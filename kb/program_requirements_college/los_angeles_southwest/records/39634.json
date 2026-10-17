@@ -1,0 +1,171 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "39634",
+ "shape": "noncredit",
+ "title": "CTE Career Exploration for ESL Students",
+ "award": "Noncredit program",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7314,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7314,
+    "output_tokens": 1027,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1027,
+  "output_tokens_details": {
+   "thinking_tokens": 411
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0498,
+ "ms": 9389,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VOCED73CE"
+   ],
+   "flagged": [
+    "VOCED73CE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 180 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CTE Career Exploration for ESL Students Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define and clarify personal values, interests, personality, interests and skills.",
+    "Formulate career, training and education options that align with individual characteristics",
+    "Develop a strategy of occupational research that will enhance job efficiency and effectiveness",
+    "Identify key vocabulary used in the target CTE sector"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 073CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC ED 096CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins on page 162 with the program description. The section's own heading is not shown; it is probably on the preceding page. The section_heading is taken from the description's wording 'CTE Career Exploration for ESL Students Certificate of Completion'.",
+   "Measure is set to hours because this is a noncredit Certificate of Completion. However, the text prints no hours for the courses and no total hours, so all hour fields are null.",
+   "VOC ED 073CE CTE Career Exploration is not in the closed list, so it is recorded as a catalog addition.",
+   "VOC ED 096CE also appears in the Custodial Technician Preparation section, which was not read for this record.",
+   "Outcome 1 repeats 'interests' as printed in the catalog."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

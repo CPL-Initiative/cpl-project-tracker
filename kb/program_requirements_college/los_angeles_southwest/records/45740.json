@@ -1,0 +1,202 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "45740",
+ "shape": "certificate",
+ "title": "Small Business Entrepreneurship Level II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=129",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8248,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8248,
+    "output_tokens": 1290,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1290,
+  "output_tokens_details": {
+   "thinking_tokens": 409
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05879,
+ "ms": 10989,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "BUS22"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CAOT85",
+    "SUPV1"
+   ],
+   "flagged": [
+    "CAOT85",
+    "SUPV1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    14.0,
+    14.0
+   ],
+   "stated": [
+    14.0,
+    14.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CERTIFICATE OF ACHIEVEMENT SMALL BUSINESS ENTREPRENEURSHIP LEVEL II",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 14
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply supervisory and leadership principles to effectively manage employees and business operations in a small business setting.",
+    "Prepare and interpret basic accounting records and financial statements to support sound business decision-making.",
+    "Use spreadsheet software to analyze, organize, and present business and financial data for small business applications.",
+    "Demonstrate professional selling techniques to build customer relationships and increase sales in entrepreneurial ventures.",
+    "Evaluate e-commerce opportunities and challenges to integrate online platforms into small business strategies."
+   ],
+   "careers": [
+    "sales",
+    "supervision",
+    "business operations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARKET 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SUPV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 22",
+    "why": "Named only in the preceding Small Business Entrepreneurship Level I section (BUS 022), not in the Level II required courses, though the Level II description mentions e-commerce."
+   }
+  ],
+  "notes": [
+   "The award is labeled a Certificate of Achievement requiring 16 to fewer than 30 units, but the catalog prints TOTAL UNITS 14 for this certificate; reviewer should check.",
+   "The Level II description says students will examine electronic commerce and the PLOs include e-commerce, yet BUS 022 appears only in the Level I list; the state file lists BUS 22 for this program.",
+   "The text page begins mid-way through the Level I section (its outcomes and 21-unit course list), which was not recorded.",
+   "Careers taken from 'entry-level positions in sales, supervision, or business operations'; 'aspiring entrepreneurs, small business owners' read as the intended audience, not careers."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

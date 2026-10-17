@@ -1,0 +1,532 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "08449",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=130",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11360,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11360,
+    "output_tokens": 3942,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3942,
+  "output_tokens_details": {
+   "thinking_tokens": 1080
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12428,
+ "ms": 29875,
+ "seconds": 30.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "CHDEV10",
+    "CHDEV16",
+    "CHDEV17",
+    "CHDEV23",
+    "CHDEV34",
+    "CHDEV37",
+    "CHDEV38",
+    "CHDEV61",
+    "CHDEV62",
+    "CHDEV63",
+    "CHDEV66",
+    "CHDEV67",
+    "CHDEV7",
+    "CHDEV72",
+    "CHDEV77",
+    "CHDEV8",
+    "FAM&CS21"
+   ],
+   "flagged": [
+    "CHDEV10",
+    "CHDEV16",
+    "CHDEV17",
+    "CHDEV23",
+    "CHDEV34",
+    "CHDEV37",
+    "CHDEV38",
+    "CHDEV61",
+    "CHDEV62",
+    "CHDEV63",
+    "CHDEV66",
+    "CHDEV67",
+    "CHDEV7",
+    "CHDEV72",
+    "CHDEV77",
+    "CHDEV8",
+    "FAM&CS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [
+    "'Specialized Electives: Infant and Toddler Studies' chooses units but names no minimum",
+    "'Specialized Electives: Language and Literacy' chooses units but names no minimum",
+    "'Specialized Electives: Administrative and Supervision of Early Childhood Programs' chooses units but names no minimum",
+    "'Specialized Electives: Children with Special Needs' chooses units but names no minimum",
+    "'Specialized Electives: Positive Guidance and Family School Relationships' chooses units but names no minimum",
+    "'Specialized Electives: School Age' chooses units but names no minimum",
+    "'Specialized Electives: Additional Electives' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts Child Development (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate understanding of characteristics, special needs, and multiple influences on the development of children from birth to age eight as it relates to early childhood theories and milestones for optimal growth and development.",
+    "Create and implement developmentally appropriate strategies, best practices, techniques, and curriculum incorporating the California Early Childhood Educator Competencies, as well as anti-bias and adaptation principles for working with typical and atypical developing children.",
+    "Identify and evaluate developmental, environmental and teacher-child interaction assessment tools.",
+    "Integrate understanding of infant and early childhood social emotional development, mental health, adverse childhood experiences, brain growth and development and the importance of attachment and relationships on the lives of children.",
+    "Identify and demonstrate the strategies and techniques for building sensitive and respectful child, family, and community relationships that express understanding of culture, diversity, and factors that influence health safety, nutrition, and mental health.",
+    "Uphold professional standards (based on NAEYC code of Ethics) for job seeking, respecting, interacting, and communicating with others (parents, staff, children, community members, colleagues, and peers)."
+   ],
+   "careers": [
+    "early childhood culturally inclusive careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "CH DEV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 042",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: Infant and Toddler Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: Language and Literacy",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 036",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 037",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: Administrative and Supervision of Early Childhood Programs",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 038",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 039",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 065",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: Children with Special Needs",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: Positive Guidance and Family School Relationships",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 048",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: School Age",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 046",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialized Electives: Additional Electives",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FAM & CS 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 016",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 017",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 061",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 062",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 063",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 066",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 067",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 072",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 077",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text begins mid-page with the AA description; no explicit section heading is printed in the text, so the heading was inferred from the opening sentence ('The Associate in Arts Child Development (AA) pathway').",
+   "'TOTAL UNITS 32' is printed directly after the Required Courses list and equals the sum of those ten courses; it was recorded both as the block's stated total and as total_units. The catalog does not say whether any Specialized Electives are required or how many units of them count toward the degree.",
+   "Specialized Electives are listed under subheadings with no printed rule or minimum; each subheading was recorded as a choose_units block with minimum null. A reviewer should verify whether the electives are required, optional, or recommended.",
+   "No general education pattern, degree total or general elective units are printed for this AA section.",
+   "Catalog titles differ from the closed list: CH DEV 044 is printed as 'Early Intervention for Children with Special Needs I' (closed list: Programs for Children with Special Needs I) and CH DEV 045 as 'Programs for Children with Special Needs I' (closed list: ... II).",
+   "Program learning outcomes were taken from the AA section; the following AS-T, Family Child Care and Associate Teacher sections print their own outcomes and were not used.",
+   "The source is labeled a catalog draft (08.27.2026)."
+  ]
+ },
+ "extracted_run": "39061735776"
+}
