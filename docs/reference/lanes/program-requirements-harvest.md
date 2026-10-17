@@ -65,7 +65,7 @@ the weekly apply.
 
 **The sequence pass (S325) and a refused mapper host:** lessons, *Moved from the lane (S394 compaction)*.
 
-**A refusal is on the college's record (Sam, sheet 29 card 3):** the agent notes the limitation and keeps looking, and asks no one for access; `program_source_registry` carries `sequence_host`, `sequence_access`, `sequence_note`, `sequence_checked_run`. ⚠️ **A workaround is another public source, never the same refused host under another name**: the reader keeps the census user agent that names the CPL Initiative. Detail and the 25 colleges filed: lessons, *Moved from the lane (S386 compaction)*.
+**A refusal is on the college's record (Sam, sheet 29 card 3, revised 2026-10-17):** `program_source_registry` carries `sequence_host`, `sequence_access`, `sequence_note`, `sequence_checked_run`, and `access_status` for the catalog. ⚠️ **Automated reads still name the CPL Initiative in the user agent and still respect blocks and robots.txt.** Since Sam's rulings of 2026-10-17 (`cpl_memory` `sam-sheet-29-revised-refusal-workarounds-2026-10-17`), a person may fetch a public file by hand for the pipeline (the hand-filed step, `kb/hand_filed_catalogs/`), and the CO may ask a college or vendor for access (the access-note drafts in `CPLBrain/04-projects/cpl-initiative/20261017_Catalog_Reader_Access_Notes_Draft_1.md`; Sam sends them). Detail and the 25 colleges filed: lessons, *Moved from the lane (S386 compaction)*.
 
 **Sam's ruling (2026-10-04, 11:1xZ, in chat):** *"No need for governance at this
 point. Everything is public record and we can mark the tab and contents as beta

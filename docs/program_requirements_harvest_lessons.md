@@ -88,10 +88,11 @@ own maps pages; Santa Monica timed out in the morning probe and answered in run
 requests a host on record as refused, follows the college's own links to the
 program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
 each recorded host's front page once a run, flagging `CHANGED: file it` when a refused host or an unreached page now
-answers. ⚠️ **"Workaround" means another public source, never the same refused
-host under another name:** the reader keeps the census user agent that names the
-CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
-disguise. The program read still needs the dispatch input `read: 1`.
+answers. ⚠️ **Revised by Sam, 2026-10-17:** automated reads still name the CPL
+Initiative in the user agent (Sam's call 5 on sheet 23) and still respect blocks
+and robots.txt; a person may fetch a public file by hand for the pipeline, and the
+CO may ask a college or vendor for access (`cpl_memory`
+`sam-sheet-29-revised-refusal-workarounds-2026-10-17`; the hand-filed step, S405). The program read still needs the dispatch input `read: 1`.
 
 **Sam's sheet 32 (2026-10-04 17:33Z, both his own calls, as proposed):** (1) a
 program shows "up to" (the CPL course taken in every choice, the option with more
@@ -612,3 +613,40 @@ the session. Proving a seeded a11y target by running it on the old file (it must
   program paths, so the read stopped at 900 pages and still found 54 of 58, 19 of them by link search. The registry's
   address is `/current/`; a sitemap page outside it is another year's catalog. The next reader change: keep sitemap
   pages under the start address's path when the host serves more than one year.
+
+## S405 SkyCholla (2026-10-17, the 12:12Z firing): the year scope, Sheet 88's colleges, ligatures and the hand-filed step
+
+- **An own-HTML catalog keeps to its own year (#S405 wave).** Skyline's capture took 40 of 62 picks from `/1718/`,
+  `/1819/` and `/1920/`. `year_scope()` scopes a `custom_html` read (sitemap, child pages, link search) through the
+  registry address's year segment (`current`, `2026-2027`, `1718`); an address naming no year keeps the whole host.
+  Skyline's next capture listed 466 program pages instead of 3,927 and ran 42 minutes instead of 78. The S404 run was
+  canceled before its extraction spent anything on the old years.
+- **A 401 from the extraction function is its caller probe, not the key.** `program-requirements-extract` answers 401
+  whenever its probe of `allowed_reviewers` fails (12 s timeout). At 13:04Z 29 calls in one minute failed that way,
+  mid-run, after Coalinga's run at 12:38Z had none (`function_edge_logs`). Re-run with `force=incomplete`.
+- **Coalinga** (own HTML, `/catalog/2026-2027/`): 53 of 62 found in six minutes through the catalog's index, $3.34,
+  42 passing, 52 loaded. **West Valley** (Sheet 88, own HTML): 134 of 142 through its index, $11.19, 90 passing, 133
+  loaded. **Copper Mountain** (Sheet 88, PDF): 48 of 48, $3.84, 32 passing, 46 loaded. **San Diego Continuing
+  Education** (PDF): 109 of 120, $4.95, 89 passing, 90 loaded (19 placed none of their listed courses and stayed out).
+  **Solano** (PDF): 162 of 163, $13.17, 144 loaded. **Porterville's robots.txt disallows its catalog PDF**: on its
+  record, with Cerro Coso's.
+- **Solano's PDF prints ligatures as stand-in glyphs with a space beside them** (*"IntroducƟ on"*, *"draŌ  landscape
+  plan"*, *"Iden Ɵ ﬁ caƟ on"*: Ɵ ti, Ʃ tt, Ō ft, and the Unicode fi, fl, ff, ffi, ffl), found by a page read of the PDF
+  (39036135577) after 135 of 162 records failed the outcomes check. Which space is the word's own cannot be told
+  (*"draŌ  landscape"* against *"aŌ er"*), so text carrying one gets a fifth reading in `_readings()`: ligatures spelled
+  out and every space dropped, compared with the outcome's letters, spaces dropped too. A free reconcile took Solano's
+  outcomes failures from 135 to 25 and its passes from 7 to 83.
+- **Three more registry rows name a page about the catalog** (page reads 39032643761, 39035702276): Grossmont (the
+  cover image; `catalog.gcccd.edu/grossmont/`), Ohlone (the landing page; chapter 7 of a PDF catalog), Cañada (its
+  schedule page; `catalog.canadacollege.edu/current/` refuses the reader in robots.txt). Open Asks Sheet 89 card 1.
+- **The hand-filed catalog step** (Sam's ruling 2 on the refusing hosts, 2026-10-17): `kb/hand_filed_catalogs/` holds a
+  PDF a person fetched and a provenance record (who, when, from where, sha256). The capture reads it in place of a
+  download, refuses it when the hash differs, and stamps the provenance on the report and each record. Steps in the
+  folder's README. The seven waiting: De Anza, CCSF, American River, Cosumnes River, Folsom Lake, Sacramento City, Cerro
+  Coso; Porterville and Cañada joined them this run.
+- **The display build needs the dated reads.** A college missing from `registry_read.json` and
+  `map_cr_by_course.json` builds with no registry row and no MAP credit recommendations; San Mateo went out that way in
+  `928577b30f0f`. This wave adds all seven, each matched by md5.
+
+**Patterns that worked.** Ten branches, one a college, captured in parallel while the session fixed what the first
+reports showed. A page read of the PDF around one failing outcome named the fault in one load.
