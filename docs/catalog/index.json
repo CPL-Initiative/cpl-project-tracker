@@ -15619,8 +15619,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 379,
+   "count": 380,
    "docs": [
+    {
+     "created": "2026-10-17",
+     "governs": [],
+     "n": 409,
+     "path": "docs/session_409_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "display-build",
+      "ui-pass"
+     ],
+     "title": "Session 409 handoff: the display apply, Cuesta, Ca\u00f1ada's page, and Exhibit Adoption's UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-17",
      "governs": [],
@@ -22146,5 +22163,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1162
+ "total": 1163
 }

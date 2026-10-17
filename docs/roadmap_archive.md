@@ -6010,3 +6010,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - 2026-10-16 (S397 SkyCatalpa, the CPL Queue routine): Allan Hancock loaded; Monterey Peninsula's reconcile reread; wave 4's display build `66b50c86891e` (#2157, superseding #2156); Open Asks Sheet 84 published; handoff 398 (SkyLinden).
 - 2026-10-16 (S396 SkyJacaranda): wave 4 read, nine colleges, five loaded; Orange Coast and Monterey Peninsula's reconcile steps; #2148 and #2151 merged; handoff 397.
+## INDEX update history moved at the S408 checkpoint (2026-10-17)
+
+- 2026-10-16 (S400 SkyBirch, Sam's session): My College's Sierra in Sierra AI's format on Sam's ask (#2171); the program search's no-match path fixed after the smoke's 7l timeout (#2173, applied, 2,742 to 204 ms); wave 5's second half loaded, build `9237d2cbf931` applied (#2170); nine procedure records (#2172, #2174); Butte parked for its reader; handoff 401 names SkyManzanita.

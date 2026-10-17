@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 379 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1162** | |
+| Session handoffs | 380 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1163** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-17 (S408 SkyAgave, hand-opened): the code finder reads a run of numbers after one subject (#2206, Glendale 190 to 258 found); the outcomes check reads a list number at a line's end (#2207, Ohlone 125 failures to 8); East LA's rows carry their year; Desert, Pasadena, Glendale, Grossmont, Ohlone and LA Southwest loaded unchecked; display build `f949e7c0ea35` (15,336 programs at 108 colleges, #2208); handoff 409 (SkyOcotillo).
 - 2026-10-17 (S406 SkyIronwood, hand-opened): a hand-filed catalog is read from the copy a person posted, its hash pinned on the first fetch (#2199); the eight refused colleges loaded unchecked from Sam's copies (1,427 records, $131.00, build `fec9782a4dbc`, 13,851 programs at 100 colleges); Open Asks Sheet 90; MAP Export's UI pass (#2200); harvest lane compacted under its budget.
 - 2026-10-17 (S405 SkyCholla, the 12:12Z firing): own-HTML reads keep to the catalog's year (`year_scope()`); Coalinga, Skyline, West Valley, Copper Mountain, San Diego Continuing Education and Solano loaded unchecked; the scorer reads stand-in ligature glyphs (Solano, Santa Rosa reread); the hand-filed catalog step; display build `c111c9b05ca0` (12,424 programs, 92 colleges); Open Asks Sheet 89; handoff 406 (SkyIronwood).
 - 2026-10-17 (S404 SkyBuckeye, the 10:12Z firing): own-HTML catalogs take the generic sitemap road (#2194); College of San Mateo loaded 55 unchecked (60 of 64 found, $4.98, build `928577b30f0f`); Los Rios's hosts still serve the reader 404; the MAP Data Quality UI pass (#2193); handoff 405 (SkyCholla).
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-17 (S403 SkyYarrow, the CPL Queue routine): a whole-catalog PDF reader and the PDF wave, fifteen colleges loaded unchecked (1,725 records, #2189, build `7f4744e8e4ae`, 11,742 programs); Cerro Coso's robots.txt refuses its catalog PDF; the outcomes check fails on PDF text (open); handoff 404 (SkyBuckeye).
 - 2026-10-17 (S402 SkyToyon, Sam's session): two catalog-sweep waves, Lake Tahoe, Marin, Butte and Las Positas (#2186, build `40d138a9f533` applied), then Los Medanos and Mission (#2187, build `7c13e42917c5`); the eLumen reader takes catalog links written whole with a fragment (Los Medanos 7 to 83 of 97); the college workflow refuses a run naming no college; ten procedure records; Open Asks Sheet 87 asks to correct five registry rows; handoff 403 names SkyYarrow.
 - 2026-10-17 (S401 SkyManzanita, Sam's session): five catalog-reader faults read from the hosts' own outlines (#2177 curriQunet retry, #2178 Butte's two title forms, #2179 and #2183 the eLumen menu walk, #2182 Las Positas's comma); the eLumen wave, six colleges loaded, build `d4ac5009f5aa` applied (#2181); Lake Tahoe and Marin extracted; handoff 402 names SkyToyon.
-- 2026-10-16 (S400 SkyBirch, Sam's session): My College's Sierra in Sierra AI's format on Sam's ask (#2171); the program search's no-match path fixed after the smoke's 7l timeout (#2173, applied, 2,742 to 204 ms); wave 5's second half loaded, build `9237d2cbf931` applied (#2170); nine procedure records (#2172, #2174); Butte parked for its reader; handoff 401 names SkyManzanita.

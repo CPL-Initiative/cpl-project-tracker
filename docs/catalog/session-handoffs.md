@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-379 document(s).
+380 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 409 | [Session 409 handoff: the display apply, Cuesta, Cañada's page, and Exhibit Adoption's UI pass](../session_409_handoff.md) | 2026-10-17 |
 | 408 | [Session 408 handoff: catalog steps, the heading preference, the migrate path, six colleges reading](../session_408_handoff.md) | 2026-10-17 |
 | 407 | [Session 407 handoff: the eight hand-filed catalogs loaded, Sheet 90, MAP Export's UI pass](../session_407_handoff.md) | 2026-10-17 |
 | 406 | [Session 406 handoff: the year scope, seven colleges loaded, ligature glyphs read, the hand-filed catalog step](../session_406_handoff.md) | 2026-10-17 |
