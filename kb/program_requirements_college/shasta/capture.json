@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 150,
  "with_closed_list": 137,
- "started": "2026-10-17T05:26:20Z",
+ "started": "2026-10-17T05:29:29Z",
  "pdf": {
   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 107.4,
+ "seconds": 104.6,
  "found": 124,
  "by_method": {
   "no_closed_list": 13,
@@ -1583,5 +1583,5 @@
    }
   ]
  },
- "run": "39006205021"
+ "run": "39006384701"
 }

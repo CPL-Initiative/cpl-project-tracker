@@ -1,0 +1,328 @@
+{
+ "college": "Shasta College",
+ "control_number": "34005",
+ "shape": "degree",
+ "title": "Health Information Management",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8632,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8632,
+    "output_tokens": 2523,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2523,
+  "output_tokens_details": {
+   "thinking_tokens": 804
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08499,
+ "ms": 20223,
+ "seconds": 20.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 54.0-54.0; the catalog states 45.0-45.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     81.0,
+     88.0
+    ],
+    "stated": [
+     120.0,
+     126.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [
+     "the blocks and general education sum to 81.0-88.0; the catalog prints 120.0-126.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health Information Management",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Associate Degree General Education plus an additional 6 units of GE or Cal-GETC",
+   "degree_total": {
+    "min": 120,
+    "max": 126
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Qualify for national certification as a Registered Health Information Administrator (RHIA) by achieving a passing score on the AHIMA certification exam.",
+    "Integrate knowledge of medical, administrative, ethical and legal requirements and standards related to healthcare delivery and protecting patient information as evidenced by successful completion of course competencies and assignments.",
+    "Apply the principles of health information management related to administering computer information systems, collecting and analyzing patient data, and using classification systems and medical terminologies as evidenced by successful completion of course competencies and assignments.",
+    "Demonstrate the concepts of effective communication to effectively interact with all healthcare organization levels that utilize patient data in decision-making and operations – clinical, financial, administrative and information systems – as evidenced by successful completion of course competencies and assignments."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "SEMESTER ONE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIMS 405",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 408",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER TWO",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIMS 415",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 418",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 420",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER THREE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIMS 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 425",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 430",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 435",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER FOUR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIMS 440",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 445",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 455A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIMS 455B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program heading is not in the extracted text (the page begins mid-description); section_heading uses the program title. The requirement list is printed under 'DEGREE REQUIREMENTS:'.",
+   "The semester blocks sum to 54 units. HIMS 408, ENGL 401 and PSYC 401 (9 units) are marked '*Used to fulfill Upper Division General Education requirements' and match the printed 'Upper Division General Education 9'. The remaining 45 units match 'Upper Division Major Core 45'. These three courses are kept in the blocks because the degree requirements list them as required courses; a reviewer may decide whether they should count toward total_units.",
+   "The degree total of 120-126 is built from the Health Information Technology AS Degree (66-72, which includes 27 or 34 units of lower division GE), the Upper Division Major Core (45) and Upper Division General Education (9).",
+   "ge_units records the printed lower division 'General Education: 27-34 units'. A separate 9 units of upper division GE is printed in addition.",
+   "RHIA (Registered Health Information Administrator) is named as a certification graduates may sit for, not as a career, so it is not recorded in careers.",
+   "The text after the degree total belongs to the Health Information Technology A.S. program and was not read for this award."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

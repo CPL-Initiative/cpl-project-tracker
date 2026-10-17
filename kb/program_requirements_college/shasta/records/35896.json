@@ -1,0 +1,309 @@
+{
+ "college": "Shasta College",
+ "control_number": "35896",
+ "shape": "adt",
+ "title": "Agriculture Animal Sciences",
+ "award": "A.S. T Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12212,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12212,
+    "output_tokens": 2522,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2522,
+  "output_tokens_details": {
+   "thinking_tokens": 904
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09929,
+ "ms": 21308,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    29.0
+   ],
+   "stated": [
+    24.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     75.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture Animal Sciences — Associate in Science for Transfer (SC Program: AS-T.2004)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 4,
+    "max": 12
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of practical reproductive management of livestock species.",
+    "Define livestock nutritional needs and demonstrate proper feeding techniques related to growth, development, and finishing of livestock.",
+    "List common infectious diseases and parasites, and explain the role of preventative health.",
+    "Explain marketing strategies and market classification of livestock and their products.",
+    "Identify and implement sustainable livestock management practices that will improve livestock quality, provide efficacious management, protect the natural resources, and ensure economic viability of the livestock industry.",
+    "Demonstrate a working knowledge of animal production life cycles to develop a ranch management calendar that incorporates scientifically based management decisions and the latest technological advances in livestock husbandry.",
+    "Name and demonstrate proper use of equipment that humanely confines, treats, and protects livestock.",
+    "Identify and evaluate livestock anatomy and physiology, and relate form to function."
+   ],
+   "careers": [
+    "agriculture teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGAB 54",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGAS 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 2A",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 6,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A Area 1: Animal Production",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGEQ 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGAS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGAS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A Area 2: Animal Health",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGAS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 2B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AGPS 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGPS 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "LIST A is printed as 'Select two courses, one from each area' with a total of 6-8 units; recorded as two blocks (Area 1 and Area 2), one course each. The 6-8 total applies to the two areas combined, so neither area block carries a stated total.",
+   "LIST B also allows 'Any LIST A course not already used'; only AGPS 20 and AGPS 24 are listed as LIST B's own courses.",
+   "CHEM 1A OR CHEM 2A are printed with a single '5' beside the pair; 5 was recorded for both.",
+   "Degree total is printed as 'Degree Total Will Not Exceed 60 Units'; recorded as 60.",
+   "Additional Electives are printed as 4-12 with the note 'Number will vary depending on units that double count'; recorded as degree_elective_units.",
+   "Career entry 'agriculture teachers' comes from the description's mention of a shortage of agriculture teachers for students interested in teaching at the high school level.",
+   "CHEM 1A, CHEM 2A, CHEM 2B, STAT C1000 and STAT C1000E are marked # (may be used to fulfill Cal-GETC requirements)."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

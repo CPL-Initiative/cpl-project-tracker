@@ -1,0 +1,205 @@
+{
+ "college": "Shasta College",
+ "control_number": "30486",
+ "shape": "degree",
+ "title": "Agriculture Business",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11025,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11025,
+    "output_tokens": 1194,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1194,
+  "output_tokens_details": {
+   "thinking_tokens": 382
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06798,
+ "ms": 10448,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 13,
+   "share": 0.0,
+   "missing": [
+    "AG1",
+    "AG94",
+    "AG9A",
+    "AGAB54",
+    "AGAS19",
+    "AGMA44",
+    "AGNR52",
+    "AGPS20",
+    "AGPS24",
+    "BUAD77",
+    "COMM54",
+    "ECONC2002",
+    "ENGLC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AG 1",
+    "why": "Agriculture Business section not in the text"
+   },
+   {
+    "code": "AG 9A",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "AG94",
+    "why": "Agriculture Business section not in the text; AG 94 appears only in other programs' sections"
+   },
+   {
+    "code": "AGAB 54",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "AGAS 19",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "AGMA 44",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "AGNR 52",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "AGPS 20",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "AGPS 24",
+    "why": "Agriculture Business section not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "BUAD 77",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 54",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog pages (53-54) do not contain an Agriculture Business A.S. section. They contain the tail of the Agriculture Plant Science AS-T, Agriculture Science, Education, and Management A.S. (AS.1519), Agriculture Sciences University Studies emphasis (AA.1491), Pest Control Advisor Preparation Certificate, Small Farm Operations Noncredit Certificate, and the start of the Sustainable Landscape Certificate.",
+   "No blocks, totals, outcomes or careers were recorded because the named award's section is absent; a reviewer should locate the Agriculture Business A.S. on another page of the 2026-2027 catalog (likely an earlier page, since the program list appears alphabetical)."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

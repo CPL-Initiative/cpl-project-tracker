@@ -1,0 +1,355 @@
+{
+ "college": "Shasta College",
+ "control_number": "09113",
+ "shape": "degree",
+ "title": "Medical Office Professional",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8350,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8350,
+    "output_tokens": 2249,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2249,
+  "output_tokens_details": {
+   "thinking_tokens": 622
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07838,
+ "ms": 18221,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 16,
+   "share": 0.688,
+   "missing": [
+    "BSOT10",
+    "BSOT11",
+    "BSOT51",
+    "BSOT52",
+    "BSOT64"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "ACCT101",
+    "ACCT103",
+    "ACCT104",
+    "BIOL5",
+    "BSOT91",
+    "BSOT92",
+    "CIS20"
+   ],
+   "flagged": [
+    "ACCT101",
+    "ACCT103",
+    "ACCT104",
+    "BIOL5",
+    "BSOT91",
+    "BSOT92",
+    "CIS20"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.5,
+    26.5
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.5-26.5; the catalog states 35.0-35.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     54.5,
+     54.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [
+     "the blocks and general education sum to 54.5-54.5; the catalog prints 60.0-60.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 7,
+    "max": 7
+   },
+   "ge_pattern": "SCGE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements (continued from previous page)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSOT 80",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 152",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 166",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 171",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 66",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEOC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RECOMMENDED COURSES (not required)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 104",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 20",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSOT 91",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSOT 92",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BSOT 10",
+    "why": "not in the text for the A.S. section; degree course list begins on the previous page (only in the certificate section here)"
+   },
+   {
+    "code": "BSOT 11",
+    "why": "not in the text for the A.S. section; degree course list begins on the previous page (only in the certificate section here)"
+   },
+   {
+    "code": "BSOT 51",
+    "why": "not in the text for the A.S. section; degree course list begins on the previous page (only in the certificate section here)"
+   },
+   {
+    "code": "BSOT 52",
+    "why": "not in the text for the A.S. section; degree course list begins on the previous page (only in the certificate section here)"
+   },
+   {
+    "code": "BSOT 64",
+    "why": "not in the text for the A.S. section; degree course list begins on the previous page (only in the certificate section here)"
+   }
+  ],
+  "notes": [
+   "The excerpt starts mid-list: the A.S. degree heading, description, outcomes and the first courses of the major are on the previous page and not in the text. The program's own heading is not printed in this excerpt; section_heading uses the degree requirements summary heading.",
+   "Visible required courses total 26.5 units against a stated major of 35; the missing 8.5 units match BSOT 10, 11, 51, 52 and 64 (1+1+3+3+0.5), likely on the prior page. Verify against the full page.",
+   "Degree summary: Major 35, General Education (SCGE) 21, Additional Electives 7*, Degree Total 60; footnote says the elective number will vary depending on units that double count.",
+   "BUAD 66 and BIOL 5 are marked with * meaning they may be used to fulfill General Education requirements.",
+   "No program learning outcomes or careers for the A.S. degree appear in the excerpt; the outcome and career text shown belong to the Medical Office Specialist Certificate and were not recorded."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

@@ -1,0 +1,289 @@
+{
+ "college": "Shasta College",
+ "control_number": "33929",
+ "shape": "degree",
+ "title": "Health Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11108,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11108,
+    "output_tokens": 2168,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2168,
+  "output_tokens_details": {
+   "thinking_tokens": 663
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08779,
+ "ms": 18359,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     15.0,
+     15.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "DEGREE REQUIREMENTS:",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 4,
+    "max": 4
+   },
+   "ge_pattern": "Shasta College local GE (SCGE)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 15,
+    "max": 15
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the knowledge and skills needed to successfully pass the national Registered Health Information Technician (RHIT) exam.",
+    "Apply the knowledge and skills needed to successfully pass the national Registered Health Information Technician (RHIT) exam.",
+    "Compete in the job market in the field of health information technology or enroll in an advanced degree program.",
+    "Demonstrate the ability to work effectively as an individual and collaboratively in a group to resolve health information challenges in a changing healthcare environment.",
+    "Apply the knowledge and skills needed to perform HIM Associate Degree entry-level competencies as defined by the American Health Information Management Association’s (AHIMA) Council for Excellence in Education (CEE)."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HEOC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 11",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 25",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 30",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 42",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 45",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 50",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-description on page 85; the program's title heading and the start of its description (possibly naming careers) are on the prior page and not in the text. section_heading uses the requirements heading as printed.",
+   "Closed list stores HIT10 and HIT60 without a space; the catalog prints HIT 10 and HIT 60 — treated as the same courses (not catalog additions).",
+   "The degree table prints 'General Education (SCGE) 15', while the narrative says 'In addition to the 21 unit local GE pattern'; ge_units records the 15 printed in the table. A footnote says the number varies depending on units that double count (BIOL 5 and HIT 20 marked * may fulfill GE).",
+   "'Additional Electives 4*' recorded as degree_elective_units; the footnote marker in the table (♦/*) indicates it varies with double counting.",
+   "Program learning outcomes 1 and 2 are printed identically in the catalog; both recorded as printed.",
+   "Description mentions eligibility for the Registered Health Information Technician (RHIT) certification exam and a Cal-GETC recommendation for students pursuing a BS in Health Information Management; not recorded as careers or as the GE pattern for this degree."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

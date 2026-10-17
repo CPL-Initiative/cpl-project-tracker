@@ -1,0 +1,383 @@
+{
+ "college": "Shasta College",
+ "control_number": "18625",
+ "shape": "degree",
+ "title": "General Studies - Coastal Oceanographic Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8639,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8639,
+    "output_tokens": 3692,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3692,
+  "output_tokens_details": {
+   "thinking_tokens": 1633
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1084,
+ "ms": 29615,
+ "seconds": 30.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 16,
+   "share": 0.312,
+   "missing": [
+    "AGNR60",
+    "AGNR61",
+    "BIOL1",
+    "BIOL10",
+    "BIOL12",
+    "CIS1",
+    "ESCI1",
+    "ESCI10",
+    "ESCI17",
+    "GEOG5",
+    "PHYS2B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 12,
+   "codes": [
+    "AGNR12",
+    "AGNR64",
+    "ESCI16L",
+    "ESCI37",
+    "ESCI37L",
+    "ESCI38",
+    "ESCI38L",
+    "GEOG1A",
+    "GEOG1AL",
+    "GEOG25",
+    "GEOG2A",
+    "NHIS65"
+   ],
+   "flagged": [
+    "AGNR12",
+    "AGNR64",
+    "ESCI16L",
+    "ESCI37",
+    "ESCI37L",
+    "ESCI38",
+    "ESCI38L",
+    "GEOG1A",
+    "GEOG1AL",
+    "GEOG25",
+    "GEOG2A",
+    "NHIS65"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    14.0,
+    14.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emphasis in Coastal Science Technician:",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Emphasis in Coastal Science Technician",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESCI 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 16L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AGNR 1 OR AGNR 64 OR GEOG 10 OR NHIS 15",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGNR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGNR 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NHIS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGNR 12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 37",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 37L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 38",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 38L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 1AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 2A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 25",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NHIS 65",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGNR 60",
+    "why": "not in this emphasis's text; appears only in the Oceanography and Marine Sciences (AA.1498) section"
+   },
+   {
+    "code": "AGNR 61",
+    "why": "not in this emphasis's text; appears only in the Oceanography and Marine Sciences (AA.1498) section"
+   },
+   {
+    "code": "BIOL 1",
+    "why": "not in this emphasis's text; appears only in the Oceanography and Marine Sciences (AA.1498) section"
+   },
+   {
+    "code": "BIOL 10",
+    "why": "not in the text; possibly in a degree core on the preceding page not provided"
+   },
+   {
+    "code": "BIOL 12",
+    "why": "not in this emphasis's text; appears only in the Oceanography and Marine Sciences (AA.1498) section"
+   },
+   {
+    "code": "CIS 1",
+    "why": "not in the text; possibly in a degree core on the preceding page not provided"
+   },
+   {
+    "code": "ESCI 1",
+    "why": "not in this emphasis's text; appears only in the Oceanography and Marine Sciences (AA.1498) section"
+   },
+   {
+    "code": "ESCI 10",
+    "why": "not in this emphasis's text; appears only in the Oceanography elective list"
+   },
+   {
+    "code": "ESCI 17",
+    "why": "not in the text; possibly in a degree core on the preceding page not provided"
+   },
+   {
+    "code": "GEOG 5",
+    "why": "not in the text; possibly in a degree core on the preceding page not provided"
+   },
+   {
+    "code": "PHYS 2B",
+    "why": "not in this emphasis's text; appears only in the Oceanography elective list"
+   }
+  ],
+  "notes": [
+   "The text begins mid-program on page 78; the heading and shared core of the General Studies A.S. degree that contains the 'Emphasis in Coastal Science Technician' appear to be on an earlier page not provided. Several closed-list courses (BIOL 10, CIS 1, ESCI 17, GEOG 5) may sit in that core.",
+   "Section choice is ambiguous: the 'Oceanography and Marine Sciences University Studies – 25 Unit Emphasis' (SC Program AA.1498) also matches 'Oceanographic Studies' but is labeled an AA program; the Coastal Science Technician emphasis was chosen as the General Studies A.S. section. Reviewer should confirm.",
+   "Closed list prints 'ESCI16' without a space; treated as the catalog's ESCI 16 (not a catalog addition).",
+   "ESCI 16 and ESCI 16L are joined by AND; in the 3-unit elective list, ESCI 37/37L, ESCI 38/38L and GEOG 1A/1AL are also printed as AND pairs to be taken together.",
+   "The four-way OR row (AGNR 1, AGNR 64, GEOG 10, NHIS 15) is recorded as choose 1 course.",
+   "No program learning outcomes or careers are printed for this emphasis; the outcomes in the text belong to the Oceanography and Marine Sciences emphasis and were not recorded.",
+   "No total units for the emphasis or degree are printed in the provided text.",
+   "A NOTE says specific Humanities and Social Science courses can further support this emphasis; none are named."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

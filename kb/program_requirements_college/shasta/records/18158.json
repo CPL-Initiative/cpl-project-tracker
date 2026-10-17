@@ -1,0 +1,491 @@
+{
+ "college": "Shasta College",
+ "control_number": "18158",
+ "shape": "degree",
+ "title": "General Studies - Natural Sciences",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=46",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9088,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9088,
+    "output_tokens": 3895,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3895,
+  "output_tokens_details": {
+   "thinking_tokens": 912
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11425,
+ "ms": 27790,
+ "seconds": 28.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 70,
+   "share": 0.0,
+   "missing": [
+    "AGAS19",
+    "AGEH33",
+    "AGNR1",
+    "AGNR60",
+    "AGNR61",
+    "AGNR64",
+    "AGPS20",
+    "AGPS24",
+    "ANAT1",
+    "ANTHC1001",
+    "ASTR2",
+    "ASTR3",
+    "BIOL1",
+    "BIOL10",
+    "BIOL10L",
+    "BIOL11",
+    "BIOL12",
+    "BIOL5",
+    "BIOL6",
+    "BOT1",
+    "BOT50",
+    "BOT52",
+    "CHEM10",
+    "CHEM11",
+    "CHEM1A",
+    "CHEM1B",
+    "CHEM2A",
+    "CHEM2B",
+    "CHEM70",
+    "CHEM70A",
+    "CHEM71",
+    "CHEM71A",
+    "ESCI1",
+    "ESCI10",
+    "ESCI12",
+    "ESCI14",
+    "ESCI14L",
+    "ESCI15",
+    "ESCI16",
+    "ESCI17",
+    "ESCI18",
+    "ESCI2",
+    "ESCI3",
+    "ESCI32",
+    "ESCI33",
+    "ESCI34",
+    "ESCI35",
+    "ESCI36",
+    "ESCI37",
+    "ESCI38",
+    "ESCI6",
+    "ESCI7",
+    "ESCI8",
+    "ESCI9",
+    "GEOG10",
+    "GEOG1A",
+    "GEOG1AL",
+    "GEOG9",
+    "MICR1",
+    "NHIS15",
+    "NHIS65",
+    "NUTR25",
+    "PHSC1",
+    "PHY1",
+    "PHYS2A",
+    "PHYS2B",
+    "PHYS4A",
+    "PHYS4B",
+    "PHYS4C",
+    "ZOOL1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AREA 5 – PHYSICAL AND BIOLOGICAL SCIENCES (Cal-GETC pattern course list; the General Studies - Natural Sciences A.S. section is not in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGAS 19",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "AGEH 33",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "AGNR 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "AGNR 60",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "AGNR 61",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "AGNR 64",
+    "why": "not in the text"
+   },
+   {
+    "code": "AGPS 20",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "AGPS 24",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ANAT 1",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "ANTH C1001",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "ASTR 2",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ASTR 3",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 1",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 10",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 10L",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 11",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 12",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 5",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BIOL 6",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BOT 1",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "BOT 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "BOT 52",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 10",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 11",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 1A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 1B",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 2A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 2B",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 70",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 70A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 71",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "CHEM 71A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 1",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 10",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 12",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 14",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 14L",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 15",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 17",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 18",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 2",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 3",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 34",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 36",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 37",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 6",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 7",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 8",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI 9",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ESCI16",
+    "why": "only in Cal-GETC Area 5A GE list (as ESCI 16); program section not in text"
+   },
+   {
+    "code": "GEOG 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 1A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "GEOG 1AL",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "GEOG 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "MICR 1",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "NHIS 15",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "NHIS 65",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 25",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "PHSC 1",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "PHY 1",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   },
+   {
+    "code": "PHYS 2A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "PHYS 2B",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "PHYS 4A",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "PHYS 4B",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "PHYS 4C",
+    "why": "only in Cal-GETC Area 5A GE list; program section not in text"
+   },
+   {
+    "code": "ZOOL 1",
+    "why": "only in Cal-GETC Area 5B GE list; program section not in text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 38 of the PDF, linked as page 46) is the Cal-GETC general education pattern list (Areas 4, 5 and 6), not the General Studies - Natural Sciences A.S. program section. No program requirements, totals, outcomes or careers are printed for this award.",
+   "Because general education courses never go in a block, no blocks were recorded; a reviewer should locate the actual General Studies - Natural Sciences page (likely elsewhere in Chapter 3) to extract its requirements.",
+   "Many closed-list courses appear in the Cal-GETC Area 5A/5B lists; the General Studies emphasis may draw on a similar list, but the text does not show that."
+  ]
+ },
+ "extracted_run": "39006384701"
+}
