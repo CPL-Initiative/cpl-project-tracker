@@ -1737,6 +1737,36 @@ below = C.pdf_best("https://x.edu/c.pdf", ["Accounting\nACCT 101 4\nACCT 102 4\n
                    AC_COURSES, "pypdf")
 check(below and below["coverage"] == 1.0 and below["text"].startswith("[page 1]\nAccounting\nACCT 101"),
       "a control number printed below the list never cuts the list away (Pierce)")
+# City College of San Francisco (S407): a one-subject program's course descriptions name more of its codes than
+# its own page, and a transfer degree's award words include a bare "transfer", which a course line prints.
+PH_COURSES = [{"code": c} for c in ("PHYS 4A", "PHYS 4B", "PHYS 4C", "MATH 110A", "MATH 110B")]
+PH = ["Physics – AS-T Degree\nProgram Summary\nRequired courses\nPHYS 4A 5.0\nPHYS 4B 5.0\nPHYS 4C 5.0\n"
+      "MATH 110A 5.0\nTotal: 20.0",
+      "Course Descriptions\nPHYS 4A - General Physics with Calculus I (5.0) Transfer: CSU, UC\nPHYS 4B - General "
+      "Physics with Calculus II (5.0) Transfer: CSU, UC\nPHYS 4C - General Physics III (5.0)\nMATH 110A Calculus I "
+      "MATH 110B Calculus II"]
+ph = {"title": "Physics 2.0", "award": "A.S. T Degree"}
+check(C.pdf_program_pages(PH, ph, PH_COURSES)[0] == 0,
+      "a transfer degree takes its own heading's page over course descriptions naming more of its codes: %r"
+      % C.pdf_program_pages(PH, ph, PH_COURSES))
+check(not C._clean_heading(PH[1], C.pdf_heading(PH[1], ph), PH_COURSES)
+      and C._clean_heading(PH[0], C.pdf_heading(PH[0], ph), PH_COURSES),
+      "a course line naming the subject and 'Transfer' is no heading; the program's own heading is")
+# With no heading anywhere, a program's page comes before course descriptions naming more of its codes.
+PL_COURSES = [{"code": c} for c in ("LALS 10", "LALS 11", "LALS 12", "LALS 13")]
+PL = ["Paralegal/Legal Studies program\nRequired Courses\nLALS 10 Introduction 3.0\nLALS 11 Legal Research 3.0\n"
+      "LALS 12 Legal Writing 3.0\nTotal: 9.0",
+      "CCSF Catalog - 2026/27\nLALS 10 - Introduction to Paralegal Studies (3.0)\nCredit (Degree Applicable)\n"
+      "LALS 11 - Legal Research (3.0)\nLALS 12 - Legal Writing (3.0)\nLALS 13 - Torts for Legal Studies (3.0)"]
+pl = {"title": "Paralegal/Legal Studies", "award": "Certificate of Achievement"}
+check(C._descriptions(PL[1]) and not C._descriptions(PL[0]),
+      "two entry lines (code, dash, title, units in parentheses) make a description page; a course list does not")
+check(C.pdf_program_pages(PL, pl, PL_COURSES)[0] == 0,
+      "the program's page comes before a description page naming more of its codes: %r"
+      % C.pdf_program_pages(PL, pl, PL_COURSES))
+check(C.pdf_program_pages(EL, {"title": "Accounting", "award": "Certificate of Achievement",
+                               "control_number": "13343"}, AC_COURSES)[0] == 1,
+      "a printed control number stays in the preferred class beside a clean heading (East LA)")
 step = {"start": "https://x.edu/catalog", "follow": "2026-2027 Catalog.pdf", "format": "pdf"}
 check(P.procedure_catalog({"catalog": dict(step, catalog_year="2026-2027")}).get("catalog_year") == "2026-2027"
       and "catalog_year" not in P.procedure_catalog({"catalog": dict(step, catalog_year="2026-2028")})
