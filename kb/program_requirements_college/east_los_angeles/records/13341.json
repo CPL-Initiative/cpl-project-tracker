@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6708,
+  "input_tokens": 6712,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6708,
-    "output_tokens": 1291,
+    "input_tokens": 6712,
+    "output_tokens": 1218,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1291,
+  "output_tokens": 1218,
   "output_tokens_details": {
-   "thinking_tokens": 356
+   "thinking_tokens": 371
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05265,
- "ms": 11738,
- "seconds": 12.4,
+ "cost_usd": 0.05121,
+ "ms": 11295,
+ "seconds": 11.7,
  "parts": null,
  "error": null,
  "score": {
@@ -193,14 +193,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins at '(Academic Plan E013341D)'; the program heading itself is not in the excerpt (likely on the preceding page). The section was identified by its content and position before the 'Administration of Justice' section, and section_heading uses the program title. The reviewer should verify the heading.",
-   "The course list has no block name printed; 'Required Courses' is a descriptive name. All courses appear required, and the total of 18 matches the six 3-unit courses.",
-   "Catalog codes use leading zeros (ADDICST 001, ADM JUS 049); they are treated as the same courses as the closed-list codes ADDICST 1, ADDICST 7, ADDICST 22 and ADM JUS 49.",
-   "ADM JUS 001 and ADM JUS 075 are not in the closed list and are marked as catalog additions.",
-   "The description mentions 'entry-level employment positions' in assessment and treatment settings but names no specific job title, so careers is left empty.",
-   "The following 'Administration of Justice' section (Academic Plan E021184D) belongs to a different program and was not read.",
-   "The catalog year is not known; the source file name suggests 2026-2027."
+   "The excerpt begins at '(Academic Plan E013341D)'; the program title heading itself is not printed in the text (likely on the preceding page). The section was identified as this program because it is followed by the separate 'Administration of Justice' section and its description matches the Chemical Dependency Specialist in Criminal Justice certificate.",
+   "The award level (Certificate of Achievement) is not printed in the excerpt; verify against the full catalog page.",
+   "Outcomes contain PDF line-break hyphenations ('meth -ods', 'assess -ment', 'perspec -tives'); these were joined into whole words.",
+   "The course list has no block heading; the block name 'Required Courses' is supplied, and the printed 'Total 18' is recorded as both the block and certificate total.",
+   "The following 'Administration of Justice' section (Academic Plan E021184D) belongs to a different award and was not read."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

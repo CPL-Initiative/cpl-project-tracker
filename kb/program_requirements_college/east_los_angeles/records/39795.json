@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12076,
+  "input_tokens": 12080,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12076,
-    "output_tokens": 1921,
+    "input_tokens": 12080,
+    "output_tokens": 1942,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1921,
+  "output_tokens": 1942,
   "output_tokens_details": {
-   "thinking_tokens": 785
+   "thinking_tokens": 740
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08672,
- "ms": 17246,
- "seconds": 17.6,
+ "cost_usd": 0.08716,
+ "ms": 16243,
+ "seconds": 16.5,
  "parts": null,
  "error": null,
  "score": {
@@ -218,7 +218,7 @@
   "missing_explained": [
    {
     "code": "ENG GEN 101",
-    "why": "named only in the Engineering Graphics and Design Technology A.S. restricted electives"
+    "why": "named only in the Engineering Graphics and Design Technology A.S. restricted electives, not in this certificate's section"
    },
    {
     "code": "ENG TEK 111",
@@ -230,25 +230,24 @@
    },
    {
     "code": "IND TEK 103",
-    "why": "named only in other programs' sections (CAD certificate, IT pathway, EGD A.S.)"
+    "why": "named only in the CAD certificate, IT Technician Pathway certificates and the A.S. degree sections"
    },
    {
     "code": "IND TEK 106",
-    "why": "named only in the CAD certificate and EGD A.S. sections"
+    "why": "named only in the CAD certificate and the A.S. degree sections"
    },
    {
     "code": "MIT 201",
-    "why": "named only in the EGD A.S. section"
+    "why": "named only in the Engineering Graphics and Design Technology A.S. section"
    }
   ],
   "notes": [
-   "The section's title heading is not printed in the extracted text; the section begins at '(Academic Plan E039795D)' at the top of page 195 and is identified as this program by its description. Heading recorded from the program title plus the academic plan number.",
-   "Catalog year appears to be 2026-2027 per the page headers.",
-   "The printed course list sums to the stated total of 17 units.",
-   "EGD TEK 121 is printed at 3 units in this section but at 2 units in the CAD certificate and EGD A.S. sections; reviewer may wish to check.",
-   "The closed list (ENG TEK 111, ENG TEK 290, ENG GEN 101, IND TEK 103, IND TEK 106, MIT 201) differs substantially from the catalog's course list for this certificate; only MIT 101 matches.",
-   "Careers: only 'technicians' recorded; the description also mentions 'CNC programmer and Operator training' as a technology area, which was not recorded as a career."
+   "The excerpt begins at '(Academic Plan E039795D)'; the program title heading itself is not printed in the excerpt (likely on the previous page). The section was identified by the description naming the Advanced Manufacturing Engineering Technician program.",
+   "The catalog prints no block heading; the course list is recorded as one all-required block named 'Required Courses' with the printed Total 17, which matches the sum of listed units.",
+   "EGD TEK 121 is printed at 3 units in this section but at 2 units in the CAD certificate and A.S. sections; recorded as printed here.",
+   "The description mentions 'CNC programmer and Operator training' as a technology/training area; not recorded as a career. Only 'technicians' ('become technicians') was recorded as a career.",
+   "Six of the seven listed courses are not in the closed list; the closed list (ENG GEN 101, ENG TEK 111, ENG TEK 290, IND TEK 103, IND TEK 106, MIT 201) differs substantially from the catalog's course list, suggesting the state Program Course File may reflect a different version of this program."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

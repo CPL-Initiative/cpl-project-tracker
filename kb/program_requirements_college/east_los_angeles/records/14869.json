@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10776,
+  "input_tokens": 12401,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10776,
-    "output_tokens": 2056,
+    "input_tokens": 12401,
+    "output_tokens": 1890,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2056,
+  "output_tokens": 1890,
   "output_tokens_details": {
-   "thinking_tokens": 675
+   "thinking_tokens": 553
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08422,
- "ms": 16608,
- "seconds": 17.0,
+ "cost_usd": 0.0874,
+ "ms": 15232,
+ "seconds": 15.6,
  "parts": null,
  "error": null,
  "score": {
@@ -309,13 +309,13 @@
    }
   ],
   "notes": [
-   "The excerpt begins at the Academic Plan line; the section's own title line is not printed in the text, so the heading is taken from the description ('Certificate of Achievement in Stage Management and Production') and the plan number.",
-   "The first four required courses print under no block name; 'Required Courses' is a label supplied by this record.",
-   "TECTHTR 348 is printed as 'TECTHTR 348#'; the # is a footnote marker (repeatable, must be taken twice), so the course is recorded once at 2 units in a block stated at 4 units.",
-   "Block units sum to 23 (11 + 4 + 3 + 2 + 3), matching the printed Total of 23.",
-   "Note printed: TECTHTR 323 should be taken in the first semester. Candidates must also be successful in productions.",
-   "Catalog footer reads 2026-2027 General Catalog."
+   "The section's title heading is not printed in the extracted text, which begins with '(Academic Plan E014869D)'; the heading is inferred from the description ('Certificate of Achievement in Stage Management and Production'). It may have been printed on the previous page.",
+   "The first four required courses print without a block heading; the name 'Required Courses' is supplied.",
+   "TECTHTR 348 is repeatable and must be taken twice (2 units each), giving the block's printed 4 units.",
+   "Note printed: TECTHTR 323 should be taken in the first semester.",
+   "Candidates must also be successful in productions; this is a non-course requirement.",
+   "The printed total of 23 matches 11 + 4 + 3 + 2 + 3."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

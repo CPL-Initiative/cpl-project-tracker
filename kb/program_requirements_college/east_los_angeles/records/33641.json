@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8562,
+  "input_tokens": 11390,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8562,
-    "output_tokens": 3465,
+    "input_tokens": 11390,
+    "output_tokens": 3733,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3465,
+  "output_tokens": 3733,
   "output_tokens_details": {
-   "thinking_tokens": 981
+   "thinking_tokens": 1218
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10355,
- "ms": 27116,
- "seconds": 27.4,
+ "cost_usd": 0.12022,
+ "ms": 29976,
+ "seconds": 30.3,
  "parts": null,
  "error": null,
  "score": {
@@ -79,8 +79,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     55.0,
     55.0
@@ -94,8 +94,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    5.0,
+    5.0
    ]
   },
   "repeated": {
@@ -120,11 +122,11 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Theatre Arts for Transfer Degree (Academic Plan E033641G)",
+   "section_heading": "Associate in Arts in Theatre Arts for Transfer (Academic Plan E033641G)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -191,7 +193,7 @@
     ]
    },
    {
-    "name": "SELECT 3 UNITS MAXIMUM FROM REHEARSAL PERFORMANCE PRODUCTION OR TECHNICAL THEATRE IN PRODUCTION",
+    "name": "Select 3 units maximum from: Rehearsal Performance Production or Technical Theatre in Production",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -294,7 +296,7 @@
     ]
    },
    {
-    "name": "LIST A: SELECT THREE COURSES",
+    "name": "List A: Select Three Courses",
     "rule": "choose_courses",
     "minimum": 3,
     "option_group": null,
@@ -355,7 +357,7 @@
     ]
    },
    {
-    "name": "MAY SELECT FROM THE FOLLOWING REQUIRED CORE COURSES NOT ALREADY USED (3 UNITS MAXIMUM)",
+    "name": "May select from the following required core courses not already used (3 units maximum)",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -461,14 +463,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "No section heading is printed in the excerpt; the heading used is taken from the degree name in the text plus the printed Academic Plan number.",
-   "The major's own total is not printed; 'A minimum of 18 semester units' is the generic ADT major requirement, so total_units is null. Only a core Subtotal of 6 is printed.",
-   "Degree total 60 is printed as 'Total 60'; ge_units 34 comes from the Cal-GETC requirement statement (34 semester/45 quarter units).",
-   "The first 3-unit block offers THEATER 293 (Rehearsal Performance Production) OR courses from Technical Theatre in Production; recorded as one choose_units block of 3 units. THEATER 293 has no units printed beside it there and is printed without 'III'.",
-   "The fourth block repeats the same courses as the first 3-unit block ('not already used'); same courses appear in both blocks by design.",
-   "Catalog prints 'Scenery Practium' (typo) for TECTHTR 343.",
-   "Catalog year printed on page is 2026-2027."
+   "The first 3-unit production block is printed as 'Rehearsal Performance Production: THEATER 293' OR 'Technical Theatre in Production' (a list of practicums); recorded as one choose_units 3 block containing both paths. THEATER 293 has no units printed there (printed as 3 in the later block).",
+   "The final block 'May select from the following required core courses not already used (3 units maximum) 3 units' repeats the same production courses; it appears to function as the List B elective, though the catalog does not name it so. Courses used in the core block cannot be reused.",
+   "total_units left null: the page prints no major total; 'A minimum of 18 semester units' is the general ADT requirement, not this award's major total.",
+   "degree_total 60 is the printed 'Total 60'. ge_units 34 taken from the ADT requirement text 'Completion of ... (Cal-GETC) course requirements ... (34 semester/45 quarter units)'; the 'Cal-GETC Pattern' line at the bottom prints no units.",
+   "Electives: 'Complete additional CSU units, if needed, to reach 60 CSU transferable units' with no units printed, so electives_fill_degree is true.",
+   "The preceding text on page 375 (Lists B and C, emphases, LACCD GE 27, Total 60) belongs to the A.A. degree in Theater, not this A.A.-T, and was not recorded."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

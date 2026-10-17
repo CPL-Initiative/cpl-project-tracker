@@ -1,0 +1,379 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "45540",
+ "shape": "degree",
+ "title": "Respiratory Therapy",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=345",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9261,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9261,
+    "output_tokens": 3630,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3630,
+  "output_tokens_details": {
+   "thinking_tokens": 1522
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10964,
+ "ms": 32032,
+ "seconds": 32.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 48,
+   "share": 0.0,
+   "missing": [
+    "ANATOMY1",
+    "BIOLOGY20",
+    "CHEM51",
+    "CHEM65",
+    "COMM121",
+    "COMMC1000",
+    "HTHTEK133",
+    "MATH245",
+    "PHYSIOL1",
+    "PSYCH420",
+    "RESPTH101",
+    "RESPTH110",
+    "RESPTH112",
+    "RESPTH114",
+    "RESPTH116",
+    "RESPTH120",
+    "RESPTH122",
+    "RESPTH124",
+    "RESPTH126",
+    "RESPTH128",
+    "RESPTH130",
+    "RESPTH201",
+    "RESPTH210",
+    "RESPTH212",
+    "RESPTH214",
+    "RESPTH216",
+    "RESPTH220",
+    "RESPTH222",
+    "RESPTH224",
+    "RESPTH300",
+    "RESPTH302",
+    "RESPTH304",
+    "RESPTH306",
+    "RESPTH308",
+    "RESPTH310",
+    "RESPTH312",
+    "RESPTH314",
+    "RESPTH316",
+    "RESPTH400",
+    "RESPTH402",
+    "RESPTH404",
+    "RESPTH406",
+    "RESPTH412",
+    "RESPTH414",
+    "RESPTH416",
+    "SOC325",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Respiratory Therapy Department (page header only; no B.S. section heading in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANATOMY 1",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "BIOLOGY 20",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "CHEM 51",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "CHEM 65",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "COMM 121",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "HTHTEK 133",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "MATH 245",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "PSYCH 420",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 101",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 110",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 112",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 114",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 116",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 120",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 122",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 124",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 126",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 130",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 201",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 210",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 212",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 214",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 216",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 220",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 222",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 224",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "RESP TH 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 302",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 304",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 306",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 308",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 312",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 314",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 316",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 400",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 404",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 406",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 412",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 414",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESP TH 416",
+    "why": "not in the text"
+   },
+   {
+    "code": "RESPTH128",
+    "why": "RESP TH 128 named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "SOC 325",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "named only in the associate degree section shown, not a B.S. section"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 345) appears to be the associate degree section, not the B.S. section: it lists only lower-division courses (prerequisites 22-24 units, major 54.5 units), uses LACCD General Education (Areas 3, 4B and 6: 9 units), cites AP 4100 (LACCD associate degree policy), and prints a Total of 85.5-87.5, far below a baccalaureate total. No upper-division (300/400-level) courses, B.S. heading, or B.S. total appear, so no blocks were recorded for the B.S.",
+   "The text begins mid-section with no heading; the program outcomes printed at the top ('Demonstrate competent and safe equipment manipulation...' and 'Evaluate patient data to develop respiratory care treatment plan recommendations...') belong to that section and were not recorded for the B.S. A reviewer should check whether these outcomes are shared by the B.S.",
+   "Reviewer should locate the B.S. section (likely on adjacent pages) listing RESP TH 300-416, PSYCH 420 and SOC 325 to record this award.",
+   "Catalog codes in the shown section not on the closed list: BUS 015, ECON 020, PSYCH 091, SOC 125 (statistics alternatives). HTHTEK 133 is printed at 2 units there while the state file stores 3."
+  ]
+ },
+ "extracted_run": "39063389278"
+}

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12142,
+  "input_tokens": 11992,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12142,
-    "output_tokens": 1604,
+    "input_tokens": 11992,
+    "output_tokens": 1538,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1604,
+  "output_tokens": 1538,
   "output_tokens_details": {
-   "thinking_tokens": 549
+   "thinking_tokens": 571
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08065,
- "ms": 13117,
- "seconds": 13.4,
+ "cost_usd": 0.07873,
+ "ms": 12756,
+ "seconds": 13.0,
  "parts": null,
  "error": null,
  "score": {
@@ -145,7 +145,7 @@
   },
   "blocks": [
    {
-    "name": "Required courses",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -199,7 +199,7 @@
     ]
    },
    {
-    "name": "Choose one of the following courses",
+    "name": "CHOOSE ONE OF THE FOLLOWING COURSES",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -244,13 +244,11 @@
    }
   ],
   "notes": [
-   "The program's title heading is not printed in the extracted text; it begins at '(Academic Plan E038704D)' on page 235, so the section heading is reconstructed from the program name and plan number.",
-   "HLTHOCC 063, HEALTH 012 and HEALTH 049 are printed with leading zeros; treated as the closed-list HLTHOCC 63, HEALTH 12 and HEALTH 49.",
+   "The page also prints a Physical Therapy Aide Skills Certificate (10-12 units) under the skills certificates; this record reads only the Certificate of Achievement section (Academic Plan E038704D).",
    "KIN MAJ 133 is marked with an asterisk: 'This course has a prerequisite.'",
-   "The printed total of 14.5-16.5 units falls below the 16-unit floor of the award category named for this program; reviewer should check.",
-   "KIN MAJ 115 is printed at 1.5 units here but at 2 units in the Physical Education A.A. elective list on the same pages.",
-   "Catalog pages are labeled 2026-2027 General Catalog."
+   "The required-course block has no printed heading; it is named 'Required Courses' for this record.",
+   "Careers: the description names the physical therapy aide role; employment settings (hospitals, rehabilitation centers, etc.) were not recorded as careers."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6178,
+  "input_tokens": 6182,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6178,
-    "output_tokens": 1082,
+    "input_tokens": 6182,
+    "output_tokens": 1029,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1082,
+  "output_tokens": 1029,
   "output_tokens_details": {
-   "thinking_tokens": 445
+   "thinking_tokens": 430
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04635,
- "ms": 9942,
- "seconds": 10.3,
+ "cost_usd": 0.04531,
+ "ms": 9476,
+ "seconds": 9.7,
  "parts": null,
  "error": null,
  "score": {
@@ -102,7 +102,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Competency in English for Citizenship (Academic Plan E042014F)",
+   "section_heading": "English for Citizenship (Academic Plan E042014F)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -170,12 +170,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins with '(Academic Plan E042014F)'; the program heading itself is not printed in the text. The section heading was taken from the description's name for the award, 'Certificate of Competency in English for Citizenship'.",
-   "The catalog prints a UNITS column with 0 beside each noncredit course. It prints no hours, so the measure is units and no total is recorded.",
-   "The requirement reads as: ESL NC 042CE OR ESL NC 042ACE OR ESL NC 043CE, AND CITIZN 050CE. The three ESL options are recorded as one entry with alternatives.",
-   "The block name 'Required Courses' is supplied; the catalog prints no block heading.",
-   "ESL NC 042CE and ESL NC 042ACE are not in the closed list."
+   "The excerpt prints no section heading beyond '(Academic Plan E042014F)'; the description names the award 'Certificate of Competency in English for Citizenship'. The heading recorded is inferred and should be checked against the PDF.",
+   "The catalog prints a UNITS column with 0 for every course and states no hours or total for this noncredit certificate, so measure is 'units' with the printed 0s and total_units is null.",
+   "Read as: one of ESL NC 042CE, ESL NC 042ACE or ESL NC 043CE, AND CITIZN 050CE. ESL NC 042CE and ESL NC 042ACE are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

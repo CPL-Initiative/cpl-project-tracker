@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7808,
+  "input_tokens": 8153,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7808,
-    "output_tokens": 1059,
+    "input_tokens": 8153,
+    "output_tokens": 965,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1059,
+  "output_tokens": 965,
   "output_tokens_details": {
-   "thinking_tokens": 385
+   "thinking_tokens": 301
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05241,
- "ms": 10401,
- "seconds": 10.7,
+ "cost_usd": 0.05191,
+ "ms": 9053,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Patrol Procedures",
+   "section_heading": "Patrol Procedures (Academic Plan E045718D)",
    "measure": "units",
    "total_units": {
     "min": 22.5,
@@ -159,12 +159,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins at '(Academic Plan E045718D)'. The 'Patrol Procedures' heading itself is not in the text, likely because it was printed at the bottom of the previous page. The section was identified by its position before 'Police Academy Extended' and by its patrol-procedures description.",
-   "The catalog prints 'PUBSERV 090', while the closed list has 'PUBSERV 90'. These were treated as the same course, so it is not marked as a catalog addition.",
-   "The course table has no block heading. The name 'Required Courses' is supplied. The catalog prints the total as 'Total 22 .5', read as 22.5.",
-   "Hyphenated line breaks in the outcomes ('commu -nity', 'crimi -nal') were joined.",
-   "The source PDF is the 2026-2027 General Catalog, per the page footer."
+   "The excerpt begins with '(Academic Plan E045718D)'; the 'Patrol Procedures' heading itself appears to sit on the previous page and is not in the text. The section was identified by its position before 'Police Academy Extended' and by its patrol-procedures description and course list.",
+   "The catalog prints PUBSERV 090. The closed list names PUBSERV 90. Both are read as the same course.",
+   "The required list has no block name in the catalog. 'Required Courses' is a descriptive label, and the printed Total of 22.5 is recorded as the block's stated total and as total_units.",
+   "Line-break hyphenations in the outcomes ('commu -nity', 'crimi -nal') were joined as 'community' and 'criminal'.",
+   "No careers are named in this section."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

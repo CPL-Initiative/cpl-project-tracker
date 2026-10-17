@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6766,
+  "input_tokens": 7241,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6766,
-    "output_tokens": 1288,
+    "input_tokens": 7241,
+    "output_tokens": 1186,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1288,
+  "output_tokens": 1186,
   "output_tokens_details": {
-   "thinking_tokens": 460
+   "thinking_tokens": 403
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05282,
- "ms": 19211,
- "seconds": 19.5,
+ "cost_usd": 0.05268,
+ "ms": 10344,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
@@ -96,7 +96,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Physical Therapist Aide",
+   "section_heading": "Physical Therapist Aide (Academic Plan E040602E)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -172,13 +172,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program heading 'Physical Therapist Aide' is not printed in the excerpt; the section begins with '(Academic Plan E040602E)', and the heading likely sits on the preceding page. The section was identified by its description and its course list, which matches the closed list.",
-   "The course table has no block name; 'Required Courses' was assigned. The description says 'These four courses', so all four are read as required.",
-   "The catalog prints 0 in a UNITS column and states no hours or total for this noncredit certificate. Measure is recorded as units, with 0 as printed, and total_units is null.",
-   "Careers: 'physical therapist aide' comes from 'understand the roles and responsibilities of a physical therapist aide', and 'physical therapy' comes from 'a career in physical therapy'. A reviewer may want to confirm the first counts as a career the program names.",
-   "VOC ED 353CE is printed as 'First Aid and Basic Training CPR', a slightly different title from the state file's 'First Aid and Basic CPR Training'.",
-   "The text that follows belongs to the Play and Programming and Apps programs and was ignored."
+   "The excerpt begins at '(Academic Plan E040602E)'; the program title heading appears to be printed just before this (likely at the bottom of the previous page). Identified as Physical Therapist Aide from the description and course list.",
+   "The block name 'Required Courses' is supplied; the catalog prints only a 'SUBJECT & NO. COURSE UNITS' table with no block heading, and all four courses read as required ('These four courses').",
+   "The catalog prints a UNITS column with 0 for each noncredit course and states no hours, so measure is 'units' and no total is recorded.",
+   "The catalog prints VOC ED 353CE's title as 'First Aid and Basic Training CPR', while the state file has 'First Aid and Basic CPR Training'.",
+   "Following sections (Play, Programming and Apps, Sewing Essentials and Alterations, Small Business Start-Up and Registration) belong to other programs and were not read."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

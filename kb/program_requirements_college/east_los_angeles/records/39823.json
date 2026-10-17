@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7276,
+  "input_tokens": 7280,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7276,
-    "output_tokens": 2078,
+    "input_tokens": 7280,
+    "output_tokens": 2080,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2078,
+  "output_tokens": 2080,
   "output_tokens_details": {
-   "thinking_tokens": 691
+   "thinking_tokens": 653
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07066,
- "ms": 16984,
- "seconds": 17.2,
+ "cost_usd": 0.07072,
+ "ms": 16229,
+ "seconds": 16.5,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +121,7 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -132,7 +132,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(Academic Plan E039823C) IT (Information Technology) Technician AS Degree",
+   "section_heading": "(Academic Plan E039823C)",
    "measure": "units",
    "total_units": {
     "min": 42,
@@ -160,7 +160,6 @@
     "Program automation tasks, including cybersecurity defenses, and configuring and troubleshooting networks."
    ],
    "careers": [
-    "IT Technician",
     "Computer Systems Analysts",
     "Information Security Analysts",
     "Network and Computer Systems Administrators",
@@ -301,12 +300,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text excerpt shows no printed program title heading; section_heading combines the academic plan line and the degree name from the description.",
-   "total_units taken from the 42-43 printed beside 'COMPLETE THE FOLLOWING COURSES', the only major requirement list.",
-   "Degree total 60-61 is less than major 42-43 plus GE 27 because the catalog notes 3 major units may double count in LACCD GE area 4b and GE Areas 4a (3 units) and 7 (3 units) are waived for this high-unit major.",
-   "CAOT 035 printed with leading zero; matched to closed-list CAOT 35.",
-   "Asterisks on ELECTRN 121, 122, 126, 129 mark prerequisite/corequisite notes and were dropped from codes."
+   "The extracted text prints no program title heading; the section begins with '(Academic Plan E039823C)' and describes the IT Technician AS Degree. Reviewer should confirm the heading on the PDF page.",
+   "CAOT 035 is printed with a leading zero; it is matched to closed-list CAOT 35.",
+   "Major total 42-43 is the printed block total; degree total 60-61 includes the LACCD General Education Plan (27 units).",
+   "Note: 3 units of major courses may be double counted in LACCD GE area 4b; LACCD GE Area 4a (3 units) and Area 7 (3 units) are waived for this high-unit major (AP 4100).",
+   "Asterisks on ELECTRN 121, 122, 126 (corequisite) and ELECTRN 129 (prerequisite) were dropped from codes.",
+   "Outcome text 'cybersecu -rity' was read as a hyphenated line break and recorded as 'cybersecurity'."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6856,
+  "input_tokens": 6860,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6856,
-    "output_tokens": 1727,
+    "input_tokens": 6860,
+    "output_tokens": 1500,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1727,
+  "output_tokens": 1500,
   "output_tokens_details": {
-   "thinking_tokens": 665
+   "thinking_tokens": 443
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06196,
- "ms": 14095,
- "seconds": 14.4,
+ "cost_usd": 0.05744,
+ "ms": 12097,
+ "seconds": 12.4,
  "parts": null,
  "error": null,
  "score": {
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(Academic Plan E041218D)",
+   "section_heading": "Health Sciences Certificate (Academic Plan E041218D)",
    "measure": "units",
    "total_units": {
     "min": 22,
@@ -135,10 +135,10 @@
   },
   "blocks": [
    {
-    "name": "ANATOMY 001 AND PHYSIOL 001",
+    "name": "Anatomy and Physiology: ANATOMY 001 and PHYSIOL 001",
     "rule": "all",
     "minimum": null,
-    "option_group": "Anatomy and Physiology",
+    "option_group": "Anatomy & Physiology",
     "stated": {
      "min": null,
      "max": null
@@ -161,10 +161,10 @@
     ]
    },
    {
-    "name": "OR BIOLOGY 020",
+    "name": "Anatomy and Physiology: BIOLOGY 020",
     "rule": "all",
     "minimum": null,
-    "option_group": "Anatomy and Physiology",
+    "option_group": "Anatomy & Physiology",
     "stated": {
      "min": null,
      "max": null
@@ -180,7 +180,7 @@
     ]
    },
    {
-    "name": "Required courses",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -229,13 +229,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program heading itself is not in the excerpt; the section begins at '(Academic Plan E041218D)' and the text refers to the 'Health Sciences Certificate'. The section heading is recorded as that printed line.",
-   "The catalog does not name the blocks; block names are descriptive. ANATOMY 001 AND PHYSIOL 001 OR BIOLOGY 020 was read as two whole options (8 units either way).",
-   "BIOLOGY 020 is not in the closed list and is marked as a catalog addition.",
-   "Catalog codes use leading zeros (ANATOMY 001, PHYSIOL 001, MICRO 020, CHEM 051, CHEM 065, PSYCH 041). These match closed-list ANATOMY 1, PHYSIOL 1, MICRO 20, CHEM 51, CHEM 65 and PSYCH 41.",
-   "The printed total of 22-23 is consistent with the course units: 8 + 4 + (5 or 4) + 3 + 3.",
-   "The certificate requires a grade of C or better in each course."
+   "The section's title line is not in the excerpt; the text begins at '(Academic Plan E041218D)' and the description names 'The Health Sciences Certificate'. The heading was reconstructed from that and should be checked against the previous page.",
+   "Read 'ANATOMY 001 AND PHYSIOL 001* OR BIOLOGY 020*' as a choice between the pair ANATOMY 001 + PHYSIOL 001 (8 units) and BIOLOGY 020 (8 units). These are recorded as two option blocks sharing option_group 'Anatomy & Physiology'.",
+   "BIOLOGY 020 is not in the closed list and is recorded as a catalog addition.",
+   "Total 22-23 reflects the CHEM 051 (5) or CHEM 065 (4) choice.",
+   "The catalog requires a grade of C or better in each course. PHYSIOL 001 and BIOLOGY 020 are marked as having prerequisites."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

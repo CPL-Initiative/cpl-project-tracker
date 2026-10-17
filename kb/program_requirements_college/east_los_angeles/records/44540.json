@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6742,
+  "input_tokens": 7925,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6742,
-    "output_tokens": 1137,
+    "input_tokens": 7925,
+    "output_tokens": 1218,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1137,
+  "output_tokens": 1218,
   "output_tokens_details": {
-   "thinking_tokens": 394
+   "thinking_tokens": 465
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04971,
- "ms": 10054,
- "seconds": 10.4,
+ "cost_usd": 0.05606,
+ "ms": 11083,
+ "seconds": 11.4,
  "parts": null,
  "error": null,
  "score": {
@@ -133,7 +133,7 @@
    "careers": [
     "animation",
     "visual effects (VFX)",
-    "other entertainment technologies industries"
+    "entertainment technologies industries"
    ]
   },
   "blocks": [
@@ -143,8 +143,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -188,12 +188,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program title heading is not in the extracted text; the section begins with '(Academic Plan E044540D)' at the top of page 274, and its content (apprenticeship certificate, ANIMATN 290-292) matches Animation and VFX Apprenticeship. Reviewer should confirm the heading on the preceding page.",
-   "The course table has no block name; 'Required Courses' is a descriptive name for the single list of required courses. The printed Total 18 is recorded as both the award total and the block total.",
-   "Catalog year is not given in the request; the source PDF is titled 2026-2027 General Catalog.",
-   "Careers were read from 'preparing students entering careers in animation, visual effects (VFX) and other entertainment technologies industries'.",
-   "The following Character Animation section (Academic Plan E045491D) was not read."
+   "The program title heading is not in the extracted text (it likely falls at the bottom of the previous page); the section begins with '(Academic Plan E044540D)' and its description names an apprenticeship certificate in animation and VFX, so it was read as this award.",
+   "The course list is printed without a block heading; 'Required Courses' is a descriptive name assigned to it. All five courses are listed without 'or' or choice wording, so they were read as all required.",
+   "Asterisks on the course codes are footnote markers ('This course has a prerequisite') and were removed from the codes.",
+   "The printed total of 18 units falls within the award's 16 to fewer than 30 unit range.",
+   "Careers were read from the phrase 'careers in animation, visual effects (VFX) and other entertainment technologies industries'.",
+   "Hyphens caused by line breaks in the outcome ('method -ologies') were joined."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

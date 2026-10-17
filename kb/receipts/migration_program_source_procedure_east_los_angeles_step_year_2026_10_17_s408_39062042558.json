@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/program_source_procedure_east_los_angeles_step_year_2026-10-17_s408.sql",
+ "name": "program_source_procedure_east_los_angeles_step_year_2026_10_17_s408",
+ "version": "20261017192139",
+ "sha256": "5861c8c84057f4fff1aaf412a889aac747fc759b4be99827bc3fdb25d6d64eab",
+ "run": "39062042558",
+ "status": 201,
+ "response": "[{\"program_source_procedure_set\":{\"v\":\"2\",\"md5\":\"f5551f70d0644a9fac766131f03d50ee\",\"college\":\"East Los Angeles College\",\"was_md5\":\"ba1495ed2570043f8ee5a6e3e11abf8d\",\"procedure_by\":\"S408 SkyAgave, 2026-10-17 (the catalog step names its file's year; page read 39009644813)\"}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

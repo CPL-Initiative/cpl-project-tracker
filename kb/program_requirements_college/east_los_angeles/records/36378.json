@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6795,
+  "input_tokens": 7317,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6795,
-    "output_tokens": 1089,
+    "input_tokens": 7317,
+    "output_tokens": 1246,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1089,
+  "output_tokens": 1246,
   "output_tokens_details": {
-   "thinking_tokens": 431
+   "thinking_tokens": 506
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04896,
- "ms": 9893,
- "seconds": 10.1,
+ "cost_usd": 0.05419,
+ "ms": 10898,
+ "seconds": 11.3,
  "parts": null,
  "error": null,
  "score": {
@@ -85,7 +85,7 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -96,7 +96,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Workplace Skills Certificate of Completion (Academic Plan E036378E)",
+   "section_heading": "Workplace Skills",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -121,6 +121,7 @@
     "Exhibit proficiency in core competencies, including the application of best practices, tools, and methodologies relevant to the field."
    ],
    "careers": [
+    "entry-level office and administrative support",
     "general office clerks",
     "receptionists",
     "customer service representatives",
@@ -184,10 +185,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's printed title line falls before the extracted text (likely on the previous page); the heading recorded is built from the description ('The Workplace Skills Certificate of Completion') and the academic plan number.",
-   "The award is a noncredit Certificate of Completion. The catalog prints 0 units per course and states no hours, so measure is recorded as units with the printed 0 values; no total is stated.",
-   "Source is the 2026-2027 General Catalog per the URL, though the catalog year was given as not known."
+   "The text begins at '(Academic Plan E036378E)'; the program heading appears to fall before the excerpt, so 'Workplace Skills' is taken from the program name and the description ('The Workplace Skills Certificate of Completion').",
+   "The catalog prints 0 in a UNITS column for each noncredit course and states no hours, so measure is 'units' with 0 as printed. No hours or program total are stated.",
+   "The excerpt also contains the following Certificates of Competency, which were not read for this record: ESL Academic Bridge, ESL Communication Competency, and English for Citizenship.",
+   "The required-course block name is supplied. The catalog prints VOC ED 101CE without a heading, before 'AND ONE OF THE FOLLOWING COURSES'."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11477,
+  "input_tokens": 12211,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11477,
-    "output_tokens": 1529,
+    "input_tokens": 12211,
+    "output_tokens": 1976,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1529,
+  "output_tokens": 1976,
   "output_tokens_details": {
-   "thinking_tokens": 585
+   "thinking_tokens": 891
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07649,
- "ms": 12899,
- "seconds": 13.2,
+ "cost_usd": 0.08836,
+ "ms": 16453,
+ "seconds": 16.7,
  "parts": null,
  "error": null,
  "score": {
@@ -134,13 +134,13 @@
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 16,
-     "max": 16
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -184,13 +184,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program's title heading (Yoga Teacher Training certificate) falls before the extracted text; the section is identified by its Academic Plan line E045406D at the top of page 237.",
-   "The catalog prints no block heading; the courses are listed as a single required list with 'Total 16', recorded as one 'all' block named 'Required Courses'.",
-   "The catalog titles KIN MAJ 102 'Introduction to Human Movement Anatomy', while the closed list titles it 'Foundations of Kinesiology'; the code matches.",
-   "KIN MAJ 163 is marked with an asterisk: the course has a prerequisite.",
-   "Careers: the description also names workplaces (health clubs, wellness centers, spas, yoga/dance studios), which were not recorded as careers.",
-   "The page header reads 2026-2027 General Catalog."
+   "The excerpt begins mid-section at '(Academic Plan E045406D)'; the program/award heading (presumably 'Yoga Teacher Training, Certificate of Achievement') is on the preceding page and not in the text, so the Academic Plan line is used as the section heading.",
+   "The certificate's course list prints no block heading; the five courses are recorded as one required block under a supplied name. The printed 'Total 16' is recorded as total_units.",
+   "KIN MAJ 102 is printed with the title 'Introduction to Human Movement Anatomy', while the closed list titles it 'Foundations of Kinesiology'; units (4) match.",
+   "KIN MAJ 163 is marked as having a prerequisite.",
+   "The description mentions a '200-hour certification' meeting Yoga Alliance standards, but the catalog counts the award in units (16), so measure is units.",
+   "Careers: the description also names workplaces (health clubs, wellness centers, spas, yoga/dance studios) and says graduates can register as certified yoga teachers (RYT); only 'private yoga instructors' and the 'health and wellness field' were recorded as careers.",
+   "The following sections (Physical Education AA, Recreation and Leisure Studies AA, Sports Medicine AA) belong to other awards and were not used."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

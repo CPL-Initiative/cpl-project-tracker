@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6896,
+  "input_tokens": 7308,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6896,
-    "output_tokens": 1428,
+    "input_tokens": 7308,
+    "output_tokens": 1354,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1428,
+  "output_tokens": 1354,
   "output_tokens_details": {
-   "thinking_tokens": 474
+   "thinking_tokens": 430
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05614,
- "ms": 12671,
- "seconds": 12.9,
+ "cost_usd": 0.05631,
+ "ms": 11734,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
@@ -71,7 +71,7 @@
    "stated": null,
    "against": null,
    "why": [
-    "the record states no figure, but the catalog text names 1.5 HOURS, 1.5 HOURS"
+    "the record states no figure, but the catalog text names 1.5 HOURS, 1.5 HOURS, 1.5 HOURS, 1.5 HOURS"
    ]
   },
   "repeated": {
@@ -160,7 +160,7 @@
     ]
    },
    {
-    "name": "And one of the following courses",
+    "name": "AND ONE OF THE FOLLOWING COURSES",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -203,13 +203,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program's heading line is not in the excerpt (text begins with '(Academic Plan E042017F)'); section_heading is reconstructed from the program title and the description's 'Certificate of Competency in High School Equivalency Test Preparation'.",
-   "The catalog prints no hours for this noncredit certificate, only 0 in a UNITS column, so measure is 'units' and each course carries the printed 0. No program total is printed.",
-   "BSICSKL 082CE (GED Preparation: Reading Skills) is printed as the 'OR' alternative to BSICSKL 034CE and is not in the closed list, so it is marked as a catalog addition.",
-   "The catalog's course titles read 'GED Preparation: ...' while the closed list reads 'GED/HiSET Preparation: ...'; the codes match.",
-   "The catalog places 'AND' between the 034CE/082CE choice and 084CE, which reads as both being required, followed by a choice of one course from four.",
-   "The single program learning outcome is copied as printed, though it is phrased as a description rather than as a student ability."
+   "The section's own title heading is not in the extracted text (it likely sits at the bottom of the previous page); the text begins at '(Academic Plan E042017F)' and the description names the award 'Certificate of Competency in High School Equivalency Test Preparation'.",
+   "The catalog prints 0 units beside each course and states no hours for courses or the program, so measure is recorded as units with the printed 0 values; no program total is printed.",
+   "BSICSKL 082CE (GED Preparation: Reading Skills) is printed as an OR alternative to BSICSKL 034CE and is not in the closed list.",
+   "Catalog course titles ('GED Preparation: ...') differ from the closed list titles ('GED/HiSET Preparation: ...') for 084CE, 085CE, 086CE, 088CE; codes match.",
+   "The single program learning outcome is copied as printed even though it reads as a description rather than a 'students will be able to' statement."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

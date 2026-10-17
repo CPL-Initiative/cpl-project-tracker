@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10829,
+  "input_tokens": 12064,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10829,
-    "output_tokens": 1227,
+    "input_tokens": 12064,
+    "output_tokens": 1180,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1227,
+  "output_tokens": 1180,
   "output_tokens_details": {
-   "thinking_tokens": 347
+   "thinking_tokens": 353
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06786,
- "ms": 12811,
- "seconds": 13.1,
+ "cost_usd": 0.07186,
+ "ms": 10163,
+ "seconds": 10.5,
  "parts": null,
  "error": null,
  "score": {
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Equity-Minded Education in Early Childhood Classroom",
+   "section_heading": "Equity-Minded Education in Early Childhood Classroom (Academic Plan E045413D)",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -199,13 +199,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's heading is not in the extracted text (it begins at '(Academic Plan E045413D)', likely with the title on the preceding page); section_heading uses the program title. Reviewer should confirm the section is the Equity-Minded Education certificate (Academic Plan E045413D).",
-   "The block name 'Required Courses' is supplied; the catalog prints the courses as a single list under 'SUBJECT & NO. COURSE UNITS' with 'Total 21'.",
-   "EDUC 001 Introduction to Teaching is in the catalog list but not in the closed list; recorded as a catalog addition.",
-   "Closed-list codes are written without leading zeros (CH DEV 2, 7, 11, 40, 42, 45); the catalog prints them as CH DEV 002, 007, 011, 040, 042, 045.",
-   "Catalog marks CH DEV 007 as having a prerequisite.",
-   "Page footer indicates the 2026-2027 General Catalog."
+   "The section's title heading is not in the extracted text (it begins at '(Academic Plan E045413D)', likely on the preceding page); section_heading uses the program title plus the printed academic plan code. Reviewer should confirm this section is the Equity-Minded Education certificate.",
+   "The required list has no block heading printed; block name 'Required Courses' is supplied, and the 21-unit Total is recorded as both the award total and the block's stated total.",
+   "EDUC 001 Introduction to Teaching is required but is not in the closed list; recorded as a catalog addition.",
+   "CH DEV 007 is marked as having a prerequisite.",
+   "The careers entries are read from the description sentence 'prepare students to become equity-minded, anti-bias educators when they enter the field of education.'"
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

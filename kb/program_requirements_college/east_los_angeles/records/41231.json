@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12268,
+  "input_tokens": 12272,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12268,
-    "output_tokens": 3960,
+    "input_tokens": 12272,
+    "output_tokens": 3952,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3960,
+  "output_tokens": 3952,
   "output_tokens_details": {
-   "thinking_tokens": 1767
+   "thinking_tokens": 1642
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12827,
- "ms": 32610,
- "seconds": 32.9,
+ "cost_usd": 0.12813,
+ "ms": 31205,
+ "seconds": 31.5,
  "parts": null,
  "error": null,
  "score": {
@@ -141,7 +141,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science in Environmental Science for Transfer (Academic Plan E041231H)",
+   "section_heading": "(Academic Plan E041231H)",
    "measure": "units",
    "total_units": {
     "min": 41,
@@ -172,7 +172,7 @@
   },
   "blocks": [
    {
-    "name": "OPTION 1",
+    "name": "Option 1",
     "rule": "all",
     "minimum": null,
     "option_group": "Core option",
@@ -205,7 +205,7 @@
     ]
    },
    {
-    "name": "OPTION 2",
+    "name": "Option 2",
     "rule": "all",
     "minimum": null,
     "option_group": "Core option",
@@ -238,7 +238,7 @@
     ]
    },
    {
-    "name": "AND ALL COURSES LISTED BELOW",
+    "name": "And all courses listed below",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -253,7 +253,90 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geology sequence: GEOLOGY 001 and GEOLOGY 006",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOLOGY 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
+     {
+      "code": "GEOLOGY 006",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geology option: GEOLOGY 004",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOLOGY 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geography sequence: GEOG 001 and GEOG 015",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 015",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "And all courses listed below (statistics, calculus, economics)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "BUS 015",
       "units": 3,
@@ -305,78 +388,7 @@
     ]
    },
    {
-    "name": "Physical Geology and Physical Geology Laboratory",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Geoscience",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "GEOLOGY 001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOLOGY 006",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Physical Geology and Laboratory",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Geoscience",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "GEOLOGY 004",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Physical Geography and Physical Geography Laboratory",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Geoscience",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "GEOG 001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GEOG 015",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "General Physics I and II",
+    "name": "Physics sequence: PHYSICS 006 and PHYSICS 007",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics",
@@ -402,7 +414,7 @@
     ]
    },
    {
-    "name": "Physics for Engineers and Scientists I and II",
+    "name": "Physics sequence: PHYSICS 101 and PHYSICS 102",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics",
@@ -436,14 +448,15 @@
    }
   ],
   "notes": [
-   "The section's title heading is not in the extracted text (it begins at '(Academic Plan E041231H)'); heading taken from the description sentence 'Associate in Science in Environmental Science for Transfer Degree'.",
-   "The 41-45 units printed on 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW' is recorded as the major total; 'Total 62-66' is the degree total with Cal-GETC; note says 13 units of major courses may be double counted.",
-   "The single 'Subtotal 15' printed after Option 2 is applied as stated to both Option 1 and Option 2.",
-   "Geoscience rows (GEOLOGY 001 AND GEOLOGY 006 OR GEOLOGY 004 OR GEOG 001 AND GEOG 015) read as three alternative pairings; this reading is consistent with the 41-45 unit range but a reviewer should confirm.",
-   "Physics rows read as two alternative sequences: PHYSICS 006 + 007, or PHYSICS 101 + 102.",
-   "Cal-GETC 34 units taken from the ADT requirements paragraph in this section ('34 semester/45 quarter units').",
-   "Option 2 prints BIOLOGY 006 with the title 'General Biology'."
+   "The section's title heading falls before the extracted text (page 92 begins with '(Academic Plan E041231H)'); the section is the Associate in Science in Environmental Science for Transfer Degree.",
+   "total_units 41-45 is read from the line 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW 41-45', which covers the options plus all courses listed below; degree total 'Total 62-66'.",
+   "ge_units 34 is taken from the ADT requirements paragraph ('34 semester/45 quarter units'); the course table prints 'Cal-GETC GE Pattern' without units.",
+   "The 'Subtotal 15' is printed once after Option 2; recorded as stated for both Option 1 and Option 2 (each sums to 15).",
+   "In Option 2 BIOLOGY 006 is printed with title 'General Biology' rather than 'General Biology I'.",
+   "Geology requirement read as one of three paths: GEOLOGY 001 + GEOLOGY 006, or GEOLOGY 004, or GEOG 001 + GEOG 015; physics as PHYSICS 006 + 007 or PHYSICS 101 + 102.",
+   "Statistics: one of BUS 015, ECON 020, PSYCH 091, STAT C1000, STAT C1000E. Calculus: MATH 261 or MATH 261S (3 units).",
+   "Note printed: 13 units of major courses may be double counted."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

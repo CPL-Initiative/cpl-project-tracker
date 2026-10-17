@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7150,
+  "input_tokens": 7625,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7150,
-    "output_tokens": 1173,
+    "input_tokens": 7625,
+    "output_tokens": 1395,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1173,
+  "output_tokens": 1395,
   "output_tokens_details": {
-   "thinking_tokens": 441
+   "thinking_tokens": 581
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05206,
- "ms": 10872,
- "seconds": 11.2,
+ "cost_usd": 0.0584,
+ "ms": 13149,
+ "seconds": 13.5,
  "parts": null,
  "error": null,
  "score": {
@@ -96,7 +96,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Phlebotomy Technician (Academic Plan E040601E)",
+   "section_heading": "Phlebotomy Technician",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -170,12 +170,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins at '(Academic Plan E040601E)'; the 'Phlebotomy Technician' title line itself is not printed in the text, presumably on the preceding page. The section was identified by its description, its Academic Plan code, and its course list, which matches the closed list.",
-   "This is a noncredit certificate. The catalog prints 0 in the UNITS column for each course and states no hours, so measure is 'units' and the printed 0s are recorded as units. No total is stated, so total_units is null.",
-   "The table has no block heading; the block name 'Required Courses' was supplied. All four courses are listed without choice and read as required.",
-   "The catalog prints the title of VOC ED 353CE as 'First Aid and Basic Training CPR', slightly different from the state title.",
-   "The text names only 'a career in phlebotomy' and 'a phlebotomy technician' (the latter in the context of roles and responsibilities); both were recorded as careers."
+   "The program heading 'Phlebotomy Technician' is not in the extracted text, which begins at '(Academic Plan E040601E)'. The heading was probably printed on the previous page. Check that this section belongs to the Phlebotomy Technician certificate.",
+   "The catalog prints 0 in the UNITS column for each noncredit course and states no hours, so measure is 'units' and every course is recorded as 0 as printed. No total hours or units are stated for the program, so total_units is null.",
+   "The catalog prints the title of VOC ED 353CE as 'First Aid and Basic Training CPR'. The state file title is 'First Aid and Basic CPR Training'.",
+   "The block name 'Required Courses' was supplied for the reviewer; the catalog prints only a course table with no block heading. The text says 'These four courses', which shows all four are required.",
+   "The careers 'phlebotomy technician' and 'phlebotomy' come from the program description ('roles and responsibilities of a phlebotomy technician', 'a career in phlebotomy'). 'phlebotomy technician' is hyphenated across a line break in the source.",
+   "The single outcome is a generic outcome that the catalog prints identically for several other noncredit certificates on this page."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }
