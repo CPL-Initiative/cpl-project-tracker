@@ -1,0 +1,190 @@
+{
+ "college": "Las Positas College",
+ "control_number": "43735",
+ "shape": "noncredit",
+ "title": "ESL College Speaking and Listening Fluency Pathway",
+ "award": "Noncredit program",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1974",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6823,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6823,
+    "output_tokens": 829,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 829,
+  "output_tokens_details": {
+   "thinking_tokens": 173
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04387,
+ "ms": 7250,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    162.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 108.0-108.0; the catalog states 108.0-162.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL College Speaking and Listening Fluency Pathway (NCY): Program Requirements",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 162
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Comprehend academic lectures",
+    "Present on a researched topic",
+    "Use idiomatic expressions and learned vocabulary accurately and formally"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "NESL 213",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One or More",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "NESL 223",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NESL 226",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is printed as a Certificate of Competency (NCY), a noncredit award; all figures are hours as printed (54.0 per course, Total 108.0-162.0).",
+   "List A reads 'Select One or More', recorded as choose_courses with minimum 1; the overview describes a sequence of three courses, which matches the 162-hour maximum.",
+   "The '1st' printed beside each course appears to be a sequence/term indicator and was not recorded.",
+   "The first program learning outcome was printed run-on with the lead-in sentence ('Upon completion of this program, students will be able to: Comprehend academic lectures'); the lead-in was omitted."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

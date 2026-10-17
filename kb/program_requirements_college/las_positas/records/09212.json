@@ -1,0 +1,258 @@
+{
+ "college": "Las Positas College",
+ "control_number": "09212",
+ "shape": "certificate",
+ "title": "Retailing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1893",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7016,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7016,
+    "output_tokens": 1615,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1615,
+  "output_tokens_details": {
+   "thinking_tokens": 396
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06036,
+ "ms": 12756,
+ "seconds": 13.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WRKX94"
+   ],
+   "flagged": [
+    "WRKX94"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Retailing (CA): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Compare and contrast the various pricing strategies.",
+    "Determine the demand for products and services offered by a firm and identify potential customers.",
+    "Develop pricing strategies with the goal of maximizing the firm's profits and/or market share while ensuring customer satisfaction.",
+    "Explain promotional mixes and effective strategies for each.",
+    "Identify distinctions between distribution channels.",
+    "Identify the primary business operations, business organizational options, and business procedures.",
+    "List resources and strategies for monitoring trends which help identify the need for new products and services.",
+    "Summarize measures that can be taken by individuals and organizations to correct organizational dysfunctions."
+   ],
+   "careers": [
+    "merchandising",
+    "independent small retailer management",
+    "online engagement specialists",
+    "display positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "BUSN 48",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG 56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUSN 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "WRKX 94",
+      "units": 3,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WRKX 95",
+      "units": 3,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence ('xisting knowledge and skills.'), so the program description is cut off at the start; careers were read only from the visible Career Opportunities paragraph.",
+   "The program learning outcomes are printed for the program as a whole on this page; the Certificate of Achievement shares that list. The lead-in 'Upon completion of this program, students will be able to:' was removed from the first outcome.",
+   "WRKX 95 is printed as 'WRKX 95' in the catalog and as 'WRKX95' in the closed list; treated as the same course.",
+   "WRKX 94 (Occupational Work Experience/Internship) is not in the closed list and is recorded as a catalog addition.",
+   "The '1st'/'2nd' markers beside courses appear to be suggested semesters and were not recorded.",
+   "Required Core 16 + List A 3 + List B 3-6 = 22-25, matching the printed total of 22.0-25.0."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

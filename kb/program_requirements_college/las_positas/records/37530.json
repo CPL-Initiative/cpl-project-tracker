@@ -1,0 +1,297 @@
+{
+ "college": "Las Positas College",
+ "control_number": "37530",
+ "shape": "certificate",
+ "title": "Photography",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2038",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7373,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7373,
+    "output_tokens": 1736,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1736,
+  "output_tokens_details": {
+   "thinking_tokens": 336
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06421,
+ "ms": 13380,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.5,
+    28.5
+   ],
+   "stated": [
+    27.5,
+    28.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.5-28.5; the catalog states 27.5-28.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photography (CA): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 27.5,
+    "max": 28.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Appropriately visualize and accurately construct lighting designs utilizing artificial studio lighting and natural, available light in film and digital photographs.",
+    "Appropriately visualize and produce entry level professional, commercial, and fine art photographs that represent fully developed concepts of form, medium and content.",
+    "Critique and discuss film and digital photographic images that represent fully developed concepts of form, medium and content."
+   ],
+   "careers": [
+    "Professional Photographer",
+    "Photography business owner",
+    "Portrait Photographer",
+    "Wedding Photographer",
+    "Architectural Photographer",
+    "digital imaging technician",
+    "Photo Studio Manager",
+    "Photo Assistant",
+    "entry level professional photographer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22.5,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "PHTO 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 51A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 56",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 57",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 64A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 68",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GDDM 70",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Two",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHTO 29P",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 29V",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 66",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 69",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JAMS 12",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "PHTO 70/GDDM 70 and PHTO 72/JAMS 12 are printed as cross-listed pairs; recorded as one entry with the cross-listed code as an alternative.",
+   "PHTO 29P and PHTO 29V are printed at 2.0 units, while the state file stores 0.5 units; printed units recorded.",
+   "List A is stated as 5-6 units for two courses, but choosing PHTO 29P and PHTO 29V (2.0 each) would total 4 units; reviewer may check.",
+   "Section heading at top of text is truncated ('hy, Certificate of Achievement (CA)'); used the requirements heading.",
+   "'entry level professional photographer' taken from the program overview ('will be able to work as an entry level professional photographer')."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

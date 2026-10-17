@@ -1,0 +1,187 @@
+{
+ "college": "Las Positas College",
+ "control_number": "39074",
+ "shape": "certificate",
+ "title": "Occupational Safety",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2022",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6784,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6784,
+    "output_tokens": 1164,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1164,
+  "output_tokens_details": {
+   "thinking_tokens": 455
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05042,
+ "ms": 10953,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Occupational Safety and Health (CA): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design programs to control, eliminate, and prevent disease or injury caused by chemical, physical, radiological, and biological agents or ergonomic factors.",
+    "Perform basic duties of a safety specialist.",
+    "Prepare an emergency response plan meeting regulatory requirements"
+   ],
+   "careers": [
+    "occupational safety and health specialists",
+    "Safety Technician",
+    "Safety Specialist",
+    "Safety Officer",
+    "Industrial Hygienist",
+    "Safety Professional – Construction",
+    "Safety Professional – Manufacturing",
+    "Safety Professional – Metals",
+    "Field Safety and OSHA Specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "OSH 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSH 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSH 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence; the earlier part of the program description is cut off.",
+   "The catalog section is titled 'Occupational Safety and Health (CA)', while the program name given is 'Occupational Safety'.",
+   "'occupational safety and health specialists' is taken from the truncated job-growth sentence in the description. Reviewer may confirm it counts as a named career.",
+   "The specialization areas (fire and property, chemical and radiological safety, emergency response, etc.) were not recorded as careers.",
+   "The first outcome was printed on the same line as the lead-in sentence; the lead-in was removed."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

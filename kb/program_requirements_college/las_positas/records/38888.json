@@ -1,0 +1,254 @@
+{
+ "college": "Las Positas College",
+ "control_number": "38888",
+ "shape": "certificate",
+ "title": "Electrical Engineering UC Pathway",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1696",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7042,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7042,
+    "output_tokens": 1359,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1359,
+  "output_tokens_details": {
+   "thinking_tokens": 274
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05535,
+ "ms": 10959,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 12,
+   "share": 0.667,
+   "missing": [
+    "CS1",
+    "MATH7",
+    "PHYS1B",
+    "PHYS1D"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGR1",
+    "ENGR26"
+   ],
+   "flagged": [
+    "ENGR1",
+    "ENGR26"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.5,
+    42.5
+   ],
+   "stated": [
+    42.5,
+    42.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electrical Engineering UC Pathway (CA): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 42.5,
+    "max": 42.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply fundamental principles from mathematics, science and engineering to solve a mechanical engineering-related problem.",
+    "Set up appropriate laboratory equipment, collect and analyze mechanical engineering data, draw conclusions, and clearly communicate results.",
+    "Use a variety of technological tools to solve mechanical engineering problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42.5,
+     "max": 42.5
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 1",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR 44",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 5",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 1B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 1D",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog text begins mid-word ('ectrical Engineering'); the start of the description is cut off.",
+   "The program learning outcomes printed for this Electrical Engineering program refer to 'mechanical engineering'; they appear copied from another program. Recorded as printed; reviewer should check.",
+   "Description refers to 'The LPC Electrical Engineering degree' though this record is the Certificate of Achievement (CA); the requirements section is labeled (CA).",
+   "Closed-list courses PHYS 1B, PHYS 1D, MATH 7 and CS 1 do not appear in the catalog requirements; ENGR 1 and ENGR 26 appear in the catalog but not in the closed list.",
+   "Required Core printed as 42.5 units and Total 42.5; course units sum to 42.5."
+  ]
+ },
+ "extracted_run": "38984747530"
+}
