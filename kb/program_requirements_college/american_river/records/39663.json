@@ -1,0 +1,313 @@
+{
+ "college": "American River College",
+ "control_number": "39663",
+ "shape": "certificate",
+ "title": "Plumbers/Pipefitters Apprenticeship Level I",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10877,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10877,
+    "output_tokens": 2139,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2139,
+  "output_tokens_details": {
+   "thinking_tokens": 407
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08629,
+ "ms": 16959,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 35,
+   "share": 0.0,
+   "missing": [
+    "HVACR101",
+    "HVACR298",
+    "PLUMB100",
+    "PLUMB110",
+    "PLUMB111",
+    "PLUMB120",
+    "PLUMB121",
+    "PLUMB122",
+    "PLUMB130",
+    "PLUMB131",
+    "PLUMB140",
+    "PLUMB141",
+    "PLUMB150",
+    "PLUMB160",
+    "PLUMB163",
+    "PLUMB164",
+    "PLUMB166",
+    "PLUMB168",
+    "PLUMB169",
+    "PLUMB170",
+    "PLUMB171",
+    "PLUMB200",
+    "PLUMB201",
+    "PLUMB202",
+    "PLUMB210",
+    "PLUMB211",
+    "PLUMB212",
+    "PLUMB240",
+    "PLUMB241",
+    "PLUMB298",
+    "STMFT104",
+    "STMFT109",
+    "STMFT113",
+    "STMFT114",
+    "STMFT298"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Plumbers/Pipefitters Apprenticeship Level I Certificate of Achievement (section not in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HVACR 101",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "HVACR 298",
+    "why": "named only in the A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 100",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 110",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 111",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 120",
+    "why": "named only in the A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 121",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 122",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 130",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 131",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 140",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 141",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 150",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 160",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 163",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 164",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 166",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 168",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 169",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 170",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 171",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 200",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 201",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 202",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 210",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 211",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 212",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 240",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 241",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLUMB 298",
+    "why": "named only in the A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "STMFT 104",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "STMFT 109",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "STMFT 113",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "STMFT 114",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "STMFT 298",
+    "why": "named only in the A.S. sections; certificate section not in text"
+   }
+  ],
+  "notes": [
+   "The provided text (catalog pages 167-169) contains the A.S. in Plumbers/Pipefitters Apprenticeship, the A.S. in Refrigeration Service Technician Apprenticeship, and the start of the Certificates of Achievement (Acoustical Installer Apprenticeship Certificate), but no section for the Plumbers/Pipefitters Apprenticeship Level I Certificate of Achievement. No requirements were recorded; the certificate section likely appears on a later page of the catalog and should be reviewed.",
+   "The A.S. in Plumbers/Pipefitters Apprenticeship requires a minimum of 40 units from a list including all non-298 closed-list courses plus a minimum of 16 units of work experience (HVACR 298, PLUMB 298, STMFT 298), Total Units: 56; these were not applied to the Level I certificate.",
+   "The A.S. section's Student Learning Outcomes and Career Information are printed for the degree, not for the Level I certificate, so they were not recorded."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

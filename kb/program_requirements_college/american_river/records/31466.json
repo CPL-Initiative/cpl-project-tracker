@@ -1,0 +1,892 @@
+{
+ "college": "American River College",
+ "control_number": "31466",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=713",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13371,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13371,
+    "output_tokens": 7282,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 7282,
+  "output_tokens_details": {
+   "thinking_tokens": 2174
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.19912,
+ "ms": 54476,
+ "seconds": 54.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 72,
+   "listed": 96,
+   "share": 0.75,
+   "missing": [
+    "BIOL430",
+    "BIOL431",
+    "CHEM305",
+    "CHEM309",
+    "CHEM400",
+    "DANCE300",
+    "DANCE301",
+    "DANCE302",
+    "DANCE304",
+    "DANCE305",
+    "DANCE306",
+    "DANCE307",
+    "DANCE310",
+    "ECON310",
+    "KINES300",
+    "PHYS350",
+    "PHYS410",
+    "PSYC330",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC300",
+    "SOC480",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "FITNS381",
+    "FITNS385"
+   ],
+   "flagged": [
+    "FITNS381",
+    "FITNS385"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "'Dance (area heading cut off at page break)' chooses courses but names no minimum",
+    "'Individual Sports' chooses courses but names no minimum",
+    "'Fitness' chooses courses but names no minimum",
+    "'Aquatics' chooses courses but names no minimum",
+    "'Combatives' chooses courses but names no minimum",
+    "'Team Sports' chooses courses but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [
+    "recount the historical evolution of physical education/kinesiology."
+   ],
+   "why": [
+    "not in the catalog text as printed: recount the historical evolution of physical education/kinesiology."
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Kinesiology for Transfer (AA-T) (section heading not in the excerpt; the section begins on the page before page 713)",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "recount the historical evolution of physical education/kinesiology.",
+    "evaluate current theories, philosophies, and trends in the field of kinesiology.",
+    "identify key aspects of personal fitness as it relates to physical fitness programs.",
+    "construct a philosophy of kinesiology that includes goals for lifetime fitness.",
+    "discuss how sociological, historical, and philosophical factors influence the field of kinesiology.",
+    "outline the basic principles of current accepted nutritional standards for physically active individuals.",
+    "describe the basic structure of the human body and how its various systems respond to exercise."
+   ],
+   "careers": [
+    "kinesiology instructor",
+    "exercise physiologist",
+    "athletic trainer",
+    "strength and conditioning coach",
+    "athletic coach",
+    "personal trainer",
+    "physical educator",
+    "corporate fitness director"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Dance (area heading cut off at page break)",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 312",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 321",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 330",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 332",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 340",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 341",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 342",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 343",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 344",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 345",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 348",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 351",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 352",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 360",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 361",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 377",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 390",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Individual Sports",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PACT 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 311",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 351",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 390",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 391",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 393",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fitness",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FITNS 302",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 303",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 304",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 306",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 307",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 308",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 321",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 324",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 325",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 326",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 331",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 343",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 344",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 345",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 380",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 381",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FITNS 385",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FITNS 392",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 393",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 395",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 400",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 324",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 330",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 335",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 337",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 338",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Aquatics",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FITNS 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 314",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 316",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 440",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 441",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 442",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 443",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 332",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Combatives",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FITNS 414",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 450",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Team Sports",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TMACT 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 302",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 303",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 304",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 330",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 331",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 333",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 340",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADAPT 314",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DANCE 300",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 301",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 302",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 304",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 305",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 306",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 307",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "DANCE 310",
+    "why": "not in the excerpt; the requirements table starts mid-list on page 713"
+   },
+   {
+    "code": "KINES 300",
+    "why": "named only in the A.S. in Physical Education section; the AA-T core is cut off on the earlier page"
+   },
+   {
+    "code": "BIOL 430",
+    "why": "named only in the A.S. in Sports Medicine section; the AA-T core is cut off on the earlier page"
+   },
+   {
+    "code": "BIOL 431",
+    "why": "named only in the A.S. in Sports Medicine section; the AA-T core is cut off on the earlier page"
+   },
+   {
+    "code": "CHEM 305",
+    "why": "named only in the A.S. in Sports Medicine section; the AA-T core is cut off on the earlier page"
+   },
+   {
+    "code": "CHEM 309",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 400",
+    "why": "named only in the A.S. in Sports Medicine section; the AA-T core is cut off on the earlier page"
+   },
+   {
+    "code": "ECON 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 350",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 410",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 330",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "named only in the A.S. in Physical Education and A.S. in Sports Medicine sections"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 480",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-table on page 713. The AA-T section heading, its required core (likely KINES 300 and other courses), the list A/B choices, the rule for the movement-based courses, and the first part of the Dance list are on the earlier page, which is not in the excerpt. Please check the source.",
+   "The rule for the movement-based area lists is not visible: how many courses and areas to choose. Each printed area is recorded as a choose_courses block with minimum null. The Dance area heading is inferred, since that list starts mid-table.",
+   "'Total Units: 22' is printed at the end of the AA-T table and is recorded as total_units.",
+   "The sentence that the AA-T 'may be obtained by completion of 60 transferable, semester units' is boilerplate. It is not recorded as degree_total, and no Cal-GETC units are printed.",
+   "The Student Learning Outcomes and Career Information on page 714 come right after the AA-T paragraph and before the 'Associate Degrees' heading for the A.S. in Physical Education, so they are read as belonging to the AA-T.",
+   "The first outcome wraps after a slash ('physical education/' then 'kinesiology.'). It is recorded as 'physical education/kinesiology.' with no space.",
+   "DANCE 351 and DANCE 352 are printed as 'Hip Hop I' and 'Hip Hop II'. The closed list titles them 'Urban Hip Hop'; the codes match.",
+   "FITNS 381 and FITNS 385 (0.5 - 1 units) are not in the closed list and are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

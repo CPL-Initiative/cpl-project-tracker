@@ -1,0 +1,214 @@
+{
+ "college": "American River College",
+ "control_number": "35640",
+ "shape": "certificate",
+ "title": "Computer Applications for Small Business",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=400",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11247,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11247,
+    "output_tokens": 1260,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1260,
+  "output_tokens_details": {
+   "thinking_tokens": 358
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07019,
+ "ms": 10585,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    17.0
+   ],
+   "stated": [
+    16.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Applications for Small Business Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "assess the ways to start a business and which form of business organization should be used",
+    "explain the importance of a business plan, a financial plan, and a marketing plan",
+    "apply principles of management and marketing relevant to the small business",
+    "plan and execute strategies for working with multiple documents, templates, and macros, and apply techniques for using and editing pre-designed styles",
+    "plan, construct, test, and evaluate worksheets that are efficient, accurate, and professional using a spreadsheet application",
+    "create commonly used printed marketing documents using desktop publishing software",
+    "evaluate web page content needs and design a web page",
+    "generate and interpret various reports and financial statements in appropriate bookkeeping software"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 301",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 305",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 330",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 306",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The ACCT 101 row prints '(3) 3 - 4'; the 3-4 range reflects the choice between ACCT 101 (3) and ACCT 301 (4), so each course is recorded with its own units rather than as a range on ACCT 101.",
+   "The Career Information paragraph on page 400 belongs to the Business Information Technology A.S. section, not this certificate; the certificate section names no careers, so careers is empty.",
+   "The Student Learning Outcomes recorded are those printed directly under the Computer Applications for Small Business Certificate requirements."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

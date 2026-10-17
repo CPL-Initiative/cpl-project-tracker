@@ -1,0 +1,318 @@
+{
+ "college": "American River College",
+ "control_number": "46012",
+ "shape": "degree",
+ "title": "Welder Apprenticeship",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=165",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7159,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7159,
+    "output_tokens": 2341,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2341,
+  "output_tokens_details": {
+   "thinking_tokens": 788
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07546,
+ "ms": 18371,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    56.0,
+    56.0
+   ],
+   "stated": [
+    56.0,
+    56.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Welder Apprenticeship",
+   "measure": "units",
+   "total_units": {
+    "min": 56,
+    "max": 56
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "local ARC General Education Requirement",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "discuss the role the steamfitter plays in a safe work site.",
+    "demonstrate all the major safety responsibilities of the steamfitter.",
+    "interpret technical drawings and piping and plumbing diagrams in orthographic and isometric views.",
+    "identify types of flanges and gaskets and their common standards, ratings and design.",
+    "identify welding methods and applications.",
+    "identify methods of soldering and joining metals."
+   ],
+   "careers": [
+    "plumber",
+    "pipefitter",
+    "steamfitter welders"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "A minimum of 40 units from the following",
+    "rule": "choose_units",
+    "minimum": 40,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "PLUMB 241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 104",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 141",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 151",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 153",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 161",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 16 units from the following",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "HVACR 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints titles for STMFT 150-161 as Welding V through Welding X, while the closed list titles them Welding I through Welding VI; codes match, titles differ.",
+   "PLUMB 298 is printed with a space in the catalog; the closed list stores it as PLUMB298 with no units. Treated as the same course.",
+   "The page says the A.A. requires the program plus local ARC GE plus sufficient electives to meet a 60-unit total; recorded electives_fill_degree true and left degree_total null since no total is printed as a table figure for the whole degree. Reviewer may prefer degree_total 60.",
+   "Careers taken from 'training for plumber, pipefitter, and steamfitter welders'; the phrase may be read as plumber, pipefitter and steamfitter welders collectively.",
+   "Outcomes are the program's Student Learning Outcomes printed in this A.A. section."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

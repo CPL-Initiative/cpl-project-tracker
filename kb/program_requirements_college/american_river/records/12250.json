@@ -1,0 +1,274 @@
+{
+ "college": "American River College",
+ "control_number": "12250",
+ "shape": "degree",
+ "title": "Automotive Analysis",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12042,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12042,
+    "output_tokens": 2480,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2480,
+  "output_tokens_details": {
+   "thinking_tokens": 984
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09777,
+ "ms": 21901,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 13,
+   "share": 0.538,
+   "missing": [
+    "AT100",
+    "AT103",
+    "AT105",
+    "AT180",
+    "AT181",
+    "AT188"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-21.0; the catalog states 35.0-35.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     21.0,
+     21.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Automotive Analysis",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "identify and implement safety procedures involved in the diagnosis, service, and repair of all major automobile and light truck systems.",
+    "describe the function, operation, and characteristics of all major components in the following automotive systems: engines, automatic transmissions, electrical, air conditioning, emission control and computerized engine controls.",
+    "identify and follow manufacturer's standards for proper automobile diagnosis and repair.",
+    "operate hand and power tools necessary for automobile and light truck repair.",
+    "operate diagnostic equipment and interpret test results.",
+    "analyze, diagnose, and repair automotive engines, automatic transmissions, electrical systems, fuel delivery systems, ignition systems, emissions control systems, and computerized engine controls.",
+    "operate a variety of aftermarket and factory scan tools."
+   ],
+   "careers": [
+    "Automotive Technician",
+    "Smog Check Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AT 189",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 332",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 333",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 1 unit from the following",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "AT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 298",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AT 100",
+    "why": "A.S. table begins on the previous page (cut off); in this text named only in other programs' sections, e.g. the Automotive Analysis Certificate"
+   },
+   {
+    "code": "AT 103",
+    "why": "A.S. table begins on the previous page (cut off); in this text named only in other programs' sections"
+   },
+   {
+    "code": "AT 105",
+    "why": "A.S. table begins on the previous page (cut off); in this text named only in other programs' sections"
+   },
+   {
+    "code": "AT 180",
+    "why": "A.S. table begins on the previous page (cut off); in this text named only in other programs' sections"
+   },
+   {
+    "code": "AT 181",
+    "why": "A.S. table begins on the previous page (cut off); in this text named only in other programs' sections"
+   },
+   {
+    "code": "AT 188",
+    "why": "A.S. table begins on the previous page (cut off); in this text named only in the Automotive Analysis Certificate section"
+   }
+  ],
+  "notes": [
+   "The text starts mid-table on page 362; the A.S. in Automotive Analysis heading, description and the first rows of its Degree Requirements table are on page 361 and not in the text. The section heading is inferred from the degree paragraph ('The Automotive Analysis Associate in Science (A.S.) degree...'). The certificate version lists AT 100 or AT 103, AT 105, AT 180, AT 181 and AT 188 before AT 189, and the A.S. total (35) matches the certificate, suggesting the same courses, but they were not placed because the A.S. text shown does not print them.",
+   "The 'A minimum of 1 unit' block prints AT 140 'or' AT 298; recorded as two choices in a choose_units block.",
+   "degree_total 60 taken from the award's paragraph 'plus sufficient electives for a total of at least 60 units'; reviewer may treat this as a generic degree statement. Electives units are not printed, so electives_fill_degree is true.",
+   "Outcomes are from the A.S. section on page 362 (the certificate's list differs only by a comma after 'emission control')."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

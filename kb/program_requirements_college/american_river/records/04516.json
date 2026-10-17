@@ -1,0 +1,398 @@
+{
+ "college": "American River College",
+ "control_number": "04516",
+ "shape": "degree",
+ "title": "Interior  Planning and Design",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=698",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11592,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11592,
+    "output_tokens": 3143,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3143,
+  "output_tokens_details": {
+   "thinking_tokens": 1107
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10923,
+ "ms": 25609,
+ "seconds": 26.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 25,
+   "share": 0.92,
+   "missing": [
+    "ARTH302",
+    "WEXP298"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "WEXP498"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "WEXP498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "assess client's needs and plans with the Americans with Disabilities Act (ADA), Life-Safety Codes and Universal/Barrier-Free Design."
+   ],
+   "why": [
+    "not in the catalog text as printed: assess client's needs and plans with the Americans with Disabilities Act (ADA), "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 16,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Interior Planning and Design",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "incorporate the appropriate finishes and materials for commercial and residential interiors.",
+    "examine building types and occupancy classifications.",
+    "create construction and presentation drawings that meet California building codes.",
+    "assess client's needs and plans with the Americans with Disabilities Act (ADA), Life-Safety Codes and Universal/Barrier-Free Design.",
+    "analyze interiors to reflect the needs of the end user.",
+    "design spaces that are aesthetically pleasing and incorporate sound design principles."
+   ],
+   "careers": [
+    "residential design",
+    "Universal Design",
+    "Green/Sustainable",
+    "smart-home",
+    "home office",
+    "home theater design",
+    "commercial design",
+    "ADA compliance",
+    "hospitality (restaurant, hotel, cruise ship) design",
+    "set design",
+    "contract space planning",
+    "product design",
+    "retailer",
+    "buyer/purchaser",
+    "manufacturers’ representative",
+    "facilities management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IDES 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DESGN 301",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DESGN 320",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 350",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 351",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 323",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDES 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 1 unit from the following",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "WEXP 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARTH 302",
+    "why": "not in the text; the catalog lists ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
+   },
+   {
+    "code": "WEXP 298",
+    "why": "not in the text; the catalog lists WEXP 498 Work Experience in (Subject) instead"
+   }
+  ],
+  "notes": [
+   "IDES 110 appears after a repeated table header following the 3-unit choice list, with its units in parentheses like the other list options; it is read as part of the 'minimum of 3 units' list. This matches the printed Total Units: 40 (36 required + 3 + 1); if IDES 110 were required the total would be 43.",
+   "The degree text says the required program plus Local GE or Cal-GETC plus sufficient electives for at least 60 units; recorded as electives_fill_degree, with no degree_total or GE units printed.",
+   "ARTH C1100 and WEXP 498 are not on the closed list (which has ARTH 302 and WEXP 298); likely renumbered courses.",
+   "In the fourth outcome, 'Universal/' and 'Barrier-Free' are split by a line break; it is recorded as 'Universal/Barrier-Free' without a space.",
+   "Career entries include specialties (Universal Design, Green/Sustainable, smart-home, home office, home theater design) that the catalog names as residential design career options."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,346 @@
+{
+ "college": "American River College",
+ "control_number": "11565",
+ "shape": "degree",
+ "title": "Gerontology: Recreation",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11846,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11846,
+    "output_tokens": 2981,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2981,
+  "output_tokens_details": {
+   "thinking_tokens": 919
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.107,
+ "ms": 22608,
+ "seconds": 23.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 18,
+   "share": 0.778,
+   "missing": [
+    "COMM321",
+    "HSER300",
+    "HSER310",
+    "HSER330"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "COMMC1004",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 15,
+   "courses": 0,
+   "count": 15,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Gerontology: Recreation",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "associate social conditions in the current and recent past with their potential impact on future aging cohorts.",
+    "evaluate the impact of diversity in terms of race, ethnicity, religion, sex, gender and sexual orientation, and citizenship on well-being during aging and on aging outcomes.",
+    "generalize knowledge about cognition and memory during aging to how people learn and remember at any age.",
+    "recognize macro, mezzo, and micro-level ageism messages that marginalize and stigmatize older people.",
+    "enumerate the functions of social service delivery systems.",
+    "synthesize knowledge of existing California professional codes of ethics for the helping professions.",
+    "analyze legal and ethical issues related to aging including the mandatory reporting of abuse, neglect, and exploitation, value imposition, and end-of-life decisions.",
+    "demonstrate ease, confidence, rapport, and listening skills during interactions with older adults at various levels of function.",
+    "differentiate between aging-related changes and the effects of social conditions and deprivations, and physical and mental diseases, disorders, deficits, injuries, and disabilities.",
+    "assess the impacts of the social determinants of health on the biopsychosocial domains of function during aging.",
+    "apply biopsychosocial gerontological knowledge to case studies and real-life situations.",
+    "list services for older people and adults with disabilities available within a community.",
+    "integrate health and aging-related fitness and nutrition components into activities in a group setting.",
+    "demonstrate basic knowledge of program planning principles, activity leadership, and recreation and leisure events for a diverse population based on health and age.",
+    "describe the philosophical foundations of leisure and recreation and recreation and leisure program components."
+   ],
+   "careers": [
+    "Entry-level positions planning and leading recreation and leisure activities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWCD 330",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 375",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 490",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GERON 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "HEED 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINES 300",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "NUTRI 324",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "RECR 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RECR 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RECR 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 321",
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication (same title) instead"
+   },
+   {
+    "code": "HSER 300",
+    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work instead"
+   },
+   {
+    "code": "HSER 310",
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights (same title) instead"
+   },
+   {
+    "code": "HSER 330",
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations (same title) as an alternative instead"
+   }
+  ],
+  "notes": [
+   "COMM C1004 and SWCD 300/310/330 appear to be renumberings of closed-list COMM 321 and HSER 300/310/330 (matching titles); recorded as catalog additions.",
+   "The 9-unit block prints HEED 300 or KINES 300 or NUTRI 324 or RECR 310 as one 'or' choice, followed by RECR 300 and RECR 320; recorded with alternatives as printed.",
+   "The page says the degree requires the program plus GE and sufficient electives 'for a total of at least 60 units'; treated as general degree wording, so degree_total left null and electives_fill_degree set true. Reviewer may consider 60 as degree_total.",
+   "Outcomes are recorded from the A.A. section's Student Learning Outcomes list, which continues onto page 636.",
+   "Career Information names settings (skilled nursing facilities, adult day health centers, etc.) as workplaces rather than careers; only the position description was recorded."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,302 @@
+{
+ "college": "American River College",
+ "control_number": "04518",
+ "shape": "degree",
+ "title": "General Business",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=398",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10925,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10925,
+    "output_tokens": 2230,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2230,
+  "output_tokens_details": {
+   "thinking_tokens": 767
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0883,
+ "ms": 18842,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "ECON302"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    38.0
+   ],
+   "stated": [
+    37.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 19,
+   "not_verbatim": [
+    "retail/industrial sales"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in General Business",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "identify and explain the major functional areas of business organizations including management, marketing, finance, and accounting.",
+    "develop leadership skills and abilities that are effective in managing a multicultural workforce.",
+    "analyze practical business problems and utilize critical thinking and research skills in the evaluation of alternative solutions.",
+    "apply accounting concepts and principles in making decisions about business operations.",
+    "integrate management principles in relationship to finance, personnel, products, services, and information.",
+    "communicate effectively verbally and in writing in various business settings.",
+    "apply commonly used computer application programs to compose relevant business documents."
+   ],
+   "careers": [
+    "Account executive",
+    "analyst",
+    "bank employee",
+    "buyer",
+    "clerk",
+    "data-entry clerk",
+    "data-entry specialist",
+    "entrepreneur",
+    "financial planner",
+    "government service",
+    "insurance representative",
+    "investment counselor",
+    "manager",
+    "marketing",
+    "market research",
+    "office assistant",
+    "public administration",
+    "purchasing agent",
+    "retail/industrial sales"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 301",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 305",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 302",
+    "why": "not in the text; the section names ECON C2002 as the alternative to BUS 110 instead"
+   }
+  ],
+  "notes": [
+   "The ACCT 101 row prints '3 - 4' for the choice of ACCT 101 (3) or ACCT 301 (4); recorded ACCT 101 at 3 with ACCT 301 as a 4-unit alternative.",
+   "The 6-unit elective block lists no specific courses: 'BUS, MGT, MKT, RE courses not used to fulfill other requirements for this major.' Courses array left empty. The '61' printed beside it is read as 6 with footnote 1.",
+   "Footnote 1: Work Experience (498) courses are limited to 3 units maximum towards degree requirements.",
+   "The page says the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as electives filling the degree, not a printed degree total, so degree_total left null.",
+   "ECON C2002 (alternative to BUS 110) is not in the closed list; marked catalog_addition. Closed list has ECON 302, likely its predecessor."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,215 @@
+{
+ "college": "American River College",
+ "control_number": "42152",
+ "shape": "certificate",
+ "title": "Sheet Metal Service Technician Apprenticeship Level II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=218",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8498,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8498,
+    "output_tokens": 1516,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1516,
+  "output_tokens_details": {
+   "thinking_tokens": 584
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06431,
+ "ms": 13344,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 5,
+   "share": 0.6,
+   "missing": [
+    "SMTEC100",
+    "SMTEC101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sheet Metal Service Technician Apprenticeship Level II Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze control diagrams in a packaged air conditioning unit.",
+    "demonstrate measuring for electricity with a voltage meter in an air conditioning package unit.",
+    "demonstrate wiring a basic hermetically sealed motor.",
+    "demonstrate the servicing of a hermetically sealed motor.",
+    "calculate the overload protection for a motor."
+   ],
+   "careers": [
+    "Sheet metal service technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SMTEC 110",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SMTEC 111",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following: Sheet Metal Service Technician Apprenticeship Level I Certificate",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": []
+   },
+   {
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SHME 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SMTEC 100",
+    "why": "not in the Level II section; presumably part of the Level I Certificate the section requires (9 units), whose courses are not listed here"
+   },
+   {
+    "code": "SMTEC 101",
+    "why": "not in the Level II section; presumably part of the Level I Certificate the section requires (9 units), whose courses are not listed here"
+   }
+  ],
+  "notes": [
+   "The 9-unit block requires completion of the Sheet Metal Service Technician Apprenticeship Level I Certificate; the catalog lists the certificate, not its courses, so the block has no courses. The Level I section (cut off above page 218) would list them, likely SMTEC 100, SMTEC 101 and SHME 298.",
+   "SHME 298 printed with a space; closed list stores it as SHME298 — treated as the same course.",
+   "Total Units: 18 = 2.5 + 2.5 + 9 + 4.",
+   "Careers entry taken from the Career Information paragraph, which names only sheet metal service technicians."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,20 @@
+{
+ "college": "American River College",
+ "programs": 371,
+ "with_closed_list": 368,
+ "found": 368,
+ "extracted": 368,
+ "errors": 1,
+ "passed_machine_checks": 279,
+ "failed": {
+  "coverage": 41,
+  "invented": 0,
+  "arithmetic": 85,
+  "repeated": 0,
+  "outcomes": 5
+ },
+ "cost_usd": 29.75,
+ "cost_per_program": 0.0808,
+ "not_found": [],
+ "run": "39047245752"
+}

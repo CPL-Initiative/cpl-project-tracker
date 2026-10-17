@@ -1,0 +1,239 @@
+{
+ "college": "American River College",
+ "control_number": "41505",
+ "shape": "certificate",
+ "title": "Elevator Apprenticeship",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=180",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9766,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9766,
+    "output_tokens": 1601,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1601,
+  "output_tokens_details": {
+   "thinking_tokens": 405
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07108,
+ "ms": 12977,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    44.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elevator Apprenticeship Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate appropriate behavior in the workplace to prevent harassment and discrimination.",
+    "demonstrate material handling and how to rig and hoist heavy elevator equipment.",
+    "solve mathematical and algebraic equations that pertain to voltage, current, and resistance in electrical theory (Ohm’s Law).",
+    "compare basic magnetism and electromagnetism, including Domain Theory.",
+    "interpret the electrical inductance of transformers and the functions of step-down and step-up transformers.",
+    "research how capacitors and capacitance, inductors and inductance, and diodes pertain to the elevator industry.",
+    "define relays and timers, power and power control, as well as logic controls pertaining to elevator control systems.",
+    "describe the components and installation procedures for installing and maintaining escalators."
+   ],
+   "careers": [
+    "government",
+    "residential and commercial construction",
+    "utilities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELEVA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 105",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEVA 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 16 units from the following:",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ELEVA 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints five Elevator Apprenticeship certificates (the main certificate at 44 units, and Levels I-IV at 10, 20, 30 and 40 units). Levels III and IV also fall in the 30-to-under-60-unit range; this record reads the main 'Elevator Apprenticeship Certificate' section because its title matches the program title. A reviewer should confirm that this is the intended award.",
+   "The closed list writes 'ELEVA298' without a space. The catalog prints 'ELEVA 298'. These are treated as the same course, not as a catalog addition.",
+   "ELEVA 298 is variable-unit (0.5 - 6) and repeatable toward the 16-unit minimum. 28 required units plus 16 work-experience units equal the printed 44-unit total.",
+   "Career Information names employment sectors, not job titles. These sectors are recorded as career fields."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

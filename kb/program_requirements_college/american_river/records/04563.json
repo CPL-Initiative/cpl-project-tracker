@@ -1,0 +1,771 @@
+{
+ "college": "American River College",
+ "control_number": "04563",
+ "shape": "degree",
+ "title": "Physical Science/Mathematics",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=848",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14511,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14511,
+    "output_tokens": 5796,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5796,
+  "output_tokens_details": {
+   "thinking_tokens": 1119
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.17396,
+ "ms": 42717,
+ "seconds": 43.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 64,
+   "listed": 97,
+   "share": 0.66,
+   "missing": [
+    "ASTR300",
+    "ASTR310",
+    "ASTR320",
+    "ASTR330",
+    "ASTR400",
+    "ASTR481",
+    "ASTR495",
+    "ASTR499",
+    "CHEM305",
+    "CHEM306",
+    "CHEM309",
+    "CHEM310",
+    "CHEM338",
+    "CHEM400",
+    "CHEM401",
+    "CHEM420",
+    "CHEM421",
+    "CHEM423",
+    "CHEM495",
+    "CHEM499",
+    "ENGR300",
+    "ENGR310",
+    "ENGR312",
+    "ENGR401",
+    "ENGR412",
+    "ENGR420",
+    "ENGR495",
+    "ENGR499",
+    "GEOG300",
+    "GEOG301",
+    "GEOG305",
+    "GEOG306",
+    "GEOG307"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Physical Science/Mathematics",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "recognize and correctly use the terminology of math, statistics, and/or science.",
+    "analyze and interpret data, charts, and graphs using quantitative and qualitative methods.",
+    "recognize and construct valid arguments using deductive and inductive reasoning.",
+    "evaluate new and accepted ideas about the natural universe using testable methodology."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Program (course list continued from previous page)",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "GEOG 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 309",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 391",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 392",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 393",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 394",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 499",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 306",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 311",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 331",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 345",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 392",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 393",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 394",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 499",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 309",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 324",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 333",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 341",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 355",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 356",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 372",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 373",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 375",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 383",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 402",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 410",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 420",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 480",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 499",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 312",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 350",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 410",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 421",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 431",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 499",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 310",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 330",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 309",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 499",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASTR 300",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 310",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 320",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 330",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 400",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 481",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 495",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ASTR 499",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 305",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 306",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 309",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 310",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 338",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 400",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 401",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 420",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 421",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 423",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 495",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "CHEM 499",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 300",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 310",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 312",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 401",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 412",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 420",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 495",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "ENGR 499",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "GEOG 300",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "GEOG 301",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "GEOG 305",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "GEOG 306",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   },
+   {
+    "code": "GEOG 307",
+    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+   }
+  ],
+  "notes": [
+   "The text begins mid-list on page 848; the section heading, program description and the rule line introducing the course list (likely 'A minimum of 18 units from the following') are on an earlier page not provided. section_heading is inferred from the program/award, not printed in the text.",
+   "Block rule choose_units with minimum 18 is inferred from 'Total Units: 18' at the end of the list; the actual rule wording is not in the text. Block name is a placeholder because the printed name is not visible.",
+   "Closed-list ASTR, CHEM, ENGR and GEOG 300-307 courses are presumably in the cut-off earlier part of the list; reviewer should check page 847.",
+   "MATH 480 as printed matches closed-list entry 'MATH480' (spacing difference only); treated as not a catalog addition.",
+   "Degree sentence: 'plus sufficient electives for a total of at least 60 units' — recorded as electives_fill_degree true; degree_total left null since 60 is stated as a minimum general requirement rather than a printed award total.",
+   "MATH 333 is titled 'College Algebra for Liberal Arts' in the catalog vs 'Introduction to College Algebra' in the state file.",
+   "Page footer reads 'Programs of Study – Physics'; the text after the outcomes (Physics course descriptions, Political Science programs) belongs to other sections and was ignored, including Political Science career fields."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

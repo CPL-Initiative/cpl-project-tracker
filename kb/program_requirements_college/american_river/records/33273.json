@@ -1,0 +1,335 @@
+{
+ "college": "American River College",
+ "control_number": "33273",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=980",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9134,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9134,
+    "output_tokens": 3128,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3128,
+  "output_tokens_details": {
+   "thinking_tokens": 1028
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0991,
+ "ms": 24827,
+ "seconds": 25.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 15.0-19.0; the catalog states 19.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [
+    "critique and discuss Latin American, Peninsular, Chicana/o/x, Afrolatina/o/x, and Indigenous literature in a historical context."
+   ],
+   "why": [
+    "not in the catalog text as printed: critique and discuss Latin American, Peninsular, Chicana/o/x, Afrolatina/o/x, an"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Spanish for Transfer (AA-T) degree (heading not shown in the excerpt; text begins mid-table)",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate proficiency in the five skills as mandated by the competency guidelines of the American Council of the Teaching of Foreign Languages (ACTFL): comprehension, speaking, reading, writing, and understanding the people and culture of Spanish-speaking countries.",
+    "utilize grammatical structures of Spanish.",
+    "read and understand Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, Afrolatina/o/x, and Chicana/o/x authors.",
+    "demonstrate writing and composition skills in Spanish.",
+    "critique and discuss Latin American, Peninsular, Chicana/o/x, Afrolatina/o/x, and Indigenous literature in a historical context.",
+    "analyze and discuss major historical events and periods in the history of Spanish-speaking countries.",
+    "compare and contrast aspects of the Spanish-speaking culture that are different or similar to their own culture.",
+    "compare and contrast aspects of Spanish to their first language.",
+    "recognize regional linguistic and lexical differences including influences from indigenous languages.",
+    "describe the complexity and struggles of Latina/o/x racialized groups in Spanish-speaking countries and the United States.",
+    "analyze how struggle, resistance, social justice, solidarity and liberation are experienced by Latina/o/x communities socially, linguistically, and politically."
+   ],
+   "careers": [
+    "airlines/travel",
+    "banking",
+    "bilingual education",
+    "bilingual telecommunications",
+    "emergency services",
+    "foreign service",
+    "imports and exports",
+    "international business",
+    "intelligence/military services",
+    "IRS/State Franchise Tax Board",
+    "law enforcement/correctional officer",
+    "social services",
+    "translating/interpreting",
+    "tourism",
+    "world language instructor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "A) Sequence for Spanish heritage speakers (Sequence A; heading cut off)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 413",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 415",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "B) Sequence for non-Spanish heritage speakers",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGLT 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHNS 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 327",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 373",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 374",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 375",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 427",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-table on page 980: the program heading, the 'Required Program' heading and the start of Sequence A (heritage speakers) are cut off. Only SPAN 412, 413 and 415 of Sequence A are visible; with a printed total of 19 (16-unit sequence + 3 units List A), Sequence A likely includes one more 4-unit course (possibly SPAN 411) on the previous page. Reviewer should check page 979.",
+   "Sequence A heading name is inferred from footnote 1 ('Sequence A or B') and the parallel Sequence B heading.",
+   "The '32' after 'A minimum of 3 units from the following:' is read as 3 units with footnote 2.",
+   "Footnote 2: students following the Sequence for non-Spanish heritage speakers may use SPAN 413 or SPAN 415 to meet the List A requirement.",
+   "Footnote 1: students who meet core prerequisites by challenge must consult faculty and petition for substitutions; at least 18 units in the major must be completed.",
+   "The degree statement says 60 transferable semester units including the major and Cal-GETC; recorded as the general ADT requirement, not a printed degree total.",
+   "In outcomes, 'Chicana/o/x' was printed split across a line ('Chicana/o/' then 'x'); it was joined without a space.",
+   "The following A.A. in Language Studies section (which also lists SPAN courses) was not read for this record."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

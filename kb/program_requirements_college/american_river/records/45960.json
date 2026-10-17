@@ -1,0 +1,256 @@
+{
+ "college": "American River College",
+ "control_number": "45960",
+ "shape": "degree",
+ "title": "Hardwood Floor Layer Apprenticeship",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=183",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12167,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12167,
+    "output_tokens": 1982,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1982,
+  "output_tokens_details": {
+   "thinking_tokens": 562
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08831,
+ "ms": 17396,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 23,
+   "share": 0.0,
+   "missing": [
+    "CARPT298",
+    "CARPT498",
+    "INSTL100",
+    "INSTL102",
+    "INSTL103",
+    "INSTL104",
+    "INSTL105",
+    "INSTL106",
+    "INSTL107",
+    "INSTL110",
+    "INSTL111",
+    "INSTL112",
+    "INSTL113",
+    "INSTL114",
+    "INSTL115",
+    "INSTL120",
+    "INSTL121",
+    "INSTL122",
+    "INSTL123",
+    "INSTL124",
+    "INSTL125",
+    "INSTL126",
+    "INSTL298"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (no A.A. Degree section for Hardwood Floor Layer Apprenticeship is printed)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CARPT 498",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "CARPT298",
+    "why": "A.A. Degree section not in the text; named (as CARPT 298) only in the certificate sections"
+   },
+   {
+    "code": "INSTL 100",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 102",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 103",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 104",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 105",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 106",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 107",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 110",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 111",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 112",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 113",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 114",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 115",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 120",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 121",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 122",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 123",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 124",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 125",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 126",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "INSTL 298",
+    "why": "A.A. Degree section not in the text; named only in the certificate sections"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 183-186) prints no A.A. Degree section for Hardwood Floor Layer Apprenticeship. It prints only certificates: Hardwood Floor Layer Apprenticeship Certificate (37 units: min 21 units INSTL 100-126, min 16 units work experience CARPT 298/CARPT 498/INSTL 298), and Level I (10), Level II (20) and Level III (30) Certificates. The degree section may sit on another page (the excerpt begins mid-way through the Elevator program); a reviewer should check the catalog for an A.A. section.",
+   "No blocks, totals, outcomes or careers were recorded because none are printed for the A.A. Degree. The certificate sections print the same outcomes list and a Career Information paragraph that names no specific career titles beyond 'hardwood floor layer technicians'.",
+   "The closed list stores CARPT298 without a space; the catalog prints it as 'CARPT 298' with units 0.5-6. CARPT 498 is printed with units 0.5-4."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

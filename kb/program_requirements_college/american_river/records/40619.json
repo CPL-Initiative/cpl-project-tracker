@@ -1,0 +1,230 @@
+{
+ "college": "American River College",
+ "control_number": "40619",
+ "shape": "certificate",
+ "title": "Ironworkers Apprenticeship Level III",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7533,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7533,
+    "output_tokens": 1501,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1501,
+  "output_tokens_details": {
+   "thinking_tokens": 389
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06015,
+ "ms": 20353,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 18,
+   "share": 0.0,
+   "missing": [
+    "IW100",
+    "IW101",
+    "IW110",
+    "IW120",
+    "IW130",
+    "IW131",
+    "IW140",
+    "IW150",
+    "IW151",
+    "IW152",
+    "IW158",
+    "IW160",
+    "IW170",
+    "IW171",
+    "IW180",
+    "IW183",
+    "IW186",
+    "IW298"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "IW 100",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 101",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 110",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 120",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 130",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 131",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 140",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 150",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 151",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 152",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 158",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 160",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 170",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 171",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 180",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 183",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW 186",
+    "why": "named only in the A.A. section; certificate section not in text"
+   },
+   {
+    "code": "IW298",
+    "why": "named only in the A.A. section (as IW 298); certificate section not in text"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 159) contains the end of the Hardwood Floor Layer Apprenticeship section and the 'A.A. in Ironworkers Apprenticeship' section, but no section for the Ironworkers Apprenticeship Level III Certificate of Achievement. The certificate section likely appears on a following page (page 160 or later); a reviewer should check it.",
+   "section_heading is left empty because the named award's heading is not printed in the text.",
+   "The A.A. section prints 'A minimum of 21 units' from IW 100-IW 186, 'A minimum of 16 units' from IW 298 (0.5-6), and 'Total Units: 37', with the Local GE Pattern or Cal-GETC plus electives to at least 60 units. These were not recorded because they belong to the A.A. degree, not the certificate.",
+   "The A.A. section's Student Learning Outcomes heading is cut off at the page break with no outcomes printed under it in the supplied text.",
+   "The catalog prints IW 131 as 'Reinforcing II/Post Tensioning' and IW 158 as 0.5-16 units in the A.A. section; the closed list stores 'Reinforcing II/Post Tension' and 0.5 units."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

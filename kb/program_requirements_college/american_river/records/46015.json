@@ -1,0 +1,238 @@
+{
+ "college": "American River College",
+ "control_number": "46015",
+ "shape": "certificate",
+ "title": "Welder Apprenticeship Level II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=165",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7523,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7523,
+    "output_tokens": 1577,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1577,
+  "output_tokens_details": {
+   "thinking_tokens": 392
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06163,
+ "ms": 13841,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "HVACR298",
+    "PLUMB241",
+    "PLUMB298",
+    "STMFT100",
+    "STMFT104",
+    "STMFT110",
+    "STMFT120",
+    "STMFT130",
+    "STMFT131",
+    "STMFT140",
+    "STMFT141",
+    "STMFT145",
+    "STMFT150",
+    "STMFT151",
+    "STMFT152",
+    "STMFT153",
+    "STMFT160",
+    "STMFT161",
+    "STMFT164",
+    "STMFT298"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not in the text (the page prints only the A.A. in Welder Apprenticeship section)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HVACR 298",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "PLUMB 241",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "PLUMB298",
+    "why": "named only in the A.A. section (as PLUMB 298); certificate section not in the text"
+   },
+   {
+    "code": "STMFT 100",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 104",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 110",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 120",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 130",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 131",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 140",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 141",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 145",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 150",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 151",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 152",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 153",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 160",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 161",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 164",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "STMFT 298",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 165) contains the tail of a Steamfitter program's outcomes and career information, then the 'A.A. in Welder Apprenticeship' section (Total Units: 56; 40 units from PLUMB 241/STMFT courses plus 16 units of work experience). It does not contain a section for the Certificate of Achievement 'Welder Apprenticeship Level II', so no requirements, total, outcomes or careers were recorded for this award. A reviewer should locate the certificate section, likely on the following page (166).",
+   "The A.A. section's Student Learning Outcomes and the description naming plumber, pipefitter, and steamfitter welders belong to the A.A. degree and were not recorded for this certificate.",
+   "In the A.A. section, STMFT 150-161 are titled Welding V through Welding X, which differs from the closed-list titles (Welding I-VI). The work experience courses there are listed at 0.5 - 6 units."
+  ]
+ },
+ "extracted_run": "39047245752"
+}
