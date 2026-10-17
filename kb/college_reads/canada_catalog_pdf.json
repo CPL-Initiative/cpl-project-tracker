@@ -1,0 +1,20 @@
+{
+ "_readme": "S408 SkyAgave, 2026-10-17. Canada's online catalog (catalog.canadacollege.edu/current/) refuses the reader in robots.txt (S405 page read 39032643761), and Sam's ruling 2 (2026-10-17) makes a hand-filed copy its way in. Before asking a person to fetch one, this read opens the college's own schedule-and-catalog page on canadacollege.edu, which robots.txt does not refuse, to see whether it links a 2026-2027 catalog PDF the reader could follow through a procedure catalog step. Pages only, no model call, no table write.",
+ "college": "Cañada College",
+ "questions": {
+  "catalog_pdf": "Whether canadacollege.edu links a 2026-2027 catalog as a PDF, its address and the words on its link, and on which host the file sits."
+ },
+ "keywords": [
+  "\\.pdf",
+  "[Cc]atalog",
+  "2026\\s*[-–/]\\s*(20)?27",
+  "[Aa]ddend"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_pdf"],
+   "url": "https://canadacollege.edu/catalogschedule/",
+   "links": "\\.pdf|catalog|Catalog"
+  }
+ ]
+}
