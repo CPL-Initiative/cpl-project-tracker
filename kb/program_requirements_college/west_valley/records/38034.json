@@ -1,0 +1,173 @@
+{
+ "college": "West Valley College",
+ "control_number": "38034",
+ "shape": "noncredit",
+ "title": "Small Business Essentials",
+ "award": "Noncredit program",
+ "source_url": "https://www.westvalley.edu/catalog/programs/small-business-essentials-certificate-of-completion.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6785,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6785,
+    "output_tokens": 492,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 492,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03698,
+ "ms": 4254,
+ "seconds": 4.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    36.0
+   ],
+   "stated": [
+    32.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Small Business Essentials Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 32,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of starting and operating a business and begin the development of a business plan.",
+    "Demonstrate knowledge of the importance of various types of marketing and how it affects your small business."
+   ],
+   "careers": [
+    "Entrepreneur",
+    "Small Business Owner",
+    "Marketing Coordinator",
+    "Brand Ambassador",
+    "Business Development Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "NCBU054",
+      "units": 16,
+      "units_max": 18,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCBU056",
+      "units": 16,
+      "units_max": 18,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (NCBU054, NCBU056); these match closed-list NCBU 54 and NCBU 56.",
+   "Hours are printed as ranges (16-18 hours each); total certificate hours 32-36.",
+   "Outcomes taken from the page's outcomes tab."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

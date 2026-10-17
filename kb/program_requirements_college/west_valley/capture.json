@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 145,
  "with_closed_list": 142,
- "started": "2026-10-17T12:58:59Z",
+ "started": "2026-10-17T13:13:32Z",
  "scope": null,
  "sitemap": {
   "url": "https://www.westvalley.edu/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 0,
  "banner_h1": "Catalog 2026-2027",
  "loads": 151,
- "seconds": 793.5,
+ "seconds": 787.6,
  "found": 134,
  "by_method": {
   "no_closed_list": 3,
@@ -1477,5 +1477,5 @@
    }
   ]
  },
- "run": "39034618946"
+ "run": "39035604333"
 }
