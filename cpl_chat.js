@@ -461,7 +461,7 @@
     var list = (b.suggestions && b.suggestions.length) ? b.suggestions : SUGGESTED;
     // A heading, because a bare row of pills reads as chrome. My College's own
     // label said this; it moves with the questions rather than being lost.
-    chipsEl.appendChild(el('div', { className: 'cplchat-suggest-lab' }, 'Try one of these'));
+    chipsEl.appendChild(el('div', { className: 'cplchat-suggest-lab' }, 'Try'));
     list.forEach(function (q) {
       chipsEl.appendChild(el('button', {
         type: 'button', className: 'cplchat-chip',
@@ -784,23 +784,31 @@
       '.cplchat-bubble { max-width:78%; padding:10px 14px; border-radius:14px; line-height:1.5; font-size:.95rem; word-wrap:break-word; overflow-wrap:anywhere; }',
       '.cplchat-bot .cplchat-bubble { max-width:calc(100% - 38px); }',
       '.cplchat-user .cplchat-bubble { max-width:min(78%, 70ch); }',
-      '.cplchat-user .cplchat-bubble { background:var(--seal-blue); color:var(--white); border-bottom-right-radius:4px; }',
-      '.cplchat-bot .cplchat-bubble { background:var(--surface-opaque); color:var(--text-body); border:1px solid var(--border); border-bottom-left-radius:4px; }',
+      // The public page's asking view (S405; Sam, 2026-10-17, on My College: "busy and
+      // boxy"): the reader's question is a tinted line, her answer plain text beside her
+      // roundel, with no bubble drawn around it.
+      '.cplchat-user .cplchat-bubble { background:var(--surface-muted); color:var(--text-strong); border-radius:12px; }',
+      '.cplchat-bot .cplchat-bubble { background:transparent; color:var(--text-body); border:0; border-radius:0; padding:4px 0 0; }',
       '.cplchat-bubble p { margin:0 0 8px; } .cplchat-bubble p:last-child { margin-bottom:0; }',
       '.cplchat-bubble ul { margin:4px 0 8px; padding-left:20px; }',
       '.cplchat-bubble a { color:var(--cobalt); }',
-      '.cplchat-user .cplchat-bubble a { color:var(--mustard-on-dark); }',
+      '.cplchat-user .cplchat-bubble a { color:var(--cobalt); }',
       '.cplchat-typing { letter-spacing:2px; color:var(--text-muted); animation:cplchatPulse 1.2s infinite; }',
       '@keyframes cplchatPulse { 0%,100% { opacity:.35; } 50% { opacity:1; } }',
-      '.cplchat-suggest { display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 2px; }',
-      '.cplchat-chip { background:var(--surface-opaque); border:1px solid var(--border-strong); color:var(--navy-primary); border-radius:16px; padding:7px 12px; font-size:.85rem; cursor:pointer; transition:background .15s, border-color .15s; }',
-      '.cplchat-chip:hover { background:var(--surface-muted); border-color:var(--cobalt); }',
+      // The starters are underlined lines after "Try" (Sam's controls rule, 2026-10-09):
+      // the label holds the first column, each question its own row in the second.
+      '.cplchat-suggest { display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:12px; row-gap:2px; align-items:baseline; margin:4px 0 8px; }',
+      '.cplchat-chip { grid-column:2; justify-self:start; background:none; border:0; padding:2px 0; min-height:24px; font:inherit; font-size:.95rem; line-height:1.4; text-align:left; color:var(--cobalt); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; }',
+      '.cplchat-chip:hover { text-decoration-thickness:2px; }',
       '.cplchat-status { min-height:18px; font-size:.85rem; color:var(--text-muted); margin:2px 0; }',
       '.cplchat-status.cplchat-error { color:var(--crimson); }',
-      '.cplchat-inputrow { display:flex; gap:8px; }',
-      '.cplchat-input { flex:1 1 auto; padding:12px 14px; border:1px solid var(--border-strong); border-radius:8px; font-size:.95rem; }',
-      '.cplchat-input:focus { outline:none; border-color:var(--seal-blue); box-shadow:0 0 0 3px color-mix(in srgb, var(--seal-blue) 12%, transparent); }',
-      '.cplchat-send { background:var(--seal-blue); color:var(--white); border:none; border-radius:8px; padding:0 22px; font-weight:600; cursor:pointer; }',
+      // The box is the one card, as on the public page: the input borderless inside a
+      // white card, the button a round word at its end.
+      '.cplchat-inputrow { display:flex; gap:10px; align-items:center; padding:8px 8px 8px 18px; background:var(--surface-opaque); border:1px solid var(--border); border-radius:20px; box-shadow:0 6px 22px color-mix(in srgb, var(--text-strong) 12%, transparent); }',
+      '.cplchat-input { flex:1 1 auto; min-width:0; padding:10px 2px; border:0; border-radius:8px; background:transparent; color:var(--text-strong); font:inherit; font-size:1rem; }',
+      '.cplchat-input::placeholder { color:var(--text-muted); opacity:1; }',
+      '.cplchat-input:focus { outline:2px solid var(--cobalt); outline-offset:2px; }',
+      '.cplchat-send { flex:0 0 auto; min-height:44px; background:var(--seal-blue); color:var(--white); border:none; border-radius:999px; padding:0 22px; font-weight:700; cursor:pointer; }',
       '.cplchat-send:hover { background:color-mix(in srgb, var(--seal-blue) 85%, var(--white)); }',
       '.cplchat-send:disabled { background:var(--surface-muted); color:var(--text-muted); cursor:default; }',
       // Mobile: the log gets MORE of the screen, not less — there is no room to
@@ -810,22 +818,24 @@
         + ' .cplchat-user .cplchat-bubble { max-width:88%; } .cplchat-log { max-height:68vh; }'
         + ' .cplchat-send { padding:0 16px; } .cplchat-input { min-width:0; } }',
       // ── The audience row, the feedback row and the rest ────────────────────
-      '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
+      // Words, as on the public page's bar: no panel, no pills. The pick is bold over a
+      // cobalt rule (a weight and a rule, never color alone).
+      '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 16px; margin:6px 0 8px; padding:2px 0; border-radius:6px; }',
       '.cplchat-viewer { margin:4px 0 0; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
       '.cplchat-viewer[hidden] { display:none; }',
-      '.cplchat-aud-label { font-size:.82rem; font-weight:600; color:var(--text-muted, #5a6478); margin-right:2px; }',
-      '.cplchat-aud-chip { border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); border-radius:999px; padding:6px 12px; font-size:.82rem; font-weight:600; cursor:pointer; }',
-      '.cplchat-aud-chip:hover { border-color:var(--cobalt, #0047AB); }',
-      '.cplchat-aud-chip.on { background:var(--seal-blue, #002F6D); border-color:var(--seal-blue, #002F6D); color:#fff; }',
+      '.cplchat-aud-label { font-size:.92rem; font-weight:400; color:var(--text-muted, #5a6478); }',
+      '.cplchat-aud-chip { background:none; border:0; border-bottom:2px solid transparent; border-radius:0; padding:4px 0 2px; min-height:28px; font:inherit; font-size:.92rem; font-weight:400; color:var(--text-body, #3A3A36); cursor:pointer; }',
+      '.cplchat-aud-chip:hover { color:var(--text-strong, #1C1C1A); border-bottom-color:var(--border-strong, #cdd6e3); }',
+      '.cplchat-aud-chip.on { color:var(--text-strong, #1C1C1A); font-weight:700; border-bottom-color:var(--cobalt, #0047AB); }',
       // The remembered-but-unconfirmed chip: marked as the current pick, drawn
       // as provisional. Dashed + unfilled so it cannot be mistaken for `.on` at
       // a glance, and never the only signal — .cplchat-aud-note carries it in
       // words for anyone who does not see the difference.
-      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue-text,#002F6D); }',
+      '.cplchat-aud-chip.remembered { color:var(--text-strong, #1C1C1A); border-bottom:2px dashed var(--cobalt, #0047AB); }',
       '.cplchat-aud-note { flex-basis:100%; font-size:.78rem; color:var(--text-muted, #5a6478); }',
-      '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
+      '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); outline-offset:4px; }',
       // Waiting on a tap is not an error, so it is cobalt, not crimson.
-      '.cplchat-audience.confirm { outline:2px solid var(--cobalt, #0047AB); }',
+      '.cplchat-audience.confirm { outline:2px solid var(--cobalt, #0047AB); outline-offset:4px; }',
       // Dark, on the cpl_theme.js contract (the OS rule, then the explicit choice). The
       // base rules carried the light palette as raw values until S398, so a dark
       // reader got a light log with dark-theme muted text on it (2.19:1, measured
@@ -835,8 +845,8 @@
       darkRules([
         ['.cplchat-bot .cplchat-bubble', 'color:var(--text-body); border-color:var(--border);'],
         ['.cplchat-bot .cplchat-bubble a', 'color:var(--cobalt);'],
-        ['.cplchat-chip', 'border-color:var(--border-strong);'],
-        ['.cplchat-chip:hover', 'background:var(--surface-muted); border-color:var(--cobalt);'],
+        ['.cplchat-chip', 'color:var(--cobalt);'],
+        ['.cplchat-chip:hover', 'text-decoration-thickness:2px;'],
         ['.cplchat-input', 'background:var(--surface-opaque); color:var(--text-body); border-color:var(--border-strong);'],
         ['.cplchat-input:focus', 'border-color:var(--cobalt); box-shadow:0 0 0 3px color-mix(in srgb, var(--cobalt) 25%, transparent);'],
         ['.cplchat-typing', 'color:var(--text-muted);'],
@@ -850,7 +860,7 @@
       // floor: the first seeded conversation the sweep measured (S349, the
       // full-screen dock) found --text-faint at 3.24:1 and the .75 fade at
       // 2.48:1, and every pill 23.4px tall. The public page's row already does this.
-      '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
+      '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:4px 14px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
       // The rating buttons carry WORDS now (Helpful / Not helpful), not thumbs.
       // A <button> inherits neither font-family nor color — which is why the
       // Copy pill below spells both out — and a glyph did not care, but a word
@@ -858,15 +868,16 @@
       // button font and color right beside a Copy pill that does not. nowrap
       // keeps "Not helpful" on one line; the row still wraps (.cplchat-fb is
       // flex-wrap).
-      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; line-height:1.4; min-height:24px; color:inherit; font-family:inherit; white-space:nowrap; }',
-      '.cplchat-fb-btn:hover { border-color:var(--cobalt, #0047AB); }',
-      '.cplchat-fb-btn.on { background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      // Underlined words since S405 (Sam's controls rule, 2026-10-09); the pick is bold.
+      '.cplchat-fb-btn { border:0; background:none; border-radius:0; padding:2px 0; cursor:pointer; font-size:.78rem; line-height:1.4; min-height:24px; color:inherit; font-family:inherit; white-space:nowrap; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }',
+      '.cplchat-fb-btn:hover { color:var(--text-strong, #1C1C1A); text-decoration-thickness:2px; }',
+      '.cplchat-fb-btn.on { color:var(--text-strong, #1C1C1A); font-weight:700; }',
       // Copy shares the pill shape but NOT the .cplchat-fb-btn class — that class
       // means "a rating button" to the code (btns.up/btns.down) and to the tests,
       // which assert exactly two of them.
-      '.cplchat-fb-copy { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; min-height:24px; color:inherit; white-space:nowrap; }',
-      '.cplchat-fb-copy:hover { border-color:var(--cobalt, #0047AB); }',
-      '.cplchat-fb-copy.on { background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-copy { border:0; background:none; border-radius:0; padding:2px 0; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; min-height:24px; color:inherit; white-space:nowrap; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }',
+      '.cplchat-fb-copy:hover { color:var(--text-strong, #1C1C1A); text-decoration-thickness:2px; }',
+      '.cplchat-fb-copy.on { color:var(--text-strong, #1C1C1A); font-weight:700; }',
       // THE ROOT DEFECT. An author `display` rule beats the UA stylesheet's
       // `[hidden] { display:none }`, so `noteWrap.hidden = true` was INERT:
       // the composer never closed on success, and it was on screen from the
@@ -900,8 +911,8 @@
       // The suggestion row's heading. `.cplchat-suggest` is a wrapping flex row,
       // so the label claims a full line of its own rather than sitting in the
       // chip flow.
-      '.cplchat-suggest-lab { flex:1 0 100%; font-size:.72rem; text-transform:uppercase;'
-        + ' letter-spacing:.04em; color:var(--text-muted, #5a6478); margin:2px 0 2px; }',
+      '.cplchat-suggest-lab { grid-column:1; grid-row:1; font-size:.92rem; color:var(--text-muted, #5a6478); }',
+      '@media (max-width: 600px) { .cplchat-suggest { grid-template-columns:minmax(0,1fr); } .cplchat-chip { grid-column:1; } .cplchat-suggest-lab { grid-row:auto; } }',
       '.cplchat-title { display:flex; align-items:center; gap:10px; }',
       '.cplchat-title-mark { flex:0 0 auto; width:1.25em; height:1.25em; display:block; }',
       '.cplchat-title-mark svg { width:100%; height:100%; display:block; }',
@@ -936,9 +947,10 @@
       '.cplchat-dockbar { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin:4px 0 6px; }',
       '.cplchat-dock-name { display:none; align-items:center; gap:8px; margin-right:auto; font-weight:700; color:var(--navy-primary, #0b3d61); }',
       '.cplchat-dock-name svg { width:1.5em; height:1.5em; display:block; }',
-      '.cplchat-dock-btn { font:inherit; font-size:.85rem; font-weight:600; min-height:34px; padding:4px 14px; border-radius:999px;'
-        + ' border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--seal-blue-text, #002F6D); cursor:pointer; }',
-      '.cplchat-dock-btn:hover { border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-dock-btn { font:inherit; font-size:.9rem; font-weight:600; min-height:24px; padding:2px 0; border-radius:0;'
+        + ' border:0; background:none; color:var(--accent-link, var(--cobalt, #0047AB)); cursor:pointer;'
+        + ' text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }',
+      '.cplchat-dock-btn:hover { text-decoration-thickness:2px; }',
       '.cplchat-foot { margin:6px 0 0; font-size:.8rem; line-height:1.45; color:var(--text-muted, #5C5C55); max-width:var(--cpl-measure,none); }',
       'html.cplchat-locked, html.cplchat-locked body { overflow:hidden; }',
       'html .cplchat.cplchat-full { position:fixed; inset:0; margin:0; max-width:none; box-sizing:border-box;'
@@ -953,7 +965,7 @@
       'html .cplchat.cplchat-full .cplchat-dock-name { display:flex; }',
       'html .cplchat.cplchat-full .cplchat-log { flex:1 0 auto; min-height:0; max-height:none; overflow:visible;'
         + ' border:0; border-radius:0; background:transparent; padding:8px 0; margin-top:0; margin-bottom:0; }',
-      'html .cplchat.cplchat-full .cplchat-inputrow { position:sticky; bottom:0; z-index:1; padding:10px 0 12px; background:var(--paper, #F4F2ED); }',
+      'html .cplchat.cplchat-full .cplchat-inputrow { position:sticky; bottom:12px; z-index:1; margin:10px auto 12px; box-shadow:0 0 0 12px var(--paper, #F4F2ED); }',
       'html .cplchat.cplchat-full .cplchat-foot { margin-top:0; margin-bottom:0; padding:0 0 14px; }',
       '@media (prefers-reduced-motion: no-preference) { html .cplchat.cplchat-full { animation:cplchatFull .16s ease-out; } }',
       '@keyframes cplchatFull { from { opacity:0; } to { opacity:1; } }',
@@ -1579,7 +1591,7 @@
       type: 'text', id: 'cplchat-input', className: 'cplchat-input',
       placeholder: 'Ask a question about CPL…', autocomplete: 'off', maxlength: '1000',
     });
-    b.send = el('button', { type: 'button', className: 'cplchat-send' }, 'Send');
+    b.send = el('button', { type: 'button', className: 'cplchat-send' }, 'Ask');
     b.input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(b); } });
     b.send.addEventListener('click', function () { submit(b); });
     row.appendChild(b.input); row.appendChild(b.send);

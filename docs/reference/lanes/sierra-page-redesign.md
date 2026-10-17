@@ -1,7 +1,7 @@
 ---
 title: "Sierra's page redesign (after america.gov) — lane state"
 created: 2026-10-08
-updated: 2026-10-09
+updated: 2026-10-17
 tags: [reference, roadmap-lane, sierra, first-light]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -44,7 +44,7 @@ related:
 
 **UI pass (S349).** The public page passed its first pass: AA, 24px targets, rings, keyboard and reduced motion at nine widths in all four views; First Light holds; the chat function and feedback RPC agree with the COBI surfaces. Nothing to fix (`kb/ui_pass_ledger.json`).
 
-**NEXT.** Sam's reaction to My College's Sierra in Sierra AI's format (screenshots sent in S400). The Fact Sheet is on First Light (below).
+**My College's Sierra and Sierra AI take the public page's style (S405; Sam, 2026-10-17: *"My College Sierra looks like the old format still--busy and boxy"*, then on the mock-up [My College's Sierra](https://claude.ai/artifact/LQ2wayKDomp3411VZAR74y), `prototype/my_college_sierra_mockup.html`: *"Yes, use the new Sierra"*).** One shared box (`cpl_chat.js`), so both change: no frame around her on My College and no rule under her name (`college_briefing.js`); the role row is words, the pick bold over a cobalt rule; the starters are underlined lines after *Try*; the box is the one white card with a round *Ask*; the reader's question is a tinted line and her answer plain text beside her roundel; Full screen, Copy, Helpful and Not helpful are underlined words. The order stays role row, starters, box, caution (Sam, 2026-08-21: the role is read first; the mock-up drew the role words inside the card). Guard: `tests/my_college_sierra_ai_format.test.js` (4), which fails on the S400 files; `npm run a11y` passes the six Sierra views. **NEXT.** The public page's own pills (Copy, Helpful, Not helpful) convert to words at its next UI pass. The Fact Sheet is on First Light (below).
 
 **The veteran map is on First Light (S350, ported).** Sam ruled *Port it* on Open Asks Sheet 55 card 1 (00:42Z, Oct 9, his own call) on the mock-up [Colleges and Installations](https://claude.ai/artifact/NXB75PqESUBumqSajpdHbm). The mock-up's template now lives in `veteran-sprint-map/build_selfcontained.py`, which writes `ca_cpl_map_selfcontained.html`; the mock-up generator (`prototype/veteran_map_mockup.py` and its page) is retired, since a second copy of the template would drift.
 - **The page.** First Light tokens in `:root` only, light and dark on the `cpl_theme` contract: read before the first paint, and followed live through the `storage` event, so the map inside COBI's iframe changes with COBI's control. Playfair Display and Source Sans 3 embedded from `sierra/fonts/` (the page loads nothing). Installations are ink stars (crimson is First Light's alert); every control a word; the controls beside the map; the served count with its date (28,884 as of October 8, 2026, from `military_by_college.json`; nothing refreshes it on a schedule: rerun `extract_military.py`, then the builder, when the figure matters). Where the build differs from the mock-up: the page title is *California Community Colleges and Military Installations* (the mock-up's was the artifact's short name), and the panel keeps the live page's id, `side`.

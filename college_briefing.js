@@ -769,7 +769,7 @@
       ".cb-land{display:inline-block;min-height:24px;padding:3px 0;box-sizing:border-box;overflow-wrap:anywhere;color:var(--accent-link,var(--cobalt));}",
       ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
       // Sierra AI box — first on the tab, holds the pickers and the embedded chat.
-      ".cb-assist{border:1px solid var(--border-strong);border-radius:11px;background:var(--surface);padding:16px 18px;margin-bottom:20px;}",
+      ".cb-assist{border:0;border-radius:0;background:transparent;padding:0;margin-bottom:26px;box-shadow:none;}",
       // (The .cb-assist>header / h3 rules went with the duplicate heading they
       //  styled — the box's title is now the widget's own, hoisted into
       //  .cb-assist-head. See hoistAssistantIntro().)
@@ -779,12 +779,11 @@
       ".cb-asks{display:flex;flex-wrap:wrap;gap:8px 18px;}",
       ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;color:var(--cobalt);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
       ".cb-ask:hover{text-decoration-thickness:2px;}",
-      // ── Sierra AI leads the tab (Sam, 2026-08-12) ──────────────────────
-      // The team's read was that she is the useful part, so she gets the
-      // weight: a heavier frame, real breathing room, and a stated purpose.
-      // Everything below is deliberately quieter so the contrast does the
-      // work — no section under here competes with this box.
-      ".cb-assist{border-width:2px;border-color:var(--border-strong);padding:20px 22px 18px;margin-bottom:26px;box-shadow:0 1px 3px rgba(28,28,26,.06);}",
+      // ── Sierra AI leads the tab (Sam, 2026-08-12), unframed (S405) ─────
+      // She still leads, but the weight is her question box now: the one white
+      // card, as on the public Sierra page. Sam, 2026-10-17, of the framed box:
+      // "looks like the old format still--busy and boxy"; he approved the
+      // mock-up with no frame (https://claude.ai/artifact/LQ2wayKDomp3411VZAR74y).
       ".cb-asks-lab{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);margin:14px 0 7px;}",
       // ── The hoisted heading slot (2026-08-17) ─────────────────────────────
       // finish() moves cpl_chat.js's OWN .cplchat-intro in here, so the box
@@ -863,13 +862,14 @@
          Sierra AI over a tab is one column: her name and one control on a
          ruled bar, the role row, the starters, the box, the caution under it.
          Here she sat in three nested cards (.cb-assist, then the <details>
-         drawn as a .cb-sec card, then the log's own frame). The .cb-assist
-         frame stays, the heavier one that leads the tab (Sam, 2026-08-12);
-         the <details> inside it draws none, and its summary becomes the bar.
+         drawn as a .cb-sec card, then the log's own frame). The <details>
+         draws none, and its summary carries her name. Since S405 the .cb-assist
+         frame and the summary's rule are gone too: her question box is the one
+         card (Sam, 2026-10-17, on the public page's style).
          (0,3,0) selectors, because the .cb-sec rules sit later in this sheet. */
       ".cb-assist>.cb-assist-d.cb-sec{border:0;border-radius:0;background:transparent;margin:0;position:relative;}",
       ".cb-assist>.cb-assist-d>.cb-sum{padding:0 8.5rem 10px 0;border-radius:0;min-height:34px;box-sizing:border-box;align-items:center;}",
-      ".cb-assist>.cb-assist-d[open]>.cb-sum{border-bottom:1px solid var(--border);margin-bottom:10px;}",
+      ".cb-assist>.cb-assist-d[open]>.cb-sum{border-bottom:0;margin-bottom:8px;}",
       ".cb-assist .cb-assist-body{padding-top:0;}",
       ".cb-assist .cb-assist-mount{margin-top:0;}",
       /* The one control, Full screen, at the bar's right end where Sierra AI
@@ -903,7 +903,7 @@
       // The pickers stretch instead of sitting at a 220px minimum that wraps
       // into a ragged column, and the box gives its padding back to content.
       "@media (max-width:640px){",
-      "  .cb-assist{padding:14px 13px 13px;border-radius:9px;margin-bottom:18px;}",
+      "  .cb-assist{margin-bottom:18px;}",
       "  .cb-bar{gap:9px;}",
       "  .cb-bar>div{flex:1 1 100%;min-width:0;}",
       "  .cb-bar select{width:100%;min-width:0;}",
