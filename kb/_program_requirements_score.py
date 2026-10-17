@@ -327,6 +327,7 @@ _FOLD = str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"',
 _LIGATURES = {"Ɵ": "ti", "Ʃ": "tt", "Ō": "ft", "ﬁ": "fi", "ﬂ": "fl", "ﬀ": "ff", "ﬃ": "ffi", "ﬄ": "ffl"}
 _LIGATURE = re.compile("[%s]" % "".join(_LIGATURES))
 _UNSPACED = "\x00"   # marks the reading with no spaces
+_LINE_END_MARKER = re.compile(r"[ \t]+(?:\d{1,2}\.|[a-z]\))[ \t]*(?=\n|$)")
 
 
 def _flat(s: str) -> str:
@@ -349,6 +350,13 @@ def _readings(text: str) -> list[str]:
     # outcomes_check compares with the outcome's own letters, spaces dropped too.
     if _LIGATURE.search(flat):
         readings.append(_UNSPACED + re.sub(r"\s", "", _LIGATURE.sub(lambda m: _LIGATURES[m.group(0)], flat)))
+    # Ohlone's PDF prints a numbered outcome's number at the end of its first line ("Demonstrate knowledge
+    # of real estate listings, deposit receipts, escrows, 2.\nand financing."); 125 of its 146 records failed
+    # the outcomes check on that (run 39061732843; page read 39062425296). One more reading drops a list
+    # marker printed at a line's end.
+    unmarked = _flat(_LINE_END_MARKER.sub("", text or ""))
+    if unmarked != flat:
+        readings.append(unmarked)
     return readings
 
 
