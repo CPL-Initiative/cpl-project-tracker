@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 206,
  "with_closed_list": 198,
- "started": "2026-10-17T18:20:25Z",
+ "started": "2026-10-17T19:40:02Z",
  "curriqunet": {
   "catalog": 15,
   "view_prefix": "https://cuesta.curriqunet.com/catalog/iq/",
@@ -25,7 +25,7 @@
  "pages_read": 210,
  "banner_h1": null,
  "loads": 1009,
- "seconds": 4423.3,
+ "seconds": 4604.7,
  "found": 183,
  "by_method": {
   "no_closed_list": 8,
@@ -2093,5 +2093,5 @@
    }
   ]
  },
- "run": "39057578219"
+ "run": "39063368678"
 }

@@ -1,0 +1,321 @@
+{
+ "college": "Cuesta College",
+ "control_number": "40085",
+ "shape": "degree",
+ "title": "CULINARY ARTS",
+ "award": "A.S. Degree",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30123",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7408,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7408,
+    "output_tokens": 2434,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2434,
+  "output_tokens_details": {
+   "thinking_tokens": 841
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07831,
+ "ms": 20135,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 18,
+   "share": 0.944,
+   "missing": [
+    "CUL249"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NUTR250"
+   ],
+   "flagged": [
+    "NUTR250"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    29.0
+   ],
+   "stated": [
+    25.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CULINARY ARTS - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice professional and ethical manners while applying knowledge and skills imperative to achieve and exceed guest satisfaction.",
+    "Identify and apply food safety and sanitation principles.",
+    "Demonstrate flavor profiling, ingredient selection, cooking/baking techniques, nutrition, and presentation principles.",
+    "Apply food and beverage management, leadership, customer service, and interpersonal skills.",
+    "Demonstrate basic measuring, conversion, food costing, and yield management practices."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core (14 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "CUL 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 225",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 243",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 290",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Food Production (12-15 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 12,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CUL 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 245",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 252",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CUL 261",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Sustainable Culinary (11 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "AGPS 246",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CUL 242",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 249",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CUL 249",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The closed list stores NUTR 210 as 'NUTR210' (no space); treated as the same course as the catalog's NUTR 210, which the catalog marks Historical.",
+   "The concentration choice prints 'Units: 11.0- 15.0'; the Food Production heading says 12-15 units but its block line prints 'Units: 3.0' followed by a stray '3.0', which appears to be a formatting artifact. Stated recorded from the heading (12-15), consistent with the course sum 12-15 given CUL 252 at 1-4 units.",
+   "CUL 252 (Historical) is printed with 1.0-4.0 units; the closed list stores 0.5 units.",
+   "CUL 261 and NUTR 210 are marked Historical in the catalog; CUL 225 is titled 'BAKING AND BAKING SCIENCE I' in the catalog vs 'BAKING SCIENCE I' in the closed list.",
+   "Total 25.0-29.0 is recorded as the major total; the page names no GE pattern and prints no degree total.",
+   "The program summary mentions 'an entry-level position in the culinary industry' but names no specific career or job title, so careers is left empty."
+  ]
+ },
+ "extracted_run": "39063368678"
+}

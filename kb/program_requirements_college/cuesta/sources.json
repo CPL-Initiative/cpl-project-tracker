@@ -1,0 +1,6700 @@
+[
+ {
+  "control_number": "05660",
+  "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS227",
+   "BUS228",
+   "CIS154",
+   "CIS173",
+   "CIS210",
+   "CIS216"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30097",
+   "title": "BUSINESS ADMINISTRATIVE ASSISTANT - Associate in Arts",
+   "h1": "BUSINESS ADMINISTRATIVE ASSISTANT - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1010
+ },
+ {
+  "control_number": "05661",
+  "title": "JOURNALISM",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART249A",
+   "ART249B",
+   "JOUR200",
+   "JOUR201",
+   "JOUR202A",
+   "JOUR202B",
+   "JOUR202C",
+   "JOUR205",
+   "JOUR206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30166",
+   "title": "JOURNALISM - Associate in Arts",
+   "h1": "JOURNALISM - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1939
+ },
+ {
+  "control_number": "05666",
+  "title": "AUTOMOTIVE TECHNICIAN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH109",
+   "ATCH152",
+   "ATCH153",
+   "ATCH158",
+   "ATCH168",
+   "ATCH182",
+   "ATCH186",
+   "ATCH188",
+   "ATCH280",
+   "ATCH281",
+   "ATCH284"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30088",
+   "title": "AUTOMOTIVE TECHNICIAN - Associate in Science",
+   "h1": "AUTOMOTIVE TECHNICIAN - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2141
+ },
+ {
+  "control_number": "05667",
+  "title": "CONSTRUCTION TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH105",
+   "BUS283",
+   "CTCH180A",
+   "CTCH200",
+   "CTCH210",
+   "CTCH220",
+   "CTCH222",
+   "CTCH224",
+   "CTCH226",
+   "CTCH228",
+   "CTCH230",
+   "CTCH232",
+   "CTCH250",
+   "CTCH260",
+   "EET181",
+   "EET183",
+   "ENGR201",
+   "ENGR226",
+   "WELD270A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30118",
+   "title": "CONSTRUCTION TECHNOLOGY - Associate in Science",
+   "h1": "CONSTRUCTION TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 1682
+ },
+ {
+  "control_number": "05668",
+  "title": "WELDING TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTCH200",
+   "ENGR226",
+   "WELD270A",
+   "WELD270B",
+   "WELD270C",
+   "WELD273",
+   "WELD275",
+   "WELD276",
+   "WELD277",
+   "WELD280A",
+   "WELD280B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30260",
+   "title": "WELDING TECHNOLOGY - Associate in Science",
+   "h1": "WELDING TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1600
+ },
+ {
+  "control_number": "05669",
+  "title": "ART HISTORY AND PROFESSIONAL PRACTICES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "ART220",
+   "ART221",
+   "ART249A",
+   "ART255",
+   "ART256",
+   "ART259",
+   "ART266",
+   "ART268",
+   "ART270",
+   "ART280",
+   "ARTH202",
+   "ARTH205",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211",
+   "ARTH295"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30083",
+   "title": "ART HISTORY AND PROFESSIONAL  PRACTICES - Associate in Arts",
+   "h1": "ART HISTORY AND PROFESSIONAL  PRACTICES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2787
+ },
+ {
+  "control_number": "05675",
+  "title": "NURSING, REGISTERED",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NRAD103H",
+   "NRAD120A",
+   "NRAD120B",
+   "NRAD120C",
+   "NRAD120D",
+   "NRAD201A",
+   "NRAD201C",
+   "NRAD201D",
+   "NRAD201E",
+   "NRAD202A",
+   "NRAD202C",
+   "NRAD202D",
+   "NRAD202E",
+   "NRAD203A",
+   "NRAD203C",
+   "NRAD203D",
+   "NRAD203E",
+   "NRAD204A",
+   "NRAD204B",
+   "NRAD204D",
+   "NRAD4E"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30214",
+   "title": "NURSING, REGISTERED - Associate in Science",
+   "h1": "NURSING, REGISTERED - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4864
+ },
+ {
+  "control_number": "05677",
+  "title": "MEDICAL ASSISTING",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO212",
+   "BUS227",
+   "BUS228",
+   "CIS210",
+   "CSS225",
+   "MAST110",
+   "MAST111A",
+   "MAST111B",
+   "NRAD222",
+   "PHLB109A",
+   "PHLB109B",
+   "PSYCC1000",
+   "SOC201A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30188",
+   "title": "MEDICAL ASSISTING - Associate in Science",
+   "h1": "MEDICAL ASSISTING - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2140
+ },
+ {
+  "control_number": "05679",
+  "title": "HUMAN SERVICES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS210",
+   "ASHS212",
+   "ASHS214",
+   "ASHS270",
+   "ASHS271",
+   "ASHS278",
+   "ASHS279",
+   "ASHS280",
+   "ASHS289",
+   "ASHS289D",
+   "PHS206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30161",
+   "title": "HUMAN SERVICES - Associate in Arts",
+   "h1": "HUMAN SERVICES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2699
+ },
+ {
+  "control_number": "05680",
+  "title": "EARLY CHILDHOOD EDUCATION",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS205",
+   "CDFS206",
+   "CDFS211",
+   "CDFS212",
+   "CDFS215",
+   "CDFS216",
+   "CDFS217",
+   "CDFS220",
+   "CDFS221",
+   "CDFS223",
+   "CDFS234",
+   "CDFS235",
+   "CDFS236",
+   "CDFS237",
+   "CDFS240",
+   "CDFS242",
+   "CDFS245"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30126",
+   "title": "EARLY CHILDHOOD EDUCATION - Associate in Arts",
+   "h1": "EARLY CHILDHOOD EDUCATION - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2936
+ },
+ {
+  "control_number": "05684",
+  "title": "LIBRARY/INFORMATION TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS234",
+   "DIST101",
+   "LIBT201",
+   "LIBT204",
+   "LIBT205",
+   "LIBT208",
+   "LIBT209",
+   "LIBT210",
+   "LIBT212",
+   "LIBT213",
+   "LIBT214",
+   "LIBT217",
+   "LIBT218",
+   "LIBT221",
+   "LIBT222",
+   "LIBT247"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30177",
+   "title": "LIBRARY/INFORMATION TECHNOLOGY - Associate in Science",
+   "h1": "LIBRARY/INFORMATION TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1824
+ },
+ {
+  "control_number": "05686",
+  "title": "PHYSICS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "MATH287",
+   "PHYS208A",
+   "PHYS208B",
+   "PHYS208C"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30230",
+   "title": "PHYSICS - Associate in Science",
+   "h1": "PHYSICS - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1724
+ },
+ {
+  "control_number": "05687",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM201A",
+   "CHEM201B",
+   "CHEM212A",
+   "CHEM212B",
+   "MATH265A",
+   "MATH265B",
+   "PHYS205A",
+   "PHYS205B",
+   "PHYS208A",
+   "PHYS208B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30103",
+   "title": "CHEMISTRY - Associate in Science",
+   "h1": "CHEMISTRY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1389
+ },
+ {
+  "control_number": "05688",
+  "title": "GEOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM201A",
+   "CHEM201B",
+   "ENVS200",
+   "ENVS205",
+   "GEOL210",
+   "GEOL211",
+   "GEOL212",
+   "GEOL220",
+   "GEOL229A",
+   "GEOL229B",
+   "GEOL229C",
+   "GEOL229D",
+   "GEOL230",
+   "MATH265A",
+   "MATH265B",
+   "OCEN210",
+   "OCEN210L",
+   "PHYS208A",
+   "PHYS208B",
+   "PSCI211"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30151",
+   "title": "GEOLOGY - Associate in Science",
+   "h1": "GEOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2418
+ },
+ {
+  "control_number": "05690",
+  "title": "CRIMINAL JUSTICE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ202",
+   "CJ204",
+   "CJ206",
+   "CJ208",
+   "CJ210",
+   "CJ213",
+   "CJ224",
+   "CJ226",
+   "CJ228"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30120",
+   "title": "CRIMINAL JUSTICE - Associate in Arts",
+   "h1": "CRIMINAL JUSTICE - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1970
+ },
+ {
+  "control_number": "05696",
+  "title": "ENGINEERING",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO211",
+   "CHEM201A",
+   "CHEM211",
+   "CS231",
+   "CS232",
+   "CS233",
+   "CS241",
+   "CTCH200",
+   "ENGR201",
+   "ENGR210",
+   "ENGR217",
+   "ENGR226",
+   "ENGR228",
+   "ENGR246",
+   "ENGR246L",
+   "ENGR248",
+   "ENGR250",
+   "ENGR251",
+   "ENGR252A",
+   "ENGR252B",
+   "GEOL210",
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "MATH287",
+   "PHYS208A",
+   "PHYS208B",
+   "PHYS208C",
+   "WELD270A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30137",
+   "title": "ENGINEERING - Associate in Science",
+   "h1": "ENGINEERING - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3935
+ },
+ {
+  "control_number": "07672",
+  "title": "ARCHITECTURAL TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH205",
+   "ARCH217",
+   "ARCH218",
+   "ARCH221",
+   "ARCH222",
+   "ARCH232",
+   "ARCH242",
+   "ARCH244",
+   "ARCH251",
+   "ARCH252",
+   "ART220",
+   "ART221",
+   "ART270",
+   "CTCH180A",
+   "CTCH250",
+   "ENGR226",
+   "ENGR250",
+   "ENGR252A",
+   "MATH265A",
+   "PHYS205A",
+   "PHYS205B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30081",
+   "title": "ARCHITECTURAL TECHNOLOGY - Associate in Science",
+   "h1": "ARCHITECTURAL TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2580
+ },
+ {
+  "control_number": "07677",
+  "title": "ACCOUNTING CLERK",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "ACCT252A",
+   "ACCT252B",
+   "BUS228",
+   "BUS253",
+   "CIS210"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30070",
+   "title": "ACCOUNTING CLERK - Certificate of Achievement",
+   "h1": "ACCOUNTING CLERK - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1429
+ },
+ {
+  "control_number": "07681",
+  "title": "FILM TELEVISION AND ELECTRONIC MEDIA",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTVE221",
+   "FTVE223",
+   "FTVE224A",
+   "FTVE225A",
+   "FTVE225B",
+   "FTVE226",
+   "FTVE230A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30146",
+   "title": "FILM TELEVISION AND ELECTRONIC MEDIA - Associate in Arts",
+   "h1": "FILM TELEVISION AND ELECTRONIC MEDIA - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1281
+ },
+ {
+  "control_number": "07684",
+  "title": "RECREATION ADMINISTRATION",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSCI202",
+   "HSCI204",
+   "HSCI208",
+   "REC201",
+   "REC203",
+   "REC204",
+   "REC205"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30244",
+   "title": "RECREATION ADMINISTRATION - Associate in Arts",
+   "h1": "RECREATION ADMINISTRATION - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1823
+ },
+ {
+  "control_number": "07685",
+  "title": "AUTO BODY TECHNICIAN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABOD170",
+   "ABOD171",
+   "ABOD175",
+   "ABOD177",
+   "ATCH109",
+   "ATCH160",
+   "ATCH168",
+   "ATCH186",
+   "ATCH188",
+   "ATCH284",
+   "WELD270A",
+   "WELD270C"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30086",
+   "title": "AUTO BODY TECHNICIAN - Associate in Science",
+   "h1": "AUTO BODY TECHNICIAN - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1819
+ },
+ {
+  "control_number": "10374",
+  "title": "ENGINE PERFORMANCE SPECIALIST",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH109",
+   "ATCH125",
+   "ATCH152",
+   "ATCH153",
+   "ATCH158"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30136",
+   "title": "ENGINE PERFORMANCE SPECIALIST - Certificate of Achievement",
+   "h1": "ENGINE PERFORMANCE SPECIALIST - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1336
+ },
+ {
+  "control_number": "10433",
+  "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS227",
+   "BUS228",
+   "BUS253",
+   "CIS154",
+   "CIS173",
+   "CIS210",
+   "CIS216"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30098",
+   "title": "BUSINESS ADMINISTRATIVE ASSISTANT - Certificate of Achievement",
+   "h1": "BUSINESS ADMINISTRATIVE ASSISTANT - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1146
+ },
+ {
+  "control_number": "12223",
+  "title": "PARALEGAL",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS218",
+   "BUS227",
+   "CJ208",
+   "LGL217",
+   "PLGL131",
+   "PLGL201",
+   "PLGL203",
+   "PLGL205",
+   "PLGL206",
+   "PLGL207",
+   "PLGL208",
+   "PLGL209",
+   "PLGL220"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30218",
+   "title": "PARALEGAL - Associate in Arts",
+   "h1": "PARALEGAL - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2234
+ },
+ {
+  "control_number": "13607",
+  "title": "COMPUTER SCIENCE",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM201A",
+   "CHEM201B",
+   "CS201",
+   "CS231",
+   "CS232",
+   "CS233",
+   "CS240",
+   "CS241",
+   "MATH265A",
+   "MATH265B",
+   "PHYS208A",
+   "PHYS208B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30116",
+   "title": "COMPUTER SCIENCE - Associate in Science",
+   "h1": "COMPUTER SCIENCE - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2207
+ },
+ {
+  "control_number": "13611",
+  "title": "MANAGEMENT INFORMATION SYSTEMS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "BUS218",
+   "CIS216",
+   "CS201",
+   "CS231",
+   "CS232",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH255"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30182",
+   "title": "MANAGEMENT INFORMATION SYSTEMS - Associate in Science",
+   "h1": "MANAGEMENT INFORMATION SYSTEMS - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2404
+ },
+ {
+  "control_number": "13697",
+  "title": "NURSING, REGISTERED (30 UNIT OPTION)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO204",
+   "BIO212",
+   "BIO212L",
+   "NRAD102H",
+   "NRAD103H",
+   "NRAD120C",
+   "NRAD120D",
+   "NRAD203A",
+   "NRAD203C",
+   "NRAD203D",
+   "NRAD203E",
+   "NRAD204A",
+   "NRAD204B",
+   "NRAD204D",
+   "NRAD4E"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30215",
+   "title": "NURSING, REGISTERED (30 UNIT OPTION) - Certificate of Achievement",
+   "h1": "NURSING, REGISTERED (30 UNIT OPTION) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3103
+ },
+ {
+  "control_number": "13698",
+  "title": "JAZZ STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS204A",
+   "MUS204B",
+   "MUS204C",
+   "MUS205A",
+   "MUS205B",
+   "MUS205C",
+   "MUS212",
+   "MUS223",
+   "MUS224A",
+   "MUS224B",
+   "MUS231",
+   "MUS232",
+   "MUS233",
+   "MUS234",
+   "MUS238",
+   "MUS245",
+   "MUS257",
+   "MUS259"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30165",
+   "title": "JAZZ STUDIES - Associate in Arts",
+   "h1": "JAZZ STUDIES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 1997
+ },
+ {
+  "control_number": "14441",
+  "title": "COMPUTER AND NETWORKING TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET219",
+   "CNET221",
+   "CNET235",
+   "CNET240",
+   "CNET253",
+   "CNET254",
+   "CNET260",
+   "CNET261",
+   "CS201",
+   "EET113",
+   "EET213",
+   "PDS171",
+   "PDS178"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30114",
+   "title": "COMPUTER AND NETWORKING  TECHNOLOGY - Associate in Science",
+   "h1": "COMPUTER AND NETWORKING  TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2300
+ },
+ {
+  "control_number": "14793",
+  "title": "ADVANCED ENGINE PERFORMANCE TECHNICIAN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH109",
+   "ATCH125",
+   "ATCH152",
+   "ATCH158",
+   "ATCH160",
+   "ATCH168",
+   "ATCH188",
+   "ATCH264"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30076",
+   "title": "ADVANCED ENGINE PERFORMANCE  TECHNICIAN - Associate in Science",
+   "h1": "ADVANCED ENGINE PERFORMANCE  TECHNICIAN - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2020
+ },
+ {
+  "control_number": "14876",
+  "title": "MUSIC PERFORMANCE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS204A",
+   "MUS204B",
+   "MUS204C",
+   "MUS205A",
+   "MUS205B",
+   "MUS205C",
+   "MUS212",
+   "MUS220",
+   "MUS223",
+   "MUS225",
+   "MUS227",
+   "MUS228",
+   "MUS229",
+   "MUS231",
+   "MUS232A",
+   "MUS234",
+   "MUS240",
+   "MUS245",
+   "MUS257"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30194",
+   "title": "MUSIC PERFORMANCE - Associate in Arts",
+   "h1": "MUSIC PERFORMANCE - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 1660
+ },
+ {
+  "control_number": "15487",
+  "title": "POLITICAL SCIENCE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2002",
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HIST210",
+   "HIST212",
+   "HIST233",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL206",
+   "PHIL208",
+   "POLS201",
+   "POLS204",
+   "POLS205",
+   "POLS206",
+   "POLS209",
+   "POLSC1000",
+   "PSYC206",
+   "SOC206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30234",
+   "title": "POLITICAL SCIENCE - Associate in Arts",
+   "h1": "POLITICAL SCIENCE - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2689
+ },
+ {
+  "control_number": "15491",
+  "title": "HISTORY",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2002",
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HIST210",
+   "HIST212",
+   "HIST233",
+   "HISTC1001",
+   "HISTC1002",
+   "POLS204",
+   "POLS206",
+   "POLS209"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30156",
+   "title": "HISTORY - Associate in Arts",
+   "h1": "HISTORY - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2454
+ },
+ {
+  "control_number": "15547",
+  "title": "LEGAL STUDIES: BUSINESS OPTION",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "BUS218",
+   "BUS245",
+   "ECONC2001",
+   "ECONC2002",
+   "LGL217",
+   "MATH255",
+   "PLGL206",
+   "PLGL220",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30170",
+   "title": "LEGAL STUDIES: BUSINESS OPTION - Associate in Arts",
+   "h1": "LEGAL STUDIES: BUSINESS OPTION - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2217
+ },
+ {
+  "control_number": "15548",
+  "title": "LEGAL STUDIES: SOCIAL SCIENCE OPTION",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "BUS218",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HISTC1001",
+   "HISTC1002",
+   "LGL217",
+   "PHIL208",
+   "PHIL213",
+   "PLGL220",
+   "POLS201",
+   "POLS206",
+   "POLS209",
+   "POLSC1000",
+   "SOC201A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30171",
+   "title": "LEGAL STUDIES: SOCIAL SCIENCE  OPTION - Associate in Arts",
+   "h1": "LEGAL STUDIES: SOCIAL SCIENCE  OPTION - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2657
+ },
+ {
+  "control_number": "16506",
+  "title": "SOCIOLOGY",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "ANTH225",
+   "ECONC2002",
+   "GEOG202",
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HIST210",
+   "HIST212",
+   "HIST233",
+   "HIST237",
+   "HISTC1001",
+   "HISTC1002",
+   "HSCI203",
+   "HSCI208",
+   "PHIL206",
+   "PHIL208",
+   "PHIL209",
+   "POLS204",
+   "POLS206",
+   "PSYC206",
+   "PSYCC1000",
+   "SOC201A",
+   "SOC201B",
+   "SOC202",
+   "SOC204",
+   "SOC206",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30251",
+   "title": "SOCIOLOGY - Associate in Arts",
+   "h1": "SOCIOLOGY - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 2523
+ },
+ {
+  "control_number": "16766",
+  "title": "ELECTRICAL TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTCH260",
+   "EET119",
+   "EET169",
+   "EET181",
+   "EET183",
+   "EET213",
+   "EET224",
+   "EET228",
+   "EET257",
+   "EET267"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30129",
+   "title": "ELECTRICAL TECHNOLOGY - Associate in Science",
+   "h1": "ELECTRICAL TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2062
+ },
+ {
+  "control_number": "16837",
+  "title": "Licensed Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "LVN101",
+   "LVN101A",
+   "LVN101AL",
+   "LVN101B",
+   "LVN102",
+   "LVN102A",
+   "LVN102AL",
+   "LVN102B",
+   "LVN103A",
+   "LVN103B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30213",
+   "title": "LICENSED VOCATIONAL  NURSING - Certificate of Achievement",
+   "h1": "LICENSED VOCATIONAL  NURSING - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3420
+ },
+ {
+  "control_number": "16875",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO212",
+   "EMS210",
+   "EMS211",
+   "EMS211L",
+   "EMS212",
+   "EMS213"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30221",
+   "title": "PARAMEDIC - Certificate of Achievement",
+   "h1": "PARAMEDIC - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3221
+ },
+ {
+  "control_number": "18665",
+  "title": "CSU General Education Breadth",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18666",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18710",
+  "title": "LIBERAL ARTS - ARTS AND HUMANITIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.972,
+  "codes_found": [
+   "ART220",
+   "ART221",
+   "ART222",
+   "ART223",
+   "ART224",
+   "ART229",
+   "ART230A",
+   "ART230B",
+   "ART230C",
+   "ART232",
+   "ART233",
+   "ART234",
+   "ART240A",
+   "ART240B",
+   "ART240C",
+   "ART241A",
+   "ART241B",
+   "ART241C",
+   "ART243A",
+   "ART243B",
+   "ART244",
+   "ART245",
+   "ART249A",
+   "ART249B",
+   "ART251",
+   "ART252",
+   "ART253",
+   "ART255",
+   "ART256",
+   "ART258",
+   "ART259",
+   "ART266",
+   "ART268",
+   "ART270",
+   "ART271",
+   "ART272",
+   "ART274A",
+   "ART274B",
+   "ART274C",
+   "ART280",
+   "ART281A",
+   "ART281B",
+   "ART282",
+   "ART283",
+   "ART284",
+   "ARTH202",
+   "ARTH205",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211",
+   "ARTH295",
+   "ASL201",
+   "ASL202",
+   "DRA200",
+   "DRA201",
+   "DRA207",
+   "DRA209",
+   "DRA211",
+   "DRA236",
+   "DRA240",
+   "DRA263",
+   "ENGL205",
+   "ENGL206",
+   "ENGL212A",
+   "ENGL212B",
+   "ENGL213",
+   "ENGL215",
+   "ENGL216",
+   "ENGL217",
+   "ENGL231",
+   "ENGL237",
+   "ENGL242",
+   "ENGL245A",
+   "ENGL245B",
+   "ENGL246A",
+   "ENGL246B",
+   "ENGLC1001",
+   "ENGLC1003",
+   "ETHN213",
+   "ETHN235",
+   "FR201",
+   "FR202",
+   "GER201",
+   "GER202",
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HIST210",
+   "HIST212",
+   "HIST233",
+   "HIST237",
+   "HISTC1001",
+   "HISTC1002",
+   "MUS201",
+   "MUS204A",
+   "MUS204B",
+   "MUS204C",
+   "MUS205A",
+   "MUS205B",
+   "MUS205C",
+   "MUS210",
+   "MUS211",
+   "MUS212",
+   "MUS220",
+   "MUS222",
+   "MUS223",
+   "MUS224A",
+   "MUS225",
+   "MUS227",
+   "MUS228",
+   "MUS229",
+   "MUS231",
+   "MUS232",
+   "MUS233",
+   "MUS234",
+   "MUS235",
+   "MUS236",
+   "MUS237",
+   "MUS238",
+   "MUS240",
+   "MUS241",
+   "MUS245",
+   "MUS257",
+   "MUS258",
+   "MUS259",
+   "MUS267",
+   "MUS270",
+   "MUS271",
+   "PHIL205",
+   "PHIL206",
+   "PHIL209",
+   "PHIL212",
+   "PHIL213",
+   "SPAN201",
+   "SPAN202",
+   "SPAN203",
+   "SPAN204"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30173",
+   "title": "LIBERAL ARTS: ARTS AND HUMANITIES - Associate in Arts",
+   "h1": "LIBERAL ARTS: ARTS AND HUMANITIES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 143,
+  "text_chars": 8621
+ },
+ {
+  "control_number": "18712",
+  "title": "LIBERAL ARTS - SOCIAL AND BEHAVIORAL SCIENCES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGB201",
+   "ANTH201",
+   "ANTH201L",
+   "ANTH202",
+   "ANTH203",
+   "ANTH220",
+   "ANTH221",
+   "ANTH225",
+   "ASHS212",
+   "ASHS214",
+   "ASHS218",
+   "ASHS262",
+   "ASHS278",
+   "BUS218",
+   "CDFS201",
+   "CDFS202",
+   "CDFS217",
+   "CJ202",
+   "CJ206",
+   "CJ224",
+   "COMM212",
+   "COMM230",
+   "COMM280",
+   "ECON200",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC210",
+   "ETHN210",
+   "ETHN211",
+   "ETHN219",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN235",
+   "ETHN240",
+   "ETHN250",
+   "ETHN260",
+   "ETHN262",
+   "ETHN270",
+   "GEOG201",
+   "GEOG202",
+   "GEOG225",
+   "GLST210",
+   "GLST220",
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HIST210",
+   "HIST212",
+   "HIST233",
+   "HIST237",
+   "HISTC1001",
+   "HISTC1002",
+   "LGL217",
+   "PHIL208",
+   "PHS212",
+   "POLS201",
+   "POLS204",
+   "POLS205",
+   "POLS206",
+   "POLS209",
+   "POLSC1000",
+   "PSYC202",
+   "PSYC204",
+   "PSYC206",
+   "PSYC233",
+   "PSYCC1000",
+   "SOC201A",
+   "SOC201B",
+   "SOC202",
+   "SOC204",
+   "SOC206",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30175",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES - Associate in Arts",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 75,
+  "text_chars": 6142
+ },
+ {
+  "control_number": "20945",
+  "title": "PSYCHIATRIC TECHNICIAN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS212",
+   "BIO212",
+   "PSYCC1000",
+   "PSYT110",
+   "PSYT207",
+   "PSYT208",
+   "PSYT209"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30239",
+   "title": "PSYCHIATRIC TECHNICIAN - Associate in Science",
+   "h1": "PSYCHIATRIC TECHNICIAN - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3726
+ },
+ {
+  "control_number": "20946",
+  "title": "PSYCHIATRIC TECHNICIAN",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYT110",
+   "PSYT207",
+   "PSYT208",
+   "PSYT209"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30240",
+   "title": "PSYCHIATRIC TECHNICIAN - Certificate of Achievement",
+   "h1": "PSYCHIATRIC TECHNICIAN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3603
+ },
+ {
+  "control_number": "21033",
+  "title": "BUSINESS CAREER TRACK CORE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT251",
+   "AGB201",
+   "BUS218",
+   "BUS227",
+   "BUS245",
+   "ECON200",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30099",
+   "title": "BUSINESS CAREER TRACK CORE - Certificate of Achievement",
+   "h1": "BUSINESS CAREER TRACK CORE - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2041
+ },
+ {
+  "control_number": "21040",
+  "title": "AUTO BODY TECHNICIAN",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABOD170",
+   "ABOD175",
+   "ATCH158",
+   "ATCH160",
+   "ATCH168",
+   "ATCH186",
+   "ATCH188"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30087",
+   "title": "AUTOBODY TECHNICIAN - Certificate of Achievement",
+   "h1": "AUTOBODY TECHNICIAN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 7,
+  "text_chars": 1496
+ },
+ {
+  "control_number": "21041",
+  "title": "CONSTRUCTION TECHNOLOGY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH105",
+   "BUS283",
+   "CTCH180A",
+   "CTCH200",
+   "CTCH210",
+   "CTCH220",
+   "CTCH222",
+   "CTCH224",
+   "CTCH226",
+   "CTCH228",
+   "CTCH230",
+   "CTCH232",
+   "CTCH250",
+   "CTCH260",
+   "EET181",
+   "EET183",
+   "ENGR201",
+   "ENGR226",
+   "WELD270A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30119",
+   "title": "CONSTRUCTION TECHNOLOGY - Certificate of Achievement",
+   "h1": "CONSTRUCTION TECHNOLOGY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 1688
+ },
+ {
+  "control_number": "21042",
+  "title": "ELECTRONICS AND STATE ELECTRICIAN",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTCH260",
+   "EET119",
+   "EET169",
+   "EET181",
+   "EET183",
+   "EET213",
+   "EET224",
+   "EET228",
+   "EET267",
+   "MATH127"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30130",
+   "title": "ELECTRONICS AND STATE ELECTRICIAN - Certificate of Achievement",
+   "h1": "ELECTRONICS AND STATE ELECTRICIAN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "21043",
+  "title": "WELDING TECHNOLOGY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR226",
+   "WELD270A",
+   "WELD270B",
+   "WELD275",
+   "WELD277",
+   "WELD280A",
+   "WELD280B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30261",
+   "title": "WELDING TECHNOLOGY - Certificate of Achievement",
+   "h1": "WELDING TECHNOLOGY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1512
+ },
+ {
+  "control_number": "21044",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO212",
+   "BUS227",
+   "BUS228",
+   "CIS210",
+   "CSS225",
+   "MAST110",
+   "MAST111A",
+   "MAST111B",
+   "NAST148",
+   "NAST148L",
+   "NRAD222",
+   "PHLB109A",
+   "PHLB109B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30189",
+   "title": "MEDICAL ASSISTING - Certificate of Achievement",
+   "h1": "MEDICAL ASSISTING - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1487
+ },
+ {
+  "control_number": "21050",
+  "title": "CHILD DEVELOPMENT TEACHER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS205",
+   "CDFS206",
+   "CDFS215",
+   "CDFS216"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
+   "title": "CHILD DEVELOPMENT MASTER TEACHER - Certificate of Achievement",
+   "h1": "CHILD DEVELOPMENT MASTER TEACHER - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2056
+ },
+ {
+  "control_number": "21053",
+  "title": "Paralegal",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS218",
+   "BUS227",
+   "CJ208",
+   "LGL217",
+   "PLGL131",
+   "PLGL201",
+   "PLGL203",
+   "PLGL205",
+   "PLGL206",
+   "PLGL207",
+   "PLGL208",
+   "PLGL209",
+   "PLGL220"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30219",
+   "title": "PARALEGAL - Certificate of Achievement",
+   "h1": "PARALEGAL - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2243
+ },
+ {
+  "control_number": "21054",
+  "title": "LIBRARY/INFORMATION TECHNOLOGY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS234",
+   "DIST101",
+   "LIBT201",
+   "LIBT204",
+   "LIBT205",
+   "LIBT208",
+   "LIBT209",
+   "LIBT210",
+   "LIBT212",
+   "LIBT213",
+   "LIBT214",
+   "LIBT217",
+   "LIBT218",
+   "LIBT221",
+   "LIBT222",
+   "LIBT247"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30178",
+   "title": "LIBRARY/INFORMATION TECHNOLOGY - Certificate of Achievement",
+   "h1": "LIBRARY/INFORMATION TECHNOLOGY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1835
+ },
+ {
+  "control_number": "24397",
+  "title": "NONCREDIT VOCATIONAL ENGLISH AS A SECOND LANGUAGE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VESL711",
+   "VESL712"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30211",
+   "title": "NONCREDIT VOCATIONAL ENGLISH AS  A SECOND LANGUAGE - Certificate of Completion",
+   "h1": "NONCREDIT VOCATIONAL ENGLISH AS  A SECOND LANGUAGE - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 903
+ },
+ {
+  "control_number": "24462",
+  "title": "SECONDARY EDUCATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSHS404",
+   "BSHS405",
+   "BSHS406",
+   "BSHS407",
+   "BSHS408",
+   "BSHS409",
+   "BSHS410",
+   "BSHS411",
+   "BSHS412",
+   "BSHS414"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30247",
+   "title": "SECONDARY EDUCATION - Certificate of Completion",
+   "h1": "SECONDARY EDUCATION - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1179
+ },
+ {
+  "control_number": "30452",
+  "title": "BUSINESS ADMINISTRATION - CAREER TRACK",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "ACCT203",
+   "ACCT251",
+   "ACCT252A",
+   "ACCT252B",
+   "AGB201",
+   "AGB204",
+   "AGB206",
+   "BUS218",
+   "BUS227",
+   "BUS230",
+   "BUS231",
+   "BUS232",
+   "BUS233",
+   "BUS234",
+   "BUS243",
+   "BUS245",
+   "BUS248",
+   "BUS249",
+   "BUS283",
+   "BUS285",
+   "ECON200",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30095",
+   "title": "BUSINESS ADMINISTRATION - CAREER TRACK - Associate in Arts",
+   "h1": "BUSINESS ADMINISTRATION - CAREER TRACK - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4297
+ },
+ {
+  "control_number": "30845",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "GEOG202",
+   "MATH236",
+   "PSYC206",
+   "PSYCC1000",
+   "SOC201A",
+   "SOC201B",
+   "SOC202",
+   "SOC204",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30252",
+   "title": "SOCIOLOGY - Associate in Arts for Transfer",
+   "h1": "SOCIOLOGY - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2521
+ },
+ {
+  "control_number": "30918",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS217",
+   "CS231",
+   "CS241",
+   "MATH236",
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "MATH287",
+   "PHYS208A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30186",
+   "title": "MATHEMATICS - Associate in Science for Transfer",
+   "h1": "MATHEMATICS - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2167
+ },
+ {
+  "control_number": "31857",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "COMM210",
+   "COMM212",
+   "COMM215",
+   "COMM230",
+   "COMM280",
+   "COMMC1000",
+   "ENGLC1001",
+   "FTVE221",
+   "JOUR200",
+   "JOUR201",
+   "PSYCC1000",
+   "SOC201A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113",
+   "title": "COMMUNICATION STUDIES 2.0 - Associate in Arts for Transfer",
+   "h1": "COMMUNICATION STUDIES 2.0 - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2519
+ },
+ {
+  "control_number": "31885",
+  "title": "POLITICAL SCIENCE",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLS201",
+   "POLS204",
+   "POLS205",
+   "POLS206",
+   "POLS209",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30235",
+   "title": "POLITICAL SCIENCE - Associate in Arts for Transfer",
+   "h1": "POLITICAL SCIENCE - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2127
+ },
+ {
+  "control_number": "31933",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ202",
+   "CJ204",
+   "CJ206",
+   "CJ208",
+   "CJ210",
+   "CJ224",
+   "CJ228",
+   "MATH236",
+   "PSYCC1000",
+   "SOC201A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30075",
+   "title": "ADMINISTRATION OF JUSTICE - Associate in Science for Transfer",
+   "h1": "ADMINISTRATION OF JUSTICE - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2372
+ },
+ {
+  "control_number": "32131",
+  "title": "STUDIO ARTS",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.939,
+  "codes_found": [
+   "ART209",
+   "ART220",
+   "ART221",
+   "ART222",
+   "ART223",
+   "ART224",
+   "ART229",
+   "ART230A",
+   "ART230B",
+   "ART232",
+   "ART240A",
+   "ART241A",
+   "ART244",
+   "ART245",
+   "ART249A",
+   "ART253",
+   "ART266",
+   "ART268",
+   "ART270",
+   "ART271",
+   "ART274A",
+   "ART280",
+   "ART281A",
+   "ART281B",
+   "ART282",
+   "ART283",
+   "ARTH205",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30255",
+   "title": "STUDIO ARTS - Associate in Arts for Transfer",
+   "h1": "STUDIO ARTS - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 3234
+ },
+ {
+  "control_number": "32132",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32139",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH201",
+   "ANTH201L",
+   "ANTH202",
+   "ANTH203",
+   "ANTH220",
+   "ANTH221",
+   "ANTH225",
+   "GEOL210",
+   "PHIL209",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30080",
+   "title": "ANTHROPOLOGY - Associate in Arts for Transfer",
+   "h1": "ANTHROPOLOGY - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2222
+ },
+ {
+  "control_number": "32140",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRA200",
+   "DRA201",
+   "DRA207",
+   "DRA209",
+   "DRA211",
+   "DRA212",
+   "DRA214",
+   "DRA236",
+   "DRA240",
+   "DRA241",
+   "DRA242",
+   "DRA243",
+   "DRA260",
+   "DRA261",
+   "DRA262",
+   "DRA263",
+   "DRA264"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30257",
+   "title": "THEATRE ARTS - Associate in Arts for Transfer",
+   "h1": "THEATRE ARTS - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2767
+ },
+ {
+  "control_number": "32153",
+  "title": "BUSINESS ADMINISTRATION",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096",
+   "title": "BUSINESS ADMINISTRATION 2.0 - Associate in Science for Transfer",
+   "h1": "BUSINESS ADMINISTRATION 2.0 - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1671
+ },
+ {
+  "control_number": "32157",
+  "title": "JOURNALISM",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM215",
+   "COMM230",
+   "COMM280",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL231",
+   "ENGLC1001",
+   "ETHN230",
+   "ETHN235",
+   "FTVE221",
+   "FTVE223",
+   "GLST220",
+   "JOUR200",
+   "JOUR201",
+   "JOUR202A",
+   "JOUR202B",
+   "JOUR205",
+   "PHIL208",
+   "POLS206",
+   "POLSC1000",
+   "SOC201B",
+   "SOC202",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30167",
+   "title": "JOURNALISM - Associate in Arts for Transfer",
+   "h1": "JOURNALISM - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3024
+ },
+ {
+  "control_number": "32198",
+  "title": "MUSIC",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS201",
+   "MUS204A",
+   "MUS204B",
+   "MUS204C",
+   "MUS205A",
+   "MUS205B",
+   "MUS205C",
+   "MUS212",
+   "MUS223",
+   "MUS225",
+   "MUS227",
+   "MUS228",
+   "MUS229",
+   "MUS231",
+   "MUS245"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30192",
+   "title": "MUSIC - Associate in Arts for Transfer",
+   "h1": "MUSIC - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2689
+ },
+ {
+  "control_number": "32270",
+  "title": "ART HISTORY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.939,
+  "codes_found": [
+   "ART209",
+   "ART220",
+   "ART221",
+   "ART222",
+   "ART223",
+   "ART224",
+   "ART229",
+   "ART230A",
+   "ART230B",
+   "ART232",
+   "ART240A",
+   "ART241A",
+   "ART244",
+   "ART245",
+   "ART249A",
+   "ART253",
+   "ART266",
+   "ART268",
+   "ART270",
+   "ART271",
+   "ART274A",
+   "ART280",
+   "ART281A",
+   "ART281B",
+   "ART282",
+   "ART283",
+   "ARTH205",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30082",
+   "title": "ART HISTORY - Associate in Arts for Transfer",
+   "h1": "ART HISTORY - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 3232
+ },
+ {
+  "control_number": "32271",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.643,
+  "codes_found": [
+   "DRA207",
+   "ENGL205",
+   "ENGL206",
+   "ENGL212A",
+   "ENGL212B",
+   "ENGL213",
+   "ENGL215",
+   "ENGL231",
+   "ENGL237",
+   "ENGL242",
+   "ENGL245A",
+   "ENGL245B",
+   "ENGL246A",
+   "ENGL246B",
+   "ENGLC1001",
+   "ENGLC1003",
+   "JOUR200",
+   "JOUR201"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30138",
+   "title": "ENGLISH - Associate in Arts for Transfer",
+   "h1": "ENGLISH - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 2994
+ },
+ {
+  "control_number": "32321",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM201A",
+   "CHEM201B",
+   "GEOL210",
+   "GEOL211",
+   "MATH265A",
+   "MATH265B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30152",
+   "title": "GEOLOGY - Associate in Science for Transfer",
+   "h1": "GEOLOGY - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1834
+ },
+ {
+  "control_number": "32377",
+  "title": "EARLY CHILDHOOD EDUCATION",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS205",
+   "CDFS206",
+   "CDFS215",
+   "CDFS216"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30127",
+   "title": "EARLY CHILDHOOD EDUCATION - Associate in Science for Transfer",
+   "h1": "EARLY CHILDHOOD EDUCATION - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2063
+ },
+ {
+  "control_number": "32453",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "PHYS208A",
+   "PHYS208B",
+   "PHYS208C"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30231",
+   "title": "PHYSICS - Associate in Science for Transfer",
+   "h1": "PHYSICS - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1822
+ },
+ {
+  "control_number": "32454",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS212",
+   "BIO212",
+   "BIO212L",
+   "PSYC200",
+   "PSYC202",
+   "PSYC204",
+   "PSYC206",
+   "PSYC233",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30242",
+   "title": "PSYCHOLOGY - Associate in Arts for Transfer",
+   "h1": "PSYCHOLOGY - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2420
+ },
+ {
+  "control_number": "32562",
+  "title": "SPANISH",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "ARTH207",
+   "ARTH208",
+   "COMM212",
+   "ENGL245A",
+   "ENGL245B",
+   "FR201",
+   "FR202",
+   "GEOG202",
+   "HIST212",
+   "SOC206",
+   "SPAN201",
+   "SPAN202",
+   "SPAN203",
+   "SPAN204"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30253",
+   "title": "SPANISH - Associate in Arts for Transfer",
+   "h1": "SPANISH - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2933
+ },
+ {
+  "control_number": "32593",
+  "title": "HISTORY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST203A",
+   "HIST203B",
+   "HIST204A",
+   "HIST204B",
+   "HIST210",
+   "HIST212",
+   "HIST233",
+   "HIST237",
+   "HISTC1001",
+   "HISTC1002",
+   "POLS201",
+   "POLS204",
+   "POLS206",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30157",
+   "title": "HISTORY - Associate in Arts for Transfer",
+   "h1": "HISTORY - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2801
+ },
+ {
+  "control_number": "32960",
+  "title": "PARAMEDIC",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO212",
+   "EMS210",
+   "EMS211",
+   "EMS211L",
+   "EMS212",
+   "EMS213"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30220",
+   "title": "PARAMEDIC - Associate in Science",
+   "h1": "PARAMEDIC - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3215
+ },
+ {
+  "control_number": "33041",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "BUS218",
+   "BUS227",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH255",
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30128",
+   "title": "ECONOMICS - Associate in Arts for Transfer",
+   "h1": "ECONOMICS - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2322
+ },
+ {
+  "control_number": "33400",
+  "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL701",
+   "ESL702"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30202",
+   "title": "NONCREDIT ENGLISH AS A SECOND  LANGUAGE - LEVEL I - Certificate of Competency",
+   "h1": "NONCREDIT ENGLISH AS A SECOND  LANGUAGE - LEVEL I - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 881
+ },
+ {
+  "control_number": "33401",
+  "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL703",
+   "ESL713"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30203",
+   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II - Certificate of Competency",
+   "h1": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1005
+ },
+ {
+  "control_number": "33402",
+  "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL704",
+   "ESL714"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30204",
+   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III - Certificate of Competency",
+   "h1": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1075
+ },
+ {
+  "control_number": "33634",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM201A",
+   "CHEM201B",
+   "CHEM212A",
+   "MATH236",
+   "NUTR210",
+   "NUTR222",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30216",
+   "title": "NUTRITION AND DIETETICS - Associate in Science for Transfer",
+   "h1": "NUTRITION AND DIETETICS - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2341
+ },
+ {
+  "control_number": "33704",
+  "title": "AGRICULTURE BUSINESS",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT251",
+   "AGPS241",
+   "AGPS242",
+   "CHEM200",
+   "CHEM201A",
+   "MATH255",
+   "NUTR210"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30077",
+   "title": "AGRICULTURE BUSINESS - Associate in Science for Transfer",
+   "h1": "AGRICULTURE BUSINESS - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2494
+ },
+ {
+  "control_number": "33875",
+  "title": "LIBERAL ARTS - SCIENCE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS241",
+   "AGPS242",
+   "ANTH201",
+   "ASTR210",
+   "BIO201A",
+   "BIO201B",
+   "BIO202",
+   "BIO204",
+   "BIO205",
+   "BIO206",
+   "BIO211",
+   "BIO212",
+   "BIO213",
+   "BIO216",
+   "BIO220",
+   "BIO221",
+   "BIO222",
+   "BIO224",
+   "CHEM200",
+   "CHEM201A",
+   "CHEM201B",
+   "CHEM211",
+   "CHEM212A",
+   "CHEM212B",
+   "CHEM231",
+   "ENVS200",
+   "GEOG201",
+   "GEOL210",
+   "GEOL211",
+   "GEOL212",
+   "GEOL220",
+   "MATH229",
+   "MATH230",
+   "MATH231",
+   "MATH232",
+   "MATH242",
+   "MATH255",
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "MATH287",
+   "METE212",
+   "OCEN210",
+   "PHYS205A",
+   "PHYS205B",
+   "PHYS208A",
+   "PHYS208B",
+   "PSCI210",
+   "PSCI211",
+   "PSYC202",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30172",
+   "title": "LIBERAL ARTS - SCIENCE - Associate in Arts",
+   "h1": "LIBERAL ARTS - SCIENCE - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 51,
+  "text_chars": 5097
+ },
+ {
+  "control_number": "33910",
+  "title": "PRE-NURSING",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "ASHS212",
+   "BIO204",
+   "BIO205",
+   "BIO206",
+   "CHEM200",
+   "CHEM201A",
+   "CHEM211",
+   "COMM210",
+   "COMM230",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "HSCI203",
+   "HSCI208",
+   "NAST148",
+   "NAST148L",
+   "NRAD222",
+   "NUTR210",
+   "NUTR211",
+   "NUTR218",
+   "NUTR222",
+   "PSYCC1000",
+   "SOC201A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30238",
+   "title": "PRE-NURSING - Associate in Science",
+   "h1": "PRE-NURSING - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 2449
+ },
+ {
+  "control_number": "33939",
+  "title": "ART STUDIO",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "ART220",
+   "ART221",
+   "ART222",
+   "ART223",
+   "ART224",
+   "ART229",
+   "ART230A",
+   "ART230B",
+   "ART230C",
+   "ART232",
+   "ART233",
+   "ART234",
+   "ART240A",
+   "ART240B",
+   "ART241A",
+   "ART241B",
+   "ART241C",
+   "ART243A",
+   "ART243B",
+   "ART244",
+   "ART245",
+   "ART249A",
+   "ART249B",
+   "ART251",
+   "ART252",
+   "ART253",
+   "ART255",
+   "ART256",
+   "ART258",
+   "ART259",
+   "ART265",
+   "ART266",
+   "ART267",
+   "ART268",
+   "ART270",
+   "ART271",
+   "ART272",
+   "ART274A",
+   "ART274B",
+   "ART274C",
+   "ART280",
+   "ART281A",
+   "ART281B",
+   "ART282",
+   "ART283",
+   "ART284",
+   "ART293",
+   "ARTH202",
+   "ARTH205",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211",
+   "ARTH295"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30084",
+   "title": "ART STUDIO - Associate in Arts",
+   "h1": "ART STUDIO - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 56,
+  "text_chars": 4256
+ },
+ {
+  "control_number": "33963",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO201A",
+   "BIO201B",
+   "CHEM201A",
+   "CHEM201B",
+   "MATH236",
+   "MATH265A",
+   "PHYS205A",
+   "PHYS205B",
+   "PHYS208A",
+   "PHYS208B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30094",
+   "title": "BIOLOGY - Associate in Science for Transfer",
+   "h1": "BIOLOGY - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2198
+ },
+ {
+  "control_number": "35008",
+  "title": "Licensed Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LVN101",
+   "LVN101A",
+   "LVN101AL",
+   "LVN101B",
+   "LVN102",
+   "LVN102A",
+   "LVN102AL",
+   "LVN102B",
+   "LVN103",
+   "LVN103A",
+   "LVN103B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30180",
+   "title": "LICENSED VOCATIONAL NURSING - Associate in Science",
+   "h1": "LICENSED VOCATIONAL NURSING - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2760
+ },
+ {
+  "control_number": "35076",
+  "title": "Graphics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART220",
+   "ART255",
+   "ART256",
+   "ART258",
+   "ART259",
+   "ART265",
+   "ART266",
+   "ART267",
+   "ART268"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30154",
+   "title": "GRAPHICS - Certificate of Achievement",
+   "h1": "GRAPHICS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1453
+ },
+ {
+  "control_number": "35099",
+  "title": "PSYCHOLOGY",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH201",
+   "ANTH203",
+   "ASHS212",
+   "ASHS214",
+   "ASHS218",
+   "BIO201A",
+   "BIO201B",
+   "BIO211",
+   "BIO212",
+   "PSYC200",
+   "PSYC202",
+   "PSYC206",
+   "PSYC233",
+   "PSYCC1000",
+   "SOC201A",
+   "SOC206",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30241",
+   "title": "PSYCHOLOGY - Associate in Arts",
+   "h1": "PSYCHOLOGY - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2700
+ },
+ {
+  "control_number": "35142",
+  "title": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL725",
+   "ESL735"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30209",
+   "title": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES - Certificate of Competency",
+   "h1": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 972
+ },
+ {
+  "control_number": "35717",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36261",
+  "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "ART244",
+   "ART253",
+   "ART265",
+   "ARTH205",
+   "DRA207",
+   "DRA214",
+   "ENGL216",
+   "ENGL237",
+   "FTVE212",
+   "FTVE221",
+   "FTVE223",
+   "FTVE224A",
+   "FTVE225A",
+   "FTVE225B",
+   "FTVE226",
+   "FTVE227",
+   "FTVE230A",
+   "JOUR200",
+   "JOUR206",
+   "MUS235",
+   "MUS240"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30147",
+   "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA - Associate in Science for Transfer",
+   "h1": "FILM, TELEVISION, AND ELECTRONIC MEDIA - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3268
+ },
+ {
+  "control_number": "36266",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "ASHS218",
+   "BIO201A",
+   "CHEM200",
+   "CHEM201A",
+   "HSCI202",
+   "HSCI203",
+   "HSCI208",
+   "PHS206",
+   "PHS210",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243",
+   "title": "PUBLIC HEALTH - Associate in Science for Transfer",
+   "h1": "PUBLIC HEALTH - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2442
+ },
+ {
+  "control_number": "36269",
+  "title": "CHILD AND ADOLESCENT DEVELOPMENT",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS212",
+   "ASHS214",
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS206",
+   "CDFS240",
+   "PSYCC1000",
+   "SOC201A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30104",
+   "title": "CHILD AND ADOLESCENT DEVELOPMENT - Associate in Arts for Transfer",
+   "h1": "CHILD AND ADOLESCENT DEVELOPMENT - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2227
+ },
+ {
+  "control_number": "36271",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ANTH203",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL245A",
+   "ENGL245B",
+   "GEOG201",
+   "GEOG202",
+   "GLST210",
+   "GLST220",
+   "HIST203A",
+   "HIST203B",
+   "PHIL209",
+   "POLS204",
+   "POLS206",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30153",
+   "title": "GLOBAL STUDIES - Associate in Arts for Transfer",
+   "h1": "GLOBAL STUDIES - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2593
+ },
+ {
+  "control_number": "36603",
+  "title": "SOCIAL JUSTICE STUDIES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH220",
+   "ANTH221",
+   "ANTH225",
+   "ART209",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211",
+   "ASHS218",
+   "CDFS215",
+   "CJ224",
+   "COMM212",
+   "EDUC210",
+   "ENGL213",
+   "ENGL217",
+   "ETHN210",
+   "ETHN211",
+   "ETHN213",
+   "ETHN219",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN235",
+   "ETHN240",
+   "ETHN250",
+   "ETHN260",
+   "ETHN270",
+   "GLST210",
+   "GLST220",
+   "HIST203B",
+   "HIST212",
+   "HIST233",
+   "HIST237",
+   "HSCI203",
+   "HSCI208",
+   "MUS236",
+   "MUS238",
+   "POLS204",
+   "PSYC200",
+   "SOC202",
+   "SOC206",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30249",
+   "title": "SOCIAL JUSTICE STUDIES - Associate in Arts for Transfer",
+   "h1": "SOCIAL JUSTICE STUDIES - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 4847
+ },
+ {
+  "control_number": "36738",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "BIO201A",
+   "BIO211",
+   "BIO212",
+   "BIO212L",
+   "CDFS201",
+   "CDFS234",
+   "COMMC1000",
+   "DRA207",
+   "EDUC200",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "GEOG225",
+   "HIST203A",
+   "HIST210",
+   "HISTC1001",
+   "HSCI202",
+   "MATH220",
+   "MUS235",
+   "POLSC1000",
+   "PSCI210",
+   "PSCI211",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30132",
+   "title": "ELEMENTARY TEACHER EDUCATION - Associate in Arts for Transfer",
+   "h1": "ELEMENTARY TEACHER EDUCATION - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3053
+ },
+ {
+  "control_number": "36762",
+  "title": "LAW, PUBLIC POLICY, AND SOCIETY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "ANTH220",
+   "ANTH221",
+   "BUS218",
+   "CJ202",
+   "CJ204",
+   "CJ206",
+   "CJ208",
+   "CJ224",
+   "CJ228",
+   "COMM210",
+   "COMM212",
+   "COMM215",
+   "COMMC1000",
+   "CSS225",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG202",
+   "GLST210",
+   "GLST220",
+   "HIST212",
+   "HIST233",
+   "HIST237",
+   "HISTC1001",
+   "HISTC1002",
+   "HSCI203",
+   "HSCI208",
+   "LGL217",
+   "PHIL208",
+   "PHIL213",
+   "PHS206",
+   "PLGL203",
+   "POLS201",
+   "POLS204",
+   "POLS206",
+   "POLS209",
+   "POLSC1000",
+   "SOC202",
+   "SOC206",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30169",
+   "title": "LAW, PUBLIC POLICY, AND SOCIETY - Associate in Arts for Transfer",
+   "h1": "LAW, PUBLIC POLICY, AND SOCIETY - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 4809
+ },
+ {
+  "control_number": "36960",
+  "title": "Environmental Sciences",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BIO201A",
+   "BIO201B",
+   "CHEM201A",
+   "CHEM201B",
+   "ENVS200",
+   "GEOL210",
+   "MATH255",
+   "MATH265A",
+   "PHYS205A",
+   "PHYS205B",
+   "PHYS208A",
+   "PHYS208B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30139",
+   "title": "ENVIRONMENTAL SCIENCES - Associate in Science for Transfer",
+   "h1": "ENVIRONMENTAL SCIENCES - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2530
+ },
+ {
+  "control_number": "36981",
+  "title": "GED PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37046",
+  "title": "Automotive Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH109",
+   "ATCH152",
+   "ATCH153",
+   "ATCH158",
+   "ATCH168",
+   "ATCH182",
+   "ATCH186",
+   "ATCH188",
+   "ATCH280",
+   "ATCH281",
+   "ATCH284"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30089",
+   "title": "AUTOMOTIVE TECHNICIAN - Certificate of Achievement",
+   "h1": "AUTOMOTIVE TECHNICIAN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2147
+ },
+ {
+  "control_number": "37062",
+  "title": "SOCIAL WORK AND HUMAN SERVICES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS210",
+   "ASHS212",
+   "ASHS289",
+   "ASHS289B",
+   "BIO205",
+   "BIO212",
+   "CDFS201",
+   "CDFS202",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHN230",
+   "PHS206",
+   "PSYCC1000",
+   "SOC201A",
+   "SOC206",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30250",
+   "title": "SOCIAL WORK AND HUMAN SERVICES - Associate in Arts for Transfer",
+   "h1": "SOCIAL WORK AND HUMAN SERVICES - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2653
+ },
+ {
+  "control_number": "37077",
+  "title": "MECHANIZED AGRICULTURE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM220",
+   "AGM221",
+   "AGM222",
+   "AGM223",
+   "WELD270A",
+   "WELD275"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30187",
+   "title": "MECHANIZED AGRICULTURE - Certificate of Achievement",
+   "h1": "MECHANIZED AGRICULTURE - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1124
+ },
+ {
+  "control_number": "37078",
+  "title": "ADDICTION TREATMENT STUDIES",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS205",
+   "ASHS270",
+   "ASHS271",
+   "ASHS278",
+   "ASHS279",
+   "ASHS280",
+   "ASHS289",
+   "ASHS289A",
+   "PHS206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30074",
+   "title": "ADDICTION TREATMENT  STUDIES - Certificate of Achievement",
+   "h1": "ADDICTION TREATMENT  STUDIES - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2088
+ },
+ {
+  "control_number": "37079",
+  "title": "ADDICTION TREATMENT STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS205",
+   "ASHS270",
+   "ASHS271",
+   "ASHS278",
+   "ASHS279",
+   "ASHS280",
+   "ASHS289",
+   "ASHS289A",
+   "PHS206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30073",
+   "title": "ADDICTION TREATMENT  STUDIES - Associate in Arts",
+   "h1": "ADDICTION TREATMENT  STUDIES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2079
+ },
+ {
+  "control_number": "37170",
+  "title": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATCH152",
+   "ATCH153",
+   "ATCH158",
+   "ATCH160",
+   "ATCH186",
+   "ATCH284"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30181",
+   "title": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN - Certificate of Achievement",
+   "h1": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1163
+ },
+ {
+  "control_number": "37252",
+  "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE LEVEL IV",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL705",
+   "ESL715"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30205",
+   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL IV - Certificate of Competency",
+   "h1": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL IV - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1187
+ },
+ {
+  "control_number": "37253",
+  "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL706",
+   "ESL716"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30206",
+   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V - Certificate of Competency",
+   "h1": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1056
+ },
+ {
+  "control_number": "37255",
+  "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE GRAMMAR",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37257",
+  "title": "NONCREDIT AUTO/BODY COLLISION REPAIR",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABOD570",
+   "ABOD571"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30196",
+   "title": "NONCREDIT AUTO/BODY COLLISION REPAIR - Certificate of Completion",
+   "h1": "NONCREDIT AUTO/BODY COLLISION REPAIR - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1075
+ },
+ {
+  "control_number": "37258",
+  "title": "NONCREDIT AUTOMOTIVE REFINISH REPAIR",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABOD575",
+   "ABOD577"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30197",
+   "title": "NONCREDIT AUTOMOTIVE REFINISH REPAIR - Certificate of Completion",
+   "h1": "NONCREDIT AUTOMOTIVE REFINISH REPAIR - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1129
+ },
+ {
+  "control_number": "37339",
+  "title": "HOSPITALITY MANAGEMENT",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "BUS218",
+   "CUL210",
+   "CUL215",
+   "ECONC2001",
+   "HOSP200",
+   "HOSP230",
+   "HOSP250",
+   "HOSP270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30158",
+   "title": "HOSPITALITY MANAGEMENT - Associate in Science for Transfer",
+   "h1": "HOSPITALITY MANAGEMENT - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2222
+ },
+ {
+  "control_number": "37433",
+  "title": "MUSIC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS204A",
+   "MUS204B",
+   "MUS204C",
+   "MUS205A",
+   "MUS205B",
+   "MUS205C",
+   "MUS212",
+   "MUS220",
+   "MUS222",
+   "MUS223",
+   "MUS225",
+   "MUS228",
+   "MUS229",
+   "MUS231",
+   "MUS232",
+   "MUS233",
+   "MUS234",
+   "MUS240",
+   "MUS245",
+   "MUS257",
+   "MUS259",
+   "MUS271"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30193",
+   "title": "MUSIC - Certificate of Achievement",
+   "h1": "MUSIC - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 1909
+ },
+ {
+  "control_number": "37435",
+  "title": "PREMEDICAL STUDIES",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO201A",
+   "BIO201B",
+   "CHEM201A",
+   "CHEM201B",
+   "CHEM212A",
+   "CHEM212B",
+   "CHEM231",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "MATH229",
+   "MATH231",
+   "MATH242",
+   "MATH265A",
+   "MATH265B",
+   "PHYS205A",
+   "PHYS205B",
+   "PHYS208A",
+   "PHYS208B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30237",
+   "title": "PREMEDICAL STUDIES - Certificate of Achievement",
+   "h1": "PREMEDICAL STUDIES - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2645
+ },
+ {
+  "control_number": "37543",
+  "title": "NONCREDIT READING, WRITING, AND GRAMMAR",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37651",
+  "title": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS205",
+   "CDFS206",
+   "CDFS215",
+   "CDFS234"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30232",
+   "title": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS - Certificate of Achievement",
+   "h1": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2063
+ },
+ {
+  "control_number": "37979",
+  "title": "CERAMICS",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART280",
+   "ART281A",
+   "ART281B",
+   "ART282",
+   "ART283",
+   "ART284",
+   "ART293"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30102",
+   "title": "CERAMICS - Certificate of Achievement",
+   "h1": "CERAMICS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1973
+ },
+ {
+  "control_number": "37980",
+  "title": "PHOTOGRAPHY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART244",
+   "ART245",
+   "ART249A",
+   "ART249B",
+   "ART251",
+   "ART252",
+   "ART293"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30229",
+   "title": "PHOTOGRAPHY - Certificate of Achievement",
+   "h1": "PHOTOGRAPHY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1867
+ },
+ {
+  "control_number": "37981",
+  "title": "SCULPTURE FOUNDRY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART270",
+   "ART271",
+   "ART272",
+   "ART274A",
+   "ART274B",
+   "ART274C",
+   "ART293"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30245",
+   "title": "SCULPTURE FOUNDRY - Certificate of Achievement",
+   "h1": "SCULPTURE FOUNDRY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1866
+ },
+ {
+  "control_number": "38201",
+  "title": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE608",
+   "VOCE609",
+   "VOCE610",
+   "VOCE611",
+   "VOCE612"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30199",
+   "title": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS - Certificate of Completion",
+   "h1": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 858
+ },
+ {
+  "control_number": "38246",
+  "title": "NONCREDIT ACCOUNTING BASICS FOR SMALL BUSINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38249",
+  "title": "NONCREDIT WORKPLACE ESSENTIALS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38250",
+  "title": "NONCREDIT BASIC INTERNET SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE594",
+   "VOCE595",
+   "VOCE596"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30198",
+   "title": "NONCREDIT BASIC INTERNET SKILLS - Certificate of Completion",
+   "h1": "NONCREDIT BASIC INTERNET SKILLS - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1004
+ },
+ {
+  "control_number": "38254",
+  "title": "NONCREDIT BEGINNING COMPUTER SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE598",
+   "VOCE599",
+   "VOCE600",
+   "VOCE601"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30200",
+   "title": "NONCREDIT BEGINNING COMPUTER SKILLS - Certificate of Completion",
+   "h1": "NONCREDIT BEGINNING COMPUTER SKILLS - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 800
+ },
+ {
+  "control_number": "38260",
+  "title": "NONCREDIT CAREER STRATEGIST",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKFP561",
+   "WKFP562"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30201",
+   "title": "NONCREDIT CAREER STRATEGIST - Certificate of Completion",
+   "h1": "NONCREDIT CAREER STRATEGIST - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1343
+ },
+ {
+  "control_number": "38261",
+  "title": "NONCREDIT CUSTOMER RELATIONS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38271",
+  "title": "NONCREDIT EFFECTIVE MARKETING COMMUNICATION MANAGEMENT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38273",
+  "title": "NONCREDIT EMERGING LEADERS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38274",
+  "title": "NONCREDIT ENTERPRISE COMMUNICATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38275",
+  "title": "NONCREDIT ENTERPRISE COMMUNICATION 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38276",
+  "title": "NONCREDIT THRIVE AND SURVIVE IN THE WORKPLACE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38303",
+  "title": "NONCREDIT MANAGING TO MAXIMIZE PERFORMANCE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38304",
+  "title": "NONCREDIT MANAGEMENT TOOL BOX",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38305",
+  "title": "NONCREDIT HIGH PERFORMANCE TEAMS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38358",
+  "title": "GEOGRAPHIC INFORMATION SYSTEMS",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOL230",
+   "GEOL231",
+   "GEOL232",
+   "GEOL233",
+   "GEOL234"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30150",
+   "title": "GEOGRAPHIC INFORMATION SYSTEMS - Certificate of Achievement",
+   "h1": "GEOGRAPHIC INFORMATION SYSTEMS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1927
+ },
+ {
+  "control_number": "38384",
+  "title": "HOSPITALITY MANAGEMENT NONCREDIT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP700",
+   "HOSP730",
+   "HOSP750"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30160",
+   "title": "HOSPITALITY MANAGEMENT NONCREDIT - Certificate of Completion",
+   "h1": "HOSPITALITY MANAGEMENT NONCREDIT - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 994
+ },
+ {
+  "control_number": "38409",
+  "title": "NONCREDIT COMPUTER TECHNICIAN INTERNSHIP PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38410",
+  "title": "NONCREDIT COMPUTER AND DEVICE FUNDAMENTALS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38465",
+  "title": "AUDIO TECHNOLOGY I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS201",
+   "MUS240",
+   "MUS241",
+   "MUS242",
+   "MUS243"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30085",
+   "title": "AUDIO TECHNOLOGY I - Certificate of Achievement",
+   "h1": "AUDIO TECHNOLOGY I - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1693
+ },
+ {
+  "control_number": "38466",
+  "title": "ADDICTION STUDIES FOUNDATION",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS270",
+   "ASHS271",
+   "ASHS278",
+   "ASHS279",
+   "PHS206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30072",
+   "title": "ADDICTION STUDIES FOUNDATION - Certificate of Achievement",
+   "h1": "ADDICTION STUDIES FOUNDATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1491
+ },
+ {
+  "control_number": "38467",
+  "title": "NUTRITION EDUCATION/COACHING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NUTR210",
+   "NUTR211",
+   "NUTR218",
+   "NUTR222",
+   "NUTR230",
+   "NUTR232",
+   "NUTR240",
+   "NUTR249"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30217",
+   "title": "NUTRITION EDUCATION/COACHING - Certificate of Achievement",
+   "h1": "NUTRITION EDUCATION/COACHING - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2197
+ },
+ {
+  "control_number": "38468",
+  "title": "HOSPITALITY MANAGEMENT FOUNDATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS218",
+   "CUL215",
+   "HOSP200",
+   "HOSP230",
+   "HOSP250",
+   "HOSP270"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30159",
+   "title": "HOSPITALITY MANAGEMENT FOUNDATION - Certificate of Achievement",
+   "h1": "HOSPITALITY MANAGEMENT FOUNDATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1156
+ },
+ {
+  "control_number": "38469",
+  "title": "PARAPROFESSIONAL COUNSELING SKILLS",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS210",
+   "ASHS271",
+   "ASHS279",
+   "ASHS280",
+   "ASHS289",
+   "ASHS289D"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30222",
+   "title": "PARAPROFESSIONAL COUNSELING SKILLS - Certificate of Achievement",
+   "h1": "PARAPROFESSIONAL COUNSELING SKILLS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1202
+ },
+ {
+  "control_number": "38470",
+  "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS205"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30106",
+   "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER - Certificate of Achievement",
+   "h1": "CHILD DEVELOPMENT ASSOCIATE TEACHER - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1570
+ },
+ {
+  "control_number": "38471",
+  "title": "CHILD DEVELOPMENT SITE SUPERVISOR",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS205",
+   "CDFS206",
+   "CDFS215",
+   "CDFS216",
+   "CDFS245",
+   "CDFS246",
+   "CDFS248"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30108",
+   "title": "CHILD DEVELOPMENT SITE SUPERVISOR - Certificate of Achievement",
+   "h1": "CHILD DEVELOPMENT SITE SUPERVISOR - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2247
+ },
+ {
+  "control_number": "38472",
+  "title": "PARENTING EDUCATION/FAMILY ADVOCACY",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS278",
+   "CDFS201",
+   "CDFS202",
+   "CDFS217",
+   "CDFS235",
+   "CDFS240"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30226",
+   "title": "PARENTING EDUCATION/FAMILY ADVOCACY - Certificate of Achievement",
+   "h1": "PARENTING EDUCATION/FAMILY ADVOCACY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1517
+ },
+ {
+  "control_number": "38479",
+  "title": "CHILD DEVELOPMENT MASTER TEACHER",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS204",
+   "CDFS205",
+   "CDFS206",
+   "CDFS211",
+   "CDFS212",
+   "CDFS215",
+   "CDFS216",
+   "CDFS217",
+   "CDFS220",
+   "CDFS221",
+   "CDFS223",
+   "CDFS234",
+   "CDFS235",
+   "CDFS236",
+   "CDFS237",
+   "CDFS240",
+   "CDFS242",
+   "CDFS245"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
+   "title": "CHILD DEVELOPMENT MASTER TEACHER - Certificate of Achievement",
+   "h1": "CHILD DEVELOPMENT MASTER TEACHER - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2523
+ },
+ {
+  "control_number": "38500",
+  "title": "POWER AND INSTRUMENTATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EET227",
+   "EET228",
+   "EET257",
+   "EET267"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30236",
+   "title": "POWER AND INSTRUMENTATION - Certificate of Achievement",
+   "h1": "POWER AND INSTRUMENTATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1791
+ },
+ {
+  "control_number": "38515",
+  "title": "EQUIPMENT TECHNICIAN",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM220",
+   "AGM221",
+   "AGM223",
+   "ATCH109",
+   "ATCH158",
+   "ATCH160",
+   "ATCH182",
+   "ATCH188",
+   "ATCH255",
+   "ATCH269",
+   "ATCH281",
+   "EET227"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30140",
+   "title": "EQUIPMENT TECHNICIAN - Certificate of Achievement",
+   "h1": "EQUIPMENT TECHNICIAN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1703
+ },
+ {
+  "control_number": "38687",
+  "title": "NONCREDIT STRUCTURAL STEEL CERTIFICATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD770A",
+   "WELD770B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30210",
+   "title": "NONCREDIT STRUCTURAL STEEL CERTIFICATION - Certificate of Completion",
+   "h1": "NONCREDIT STRUCTURAL STEEL CERTIFICATION - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1675
+ },
+ {
+  "control_number": "38689",
+  "title": "NONCREDIT FOSTER YOUTH CHILD ADVOCATE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38772",
+  "title": "NONCREDIT ESL: BEGINNING CONVERSATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL720",
+   "ESL721"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30207",
+   "title": "NONCREDIT ESL: BEGINNING CONVERSATION - Certificate of Competency",
+   "h1": "NONCREDIT ESL: BEGINNING CONVERSATION - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 778
+ },
+ {
+  "control_number": "38836",
+  "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS205",
+   "CDFS215",
+   "CDFS236",
+   "CDFS237",
+   "EDUC200",
+   "EDUC220"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30225",
+   "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING - Certificate of Achievement",
+   "h1": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "38837",
+  "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS205",
+   "CDFS215",
+   "CDFS236",
+   "CDFS237",
+   "EDUC200",
+   "EDUC220"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30224",
+   "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING - Associate in Arts",
+   "h1": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3799
+ },
+ {
+  "control_number": "39678",
+  "title": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "EDUC200",
+   "EDUC210"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30155",
+   "title": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY - Certificate of Achievement",
+   "h1": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1747
+ },
+ {
+  "control_number": "39907",
+  "title": "CLOUD COMPUTING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS201",
+   "CS203",
+   "CS207",
+   "CS220",
+   "CS223",
+   "CS225",
+   "CS226"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30110",
+   "title": "CLOUD COMPUTING - Certificate of Achievement",
+   "h1": "CLOUD COMPUTING - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1430
+ },
+ {
+  "control_number": "39908",
+  "title": "CULINARY ARTS STUDIES",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "CUL210",
+   "CUL215",
+   "CUL220",
+   "CUL225",
+   "CUL241",
+   "CUL242",
+   "CUL243",
+   "CUL245",
+   "CUL255",
+   "CUL260",
+   "CUL261",
+   "CUL290",
+   "HOSP200",
+   "HOSP230",
+   "HOSP270",
+   "NUTR210"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30122",
+   "title": "CULINARY ARTS STUDIES - Certificate of Achievement",
+   "h1": "CULINARY ARTS STUDIES - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2218
+ },
+ {
+  "control_number": "39909",
+  "title": "MANAGEMENT SPECIALIZATION",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT251",
+   "BUS248",
+   "BUS283",
+   "BUS285"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30183",
+   "title": "MANAGEMENT SPECIALIZATION - Certificate of Achievement",
+   "h1": "MANAGEMENT SPECIALIZATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1081
+ },
+ {
+  "control_number": "39911",
+  "title": "VITICULTURE",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS230",
+   "AGPS241",
+   "AGPS242",
+   "AGPS250",
+   "AGPS251"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30259",
+   "title": "VITICULTURE - Certificate of Achievement",
+   "h1": "VITICULTURE - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1352
+ },
+ {
+  "control_number": "40057",
+  "title": "FARM MANAGEMENT",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGB202",
+   "AGB205",
+   "AGB206",
+   "AGM220",
+   "AGPS230",
+   "AGPS241",
+   "AGPS242"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30145",
+   "title": "FARM MANAGEMENT - Certificate of Achievement",
+   "h1": "FARM MANAGEMENT - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1245
+ },
+ {
+  "control_number": "40085",
+  "title": "CULINARY ARTS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "AGPS246",
+   "CUL210",
+   "CUL215",
+   "CUL220",
+   "CUL225",
+   "CUL241",
+   "CUL242",
+   "CUL243",
+   "CUL245",
+   "CUL252",
+   "CUL255",
+   "CUL260",
+   "CUL261",
+   "CUL290",
+   "HOSP200",
+   "NUTR210",
+   "NUTR249"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30123",
+   "title": "CULINARY ARTS - Associate in Science",
+   "h1": "CULINARY ARTS - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2485
+ },
+ {
+  "control_number": "40104",
+  "title": "INCLUSION AND SPECIAL NEEDS",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDFS201",
+   "CDFS215",
+   "CDFS235",
+   "CDFS236",
+   "CDFS237"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30162",
+   "title": "INCLUSION AND SPECIAL NEEDS - Certificate of Achievement",
+   "h1": "INCLUSION AND SPECIAL NEEDS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1655
+ },
+ {
+  "control_number": "40825",
+  "title": "EMPLOYABILITY & TRANSITIONS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NAWD701",
+   "NAWD705",
+   "NAWD710",
+   "NAWD730"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30135",
+   "title": "EMPLOYABILITY & TRANSITIONS - Certificate of Competency",
+   "h1": "EMPLOYABILITY & TRANSITIONS - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 817
+ },
+ {
+  "control_number": "40856",
+  "title": "CALIFORNIA CONSERVATION AWARENESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE725A",
+   "VOCE725B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30100",
+   "title": "CALIFORNIA CONSERVATION AWARENESS - Certificate of Completion",
+   "h1": "CALIFORNIA CONSERVATION AWARENESS - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 736
+ },
+ {
+  "control_number": "41234",
+  "title": "EXERCISE SCIENCE - FITNESS PROFESSIONAL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSCI204",
+   "KINE213",
+   "KINE214",
+   "KINE218",
+   "KINE219",
+   "KINE220",
+   "KINE224",
+   "NUTR240"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30144",
+   "title": "EXERCISE SCIENCE - FITNESS PROFESSIONAL - Certificate of Achievement",
+   "h1": "EXERCISE SCIENCE - FITNESS PROFESSIONAL - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2065
+ },
+ {
+  "control_number": "41526",
+  "title": "COMMERCIAL MUSIC",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS201",
+   "MUS204A",
+   "MUS205A",
+   "MUS210",
+   "MUS210B",
+   "MUS211",
+   "MUS212",
+   "MUS220",
+   "MUS222",
+   "MUS223",
+   "MUS224A",
+   "MUS224B",
+   "MUS225",
+   "MUS227",
+   "MUS228",
+   "MUS229",
+   "MUS231",
+   "MUS232",
+   "MUS232A",
+   "MUS233",
+   "MUS244A",
+   "MUS244B",
+   "MUS245",
+   "MUS257",
+   "MUS258",
+   "MUS259",
+   "MUS270",
+   "MUS271"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30112",
+   "title": "COMMERCIAL MUSIC - Certificate of Achievement",
+   "h1": "COMMERCIAL MUSIC - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 2142
+ },
+ {
+  "control_number": "41555",
+  "title": "FITNESS AND HEALTH",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41742",
+  "title": "BUSINESS ADMINISTRATION 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "BUS218",
+   "BUS227",
+   "BUS245",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH255",
+   "MATH265A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096",
+   "title": "BUSINESS ADMINISTRATION 2.0 - Associate in Science for Transfer",
+   "h1": "BUSINESS ADMINISTRATION 2.0 - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2101
+ },
+ {
+  "control_number": "41744",
+  "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVMT110",
+   "AVMT110A",
+   "AVMT110B",
+   "AVMT120",
+   "AVMT120A",
+   "AVMT120B",
+   "AVMT130",
+   "AVMT140",
+   "AVMT150",
+   "AVMT160",
+   "AVMT170",
+   "AVMT180"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
+   "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement",
+   "h1": "AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1617
+ },
+ {
+  "control_number": "42040",
+  "title": "DIGITAL COMMERCE CONCENTRATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT251",
+   "BUS230",
+   "BUS231",
+   "BUS232",
+   "BUS233",
+   "BUS234"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30125",
+   "title": "DIGITAL COMMERCE CONCENTRATION - Certificate of Achievement",
+   "h1": "DIGITAL COMMERCE CONCENTRATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2008
+ },
+ {
+  "control_number": "42042",
+  "title": "ACCOUNTING CONCENTRATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "ACCT203",
+   "ACCT252A",
+   "ACCT252B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30071",
+   "title": "ACCOUNTING CONCENTRATION - Certificate of Achievement",
+   "h1": "ACCOUNTING CONCENTRATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1433
+ },
+ {
+  "control_number": "42043",
+  "title": "GENERAL BUSINESS CONCENTRATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT201B",
+   "ACCT203",
+   "ACCT251",
+   "ACCT252A",
+   "ACCT252B",
+   "AGB201",
+   "AGB202",
+   "AGB204",
+   "AGB205",
+   "AGB206",
+   "AGB210",
+   "BUS218",
+   "BUS220",
+   "BUS227",
+   "BUS230",
+   "BUS231",
+   "BUS232",
+   "BUS233",
+   "BUS234",
+   "BUS243",
+   "BUS245",
+   "BUS248",
+   "BUS249",
+   "BUS283",
+   "BUS285",
+   "CIS210",
+   "CIS216",
+   "ECON200",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30149",
+   "title": "GENERAL BUSINESS CONCENTRATION - Certificate of Achievement",
+   "h1": "GENERAL BUSINESS CONCENTRATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 2634
+ },
+ {
+  "control_number": "42044",
+  "title": "MARKETING CONCENTRATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT251",
+   "AGB204",
+   "BUS230",
+   "BUS231",
+   "BUS243"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30184",
+   "title": "MARKETING CONCENTRATION - Certificate of Achievement",
+   "h1": "MARKETING CONCENTRATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 968
+ },
+ {
+  "control_number": "42045",
+  "title": "SMALL BUSINESS MANAGEMENT CONCENTRATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT251",
+   "AGB206",
+   "BUS231",
+   "BUS234",
+   "BUS243",
+   "BUS248",
+   "BUS249",
+   "BUS283",
+   "BUS285"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30248",
+   "title": "SMALL BUSINESS MANAGEMENT CONCENTRATION - Certificate of Achievement",
+   "h1": "SMALL BUSINESS MANAGEMENT CONCENTRATION - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1399
+ },
+ {
+  "control_number": "42046",
+  "title": "MULTIMEDIA JOURNALISM",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART249A",
+   "ART258",
+   "ART265",
+   "FTVE223",
+   "JOUR202C",
+   "JOUR203A",
+   "JOUR203B",
+   "JOUR203C",
+   "JOUR203D",
+   "JOUR205",
+   "JOUR206"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30191",
+   "title": "MULTIMEDIA JOURNALISM - Certificate of Achievement",
+   "h1": "MULTIMEDIA JOURNALISM - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2435
+ },
+ {
+  "control_number": "42411",
+  "title": "CHILD DEVELOPMENT AND FAMILY STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS212",
+   "ASHS214",
+   "ASHS278",
+   "CDFS201",
+   "CDFS202",
+   "CDFS217",
+   "CDFS240",
+   "NUTR218"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30105",
+   "title": "CHILD DEVELOPMENT AND FAMILY STUDIES - Associate in Arts",
+   "h1": "CHILD DEVELOPMENT AND FAMILY STUDIES - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2004
+ },
+ {
+  "control_number": "42763",
+  "title": "COMMUNICATION STUDIES 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH203",
+   "COMM210",
+   "COMM212",
+   "COMM215",
+   "COMM230",
+   "COMM280",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "FTVE221",
+   "JOUR200",
+   "JOUR201",
+   "PSYCC1000",
+   "SOC201A"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113",
+   "title": "COMMUNICATION STUDIES 2.0 - Associate in Arts for Transfer",
+   "h1": "COMMUNICATION STUDIES 2.0 - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2519
+ },
+ {
+  "control_number": "42770",
+  "title": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUC200",
+   "HSCI204"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30101",
+   "title": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION - Associate in Science",
+   "h1": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1091
+ },
+ {
+  "control_number": "42774",
+  "title": "SPORTS MEDICINE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO205",
+   "HSCI204",
+   "KINE210",
+   "KINE211",
+   "KINE213",
+   "KINE214"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30254",
+   "title": "SPORTS MEDICINE - Certificate of Achievement",
+   "h1": "SPORTS MEDICINE - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1487
+ },
+ {
+  "control_number": "42865",
+  "title": "ESL CITIZENSHIP",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL707A",
+   "ESL707B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30141",
+   "title": "ESL CITIZENSHIP - Certificate of Competency",
+   "h1": "ESL CITIZENSHIP - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 925
+ },
+ {
+  "control_number": "42883",
+  "title": "TRANSITIONS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL797",
+   "ESL798"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30258",
+   "title": "TRANSITIONS - Certificate of Competency",
+   "h1": "TRANSITIONS - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 977
+ },
+ {
+  "control_number": "42891",
+  "title": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSS725",
+   "CSS754"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30069",
+   "title": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT - Certificate of Completion",
+   "h1": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 959
+ },
+ {
+  "control_number": "42973",
+  "title": "AVIATION MECHANIC - GENERAL",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVMT110",
+   "AVMT110A",
+   "AVMT110B",
+   "AVMT120",
+   "AVMT120A",
+   "AVMT120B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30092",
+   "title": "AVIATION MECHANIC - GENERAL - Certificate of Achievement",
+   "h1": "AVIATION MECHANIC - GENERAL - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1418
+ },
+ {
+  "control_number": "43036",
+  "title": "AVIATION MECHANIC - AIRFRAME",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVMT110",
+   "AVMT110A",
+   "AVMT110B",
+   "AVMT120",
+   "AVMT120A",
+   "AVMT120B",
+   "AVMT130",
+   "AVMT140",
+   "AVMT150"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30090",
+   "title": "AVIATION MECHANIC - AIRFRAME - Certificate of Achievement",
+   "h1": "AVIATION MECHANIC - AIRFRAME - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1709
+ },
+ {
+  "control_number": "43053",
+  "title": "AVIATION MECHANIC - POWERPLANT",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVMT110",
+   "AVMT110A",
+   "AVMT110B",
+   "AVMT120",
+   "AVMT120A",
+   "AVMT120B",
+   "AVMT160",
+   "AVMT170",
+   "AVMT180"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
+   "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement",
+   "h1": "AVIATION MECHANIC - AIRFRAME & POWERPLANT - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1617
+ },
+ {
+  "control_number": "43368",
+  "title": "TECHNICAL THEATER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRA207",
+   "DRA211",
+   "DRA212",
+   "DRA236",
+   "DRA237",
+   "DRA240",
+   "DRA241",
+   "DRA242",
+   "DRA243",
+   "MUS240"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30256",
+   "title": "TECHNICAL THEATER - Certificate of Achievement",
+   "h1": "TECHNICAL THEATER - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1595
+ },
+ {
+  "control_number": "43682",
+  "title": "LIBERAL ARTS: HEALTH AND WELLNESS",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS205",
+   "ASHS212",
+   "ASHS262",
+   "ASHS270",
+   "ASHS280",
+   "BIO205",
+   "BIO212",
+   "CUL241",
+   "CUL242",
+   "EMS201",
+   "ETHN262",
+   "HSCI202",
+   "HSCI203",
+   "HSCI204",
+   "HSCI208",
+   "KINA201",
+   "KINA202",
+   "KINA203",
+   "KINA204",
+   "KINA205",
+   "KINA206",
+   "KINA209",
+   "KINA210",
+   "KINA214",
+   "KINA217",
+   "KINA222",
+   "KINA223",
+   "KINA224",
+   "KINA225",
+   "KINA226",
+   "KINA227",
+   "KINA228",
+   "KINA229",
+   "KINA231",
+   "KINA232",
+   "KINA233",
+   "KINA234",
+   "KINA235",
+   "KINA237",
+   "KINA239",
+   "KINA241",
+   "KINA244",
+   "KINA245",
+   "KINA246",
+   "KINA251",
+   "KINA294",
+   "KINE201",
+   "KINE213",
+   "KINE214",
+   "KINE218",
+   "KINE219",
+   "KINE220",
+   "KINE221",
+   "KINE224",
+   "NRAD222",
+   "NUTR210",
+   "NUTR211",
+   "NUTR218",
+   "NUTR222",
+   "NUTR224",
+   "NUTR230",
+   "NUTR232",
+   "NUTR240",
+   "NUTR249",
+   "NUTR250",
+   "PHS206",
+   "PHS210",
+   "PHS212",
+   "REC201"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30174",
+   "title": "LIBERAL ARTS: HEALTH AND WELLNESS  - Associate in Arts",
+   "h1": "LIBERAL ARTS: HEALTH AND WELLNESS  - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 69,
+  "text_chars": 5386
+ },
+ {
+  "control_number": "43707",
+  "title": "ETHNIC STUDIES FOR EDUCATORS",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUC200",
+   "EDUC210",
+   "EDUC252",
+   "ETHN210",
+   "ETHN211",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN240",
+   "ETHN250",
+   "ETHN252",
+   "ETHN260",
+   "ETHN262",
+   "ETHN270"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30143",
+   "title": "ETHNIC STUDIES FOR EDUCATORS - Certificate of Achievement",
+   "h1": "ETHNIC STUDIES FOR EDUCATORS - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2573
+ },
+ {
+  "control_number": "43775",
+  "title": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "BIO201A",
+   "BIO211",
+   "BIO212",
+   "BIO212L",
+   "CDFS201",
+   "CDFS202",
+   "CDFS203",
+   "CDFS205",
+   "CDFS234",
+   "CDFS235",
+   "COMMC1000",
+   "DRA207",
+   "EDUC200",
+   "EDUC210",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETHN210",
+   "HIST203A",
+   "HISTC1001",
+   "MUS235",
+   "PHIL206",
+   "PHIL212",
+   "PHIL213",
+   "PSCI210",
+   "PSCI211",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30131",
+   "title": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP) - Associate in Arts",
+   "h1": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP) - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3614
+ },
+ {
+  "control_number": "43794",
+  "title": "MATH PREPARATION FOR COLLEGE SUCCESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSNC530",
+   "BSNC547"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30185",
+   "title": "MATH PREPARATION FOR COLLEGE SUCCESS - Certificate of Competency",
+   "h1": "MATH PREPARATION FOR COLLEGE SUCCESS - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 880
+ },
+ {
+  "control_number": "44171",
+  "title": "ESSENTIAL RANCHING SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE565A",
+   "VOCE565B",
+   "VOCE565C",
+   "VOCE565D",
+   "VOCE565E"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32560",
+   "title": "ESSENTIAL RANCHING SKILLS - Certificate of Completion",
+   "h1": "ESSENTIAL RANCHING SKILLS - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1437
+ },
+ {
+  "control_number": "44278",
+  "title": "SOCIAL JUSTICE: ETHNIC STUDIES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH220",
+   "ANTH221",
+   "ART209",
+   "ARTH207",
+   "ARTH208",
+   "ARTH210",
+   "ARTH211",
+   "COMM212",
+   "EDUC210",
+   "ENGL213",
+   "ETHN210",
+   "ETHN211",
+   "ETHN213",
+   "ETHN219",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN235",
+   "ETHN240",
+   "ETHN250",
+   "ETHN260",
+   "ETHN270",
+   "HIST203B",
+   "HIST212",
+   "HIST233",
+   "HSCI208",
+   "MUS236",
+   "MUS238",
+   "POLS204",
+   "PSYC200",
+   "SOC206",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32561",
+   "title": "SOCIAL JUSTICE: ETHNIC STUDIES - Associate in Arts for Transfer",
+   "h1": "SOCIAL JUSTICE: ETHNIC STUDIES - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 4120
+ },
+ {
+  "control_number": "44552",
+  "title": "SOCIAL JUSTICE: GENDER STUDIES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS218",
+   "ENGL217",
+   "ETHN219",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN235",
+   "HIST237",
+   "HSCI203",
+   "PSYC200",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32617",
+   "title": "SOCIAL JUSTICE: GENDER STUDIES - Associate in Arts for Transfer",
+   "h1": "SOCIAL JUSTICE: GENDER STUDIES - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2864
+ },
+ {
+  "control_number": "44556",
+  "title": "PUBLIC HEALTH",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS218",
+   "BIO201A",
+   "BIO204",
+   "BIO205",
+   "BIO206",
+   "CHEM200",
+   "CHEM201A",
+   "HSCI202",
+   "HSCI203",
+   "HSCI208",
+   "PHS206",
+   "PHS210",
+   "PHS212",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243",
+   "title": "PUBLIC HEALTH - Associate in Science for Transfer",
+   "h1": "PUBLIC HEALTH - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2442
+ },
+ {
+  "control_number": "44776",
+  "title": "WOMEN'S, FEMINIST, AND QUEER STUDIES",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASHS218",
+   "ENGL217",
+   "ETHN219",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN235",
+   "ETHN250",
+   "ETHN260",
+   "HIST237",
+   "HSCI203",
+   "NUTR218",
+   "SOC208"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32619",
+   "title": "WOMEN'S, FEMINIST, AND QUEER STUDIES - Certificate of Achievement",
+   "h1": "WOMEN'S, FEMINIST, AND QUEER STUDIES - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2659
+ },
+ {
+  "control_number": "44824",
+  "title": "FOOD, NUTRITION, AND SYSTEMS STUDIES",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS246",
+   "BIO201A",
+   "BIO204",
+   "BIO205",
+   "BIO206",
+   "CHEM201A",
+   "CHEM201B",
+   "CHEM211",
+   "CHEM212A",
+   "ENVS200",
+   "MATH232",
+   "MATH265A",
+   "NUTR210",
+   "NUTR222",
+   "NUTR232",
+   "NUTR249",
+   "PHS210",
+   "PHYS205A",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32618",
+   "title": "FOOD, NUTRITION, AND SYSTEMS STUDIES - Associate in Science",
+   "h1": "FOOD, NUTRITION, AND SYSTEMS STUDIES - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2875
+ },
+ {
+  "control_number": "44904",
+  "title": "SOCIAL JUSTICE: CHICANO STUDIES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH207",
+   "ARTH208",
+   "COMM212",
+   "ETHN219",
+   "ETHN230",
+   "ETHN231",
+   "ETHN234",
+   "ETHN235",
+   "ETHN260",
+   "HIST203B",
+   "HIST212",
+   "HSCI208",
+   "POLS204",
+   "PSYC200",
+   "SOC206",
+   "SOC208",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32673",
+   "title": "SOCIAL JUSTICE: CHICANO STUDIES – Associate in Arts for Transfer",
+   "h1": "SOCIAL JUSTICE: CHICANO STUDIES – Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2988
+ },
+ {
+  "control_number": "45157",
+  "title": "COMMERCIAL DRIVER'S LICENSE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE770",
+   "VOCE771",
+   "VOCE772"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32672",
+   "title": "COMMERCIAL DRIVER'S LICENSE - Certificate of Completion",
+   "h1": "COMMERCIAL DRIVER'S LICENSE - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 653
+ },
+ {
+  "control_number": "45182",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45889",
+  "title": "DATA SCIENCE",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGB210",
+   "CIS210",
+   "CS201",
+   "CS217",
+   "CS225",
+   "CS231",
+   "CS232",
+   "CS233",
+   "CS240",
+   "CS241",
+   "ENGR210",
+   "GEOL230",
+   "MATH248",
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "MATH287",
+   "PHIL213",
+   "PSYC200",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32700",
+   "title": "DATA SCIENCE - Associate in Science",
+   "h1": "DATA SCIENCE - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2802
+ },
+ {
+  "control_number": "45890",
+  "title": "DATA SCIENCE",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGB210",
+   "CIS210",
+   "CS201",
+   "CS217",
+   "CS225",
+   "CS231",
+   "CS232",
+   "CS233",
+   "CS240",
+   "CS241",
+   "ENGR210",
+   "GEOL230",
+   "MATH248",
+   "MATH265A",
+   "MATH265B",
+   "MATH283",
+   "MATH287",
+   "PHIL213",
+   "PSYC200",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32701",
+   "title": "DATA SCIENCE - Certificate of Achievement",
+   "h1": "DATA SCIENCE - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2808
+ },
+ {
+  "control_number": "46075",
+  "title": "BLACKSMITHING",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE567A",
+   "VOCE567B"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32702",
+   "title": "BLACKSMITHING - Certificate of Completion",
+   "h1": "BLACKSMITHING - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 774
+ },
+ {
+  "control_number": "46278",
+  "title": "AVIATION MAINTENANCE TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVMT110",
+   "AVMT110A",
+   "AVMT110B",
+   "AVMT120",
+   "AVMT120A",
+   "AVMT120B",
+   "AVMT130",
+   "AVMT140",
+   "AVMT150",
+   "AVMT160",
+   "AVMT170",
+   "AVMT180"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32738",
+   "title": "AVIATION MAINTENANCE TECHNOLOGY - Associate in Science",
+   "h1": "AVIATION MAINTENANCE TECHNOLOGY - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1487
+ },
+ {
+  "control_number": "46389",
+  "title": "AGRICULTURE ANIMAL SCIENCES",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT201A",
+   "ACCT251",
+   "AGAS201",
+   "AGAS210",
+   "AGAS211",
+   "AGAS212",
+   "AGB201",
+   "AGB202",
+   "AGB204",
+   "AGB210",
+   "AGM220",
+   "AGM221",
+   "AGPS241",
+   "AGPS242",
+   "AGPS243",
+   "BIO201A",
+   "BIO211",
+   "CHEM200",
+   "CHEM201A",
+   "CHEM211",
+   "CHEM212A",
+   "ECONC2001",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32751",
+   "title": "AGRICULTURE ANIMAL SCIENCES - Associate in Science for Transfer",
+   "h1": "AGRICULTURE ANIMAL SCIENCES - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3135
+ }
+]

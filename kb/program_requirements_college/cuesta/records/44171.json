@@ -1,0 +1,194 @@
+{
+ "college": "Cuesta College",
+ "control_number": "44171",
+ "shape": "noncredit",
+ "title": "ESSENTIAL RANCHING SKILLS",
+ "award": "Noncredit program",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32560",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6499,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6499,
+    "output_tokens": 1079,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1079,
+  "output_tokens_details": {
+   "thinking_tokens": 253
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04758,
+ "ms": 9562,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    432.0
+   ],
+   "stated": [
+    72.0,
+    432.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESSENTIAL RANCHING SKILLS - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 432
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the components of and create a business plan for a viable ranching, livestock facility, equine facility, or targeted grazing business.",
+    "Describe various livestock species anatomy and physiology using correct terminology.",
+    "Examine and analyze land use planning regulations as they relate to agricultural operations.",
+    "Analyze and explain how to care for livestock while demonstrating sustainable environmental conditions.",
+    "Analyze and demonstrate basic construction and maintenance of various livestock animal facilities while caring for livestock.",
+    "Demonstrate knowledge of general safety procedures and sustainable environmental practices of various livestock facilities."
+   ],
+   "careers": [
+    "ranching related industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 432
+    },
+    "courses": [
+     {
+      "code": "VOCE 565A",
+      "units": 18,
+      "units_max": 108,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 565B",
+      "units": 18,
+      "units_max": 108,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 565C",
+      "units": 18,
+      "units_max": 108,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 565D",
+      "units": 18,
+      "units_max": 108,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 565E",
+      "units": 18,
+      "units_max": 108,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours: each course prints 18.0-108.0 hours; the section prints 'Hours: 72.0- 432.0' and 'Total : 72.0- 432.0' (also '0.0 credits').",
+   "Rule: 'Students must complete 4 of the 5 available courses'. The printed hours range 72-432 is recorded both as the block's stated total and as total_units.",
+   "Career entry 'ranching related industries' is taken from the Program Summary ('employability in ranching related industries'); reviewer may check whether it counts as a career field."
+  ]
+ },
+ "extracted_run": "39063368678"
+}
