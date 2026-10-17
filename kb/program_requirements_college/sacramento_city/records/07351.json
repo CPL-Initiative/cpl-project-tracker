@@ -1,0 +1,274 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "07351",
+ "shape": "degree",
+ "title": "Photography",
+ "award": "A.A. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=594",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11862,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11862,
+    "output_tokens": 1831,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1831,
+  "output_tokens_details": {
+   "thinking_tokens": 531
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08407,
+ "ms": 16653,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 13,
+   "share": 0.846,
+   "missing": [
+    "PHOT37018390",
+    "PHOT39048610"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PHOTO393"
+   ],
+   "flagged": [
+    "PHOTO393"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    26.0
+   ],
+   "stated": [
+    23.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Photography",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "describe technical and aesthetic qualities of successful photographs.",
+    "produce photographs using various camera and digital methods.",
+    "demonstrate a thorough knowledge of current computer software and digital imaging skills as they apply to photography.",
+    "produce photographs using photographic papers and various digital media outputs.",
+    "describe successful working relationships with clients and subjects.",
+    "survey history, careers, styles, and trends in professional photography.",
+    "develop pre-production shoot and planning methods.",
+    "execute shoot production in both the studio and on location.",
+    "demonstrate post production technical and creative solutions.",
+    "develop a marketing plan, materials, and support process.",
+    "develop a small business plan and organizational structure."
+   ],
+   "careers": [
+    "press photographers",
+    "photojournalists",
+    "portrait photographers",
+    "freelance photographers",
+    "editorial photographers",
+    "photo-lab technicians",
+    "Studio Photography",
+    "Portrait & Wedding Photography",
+    "Photographic Lab Technician",
+    "Photojournalism",
+    "Industrial or Architectural Photography"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "PHOTO 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOTO 212",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 280",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 360",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 380",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 364",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 393",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 400",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOTO 410",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOT37018390",
+    "why": "not in the text (Portraiture and Wedding Photography not named in the A.A. section)"
+   },
+   {
+    "code": "PHOT39048610",
+    "why": "not in the text (Studio Lighting Techniques not named; A.A. lists PHOTO 393 Lighting I instead)"
+   }
+  ],
+  "notes": [
+   "The page says the A.A. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this was read as a generic minimum, not a printed degree total, so degree_total is null and electives_fill_degree is true.",
+   "PHOTO 393 Lighting I (3-4 units) is not in the closed list; it may correspond to the stored PHOT39048610 Studio Lighting Techniques.",
+   "Total Units 23 - 26 is recorded as both total_units and the block's stated total.",
+   "Certificate sections on the same pages (Career Photography I, Career Photography II, Photography Certificate) were not read for this record."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

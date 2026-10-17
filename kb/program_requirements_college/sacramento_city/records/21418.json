@@ -1,0 +1,609 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "21418",
+ "shape": "degree",
+ "title": "Intercultural Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=455",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14067,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14067,
+    "output_tokens": 5000,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5000,
+  "output_tokens_details": {
+   "thinking_tokens": 1499
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.15627,
+ "ms": 38041,
+ "seconds": 38.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 33,
+   "listed": 60,
+   "share": 0.55,
+   "missing": [
+    "ANTH310",
+    "ANTH481",
+    "ARTH320",
+    "ARTH324",
+    "ARTH328",
+    "ARTH332",
+    "COMM325",
+    "ENGLT345",
+    "ENGLT480",
+    "ENGLT481",
+    "ETHNS300",
+    "GEOG310",
+    "GREEK401",
+    "GREEK402",
+    "HIST307",
+    "HIST308",
+    "HIST360",
+    "HIST364",
+    "HIST365",
+    "HIST373",
+    "HIST380",
+    "ITAL401",
+    "ITAL402",
+    "PRSIAN401",
+    "PRSIAN402",
+    "SOC321",
+    "SOC482"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "MAND401",
+    "SPAN401",
+    "SPAN402",
+    "SPAN411",
+    "SPAN412",
+    "SPAN413",
+    "SPAN415"
+   ],
+   "flagged": [
+    "MAND401",
+    "SPAN401",
+    "SPAN402",
+    "SPAN411",
+    "SPAN412",
+    "SPAN413",
+    "SPAN415"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 8.0-8.0; the catalog states 26.0-26.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Intercultural Studies Associate in Arts (A.A.) degree",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "explain the ways in which culture and knowledge interconnect with the past, present, and future of human society.",
+    "integrate content knowledge into critical thinking skills around issues of culture, cultural variation, and intercultural interactions, conflicts, and collaborations.",
+    "demonstrate competence in intercultural communication skills essential to success in a globalized and multicultural workplace.",
+    "demonstrate an understanding of the role of culture, geography, and history in diverse human societies and social contexts, both international and domestic.",
+    "communicate with at least basic proficiency in a foreign language, including American Sign Language.",
+    "demonstrate the ability to apply social science principles, humanities content knowledge, and intercultural communication skills in the workplace."
+   ],
+   "careers": [
+    "international business",
+    "international marketing",
+    "international affairs",
+    "import-export trade",
+    "teaching",
+    "social work",
+    "public relations",
+    "international law",
+    "law enforcement",
+    "lobbying"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Language requirement (heading not in extracted text)",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARABIC 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARABIC 402",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 312",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 314",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 316",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAND 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PNJABI 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PNJABI 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 413",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 415",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TGLG 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TGLG 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 310",
+    "why": "not in the extracted text; likely in the earlier part of the section on the preceding page"
+   },
+   {
+    "code": "ANTH 481",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "ARTH 320",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "ARTH 324",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "ARTH 328",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "ARTH 332",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "COMM 325",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "ENGLT 345",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "ENGLT 480",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "ENGLT 481",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "ETHNS 300",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "GEOG 310",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "GREEK 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "GREEK 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 307",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "HIST 308",
+    "why": "named only in the Interdisciplinary Studies: Arts and Humanities section in this text"
+   },
+   {
+    "code": "HIST 360",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "HIST 364",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "HIST 365",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "HIST 373",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "HIST 380",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "ITAL 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "PRSIAN 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "PRSIAN 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 321",
+    "why": "not in the extracted text; likely on the preceding page"
+   },
+   {
+    "code": "SOC 482",
+    "why": "not in the extracted text; likely on the preceding page"
+   }
+  ],
+  "notes": [
+   "The extracted text begins mid-section on page 455; the section heading, program description and the earlier requirement blocks (core and other lists, likely on page 454) are cut off. Only the language list is present, so the blocks do not sum to the printed Total Units: 26.",
+   "Section heading is not printed in the extract; recorded from the sentence 'The Intercultural Studies Associate in Arts (A.A.) degree may be obtained...'.",
+   "Language block: footnote 1 says 'Students must choose only one language to fulfill the 8 unit requirement.' Recorded as choose_units 8. The catalog prints some languages as 'and' pairs (Arabic, Korean, Punjabi, Tagalog, Vietnamese) and others as 'or' chains of four courses; courses were listed individually because two courses of one language are needed for 8 units. The block's heading and any printed block total are cut off.",
+   "MAND 401 and SPAN 401/402/411/412/413/415 are not on the closed list (catalog additions).",
+   "Degree requires Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total printed as a figure for this award.",
+   "DEAF 310-316 appear in the language list; DEAF courses are American Sign Language."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

@@ -1,0 +1,240 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "30481",
+ "shape": "degree",
+ "title": "Chemistry",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=234",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11627,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11627,
+    "output_tokens": 1746,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1746,
+  "output_tokens_details": {
+   "thinking_tokens": 643
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08143,
+ "ms": 14311,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Chemistry",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "understand the language and nomenclature of chemistry.",
+    "utilize problem solving strategies involving data collection, dimensional analysis, interpretation, and drawing reasonable conclusions from data.",
+    "demonstrate basic chemical laboratory skills.",
+    "operate a variety of modern chemical instruments and accurately interpret spectral and chromatographic data.",
+    "understand and apply fundamental chemical principles."
+   ],
+   "careers": [
+    "Chemists",
+    "pharmaceutical or environmental chemists",
+    "educators",
+    "medical researchers",
+    "quality assurance and general scientists",
+    "pharmacists",
+    "medicine",
+    "dentistry",
+    "engineering",
+    "the biological sciences",
+    "earth sciences",
+    "environmental studies",
+    "science education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Organic Chemistry sequence: CHEM 420 and CHEM 421",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Organic Chemistry sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 420",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 421",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Organic Chemistry sequence: CHEM 425 and CHEM 426",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Organic Chemistry sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 425",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 426",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the organic chemistry choice as '[CHEM 420 and CHEM 421] or [CHEM 425 and CHEM 426]' with a combined 8 - 10 units; recorded as two sequence blocks in one option_group, and the 8 - 10 range was not assigned to either block's stated.",
+   "The degree is completed with the Local General Education Pattern or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this generic sentence was not recorded as degree_total, and electives_fill_degree is true.",
+   "The page also contains the A.S. in Chemical Technology and Chemical Technician certificates; only the A.S. in Chemistry section was read.",
+   "Careers recorded include 'Chemists' from the sentence 'Chemists work as ...'; 'pharmaceutical or environmental chemists' kept as printed rather than split."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

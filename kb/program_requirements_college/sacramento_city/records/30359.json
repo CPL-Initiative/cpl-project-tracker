@@ -1,0 +1,298 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "30359",
+ "shape": "degree",
+ "title": "Applied Apparel Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=405",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11834,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11834,
+    "output_tokens": 2647,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2647,
+  "output_tokens_details": {
+   "thinking_tokens": 752
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10028,
+ "ms": 19723,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 15,
+   "courses": 0,
+   "count": 15,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 35,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Applied Apparel Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "draw the clothed figure, rendering the sketch in different styles, poses, and fabrications on developed croquis in different media, emphasizing presentation techniques.",
+    "assemble apparel products, applying techniques that meet the standards of quality construction for sewn products.",
+    "integrate proper use, care, and maintenance of sewing machinery, equipment, and notions.",
+    "apply pattern and fabric selection to appropriate designs that develop required sewing skills.",
+    "apply layout and cutting techniques, use of industrial machines, professional pressing techniques, quality control and production procedures, and grading, sorting, and labeling of garments.",
+    "manipulate pattern blocks and develop style changes with the flat pattern method of designing first patterns from a designer's trade sketch for targeted customers.",
+    "use garment industry terminology and procedures for the process of marker making, multiple layer lay up, and use of industrial cutting equipment.",
+    "construct devices to apply the evaluation of fit problems and the ability to solve figure differences in the garment through fitting skills.",
+    "manipulate fabrics on a dress form to create designs without the use of drafted patterns using a variety of fabrics and design concepts.",
+    "study and apply the elements and principles of design as related to apparel for individuals in contemporary western fashion as compared to the influence of past fashions and other cultures.",
+    "analyze and identify textile fibers, yarns, fabrications, dyestuffs, and finishes, and how they relate to performance and serviceability of materials.",
+    "survey the evolution of apparel styles through history and explore the relationship of recurring style trends to contemporary fashions including sociological, technological, economic, and political factors.",
+    "use microcomputers and Computer Aided Design (CAD) software for the apparel design processes used by manufacturers.",
+    "develop basic patterns and sloper blocks utilizing standard and custom body measurements.",
+    "demonstrate personal management skills such as planning, time management, and the ability to work cooperatively with others."
+   ],
+   "careers": [
+    "cutter-draper",
+    "tailor",
+    "pattern drafter",
+    "alterationist",
+    "fiber artist",
+    "assistant designer",
+    "CAD technician",
+    "computer digitizer",
+    "costing engineer",
+    "customer services",
+    "designer",
+    "design room assistant",
+    "fashion illustrator",
+    "fashion stylist",
+    "first pattern maker",
+    "grader",
+    "manufacturer's sales representative",
+    "marker maker",
+    "operation manager",
+    "piece goods buyer",
+    "product specialist",
+    "production manager",
+    "production pattern maker",
+    "quality controller",
+    "quick response manager",
+    "sales manager",
+    "sample maker",
+    "sewing room supervisor",
+    "showroom assistant",
+    "textile colorist",
+    "textile croquis painter",
+    "textile designer",
+    "textile researcher",
+    "textile tester",
+    "trim buyer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "FASHN 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 351",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 355",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 364",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 368",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 390",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHN 394",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Total Units: 39' for the degree requirements, recorded as total_units and as the block's stated total.",
+   "The degree is completed with either the Local GE Pattern or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this is a minimum-sentence rather than a printed degree total, so degree_total is left null and electives_fill_degree is true. Reviewer may consider 60 as degree_total.",
+   "No GE units are printed.",
+   "Careers combine the program description (cutter-draper, tailor, pattern drafter, alterationist, fiber artist) and the Career Information list; 'tailor' appears in both and is recorded once. The text also mentions self-employment or entrepreneurship, not recorded as a career title.",
+   "The Applied Apparel Studies Construction Certificate section (21 units, its own outcomes) was not read for this record."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

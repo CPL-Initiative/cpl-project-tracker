@@ -1,0 +1,262 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "45841",
+ "shape": "certificate",
+ "title": "Enhanced Air Traffic Control",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=132",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12362,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12362,
+    "output_tokens": 1620,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1620,
+  "output_tokens_details": {
+   "thinking_tokens": 433
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08185,
+ "ms": 13745,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement: Enhanced Air Traffic Control Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "interpret and apply Federal Aviation Regulations that pertain to Air Traffic Control procedures.",
+    "utilize correct air-to-ground and ground-to-air communication terminology and phraseology.",
+    "interpret, prepare, and disseminate terminal and/or en-route weather reports.",
+    "correctly apply Air Traffic Control procedures in simulated terminal, or en-route air traffic control environments.",
+    "properly use air traffic control computer data entry systems and voice communication equipment."
+   ],
+   "careers": [
+    "Air Traffic Controllers",
+    "controllers",
+    "remote pilot operators",
+    "military controllers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ATC 200",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 320",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 321",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 322",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 313",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 323",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 315",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 325",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page begins with the tail of the A.S. degree section (also Total Units: 29); only the Certificate of Achievement section (pages 132-133) was read.",
+   "The 'or' rows pair Terminal courses (ATC 310-313, 315) with En Route courses (ATC 320-323, 325) position by position. The catalog prints no 'select one sequence' heading, so they are recorded as alternatives; prerequisites suggest students follow either a Terminal track or an En Route track. Reviewer may want to model these as two option blocks.",
+   "Student Learning Outcomes and Career Information are printed identically in both the A.S. and certificate sections; recorded from the certificate section.",
+   "Block stated total 29 taken from the certificate's 'Total Units: 29', which follows the course table across the page break."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

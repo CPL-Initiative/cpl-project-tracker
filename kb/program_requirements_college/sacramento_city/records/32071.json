@@ -1,0 +1,229 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "32071",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=416",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11142,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11142,
+    "output_tokens": 1911,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1911,
+  "output_tokens_details": {
+   "thinking_tokens": 750
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08279,
+ "ms": 15832,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "evaluate ideas about the natural universe using testable methodology, differentiate between scientific and non-scientific information, and demonstrate understanding of the scientific method by designing a valid scientific inquiry.",
+    "examine and enumerate orally and/or in writing the importance of continuous examination and modification of accepted ideas as a fundamental element in the progress of science.",
+    "analyze a wide variety of natural phenomena using basic definitions and fundamental theories of natural science.",
+    "apply knowledge of current geologic processes to the understanding of Earth's past geologic history.",
+    "synthesize diverse geological terminology and concepts and be able to explain them to a diverse audience.",
+    "evaluate and analyze contemporary geologic problems including the implications of human activities on geologic resources.",
+    "integrate information about the rate and scale of simple geologic processes and be able to convert between them."
+   ],
+   "careers": [
+    "environmental monitoring",
+    "protection and remediation",
+    "energy and mineral exploration",
+    "paleontology",
+    "vulcanology",
+    "seismology",
+    "climatology",
+    "teaching",
+    "research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 311",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section; the program's main heading (e.g., Associate in Science in Geology for Transfer) is not printed in the text, so section_heading uses the printed 'Degree Requirements' heading.",
+   "'Total Units: 28' is printed under the single required list; recorded as total_units and as the block's stated total.",
+   "The text says the AS-T 'may be obtained by completion of 60 transferable, semester units' including Cal-GETC; this reads as the standard ADT boilerplate rather than a printed degree total, so degree_total is left null. No units are printed for Cal-GETC.",
+   "Career phrase 'environmental monitoring, protection and remediation' may be one field (environmental monitoring, protection and remediation); split into two entries here—reviewer may wish to check.",
+   "Course descriptions for GEOL 305, 306, 308, 325, 345, 391, 495 appear after the program but are not part of the degree requirements."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

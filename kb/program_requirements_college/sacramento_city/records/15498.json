@@ -1,0 +1,286 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "15498",
+ "shape": "degree",
+ "title": "Sociology",
+ "award": "A.A. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=630",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12510,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12510,
+    "output_tokens": 2065,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2065,
+  "output_tokens_details": {
+   "thinking_tokens": 316
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09134,
+ "ms": 16519,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 29,
+   "share": 0.0,
+   "missing": [
+    "ADMJ349",
+    "CSP300",
+    "CSP301",
+    "CSP302",
+    "CSP305",
+    "GERON300",
+    "PSYC320",
+    "SOC300",
+    "SOC301",
+    "SOC302",
+    "SOC305",
+    "SOC310",
+    "SOC318",
+    "SOC319",
+    "SOC321",
+    "SOC335",
+    "SOC341",
+    "SOC343",
+    "SOC344",
+    "SOC345",
+    "SOC347",
+    "SOC350",
+    "SOC375",
+    "SOC380",
+    "SOC382",
+    "SOC385",
+    "SOC482",
+    "WGS302",
+    "WGS304"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Sociology",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADMJ 349",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T and Social Work sections"
+   },
+   {
+    "code": "CSP 300",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "CSP 301",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "CSP 302",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "CSP 305",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "GERON 300",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "PSYC 320",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 300",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 301",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 302",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 305",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 310",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 318",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 319",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 321",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 335",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 341",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 343",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 344",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 345",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 347",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 350",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "SOC 375",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 380",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 382",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 385",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "SOC 482",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in other sections"
+   },
+   {
+    "code": "WGS 302",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   },
+   {
+    "code": "WGS 304",
+    "why": "A.A. in Sociology requirements not in text (section cut off); appears only in A.A.-T section"
+   }
+  ],
+  "notes": [
+   "The catalog text ends mid-sentence in the A.A. in Sociology description ('Students can gain valuable tools in d'), before its Degree Requirements, total, outcomes and career information. No blocks, total, outcomes or careers could be recorded; the reviewer should fetch page 634 of the PDF.",
+   "The A.A. in Sociology description is identical so far to the A.A.-T description, which goes on to name career fields (community planning and development, education, law and law enforcement, profit and non-profit sectors, social work); these were not recorded because that sentence is not printed in the A.A. section's extracted text.",
+   "The A.A.-T in Sociology (18-19 units), A.A. in Intercultural Studies (26 units) and A.A. in Social Work and Community Studies (21 units) sections were not used, as they belong to other awards."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

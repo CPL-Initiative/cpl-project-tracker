@@ -1,0 +1,363 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "30397",
+ "shape": "certificate",
+ "title": "Commercial and Magazine Photography",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=595",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12032,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12032,
+    "output_tokens": 3366,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3366,
+  "output_tokens_details": {
+   "thinking_tokens": 1655
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11545,
+ "ms": 27477,
+ "seconds": 27.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 21,
+   "share": 0.81,
+   "missing": [
+    "PHOT39048610",
+    "PHOT39216880",
+    "PHOTO391",
+    "PHOTO490"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "PHOTO341",
+    "PHOTO350",
+    "PHOTO393",
+    "PHOTO394",
+    "PHOTO402"
+   ],
+   "flagged": [
+    "PHOTO341",
+    "PHOTO350",
+    "PHOTO393",
+    "PHOTO394",
+    "PHOTO402"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    32.0
+   ],
+   "stated": [
+    29.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Career Photography II Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate advanced camera functions with stills and video and techniques associated with their use.",
+    "demonstrate a thorough knowledge of current computer software and digital imaging skills as they apply to photography.",
+    "execute a wide range of technical and creative lighting solutions.",
+    "develop and expand a personal style with pre visualization conceptualization skills.",
+    "apply shooting production skills in both the studio and on location.",
+    "develop a small business plan and organizational structure.",
+    "develop a marketing plan, materials, and support process."
+   ],
+   "careers": [
+    "wedding or portrait photographer",
+    "commercial Photographer",
+    "studio assistant",
+    "studio photographer",
+    "freelance photographer",
+    "lab manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHOTO 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 280",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 380",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 364",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 393",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHOTO 266",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 267",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 268",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 269",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 281",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 282",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 381",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 394",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 400",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 410",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOT39048610",
+    "why": "not in the text (older studio lighting course; no code printed)"
+   },
+   {
+    "code": "PHOT39216880",
+    "why": "not in the text (older commercial/advertising course; no code printed)"
+   },
+   {
+    "code": "PHOTO 391",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOTO 490",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text has no section titled 'Commercial and Magazine Photography'. The section read is 'Career Photography II Certificate', chosen because its description covers magazine, food and beverage photography in studio and on location. Its 29-32 unit total also fits the 30+ unit award bracket. The preceding, untitled section (23-25 units, portrait/wedding-oriented outcomes) is the other candidate; a reviewer should confirm the mapping.",
+   "The elective block heading carries footnote 1: 'Choose any course not used from the previous list.'",
+   "The closed list includes older lighting courses (PHOTO 391, PHOT39048610) that appear to have been replaced by PHOTO 393/394 Lighting I/II in this catalog."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

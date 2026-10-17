@@ -1,0 +1,243 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "35392",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=205",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10321,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10321,
+    "output_tokens": 1919,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1919,
+  "output_tokens_details": {
+   "thinking_tokens": 636
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07966,
+ "ms": 15793,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 23,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S.-T. in Biology",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply the scientific method to pose questions and test hypotheses about the natural world.",
+    "evaluate the design, analysis, and interpretation of scientific experiments.",
+    "successfully perform biological laboratory techniques, including microscopy, and understand laboratory safety protocols.",
+    "define and correctly use a core set of scientific terminology relevant to biological organisms and principles.",
+    "write clear, well organized essays or research papers that demonstrate the ability to integrate the chemical, cellular, organismal, population, and ecosystem levels of biological organization into explanations of biological processes.",
+    "demonstrate an understanding of biological evolution by explaining the diversity and unity of life in terms of evolutionary mechanisms including natural selection.",
+    "apply biological principles to successfully complete upper division coursework in general biology, cell biology, molecular biology, genetics, botany, zoology, marine biology, anatomy, physiology, ecology, and evolution.",
+    "apply the process of science and scientific skills in order to successfully participate in supervised research in a biological science."
+   ],
+   "careers": [
+    "laboratory technologists",
+    "x-ray and respiratory technologists",
+    "physical therapists",
+    "physicians",
+    "nurses",
+    "researchers",
+    "medical field",
+    "foresters",
+    "wildlife and fisheries biologists",
+    "field ecologists",
+    "ethnobiologists",
+    "botanists",
+    "entomologists",
+    "field biology and ecology",
+    "veterinary technicians",
+    "doctors",
+    "veterinary medicine",
+    "agronomists",
+    "plant pathologists",
+    "enologists",
+    "pest management specialists",
+    "agriculture",
+    "educators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 402",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 412",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 422",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 355",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 350",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "MATH 355 is printed with units '41'; read as 4 units with footnote marker 1. Footnote 1: 'Students may substitute MATH 350, or another equivalent Calculus course for MATH 355.' MATH 350 not recorded as an alternative; reviewer may wish to add it (not in closed list).",
+   "The page states the AS-T may be obtained by completion of 60 transferable semester units including Cal-GETC; this reads as the generic ADT requirement statement, so degree_total left null. No GE unit figure printed.",
+   "Career Information text is identical for the A.S.-T and A.S. sections; careers taken from the A.S.-T section. 'researchers' appears twice in the text (medical field and veterinary medicine) and is recorded once.",
+   "A.S. in Biology and Field Ecology Certificate sections on the same pages were not read for this record."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

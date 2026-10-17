@@ -1,0 +1,235 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "45426",
+ "shape": "degree",
+ "title": "Barbering",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=199",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7597,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7597,
+    "output_tokens": 1924,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1924,
+  "output_tokens_details": {
+   "thinking_tokens": 846
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06887,
+ "ms": 16591,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 5,
+   "share": 0.8,
+   "missing": [
+    "BAR100"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 30.0-30.0; the catalog states 32.0-32.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     30.0,
+     30.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the local SCC General Education Requirement pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Programs of Study – Barbering",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "local SCC General Education Requirement",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "apply technical knowledge and practical skills relating to the salon workplace.",
+    "analyze situations by applying experience, knowledge, and communication skills in customer relations, professionalism, salon business, and management.",
+    "measure salon readiness through acquired skills and evaluation.",
+    "formulate, demonstrate, and complete tasks needed to apply to the field of barbering.",
+    "incorporate practical skills using the functional textbook study guide rubric self-assessment scale, available per chapter lesson.",
+    "complete all practical, operational, and hours requirements for the California State Board written exam.",
+    "identify operational, technical, and sequential skills needed to be successful in the salon workplace.",
+    "define California State Board Rules and Regulations, sanitation, disinfection, client protection, health, and safety as it pertains to the salon workplace and the California State Board Written Exam.",
+    "apply science related subjects to the technical and practical skills learned."
+   ],
+   "careers": [
+    "entertainment industry",
+    "platform artists",
+    "hair colorists",
+    "hair-cutting specialists",
+    "salon owners",
+    "managers",
+    "educators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Program",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BAR 115",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAR 117",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Full Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BAR 135",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAR 137",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BAR 100",
+    "why": "in the text only as the enrollment prerequisite; not in the visible requirements table (may be listed on the preceding page)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-table on page 199; the A.S. heading and the first rows of the requirements table (likely a 'First Full Semester' label) are on the preceding page and not in the text. The first block name 'Required Program' is taken from the sentence 'completion of the required program'; the section heading recorded is the page footer.",
+   "Printed Total Units: 32, but the visible courses sum to 30. The 2-unit difference matches BAR 100, which may be listed in the cut-off part of the table; reviewer should check page 198.",
+   "degree_total 60 is taken from the sentence that the Barbering A.S. requires the program plus local SCC GE plus sufficient electives to meet a 60-unit total; electives_fill_degree is set true because no elective units are printed.",
+   "Text following 'A.S. in Cosmetology' belongs to a different program and was not read."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

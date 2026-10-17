@@ -1,0 +1,203 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "30407",
+ "shape": "degree",
+ "title": "Surveying (Geomatics)",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=647",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9999,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9999,
+    "output_tokens": 2114,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2114,
+  "output_tokens_details": {
+   "thinking_tokens": 890
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08228,
+ "ms": 17448,
+ "seconds": 17.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "SURVY300",
+    "SURVY310",
+    "SURVY320",
+    "SURVY324",
+    "SURVY330",
+    "SURVY340",
+    "SURVY350",
+    "SURVY352"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or Cal-GETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Surveying/Geomatics Associate in Science (A.S.) degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "operate all surveying measurement instruments commonly in use within the profession.",
+    "demonstrate a knowledge of the techniques and methodology of surveying measurement.",
+    "select appropriate survey measuring instruments to accurately complete a variety of surveying projects.",
+    "list specific requirements of local agencies for approval and filing of survey maps such as, record of surveys, parcel maps, subdivision maps, preliminary and final maps, and also improvement plans.",
+    "demonstrate an understanding of boundary surveying and photogrammetric surveys, theory of geodetic and control surveys, Global Positioning Systems, Geographic Information Systems and electronic surveys.",
+    "demonstrate knowledge of statutory and common law regulating the surveying industry.",
+    "prepare and interpret different forms of legal descriptions of land ownership and transfer.",
+    "discuss various types of land ownership and classify effects and intent of various land transfers and transactions."
+   ],
+   "careers": [
+    "surveyor assistants",
+    "instrument person",
+    "notekeeper",
+    "Boundary Technicians",
+    "Survey Technicians",
+    "Engineering Technicians",
+    "Engineering Aide",
+    "Survey Aide"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SURVY 300",
+    "why": "A.S. degree requirements table not in the text (likely on page 646); listed only in the certificate section"
+   },
+   {
+    "code": "SURVY 310",
+    "why": "A.S. degree requirements table not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "SURVY 320",
+    "why": "A.S. degree requirements table not in the text; listed only in the certificate section"
+   },
+   {
+    "code": "SURVY 324",
+    "why": "A.S. degree requirements table not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "SURVY 330",
+    "why": "A.S. degree requirements table not in the text; listed only in the certificate section"
+   },
+   {
+    "code": "SURVY 340",
+    "why": "A.S. degree requirements table not in the text; listed only in the certificate section"
+   },
+   {
+    "code": "SURVY 350",
+    "why": "A.S. degree requirements table not in the text; listed only in the certificate section"
+   },
+   {
+    "code": "SURVY 352",
+    "why": "A.S. degree requirements table not in the text; listed only in the certificate section"
+   }
+  ],
+  "notes": [
+   "The extract begins at page 647 with the A.S. degree's closing paragraph; the degree heading and its course requirements table (and any stated major total) are apparently on page 646, which is not in the text. No blocks were recorded; a reviewer should check the prior page.",
+   "No heading for the A.S. degree is printed in the text; section_heading uses the phrase from the degree paragraph.",
+   "degree_total 60 is taken from 'plus sufficient electives for a total of at least 60 units' in the degree paragraph; it is printed as 'at least 60' and may be a generic graduation requirement.",
+   "electives_fill_degree set true because the page says 'sufficient electives for a total of at least 60 units' without printing elective units.",
+   "The Certificate of Achievement section (26 units: SURVY 300, 320, 330, 340, 350, 352 plus 3 units from SURVY 311 or SURVY 360) was not recorded since it is a different award.",
+   "Careers taken from the Career Information following the degree outcomes; 'rod, chain, level, and instrument person' recorded as 'instrument person'."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

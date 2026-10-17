@@ -1,0 +1,457 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "04651",
+ "shape": "degree",
+ "title": "Occupational Therapy Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=577",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12347,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12347,
+    "output_tokens": 3889,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3889,
+  "output_tokens_details": {
+   "thinking_tokens": 1098
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12717,
+ "ms": 30042,
+ "seconds": 30.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 30,
+   "listed": 30,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    61.0,
+    68.0
+   ],
+   "stated": [
+    61.0,
+    68.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 15,
+   "courses": 0,
+   "count": 15,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 61,
+    "max": 68
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "ensure the safety of self and others during all professional activities, in compliance with all safety regulations and required documentation.",
+    "comply with all federal, state, and facility practice regulations and abide by professional codes of ethics.",
+    "articulate the profession’s values, beliefs, and the distinct nature of occupation, and its impact on health, wellness, and engagement in necessary and meaningful daily life activities.",
+    "communicate clearly and effectively with clients and their care partners, with consideration for psychosocial factors, health literacy, diversity factors, and cultural differences.",
+    "report accurate client status to supervising occupational therapist, client’s care partners, the inter-professional team, other relevant parties, and in written documentation.",
+    "demonstrate therapeutic use of self as a foundation of establishing effective therapeutic relationships with clients and their care partners.",
+    "administer assigned assessments using correct procedures and protocols, accurately reporting client’s expressed needs, and demonstrated occupational performance.",
+    "implement client-centered and occupation-based intervention plans, selecting effective therapeutic activities appropriate for the individual and the established goals.",
+    "modify therapeutic tasks and/or environments to maximize the client’s performance.",
+    "participate in and provide relevant recommendations for the discharge process, related client and care partner education, and equipment needs.",
+    "articulate a clear and logical rationale for clinical decision-making, based on scope of practice, client status, treatment goals, professional evidence, and other relevant factors.",
+    "interact with members of an intra- and inter-professional care team, demonstrating knowledge of differences in scope of practice, levels of training, and professional roles.",
+    "demonstrate accurate billing and productivity procedures for occupational therapy services, in compliance with rules for federal, state, third party, and private payers.",
+    "demonstrate professional work behaviors and attitudes, and the ability to receive and apply constructive feedback for professional growth.",
+    "understand systems, legislation, regulations, and compliance requirements for certification, licensing, and continuing education."
+   ],
+   "careers": [
+    "Occupational therapy assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Courses Required for Program Application in addition to the Graduation Requirements listed in the Enrollment Limitations",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AH 106",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AH 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 302",
+      "units": 3,
+      "units_max": 10,
+      "alternatives": [
+       {
+        "code": "BIOL 430",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 431",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHNS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR 307",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRI 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTRI 480",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDUC 300",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 1 (Spring)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTA 123",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 131",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 132",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OTA 122",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 150",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 2 (Summer)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTA 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 152",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 3 (Fall)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTA 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 141",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OTA 122",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 4 (Spring)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTA 120",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 160",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 162",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 5 (Summer)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTA 121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTA 163",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 6 (Fall)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTA 161",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '3 - 10' (with footnote 1: ten year recency) beside BIOL 302; the alternative path is BIOL 430 AND BIOL 431 together (5 + 5 units), recorded as alternatives on BIOL 302.",
+   "The closed list stores 'OTA123' without a space; matched to the catalog's 'OTA 123' (1.5 units), so catalog_addition is false.",
+   "OTA 122 appears as the 'or' alternative to both OTA 132 (Semester 1) and OTA 142 (Semester 3); it is recorded as an alternative in each block.",
+   "Total Units: 61 - 68 is printed for the required program and recorded as total_units. The A.S. requires the program plus the Local GE Pattern or Cal-GETC plus sufficient electives for at least 60 units; no degree total or GE units printed for this award.",
+   "General education courses named in the enrollment eligibility text (COMM, ENGL/ENGWR/ESLW, MATH, Humanities) are not recorded in blocks.",
+   "Only one Student Learning Outcomes list is printed for the program; recorded for this A.S. degree.",
+   "Career Information lists work settings (hospitals, rehabilitation centers, etc.), which were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

@@ -1,0 +1,402 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "40346",
+ "shape": "certificate",
+ "title": "Chemical Technician, Beginning",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=237",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12485,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12485,
+    "output_tokens": 4973,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4973,
+  "output_tokens_details": {
+   "thinking_tokens": 2728
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1494,
+ "ms": 41268,
+ "seconds": 41.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 21,
+   "share": 0.952,
+   "missing": [
+    "ENGWR488"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CHEM306",
+    "CHEMT301",
+    "CHEMT429",
+    "CISC310",
+    "ENGL488"
+   ],
+   "flagged": [
+    "CHEM306",
+    "CHEMT301",
+    "CHEMT429",
+    "CISC310",
+    "ENGL488"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    14.0,
+    21.5
+   ],
+   "stated": [
+    10.0,
+    21.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 14.0-21.5; the catalog states 10.0-21.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 21.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply basic chemistry principles and laboratory skills needed to safely work in a commercial lab using chemical technology with direct supervision.",
+    "apply basic problem-solving and analytical thinking skills in interpretation and execution of chemistry lab work.",
+    "correctly use common chemistry laboratory equipment to process materials and/or collect data.",
+    "demonstrate basic oral and written communication skills necessary to report and discuss chemistry laboratory processes with other scientifically trained personnel.",
+    "demonstrate a basic understanding of safety practices, including proper chemical waste disposal procedures."
+   ],
+   "careers": [
+    "entry level science lab technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHEMT 201",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "BUS 100",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 310",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 488",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "ESLW 340",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 1 See Description",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 11.5,
+     "max": 15.5
+    },
+    "courses": [
+     {
+      "code": "BUS 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 325",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 300",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 321",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 482",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 300",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "CHEM 305",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 306",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 309",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT 296",
+      "units": 0.5,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 1: CISA 305 and CISA 315 and CISC 300",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway 1 computer",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISA 305",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 1: or CISC 310",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway 1 computer",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 1 unit from the following:",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "CHEMT 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEMT 429",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEMT 296",
+      "units": 0.5,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 2 See Description",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGWR 488",
+    "why": "not in the text; catalog prints ENGL 488 Honors College Composition and Research (4) instead, recorded as a catalog addition"
+   }
+  ],
+  "notes": [
+   "The section's own heading (Chemical Technician, Beginning) is cut off before page 237; the text starts at 'Certificate Requirements'. The Career Information names it 'Chemical Technology, Beginning, Certificate of Achievement'.",
+   "The catalog prints two totals: Pathway 1 'Total Units: 16.5 - 21.5' and Pathway 2 'Total Units: 10 - 11'. total_units records the span 10-21.5 across both printed pathway totals; reviewer should check.",
+   "Pathway 1 is printed as one group including BUS 330 line, CHEM 300 line, the computer course choice, CHEMT 296 (0.5-1.5), and 'A minimum of 1 unit from the following'. The computer choice and the minimum-1-unit block belong to Pathway 1 only, though recorded as separate blocks; the Pathway 1 stated 11.5-15.5 covers all of these.",
+   "Computer choice printed as '[[ CISA 305 and CISA 315 ] and CISC 300 ] or CISC 310' with units 3 - 5; recorded as two alternative blocks in option_group 'Pathway 1 computer'.",
+   "CHEMT 296 is printed both as a required Pathway 1 line (0.5-1.5) and again in the 'minimum of 1 unit' list; recorded in both blocks as printed. The Pathway 1 unit arithmetic (11.5-15.5) counts both.",
+   "CHEM 400 '51' read as 5 units with footnote 1: CHEM 300 and Intermediate Algebra are required prerequisites for CHEM 400.",
+   "Page 237 also has an empty 'Course Code Course Title Units' header after Pathway 2 before 'Total Units: 10 - 11'."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

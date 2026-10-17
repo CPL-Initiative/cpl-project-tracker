@@ -1,0 +1,341 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "30518",
+ "shape": "degree",
+ "title": "Air Traffic Control",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=131",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7727,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7727,
+    "output_tokens": 2296,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2296,
+  "output_tokens_details": {
+   "thinking_tokens": 677
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07683,
+ "ms": 18936,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 11,
+   "share": 0.636,
+   "missing": [
+    "ATCAD300",
+    "ATCAD301",
+    "ATCAD302",
+    "ATCAD303"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ATC300",
+    "ATC301",
+    "ATC302",
+    "ATC303",
+    "FLTEC302",
+    "FLTEC320"
+   ],
+   "flagged": [
+    "ATC300",
+    "ATC301",
+    "ATC302",
+    "ATC303",
+    "FLTEC302",
+    "FLTEC320"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    43.0,
+    43.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     43.0,
+     43.0
+    ],
+    "stated": [
+     43.0,
+     43.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "interpret Federal Aviation Regulations that pertain to Air Traffic Control procedures.",
+    "utilize correct air-to-ground and ground-to-air communication terminology and phraseology.",
+    "interpret, prepare and disseminate terminal and enroute weather reports.",
+    "apply Air Traffic Control procedures in simulated radar approach control, terminal, and enroute environments."
+   ],
+   "careers": [
+    "Air Traffic Controllers",
+    "Remote Pilot Operators (RPO's)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Enrollment Eligibility Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLTEC 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "First Semester (Fall)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLTEC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLTEC 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester (Spring)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLTEC 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 314",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester (Fall)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ATC 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ATC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ATC 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ATCAD 300",
+    "why": "not in the text; catalog lists ATC 300 Basic Air Traffic Control Part 1 instead"
+   },
+   {
+    "code": "ATCAD 301",
+    "why": "not in the text; catalog lists ATC 301 Basic Air Traffic Control Part 2 instead"
+   },
+   {
+    "code": "ATCAD 302",
+    "why": "not in the text; catalog lists ATC 302 Basic Air Traffic Control Part 3 instead"
+   },
+   {
+    "code": "ATCAD 303",
+    "why": "not in the text; catalog lists ATC 303 Basic Air Traffic Control Part 4 instead"
+   }
+  ],
+  "notes": [
+   "The text begins mid-description on page 131; the program's own heading (likely 'A.S. in Air Traffic Control') is on the prior page and not in the text, so section_heading uses the printed 'Degree Requirements' heading.",
+   "Only the first A.S. section was read; the following 'A.S. in Enhanced Air Traffic Control' section is a different award and was ignored.",
+   "The Enrollment Eligibility Course FLTEC 320 is counted in the printed Total Units: 43 (4+12+15+12=43), so it is recorded as a required block.",
+   "Closed list names ATCAD 300-303 (Basic/Advanced Terminal and En Route Procedures) while the catalog prints ATC 300-303 (Basic Air Traffic Control Parts 1-4); possibly a course renumbering—reviewer should check.",
+   "degree_total 60 taken from the sentence that this A.S. degree requires the program, GE, and sufficient electives for a total of at least 60 units; it may be generic boilerplate.",
+   "No GE unit figure is printed."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

@@ -1,0 +1,323 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "07329",
+ "shape": "degree",
+ "title": "Marketing, Advertising",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=220",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11698,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11698,
+    "output_tokens": 2369,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2369,
+  "output_tokens_details": {
+   "thinking_tokens": 821
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09417,
+ "ms": 18450,
+ "seconds": 18.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 16,
+   "share": 0.75,
+   "missing": [
+    "DDSN311",
+    "DDSN341",
+    "DDSN360",
+    "MKT312"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "DDSN370",
+    "MKT334"
+   ],
+   "flagged": [
+    "DDSN370",
+    "MKT334"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    35.0,
+    36.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     35.0,
+     36.0
+    ],
+    "stated": [
+     35.0,
+     36.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 19,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Marketing",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "evaluate marketing decisions related to product development, market research, pricing, distribution, and promotion in the development and execution of a marketing strategy.",
+    "develop the appropriate strategy, execution, and media for advertising and promotion.",
+    "research and evaluate consumer buying behavior and recommend integrated marketing communications to effectively meet consumer needs.",
+    "incorporate professional sales skills by effectively identifying and responding to customers' needs.",
+    "compose effective verbal and written communications.",
+    "design effective marketing materials.",
+    "create effective digital marketing strategies that enhance a business' relationship with present and future customers.",
+    "explain the critical role ethics plays in modern marketing.",
+    "formulate a strategic marketing plan for a new or existing business."
+   ],
+   "careers": [
+    "sales",
+    "advertising",
+    "marketing",
+    "Sales manager",
+    "marketing specialist",
+    "social media manager",
+    "search engine optimization specialist",
+    "email marketing manager",
+    "web content writer",
+    "product manager",
+    "marketing analyst",
+    "advertising coordinator",
+    "advertising manager",
+    "public relations manager",
+    "brand manager",
+    "media buyer",
+    "digital marketing manager",
+    "digital marketing director",
+    "e-commerce manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 301",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDSN 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DDSN 370",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DDSN 311",
+    "why": "not in the text"
+   },
+   {
+    "code": "DDSN 341",
+    "why": "not in the text"
+   },
+   {
+    "code": "DDSN 360",
+    "why": "not in the text"
+   },
+   {
+    "code": "MKT 312",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The program is named 'Marketing, Advertising' in the state file; the catalog section read is 'A.S. in Marketing', which matches most of the closed list. Closed-list courses DDSN 311, DDSN 341, DDSN 360 and MKT 312 do not appear, suggesting the state file reflects an older version of the program.",
+   "ACCT 101 or ACCT 301 row prints '3 - 4' units for the choice; recorded ACCT 101 at 3 with ACCT 301 alternative at 4.",
+   "DDSN 331 / DDSN 370 row spans a page break (pages 220-221).",
+   "degree_total of 60 taken from the sentence 'The Marketing Associate in Science (A.S.) degree may be obtained by ... sufficient electives for a total of at least 60 units'; this is boilerplate repeated for every A.S. on the page and states 'at least' — reviewer may prefer null. electives_fill_degree set true on that basis.",
+   "GE pattern may be either the Local General Education Pattern or Cal-GETC; no GE units printed."
+  ]
+ },
+ "extracted_run": "39047070975"
+}
