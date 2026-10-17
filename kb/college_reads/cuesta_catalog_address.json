@@ -1,0 +1,29 @@
+{
+ "_readme": "S406 SkyIronwood, 2026-10-17. Cuesta's registry row names its class-search page (findclasses), and the capture-only read on this branch found 2 of 198 programs in 89 minutes through the main site's 16,529-page sitemap (run 39032973487). This read lists the links the college's home page and the class-search page give for its catalog, so a session can name the catalog's own address (a catalog host, a PDF, or a program page form) for a correction card. Two loads, no model call.",
+ "college": "Cuesta College",
+ "questions": {
+  "catalog_address": "Where the 2026-2027 catalog lives: its host, PDF or page form, and the address each page links it at."
+ },
+ "keywords": [
+  "2026",
+  "catalog",
+  "requirements",
+  "units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://www.cuesta.edu/",
+   "links": "[Cc]atalog|\\.pdf"
+  },
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://www.cuesta.edu/become-student/findclasses/index.html",
+   "links": "[Cc]atalog|\\.pdf"
+  }
+ ]
+}
