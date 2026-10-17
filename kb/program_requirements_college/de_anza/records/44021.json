@@ -1,0 +1,172 @@
+{
+ "college": "De Anza College",
+ "control_number": "44021",
+ "shape": "noncredit",
+ "title": "English as a Second Language High Intermediate Level",
+ "award": "Noncredit program",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6649,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6649,
+    "output_tokens": 971,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 971,
+  "output_tokens_details": {
+   "thinking_tokens": 204
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04602,
+ "ms": 7966,
+ "seconds": 8.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    96.0,
+    96.0
+   ],
+   "stated": [
+    96.0,
+    96.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency English as a Second Language High Intermediate Level",
+   "measure": "hours",
+   "total_units": {
+    "min": 96,
+    "max": 96
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Produce comprehensible high-intermediate spoken English on academic topics through one-on-one, group and public speaking situations",
+    "Demonstrate listening comprehension of a variety of high-intermediate materials, including academic lectures, newscasts, dialogues and interviews, by taking notes and answering questions",
+    "Develop high-intermediate English reading comprehension skills and vocabulary building skills in extended written materials",
+    "Demonstrate understanding and usage of high-intermediate vocabulary in readings and writing",
+    "Write well-developed, single and connected narrative, descriptive and explanatory paragraphs demonstrating high-intermediate grammar and vocabulary in response to reading materials",
+    "Evaluate own writing for rhetorical structure, clarity, organization and grammatical correctness by means of revision and editing"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 96,
+     "max": 96
+    },
+    "courses": [
+     {
+      "code": "ESL 451",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 455",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is not printed in the excerpt (the text begins mid-section on page 304); the heading was inferred from the description 'The Certificate of Competency in English as a Second Language High Intermediate Level sequence'. Reviewer should confirm on the preceding page.",
+   "The closed list writes 'ESL451' without a space; matched to the catalog's 'ESL 451 High Intermediate Listening and Speaking'.",
+   "Award is counted in hours (noncredit); all units fields hold hours. Total Required: 96 Hours.",
+   "The following section (Certificate of Competency ESL Intermediate Level) belongs to a different award and was not recorded."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

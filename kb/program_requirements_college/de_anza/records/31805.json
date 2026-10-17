@@ -1,0 +1,433 @@
+{
+ "college": "De Anza College",
+ "control_number": "31805",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=106",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12329,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12329,
+    "output_tokens": 3027,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3027,
+  "output_tokens_details": {
+   "thinking_tokens": 928
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10986,
+ "ms": 23810,
+ "seconds": 24.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 32,
+   "listed": 32,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HIST18A",
+    "HIST18B"
+   ],
+   "flagged": [
+    "HIST18A",
+    "HIST18B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "History for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate and apply historical knowledge to support defensible statements of meaning and evaluation about a time period’s developments",
+    "Use secondary and primary sources to construct historical analyses of the human condition within the context of various cultures, civilizations and time periods"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "HIST 17A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 17AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 17B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 17BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 17C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 17CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "HIST 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 3B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 3C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "HIST 6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 6B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 6C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Area 1",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "HIST 7A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 7B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 16A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 16B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Area 2",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AFAM 12A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 18A",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 12B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 18B",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 9",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 9H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "WMST 9H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 10H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes omit the zero padding used in the closed list (e.g., HIST 17A = HIST 017A, HIST 3AH = HIST 03AH, HIST 9H = HIST 009H, WMST 9H = WMST 009H, AFAM 12A = AFAM 012A); these were treated as matches, not catalog additions.",
+   "HIST 18A and HIST 18B are printed as cross-listed versions of AFAM 12A/12B but are not in the closed list; recorded as catalog additions.",
+   "De Anza uses quarter units; 'Total Required: 90 Units' includes Cal-GETC and CSU-transferable electives, so it is recorded as degree_total. No major-only total is printed (total_units null).",
+   "The page break between pages 106 and 107 splits List B Area 2; the line 'Additional Cal-GETC AND CSU-transferable electives as needed to reach at least 90 units' appears mid-list. Area 2 was read as continuing with AFAM 12B/HIST 18B, HIST 9/WMST 9/HIST 9H/WMST 9H, and HIST 10/HIST 10H.",
+   "List B requires one course from each area (Area 1 and Area 2, 4 units each, 8 units total)."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

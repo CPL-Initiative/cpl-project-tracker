@@ -1,0 +1,279 @@
+{
+ "college": "De Anza College",
+ "control_number": "39307",
+ "shape": "certificate",
+ "title": "Database Development Practitioner",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12004,
+    "output_tokens": 2188,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2188,
+  "output_tokens_details": {
+   "thinking_tokens": 818
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09178,
+ "ms": 18766,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 17,
+   "share": 0.471,
+   "missing": [
+    "CIS18A",
+    "CIS18B",
+    "CIS36A",
+    "CIS36B",
+    "CIS41A",
+    "CIS41B",
+    "CIS44H",
+    "CIS64G",
+    "CIS9"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.5
+   ],
+   "stated": [
+    26.0,
+    26.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Database Development Practitioner Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Prepare and review a database design that includes logical and system representations",
+    "Design, code and debug SQL and PL/SQL programs",
+    "Apply performance tuning techniques to large-scale database applications",
+    "Create, design and debug intermediate level programs with basic C programming language",
+    "Create a database that is optimized to meet defined technical requirements"
+   ],
+   "careers": [
+    "software engineers",
+    "business analysts",
+    "database architects",
+    "database administrators",
+    "database designers",
+    "reporting analysts"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 22A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 22B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 22BH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 17,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17.5
+    },
+    "courses": [
+     {
+      "code": "CIS 44A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64E",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 018A",
+    "why": "named only in the COA-A and A.A. sections (List C)"
+   },
+   {
+    "code": "CIS 018B",
+    "why": "named only in the COA-A and A.A. sections (List C)"
+   },
+   {
+    "code": "CIS 036A",
+    "why": "named only in the COA-A and A.A. sections (Option 2)"
+   },
+   {
+    "code": "CIS 036B",
+    "why": "named only in the COA-A and A.A. sections (Option 2)"
+   },
+   {
+    "code": "CIS 041A",
+    "why": "named only in the COA-A and A.A. sections (Option 3)"
+   },
+   {
+    "code": "CIS 041B",
+    "why": "named only in the COA-A and A.A. sections (Option 3)"
+   },
+   {
+    "code": "CIS 044H",
+    "why": "named only in the COA-A and A.A. sections (List B)"
+   },
+   {
+    "code": "CIS 064G",
+    "why": "named only in the COA-A and A.A. sections (List B)"
+   },
+   {
+    "code": "CIS 9",
+    "why": "named only in the COA-A and A.A. sections (List B)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 76; the COA heading itself is not printed in the text, so section_heading is taken from the description's own wording ('The Database Development Practitioner Certificate of Achievement'). This section was chosen because its 26-26.5 quarter-unit total fits the 24Q-to-under-45Q award; the COA-A (44-44.5) and A.A. (90) sections were not used.",
+   "Units are De Anza quarter units.",
+   "Catalog codes (CIS 22A, CIS 44A, etc.) match closed-list codes with leading zeros (CIS 022A, CIS 044A); treated as the same courses.",
+   "List A prints five courses totaling 21.5 units but states 17-17.5 units with no explicit selection rule; recorded as choose_units 17 (equivalent to choosing any four of the five courses). Reviewer should confirm.",
+   "Total Required 26-26.5 = Required Core 9 + List A 17-17.5."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

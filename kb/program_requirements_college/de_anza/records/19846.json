@@ -1,0 +1,232 @@
+{
+ "college": "De Anza College",
+ "control_number": "19846",
+ "shape": "certificate",
+ "title": "Database Development Practitioner",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11797,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11797,
+    "output_tokens": 1711,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1711,
+  "output_tokens_details": {
+   "thinking_tokens": 659
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08141,
+ "ms": 15380,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.5
+   ],
+   "stated": [
+    26.0,
+    26.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Database Development Practitioner Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Prepare and review a database design that includes logical and system representations",
+    "Design, code and debug SQL and PL/SQL programs",
+    "Apply performance tuning techniques to large-scale database applications",
+    "Create, design and debug intermediate level programs with basic C programming language",
+    "Create a database that is optimized to meet defined technical requirements"
+   ],
+   "careers": [
+    "software engineers",
+    "business analysts",
+    "database architects",
+    "database administrators",
+    "database designers",
+    "reporting analysts"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 22A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 22B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 22BH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 17,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17.5
+    },
+    "courses": [
+     {
+      "code": "CIS 44A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64E",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award's own heading is not in the extracted text (it falls before the start of page 76); the section read is the first Database Development Practitioner section, ending at 'Total Required: 26 - 26.5 Units', before the Certificate of Achievement-Advanced and A.A. sections.",
+   "Units are De Anza quarter units; the 26-26.5 total fits the 24-45 quarter unit range of this award.",
+   "List A prints '(17 - 17.5 Units)' with no selection rule; the five courses total 21.5 units, so it is recorded as choose_units with minimum 17. The 17-17.5 range matches choosing any four of the five courses; a reviewer may prefer choose_courses 4.",
+   "Catalog codes omit the leading zero of the closed-list codes (CIS 22A = CIS 022A, CIS 44A = CIS 044A, etc.); treated as the same courses, not catalog additions.",
+   "Careers are taken from the sentence 'Database skills are applied by ...' in this certificate's description."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

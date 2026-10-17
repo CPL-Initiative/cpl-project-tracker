@@ -1,0 +1,230 @@
+{
+ "college": "De Anza College",
+ "control_number": "23082",
+ "shape": "certificate",
+ "title": "Automotive Machining and Engine Repair",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=63",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7660,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7660,
+    "output_tokens": 1772,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1772,
+  "output_tokens_details": {
+   "thinking_tokens": 574
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06608,
+ "ms": 15729,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AUTO53B"
+   ],
+   "flagged": [
+    "AUTO53B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    44.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement-Advanced (COA-A) Automotive Machining and Engine Repair",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an application of four-stroke engine theory",
+    "Identify basic electrical circuits and diagnose automotive electrical circuit systems",
+    "Apply the basic principles of physics as they work in the automotive industry",
+    "Demonstrate knowledge of the job procurement process in the automotive industry",
+    "Demonstrate basic safe machining practices",
+    "Demonstrate knowledge of estimates and repair orders",
+    "Demonstrate hazardous materials handling in the automotive industry"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "AUTO 53A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 53B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 57A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 94A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 94B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 94C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 94D",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 94E",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 94F",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints this award as a Certificate of Achievement-Advanced (COA-A) of 44 units; De Anza uses quarter units, so 44 quarter units falls in the state's 24Q to fewer than 45Q category. Reviewer should confirm the COA-A is the award matching this state record.",
+   "Units are quarter units as printed by De Anza.",
+   "Catalog codes (e.g., AUTO 53A) correspond to closed-list codes with zero padding (AUTO 053A).",
+   "AUTO 53B is not in the closed list and is recorded as a catalog addition.",
+   "The section's description names 'an entry-level position in the automotive repair industry in engine diagnostics'; no specific job titles are listed, so careers left empty.",
+   "The section recommends one year of prior automotive experience (high school, ROP or De Anza's AUTO 50 series) and requires an Approved Automotive Technology Course Sequence Contract; these are not recorded as course blocks.",
+   "The final outcome in the COA-A section reads 'Demonstrate hazardous materials handling...' while the A.S. section reads 'Demonstrate knowledge of hazardous materials handling...'; the COA-A wording was copied as printed.",
+   "Text at the top of page 63 belongs to a different (automotive engine performance) program and was ignored; the A.S. section following the COA-A was not used."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

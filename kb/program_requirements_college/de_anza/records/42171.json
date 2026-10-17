@@ -1,0 +1,270 @@
+{
+ "college": "De Anza College",
+ "control_number": "42171",
+ "shape": "certificate",
+ "title": "Forensic Criminal Investigation Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12511,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12511,
+    "output_tokens": 2425,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2425,
+  "output_tokens_details": {
+   "thinking_tokens": 1016
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09854,
+ "ms": 20183,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement-Advanced (COA-A) Forensic Criminal Investigation Technician",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Conduct a detailed crime scene investigation of a wide variety of felony crimes",
+    "Identify the responsibilities of a crime scene investigator, including the identification, collection and processing of crime scene evidence",
+    "Demonstrate knowledge and experience of the advanced skill set of investigative steps and the use of state-of-the-art investigative procedures and equipment",
+    "Show knowledge and skill in completing a detailed, scientific criminal investigative report of the crime scene investigation",
+    "Demonstrate ability to testify in a criminal court adjudication related to a broad spectrum of felony crimes"
+   ],
+   "careers": [
+    "law enforcement officers",
+    "nonsworn personnel"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "ADMJ 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 3",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 13",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 61",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 75",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 75",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 75",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 84",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 90A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 90A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTG 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 10H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog labels this award a Certificate of Achievement-Advanced (COA-A) with 32 total units; De Anza is on the quarter system, so 32 quarter units fits the 24Q to fewer than 45Q range named in the program record.",
+   "Catalog prints ADMJ 90A / PARA 90A and BIOL 10H; the closed list stores them as ADMJ 090A / PARA 090A and BIOL 010H. Treated as the same courses (leading-zero formatting), not catalog additions.",
+   "Cross-listed courses (ADMJ 3 / PARA 3 / POLI 13; ADMJ 75 / PARA 75 / POLI 75; ADMJ 90A / PARA 90A) recorded as one entry with alternatives; catalog notes students receive credit for only one version.",
+   "The third outcome breaks across lines at 'state-' / 'of-the-art'; recorded as 'state-of-the-art', treating the line-end hyphen as part of the compound word.",
+   "Careers: description names currently employed law enforcement officers and nonsworn personnel for positions within criminal justice agency crime scene investigation (CSI) units; reviewer may wish to confirm these as career entries."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

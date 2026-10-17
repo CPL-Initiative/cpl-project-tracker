@@ -1,0 +1,258 @@
+{
+ "college": "De Anza College",
+ "control_number": "45499",
+ "shape": "degree",
+ "title": "Automotive Technology Management",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6776,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6776,
+    "output_tokens": 1830,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1830,
+  "output_tokens_details": {
+   "thinking_tokens": 684
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0637,
+ "ms": 15978,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 12,
+   "share": 0.75,
+   "missing": [
+    "BUS615",
+    "BUS620",
+    "EWRT610"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     45.0
+    ],
+    "stated": [
+     180.0,
+     180.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     135.0,
+     135.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology Management (Baccalaureate of Science)",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 180,
+    "max": 180
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate the required skills for effective entry-level management in the automotive repair industry",
+    "Demonstrate knowledge of leadership, ethics, critical thinking, and all forms of communication in business and life",
+    "Recognize and value the intricacies of working and living in a multicultural world by demonstrating gratefulness of diversity"
+   ],
+   "careers": [
+    "entry-level management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core - Upper-Division Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "ATMG 601",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 602",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 603",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 604",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 605",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 606",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 607",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 608",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATMG 609",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 615",
+    "why": "listed under Required Core - Upper-Division General Education (15 Units); general education, not the major"
+   },
+   {
+    "code": "BUS 620",
+    "why": "listed under Required Core - Upper-Division General Education (15 Units); general education, not the major"
+   },
+   {
+    "code": "EWRT 610",
+    "why": "listed under Required Core - Upper-Division General Education (15 Units); general education, not the major"
+   }
+  ],
+  "notes": [
+   "No separate section heading is printed in the extracted text; section_heading uses the program and award name.",
+   "total_units is the printed 'Required Core - Upper-Division Major: (45 Units)'; degree_total is 'Total Required: 180 Units' (quarter units).",
+   "BUS 615, BUS 620 and EWRT 610 are required by name but printed as 'Required Core - Upper-Division General Education: (15 Units)'; they were kept out of blocks as general education. A reviewer may prefer to record them as a required block.",
+   "The page states at least 15 units of upper-division GE and at least 39 units of lower-division GE; no named GE pattern and no single GE total, so ge_pattern and ge_units are null.",
+   "'Lower-Division Electives (as needed to reach 180 units)' sets electives_fill_degree true.",
+   "The program description does not say whether the outcomes list is shared with other awards; it appears specific to this B.S."
+  ]
+ },
+ "extracted_run": "39046890834"
+}
