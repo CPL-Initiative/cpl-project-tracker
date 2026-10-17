@@ -1,0 +1,290 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "21885",
+ "shape": "certificate",
+ "title": "Journalism: Newspaper",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9431,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9431,
+    "output_tokens": 1120,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1120,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06012,
+ "ms": 8457,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 12,
+   "codes": [
+    "BRDCSTG1",
+    "JOURNAL101",
+    "JOURNAL105",
+    "JOURNAL106",
+    "JOURNAL108",
+    "JOURNAL202",
+    "JOURNAL220",
+    "JOURNAL385",
+    "JOURNAL911",
+    "JOURNAL921",
+    "JOURNAL931",
+    "JOURNAL941"
+   ],
+   "flagged": [
+    "BRDCSTG1",
+    "JOURNAL101",
+    "JOURNAL105",
+    "JOURNAL106",
+    "JOURNAL108",
+    "JOURNAL202",
+    "JOURNAL220",
+    "JOURNAL385",
+    "JOURNAL911",
+    "JOURNAL921",
+    "JOURNAL931",
+    "JOURNAL941"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "JOURNALISM: NEWSPAPER Certificate of Achievement (CA) (Program Code 060200, State Code 21885)",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write simple and complex/long form articles using the inverted pyramid structure and other story structure formats.",
+    "Edit your own and others' stories for proper spelling, grammar and AP Style.",
+    "Produce a digital and hard copy clip file."
+   ],
+   "careers": [
+    "newspaper reporter",
+    "newspaper editor",
+    "public relations writer",
+    "publicist",
+    "writer for on-line publications",
+    "proof readers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE THE FOLLOWING 5 REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JOURNAL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 218-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE 6 UNITS FROM THE FOLLOWING COURSES",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BRDCSTG 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 385",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 911",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 921",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 931",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 941",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list names only JOURNAL 218-1; every other course in the certificate section is recorded as a catalog addition.",
+   "The certificate's printed outcomes are identical to those printed for the Journalism: Magazine certificate; recorded as printed under the Newspaper certificate.",
+   "Program table lists 21 major units for the Newspaper CA, matching 'Total: 21'."
+  ]
+ },
+ "extracted_run": "39006418426"
+}

@@ -1,0 +1,236 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "39623",
+ "shape": "noncredit",
+ "title": "21st Century Employability Skills - Advanced",
+ "award": "Noncredit program",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9674,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9674,
+    "output_tokens": 1575,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1575,
+  "output_tokens_details": {
+   "thinking_tokens": 338
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0702,
+ "ms": 12809,
+ "seconds": 13.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "21ST CENTURY EMPLOYABILITY SKILLS - ADVANCED",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "To notice changes and see opportunities for growth, stay open to new experiences, consider a variety of viewpoints, and handle stress in a positive way.",
+    "To improve professional manner by learning guidelines or rules of the work setting, and look for work opportunities that would be a good match for personal strengths and skills.",
+    "To have a basic understanding of computer, tablet, and smartphone hardware and software and know what technology tools will help people work together.",
+    "To know the difference between empathy and sympathy and connect with others by being a good listener, develop good relationships with people from different backgrounds, and make decisions based on client or customer needs by looking at things from their point of view.",
+    "To know how to speak in a professional manner, communicate using technology tools, choose words wisely and use non-verbal communication, and be an attentive listener while asking questions or repeating back to make sure points were understood correctly.",
+    "To understand diversity in the workplace, respect people's differences, share leadership by gathering ideas and using skills of all team members, and finding positive ways to deal with conflict."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete the following required course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 116CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete 9 courses from the electives list above",
+    "rule": "choose_courses",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 108CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 109CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 110CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 111CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 112CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 113CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 114CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 115CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 117CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Program Student Learning Outcomes are printed once for the whole 21st Century Employability Skills noncredit certificate series (Basic through Advanced); the Advanced award shares them and they are recorded here.",
+   "The elective block references the shared 'Electives List' printed on page 92 above the individual program sections; the Advanced certificate requires 9 courses from it, which equals the entire list of 9 electives.",
+   "The catalog prints no units or hours beside any course and no total hours for this noncredit certificate; all unit fields are null and measure is left as 'units' since no hours are stated.",
+   "No careers are named for this program."
+  ]
+ },
+ "extracted_run": "39006418426"
+}

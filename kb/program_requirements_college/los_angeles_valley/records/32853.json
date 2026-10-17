@@ -1,0 +1,285 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "32853",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11778,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11778,
+    "output_tokens": 2881,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2881,
+  "output_tokens_details": {
+   "thinking_tokens": 1177
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10473,
+ "ms": 21016,
+ "seconds": 21.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    18.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [
+    "'COURSE SUBSTITUTIONS: SOME STUDENTS MAY NEED COURSES TO SUBSTITUTE FOR UNITS THEY PLACED OUT OF FROM THE REQUIRED COURSES. SELECT COURSES FROM LIST A NOT ALREADY TAKEN OR FROM THE FOLLOWING TO ATTAIN A MINIMUM OF 18 UNITS TOTAL' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ASSOCIATE DEGREE FOR TRANSFER: SPANISH",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use advanced grammar and vocabulary to demonstrate oral competence in the Spanish language and compose and present well-structured oral presentations in Spanish expressing complex ideas. (Communication, Critical Thinking, Self-Awareness and Interpersonal Skills).",
+    "Interpret, analyze, and summarize Spanish-language advanced level texts orally and in writing according to their cultural, literary and/or linguistic content. (Communication, Critical Thinking, Global Awareness and Valuing Diversity).",
+    "Use advanced grammar and vocabulary to compose well-constructed critical essays in Spanish with special emphasis on stylistics, form, content, purpose, and style. (Communication, Critical Thinking).",
+    "Distinguish, compare, and contrast the different elements of the cultures of Spain and the Hispanic world, including basic history, literature, and art; assess Hispanic contributions to the global society, and the role of the Spanish language and heritage in various parts of the world.",
+    "Design and execute a project that examines and evaluates a special topic."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE: COMPLETE THE FOLLOWING 4 COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPANISH 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 036",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 037",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: SELECT 1 COURSE FROM THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HISTORY 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTORY 006",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 005",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 006",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 016",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COURSE SUBSTITUTIONS: SOME STUDENTS MAY NEED COURSES TO SUBSTITUTE FOR UNITS THEY PLACED OUT OF FROM THE REQUIRED COURSES. SELECT COURSES FROM LIST A NOT ALREADY TAKEN OR FROM THE FOLLOWING TO ATTAIN A MINIMUM OF 18 UNITS TOTAL",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LING 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 035",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Course codes printed with leading zeros (e.g., SPANISH 001) match closed-list codes without them (SPANISH 1).",
+   "List A says 'Select 1 course' but prints three 'or' pairs; recorded each pair as one entry with its alternative and minimum 1 course.",
+   "Course Substitutions block applies only to students who placed out of required courses; it sets no fixed unit count of its own, only that the major reach a minimum of 18 units total, so minimum is left null. Unused List A courses may also serve as substitutions.",
+   "Catalog notes the prerequisite for SPANISH 036 is SPANISH 035 (a substitution course), not SPANISH 002.",
+   "Degree total recorded from 'Total Minimum Units: 60' printed under this award; Cal-GETC 34 semester units recorded as ge_units.",
+   "No careers named in the AA-T section."
+  ]
+ },
+ "extracted_run": "39006418426"
+}

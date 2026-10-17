@@ -1,0 +1,84 @@
+{
+ "college": "Los Angeles Valley College",
+ "programs": 237,
+ "with_closed_list": 232,
+ "found": 225,
+ "extracted": 225,
+ "errors": 0,
+ "passed_machine_checks": 110,
+ "failed": {
+  "coverage": 31,
+  "invented": 10,
+  "arithmetic": 107,
+  "repeated": 0,
+  "outcomes": 4
+ },
+ "cost_usd": 15.6,
+ "cost_per_program": 0.0693,
+ "not_found": [
+  {
+   "control_number": "11545",
+   "title": "Commercial Music: Music Arranging",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=235",
+    "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "17958",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
+    "coverage": 0.293
+   }
+  },
+  {
+   "control_number": "18169",
+   "title": "General Studies: Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=112",
+    "coverage": 0.237
+   }
+  },
+  {
+   "control_number": "18170",
+   "title": "General Studies: Natural Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=206",
+    "coverage": 0.267
+   }
+  },
+  {
+   "control_number": "18171",
+   "title": "General Studies: Social and Behavioral Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=29",
+    "coverage": 0.13
+   }
+  },
+  {
+   "control_number": "24315",
+   "title": "English as a Second Language III",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "40989",
+   "title": "ESL Milestone - Pathway to Environmental Science",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=146",
+    "coverage": 0.286
+   }
+  }
+ ],
+ "run": "39006418426"
+}

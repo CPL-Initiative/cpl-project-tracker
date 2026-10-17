@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 237,
  "with_closed_list": 232,
- "started": "2026-10-17T05:27:05Z",
+ "started": "2026-10-17T05:30:02Z",
  "pdf": {
   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 61.9,
+ "seconds": 63.7,
  "found": 225,
  "by_method": {
   "no_closed_list": 5,
@@ -2699,5 +2699,5 @@
    }
   ]
  },
- "run": "39006200480"
+ "run": "39006418426"
 }

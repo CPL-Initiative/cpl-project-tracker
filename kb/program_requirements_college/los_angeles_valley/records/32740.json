@@ -1,0 +1,157 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "32740",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9443,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9443,
+    "output_tokens": 967,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 967,
+  "output_tokens_details": {
+   "thinking_tokens": 303
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05711,
+ "ms": 10375,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "PHYSICS37",
+    "PHYSICS38",
+    "PHYSICS39"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS FOR THE ASSOCIATE IN ARTS FOR TRANSFER DEGREE (AA-T) OR ASSOCIATE IN SCIENCE FOR TRANSFER DEGREE (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHYSICS 37",
+    "why": "Physics AS-T section not in the text; named only in the C-ID table (PHYS 205)"
+   },
+   {
+    "code": "PHYSICS 38",
+    "why": "Physics AS-T section not in the text; named only in the C-ID table (PHYS 210)"
+   },
+   {
+    "code": "PHYSICS 39",
+    "why": "Physics AS-T section not in the text; named only in the C-ID table (PHYS 215)"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 49) holds only the C-ID descriptor table and the general requirements for all AA-T/AS-T degrees; the Physics A.S.-T program section itself, with its course list, is not in the text. The page refers to the program section of the catalog for the major details, which seems to begin on a later page. A reviewer should fetch the following page(s).",
+   "The 60 CSU-transferable unit requirement and the minimum 18 units in the major apply to all AA-T/AS-T degrees. They are not printed as this award's own totals, so total_units and degree_total are left null.",
+   "The ge_pattern Cal-GETC comes from the general AA-T/AS-T requirements, for students admitted Fall 2025 or later. Students with earlier catalog rights may use CSU GE-Breadth or IGETC for CSU.",
+   "No program learning outcomes or careers appear in the text for this award."
+  ]
+ },
+ "extracted_run": "39006418426"
+}
