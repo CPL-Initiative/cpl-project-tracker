@@ -1,0 +1,2231 @@
+{
+ "college": "Los Angeles Southwest College",
+ "catalog_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 136,
+ "with_closed_list": 96,
+ "started": "2026-10-17T18:20:32Z",
+ "pdf": {
+  "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 5517393,
+  "pages_total": 250,
+  "error": null,
+  "chars_total": 1177319,
+  "pypdf_accepted": 94,
+  "sample": [
+   "p76: ' \\n75 | Page  \\n \\n \\n4. Use of computing facilities to \\ninterfere with the work of a \\nstudent faculty member or \\ncollege official, or to alter \\ncollege or district records. \\n5. Use of unlicensed software. \\n6. Unauthorized copying of \\nsoftware.'",
+   "p151: '150 | Page  \\n \\nMusic \\nASSOCIATE IN ARTS IN \\nMUSIC \\nThe Music Associate of Arts degree provides the student with practical skills in \\ntheory, musicianship, piano, and performance. The degree may serve as a basis \\nfor further undergraduate ed'"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "02862",
+    "pages": [
+     210
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 210] 209 | Page This course will cover the comparative and analytical study of the law and related problems concerning the Bill of Rights and the U.S. Constitution, due process of law, freedom of speech an"
+   },
+   {
+    "control_number": "02863",
+    "pages": [
+     157
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] The Real Estate Broker Certificate of Achievement is designed to prepare students for a career as a licensed real estate broker in California. The program provides the academic foundation required to qualify"
+   },
+   {
+    "control_number": "02866",
+    "pages": [
+     135,
+     136,
+     137,
+     138
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 135] 134 | Page assistant, or to continue their studies toward a bachelor’s degree in Computer Science, Information Technology, or a related field. Program Learning Outcomes: Upon completion of this progra"
+   },
+   {
+    "control_number": "02873",
+    "pages": [
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] The Art History Associate in Arts degree aligns with specific lower-division major requirements for the art major at various universities within the University of California (UC) and California State Univers"
+   },
+   {
+    "control_number": "02874",
+    "pages": [
+     151
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.769,
+    "opens": "[page 151] The Music Associate of Arts degree provides the student with practical skills in theory, musicianship, piano, and performance. The degree may serve as a basis for further undergraduate education in music or "
+   },
+   {
+    "control_number": "02875",
+    "pages": [
+     160
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] The Associate in Arts in Theater Degree provides students with a comprehensive foundation in performance, production, and the study of theater as a cultural and artistic practice. The program emphasizes the "
+   },
+   {
+    "control_number": "02877",
+    "pages": [
+     215
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 215] 214 | Page ASSOCIATE DEGREE NURSING (ADN) COURSES NURSING 501A Fundamentals of Nursing A (5) CSU Prerequisites: Admission to the Nursing Program, Lecture: 4.5 hours; Lab: 17 hours - 8 Week Course "
+   },
+   {
+    "control_number": "02879",
+    "pages": [
+     147
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 147] The Associate in Arts (AA) in Liberal Arts (English) is designed for students who want a broad education focused on reading and writing but do not plan to transfer to a four-year institution to pursue an Eng"
+   },
+   {
+    "control_number": "02882",
+    "pages": [
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 149] 148 | Page Program Learning Outcomes: Upon completion of this program, students will be able to: 1. Use language (oral and written) and non-verbal modes of communication appropriate to the audience and"
+   },
+   {
+    "control_number": "02883",
+    "pages": [
+     154
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] The Associate in Science in Physics for Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the Physics Bachelors program. The studen"
+   },
+   {
+    "control_number": "02885",
+    "pages": [
+     156
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] The Associate of Science degree in Psychology will give students a foundation for more advanced psychology courses and a foundation for optimal human interaction in the workplace and/or in their own personal"
+   },
+   {
+    "control_number": "02886",
+    "pages": [
+     123,
+     124
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] The Associate of Arts in Administration of Justice is designed to address the principles and practices of the criminal justice system. It will serve students who wish to prepare themselves for one of several"
+   },
+   {
+    "control_number": "02887",
+    "pages": [
+     143
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 143] The Associate of Arts degree in History includes coursework that aligns with specific lower-division major requirements for the history major at various universities within the University of California (UC) "
+   },
+   {
+    "control_number": "02888",
+    "pages": [
+     158,
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 158] The Associate of Arts degree in Sociology includes coursework that aligns with specific lower-division major requirements for the sociology major at various universities within the UC and CSU systems. Studen"
+   },
+   {
+    "control_number": "08442",
+    "pages": [
+     126
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] 125 | Page The Art History Associate in Arts degree aligns with specific lower-division major requirements for the art major at various universities within the University of California (UC) and Califo"
+   },
+   {
+    "control_number": "08446",
+    "pages": [
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] The Art History Associate in Arts degree aligns with specific lower-division major requirements for the art major at various universities within the University of California (UC) and California State Univers"
+   },
+   {
+    "control_number": "08449",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] The Associate in Arts Child Development (AA) pathway includes Child Development core courses that prepare students to implement quality equitable practices, educate and nurture young children, work with dive"
+   },
+   {
+    "control_number": "08451",
+    "pages": [
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] The Associate of Arts degree in Anthropology includes foundational coursework in all four fields of the discipline: biological anthropology, cultural anthropology, archaeology, and linguistics. While not pri"
+   },
+   {
+    "control_number": "08452",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 141] 140 | Page Ethnic Studies ASSOCIATE IN ARTS ETHNIC STUDIES Ethnic Studies is an interdisciplinary approach to the study of the cultures, languages, historical, and contemporary issues relating to Afri"
+   },
+   {
+    "control_number": "08453",
+    "pages": [
+     154,
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] The Associate of Arts degree in Political Science includes coursework that aligns with specific lower-division major requirements for the Political Science major at various universities within the University"
+   },
+   {
+    "control_number": "10738",
+    "pages": [
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] 98 | Page 15 units may be applied toward the two-year degree on this basis. Courses taken for Pass/No Pass do not meet the prerequisites for the next higher courses unless special approval is secured"
+   },
+   {
+    "control_number": "11795",
+    "pages": [
+     156
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] 155 | Page OR PSYCH 091 Statistics for Psychology ........................................................... 4 TOTAL UNITS ........................................................................."
+   },
+   {
+    "control_number": "18796",
+    "pages": [
+     144
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] 143 | Page OR ART 103 Art Appreciation I ............................................................................. 3 MUSIC 101 Fundamentals of Music ............................................."
+   },
+   {
+    "control_number": "18903",
+    "pages": [
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 159] 158 | Page SKILLS CERTIFICATE SOCIAL SERVICES The Social Services certificate provides an introduction to social work practice. Students analyze social problems, explore community-based solutions, and "
+   },
+   {
+    "control_number": "19064",
+    "pages": [
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 148] 147 | Page ASSOCIATE IN ARTS LIBERAL ARTS: NATURAL SCIENCE The Liberal Arts: Natural Sciences degree prepares students for life in the global community by helping them develop a core of knowledge, s"
+   },
+   {
+    "control_number": "19186",
+    "pages": [
+     194
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 194] 193 | Page photographs, and data sets collected from a variety of Earth-sensing instruments. ECONOMICS (ECON) ECON C2001 Principles of Microeconomics (3) UC:CSU Cal-GETC Area 4 Lecture: 3 hours"
+   },
+   {
+    "control_number": "24277",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 174 | Page space and form. Development of a visual vocabulary for creative expression through lecture presentations and use of appropriate materials for non- representational three-dimensional studio proj"
+   },
+   {
+    "control_number": "31022",
+    "pages": [
+     123,
+     124,
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 123] 122 | Page ASSOCIATE DEGREES FOR TRANSFER AND LOCAL ASSOCIATE DEGREES A student who completes an Associate Degree for Transfer (ADT) in a particular major/area of emphasis may also be awarded a local a"
+   },
+   {
+    "control_number": "31027",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] AST in Early AST in Early Childhood Education (transfer degree) may be completed in four semesters if all GE course requirements are met. Third Year Courses Fall Semester Units Prerequisites (Co"
+   },
+   {
+    "control_number": "33167",
+    "pages": [
+     135,
+     136
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 135] 134 | Page assistant, or to continue their studies toward a bachelor’s degree in Computer Science, Information Technology, or a related field. Program Learning Outcomes: Upon completion of this progra"
+   },
+   {
+    "control_number": "33170",
+    "pages": [
+     135,
+     136
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 135] 134 | Page assistant, or to continue their studies toward a bachelor’s degree in Computer Science, Information Technology, or a related field. Program Learning Outcomes: Upon completion of this progra"
+   },
+   {
+    "control_number": "33604",
+    "pages": [
+     160
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] The Associate in Arts in Theatre Arts Degree for Transfer provides students with a comprehensive foundation in performance, production, and the study of theater as a cultural and artistic practice. This degr"
+   },
+   {
+    "control_number": "33632",
+    "pages": [
+     143,
+     144,
+     145
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 143] The Associate in Arts in History for Transfer is intended for students who are planning to transfer to a California State University (CSU) institution into the History Bachelors program. The student is guara"
+   },
+   {
+    "control_number": "33635",
+    "pages": [
+     154,
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] 153 | Page MATH 260 Pre-Calculus ................................................................................ 5 MATH 265 Calculus with Analytic Geometry I ......................................."
+   },
+   {
+    "control_number": "33636",
+    "pages": [
+     158,
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 158] The Associate in Arts in Sociology for Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the Sociology Bachelors program. The Stude"
+   },
+   {
+    "control_number": "33640",
+    "pages": [
+     154
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] The Associate in Science in Physics for Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the Physics Bachelors program. The studen"
+   },
+   {
+    "control_number": "33648",
+    "pages": [
+     149,
+     150,
+     151
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] 148 | Page Program Learning Outcomes: Upon completion of this program, students will be able to: 1. Use language (oral and written) and non-verbal modes of communication appropriate to the audience and"
+   },
+   {
+    "control_number": "33658",
+    "pages": [
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] The Associate in Arts in Spanish for Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the Spanish Bachelors program. The student i"
+   },
+   {
+    "control_number": "33659",
+    "pages": [
+     140
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 140] The Associate in Arts in English for Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the English Bachelors program. The student i"
+   },
+   {
+    "control_number": "33816",
+    "pages": [
+     153
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 153] 152 | Page Upon completion of the TEAS Test, the Nursing Counselor and the senior office assistant will compile the qualified candidates who are eligible to be admitted into the nursing program. The"
+   },
+   {
+    "control_number": "33832",
+    "pages": [
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] The Associate in Arts in Studio Arts for Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the Studio Arts Bachelors program. The"
+   },
+   {
+    "control_number": "33868",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 174 | Page space and form. Development of a visual vocabulary for creative expression through lecture presentations and use of appropriate materials for non- representational three-dimensional studio proj"
+   },
+   {
+    "control_number": "33881",
+    "pages": [
+     145,
+     146,
+     147
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] 144 | Page Required Courses: (Choose and complete 9 units) ........................... Units HIST C1001 United States History to 1877 ..................................................... 3 OR HIST C10"
+   },
+   {
+    "control_number": "33882",
+    "pages": [
+     125,
+     126,
+     127
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 125] the Anthropology AA-T), this sequence of courses aligns with lower-division requirements in anthropology at various California State University (CSU) campuses. Students interested in transferring to a four-y"
+   },
+   {
+    "control_number": "36962",
+    "pages": [
+     146,
+     147,
+     148,
+     149
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 146] The Associate in Arts in Kinesiology for Transfer is intended for students who are planning to transfer to a California State University (CSU) institution into the Kinesiology Bachelors program. The student "
+   },
+   {
+    "control_number": "36991",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 142] The Associate of Science in Nutrition and Dietetics Transfer Degree is intended for students who are planning to transfer to a California State University (CSU) institution into the Nutrition and Dietetics B"
+   },
+   {
+    "control_number": "36992",
+    "pages": [
+     157,
+     158
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] the Social Justice Studies degree, students will be prepared for transfer to the CSU, while also giving them valuable insight into careers in nonprofit, governmental, educational, political, labor, philanthr"
+   },
+   {
+    "control_number": "37821",
+    "pages": [
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The Custodial Technician Preparation Certificate of Completion will prepare students to meet the application requirements and job seeking and retention skills necessary for entry level custodial positions in"
+   },
+   {
+    "control_number": "37874",
+    "pages": [
+     146,
+     147
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 146] 145 | Page Required Courses: ................................................................................ Units JOURN 101 Collecting and Writing News .............................................."
+   },
+   {
+    "control_number": "37988",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 142] 141 | Page Los Angeles Southwest College (LASC) offers a comprehensive Geology program designed to provide students with a foundational understanding of geological principles and processes. Program"
+   },
+   {
+    "control_number": "37997",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] 160 | Page BSICSKL 005CE Academic Guidance BSICSKL 075CE Introduction to Post-Secondary Education CERTIFICATE OF COMPETENCY ADVANCED ESL The Advanced ESL Certificate of Competency will prepare studen"
+   },
+   {
+    "control_number": "38280",
+    "pages": [
+     165
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] 164 | Page Upon completion of this program, students will be able to: 1. Solve multi-step computational problems 2. Solve multi-step word problems 3. Describe the benefits of post-secondary educatio"
+   },
+   {
+    "control_number": "38545",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] 127 | Page This program equips students with the competencies needed to lead teams, manage organizational operations, and understand the legal, financial, and interpersonal aspects of business environ"
+   },
+   {
+    "control_number": "38546",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 128] Global Entrepreneur II Certificate of Achievement spans all stages of small business development, from defining an idea to finding and managing finances to building marketing strategies and managing an opera"
+   },
+   {
+    "control_number": "38597",
+    "pages": [
+     192,
+     193
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 192] 191 | Page be related to the student's educational goals. Students must work 225 paid hours or 18 volunteer hours during the semester. COUNSELING (COUNSEL) COUNSEL 006 Career Planning for Students "
+   },
+   {
+    "control_number": "39632",
+    "pages": [
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] The ESL Communication Skills Certificate of Competency will prepare students with the English language conversation, listening and speaking skill needed to participate in their communities , further studies,"
+   },
+   {
+    "control_number": "39634",
+    "pages": [
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The CTE Career Exploration for ESL Students Certificate of Completion prepares English language learners to assess and understand their strengths, interests, abilities and work values while learning about CT"
+   },
+   {
+    "control_number": "39648",
+    "pages": [
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The CTE Career Exploration Certificate of Completion prepares students to assess and understand their strengths, interests, abilities and work values while learning about CTE (Career and Technical Education)"
+   },
+   {
+    "control_number": "39760",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 161] 160 | Page BSICSKL 005CE Academic Guidance BSICSKL 075CE Introduction to Post-Secondary Education CERTIFICATE OF COMPETENCY ADVANCED ESL The Advanced ESL Certificate of Competency will prepare studen"
+   },
+   {
+    "control_number": "39766",
+    "pages": [
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 168] The Photovoltaics Certificate of Completion courses prepare students for work in the residential and commercial solar industry. This program emphasizes the integration of practical and theoretical knowledge "
+   },
+   {
+    "control_number": "40092",
+    "pages": [
+     135,
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] 134 | Page assistant, or to continue their studies toward a bachelor’s degree in Computer Science, Information Technology, or a related field. Program Learning Outcomes: Upon completion of this progra"
+   },
+   {
+    "control_number": "40275",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 141] 140 | Page Ethnic Studies ASSOCIATE IN ARTS ETHNIC STUDIES Ethnic Studies is an interdisciplinary approach to the study of the cultures, languages, historical, and contemporary issues relating to Afri"
+   },
+   {
+    "control_number": "40375",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.85,
+    "opens": "[page 141] 140 | Page Ethnic Studies ASSOCIATE IN ARTS ETHNIC STUDIES Ethnic Studies is an interdisciplinary approach to the study of the cultures, languages, historical, and contemporary issues relating to Afri"
+   },
+   {
+    "control_number": "40376",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 141] 140 | Page Ethnic Studies ASSOCIATE IN ARTS ETHNIC STUDIES Ethnic Studies is an interdisciplinary approach to the study of the cultures, languages, historical, and contemporary issues relating to Afri"
+   },
+   {
+    "control_number": "40377",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.929,
+    "opens": "[page 141] 140 | Page Ethnic Studies ASSOCIATE IN ARTS ETHNIC STUDIES Ethnic Studies is an interdisciplinary approach to the study of the cultures, languages, historical, and contemporary issues relating to Afri"
+   },
+   {
+    "control_number": "40378",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.84,
+    "opens": "[page 141] 140 | Page Ethnic Studies ASSOCIATE IN ARTS ETHNIC STUDIES Ethnic Studies is an interdisciplinary approach to the study of the cultures, languages, historical, and contemporary issues relating to Afri"
+   },
+   {
+    "control_number": "40626",
+    "pages": [
+     165
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] The Introduction to Apple World and Ecosystem Certificate of Completion provides students an overview of the knowledge and skills needed in fields that require software coding for the development of computer"
+   },
+   {
+    "control_number": "40818",
+    "pages": [
+     136
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 136] 135 | Page Students will be ready to pursue a degree in Homeland Security and Computer Forensics offered by the Computer Science and Information Technology discipline at Los Angeles Southwest College."
+   },
+   {
+    "control_number": "40819",
+    "pages": [
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] 136 | Page CERTIFICATE OF ACHIEVEMENT ICT MEDIA TECHNOLOGY ESSENTIALS The Design, Visual, and Media Arts pathway includes the use of visual art, digital media, and Web-based tools and materials as the p"
+   },
+   {
+    "control_number": "40855",
+    "pages": [
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 163 | Page The ESL Transition Certificate of Competency will prepare students to achieve the advanced level English language competencies needed to function independently in a variety of vocational, c"
+   },
+   {
+    "control_number": "40918",
+    "pages": [
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 136] 135 | Page Students will be ready to pursue a degree in Homeland Security and Computer Forensics offered by the Computer Science and Information Technology discipline at Los Angeles Southwest College."
+   },
+   {
+    "control_number": "40919",
+    "pages": [
+     136
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 136] 135 | Page Students will be ready to pursue a degree in Homeland Security and Computer Forensics offered by the Computer Science and Information Technology discipline at Los Angeles Southwest College."
+   },
+   {
+    "control_number": "40947",
+    "pages": [
+     229
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] 228 | Page and hospitality, food and lodging, resorts, tourism enterprises and related operations in addition to workforce preparation. VOC ED 554CE Community Health Workers I -Introduction and Backgr"
+   },
+   {
+    "control_number": "41386",
+    "pages": [
+     137
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] Apple Coding Developer - Certificate of Achievement is designed to teach learners how to be an app developer, capable of bringing their own ideas to life. This certificate starts by covering iOS development "
+   },
+   {
+    "control_number": "41444",
+    "pages": [
+     164,
+     165
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 164] 163 | Page The ESL Transition Certificate of Competency will prepare students to achieve the advanced level English language competencies needed to function independently in a variety of vocational, c"
+   },
+   {
+    "control_number": "41445",
+    "pages": [
+     164,
+     165
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 163 | Page The ESL Transition Certificate of Competency will prepare students to achieve the advanced level English language competencies needed to function independently in a variety of vocational, c"
+   },
+   {
+    "control_number": "41449",
+    "pages": [
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The Customer Service Certificate of Completion program introduces students to the theories of customer service exchange and practical application during a customer encounter. Students will learn, practice an"
+   },
+   {
+    "control_number": "41453",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] 165 | Page 3. Understand and apply the behavior and skills necessary to obtain and maintain entry-level employment. Required Courses: VOC ED 436CE Carpentry I And one of these: VOC ED 096CE Bluep"
+   },
+   {
+    "control_number": "41454",
+    "pages": [
+     165,
+     166
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] 164 | Page Upon completion of this program, students will be able to: 1. Solve multi-step computational problems 2. Solve multi-step word problems 3. Describe the benefits of post-secondary educatio"
+   },
+   {
+    "control_number": "41457",
+    "pages": [
+     161,
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] 160 | Page BSICSKL 005CE Academic Guidance BSICSKL 075CE Introduction to Post-Secondary Education CERTIFICATE OF COMPETENCY ADVANCED ESL The Advanced ESL Certificate of Competency will prepare studen"
+   },
+   {
+    "control_number": "41458",
+    "pages": [
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 168] The Workplace Readiness - Allied Health Certificate of Completion program is designed to help students learn the communication skills, medical terminology and acquire a general introduction to careers and pa"
+   },
+   {
+    "control_number": "41462",
+    "pages": [
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 163 | Page The ESL Transition Certificate of Competency will prepare students to achieve the advanced level English language competencies needed to function independently in a variety of vocational, c"
+   },
+   {
+    "control_number": "41758",
+    "pages": [
+     138
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 138] 137 | Page 5. Develop and advance their knowledge in iOS and Apple applications. 6. Design and create mobile applications. 7. Learn about the larger societal, economic, and cultural impact of impact"
+   },
+   {
+    "control_number": "42658",
+    "pages": [
+     167
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] The courses in the Pathway to Success Certificate of Competency provide resources and strategies to succeed in an online college environment as a new or returning student. Program Learning Outcomes: Upon"
+   },
+   {
+    "control_number": "42910",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] 130 | Page CH DEV 038 Administration and Supervision of Early Childhood Programs I ...................................................................................................... 3 CH DEV 039 Ad"
+   },
+   {
+    "control_number": "43834",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] 165 | Page 3. Understand and apply the behavior and skills necessary to obtain and maintain entry-level employment. Required Courses: VOC ED 436CE Carpentry I And one of these: VOC ED 096CE Bluep"
+   },
+   {
+    "control_number": "44057",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] 165 | Page 3. Understand and apply the behavior and skills necessary to obtain and maintain entry-level employment. Required Courses: VOC ED 436CE Carpentry I And one of these: VOC ED 096CE Bluep"
+   },
+   {
+    "control_number": "45368",
+    "pages": [
+     127,
+     128,
+     129
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] An Associate in Science in Business Administration 2.0 for Transfer (AS-T) from Los Angeles Southwest College is intended for students who are interested in transferring to a California State University (CSU"
+   },
+   {
+    "control_number": "45700",
+    "pages": [
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] The ESL Conversation Certificate of Competency is designed for students to use conversation strategies to develop their listening comprehension and speaking skills in English to improve their job opportuniti"
+   },
+   {
+    "control_number": "45701",
+    "pages": [
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] The ESL Pronunciation Certificate of Competency is designed for students to gain confidence in their English pronunciation skills to improve their job opportunities, continue their education, and increase th"
+   },
+   {
+    "control_number": "45739",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] 128 | Page 1. Apply business principles to small business operations and decision- making. 2. Interpret and apply legal requirements affecting small business ownership and management. 3. Perform busines"
+   },
+   {
+    "control_number": "45740",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] 128 | Page 1. Apply business principles to small business operations and decision- making. 2. Interpret and apply legal requirements affecting small business ownership and management. 3. Perform busines"
+   },
+   {
+    "control_number": "45742",
+    "pages": [
+     138
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] Upon completing the Artificial Intelligence (AI) Foundations - Certificate of Achievement, learners will be able to: 1. Comprehend what Artificial Intelligence (AI) is and what is the future impact of AI in"
+   },
+   {
+    "control_number": "45883",
+    "pages": [
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 168] Courses in the Stand-up Forklift Safety Certificate of Completion will provide instruction in basic safety and operation of the stand-up forklift, including lifting principles and operation techniques. Pr"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 78.9,
+ "found": 94,
+ "by_method": {
+  "no_closed_list": 40,
+  "not_found": 2,
+  "pdf_pages": 94
+ },
+ "shared_pages": {
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=157": [
+   "02863",
+   "36992"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135": [
+   "02866",
+   "33167",
+   "33170",
+   "40092"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126": [
+   "02873",
+   "08442",
+   "08446",
+   "33832"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=160": [
+   "02875",
+   "33604"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=149": [
+   "02882",
+   "33648"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154": [
+   "02883",
+   "08453",
+   "33635",
+   "33640"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=156": [
+   "02885",
+   "11795"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=123": [
+   "02886",
+   "31022"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143": [
+   "02887",
+   "33632"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158": [
+   "02888",
+   "33636"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=130": [
+   "08449",
+   "31027"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=125": [
+   "08451",
+   "33882"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141": [
+   "08452",
+   "40275",
+   "40375",
+   "40376",
+   "40377",
+   "40378"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=159": [
+   "18903",
+   "33658"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=175": [
+   "24277",
+   "33868"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=146": [
+   "36962",
+   "37874"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=142": [
+   "36991",
+   "37988"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162": [
+   "37821",
+   "39634",
+   "39648",
+   "41449"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161": [
+   "37997",
+   "39760",
+   "41457"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165": [
+   "38280",
+   "40626",
+   "41454"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=128": [
+   "38545",
+   "38546"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163": [
+   "39632",
+   "45700",
+   "45701"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168": [
+   "39766",
+   "41458",
+   "45883"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136": [
+   "40818",
+   "40918",
+   "40919"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=137": [
+   "40819",
+   "41386"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164": [
+   "40855",
+   "41444",
+   "41445",
+   "41462"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166": [
+   "41453",
+   "43834",
+   "44057"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=138": [
+   "41758",
+   "45742"
+  ],
+  "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=129": [
+   "45739",
+   "45740"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "18798",
+   "title": "Interdisciplinary Studies: Social And Behavioral Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
+    "coverage": 0.433
+   }
+  },
+  {
+   "control_number": "45576",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=145",
+    "coverage": 0.368
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 15,
+  "0.8-1.0": 14,
+  "1.0": 65
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 94,
+  "list": [
+   {
+    "control_number": "02862",
+    "title": "Management/Supervision",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02863",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02866",
+    "title": "Computer Science: Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02873",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02874",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=151",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02875",
+    "title": "Theater",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02877",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=215",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02879",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=147",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02882",
+    "title": "Mathematics: General",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=149",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02883",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02885",
+    "title": "Psychology",
+    "award": "A.S. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=156",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02886",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02887",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02888",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08442",
+    "title": "Biology",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08446",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08449",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08451",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08452",
+    "title": "Geography",
+    "award": "A.S. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08453",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10738",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11795",
+    "title": "Chemical Dependency Counselor Program",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=156",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18796",
+    "title": "Interdisciplinary Studies: Arts & Humanities II",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18903",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=159",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19064",
+    "title": "Liberal Arts: Natural Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=148",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19186",
+    "title": "Liberal Studies (teaching preparation)",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24277",
+    "title": "Job Training Preparation",
+    "award": null,
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31022",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=123",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31027",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33167",
+    "title": "Computer Science: Homeland Security and Computer Network",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33170",
+    "title": "Computer Science: Homeland Security Network Administrator",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33604",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33632",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33635",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33636",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33640",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33648",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33658",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=159",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33659",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=140",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33816",
+    "title": "Certified Nursing Assistant/Home Health Aide",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=153",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33832",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33868",
+    "title": "Workforce Preparation",
+    "award": null,
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33881",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33882",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=125",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36962",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=146",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36991",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=142",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36992",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37821",
+    "title": "Custodial Technician Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37874",
+    "title": "Personal Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=146",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37988",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=142",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37997",
+    "title": "Academic Success",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38280",
+    "title": "In-Home Supportive Services (IHSS)",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38545",
+    "title": "Global Entrepreneur I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38546",
+    "title": "Global Entrepreneur II",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=128",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38597",
+    "title": "DANCE",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=192",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39632",
+    "title": "ESL Communication Skills",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39634",
+    "title": "CTE Career Exploration for ESL Students",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39648",
+    "title": "CTE Career Exploration",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39760",
+    "title": "Basic Computer Literacy for College and Career&nbsp;",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39766",
+    "title": "Photovoltaics",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40092",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40275",
+    "title": "Social Justice Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40375",
+    "title": "Ethnic Studies: African American Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40376",
+    "title": "Ethnic Studies: Chicano Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40377",
+    "title": "Ethnic Studies: Native American Studies AA",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40378",
+    "title": "Ethnic Studies: American Cultures Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+    "coverage": 0.84,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40626",
+    "title": "Introduction to Apple World and Ecosystem",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40818",
+    "title": "ICT - Cyber Security Technology Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40819",
+    "title": "ICT Media Technology Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40855",
+    "title": "Fundamentals of Robotics",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40918",
+    "title": "ICT - Communications Technology Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40919",
+    "title": "ICT - Information Technology Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40947",
+    "title": "Workplace Safety I",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41386",
+    "title": "Apple Coding Developer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41444",
+    "title": "HSE Language Arts",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41445",
+    "title": "HSE Math",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41449",
+    "title": "Customer Service",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41453",
+    "title": "Introduction to Drywall Lathing",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41454",
+    "title": "Introduction to Carpentry",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41457",
+    "title": "Building and Grounds Worker",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41458",
+    "title": "Workplace Readiness – Allied Health",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41462",
+    "title": "Facilities Maintenance Attendant",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41758",
+    "title": "Apple Coding Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42658",
+    "title": "Pathway to  Success",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=167",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42910",
+    "title": "Family Child Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43834",
+    "title": "Medical Assistant",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44057",
+    "title": "Introduction to Community Health Workers",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45368",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45700",
+    "title": "ESL Conversation",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45701",
+    "title": "ESL Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45739",
+    "title": "Small Business Entrepreneurship Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45740",
+    "title": "Small Business Entrepreneurship Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45742",
+    "title": "Artificial Intelligence Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45883",
+    "title": "Stand-up Forklift Safety",
+    "award": "Noncredit program",
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39057602129"
+}
