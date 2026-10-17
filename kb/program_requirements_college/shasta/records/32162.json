@@ -101,11 +101,17 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Identify and apply the scientific principles of movement, exercise, and sport including the knowledge and skill in the listed activity course families of fitness, aquatics, individual sport and team sport.",
+    "Transfer to the California State University level programs with a comprehensive foundation in Kinesiology courses."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify and apply the scientific principles of movement, exercise, and sport in",
+    "not in the catalog text as printed: Transfer to the California State University level programs with a comprehensive "
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -115,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -415,5 +421,6 @@
    "Additional Electives 6-14 recorded in degree_elective_units; the catalog notes the number varies depending on units that double count."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

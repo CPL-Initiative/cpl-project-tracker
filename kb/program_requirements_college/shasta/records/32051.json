@@ -101,11 +101,27 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Describe the basic elements of dramatic structure and analyze the dramatic components in a theatrical production.",
+    "Select appropriate monologues and prepare them as audition pieces.",
+    "Investigate the themes and dramaturgy of the Greek, Roman, Medieval, Renaissance, Elizabethan, Jacobean and Restoration periods of Theatre history and compare and contrast those periods through discussion, papers, and performance analysis.",
+    "Identify and apply the major components of stagecraft in the implementation of scenery, lighting, costume, make- up, special effects, and production management.",
+    "Investigate the social, political, and spiritual objectives of theatrical performance through discussions and papers that deal with gender, politics and religion.",
+    "Evaluate dramatic scripts relative to historical context and contemporary relevance.",
+    "Develop cooperation skills in working with people from diverse cultures."
+   ],
+   "why": [
+    "not in the catalog text as printed: Describe the basic elements of dramatic structure and analyze the dramatic compo",
+    "not in the catalog text as printed: Select appropriate monologues and prepare them as audition pieces.",
+    "not in the catalog text as printed: Investigate the themes and dramaturgy of the Greek, Roman, Medieval, Renaissance",
+    "not in the catalog text as printed: Identify and apply the major components of stagecraft in the implementation of s",
+    "not in the catalog text as printed: Investigate the social, political, and spiritual objectives of theatrical perfor",
+    "not in the catalog text as printed: Evaluate dramatic scripts relative to historical context and contemporary releva",
+    "not in the catalog text as printed: Develop cooperation skills in working with people from diverse cultures."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -115,7 +131,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -306,5 +322,6 @@
    "The page also contains the Studio Arts AA-T and Accounting certificates; only the Theatre Arts AA-T section was read. The section continues across a page break (pages 57-58)."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

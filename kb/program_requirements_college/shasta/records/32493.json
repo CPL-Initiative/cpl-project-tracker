@@ -102,10 +102,18 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Identify and discuss plot, conflict, setting, time frame, characters (protagonist and antagonist), dialogue, suspense, rising action, and denouement with works of literature in papers and on examinations."
+    "Define basic critical reasoning concepts; identify literary genres; and write effective, clear, and well -organized analytical arguments or literary analyses.",
+    "Identify and discuss plot, conflict, setting, time frame, characters (protagonist and antagonist), dialogue, suspense, rising action, and denouement with works of literature in papers and on examinations.",
+    "Identify and write about or discuss diction, syntax, figurative language, sound and rhythm, irony, and various poetic forms.",
+    "Analyze and write about literature with an understanding of the historical and cultural contexts from which literary classics spring.",
+    "Apply a variety of approaches to the analysis of literary works, including but not limited to historical, thematic, and formal approaches."
    ],
    "why": [
-    "not in the catalog text as printed: Identify and discuss plot, conflict, setting, time frame, characters (protagonis"
+    "not in the catalog text as printed: Define basic critical reasoning concepts; identify literary genres; and write ef",
+    "not in the catalog text as printed: Identify and discuss plot, conflict, setting, time frame, characters (protagonis",
+    "not in the catalog text as printed: Identify and write about or discuss diction, syntax, figurative language, sound ",
+    "not in the catalog text as printed: Analyze and write about literature with an understanding of the historical and c",
+    "not in the catalog text as printed: Apply a variety of approaches to the analysis of literary works, including but n"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -431,5 +439,6 @@
    "# marks courses that may also fulfill Cal-GETC requirements; markers dropped from codes."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

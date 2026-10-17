@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 150,
  "with_closed_list": 137,
- "started": "2026-10-17T05:29:29Z",
+ "started": "2026-10-17T09:02:44Z",
  "pdf": {
   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
   "access": "ok",
@@ -14,20 +14,1607 @@
   "pages_total": 265,
   "error": null,
   "chars_total": 1822787,
-  "pypdf_accepted": 124,
+  "pypdf_accepted": 127,
   "sample": [
    "p80: '1. Demonstrate the basic knowledge, skills and abilities to safely \\nperform the tasks required to become an entry level firefighter. \\nCERTIFICATE REQUIREMENTS: \\nFIRS 104 Fire Fighter Academy 21.5 \\n TOTAL UNITS FOR CERTIFICATE 21.5 \\nStudents'",
    "p160: 'flammable liquids and gas fire fighting, and hazardous materials/WMD. \\nThis academy is an Accredited Regional Training Program approved by \\nthe California State Board of Fire Services. Final certification as an \\nIFSAC/Pro Board certified Fi'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "06409",
+    "pages": [
+     49,
+     50,
+     51,
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Associate in Science for Transfer: SC Program: AS-T.2003 PROGRAM DESCRIPTION: The Associate in Science in Agricultural Business for Transfer Degree (AS- T in Agricultural Business) provides students with th"
+   },
+   {
+    "control_number": "06412",
+    "pages": [
+     60,
+     61,
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] In addition to the 34- unit general education pattern for Cal-GETC, students must complete the core courses listed below for the Associate in Science in Business Administration 2.0 for Transfer degree. Studen"
+   },
+   {
+    "control_number": "06423",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] *May be used to fulfill General Education requirements. See a counselor. ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS: Major 41 General Education 15 Additional Electives 4* Degree Total 60 ♦Number "
+   },
+   {
+    "control_number": "06424",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] The Humanities emphasis permits students to explore the arts, ideas, values, and cultural expressions of the world’s peoples as a foundation for lifelong learning or as an introduction to fine arts, literatur"
+   },
+   {
+    "control_number": "06430",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] • Associate in Science Degree in Welding Technology • Certificate from Shasta College in Welding Technology • Certification by the American Welding Society as a certified welder This degree is approved thr"
+   },
+   {
+    "control_number": "06433",
+    "pages": [
+     56,
+     57
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] AA degree in Art. Students interested in transferring should check course requirements with counselors or the transfer college. This degree is approved through the California Community College Chancellor’s O"
+   },
+   {
+    "control_number": "06434",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.765,
+    "opens": "[page 98] PROGRAM DESCRIPTION: The Associate in Arts in Music for Transfer Degree is designed to prepare the student for transfer to four -year institutions of higher education and specifically intended to satisfy the "
+   },
+   {
+    "control_number": "06440",
+    "pages": [
+     87,
+     88,
+     89,
+     90
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] mental, and social well-being of clients, families and the community. GRADUATION REQUIREMENTS: Local GE pattern is a component of the graduation requirements REQUIREMENTS FOR ENROLLMENT IN THE PROGRAM: Spac"
+   },
+   {
+    "control_number": "06441",
+    "pages": [
+     209
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 209] This is a survey course on Theatre History emphasizing cultural, historical, and international theatre from its origins through the 17th Century. It includes exploration of experience, imagination, and expr"
+   },
+   {
+    "control_number": "06444",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] support services. Students with an A.S. Degree in Human Services will have the opportunity to enter the Human Services field in a number of paraprofessional positions, and with additional coursework, would be"
+   },
+   {
+    "control_number": "06453",
+    "pages": [
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] ASSOCIATE IN SCIENCE IN EARLY CHILDHOOD EDUCATION FOR TRANSFER DEGREE REQUIREMENTS: Major 24 General Education (Cal-GETC) 34 Additional Electives 5* Degree Total Will Not Exceed 60 Units ♦Numbe"
+   },
+   {
+    "control_number": "06457",
+    "pages": [
+     69,
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] requirements are also required for the degree. Hands-on work experience education provides the student additional experience in the field. This degree is approved through the California Community College Ch"
+   },
+   {
+    "control_number": "09113",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] BSOT 80 Outlook 1 BSOT 114 Healthcare Billing and Reimbursement 3 BSOT 150 Electronic Medical Records 3 BSOT 152 Keyboarding for Speed and Accuracy 0.5 BSOT 158 Office Procedures for Admin Assistants 3 BS"
+   },
+   {
+    "control_number": "09115",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] BSOT 80 Outlook 1 BSOT 114 Healthcare Billing and Reimbursement 3 BSOT 150 Electronic Medical Records 3 BSOT 152 Keyboarding for Speed and Accuracy 0.5 BSOT 158 Office Procedures for Admin Assistants 3 BS"
+   },
+   {
+    "control_number": "09477",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] TRANSFER DEGREE REQUIREMENTS: Major 18 General Education (Cal-GETC) 34 Additional Electives 14-17* Degree Total Will Not Exceed 60 Units ♦Number will vary depending on units that double count. "
+   },
+   {
+    "control_number": "09478",
+    "pages": [
+     61,
+     62,
+     63,
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Business Administration – Business Entrepreneurship Certificate: SC Program: CT.3055 PROGRAM DESCRIPTION: Students completing this certificate will have the foundation necessary to begin building a small"
+   },
+   {
+    "control_number": "09485",
+    "pages": [
+     63,
+     64,
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] 2. Recognize conflict styles and manage conflict situations utilizing conflict resolution skills. 3. List ways to maintain/change your attitude in order to provide superior customer service. 4. Embrace chan"
+   },
+   {
+    "control_number": "09497",
+    "pages": [
+     48,
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 48] ADJU 17 Principles and Procedures of the Justice System 3 ADJU 18 Community Relations & Multicultural Issues for Law Enforcement 3 ADJU 20 Principles of Investigation 3 ADJU 23 Career Planning for Administr"
+   },
+   {
+    "control_number": "09501",
+    "pages": [
+     50,
+     51,
+     52,
+     53
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] SC Program: AS.1494 PROGRAM DESCRIPTION: The job market in forestry is strong with respect to both permanent and seasonal employment. On average, 70 - 80% of seasonal Natural Resources job openings in norther"
+   },
+   {
+    "control_number": "09505",
+    "pages": [
+     52,
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] 5. Be able to evaluate basic theory, concepts, and ecological principles as they apply to Forestry, Wildlife, Water Resources, and Ecosystem Restoration and will use his/her cumulative skills to think critica"
+   },
+   {
+    "control_number": "09506",
+    "pages": [
+     104
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] Degree Total Will Not Exceed 60 Units ♦Number will vary depending on units that double count. WATER RESOURCES Water/Wastewater Treatment Certificate: SC Program: CL.3420 PROGRAM DESCRIPTION: This program"
+   },
+   {
+    "control_number": "09513",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] All courses in the program will employ an integrated teaching strategy that will include development of critical thinking and clinical skills requiring competence in oral and written English communication, an"
+   },
+   {
+    "control_number": "10718",
+    "pages": [
+     69,
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] requirements are also required for the degree. Hands-on work experience education provides the student additional experience in the field. This degree is approved through the California Community College Ch"
+   },
+   {
+    "control_number": "11074",
+    "pages": [
+     80
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] 1. Demonstrate the basic knowledge, skills and abilities to safely perform the tasks required to become an entry level firefighter. CERTIFICATE REQUIREMENTS: FIRS 104 Fire Fighter Academy 21.5 TOTAL UNITS "
+   },
+   {
+    "control_number": "13196",
+    "pages": [
+     61,
+     62,
+     63,
+     64
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Business Administration – Business Entrepreneurship Certificate: SC Program: CT.3055 PROGRAM DESCRIPTION: Students completing this certificate will have the foundation necessary to begin building a small"
+   },
+   {
+    "control_number": "13483",
+    "pages": [
+     139
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 139] Advisory: CIS 61 with a grade of C or higher Class Hours: 36 lecture/54 lab total C-ID: COMP 132 This second-level course for the C++ programming language picks up from the ending point of CIS 61. An empha"
+   },
+   {
+    "control_number": "17479",
+    "pages": [
+     50,
+     51,
+     52,
+     53
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] SC Program: AS.1494 PROGRAM DESCRIPTION: The job market in forestry is strong with respect to both permanent and seasonal employment. On average, 70 - 80% of seasonal Natural Resources job openings in norther"
+   },
+   {
+    "control_number": "17964",
+    "pages": [
+     43,
+     44,
+     45,
+     46
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.922,
+    "opens": "[page 43] Shasta College 2026-2027 Cal-GETC CT.3461 California General Education Transfer Curriculum Completion of the California General Education Transfer Curriculum (Cal-GETC) will permit a student to transfer fro"
+   },
+   {
+    "control_number": "17965",
+    "pages": [
+     41,
+     42,
+     43,
+     44
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.994,
+    "opens": "[page 41] Shasta College 2026-2027 Associate Degree – General Education General Education - 21 units (plus a major field of study = 60 units) 1. ENGLISH COMPOSITION, ORAL COMMUNICATION, AND CRITICAL THINKING (minimum "
+   },
+   {
+    "control_number": "18063",
+    "pages": [
+     52,
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] 5. Be able to evaluate basic theory, concepts, and ecological principles as they apply to Forestry, Wildlife, Water Resources, and Ecosystem Restoration and will use his/her cumulative skills to think critica"
+   },
+   {
+    "control_number": "18064",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] The Humanities emphasis permits students to explore the arts, ideas, values, and cultural expressions of the world’s peoples as a foundation for lifelong learning or as an introduction to fine arts, literatur"
+   },
+   {
+    "control_number": "18065",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] • Certificate from Shasta College in Welding Technology • Certification by the American Welding Society as a certified welder This degree is approved through the California Community College Chancellor’s Of"
+   },
+   {
+    "control_number": "18080",
+    "pages": [
+     53,
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.807,
+    "opens": "[page 53] #May be used to fulfill Cal-GETC requirements. See a counselor. ASSOCIATE IN SCIENCE IN AGRICULTURE PLANT SCIENCE FOR TRANSFER DEGREE REQUIREMENTS: Major 28-33 General Education (Cal-GETC) 34 Additio"
+   },
+   {
+    "control_number": "18081",
+    "pages": [
+     81,
+     82,
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] FTWO 128 Emergency Medical Services Classes: FAID 75, 130, 132, 133 *May be used to fulfill General Education requirements. ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS: Major 39 General Education (SCGE) "
+   },
+   {
+    "control_number": "18082",
+    "pages": [
+     100,
+     101,
+     102,
+     103
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] 4. Identify and apply the scientific principles of movement, exercise, and sport including the knowledge and skill in the listed activity course families of fitness, aquatics, individual sport and team sport"
+   },
+   {
+    "control_number": "18083",
+    "pages": [
+     42
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 42] ANTH 25 Indigenous Peoples of N.America ARCH 3 Prin of Archaeology ARCH 4A Beg Field Archaeology BUAD 10 Into to Business BUAD 15 Business & Society BUAD 45 Humn Rela on Job COMM 20 Intercult Comm COMM 50 Ge"
+   },
+   {
+    "control_number": "18084",
+    "pages": [
+     59,
+     60,
+     61,
+     62
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] This certificate is approved through the California Community College Chancellor’s Office. Upon satisfactory completion of the listed requirements and filing an application for graduation with Admissions and"
+   },
+   {
+    "control_number": "18087",
+    "pages": [
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Engineering. See a counselor for the complete list of courses required for your engineering field and university – the requirements typically total many more than 26 units and the general education areas are "
+   },
+   {
+    "control_number": "18088",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.619,
+    "opens": "[page 45] Shasta College 2026-2027 University Studies – GE Option 3 Independent, out-of-state universities, and high unit/specialized majors complete 30 units to satisfy a GE-modified plan. AREA 1 - ENGLISH COMMUNICAT"
+   },
+   {
+    "control_number": "18089",
+    "pages": [
+     45,
+     46
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.854,
+    "opens": "[page 45] Shasta College 2026-2027 University Studies – GE Option 3 Independent, out-of-state universities, and high unit/specialized majors complete 30 units to satisfy a GE-modified plan. AREA 1 - ENGLISH COMMUNICAT"
+   },
+   {
+    "control_number": "18090",
+    "pages": [
+     96,
+     97
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] JAPN 2 Japanese 2 (5) JAPN 3 Japanese 3 (5) JAPN 4 Japanese 4 (5) SPAN 1 Spanish 1 (5) SPAN 2 Spanish 2 (5) SPAN 3 Spanish 3 (4) SPAN 4 Spanish 4 (4) Select the remaining 0 – 8 units from: Any course no"
+   },
+   {
+    "control_number": "18093",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.561,
+    "opens": "[page 74] Middle/High School teachers and Elementary School teachers, respectively. In addition, the degree core includes a course in Earth History needed for the Single Subject path but also NGSS -relevant at several"
+   },
+   {
+    "control_number": "18094",
+    "pages": [
+     100,
+     101,
+     102,
+     103
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.623,
+    "opens": "[page 100] 4. Identify and apply the scientific principles of movement, exercise, and sport including the knowledge and skill in the listed activity course families of fitness, aquatics, individual sport and team sport"
+   },
+   {
+    "control_number": "18095",
+    "pages": [
+     100,
+     101
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] 4. Identify and apply the scientific principles of movement, exercise, and sport including the knowledge and skill in the listed activity course families of fitness, aquatics, individual sport and team sport"
+   },
+   {
+    "control_number": "18096",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 45] Shasta College 2026-2027 University Studies – GE Option 3 Independent, out-of-state universities, and high unit/specialized majors complete 30 units to satisfy a GE-modified plan. AREA 1 - ENGLISH COMMUNICAT"
+   },
+   {
+    "control_number": "18097",
+    "pages": [
+     45,
+     46,
+     47,
+     48
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.854,
+    "opens": "[page 45] Shasta College 2026-2027 University Studies – GE Option 3 Independent, out-of-state universities, and high unit/specialized majors complete 30 units to satisfy a GE-modified plan. AREA 1 - ENGLISH COMMUNICAT"
+   },
+   {
+    "control_number": "18098",
+    "pages": [
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] requirements and filing an application for graduation with Admissions and Records, the student’s transcript will reflect completion of this degree. PROGRAM LEARNING OUTCOMES: Upon successful completion of t"
+   },
+   {
+    "control_number": "18142",
+    "pages": [
+     53,
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.792,
+    "opens": "[page 53] #May be used to fulfill Cal-GETC requirements. See a counselor. ASSOCIATE IN SCIENCE IN AGRICULTURE PLANT SCIENCE FOR TRANSFER DEGREE REQUIREMENTS: Major 28-33 General Education (Cal-GETC) 34 Additio"
+   },
+   {
+    "control_number": "18143",
+    "pages": [
+     61,
+     62,
+     63,
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.659,
+    "opens": "[page 61] Business Administration – Business Entrepreneurship Certificate: SC Program: CT.3055 PROGRAM DESCRIPTION: Students completing this certificate will have the foundation necessary to begin building a small"
+   },
+   {
+    "control_number": "18145",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Engineering. See a counselor for the complete list of courses required for your engineering field and university – the requirements typically total many more than 26 units and the general education areas are "
+   },
+   {
+    "control_number": "18150",
+    "pages": [
+     44
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.524,
+    "opens": "[page 44] ECE 1: Human Development ECE 9: Child Growth and Development ECON C2001: Principles of Microeconomics ECON C2002: Principles of Macroeconomics ETHS 5: Intro. Asian American Studies ETHS 8: Intro. African A"
+   },
+   {
+    "control_number": "18154",
+    "pages": [
+     73
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.56,
+    "opens": "[page 73] ECE 7 Early Childhood Observation and Assessment 3 ECE 8 Teaching Practicum for Young Children 3 ECE 9 Child, Growth and Development 3 ECE 17 Principles/Practices of Teaching Young Children 3 ECE 20 Introdu"
+   },
+   {
+    "control_number": "18156",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.623,
+    "opens": "[page 91] The Humanities emphasis permits students to explore the arts, ideas, values, and cultural expressions of the world’s peoples as a foundation for lifelong learning or as an introduction to fine arts, literatur"
+   },
+   {
+    "control_number": "18157",
+    "pages": [
+     41,
+     42,
+     43,
+     44
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.896,
+    "opens": "[page 41] Shasta College 2026-2027 Associate Degree – General Education General Education - 21 units (plus a major field of study = 60 units) 1. ENGLISH COMPOSITION, ORAL COMMUNICATION, AND CRITICAL THINKING (minimum "
+   },
+   {
+    "control_number": "18158",
+    "pages": [
+     46
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 46] COMM C1004: Interpersonal Communication COMM 20: Intercultural Communication COMM 50: Gender and Communication ECE 1: Human Development ECE 9: Child Growth and Development ECON C2001: Prin./Microecon"
+   },
+   {
+    "control_number": "18159",
+    "pages": [
+     48
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 48] ADJU 17 Principles and Procedures of the Justice System 3 ADJU 18 Community Relations & Multicultural Issues for Law Enforcement 3 ADJU 20 Principles of Investigation 3 ADJU 23 Career Planning for Administr"
+   },
+   {
+    "control_number": "18160",
+    "pages": [
+     41,
+     42,
+     43,
+     44
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.94,
+    "opens": "[page 41] Shasta College 2026-2027 Associate Degree – General Education General Education - 21 units (plus a major field of study = 60 units) 1. ENGLISH COMPOSITION, ORAL COMMUNICATION, AND CRITICAL THINKING (minimum "
+   },
+   {
+    "control_number": "18624",
+    "pages": [
+     44,
+     45,
+     46,
+     47
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.786,
+    "opens": "[page 44] ECE 1: Human Development ECE 9: Child Growth and Development ECON C2001: Principles of Microeconomics ECON C2002: Principles of Macroeconomics ETHS 5: Intro. Asian American Studies ETHS 8: Intro. African A"
+   },
+   {
+    "control_number": "18625",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 78] Select 3 units from the following: ESCI 18 Global Climate Change: Past, Present and Future (3) GEOG 1A Physical Geography (3) AND GEOG 1AL Physical Geography Lab (1) GEOG 2A Field Studies in Physical Geogr"
+   },
+   {
+    "control_number": "18626",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.843,
+    "opens": "[page 77] 3. Practice critical thinking to evaluate internal and surface Earth processes and their results. 4. Utilize geologic concepts and theory to analyze and interpret field situations supported by lab and field-"
+   },
+   {
+    "control_number": "18655",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.94,
+    "opens": "[page 74] Middle/High School teachers and Elementary School teachers, respectively. In addition, the degree core includes a course in Earth History needed for the Single Subject path but also NGSS -relevant at several"
+   },
+   {
+    "control_number": "18657",
+    "pages": [
+     44,
+     45,
+     46,
+     47
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.824,
+    "opens": "[page 44] ECE 1: Human Development ECE 9: Child Growth and Development ECON C2001: Principles of Microeconomics ECON C2002: Principles of Macroeconomics ETHS 5: Intro. Asian American Studies ETHS 8: Intro. African A"
+   },
+   {
+    "control_number": "18658",
+    "pages": [
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.789,
+    "opens": "[page 78] Select 3 units from the following: ESCI 18 Global Climate Change: Past, Present and Future (3) GEOG 1A Physical Geography (3) AND GEOG 1AL Physical Geography Lab (1) GEOG 2A Field Studies in Physical Geogr"
+   },
+   {
+    "control_number": "18659",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.915,
+    "opens": "[page 74] Middle/High School teachers and Elementary School teachers, respectively. In addition, the degree core includes a course in Earth History needed for the Single Subject path but also NGSS -relevant at several"
+   },
+   {
+    "control_number": "19640",
+    "pages": [
+     60,
+     61,
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] In addition to the 34- unit general education pattern for Cal-GETC, students must complete the core courses listed below for the Associate in Science in Business Administration 2.0 for Transfer degree. Studen"
+   },
+   {
+    "control_number": "19642",
+    "pages": [
+     63,
+     64,
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] 2. Recognize conflict styles and manage conflict situations utilizing conflict resolution skills. 3. List ways to maintain/change your attitude in order to provide superior customer service. 4. Embrace chan"
+   },
+   {
+    "control_number": "19647",
+    "pages": [
+     69,
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] requirements are also required for the degree. Hands-on work experience education provides the student additional experience in the field. This degree is approved through the California Community College Ch"
+   },
+   {
+    "control_number": "19650",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] *May be used to fulfill General Education requirements. See a counselor. ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS: Major 41 General Education 15 Additional Electives 4* Degree Total 60 ♦Number "
+   },
+   {
+    "control_number": "30486",
+    "pages": [
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.692,
+    "opens": "[page 53] #May be used to fulfill Cal-GETC requirements. See a counselor. ASSOCIATE IN SCIENCE IN AGRICULTURE PLANT SCIENCE FOR TRANSFER DEGREE REQUIREMENTS: Major 28-33 General Education (Cal-GETC) 34 Additio"
+   },
+   {
+    "control_number": "30491",
+    "pages": [
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] #May be used to fulfill Cal-GETC requirements. See a counselor. ASSOCIATE IN SCIENCE IN AGRICULTURE PLANT SCIENCE FOR TRANSFER DEGREE REQUIREMENTS: Major 28-33 General Education (Cal-GETC) 34 Additio"
+   },
+   {
+    "control_number": "30579",
+    "pages": [
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] in Arts in Sociology for Transfer Degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No Pass basis. REQU"
+   },
+   {
+    "control_number": "30580",
+    "pages": [
+     66
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Communication Studies 2.0 for Transfer degree aligns with the CSU Bachelor of Arts in Communication Studies. This degree is approved through the California Community College Chancellor’s Office. Upon satisfa"
+   },
+   {
+    "control_number": "31130",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] FTWO 128 Emergency Medical Services Classes: FAID 75, 130, 132, 133 *May be used to fulfill General Education requirements. ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS: Major 39 General Education (SCGE) "
+   },
+   {
+    "control_number": "31267",
+    "pages": [
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] in Science in Early Childhood Education for Transfer degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No"
+   },
+   {
+    "control_number": "31844",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] and ESCI 34L The Modoc Plateau Lab/Field Studies (0.5) ESCI 35 Lassen Volcanic National Park (1.5) and ESCI 35L Lassen Volcanic Nat’l Park Lab/Field Studies (0.5) ESCI 36 The Mount Shasta Region (1.5"
+   },
+   {
+    "control_number": "31845",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] and ESCI 34L The Modoc Plateau Lab/Field Studies (0.5) ESCI 35 Lassen Volcanic National Park (1.5) and ESCI 35L Lassen Volcanic Nat’l Park Lab/Field Studies (0.5) ESCI 36 The Mount Shasta Region (1.5"
+   },
+   {
+    "control_number": "31846",
+    "pages": [
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] PROGRAM DESCRIPTION: The Early Childhood Education Certificate prepares students to work effectively with young children (ages 0-8) in a variety of care and education settings. After completion of the 24-unit"
+   },
+   {
+    "control_number": "31988",
+    "pages": [
+     102,
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 102] social issues. The Associate in Arts in Psychology for Transfer degree is designed to provide students with a common core of lower division courses required to transfer and pursue a baccalaureate (4-year) de"
+   },
+   {
+    "control_number": "32039",
+    "pages": [
+     47,
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] in Science in Administration of Justice for Transfer Degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No"
+   },
+   {
+    "control_number": "32051",
+    "pages": [
+     57,
+     58
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] 8. Transfer to a California State University with a major in Theatre Arts. REQUIREMENTS: In addition to the 34-unit general education pattern or Cal-GETC, students must complete the core courses listed below"
+   },
+   {
+    "control_number": "32162",
+    "pages": [
+     100,
+     101,
+     102,
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] in Arts in Kinesiology for Transfer Degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No Pass basis. RE"
+   },
+   {
+    "control_number": "32173",
+    "pages": [
+     57
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] PROGRAM DESCRIPTION: The AA-T in Studio Arts program provides a solid foundation in the fundamentals of art, including conceptual awareness of current issues in art, technical competencies, visual aptitudes,"
+   },
+   {
+    "control_number": "32213",
+    "pages": [
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed professional production consultants who serve California agriculture, natural resource and horticulture producers. PCAs specialize in pest manag"
+   },
+   {
+    "control_number": "32486",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] in Science in Physics for Transfer Degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No Pass basis. REQ"
+   },
+   {
+    "control_number": "32493",
+    "pages": [
+     95,
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] in Arts in English for Transfer Degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No Pass basis. REQUIR"
+   },
+   {
+    "control_number": "32573",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] PROGRAM DESCRIPTION: The Associate in Arts in Music for Transfer Degree is designed to prepare the student for transfer to four -year institutions of higher education and specifically intended to satisfy the "
+   },
+   {
+    "control_number": "32755",
+    "pages": [
+     91
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] nature of the universe. The Associate in Arts in Philosophy for Transfer degree is designed to provide students with a common core of lower division courses required to transfer and pursue a baccalaureate (4-"
+   },
+   {
+    "control_number": "33268",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] 3. Practice critical thinking to evaluate internal and surface Earth processes and their results. 4. Utilize geologic concepts and theory to analyze and interpret field situations supported by lab and field-"
+   },
+   {
+    "control_number": "33929",
+    "pages": [
+     85,
+     86
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] offices, ambulatory care facilities, long term care facilities, home health agencies, consulting firms, and any organization that uses patient data or health information, such as pharmaceutical companies, law"
+   },
+   {
+    "control_number": "34005",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Students can enter the health information management bachelor degree program through the following pathways: 1. Entering as a Freshman (1st year): Designed for students admitted to the Health Information Tec"
+   },
+   {
+    "control_number": "35160",
+    "pages": [
+     102,
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] Arts in Political Science for Transfer degree provides the student with the problem solving skills to become active participants in the world around them. This degree is approved through the California Comm"
+   },
+   {
+    "control_number": "35244",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Arts in Geography for Transfer degree is designed to prepare students for a seamless transfer into the CSU system to complete a baccalaureate degree in Geography or a similar major. This degree is approved t"
+   },
+   {
+    "control_number": "35407",
+    "pages": [
+     118,
+     119
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 118] first semester of the Certificate of Achievement in Medical Assisting. Students will demonstrate the knowledge required to perform basic billing and coding and financial management, as well as understand med"
+   },
+   {
+    "control_number": "35606",
+    "pages": [
+     52,
+     53,
+     54,
+     55
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] PROGRAM DESCRIPTION: The AS-T in Agriculture-Plant Science is designed to prepare students for transfer to a Bachelor’s degree program in Plant Science, Horticulture or related major at a CSU campus. A Bach"
+   },
+   {
+    "control_number": "35607",
+    "pages": [
+     49,
+     50,
+     51,
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Associate in Science for Transfer: SC Program: AS-T.2003 PROGRAM DESCRIPTION: The Associate in Science in Agricultural Business for Transfer Degree (AS- T in Agricultural Business) provides students with th"
+   },
+   {
+    "control_number": "35817",
+    "pages": [
+     96,
+     97
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.85,
+    "opens": "[page 96] in Arts in Elementary Teacher Education for Transfer degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/No"
+   },
+   {
+    "control_number": "35896",
+    "pages": [
+     48,
+     49,
+     50,
+     51
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] ADJU 17 Principles and Procedures of the Justice System 3 ADJU 18 Community Relations & Multicultural Issues for Law Enforcement 3 ADJU 20 Principles of Investigation 3 ADJU 23 Career Planning for Administr"
+   },
+   {
+    "control_number": "35921",
+    "pages": [
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 93] Diesel Technology Certificate: SC Program: CT.3134 PROGRAM DESCRIPTION: This curriculum prepares the student for entry into the mechanic trade related to heavy equipment and diesel engines. Award of appr"
+   },
+   {
+    "control_number": "35929",
+    "pages": [
+     101,
+     102,
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] History for Transfer Degree is designed to provide students with a common core of lower division courses required to transfer and pursue a baccalaureate (4-year) degree in History in the CSU system. This de"
+   },
+   {
+    "control_number": "36060",
+    "pages": [
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.885,
+    "opens": "[page 197] PHYSICAL THERAPIST ASSISTANT (PTA) PTA 1 PHYSICAL THERAPY PRACTICE FOR THE PTA – 2 Units Corequisites: PTA 2, PTA 3, PTA 3L, PTA 4, and PTA 4L Limitation on Enrollment: Enrollment in the Physical Therap"
+   },
+   {
+    "control_number": "37749",
+    "pages": [
+     68
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Science for Transfer Degree (AS -T in Computer Science) provides students with the opportunity to meet the requirements for transfer to the California State University system in Computer Science or a similar "
+   },
+   {
+    "control_number": "37774",
+    "pages": [
+     70
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Management for Transfer Degree (AS -T Hospitality Management) provides students with the opportunity to meet the requirements for transfer to the California State University system in Hospitality Management."
+   },
+   {
+    "control_number": "38138",
+    "pages": [
+     62,
+     63,
+     64,
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] statements for service and merchandising organizations in accordance with generally accepted accounting principles. 2. Recognize, acknowledge and apply the functions and responsibilities of retail management"
+   },
+   {
+    "control_number": "39409",
+    "pages": [
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 125] student to successfully complete the L3 ASE certification exam. The Light Duty Hybrid/Electric Vehicle Specialist (L3) is a new, advanced -level certification geared toward technicians who perform diagnoses "
+   },
+   {
+    "control_number": "39682",
+    "pages": [
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Diesel Technology Certificate: SC Program: CT.3134 PROGRAM DESCRIPTION: This curriculum prepares the student for entry into the mechanic trade related to heavy equipment and diesel engines. Award of appr"
+   },
+   {
+    "control_number": "39683",
+    "pages": [
+     61,
+     62
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Business Administration – Business Entrepreneurship Certificate: SC Program: CT.3055 PROGRAM DESCRIPTION: Students completing this certificate will have the foundation necessary to begin building a small"
+   },
+   {
+    "control_number": "39957",
+    "pages": [
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed professional production consultants who serve California agriculture, natural resource and horticulture producers. PCAs specialize in pest manag"
+   },
+   {
+    "control_number": "41382",
+    "pages": [
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] HOSP 40 Human Res. Mgmt. in the Hospitality Industry 3 HOSP 45 Restaurants, Hotels, and Lawful Management 3 HOSP 50 Hospitality Marketing, Sales and Advertising 3 HOSP 55 Customer Srvc Skills for a Multicult"
+   },
+   {
+    "control_number": "41514",
+    "pages": [
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Engineering. See a counselor for the complete list of courses required for your engineering field and university – the requirements typically total many more than 26 units and the general education areas are "
+   },
+   {
+    "control_number": "41515",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] 2. Recognize conflict styles and manage conflict situations utilizing conflict resolution skills. 3. List ways to maintain/change your attitude in order to provide superior customer service. 4. Embrace chan"
+   },
+   {
+    "control_number": "41811",
+    "pages": [
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 90] certificate also serves as a pathway to the Level 2 Case Management certificate and other associate degrees including Human Services and Sociology. The content of this certificate provides students with an i"
+   },
+   {
+    "control_number": "42267",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Dietetics for Transfer degree (AS -T in Nutrition and Dietetics) prepares students for success in a baccalaureate degree in Nutrition and Dietetics with the lower- division coursework required to transfer int"
+   },
+   {
+    "control_number": "42346",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 63] 2. Recognize conflict styles and manage conflict situations utilizing conflict resolution skills. 3. List ways to maintain/change your attitude in order to provide superior customer service. 4. Embrace chan"
+   },
+   {
+    "control_number": "42367",
+    "pages": [
+     60,
+     61,
+     62
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] in Science in Business Administration 2.0 for Transfer degree. Students must also obtain a minimum grade point average of 2.0 and a C or better in each major course, or a “P\" if the course is taken on a Pass/"
+   },
+   {
+    "control_number": "43618",
+    "pages": [
+     66
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Communication Studies 2.0 for Transfer degree aligns with the CSU Bachelor of Arts in Communication Studies. This degree is approved through the California Community College Chancellor’s Office. Upon satisfa"
+   },
+   {
+    "control_number": "43879",
+    "pages": [
+     56
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] evidenced by written supervisor review in both Supervised Internships, ADS 94 and ADS 21. 2. By the completion of the Alcohol and Drug Studies Program, students will clearly identify themselves as profession"
+   },
+   {
+    "control_number": "43880",
+    "pages": [
+     55,
+     56
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Upon successful completion of the certificate, the student should be able to: 4. Demonstrate the skills required to successfully pass the CLCA Certified Landscape Technician Exam. 5. Properly identify and p"
+   },
+   {
+    "control_number": "43972",
+    "pages": [
+     65,
+     66
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] BSOT 80 Outlook 1 BSOT 114 Healthcare Billing and Reimbursement 3 BSOT 150 Electronic Medical Records 3 BSOT 152 Keyboarding for Speed and Accuracy 0.5 BSOT 158 Office Procedures for Admin Assistants 3 BS"
+   },
+   {
+    "control_number": "44358",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] businesses. The Integrative Health and Wellness Coaching Certificate of Achievement is intended for those working or planning to work as health coaches, personal trainers, registered dietitians, registered n"
+   },
+   {
+    "control_number": "44492",
+    "pages": [
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] ALH 94, 101, 101L 102, 103, 103L, 104, 104L, 110 DAN (activity)* 15, 20A, 20B, 20C, 20D, 30A, 30B, 30C, 30D, 40A, 40B, 40C, 40D ETHS 11 FAID 75, 76, 130, 132, 133 HLTH 1, 2, 3, 4, 6, 7 HEOC 10, 11, 1"
+   },
+   {
+    "control_number": "44718",
+    "pages": [
+     81,
+     82,
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] FTWO 128 Emergency Medical Services Classes: FAID 75, 130, 132, 133 *May be used to fulfill General Education requirements. ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS: Major 39 General Education (SCGE) "
+   },
+   {
+    "control_number": "45111",
+    "pages": [
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed professional production consultants who serve California agriculture, natural resource and horticulture producers. PCAs specialize in pest manag"
+   },
+   {
+    "control_number": "45360",
+    "pages": [
+     43,
+     44,
+     45,
+     46
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] Shasta College 2026-2027 Cal-GETC CT.3461 California General Education Transfer Curriculum Completion of the California General Education Transfer Curriculum (Cal-GETC) will permit a student to transfer fro"
+   },
+   {
+    "control_number": "45747",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] JAPN 2 Japanese 2 (5) JAPN 3 Japanese 3 (5) JAPN 4 Japanese 4 (5) SPAN 1 Spanish 1 (5) SPAN 2 Spanish 2 (5) SPAN 3 Spanish 3 (4) SPAN 4 Spanish 4 (4) Select the remaining 0 – 8 units from: Any course no"
+   },
+   {
+    "control_number": "45839",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Accounting Foundations Certificate, providing additional depth in accounting systems, technology, and specialized procedures. This certificate equips students to pursue roles such as accounting clerk or book"
+   },
+   {
+    "control_number": "45847",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] being the Accounting Specialist Certificate. It addresses the evolving needs of the accounting profession, enhances student employability, and provides a strong foundation for further academic and professiona"
+   },
+   {
+    "control_number": "46491",
+    "pages": [
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] REQUIRED CORE: MUS 2 Diatonic Harmony and Musicianship 4 MUS 3 Advanced Diatonic Harmony and Musicianship 4 MUS 11 History of Jazz and Early Rock OR MUS 15 History of Rock 3 MUS 17 Computer Softwa"
+   }
+  ],
+  "unproven": []
  },
  "loads": 1,
- "seconds": 104.6,
- "found": 124,
+ "seconds": 167.2,
+ "found": 127,
  "by_method": {
   "no_closed_list": 13,
-  "not_found": 13,
-  "pdf_pages": 124
+  "not_found": 10,
+  "pdf_pages": 127
  },
  "shared_pages": {
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=49": [
@@ -46,6 +1633,7 @@
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91": [
    "06424",
    "18064",
+   "18156",
    "32755"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94": [
@@ -60,14 +1648,9 @@
    "06434",
    "32573"
   ],
-  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89": [
-   "06444",
-   "41811"
-  ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71": [
    "06453",
-   "31267",
-   "31846"
+   "31267"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69": [
    "06457",
@@ -81,6 +1664,7 @@
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61": [
    "09478",
+   "13196",
    "18143",
    "39683"
   ],
@@ -103,10 +1687,6 @@
    "09505",
    "18063",
    "35606"
-  ],
-  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=62": [
-   "13196",
-   "38138"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=43": [
    "17964",
@@ -137,7 +1717,6 @@
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79": [
    "18087",
    "18145",
-   "32486",
    "41514"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45": [
@@ -150,6 +1729,11 @@
    "18090",
    "35817",
    "45747"
+  ],
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74": [
+   "18093",
+   "18655",
+   "18659"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=95": [
    "18098",
@@ -174,8 +1758,7 @@
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75": [
    "31844",
-   "31845",
-   "35244"
+   "31845"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102": [
    "31988",
@@ -189,6 +1772,10 @@
    "32213",
    "39957",
    "45111"
+  ],
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=101": [
+   "32486",
+   "35929"
   ],
   "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=85": [
    "33929",
@@ -228,15 +1815,6 @@
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
     "coverage": 0.15
-   }
-  },
-  {
-   "control_number": "18093",
-   "title": "University Studies - Natural Sciences",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
-    "coverage": 0.368
    }
   },
   {
@@ -294,24 +1872,6 @@
    }
   },
   {
-   "control_number": "18156",
-   "title": "General Studies - Industrial Technologies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-    "coverage": 0.478
-   }
-  },
-  {
-   "control_number": "18655",
-   "title": "University Studies - Earth Sciences",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-    "coverage": 0.44
-   }
-  },
-  {
    "control_number": "19643",
    "title": "Computer and Information Systems - Network Administration",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -332,1256 +1892,106 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 15,
-  "0.8-1.0": 16,
-  "1.0": 93
+  "0.5-0.8": 17,
+  "0.8-1.0": 19,
+  "1.0": 91
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 124,
+  "against": "kb/program_requirements_college/shasta",
+  "kept": 118,
+  "programs": 9,
   "list": [
-   {
-    "control_number": "06409",
-    "title": "Agriculture - Equipment Operations and Maintenance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=49",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06412",
-    "title": "Business Administration - Accounting Concentration",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06423",
-    "title": "Diesel Technology",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06424",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06430",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06433",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06434",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=98",
-    "coverage": 0.765,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06440",
-    "title": "Nursing",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06441",
-    "title": "Vocational Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06444",
-    "title": "Human Services",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06453",
-    "title": "Early Childhood Education",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06457",
-    "title": "Hospitality - Culinary Arts Concentration",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09113",
-    "title": "Medical Office Professional",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09115",
-    "title": "Medical Office Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09477",
-    "title": "Computer and Information Systems - Systems Management",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09478",
-    "title": "Business - Management",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09485",
-    "title": "Business Information Systems Professional",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09497",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09501",
-    "title": "Agriculture - Horticulture and Landscaping",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09505",
-    "title": "Agriculture - Natural Resources",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=52",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09506",
-    "title": "Water/Wastewater Treatment",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09513",
-    "title": "Dental Hygiene",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10718",
-    "title": "Hospitality - Hotel/Restaurant Management Concentration",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11074",
-    "title": "Firefighter II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "13196",
     "title": "Business Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=62",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13483",
-    "title": "CIS - Network Administration",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=139",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17479",
-    "title": "Agriculture - Forest Science and Technology",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17964",
-    "title": "CSU General Education",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=43",
-    "coverage": 0.922,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17965",
-    "title": "IGETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-    "coverage": 0.994,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18063",
-    "title": "Agriculture: Natural Resources",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=52",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18064",
-    "title": "Automotive Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18065",
-    "title": "Welding Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18080",
-    "title": "University Studies - Agriculture Sciences",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-    "coverage": 0.807,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18081",
-    "title": "University Studies - Allied Health",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18082",
-    "title": "University Studies: Behavioral Science",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18083",
-    "title": "University Studies - Biological Sciences",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=42",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18084",
-    "title": "University Studies - Business Administration",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18087",
-    "title": "University Studies - Engineering",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18088",
-    "title": "University Studies - Humanities",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-    "coverage": 0.619,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18089",
-    "title": "University Studies - Language Arts",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-    "coverage": 0.854,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18090",
-    "title": "University Studies - Liberal Studies - Teaching Prep",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18094",
-    "title": "University Studies - Physical Education",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-    "coverage": 0.623,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18095",
-    "title": "University Studies: Physical Sciences",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18096",
-    "title": "University Studies - Quantitative Reasoning",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18097",
-    "title": "University Studies - Social Sciences",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-    "coverage": 0.854,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18098",
-    "title": "University Studies - World Languages",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18142",
-    "title": "General Studies - Agriculture Trades",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-    "coverage": 0.792,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18143",
-    "title": "General Studies - Business - General Business",
-    "award": "A.S. Degree",
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-    "coverage": 0.659,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18145",
-    "title": "General Studies - EMS - Emergency Medical Response",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=62",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "18150",
-    "title": "General Studies - Fire - Wildland Fire Behavior",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
-    "coverage": 0.524,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18154",
-    "title": "General Studies - Human Development",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=73",
-    "coverage": 0.56,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18157",
-    "title": "General Studies - Language Arts",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-    "coverage": 0.896,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18158",
-    "title": "General Studies - Natural Sciences",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=46",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18159",
-    "title": "General Studies - Public Safety and Services",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18160",
-    "title": "General Studies - Social Sciences",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-    "coverage": 0.94,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18624",
-    "title": "General Studies: Climatological & Meteorological Studies",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18625",
-    "title": "General Studies - Coastal Oceanographic Studies",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18626",
-    "title": "General Studies - Geosciences Technician",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=77",
-    "coverage": 0.843,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18657",
-    "title": "University Studies: Meteorology/Climatology",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18658",
-    "title": "University Studies - Oceanography and Marine Sciences",
-    "award": "A.A. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-    "coverage": 0.789,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18659",
-    "title": "University Studies - Earth Science Teacher",
+    "control_number": "18093",
+    "title": "University Studies - Natural Sciences",
     "award": "A.A. Degree",
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
-    "coverage": 0.915,
+    "coverage": 0.561,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "19640",
-    "title": "Accounting Professional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19642",
-    "title": "Business Information Systems Professional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19647",
-    "title": "Hospitality - Culinary Arts Concentration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19650",
-    "title": "Diesel Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30486",
-    "title": "Agriculture Business",
+    "control_number": "18156",
+    "title": "General Studies - Industrial Technologies",
     "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-    "coverage": 0.692,
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
+    "coverage": 0.623,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "30491",
-    "title": "Agriculture Science, Education, and Management",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-    "coverage": 1.0,
+    "control_number": "18655",
+    "title": "University Studies - Earth Sciences",
+    "award": "A.A. Degree",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
+    "coverage": 0.94,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30579",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30580",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31130",
-    "title": "English As  a Second Language",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31267",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31844",
-    "title": "Geographic Information Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31845",
-    "title": "Geographic Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "31846",
     "title": "Early Childhood Education",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=72",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31988",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32039",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=47",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32051",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32162",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32173",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32213",
-    "title": "Agriculture - Pest Control Advisor Preparation",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32486",
     "title": "Physics",
     "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=101",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32493",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32573",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32755",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33268",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33929",
-    "title": "Health Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "34005",
-    "title": "Health Information Management",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35160",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35244",
     "title": "Geography",
     "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=76",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35407",
     "title": "Medical Assisting",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35606",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=52",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35607",
-    "title": "Agriculture Business",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=49",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35817",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=96",
-    "coverage": 0.85,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35896",
-    "title": "Agriculture Animal Sciences",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35921",
-    "title": "Maintenance Mechanic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-    "coverage": 0.615,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35929",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36060",
-    "title": "Physical Therapist Assistant",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
-    "coverage": 0.885,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37749",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37774",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38138",
-    "title": "Business - Marketing and Finance",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=62",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39409",
-    "title": "Smog Inspection and Repair Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=125",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39682",
-    "title": "Heavy Equipment Logging Operations and Maintenance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39683",
-    "title": "Business Administration - Business Entrepreneurship",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39957",
-    "title": "Sustainable Landscape",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41382",
-    "title": "Wine Essentials",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41514",
-    "title": "Emergency Medical Services Specialization",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41515",
-    "title": "Small Business/Entrepreneurship Start-up",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+    "coverage": 0.875,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=86",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41811",
     "title": "Level 2 Case Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42267",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42346",
-    "title": "Customer Service Academy",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42367",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43618",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43879",
-    "title": "Addiction Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43880",
-    "title": "Addiction Studies",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=55",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43972",
-    "title": "Career and Life Success",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44358",
-    "title": "Integrative Health and Wellness Coaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44492",
-    "title": "Health and Wellness Coaching",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44718",
-    "title": "Health Sciences",
-    "award": "A.S. Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45111",
-    "title": "Small Farm Operations",
-    "award": "Noncredit program",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45360",
-    "title": "Cal-GETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=43",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45747",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45839",
-    "title": "Accounting Foundations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45847",
-    "title": "Accounting Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46491",
-    "title": "Recording Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=90",
+    "coverage": 0.875,
+    "was_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39006384701"
+ "run": "39019560588"
 }

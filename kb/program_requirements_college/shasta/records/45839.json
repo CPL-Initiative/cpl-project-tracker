@@ -83,9 +83,11 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
+    "Utilize QuickBooks Online to accurately process accounting information and prepare financial reports in compliance with generally accepted accounting principles.",
     "Analyze and apply core managerial accounting concepts, including cost classifications, cost systems, cost-volume- profit relationships, budgeting, variance analysis, responsibility accounting, differential analysis, strategic performance measurement, and capital budgeting decisions to support effective management decision-making, planning, and control."
    ],
    "why": [
+    "not in the catalog text as printed: Utilize QuickBooks Online to accurately process accounting information and prepa",
     "not in the catalog text as printed: Analyze and apply core managerial accounting concepts, including cost classifica"
    ],
    "heading_printed": true,
@@ -183,5 +185,6 @@
    "Outcome 3 copied with the catalog's spacing 'cost-volume- profit' as printed."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

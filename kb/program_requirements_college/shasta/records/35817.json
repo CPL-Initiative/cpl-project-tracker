@@ -113,11 +113,17 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Demonstrate transfer readiness for a liberal studies major at a university, especially a CSU.",
+    "Assemble an observation portfolio which includes descriptions of teaching events that implement the California Teacher Performance Expectations and documentation of 45 hours of classroom observation."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate transfer readiness for a liberal studies major at a university, espe",
+    "not in the catalog text as printed: Assemble an observation portfolio which includes descriptions of teaching events"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -363,5 +369,6 @@
    "The Liberal Studies – Teaching Prep (AA.1504) section that follows also uses many of these courses but belongs to a different award and was not read."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

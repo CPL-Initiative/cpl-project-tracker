@@ -82,21 +82,46 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Analyze and interpret the diversity of social experience using a sociological perspective.",
+    "Assess competing theoretical approaches to societal problems of publics with differing and multiple interests; specify structural or institutional sources of these social problems; and, propose and assess policies, interventions and/or modes of advocacy that will enact positive change.",
+    "Locate, analyze, assess, and communicate sociological scholarship.",
+    "Articulate the applicability of and demonstrate ability to employ a range of research strategies - quantitative and qualitative - to particular research questions, theoretical orientations, and social contexts.",
+    "Demonstrate critical thinking skills by analyzing and evaluating social, political, and/or cultural arguments, across a variety of social phenomenon, through an intersectional lens.",
+    "Articulate the ethical and social justice implications of sociological inquiry."
+   ],
+   "why": [
+    "not in the catalog text as printed: Analyze and interpret the diversity of social experience using a sociological pe",
+    "not in the catalog text as printed: Assess competing theoretical approaches to societal problems of publics with dif",
+    "not in the catalog text as printed: Locate, analyze, assess, and communicate sociological scholarship.",
+    "not in the catalog text as printed: Articulate the applicability of and demonstrate ability to employ a range of res",
+    "not in the catalog text as printed: Demonstrate critical thinking skills by analyzing and evaluating social, politic",
+    "not in the catalog text as printed: Articulate the ethical and social justice implications of sociological inquiry."
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 12,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "politics",
+    "law",
+    "public administration",
+    "international development",
+    "marketing",
+    "urban and environmental planning",
+    "medicine",
+    "criminal justice",
+    "counseling",
+    "other social service professions"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -289,5 +314,6 @@
    "The University Studies and General Studies Social Sciences sections on the same page were ignored as other awards."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

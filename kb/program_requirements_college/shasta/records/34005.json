@@ -104,11 +104,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Qualify for national certification as a Registered Health Information Administrator (RHIA) by achieving a passing score on the AHIMA certification exam.",
+    "Integrate knowledge of medical, administrative, ethical and legal requirements and standards related to healthcare delivery and protecting patient information as evidenced by successful completion of course competencies and assignments.",
+    "Apply the principles of health information management related to administering computer information systems, collecting and analyzing patient data, and using classification systems and medical terminologies as evidenced by successful completion of course competencies and assignments.",
+    "Demonstrate the concepts of effective communication to effectively interact with all healthcare organization levels that utilize patient data in decision-making and operations – clinical, financial, administrative and information systems – as evidenced by successful completion of course competencies and assignments."
+   ],
+   "why": [
+    "not in the catalog text as printed: Qualify for national certification as a Registered Health Information Administra",
+    "not in the catalog text as printed: Integrate knowledge of medical, administrative, ethical and legal requirements a",
+    "not in the catalog text as printed: Apply the principles of health information management related to administering c",
+    "not in the catalog text as printed: Demonstrate the concepts of effective communication to effectively interact with"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -324,5 +334,6 @@
    "The text after the degree total belongs to the Health Information Technology A.S. program and was not read for this award."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

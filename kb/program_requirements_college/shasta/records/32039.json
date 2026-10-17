@@ -101,11 +101,31 @@
    "program": 9,
    "courses": 0,
    "count": 9,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Identify and apply communication skills when interacting with all people.",
+    "Identify the need for understanding diverse populations in the criminal justice field and establish strategies for effectively communicating with those diverse populations.",
+    "Identify the cultural differences found in most communities and apply methods of effectively bridging those differences.",
+    "Demonstrate and apply critical thinking skills in dealing with ethical decision making within the criminal justice system.",
+    "Demonstrate the ability to locate resources which enable the resolution of problems within the community and the participants of the criminal justice system.",
+    "Recognize the major impact ethics and morality has on the citizens the law enforcement profession serves and the daily interaction with others within the criminal justice system.",
+    "Develop effective writing skills to properly document law enforcement priorities.",
+    "Demonstrate an understanding of the theory and application of law enforcement rules, regulations, and applicable laws.",
+    "Demonstrate the ability to make the correct decision during critical life-threatening situations."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify and apply communication skills when interacting with all people.",
+    "not in the catalog text as printed: Identify the need for understanding diverse populations in the criminal justice ",
+    "not in the catalog text as printed: Identify the cultural differences found in most communities and apply methods of",
+    "not in the catalog text as printed: Demonstrate and apply critical thinking skills in dealing with ethical decision ",
+    "not in the catalog text as printed: Demonstrate the ability to locate resources which enable the resolution of probl",
+    "not in the catalog text as printed: Recognize the major impact ethics and morality has on the citizens the law enfor",
+    "not in the catalog text as printed: Develop effective writing skills to properly document law enforcement priorities",
+    "not in the catalog text as printed: Demonstrate an understanding of the theory and application of law enforcement ru",
+    "not in the catalog text as printed: Demonstrate the ability to make the correct decision during critical life-threat"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -115,7 +135,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -319,5 +339,6 @@
    "Only the A.S.-T section was read; the separate A.S. (AS.1001) and General Studies emphasis sections were ignored."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": 39019560588,
+ "read_run": "39006384701"
 }

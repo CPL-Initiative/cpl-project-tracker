@@ -2,16 +2,16 @@
  "college": "Shasta College",
  "programs": 150,
  "with_closed_list": 137,
- "found": 124,
+ "found": 127,
  "extracted": 124,
  "errors": 0,
- "passed_machine_checks": 50,
+ "passed_machine_checks": 44,
  "failed": {
   "coverage": 21,
   "invented": 0,
   "arithmetic": 72,
   "repeated": 0,
-  "outcomes": 5
+  "outcomes": 13
  },
  "cost_usd": 11.12,
  "cost_per_program": 0.0897,
@@ -32,15 +32,6 @@
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
     "coverage": 0.15
-   }
-  },
-  {
-   "control_number": "18093",
-   "title": "University Studies - Natural Sciences",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
-    "coverage": 0.368
    }
   },
   {
@@ -98,24 +89,6 @@
    }
   },
   {
-   "control_number": "18156",
-   "title": "General Studies - Industrial Technologies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-    "coverage": 0.478
-   }
-  },
-  {
-   "control_number": "18655",
-   "title": "University Studies - Earth Sciences",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-    "coverage": 0.44
-   }
-  },
-  {
    "control_number": "19643",
    "title": "Computer and Information Systems - Network Administration",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -134,5 +107,5 @@
    }
   }
  ],
- "run": "39006384701"
+ "run": "39019560588"
 }
