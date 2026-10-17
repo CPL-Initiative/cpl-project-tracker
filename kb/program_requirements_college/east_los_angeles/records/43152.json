@@ -1,0 +1,171 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "43152",
+ "shape": "noncredit",
+ "title": "Makeup for Fashion and Entertainment",
+ "award": "Noncredit program",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6667,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6667,
+    "output_tokens": 1104,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1104,
+  "output_tokens_details": {
+   "thinking_tokens": 468
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04875,
+ "ms": 10067,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "Students who complete the Makeup For Fashion And Entertainment Certificate Of Completion will exhibit proficiency in core competencies, including the application of best practices, tools, and methodologies relevant to the field."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students who complete the Makeup For Fashion And Entertainment Certificate Of Co"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Makeup for Fashion and Entertainment",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students who complete the Makeup For Fashion And Entertainment Certificate Of Completion will exhibit proficiency in core competencies, including the application of best practices, tools, and methodologies relevant to the field."
+   ],
+   "careers": [
+    "freelance makeup artists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 364CE",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 365CE",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is not printed in the excerpt; the text begins at '(Academic Plan E043152E)', so the heading was taken from the program title and should be checked against the previous page.",
+   "The page prints no block name. 'Required Courses' is a descriptive label for the unnamed course table.",
+   "This is a noncredit certificate of completion, but the catalog prints only a UNITS column showing 0 for each course and gives no hours. Measure is therefore recorded as units, with the printed 0 values.",
+   "No program total (units or hours) is printed, so total_units is null.",
+   "'freelance makeup artists' is named in the description as a topic students learn about. It is recorded as a career, but a reviewer should confirm this reading.",
+   "The text that follows belongs to other programs (Non-Medical In-Home Health Care Aide; Nutrition for a Healthy Lifestyle) and was not used."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

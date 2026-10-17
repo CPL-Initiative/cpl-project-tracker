@@ -1,0 +1,205 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "45717",
+ "shape": "certificate",
+ "title": "Criminal Investigations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9928,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9928,
+    "output_tokens": 1279,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1279,
+  "output_tokens_details": {
+   "thinking_tokens": 314
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06529,
+ "ms": 11152,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate and summarize both department policies and procedures as well as legal statutes related to criminal investigations.",
+    "Demonstrate proficiency in applying learned tactics to the interview process of witnesses and suspects, and apply this knowledge to the courtroom environment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate and summarize both department policies and procedures as well as leg",
+    "not in the catalog text as printed: Demonstrate proficiency in applying learned tactics to the interview process of "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Criminal Investigations",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in all areas of criminal investigations including the processing of the initial crime scene, collection of evidence, required reports, and determining potential suspects and victims.",
+    "Demonstrate and summarize both department policies and procedures as well as legal statutes related to criminal investigations.",
+    "Demonstrate proficiency in applying learned tactics to the interview process of witnesses and suspects, and apply this knowledge to the courtroom environment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "PUBSERV 220",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBSERV 301",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBSERV 302",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBSERV 303",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBSERV 316",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBSERV 333",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins at '(Academic Plan E045717D)'; the program heading itself is not in the text (likely on the preceding page). Section identified as Criminal Investigations by its courses matching the closed list and its outcomes; reviewer should confirm the heading.",
+   "The catalog prints the course list without a block name; 'Required Courses' is a descriptive name for the single all-required list. The list continues across a page break (pages 320-321) and ends with 'Total 16', which matches the sum of the six courses.",
+   "Closed list writes PUBSERV301 and PUBSERV303 without a space; the catalog prints PUBSERV 301 and PUBSERV 303, treated as the same courses (not catalog additions). Closed list stores no units for them; catalog prints 2 units each.",
+   "Outcomes were copied with PDF line-break hyphenation removed (e.g., 'poli - cies' read as 'policies', 'tac - tics' as 'tactics', 'sus - pects' as 'suspects').",
+   "No careers are named in this section.",
+   "Catalog year taken from page footer: 2026-2027."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

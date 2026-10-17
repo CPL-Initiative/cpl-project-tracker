@@ -1,0 +1,304 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "38093",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11382,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11382,
+    "output_tokens": 1974,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1974,
+  "output_tokens_details": {
+   "thinking_tokens": 652
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08501,
+ "ms": 16424,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "CS111",
+    "CS113",
+    "CS116",
+    "CS119",
+    "CS136",
+    "CS216",
+    "ENGGEN121",
+    "ENGGEN122",
+    "MATH261S",
+    "MATH270",
+    "MATH275"
+   ],
+   "flagged": [
+    "CS111",
+    "CS113",
+    "CS116",
+    "CS119",
+    "CS136",
+    "CS216",
+    "ENGGEN121",
+    "ENGGEN122",
+    "MATH261S",
+    "MATH270",
+    "MATH275"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     73.0
+    ],
+    "stated": [
+     66.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ysics 2.0 for Transfer (Academic Plan E046348H)",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 66,
+    "max": 66
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of physics principles, concepts and equations to solve a wide variety of problems in physics including mechanics, thermodynamics, waves, optics, electricity, magnetism & modern physics using calculus.",
+    "Demonstrate an ability to effectively collect, record and analyze data, as well as to express their findings in written form."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYSICS 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261S",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 116",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 111",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 119",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 136",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 216",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENG GEN 121",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENG GEN 122",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is cut off at the start of the extracted text ('ysics 2.0 for Transfer'); it is the Associate in Science in Physics 2.0 for Transfer degree.",
+   "Page headers read 'GENERAL CATALOG | 2026-2027'; the catalog year was given as not known.",
+   "The programming requirement is printed as a chain of 'OR' rows (CS 113, CS 116, CS 111, CS 119, CS 136, CS 216, ENG GEN 121, ENG GEN 122) inside Required Core Courses; it is recorded as one entry with alternatives. Core sum 36 + 3 = 39 matches 'TOTAL UNITS FOR MAJOR 39'.",
+   "The 'Cal-GETC GE Pattern' row in the table prints no units; ge_units 34 is taken from the ADT requirement paragraph ('34 semester/45 quarter units'). The table's 'Total 66' is recorded as degree_total.",
+   "The general sentence 'A minimum of 18 semester units' for the major and '60 semester units' for ADTs are not used as totals.",
+   "The page says this ADT replaces the previous ADT in Physics for Transfer; students with earlier catalog rights should refer to the prior catalog."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

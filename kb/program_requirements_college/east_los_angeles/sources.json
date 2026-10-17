@@ -1,0 +1,5373 @@
+[
+ {
+  "control_number": "02430",
+  "title": "Architectural Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ARC110",
+   "ARC132",
+   "ARC133",
+   "ARC161",
+   "ARC164",
+   "ARC223"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+   "title": "(Academic Plan E002430C)",
+   "h1": "(Academic Plan E002430C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 8060
+ },
+ {
+  "control_number": "02433",
+  "title": "Business Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02435",
+  "title": "Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02436",
+  "title": "International Trade",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02437",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02438",
+  "title": "Executive Assistant",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02439",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02440",
+  "title": "Computer Science Information Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02441",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02446",
+  "title": "Automobile Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02450",
+  "title": "Theater",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02451",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02452",
+  "title": "Desktop Publishing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02455",
+  "title": "Nursing, Registered",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02456",
+  "title": "Medical Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC40",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC53",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC56",
+   "HLTHOCC59",
+   "HLTHOCC61",
+   "PHYSIOL6"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=84",
+   "title": "(Academic Plan E002456C)",
+   "h1": "(Academic Plan E002456C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 3817
+ },
+ {
+  "control_number": "02458",
+  "title": "Respiratory Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02459",
+  "title": "Health Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02461",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02470",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02471",
+  "title": "Fire Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02474",
+  "title": "Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08252",
+  "title": "Architectural Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ARC110",
+   "ARC165",
+   "ARC210",
+   "ARC211",
+   "ARC223"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=103",
+   "title": "(Academic Plan E008252C)",
+   "h1": "(Academic Plan E008252C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 4925
+ },
+ {
+  "control_number": "08256",
+  "title": "Office Systems Specialist",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08257",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08259",
+  "title": "Word Information Processor",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08261",
+  "title": "Legal Secretary",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08263",
+  "title": "Computer Science Information Technology--Programming",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08266",
+  "title": "Arts Graphic Communication",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08267",
+  "title": "Licensed Vocational Nurse to Registered Nurse",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08270",
+  "title": "Health Information Coding Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08271",
+  "title": "Health Information Coding & Statistics Clerk",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08272",
+  "title": "Health Information Clerk Typist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08281",
+  "title": "Teacher II",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10721",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12781",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12782",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13322",
+  "title": "Microcomputer Programming Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13324",
+  "title": "Color Printing and Processing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13325",
+  "title": "Digital Imaging",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13326",
+  "title": "Large Format Photography",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13328",
+  "title": "Studio Lighting and Techniques",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13336",
+  "title": "Administration of Justice: Sociological",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13340",
+  "title": "Forensic Crime Scene Investigation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS172",
+   "ADMJUS173",
+   "ADMJUS285",
+   "ADMJUS428",
+   "ADMJUS5"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70",
+   "title": "(Academic Plan E013340D)",
+   "h1": "(Academic Plan E013340D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 14866
+ },
+ {
+  "control_number": "13341",
+  "title": "Chemical Dependency Specialist in Criminal Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST22",
+   "ADDICST7",
+   "ADMJUS49"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=68",
+   "title": "(Academic Plan E013341D)",
+   "h1": "(Academic Plan E013341D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2219
+ },
+ {
+  "control_number": "13343",
+  "title": "Basic Police Academy Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS14",
+   "ADMJUS2",
+   "ADMJUS6",
+   "KIN229"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69",
+   "title": "(Academic Plan E013343D)",
+   "h1": "(Academic Plan E013343D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8648
+ },
+ {
+  "control_number": "13529",
+  "title": "Multimedia",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13530",
+  "title": "Multimedia (Level II)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13531",
+  "title": "Animation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13532",
+  "title": "Animation (Level II)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14593",
+  "title": "Chemical Dependency Counselor",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14869",
+  "title": "Stage Management and Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "TECTHTR348",
+   "THEATER100",
+   "THEATER260"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
+   "title": "(Academic Plan E014869D)",
+   "h1": "(Academic Plan E014869D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    373,
+    374,
+    375,
+    376
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 12279
+ },
+ {
+  "control_number": "14872",
+  "title": "Architectural Drawing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15111",
+  "title": "Architectural Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15920",
+  "title": "CSI Technology--Microcomputers",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15923",
+  "title": "Office Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15924",
+  "title": "Fire Technology/State Fire Marshall Core Classes",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17493",
+  "title": "Cooling System and Climate Control Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17494",
+  "title": "Drivetrain Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17495",
+  "title": "Engine Performance and Drivability",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17962",
+  "title": "CSU General Education Breadth",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17963",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18010",
+  "title": "General Studies: Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18011",
+  "title": "General Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18012",
+  "title": "General Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19029",
+  "title": "Infant: Toddler",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19347",
+  "title": "Customer Service Representative",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19715",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21156",
+  "title": "Architectural Computer-Aided Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21157",
+  "title": "Architectural Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ARC110",
+   "ARC115",
+   "ARC151",
+   "ARC161",
+   "ARC164"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+   "title": "(Academic Plan E021157D)",
+   "h1": "(Academic Plan E021157D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 9646
+ },
+ {
+  "control_number": "21158",
+  "title": "Accounting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21159",
+  "title": "Business Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21161",
+  "title": "Marketing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21162",
+  "title": "Executive Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21163",
+  "title": "Office Systems Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21166",
+  "title": "Journalism",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21167",
+  "title": "Multimedia (Level I)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21168",
+  "title": "Animation (Level I)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21169",
+  "title": "Desktop Publishing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21172",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21173",
+  "title": "Computer-Aided Drafting (CAD)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21174",
+  "title": "Engineering Graphics & Design Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EET120",
+   "EET121",
+   "EET122",
+   "EET123",
+   "EET124",
+   "EGDTEK111",
+   "EGDTEK185",
+   "EGDTEK221",
+   "EGDTEK285",
+   "EGDTEK385",
+   "ELECTRN121",
+   "ELECTRN122",
+   "ELECTRN125",
+   "ELECTRN126",
+   "ENGGEN101",
+   "ENGGEN121",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN212",
+   "ENGGEN220",
+   "ENGGEN221",
+   "ENGGEN231",
+   "ENGGEN241",
+   "ENGGEN242",
+   "ENGGEN272",
+   "ENGSUP121",
+   "ENGSUP224",
+   "ENGSUP225",
+   "INDTEK103",
+   "INDTEK106",
+   "INDTEK185",
+   "INDTEK285",
+   "INDTEK385",
+   "MIT185",
+   "MIT201",
+   "MIT285",
+   "MIT385"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197",
+   "title": "(Academic Plan E021174C)",
+   "h1": "(Academic Plan E021174C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 38,
+  "text_chars": 14731
+ },
+ {
+  "control_number": "21175",
+  "title": "Photography & Digital Imaging",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21176",
+  "title": "Arts Graphic Communication",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21178",
+  "title": "Respiratory Therapy",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21179",
+  "title": "Health Information Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21180",
+  "title": "Licensed Vocational Nurse to Registered Nurse",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21183",
+  "title": "Supervisor - 3",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21184",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24040",
+  "title": "Basic Writing Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADPR1CE",
+   "ACADPR2CE",
+   "ACADPR3CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387",
+   "title": "(Academic Plan E024040E)",
+   "h1": "(Academic Plan E024040E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    387
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2360
+ },
+ {
+  "control_number": "24129",
+  "title": "Basic Skills Mathematics Preparation Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24133",
+  "title": "Job Readiness",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24134",
+  "title": "Job Readiness and Career Exploration",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24458",
+  "title": "Foundations for Academic Success",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31017",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.972,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY20",
+   "BIOLOGY3",
+   "BUS15",
+   "CHEM101",
+   "CHEM51",
+   "CHEM65",
+   "DANCETQ111",
+   "DANCETQ112",
+   "DANCETQ121",
+   "DANCETQ122",
+   "DANCETQ141",
+   "DANCETQ142",
+   "DANCETQ171",
+   "DANCETQ172",
+   "DANCETQ181",
+   "DANCETQ182",
+   "DANCETQ211",
+   "DANCETQ212",
+   "DANCETQ221",
+   "DANCETQ222",
+   "DANCETQ321",
+   "DANCETQ322",
+   "DANCETQ411",
+   "DANCETQ412",
+   "DANCETQ421",
+   "DANCETQ422",
+   "DANCETQ570",
+   "ECON20",
+   "HEALTH12",
+   "KIN201",
+   "KIN229",
+   "KIN247",
+   "KIN3011",
+   "KIN3012",
+   "KIN303",
+   "KIN307",
+   "KIN3281",
+   "KIN3282",
+   "KIN3301",
+   "KIN3302",
+   "KIN3341",
+   "KIN3361",
+   "KIN3362",
+   "KIN3381",
+   "KIN3382",
+   "KIN3391",
+   "KIN3392",
+   "KIN3461",
+   "KIN3501",
+   "KIN3502",
+   "KIN3661",
+   "KIN3662",
+   "KIN3711",
+   "KIN3861",
+   "KIN3862",
+   "KIN3871",
+   "KIN3872",
+   "KIN388",
+   "KIN3891",
+   "KIN3901",
+   "KIN3902",
+   "KIN3911",
+   "KINMAJ100",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCH91",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=240",
+   "title": "(Academic Plan E031017G)",
+   "h1": "(Academic Plan E031017G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    240,
+    241,
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 71,
+  "text_chars": 13061
+ },
+ {
+  "control_number": "32154",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM104",
+   "COMM106",
+   "COMM121",
+   "COMM130",
+   "COMM151",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167",
+   "title": "• Communication Studies 2.0 for Transfer",
+   "h1": "• Communication Studies 2.0 for Transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 8745
+ },
+ {
+  "control_number": "32170",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS15",
+   "ECON20",
+   "POLSCI40",
+   "PSYCH13",
+   "PSYCH91",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC13",
+   "SOC14",
+   "SOC19",
+   "SOC2",
+   "SOC21",
+   "SOC22",
+   "SOC23",
+   "SOC3",
+   "SOC4",
+   "SOC7",
+   "SOC86",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359",
+   "title": "(Academic Plan E032170G)",
+   "h1": "(Academic Plan E032170G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359,
+    360
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 6607
+ },
+ {
+  "control_number": "32193",
+  "title": "Technology and Logistics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT111",
+   "CAOT133",
+   "CAOT145",
+   "CAOT35",
+   "CAOT92",
+   "ECON11",
+   "GEOG25",
+   "GIS25",
+   "INTBUS3",
+   "INTBUS4",
+   "LOGTIC103",
+   "LOGTIC104",
+   "LOGTIC105",
+   "LOGTIC106",
+   "LOGTIC108"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=177",
+   "title": "(Academic Plan E032193C)",
+   "h1": "(Academic Plan E032193C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177,
+    178
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 9047
+ },
+ {
+  "control_number": "32194",
+  "title": "Technology and Logistics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT133",
+   "CAOT145",
+   "CAOT35",
+   "LOGTIC103",
+   "LOGTIC104",
+   "LOGTIC105"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=175",
+   "title": "(Academic Plan E032194D)",
+   "h1": "(Academic Plan E032194D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177,
+    178
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 13233
+ },
+ {
+  "control_number": "32902",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS160",
+   "ADMJUS172",
+   "ADMJUS2",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS67",
+   "BUS15",
+   "ECON20",
+   "PSYCC1000",
+   "PSYCH91",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=72",
+   "title": "(Academic Plan E032902H)",
+   "h1": "(Academic Plan E032902H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 7167
+ },
+ {
+  "control_number": "32980",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURNAL2181",
+   "JOURNAL2182",
+   "PHOTO47",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=231",
+   "title": "(Academic Plan E032980G)",
+   "h1": "(Academic Plan E032980G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 4124
+ },
+ {
+  "control_number": "33013",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO109",
+   "ANTHRO111",
+   "ANTHRO121",
+   "ANTHRO132",
+   "EARTH1",
+   "EARTH2",
+   "GEOG1",
+   "GEOG2",
+   "GEOLOGY1",
+   "GEOLOGY4",
+   "GEOLOGY6",
+   "PSYCH91",
+   "SOC1",
+   "SOC11",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=91",
+   "title": "(Academic Plan E033013G)",
+   "h1": "(Academic Plan E033013G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33382",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC161",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC323",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC705",
+   "MUSIC721",
+   "MUSIC745",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=291",
+   "title": "(Academic Plan E033382G)",
+   "h1": "(Academic Plan E033382G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    291,
+    292,
+    293,
+    294
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33641",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TECTHTR343",
+   "TECTHTR344",
+   "TECTHTR345",
+   "TECTHTR346",
+   "TECTHTR347",
+   "TECTHTR348",
+   "TECTHTR3491",
+   "TECTHTR3492",
+   "TECTHTR3493",
+   "TECTHTR350",
+   "THEATER100",
+   "THEATER114",
+   "THEATER260",
+   "THEATER270",
+   "THEATER272",
+   "THEATER293"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=375",
+   "title": "(Academic Plan E033641G)",
+   "h1": "(Academic Plan E033641G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    375,
+    376
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 6172
+ },
+ {
+  "control_number": "33681",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
+   "title": "Mathematics 2.0 for Transfer",
+   "h1": "Mathematics 2.0 for Transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 3882
+ },
+ {
+  "control_number": "33915",
+  "title": "Gerontology - Health",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTHOCC62",
+   "HLTHOCC63",
+   "HLTHOCC65"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78",
+   "title": "(Academic Plan E033915D)",
+   "h1": "(Academic Plan E033915D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3192
+ },
+ {
+  "control_number": "35087",
+  "title": "Environmental Studies: Social and Public Policy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35088",
+  "title": "Environmental Studies: Physical Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.737,
+  "codes_found": [
+   "BIOLOGY9",
+   "CHEM101",
+   "EARTH1",
+   "ECON60",
+   "ENVSCI1",
+   "ENVSCI22",
+   "GEOG3",
+   "GEOLOGY1",
+   "LAW60",
+   "METEOR3",
+   "OCEANO1",
+   "PHILOS28",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=93",
+   "title": "(Academic Plan E035088C)",
+   "h1": "(Academic Plan E035088C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 11690
+ },
+ {
+  "control_number": "35309",
+  "title": "Environmental Studies- Biology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY22",
+   "BIOLOGY6",
+   "BIOLOGY9",
+   "CHEM101",
+   "ECON60",
+   "ENVSCI1",
+   "ENVSCI22",
+   "HISTORY78",
+   "HISTORY97",
+   "LAW60",
+   "PHILOS28"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257",
+   "title": "(Academic Plan E035309C)",
+   "h1": "(Academic Plan E035309C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257,
+    258,
+    259,
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 15657
+ },
+ {
+  "control_number": "35397",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35720",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35752",
+  "title": "Care",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35753",
+  "title": "Engineering Technologies and Applications",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35754",
+  "title": "Environments",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35756",
+  "title": "Play",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35757",
+  "title": "Programming and Apps",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED293CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391",
+   "title": "(Academic Plan E035757E)",
+   "h1": "(Academic Plan E035757E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    391
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 1873
+ },
+ {
+  "control_number": "35758",
+  "title": "English as a Second Language Communication Competency",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC51CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392",
+   "title": "(Academic Plan E035758F)",
+   "h1": "(Academic Plan E035758F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    392
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2069
+ },
+ {
+  "control_number": "35759",
+  "title": "Reading and Writing Foundations",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADPR7CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
+   "title": "(Academic Plan E035759F)",
+   "h1": "(Academic Plan E035759F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    393
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 2080
+ },
+ {
+  "control_number": "35771",
+  "title": "Technology for E-Commerce & Entrepreneurs",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT153"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=176",
+   "title": "(Academic Plan E035771D)",
+   "h1": "(Academic Plan E035771D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 7339
+ },
+ {
+  "control_number": "35798",
+  "title": "Business Information Worker I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT111",
+   "CAOT35",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=172",
+   "title": "(Academic Plan E035798D)",
+   "h1": "(Academic Plan E035798D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 6651
+ },
+ {
+  "control_number": "35888",
+  "title": "Women/Gender Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO109",
+   "ARTHIST181",
+   "CHICANO47",
+   "CHICANO50",
+   "ENGLISH239",
+   "HEALTH8",
+   "HISTORY52",
+   "HUMAN8",
+   "KINMAJ109",
+   "PHILOS44",
+   "POLSCI19",
+   "PSYCH32",
+   "SOC22"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=360",
+   "title": "(Academic Plan E035888C)",
+   "h1": "(Academic Plan E035888C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    360
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 3079
+ },
+ {
+  "control_number": "35902",
+  "title": "Interventional Radiology Coding",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HTHTEK100",
+   "HTHTEK103",
+   "HTHTEK108",
+   "HTHTEK202",
+   "HTHTEK215",
+   "HTHTEK216",
+   "PHYSIOL6"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=81",
+   "title": "(Academic Plan E035902D)",
+   "h1": "(Academic Plan E035902D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 12866
+ },
+ {
+  "control_number": "36177",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM102",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY7",
+   "MATH261",
+   "MATH262"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=94",
+   "title": "(Academic Plan E036177H)",
+   "h1": "(Academic Plan E036177H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 4156
+ },
+ {
+  "control_number": "36345",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS15",
+   "CAOT35",
+   "ECON11",
+   "ECON20",
+   "ECON30",
+   "ECON60",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH235",
+   "MATH236",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "PSYCH91",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354",
+   "title": "(Academic Plan E036345G)",
+   "h1": "(Academic Plan E036345G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    354,
+    355,
+    356,
+    357
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 15105
+ },
+ {
+  "control_number": "36377",
+  "title": "Nutrition for a Healthy Lifestyle",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED350CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
+   "title": "(Academic Plan E036377E)",
+   "h1": "(Academic Plan E036377E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    390
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 1156
+ },
+ {
+  "control_number": "36378",
+  "title": "Workplace Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED101CE",
+   "VOCED102CE",
+   "VOCED104CE",
+   "VOCED313CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392",
+   "title": "(Academic Plan E036378E)",
+   "h1": "(Academic Plan E036378E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    392
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 2683
+ },
+ {
+  "control_number": "36534",
+  "title": "Biotechnology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37391",
+  "title": "Non-Medical In-Home Health Care Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED353CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
+   "title": "(Academic Plan E037391E)",
+   "h1": "(Academic Plan E037391E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    390,
+    391
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5537
+ },
+ {
+  "control_number": "37510",
+  "title": "Automotive Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "ACADPR14CE",
+   "ACADPR5CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386",
+   "title": "(Academic Plan E037510E)",
+   "h1": "(Academic Plan E037510E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    386,
+    387
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 5642
+ },
+ {
+  "control_number": "37765",
+  "title": "Tax Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37923",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS21",
+   "PHYSICS22",
+   "PHYSICS6",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=258",
+   "title": "(Academic Plan E037923H)",
+   "h1": "(Academic Plan E037923H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258,
+    259,
+    260,
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 14997
+ },
+ {
+  "control_number": "37924",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37956",
+  "title": "Chemistry Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM201",
+   "CHEM211",
+   "CHEM212"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143",
+   "title": "(Academic Plan E037956C)",
+   "h1": "(Academic Plan E037956C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 8986
+ },
+ {
+  "control_number": "37965",
+  "title": "Commercial Music and Recording Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.947,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC116",
+   "MUSIC141",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC172",
+   "MUSIC205",
+   "MUSIC248",
+   "MUSIC2611",
+   "MUSIC2612",
+   "MUSIC2613",
+   "MUSIC271",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC531",
+   "MUSIC721",
+   "MUSIC745",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
+   "title": "(Academic Plan E037965C)",
+   "h1": "(Academic Plan E037965C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    289,
+    290,
+    291
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 12646
+ },
+ {
+  "control_number": "37969",
+  "title": "Interpreter Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO104",
+   "ASL10",
+   "ASL16",
+   "ASL33",
+   "ASL35",
+   "ASL36",
+   "ASL4",
+   "ASL45",
+   "CHDEV44",
+   "COMM121",
+   "COMMC1000",
+   "LING7"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
+   "title": "(Academic Plan E037969C)",
+   "h1": "(Academic Plan E037969C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    219
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 4380
+ },
+ {
+  "control_number": "38090",
+  "title": "Fitness Specialist Certification",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38093",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311",
+   "title": "• Physics 2.0 for Transfer",
+   "h1": "• Physics 2.0 for Transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    311,
+    312,
+    313
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 13665
+ },
+ {
+  "control_number": "38159",
+  "title": "Administration of Justice, Law Emphasis",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS2",
+   "ADMJUS285",
+   "ADMJUS4"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69",
+   "title": "(Academic Plan E038159D)",
+   "h1": "(Academic Plan E038159D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38163",
+  "title": "Substance Abuse Assessor",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST25",
+   "ADDICST26",
+   "PSYCC1000",
+   "PSYCH14"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=315",
+   "title": "(Academic Plan E038163D)",
+   "h1": "(Academic Plan E038163D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    315,
+    316,
+    317,
+    318
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38165",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38166",
+  "title": "Theatre in the Community",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV3",
+   "THEATER225",
+   "THEATER252",
+   "THEATER257",
+   "THEATER259"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=374",
+   "title": "(Academic Plan E038166D)",
+   "h1": "(Academic Plan E038166D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    374
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 5327
+ },
+ {
+  "control_number": "38168",
+  "title": "Commercial Music: Instrumental/Vocal Performer",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 39,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38169",
+  "title": "Commercial Music: Jazz Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "MUSIC141",
+   "MUSIC200",
+   "MUSIC205",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
+   "title": "(Academic Plan E038169D)",
+   "h1": "(Academic Plan E038169D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    288,
+    289,
+    290,
+    291
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38170",
+  "title": "Costume Design and Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "TECTHTR305",
+   "TECTHTR345",
+   "TECTHTR361",
+   "TECTHTR365",
+   "TECTHTR366",
+   "TECTHTR921"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372",
+   "title": "(Academic Plan E038170D)",
+   "h1": "(Academic Plan E038170D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    372,
+    373,
+    374,
+    375
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38205",
+  "title": "Commercial Music: Music Arranging",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC141",
+   "MUSIC161",
+   "MUSIC200",
+   "MUSIC248",
+   "MUSIC271",
+   "MUSIC321"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
+   "title": "(Academic Plan E038205D)",
+   "h1": "(Academic Plan E038205D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    289,
+    290,
+    291,
+    292
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 15987
+ },
+ {
+  "control_number": "38206",
+  "title": "Commercial Music: Music Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC166",
+   "MUSIC248",
+   "MUSIC321"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
+   "title": "(Academic Plan E038206D)",
+   "h1": "(Academic Plan E038206D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    288,
+    289,
+    290,
+    291
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 13102
+ },
+ {
+  "control_number": "38234",
+  "title": "Business Information Worker II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG32",
+   "CAOT110"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=173",
+   "title": "(Academic Plan E038234D)",
+   "h1": "(Academic Plan E038234D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 4714
+ },
+ {
+  "control_number": "38317",
+  "title": "Introduction to Patient Transporting",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38332",
+  "title": "Geo-Spatial Engineering and Technologies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38333",
+  "title": "Executive Legal Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW931"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127",
+   "title": "(Academic Plan E038333D)",
+   "h1": "(Academic Plan E038333D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 7720
+ },
+ {
+  "control_number": "38334",
+  "title": "International Law and Public Policy Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON11",
+   "LAW21",
+   "LAW26",
+   "LAW931",
+   "POLSCI2"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128",
+   "title": "(Academic Plan E038334D)",
+   "h1": "(Academic Plan E038334D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 4373
+ },
+ {
+  "control_number": "38336",
+  "title": "Chemistry Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM201",
+   "CHEM211",
+   "CHEM212"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143",
+   "title": "(Academic Plan E038336D)",
+   "h1": "(Academic Plan E038336D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 10422
+ },
+ {
+  "control_number": "38337",
+  "title": "Geo-Spatial Engineering and Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38340",
+  "title": "Custodial Technician Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38373",
+  "title": "Technical Theatre and Entertainment Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TECTHTR305",
+   "TECTHTR330",
+   "TECTHTR343",
+   "TECTHTR344",
+   "TECTHTR346",
+   "TECTHTR347"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
+   "title": "(Academic Plan E038373D)",
+   "h1": "(Academic Plan E038373D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    373,
+    374,
+    375,
+    376
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38374",
+  "title": "Phlebotomy Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH11",
+   "HLTHOCC62",
+   "HLTHOCC63",
+   "HLTHOCC65",
+   "HLTHOCC67",
+   "HLTHOCC68"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=82",
+   "title": "(Academic Plan E038374D)",
+   "h1": "(Academic Plan E038374D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 2218
+ },
+ {
+  "control_number": "38427",
+  "title": "Basic Training Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38507",
+  "title": "IT Technician Pathway:  Stage I Computer Retail Sales and Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT35",
+   "ELECTRN121",
+   "ELECTRN122",
+   "ELECTRN126",
+   "INDTEK103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196",
+   "title": "(Academic Plan E038507D)",
+   "h1": "(Academic Plan E038507D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 13205
+ },
+ {
+  "control_number": "38704",
+  "title": "Physical Therapy Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "HEALTH12",
+   "HEALTH49",
+   "HLTHOCC63",
+   "KINMAJ116"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
+   "title": "(Academic Plan E038704D)",
+   "h1": "(Academic Plan E038704D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235,
+    236,
+    237,
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38778",
+  "title": "Industry Safety Standards",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LOGTIC104",
+   "LOGTIC106",
+   "LOGTIC108"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=174",
+   "title": "(Academic Plan E038778D)",
+   "h1": "(Academic Plan E038778D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    174,
+    175
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 11104
+ },
+ {
+  "control_number": "39523",
+  "title": "Legal Support Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM104",
+   "ENGLC1000",
+   "LAW8",
+   "LAW931",
+   "PHILOS6"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128",
+   "title": "(Academic Plan E039523D)",
+   "h1": "(Academic Plan E039523D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 2538
+ },
+ {
+  "control_number": "39601",
+  "title": "Fire Academy Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV600",
+   "PUBSERV602"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
+   "title": "(Academic Plan E039601D)",
+   "h1": "(Academic Plan E039601D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2519
+ },
+ {
+  "control_number": "39608",
+  "title": "Police Academy Extended",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV101",
+   "PUBSERV422"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
+   "title": "(Academic Plan E039608D)",
+   "h1": "(Academic Plan E039608D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2630
+ },
+ {
+  "control_number": "39649",
+  "title": "Juvenile Corrections Officer Core",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV120",
+   "PUBSERV422"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
+   "title": "(Academic Plan E039649D)",
+   "h1": "(Academic Plan E039649D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6018
+ },
+ {
+  "control_number": "39711",
+  "title": "Field Probation Officer Core (FPOC)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV122",
+   "PUBSERV422"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321",
+   "title": "(Academic Plan E039711D)",
+   "h1": "(Academic Plan E039711D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321,
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 9776
+ },
+ {
+  "control_number": "39795",
+  "title": "Advanced Manufacturing Engineering Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "ENGGEN101",
+   "INDTEK103",
+   "INDTEK106",
+   "MIT101",
+   "MIT201"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
+   "title": "(Academic Plan E039795D)",
+   "h1": "(Academic Plan E039795D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195,
+    196,
+    197,
+    198
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39796",
+  "title": "Administrative Medical Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC40",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC53",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC59",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=77",
+   "title": "(Academic Plan E039796D)",
+   "h1": "(Academic Plan E039796D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 6281
+ },
+ {
+  "control_number": "39800",
+  "title": "Engineering Technology: Mechanical",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39801",
+  "title": "Engineering Technology: Industrial",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39823",
+  "title": "IT Technician Pathway",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT35",
+   "ELECTRN121",
+   "ELECTRN122",
+   "ELECTRN125",
+   "ELECTRN126",
+   "ELECTRN127",
+   "ELECTRN128",
+   "ELECTRN129",
+   "ELECTRN130",
+   "ELECTRN131",
+   "ELECTRN132",
+   "INDTEK103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=199",
+   "title": "(Academic Plan E039823C)",
+   "h1": "(Academic Plan E039823C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 3147
+ },
+ {
+  "control_number": "39824",
+  "title": "IT Technician Pathway: Stage III IT Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT35",
+   "ELECTRN121",
+   "ELECTRN122",
+   "ELECTRN125",
+   "ELECTRN126",
+   "ELECTRN127",
+   "ELECTRN128",
+   "ELECTRN129",
+   "ELECTRN130",
+   "ELECTRN131",
+   "ELECTRN132",
+   "INDTEK103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197",
+   "title": "(Academic Plan E039824D)",
+   "h1": "(Academic Plan E039824D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 8576
+ },
+ {
+  "control_number": "39881",
+  "title": "IT Technician Pathway: Stage II Help Desk User Support",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT35",
+   "ELECTRN121",
+   "ELECTRN122",
+   "ELECTRN125",
+   "ELECTRN126",
+   "ELECTRN127",
+   "ELECTRN128",
+   "INDTEK103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196",
+   "title": "(Academic Plan E039881D)",
+   "h1": "(Academic Plan E039881D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 11139
+ },
+ {
+  "control_number": "39970",
+  "title": "Museum Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO103",
+   "ART504",
+   "ARTHIST100",
+   "ARTHIST171",
+   "ARTHIST200",
+   "LIBSCI201"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=108",
+   "title": "(Academic Plan E039970D)",
+   "h1": "(Academic Plan E039970D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 6997
+ },
+ {
+  "control_number": "40042",
+  "title": "Engineering Technology: Advanced Manufacturing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "ENGGEN101",
+   "ENGTEK101",
+   "ENGTEK111",
+   "ENGTEK125",
+   "INDTEK103",
+   "MATH260",
+   "MIT101",
+   "MIT201"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+   "title": "(Academic Plan E040042C)",
+   "h1": "(Academic Plan E040042C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 9485
+ },
+ {
+  "control_number": "40598",
+  "title": "Administrative Medical Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED398CE",
+   "VOCED399CE",
+   "VOCED400CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386",
+   "title": "(Academic Plan E040598E)",
+   "h1": "(Academic Plan E040598E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    386,
+    387
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 9749
+ },
+ {
+  "control_number": "40599",
+  "title": "Emergency First Responder Basic Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED353CE",
+   "VOCED358CE",
+   "VOCED359CE",
+   "VOCED391CE",
+   "VOCED400CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387",
+   "title": "(Academic Plan E040599E)",
+   "h1": "(Academic Plan E040599E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    387
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 1627
+ },
+ {
+  "control_number": "40601",
+  "title": "Phlebotomy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED353CE",
+   "VOCED391CE",
+   "VOCED395CE",
+   "VOCED400CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391",
+   "title": "(Academic Plan E040601E)",
+   "h1": "(Academic Plan E040601E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    391
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 3612
+ },
+ {
+  "control_number": "40602",
+  "title": "Physical Therapist Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED353CE",
+   "VOCED390CE",
+   "VOCED391CE",
+   "VOCED400CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391",
+   "title": "(Academic Plan E040602E)",
+   "h1": "(Academic Plan E040602E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    391
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2595
+ },
+ {
+  "control_number": "40637",
+  "title": "Accounting Clerk/Bookkeeping",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40898",
+  "title": "Global Business Relations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40899",
+  "title": "Clinical Medical Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH57",
+   "HLTHOCC40",
+   "HLTHOCC51",
+   "HLTHOCC52",
+   "HLTHOCC53",
+   "HLTHOCC54",
+   "HLTHOCC55",
+   "HLTHOCC56",
+   "HLTHOCC59",
+   "HLTHOCC61"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78",
+   "title": "(Academic Plan E040899D)",
+   "h1": "(Academic Plan E040899D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 3560
+ },
+ {
+  "control_number": "41097",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41132",
+  "title": "Forensic Crime Scene Investigation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS172",
+   "ADMJUS173",
+   "ADMJUS285",
+   "ADMJUS428",
+   "ADMJUS5",
+   "ADMJUS62",
+   "BIOLOGY3",
+   "PHOTO47"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=71",
+   "title": "(Academic Plan E041132C)",
+   "h1": "(Academic Plan E041132C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 7078
+ },
+ {
+  "control_number": "41139",
+  "title": "Custody Assistant Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV103",
+   "PUBSERV422"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321",
+   "title": "(Academic Plan E041139D)",
+   "h1": "(Academic Plan E041139D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321,
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 11905
+ },
+ {
+  "control_number": "41218",
+  "title": "Health Sciences",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257",
+   "title": "(Academic Plan E041218D)",
+   "h1": "(Academic Plan E041218D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 2470
+ },
+ {
+  "control_number": "41231",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "ECONC2001",
+   "ENVSCI1",
+   "GEOLOGY1",
+   "GEOLOGY4",
+   "GEOLOGY6",
+   "MATH261",
+   "PHYSICS6",
+   "PHYSICS7",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=92",
+   "title": "(Academic Plan E041231H)",
+   "h1": "(Academic Plan E041231H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42013",
+  "title": "English as a Second Language Academic Bridge",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC54CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392",
+   "title": "(Academic Plan E042013F)",
+   "h1": "(Academic Plan E042013F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    392
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 1998
+ },
+ {
+  "control_number": "42014",
+  "title": "English for Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CITIZN50CE",
+   "ESLNC43CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392",
+   "title": "(Academic Plan E042014F)",
+   "h1": "(Academic Plan E042014F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    392
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 1022
+ },
+ {
+  "control_number": "42017",
+  "title": "High School Equivalency Test Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL34CE",
+   "BSICSKL75CE",
+   "BSICSKL84CE",
+   "BSICSKL85CE",
+   "BSICSKL86CE",
+   "BSICSKL88CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
+   "title": "(Academic Plan E042017F)",
+   "h1": "(Academic Plan E042017F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    393
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 2602
+ },
+ {
+  "control_number": "42065",
+  "title": "Healthcare Professions Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED320CE",
+   "VOCED358CE",
+   "VOCED390CE",
+   "VOCED395CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=389",
+   "title": "(Academic Plan E042065E)",
+   "h1": "(Academic Plan E042065E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    389
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2395
+ },
+ {
+  "control_number": "42174",
+  "title": "Pathway to Law School",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM104",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "LAW8",
+   "POLSC1000",
+   "POLSCI40",
+   "SOC14",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353",
+   "title": "(Academic Plan E042174D)",
+   "h1": "(Academic Plan E042174D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    353,
+    354,
+    355,
+    356
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 15419
+ },
+ {
+  "control_number": "42672",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM100",
+   "COMM104",
+   "COMM106",
+   "COMM107",
+   "COMM121",
+   "COMM122",
+   "COMM130",
+   "COMM151",
+   "COMM190",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167",
+   "title": "(Academic Plan E042672G)",
+   "h1": "(Academic Plan E042672G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 8618
+ },
+ {
+  "control_number": "43039",
+  "title": "Central American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHIST140",
+   "CHICANO31",
+   "CHICANO32",
+   "CHICANO33",
+   "CHICANO34",
+   "CHICANO36"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=146",
+   "title": "(Academic Plan E043039C)",
+   "h1": "(Academic Plan E043039C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 13308
+ },
+ {
+  "control_number": "43152",
+  "title": "Makeup for Fashion and Entertainment",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED364CE",
+   "VOCED365CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
+   "title": "(Academic Plan E043152E)",
+   "h1": "(Academic Plan E043152E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    390
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2450
+ },
+ {
+  "control_number": "43632",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 25,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43634",
+  "title": "Child Development STEAM",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV18",
+   "CHDEV3",
+   "CHDEV36",
+   "CHDEV37",
+   "CHDEV4"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155",
+   "title": "(Academic Plan E043634D)",
+   "h1": "(Academic Plan E043634D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 5690
+ },
+ {
+  "control_number": "43649",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS4",
+   "LAW10",
+   "LAW13",
+   "LAW17",
+   "LAW18",
+   "LAW21",
+   "LAW26",
+   "LAW4",
+   "LAW51",
+   "LAW60",
+   "LAW8",
+   "LAW931",
+   "REALES5"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=133",
+   "title": "(Academic Plan E043649C)",
+   "h1": "(Academic Plan E043649C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 3659
+ },
+ {
+  "control_number": "43725",
+  "title": "Recreation and Leisure Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 25,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44329",
+  "title": "Acting for Stage and Screen",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TECTHTR701",
+   "THEATER205",
+   "THEATER240",
+   "THEATER244",
+   "THEATER265",
+   "THEATER270",
+   "THEATER272",
+   "THEATER278",
+   "THEATER293"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=371",
+   "title": "(Academic Plan E044329D)",
+   "h1": "(Academic Plan E044329D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    371,
+    372,
+    373,
+    374
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44368",
+  "title": "Child Development Assessment in ECE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV30",
+   "CHDEV54"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155",
+   "title": "(Academic Plan E044368D)",
+   "h1": "(Academic Plan E044368D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2419
+ },
+ {
+  "control_number": "44374",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44375",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "CIS123",
+   "CIS125",
+   "CIS219"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127",
+   "title": "(Academic Plan E044375D)",
+   "h1": "(Academic Plan E044375D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 2677
+ },
+ {
+  "control_number": "44539",
+  "title": "Equity and Social Justice in Early Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV40",
+   "CHDEV42"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=156",
+   "title": "(Academic Plan E044539D)",
+   "h1": "(Academic Plan E044539D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157,
+    158
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 12454
+ },
+ {
+  "control_number": "44540",
+  "title": "Animation and VFX Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN290",
+   "ANIMATN291",
+   "ANIMATN292"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274",
+   "title": "(Academic Plan E044540D)",
+   "h1": "(Academic Plan E044540D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    274
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2539
+ },
+ {
+  "control_number": "44541",
+  "title": "Entertainment Craft",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN218",
+   "ASIAN20",
+   "BRDCSTG1",
+   "BRDCSTG15",
+   "BRDCSTG300",
+   "CHICANO36",
+   "CHICANO57",
+   "ENGLISH240",
+   "ENGLISH241",
+   "ENGLISH242",
+   "FRENCH26",
+   "MEDIART111",
+   "MUSIC118",
+   "MUSIC161",
+   "MUSIC165",
+   "PHOTO10",
+   "PHOTO123",
+   "PHOTO47",
+   "SPANISH26",
+   "TECTHTR300",
+   "TECTHTR305",
+   "TECTHTR313",
+   "TECTHTR323",
+   "TECTHTR330",
+   "TECTHTR340",
+   "TECTHTR342",
+   "TECTHTR343",
+   "TECTHTR344",
+   "TECTHTR345",
+   "TECTHTR346",
+   "TECTHTR347",
+   "TECTHTR348",
+   "TECTHTR355",
+   "THEATER130",
+   "THEATER505"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372",
+   "title": "(Academic Plan E044541D)",
+   "h1": "(Academic Plan E044541D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    372,
+    373,
+    374,
+    375
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 35,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44595",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 25,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44624",
+  "title": "Digital Film Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANIMATN218",
+   "ASIAN20",
+   "CHICANO36",
+   "CHICANO57",
+   "ENGLISH240",
+   "ENGLISH241",
+   "ENGLISH242",
+   "FRENCH26",
+   "MEDIART111",
+   "MEDIART210",
+   "MUSIC165",
+   "PHOTO10",
+   "PHOTO123",
+   "PHOTO47",
+   "SPANISH26",
+   "THEATER505"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
+   "title": "(Academic Plan E044624D)",
+   "h1": "(Academic Plan E044624D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    275,
+    276,
+    277,
+    278
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 15537
+ },
+ {
+  "control_number": "44840",
+  "title": "Paralegal",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "LAW1",
+   "LAW10",
+   "LAW17",
+   "LAW2",
+   "LAW51"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128",
+   "title": "(Academic Plan E044840D)",
+   "h1": "(Academic Plan E044840D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129,
+    130,
+    131
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44913",
+  "title": "English Through Cultural Awareness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC67CE",
+   "ESLNC68CE",
+   "ESLNC69CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
+   "title": "(Academic Plan E044913F)",
+   "h1": "(Academic Plan E044913F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    393
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2571
+ },
+ {
+  "control_number": "45028",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 278,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45051",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45406",
+  "title": "Yoga Teacher Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINMAJ102",
+   "KINMAJ160",
+   "KINMAJ161",
+   "KINMAJ162",
+   "KINMAJ163"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=237",
+   "title": "(Academic Plan E045406D)",
+   "h1": "(Academic Plan E045406D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237,
+    238,
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 13904
+ },
+ {
+  "control_number": "45413",
+  "title": "Equity-Minded Education in Early Childhood Classroom",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV40",
+   "CHDEV42",
+   "CHDEV45",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=157",
+   "title": "(Academic Plan E045413D)",
+   "h1": "(Academic Plan E045413D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157,
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 12898
+ },
+ {
+  "control_number": "45414",
+  "title": "Recreation Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH11",
+   "HEALTH12",
+   "HEALTH13",
+   "HEALTH5",
+   "KINMAJ106",
+   "KINMAJ109",
+   "KINMAJ110",
+   "KINMAJ111",
+   "KINMAJ112",
+   "RECR100",
+   "RECR131",
+   "RECR132",
+   "RECR133",
+   "RECR134"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=236",
+   "title": "(Academic Plan E045414D)",
+   "h1": "(Academic Plan E045414D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237,
+    238,
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 14354
+ },
+ {
+  "control_number": "45491",
+  "title": "Character Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN212",
+   "ANIMATN213",
+   "ANIMATN217",
+   "ANIMATN219",
+   "ANIMATN225",
+   "ANIMATN226",
+   "ANIMATN227",
+   "ANIMATN228"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274",
+   "title": "(Academic Plan E045491D)",
+   "h1": "(Academic Plan E045491D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    274
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 2863
+ },
+ {
+  "control_number": "45540",
+  "title": "Respiratory Therapy",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 48,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45587",
+  "title": "Entertainment Technology and VFX",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN227",
+   "ANIMATN261",
+   "ANIMATN264",
+   "ANIMATN265",
+   "ANIMATN268",
+   "ANIMATN269",
+   "GAD101",
+   "GAD103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
+   "title": "(Academic Plan E045587D)",
+   "h1": "(Academic Plan E045587D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    275,
+    276,
+    277,
+    278
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45588",
+  "title": "Visual Development for Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN212",
+   "ANIMATN213",
+   "ANIMATN215",
+   "ANIMATN216",
+   "ANIMATN217",
+   "ANIMATN219"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277",
+   "title": "(Academic Plan E045588D)",
+   "h1": "(Academic Plan E045588D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    277,
+    278,
+    279
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 13056
+ },
+ {
+  "control_number": "45589",
+  "title": "Social Work and Human Services",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "SOC1",
+   "SOC19",
+   "SOC20"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353",
+   "title": "(Academic Plan E045589D)",
+   "h1": "(Academic Plan E045589D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    353,
+    354
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 5517
+ },
+ {
+  "control_number": "45591",
+  "title": "Wildland Firefighting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDA9",
+   "FIRETEK201",
+   "FIRETEK205",
+   "FIRETEK216",
+   "FIRETEK27"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70",
+   "title": "(Academic Plan E045591D)",
+   "h1": "(Academic Plan E045591D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 7435
+ },
+ {
+  "control_number": "45602",
+  "title": "Recording and Sound Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC166",
+   "MUSIC172",
+   "MUSIC2611",
+   "MUSIC3651",
+   "MUSIC3652",
+   "TECTHTR330",
+   "TECTHTR347"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
+   "title": "(Academic Plan E045602D)",
+   "h1": "(Academic Plan E045602D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    289,
+    290,
+    291
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 7763
+ },
+ {
+  "control_number": "45715",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV770",
+   "PUBSERV771",
+   "PUBSERV772",
+   "PUBSERV773",
+   "PUBSERV774",
+   "PUBSERV775",
+   "PUBSERV776",
+   "PUBSERV777"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
+   "title": "(Academic Plan E045715D)",
+   "h1": "(Academic Plan E045715D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 2953
+ },
+ {
+  "control_number": "45716",
+  "title": "Field Training Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV220",
+   "PUBSERV222",
+   "PUBSERV90"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321",
+   "title": "(Academic Plan E045716D)",
+   "h1": "(Academic Plan E045716D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321,
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 10417
+ },
+ {
+  "control_number": "45717",
+  "title": "Criminal Investigations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV220",
+   "PUBSERV301",
+   "PUBSERV302",
+   "PUBSERV303",
+   "PUBSERV316",
+   "PUBSERV333"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
+   "title": "(Academic Plan E045717D)",
+   "h1": "(Academic Plan E045717D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320,
+    321,
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 11065
+ },
+ {
+  "control_number": "45718",
+  "title": "Patrol Procedures",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV220",
+   "PUBSERV90"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
+   "title": "(Academic Plan E045718D)",
+   "h1": "(Academic Plan E045718D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5528
+ },
+ {
+  "control_number": "45752",
+  "title": "Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV441",
+   "PUBSERV90"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323",
+   "title": "(Academic Plan E045752D)",
+   "h1": "(Academic Plan E045752D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3163
+ },
+ {
+  "control_number": "45753",
+  "title": "Traffic Investigations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV276",
+   "PUBSERV277",
+   "PUBSERV278",
+   "PUBSERV289",
+   "PUBSERV90"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323",
+   "title": "(Academic Plan E045753D)",
+   "h1": "(Academic Plan E045753D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 2419
+ },
+ {
+  "control_number": "45935",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45986",
+  "title": "Sports Medicine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "HEALTH49",
+   "KINMAJ100",
+   "KINMAJ102",
+   "KINMAJ116",
+   "KINMAJ128",
+   "KINMAJ129"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
+   "title": "The Sports Medicine Skills Certificate provides an intro -",
+   "h1": "The Sports Medicine Skills Certificate provides an intro -",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235,
+    236,
+    237,
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 13692
+ },
+ {
+  "control_number": "45987",
+  "title": "Sports Medicine",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH11",
+   "HEALTH12",
+   "HEALTH15",
+   "HEALTH2",
+   "HEALTH43",
+   "HEALTH5",
+   "HEALTH7",
+   "HEALTH8",
+   "KINMAJ100",
+   "KINMAJ102",
+   "KINMAJ103",
+   "KINMAJ106",
+   "KINMAJ109",
+   "KINMAJ111",
+   "KINMAJ112",
+   "KINMAJ116",
+   "KINMAJ117",
+   "KINMAJ128",
+   "KINMAJ129",
+   "KINMAJ130",
+   "KINMAJ135"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=239",
+   "title": "(Academic Plan E045987C)",
+   "h1": "(Academic Plan E045987C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239,
+    240,
+    241,
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46264",
+  "title": "AI Essentials for College and Career",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED523CE",
+   "VOCED524CE"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386",
+   "title": "(Academic Plan E046264E)",
+   "h1": "(Academic Plan E046264E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    386
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 2419
+ },
+ {
+  "control_number": "46328",
+  "title": "Emergency Medical Awareness and Response",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDA9",
+   "FIRETEK96",
+   "PUBSERV611",
+   "PUBSERV931"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69",
+   "title": "(Academic Plan E046328D)",
+   "h1": "(Academic Plan E046328D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 11300
+ },
+ {
+  "control_number": "46343",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS111",
+   "CS113",
+   "CS116",
+   "CS119",
+   "CS136",
+   "CS216",
+   "ENGGEN122",
+   "MATH173",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
+   "title": "(Academic Plan E046343H)",
+   "h1": "(Academic Plan E046343H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 3853
+ },
+ {
+  "control_number": "46348",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS111",
+   "CS113",
+   "CS116",
+   "CS119",
+   "CS136",
+   "CS216",
+   "ENGGEN121",
+   "ENGGEN122",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311",
+   "title": "(Academic Plan E046348H)",
+   "h1": "(Academic Plan E046348H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    311,
+    312,
+    313
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 13653
+ },
+ {
+  "control_number": "46461",
+  "title": "Animation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN118",
+   "ANIMATN212",
+   "ANIMATN213",
+   "ANIMATN214",
+   "ANIMATN215",
+   "ANIMATN216",
+   "ANIMATN217",
+   "ANIMATN218",
+   "ANIMATN219",
+   "ANIMATN221",
+   "ANIMATN225",
+   "ANIMATN226",
+   "ANIMATN227",
+   "ANIMATN228",
+   "ANIMATN261",
+   "ANIMATN264",
+   "ANIMATN265",
+   "ANIMATN268",
+   "ANIMATN269",
+   "ART201",
+   "ART204",
+   "ART209",
+   "ART639",
+   "GAD101",
+   "GAD103"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277",
+   "title": "(Academic Plan E046461C)",
+   "h1": "(Academic Plan E046461C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    277,
+    278,
+    279,
+    280
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 25,
+  "text_chars": 16000
+ }
+]

@@ -1,0 +1,228 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "21157",
+ "shape": "certificate",
+ "title": "Architectural Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9564,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9564,
+    "output_tokens": 1540,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1540,
+  "output_tokens_details": {
+   "thinking_tokens": 622
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06906,
+ "ms": 13870,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 6,
+   "share": 0.333,
+   "missing": [
+    "ARC110",
+    "ARC161",
+    "ARC162",
+    "ARC164"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARC271",
+    "ARC272"
+   ],
+   "flagged": [
+    "ARC271",
+    "ARC272"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 8.0-8.0; the catalog states 22.0-22.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.",
+    "Create complex professional multi-media presentations as a means to communicate design intent."
+   ],
+   "why": [
+    "not in the catalog text as printed: Analyze and examine traditional architectural techniques along with CAD (Compute",
+    "not in the catalog text as printed: Create complex professional multi-media presentations as a means to communicate "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Academic Plan E021157D)",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.",
+    "Create complex professional multi-media presentations as a means to communicate design intent."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Skills Certificate in Architectural Technology",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": []
+   },
+   {
+    "name": "COMPLETE THE FOLLOWING ADDITIONAL COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ARC 115",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARC 272",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARC 110",
+    "why": "not in the text; likely part of the Skills Certificate, whose courses are not printed here"
+   },
+   {
+    "code": "ARC 161",
+    "why": "named only in the Architectural Design A.A. section; likely in the Skills Certificate, not printed here"
+   },
+   {
+    "code": "ARC 162",
+    "why": "not in the text; likely part of the Skills Certificate, whose courses are not printed here"
+   },
+   {
+    "code": "ARC 164",
+    "why": "named only in the Architectural Design A.A. section; likely in the Skills Certificate, not printed here"
+   }
+  ],
+  "notes": [
+   "The excerpt begins at '(Academic Plan E021157D)'; the section's title heading (presumably 'Architectural Technology, Certificate of Achievement') is not printed in the text, likely on the preceding page.",
+   "The certificate includes the Skills Certificate in Architectural Technology (14 units), whose courses are not listed in this text; that block is recorded with its stated 14 units and no courses. Reviewer should check the Skills Certificate section for ARC 110, 161, 162, 164.",
+   "ARC 271 and ARC 272 (marked as having a prerequisite) are an either/or choice recorded as one entry with an alternative.",
+   "Section text mentions only 'architectural office or related industry' as employment setting; no specific career titles named."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

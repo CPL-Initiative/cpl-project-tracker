@@ -1,0 +1,273 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "08252",
+ "shape": "degree",
+ "title": "Architectural Technology",
+ "award": "A.A. Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=103",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7871,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7871,
+    "output_tokens": 2526,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2526,
+  "output_tokens_details": {
+   "thinking_tokens": 1123
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.082,
+ "ms": 21862,
+ "seconds": 22.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 10,
+   "share": 0.4,
+   "missing": [
+    "ARC110",
+    "ARC115",
+    "ARC151",
+    "ARC161",
+    "ARC162",
+    "ARC164"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARC271",
+    "ARC272"
+   ],
+   "flagged": [
+    "ARC271",
+    "ARC272"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    61.0,
+    61.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [
+    "the record says electives fill the degree total, but the catalog text names no electives"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Appraise and compare traditional architectural techniques along with CAD (Computer Aided Design) design process.",
+    "Create complex professional multi-media presentations as a means to communicate design intent."
+   ],
+   "why": [
+    "not in the catalog text as printed: Appraise and compare traditional architectural techniques along with CAD (Comput",
+    "not in the catalog text as printed: Create complex professional multi-media presentations as a means to communicate "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Academic Plan E008252C)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD General Education Plan",
+   "degree_total": {
+    "min": 61,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Appraise and compare traditional architectural techniques along with CAD (Computer Aided Design) design process.",
+    "Create complex professional multi-media presentations as a means to communicate design intent."
+   ],
+   "careers": [
+    "construction management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate of Achievement in Architectural Technology",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": []
+   },
+   {
+    "name": "COMPLETE THE FOLLOWING ADDITIONAL COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ARC 165",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 223",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: COMPLETE THE COURSE BELOW NOT COMPLETED AS PART OF THE ARCHITECTURAL TECHNOLOGY CERTIFICATE OF ACHIEVEMENT",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARC 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARC 272",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARC 110",
+    "why": "presumably in the Certificate of Achievement (22 units), whose courses are not printed in this section; appears only in course descriptions"
+   },
+   {
+    "code": "ARC 115",
+    "why": "not in the text; presumably part of the referenced Certificate of Achievement"
+   },
+   {
+    "code": "ARC 151",
+    "why": "not in the text; presumably part of the referenced Certificate of Achievement"
+   },
+   {
+    "code": "ARC 161",
+    "why": "not listed as a requirement; named only in a cross-reference note; presumably part of the referenced Certificate of Achievement"
+   },
+   {
+    "code": "ARC 162",
+    "why": "not listed as a requirement; named only in a cross-reference note; presumably part of the referenced Certificate of Achievement"
+   },
+   {
+    "code": "ARC 164",
+    "why": "not listed as a requirement; named only in a cross-reference note; presumably part of the referenced Certificate of Achievement"
+   }
+  ],
+  "notes": [
+   "The award heading (A.A. Degree in Architectural Technology) is not printed in the extracted text, which begins with '(Academic Plan E008252C)'; it likely appears at the bottom of the previous page.",
+   "Major requirements include the Certificate of Achievement in Architectural Technology (22 units), but its courses are not listed in this section; the certificate block is recorded with its stated 22 units and no courses.",
+   "The 12 units printed for 'COMPLETE THE FOLLOWING ADDITIONAL COURSES' appear to include List A: the four listed courses total 9 units, plus 3 from List A (ARC 271 or ARC 272) = 12.",
+   "No major total is printed; 22 + 12 = 34 would be the major but is not stated. Total 61 includes the LACCD GE Plan (27) and is recorded as degree_total.",
+   "Page says to complete additional degree-applicable units if needed to reach 60 units; electives_fill_degree set true although the printed total is already 61.",
+   "Note: high unit major; student may waive LACCD GE Area 4a (3 units) or Area 7 (3 units).",
+   "ARC 271 and ARC 272 carry a prerequisite and are not in the closed list."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

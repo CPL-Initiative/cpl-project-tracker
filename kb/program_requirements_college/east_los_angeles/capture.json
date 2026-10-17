@@ -5,7 +5,7 @@
  "catalog_year": null,
  "programs": 234,
  "with_closed_list": 147,
- "started": "2026-10-17T06:42:50Z",
+ "started": "2026-10-17T06:50:24Z",
  "procedure_step": {
   "start": "https://www.elac.edu/academic-resources/catalog",
   "follow": "2026 - 2027",
@@ -1617,15 +1617,38 @@
     "coverage": 1.0,
     "opens": "[page 277] (Academic Plan E046461C) This program provides students with a strong founda - tion in different areas of digital entertainment industry. Through hands-on training in 3D production, character animation, VFX,"
    }
+  ],
+  "unproven": [
+   "24129",
+   "35087",
+   "35397",
+   "35720",
+   "36534",
+   "37924",
+   "38168",
+   "38317",
+   "38332",
+   "38337",
+   "38427",
+   "39800",
+   "40637",
+   "40898",
+   "41097",
+   "43632",
+   "43725",
+   "44595",
+   "45051",
+   "45540",
+   "45935"
   ]
  },
  "loads": 2,
- "seconds": 267.0,
- "found": 141,
+ "seconds": 148.3,
+ "found": 120,
  "by_method": {
   "no_closed_list": 87,
-  "not_found": 6,
-  "pdf_pages": 141
+  "not_found": 27,
+  "pdf_pages": 120
  },
  "shared_pages": {
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102": [
@@ -1657,14 +1680,6 @@
    "32154",
    "42672"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359": [
-   "32170",
-   "43632"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=291": [
-   "33382",
-   "38168"
-  ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265": [
    "33681",
    "46343"
@@ -1673,17 +1688,9 @@
    "33915",
    "40899"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354": [
-   "35087",
-   "36345"
-  ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257": [
    "35309",
    "41218"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54": [
-   "35397",
-   "45935"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391": [
    "35757",
@@ -1704,17 +1711,12 @@
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390": [
    "36377",
    "37391",
-   "38317",
    "43152"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386": [
    "37510",
    "40598",
    "46264"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=259": [
-   "37924",
-   "44595"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143": [
    "37956",
@@ -1737,11 +1739,6 @@
    "38170",
    "44541"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196": [
-   "38332",
-   "38507",
-   "39881"
-  ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127": [
    "38333",
    "44375"
@@ -1749,16 +1746,11 @@
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128": [
    "38334",
    "39523",
-   "40898",
    "44840"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=199": [
-   "38337",
-   "39823"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320": [
-   "38427",
-   "45717"
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196": [
+   "38507",
+   "39881"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235": [
    "38704",
@@ -1776,10 +1768,6 @@
    "41139",
    "45716"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195": [
-   "39795",
-   "39800"
-  ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353": [
    "42174",
    "45589"
@@ -1787,10 +1775,6 @@
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155": [
    "43634",
    "44368"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=239": [
-   "43725",
-   "45987"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274": [
    "44540",
@@ -1810,6 +1794,83 @@
   ]
  },
  "not_found": [
+  {
+   "control_number": "24129",
+   "title": "Basic Skills Mathematics Preparation Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "pages": [
+     31
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35087",
+   "title": "Environmental Studies: Social and Public Policy",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     354,
+     355,
+     356,
+     357
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35397",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     54
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35720",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     161
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "36534",
+   "title": "Biotechnology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     40
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "37924",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     259,
+     260,
+     261
+    ],
+    "coverage": 0.875,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
   {
    "control_number": "38090",
    "title": "Fitness Specialist Certification",
@@ -1838,10 +1899,91 @@
    }
   },
   {
+   "control_number": "38168",
+   "title": "Commercial Music: Instrumental/Vocal Performer",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     291,
+     292,
+     293,
+     294
+    ],
+    "coverage": 0.846,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "38317",
+   "title": "Introduction to Patient Transporting",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     390
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "38332",
+   "title": "Geo-Spatial Engineering and Technologies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     196
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "38337",
+   "title": "Geo-Spatial Engineering and Technologies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "pages": [
+     199
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
    "control_number": "38340",
    "title": "Custodial Technician Training",
    "award": "Noncredit program",
    "near_miss": null
+  },
+  {
+   "control_number": "38427",
+   "title": "Basic Training Academy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     320,
+     321,
+     322,
+     323
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "39800",
+   "title": "Engineering Technology: Mechanical",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "pages": [
+     195,
+     196,
+     197,
+     198
+    ],
+    "coverage": 0.6,
+    "why": "the page prints neither the control number nor the title and award"
+   }
   },
   {
    "control_number": "39801",
@@ -1859,6 +2001,73 @@
    }
   },
   {
+   "control_number": "40637",
+   "title": "Accounting Clerk/Bookkeeping",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     38
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "40898",
+   "title": "Global Business Relations",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     128
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "41097",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "43632",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "pages": [
+     359,
+     360
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "43725",
+   "title": "Recreation and Leisure Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     239,
+     240,
+     241,
+     242
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
    "control_number": "44374",
    "title": "Data Science",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -1868,6 +2077,20 @@
     ],
     "coverage": 0.333,
     "heading": "Academic Resources/Programs"
+   }
+  },
+  {
+   "control_number": "44595",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     259,
+     260,
+     261
+    ],
+    "coverage": 0.92,
+    "why": "the page prints neither the control number nor the title and award"
    }
   },
   {
@@ -1881,18 +2104,54 @@
     "coverage": 0.424,
     "heading": "Graduation Requirements"
    }
+  },
+  {
+   "control_number": "45051",
+   "title": "Japanese",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     35
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45540",
+   "title": "Respiratory Therapy",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "pages": [
+     345
+    ],
+    "coverage": 0.625,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45935",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     54
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 13,
-  "0.8-1.0": 14,
-  "1.0": 114
+  "0.5-0.8": 11,
+  "0.8-1.0": 11,
+  "1.0": 98
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 141,
+  "programs": 120,
   "list": [
    {
     "control_number": "02430",
@@ -1989,16 +2248,6 @@
     "title": "Basic Writing Success",
     "award": "Noncredit program",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24129",
-    "title": "Basic Skills Mathematics Preparation Certificate of Completion",
-    "award": null,
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=31",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2125,16 +2374,6 @@
     "was_method": null
    },
    {
-    "control_number": "35087",
-    "title": "Environmental Studies: Social and Public Policy",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "35088",
     "title": "Environmental Studies: Physical Sciences",
     "award": "A.A. Degree",
@@ -2149,26 +2388,6 @@
     "title": "Environmental Studies- Biology",
     "award": "A.A. Degree",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35397",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35720",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=161",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2285,16 +2504,6 @@
     "was_method": null
    },
    {
-    "control_number": "36534",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=40",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "37391",
     "title": "Non-Medical In-Home Health Care Aide",
     "award": "Noncredit program",
@@ -2320,16 +2529,6 @@
     "award": "A.S. T Degree",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=258",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37924",
-    "title": "Public Health Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=259",
-    "coverage": 0.875,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2405,16 +2604,6 @@
     "was_method": null
    },
    {
-    "control_number": "38168",
-    "title": "Commercial Music: Instrumental/Vocal Performer",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=291",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "38169",
     "title": "Commercial Music: Jazz Studies",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2465,26 +2654,6 @@
     "was_method": null
    },
    {
-    "control_number": "38317",
-    "title": "Introduction to Patient Transporting",
-    "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38332",
-    "title": "Geo-Spatial Engineering and Technologies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "38333",
     "title": "Executive Legal Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2515,16 +2684,6 @@
     "was_method": null
    },
    {
-    "control_number": "38337",
-    "title": "Geo-Spatial Engineering and Technologies",
-    "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=199",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "38373",
     "title": "Technical Theatre and Entertainment Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2539,16 +2698,6 @@
     "title": "Phlebotomy Technician",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38427",
-    "title": "Basic Training Academy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2655,16 +2804,6 @@
     "was_method": null
    },
    {
-    "control_number": "39800",
-    "title": "Engineering Technology: Mechanical",
-    "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "39823",
     "title": "IT Technician Pathway",
     "award": "A.S. Degree",
@@ -2755,40 +2894,10 @@
     "was_method": null
    },
    {
-    "control_number": "40637",
-    "title": "Accounting Clerk/Bookkeeping",
-    "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=38",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40898",
-    "title": "Global Business Relations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "40899",
     "title": "Clinical Medical Assistant",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41097",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2915,16 +3024,6 @@
     "was_method": null
    },
    {
-    "control_number": "43632",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "43634",
     "title": "Child Development STEAM",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2939,16 +3038,6 @@
     "title": "Paralegal Studies",
     "award": "A.A. Degree",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43725",
-    "title": "Recreation and Leisure Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=239",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -3015,16 +3104,6 @@
     "was_method": null
    },
    {
-    "control_number": "44595",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=259",
-    "coverage": 0.92,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "44624",
     "title": "Digital Film Production",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3049,16 +3128,6 @@
     "title": "English Through Cultural Awareness",
     "award": "Noncredit program",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45051",
-    "title": "Japanese",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=35",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -3100,16 +3169,6 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45540",
-    "title": "Respiratory Therapy",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=345",
-    "coverage": 0.625,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -3225,16 +3284,6 @@
     "was_method": null
    },
    {
-    "control_number": "45935",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "45986",
     "title": "Sports Medicine",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3306,5 +3355,5 @@
    }
   ]
  },
- "run": "39010864052"
+ "run": "39011319511"
 }

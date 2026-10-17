@@ -1,0 +1,202 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "37510",
+ "shape": "noncredit",
+ "title": "Automotive Fundamentals",
+ "award": "Noncredit program",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7918,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7918,
+    "output_tokens": 1427,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1427,
+  "output_tokens_details": {
+   "thinking_tokens": 650
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06021,
+ "ms": 13037,
+ "seconds": 13.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "ESLNC45CE"
+   ],
+   "unexplained": [
+    "ESLNC45CE"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ESLNC45",
+    "VOCED70CE"
+   ],
+   "flagged": [
+    "VOCED70CE"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Fundamentals (Academic Plan E037510E)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Research and locate vehicle specifications and locate Technical Service Bulletins.",
+    "Identify type, use and application of automotive hardware."
+   ],
+   "careers": [
+    "Automotive industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 070CE",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACAD PR 014CE",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACAD PR 005CE",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESL NC 045",
+        "units": 0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program heading itself is not in the extracted text; the section begins at '(Academic Plan E037510E)' on page 386, and it was identified as Automotive Fundamentals by its automotive description and course list. The heading was likely printed on the previous page.",
+   "The catalog prints 0 in the UNITS column for every course and states no hours, so measure is 'units' and no total is recorded.",
+   "The first two courses carry no heading of their own; they are listed before 'ELECTIVE COURSES:' and are read as required.",
+   "Under 'ELECTIVE COURSES', ACAD PR 005CE OR ESL NC 045 is read as choosing one of the two courses.",
+   "The catalog prints 'ESL NC 045' without the CE suffix. It was treated as the closed-list ESL NC 045CE (Workplace English), so catalog_addition is false; a reviewer should confirm.",
+   "VOC ED 070CE (Introduction to Automotive Technology) is not in the closed list."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

@@ -1,0 +1,345 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "40042",
+ "shape": "degree",
+ "title": "Engineering Technology: Advanced Manufacturing",
+ "award": "A.S. Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9738,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9738,
+    "output_tokens": 2285,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2285,
+  "output_tokens_details": {
+   "thinking_tokens": 706
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08465,
+ "ms": 18040,
+ "seconds": 18.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 11,
+   "share": 0.545,
+   "missing": [
+    "EGDTEK221",
+    "ENGGEN101",
+    "ENGTEK290",
+    "INDTEK103",
+    "INDTEK106"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "EGDTEK102",
+    "EGDTEK121",
+    "ENGGEN212",
+    "ENGTEK141",
+    "ENGTEK142",
+    "ENGTEK151",
+    "ENGTEK220",
+    "INDTEK104",
+    "MATH260S",
+    "PHYSICS11"
+   ],
+   "flagged": [
+    "EGDTEK102",
+    "EGDTEK121",
+    "ENGGEN212",
+    "ENGTEK141",
+    "ENGTEK142",
+    "ENGTEK151",
+    "ENGTEK220",
+    "INDTEK104",
+    "MATH260S",
+    "PHYSICS11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    68.0,
+    68.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [
+    "the blocks and general education sum to 68.0-68.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     41.0,
+     41.0
+    ],
+    "stated": [
+     41.0,
+     41.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Build parts by using Computer Aided Manufacturing (CAM) techniques specifically in Additive Manufacturing and 3D printing."
+   ],
+   "why": [
+    "not in the catalog text as printed: Build parts by using Computer Aided Manufacturing (CAM) techniques specifically "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Technician: Advanced Manufacturing (Academic Plan E040042C)",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD General Education Plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply written, oral, and graphical communication in both technical and non-technical environments.",
+    "Set up and operate a CNC machine and program and set up a CNC with Mastercam.",
+    "Function effectively as a member of a technical team.",
+    "Build parts by using Computer Aided Manufacturing (CAM) techniques specifically in Additive Manufacturing and 3D printing.",
+    "Apply the knowledge, techniques, skills, and modern tools of the discipline to narrowly defined technology activities."
+   ],
+   "careers": [
+    "technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE THE FOLLOWING COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 41,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "ENG GEN 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EGD TEK 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG TEK 151",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MIT 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 260",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 260S",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG TEK 141",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IND TEK 104",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MIT 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG TEK 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGD TEK 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSICS 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG TEK 111",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG TEK 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG TEK 142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG TEK 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EGD TEK 221",
+    "why": "not in the text; section lists EGD TEK 121 instead"
+   },
+   {
+    "code": "ENG GEN 101",
+    "why": "named only in the Geo-Spatial Engineering and Technologies A.S. section"
+   },
+   {
+    "code": "ENG TEK 290",
+    "why": "not in the text"
+   },
+   {
+    "code": "IND TEK 103",
+    "why": "named only in the IT Technician Pathway A.S. section"
+   },
+   {
+    "code": "IND TEK 106",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section's printed heading falls before the excerpt (page 198 starts with '(Academic Plan E040042C)'); the heading recorded is reconstructed from the description, which calls the program 'Engineering Technician: Advanced Manufacturing'. Reviewer should confirm the heading and that this is the A.S. degree.",
+   "The major block 'COMPLETE THE FOLLOWING COURSES 41' is the only major block, so 41 is recorded as both the block's stated total and total_units; course units sum to 41.",
+   "Degree total 60 includes LACCD General Education Plan 27; note says 6 units of major courses may be double-counted in LACCD GE Areas 2 and 5.",
+   "EGD TEK 121 is printed at 2 units here but at 3 units in the Geo-Spatial section on the next page.",
+   "Catalog is the 2026-2027 General Catalog per page footer.",
+   "Career entry 'technicians' taken from 'hands-on experience to become technicians'; no explicit careers list printed."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

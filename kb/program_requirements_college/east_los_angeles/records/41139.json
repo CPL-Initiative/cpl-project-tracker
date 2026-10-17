@@ -1,0 +1,174 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "41139",
+ "shape": "certificate",
+ "title": "Custody Assistant Training",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10103,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10103,
+    "output_tokens": 1111,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1111,
+  "output_tokens_details": {
+   "thinking_tokens": 455
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06263,
+ "ms": 10742,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Demonstrate proficiency in applying learned tactics and techniques in inmate contacts and custodial situations related to the performance of the job classification.",
+    "Describe and summarize both departmental policies and procedures as well as legal statutes related to the performance of their duties, recognizing the authority granted and limitations established for their job classification."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate proficiency in applying learned tactics and techniques in inmate con",
+    "not in the catalog text as printed: Describe and summarize both departmental policies and procedures as well as lega"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Custody Assistant Training",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in applying learned tactics and techniques in inmate contacts and custodial situations related to the performance of the job classification.",
+    "Describe and summarize both departmental policies and procedures as well as legal statutes related to the performance of their duties, recognizing the authority granted and limitations established for their job classification."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "PUBSERV 103",
+      "units": 16,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBSERV 422",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins at '(Academic Plan E041139D)'; the program heading itself is not in the text (likely on the preceding page). Section identified as Custody Assistant Training by its course list (PUBSERV 103 Custody Assistant Training) and position before 'Emergency Medical Awareness and Response'.",
+   "The course table has no block name; 'Required Courses' is a descriptive label. The printed 'Total 17' is recorded as total_units and as the block's stated total.",
+   "Outcomes copied with PDF line-break hyphenation rejoined ('tac - tics' as 'tactics', 'custo - dial' as 'custodial', 'poli - cies' as 'policies'); reviewer may verify.",
+   "Catalog pages carry the header 'GENERAL CATALOG | 2026-2027'."
+  ]
+ },
+ "extracted_run": "39011319511"
+}
