@@ -3996,6 +3996,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 /* Tokens only (S364, finishing S363's Budget pass): the widget and the hover take the
@@ -4486,7 +4489,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: October 17, 2026 at 3:50 AM PT</div>
+        <div class="last-updated">Last Updated: October 17, 2026 at 6:02 AM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='Error: '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='Error: '+e.message;b.disabled=false})">Manually Refresh COBI</button>
       </div>
     </div>
@@ -4583,7 +4586,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Oct 17, 2026 · 3:50 AM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Oct 17, 2026 · 6:01 AM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -5003,7 +5006,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-17T10:49:38</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-17T13:00:56</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -10558,8 +10561,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "October 17, 2026 at 3:50 AM PT",
-  "data_as_of": "October 17, 2026 at 3:50 AM PT",
+  "last_updated": "October 17, 2026 at 6:02 AM PT",
+  "data_as_of": "October 17, 2026 at 6:02 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "57,414",
@@ -10757,7 +10760,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       ],
       "live": true
     },
-    "_live_updated": "2026-10-17T10:50:20.847Z",
+    "_live_updated": "2026-10-17T13:01:43.137Z",
     "map_exhibits": {
       "value": "3,187",
       "label": "Common Exhibit Titles",
@@ -10850,7 +10853,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-10-17T10:49:38",
+    "_exhibit_updated": "2026-10-17T13:00:56",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
