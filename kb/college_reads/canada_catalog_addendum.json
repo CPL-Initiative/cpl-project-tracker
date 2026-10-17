@@ -1,0 +1,25 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. The archive read (run 39075017243) lists each recent year as a page on canadacollege.edu (2025-26catalog-addendum.php and earlier), and the How to Get page's 'PDF of the Catalog' link goes to addendum.php. This read opens addendum.php and the 2025-2026 page to find where the 2026-2027 catalog PDF sits and on which host. Pages only, no model call, no table write.",
+ "college": "Cañada College",
+ "questions": {
+  "catalog_pdf": "Whether canadacollege.edu links a 2026-2027 catalog as a PDF, its address and the words on its link, and on which host the file sits."
+ },
+ "keywords": [
+  "\\.pdf",
+  "[Cc]atalog",
+  "2026\\s*[-–/]\\s*(20)?27",
+  "[Aa]ddend"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_pdf"],
+   "url": "https://canadacollege.edu/catalogschedule/addendum.php",
+   "links": "\\.pdf|catalog|Catalog|[Aa]ddend"
+  },
+  {
+   "answers": ["catalog_pdf"],
+   "url": "https://canadacollege.edu/catalogschedule/2025-26catalog-addendum.php",
+   "links": "\\.pdf|catalog|Catalog|[Aa]ddend"
+  }
+ ]
+}
