@@ -1,0 +1,170 @@
+{
+ "college": "Calbright College Credit",
+ "control_number": "43231",
+ "shape": "noncredit",
+ "title": "Project Management",
+ "award": "Noncredit program",
+ "source_url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6781,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6781,
+    "output_tokens": 954,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 954,
+  "output_tokens_details": {
+   "thinking_tokens": 326
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0462,
+ "ms": 9474,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Project Management",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Project Management",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS520",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS521",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS522",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt is a program listing on page 17. Under the heading 'Project Management' it lists only BUS520, BUS521 and BUS522, with no hours, units or total. Course units are left null and total_units is null.",
+   "Measure is set to 'hours' because this is a noncredit program and the page introduces a 'Noncredit Education and Clock Hour Policy' section. No hours are actually printed for this program; a reviewer should check the program's own catalog page for the hours.",
+   "Codes are printed without a space ('BUS520'). They match closed-list codes BUS 520, BUS 521 and BUS 522.",
+   "The listing gives no explicit rule. All three courses are recorded as required ('all') because they are listed as the program's courses.",
+   "No outcomes or careers are printed in this excerpt. The program's detailed section is likely elsewhere in the catalog.",
+   "The Continuing Education Modules (Career Readiness micro-credentials) appear to be shared across Calbright programs, not specific to Project Management. They are not recorded."
+  ]
+ },
+ "extracted_run": "39006334571"
+}
