@@ -1,0 +1,259 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "41976",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/business-administration-2-0-as-t.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7180,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7180,
+    "output_tokens": 1749,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1749,
+  "output_tokens_details": {
+   "thinking_tokens": 593
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0637,
+ "ms": 15010,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BUS123"
+   ],
+   "flagged": [
+    "BUS123"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    29.0
+   ],
+   "stated": [
+    26.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Prepare and analyze financial statements.",
+    "Prepare and manage operating budgets.",
+    "Evaluate the impact of current economic conditions on a business.",
+    "Assess the legal implications of business decisions."
+   ],
+   "careers": [
+    "accountant",
+    "administrative assistant",
+    "budget analyst",
+    "management consultant",
+    "claims agent",
+    "controller",
+    "credit analyst",
+    "financial manager",
+    "financial planner",
+    "hospital administrator",
+    "insurance agent",
+    "loan officer",
+    "securities analyst",
+    "trust officer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ACTG 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 131",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS. 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS. 401",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS. 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 241",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS. 123",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints 'BUS. 100' and 'BUS. 201'; matched to closed-list entries BUS100 and BUS201 (state file stores no units for them).",
+   "The Program Learning Outcomes and Career Opportunities appear in a page portion that seems shared across the Business program family (preceded by a list of other Business certificates); recorded for this award as the AS-T shares them.",
+   "Text says 'BUS 103 or CIS 110 is required for Business Administration majors at many CSU campuses' — advisory, not a requirement of this degree; not recorded as a block.",
+   "GE pattern conflict: overview text says 'completion of the CSU GE-breadth or IGETC' while the General Education heading says 'Completion of Cal-GETC'; recorded Cal-GETC.",
+   "The page states the AS-T requires 60 transfer semester units as a general ADT requirement and '60–70 transferable units' under University Transfer Program; not recorded as this award's degree_total.",
+   "Electives: 'Additional CSU or UC transferable courses needed to meet the minimum 60 CSU transferable unit requirement' — no units printed, so electives_fill_degree is true."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

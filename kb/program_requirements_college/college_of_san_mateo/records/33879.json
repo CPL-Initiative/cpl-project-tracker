@@ -1,0 +1,346 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "33879",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/anthropology-aa-t.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7295,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7295,
+    "output_tokens": 2679,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2679,
+  "output_tokens_details": {
+   "thinking_tokens": 1125
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08276,
+ "ms": 21696,
+ "seconds": 22.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 16,
+   "share": 0.688,
+   "missing": [
+    "COMM150",
+    "MUS250",
+    "PSYC120",
+    "SOCI121",
+    "SOCI141"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ANTHC1001L",
+    "GEOG150"
+   ],
+   "flagged": [
+    "ANTHC1001L",
+    "GEOG150"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    23.0,
+    24.0
+   ],
+   "stated": [
+    22.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 23.0-24.0; the catalog states 22.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 20,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology Associate in Arts Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Analyze anthropological concepts and theories",
+    "Evaluate diverse viewpoints and evidence related to the human population.",
+    "Produce evidence-based arguments."
+   ],
+   "careers": [
+    "archeology",
+    "cultural resource management",
+    "environmental impact analysis",
+    "ethnic relations",
+    "ethnology",
+    "exhibit design",
+    "expeditions",
+    "film ethnography",
+    "health research",
+    "linguistics",
+    "museum curatorship",
+    "population analysis",
+    "public information",
+    "recreation",
+    "redevelopment",
+    "social gerontology",
+    "social services consultation",
+    "transcultural nursing",
+    "travel consultation",
+    "urban planning"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANTH 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: List B",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTH 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: List C",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 150",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS. 250",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 300",
+    "why": "placed in List B (listed here in error check: placed)"
+   },
+   {
+    "code": "PSYC 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCI 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCI 141",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "ANTH C1001L is optional: the catalog says core is 9-10 units depending on whether students take ANTH C1001 alone (3 units) or with ANTH C1001L (4 units). It is recorded in the core block but is not strictly required.",
+   "List C: GEOL 100 and GEOL 101 are printed joined by AND, so the 4-unit choice is either BIOL 250 or the pair GEOL 100 + GEOL 101.",
+   "Elective courses: additional CSU/UC transferable courses to reach the minimum 60 CSU transferable units; no units printed, so electives_fill_degree is true and degree_total left null (60 is a generic ADT minimum; '60-70 transferable units' is a generic transfer-program line).",
+   "ANTH C1001L and GEOG 150 are not in the closed list and are marked as catalog additions.",
+   "PHIL 300 entry in missing_explained is erroneous; PHIL 300 is placed in List B."
+  ]
+ },
+ "extracted_run": "39025870196"
+}
