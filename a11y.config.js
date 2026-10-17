@@ -1165,6 +1165,49 @@ async function seedMemory(page, theme, state) {
   await page.waitForTimeout(300);
 }
 
+// MAP Data Quality as a team-phrase holder sees it (S404 UI pass): signed out, the cobi
+// sweep measures the lock only. The seed holds a team phrase, stubs the register's read with
+// tests/map_data_quality.test.js's synthetic shapes (never a live row: the table is
+// team-gated), and opens the list or the Add form through the tab's own seams.
+async function seedMapDataQuality(page, theme, state) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "map-data-quality") location.hash = "map-data-quality"; });
+  await page.waitForFunction(() => !!window.CPL_MAP_DQ, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate((state) => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ROWS = [
+      { id: "a1", title: "Chaffey batch blanks (Cx & exams)", category: "blank-fields", severity: "high",
+        status: "open", description: "Blank Cx and standardized-exam fields on batch uploads.", expected: "Validate required fields.",
+        example_records: "student IDs TBD", affected_count: 427, college: "Chaffey College", source_report: "View_StudentAggregatedValues" },
+      { id: "a2", title: "Potential Student = Yes origin lost", category: "origin-attribution", severity: "medium",
+        status: "reported", description: "A boolean collapses three origins.", expected: "RequestOrigin enum.",
+        example_records: "", affected_count: null, college: "", source_report: "" },
+      { id: "a3", title: "USMC JST duplicate exhibits", category: "duplication", severity: "low",
+        status: "in_progress", description: "Two exhibits per course.", expected: "One exhibit per course.",
+        example_records: "", affected_count: 12, college: "", source_report: "" },
+      { id: "a4", title: "Old resolved thing", category: "other", severity: "low",
+        status: "verified", description: "Was fixed.", expected: "", example_records: "", affected_count: null,
+        college: "Foothill", resolution: "Fixed in MAP 2.1." },
+    ];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      if (/\/map_data_quality\?/.test(String(url))) return Promise.resolve(new Response(JSON.stringify(ROWS), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_MAP_DQ.activate();
+    window.CPL_MAP_DQ._setData(ROWS);
+    if (state === "form") window.CPL_MAP_DQ._openForm(null);
+  }, state);
+  const ready = { list: ".mdq-card .mdq-card-actions", form: "form.mdq-form" }[state];
+  await page.waitForFunction((sel) => !!document.querySelector("#mdq-root " + sel), ready, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 // College Identity's roster (S371 UI pass). The tab reads map_colleges (public) and
 // map_college_contacts (reviewer or team phrase) live; with every read aborted the cobi
 // sweep paints only the failed-read notice and the snapshot's findings. The seed stands in
@@ -1877,6 +1920,39 @@ module.exports = {
     routes: [{ hash: "gr-priorities", name: "gr" }],
     widths: [320, 390, 1440],
     seed: (page) => seedGrPriorities(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── MAP Data Quality, unlocked with a team phrase (S404) ── */
+  "mdq-list": {
+    file: "index.html",
+    title: "MAP Data Quality, a team-phrase holder's view: the register's cards and filters (synthetic rows)",
+    routes: [{ hash: "map-data-quality", name: "list" }],
+    widths: [390, 1440],
+    seed: (page) => seedMapDataQuality(page, "light", "list"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "mdq-list-dark": {
+    file: "index.html",
+    title: "MAP Data Quality, a team-phrase holder's view: the register's cards and filters, dark (synthetic rows)",
+    routes: [{ hash: "map-data-quality", name: "list" }],
+    widths: [390, 1440],
+    seed: (page) => seedMapDataQuality(page, "dark", "list"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "mdq-form": {
+    file: "index.html",
+    title: "MAP Data Quality, a team-phrase holder's view: the Add form open (synthetic rows)",
+    routes: [{ hash: "map-data-quality", name: "form" }],
+    widths: [390, 1440],
+    seed: (page) => seedMapDataQuality(page, "light", "form"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "mdq-form-dark": {
+    file: "index.html",
+    title: "MAP Data Quality, a team-phrase holder's view: the Add form open, dark (synthetic rows)",
+    routes: [{ hash: "map-data-quality", name: "form" }],
+    widths: [390, 1440],
+    seed: (page) => seedMapDataQuality(page, "dark", "form"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Memory, unlocked with a team phrase (S398) ── */

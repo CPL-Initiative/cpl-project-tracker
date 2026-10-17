@@ -30,14 +30,14 @@
     { v: "other", l: "Other" },
   ];
   var SEVERITIES = [{ v: "low", l: "Low" }, { v: "medium", l: "Medium" }, { v: "high", l: "High" }];
-  // status → next in the curate cycle + a display glyph
+  // status → next in the curate cycle; each status is its word (plain-words rule, S404 UI pass)
   var STATUSES = [
-    { s: "open", l: "Open", g: "○" },
-    { s: "reported", l: "Reported", g: "✎" },
-    { s: "in_progress", l: "In progress", g: "◐" },
-    { s: "fixed", l: "Fixed", g: "✓" },
-    { s: "verified", l: "Verified", g: "✓✓" },
-    { s: "wontfix", l: "Won't fix", g: "⤳" },
+    { s: "open", l: "Open" },
+    { s: "reported", l: "Reported" },
+    { s: "in_progress", l: "In progress" },
+    { s: "fixed", l: "Fixed" },
+    { s: "verified", l: "Verified" },
+    { s: "wontfix", l: "Won't fix" },
   ];
   var STATUS_CYCLE = ["open", "reported", "in_progress", "fixed", "verified"];
 
@@ -155,10 +155,10 @@
   // ══════════════════════════════════════════════════════════════════════════
   function buildShell(root) {
     clear(root);
+    root.removeAttribute("style");   // the page's Loading placeholder box (dashed, centered) is not the register's frame
     appEl = el("div", "cpl-mdq");
     var head = el("div", "mdq-head");
     var title = el("div", "mdq-title");
-    title.appendChild(el("span", "mdq-emoji", "🩺"));
     var tt = el("div"); tt.appendChild(el("h1", null, "MAP Data Quality"));
     tt.appendChild(el("div", "mdq-sub", "map_data_quality · defect register + follow-up"));
     title.appendChild(tt);
@@ -174,9 +174,9 @@
     var meta = el("div", "mdq-metarow");
     listMetaEl = el("div", "mdq-meta"); meta.appendChild(listMetaEl);
     var actions = el("div", "mdq-metaactions");
-    var addBtn = el("button", "mdq-btn mdq-btn-primary", "+ Add issue"); addBtn.type = "button";
+    var addBtn = el("button", "mdq-btn", "Add issue"); addBtn.type = "button";
     addBtn.onclick = function () { openForm(null); };
-    var exportBtn = el("button", "mdq-btn", "⧉ Copy for MAP devs"); exportBtn.type = "button";
+    var exportBtn = el("button", "mdq-btn", "Copy for MAP devs"); exportBtn.type = "button";
     exportBtn.onclick = function () { doExport(exportBtn); };
     actions.appendChild(exportBtn); actions.appendChild(addBtn);
     meta.appendChild(actions);
@@ -191,7 +191,7 @@
     if (!authBar) return;
     clear(authBar); refreshSession();
     if (writeErrMsg) authBar.appendChild(el("span", "mdq-writeerr", "⚠ " + writeErrMsg));
-    if (sess) { authBar.appendChild(el("span", "mdq-authok", "🔓 Team curate mode — edits write to map_data_quality")); return; }
+    if (sess) { authBar.appendChild(el("span", "mdq-authok", "Team curate mode: edits write to map_data_quality")); return; }
     var TP = tp();
     if (TP && TP.unlockRow) {
       authBar.appendChild(TP.unlockRow({
@@ -210,12 +210,12 @@
     var counts = {}; DATA.forEach(function (d) { counts[d.status] = (counts[d.status] || 0) + 1; });
     var chipRow = el("div", "mdq-chips");
     var allChip = el("button", "mdq-chip" + (filters.status === "" ? " on" : ""), "All (" + DATA.length + ")");
-    allChip.type = "button"; allChip.onclick = function () { filters.status = ""; render(); };
+    allChip.type = "button"; allChip.setAttribute("aria-pressed", filters.status === "" ? "true" : "false"); allChip.onclick = function () { filters.status = ""; render(); };
     chipRow.appendChild(allChip);
     STATUSES.forEach(function (st) {
       var n = counts[st.s] || 0;
-      var c = el("button", "mdq-chip mdq-st-" + st.s + (filters.status === st.s ? " on" : ""), st.g + " " + st.l + " (" + n + ")");
-      c.type = "button"; c.onclick = function () { filters.status = (filters.status === st.s ? "" : st.s); render(); };
+      var c = el("button", "mdq-chip mdq-st-" + st.s + (filters.status === st.s ? " on" : ""), st.l + " (" + n + ")");
+      c.type = "button"; c.setAttribute("aria-pressed", filters.status === st.s ? "true" : "false"); c.onclick = function () { filters.status = (filters.status === st.s ? "" : st.s); render(); };
       chipRow.appendChild(c);
     });
     filtersEl.appendChild(chipRow);
@@ -251,7 +251,7 @@
       top.appendChild(el("div", "mdq-card-title", d.title));
       var chips = el("div", "mdq-card-chips");
       var sm = statusMeta(d.status);
-      chips.appendChild(chip("mdq-tag-st mdq-st-" + d.status, sm.g + " " + sm.l));
+      chips.appendChild(chip("mdq-tag-st mdq-st-" + d.status, sm.l));
       chips.appendChild(chip("mdq-tag-sev mdq-sev-t-" + d.severity, d.severity));
       var cat = labelOf(CATEGORIES, "v", d.category); chips.appendChild(chip("mdq-tag-cat", cat ? cat.l : d.category));
       if (d.college) chips.appendChild(chip("mdq-tag-col", d.college));
@@ -273,7 +273,7 @@
         var adv = el("button", "mdq-btn mdq-btn-sm", "Advance status →"); adv.type = "button";
         adv.title = "Cycle open → reported → in progress → fixed → verified";
         adv.onclick = function () { cycleStatus(d); };
-        var edit = el("button", "mdq-btn mdq-btn-sm", "✏ Edit"); edit.type = "button";
+        var edit = el("button", "mdq-btn mdq-btn-sm", "Edit"); edit.type = "button";
         edit.onclick = function () { openForm(d); };
         bar.appendChild(adv); bar.appendChild(edit);
         card.appendChild(bar);
@@ -326,7 +326,7 @@
     form.appendChild(row3);
     form.appendChild(field("Resolution", textarea("resolution", isEdit ? existing.resolution : "")));
     var acts = el("div", "mdq-form-actions");
-    var save = el("button", "mdq-btn mdq-btn-primary", isEdit ? "Save changes" : "Add issue"); save.type = "submit";
+    var save = el("button", "mdq-btn", isEdit ? "Save changes" : "Add issue"); save.type = "submit";
     var cancel = el("button", "mdq-btn", "Cancel"); cancel.type = "button"; cancel.onclick = function () { clear(formHostEl); };
     acts.appendChild(save); acts.appendChild(cancel); form.appendChild(acts);
     form.onsubmit = function (e) {
@@ -371,7 +371,7 @@
   }
   function doExport(btn) {
     var text = buildExportText();
-    var restore = function () { setTimeout(function () { btn.textContent = "⧉ Copy for MAP devs"; }, 1600); };
+    var restore = function () { setTimeout(function () { btn.textContent = "Copy for MAP devs"; }, 1600); };
     var ok = function () { btn.textContent = "Copied"; restore(); };
     var fail = function () {
       try {
@@ -391,40 +391,38 @@
   // ── scoped, theme-aware CSS ──
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
-    var LIGHT = "--paper:#F4F2ED;--surface:#FFFFFF;--surface-subtle:#F7F5F1;--surface-muted:#ECE9E2;--text-strong:#1C1C1A;--text-body:#3A3A36;--text-muted:#5C5C55;--text-faint:#87877F;--border:rgba(28,28,26,.14);--border-strong:rgba(28,28,26,.30);--accent-link:#0047AB;--focus:#0047AB;--sev-high:#920000;--sev-medium:#7A5800;--sev-low:#2C601A;--st-open:#5C5C55;--st-reported:#005A8C;--st-in_progress:#7A5800;--st-fixed:#2C601A;--st-verified:#0F766E;--st-wontfix:#87877F;";
-    var DARK = "--paper:#1B1B18;--surface:#242420;--surface-subtle:#201F1C;--surface-muted:#2E2D28;--text-strong:#F4F2ED;--text-body:#DAD8D0;--text-muted:#A9A79E;--text-faint:#7C7A72;--border:rgba(244,242,237,.14);--border-strong:rgba(244,242,237,.30);--accent-link:#7DA1D4;--focus:#7DA1D4;--sev-high:#CF8F8F;--sev-medium:#E3B341;--sev-low:#89A67F;--st-open:#A9A79E;--st-reported:#79B8D6;--st-in_progress:#E3B341;--st-fixed:#89A67F;--st-verified:#5EBFB5;--st-wontfix:#7C7A72;";
-    var BASE = "color-scheme:light dark;background:var(--paper);color:var(--text-body);font-family:'Source Sans 3',system-ui,Arial,sans-serif;line-height:1.5;padding:16px;border-radius:14px;box-sizing:border-box;max-width:100%;text-align:left;";
+    // First Light's own tokens (index.html :root, both themes); the tab keeps
+    // only role names over them, so dark follows cpl_theme with no hex here.
+    var ROLES = "--sev-high:var(--crimson);--sev-medium:var(--mustard-text);--sev-low:var(--hunter);--st-open:var(--text-muted);--st-reported:var(--cobalt);--st-in_progress:var(--mustard-text);--st-fixed:var(--hunter);--st-verified:var(--violet);--st-wontfix:var(--text-muted);";
+    var BASE = "background:var(--paper);color:var(--text-body);font-family:'Source Sans 3',system-ui,Arial,sans-serif;line-height:1.5;padding:16px;border-radius:14px;box-sizing:border-box;max-width:100%;text-align:left;";
     var css = [
-      ".cpl-mdq{" + LIGHT + BASE + "}",
-      "@media (prefers-color-scheme:dark){.cpl-mdq{" + DARK + "}}",
-      ':root[data-theme="light"] .cpl-mdq{' + LIGHT + "}",
-      ':root[data-theme="dark"] .cpl-mdq{' + DARK + "}",
+      ".cpl-mdq{" + ROLES + BASE + "}",
       ".cpl-mdq *{box-sizing:border-box;}",
-      ".cpl-mdq :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px;}",
+      ".cpl-mdq :focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px;border-radius:6px;}",
       ".cpl-mdq .mdq-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;border-bottom:1px solid var(--border-strong);padding-bottom:12px;}",
       ".cpl-mdq .mdq-title{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;}",
-      ".cpl-mdq .mdq-emoji{font-size:1.5rem;}",
       ".cpl-mdq .mdq-title h1{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.4rem;margin:0;font-weight:700;}",
       ".cpl-mdq .mdq-sub{color:var(--text-muted);font-size:.78rem;font-family:ui-monospace,Menlo,monospace;}",
-      ".cpl-mdq .mdq-search{font:inherit;font-size:.86rem;min-width:200px;max-width:44vw;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);}",
+      ".cpl-mdq .mdq-search{font:inherit;font-size:.86rem;min-width:200px;max-width:100%;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);}",
       ".cpl-mdq .mdq-authbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 2px;}",
-      ".cpl-mdq .mdq-authok{font-size:.76rem;font-weight:600;color:var(--st-fixed);background:color-mix(in srgb,var(--st-fixed) 12%,transparent);border:1px solid color-mix(in srgb,var(--st-fixed) 30%,transparent);padding:3px 10px;border-radius:9px;}",
-      ".cpl-mdq .mdq-writeerr{font-size:.76rem;font-weight:700;color:var(--sev-medium);background:color-mix(in srgb,var(--sev-medium) 15%,transparent);border:1px solid color-mix(in srgb,var(--sev-medium) 34%,transparent);padding:3px 10px;border-radius:9px;}",
+      ".cpl-mdq .mdq-authok{font-size:.8rem;font-weight:600;color:var(--text-muted);}",
+      ".cpl-mdq .mdq-writeerr{font-size:.8rem;font-weight:700;color:var(--red-alert);}",
       ".cpl-mdq .mdq-filters{margin:12px 0 4px;display:flex;flex-direction:column;gap:8px;}",
       ".cpl-mdq .mdq-chips{display:flex;flex-wrap:wrap;gap:6px;}",
-      ".cpl-mdq .mdq-chip{font:inherit;font-size:.74rem;font-weight:600;cursor:pointer;padding:4px 10px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text-muted);}",
-      ".cpl-mdq .mdq-chip.on{background:color-mix(in srgb,var(--accent-link) 16%,var(--surface));color:var(--accent-link);border-color:var(--accent-link);}",
+      ".cpl-mdq .mdq-chips{gap:6px 18px;}",
+      ".cpl-mdq .mdq-chip{font:inherit;font-size:.84rem;font-weight:400;cursor:pointer;min-height:24px;padding:2px 0;border:0;background:none;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cpl-mdq .mdq-chip:hover{text-decoration-thickness:2px;}",
+      ".cpl-mdq .mdq-chip.on{font-weight:700;color:var(--text-strong);text-decoration:none;}",
       ".cpl-mdq .mdq-filtrow{display:flex;flex-wrap:wrap;gap:10px 14px;}",
       ".cpl-mdq .mdq-fl{display:flex;flex-direction:column;gap:3px;}",
-      ".cpl-mdq .mdq-fl-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-faint);font-weight:700;}",
+      ".cpl-mdq .mdq-fl-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;}",
       ".cpl-mdq .mdq-sel{font:inherit;font-size:.84rem;padding:5px 9px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);}",
       ".cpl-mdq .mdq-metarow{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0 6px;}",
       ".cpl-mdq .mdq-meta{font-size:.8rem;color:var(--text-muted);}",
-      ".cpl-mdq .mdq-metaactions{display:flex;gap:8px;flex-wrap:wrap;}",
-      ".cpl-mdq .mdq-btn{font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);white-space:nowrap;}",
-      ".cpl-mdq .mdq-btn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
-      ".cpl-mdq .mdq-btn-primary{background:var(--accent-link);color:var(--on-accent);border-color:var(--accent-link);}",
-      ".cpl-mdq .mdq-btn-sm{font-size:.74rem;padding:4px 9px;}",
+      ".cpl-mdq .mdq-metaactions{display:flex;gap:6px 18px;flex-wrap:wrap;}",
+      ".cpl-mdq .mdq-btn{font:inherit;font-size:.86rem;font-weight:600;cursor:pointer;min-height:24px;padding:2px 0;border:0;background:none;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;}",
+      ".cpl-mdq .mdq-btn:hover{text-decoration-thickness:2px;}",
+      ".cpl-mdq .mdq-btn-sm{font-size:.82rem;}",
       ".cpl-mdq .mdq-list{display:flex;flex-direction:column;gap:10px;margin-top:6px;}",
       ".cpl-mdq .mdq-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--sev-medium);border-radius:11px;padding:12px 14px;}",
       ".cpl-mdq .mdq-card.mdq-sev-high{border-left-color:var(--sev-high);}",
@@ -439,9 +437,9 @@
       ".cpl-mdq .mdq-tag-sev.mdq-sev-t-low{color:var(--sev-low);text-transform:capitalize;}",
       ".cpl-mdq .mdq-card-desc{margin-top:7px;font-size:.86rem;color:var(--text-body);line-height:1.5;overflow-wrap:anywhere;}",
       ".cpl-mdq .mdq-card-exp,.cpl-mdq .mdq-card-egs,.cpl-mdq .mdq-card-res{margin-top:5px;font-size:.82rem;color:var(--text-muted);overflow-wrap:anywhere;}",
-      ".cpl-mdq .mdq-lab{font-weight:700;color:var(--text-faint);text-transform:uppercase;font-size:.68rem;letter-spacing:.03em;}",
-      ".cpl-mdq .mdq-card-foot{margin-top:6px;font-size:.72rem;color:var(--text-faint);font-family:ui-monospace,Menlo,monospace;overflow-wrap:anywhere;}",
-      ".cpl-mdq .mdq-card-actions{margin-top:9px;display:flex;gap:7px;flex-wrap:wrap;}",
+      ".cpl-mdq .mdq-lab{font-weight:700;color:var(--text-muted);text-transform:uppercase;font-size:.68rem;letter-spacing:.03em;}",
+      ".cpl-mdq .mdq-card-foot{margin-top:6px;font-size:.72rem;color:var(--text-muted);font-family:ui-monospace,Menlo,monospace;overflow-wrap:anywhere;}",
+      ".cpl-mdq .mdq-card-actions{margin-top:9px;display:flex;gap:6px 18px;flex-wrap:wrap;}",
       ".cpl-mdq .mdq-empty{color:var(--text-muted);font-size:.85rem;padding:18px;text-align:center;background:var(--surface-subtle);border:1px dashed var(--border-strong);border-radius:10px;}",
       ".cpl-mdq .mdq-formhost:not(:empty){margin:10px 0;}",
       ".cpl-mdq .mdq-form{background:var(--surface);border:1px solid var(--border-strong);border-radius:11px;padding:13px 15px;}",
@@ -449,11 +447,11 @@
       ".cpl-mdq .mdq-form-row{display:flex;flex-wrap:wrap;gap:10px;}",
       ".cpl-mdq .mdq-form-row .mdq-field{flex:1 1 150px;}",
       ".cpl-mdq .mdq-field{display:flex;flex-direction:column;gap:3px;margin-bottom:9px;}",
-      ".cpl-mdq .mdq-field-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-faint);font-weight:700;}",
-      ".cpl-mdq .mdq-field-hint{font-size:.7rem;color:var(--text-faint);font-style:italic;}",
+      ".cpl-mdq .mdq-field-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;}",
+      ".cpl-mdq .mdq-field-hint{font-size:.7rem;color:var(--text-muted);font-style:italic;}",
       ".cpl-mdq .mdq-form input,.cpl-mdq .mdq-form select,.cpl-mdq .mdq-form textarea{font:inherit;font-size:.85rem;padding:6px 9px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-subtle);color:var(--text-body);width:100%;max-width:100%;}",
       ".cpl-mdq .mdq-form textarea{resize:vertical;line-height:1.45;}",
-      ".cpl-mdq .mdq-form-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;}",
+      ".cpl-mdq .mdq-form-actions{display:flex;gap:6px 18px;margin-top:6px;flex-wrap:wrap;}",
     ].join("\n");
     var style = document.createElement("style"); style.id = CSS_ID; style.textContent = css;
     document.head.appendChild(style);
