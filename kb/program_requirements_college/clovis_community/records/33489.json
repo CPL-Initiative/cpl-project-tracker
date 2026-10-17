@@ -1,0 +1,331 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "33489",
+ "shape": "degree",
+ "title": "Physical Education",
+ "award": "A.A. Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9187,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9187,
+    "output_tokens": 3009,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3009,
+  "output_tokens_details": {
+   "thinking_tokens": 1099
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09693,
+ "ms": 25131,
+ "seconds": 25.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 38,
+   "share": 0.0,
+   "missing": [
+    "BIOL20",
+    "BIOL22",
+    "BIOL5",
+    "CHEM10",
+    "CHEM3A",
+    "DANCE10",
+    "DANCE12A",
+    "DANCE14",
+    "DANCE15",
+    "DANCE28",
+    "DANCE9",
+    "FN35",
+    "FN40",
+    "HLTH1",
+    "HLTH2",
+    "KINES22",
+    "PE12",
+    "PE12B",
+    "PE14",
+    "PE15",
+    "PE15B",
+    "PE16",
+    "PE19",
+    "PE29",
+    "PE32B",
+    "PE32C",
+    "PE36B",
+    "PE36C",
+    "PE36D",
+    "PE39B",
+    "PE43B",
+    "PE43C",
+    "PE45",
+    "PE49",
+    "PE49A",
+    "PE6",
+    "PE7",
+    "PE71"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 20",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "BIOL 22",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "BIOL 5",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "CHEM 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 3A",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "DANCE 10",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "DANCE 12A",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "DANCE 14",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "DANCE 15",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "DANCE 28",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "DANCE 9",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "FN 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "FN 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "HLTH 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "HLTH 2",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "KINES 22",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 12",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 12B",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 14",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 15",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 15B",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 16",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 19",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 29",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 32B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 32C",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 36B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 36C",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 36D",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 39B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 43B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 43C",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 45",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 49",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 49A",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 6",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 7",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   },
+   {
+    "code": "PE 71",
+    "why": "Physical Education A.A. section not in the text; appears only in the Kinesiology AA-T section"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 173-174) holds only the 'KINESIOLOGY — ASSOCIATE IN ARTS IN KINESIOLOGY FOR TRANSFER DEGREE (Major #C.1270.AA-T)' section and the start of the Mathematics AS-T section; no section for the Physical Education A.A. Degree appears, so no blocks, totals, outcomes or careers were recorded.",
+   "The Kinesiology AA-T is a different award (A.A.-T, Cal-GETC, Total Units 22-24) and its list includes courses absent from the closed list (CHEM 1A, STAT C1000, BA 23, PHYS 2A, PHYS 4A), while the closed list includes athletics, nutrition and health courses (PE 32B-PE 49, FN 35, FN 40, HLTH 1, CHEM 10) the text never names, which indicates the closed list belongs to a separate local Physical Education A.A. program.",
+   "Reviewer should locate the Physical Education A.A. Degree section elsewhere in the 2026-2027 catalog PDF."
+  ]
+ },
+ "extracted_run": "39006155986"
+}

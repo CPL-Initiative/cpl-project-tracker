@@ -1,0 +1,257 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "43175",
+ "shape": "certificate",
+ "title": "Video Editing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9809,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9809,
+    "output_tokens": 1599,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1599,
+  "output_tokens_details": {
+   "thinking_tokens": 454
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07122,
+ "ms": 17052,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "ART41A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ART41"
+   ],
+   "flagged": [
+    "ART41"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 17.0-17.0; the catalog states 17.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "VIDEO EDITING (MAJOR #C.520E.CA) CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Prepare for employment/self-employment in the video editing and production industry.",
+    "Build video editing skills required for digital media platforms.",
+    "Assemble a portfolio of video editing projects for self-promotion and marketing materials geared toward a career in contemporary video editing and production industries."
+   ],
+   "careers": [
+    "video editing and production industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 4",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 7",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 12",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 16",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 16A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 1",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specific Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSCO 4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 43",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 41A",
+    "why": "Video Editing section prints 'ART 41 Computerized Multimedia' instead of ART 41A; likely the same course (typo), recorded as printed"
+   }
+  ],
+  "notes": [
+   "The Video Editing section prints 'ART 41 Computerized Multimedia'; the closed list and the Animation/Graphic Design sections use ART 41A. Recorded ART 41 as a catalog addition; reviewer should confirm it is a typo for ART 41A.",
+   "Course names for MUS 16 and MUS 16A are garbled in the Video Editing section (both print 'Jazz History and Appreciation Hip Hop Music and Culture'); codes recorded as printed.",
+   "Printed total is 17-18 units, but listed courses sum to 17 (3+3+3+3+3+2); the source of the 18-unit high end is not evident.",
+   "Section spans pages 100-101; Specific Courses and the total continue on page 101.",
+   "The 'OR' rows in Required Core Courses are recorded as alternatives within single required entries (choose one of ART 3/4/7; choose one of ART 2/MUS 12/MUS 16/MUS 16A/PHOTO 1)."
+  ]
+ },
+ "extracted_run": "39006155986"
+}
