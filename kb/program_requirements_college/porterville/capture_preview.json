@@ -1,0 +1,555 @@
+{
+ "college": "Porterville College",
+ "catalog_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 91,
+ "with_closed_list": 85,
+ "started": "2026-10-17T12:58:54Z",
+ "pdf": {
+  "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+  "access": "robots_disallow",
+  "status": null,
+  "bytes": null,
+  "pages_total": 0,
+  "error": null,
+  "chars_total": 0,
+  "pypdf_accepted": 0,
+  "sample": [],
+  "extractor": null,
+  "unproven": []
+ },
+ "loads": 0,
+ "seconds": 1.8,
+ "found": 0,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 85
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "06771",
+   "title": "Agriculture: Production",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "06773",
+   "title": "Biological & Physical Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "06797",
+   "title": "Psychiatric Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "06809",
+   "title": "Child Development",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "09520",
+   "title": "Commercial Art",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "09528",
+   "title": "Business",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18526",
+   "title": "Liberal Arts-Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "30235",
+   "title": "Biological and Physical Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "30357",
+   "title": "Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31070",
+   "title": "LVN to RN",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31088",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31127",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31240",
+   "title": "Fire Technology Structural Firefighter",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31324",
+   "title": "Communication Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31565",
+   "title": "Industrial Maintenance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31585",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": null
+  },
+  {
+   "control_number": "31849",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33085",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33091",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33714",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33933",
+   "title": "Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35227",
+   "title": "Business Management-Global Entrepreneurship",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35228",
+   "title": "Business Management-Human Resources",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35229",
+   "title": "Business Management-Accounting",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35239",
+   "title": "LVN to RN 30-Unit Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35250",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35256",
+   "title": "Human Resource Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35388",
+   "title": "Public Safety",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35431",
+   "title": "Business Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35432",
+   "title": "Computer Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35449",
+   "title": "Advanced Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35554",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35682",
+   "title": "Agribusiness",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36021",
+   "title": "High Beginning English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36022",
+   "title": "Advanced English as a Second Language",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36023",
+   "title": "High Intermediate English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36659",
+   "title": "Early Intervention Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36704",
+   "title": "Early Child Care Administration Specialization",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37175",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37239",
+   "title": "Social Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37377",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37556",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "38309",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "39770",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "39837",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "39841",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "40122",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "40906",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "41689",
+   "title": "Personal Training",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41893",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42376",
+   "title": "Administration of Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42395",
+   "title": "Digital Video Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42412",
+   "title": "Child Development Teacher Permit",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42417",
+   "title": "Child Development Associate Teacher",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43117",
+   "title": "Law Enforcement Officer Reserve",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43139",
+   "title": "Modern Police Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "43487",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "43554",
+   "title": "Popular Music Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43784",
+   "title": "Hospitality Management",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44014",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44039",
+   "title": "Module 1: Electric Vehicle (EV) Safety",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44089",
+   "title": "Module 2: Electric Vehicle (EV) Components",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44090",
+   "title": "Module 3: Electric Vehicle (EV) Diagnostics",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44091",
+   "title": "Module 4: Advanced Electric Vehicle (EV) Safety",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44092",
+   "title": "Module 5: Advanced Electric Vehicle (EV) Components",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44409",
+   "title": "Welding",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44512",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44805",
+   "title": "Tutor Training Level 1",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44924",
+   "title": "Digital Video Production for Business",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44926",
+   "title": "Culinary Arts",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45313",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45511",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45513",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45517",
+   "title": "User Experience Design",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45519",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45536",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45541",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45544",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45593",
+   "title": "Intercollegiate Athletics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45626",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45634",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45637",
+   "title": "Modern Policing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45769",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45797",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "46183",
+   "title": "Mathematics 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39034615681"
+}
