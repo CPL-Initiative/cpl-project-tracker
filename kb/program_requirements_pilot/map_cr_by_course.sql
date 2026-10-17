@@ -24,7 +24,9 @@ with u as (
                          'Clovis Community College','Barstow Community College','Compton College','Lassen College','Mendocino College','Woodland Community College','College of the Canyons','Los Angeles City College','Los Angeles Harbor College','Los Angeles Pierce College','Shasta College','Los Angeles Valley College','Santa Rosa Junior College','Yuba College',
                          'College of San Mateo','Skyline College','Coalinga College','Copper Mountain College','San Diego College of Continuing Education','Solano Community College','West Valley College',
                          'Cerro Coso Community College','Porterville College','Folsom Lake College','De Anza College','Cosumnes River College','Sacramento City College','City College of San Francisco','American River College',
-                         'Los Angeles Trade Technical College','Los Angeles Mission College','College of the Desert')
+                         'Los Angeles Trade Technical College','Los Angeles Mission College','College of the Desert',
+                         'Grossmont College','Los Angeles Southwest College','Ohlone College','Pasadena City College','Glendale Community College',
+                         'Cuesta College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u
