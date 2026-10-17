@@ -673,3 +673,47 @@ reports showed. A page read of the PDF around one failing outcome named the faul
   39030423266).
 - Parked detail: Diablo Valley found 0 of 244 (its hubs grid departments by award, run 38999074345); Santiago
   Canyon's eLumen host serves 2025-2026, and a narrower page read must show its Catalog Archives and printer PDF links.
+
+## S406 SkyIronwood (2026-10-17, hand-opened): the hand-filed catalogs, read from Sam's release copies
+
+- **A hand-filed copy is read from where the person posted it (#2199).** Sam posted eight refused colleges' catalog
+  PDFs (and Porterville's two and De Anza's one addendum) into the `catalog-files` release's text, where GitHub files
+  them as attachments. The session's proxy refuses GitHub's attachment host (403, "sessions are bound to their
+  configured repositories"); a runner fetches them. So a record names `copy_url` in place of a committed file, and the
+  read job's first step, `pin`, writes the copy's sha256, size and run the first time a runner fetches it. A pinned
+  hash never changes. The PDFs stay out of git and off the Pages site (CCSF's is 920 pages, American River's 998).
+- **The eight read almost whole.** Capture-only reads ($0) found Porterville 82 of 85 listed programs, Cerro Coso 65
+  of 74, Folsom Lake 107 of 108, De Anza 227 of 243 (its 2025-2026 catalog), Cosumnes River 217 of 219, Sacramento
+  City 204 of 207, CCSF 349 of 371 and American River 368 of 368, each in under eight minutes: one download, no page
+  loads. The four Los Rios colleges print one compiled catalog each, so the PDF reader needed nothing new.
+- **Extraction and loads** (each under the $40 go; $131.00 in all): Cerro Coso $4.87, 52 loaded; Porterville $6.13,
+  76; Folsom Lake $9.43, 104; De Anza $19.66, 210; Sacramento City $18.50, 182; Cosumnes River $18.96, 182; CCSF
+  $23.60, 294; American River $29.85, 327 (07230 took a Cloudflare 502 from the extraction gateway, then
+  re-extracted alone with `force=07230` and loaded). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
+  35, 55 and 41; 1,427 loaded in all. CCSF's 55 (16%) is the highest share of the sweep. Four read at random are
+  wrong-page picks the extraction caught and reported as not found (Physics 2.0 drew course descriptions, pages
+  795-797; Editorial Management and Design drew the Journalism degrees page), so the title gate still admits a
+  one-subject program's course pages in a large catalog. Nothing false loaded; the reader item stays open.
+- **The arithmetic check fails on a degree with a local GE pattern whose units the page does not state**
+  (`incomplete`): Cerro Coso 38 of 65. It is the known shape (record shape 5), not a reading fault.
+- **The registry rows wait on Sam (Open Asks Sheet 90 card 2).** The Supabase guard holds an UPDATE for a person, so
+  the six rows his addresses approved are a paste card. The reads do not wait on them: a hand-filed record is read
+  whatever the row names, and each record carries the copy's address and year.
+- **Cuesta's catalog is on curriQunet** (page reads 39046661339, 39046881195, 39047849634): the home page's Catalog
+  link names the class-search page the census filed; the catalog page links `cuesta.curriqunet.com/catalog/iq/29951`,
+  "Cuesta College Catalog 2026-2027", which answered the reader 200. Sheet 90 card 3.
+
+**Patterns that worked.** One branch per college cut from the code branch before it merged, so the eight captures
+ran while #2199's tests did. A Supabase result too large for the context lands in a file: parse it there and check
+it against a fingerprint computed in the same query, with nothing retyped.
+
+## Moved from the lane (S406 compaction)
+
+- Build `c111c9b05ca0` (S405): 12,424 programs at 92 colleges, adding Coalinga 52, Skyline 42, West Valley 133, Copper
+  Mountain 46, San Diego Continuing Education 90 and Solano 144, with their dated reads and San Mateo's.
+- Sheet 89 card 1's detail (S405): Grossmont's row names the catalog's cover image, and its catalog page links
+  `catalog.gcccd.edu/grossmont/`, the district CourseLeaf host Cuyamaca reads; Ohlone's names its landing page, and
+  its 2026-2027 catalog is PDF chapters, chapter 7 the curriculum guides; Cañada's names its schedule page, and its
+  online catalog `catalog.canadacollege.edu/current/` refuses the reader in robots.txt.
+- The refusing hosts before S406: De Anza and CCSF (Cloudflare 403), American River, Cosumnes River, Folsom Lake and
+  Sacramento City (404), Cerro Coso and Porterville (robots.txt on the PDF). All eight now read from Sam's copies.

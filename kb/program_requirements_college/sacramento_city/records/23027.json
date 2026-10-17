@@ -1,0 +1,238 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "23027",
+ "shape": "certificate",
+ "title": "Commercial Music, Audio Production Emphasis",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=536",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12818,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12818,
+    "output_tokens": 1971,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1971,
+  "output_tokens_details": {
+   "thinking_tokens": 675
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09069,
+ "ms": 16912,
+ "seconds": 17.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "MUFHL305",
+    "MUFHL309",
+    "MUFHL310",
+    "MUFHL311",
+    "MUFHL315",
+    "MUFHL320",
+    "MUFHL481",
+    "MUFHL482",
+    "MUIVI345",
+    "MUSM110",
+    "MUSM115",
+    "MUSM330",
+    "MUSM331",
+    "MUSM342",
+    "MUSM344",
+    "MUSM350",
+    "MUSM356",
+    "MUSM361",
+    "MUSM362",
+    "MUSM366"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no Certificate of Achievement section for Commercial Music, Audio Production Emphasis",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MUFHL 305",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 309",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 310",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 311",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 315",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 320",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 481",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUFHL 482",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUIVI 345",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 110",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 115",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 330",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 331",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 342",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 344",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 350",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 356",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 361",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 362",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MUSM 366",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 536-539) contains only Associate Degree sections; the Certificates of Achievement for Music, including Commercial Music, Audio Production Emphasis, likely appear on later pages not included. No certificate requirements were recorded.",
+   "The 'A.A. in Commercial Music, Audio Production Emphasis' section (Total Units: 37) lists every closed-list course: required MUFHL 309, MUFHL 320, MUSM 110, MUSM 306, MUSM 342, MUSM 344, MUSM 350, MUSM 356, MUSM 357, MUSM 362, MUSM 366, MUSM 367, plus a minimum of 5.5 units from MUFHL 305, MUFHL 310 or 481, MUFHL 311 or 482, MUFHL 315, MUIVI 345 (1-2), MUSM 115, MUSM 330, MUSM 331, MUSM 361. MUSM 306, MUSM 357 and MUSM 367 are not on the closed list. A reviewer should fetch the certificate section to confirm whether its requirements match the A.A.",
+   "The A.A. section's Student Learning Outcomes and Career Information were not copied because they are printed for the A.A. degree, not the certificate."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

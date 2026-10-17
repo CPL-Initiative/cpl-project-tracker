@@ -1,0 +1,162 @@
+{
+ "college": "De Anza College",
+ "control_number": "46413",
+ "shape": "noncredit",
+ "title": "Foundations of Data Science",
+ "award": "Noncredit program",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7769,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7769,
+    "output_tokens": 865,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 865,
+  "output_tokens_details": {
+   "thinking_tokens": 248
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04838,
+ "ms": 8286,
+ "seconds": 8.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "CIS311",
+    "CIS311X",
+    "CIS340",
+    "CIS344A",
+    "CIS364G"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 558 Hours, 558 Hours, 330 Hours, 330 Hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 311",
+    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Introduction to Computer Science certificate (List A)."
+   },
+   {
+    "code": "CIS 311X",
+    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Introduction to Computer Science certificate (List A)."
+   },
+   {
+    "code": "CIS 340",
+    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Database Science Practitioner and Introduction to Computer Science certificates."
+   },
+   {
+    "code": "CIS 344A",
+    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Database Science Practitioner certificate."
+   },
+   {
+    "code": "CIS 364G",
+    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Database Science Practitioner certificate."
+   }
+  ],
+  "notes": [
+   "The catalog text on page 303 has no section for the Foundations of Data Science noncredit program.",
+   "The sections it does print are four Certificates of Completion: Database Science Practitioner, Information Technology Technical Support, Introduction to Computer Science and Project Management Practitioner.",
+   "Those requirements were not attributed to this award, so no blocks, totals, outcomes or careers were recorded.",
+   "The Foundations of Data Science section is likely on a nearby page of the catalog PDF. A reviewer should locate it.",
+   "Measure is set to hours because the neighboring noncredit certificates count in hours."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

@@ -1,0 +1,272 @@
+{
+ "college": "American River College",
+ "control_number": "04514",
+ "shape": "degree",
+ "title": "Horticulture",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=666",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11662,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11662,
+    "output_tokens": 1831,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1831,
+  "output_tokens_details": {
+   "thinking_tokens": 433
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08327,
+ "ms": 14821,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 26,
+   "share": 0.0,
+   "missing": [
+    "BUS212",
+    "BUS216",
+    "BUS218",
+    "HORT100",
+    "HORT105",
+    "HORT143",
+    "HORT200",
+    "HORT298",
+    "HORT300",
+    "HORT302",
+    "HORT305",
+    "HORT306",
+    "HORT308",
+    "HORT309",
+    "HORT312",
+    "HORT316",
+    "HORT320",
+    "HORT321",
+    "HORT322",
+    "HORT324",
+    "HORT326",
+    "HORT327",
+    "HORT329",
+    "HORT330",
+    "NATR330",
+    "NATR332"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Horticulture A.S. Degree (section not found in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 212",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "BUS 216",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "BUS 218",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "HORT 100",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 105",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 143",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 200",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 298",
+    "why": "not in the text"
+   },
+   {
+    "code": "HORT 300",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 302",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "HORT 305",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 306",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 308",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 309",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 312",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 316",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 320",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 321",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "HORT 322",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 324",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 326",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 327",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "HORT 329",
+    "why": "A.S. section not in text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 330",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "NATR 330",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   },
+   {
+    "code": "NATR 332",
+    "why": "A.S. section not in text; named only in Horticulture Certificate section"
+   }
+  ],
+  "notes": [
+   "The provided text (pages 666-669) does not contain the Horticulture A.S. Degree section. It begins mid-way through the tail of an earlier degree section (GE/Cal-GETC sentence, outcomes and career information that match the Landscape Design Technology program), then prints only Certificates of Achievement and Certificates (Horticulture, Landscape Design Technology, Floristry, Horticulture Skills, Landscape Design, Plant Production, Sustainable Landscaping).",
+   "The Horticulture Certificate (Total Units: 37) is a different award and was not recorded as the A.S. degree; its requirements likely overlap with the degree, but the degree requirements should be read from the catalog page(s) preceding page 666.",
+   "The Cal-GETC / 60-unit sentence at the top of page 666 belongs to the preceding (unidentified, likely Landscape Design Technology) degree section, so ge_pattern and degree_total were left null.",
+   "Reviewer should fetch earlier pages (around 664-665) to locate the Horticulture A.S. Degree requirements."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

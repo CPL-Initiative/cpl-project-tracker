@@ -1,0 +1,421 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "11347",
+ "shape": "degree",
+ "title": "Interdisciplinary Studies, Ethnic Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10590,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10590,
+    "output_tokens": 2852,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2852,
+  "output_tokens_details": {
+   "thinking_tokens": 944
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0994,
+ "ms": 22040,
+ "seconds": 22.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 14,
+   "share": 0.786,
+   "missing": [
+    "PHIL350",
+    "SOC300",
+    "SOC301"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 19,
+   "codes": [
+    "ARTH325",
+    "BUS345",
+    "DANCE310",
+    "DANCE351",
+    "DEAF351",
+    "ENGLT336",
+    "ETHNS300",
+    "ETHNS320",
+    "ETHNS330",
+    "ETHNS344",
+    "ETHNS360",
+    "HISTC1001",
+    "HISTC1002",
+    "HUM339",
+    "MUFHL308",
+    "MUFHL315",
+    "POLSC1000H",
+    "SPAN427",
+    "TA306"
+   ],
+   "flagged": [
+    "ARTH325",
+    "BUS345",
+    "DANCE310",
+    "DANCE351",
+    "DEAF351",
+    "ENGLT336",
+    "ETHNS300",
+    "ETHNS320",
+    "ETHNS330",
+    "ETHNS344",
+    "ETHNS360",
+    "HISTC1001",
+    "HISTC1002",
+    "HUM339",
+    "MUFHL308",
+    "MUFHL315",
+    "POLSC1000H",
+    "SPAN427",
+    "TA306"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "PSLO 1: Synthesize multiple disciplines focusing on U.S. society, such as history, art appreciation, music appreciation, and philosophy to achieve cultural literacy.",
+    "PSLO 2: Practice college level critical thinking and writing in the interdisciplinary courses within the American Studies major.",
+    "PSLO 3: Evaluate cross-cultural links between multiple disciplines focusing on U.S. society, with an emphasis on commonalities of cultural expression between different subcultures in the U.S.",
+    "PSLO 4: Develop a foundation for cultural pluralism, a rejection of previous personal prejudices, and knowledge of and comfort with others unlike themselves."
+   ],
+   "careers": [
+    "Research",
+    "Archivist",
+    "Education",
+    "Historian",
+    "Law",
+    "Politics"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HUM 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST 314",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 320",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 321",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 331",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 12 units from the following:",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANTH 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 345",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANCE 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANCE 351",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "DEAF 351",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLT 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLT 321",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 330",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 336",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHNS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHNS 320",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ETHNS 330",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ETHNS 360",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ETHNS 344",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 339",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUFHL 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 315",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 427",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TA 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHIL 350",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 301",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 425; the program's own heading is not in the excerpt. The section read is the American Studies A.A. ('The American Studies Associate in Arts (A.A.) degree may be obtained...'), which matches the closed list (HUM 332, SOC 321, HIST 314/320/321/331, ANTH 334, ENGLT 320/321/330, POLS C1000). The state program title 'Interdisciplinary Studies, Ethnic Studies' differs from the catalog's 'American Studies'; reviewer should confirm the match.",
+   "The A.A. in Humanities section that follows on pages 425-426 was not used.",
+   "Degree total not recorded: the text says only 'plus sufficient electives for a total of at least 60 units', so electives_fill_degree is true and degree_total is left null.",
+   "Course rows with 'or' options in the 12-unit list are recorded as single entries with alternatives (one choice each)."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

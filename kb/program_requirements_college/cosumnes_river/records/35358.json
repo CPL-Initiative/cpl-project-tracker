@@ -1,0 +1,158 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "35358",
+ "shape": "certificate",
+ "title": "Automotive Heating and Air Conditioning (Ford ASSET)",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7572,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7572,
+    "output_tokens": 1100,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1100,
+  "output_tokens_details": {
+   "thinking_tokens": 456
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05229,
+ "ms": 9631,
+ "seconds": 10.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "AMT370",
+    "AMT371",
+    "AMT376",
+    "AMT379"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AMT 370",
+    "why": "named only in the Automotive Mechanics Technology (Ford ASSET) A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "AMT 371",
+    "why": "named only in the Automotive Mechanics Technology (Ford ASSET) A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "AMT 376",
+    "why": "named only in the Automotive Mechanics Technology (Ford ASSET) A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "AMT 379",
+    "why": "named only in the Automotive Mechanics Technology (Ford ASSET) A.S. section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 181) holds only the Automotive Mechanics Technology (Ford ASSET) A.S. degree section ('Degree Requirements', Total Units: 59, Local GE or Cal-GETC, at least 60 units). The Automotive Heating and Air Conditioning (Ford ASSET) Certificate of Achievement section is not in the text, so no blocks, totals, outcomes or careers are recorded for it.",
+   "The degree section's description names 'Ford/Lincoln Service Technicians' as a result of completing that program; not recorded as a career because it belongs to the A.S. degree section, not this certificate.",
+   "Reviewer should check a later page of the 2026-2027 catalog (likely page 182 or nearby) for the certificate's own requirements, which presumably include AMT 370, AMT 371, AMT 376 and AMT 379."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

@@ -1,0 +1,99 @@
+{
+ "college": "Cerro Coso Community College",
+ "programs": 80,
+ "with_closed_list": 74,
+ "found": 65,
+ "extracted": 65,
+ "errors": 0,
+ "passed_machine_checks": 19,
+ "failed": {
+  "coverage": 17,
+  "invented": 4,
+  "arithmetic": 38,
+  "repeated": 0,
+  "outcomes": 11
+ },
+ "cost_usd": 4.87,
+ "cost_per_program": 0.0749,
+ "not_found": [
+  {
+   "control_number": "01933",
+   "title": "Business Office Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=147",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "18915",
+   "title": "Human Services",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+    "coverage": 0.364
+   }
+  },
+  {
+   "control_number": "20629",
+   "title": "Business Office Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=147",
+    "coverage": 0.105
+   }
+  },
+  {
+   "control_number": "31064",
+   "title": "Office Clerk",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "31065",
+   "title": "Administrative Office Assistant",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "32777",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "41740",
+   "title": "Industrial Process Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=194",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "46168",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=197",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "46179",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=197",
+    "coverage": 0.286
+   }
+  }
+ ],
+ "run": "39046789844"
+}

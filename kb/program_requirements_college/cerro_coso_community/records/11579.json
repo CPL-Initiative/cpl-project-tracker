@@ -1,0 +1,395 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "11579",
+ "shape": "certificate",
+ "title": "Child Development Master Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11233,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11233,
+    "output_tokens": 2457,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2457,
+  "output_tokens_details": {
+   "thinking_tokens": 478
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09407,
+ "ms": 18667,
+ "seconds": 19.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHDVC133",
+    "CHDVC233"
+   ],
+   "flagged": [
+    "CHDVC133",
+    "CHDVC233"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Integrate understandings of children’s development and needs to maintain healthy, safe, supportive, and challenging learning environments that demonstrate culturally relevant, inclusive, age-appropriate, and anti-bias approaches respectful of children, families, and early learning professionals."
+   ],
+   "why": [
+    "not in the catalog text as printed: Integrate understandings of children's development and needs to maintain healthy"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Master Teacher Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Examine teaching and care practices that provide a developmentally appropriate program to support children’s growth, development, and learning.",
+    "Identify one’s own values, experiences, and philosophies and how they guide and inform practice.",
+    "Integrate understandings of children’s development and needs to maintain healthy, safe, supportive, and challenging learning environments that demonstrate culturally relevant, inclusive, age-appropriate, and anti-bias approaches respectful of children, families, and early learning professionals.",
+    "Develop professional expertise in a specialized area of knowledge."
+   ],
+   "careers": [
+    "curriculum specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C281",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Infant Toddler Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "School Age Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Special Needs Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Curriculum Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHDV C149",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Dual Language Learner Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C256",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Trauma Informed Care Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHDV C233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Specializations are introduced by 'Complete 6 units in one of the following specializations'; each specialization is recorded as an all-required block in option_group 'Specialization'.",
+   "The PDF text uses broken ligature glyphs (e.g. 'pracƟces', 'respecƞul', 'experƟse'); outcomes were transcribed with these read as 'ti'/'tf' (practices, respectful, expertise). Reviewer may verify against the PDF.",
+   "Catalog course titles differ from the state file for some codes (e.g. CHDV C141/C241 'Special Needs', CHDV C156/C256 'Dual Language', CHDV C205 'Infant and Toddler Curriculum', CHDV C207 'School Age Curriculum'); codes match.",
+   "CHDV C133 and CHDV C233 (Trauma Informed Care Specialization) are not in the closed list.",
+   "Permit names (Assistant Teacher, Associate Teacher, Teacher, Master Teacher, Site Supervisor) are listed as permits rather than careers and were not recorded as careers.",
+   "The adjacent Site Supervisor certificate and Computer Applications Specialist A.S. sections were ignored."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

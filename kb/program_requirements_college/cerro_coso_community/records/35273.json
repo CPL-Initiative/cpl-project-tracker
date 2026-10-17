@@ -1,0 +1,257 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "35273",
+ "shape": "certificate",
+ "title": "Cyber Security Technology -",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11303,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11303,
+    "output_tokens": 2558,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2558,
+  "output_tokens_details": {
+   "thinking_tokens": 1283
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09637,
+ "ms": 22945,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 10,
+   "share": 0.7,
+   "missing": [
+    "MATHC130",
+    "MATHC131",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ITC146",
+    "ITC257",
+    "ITC260X"
+   ],
+   "flagged": [
+    "ITC146",
+    "ITC257",
+    "ITC260X"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cyber Security Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Configure, install, diagnose, and support hardware and software issues.",
+    "Utilize identifying tools and methodologies that hackers use to break into a network computer and defend a computer and local area network against a variety of different types of security attacks using a number of hands-on techniques.",
+    "Design, analyze, and support computer networks.",
+    "Apply problem-solving, programming, and application development including the ability to design, test, debug, and implement complex computer programs.",
+    "Operate servers, storage, and virtualization including implementing and evaluating network security solutions."
+   ],
+   "careers": [
+    "information assurance technicians",
+    "information security analysts",
+    "network security professionals",
+    "cyber security technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT C248",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C257",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT C259",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C260X",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C130",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C131",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The PDF's two-column layout interleaves the Cyber Security Technician certificate with the Data Analyst I certificate on page 89. The course list (IT C101 through IT C260X, totaling 31 units, matching the stated 31 units) is read as the Cyber Security certificate's list because it matches the A.S. major list exactly and Data Analyst I lists BSAD C220, BSAD C222, IT C251, IT C270.",
+   "The outcome 'Read and interpret technical information, as well as communicate with and write clearly for wide ranges of audiences.' appears on page 89 after the Data Analyst I outcomes lead-in but just before the Cyber Security course list. It is also the sixth outcome in the A.S. section. It may belong to the certificate as a sixth outcome; it was not recorded because its placement is ambiguous. Reviewer should check.",
+   "Only the five unambiguous outcomes printed under the certificate were recorded. Text extraction removed the ligatures (ti, ft, fi, tt), which were restored as plain letters.",
+   "Program title in the request reads 'Cyber Security Technology'; the catalog names the certificate 'Cyber Security Technician Certificate of Achievement' (description calls it 'The Cyber Security Certificate of Achievement (31 units)')."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

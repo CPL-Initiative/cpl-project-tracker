@@ -1,0 +1,42 @@
+{
+ "college": "Sacramento City College",
+ "programs": 227,
+ "with_closed_list": 207,
+ "found": 204,
+ "extracted": 204,
+ "errors": 0,
+ "passed_machine_checks": 148,
+ "failed": {
+  "coverage": 25,
+  "invented": 3,
+  "arithmetic": 54,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 18.5,
+ "cost_per_program": 0.0907,
+ "not_found": [
+  {
+   "control_number": "42374",
+   "title": "CSU GE-Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=177",
+    "coverage": 0.063
+   }
+  },
+  {
+   "control_number": "46392",
+   "title": "English as a Second Language Foundations 2",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46396",
+   "title": "English as a Second Language Foundations 3",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39047070975"
+}

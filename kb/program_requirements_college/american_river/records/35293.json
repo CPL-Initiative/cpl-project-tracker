@@ -1,0 +1,212 @@
+{
+ "college": "American River College",
+ "control_number": "35293",
+ "shape": "certificate",
+ "title": "Digital Audio Production",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=775",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7176,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7176,
+    "output_tokens": 1311,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1311,
+  "output_tokens_details": {
+   "thinking_tokens": 439
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05492,
+ "ms": 12653,
+ "seconds": 13.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.5,
+    14.0
+   ],
+   "stated": [
+    12.5,
+    14.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Audio Production Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 12.5,
+    "max": 14
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "create, arrange, and notate music using standard Musical Instrument Digital Interface (MIDI) software",
+    "produce audio recordings, music mixes, and audio post-production projects using a Digital Audio Workstation (DAW)",
+    "evaluate various formats and platforms of digital audio recording hardware and software",
+    "integrate outboard signal processing equipment and plug-ins into the audio signal path for audio enhancement",
+    "formulate and implement effective recording session techniques",
+    "analyze the fundamental process and sequence involved in the production of digital audio"
+   ],
+   "careers": [
+    "post-production audio",
+    "broadcast engineer",
+    "sound effects editor",
+    "multimedia/Internet audio",
+    "professional recording studio engineer",
+    "owner/engineer of a smaller demo production studio"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSM 334",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 344",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 356",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 357",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 366",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUSM 350",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The MUSM 366 row prints '(1.5) 1.5 - 3'; the 1.5-3 range reflects the choice between MUSM 366 (1.5) and its alternative MUSM 350 (3), so each course was recorded with its own parenthesized units rather than as a range.",
+   "Line-broken hyphenated words in outcomes ('post-production', 'plug-ins') were joined keeping the hyphen.",
+   "The page also prints the Music Management and Promotion Certificate, which was not read."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

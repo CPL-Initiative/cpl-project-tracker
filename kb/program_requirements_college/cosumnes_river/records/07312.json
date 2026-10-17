@@ -1,0 +1,218 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "07312",
+ "shape": "certificate",
+ "title": "ECE Infant Specialist",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11355,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11355,
+    "output_tokens": 1907,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1907,
+  "output_tokens_details": {
+   "thinking_tokens": 716
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08356,
+ "ms": 16550,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECE300",
+    "ECE402"
+   ],
+   "flagged": [
+    "ECE300",
+    "ECE402"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education, Infant and Toddler Specialist Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "(Development and Learning) Analyze and synthesize research and developmental theories to support infant and toddler learning. Implement developmentally, culturally, and linguistically responsive teaching practices that support the whole child, fostering foundational skills in language and literacy, math, science, health and wellness, and social emotional relationships.",
+    "(Professionalism) Demonstrate core professional competencies, including ethical decision-making, reflective practice, and advocacy for equitable early learning environments. Develop a plan for ongoing professional growth while integrating the NAEYC Code of Ethical Conduct to support children, families, and fellow educators.",
+    "(Observation, Documentation and Assessment) Utilize authentic, strengths-based assessment strategies through observation, reflection, documentation, and interpretation of children's development to inform responsive teaching practices.",
+    "(Family Engagement) Describe how to build respectful, reciprocal relationships with families and communities to support children's development and learning. Develop skills necessary to create inclusive, responsive learning environments and curriculum that reflect and honor the diverse cultural and linguistic backgrounds of the children and families in the program."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECE 402",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements table is split by a repeated table header; the row 'or ECE 402 Infants with Atypical Development (3)' follows directly after ECE 331, so ECE 402 is recorded as an alternative to ECE 331. ECE 402 has no units in the units column; 3 is taken from the parenthetical '(3)'.",
+   "Program outcomes are printed as 'PSLO 1:' through 'PSLO 4:'; the 'PSLO n:' labels were treated as list numbers and removed, while the parenthetical domain names were kept as printed.",
+   "Career Information names only settings (infant/toddler care program, privately funded child care programs, family child care settings) and a permit level, not job titles; careers left empty for reviewer check.",
+   "Printed course units sum to 22, matching 'Total Units: 22'.",
+   "Text at the top of page 306 (PSLOs and Career Information) belongs to the preceding certificate and was not used."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

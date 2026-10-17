@@ -1,0 +1,332 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "36508",
+ "shape": "degree",
+ "title": "Pre-Health Occupations",
+ "award": "A.S. Degree",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12218,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12218,
+    "output_tokens": 3181,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3181,
+  "output_tokens_details": {
+   "thinking_tokens": 1289
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11249,
+ "ms": 26669,
+ "seconds": 27.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 22,
+   "share": 0.727,
+   "missing": [
+    "BIOL400",
+    "BIOL430",
+    "BIOL431",
+    "BIOL440",
+    "COMM321",
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "COMMC1004",
+    "SOC300"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "SOC300"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "'(heading cut off at page break; first requirement list)' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pre-Health Occupations Associate in Science (A.S.) degree",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "apply chemical principles to solve quantitative problems.",
+    "demonstrate skills in laboratory procedures and apply critical thinking skills in laboratory experiments.",
+    "describe the overall organization of the human body.",
+    "describe the roles that culture and diversity play in various aspects of human behavior.",
+    "demonstrate a workable knowledge of medical terminology.",
+    "explain the principles of nutrition and their effect on health."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "(heading cut off at page break; first requirement list)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 442",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 305",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "AH 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 300",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 321",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 331",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 361",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 311",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRI 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 330",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 400",
+    "why": "not in the visible requirement table (first part cut off at page break); named only in footnote 1"
+   },
+   {
+    "code": "BIOL 430",
+    "why": "not in the text; likely on the cut-off previous page"
+   },
+   {
+    "code": "BIOL 431",
+    "why": "not in the text; likely on the cut-off previous page"
+   },
+   {
+    "code": "BIOL 440",
+    "why": "not in the visible text; BIOL 442 appears as an 'or' alternative to a course on the cut-off previous page, likely BIOL 440"
+   },
+   {
+    "code": "COMM 321",
+    "why": "not in the requirement list (COMM C1004 Interpersonal Communication printed instead); named only in footnote 2 for the Medical Laboratory Program"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text; SOC 300 Introductory Sociology printed instead"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-table on page 131; the section heading, program description and the start of the requirement table (likely BIOL 400/430/431/440 and the first block's rule) are on the previous page and not in the text. The first block's name, rule and minimum are unknown; recorded as choose_units with null minimum. Total 24 minus the 9-unit list implies 15 units for the first part, but this is not printed.",
+   "BIOL 442 is printed as '   or BIOL 442', an alternative to a course cut off at the page break (probably BIOL 440); recorded as its own entry for review.",
+   "The 9-unit block's stated total is printed as '92', read as 9 with footnote marker 2.",
+   "Degree described as required program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total or GE units printed as figures, so degree_total is null and electives_fill_degree true.",
+   "SOC 300 and COMM C1004 are not in the closed list (catalog additions); closed list has SOCIC1000 and COMM 321, which may be the state-file equivalents.",
+   "Footnotes 1 and 2 describe courses required for FLC's Medical Laboratory Program (BIOL 400, CHEM 400, CHEM 401; AH 110, COMM 301/311/321/331, STAT 300 or PSYC 330); these are advisory, not requirements of this award.",
+   "Career Information says only that the program prepares students to enter a variety of allied health training programs; no specific career named, so careers left empty.",
+   "Text after the Pre-Health section (Allied Health course descriptions, Anthropology programs) belongs to other programs and was not used."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

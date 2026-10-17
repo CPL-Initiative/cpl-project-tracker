@@ -1,0 +1,253 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "07288",
+ "shape": "degree",
+ "title": "Construction",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9923,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9923,
+    "output_tokens": 2029,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2029,
+  "output_tokens_details": {
+   "thinking_tokens": 624
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08027,
+ "ms": 18307,
+ "seconds": 18.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Construction",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Career Options and Goals- Summarize career options in the industry, and formulate initial career goals.",
+    "Tools- Identify common hand and power tools used in the trades and residential building science, and demonstrate competence in their safe and efficient use.",
+    "Analysis of building materials- Examine various building materials, and compare their strengths and weaknesses as they relate to structural integrity, sustainability, and environmental impact.",
+    "Safety- Explain the relevance of the Occupational Safety and Health Administration, and interpret those regulations specific to the construction industry",
+    "Building principles- Utilize fundamental building principles to layout and construct residential and light carpentry structures",
+    "Analysis of Sustainability- Understand the principles of Green Building and compare and contrast emerging techniques with traditional production building methods.",
+    "Building Performance Testing- Perform shell and duct diagnostics, and prescribe measures that can be tested and retested for marked improvement in the energy efficiency of the home."
+   ],
+   "careers": [
+    "Building and Construction Tradesperson",
+    "General Contracting",
+    "Estimators",
+    "Construction Supervisors",
+    "Material Salespersons",
+    "Building Inspection",
+    "Construction Apprenticeship programs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "CMT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIT 102",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 313",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the A.S. in Construction section (pages 271-272); the Construction, Pre-Apprenticeship, Green Buildings and Solar Installers certificates are separate awards.",
+   "Total Units: 33 is recorded as the major total; the page says the degree requires the major plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units. This 'at least 60' is not recorded as degree_total; electives_fill_degree set true. Reviewer may wish to check whether degree_total should be 60.",
+   "Outcome labels 'PSLO #1:' through 'PSLO #7:' were dropped as list numbers; the remaining text is copied as printed in the A.S. section (lowercase 'building materials' and 'Building principles' as printed there, which differ slightly from the certificate's list). The outcomes list spans the page break between pages 271 and 272.",
+   "BIT 102 is printed in the catalog with the title 'Plan Reading and Non-Structural Plan Review', slightly different from the state file title."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

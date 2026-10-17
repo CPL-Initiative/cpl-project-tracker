@@ -1,0 +1,292 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "07334",
+ "shape": "degree",
+ "title": "Management Information Science",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=274",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12355,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12355,
+    "output_tokens": 2825,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2825,
+  "output_tokens_details": {
+   "thinking_tokens": 1075
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10592,
+ "ms": 23755,
+ "seconds": 24.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 30,
+   "share": 0.0,
+   "missing": [
+    "CISA305",
+    "CISA306",
+    "CISA315",
+    "CISA323",
+    "CISA340",
+    "CISC305",
+    "CISC310",
+    "CISC320",
+    "CISC323",
+    "CISC324",
+    "CISC355",
+    "CISC360",
+    "CISN300",
+    "CISN303",
+    "CISN306",
+    "CISN308",
+    "CISP301",
+    "CISP310",
+    "CISP350",
+    "CISP360",
+    "CISP400",
+    "CISP401",
+    "CISP430",
+    "CISP440",
+    "CISP457",
+    "CISS300",
+    "CISS310",
+    "CISS315",
+    "CISW327",
+    "CISW400"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not in the text: the excerpt begins mid-catalog with an unheaded 'Certificate Requirements' list (apparently the Management Information Science certificate); no A.S. degree section is printed",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CISA 305",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISA 306",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISA 315",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISA 323",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISA 340",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 305",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 310",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 320",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 323",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 324",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 355",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISC 360",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISN 300",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISN 303",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISN 306",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISN 308",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 301",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 310",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 350",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 360",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 400",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 401",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 430",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 440",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISP 457",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISS 300",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISS 310",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISS315",
+    "why": "A.S. section not in the text; printed as CISS 315 only in the certificate requirements"
+   },
+   {
+    "code": "CISW 327",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   },
+   {
+    "code": "CISW 400",
+    "why": "A.S. section not in the text; named only in the certificate requirements"
+   }
+  ],
+  "notes": [
+   "The excerpt starts on page 274 with a 'Certificate Requirements' list (Total Units: 35) whose heading is cut off; it appears to be the Management Information Science certificate, not the A.S. degree. The A.S. degree section is likely on page 273, which is not in the text, so no blocks or totals were recorded for the degree.",
+   "The certificate list on page 274 names every closed-list course; if a reviewer confirms the A.S. degree requirements match the certificate (common at Sacramento City College), the degree would hold: required CISA 305, CISA 315, CISA 323, CISA 340, CISC 305, CISC 310, CISC 320 or CISC 323, CISP 301, CISP 360; a minimum of 4 units from CISP 400/CISP 401; a minimum of 4 units from CISA 306, CISA 316, CISC 324, CISC 355, CISC 360, CISP 350; a minimum of 6 units from a longer list (including CISD/CISP 357, CISD/CISP 358, CISN, CISP, CISS and CISW courses); total 35 units.",
+   "Student Learning Outcomes and Career Information printed after the certificate list belong to that certificate section; they were not copied for the A.S. degree because the text does not show that the degree shares them.",
+   "Following sections (Network Administration, Network Design, PC Support, Programming, Web Developer certificates) belong to other programs and were not read."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

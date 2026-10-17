@@ -1,0 +1,2718 @@
+[
+ {
+  "control_number": "01930",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC100",
+   "BSADC131",
+   "BSADC145",
+   "BSADC155",
+   "BSADC220",
+   "BSADC222",
+   "BSADC251",
+   "ITC101"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+   "title": "Management Associate in Science Degree",
+   "h1": "Management Associate in Science Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 9443
+ },
+ {
+  "control_number": "01933",
+  "title": "Business Office Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01946",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRFTC108",
+   "INDEC60",
+   "MCTLC107",
+   "WELDC101",
+   "WELDC102",
+   "WELDC204"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=125",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 6,
+  "text_chars": 10109
+ },
+ {
+  "control_number": "01957",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01980",
+  "title": "General Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC111",
+   "BIOLC112",
+   "CHEMC113",
+   "GEOGC101",
+   "GEOGC111",
+   "PHYSC111",
+   "PHYSC113",
+   "PHYSC211"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 4595
+ },
+ {
+  "control_number": "10976",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC171"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80",
+   "title": "Business Associate in Science Degree",
+   "h1": "Business Associate in Science Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 1,
+  "text_chars": 9523
+ },
+ {
+  "control_number": "10977",
+  "title": "CC Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.625,
+  "codes_found": [
+   "ITC142",
+   "ITC143",
+   "ITC146",
+   "ITC251",
+   "ITC270"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=95",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97,
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11577",
+  "title": "Child Development Associate Teacher",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVC100",
+   "CHDVC102",
+   "CHDVC104",
+   "CHDVC106"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 15107
+ },
+ {
+  "control_number": "11578",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVC104",
+   "CHDVC106",
+   "CHDVC121",
+   "CHDVC125",
+   "CHDVC200",
+   "CHDVC203"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 6,
+  "text_chars": 15107
+ },
+ {
+  "control_number": "11579",
+  "title": "Child Development Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVC100",
+   "CHDVC102",
+   "CHDVC104",
+   "CHDVC105",
+   "CHDVC106",
+   "CHDVC107",
+   "CHDVC111",
+   "CHDVC121",
+   "CHDVC125",
+   "CHDVC141",
+   "CHDVC145",
+   "CHDVC149",
+   "CHDVC156",
+   "CHDVC200",
+   "CHDVC203",
+   "CHDVC205",
+   "CHDVC207",
+   "CHDVC241",
+   "CHDVC256",
+   "CHDVC281"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+   "title": "Child Development Master Teacher Certificate of Achievement",
+   "h1": "Child Development Master Teacher Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 20,
+  "text_chars": 13892
+ },
+ {
+  "control_number": "11580",
+  "title": "Child Development Site Supervisor",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVC100",
+   "CHDVC102",
+   "CHDVC104",
+   "CHDVC106",
+   "CHDVC121",
+   "CHDVC125",
+   "CHDVC200",
+   "CHDVC203"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 5181
+ },
+ {
+  "control_number": "15576",
+  "title": "Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "PARAC190",
+   "PARAC210",
+   "PARAC240"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 5,
+  "text_chars": 10038
+ },
+ {
+  "control_number": "18557",
+  "title": "Liberal Arts: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18558",
+  "title": "Liberal Arts: Mathematics & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18559",
+  "title": "Liberal Arts: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18915",
+  "title": "Human Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18917",
+  "title": "Social Work and Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADSTC101",
+   "ADSTC102",
+   "CHDVC133",
+   "LIBRC111",
+   "LIBRC111H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "PSYCC241",
+   "SWHSC101",
+   "SWHSC102",
+   "SWHSC103",
+   "SWHSC104",
+   "SWHSC116"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 13,
+  "text_chars": 10612
+ },
+ {
+  "control_number": "18952",
+  "title": "Business",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC100",
+   "BSADC131",
+   "BSADC171",
+   "ITC101"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80",
+   "title": "Business Certificate of Achievement",
+   "h1": "Business Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 7690
+ },
+ {
+  "control_number": "18953",
+  "title": "Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC100",
+   "BSADC131",
+   "BSADC145",
+   "BSADC155",
+   "BSADC220",
+   "BSADC222",
+   "BSADC251",
+   "ITC101"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 9784
+ },
+ {
+  "control_number": "20629",
+  "title": "Business Office Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20632",
+  "title": "CC Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATHC130",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=64",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20640",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "EMTCC70",
+   "HCRSC100",
+   "HCRSC103",
+   "HCRSC107",
+   "HCRSC113",
+   "HCRSC181",
+   "HCRSC182",
+   "HCRSC183",
+   "HCRSC204",
+   "HCRSC205",
+   "HCRSC206",
+   "HCRSC207",
+   "HCRSC208",
+   "HCRSC214",
+   "HCRSC216"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=122",
+   "title": "Vocational Nursing Certificate of Achievement",
+   "h1": "Vocational Nursing Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 16,
+  "text_chars": 4290
+ },
+ {
+  "control_number": "30766",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJC101",
+   "ADMJC105",
+   "ADMJC115",
+   "ADMJC121",
+   "ADMJC125",
+   "ADMJC131",
+   "ADMJC151",
+   "ADMJC230",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 14,
+  "text_chars": 15706
+ },
+ {
+  "control_number": "30793",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "CSCIC252",
+   "ITC251",
+   "MATHC255",
+   "MATHC257",
+   "PHYSC111",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=102",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31064",
+  "title": "Office Clerk",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31065",
+  "title": "Administrative Office Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31066",
+  "title": "Welding Processes",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDC101",
+   "WELDC102"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=125",
+   "title": "Welding Processes Certificate of Achievement",
+   "h1": "Welding Processes Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 2,
+  "text_chars": 9007
+ },
+ {
+  "control_number": "31159",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "PARAC190",
+   "PARAC210",
+   "PARAC240"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 10038
+ },
+ {
+  "control_number": "31540",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ARTC101",
+   "ARTC111",
+   "ARTC115",
+   "ARTC121",
+   "ARTC131",
+   "ARTC151",
+   "ARTC221",
+   "ARTC231",
+   "ARTC240"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=120",
+   "title": "Studio Arts Associate in Arts Degree for Transfer (AA-T)",
+   "h1": "Studio Arts Associate in Arts Degree for Transfer (AA-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 12,
+  "text_chars": 8449
+ },
+ {
+  "control_number": "31855",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.867,
+  "codes_found": [
+   "BSOTC121",
+   "BSOTC123",
+   "HCRSC130",
+   "HCRSC131",
+   "HCRSC132",
+   "HCRSC133",
+   "HCRSC135",
+   "HCRSC136",
+   "HCRSC137",
+   "HCRSC138",
+   "HCRSC139",
+   "HCRSC143",
+   "HCRSC150"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+   "title": "Medical Assisting Associate in Science Degree",
+   "h1": "Medical Assisting Associate in Science Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31961",
+  "title": "Clinical Medical Assisting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "HCRSC130",
+   "HCRSC131",
+   "HCRSC132",
+   "HCRSC136",
+   "HCRSC137",
+   "HCRSC138",
+   "HCRSC139",
+   "HCRSC143",
+   "HCRSC150"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31962",
+  "title": "Administrative Medical Assisting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "BSOTC121",
+   "BSOTC123",
+   "HCRSC130",
+   "HCRSC131",
+   "HCRSC132",
+   "HCRSC133",
+   "HCRSC135",
+   "HCRSC150",
+   "ITC75"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=107",
+   "title": "Administrative Medical Assisting Certificate of",
+   "h1": "Administrative Medical Assisting Certificate of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32276",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32606",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVC100",
+   "CHDVC102",
+   "CHDVC104",
+   "CHDVC106",
+   "CHDVC121",
+   "CHDVC125",
+   "CHDVC200",
+   "CHDVC203"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 15107
+ },
+ {
+  "control_number": "32777",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33516",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRFTC108",
+   "INDEC60",
+   "MCTLC107",
+   "WELDC101",
+   "WELDC102",
+   "WELDC200",
+   "WELDC203",
+   "WELDC204",
+   "WELDC210"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=126",
+   "title": "Welding Technology Certificate of Achievement",
+   "h1": "Welding Technology Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 9,
+  "text_chars": 3965
+ },
+ {
+  "control_number": "33715",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "ARTC101",
+   "ARTC105",
+   "ARTC106",
+   "ARTC107",
+   "ARTC108",
+   "ARTC111",
+   "ARTC115",
+   "ARTC121",
+   "ARTC131",
+   "ARTC141",
+   "ARTC151"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=141",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 12,
+  "text_chars": 15090
+ },
+ {
+  "control_number": "33718",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC111",
+   "ANTHC131",
+   "ANTHC141",
+   "BIOLC251",
+   "SOSCC271",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=78",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 5176
+ },
+ {
+  "control_number": "33776",
+  "title": "Data Analyst I",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC220",
+   "BSADC222",
+   "ITC251",
+   "ITC270"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=89",
+   "title": "Data Analyst I Certificate of Achievement",
+   "h1": "Data Analyst I Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 8261
+ },
+ {
+  "control_number": "33838",
+  "title": "Web Fundamentals",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33889",
+  "title": "Information Technology Plus",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC101",
+   "ITC142",
+   "ITC143",
+   "ITC146"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=97",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 10163
+ },
+ {
+  "control_number": "35195",
+  "title": "Cyber Security Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.636,
+  "codes_found": [
+   "ITC101",
+   "ITC142",
+   "ITC143",
+   "ITC248",
+   "ITC251",
+   "ITC255",
+   "ITC259"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88",
+   "title": "Cyber Security Technology Associate in Science",
+   "h1": "Cyber Security Technology Associate in Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 11,
+  "text_chars": 13613
+ },
+ {
+  "control_number": "35273",
+  "title": "Cyber Security Technology -",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.7,
+  "codes_found": [
+   "ITC101",
+   "ITC142",
+   "ITC143",
+   "ITC248",
+   "ITC251",
+   "ITC255",
+   "ITC259"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 10,
+  "text_chars": 14589
+ },
+ {
+  "control_number": "38665",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETHNC210",
+   "PSYCC271",
+   "SOCIC1000",
+   "SOCIC115",
+   "SOCIC131",
+   "SOCIC161",
+   "SOCIC210",
+   "SOSCC271",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=117",
+   "title": "Sociology Associate in Arts Degree for Transfer (AA-T)",
+   "h1": "Sociology Associate in Arts Degree for Transfer (AA-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 10,
+  "text_chars": 8784
+ },
+ {
+  "control_number": "38666",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTHC111",
+   "ECONC2002",
+   "HISTC1002",
+   "HISTC131H",
+   "POLSC1000",
+   "POLSC1000H",
+   "POLSC102",
+   "POLSC103",
+   "SOCIC1000",
+   "SOCIC161",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38705",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.762,
+  "codes_found": [
+   "ANTHC111",
+   "ANTHC131",
+   "ANTHC141",
+   "ENGLC221",
+   "ENGLC221H",
+   "ENGLC222",
+   "ENGLC222H",
+   "HISTC1002",
+   "HISTC103",
+   "HISTC103H",
+   "HISTC104",
+   "HISTC104H",
+   "HISTC118",
+   "HISTC131H",
+   "MUSCC118",
+   "PHILC131"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 21,
+  "text_chars": 4595
+ },
+ {
+  "control_number": "40250",
+  "title": "Medical Billing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "HCRSC130",
+   "HCRSC131",
+   "HCRSC132",
+   "HCRSC133",
+   "HCRSC144",
+   "HCRSC150"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=108",
+   "title": "Medical Billing Certificate of Achievement",
+   "h1": "Medical Billing Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 7,
+  "text_chars": 7696
+ },
+ {
+  "control_number": "40447",
+  "title": "Linux Operating System",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC101",
+   "ITC142",
+   "ITC143",
+   "ITC290",
+   "ITC292"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=97",
+   "title": "The Linux Operating System Certificate of Achievement",
+   "h1": "The Linux Operating System Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 5,
+  "text_chars": 9122
+ },
+ {
+  "control_number": "40448",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC101",
+   "ITC142",
+   "ITC143",
+   "ITC251",
+   "ITC280",
+   "ITC282X"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=96",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 6,
+  "text_chars": 14951
+ },
+ {
+  "control_number": "40449",
+  "title": "Medical Coding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "HCRSC130",
+   "HCRSC131",
+   "HCRSC132",
+   "HCRSC133",
+   "HCRSC135",
+   "HCRSC145",
+   "HCRSC146",
+   "HCRSC150"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=109",
+   "title": "Medical Coding Certificate of Achievement",
+   "h1": "Medical Coding Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 9,
+  "text_chars": 4788
+ },
+ {
+  "control_number": "40707",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC100",
+   "BSADC171",
+   "BSADC98",
+   "ITC101"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=92",
+   "title": "Entrepreneurship Certificate of Achievement",
+   "h1": "Entrepreneurship Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 4,
+  "text_chars": 4250
+ },
+ {
+  "control_number": "40868",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC111",
+   "ENGLC249",
+   "ETHNC210",
+   "ETHNC211",
+   "FRENC101",
+   "FRENC110",
+   "LATNC101",
+   "LATNC102",
+   "SOCIC1000",
+   "SOCIC210",
+   "SPANC101",
+   "SPANC102",
+   "SPANC180",
+   "SPANC182",
+   "SPANC211"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=118",
+   "title": "Spanish Associate in Arts Degree for Transfer (AA-T)",
+   "h1": "Spanish Associate in Arts Degree for Transfer (AA-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 15,
+  "text_chars": 4873
+ },
+ {
+  "control_number": "40922",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ADMJC101",
+   "ADMJC115",
+   "ADMJC131",
+   "ANTHC111",
+   "BSADC131",
+   "COMMC1000",
+   "ECONC2002",
+   "ENGLC1000",
+   "HISTC1002",
+   "PARAC101",
+   "PARAC190",
+   "PARAC240",
+   "PHILC131",
+   "POLSC1000",
+   "POLSC1000H",
+   "POLSC102",
+   "POLSC103",
+   "SOCIC161",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+   "title": "Law, Public Policy, and Society Associate in Arts Degree for Transfer",
+   "h1": "Law, Public Policy, and Society Associate in Arts Degree for Transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40972",
+  "title": "Digital Media and Marketing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMAC102",
+   "DMAC107",
+   "DMAC111",
+   "DMAC131",
+   "DMAC201"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=90",
+   "title": "Digital Media and Marketing Certificate of Achievement",
+   "h1": "Digital Media and Marketing Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 5,
+  "text_chars": 4168
+ },
+ {
+  "control_number": "41740",
+  "title": "Industrial Process Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41968",
+  "title": "Addiction Counseling Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "ADSTC101",
+   "ADSTC103X",
+   "ADSTC104X",
+   "ADSTC105X",
+   "ADSTC106X",
+   "ADSTC107X",
+   "ADSTC109X",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76",
+   "title": "Addiction Counseling Studies Certificate of Achievement",
+   "h1": "Addiction Counseling Studies Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 11,
+  "text_chars": 9752
+ },
+ {
+  "control_number": "42678",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "BSADC100",
+   "BSADC131",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105,
+    106
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 14958
+ },
+ {
+  "control_number": "43206",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC251",
+   "BIOLC255",
+   "BIOLC262",
+   "CHEMC111",
+   "CHEMC113",
+   "CHEMC113H",
+   "CHEMC221",
+   "HCRSC121",
+   "HCRSC122",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=111",
+   "title": "Nutrition and Dietetics Associate in Science Degree for Transfer (AS-T)",
+   "h1": "Nutrition and Dietetics Associate in Science Degree for Transfer (AS-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 13,
+  "text_chars": 4713
+ },
+ {
+  "control_number": "43663",
+  "title": "English as a Second Language for the Workforce",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENSLC801",
+   "ENSLC802"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=127",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 2,
+  "text_chars": 4454
+ },
+ {
+  "control_number": "43671",
+  "title": "Addiction Counseling Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADSTC101",
+   "ADSTC103X",
+   "ADSTC104X",
+   "ADSTC105X",
+   "ADSTC106X",
+   "ADSTC107X",
+   "ADSTC108X",
+   "ADSTC109X",
+   "ADSTC110X",
+   "ADSTC111X",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SWHSC101"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=75",
+   "title": "Addiction Counseling Studies Associate in Science",
+   "h1": "Addiction Counseling Studies Associate in Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 14,
+  "text_chars": 14488
+ },
+ {
+  "control_number": "44085",
+  "title": "Computer Application Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC222",
+   "ITC101",
+   "ITC121",
+   "ITC123",
+   "ITC125",
+   "ITC127",
+   "ITC130X",
+   "ITC135",
+   "ITC260X"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=87",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 9,
+  "text_chars": 14816
+ },
+ {
+  "control_number": "44097",
+  "title": "Microsoft Applications Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC101",
+   "ITC121",
+   "ITC123",
+   "ITC125",
+   "ITC127",
+   "ITC75"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 6,
+  "text_chars": 5146
+ },
+ {
+  "control_number": "44364",
+  "title": "Computer Applications Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADC222",
+   "ITC101",
+   "ITC121",
+   "ITC123",
+   "ITC125",
+   "ITC127",
+   "ITC130X",
+   "ITC135",
+   "ITC260X"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=86",
+   "title": "Computer Applications Specialist Associate of Science Degree",
+   "h1": "Computer Applications Specialist Associate of Science Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87,
+    88,
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44450",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.893,
+  "codes_found": [
+   "ANTHC141",
+   "BIOLC251",
+   "BIOLC255",
+   "BIOLC262",
+   "CHEMC111",
+   "COMMC1000",
+   "ETHNC141",
+   "ETHNC210",
+   "HISTC1002",
+   "NURSC150",
+   "NURSC151",
+   "NURSC152",
+   "NURSC153",
+   "NURSC154",
+   "NURSC250",
+   "NURSC251",
+   "NURSC252",
+   "NURSC253",
+   "NURSC254",
+   "PHILC141",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC210",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+   "title": "The Registered Nursing Associate in Science Degree",
+   "h1": "The Registered Nursing Associate in Science Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 28,
+  "text_chars": 9379
+ },
+ {
+  "control_number": "44598",
+  "title": "Corrections Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADC100X",
+   "ACADC101X",
+   "ACADC102X"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=131",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 3,
+  "text_chars": 11356
+ },
+ {
+  "control_number": "44726",
+  "title": "Word and Excel Office Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC810",
+   "ITC815"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=128",
+   "title": "Office Skills: Word and Excel Certificate of Completion",
+   "h1": "Office Skills: Word and Excel Certificate of Completion",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 2,
+  "text_chars": 1444
+ },
+ {
+  "control_number": "44727",
+  "title": "PowerPoint and Outlook Office Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC825",
+   "ITC830"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=128",
+   "title": "Office Skills: PowerPoint and Outlook Certificate of Completion",
+   "h1": "Office Skills: PowerPoint and Outlook Certificate of Completion",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 2,
+  "text_chars": 2986
+ },
+ {
+  "control_number": "44728",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.952,
+  "codes_found": [
+   "ADMJC101",
+   "ADSTC101",
+   "ANTHC111",
+   "BIOLC121",
+   "BIOLC125",
+   "BIOLC251",
+   "CHDVC104",
+   "CHDVC106",
+   "ECONC2002",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "PSYCC181",
+   "PSYCC241",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000H",
+   "SWHSC101",
+   "SWHSC102",
+   "SWHSC103",
+   "SWHSC104"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44884",
+  "title": "Peace Officer",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACADC200X",
+   "ACADC201X",
+   "ACADC202X",
+   "ADMJC142",
+   "ADMJC143",
+   "ADMJC144X"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=113",
+   "title": "Peace Officer Certificate of Achievement",
+   "h1": "Peace Officer Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 6,
+  "text_chars": 4038
+ },
+ {
+  "control_number": "44885",
+  "title": "Reserve Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJC140",
+   "ADMJC142",
+   "ADMJC143",
+   "ADMJC62",
+   "ADMJC63"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=115",
+   "title": "Reserve Officer Certificate of Achievement",
+   "h1": "Reserve Officer Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 5,
+  "text_chars": 2803
+ },
+ {
+  "control_number": "44996",
+  "title": "Computer Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC800",
+   "ITC805"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=176",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 2,
+  "text_chars": 5541
+ },
+ {
+  "control_number": "45087",
+  "title": "Commercial Truck Driving",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTDC800",
+   "CTDC801",
+   "CTDC802",
+   "CTDC803",
+   "CTDC804",
+   "CTDC805",
+   "CTDC806",
+   "CTDC807"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=126",
+   "title": "Commercial Truck Driving Certificate of Competency",
+   "h1": "Commercial Truck Driving Certificate of Competency",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 8,
+  "text_chars": 5830
+ },
+ {
+  "control_number": "45235",
+  "title": "Sports Studies: Coaching",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINSC101",
+   "KINSC102",
+   "KINSC107",
+   "KINSC109",
+   "KINSC113",
+   "KINSC115",
+   "KINSC117",
+   "KINSC121",
+   "KINSC123",
+   "KINSC125",
+   "KINSC154",
+   "KINSC155",
+   "KINSC190",
+   "KINSC200",
+   "KINSC202",
+   "KINSC203"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=119",
+   "title": "Sports Studies: Coaching Associate in Arts Degree",
+   "h1": "Sports Studies: Coaching Associate in Arts Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 16,
+  "text_chars": 10571
+ },
+ {
+  "control_number": "45236",
+  "title": "Sports Studies: Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINSC101",
+   "KINSC102",
+   "KINSC107",
+   "KINSC109",
+   "KINSC113",
+   "KINSC115",
+   "KINSC117",
+   "KINSC121",
+   "KINSC123",
+   "KINSC125",
+   "KINSC154",
+   "KINSC155",
+   "KINSC190",
+   "KINSC200",
+   "KINSC202",
+   "KINSC203"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=119",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 16,
+  "text_chars": 10791
+ },
+ {
+  "control_number": "45237",
+  "title": "Developing a Family Childcare Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVC893",
+   "CHDVC894",
+   "CHDVC895",
+   "CHDVC896",
+   "CHDVC897",
+   "CHDVC898"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=127",
+   "title": "Developing a Family Childcare Program Certificate of Competency",
+   "h1": "Developing a Family Childcare Program Certificate of Competency",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 6,
+  "text_chars": 3857
+ },
+ {
+  "control_number": "46168",
+  "title": "Sustainable Outdoor Recreation Leadership",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46179",
+  "title": "Sustainable Outdoor Recreation Leadership",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46220",
+  "title": "Forestry Conservation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BIOLC145",
+   "FFTC50",
+   "FFTC51",
+   "FFTC52",
+   "FFTC53",
+   "FFTC54",
+   "FFTC73",
+   "FFTC74",
+   "FRCCC101",
+   "FRCCC102",
+   "FRCCC110",
+   "FRCCC131",
+   "FRCCC135",
+   "FRCCC180X",
+   "FRCCC181X",
+   "FRCCC182X",
+   "FRCCC191X",
+   "FRCCC235",
+   "GEOGC111",
+   "GEOLC111"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=162",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162,
+    163
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 30,
+  "text_chars": 11140
+ },
+ {
+  "control_number": "46361",
+  "title": "Wildland Firefighter Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "EMTCC70",
+   "FFTC50",
+   "FFTC51",
+   "FFTC52",
+   "FFTC53",
+   "FFTC54",
+   "FFTC70",
+   "FFTC72",
+   "FFTC73",
+   "FFTC74",
+   "FRCCC110",
+   "FRCCC181X",
+   "FRCCC182X",
+   "FRCCC191X"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=161",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162,
+    163,
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46375",
+  "title": "Forestry Conservation Technician I",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BIOLC145",
+   "FFTC50",
+   "FFTC51",
+   "FFTC52",
+   "FFTC53",
+   "FFTC54",
+   "FFTC73",
+   "FFTC74",
+   "FRCCC101",
+   "FRCCC102",
+   "FRCCC110",
+   "FRCCC131",
+   "FRCCC135",
+   "FRCCC180X",
+   "FRCCC181X",
+   "FRCCC182X",
+   "FRCCC191X",
+   "FRCCC235",
+   "GEOGC111",
+   "GEOLC111"
+  ],
+  "source": {
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=162",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162,
+    163
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
+   }
+  },
+  "listed": 30,
+  "text_chars": 11140
+ }
+]

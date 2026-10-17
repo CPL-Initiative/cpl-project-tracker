@@ -1,0 +1,223 @@
+{
+ "college": "Porterville College",
+ "control_number": "44805",
+ "shape": "noncredit",
+ "title": "Tutor Training Level 1",
+ "award": "Noncredit program",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7417,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7417,
+    "output_tokens": 1994,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1994,
+  "output_tokens_details": {
+   "thinking_tokens": 746
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06955,
+ "ms": 18273,
+ "seconds": 18.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Tutor Training Level 1",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "The program is designed to provide students with the necessary skills for effective tutoring. Through the program, participants will be able to differentiate between the roles and responsibilities of tutors and tutees, encouraging a collaborative and accountable learning environment. Additionally, students will gain proficiency in tutoring strategies to cater to individual learning needs. They will also maintain academic and ethical standards while improving techniques for supporting tutees with written assignments, promoting critical thinking and academic success."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIBR P030Z",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR P031Z",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR P032Z",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL P032Z",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR P033Z",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL P033Z",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR P034Z",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL P034Z",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR P035Z",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL P035Z",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section; the section's printed heading is not in the text. The description calls the award the 'Tutor Training Level 1 Certificate of Competency'. The heading recorded is the program title.",
+   "No heading is printed over the course list. The block name 'Required Courses' is supplied, and every listed course is read as required.",
+   "The award is noncredit and counted in hours. Hours are recorded as printed beside each course. No total hours are stated (no total was computed).",
+   "Each 'LIBR ... OR ENGL ...' row is recorded as the LIBR course with the ENGL course as its alternative. The hours apply to either one.",
+   "Closed-list codes ENGLP032Z, ENGLP034Z, ENGLP035Z and LIBRP033Z appear without a space. They match the catalog's 'ENGL P032Z', 'ENGL P034Z', 'ENGL P035Z' and 'LIBR P033Z', so they are treated as listed, not as additions.",
+   "The Program Learning Outcomes are printed as one prose paragraph, not a list. They are recorded as a single entry, with line-break hyphenations joined (e.g., 'tutor-ing' read as 'tutoring').",
+   "The text refers to 'student tutors' and becoming 'a tutor' as a role tied to program eligibility. No career is named, so careers is left empty; a reviewer may want to check this.",
+   "The text marks the award 'Effective Summer 2025' within the 2026-2027 catalog.",
+   "The text after 'Effective Summer 2025' (the Job Skills Certificates for Accounting and Advanced Computing) belongs to other programs and was ignored."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

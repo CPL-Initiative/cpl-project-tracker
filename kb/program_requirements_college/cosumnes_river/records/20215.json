@@ -1,0 +1,223 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "20215",
+ "shape": "certificate",
+ "title": "Construction",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9878,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9878,
+    "output_tokens": 1996,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1996,
+  "output_tokens_details": {
+   "thinking_tokens": 815
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07943,
+ "ms": 16144,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Career Options and Goals- Summarize career options in the industry, and formulate initial career goals.",
+    "Tools- Identify common hand and power tools used in the trades and residential building science, and demonstrate competence in their safe and efficient use.",
+    "Analysis of Building Materials- Examine various building materials, and compare their strengths and weaknesses as they relate to structural integrity, sustainability, and environmental impact.",
+    "Safety- Explain the relevance of the Occupational Safety and Health Administration, and interpret those regulations specific to the construction industry",
+    "Building Principles- Utilize fundamental building principles to layout and construct residential and light carpentry structures",
+    "Analysis of Sustainability- Understand the principles of Green Building and compare and contrast emerging techniques with traditional production building methods.",
+    "Building Performance Testing- Perform shell and duct diagnostics, and prescribe measures that can be tested and retested for marked improvement in the energy efficiency of the home."
+   ],
+   "careers": [
+    "general tradesperson"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "CMT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIT 102",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Selected the 'Construction Certificate' section (24 units) under Certificates of Achievement; the Pre-Apprenticeship (17 units) and Green Buildings (18 units) certificates are separate awards and were not read.",
+   "Outcome labels 'PSLO #1:' through 'PSLO #7:' were removed as list numbers; the remaining text is copied as printed in the certificate section (which capitalizes 'Building Materials' and 'Building Principles' unlike the A.S. section).",
+   "The 'Career Information' list (Building and Construction Tradesperson; General Contracting; Estimators; etc.) is printed under the A.S. in Construction section, not the certificate section, so only 'general tradesperson' from the certificate description was recorded; reviewer may choose to include the A.S. careers if they apply program-wide.",
+   "Catalog prints BIT 102 as 'Plan Reading and Non-Structural Plan Review'; state file title differs slightly."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

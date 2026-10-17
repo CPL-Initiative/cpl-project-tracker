@@ -1,0 +1,428 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "19854",
+ "shape": "degree",
+ "title": "Anthropology",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=144",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13149,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13149,
+    "output_tokens": 6265,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6265,
+  "output_tokens_details": {
+   "thinking_tokens": 2890
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1779,
+ "ms": 44646,
+ "seconds": 44.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 25,
+   "listed": 27,
+   "share": 0.926,
+   "missing": [
+    "BIOL462",
+    "PSY368250840"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ANTH323"
+   ],
+   "flagged": [
+    "ANTH323"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    23.0
+   ],
+   "stated": [
+    22.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 35,
+   "courses": 0,
+   "count": 35,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "DEMONSTRATE UNDERSTANDING OF THE PROCESSES OF SCIENCE, THE SCIENTIFIC METHOD, AND THE RELATIONSHIP BETWEEN SCIENTIFIC RESEARCH AND ESTABLISHED KNOWLEDGE. (PSLO 1)",
+    "Recognize the way in which research leads to generally accepted conclusions and the integration of new research data with the building of a body of scientific knowledge.",
+    "Recognize that the information presented in science textbooks and other established \"authorities\" is the result of research conducted in the field or the lab and is based on an accumulation of data.",
+    "Design a scientific inquiry.",
+    "CLEARLY EXPRESS SELF WHEN WRITING OR SPEAKING ABOUT ANTHROPOLOGY DEMONSTRATING KNOWLEDGE OF BASIC ANTHROPOLOGICAL TERMINOLOGY AND UNDERSTANDING MAJOR ANTHROPOLOGICAL CONCEPTS. (PSLO 2)",
+    "Produce laboratory exercises or field projects which address background information, procedures, results and analysis of data developed during the event of activity.",
+    "Write essays explaining anthropological processes in clear and concise terms.",
+    "DEMONSTRATE BOTH CONTENT KNOWLEDGE AND TEST TAKING SKILLS WHEN COMPLETING ESSAY, OBJECTIVE AND MULTIPLE CHOICE EXAMS. (PSLO 3)",
+    "Demonstrate problem solving abilities in major content areas of Anthropology including evolution, genetics, culture, archaeology and human evolution.",
+    "Analyze the logic of multiple choice questions and choose the correct response from among related items.",
+    "Write clear responses to essay question prompts without including extraneous information or omitting information necessary to provide a clear answer.",
+    "Demonstrate content knowledge in the broad areas of anthropology including evolution, culture, genetics, archaeology and human evolution.",
+    "UTILIZE APPROPRIATE FIELDWORK TECHNIQUES FOR ANTHROPOLOGY. (PSLO 4)",
+    "Conduct participation observation studies.",
+    "Take appropriate field notes while conducting participant observation studies.",
+    "Gather data in an appropriate, non-judgmental manner.",
+    "Perform skeletal measurements.",
+    "Identify major bones and features of both human and non-human primates.",
+    "Design an anthropological experiment.",
+    "Use diagrams, sketches and maps appropriately in field write-ups.",
+    "EVALUATE ANTHROPOLOGICAL DATA, DRAW REASONABLE CONCLUSIONS, RECOGNIZE ETHICAL IMPLICATIONS OF THESE CONCLUSIONS AND APPLY THESE CONCLUSIONS TO PERSONAL, COMMUNITY AND SCIENTIFIC PROBLEMS. (PSLO 5)",
+    "Choose appropriate data to collect in order to address a specific hypothesis.",
+    "Collect data and keep organized records.",
+    "Use basic graphical and statistical analysis of data.",
+    "Reach and express logical conclusions drawn on anthropological data.",
+    "Present data in the form of posters, presentations, and/or written reports how anthropological information is relevant to personal and community issues.",
+    "Recognize the ethical implications of research on human subjects.",
+    "EMPLOY INFORMATION GATHERING TOOLS TO INVESTIGATE ANTHROPOLOGICAL IDEAS. (PSLO 6)",
+    "Use the Internet in order to gather scientific information, including the ability to recognize the relevance and scientific validity (or lack thereof) of information when found.",
+    "Use the library in order to gather scientific information, including the ability to recognize the relevance and scientific validity (or lack thereof) of information when found.",
+    "STUDENTS WILL EMBRACE CULTURAL DIVERSITY. (PSLO 7)",
+    "Apply the concept of cultural relativism to real world situations.",
+    "Develop the perspective of \"global citizen\" to encourage respect for the world's people and environment.",
+    "Recognize factors of human biological and cultural variation.",
+    "Celebrate the varied trajectory of our species from prehistory and into the future."
+   ],
+   "careers": [
+    "archaeological technicians",
+    "project directors",
+    "museum management",
+    "forensic specialists",
+    "primatology",
+    "zoo curation",
+    "teaching",
+    "consultant",
+    "analyst",
+    "non-profit organizations",
+    "information technologies",
+    "tourism",
+    "public health services",
+    "social work"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 313",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 323",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTH 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 316",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 374",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BIOL 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 430",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRI 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 462",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSY368250840",
+    "why": "not in the text (Cross Cultural Psychology not listed)"
+   }
+  ],
+  "notes": [
+   "The text begins mid-description; the program's own heading is not printed in the excerpt, so section_heading uses the 'Degree Requirements' heading of the Anthropology A.S. section (page footer: Programs of Study – Anthropology).",
+   "Required core courses are printed under term headings ('Fall, Spring or Summer Term:', 'Spring Semester:', 'Check with department for schedule:') rather than a block name; recorded as one 'all' block.",
+   "PSYC 330 or STAT C1000E row prints a row total of '3 - 4'; PSYC 330's own units (3) and STAT C1000E's (4) are recorded on each course.",
+   "The 3-unit list also allows 'Any other Anthropology course listed above' (i.e., the ANTH courses from the 6-unit list); this is not a code and is not duplicated in the block.",
+   "Degree completion requires Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; no degree total line is printed, so degree_total is null and electives_fill_degree is true.",
+   "Outcomes are printed as one bulleted list with uppercase PSLO statements (with '(PSLO n)' labels kept as printed) followed by indicator bullets; all bullets recorded in order as printed.",
+   "The A.S. in General Science section that follows on the same pages is a different program and was not read for this record."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

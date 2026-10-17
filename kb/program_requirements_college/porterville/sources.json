@@ -1,0 +1,3438 @@
+[
+ {
+  "control_number": "06771",
+  "title": "Agriculture: Production",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIP101",
+   "AGRIP102",
+   "AGRIP103",
+   "AGRIP104",
+   "AGRIP105",
+   "AGRIP106",
+   "AGRIP107",
+   "AGRIP117",
+   "AGRIP131"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=78",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 11150
+ },
+ {
+  "control_number": "06773",
+  "title": "Biological & Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLP120",
+   "BIOLP135",
+   "BIOLP136",
+   "BIOLP160",
+   "CHEMP101A",
+   "CHEMP101B",
+   "CHEMP105",
+   "CHEMP106",
+   "PHYSP102A",
+   "PHYSP102B",
+   "PHYSP104A",
+   "PHYSP104B"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=81",
+   "title": "The Associate in Science degree in Biological and Physical",
+   "h1": "The Associate in Science degree in Biological and Physical",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 12,
+  "text_chars": 4221
+ },
+ {
+  "control_number": "06780",
+  "title": "Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06797",
+  "title": "Psychiatric Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLP52",
+   "HCRSP8",
+   "HCRSP9",
+   "PSYTP1",
+   "PSYTP2",
+   "PSYTP3"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=116",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 5412
+ },
+ {
+  "control_number": "06809",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CHDVP117",
+   "CHDVP119",
+   "CHDVP122",
+   "CHDVP143",
+   "CHDVP144"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 6022
+ },
+ {
+  "control_number": "09520",
+  "title": "Commercial Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1200",
+   "ARTP103",
+   "ARTP106",
+   "ARTP116",
+   "ARTP117",
+   "ARTP119",
+   "ARTP124",
+   "CGRAP110",
+   "CGRAP111",
+   "CGRAP113",
+   "CGRAP114",
+   "PHOTP101",
+   "PHOTP103"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85",
+   "title": "The Commercial Art Associate in Arts Degree will prepare",
+   "h1": "The Commercial Art Associate in Arts Degree will prepare",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 13,
+  "text_chars": 5244
+ },
+ {
+  "control_number": "09528",
+  "title": "Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ACCTP110",
+   "BSADP160"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 4,
+  "text_chars": 5551
+ },
+ {
+  "control_number": "18526",
+  "title": "Liberal Arts-Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.986,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTP101",
+   "ARTP103",
+   "ARTP106",
+   "ARTP107",
+   "ARTP116",
+   "ARTP117",
+   "ARTP119",
+   "ARTP123",
+   "ARTP124",
+   "ASLP101",
+   "ASLP102",
+   "CGRAP110",
+   "CGRAP111",
+   "CGRAP113",
+   "CGRAP114",
+   "COMMC1000",
+   "COMMC1004",
+   "COMMP103",
+   "COMMP105",
+   "COMMP106",
+   "COMMP111",
+   "COMMP140",
+   "COMMP170",
+   "DRMAP101",
+   "ENGLC1003",
+   "ENGLP102",
+   "ENGLP103",
+   "ENGLP104",
+   "ENGLP112",
+   "ENGLP113",
+   "ENGLP114",
+   "ENGLP115",
+   "ENGLP116",
+   "ENGLP117",
+   "ENGLP118",
+   "ENGLP119",
+   "ENGLP130",
+   "ENGLP140",
+   "ENGLP141",
+   "HISTP104",
+   "HISTP105",
+   "MUSCP101",
+   "MUSCP102",
+   "MUSCP103",
+   "MUSCP109",
+   "MUSCP110",
+   "MUSCP111",
+   "MUSCP112",
+   "MUSCP117",
+   "MUSCP118",
+   "MUSCP127",
+   "MUSCP129",
+   "MUSCP130",
+   "MUSCP143A",
+   "MUSCP143B",
+   "MUSCP143C",
+   "PHILP106",
+   "PHILP107",
+   "PHILP109",
+   "PHILP110",
+   "PHILP112",
+   "PHOTP101",
+   "PHOTP103",
+   "SPANP101",
+   "SPANP102",
+   "SPANP103",
+   "SPANP104"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=93",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95,
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 70,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18527",
+  "title": "Liberal Arts: Mathematics & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18528",
+  "title": "Liberal Arts: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30235",
+  "title": "Biological and Physical Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.952,
+  "codes_found": [
+   "BIOLC1000",
+   "BIOLP115",
+   "BIOLP119",
+   "BIOLP120",
+   "BIOLP135",
+   "BIOLP136",
+   "BIOLP160",
+   "CHEMP101A",
+   "CHEMP101B",
+   "CHEMP105",
+   "CHEMP106",
+   "ERSCP110",
+   "ERSCP115",
+   "GEOLP110",
+   "NUTRP110",
+   "PHSCP112",
+   "PHYSP102A",
+   "PHYSP102B",
+   "PHYSP104A",
+   "PHYSP104B"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
+   "title": "GRADUATION & GENERAL EDUCATION",
+   "h1": "GRADUATION & GENERAL EDUCATION",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 21,
+  "text_chars": 2503
+ },
+ {
+  "control_number": "30357",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSP130",
+   "NURSP131",
+   "NURSP132",
+   "NURSP133",
+   "NURSP134",
+   "NURSP135",
+   "NURSP136",
+   "NURSP137",
+   "NURSP138",
+   "NURSP139"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=102",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 10,
+  "text_chars": 5105
+ },
+ {
+  "control_number": "31070",
+  "title": "LVN to RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSP135",
+   "NURSP136",
+   "NURSP138",
+   "NURSP139"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=95",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 4,
+  "text_chars": 5047
+ },
+ {
+  "control_number": "31088",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTP103",
+   "ARTP106",
+   "ARTP107",
+   "ARTP116",
+   "ARTP123",
+   "ARTP124",
+   "CGRAP110",
+   "CGRAP113",
+   "PHOTP101"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=105",
+   "title": "This Associate in Arts in Studio Art for Transfer degree is",
+   "h1": "This Associate in Arts in Studio Art for Transfer degree is",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 3445
+ },
+ {
+  "control_number": "31127",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ETHNP119",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTP101",
+   "HISTP102",
+   "HISTP104",
+   "HISTP105",
+   "HISTP108",
+   "HISTP109",
+   "HISTP114",
+   "HISTP119",
+   "HISTP120",
+   "HISTP121",
+   "HISTP123"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=91",
+   "title": "earn the Associate in Arts in History for Transfer:",
+   "h1": "earn the Associate in Arts in History for Transfer:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 15,
+  "text_chars": 5139
+ },
+ {
+  "control_number": "31240",
+  "title": "Fire Technology Structural Firefighter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTCP50",
+   "FIREP101",
+   "FIREP50"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=110",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 3,
+  "text_chars": 5981
+ },
+ {
+  "control_number": "31324",
+  "title": "Communication Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMC1004",
+   "COMMP103",
+   "COMMP105",
+   "COMMP106",
+   "COMMP111",
+   "COMMP140",
+   "COMMP170"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108",
+   "title": "Communication Studies Certificate of Achievement include,",
+   "h1": "Communication Studies Certificate of Achievement include,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31565",
+  "title": "Industrial Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTP30",
+   "WELDP116"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111",
+   "title": "The Industrial Maintenance Certificate Program will",
+   "h1": "The Industrial Maintenance Certificate Program will",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 2,
+  "text_chars": 4535
+ },
+ {
+  "control_number": "31585",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP160"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=124",
+   "title": "The Entrepreneurship Job Skills Certificate program integrates",
+   "h1": "The Entrepreneurship Job Skills Certificate program integrates",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 1,
+  "text_chars": 4069
+ },
+ {
+  "control_number": "31849",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "ADMJP103E",
+   "ADMJP105",
+   "ADMJP106",
+   "ADMJP108",
+   "ADMJP111",
+   "ADMJP121",
+   "BSADP155",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32284",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33085",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.882,
+  "codes_found": [
+   "DRMAP101",
+   "ENGLC1003",
+   "ENGLP102",
+   "ENGLP103",
+   "ENGLP104",
+   "ENGLP112",
+   "ENGLP113",
+   "ENGLP114",
+   "ENGLP115",
+   "ENGLP116",
+   "ENGLP117",
+   "ENGLP118",
+   "ENGLP119",
+   "ENGLP130",
+   "ENGLP131"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89",
+   "title": "The Associate in Arts in English for Transfer is designed for",
+   "h1": "The Associate in Arts in English for Transfer is designed for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 17,
+  "text_chars": 5203
+ },
+ {
+  "control_number": "33091",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP155",
+   "ECONC2002",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "POLSP102",
+   "POLSP103",
+   "POLSP104",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=98",
+   "title": "The Associate in Arts in Political Science for Transfer is de-",
+   "h1": "The Associate in Arts in Political Science for Transfer is de-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 8909
+ },
+ {
+  "control_number": "33714",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC1001",
+   "ANTHP102",
+   "ANTHP103",
+   "ANTHP104",
+   "ANTHP105",
+   "ANTHP107",
+   "ERSCP110",
+   "ETHNP105",
+   "GEOGP113",
+   "GEOLP110",
+   "HISTP123",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79",
+   "title": "in Anthropology for Transfer will be introduced to the study",
+   "h1": "in Anthropology for Transfer will be introduced to the study",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 12,
+  "text_chars": 4729
+ },
+ {
+  "control_number": "33933",
+  "title": "Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSCP101",
+   "MUSCP108",
+   "MUSCP109",
+   "MUSCP110",
+   "MUSCP111",
+   "MUSCP112",
+   "MUSCP117",
+   "MUSCP130",
+   "MUSCP143A",
+   "MUSCP143B",
+   "MUSCP143C"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=114",
+   "title": "The Certificate of Achievement in Music is designed for stu-",
+   "h1": "The Certificate of Achievement in Music is designed for stu-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 9678
+ },
+ {
+  "control_number": "35001",
+  "title": "Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35227",
+  "title": "Business Management-Global Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "BSADP160",
+   "BSADP163",
+   "BSADP166",
+   "BSADP167",
+   "BSADP168",
+   "COMMC1004"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 7,
+  "text_chars": 5551
+ },
+ {
+  "control_number": "35228",
+  "title": "Business Management-Human Resources",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCTP110",
+   "BSADP155",
+   "BSADP160"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35229",
+  "title": "Business Management-Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "ACCTP120",
+   "BSADP101",
+   "BSADP140",
+   "BSADP150",
+   "BSADP155",
+   "BSADP160",
+   "INFSP100",
+   "MATHP118",
+   "MKTGP124",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 11575
+ },
+ {
+  "control_number": "35239",
+  "title": "LVN to RN 30-Unit Option",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOLP120",
+   "NURSP135",
+   "NURSP136",
+   "NURSP138",
+   "NURSP139",
+   "NURSP171"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=113",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 7,
+  "text_chars": 11162
+ },
+ {
+  "control_number": "35250",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "ACCTP120",
+   "BSADP101",
+   "BSADP155",
+   "BSADP160",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
+   "title": "The Accounting Certificate Program is a competitive and",
+   "h1": "The Accounting Certificate Program is a competitive and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 9821
+ },
+ {
+  "control_number": "35256",
+  "title": "Human Resource Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP101",
+   "BSADP120",
+   "BSADP122",
+   "BSADP140",
+   "BSADP155",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111",
+   "title": "The Human Resource Management Certificate program",
+   "h1": "The Human Resource Management Certificate program",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 6154
+ },
+ {
+  "control_number": "35388",
+  "title": "Public Safety",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJP101",
+   "ADMJP102",
+   "ADMJP104",
+   "ADMJP105",
+   "ADMJP106",
+   "ADMJP107",
+   "ADMJP108",
+   "ADMJP109",
+   "ADMJP111",
+   "ADMJP117",
+   "ADMJP121",
+   "ADMJP122",
+   "ADMJP123",
+   "ADMJP66A",
+   "ADMJP66B",
+   "FIREP101",
+   "FIREP50"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=100",
+   "title": "The Associate of Science in Public Safety may be earned",
+   "h1": "The Associate of Science in Public Safety may be earned",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 17,
+  "text_chars": 5366
+ },
+ {
+  "control_number": "35431",
+  "title": "Business Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "INFSP10",
+   "INFSP113",
+   "INFSP180",
+   "INFSP20",
+   "INFSP210",
+   "INFSP220"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82",
+   "title": "The Business Information Systems Associate of Science will",
+   "h1": "The Business Information Systems Associate of Science will",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 7,
+  "text_chars": 8838
+ },
+ {
+  "control_number": "35432",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP132",
+   "INFSP100",
+   "INFSP110",
+   "INFSP113",
+   "INFSP170",
+   "INFSP180",
+   "INFSP210",
+   "INFSP220",
+   "INFSP52"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=86",
+   "title": "The Computer Information Systems Associate of Science will",
+   "h1": "The Computer Information Systems Associate of Science will",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 4984
+ },
+ {
+  "control_number": "35449",
+  "title": "Advanced Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP132",
+   "BSADP155",
+   "INFSP110",
+   "INFSP113",
+   "INFSP164",
+   "INFSP180",
+   "INFSP210",
+   "INFSP220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35554",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CHDVP117",
+   "CHDVP119",
+   "CHDVP122",
+   "CHDVP142",
+   "PSYCP223"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 12029
+ },
+ {
+  "control_number": "35682",
+  "title": "Agribusiness",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIP101",
+   "AGRIP102",
+   "AGRIP103",
+   "AGRIP104",
+   "AGRIP105",
+   "AGRIP106",
+   "AGRIP131",
+   "CHEMP101A",
+   "CHEMP106",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=78",
+   "title": "The Associate of Science in Agribusiness for Transfer is de-",
+   "h1": "The Associate of Science in Agribusiness for Transfer is de-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36021",
+  "title": "High Beginning English as a Second Language (ESL)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36022",
+  "title": "Advanced English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36023",
+  "title": "High Intermediate English as a Second Language (ESL)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36659",
+  "title": "Early Intervention Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CHDVP115",
+   "CHDVP118",
+   "CHDVP119",
+   "CHDVP121",
+   "CHDVP161"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 11912
+ },
+ {
+  "control_number": "36704",
+  "title": "Early Child Care Administration Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "CDEVC1000",
+   "CHDVP117",
+   "CHDVP119",
+   "CHDVP122",
+   "CHDVP143",
+   "CHDVP144"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 6022
+ },
+ {
+  "control_number": "37175",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP155",
+   "ETHNP150",
+   "SOCIC1000",
+   "SOCIP102",
+   "SOCIP130",
+   "SOCIP140",
+   "SOCIP150",
+   "SOCIP160",
+   "SOCIP170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104",
+   "title": "in Arts in Sociology for Transfer will have earned a degree",
+   "h1": "in Arts in Sociology for Transfer will have earned a degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105,
+    106,
+    107
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37239",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.963,
+  "codes_found": [
+   "ANTHC1001",
+   "ANTHP102",
+   "ANTHP103",
+   "ANTHP104",
+   "ANTHP105",
+   "ANTHP107",
+   "ECONC2001",
+   "ECONC2002",
+   "ERSCP114",
+   "ETHNP105",
+   "ETHNP119",
+   "ETHNP150",
+   "GEOGP113",
+   "GEOGP114",
+   "GEOGP125",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTP101",
+   "HISTP102",
+   "HISTP104",
+   "HISTP105",
+   "HISTP107",
+   "HISTP108",
+   "HISTP109",
+   "HISTP114",
+   "HISTP119",
+   "HISTP120",
+   "HISTP121",
+   "HISTP123",
+   "PHILP106",
+   "PHILP108",
+   "PHILP109",
+   "PHILP110",
+   "PHILP112",
+   "PHILP113",
+   "PHILP114",
+   "POLSC1000",
+   "POLSP102",
+   "POLSP103",
+   "PSYCC1000",
+   "PSYCP110",
+   "PSYCP126",
+   "PSYCP133",
+   "PSYCP223",
+   "SOCIC1000",
+   "SOCIP102",
+   "SOCIP130",
+   "SOCIP140",
+   "SOCIP150",
+   "SOCIP160",
+   "SOCIP170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
+   "title": "GRADUATION & GENERAL EDUCATION",
+   "h1": "GRADUATION & GENERAL EDUCATION",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 54,
+  "text_chars": 8129
+ },
+ {
+  "control_number": "37377",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CHEMP101A",
+   "ENGRP110",
+   "ENGRP120",
+   "ENGRP130",
+   "ENGRP140",
+   "ENGRP140L",
+   "ENGRP150",
+   "ENGRP260",
+   "ENGRP260L",
+   "MATHC2211",
+   "MATHC2221",
+   "MATHP205",
+   "MATHP207",
+   "MATHP208",
+   "PHYSP104A",
+   "PHYSP104B"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=88",
+   "title": "The Associate of Science in Engineering is designed to pre-",
+   "h1": "The Associate of Science in Engineering is designed to pre-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 18,
+  "text_chars": 3738
+ },
+ {
+  "control_number": "37556",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ARTP101",
+   "BIOLC1000",
+   "CDEVC1000",
+   "COMMC1000",
+   "DRMAP101",
+   "EDUCP110",
+   "ENGLC1000",
+   "ENGLC1003",
+   "ERSCP110",
+   "HISTC1001",
+   "HISTP101",
+   "MATHP115",
+   "PHSCP112",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38309",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLP135",
+   "BIOLP136",
+   "CHEMP101A",
+   "CHEMP101B",
+   "MATHC2211",
+   "PHYSP102A",
+   "PHYSP102B",
+   "PHYSP104A",
+   "PHYSP104B"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
+   "title": "earn the Associate in Science in Biology for Transfer Degree:",
+   "h1": "earn the Associate in Science in Biology for Transfer Degree:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 10338
+ },
+ {
+  "control_number": "39770",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "BIOLP115",
+   "BIOLP135",
+   "BIOLP136",
+   "CHEMP101A",
+   "ECONC2001",
+   "ERSCP115",
+   "GEOLP110",
+   "PHYSP102A",
+   "PHYSP102B",
+   "PHYSP104A",
+   "PHYSP104B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89",
+   "title": "earn the Environmental Science for Transfer degree:",
+   "h1": "earn the Environmental Science for Transfer degree:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39837",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHP102",
+   "COMMC1000",
+   "COMMC1004",
+   "COMMP103",
+   "COMMP105",
+   "COMMP106",
+   "COMMP111",
+   "COMMP140",
+   "COMMP170",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85",
+   "title": "order to earn the Communication Studies 2.0 AA-T degree:",
+   "h1": "order to earn the Communication Studies 2.0 AA-T degree:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 6739
+ },
+ {
+  "control_number": "39841",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHC2211",
+   "MATHC2221",
+   "MATHP205",
+   "MATHP207",
+   "MATHP208",
+   "PHYSP104A"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96",
+   "title": "The Associate in Science in Mathematics 2.0 for Transfer",
+   "h1": "The Associate in Science in Mathematics 2.0 for Transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 4870
+ },
+ {
+  "control_number": "40122",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSCP101",
+   "MUSCP102",
+   "MUSCP103",
+   "MUSCP108",
+   "MUSCP111",
+   "MUSCP112",
+   "MUSCP117",
+   "MUSCP127",
+   "MUSCP130",
+   "MUSCP143A",
+   "MUSCP143B",
+   "MUSCP143C"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=97",
+   "title": "The Associate in Arts in Music for Transfer prepares stu-",
+   "h1": "The Associate in Arts in Music for Transfer prepares stu-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 12,
+  "text_chars": 4499
+ },
+ {
+  "control_number": "40906",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "ACCTP120",
+   "BSADP101",
+   "BSADP132",
+   "BSADP140",
+   "BSADP150",
+   "BSADP155",
+   "ECONC2001",
+   "ECONC2002",
+   "MATHP118",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41689",
+  "title": "Personal Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLP52",
+   "BSADP160",
+   "HLEDP112",
+   "HLEDP113",
+   "KINP102",
+   "KINP108",
+   "KINP203",
+   "KINP205"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=114",
+   "title": "The Personal Training Certificate is designed to prepare",
+   "h1": "The Personal Training Certificate is designed to prepare",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115,
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 8,
+  "text_chars": 13041
+ },
+ {
+  "control_number": "41893",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHP102",
+   "ANTHP107",
+   "COMMP106",
+   "ENGLP112",
+   "ENGLP113",
+   "HISTP109",
+   "SOCIC1000",
+   "SOCIP140",
+   "SPANP101",
+   "SPANP102",
+   "SPANP103",
+   "SPANP104",
+   "SPANP105",
+   "SPANP106"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 14,
+  "text_chars": 10707
+ },
+ {
+  "control_number": "42376",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJP102",
+   "ADMJP104",
+   "ADMJP106",
+   "ADMJP107",
+   "ADMJP108",
+   "ADMJP111",
+   "ADMJP117",
+   "ADMJP121",
+   "ADMJP122"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
+   "title": "The Administration of Justice Certificate prepares students for",
+   "h1": "The Administration of Justice Certificate prepares students for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 2780
+ },
+ {
+  "control_number": "42395",
+  "title": "Digital Video Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CGRAP105",
+   "CGRAP110",
+   "CGRAP113",
+   "CGRAP114",
+   "PHOTP101"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108",
+   "title": "The Digital Video Production Certificate of Achievement",
+   "h1": "The Digital Video Production Certificate of Achievement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 5,
+  "text_chars": 8426
+ },
+ {
+  "control_number": "42412",
+  "title": "Child Development Teacher Permit",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTP101",
+   "CDEVC1000",
+   "CHDVP117",
+   "CHDVP119",
+   "CHDVP122",
+   "CHDVP142",
+   "CHDVP143",
+   "CHDVP144",
+   "CHDVP239",
+   "ENGLC1000",
+   "ERSCP110",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCP223",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107",
+   "title": "Child Development Permit at the Teacher level. This Certificate",
+   "h1": "Child Development Permit at the Teacher level. This Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 15,
+  "text_chars": 3398
+ },
+ {
+  "control_number": "42417",
+  "title": "Child Development Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CHDVP117",
+   "CHDVP119",
+   "CHDVP122",
+   "CHDVP143",
+   "CHDVP144",
+   "PSYCP223"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 7,
+  "text_chars": 6022
+ },
+ {
+  "control_number": "43117",
+  "title": "Law Enforcement Officer Reserve",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJP66A",
+   "ADMJP66B"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=112",
+   "title": "The Law Enforcement Officer Reserve Certificate is designed",
+   "h1": "The Law Enforcement Officer Reserve Certificate is designed",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 2,
+  "text_chars": 4384
+ },
+ {
+  "control_number": "43139",
+  "title": "Modern Police Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ADMJP101",
+   "ADMJP102",
+   "ADMJP104",
+   "ADMJP107",
+   "ADMJP117",
+   "ADMJP121",
+   "ADMJP123"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=100",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 8,
+  "text_chars": 5779
+ },
+ {
+  "control_number": "43487",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHP102",
+   "COMMC1000",
+   "COMMC1004",
+   "COMMP103",
+   "COMMP105",
+   "COMMP106",
+   "COMMP111",
+   "COMMP140",
+   "COMMP170",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85",
+   "title": "order to earn the Communication Studies 2.0 AA-T degree:",
+   "h1": "order to earn the Communication Studies 2.0 AA-T degree:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 6739
+ },
+ {
+  "control_number": "43554",
+  "title": "Popular Music Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "CMUSP100",
+   "CMUSP130",
+   "CMUSP140",
+   "CMUSP150",
+   "MUSCP101",
+   "MUSCP109",
+   "MUSCP117",
+   "MUSCP127",
+   "MUSCP129",
+   "MUSCP130",
+   "MUSCP140",
+   "MUSCP143A",
+   "MUSCP143B",
+   "MUSCP143C"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115",
+   "title": "The Popular Music Studies Certificate of Achievement is",
+   "h1": "The Popular Music Studies Certificate of Achievement is",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 15,
+  "text_chars": 5146
+ },
+ {
+  "control_number": "43784",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "BSADP155",
+   "ECONC2001",
+   "HOSPP100",
+   "HOSPP110",
+   "HOSPP120",
+   "HOSPP130",
+   "HOSPP140",
+   "HOSPP150",
+   "HOSPP160",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=91",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 11,
+  "text_chars": 11065
+ },
+ {
+  "control_number": "44014",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTP110",
+   "BSADP160",
+   "BSADP163",
+   "COMMC1004",
+   "INFSP100"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 5,
+  "text_chars": 5551
+ },
+ {
+  "control_number": "44039",
+  "title": "Module 1: Electric Vehicle (EV) Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVCTP50Z",
+   "EVCTP60Z",
+   "EVCTP61Z"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=120",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 3,
+  "text_chars": 5934
+ },
+ {
+  "control_number": "44089",
+  "title": "Module 2: Electric Vehicle (EV) Components",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVCTP62Z",
+   "EVCTP63Z",
+   "EVCTP64Z",
+   "EVCTP65Z"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=120",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 4,
+  "text_chars": 5934
+ },
+ {
+  "control_number": "44090",
+  "title": "Module 3: Electric Vehicle (EV) Diagnostics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVCTP66Z",
+   "EVCTP67Z",
+   "EVCTP68Z"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=121",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 3,
+  "text_chars": 6183
+ },
+ {
+  "control_number": "44091",
+  "title": "Module 4: Advanced Electric Vehicle (EV) Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVCTP69Z",
+   "EVCTP70Z"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=121",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 2,
+  "text_chars": 6183
+ },
+ {
+  "control_number": "44092",
+  "title": "Module 5: Advanced Electric Vehicle (EV) Components",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVCTP71Z",
+   "EVCTP72Z",
+   "EVCTP73Z",
+   "EVCTP74Z",
+   "EVCTP75Z"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=122",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 5,
+  "text_chars": 5572
+ },
+ {
+  "control_number": "44409",
+  "title": "Welding",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDP113",
+   "WELDP114",
+   "WELDP116",
+   "WELDP118"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=119",
+   "title": "The goal of the welding certificate program is to provide an",
+   "h1": "The goal of the welding certificate program is to provide an",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 4,
+  "text_chars": 3256
+ },
+ {
+  "control_number": "44512",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.85,
+  "codes_found": [
+   "BIOLP119",
+   "BIOLP120",
+   "BSADP155",
+   "CHEMP101A",
+   "CHEMP105",
+   "HLEDP112",
+   "KINP101",
+   "KINP203",
+   "KINP212A",
+   "KINP212B",
+   "KINP219",
+   "KINP220",
+   "KINP247A",
+   "KINP260",
+   "PHYSP102A",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 20,
+  "text_chars": 5630
+ },
+ {
+  "control_number": "44805",
+  "title": "Tutor Training Level 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLP32Z",
+   "ENGLP33Z",
+   "ENGLP34Z",
+   "ENGLP35Z",
+   "LIBRP30Z",
+   "LIBRP31Z",
+   "LIBRP32Z",
+   "LIBRP33Z",
+   "LIBRP34Z",
+   "LIBRP35Z"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=122",
+   "title": "The Tutor Training Level 1 Certificate of Competency equips",
+   "h1": "The Tutor Training Level 1 Certificate of Competency equips",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 10,
+  "text_chars": 4537
+ },
+ {
+  "control_number": "44924",
+  "title": "Digital Video Production for Business",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP101",
+   "BSADP160",
+   "CGRAP105",
+   "CGRAP113",
+   "CGRAP120",
+   "COMMP111"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110,
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44926",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSPP110",
+   "HOSPP160",
+   "HOSPP50"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 3,
+  "text_chars": 6017
+ },
+ {
+  "control_number": "45313",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.882,
+  "codes_found": [
+   "ANTHP102",
+   "BIOLC1000",
+   "BIOLP119",
+   "BIOLP120",
+   "BIOLP135",
+   "BIOLP136",
+   "BIOLP160",
+   "BSADP155",
+   "CDEVC1000",
+   "CHDVP122",
+   "PSYCP126",
+   "PSYCP223",
+   "SOCIP130",
+   "SOCIP150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 17,
+  "text_chars": 6022
+ },
+ {
+  "control_number": "45470",
+  "title": "Computer Science & Software Engineering (AS-T)",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45511",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIOLP119",
+   "BIOLP120",
+   "BSADP155",
+   "CHEMP101A",
+   "CHEMP105",
+   "HLEDP112",
+   "KINP101",
+   "KINP110",
+   "KINP203",
+   "KINP205",
+   "KINP212A",
+   "KINP212B",
+   "KINP219",
+   "KINP220",
+   "KINP247A",
+   "KINP260",
+   "KINP301",
+   "KINP302",
+   "KINP303",
+   "KINP304",
+   "KINP305",
+   "KINP306",
+   "KINP307",
+   "KINP308",
+   "KINP309",
+   "KINP310",
+   "KINP314",
+   "KINP315",
+   "KINP318",
+   "KINP319",
+   "KINP320",
+   "KINP321",
+   "PHYSP102A",
+   "PHYSP104A",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 40,
+  "text_chars": 5630
+ },
+ {
+  "control_number": "45513",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC1001",
+   "ANTHP102",
+   "ANTHP103",
+   "ANTHP104",
+   "ANTHP105",
+   "ANTHP107",
+   "ERSCP110",
+   "ETHNP105",
+   "GEOGP113",
+   "GEOLP110",
+   "HISTP123",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79",
+   "title": "in Anthropology for Transfer will be introduced to the study",
+   "h1": "in Anthropology for Transfer will be introduced to the study",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 12,
+  "text_chars": 4729
+ },
+ {
+  "control_number": "45517",
+  "title": "User Experience Design",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CGRAP110",
+   "CGRAP111",
+   "CGRAP150",
+   "CGRAP151",
+   "CGRAP152"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117",
+   "title": "The\tcertificate\tin\tUser\tExperience\t(UX)\tDesign\tprepares",
+   "h1": "The\tcertificate\tin\tUser\tExperience\t(UX)\tDesign\tprepares",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 5,
+  "text_chars": 4451
+ },
+ {
+  "control_number": "45519",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADP155",
+   "ETHNP150",
+   "SOCIC1000",
+   "SOCIP102",
+   "SOCIP130",
+   "SOCIP140",
+   "SOCIP150",
+   "SOCIP160",
+   "SOCIP170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104",
+   "title": "in Arts in Sociology for Transfer will have earned a degree",
+   "h1": "in Arts in Sociology for Transfer will have earned a degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105,
+    106,
+    107
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45536",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRMAP101",
+   "ENGLC1003",
+   "ENGLP102",
+   "ENGLP103",
+   "ENGLP104",
+   "ENGLP112",
+   "ENGLP113",
+   "ENGLP114",
+   "ENGLP115",
+   "ENGLP116",
+   "ENGLP117",
+   "ENGLP118",
+   "ENGLP119",
+   "ENGLP130",
+   "ENGLP131"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89",
+   "title": "The Associate in Arts in English for Transfer is designed for",
+   "h1": "The Associate in Arts in English for Transfer is designed for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 15,
+  "text_chars": 5203
+ },
+ {
+  "control_number": "45541",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTP101",
+   "CGRAP105",
+   "CGRAP113",
+   "CGRAP114",
+   "CGRAP120",
+   "CGRAP130",
+   "COMMP111",
+   "PHOTP101"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=90",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 10,
+  "text_chars": 5615
+ },
+ {
+  "control_number": "45544",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "BIOLP115",
+   "BIOLP135",
+   "BIOLP136",
+   "BSADP150",
+   "BSADP155",
+   "CHEMP101A",
+   "ECONC2001",
+   "ERSCP115",
+   "GEOLP110",
+   "PHYSP102A",
+   "PHYSP102B",
+   "PHYSP104A",
+   "PHYSP104B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89",
+   "title": "earn the Environmental Science for Transfer degree:",
+   "h1": "earn the Environmental Science for Transfer degree:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45593",
+  "title": "Intercollegiate Athletics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINP110",
+   "KINP134",
+   "KINP135",
+   "KINP136",
+   "KINP151",
+   "KINP152",
+   "KINP153",
+   "KINP154",
+   "KINP155",
+   "KINP156",
+   "KINP302",
+   "KINP303",
+   "KINP304",
+   "KINP305",
+   "KINP306",
+   "KINP307",
+   "KINP308",
+   "KINP309",
+   "KINP310",
+   "KINP314",
+   "KINP315",
+   "KINP316",
+   "KINP318",
+   "KINP319",
+   "KINP320",
+   "KINP321"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 26,
+  "text_chars": 12092
+ },
+ {
+  "control_number": "45626",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HCRSP8",
+   "HCRSP9",
+   "NURSP100",
+   "VNRSP70",
+   "VNRSP71",
+   "VNRSP72",
+   "VNRSP73"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=118",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 7,
+  "text_chars": 5741
+ },
+ {
+  "control_number": "45634",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJP102",
+   "ADMJP103E",
+   "ADMJP104",
+   "ADMJP105",
+   "ADMJP106",
+   "ADMJP107",
+   "ADMJP108",
+   "ADMJP111",
+   "ADMJP121",
+   "BSADP155",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45637",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJP102",
+   "ADMJP103E",
+   "ADMJP104",
+   "ADMJP105",
+   "ADMJP106",
+   "ADMJP107",
+   "ADMJP108",
+   "ADMJP111",
+   "ADMJP121",
+   "BSADP155",
+   "COMMC1000",
+   "COMMP106",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETHNP105",
+   "PHILP110",
+   "SOCIP160",
+   "SOCIP170"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96",
+   "title": "The Associate in Science in Modern Policing is a program",
+   "h1": "The Associate in Science in Modern Policing is a program",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45769",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC1000",
+   "PSYCC1000",
+   "PSYCP110",
+   "PSYCP126",
+   "PSYCP133",
+   "PSYCP140",
+   "PSYCP150",
+   "SOCIP170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=99",
+   "title": "work. Students who complete the Psychology AA-T degree",
+   "h1": "work. Students who complete the Psychology AA-T degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 9,
+  "text_chars": 5395
+ },
+ {
+  "control_number": "45797",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTP101",
+   "BIOLC1000",
+   "CDEVC1000",
+   "COMMC1000",
+   "DRMAP101",
+   "EDUCP110",
+   "ENGLC1000",
+   "ENGLC1003",
+   "ERSCP110",
+   "HISTC1001",
+   "HISTP101",
+   "MATHP115",
+   "MUSCP111",
+   "MUSCP112",
+   "PHSCP112",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46183",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGRP120",
+   "MATHC2211",
+   "MATHC2221",
+   "MATHP205",
+   "MATHP207",
+   "MATHP208",
+   "PHYSP104A"
+  ],
+  "source": {
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96",
+   "title": "The Associate in Science in Mathematics 2.0 for Transfer",
+   "h1": "The Associate in Science in Mathematics 2.0 for Transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
+   }
+  },
+  "listed": 7,
+  "text_chars": 4870
+ }
+]

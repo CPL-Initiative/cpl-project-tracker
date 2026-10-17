@@ -1,0 +1,361 @@
+{
+ "college": "American River College",
+ "control_number": "44446",
+ "shape": "degree",
+ "title": "Biomedical Equipment Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=394",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10168,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10168,
+    "output_tokens": 3304,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3304,
+  "output_tokens_details": {
+   "thinking_tokens": 1394
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10675,
+ "ms": 26105,
+ "seconds": 26.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 12,
+   "share": 0.5,
+   "missing": [
+    "ET260",
+    "ET261",
+    "ET262",
+    "ET263",
+    "ET425",
+    "ET426"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "BMET260",
+    "BMET261",
+    "BMET262",
+    "BMET263",
+    "BMET425",
+    "BMET426"
+   ],
+   "flagged": [
+    "BMET260",
+    "BMET261",
+    "BMET262",
+    "BMET263",
+    "BMET425",
+    "BMET426"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     34.0,
+     34.0
+    ],
+    "stated": [
+     34.0,
+     34.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree A.S. in Biomedical Equipment Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "evaluate the data from basic preventive maintenance tests on the following equipment: multi-parameter physiological monitor, electrocardiogram (ECG) machine, blood pressure monitor, defibrillator, pulse oximeter, infusion pump, and electrosurgical unit.",
+    "distinguish and list various medical imaging technologies.",
+    "set up standard electrical measurement tools and differentiate the uses for calibration and troubleshooting of medical equipment.",
+    "set up the following equipment: multi-parameter physiological monitor, ECG machine, blood pressure monitor, defibrillator, pulse oximeter, infusion pump, and electrosurgical unit.",
+    "categorize biopotentials and electrodes as they relate to basic human anatomy and physiology systems.",
+    "associate the applicable regulation with the regulating organizations.",
+    "list and compare the different types of bioelectric amplifiers, signal processing circuits, and isolation circuits.",
+    "compare and contrast the protocols for working in the operating room and special care units in the hospital."
+   ],
+   "careers": [
+    "biomedical technician internship",
+    "trainee position"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "First Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ET 302",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester (Fall Semester Only)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BMET 425",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Second or Other Semesters",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ET 253",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 322",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 335",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 380",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 420",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester (Spring Semester Only)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BMET 426",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Third or Other Semesters",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "BMET 260",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMET 261",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMET 262",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMET 263",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ET 260",
+    "why": "catalog prints it as BMET 260 (formerly ET 260); placed under that code"
+   },
+   {
+    "code": "ET 261",
+    "why": "catalog prints it as BMET 261 (formerly ET 261); placed under that code"
+   },
+   {
+    "code": "ET 262",
+    "why": "catalog prints it as BMET 262 (formerly ET 262); placed under that code"
+   },
+   {
+    "code": "ET 263",
+    "why": "catalog prints it as BMET 263 (formerly ET 263); placed under that code"
+   },
+   {
+    "code": "ET 425",
+    "why": "catalog prints it as BMET 425 (formerly ET 425); placed under that code"
+   },
+   {
+    "code": "ET 426",
+    "why": "catalog prints it as BMET 426 (formerly ET 426); placed under that code"
+   }
+  ],
+  "notes": [
+   "Closed-list entries 'ET253' and 'ET420' (no space) were matched to the catalog's 'ET 253' and 'ET 420' and marked catalog_addition false; reviewer should confirm.",
+   "BMET 260-263, 425, 426 are renumbered versions of closed-list ET 260-263, 425, 426 per course descriptions ('formerly known as ET ...'); recorded as catalog additions under the BMET codes as printed.",
+   "degree_total 60 taken from the sentence specific to this A.S. degree: 'plus sufficient electives for a total of at least 60 units'; it reads 'at least 60', and may be boilerplate. Electives fill the remainder with no units printed.",
+   "No GE unit figure printed; ge_pattern is either Local GE or Cal-GETC.",
+   "The same Student Learning Outcomes list is printed for both the A.S. degree and the certificate; recorded from the A.S. section.",
+   "Careers taken from the 'Career Information' heading printed after the certificate section, which appears to apply to the program as a whole.",
+   "Certificate section (Total Units 21, includes ET 312 and ET 298) was not used."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

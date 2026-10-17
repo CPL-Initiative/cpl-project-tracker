@@ -1,0 +1,2558 @@
+{
+ "college": "De Anza College",
+ "control_number": "15965",
+ "shape": "degree",
+ "title": "Liberal Arts (Arts and Letters Emphasis)",
+ "award": "A.A. Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 44216,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 20690
+ },
+ "cost_usd": 0.59066,
+ "ms": 79272,
+ "seconds": 79.9,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 176,
+   "listed": 315,
+   "share": 0.559,
+   "missing": [
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "FTV1",
+    "FTV17H",
+    "FTV1H",
+    "FTV20",
+    "FTV2A",
+    "FTV2AH",
+    "FTV2AW",
+    "FTV2AWH",
+    "FTV2B",
+    "FTV2BH",
+    "FTV2BW",
+    "FTV2BWH",
+    "FTV2C",
+    "FTV2CH",
+    "FTV2CW",
+    "FTV2CWH",
+    "FTV3A",
+    "FTV41",
+    "FTV42",
+    "FTV43",
+    "FTV66A",
+    "FTV67A",
+    "FTV7",
+    "FTV71J",
+    "FTV74",
+    "FTV75G",
+    "FTV75K",
+    "FTV8",
+    "FTV88",
+    "KORE4",
+    "LING1",
+    "MAND1",
+    "MAND2",
+    "MAND3",
+    "MAND4",
+    "MAND5",
+    "MAND6",
+    "MUSI12A",
+    "MUSI12B",
+    "MUSI12C",
+    "MUSI13A",
+    "MUSI13B",
+    "MUSI13C",
+    "MUSI14A",
+    "MUSI14B",
+    "MUSI14C",
+    "MUSI14D",
+    "MUSI16A",
+    "MUSI16B",
+    "MUSI17",
+    "MUSI18A",
+    "MUSI18B",
+    "MUSI18C",
+    "MUSI1A",
+    "MUSI1B",
+    "MUSI1C",
+    "MUSI1D",
+    "MUSI2",
+    "MUSI20",
+    "MUSI21",
+    "MUSI22",
+    "MUSI25",
+    "MUSI31",
+    "MUSI34",
+    "MUSI3A",
+    "MUSI3B",
+    "MUSI3C",
+    "MUSI42",
+    "MUSI44A",
+    "MUSI45",
+    "MUSI4A",
+    "MUSI4B",
+    "MUSI4C",
+    "MUSI5",
+    "MUSI51",
+    "MUSI53",
+    "MUSI8",
+    "MUSI9A",
+    "NAIS13",
+    "NAIS14",
+    "NAIS15",
+    "NAIS32",
+    "PERS1",
+    "PHIL1",
+    "PHIL11",
+    "PHIL2",
+    "PHIL20A",
+    "PHIL20B",
+    "PHIL20C",
+    "PHIL24",
+    "PHIL3",
+    "PHIL30",
+    "PHIL4",
+    "PHIL49",
+    "PHIL7",
+    "PHIL7H",
+    "PHIL8",
+    "PHIL8H",
+    "PHTG1",
+    "PHTG2",
+    "PHTG21",
+    "PHTG3",
+    "PHTG4",
+    "PHTG5",
+    "PHTG54",
+    "PHTG57A",
+    "PHTG57B",
+    "PHTG58A",
+    "PHTG58B",
+    "PHTG6",
+    "PHTG7",
+    "RUSS1",
+    "RUSS2",
+    "RUSS3",
+    "SIGN1",
+    "SIGN2",
+    "SIGN3",
+    "SPAN1",
+    "SPAN2",
+    "SPAN3",
+    "SPAN4",
+    "SPAN5",
+    "SPAN6",
+    "THEA1",
+    "THEA20A",
+    "THEA20B",
+    "THEA20C",
+    "VIET1",
+    "VIET2",
+    "VIET3",
+    "VIET4",
+    "VIET5",
+    "VIET6",
+    "WMST21",
+    "WMST3C",
+    "WMST49"
+   ],
+   "unexplained": [
+    "FTV1",
+    "FTV17H",
+    "FTV1H",
+    "FTV20",
+    "FTV2A",
+    "FTV2AH",
+    "FTV2AW",
+    "FTV2AWH",
+    "FTV2B",
+    "FTV2BH",
+    "FTV2BW",
+    "FTV2BWH",
+    "FTV2C",
+    "FTV2CH",
+    "FTV2CW",
+    "FTV2CWH",
+    "FTV3A",
+    "FTV41",
+    "FTV42",
+    "FTV43",
+    "FTV66A",
+    "FTV67A",
+    "FTV7",
+    "FTV71J",
+    "FTV74",
+    "FTV75G",
+    "FTV75K",
+    "FTV88"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 39,
+   "codes": [
+    "DANC27A",
+    "DANC27B",
+    "DANC27C",
+    "DANC27D",
+    "ELIT12",
+    "EWRT1B",
+    "EWRT1BH",
+    "EWRT1C",
+    "F/TV1",
+    "F/TV17H",
+    "F/TV1H",
+    "F/TV20",
+    "F/TV2A",
+    "F/TV2AH",
+    "F/TV2AW",
+    "F/TV2AWH",
+    "F/TV2B",
+    "F/TV2BH",
+    "F/TV2BW",
+    "F/TV2BWH",
+    "F/TV2C",
+    "F/TV2CH",
+    "F/TV2CW",
+    "F/TV2CWH",
+    "F/TV3A",
+    "F/TV41",
+    "F/TV42",
+    "F/TV43",
+    "F/TV66A",
+    "F/TV67A",
+    "F/TV7",
+    "F/TV71J",
+    "F/TV74",
+    "F/TV75G",
+    "F/TV75K",
+    "F/TV88",
+    "INTL16",
+    "INTL21",
+    "INTL22"
+   ],
+   "flagged": [
+    "DANC27A",
+    "DANC27B",
+    "DANC27C",
+    "DANC27D",
+    "ELIT12",
+    "EWRT1B",
+    "EWRT1BH",
+    "EWRT1C",
+    "INTL16",
+    "INTL21",
+    "INTL22"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 0.0-0.0; the catalog states 27.0-27.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts (A.A.) Degree Liberal Arts (Arts and Letters Emphasis)",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "A.A. degree General Education (De Anza local GE)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the use of effective language and speech communication skills",
+    "Analyze and solve problems by using thoughtful and logical reasoning skills",
+    "Recognize and value the complexities of living in a multicultural world by demonstrating an appreciation of diversity in its many forms",
+    "Display behaviors that promote the mental and physical well-being of self and others",
+    "Identify basic and foundational theories, concepts and practices in the comprehensive area of emphasis"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "African American Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "AFAM 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Anthropology",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ANTH 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Arts",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ARTS 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 1C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2G",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 3TC",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 3TE",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 4D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 10A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 10B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 14A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 14B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 14C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 15A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 15B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 15C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 16A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 16B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 16C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 18A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 18B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 18C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 18D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 18E",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 19H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 19J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 19K",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 19M",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 37A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 37B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 37C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 55A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 55B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 55C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 57",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 58A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 58B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 58C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 63",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 65",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 85",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 86",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Asian American Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ASAM 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Chicanx/Latinx Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "CHLX 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Communication Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 8H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 9",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 9H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 10H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 15",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 15H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Comparative Ethnic Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "CETH 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Dance",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "DANC 22",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 22K",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 22M",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23M",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23N",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 24A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 25A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 25B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 27A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 27B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 27C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 27D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 37A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 38A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "English as a Second Language",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ESL 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "English Literature",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ELIT 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 10H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELIT 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 17H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 28",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 38",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 39",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 41H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 46A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 46AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 46B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 46BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 46C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 46CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 47A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 47B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 48A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 48AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 48B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 48BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 48C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 48CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "English Writing",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EWRT 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EWRT 1BH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "EWRT 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EWRT 30",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EWRT 40",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EWRT 41",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EWRT 42",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Environmental Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "E S 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 51A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 51B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Film and Television Production",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "F/TV 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 1H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2AW",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2AWH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2BW",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2BWH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2CW",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2CWH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 17H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 42",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 43",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 66A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 67A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 71J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 74",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 75G",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 75K",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 88",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "French",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "FREN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "German",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "GERM 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Hindi",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "HNDI 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HNDI 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HNDI 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "History",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "HIST 6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 6B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 6C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Humanities",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "HUMI 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMI 1H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMI 9H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMI 18H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "International Studies",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "INTL 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INTL 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INTL 22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Italian",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ITAL 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Japanese",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "JAPN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Journalism",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "JOUR 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 21B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 80",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Korean",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "KORE 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KORE 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KORE 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text; English Writing list prints EWRT 1B/1BH and EWRT 1C instead"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not in the text; English Writing list prints EWRT 1B/1BH and EWRT 1C instead"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "not in the text; English Writing list prints EWRT 1B/1BH and EWRT 1C instead"
+   },
+   {
+    "code": "FTV008",
+    "why": "not in the Film and Television Production list"
+   },
+   {
+    "code": "KORE 4",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "LING 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MAND 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MAND 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MAND 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MAND 4",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MAND 5",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MAND 6",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 001A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 001B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 001C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 001D",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 003A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 003B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 003C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 004A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 004B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 004C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 009A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 012A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 012B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 012C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 013A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 013B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 013C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 014A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 014B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 014C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 014D",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 016A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 016B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 018A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 018B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 018C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 044A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 17",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 20",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 21",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 22",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 25",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 31",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 34",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 42",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 45",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 5",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 51",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 53",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "MUSI 8",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "NAIS 13",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "NAIS 14",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "NAIS 15",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "NAIS 32",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PERS 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 007H",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 008H",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 020A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 020B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 020C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 11",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 24",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 30",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 4",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 49",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 7",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHIL 8",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 057A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 057B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 058A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 058B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 21",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 4",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 5",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 54",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 6",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "PHTG 7",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "RUSS 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "RUSS 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "RUSS 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SIGN 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SIGN 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SIGN 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SPAN 5",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "SPAN 6",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "THEA 020A",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "THEA 020B",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "THEA 020C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "THEA 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "VIET 1",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "VIET 2",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "VIET 3",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "VIET 4",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "VIET 5",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "VIET 6",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "WMST 003C",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "WMST 21",
+    "why": "not in the text; text cut off after KORE 3"
+   },
+   {
+    "code": "WMST 49",
+    "why": "not in the text; text cut off after KORE 3"
+   }
+  ],
+  "notes": [
+   "total_units 27 comes from the program description: 'Students complete a minimum of 27 units from one of the four emphasis areas'. No 'Total Required' line appears because the text is cut off.",
+   "Each subject list prints '(0 Units)'. These are recorded as choose_units with minimum 0 and stated 0. The 27 units are evidently chosen from across all the subject lists combined; the reviewer should confirm.",
+   "The catalog text is cut off in the Korean list (page 126). Later subject lists (e.g., Linguistics, Mandarin, Music, Philosophy, Photography, Spanish, Theatre, Vietnamese, Women's Studies) and any total line are not in the text.",
+   "The catalog prints codes without leading zeros (ARTS 1A, DANC 22K, ELIT 46A, HIST 6A, F / TV 2A). These were matched to the closed-list codes (ARTS 001A, DANC 022K, etc.).",
+   "Catalog additions not in the closed list: DANC 27A, 27B, 27C, 27D; ELIT 12; EWRT 1B/EWRT 1BH; EWRT 1C; INTL 16, 21, 22.",
+   "Courses used for the 27-unit emphasis may not also satisfy General Education. Students receive credit for only one version of cross-listed or honors courses.",
+   "The program learning outcomes are printed for the Liberal Arts degree (Arts and Letters Emphasis) section and are recorded for this award.",
+   "The Film and Television Production, Italian, Japanese, Journalism and Korean blocks hold only part-2 courses, so their lists are empty in this part. HUMI 20 belongs to part 2.",
+   "Text before the section heading (List C Leadership Internship, Total Required: 18 Units) belongs to a different program and was ignored.",
+   "Part 2: The catalog text ends mid-row at 'KORE 3 Elementary Korean (Third' on page 126; KORE 3's units are cut off (recorded as null) and the remaining subject lists (likely Korean continued, Linguistics, Mandarin, Music, Native American Studies, Persian, Philosophy, Photography, Russian, Sign Language, Spanish, Theatre, Vietnamese, Women's Studies) are not in the text. A reviewer should check the following pages.",
+   "Part 2: total_units 27 is taken from 'Students complete a minimum of 27 units from one of the four emphasis areas'; it is a minimum drawn from all subject lists combined, so each subject block is recorded as choose_units with minimum null and the printed '(0 Units)' as stated.",
+   "Part 2: Each subject heading prints '(0 Units)'; this appears to be a placeholder meaning no fixed units per subject list, with the 27-unit minimum applying across all lists.",
+   "Part 2: The page 124 text before 'Liberal Arts Degrees and Certificates' (List C - Leadership Internship, Total Required: 18 Units) belongs to a different program and was ignored.",
+   "Part 2: Film codes are extracted as 'F / TV 1'; recorded as 'F/TV 1' etc., matching the closed list's F TV entries.",
+   "Part 2: The degree requires the A.A. General Education and A.A./A.S. degree requirements; no degree total or GE units are printed. Emphasis courses may not also satisfy GE.",
+   "Part 2: Catalog note: students receive credit for only one version of cross-listed/honors courses; students are limited to one Liberal Arts degree.",
+   "Part 2: Program Learning Outcomes appear to be shared across the Liberal Arts emphases (last outcome refers to 'the comprehensive area of emphasis'); recorded for this award.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

@@ -1,0 +1,294 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "15326",
+ "shape": "degree",
+ "title": "Digital Media",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=298",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7738,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7738,
+    "output_tokens": 2436,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2436,
+  "output_tokens_details": {
+   "thinking_tokens": 980
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07967,
+ "ms": 20645,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 12,
+   "share": 0.667,
+   "missing": [
+    "RTVF300",
+    "RTVF302",
+    "RTVF304",
+    "RTVF330"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "RTVF370",
+    "RTVF498"
+   ],
+   "flagged": [
+    "RTVF370",
+    "RTVF498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 15.0-15.0; the catalog states 30.0-30.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     15.0,
+     15.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Programs of Study – Digital Media (A.A. degree table continued from previous page; the A.A. heading itself is not in the excerpt)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Write in clear, concise English. (PSLO-1)",
+    "Create traditional media, print and digital media projects that demonstrate effective use of established design principles for typography, color, images, animation, sound and video (PSLO-2)",
+    "Demonstrate a conceptual foundation in new media technology. (PSLO-3)",
+    "Articulate and apply the basic principles and processes used in traditional and digital graphic and multimedia design. (PSLO-4)",
+    "Demonstrate a conceptual foundation in the ethics of new media technology. (PSLO-5)",
+    "Examine and critique media products utilizing general information and concepts in new media. (PSLO-6)"
+   ],
+   "careers": [
+    "Nonlinear Video Editor",
+    "DVD Author",
+    "Computer Graphic Artist",
+    "Animation Artist",
+    "Producer/Director for Broadcast, Personal or Corporate Video and the Internet"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements (continued from previous page)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "RTVF 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 368",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "RTVF 354",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RTVF 371",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "RTVF 300",
+    "why": "not in the text; A.A. requirements table begins on the previous page, which the excerpt omits"
+   },
+   {
+    "code": "RTVF 302",
+    "why": "named only in the certificate section of the excerpt; A.A. table start is cut off"
+   },
+   {
+    "code": "RTVF 304",
+    "why": "named only in the certificate section of the excerpt; A.A. table start is cut off"
+   },
+   {
+    "code": "RTVF 330",
+    "why": "named only in the certificate section of the excerpt; A.A. table start is cut off"
+   }
+  ],
+  "notes": [
+   "The excerpt starts mid-table on page 298: the A.A. heading and the first required courses are on page 297 and are missing. The required block is therefore incomplete; RTVF 300, 302, 304 and 330 likely belong to it and should be checked against page 297.",
+   "Degree total of 60 taken from 'sufficient electives for a total of at least 60 units' stated for the Digital Media A.A.; elective units are not printed, so electives_fill_degree is true.",
+   "Outcomes are copied with their printed (PSLO-n) tags.",
+   "The last career entry is printed as one phrase ('Producer/Director for Broadcast, Personal or Corporate Video and the Internet'); reviewer may split it.",
+   "The Digital Media Certificate of Achievement section (18 units) was not recorded."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

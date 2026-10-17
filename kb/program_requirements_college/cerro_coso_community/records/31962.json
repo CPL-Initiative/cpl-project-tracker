@@ -1,0 +1,266 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "31962",
+ "shape": "certificate",
+ "title": "Administrative Medical Assisting",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=107",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11913,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11913,
+    "output_tokens": 2306,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2306,
+  "output_tokens_details": {
+   "thinking_tokens": 994
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09377,
+ "ms": 18198,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "HCRSCC134",
+    "ITC75"
+   ],
+   "unexplained": [
+    "HCRSCC134"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BSOTC75",
+    "HCRSC134",
+    "HCRSC142"
+   ],
+   "flagged": [
+    "BSOTC75",
+    "HCRSC142"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.5,
+    20.5
+   ],
+   "stated": [
+    20.5,
+    20.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Medical Assisting Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20.5,
+    "max": 20.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Research online and traditional reference materials effectively to stay informed about emerging trends and breakthroughs in healthcare issues related to the medical assistant’s administrative role.",
+    "Perform administrative medical assisting procedures competently, such as OSHA standards, electronic technologies, and medical records.",
+    "Achieve entry level administrative medical assisting competencies, such as verbal communication, basic banking procedures, and medical insurance which satisfy industry needs.",
+    "Identify State of California regulations that govern the healthcare industry for medical assistants."
+   ],
+   "careers": [
+    "medical assisting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Medical Assisting Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSOT C075",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HCRS C130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C131",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C132",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administrative Medical Assisting",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSOT C121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT C123",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C142",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "IT C075",
+    "why": "This section prints Computer Literacy as BSOT C075; IT C075 appears only in the Microsoft Applications Specialist section"
+   }
+  ],
+  "notes": [
+   "Closed-list codes written without spacing (BSOTC121, BSOTC123, HCRSC 130, HCRSC 131, HCRSC 132, HCRSC 150, HCRSC C134) were matched to the catalog's BSOT C121, BSOT C123, HCRS C130, HCRS C131, HCRS C132, HCRS C150, HCRS C134.",
+   "Computer Literacy is printed as BSOT C075 in this section while the closed list has IT C075 (same title, 1 unit); recorded BSOT C075 as a catalog addition. Reviewer should check whether it is the same course renumbered.",
+   "HCRS C142 Medical Assistant Administrative Externship (1.5) is not in the closed list.",
+   "Course units sum to the stated 20.5 units.",
+   "PDF text extraction split ligatures (e.g., 'tradiƟ onal', 'eﬀecƟvely'); outcomes were recorded with those ligatures restored to normal letters.",
+   "Section heading inferred from the opening sentence; the printed heading line itself may be on the preceding page."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

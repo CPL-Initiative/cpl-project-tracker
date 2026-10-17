@@ -1,0 +1,246 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "38705",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8803,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8803,
+    "output_tokens": 1900,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1900,
+  "output_tokens_details": {
+   "thinking_tokens": 675
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07321,
+ "ms": 15809,
+ "seconds": 16.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 21,
+   "share": 0.0,
+   "missing": [
+    "ANTHC111",
+    "ANTHC131",
+    "ANTHC141",
+    "ARTC105",
+    "ARTC106",
+    "ARTC106H",
+    "ENGLC221",
+    "ENGLC221H",
+    "ENGLC222",
+    "ENGLC222H",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTC103",
+    "HISTC103H",
+    "HISTC104",
+    "HISTC104H",
+    "HISTC118",
+    "HISTC131H",
+    "HISTC132H",
+    "MUSCC118",
+    "PHILC131"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "California General Education Transfer Curriculum (Cal-GETC) (35 Units)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH C111",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ANTH C131",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ANTHC 141",
+    "why": "not in a History A.A-T section; ANTH C141 appears only in Cal-GETC Areas 4 and 6 GE lists"
+   },
+   {
+    "code": "ART C105",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART C106",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTC 106H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C221",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 3B GE list"
+   },
+   {
+    "code": "ENGL C221H",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 3B GE list"
+   },
+   {
+    "code": "ENGL C222",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 3B GE list"
+   },
+   {
+    "code": "ENGL C222H",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 3B GE list"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in a History A.A-T section; appears only in Cal-GETC GE lists and the U.S. History list"
+   },
+   {
+    "code": "HIST C103",
+    "why": "not in a History A.A-T section; appears only in Cal-GETC Areas 3B and 4 GE lists"
+   },
+   {
+    "code": "HIST C103H",
+    "why": "not in a History A.A-T section; appears only in Cal-GETC Areas 3B and 4 GE lists"
+   },
+   {
+    "code": "HIST C104",
+    "why": "not in a History A.A-T section; appears only in Cal-GETC Areas 3B and 4 GE lists"
+   },
+   {
+    "code": "HIST C104H",
+    "why": "not in a History A.A-T section; appears only in Cal-GETC GE lists"
+   },
+   {
+    "code": "HIST C118",
+    "why": "not in a History A.A-T section; appears only in the U.S. History, Constitution & American Ideals list"
+   },
+   {
+    "code": "HIST C131H",
+    "why": "not in a History A.A-T section; appears only in Cal-GETC GE lists"
+   },
+   {
+    "code": "HIST C132H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSC C118",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 3A GE list"
+   },
+   {
+    "code": "PHIL C131",
+    "why": "not in a History A.A-T section; appears only in the Cal-GETC Area 1B GE list"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 65, printed page 57) is the Cal-GETC general education pattern page, not the History A.A-T program section. No major requirements, totals, outcomes or careers for the History A.A-T are printed, so no blocks were recorded.",
+   "ge_pattern left null because the text does not tie Cal-GETC to this award; a reviewer should locate the actual History A.A-T page in the 2026-2027 catalog.",
+   "The source URL page anchor (#page=65) may point to the wrong page of the PDF."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

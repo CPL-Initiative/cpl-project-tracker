@@ -1,0 +1,27 @@
+{
+ "college": "Folsom Lake College",
+ "programs": 108,
+ "with_closed_list": 108,
+ "found": 107,
+ "extracted": 107,
+ "errors": 0,
+ "passed_machine_checks": 83,
+ "failed": {
+  "coverage": 3,
+  "invented": 0,
+  "arithmetic": 23,
+  "repeated": 0,
+  "outcomes": 1
+ },
+ "cost_usd": 9.43,
+ "cost_per_program": 0.0881,
+ "not_found": [
+  {
+   "control_number": "36574",
+   "title": "Vascular-Interventional Radiography",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  }
+ ],
+ "run": "39046850071"
+}

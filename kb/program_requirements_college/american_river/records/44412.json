@@ -1,0 +1,190 @@
+{
+ "college": "American River College",
+ "control_number": "44412",
+ "shape": "certificate",
+ "title": "Business Information Professional II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11041,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11041,
+    "output_tokens": 1327,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1327,
+  "output_tokens_details": {
+   "thinking_tokens": 440
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0707,
+ "ms": 13420,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "ACCT301",
+    "ACCT341",
+    "BUS100",
+    "BUS300",
+    "BUS310",
+    "BUS312",
+    "BUS330",
+    "BUS498",
+    "BUSTEC332",
+    "COMM325"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 301",
+    "why": "Business Information Professional II certificate section not in the text; named only in the Business Information Technology A.S. and other certificates"
+   },
+   {
+    "code": "ACCT 341",
+    "why": "certificate section not in the text; named only in the A.S. degree and other certificates"
+   },
+   {
+    "code": "BUS 100",
+    "why": "certificate section not in the text; named only in the A.S. degree and other certificates"
+   },
+   {
+    "code": "BUS 300",
+    "why": "certificate section not in the text; named only in the A.S. degree and other certificates"
+   },
+   {
+    "code": "BUS 310",
+    "why": "certificate section not in the text; named only in the A.S. degree and General Business certificate"
+   },
+   {
+    "code": "BUS 312",
+    "why": "certificate section not in the text; named only in the A.S. degree"
+   },
+   {
+    "code": "BUS 330",
+    "why": "certificate section not in the text; named only in the A.S. degree and other certificates"
+   },
+   {
+    "code": "BUS 498",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUSTEC 332",
+    "why": "certificate section not in the text; A.S. degree lists BUSTEC 332 as Advanced Business Applications"
+   },
+   {
+    "code": "COMM 325",
+    "why": "certificate section not in the text; named only as an alternative in the A.S. degree"
+   }
+  ],
+  "notes": [
+   "The supplied text does not contain the Business Information Professional II Certificate section. Page 399 begins mid-way through the Business Information Technology A.S. degree, which states that degree completers also meet the Business Information Professional I and II certificate requirements, but the certificate's own requirements are not printed here.",
+   "The remaining pages cover other certificates: Computer Applications for Small Business, Cross-Cultural Conflict Resolution, Entrepreneurship/Small Business Management, General Business, Internet Marketing and Marketing Essentials (cut off). None of these is the named award.",
+   "No requirements, totals, outcomes or careers were recorded because none are printed for this award in the text. The degree's Student Learning Outcomes and Career Information belong to the Business Information Technology A.S.",
+   "A reviewer should locate the Business Information Professional II certificate section, likely on another page of the catalog, possibly under Business Technology.",
+   "The closed list's BUSTEC 332 title 'Integrated Business Projects' differs from the catalog's 'Advanced Business Applications'."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,5330 @@
+{
+ "college": "American River College",
+ "catalog_url": "https://arc.losrios.edu/2026-2027-official-catalog",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 371,
+ "with_closed_list": 368,
+ "started": "2026-10-17T16:22:19Z",
+ "pdf": {
+  "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+  "access": "hand_filed",
+  "status": null,
+  "bytes": 8052937,
+  "pages_total": 998,
+  "error": null,
+  "chars_total": 3592881,
+  "pypdf_accepted": 368,
+  "sample": [
+   "p300: 'SMTEC 101 Sheet Metal Service \\nTechnician Apprenticeship II \\nUnits: 2.5 \\nHours: 27 hours LEC; 54 hours LAB \\nPrerequisite: None. \\nEnrollment Limitation: Student must be a Registered \\nSheet Metal Apprentice \\nThis course covers diagnosing refr'",
+   "p599: 'Woodbury Heights, NJ 08097 (816) 233-3747. Web: \\nwww.abfse.org. \\nNOTE: All courses, including general education, require a grade \\nof \"C\" or better, and the student must register to take the \\nNational Board Examination graduation. \\nThe annua'"
+  ],
+  "extractor": "pypdf",
+  "hand_filed": {
+   "college": "American River College",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "fetched_by": "Sam Lee",
+   "fetched_at": "2026-10-17",
+   "sha256": "424e6222f9767fb7067628e101000e5a7358d40a5e17f0a477253db9711623b2",
+   "file": null,
+   "copy_url": "https://github.com/user-attachments/files/33599450/arc-catalog-26-27.pdf",
+   "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader 404 (since 2026-10-08). cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+   "addenda": []
+  },
+  "picks": [
+   {
+    "control_number": "04514",
+    "pages": [
+     666,
+     667,
+     668,
+     669
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 666] or (b) the California General Education Transfer Curriculum (Cal-GETC), plus sufficient electives for a total of at least 60 units. See ARC graduation requirements. Student Learning Outcomes Upon completio"
+   },
+   {
+    "control_number": "04516",
+    "pages": [
+     698,
+     699,
+     700,
+     701
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.92,
+    "opens": "[page 698] A.A. in Interior Planning and Design This degree provides a foundation of education and skills in the expanding field of interior design. Topics include space planning, building and Life-Safety codes, and t"
+   },
+   {
+    "control_number": "04518",
+    "pages": [
+     398,
+     399,
+     400,
+     401
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 398] A.A. in General Business This degree is designed to provide a strong foundation for those entering into a variety of business fields in the private and public sector. It includes coursework that is essentia"
+   },
+   {
+    "control_number": "04521",
+    "pages": [
+     743,
+     744,
+     745,
+     746
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 743] A.A. in Management Conflict Management Certificate Leadership Certificate Management Certificate Project Management Certificate Division Dean: Kirsten Corbin Department Chair: Heidi Bennett Phone: (9"
+   },
+   {
+    "control_number": "04522",
+    "pages": [
+     748,
+     749,
+     750,
+     751
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 748] A.A. in Advertising and Sales Promotion This degree program covers the general areas of marketing. In addition it provides the knowledge and skills necessary to pursue a career in advertising. Graduates sho"
+   },
+   {
+    "control_number": "04523",
+    "pages": [
+     749,
+     750,
+     751,
+     752
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 749] Course Code Course Title Units BUS 110 Business Economics (3) 3 or ECON C2002 Principles of Macroeconomics (3) BUS 300 Introduction to Business 3 BUS 310 Business Communications 3 BUS 340 Business Law"
+   },
+   {
+    "control_number": "04524",
+    "pages": [
+     864,
+     865,
+     866,
+     867
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 864] A.A. in Real Estate Real Estate Certificate Real Estate Sales Certificate Division Dean: Kirsten Corbin Department Chair: Heidi Bennett Phone: (916) 484-8361 Email: ARCBUSClerk@arc.losrios.edu Assoc"
+   },
+   {
+    "control_number": "04525",
+    "pages": [
+     409,
+     410,
+     411,
+     412
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 409] Course Code Course Title Units or ACCT 301 Financial Accounting (4) or BUS 105 Business Mathematics (3) BUS 100 English for the Professional 3 BUS 300 Introduction to Business 3 BUS 310 Business Com"
+   },
+   {
+    "control_number": "04526",
+    "pages": [
+     708,
+     709,
+     710,
+     711
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 708] Degree Requirements Course Code Course Title Units JOUR 300 Newswriting and Reporting 3 JOUR 310 Mass Media and Society 3 JOUR 320 Race and Gender in the Media 3 JOUR 351 Public Relations Writing and Medi"
+   },
+   {
+    "control_number": "04528",
+    "pages": [
+     476,
+     477,
+     478,
+     479
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 476] Degree Requirements Course Code Course Title Units DEAF 310 American Sign Language I 4 DEAF 312 American Sign Language II 4 DEAF 314 American Sign Language III 4 DEAF 316 American Sign Language IV 4 DEAF"
+   },
+   {
+    "control_number": "04533",
+    "pages": [
+     491,
+     492,
+     493,
+     494
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 491] A.S. in Diesel Technology Clean Diesel Hybrid Technology Certificate Clean Diesel Industrial Certificate Clean Diesel Management Systems Certificate Clean Diesel Technology Certificate Diesel Engine Techn"
+   },
+   {
+    "control_number": "04534",
+    "pages": [
+     363,
+     364,
+     365,
+     366
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 363] A.S. in Automotive Technology This program prepares students for entry-level positions in the automotive industry with emphasis on engine management systems, emission controls, and complete automotive syste"
+   },
+   {
+    "control_number": "04535",
+    "pages": [
+     355,
+     356,
+     357,
+     358
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 355] A.S. in Automotive Collision Technology Automotive Claims Estimator Certificate Automotive Collision Technology Certificate Automotive Collision Technology-Refinish Certificate Automotive Collision Technol"
+   },
+   {
+    "control_number": "04536",
+    "pages": [
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] A.A. in Carpenter Apprenticeship This program concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Department o"
+   },
+   {
+    "control_number": "04537",
+    "pages": [
+     157
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] A.A. in Electrical Apprenticeship This program provides instruction in the installation, operation, and maintenance of the electrical distribution systems in commercial and industrial sites. Topics include "
+   },
+   {
+    "control_number": "04538",
+    "pages": [
+     481,
+     482,
+     483,
+     484
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 481] A.A. in Design Technology This degree emphasizes the knowledge and skills required for entry level success in the architectural, civil, and mechanical engineering professions. These include graphic standard"
+   },
+   {
+    "control_number": "04540",
+    "pages": [
+     969,
+     970,
+     971,
+     972
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 969] A.S. in Welding Technology Shielded Metal Arc Plate and Pipe Certificate Welding Metallurgy and Inspection (270 hours) Certificate Welding Technology Certificate Gas Metal Arc and Flux Core Arc Welding Pla"
+   },
+   {
+    "control_number": "04542",
+    "pages": [
+     311,
+     312,
+     313,
+     314
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.977,
+    "opens": "[page 311] Course Code Course Title Units ART 391 Intermediate Ceramics (3) ARTPH 360 Studio Lighting (3) Total Units: 27 The Associate in Arts in Studio Art for Transfer (AA-T) degree may be obtained by completion "
+   },
+   {
+    "control_number": "04544",
+    "pages": [
+     945,
+     946,
+     947,
+     948
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 945] Course Code Course Title Units TA 350 Theory and Techniques of Acting I 3 TA 351 Theory and Techniques of Acting II 3 TA 370 Theatre Movement 2 TA 375 Voice, Diction and Dialects 3 TA 420 Stagecraft 3 TA"
+   },
+   {
+    "control_number": "04551",
+    "pages": [
+     812,
+     813,
+     814
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 812] A.S. in Registered Nursing Nursing is a health care profession that draws on nursing science, natural physical and biological sciences, as well as the social sciences and humanities. The Nursing Program con"
+   },
+   {
+    "control_number": "04552",
+    "pages": [
+     914,
+     915,
+     916,
+     917
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 914] A.S. in Respiratory Care This degree is preparation for licensure as a Respiratory Care Practitioner in the state of California as a Respiratory Care Practitioner at the Advanced Registered Respiratory Ther"
+   },
+   {
+    "control_number": "04554",
+    "pages": [
+     577,
+     578,
+     579,
+     580
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 577] A.A. in Fashion Design A.A. in Fashion Merchandising Fashion Design Certificate Fashion Merchandising Certificate Apparel Construction Certificate Fashion Entrepreneur Certificate Fashion Illustration Ce"
+   },
+   {
+    "control_number": "04555",
+    "pages": [
+     501,
+     502,
+     503,
+     504
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 501] A.A. in Early Childhood Education This program provides a foundation for in-depth early childhood teacher preparation both through strong general education and through introductory studies in child develop"
+   },
+   {
+    "control_number": "04563",
+    "pages": [
+     848,
+     849,
+     850,
+     851
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.66,
+    "opens": "[page 848] Course Code Course Title Units GEOG 308 Introduction to Oceanography (3) GEOG 309 Introduction to Oceanography Lab (1) GEOG 391 Field Studies in Geography: Mountain Landscapes (1 - 4) GEOG 392 Field Studie"
+   },
+   {
+    "control_number": "04570",
+    "pages": [
+     630,
+     631,
+     632,
+     633
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.765,
+    "opens": "[page 630] A.A. in Gerontology: Administrative A.A. in Gerontology: Advocacy and Social Policy A.A. in Gerontology: Case Management and Social Services A.A. in Gerontology: Geriatric Health Care A.A. in Gerontology: "
+   },
+   {
+    "control_number": "04571",
+    "pages": [
+     635,
+     636,
+     637,
+     638
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 635] A.A. in Gerontology: Recreation This degree provides a broad overview of the biological, psychological, and social aspects of adult development and aging as a foundation for a gerontological biopsychosocial"
+   },
+   {
+    "control_number": "04572",
+    "pages": [
+     588,
+     589,
+     590
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 588] A.A. in Fire Technology Fire Technology Certificate Firefighter Recruit Academy Certificate Fire Inspector 1 Certificate Fire Investigation 1A Certificate Fire Investigation 1B Certificate Fire Investiga"
+   },
+   {
+    "control_number": "04579",
+    "pages": [
+     675,
+     676,
+     677,
+     678
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 675] Associate Degree A.A. in Hospitality Management: Culinary Arts/Restaurant Management This degree focuses on basic and advanced culinary techniques, related to both hot food and baking. It emphasizes super"
+   },
+   {
+    "control_number": "07196",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 131] A.A. in Accounting Accounting Certificate Accounting Clerk Certificate Financial Services Apprenticeship Certificate Taxation Certificate Division Dean: Kirsten Corbin Department Chair: Joel Halle Pho"
+   },
+   {
+    "control_number": "07199",
+    "pages": [
+     398,
+     399,
+     400,
+     401
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 398] A.A. in Entrepreneurship The Entrepreneurship degree provides training and education for those wishing to own or manage a small entrepreneurial venture. The various elements involved in starting and operat"
+   },
+   {
+    "control_number": "07200",
+    "pages": [
+     749,
+     750,
+     751,
+     752
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 749] Course Code Course Title Units BUS 110 Business Economics (3) 3 or ECON C2002 Principles of Macroeconomics (3) BUS 300 Introduction to Business 3 BUS 310 Business Communications 3 BUS 340 Business Law"
+   },
+   {
+    "control_number": "07206",
+    "pages": [
+     429,
+     430,
+     431,
+     432
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.844,
+    "opens": "[page 429] Course Code Course Title Units CISA 340 Presentation Graphics 2 CISC 306 Introduction to Web Page Creation 1 CISC 310 Introduction to Computer Information Science 3 CISC 320 Operating Systems 1 CISC 323 L"
+   },
+   {
+    "control_number": "07207",
+    "pages": [
+     431,
+     432,
+     433,
+     434
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 431] A.S. in CIS: Computer Programming This degree includes general topics in the field of computer programming, including but not�limited to, programming language, the use of an operating system, and the transl"
+   },
+   {
+    "control_number": "07209",
+    "pages": [
+     482,
+     483,
+     484,
+     485
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 482] Degree Requirements Course Code Course Title Units CHEM 305 Introduction to Chemistry (5) 4 - 5 or CHEM 310 Chemical Calculations (4) DESGN 300 Introduction to Design Resources 3 DESGN 301 Introducti"
+   },
+   {
+    "control_number": "07210",
+    "pages": [
+     520,
+     521,
+     522,
+     523
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 520] A.S. in Electronic Systems Technology This degree combines broad-based electronic and telecommunications training with specialty areas such as robotics, fiber optics, programmable interface controllers (PI"
+   },
+   {
+    "control_number": "07213",
+    "pages": [
+     362,
+     363,
+     364,
+     365
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 362] Course Code Course Title Units AT 189 Digital Storage Oscilloscope Use and Operation 2 AT 330 Automotive Electrical Systems 3 AT 331 Advanced Automotive Electrical Systems 3 AT 332 Engine Performance & El"
+   },
+   {
+    "control_number": "07215",
+    "pages": [
+     364,
+     365,
+     366,
+     367
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 364] Air Conditioning Service Certificate This certificate program prepares the student for an entry level position in the automotive industry. This program also prepares the student for Automotive Service Excel"
+   },
+   {
+    "control_number": "07216",
+    "pages": [
+     370,
+     371,
+     372,
+     373
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 370] Transmission Service Certificate This certificate program prepares the student for an entry-level position in the automotive industry. This program includes Automotive Service Excellence (ASE) certification"
+   },
+   {
+    "control_number": "07217",
+    "pages": [
+     370,
+     371,
+     372,
+     373
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 370] Career Information The automotive small engines industry is growing and in need of technicians. This certificate prepares students for employment in many different areas, including horticulture, off road v"
+   },
+   {
+    "control_number": "07223",
+    "pages": [
+     770,
+     771
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 770] A.A. in Commercial Music: Business This degree explores the inner workings of the music industry in areas such as publishing, entertainment, distribution, and music law. Course work addresses industry-speci"
+   },
+   {
+    "control_number": "07224",
+    "pages": [
+     946,
+     947,
+     948,
+     949
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 946] A.A. in Theatre Arts: Technical Production The Technical Theatre degree provides a broad overview of theatre with an emphasis on exploring the technical elements of theatre. Coursework includes stagecraft,"
+   },
+   {
+    "control_number": "07228",
+    "pages": [
+     810,
+     811,
+     812,
+     813
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 810] Under these circumstances the BRN cannot accept applications for the examination and licensure without a SSN/ ITIN. Degree Requirements Course Code Course Title Units Prerequisites for LVN to RN Mobility "
+   },
+   {
+    "control_number": "07230",
+    "pages": [
+     675,
+     676,
+     677,
+     678
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 675] Associate Degree A.A. in Hospitality Management: Culinary Arts/Restaurant Management This degree focuses on basic and advanced culinary techniques, related to both hot food and baking. It emphasizes super"
+   },
+   {
+    "control_number": "07231",
+    "pages": [
+     926,
+     927,
+     928,
+     929
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.55,
+    "opens": "[page 926] • utilize counseling strategies based on examination of scientific theories of addiction. • identify the community resources used in assisting clients with addiction issues. • appraise and apply the knowle"
+   },
+   {
+    "control_number": "07232",
+    "pages": [
+     926,
+     927,
+     928,
+     929
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.722,
+    "opens": "[page 926] A.A. in Social Work The A.A. degree program in Social Work centers around the broad array of entry level skills and abilities effectively used in social service delivery systems. Coursework includes the twe"
+   },
+   {
+    "control_number": "07234",
+    "pages": [
+     101
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.617,
+    "opens": "[page 101] 4. Social and Behavioral Sciences Choose two courses from different disciplines for a minimum of six semester units. Area Courses 4. Behavioral and Social Sciences ADMJ 300, ADMJ 302, ADMJ 320, ANTH 310"
+   },
+   {
+    "control_number": "11548",
+    "pages": [
+     162,
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] A.A. in Sheet Metal Apprenticeship The Sheet Metal Apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the "
+   },
+   {
+    "control_number": "11553",
+    "pages": [
+     771
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 771] A.A. in Commercial Music: Recording This degree provides students the core skills needed to enter a career in audio engineering. Foundational classes in the theory and art of recording are coupled with sign"
+   },
+   {
+    "control_number": "11554",
+    "pages": [
+     698,
+     699,
+     700,
+     701
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 698] Sacramento Design History Certificate Universal Design Certificate Dean: Corinne Arrieta Katzorke Department Chair: Dyanne Marte Phone: (916) 484-8570 Email: AskHB-Arts@arc.losrios.edu Associate Degr"
+   },
+   {
+    "control_number": "11555",
+    "pages": [
+     578,
+     579,
+     580,
+     581
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 578] A.A. in Fashion Merchandising This degree offers the skills necessary for jobs in fashion coordinating, promotion, visual presentation, management, merchandising, retail buying, and entrepreneurial opportu"
+   },
+   {
+    "control_number": "11556",
+    "pages": [
+     504,
+     505,
+     506,
+     507
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 504] Infant and Toddler Specialist Certificate This certificate provides the educational coursework that serves as the core curriculum for the early childhood education field. Topics include an introduction to t"
+   },
+   {
+    "control_number": "11557",
+    "pages": [
+     500,
+     501,
+     502,
+     503
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 500] Associate Teacher Certificate Children with Disabilities and Developmental Differences Specialist Certificate Diversity, Equity, and Inclusion Specialist Certificate Infant and Toddler Specialist Certifica"
+   },
+   {
+    "control_number": "11563",
+    "pages": [
+     634,
+     635,
+     636,
+     637
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 634] A.A. in Gerontology: Geriatric Health Care This degree provides a broad overview of the biological, psychological, and social aspects of aging, along with introductory coursework emphasizing the health nee"
+   },
+   {
+    "control_number": "11564",
+    "pages": [
+     630,
+     631,
+     632,
+     633
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.588,
+    "opens": "[page 630] A.A. in Gerontology: Case Management and Social Services A.A. in Gerontology: Geriatric Health Care A.A. in Gerontology: Recreation Gerontology: Administrative Certificate Gerontology: Advocacy and Social "
+   },
+   {
+    "control_number": "11565",
+    "pages": [
+     635,
+     636,
+     637,
+     638
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 635] A.A. in Gerontology: Recreation This degree provides a broad overview of the biological, psychological, and social aspects of adult development and aging as a foundation for a gerontological biopsychosocial"
+   },
+   {
+    "control_number": "11566",
+    "pages": [
+     637,
+     638,
+     639,
+     640
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 637] • synthesize knowledge of existing California professional codes of ethics for the helping professions. • analyze legal and ethical issues related to aging, including the mandatory reporting of abuse, negle"
+   },
+   {
+    "control_number": "11994",
+    "pages": [
+     833,
+     834
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 833] A.S. in Paramedic Paramedic Certificate Emergency Medical Technician (EMT) Certificate Dean: Narinedat Madramootoo Department Chair: Grant Goold Phone: (916) 484-8902 Email: askhb-healthed@arc.losrio"
+   },
+   {
+    "control_number": "12110",
+    "pages": [
+     382,
+     383,
+     384,
+     385
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 382] A.S. in Biotechnology This degree provides the theory and skills necessary for entry into the biotechnology field, which uses cellular and molecular processes for industry or research. Course work includes "
+   },
+   {
+    "control_number": "12153",
+    "pages": [
+     156
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] A.A. in Drywall/Lathing Apprenticeship This drywall/lathing apprenticeship degree concentrates on training apprentices to the specific levels required for the drywall/lathing industry and has been approved "
+   },
+   {
+    "control_number": "12154",
+    "pages": [
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] A.A. in Ironworkers Apprenticeship This program includes training for Field Ironworkers and Reinforcing Ironworkers, provided in major ironworker components to meet Division of Apprenticeship Standards (DA"
+   },
+   {
+    "control_number": "12180",
+    "pages": [
+     437,
+     438,
+     439
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 437] CIS: Computer Programming Certificate This certificate includes general topics in the field of computer programming, including but not�limited to, programming language, the use of an operating system, and t"
+   },
+   {
+    "control_number": "12181",
+    "pages": [
+     438,
+     439
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 438] • apply techniques of structured programming. • design programs using object-oriented methodology. • analyze problems related to computer programming. • design algorithms to solve problems related to progr"
+   },
+   {
+    "control_number": "12186",
+    "pages": [
+     401,
+     402,
+     403,
+     404
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 401] Cross-Cultural Conflict Resolution Certificate This certificate provides the knowledge and skills needed to resolve cross-cultural conflict with both internal and external customers. It combines a theoreti"
+   },
+   {
+    "control_number": "12189",
+    "pages": [
+     505,
+     506,
+     507,
+     508
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 505] Master Teacher Certificate This certificate builds on the teacher level certificate with additional coursework on adult supervision and children with special needs. It also includes six units of specialized"
+   },
+   {
+    "control_number": "12190",
+    "pages": [
+     505,
+     506,
+     507,
+     508
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 505] Master Teacher Certificate This certificate builds on the teacher level certificate with additional coursework on adult supervision and children with special needs. It also includes six units of specialized"
+   },
+   {
+    "control_number": "12191",
+    "pages": [
+     506,
+     507,
+     508,
+     509
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 506] Site Supervisor Certificate Administration of early care and education programs is the main focus of this certificate. Topics include administration, supervision and coordination of staff in early childhood"
+   },
+   {
+    "control_number": "12207",
+    "pages": [
+     751,
+     752
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 751] Retail Management (WAFC) Certificate This program provides an overview of the retail industry and the business skills needed to succeed in retail store management. It provides training for those wishing to "
+   },
+   {
+    "control_number": "12236",
+    "pages": [
+     433,
+     434,
+     435
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 433] A.S. in Computer Science This degree provides a comprehensive exposure to programming languages, algorithms and problem solving in preparation for upper division computer science courses. The Computer Scie"
+   },
+   {
+    "control_number": "12237",
+    "pages": [
+     432,
+     433,
+     434
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 432] Degree Requirements Course Code Course Title Units ACCT 101 Fundamentals of College Accounting (3) 3 - 4 or ACCT 301 Financial Accounting (4) BUS 110 Business Economics (3) 3 or ECON C2002 Principl"
+   },
+   {
+    "control_number": "12238",
+    "pages": [
+     430,
+     431,
+     432,
+     433
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.862,
+    "opens": "[page 430] Course Code Course Title Units CISN 341 CISCO Networking Academy (CCNA)tm:Switching, Routing, and Wireless Essentials 3.5 CISN 342 Cisco Networking Academy CCNA: Enterprise Networking, Security, and Auto"
+   },
+   {
+    "control_number": "12239",
+    "pages": [
+     432,
+     433,
+     434
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 432] Degree Requirements Course Code Course Title Units ACCT 101 Fundamentals of College Accounting (3) 3 - 4 or ACCT 301 Financial Accounting (4) BUS 110 Business Economics (3) 3 or ECON C2002 Principl"
+   },
+   {
+    "control_number": "12250",
+    "pages": [
+     362,
+     363,
+     364,
+     365
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 362] Course Code Course Title Units AT 189 Digital Storage Oscilloscope Use and Operation 2 AT 330 Automotive Electrical Systems 3 AT 331 Advanced Automotive Electrical Systems 3 AT 332 Engine Performance & El"
+   },
+   {
+    "control_number": "12268",
+    "pages": [
+     613,
+     614,
+     615
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 613] • articulate orally and/or in writing the importance of continuous examination and modification of accepted ideas as a fundamental element in the progress of science. • discuss ethical components of scienti"
+   },
+   {
+    "control_number": "12348",
+    "pages": [
+     599,
+     600,
+     601,
+     602
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 599] Woodbury Heights, NJ 08097 (816) 233-3747. Web: www.abfse.org. NOTE: All courses, including general education, require a grade of \"C\" or better, and the student must register to take the National Board Exa"
+   },
+   {
+    "control_number": "12377",
+    "pages": [
+     754
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 754] The Associate in Science in Mathematics 2.0 for Transfer (AS-T) degree may be obtained by completion of 60 transferable, semester units with a minimum 2.0 GPA, including (a) the major or area of emphasis de"
+   },
+   {
+    "control_number": "12448",
+    "pages": [
+     330,
+     331,
+     332,
+     333
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 330] A.A. in Art New Media This degree emphasizes visual arts produced in a digital environment. Art New Media focuses on new technology and a strong foundation in the fundamentals of visual art. Coursework inc"
+   },
+   {
+    "control_number": "12449",
+    "pages": [
+     335,
+     336,
+     337,
+     338
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 335] Graphic Design: Junior Artist Certificate This certificate introduces software applications, industry- standard hardware, and the typographic/fundamental and technical skills necessary for today’s workplace."
+   },
+   {
+    "control_number": "12450",
+    "pages": [
+     334,
+     335,
+     336,
+     337
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 334] ARTNM: Web Design Certificate The Web Design certificate incorporates the fundamentals of visual communication with industry-standard work flow and tools to prepare creatives and talents for the web design "
+   },
+   {
+    "control_number": "12451",
+    "pages": [
+     333,
+     334,
+     335,
+     336
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 333] Art New Media: Illustration Certificate This certificate focuses on using traditional visual art principles to clearly communicate the needs of a client and/or target a specific audience. It includes skill "
+   },
+   {
+    "control_number": "12659",
+    "pages": [
+     675,
+     676,
+     677,
+     678
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 675] Associate Degree A.A. in Hospitality Management: Culinary Arts/Restaurant Management This degree focuses on basic and advanced culinary techniques, related to both hot food and baking. It emphasizes super"
+   },
+   {
+    "control_number": "12675",
+    "pages": [
+     969,
+     970,
+     971,
+     972
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 969] Shielded Metal Arc Plate and Pipe Certificate Welding Metallurgy and Inspection (270 hours) Certificate Welding Technology Certificate Gas Metal Arc and Flux Core Arc Welding Plate (252 hours) Certificate "
+   },
+   {
+    "control_number": "12686",
+    "pages": [
+     345,
+     346,
+     347,
+     348
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 345] ASL discourse and interpretation is established through theoretical models. Emphasis is on the practical application of these models and knowledge in the areas of human relations, language skills, interpret"
+   },
+   {
+    "control_number": "13941",
+    "pages": [
+     795,
+     796,
+     797,
+     798
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.968,
+    "opens": "[page 795] A.S. in Environmental Conservation Environmental Conservation is an interdisciplinary program that advances the understanding of ecological systems and their interrelationships, including those with human s"
+   },
+   {
+    "control_number": "14255",
+    "pages": [
+     771
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 771] Course Code Course Title Units BUS 220 Retailing and Merchandising for the Small Business (1) BUS 224 Customer Service (1) BUS 228 Selling Techniques for the Small Business (1) Total Units: 33 The Commer"
+   },
+   {
+    "control_number": "14256",
+    "pages": [
+     773,
+     774,
+     775
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 773] Commercial Music: Business Certificate This certificate explores the inner workings of the music industry in areas such as publishing, entertainment, distribution, and music law. Course work addresses indus"
+   },
+   {
+    "control_number": "14337",
+    "pages": [
+     445,
+     446
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 445] Web Developer Certificate This certificate offers a program of study for students seeking jobs in the fields of web-based programming and web application development. It provides opportunities to develop t"
+   },
+   {
+    "control_number": "14339",
+    "pages": [
+     445,
+     446
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 445] • demonstrate basic skills in the use of word processing, page design, and web design applications. • evaluate organizations' communication goals and needs based on technical writing principles. Career Inf"
+   },
+   {
+    "control_number": "14463",
+    "pages": [
+     947,
+     948,
+     949,
+     950
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 947] Acting Certificate This certificate provides training in the theories and techniques of acting. The training starts with the basic principles of acting and refines them through theoretic, rehearsal, and pe"
+   },
+   {
+    "control_number": "14464",
+    "pages": [
+     948,
+     949,
+     950,
+     951
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 948] Certificate Requirements Course Code Course Title Units TA 350 Theory and Techniques of Acting I 3 A minimum of 4 units from the following: 4 ENGLT 370 Children and Literature (3) TA 344 Improvisation an"
+   },
+   {
+    "control_number": "14465",
+    "pages": [
+     948
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 948] Costuming Certificate This certificate provides training in the skills needed to create theatrical costumes. Coursework includes costume construction, history of costume, patterning, and makeup. Certificat"
+   },
+   {
+    "control_number": "14466",
+    "pages": [
+     957,
+     958,
+     959
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 957] Dean: Corinne Arrieta Katzorke Department Chairs: Kathy Burleson Sam Williams Phone: (916) 484-8570 Email: AskHB-Arts@arc.losrios.edu Associate Degree A.A. in Film This degree provides a broad overv"
+   },
+   {
+    "control_number": "14470",
+    "pages": [
+     369,
+     370,
+     371,
+     372
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 369] Parts and Service Certificate This certificate provides training for automotive parts and service advisors. Topics include parts knowledge, integrated computer management software, scheduling, inventory co"
+   },
+   {
+    "control_number": "14477",
+    "pages": [
+     500,
+     501,
+     502,
+     503
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 500] Diversity, Equity, and Inclusion Specialist Certificate Infant and Toddler Specialist Certificate Master Teacher Certificate Site Supervisor Certificate Teacher Certificate Dean: Narinedat Madramootoo D"
+   },
+   {
+    "control_number": "14520",
+    "pages": [
+     525,
+     526,
+     527,
+     528
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 525] • apply industry-appropriate design techniques to develop technical design documents from a conceptual design. • design robotic and machine automation systems using mechatronic principles. • evaluate weldi"
+   },
+   {
+    "control_number": "14684",
+    "pages": [
+     145,
+     146,
+     147
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] Course Code Course Title Units ANTH 334 Native Peoples of North America (3) ANTH 336 Anthropology of Sex, Sexuality and Gender (3) ANTH 341 Introduction to Linguistics (3) STAT C1000 Introduction to Statis"
+   },
+   {
+    "control_number": "14999",
+    "pages": [
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree may be obtained by completion of the required program, and either (a) the Local General Education Pattern or (b) the California General Educati"
+   },
+   {
+    "control_number": "15319",
+    "pages": [
+     356,
+     357,
+     358,
+     359
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 356] Automotive Claims Estimator Certificate This program provides the technical and practical skills necessary to properly diagnose collision-damaged vehicles and to document the cost and time necessary to repa"
+   },
+   {
+    "control_number": "15325",
+    "pages": [
+     434,
+     435,
+     436
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 434] Degree Requirements Course Code Course Title Units CISN 340 Cisco Networking Academy CCNA: Introduction to Networks 3.5 CISN 341 CISCO Networking Academy (CCNA)tm:Switching, Routing, and Wireless Essent"
+   },
+   {
+    "control_number": "15519",
+    "pages": [
+     857,
+     858,
+     859,
+     860
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 857] A.A. in Psychology Psychology focuses on the study of behavior of humans and other animals. It involves both pure and practical application of science to matters of everyday life. Degree Requirements Cour"
+   },
+   {
+    "control_number": "15605",
+    "pages": [
+     525,
+     526,
+     527,
+     528
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 525] Robotics Certificate The certificate provides an overview of the application, programming, and design of robotic systems and components. It covers the theory and application of electronics, sensors, contro"
+   },
+   {
+    "control_number": "15606",
+    "pages": [
+     524,
+     525,
+     526,
+     527
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 524] Fiber Optics Certificate This certificate is an introduction to fiber optics technology. Topics include fusion and mechanical splicing, fiber connectivity, optical time domain reflectometer (OTDR), and oth"
+   },
+   {
+    "control_number": "15613",
+    "pages": [
+     969,
+     970,
+     971,
+     972
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 969] Welding Metallurgy and Inspection (270 hours) Certificate Welding Technology Certificate Gas Metal Arc and Flux Core Arc Welding Plate (252 hours) Certificate Gas Tungsten Arc Plate and Pipe Welding (180 h"
+   },
+   {
+    "control_number": "15615",
+    "pages": [
+     520,
+     521,
+     522,
+     523
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 520] Course Code Course Title Units ET 253 Industrial Communication Systems Support 4 ET 322 Semiconductors and Nanotechnology 4 ET 335 Integrated Circuits with Computer Applications 4 ET 380 Introduction to E"
+   },
+   {
+    "control_number": "16596",
+    "pages": [
+     590
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 590] Firefighter Recruit Academy Certificate This program provides the knowledge necessary to assume the role of firefighter with the ability to work effectively and safely with the fire environment as well as w"
+   },
+   {
+    "control_number": "16714",
+    "pages": [
+     87,
+     88
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] L3: Arts and Humanities Choose one course for a minimum of three semester units (four quarter units). Area Courses L3: Arts and Humanities ANTH 330*, ANTH 341*, ART 300, ART 312, ART 320, ART 323, ART 324"
+   },
+   {
+    "control_number": "16734",
+    "pages": [
+     482,
+     483,
+     484,
+     485
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 482] A.S. in Mechatronics This degree provides training in a multi-disciplinary field focusing on industrial automation. Topics include electricity, electronics, industrial motor controls, programmable logic co"
+   },
+   {
+    "control_number": "16747",
+    "pages": [
+     772,
+     773
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 772] A.A. in Jazz Studies This degree provides a rigorous curriculum of jazz theory, history, performance groups, improvisation, piano, and individual applied instruction. Degree Requirements Course Code Cours"
+   },
+   {
+    "control_number": "16784",
+    "pages": [
+     517,
+     518
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 517] Residential/Commercial Electrician Trainee Certificate Dean: Gary Aguilar Department Chair: Ocean Tran Phone: (916) 484-8588 Email: MCT@arc.losrios.edu Certificate of Achievement Residential/Commerci"
+   },
+   {
+    "control_number": "16817",
+    "pages": [
+     614,
+     615,
+     616,
+     617
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 614] A.S. in Geography This degree provides students with a solid foundation in Geography as well as the standard prerequisites for upper- division coursework leading to a baccalaureate degree. The required and "
+   },
+   {
+    "control_number": "16820",
+    "pages": [
+     740,
+     741
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.87,
+    "opens": "[page 740] A.A. in Paralegal Studies This degree prepares students to work in the legal field as an entry-level paralegal. It covers basic substantive and procedural areas including civil litigation, legal research an"
+   },
+   {
+    "control_number": "16946",
+    "pages": [
+     434,
+     435,
+     436
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 434] Degree Requirements Course Code Course Title Units CISN 340 Cisco Networking Academy CCNA: Introduction to Networks 3.5 CISN 341 CISCO Networking Academy (CCNA)tm:Switching, Routing, and Wireless Essent"
+   },
+   {
+    "control_number": "16948",
+    "pages": [
+     134,
+     135,
+     136,
+     137
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] Taxation Certificate This certificate provides occupational training and education in the areas of individual and business income tax preparation and consulting. Courses in this program provide a background"
+   },
+   {
+    "control_number": "17117",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] Accounting Clerk Certificate Financial Services Apprenticeship Certificate Taxation Certificate Division Dean: Kirsten Corbin Department Chair: Joel Halle Phone: (916) 484-8361 Email: ARCBUSClerk@arc"
+   },
+   {
+    "control_number": "17372",
+    "pages": [
+     741
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 741] Law Office Clerical Assistant Certificate This certificate provides the skills needed for entry-level clerical positions in law offices. The course work emphasizes workforce skills including an introduction"
+   },
+   {
+    "control_number": "17937",
+    "pages": [
+     689
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 689] A.A. in English Communication and Literature A.A. in History of the Creative Arts A.A. in Language Studies A.A. in Social Science A.A. in Society and the Individual Cal-GETC Certificate Phone: (916) 484"
+   },
+   {
+    "control_number": "17938",
+    "pages": [
+     690
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.972,
+    "opens": "[page 690] A.A. in History of the Creative Arts This degree provides an area of emphasis in the arts and humanities. It is intended for students who plan to transfer to a four-year college/university to earn a baccala"
+   },
+   {
+    "control_number": "17939",
+    "pages": [
+     691
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 691] Course Code Course Title Units COMM C1000 Introduction to Public Speaking (3) COMM 331 Group Discussion (3) COMM 361 The Communication Experience (3) COMM 362 Mediated Communication (3) ENGL C1000 Academi"
+   },
+   {
+    "control_number": "17940",
+    "pages": [
+     694,
+     695
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.898,
+    "opens": "[page 694] A.A. in Society and the Individual This degree provides an area of emphasis in the effects of culture, religion, ethnicity, and gender on individuals living in a global society. It is designed for students "
+   },
+   {
+    "control_number": "18005",
+    "pages": [
+     491
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 491] Clean Diesel Hybrid Technology Certificate Clean Diesel Industrial Certificate Clean Diesel Management Systems Certificate Clean Diesel Technology Certificate Diesel Engine Technology Certificate Diesel T"
+   },
+   {
+    "control_number": "18845",
+    "pages": [
+     936,
+     937,
+     938,
+     939
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 936] A.S. in Speech-Language Pathology Assistant Program SLPA Core Curriculum Certificate Certificate SLPA Specialization: Adult Neurogenic Certificate SLPA Specialization: Early Intervention Certificate SLPA S"
+   },
+   {
+    "control_number": "19330",
+    "pages": [
+     852,
+     853,
+     854
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.733,
+    "opens": "[page 852] A.A. in Political Science This degree provides a comprehensive introduction to the field of political science. It stresses the systematic study of politics, political institutions and governmental processes"
+   },
+   {
+    "control_number": "19335",
+    "pages": [
+     604,
+     605,
+     606,
+     607
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 604] Honors Transfer Certificate The American River College (ARC) Honors Program is a community of students and faculty who are dedicated to the pursuit of intellectual and personal enrichment in a diverse and "
+   },
+   {
+    "control_number": "19361",
+    "pages": [
+     355,
+     356,
+     357,
+     358
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 355] Automotive Collision Technology Certificate Automotive Collision Technology-Refinish Certificate Automotive Collision Technology-Structural Certificate Automotive Collision Technology-Non-Structural Certifi"
+   },
+   {
+    "control_number": "19772",
+    "pages": [
+     645,
+     646,
+     647
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.963,
+    "opens": "[page 645] Course Code Course Title Units Economics ECON C2002 Principles of Macroeconomics (3) ECON C2001 Principles of Microeconomics (3) Geography GEOG 300 Physical Geography: Exploring Earth's Environmental Syst"
+   },
+   {
+    "control_number": "20097",
+    "pages": [
+     666,
+     667,
+     668,
+     669
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 666] Horticulture Certificate This certificate represents several areas of study in Horticulture: arboriculture, floriculture, landscape horticulture and landscape design, olericulture, pomology, and viticulture"
+   },
+   {
+    "control_number": "20099",
+    "pages": [
+     798,
+     799,
+     800,
+     801
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 798] Course Code Course Title Units BIOL 495 Independent Studies in Biology (1 - 3) BIOL 499 Experimental Offering in Biology (0.5 - 4) BIOT 301 Biotechnology and Human Health (3) BIOT 305 Introduction to "
+   },
+   {
+    "control_number": "20100",
+    "pages": [
+     382,
+     383,
+     384,
+     385
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 382] • demonstrate knowledge of scientific terminology and interpret principle concepts of biology. • demonstrate content knowledge, laboratory skills, and study skills to be successful at a four-year institutio"
+   },
+   {
+    "control_number": "20101",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 131] The Accounting certificate provides occupational training and preparation for entry-level clerical and technical positions in various accounting careers. It provides a strong background in fundamental acco"
+   },
+   {
+    "control_number": "20102",
+    "pages": [
+     744,
+     745,
+     746,
+     747
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 744] Conflict Management Certificate This certificate focuses on identifying and understanding the underlying causes of workplace conflict and strategies for managing conflict effectively. It explores the impact"
+   },
+   {
+    "control_number": "20103",
+    "pages": [
+     743,
+     744,
+     745,
+     746
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 743] Leadership Certificate Management Certificate Project Management Certificate Division Dean: Kirsten Corbin Department Chair: Heidi Bennett Phone: (916) 484-8361 Email: ARCBUSClerk@arc.losrios.edu As"
+   },
+   {
+    "control_number": "20104",
+    "pages": [
+     401,
+     402,
+     403,
+     404
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 401] Cross-Cultural Conflict Resolution Certificate This certificate provides the knowledge and skills needed to resolve cross-cultural conflict with both internal and external customers. It combines a theoreti"
+   },
+   {
+    "control_number": "20105",
+    "pages": [
+     865,
+     866,
+     867
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 865] Real Estate Certificate This certificate introduces the basic concepts of the real estate career field. Topics include the principles of real estate, law, economics, finance, practice and appraisal. Certif"
+   },
+   {
+    "control_number": "20107",
+    "pages": [
+     336
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 336] Technical Communications Certificate This certificate offers an interdisciplinary program of courses in Technical Communications, Art/New Media, and Computer Information Systems to prepare students for a va"
+   },
+   {
+    "control_number": "20108",
+    "pages": [
+     438,
+     439
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 438] CIS: Database Management Certificate The CIS: Database Management certificate involves the study of relational database technology used in the business environment. The emphasis is on selecting the appropri"
+   },
+   {
+    "control_number": "20109",
+    "pages": [
+     434,
+     435,
+     436
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 434] Degree Requirements Course Code Course Title Units CISN 340 Cisco Networking Academy CCNA: Introduction to Networks 3.5 CISN 341 CISCO Networking Academy (CCNA)tm:Switching, Routing, and Wireless Essent"
+   },
+   {
+    "control_number": "20110",
+    "pages": [
+     436,
+     437,
+     438,
+     439
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 436] The CIS: Computer Networking Management certificate provides instruction for entry-level and IT professionals aiming for skill enhancement on the specific knowledge and skills required to master one of thre"
+   },
+   {
+    "control_number": "20111",
+    "pages": [
+     439,
+     440,
+     441
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 439] CIS: PC Support Certificate The CIS: PC Support certificate covers the use and maintenance of a microcomputer’s hardware, software and network connections in today’s business environment. Course work inclu"
+   },
+   {
+    "control_number": "20113",
+    "pages": [
+     476,
+     477,
+     478,
+     479
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 476] Degree Requirements Course Code Course Title Units DEAF 310 American Sign Language I 4 DEAF 312 American Sign Language II 4 DEAF 314 American Sign Language III 4 DEAF 316 American Sign Language IV 4 DEAF"
+   },
+   {
+    "control_number": "20114",
+    "pages": [
+     345,
+     346,
+     347,
+     348
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 345] ASL discourse and interpretation is established through theoretical models. Emphasis is on the practical application of these models and knowledge in the areas of human relations, language skills, interpret"
+   },
+   {
+    "control_number": "20115",
+    "pages": [
+     484,
+     485,
+     486,
+     487
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 484] Engineering Technology Certificate This certificate emphasizes the knowledge and skills required for entry level success in the engineering professions. These include a basic preparation within the scientif"
+   },
+   {
+    "control_number": "20116",
+    "pages": [
+     520,
+     521,
+     522,
+     523
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 520] Course Code Course Title Units ET 253 Industrial Communication Systems Support 4 ET 322 Semiconductors and Nanotechnology 4 ET 335 Integrated Circuits with Computer Applications 4 ET 380 Introduction to E"
+   },
+   {
+    "control_number": "20117",
+    "pages": [
+     484,
+     485,
+     486,
+     487
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 484] Mechatronics Certificate This certificate provides training in a multi-disciplinary field focusing on industrial automation. Topics include electricity, electronics, industrial motor controls, programmable "
+   },
+   {
+    "control_number": "20118",
+    "pages": [
+     365,
+     366,
+     367,
+     368
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 365] Automotive Analysis Certificate This program prepares students for entry-level employment as smog and driveability service technicians. It also prepares students for Automotive Service Excellence (ASE) cert"
+   },
+   {
+    "control_number": "20119",
+    "pages": [
+     362,
+     363,
+     364,
+     365
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 362] Course Code Course Title Units AT 189 Digital Storage Oscilloscope Use and Operation 2 AT 330 Automotive Electrical Systems 3 AT 331 Advanced Automotive Electrical Systems 3 AT 332 Engine Performance & El"
+   },
+   {
+    "control_number": "20120",
+    "pages": [
+     367,
+     368,
+     369,
+     370
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 367] Automotive Technology Certificate This program prepares students for entry-level positions in the automotive industry with emphasis on engine management systems, emission controls, and complete automotive s"
+   },
+   {
+    "control_number": "20121",
+    "pages": [
+     172,
+     173,
+     174
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] Carpenter Apprenticeship Certificate This program concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Departme"
+   },
+   {
+    "control_number": "20122",
+    "pages": [
+     177,
+     178,
+     179
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] Electrical Apprenticeship Certificate This program provides instruction in the installation, operation, and maintenance of the electrical distribution systems in commercial and industrial sites. Topics incl"
+   },
+   {
+    "control_number": "20124",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] This drywall/lathing apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Department"
+   },
+   {
+    "control_number": "20125",
+    "pages": [
+     483,
+     484,
+     485,
+     486
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 483] Design Technology Certificate This certificate emphasizes the knowledge and skills required for entry level success in the architectural, civil, and mechanical engineering professions. These include graphic"
+   },
+   {
+    "control_number": "20126",
+    "pages": [
+     188,
+     189,
+     190
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 188] Ironworkers Apprenticeship Certificate This program includes training for Field Ironworkers and Reinforcing Ironworkers, provided in major ironworker components to meet Division of Apprenticeship Standards "
+   },
+   {
+    "control_number": "20127",
+    "pages": [
+     162,
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The Sheet Metal Apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Department of A"
+   },
+   {
+    "control_number": "20128",
+    "pages": [
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] The Sheet Metal Service Technician Apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction and the heating, ventilation, and air conditioning (HV"
+   },
+   {
+    "control_number": "20129",
+    "pages": [
+     814
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 814] • use information and technology to communicate, manage knowledge, and mitigate error. • participate in quality improvement activities to measure patient outcomes, identify hazards and errors, and improve "
+   },
+   {
+    "control_number": "20130",
+    "pages": [
+     833,
+     834
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 833] Paramedic Certificate Emergency Medical Technician (EMT) Certificate Dean: Narinedat Madramootoo Department Chair: Grant Goold Phone: (916) 484-8902 Email: askhb-healthed@arc.losrios.edu Associate De"
+   },
+   {
+    "control_number": "20131",
+    "pages": [
+     577,
+     578,
+     579,
+     580
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 577] Fashion Design Certificate Fashion Merchandising Certificate Apparel Construction Certificate Fashion Entrepreneur Certificate Fashion Illustration Certificate Fashion Retailing Certificate Patternmaking"
+   },
+   {
+    "control_number": "20132",
+    "pages": [
+     579,
+     580,
+     581,
+     582
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 579] Fashion Merchandising Certificate This certificate offers the skills necessary for jobs in the retail market. Course work concentrates on fashion coordination, promotion, visual presentation, management, me"
+   },
+   {
+    "control_number": "20133",
+    "pages": [
+     675,
+     676,
+     677,
+     678
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 675] Associate Degree A.A. in Hospitality Management: Culinary Arts/Restaurant Management This degree focuses on basic and advanced culinary techniques, related to both hot food and baking. It emphasizes super"
+   },
+   {
+    "control_number": "20134",
+    "pages": [
+     630,
+     631,
+     632,
+     633
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.765,
+    "opens": "[page 630] Gerontology: Administrative Certificate Gerontology: Advocacy and Social Policy Certificate Gerontology: Case Management and Social Services Certificate Gerontology: Geriatric Health Care Certificate Gero"
+   },
+   {
+    "control_number": "20135",
+    "pages": [
+     633,
+     634,
+     635,
+     636
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.588,
+    "opens": "[page 633] courses in this program are offered fully online in various synchronous and asynchronous formats; some courses are also offered in person. Degree Requirements Course Code Course Title Units COMM C1004 I"
+   },
+   {
+    "control_number": "20137",
+    "pages": [
+     634,
+     635,
+     636,
+     637
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 634] A.A. in Gerontology: Geriatric Health Care This degree provides a broad overview of the biological, psychological, and social aspects of aging, along with introductory coursework emphasizing the health nee"
+   },
+   {
+    "control_number": "20138",
+    "pages": [
+     635,
+     636,
+     637,
+     638
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 635] • identify communication disorders in individuals of various ages with consideration of cultural and linguistic differences. Career Information Entry to mid-level care and support service positions in priv"
+   },
+   {
+    "control_number": "20139",
+    "pages": [
+     637,
+     638,
+     639,
+     640
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.81,
+    "opens": "[page 637] • synthesize knowledge of existing California professional codes of ethics for the helping professions. • analyze legal and ethical issues related to aging, including the mandatory reporting of abuse, negle"
+   },
+   {
+    "control_number": "20140",
+    "pages": [
+     741
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.87,
+    "opens": "[page 741] Paralegal Studies Certificate Students must possess an A.A. degree or higher from a regionally accredited institution to be eligible for the certificate. The Paralegal Studies Certificate is a one-year cou"
+   },
+   {
+    "control_number": "20141",
+    "pages": [
+     928,
+     929,
+     930,
+     931
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 928] Social Work Certificate The certificate in Social Work centers around the broad array of entry level skills and abilities effectively used in social service delivery systems. Coursework includes the twelve "
+   },
+   {
+    "control_number": "20142",
+    "pages": [
+     926,
+     927,
+     928,
+     929
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.55,
+    "opens": "[page 926] • utilize counseling strategies based on examination of scientific theories of addiction. • identify the community resources used in assisting clients with addiction issues. • appraise and apply the knowle"
+   },
+   {
+    "control_number": "20143",
+    "pages": [
+     588,
+     589,
+     590
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 588] Fire Technology Certificate Firefighter Recruit Academy Certificate Fire Inspector 1 Certificate Fire Investigation 1A Certificate Fire Investigation 1B Certificate Fire Investigation 2A Certificate Fire"
+   },
+   {
+    "control_number": "20144",
+    "pages": [
+     613,
+     614,
+     615
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 613] • articulate orally and/or in writing the importance of continuous examination and modification of accepted ideas as a fundamental element in the progress of science. • discuss ethical components of scienti"
+   },
+   {
+    "control_number": "30019",
+    "pages": [
+     368,
+     369,
+     370,
+     371
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 368] Green Vehicle Technology Certificate This program prepares students for entry-level positions in the automotive industry with emphasis on alternative fuel and electric vehicle drive systems and complete aut"
+   },
+   {
+    "control_number": "30020",
+    "pages": [
+     493,
+     494,
+     495,
+     496
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 493] Clean Diesel Technology Certificate This program covers the diesel engine systems. Topics include biodiesel fuel and fuel systems, clean diesel technology, and clean diesel software support. Certificate Re"
+   },
+   {
+    "control_number": "30021",
+    "pages": [
+     537,
+     538,
+     539,
+     540
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 537] • Advanced Components: Specialized knowledge of energy storage systems (ESS) and grid integration principles. • Compliance & Safety: In-depth training on current electrical codes, industry standards, and cr"
+   },
+   {
+    "control_number": "30022",
+    "pages": [
+     537,
+     538,
+     539,
+     540
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 537] Solar Energy Technology Certificate Basic Solar Certificate Dean: Gary Aguilar Department Chair: Jordan Meyer Phone: (916) 484-8588 Email: MCT@arc.losrios.edu Certificates of Achievement Solar Energ"
+   },
+   {
+    "control_number": "30023",
+    "pages": [
+     665,
+     666,
+     667,
+     668
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 665] Course Code Course Title Units HORT 309 Viticulture - Sustainable Vineyard Management (1) HORT 321 Sustainable and Ecolandscape Practices (3) HORT 326 Landscape Design (3) HORT 327 Advanced Landscape Desi"
+   },
+   {
+    "control_number": "30024",
+    "pages": [
+     665,
+     666,
+     667,
+     668
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 665] A.S. in Landscape Design Technology This degree is a bi-disciplinary study of horticulture resources and design fundamentals. It includes an in-depth study of plant materials, irrigation, landscape design, "
+   },
+   {
+    "control_number": "30025",
+    "pages": [
+     519,
+     520,
+     521,
+     522
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 519] Digital Home Technology Integration Certificate Electronic Systems Technology Certificate Fiber Optics Certificate Mechatronics Certificate Robotics Certificate Telecommunication Specialist Certificate B"
+   },
+   {
+    "control_number": "30268",
+    "pages": [
+     139,
+     140,
+     141,
+     142
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] A.S.-T. in Administration of Justice A.S. in Administration of Justice Homeland Security Certificate Associate Dean: Charissa Gorre Department Chair: Bill Wann Phone: (916) 570-5000 Email: askhb-publ"
+   },
+   {
+    "control_number": "30308",
+    "pages": [
+     715
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 715] A.S. in Sports Medicine This degree is designed to prepare students for transfer in the area of athletic training, exercise science, kinesiology, and other sports medicine related fields. Prevention, identi"
+   },
+   {
+    "control_number": "30341",
+    "pages": [
+     899
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 899] This course satisfies the arrest, search, and seizure requirement for peace officers as defined in section 832 of the California Penal Code. Topics include professionalism, ethics, the criminal justice syst"
+   },
+   {
+    "control_number": "30352",
+    "pages": [
+     822,
+     823,
+     824
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 822] service departments, restaurants, public health agencies, nutrition programs, Women, Infants and Children (WIC) programs, Meals on Wheels, health clubs, weight management clinics, community wellness centers"
+   },
+   {
+    "control_number": "30420",
+    "pages": [
+     367,
+     368,
+     369,
+     370
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 367] • analyze engine components for wear and/or tear. • evaluate required engine component repairs by checking them with measurement and test equipment. • set up and perform one or more machining operations. •"
+   },
+   {
+    "control_number": "30480",
+    "pages": [
+     714,
+     715
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 714] A.S. in Physical Education This degree provides an educational and practical foundation for students interested in multiple professions in the area of physical education. It also provides coursework require"
+   },
+   {
+    "control_number": "30567",
+    "pages": [
+     394,
+     395,
+     396
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 394] Biomedical Equipment Technology Certificate Dean: Gary Aguilar Department Chair: Jordan Meyer Phone: (916) 484-8588 Email: askhb-mct@arc.losrios.edu Associate Degree A.S. in Biomedical Equipment Tec"
+   },
+   {
+    "control_number": "30595",
+    "pages": [
+     856,
+     857,
+     858,
+     859
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 856] Course Code Course Title Units or ECON 310 Statistics for Business and Economics (3) or STAT C1000 Introduction to Statistics (4) or STAT C1000H Introduction to Statistics - Honors (4) PSYC 33"
+   },
+   {
+    "control_number": "30636",
+    "pages": [
+     932,
+     933,
+     934,
+     935
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 932] A.A.-T. in Sociology Dean: Matt Wright Department Chair: Jeff Sacha Phone: (916) 484-8283 Email: AskHB-PCS@arc.losrios.edu Associate Degree for Transfer A.A.-T. in Sociology The Associate in Arts in"
+   },
+   {
+    "control_number": "30823",
+    "pages": [
+     754
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 754] Mathematics at the institution they wish to transfer to because major and general education requirements may vary for each CSU and the degree may only transfer to specific institutions. Students must comple"
+   },
+   {
+    "control_number": "30842",
+    "pages": [
+     313,
+     314
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 313] Certificate Requirements Course Code Course Title Units ART 101 Lightroom and Photoshop Basics 0.5 ART 320 Design: Fundamentals (3) 3 or ARTPH 340 Alternative Process Photography (3) ARTH 300 Art Appr"
+   },
+   {
+    "control_number": "30846",
+    "pages": [
+     650,
+     651,
+     652
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 650] Healthcare Interpreting Certificate The Healthcare Interpreter certificate program is designed to prepare bilingual individuals for effective language interpretation and cultural brokering in the healthcare"
+   },
+   {
+    "control_number": "30938",
+    "pages": [
+     622,
+     623,
+     624,
+     625
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 622] A.S.-T. in Geology A.S. in General Science Dean: Joel Keebler Department Chair: Hugh Howard Phone: (916) 484-8107 Email: askhb-STEM@arc.losrios.edu Associate Degrees for Transfer A.S.-T. in Geology "
+   },
+   {
+    "control_number": "30984",
+    "pages": [
+     139,
+     140,
+     141,
+     142
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] A.S.-T. in Administration of Justice A.S. in Administration of Justice Homeland Security Certificate Associate Dean: Charissa Gorre Department Chair: Bill Wann Phone: (916) 570-5000 Email: askhb-publ"
+   },
+   {
+    "control_number": "31031",
+    "pages": [
+     541,
+     542,
+     543
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 541] Associate Degrees A.S. in Civil Engineering This degree provides the foundation in mathematics, science, and engineering needed to transfer to a four-year institution as a major in civil engineering. The c"
+   },
+   {
+    "control_number": "31052",
+    "pages": [
+     500,
+     501,
+     502,
+     503
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 500] A.S.-T. in Early Childhood Education for Transfer A.A. in Early Childhood Education Associate Teacher Certificate Children with Disabilities and Developmental Differences Specialist Certificate Diversity,"
+   },
+   {
+    "control_number": "31084",
+    "pages": [
+     310,
+     311,
+     312,
+     313
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.974,
+    "opens": "[page 310] A.A.-T. in Studio Art The Associate in Arts in Studio Art for Transfer (AA-T) program provides students with a major that fulfills the general requirements for transfer to a California State University. St"
+   },
+   {
+    "control_number": "31299",
+    "pages": [
+     88
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] L6: Ethnic Studies Choose one course for a minimum of three semester units (four quarter units). Area Courses L6: Ethnic Studies ETHNS 300*, ETHNS 320*, ETHNS 330*, ETHNS 350*, ETHNS 360* * Courses appearin"
+   },
+   {
+    "control_number": "31390",
+    "pages": [
+     545,
+     546,
+     547,
+     548
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.831,
+    "opens": "[page 545] Course Code Course Title Units ENGLT 300 Introduction to Fiction (3) ENGLT 304 Introduction to Poetry (3) ENGLT 330 African American Literature (3) ENGLT 335 Latino, Mexican-American, and Chicano Lite"
+   },
+   {
+    "control_number": "31434",
+    "pages": [
+     653,
+     654,
+     655,
+     656
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.931,
+    "opens": "[page 653] Course Code Course Title Units or HIST 320 History of the United States: African-American Emphasis (3) or HIST 332 Women in American History (To 1877) (3) or HIST C1001H United States History to 1"
+   },
+   {
+    "control_number": "31466",
+    "pages": [
+     713,
+     714,
+     715,
+     716
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 713] Course Code Course Title Units DANCE 312 Jazz Dance II (1) DANCE 320 Ballet I (1) DANCE 321 Ballet II (1) DANCE 330 Modern Dance I (1) DANCE 332 Modern Dance II (1) DANCE 340 Ballroom Dance (1) DANCE 34"
+   },
+   {
+    "control_number": "31537",
+    "pages": [
+     332,
+     333,
+     334,
+     335
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 332] Animation Certificate This certificate focuses on traditional animation principles to create believable animations. Animations created range from motion graphics for broadcast television to animated product"
+   },
+   {
+    "control_number": "31560",
+    "pages": [
+     332,
+     333,
+     334,
+     335
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 332] 3D Technical Director Certificate This certificate offers a comprehensive understanding of the computer generated three-dimensional (CG 3D) production process. It is designed for self-learners, entrepreneur"
+   },
+   {
+    "control_number": "31582",
+    "pages": [
+     331,
+     332
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 331] Certificate Requirements Course Code Course Title Units ART 300 Drawing and Composition I 3 ARTNM 420 Introduction to 3D Modeling 3 ARTNM 421 3D Modeling and Texturing II - Character 3 ARTNM 423 3D Modeli"
+   },
+   {
+    "control_number": "31583",
+    "pages": [
+     330,
+     331,
+     332,
+     333
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 330] A.A. in Art New Media This degree emphasizes visual arts produced in a digital environment. Art New Media focuses on new technology and a strong foundation in the fundamentals of visual art. Coursework inc"
+   },
+   {
+    "control_number": "32275",
+    "pages": [
+     609,
+     610,
+     611
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 609] junior status to the California State University system. Students should work closely with their American River College counselor to ensure that they are taking the appropriate coursework to prepare for maj"
+   },
+   {
+    "control_number": "32487",
+    "pages": [
+     707,
+     708,
+     709,
+     710
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.906,
+    "opens": "[page 707] Course Code Course Title Units JOUR 300 Newswriting and Reporting 3 JOUR 310 Mass Media and Society 3 JOUR 410 College Media Production I 3 List A: A minimum of 3 units from the following: 3 JOUR 301 Adv"
+   },
+   {
+    "control_number": "32560",
+    "pages": [
+     851,
+     852,
+     853,
+     854
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 851] A.A.-T. in Political Science The Associate in Arts in Political Science for Transfer (AA-T) program provides students with a major that fulfills the general requirements for transfer to a California State "
+   },
+   {
+    "control_number": "32630",
+    "pages": [
+     769,
+     770,
+     771,
+     772
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 769] A.A.-T. in Music The Associate in Arts in Music for Transfer (AA-T) program provides students with a major that fulfills the general requirements for transfer to a California State University. Students wit"
+   },
+   {
+    "control_number": "32643",
+    "pages": [
+     944,
+     945,
+     946,
+     947
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.854,
+    "opens": "[page 944] Course Code Course Title Units TAP 333 Classical Technical Production IV (1 - 3) TAP 340 Musical Rehearsal and Performance I (1 - 3) TAP 341 Musical Rehearsal and Performance II (1 - 3) TAP 342 Musical Re"
+   },
+   {
+    "control_number": "32720",
+    "pages": [
+     513,
+     514,
+     515
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 513] A.A.-T. in Economics Division Dean: Kirsten Corbin Department Chair: Brian Rosario Phone: (916) 484-8361 Email: ARCBUSClerk@arc.losrios.edu Associate Degree for Transfer A.A.-T. in Economics The Ass"
+   },
+   {
+    "control_number": "32828",
+    "pages": [
+     309,
+     310,
+     311,
+     312
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 309] Students must complete the following Associate Degree for Transfer (ADT) requirements (pursuant to SB1440, §66746): • 60 semester or 90 quarter CSU-transferable units • the California General Education Tran"
+   },
+   {
+    "control_number": "33203",
+    "pages": [
+     145,
+     146,
+     147
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.956,
+    "opens": "[page 145] Course Code Course Title Units ANTH 334 Native Peoples of North America (3) ANTH 336 Anthropology of Sex, Sexuality and Gender (3) ANTH 341 Introduction to Linguistics (3) STAT C1000 Introduction to Statis"
+   },
+   {
+    "control_number": "33273",
+    "pages": [
+     980,
+     981
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 980] Course Code Course Title Units SPAN 412 Intermediate Spanish (4) SPAN 413 Spanish for Native Speakers I (4) SPAN 415 Spanish for Native Speakers II (4) B) Sequence for non-Spanish heritage speakers SPAN "
+   },
+   {
+    "control_number": "33335",
+    "pages": [
+     294,
+     295
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 294] tools, applied construction math, and employability skills for apprenticeship. This course is not open to students who have completed PREAP 111. Field trips may be required. PREAP 113 Infrastructure Pre- Ap"
+   },
+   {
+    "control_number": "35040",
+    "pages": [
+     503,
+     504,
+     505,
+     506
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 503] Children with Disabilities and Developmental Differences Specialist Certificate This certificate provides the educational coursework that serves as the core curriculum for the early childhood education fi"
+   },
+   {
+    "control_number": "35062",
+    "pages": [
+     841,
+     842,
+     843,
+     844
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 841] A.A.-T. in Philosophy Dean: Matt Wright Department Chair: Dr. Dylan Mirek Popowicz Phone: (916) 484-8283 Email: AskHB-PCS@arc.losrios.edu Associate Degree for Transfer A.A.-T. in Philosophy The Asso"
+   },
+   {
+    "control_number": "35075",
+    "pages": [
+     366,
+     367,
+     368,
+     369
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 366] Student Learning Outcomes Upon completion of this program, the student will be able to: • diagnose and repair automotive major automotive components. • describe the relationship between automotive compone"
+   },
+   {
+    "control_number": "35164",
+    "pages": [
+     821,
+     822,
+     823,
+     824
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 821] A.S.-T. in Nutrition and Dietetics The Associate in Science in Nutrition and Dietetics for Transfer (AS-T) program provides students with a major that fulfills the general requirements for transfer to a Cal"
+   },
+   {
+    "control_number": "35262",
+    "pages": [
+     969,
+     970,
+     971,
+     972
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 969] Welding Technology Certificate Gas Metal Arc and Flux Core Arc Welding Plate (252 hours) Certificate Gas Tungsten Arc Plate and Pipe Welding (180 hours) Certificate Pipe Welding Certificate Welding Equip"
+   },
+   {
+    "control_number": "35289",
+    "pages": [
+     541,
+     542,
+     543
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 541] A.S. in Civil Engineering This degree provides the foundation in mathematics, science, and engineering needed to transfer to a four-year institution as a major in civil engineering. The courses in this degr"
+   },
+   {
+    "control_number": "35290",
+    "pages": [
+     541,
+     542,
+     543
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 541] Associate Degrees A.S. in Civil Engineering This degree provides the foundation in mathematics, science, and engineering needed to transfer to a four-year institution as a major in civil engineering. The c"
+   },
+   {
+    "control_number": "35291",
+    "pages": [
+     542,
+     543
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 542] A.S. in Mechanical Engineering This degree provides the foundation in mathematics, science, and engineering needed to transfer to a four-year institution as a major in mechanical engineering. The courses in"
+   },
+   {
+    "control_number": "35293",
+    "pages": [
+     775
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 775] Digital Audio Production Certificate This certificate is intended to provide a practical foundation in audio production skills, provide suitable preparation to begin work in the recording and sound producti"
+   },
+   {
+    "control_number": "35294",
+    "pages": [
+     770,
+     771
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 770] Course Code Course Title Units Total Units: 27 Instrumentalists Course Code Course Title Units A minimum of 8 units from the following: 8 MUP 310 Orchestra (2) MUP 311 Advanced Orchestra (1 - 2) MUP 320"
+   },
+   {
+    "control_number": "35348",
+    "pages": [
+     561,
+     562,
+     563,
+     564
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 561] Certificates of Achievement Advanced Proficiency Certificate in English as a Second Language Certificate The Advanced Proficiency Program recognizes attainment of English language abilities at an advanced"
+   },
+   {
+    "control_number": "35356",
+    "pages": [
+     561,
+     562,
+     563,
+     564
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 561] Certificates of Achievement Advanced Proficiency Certificate in English as a Second Language Certificate The Advanced Proficiency Program recognizes attainment of English language abilities at an advanced"
+   },
+   {
+    "control_number": "35384",
+    "pages": [
+     402,
+     403,
+     404
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 402] Internet Marketing Certificate This certificate offers a program of study for students seeking jobs that require skills in technical marketing applications. It provides opportunities to combine traditional "
+   },
+   {
+    "control_number": "35620",
+    "pages": [
+     381,
+     382,
+     383,
+     384
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 381] A.S.-T. in Biology 2.0 A.S. in Biotechnology A.S. in General Science Biotechnology Certificate Dean: Joel Keebler Phone: (916) 484-8107 Email: askhb-STEM@arc.losrios.edu Associate Degrees for Transfe"
+   },
+   {
+    "control_number": "35636",
+    "pages": [
+     743,
+     744
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 743] Conflict Management Certificate Leadership Certificate Management Certificate Project Management Certificate Division Dean: Kirsten Corbin Department Chair: Heidi Bennett Phone: (916) 484-8361 Email:"
+   },
+   {
+    "control_number": "35637",
+    "pages": [
+     750,
+     751,
+     752
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 750] Marketing Essentials Certificate This certificate provides an introductory overview of the various aspects of marketing, such as target marketing, marketing strategy, advertising, professional selling, reta"
+   },
+   {
+    "control_number": "35640",
+    "pages": [
+     400,
+     401,
+     402,
+     403
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 400] 5Substitute course, BUSTEC 360 - Word Processing Beyond the Essentials, is available at Folsom Lake College. 6Substitute course, BUSTEC 362 - Comprehensive Electronic Spreadsheets, is available at Folsom La"
+   },
+   {
+    "control_number": "35641",
+    "pages": [
+     401
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 401] Cross-Cultural Conflict Resolution Certificate This certificate provides the knowledge and skills needed to resolve cross-cultural conflict with both internal and external customers. It combines a theoreti"
+   },
+   {
+    "control_number": "35642",
+    "pages": [
+     494,
+     495
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 494] Preventive Maintenance Certificate This certificate prepares students for entry-level positions in the diesel technology industry. The topics include safety and environmental regulations and standards, as w"
+   },
+   {
+    "control_number": "35644",
+    "pages": [
+     491,
+     492,
+     493,
+     494
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 491] Clean Diesel Management Systems Certificate Clean Diesel Technology Certificate Diesel Engine Technology Certificate Diesel Technology Certificate Light Duty Diesel Truck Certificate Preventive Maintenanc"
+   },
+   {
+    "control_number": "35645",
+    "pages": [
+     491,
+     492,
+     493,
+     494
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 491] Clean Diesel Hybrid Technology Certificate Clean Diesel Industrial Certificate Clean Diesel Management Systems Certificate Clean Diesel Technology Certificate Diesel Engine Technology Certificate Diesel T"
+   },
+   {
+    "control_number": "35646",
+    "pages": [
+     745,
+     746
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 745] Project Management Certificate This certificate covers the responsibilities of a project manager. It includes the knowledge needed to manage a project, control costs, and schedule resources. It also introdu"
+   },
+   {
+    "control_number": "35925",
+    "pages": [
+     313,
+     314,
+     315,
+     316
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 313] Gallery Management Certificate This certificate provides a foundation of knowledge, and experience in, the everyday working practices of art museums and galleries. Certificate Requirements Course Code Cou"
+   },
+   {
+    "control_number": "35934",
+    "pages": [
+     957,
+     958,
+     959
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 957] A.A. in Film This degree provides a broad overview of film history, theory, and practice. It combines the critical study of film as an art form and societal influence, including studies in diversity and ge"
+   },
+   {
+    "control_number": "37399",
+    "pages": [
+     333,
+     334
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 333] ARTNM: Character Design Certificate This certificate focuses on the visual concept development of believable characters. Skills in traditional and digital illustration are applied to create characters for a"
+   },
+   {
+    "control_number": "37400",
+    "pages": [
+     370,
+     371,
+     372,
+     373
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 370] Snap-On™ Certification Certificate This certificate prepares students for entry-level positions in the automotive industry. It provides the knowledge and skills needed for certification using current Snap-O"
+   },
+   {
+    "control_number": "37403",
+    "pages": [
+     334,
+     335,
+     336,
+     337
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 334] Student Learning Outcomes Upon completion of this program, the student will be able to: • create believable characters using traditional and digital media • research the environment, social and cultural st"
+   },
+   {
+    "control_number": "37404",
+    "pages": [
+     330
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 330] A.A. in Art New Media This degree emphasizes visual arts produced in a digital environment. Art New Media focuses on new technology and a strong foundation in the fundamentals of visual art. Coursework inc"
+   },
+   {
+    "control_number": "37405",
+    "pages": [
+     335,
+     336,
+     337,
+     338
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 335] Graphic Design: Intern Artist Certificate This certificate introduces the software and theory used by graphic designers in the design studio. It covers page layout, vector drawing, and photo manipulation ba"
+   },
+   {
+    "control_number": "37576",
+    "pages": [
+     919,
+     920,
+     921,
+     922
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 919] receive priority admission with junior status to the California State University system. Students should work closely with their American River College counselor to ensure that they are taking the appropria"
+   },
+   {
+    "control_number": "37581",
+    "pages": [
+     920,
+     921,
+     922,
+     923
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 920] Career Information The AA-T degree provides students with a solid foundation in Social Justice Studies as well as prerequisites for upper division coursework leading to the baccalaureate degree in a variety"
+   },
+   {
+    "control_number": "37687",
+    "pages": [
+     160,
+     161,
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] • demonstrate safe working practices in a field construction environment. • analyze and interpret blueprints. • interpret and apply welding codes. • demonstrate proper selection, use, care, preparation, an"
+   },
+   {
+    "control_number": "37889",
+    "pages": [
+     493,
+     494,
+     495,
+     496
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 493] Diesel Engine Technology Certificate This certificate is designed for students seeking employment in the diesel industry specializing in diesel engine repair. Certificate Requirements Course Code Course Ti"
+   },
+   {
+    "control_number": "37892",
+    "pages": [
+     494
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 494] Light Duty Diesel Truck Certificate This certificate prepares students for entry-level positions in the diesel technology industry. Topics include theory and operation of light duty diesel engines, computer"
+   },
+   {
+    "control_number": "37899",
+    "pages": [
+     645,
+     646
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.604,
+    "opens": "[page 645] Course Code Course Title Units Economics ECON C2002 Principles of Macroeconomics (3) ECON C2001 Principles of Microeconomics (3) Geography GEOG 300 Physical Geography: Exploring Earth's Environmental Syst"
+   },
+   {
+    "control_number": "37938",
+    "pages": [
+     369,
+     370,
+     371,
+     372
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 369] Small Engines Certificate This certificate prepares students for employment in the automotive industry, specializing in small engines. Certificate Requirements Course Code Course Title Units AT 100 Techn"
+   },
+   {
+    "control_number": "38640",
+    "pages": [
+     169,
+     170,
+     171,
+     172
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 169] Course Code Course Title Units A minimum of 16 units from the following: 16 HVACR 298 Work Experience in HVAC, & Refrigeration (0.5 - 6) PLUMB 298 Work Experience in Plumbers and Pipefitters Apprentice"
+   },
+   {
+    "control_number": "38955",
+    "pages": [
+     492,
+     493,
+     494
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 492] Clean Diesel Industrial Certificate This certificate prepares students for entry-level positions in the diesel technology industry. Topics include fabrication in the diesel technology industry. Certificate"
+   },
+   {
+    "control_number": "39057",
+    "pages": [
+     169,
+     170,
+     171,
+     172
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 169] Course Code Course Title Units A minimum of 16 units from the following: 16 HVACR 298 Work Experience in HVAC, & Refrigeration (0.5 - 6) PLUMB 298 Work Experience in Plumbers and Pipefitters Apprentice"
+   },
+   {
+    "control_number": "39255",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] • recognize types of brazing methods and their applications. • use an Oxy-Fuel torch to cut and weld materials properly and safely. • use a shielded metal arc welder properly and safely. • solve complex cu"
+   },
+   {
+    "control_number": "39256",
+    "pages": [
+     167,
+     168,
+     169
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Career Information Millwright technicians are in high demand. The millwright industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry. "
+   },
+   {
+    "control_number": "39275",
+    "pages": [
+     161,
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] A.A. in Pile Driver Apprenticeship This program concentrates on training Pile Driver apprentices to the specific levels required for the construction industry and has been approved by the State of Californi"
+   },
+   {
+    "control_number": "39338",
+    "pages": [
+     160,
+     161,
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] • demonstrate safe working practices in a field construction environment. • analyze and interpret blueprints. • interpret and apply welding codes. • demonstrate proper selection, use, care, preparation, an"
+   },
+   {
+    "control_number": "39339",
+    "pages": [
+     161,
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] Career Information Mill and cabinet maker technicians are in high demand. The industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry."
+   },
+   {
+    "control_number": "39340",
+    "pages": [
+     166
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] A.S. in Millwright Apprenticeship This degree includes the training required to meet the Division of Apprenticeship Standards (DAS) Journey Worker guidelines for the Millwright apprenticeship program. Degr"
+   },
+   {
+    "control_number": "39341",
+    "pages": [
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 211] Course Code Course Title Units HVACR 101 Electrical Theory I (2) HVACR 102 Electrical Theory II (2) HVACR 110 Mechanical Refrigeration Theory (2) HVACR 111 Refrigeration Cycle (2) HVACR 120 Intermedi"
+   },
+   {
+    "control_number": "39389",
+    "pages": [
+     167,
+     168,
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Career Information Millwright technicians are in high demand. The millwright industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry. "
+   },
+   {
+    "control_number": "39448",
+    "pages": [
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 211] Course Code Course Title Units HVACR 101 Electrical Theory I (2) HVACR 102 Electrical Theory II (2) HVACR 110 Mechanical Refrigeration Theory (2) HVACR 111 Refrigeration Cycle (2) HVACR 120 Intermedi"
+   },
+   {
+    "control_number": "39451",
+    "pages": [
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] blueprint reading, commercial construction processes, building codes, estimation, welding, and proper scaffold erection. Degree Requirements Course Code Course Title Units A minimum of 21 units from the "
+   },
+   {
+    "control_number": "39589",
+    "pages": [
+     194,
+     195,
+     196,
+     197
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 194] Millwright Level I Certificate This certificate includes the training required to meet the Division of Apprenticeship Standards (DAS) level I guidelines for the millwright apprenticeship program. Certifica"
+   },
+   {
+    "control_number": "39590",
+    "pages": [
+     195,
+     196,
+     197,
+     198
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 195] Millwright Level II Certificate This certificate includes the training required to meet the Division of Apprenticeship Standards (DAS) level II guidelines for the millwright apprenticeship program. Certifi"
+   },
+   {
+    "control_number": "39591",
+    "pages": [
+     195,
+     196,
+     197,
+     198
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 195] • describe the responsibilities of the apprentice as required by the Joint Apprenticeship and Training Committee (JATC) and other governing agencies. • demonstrate basic layout methods for establishing a ri"
+   },
+   {
+    "control_number": "39592",
+    "pages": [
+     170,
+     171,
+     172,
+     173
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 170] Acoustical Installer Level I Certificate This program concentrates on training apprentices to the level I requirements for the acoustical installer industry and has been approved by the State of California "
+   },
+   {
+    "control_number": "39593",
+    "pages": [
+     171,
+     172,
+     173,
+     174
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] Acoustical Installer Level II Certificate This program concentrates on training apprentices to the level II requirements for the acoustical installer industry and has been approved by the State of Californi"
+   },
+   {
+    "control_number": "39594",
+    "pages": [
+     171,
+     172,
+     173,
+     174
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] Acoustical Installer Level III Certificate This program concentrates on training apprentices to the level III requirements for the acoustical installer industry and has been approved by the State of Califor"
+   },
+   {
+    "control_number": "39595",
+    "pages": [
+     160,
+     161,
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] • demonstrate safe working practices in a field construction environment. • analyze and interpret blueprints. • interpret and apply welding codes. • demonstrate proper selection, use, care, preparation, an"
+   },
+   {
+    "control_number": "39596",
+    "pages": [
+     192,
+     193,
+     194,
+     195
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 192] Course Code Course Title Units CARPT 271 Introduction to Mill Cabinet Apprenticeship (1.5) CARPT 272 Math for the Mill Cabinet Trade (1.5) CARPT 273 Basic Cabinet Making (1.5) CARPT 274 Basic Blueprint Re"
+   },
+   {
+    "control_number": "39597",
+    "pages": [
+     193,
+     194,
+     195,
+     196
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 193] • demonstrate proper selection, use, care, preparation, and handling of the mill and cabinet carpenter's tools of the trade. • analyze, interpret, and apply national building codes relating to mill and cab"
+   },
+   {
+    "control_number": "39598",
+    "pages": [
+     198,
+     199,
+     200
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 198] Pile Driver Level I Certificate This certificate includes training for the Pile Driver apprentice to meet the Division of Apprenticeship Standards (DAS) level I guidelines for the Pile Driver apprenticeship"
+   },
+   {
+    "control_number": "39599",
+    "pages": [
+     199,
+     200
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 199] Pile Driver Level II Certificate This certificate includes training for the Pile Driver apprentice to meet the Division of Apprenticeship Standards (DAS) level II guidelines for the Pile Driver apprenticesh"
+   },
+   {
+    "control_number": "39600",
+    "pages": [
+     200
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 200] Pile Driver Level III Certificate This certificate includes training for the Pile Driver apprentice to meet the Division of Apprenticeship Standards (DAS) level III guidelines for the Pile Driver apprentice"
+   },
+   {
+    "control_number": "39659",
+    "pages": [
+     212,
+     213,
+     214
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 212] Scaffold Erector Level I Certificate This certificate includes the training for scaffold erectors to meet the Division of Apprenticeship Standards (DAS) Level I guidelines for the scaffold erectors apprenti"
+   },
+   {
+    "control_number": "39661",
+    "pages": [
+     213,
+     214
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 213] Scaffold Erector Level II Certificate This certificate includes the training for scaffold erectors to meet the Division of Apprenticeship Standards (DAS) Level II guidelines for the scaffold erectors appren"
+   },
+   {
+    "control_number": "39663",
+    "pages": [
+     167,
+     168,
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Career Information Millwright technicians are in high demand. The millwright industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry. "
+   },
+   {
+    "control_number": "39665",
+    "pages": [
+     213,
+     214
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 213] Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • Must be a state registered Scaffold Erector apprentice. Student Learning Outcomes Upon "
+   },
+   {
+    "control_number": "39666",
+    "pages": [
+     167,
+     168,
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Career Information Millwright technicians are in high demand. The millwright industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry. "
+   },
+   {
+    "control_number": "39668",
+    "pages": [
+     167,
+     168,
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Career Information Millwright technicians are in high demand. The millwright industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry. "
+   },
+   {
+    "control_number": "39669",
+    "pages": [
+     205,
+     206,
+     207,
+     208
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 205] Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • The student must be a registered Plumbers and Pipefitters apprentice. Student Learning "
+   },
+   {
+    "control_number": "39731",
+    "pages": [
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 211] Course Code Course Title Units HVACR 101 Electrical Theory I (2) HVACR 102 Electrical Theory II (2) HVACR 110 Mechanical Refrigeration Theory (2) HVACR 111 Refrigeration Cycle (2) HVACR 120 Intermedi"
+   },
+   {
+    "control_number": "39732",
+    "pages": [
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 211] Course Code Course Title Units HVACR 101 Electrical Theory I (2) HVACR 102 Electrical Theory II (2) HVACR 110 Mechanical Refrigeration Theory (2) HVACR 111 Refrigeration Cycle (2) HVACR 120 Intermedi"
+   },
+   {
+    "control_number": "39733",
+    "pages": [
+     209,
+     210,
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 209] Course Code Course Title Units HVACR 146 Introduction to Variable Frequency Drives (2) HVACR 152 Introduction to Boilers (2) HVACR 160 Introduction to Market Refrigeration Systems (2) HVACR 161 Introdu"
+   },
+   {
+    "control_number": "39734",
+    "pages": [
+     210,
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 210] Course Code Course Title Units HVACR 130 Intermediate Mechanical Refrigeration I (2) HVACR 132 Intermediate Mechanical Refrigeration II (2) HVACR 140 Electrical Troubleshooting I (2) HVACR 142 Electri"
+   },
+   {
+    "control_number": "40094",
+    "pages": [
+     196,
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 196] Course Code Course Title Units CARPT 226 Precision Optical Instruments (1.5) CARPT 227 Blueprint Reading for Millwrights (1.5) CARPT 228 Millwright Rigging (1.5) CARPT 229 Welding II SMAW (1.5) CARPT 230"
+   },
+   {
+    "control_number": "40095",
+    "pages": [
+     196,
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 196] Course Code Course Title Units CARPT 226 Precision Optical Instruments (1.5) CARPT 227 Blueprint Reading for Millwrights (1.5) CARPT 228 Millwright Rigging (1.5) CARPT 229 Welding II SMAW (1.5) CARPT 230"
+   },
+   {
+    "control_number": "40096",
+    "pages": [
+     220
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Certificate Requirements Course Code Course Title Units CARPT 101 Introduction to Apprenticeship II 1.5 CARPT 107 Rigging 1.5 CARPT 160 Blueprint Reading Basic 1.5 CARPT 162 Blueprint Reading Advanced 1."
+   },
+   {
+    "control_number": "40098",
+    "pages": [
+     186,
+     187,
+     188
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] Insulator Apprenticeship Certificate This program concentrates on training insulator apprentices to the specific levels required for the construction industry and has been approved by the State of Californi"
+   },
+   {
+    "control_number": "40099",
+    "pages": [
+     183,
+     184,
+     185,
+     186
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • The student must be a registered Elevator apprentice. Student Learning Outcomes Upon co"
+   },
+   {
+    "control_number": "40100",
+    "pages": [
+     172,
+     173,
+     174
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] Carpenter Apprenticeship Certificate This program concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Departme"
+   },
+   {
+    "control_number": "40110",
+    "pages": [
+     155
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] Course Code Course Title Units CARPT 164 Blueprint Reading Specialized Acoustical (1.5) CARPT 166 Acoustical Blueprint Reading Advanced (1.5) CARPT 190 Introduction to Welding (1.5) CARPT 211 Introduction"
+   },
+   {
+    "control_number": "40111",
+    "pages": [
+     174
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 174] Course Code Course Title Units Total Units: 17 Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • Be a registered Carpenter apprentice S"
+   },
+   {
+    "control_number": "40112",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] This drywall/lathing apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Department"
+   },
+   {
+    "control_number": "40113",
+    "pages": [
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 176] Drywall/Lathing Level II Certificate This certificate includes the training for drywall/lathing to meet the Division of Apprenticeship Standards (DAS) level II guidelines for the drywall/lathing apprentices"
+   },
+   {
+    "control_number": "40114",
+    "pages": [
+     177
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] Drywall/Lathing Level III Certificate This certificate includes the training for drywall/lathing to meet the Division of Apprenticeship Standards (DAS) level III guidelines for the drywall/lathing apprentic"
+   },
+   {
+    "control_number": "40332",
+    "pages": [
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] blueprint reading, commercial construction processes, building codes, estimation, welding, and proper scaffold erection. Degree Requirements Course Code Course Title Units A minimum of 21 units from the "
+   },
+   {
+    "control_number": "40536",
+    "pages": [
+     177,
+     178,
+     179
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] Electrical Apprenticeship Certificate This program provides instruction in the installation, operation, and maintenance of the electrical distribution systems in commercial and industrial sites. Topics incl"
+   },
+   {
+    "control_number": "40544",
+    "pages": [
+     157
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] • demonstrate proper selection, use, care, preparation, and handling of the drywall/lathing craftsman's tools of the trade. • analyze, interpret, and apply national building codes relating to the drywall/l"
+   },
+   {
+    "control_number": "40545",
+    "pages": [
+     157
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] • demonstrate proper selection, use, care, preparation, and handling of the drywall/lathing craftsman's tools of the trade. • analyze, interpret, and apply national building codes relating to the drywall/l"
+   },
+   {
+    "control_number": "40579",
+    "pages": [
+     157
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] • demonstrate proper selection, use, care, preparation, and handling of the drywall/lathing craftsman's tools of the trade. • analyze, interpret, and apply national building codes relating to the drywall/l"
+   },
+   {
+    "control_number": "40617",
+    "pages": [
+     188,
+     189,
+     190
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 188] Ironworkers Apprenticeship Certificate This program includes training for Field Ironworkers and Reinforcing Ironworkers, provided in major ironworker components to meet Division of Apprenticeship Standards "
+   },
+   {
+    "control_number": "40618",
+    "pages": [
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] Course Code Course Title Units INSTL 125 Turf and Rugmaking (1.5) INSTL 126 Custom Insets (1.5) A minimum of 16 units from the following: 16 CARPT 298 Work Experience in Carpenters Apprenticeship (0.5 -"
+   },
+   {
+    "control_number": "40619",
+    "pages": [
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] Course Code Course Title Units INSTL 125 Turf and Rugmaking (1.5) INSTL 126 Custom Insets (1.5) A minimum of 16 units from the following: 16 CARPT 298 Work Experience in Carpenters Apprenticeship (0.5 -"
+   },
+   {
+    "control_number": "40860",
+    "pages": [
+     162,
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The Sheet Metal Apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction industry and has been approved by the State of California Department of A"
+   },
+   {
+    "control_number": "40861",
+    "pages": [
+     216,
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 216] Sheet Metal Apprenticeship Level II Certificate A minimum of 4 units from the following: 4 SHME 298 Work Experience in Sheet Metal Apprenticeship (0.5 - 6) Total Units: 31 Enrollment Eligibility To be eli"
+   },
+   {
+    "control_number": "40864",
+    "pages": [
+     216,
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 216] Career Information Sheet metal technicians are in high demand. The sheet metal industry is not able to hire the amount of certified employees needed to fill the workforce and meet the needs of the industry"
+   },
+   {
+    "control_number": "40865",
+    "pages": [
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] blueprint reading, commercial construction processes, building codes, estimation, welding, and proper scaffold erection. Degree Requirements Course Code Course Title Units A minimum of 21 units from the "
+   },
+   {
+    "control_number": "41038",
+    "pages": [
+     397,
+     398,
+     399,
+     400
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 397] A.S.-T. in Business Administration 2.0 The Associate in Science in Business Administration 2.0 for Transfer (AS-T) program provides students with a major that fulfills the general requirements for transfer "
+   },
+   {
+    "control_number": "41294",
+    "pages": [
+     799,
+     800,
+     801,
+     802
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 799] environmental studies, provides many unique opportunities for hands-on and real-world field experience, and prepares students for a variety of entry-level positions in the area of environmental sciences and"
+   },
+   {
+    "control_number": "41295",
+    "pages": [
+     799,
+     800,
+     801,
+     802
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 799] environmental studies, provides many unique opportunities for hands-on and real-world field experience, and prepares students for a variety of entry-level positions in the area of environmental sciences and"
+   },
+   {
+    "control_number": "41296",
+    "pages": [
+     799,
+     800,
+     801,
+     802
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 799] environmental studies, provides many unique opportunities for hands-on and real-world field experience, and prepares students for a variety of entry-level positions in the area of environmental sciences and"
+   },
+   {
+    "control_number": "41297",
+    "pages": [
+     799,
+     800,
+     801,
+     802
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 799] environmental studies, provides many unique opportunities for hands-on and real-world field experience, and prepares students for a variety of entry-level positions in the area of environmental sciences and"
+   },
+   {
+    "control_number": "41503",
+    "pages": [
+     158
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] A.A. in Elevator Apprenticeship This program concentrates on training elevator apprentices to the specific levels required for the elevator industry and has been approved by the State of California Division"
+   },
+   {
+    "control_number": "41504",
+    "pages": [
+     182
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 182] Career Information Upon completion of this certificate, students may find employment in the following sectors: government, residential and commercial construction, and utilities. Elevator Apprenticeship Le"
+   },
+   {
+    "control_number": "41505",
+    "pages": [
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 180] Elevator Apprenticeship Certificate This program concentrates on training elevator apprentices to the specific levels required for the elevator industry and has been approved by the State of California Divi"
+   },
+   {
+    "control_number": "41506",
+    "pages": [
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 180] Elevator Apprenticeship Certificate This program concentrates on training elevator apprentices to the specific levels required for the elevator industry and has been approved by the State of California Divi"
+   },
+   {
+    "control_number": "41507",
+    "pages": [
+     181,
+     182
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Course Code Course Title Units ELEVA 102 Elevator Hoistway Structures (3) ELEVA 103 Elevator Electrical Fundamentals (4) ELEVA 104 Elevator Electrical Theory and Application (3) ELEVA 105 Elevator Install"
+   },
+   {
+    "control_number": "41508",
+    "pages": [
+     182
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 182] Career Information Upon completion of this certificate, students may find employment in the following sectors: government, residential and commercial construction, and utilities. Elevator Apprenticeship Le"
+   },
+   {
+    "control_number": "41562",
+    "pages": [
+     562,
+     563,
+     564,
+     565
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 562] speaking and listening to produce clear, well structured texts on complex subjects, and express themselves fluently and spontaneously in their second language. Guided Pathways Milestone Certificate for Mul"
+   },
+   {
+    "control_number": "41563",
+    "pages": [
+     564,
+     565
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 564] • demonstrate background knowledge of and approaches of successful chefs and restaurateurs. Career Information This certificate supports course work in the hospitality management profession, including in m"
+   },
+   {
+    "control_number": "41564",
+    "pages": [
+     443,
+     444,
+     445,
+     446
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 443] • Meets the requirements under the selection procedures of participating California state agencies. • Engaged in learning a designated occupation and who has entered into a written apprentice agreement to p"
+   },
+   {
+    "control_number": "41565",
+    "pages": [
+     563,
+     564,
+     565
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 563] Course Code Course Title Units CISW 300 Web Publishing (3) Total Units: 21 Student Learning Outcomes Upon completion of this program, the student will be able to: • write formal academic essays as well"
+   },
+   {
+    "control_number": "42152",
+    "pages": [
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 218] Course Code Course Title Units Total Units: 9 Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • Be a registered sheet metal service tech"
+   },
+   {
+    "control_number": "42153",
+    "pages": [
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree may be obtained by completion of the required program, and either (a) the Local General Education Pattern or (b) the California General Educati"
+   },
+   {
+    "control_number": "42154",
+    "pages": [
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree may be obtained by completion of the required program, and either (a) the Local General Education Pattern or (b) the California General Educati"
+   },
+   {
+    "control_number": "42157",
+    "pages": [
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] The Sheet Metal Service Technician Apprenticeship certificate concentrates on training apprentices to the specific levels required for the construction and the heating, ventilation, and air conditioning (HV"
+   },
+   {
+    "control_number": "42424",
+    "pages": [
+     811,
+     812,
+     813,
+     814
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 811] A.S. in Pre-Health Occupations This degree prepares students interested in a variety of Allied Health occupations. The degree will prepare students with a rigorous course of study prior to selecting the pro"
+   },
+   {
+    "control_number": "42546",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 131] Financial Services Apprenticeship Certificate Taxation Certificate Division Dean: Kirsten Corbin Department Chair: Joel Halle Phone: (916) 484-8361 Email: ARCBUSClerk@arc.losrios.edu Associate Degree"
+   },
+   {
+    "control_number": "42725",
+    "pages": [
+     939,
+     940,
+     941,
+     942
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 939] Certificate Requirements Course Code Course Title Units ECE 330 Infant and Toddler Development 3 ECE 404 Children with Special Needs 3 SLPA 105 Articulation and Phonology for the SLPA 3 SLPA 110 Profess"
+   },
+   {
+    "control_number": "42734",
+    "pages": [
+     937,
+     938,
+     939,
+     940
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 937] SLPA Core Curriculum Certificate Certificate This certificate is designed for students with a bachelor's degree in the field of communication sciences and disorders. With the addition of this certificate, "
+   },
+   {
+    "control_number": "42735",
+    "pages": [
+     939,
+     940,
+     941,
+     942
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 939] Certificate Requirements Course Code Course Title Units ECE 330 Infant and Toddler Development 3 ECE 404 Children with Special Needs 3 SLPA 105 Articulation and Phonology for the SLPA 3 SLPA 110 Profess"
+   },
+   {
+    "control_number": "42736",
+    "pages": [
+     938,
+     939,
+     940,
+     941
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 938] Career Information Upon completion of the SLPA Core Curriculum Certificate and awarding of the Bachelor's degree in the field of Communication Sciences and Disorders, the student qualifies for for eligibil"
+   },
+   {
+    "control_number": "42859",
+    "pages": [
+     423,
+     424,
+     425
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 423] A.A.-T. in Communication Studies 2.0 Dean: Pam Chao Department Chair: Alisa Shubb Phone: (916) 484-8653 Email: askhb-LAC@arc.losrios.edu Associate Degree for Transfer A.A.-T. in Communication Studies"
+   },
+   {
+    "control_number": "42860",
+    "pages": [
+     442,
+     443
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 442] The enterprise mainframe system administration certificate provides the Related Supplemental Instruction (RSI) of a structured training program to develop individuals into journey-workers in the mainframe i"
+   },
+   {
+    "control_number": "42868",
+    "pages": [
+     442,
+     443
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 442] Enterprise Mainframe System Administration Certificate The enterprise mainframe system administration certificate provides the Related Supplemental Instruction (RSI) of a structured training program to dev"
+   },
+   {
+    "control_number": "42885",
+    "pages": [
+     441
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 441] • analyze security risks mitigation processes to identify, evaluate, prioritize, and prevent potential security threats. • critique plans to secure and manage physical and virtual infrastructures for legal "
+   },
+   {
+    "control_number": "43358",
+    "pages": [
+     366,
+     367,
+     368,
+     369
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 366] Student Learning Outcomes Upon completion of this program, the student will be able to: • diagnose and repair automotive major automotive components. • describe the relationship between automotive compone"
+   },
+   {
+    "control_number": "43381",
+    "pages": [
+     364,
+     365,
+     366,
+     367
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 364] Course Code Course Title Units AT 310 Heating and Air-Conditioning Systems 3 AT 311 Suspension and Steering Systems 3 AT 330 Automotive Electrical Systems 3 AT 331 Advanced Automotive Electrical Systems 3"
+   },
+   {
+    "control_number": "43606",
+    "pages": [
+     649,
+     650,
+     651,
+     652
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 649] This course provides opportunities to study contemporary topics in health which are not included in current offerings or which require emphasis beyond existing courses. HEED 495 Independent Studies in Heal"
+   },
+   {
+    "control_number": "43950",
+    "pages": [
+     355,
+     356,
+     357,
+     358
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 355] Automotive Collision Technology-Refinish Certificate Automotive Collision Technology-Structural Certificate Automotive Collision Technology-Non-Structural Certificate Dean: Gary Aguilar Department Chair: "
+   },
+   {
+    "control_number": "43951",
+    "pages": [
+     355,
+     356,
+     357,
+     358
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 355] Automotive Collision Technology-Structural Certificate Automotive Collision Technology-Non-Structural Certificate Dean: Gary Aguilar Department Chair: Galen Hartman Phone: (916) 484-8588 Email: MCT@ar"
+   },
+   {
+    "control_number": "44154",
+    "pages": [
+     516
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 516] Associate Degree A.A. in Liberal Studies for Elementary Teacher Education This is a multidisciplinary program designed for students planning to teach in the elementary school setting. The coursework provi"
+   },
+   {
+    "control_number": "44357",
+    "pages": [
+     435,
+     436
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 435] Course Code Course Title Units MATH 400 Calculus I (5) MATH 401 Calculus II (5) MATH 410 Introduction to Linear Algebra (3) Total Units: 27 The Game Engineering Associate in Science (A.S.) degree may be "
+   },
+   {
+    "control_number": "44412",
+    "pages": [
+     399,
+     400,
+     401,
+     402
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 399] certificate, Business Information Professional II certificate, and this degree. Students who complete this degree program will have met the requirements to earn the Business Information Professional I certi"
+   },
+   {
+    "control_number": "44413",
+    "pages": [
+     411,
+     412,
+     413,
+     414
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 411] Certificate Requirements Course Code Course Title Units BUS 100 English for the Professional 3 BUS 105 Business Mathematics (3) 3 or MATH 300 Introduction to Mathematical Ideas (3) BUSTEC 101 Computer Key"
+   },
+   {
+    "control_number": "44446",
+    "pages": [
+     394,
+     395,
+     396
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 394] A.S. in Biomedical Equipment Technology Biomedical Equipment Technology Certificate Dean: Gary Aguilar Department Chair: Jordan Meyer Phone: (916) 484-8588 Email: askhb-mct@arc.losrios.edu Associate "
+   },
+   {
+    "control_number": "44531",
+    "pages": [
+     927,
+     928,
+     929,
+     930
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 927] work includes the twelve counselor core function applications in addiction screening: intake, assessment, orientation, counseling, crisis intervention, consultation, client's education, client's rights, con"
+   },
+   {
+    "control_number": "44962",
+    "pages": [
+     314,
+     315,
+     316,
+     317
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 314] Sculpture Certificate This certificate gives students the opportunity to study three- dimensional forms in depth. It offers training for further studies in sculpture. Topics include assemblage, figure sculp"
+   },
+   {
+    "control_number": "44999",
+    "pages": [
+     312,
+     313,
+     314,
+     315
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 312] Figure Study Certificate This program offers students an opportunity to study the figure in depth using both two-dimensional and three- dimensional forms. Topics include figure drawing, facial expression an"
+   },
+   {
+    "control_number": "45960",
+    "pages": [
+     183,
+     184,
+     185,
+     186
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • The student must be a registered Elevator apprentice. Student Learning Outcomes Upon co"
+   },
+   {
+    "control_number": "45961",
+    "pages": [
+     184,
+     185,
+     186,
+     187
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] Hardwood Floor Layer Level I Certificate This program concentrates on training hardwood floor layer apprentices to the specific levels required for the construction industry and has been approved by the Sta"
+   },
+   {
+    "control_number": "45962",
+    "pages": [
+     185,
+     186,
+     187,
+     188
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] Hardwood Floor Layer Level II Certificate This program concentrates on training hardwood floor layer apprentices to the specific levels required for the construction industry and has been approved by the St"
+   },
+   {
+    "control_number": "45963",
+    "pages": [
+     185,
+     186,
+     187,
+     188
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] Hardwood Floor Layer Level II Certificate This program concentrates on training hardwood floor layer apprentices to the specific levels required for the construction industry and has been approved by the St"
+   },
+   {
+    "control_number": "45977",
+    "pages": [
+     186,
+     187,
+     188
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] Insulator Apprenticeship Certificate This program concentrates on training insulator apprentices to the specific levels required for the construction industry and has been approved by the State of Californi"
+   },
+   {
+    "control_number": "45978",
+    "pages": [
+     187,
+     188
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 187] Student Learning Outcomes Upon completion of this program, the student will be able to: • demonstrate safe working practices in a field construction environment. • demonstrate proper selection, use, care, "
+   },
+   {
+    "control_number": "45997",
+    "pages": [
+     164,
+     165
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] A.A. in Steamfitter Apprenticeship This degree includes the training for steamfitter apprentices to meet the Division of Apprenticeship Standards (DAS) journey worker guidelines for the steamfitter apprenti"
+   },
+   {
+    "control_number": "45998",
+    "pages": [
+     220,
+     221,
+     222,
+     223
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Steamfitter Apprenticeship Certificate This certificate includes the training for steamfitter apprentices to meet the Division of Apprenticeship Standards (DAS) journey worker guidelines for the steamfitter"
+   },
+   {
+    "control_number": "45999",
+    "pages": [
+     164,
+     165
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] • analyze, interpret, and apply national building codes relating to sheet metal and mechanical construction. • analyze and interpret residential and commercial construction blueprints. • demonstrate the pr"
+   },
+   {
+    "control_number": "46000",
+    "pages": [
+     223,
+     224,
+     225,
+     226
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 223] Student Learning Outcomes Upon completion of this program, the student will be able to: • discuss the role the steamfitter plays in a safe work site. • demonstrate all the major safety responsibilities of t"
+   },
+   {
+    "control_number": "46001",
+    "pages": [
+     224,
+     225,
+     226,
+     227
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] Student Learning Outcomes Upon completion of this program, the student will be able to: • discuss the role the steamfitter plays in a safe work site. • demonstrate all the major safety responsibilities of t"
+   },
+   {
+    "control_number": "46005",
+    "pages": [
+     220,
+     221,
+     222,
+     223
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Steamfitter Apprenticeship Certificate This certificate includes the training for steamfitter apprentices to meet the Division of Apprenticeship Standards (DAS) journey worker guidelines for the steamfitter"
+   },
+   {
+    "control_number": "46012",
+    "pages": [
+     165
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] A.A. in Welder Apprenticeship This degree includes the training for plumber, pipefitter, and steamfitter welders to meet the Division of Apprenticeship Standards (DAS) journey worker guidelines for the plum"
+   },
+   {
+    "control_number": "46013",
+    "pages": [
+     225,
+     226,
+     227,
+     228
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 225] Welder Apprenticeship Certificate This certificate includes the training for plumber, pipefitter, and steamfitter welders to meet the Division of Apprenticeship Standards (DAS) journey worker guidelines for"
+   },
+   {
+    "control_number": "46014",
+    "pages": [
+     225,
+     226,
+     227,
+     228
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 225] Welder Apprenticeship Certificate This certificate includes the training for plumber, pipefitter, and steamfitter welders to meet the Division of Apprenticeship Standards (DAS) journey worker guidelines for"
+   },
+   {
+    "control_number": "46015",
+    "pages": [
+     165
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] • interpret technical drawings and piping and plumbing diagrams in orthographic and isometric views. • apply the uses and applications of Computer Aided Drafting (CAD). • identify methods of joining pipes "
+   },
+   {
+    "control_number": "46016",
+    "pages": [
+     228,
+     229
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • Student must be a registered Welder apprentice. Student Learning Outcomes Upon completi"
+   },
+   {
+    "control_number": "46017",
+    "pages": [
+     229
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • Student must be a registered Welder apprentice. Student Learning Outcomes Upon completi"
+   },
+   {
+    "control_number": "46363",
+    "pages": [
+     329,
+     330,
+     331,
+     332
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 329] A.A. in Animation This degree emphasizes art and animation principles ultimately produced in a digital environment, combining technology with a strong foundation in traditional visual art principles. Stude"
+   },
+   {
+    "control_number": "46364",
+    "pages": [
+     434,
+     435
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 434] A.S. in Game Engineering This degree provides a transferable foundation in game engineering. Technical topics range from core programming, the â€œglueâ€⯑ holding the game together, to the visible, user-fac"
+   },
+   {
+    "control_number": "46434",
+    "pages": [
+     399,
+     400,
+     401,
+     402
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 399] A.S. in Business Information Technology The Associate in Science Business Information Technology degree provides general knowledge in business and in-depth knowledge of a variety of business technology appl"
+   },
+   {
+    "control_number": "46503",
+    "pages": [
+     381,
+     382,
+     383,
+     384
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 381] A.S.-T. in Biology 2.0 A.S. in Biotechnology A.S. in General Science Biotechnology Certificate Dean: Joel Keebler Phone: (916) 484-8107 Email: askhb-STEM@arc.losrios.edu Associate Degrees for Transfe"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 0,
+ "seconds": 425.3,
+ "found": 368,
+ "by_method": {
+  "no_closed_list": 3,
+  "pdf_pages": 368
+ },
+ "shared_pages": {
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=666": [
+   "04514",
+   "20097"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=698": [
+   "04516",
+   "11554"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=398": [
+   "04518",
+   "07199"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=743": [
+   "04521",
+   "20103",
+   "35636"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749": [
+   "04523",
+   "07200"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=476": [
+   "04528",
+   "20113"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491": [
+   "04533",
+   "18005",
+   "35644",
+   "35645"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=355": [
+   "04535",
+   "19361",
+   "43950",
+   "43951"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155": [
+   "04536",
+   "40110"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157": [
+   "04537",
+   "40544",
+   "40545",
+   "40579"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969": [
+   "04540",
+   "12675",
+   "15613",
+   "35262"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=577": [
+   "04554",
+   "20131"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630": [
+   "04570",
+   "11564",
+   "20134"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635": [
+   "04571",
+   "11565",
+   "20138"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=588": [
+   "04572",
+   "20143"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675": [
+   "04579",
+   "07230",
+   "12659",
+   "20133"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=131": [
+   "07196",
+   "17117",
+   "20101",
+   "42546"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=482": [
+   "07209",
+   "16734"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=520": [
+   "07210",
+   "15615",
+   "20116"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362": [
+   "07213",
+   "12250",
+   "20119"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=364": [
+   "07215",
+   "43381"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=370": [
+   "07216",
+   "07217",
+   "37400"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=770": [
+   "07223",
+   "35294"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=926": [
+   "07231",
+   "07232",
+   "20142"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162": [
+   "11548",
+   "20127",
+   "39451",
+   "40332",
+   "40860",
+   "40865"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771": [
+   "11553",
+   "14255"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=500": [
+   "11557",
+   "14477",
+   "31052"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=634": [
+   "11563",
+   "20137"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=637": [
+   "11566",
+   "20139"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=833": [
+   "11994",
+   "20130"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=382": [
+   "12110",
+   "20100"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159": [
+   "12154",
+   "40618",
+   "40619"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=438": [
+   "12181",
+   "20108"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=401": [
+   "12186",
+   "20104",
+   "35641"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505": [
+   "12189",
+   "12190"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=432": [
+   "12237",
+   "12239"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=613": [
+   "12268",
+   "20144"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=754": [
+   "12377",
+   "30823"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=330": [
+   "12448",
+   "31583",
+   "37404"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=335": [
+   "12449",
+   "37405"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=334": [
+   "12450",
+   "37403"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=333": [
+   "12451",
+   "37399"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=345": [
+   "12686",
+   "20114"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=445": [
+   "14337",
+   "14339"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=948": [
+   "14464",
+   "14465"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=957": [
+   "14466",
+   "35934"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=369": [
+   "14470",
+   "37938"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=525": [
+   "14520",
+   "15605"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=145": [
+   "14684",
+   "33203"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=163": [
+   "14999",
+   "42153",
+   "42154"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434": [
+   "15325",
+   "16946",
+   "20109",
+   "46364"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741": [
+   "17372",
+   "20140"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=645": [
+   "19772",
+   "37899"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=484": [
+   "20115",
+   "20117"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=367": [
+   "20120",
+   "30420"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=172": [
+   "20121",
+   "40100"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=177": [
+   "20122",
+   "40114",
+   "40536"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=175": [
+   "20124",
+   "40112"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=188": [
+   "20126",
+   "40617"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=217": [
+   "20128",
+   "42157"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=493": [
+   "30020",
+   "37889"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=537": [
+   "30021",
+   "30022"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=665": [
+   "30023",
+   "30024"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=139": [
+   "30268",
+   "30984"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=394": [
+   "30567",
+   "44446"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=313": [
+   "30842",
+   "35925"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=541": [
+   "31031",
+   "35289",
+   "35290"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=332": [
+   "31537",
+   "31560"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=366": [
+   "35075",
+   "43358"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=561": [
+   "35348",
+   "35356"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=381": [
+   "35620",
+   "46503"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=494": [
+   "35642",
+   "37892"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=160": [
+   "37687",
+   "39338",
+   "39595"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=169": [
+   "38640",
+   "39057"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=166": [
+   "39255",
+   "39340"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167": [
+   "39256",
+   "39389",
+   "39663",
+   "39666",
+   "39668"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=161": [
+   "39275",
+   "39339"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211": [
+   "39341",
+   "39448",
+   "39731",
+   "39732"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=195": [
+   "39590",
+   "39591"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=171": [
+   "39593",
+   "39594"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=213": [
+   "39661",
+   "39665"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=196": [
+   "40094",
+   "40095"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=220": [
+   "40096",
+   "45998",
+   "46005"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=186": [
+   "40098",
+   "45977"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=183": [
+   "40099",
+   "45960"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216": [
+   "40861",
+   "40864"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799": [
+   "41294",
+   "41295",
+   "41296",
+   "41297"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=182": [
+   "41504",
+   "41508"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=180": [
+   "41505",
+   "41506"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=939": [
+   "42725",
+   "42735"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=442": [
+   "42860",
+   "42868"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399": [
+   "44412",
+   "46434"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=185": [
+   "45962",
+   "45963"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=164": [
+   "45997",
+   "45999"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=165": [
+   "46012",
+   "46015"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=225": [
+   "46013",
+   "46014"
+  ]
+ },
+ "not_found": [],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 23,
+  "0.8-1.0": 56,
+  "1.0": 289
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/american_river",
+  "kept": 367,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "07230",
+    "title": "Hospitality Management: Culinary Arts/Restaurant Management",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ]
+ },
+ "run": "39049026449"
+}

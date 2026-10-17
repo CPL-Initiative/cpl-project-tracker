@@ -1,0 +1,196 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "46086",
+ "shape": "certificate",
+ "title": "Cardiovascular Technologist",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=232",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11154,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11154,
+    "output_tokens": 1171,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1171,
+  "output_tokens_details": {
+   "thinking_tokens": 284
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06804,
+ "ms": 11147,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "CVT100",
+    "CVT101",
+    "CVT102",
+    "CVT103",
+    "CVT106",
+    "CVT107",
+    "CVT108",
+    "CVT110",
+    "CVT112",
+    "CVT114",
+    "CVT116",
+    "CVT118"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 2 \nHours, 36 hours, 3 \nHours, 162 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Programs of Study – Cardiovascular Technologist",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CVT100",
+    "why": "certificate requirements not in the text; named only as a corequisite in course descriptions"
+   },
+   {
+    "code": "CVT101",
+    "why": "certificate requirements not in the text; only the tail of its course description appears"
+   },
+   {
+    "code": "CVT102",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT103",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT106",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT107",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT108",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT110",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT112",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT114",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT116",
+    "why": "certificate requirements not in the text; only its course description appears"
+   },
+   {
+    "code": "CVT118",
+    "why": "certificate requirements not in the text; only its course description appears"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 232-234) holds only the Cardiovascular Technologist course descriptions, starting mid-description of what appears to be CVT 101, followed by the start of the Chemistry section. The Certificate of Achievement requirements table, total units, program description, outcomes and careers are not in the text; they are likely on an earlier page (around page 230-231). No blocks were recorded.",
+   "Course descriptions print units for CVT 102 (2), CVT 103 (3), CVT 106 (4), CVT 107 (4), CVT 108 (2), CVT 110 (5), CVT 112 (5), CVT 114 (4), CVT 116 (2), CVT 118 (5); these were not placed in blocks because no requirements list appears.",
+   "CVT 299 and CVT 499 (experimental offerings) appear in the course descriptions but not in the closed list; not recorded because they are not part of any requirements list in the text.",
+   "The Chemistry A.S. in Chemical Technology section at the end belongs to a different program and was ignored."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

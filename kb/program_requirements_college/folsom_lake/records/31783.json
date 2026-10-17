@@ -1,0 +1,305 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "31783",
+ "shape": "degree",
+ "title": "Medical Laboratory Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11792,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11792,
+    "output_tokens": 2323,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2323,
+  "output_tokens_details": {
+   "thinking_tokens": 835
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09363,
+ "ms": 19716,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "MEDTEC323",
+    "MEDTEC330",
+    "MEDTEC340",
+    "MEDTEC350",
+    "MEDTEC360",
+    "MEDTEC361",
+    "MEDTEC362",
+    "MEDTEC363"
+   ],
+   "flagged": [
+    "MEDTEC323",
+    "MEDTEC330",
+    "MEDTEC340",
+    "MEDTEC350",
+    "MEDTEC360",
+    "MEDTEC361",
+    "MEDTEC362",
+    "MEDTEC363"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     42.0
+    ],
+    "stated": [
+     42.0,
+     42.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Medical Laboratory Technician",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "pass the nationally recognized certification examination.",
+    "apply appropriate quality control procedures and recognize and interpret erroneous results for any applicable medium-complexity laboratory testing process.",
+    "describe the principles, the clinical significance, and critical values of applicable medium-complexity clinical laboratory test results.",
+    "demonstrate safe use and disposal of biohazardous materials, and the proper methods of specimen preparation.",
+    "assess sample quality and cite any pre-analytical variables in testing.",
+    "demonstrate successful venipunctures and skin punctures on patients from a variety of age groups with a variety of medical conditions.",
+    "exhibit professional and committed delivery of excellent health care."
+   ],
+   "careers": [
+    "clinical laboratories",
+    "industry",
+    "biotechnology",
+    "Medical Laboratory Technicians",
+    "Laboratory Assistants",
+    "Research Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEDTEC 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 323",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 324",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 325",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 330",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 340",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 350",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 361",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 362",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 363",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 0 units from the following",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "MEDTEC 311",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 312",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The phlebotomy block prints 'A minimum of 0 units from the following: 01'; read as 0 units with footnote 1. Footnote: students holding a valid California CPT-1 certificate need not take MEDTEC 311 or 312; students without CPT-1 are required by the State to take both MEDTEC 311 and MEDTEC 312.",
+   "The required core sums to 42 units, matching the printed 'Total Units: 42'; MEDTEC 311/312 (4 units) are not counted in that total.",
+   "degree_total 60 is taken from the sentence that this A.S. degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; reviewer may check whether this should count as the award's printed total.",
+   "Enrollment prerequisites (CHEM, BIOL, STAT, COMM, AH 311 etc.) are eligibility criteria, not degree requirements, and were not placed in blocks.",
+   "Career Information also names 'Medical Laboratory Technician' (singular) as an entry-level position; recorded via the plural form from the description."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

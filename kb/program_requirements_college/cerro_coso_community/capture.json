@@ -1,0 +1,1663 @@
+{
+ "college": "Cerro Coso Community College",
+ "catalog_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 80,
+ "with_closed_list": 74,
+ "started": "2026-10-17T15:51:20Z",
+ "pdf": {
+  "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+  "access": "hand_filed",
+  "status": null,
+  "bytes": 8604112,
+  "pages_total": 212,
+  "error": null,
+  "chars_total": 948483,
+  "pypdf_accepted": 65,
+  "sample": [
+   "p64: '\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n\\u2009\\n'",
+   "p128: ' \\n  \\n  \\n \\n \\n \\n  \\n  \\n \\n \\n \\n   \\n \\n \\n   \\n \\n  \\n \\n  \\n  \\n  \\n  \\n  \\n \\n \\n  \\n \\n  \\n  \\n   \\n  \\n   \\n \\n \\n \\n \\n  \\n \\n \\n  \\n \\n \\n \\n \\n   \\n  \\n   \\nCERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog \\n\\uf06e Perform basic computer tasks using hardware \\nand soŌ ware funcƟon'"
+  ],
+  "extractor": "pypdf",
+  "hand_filed": {
+   "college": "Cerro Coso Community College",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+   "fetched_by": "Sam Lee",
+   "fetched_at": "2026-10-17",
+   "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214",
+   "file": null,
+   "copy_url": "https://github.com/user-attachments/files/33599445/2026-2027-catalog.pdf",
+   "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its robots.txt disallows the catalog PDF to readers. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+   "addenda": []
+  },
+  "picks": [
+   {
+    "control_number": "01930",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] Management Associate in Science Degree The Management Associate in Science Degree (60 units total, 32 units in the major) is designed to provide students with the management skills necessary to succeed in "
+   },
+   {
+    "control_number": "01946",
+    "pages": [
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog a counselor for more informaƟon about the Prerequisite Challenge process. Complete all of the following courses: "
+   },
+   {
+    "control_number": "01980",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] "
+   },
+   {
+    "control_number": "10976",
+    "pages": [
+     80,
+     81
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Business Associate in Science Degree The Business Associate in Science Degree (60 units total, 25 units in the major) is designed to develop skills for an increasingly challenging business environment. This "
+   },
+   {
+    "control_number": "10977",
+    "pages": [
+     95,
+     96,
+     97,
+     98
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.625,
+    "opens": "[page 95] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog Courses Note: Some courses within the major may have a required prerequisite. If you feel you have equi"
+   },
+   {
+    "control_number": "11577",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog identify the courses needed for the major at your transfer school and to develop a plan that will best meet your goals. You m"
+   },
+   {
+    "control_number": "11578",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog identify the courses needed for the major at your transfer school and to develop a plan that will best meet your goals. You m"
+   },
+   {
+    "control_number": "11579",
+    "pages": [
+     84,
+     85,
+     86
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Child Development Master Teacher Certificate of Achievement The Child Development Master Teacher Certificate of Achievement (33 units) is designed to provide students with a complete educational foundation t"
+   },
+   {
+    "control_number": "11580",
+    "pages": [
+     84
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog CHDV C102 Teaching Young Children ............................3 Units IntroducƟon to Materials and Curriculum "
+   },
+   {
+    "control_number": "15576",
+    "pages": [
+     112,
+     113
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 112] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog transfer school and to develop a plan that will best meet your goals. You must complete a minimum"
+   },
+   {
+    "control_number": "18917",
+    "pages": [
+     116,
+     117
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog applied to careers in sociology, social work, law, business, politics, education, criminology, and h"
+   },
+   {
+    "control_number": "18952",
+    "pages": [
+     80,
+     81
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Business Certificate of Achievement The Business Certificate of Achievement (25 units) is designed to develop skills for an increasingly challenging MATH C130 Finite Mathema Ɵ cs ............................"
+   },
+   {
+    "control_number": "18953",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog or STAT C1000H Introduc Ɵon to StaƟsƟ cs Honors ...............5 OPTION B Cal-GETC – California General Educa Ɵ on "
+   },
+   {
+    "control_number": "20632",
+    "pages": [
+     64,
+     65,
+     66
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.5,
+    "opens": "[page 64] "
+   },
+   {
+    "control_number": "20640",
+    "pages": [
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 122] Vocational Nursing Certificate of Achievement Vocational Nursing Certificate of Achievement (43 units): This course of study is an intensive program totaling 1,662 hours approved by the Board of Vocational "
+   },
+   {
+    "control_number": "30766",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog ADST C111X Addic Ɵon Studies Field Experience Seminar ................................"
+   },
+   {
+    "control_number": "30793",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 102] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog requirements, with an overall GPA of 2.0 or better, and a grade of “A,” “B,” or “C,” in all courses for t"
+   },
+   {
+    "control_number": "31066",
+    "pages": [
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] Welding Processes Certificate of Achievement Welding Processes Certificate of Achievement (12 units): This certificate provides a focus on the major welding and cutting processes for building or upgrading s"
+   },
+   {
+    "control_number": "31159",
+    "pages": [
+     112,
+     113
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 112] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog transfer school and to develop a plan that will best meet your goals. You must complete a minimum"
+   },
+   {
+    "control_number": "31540",
+    "pages": [
+     120,
+     121
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 120] Studio Arts Associate in Arts Degree for Transfer (AA-T) The Associate in Arts Degree in Studio Arts for Transfer (60 units total, 24 units in major) prepares students for transfer to complete work for a ba"
+   },
+   {
+    "control_number": "31855",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.867,
+    "opens": "[page 106] Medical Assisting Associate in Science Degree Medical Assisting Associate of Science Degree (60 units total, 32 units in the major) is designed around the Model Curriculum established by the California Comm"
+   },
+   {
+    "control_number": "31961",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 106] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog Area B PHYS C111 Mechanics ..................................................5 STAT C1000 Introduc Ɵon to StaƟsƟ"
+   },
+   {
+    "control_number": "31962",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 107] Administrative Medical Assisting Certificate of Achievement (20.5 units) is designed around the Model Curriculum established by the California Community Colleges Chancellor’s Office for preparation for the "
+   },
+   {
+    "control_number": "32606",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog identify the courses needed for the major at your transfer school and to develop a plan that will best meet your goals. You m"
+   },
+   {
+    "control_number": "33516",
+    "pages": [
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Welding Technology Certificate of Achievement Welding Technology Certificate of Achievement (23 units): This course of study trains students in multiple welding processes and is designed to prepare them for"
+   },
+   {
+    "control_number": "33715",
+    "pages": [
+     141,
+     142,
+     143
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 141] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog contributions of Native Americans to the cultures of the Americas. This course is cross-listed with ETHN C141. ANTH C161 A/CSU/UC 3.00 Units Anthropolog"
+   },
+   {
+    "control_number": "33718",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog the requirements of this degree and that all required courses for the degree must be transferable to CSU. Th"
+   },
+   {
+    "control_number": "33776",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Data Analyst I Certificate of Achievement The Data Analyst I Certificate of Achievement (12 units): The purpose of this certificate is to prepare students for positions in data collection, data processing, a"
+   },
+   {
+    "control_number": "33889",
+    "pages": [
+     97,
+     98
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog or cerƟﬁcaƟon, you have the opportunity to submit a Prerequisite Challenge to be reviewed by the faculty ch"
+   },
+   {
+    "control_number": "35195",
+    "pages": [
+     88,
+     89,
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 88] Cyber Security Technology Associate in Science The Cyber Security Associate in Science Degree (60 units  Apply problem-solving, programming, and total, 31 units in the major) prepares students for careers ap"
+   },
+   {
+    "control_number": "35273",
+    "pages": [
+     88,
+     89,
+     90
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 88] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog and others required under state cerƟﬁcaƟon veriﬁcaƟon to substanƟate the basis for the challeng"
+   },
+   {
+    "control_number": "38665",
+    "pages": [
+     117,
+     118
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] Sociology Associate in Arts Degree for Transfer (AA-T) An Associate in Arts in Sociology for Transfer Degree (60 units total, 19 units in the major) prepares students for transfer to the CSU system to earn "
+   },
+   {
+    "control_number": "38666",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 99] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog KINS C123 SoŌ ball .......................................................1 List A: Select two courses (mi"
+   },
+   {
+    "control_number": "38705",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.762,
+    "opens": "[page 65] "
+   },
+   {
+    "control_number": "40250",
+    "pages": [
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 108] Medical Billing Certificate of Achievement The Medical Billing Certificate (17 units) is designed around the national American Academy of Professional Coder’s (AAPC) Certified Professional Biller (CPB) cur"
+   },
+   {
+    "control_number": "40447",
+    "pages": [
+     97,
+     98
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] The Linux Operating System Certificate of Achievement (16 units) is designed to develop skills needed to support systems running on increasingly popular operating systems, such as Linux. Linux operating syst"
+   },
+   {
+    "control_number": "40448",
+    "pages": [
+     96,
+     97,
+     98
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog Information Technology Certificate of Achievement The Information Technology Certificate of Ach"
+   },
+   {
+    "control_number": "40449",
+    "pages": [
+     109
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 109] Medical Coding Certificate of Achievement The Medical Coding Certificate (22 units) is designed around the national American Academy of Professional Coder’s (AAPC) Certified Professional Coder (CPC) curric"
+   },
+   {
+    "control_number": "40707",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Entrepreneurship Certificate of Achievement The Entrepreneurship Certificate of Achievement (13 Units) provides students with the fundamental knowledge necessary for starting a business. Students learn how "
+   },
+   {
+    "control_number": "40868",
+    "pages": [
+     118
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] Spanish Associate in Arts Degree for Transfer (AA-T) The Spanish Associate in Arts Degree for Transfer (60 units total, 22-25 units in the major) prepares students for transfer to the CSU system to earn a b"
+   },
+   {
+    "control_number": "40922",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 99] Law, Public Policy, and Society Associate in Arts Degree for Transfer (AA-T) An Associate in Arts Degree in Law, Public Policy, and Society for Transfer (60 units total, 33 units in the major) is designed t"
+   },
+   {
+    "control_number": "40972",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Digital Media and Marketing Certificate of Achievement Digital Media and Marketing Certificate of Achievement (12 units): The purpose of this certificate is to equip individuals from the broader business com"
+   },
+   {
+    "control_number": "41968",
+    "pages": [
+     76,
+     77
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 76] Addiction Counseling Studies Certificate of Achievement The Addiction Counseling Studies Certificate of Achievement (37 units) is designed to prepare individuals for counseling in alcohol, drug, and other ad"
+   },
+   {
+    "control_number": "42678",
+    "pages": [
+     104,
+     105,
+     106
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 104] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog or STAT C1000H Introduc Ɵon to StaƟsƟ cs Honors ...............5 OPTION B Cal-GETC – California General Educa Ɵ on "
+   },
+   {
+    "control_number": "43206",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] Nutrition and Dietetics Associate in Science Degree for Transfer (AS-T) The Associate of Science Degree for Transfer in Nutrition and Dietetics (60 units total, 23 in the major) is designed to prepare stude"
+   },
+   {
+    "control_number": "43663",
+    "pages": [
+     127
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog OpƟonal Endorsements can be added, which include the following CTD C804 CTD C805 Passenger Endorsement ."
+   },
+   {
+    "control_number": "43671",
+    "pages": [
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Addiction Counseling Studies Associate in Science The Addiction Counseling Studies Associate in Science Degree (60 units total, 37 units in the major) is designed to prepare students for careers focused on t"
+   },
+   {
+    "control_number": "44085",
+    "pages": [
+     87,
+     88,
+     89
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog IT C130X Professional Informa Ɵon Complete one of the following general education patterns: "
+   },
+   {
+    "control_number": "44097",
+    "pages": [
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 110] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog Challenge to be reviewed by the Department Chair. For the Prerequisite Challenge to be "
+   },
+   {
+    "control_number": "44364",
+    "pages": [
+     86,
+     87,
+     88,
+     89
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Computer Applications Specialist Associate of Science Degree The Computer Applications Specialist Associate of Science Degree (60 units total, 26 units in the major) is designed to develop integrated applica"
+   },
+   {
+    "control_number": "44450",
+    "pages": [
+     110,
+     111
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.893,
+    "opens": "[page 110] The Registered Nursing Associate in Science Degree (ADN) (79 units total, 53 units in the major) is designed to prepare students for careers as registered nurses. Upon successful completion of the program, "
+   },
+   {
+    "control_number": "44598",
+    "pages": [
+     131,
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog Academy ACAD C070 A 0.50 Unit Advanced Oﬃ cer Training I Limitation on Enrollment: Enrollment is limited per Government Code 1029 and 1031. Must complet"
+   },
+   {
+    "control_number": "44726",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] Office Skills: Word and Excel Certificate of Completion The Word and Excel Office Skills Certificate of Completion (72 hours, non-credit) is designed to provide students with skills in basic features and op"
+   },
+   {
+    "control_number": "44727",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] Office Skills: PowerPoint and Outlook Certificate of Completion The PowerPoint and Outlook Office Skills Certificate of Completion (72 hours, non-credit) is designed to provide students with skills in basic"
+   },
+   {
+    "control_number": "44728",
+    "pages": [
+     116,
+     117,
+     118
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 116] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog applied to careers in sociology, social work, law, business, politics, education, criminology, and h"
+   },
+   {
+    "control_number": "44884",
+    "pages": [
+     113
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] Peace Officer Certificate of Achievement The Peace Officer Certificate of Achievement (30 Units) is designed to develop skills for state-certified police- officer appointments through a progressive sequence "
+   },
+   {
+    "control_number": "44885",
+    "pages": [
+     115
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] Reserve Officer Certificate of Achievement The Reserve Officer Certificate of Achievement (16 units) is designed to develop skills for state-certified, limited peace-officer appointments. Upon completion of"
+   },
+   {
+    "control_number": "44996",
+    "pages": [
+     176
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 176] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog incident response, security operations, and preventative controls. Topics include planning and requirements development, threat actors, threat "
+   },
+   {
+    "control_number": "45087",
+    "pages": [
+     126,
+     127
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Commercial Truck Driving Certificate of Competency Commercial Truck Driving Certificate of Completion (218 hours, non-credit) is designed to develop skills and knowledge to complete the California Class A C"
+   },
+   {
+    "control_number": "45235",
+    "pages": [
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] Sports Studies: Coaching Associate in Arts Degree The Sports Studies: Coaching Associate in Arts Degree (60 units total, 21 units in major) is designed to provide students with the foundational knowledge ne"
+   },
+   {
+    "control_number": "45236",
+    "pages": [
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog Complete the following general education pattern. OPTION B Cal-GETC – California General Educa Ɵ on Transfer C"
+   },
+   {
+    "control_number": "45237",
+    "pages": [
+     127
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Developing a Family Childcare Program Certificate of Competency Developing a Family Childcare Program Certificate of Competency (108 hours, non-credit) is designed to assist students in applying for licensi"
+   },
+   {
+    "control_number": "46220",
+    "pages": [
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 162] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog FFT C073 A 1.00 Unit Wildland Fire Chainsaw Advisory: FFT C050, FFT C051, FFT C052, FFT C053, FFT C054 Repeat Status: Not repeatable Grading op"
+   },
+   {
+    "control_number": "46361",
+    "pages": [
+     161,
+     162,
+     163,
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 161] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog FFT C051 A 0.50 Unit IntroducƟon to Wildland Fire Behavior Repeatability Status: Not repeatable Grading Option: P/NP only 8 hours lecture. This course"
+   },
+   {
+    "control_number": "46375",
+    "pages": [
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.667,
+    "opens": "[page 162] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog FFT C073 A 1.00 Unit Wildland Fire Chainsaw Advisory: FFT C050, FFT C051, FFT C052, FFT C053, FFT C054 Repeat Status: Not repeatable Grading op"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 0,
+ "seconds": 33.6,
+ "found": 65,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 9,
+  "pdf_pages": 65
+ },
+ "shared_pages": {
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104": [
+   "01930",
+   "18953",
+   "42678"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=125": [
+   "01946",
+   "31066"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65": [
+   "01980",
+   "38705"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80": [
+   "10976",
+   "18952"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82": [
+   "11577",
+   "11578",
+   "32606"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84": [
+   "11579",
+   "11580"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112": [
+   "15576",
+   "31159"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116": [
+   "18917",
+   "44728"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76": [
+   "30766",
+   "41968"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106": [
+   "31855",
+   "31961"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=126": [
+   "33516",
+   "45087"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=97": [
+   "33889",
+   "40447"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88": [
+   "35195",
+   "35273"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99": [
+   "38666",
+   "40922"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=127": [
+   "43663",
+   "45237"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110": [
+   "44097",
+   "44450"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=128": [
+   "44726",
+   "44727"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=119": [
+   "45235",
+   "45236"
+  ],
+  "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=162": [
+   "46220",
+   "46375"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "01933",
+   "title": "Business Office Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=147",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "18915",
+   "title": "Human Services",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+    "coverage": 0.364
+   }
+  },
+  {
+   "control_number": "20629",
+   "title": "Business Office Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=147",
+    "coverage": 0.105
+   }
+  },
+  {
+   "control_number": "31064",
+   "title": "Office Clerk",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "31065",
+   "title": "Administrative Office Assistant",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "32777",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "41740",
+   "title": "Industrial Process Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=194",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "46168",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=197",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "46179",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=197",
+    "coverage": 0.286
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 13,
+  "1.0": 40
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 65,
+  "list": [
+   {
+    "control_number": "01930",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01946",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01980",
+    "title": "General Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10976",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10977",
+    "title": "CC Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=95",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11577",
+    "title": "Child Development Associate Teacher",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11578",
+    "title": "Child Development Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11579",
+    "title": "Child Development Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11580",
+    "title": "Child Development Site Supervisor",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15576",
+    "title": "Paralegal Studies",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18917",
+    "title": "Social Work and Human Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18952",
+    "title": "Business",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18953",
+    "title": "Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20632",
+    "title": "CC Information Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=64",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20640",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=122",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30766",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30793",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=102",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31066",
+    "title": "Welding Processes",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31159",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31540",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=120",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31855",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31961",
+    "title": "Clinical Medical Assisting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31962",
+    "title": "Administrative Medical Assisting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=107",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32606",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33516",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33715",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=141",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33718",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33776",
+    "title": "Data Analyst I",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=89",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33889",
+    "title": "Information Technology Plus",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35195",
+    "title": "Cyber Security Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35273",
+    "title": "Cyber Security Technology -",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38665",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38666",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38705",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40250",
+    "title": "Medical Billing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=108",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40447",
+    "title": "Linux Operating System",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40448",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=96",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40449",
+    "title": "Medical Coding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=109",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40707",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40868",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40922",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40972",
+    "title": "Digital Media and Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41968",
+    "title": "Addiction Counseling Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42678",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=104",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43206",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43663",
+    "title": "English as a Second Language for the Workforce",
+    "award": "Noncredit program",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43671",
+    "title": "Addiction Counseling Studies",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44085",
+    "title": "Computer Application Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44097",
+    "title": "Microsoft Applications Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44364",
+    "title": "Computer Applications Specialist",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44450",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+    "coverage": 0.893,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44598",
+    "title": "Corrections Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44726",
+    "title": "Word and Excel Office Skills",
+    "award": "Noncredit program",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44727",
+    "title": "PowerPoint and Outlook Office Skills",
+    "award": "Noncredit program",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44728",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44884",
+    "title": "Peace Officer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44885",
+    "title": "Reserve Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=115",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44996",
+    "title": "Computer Basics",
+    "award": "Noncredit program",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45087",
+    "title": "Commercial Truck Driving",
+    "award": "Noncredit program",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45235",
+    "title": "Sports Studies: Coaching",
+    "award": "A.A. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45236",
+    "title": "Sports Studies: Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45237",
+    "title": "Developing a Family Childcare Program",
+    "award": "Noncredit program",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46220",
+    "title": "Forestry Conservation",
+    "award": "A.S. Degree",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=162",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46361",
+    "title": "Wildland Firefighter Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=161",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46375",
+    "title": "Forestry Conservation Technician I",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=162",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39046789844"
+}

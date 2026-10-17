@@ -1,0 +1,342 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "40325",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=162",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11856,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11856,
+    "output_tokens": 2927,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2927,
+  "output_tokens_details": {
+   "thinking_tokens": 1005
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10596,
+ "ms": 23388,
+ "seconds": 23.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BIOL410",
+    "BIOL420"
+   ],
+   "flagged": [
+    "BIOL410",
+    "BIOL420"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    42.0
+   ],
+   "stated": [
+    41.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S.-T. in Environmental Science",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply acquired knowledge, skills, and abilities toward successful completion of coursework at transfer institutions.",
+    "demonstrate knowledge of the language, facts, and concepts that serve as the foundation for working independently on more complex problems.",
+    "employ appropriate information-gathering tools to investigate scientific matters.",
+    "clearly communicate scientific information, both orally and in written form, to diverse audiences.",
+    "demonstrate laboratory and field habits consistent with accepted practices for safety, documentation, and core techniques.",
+    "analyze data sets, recognize the implications of disturbances to biological systems, and synthesize information to draw conclusions.",
+    "differentiate between scientifically-derived knowledge, myth, and conjecture in professional or everyday encounters with information.",
+    "recognize and discuss ethical implications of environmental science research when encountered in personal, community, and scientific issues.",
+    "engage in free exchange of ideas to support creative problem solving.",
+    "evaluate former and proposed human activities, and, if necessary, recommend alternative actions that are environmentally sustainable."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 410",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL 420",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 341",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 400",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 4 units from the following: Geography plus lab",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geography or Geology",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOG 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 4 units from the following: Geology plus lab",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geography or Geology",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 8 units from the following: PHYS 350 and 360",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 350",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 8 units from the following: PHYS 411 and 421",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 421",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CHEM 401 is printed with units '51'; read as 5 units with footnote 1. Footnote: 'Students may also complete BIOL 410 and 420 instead of CHEM 401'. BIOL 410 and BIOL 420 are recorded as alternatives to CHEM 401 (catalog additions, no units printed in the footnote); both must be taken together to replace CHEM 401.",
+   "MATH 341 row prints '(4) 4 - 5' reflecting the MATH 400 (5) alternative; MATH 341 recorded at its own 4 units with MATH 400 at 5.",
+   "Geography/Geology and Physics choices are recorded as sequence blocks in option groups; the printed block totals (4 and 8) are put on each sequence block.",
+   "The page says the AS-T 'may be obtained by completion of 60 transferable, semester units' including the major and Cal-GETC; this is the standard ADT requirement in prose, not a printed degree total, so degree_total is left null. No Cal-GETC units are printed.",
+   "Program SLOs are printed for this A.S.-T.; the A.S. in Biological Sciences prints a nearly identical list (differing in 'biological research')."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

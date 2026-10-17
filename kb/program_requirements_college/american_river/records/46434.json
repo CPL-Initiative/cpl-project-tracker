@@ -1,0 +1,405 @@
+{
+ "college": "American River College",
+ "control_number": "46434",
+ "shape": "degree",
+ "title": "Business Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11553,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11553,
+    "output_tokens": 3410,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3410,
+  "output_tokens_details": {
+   "thinking_tokens": 1109
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11441,
+ "ms": 26967,
+ "seconds": 27.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 25,
+   "listed": 26,
+   "share": 0.962,
+   "missing": [
+    "ECON302"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CISA315",
+    "CISA340",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "CISA315",
+    "CISA340",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    46.5,
+    46.5
+   ],
+   "stated": [
+    46.5,
+    46.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Business Information Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 46.5,
+    "max": 46.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "local ARC General Education Requirement",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "demonstrate an understanding of major functional areas of business organizations including planning, management, marketing, and finance.",
+    "demonstrate an understanding of accounting as an information system and how it is used by investors, creditors, and others to make decisions and the recording and reporting of business transactions, generally accepted accounting principles, financial statements, and statement analysis.",
+    "demonstrate proficiency in advanced business technology applications and employ computer applications to create relevant business documents.",
+    "demonstrate proficiency in business administration and leadership skills needed to manage a multicultural workforce.",
+    "demonstrate customer service skills in a business environment and skills required to deliver a positive customer service experience.",
+    "compose effective oral and written communications in various business settings.",
+    "research, develop, evaluate, and test possible solutions using creativity, critical thinking, and technology skills."
+   ],
+   "careers": [
+    "customer service representatives",
+    "receptionists and information clerks",
+    "executive secretaries and executive administrative assistants",
+    "business analysts",
+    "technical support specialists",
+    "first-line supervisors of office and administrative support workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 325",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 126",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 300.1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 300.2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 300.3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISA 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 0.5 units from the following",
+    "rule": "choose_units",
+    "minimum": 0.5,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 0.5
+    },
+    "courses": [
+     {
+      "code": "BUSTEC 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "WEXP 498",
+        "units": 0.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 302",
+    "why": "not in the text; the catalog lists ECON C2002 Principles of Macroeconomics instead (likely common course numbering renumber)"
+   }
+  ],
+  "notes": [
+   "Superscript footnote markers were fused to units in the PDF text (e.g. 'BUSTEC 101 ... 11', 'BUSTEC 310 ... 35', 'CISA 315 ... 26'); read as units 1,1,1,1,3,2,2 with footnotes 1-7. These units sum with the other blocks to the printed Total Units 46.5.",
+   "Closed list code 'BUSTEC498' matched to catalog 'BUSTEC 498' (same course, spacing difference); not marked as a catalog addition.",
+   "WEXP 498 printed as 0.5 - 4 units; the alternative's units field records the low end 0.5.",
+   "BUSTEC 332 is titled 'Advanced Business Applications' in the catalog but 'Integrated Business Projects' in the closed list; check.",
+   "CISA 315 and CISA 340 are required but not in the closed list; recorded as catalog additions.",
+   "The page says the degree requires the program plus the local ARC General Education Requirement plus sufficient electives to meet a 60-unit total; no units printed for GE or electives, so electives_fill_degree is true and degree_total left null (60 stated only as the target in that sentence).",
+   "Footnotes name Folsom Lake College substitute courses (BUSTEC 307, 360, 362, 366); not recorded as alternatives."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

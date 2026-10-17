@@ -1,0 +1,344 @@
+{
+ "college": "Cosumnes River College",
+ "load_run": "39048319477",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T16:12:10Z",
+ "records": 217,
+ "posted": 182,
+ "batches": 8,
+ "inserted": 182,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "04586",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "04633",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07302",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07315",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07320",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11336",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11348",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20147",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20193",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20204",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20227",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33053",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35072",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35097",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35336",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35350",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35354",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35358",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35359",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35360",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35362",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35363",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35364",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35367",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35374",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35412",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36447",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37285",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37842",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39131",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39047009824"
+ ],
+ "machine_pass": 143,
+ "inserted_keys": [
+  "04584",
+  "04589",
+  "04593",
+  "04595",
+  "04596",
+  "04597",
+  "04600",
+  "04601",
+  "04602",
+  "04607",
+  "04609",
+  "04611",
+  "04614",
+  "04615",
+  "04616",
+  "04622",
+  "04623",
+  "04635",
+  "04637",
+  "04645",
+  "04648",
+  "07087",
+  "07088",
+  "07097",
+  "07288",
+  "07290",
+  "07291",
+  "07292",
+  "07294",
+  "07300",
+  "07305",
+  "07309",
+  "07312",
+  "07314",
+  "07319",
+  "11319",
+  "11320",
+  "11328",
+  "11338",
+  "11339",
+  "11340",
+  "11341",
+  "11343",
+  "11346",
+  "11347",
+  "12208",
+  "12260",
+  "12262",
+  "12667",
+  "12725",
+  "12726",
+  "12740",
+  "12742",
+  "12743",
+  "12789",
+  "12790",
+  "12791",
+  "12792",
+  "14268",
+  "14289",
+  "14387",
+  "14394",
+  "14396",
+  "15246",
+  "15249",
+  "15300",
+  "15306",
+  "15314",
+  "15326",
+  "17868",
+  "17869",
+  "17870",
+  "17871",
+  "18851",
+  "18902",
+  "19013",
+  "19854",
+  "20153",
+  "20178",
+  "20182",
+  "20187",
+  "20197",
+  "20200",
+  "20206",
+  "20215",
+  "20217",
+  "20220",
+  "20222",
+  "20224",
+  "20226",
+  "20367",
+  "22953",
+  "30426",
+  "30566",
+  "30575",
+  "30576",
+  "30720",
+  "30722",
+  "30852",
+  "31053",
+  "31054",
+  "31055",
+  "31311",
+  "31674",
+  "31780",
+  "31781",
+  "31913",
+  "31915",
+  "31916",
+  "31931",
+  "31993",
+  "31994",
+  "31995",
+  "31996",
+  "31997",
+  "31998",
+  "32569",
+  "33072",
+  "33457",
+  "33537",
+  "33542",
+  "33571",
+  "33931",
+  "35148",
+  "35175",
+  "35303",
+  "35357",
+  "35366",
+  "35375",
+  "35378",
+  "35379",
+  "35409",
+  "35410",
+  "35411",
+  "35413",
+  "35414",
+  "35552",
+  "35655",
+  "35657",
+  "35658",
+  "35871",
+  "35899",
+  "35900",
+  "35901",
+  "36525",
+  "36566",
+  "37242",
+  "37337",
+  "37837",
+  "37848",
+  "37891",
+  "38017",
+  "38021",
+  "38024",
+  "38381",
+  "38382",
+  "38750",
+  "39139",
+  "39146",
+  "39286",
+  "39354",
+  "39585",
+  "39606",
+  "39656",
+  "39679",
+  "40365",
+  "40421",
+  "40921",
+  "41712",
+  "41992",
+  "42403",
+  "42792",
+  "43894",
+  "44527",
+  "45203",
+  "45317",
+  "45615",
+  "45820",
+  "45827",
+  "46092",
+  "46139",
+  "46419"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Cosumnes River College' and checked = false and control_number in ('04584', '04589', '04593', '04595', '04596', '04597', '04600', '04601', '04602', '04607', '04609', '04611', '04614', '04615', '04616', '04622', '04623', '04635', '04637', '04645', '04648', '07087', '07088', '07097', '07288', '07290', '07291', '07292', '07294', '07300', '07305', '07309', '07312', '07314', '07319', '11319', '11320', '11328', '11338', '11339', '11340', '11341', '11343', '11346', '11347', '12208', '12260', '12262', '12667', '12725', '12726', '12740', '12742', '12743', '12789', '12790', '12791', '12792', '14268', '14289', '14387', '14394', '14396', '15246', '15249', '15300', '15306', '15314', '15326', '17868', '17869', '17870', '17871', '18851', '18902', '19013', '19854', '20153', '20178', '20182', '20187', '20197', '20200', '20206', '20215', '20217', '20220', '20222', '20224', '20226', '20367', '22953', '30426', '30566', '30575', '30576', '30720', '30722', '30852', '31053', '31054', '31055', '31311', '31674', '31780', '31781', '31913', '31915', '31916', '31931', '31993', '31994', '31995', '31996', '31997', '31998', '32569', '33072', '33457', '33537', '33542', '33571', '33931', '35148', '35175', '35303', '35357', '35366', '35375', '35378', '35379', '35409', '35410', '35411', '35413', '35414', '35552', '35655', '35657', '35658', '35871', '35899', '35900', '35901', '36525', '36566', '37242', '37337', '37837', '37848', '37891', '38017', '38021', '38024', '38381', '38382', '38750', '39139', '39146', '39286', '39354', '39585', '39606', '39656', '39679', '40365', '40421', '40921', '41712', '41992', '42403', '42792', '43894', '44527', '45203', '45317', '45615', '45820', '45827', '46092', '46139', '46419');"
+}

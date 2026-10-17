@@ -1,0 +1,301 @@
+{
+ "college": "American River College",
+ "control_number": "04540",
+ "shape": "degree",
+ "title": "Welding Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11684,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11684,
+    "output_tokens": 2355,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2355,
+  "output_tokens_details": {
+   "thinking_tokens": 753
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09384,
+ "ms": 18920,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.5,
+    38.0
+   ],
+   "stated": [
+    34.5,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 15,
+   "courses": 0,
+   "count": 15,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Welding Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 34.5,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "select the correct electrode classification and parameters for various material thicknesses and welding positions on ferrous and nonferrous metals.",
+    "define principles of GMAW.",
+    "interpret GMAW electrode classification and specification.",
+    "describe GMAW welding operations of various joint designs using selected electrodes on different positions.",
+    "describe SMAW operations of various positions using selected electrodes on different joint designs.",
+    "define principles of arc welding.",
+    "select correct electrode amperage settings for the job application.",
+    "identify GTAW principles and safe welding practices.",
+    "define GTAW applications and limitations.",
+    "explain the reason for the formation of each discontinuity type and identify different discontinuities.",
+    "interpret fabrication blueprints using a systematic process.",
+    "interpret graphic welding symbols.",
+    "relate the requirements for welding ferrous and nonferrous metals.",
+    "select the appropriate setting and application methods.",
+    "list the methods used for discontinuity prevention and identify surface defects in welds."
+   ],
+   "careers": [
+    "oil refineries",
+    "nuclear power plants",
+    "aerospace",
+    "structural buildings",
+    "bridge construction",
+    "auto industry",
+    "small commercial fabricating shops"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WELD 301",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 316",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 333",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 334",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 1 unit from the following courses",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "WELD 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 115",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 298",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The final row prints 'WELD 155 Industry Training (3) 0.5 - 41 or WELD 115 (2) or WELD 298 (0.5 -4)'; the trailing '1' is read as a footnote marker, giving a printed range of 0.5-4 units, with footnote 1: 'A minimum of 1 unit from the following courses.' The footnote's 1-unit minimum conflicts with the printed 0.5 low end and the 34.5 total low end; reviewer should check.",
+   "Required courses sum to 34 units; with the 0.5-4 unit choice this matches the printed Total Units: 34.5 - 38.",
+   "The page says the A.S. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; no degree total figure is printed for this award, so degree_total is null and electives_fill_degree is true.",
+   "Careers taken from the Career Information paragraph following the A.S. section; certificate career paragraphs were not used."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

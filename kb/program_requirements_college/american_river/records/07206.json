@@ -1,0 +1,392 @@
+{
+ "college": "American River College",
+ "control_number": "07206",
+ "shape": "degree",
+ "title": "CIS: Microcomputer Applications",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=429",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12144,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12144,
+    "output_tokens": 3059,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3059,
+  "output_tokens_details": {
+   "thinking_tokens": 911
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10976,
+ "ms": 23717,
+ "seconds": 24.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 32,
+   "share": 0.625,
+   "missing": [
+    "BUSTEC126",
+    "BUSTEC127",
+    "BUSTEC3001",
+    "CISA126",
+    "CISA127",
+    "CISA305",
+    "CISA306",
+    "CISA315",
+    "CISA316",
+    "CISA320",
+    "CISA322",
+    "CISA330"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 20.0-20.0; the catalog states 37.0-37.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in CIS: Microcomputer Applications",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "design and manage database tables, queries and forms.",
+    "produce reports for use in a typical business environment.",
+    "evaluate the basic computing needs of a business by developing associated documentation and presentations.",
+    "create spreadsheet formulas and manipulate business data.",
+    "compose and format typical business communications documents according to industry standards.",
+    "combine data from different software applications into one document.",
+    "compose simple computer programs using basic logic.",
+    "apply file management techniques in organizing computer data."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements (table continued from page 428)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISA 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 306",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 323",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 370",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 5 units from the following",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ACCT 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 351",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ACCT 343",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 331",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 305",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 480",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 370",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSTEC 126",
+    "why": "not in the provided Microcomputer Applications text; likely on page 428 (start of table not included)"
+   },
+   {
+    "code": "BUSTEC 127",
+    "why": "not in the provided Microcomputer Applications text; likely on page 428 (start of table not included)"
+   },
+   {
+    "code": "BUSTEC 300.1",
+    "why": "not in the text; possibly on page 428 (start of table not included)"
+   },
+   {
+    "code": "CISA 126",
+    "why": "named only in the A.S. Information Technology Technician section in the provided text; Microcomputer Applications table start (page 428) not included"
+   },
+   {
+    "code": "CISA 127",
+    "why": "named only in the A.S. Information Technology Technician section in the provided text; table start on page 428 not included"
+   },
+   {
+    "code": "CISA 305",
+    "why": "named only in the A.S. Information Technology Technician section in the provided text; table start on page 428 not included"
+   },
+   {
+    "code": "CISA 306",
+    "why": "not in the text; likely on page 428 (start of table not included)"
+   },
+   {
+    "code": "CISA 315",
+    "why": "named only in other degree sections in the provided text; table start on page 428 not included"
+   },
+   {
+    "code": "CISA 316",
+    "why": "not in the text; likely on page 428 (start of table not included)"
+   },
+   {
+    "code": "CISA 320",
+    "why": "named only in other degree sections in the provided text; table start on page 428 not included"
+   },
+   {
+    "code": "CISA 322",
+    "why": "named only in the A.S. Database Management section in the provided text; table start on page 428 not included"
+   },
+   {
+    "code": "CISA 330",
+    "why": "not in the text; likely on page 428 (start of table not included)"
+   }
+  ],
+  "notes": [
+   "The provided text begins mid-table on page 429; the section heading, program description, possible career information, and the first rows of the requirements table are on page 428, which is not included. The first block is therefore incomplete; the listed courses (19 units shown) do not reach the stated Total Units: 37.",
+   "Section heading not printed in the provided text; 'A.A. in CIS: Microcomputer Applications' is inferred from the closing paragraph naming 'The CIS: Microcomputer Applications Associate in Arts (A.A.) degree'.",
+   "Closed list stores 'CISC305' (no space); catalog prints 'CISC 305', treated as the same course.",
+   "Degree is completed with Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; recorded as electives_fill_degree true. degree_total left null since this is the college's standard 60-unit boilerplate rather than a printed award total; reviewer may check.",
+   "No career information printed in the provided portion for this award."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

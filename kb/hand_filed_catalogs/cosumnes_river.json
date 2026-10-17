@@ -5,6 +5,8 @@
  "fetched_at": "2026-10-17",
  "catalog_year": "2026-2027",
  "copy_url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf",
- "sha256": "",
- "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader 404 (since 2026-10-08). cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17."
+ "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc",
+ "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader 404 (since 2026-10-08). cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+ "bytes": 4515038,
+ "pinned_run": "39046626740"
 }

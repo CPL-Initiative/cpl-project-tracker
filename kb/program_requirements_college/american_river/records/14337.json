@@ -1,0 +1,293 @@
+{
+ "college": "American River College",
+ "control_number": "14337",
+ "shape": "certificate",
+ "title": "Web Developer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=445",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8755,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8755,
+    "output_tokens": 1948,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1948,
+  "output_tokens_details": {
+   "thinking_tokens": 545
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07398,
+ "ms": 16458,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    27.0
+   ],
+   "stated": [
+    25.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Web Developer Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze how an interactive web application is developed using static web pages, forms, client-side scripts, server-side scripts, subroutine or class libraries, and relational databases.",
+    "evaluate informational or business needs that could benefit from a web application and design an appropriate web application that address those needs.",
+    "create and debug scripts in at least one client-side and at least one server-side scripting language.",
+    "construct embedded Structured Query Language (SQL) commands to access, display, modify, add, and delete information via a web application.",
+    "integrate graphic principles and programming functionality with a web application.",
+    "demonstrate basic use of both Linux and Windows Operating System command-line interface.",
+    "devise or choose efficient algorithms for the solution of problems using the control structures of structured programming.",
+    "design software using object-oriented methods to develop event driven programs for both applets and applications."
+   ],
+   "careers": [
+    "web-based programming",
+    "web application development"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISC 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 323",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 324",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 300",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "CISP 360",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 370",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 401",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 480",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISW 400",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 370",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CISW 304",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 355",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CISW 410 is printed both as a required course and as an option in the 'minimum of 4 units' list; recorded in both blocks as printed. A reviewer should check whether the elective list entry is a catalog error (perhaps CISW 400 intended).",
+   "The CISP 300 row prints '3 - 5' as the range for the choice among CISP 300/360/370/401/480; recorded as units 3, units_max 5 with each alternative's own units.",
+   "The 'Career Information' list on page 446 belongs to the Web Publishing (Front-End) Certificate, not this award, so it was not used; careers are taken from this certificate's description.",
+   "Web Publishing (Front-End) Certificate section that follows was ignored."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

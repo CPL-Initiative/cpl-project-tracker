@@ -1,0 +1,332 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "31855",
+ "shape": "degree",
+ "title": "Medical Assisting",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11952,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11952,
+    "output_tokens": 2682,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2682,
+  "output_tokens_details": {
+   "thinking_tokens": 950
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10145,
+ "ms": 21181,
+ "seconds": 21.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 15,
+   "share": 0.867,
+   "missing": [
+    "HCRSCC134",
+    "ITC75"
+   ],
+   "unexplained": [
+    "HCRSCC134"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BSOTC75",
+    "HCRSC134",
+    "HCRSC142"
+   ],
+   "flagged": [
+    "BSOTC75",
+    "HCRSC142"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cerro Coso Local General Education Pattern (Option A) or Cal-GETC (Option B) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     32.0,
+     32.0
+    ],
+    "stated": [
+     32.0,
+     32.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cerro Coso Local General Education Pattern (Option A) or Cal-GETC (Option B)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Research online and traditional reference materials effectively to stay informed about emerging trends and breakthroughs in healthcare issues related to the medical assistant’s role in healthcare.",
+    "Perform medical assisting procedures competently, such as OSHA standards, electronic technologies, and medical records.",
+    "Achieve entry level medical assisting competencies, such as verbal communication, medical and surgical aseptic, basic banking procedures, medical insurance, and physical assessments which satisfy industry needs.",
+    "Identify State of California regulations that govern the healthcare industry for medical assistants.",
+    "Exhibit depth and breadth of knowledge of concepts and principles of medical assisting."
+   ],
+   "careers": [
+    "medical assisting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Medical Assisting Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSOT C075",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HCRS C130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C131",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C132",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administrative Medical Assisting",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSOT C121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT C123",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C142",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Clinical Medical Assisting",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HCRS C136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C138",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C139",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C143",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "IT C075",
+    "why": "not in the text; catalog prints Computer Literacy as BSOT C075 (recorded as catalog addition)"
+   }
+  ],
+  "notes": [
+   "Total from '(60 units total, 32 units in the major)': 32 recorded as total_units, 60 as degree_total. Block units sum to 32.",
+   "Closed-list codes with spacing variants (BSOTC121, BSOTC123, HCRSC 130, HCRSC 131, HCRSC 132, HCRSC 143, HCRSC 150, HCRSC C134) were matched to catalog codes BSOT C121, BSOT C123, HCRS C130, HCRS C131, HCRS C132, HCRS C143, HCRS C150, HCRS C134.",
+   "BSOT C075 Computer Literacy matches the title of closed-list IT C075; reviewer should confirm whether it is the same course under a different subject.",
+   "HCRS C142 Medical Assistant Administrative Externship is not in the closed list.",
+   "GE: student completes either Option A Cerro Coso Local GE Pattern or Option B Cal-GETC; no GE units printed.",
+   "Outcome text had PDF ligature extraction artifacts (e.g. 'tradiƟ onal', 'eﬀecƟvely'); recorded with the intended characters restored ('traditional', 'effectively'). Outcome 3 prints 'medical and surgical aseptic' as is.",
+   "The Administrative and Clinical certificates on following pages share the same course blocks but were not read for this record."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

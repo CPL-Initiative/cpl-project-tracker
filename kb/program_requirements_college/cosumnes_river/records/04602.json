@@ -1,0 +1,278 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "04602",
+ "shape": "degree",
+ "title": "Management Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11860,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11860,
+    "output_tokens": 2607,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2607,
+  "output_tokens_details": {
+   "thinking_tokens": 1152
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09958,
+ "ms": 23932,
+ "seconds": 24.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 12,
+   "share": 0.583,
+   "missing": [
+    "BUS300",
+    "CISC310",
+    "MATH341",
+    "MATH343",
+    "MATH400"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "STATC1000E"
+   ],
+   "flagged": [
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    31.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 27.0-27.0; the catalog states 31.0-32.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Management Information Systems (heading not in the supplied text; inferred)",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply fundamental information and communication technology concepts in various types of organizational settings (PSLO #01).",
+    "Organize data sets by using spreadsheet application software in various types of organizational settings (PSLO #02).",
+    "Apply fundamental accounting concepts and principles to decision-making processes in various organizational settings (PSLO #03).",
+    "Apply fundamental economics concepts and principles to decision-making processes in various organizational settings (PSLO #04).",
+    "Apply fundamental legal concepts and principles to decision-making processes in various organizational settings (PSLO #05).",
+    "Use statistical and mathematical methods to support decision-making processes in various organizational settings (PSLO #6)."
+   ],
+   "careers": [
+    "Applications Software Specialist",
+    "Business Operations Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "2nd Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "3rd Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 311",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "4th Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISP 370",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 300",
+    "why": "not in the text; the 1st Semester rows appear to be on page 248, which was not supplied"
+   },
+   {
+    "code": "CISC 310",
+    "why": "not in the text; the 1st Semester rows appear to be on page 248, which was not supplied"
+   },
+   {
+    "code": "MATH 343",
+    "why": "not in the text; likely part of the math group cut off before page 249"
+   },
+   {
+    "code": "MATH 341",
+    "why": "named only in footnote 1 as recommended; its row in the math group is cut off before page 249"
+   },
+   {
+    "code": "MATH 400",
+    "why": "appears only as an 'or MATH 400 Calculus I (5)' row at the top of page 249; the row it alternates with and its group are cut off at the page break"
+   }
+  ],
+  "notes": [
+   "The supplied text begins mid-section on page 249: the program heading, description and the 1st Semester requirements (including the math group with MATH 341/MATH 343/MATH 400) are cut off and were not recorded. A reviewer should check page 248.",
+   "Footnote 1 says MATH 341 is recommended but other courses in the group also meet the second MATH course requirement for CSU Sacramento transfer.",
+   "Degree text: 'completion of the required program, and either (a) the Local General Education Pattern or (b) Cal-GETC, plus sufficient electives for a total of at least 60 units.' Recorded electives_fill_degree true; degree_total left null because the 60 units is stated as a minimum in a general degree sentence rather than a printed award total.",
+   "STAT C1000E is not in the closed list (catalog_addition true).",
+   "Career Information list appears truncated: it ends 'Applications Software Specialist; Business Operations Manager;' and runs directly into the A.S. in Web Developer heading."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

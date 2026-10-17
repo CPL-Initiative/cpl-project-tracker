@@ -1,0 +1,351 @@
+{
+ "college": "American River College",
+ "control_number": "20141",
+ "shape": "certificate",
+ "title": "Social Work",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11196,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11196,
+    "output_tokens": 2026,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2026,
+  "output_tokens_details": {
+   "thinking_tokens": 378
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0853,
+ "ms": 15095,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 18,
+   "share": 0.556,
+   "missing": [
+    "HSER300",
+    "HSER310",
+    "HSER330",
+    "HSER340",
+    "HSER360",
+    "HSER362",
+    "HSER365",
+    "HSER498"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "SWCD300",
+    "SWCD310",
+    "SWCD330",
+    "SWCD340",
+    "SWCD360",
+    "SWCD362",
+    "SWCD365",
+    "SWCD498"
+   ],
+   "flagged": [
+    "SWCD300",
+    "SWCD310",
+    "SWCD330",
+    "SWCD340",
+    "SWCD360",
+    "SWCD362",
+    "SWCD365",
+    "SWCD498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Work Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "define the functions of social service delivery systems.",
+    "analyze public policy issues, complexities and controversies affecting social service agencies and their clients.",
+    "integrate different theoretical approaches in working with clients.",
+    "identify the community resources used in assisting clients.",
+    "appraise and apply the knowledge of existing California professional codes of ethics for the helping professions.",
+    "describe the application of clients' rights in the social service delivery system.",
+    "evaluate one's own values and attitudes as they apply to ethical decision making.",
+    "demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, social justice, and inclusion."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HEED 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 305",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 481",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 480",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 400",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 2 units from the following",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "SWCD 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HSER 300",
+    "why": "catalog prints renumbered SWCD 300 (formerly HSER 300)"
+   },
+   {
+    "code": "HSER 310",
+    "why": "catalog prints renumbered SWCD 310 (formerly HSER 310)"
+   },
+   {
+    "code": "HSER 330",
+    "why": "catalog prints renumbered SWCD 330 (formerly HSER 330)"
+   },
+   {
+    "code": "HSER 340",
+    "why": "catalog prints renumbered SWCD 340 (formerly HSER 340)"
+   },
+   {
+    "code": "HSER 360",
+    "why": "catalog prints renumbered SWCD 360 (formerly HSER 360)"
+   },
+   {
+    "code": "HSER 362",
+    "why": "catalog prints renumbered SWCD 362 (formerly HSER 362)"
+   },
+   {
+    "code": "HSER 365",
+    "why": "catalog prints renumbered SWCD 365 (formerly HSER 365)"
+   },
+   {
+    "code": "HSER 498",
+    "why": "catalog prints renumbered SWCD 498 (formerly HSER 498)"
+   }
+  ],
+  "notes": [
+   "The catalog uses SWCD course codes; the closed list still names the former HSER codes. SWCD courses are recorded as catalog additions and the HSER codes listed in missing_explained.",
+   "SWCD 365 is printed with units '31'; read as 3 units with footnote 1 (must be taken prior to or as corequisite with SWCD 362 and 498).",
+   "The Student Learning Outcomes follow the certificate on page 929 under 'Upon completion of this program'; recorded as this certificate's outcomes.",
+   "No careers are named in the certificate section; career roles mentioned only in the SWCD 300 course description were not recorded."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

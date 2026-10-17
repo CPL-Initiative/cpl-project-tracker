@@ -1,0 +1,533 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "15484",
+ "shape": "degree",
+ "title": "International Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=465",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9320,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9320,
+    "output_tokens": 4159,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4159,
+  "output_tokens_details": {
+   "thinking_tokens": 1219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12046,
+ "ms": 32635,
+ "seconds": 33.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 37,
+   "listed": 47,
+   "share": 0.787,
+   "missing": [
+    "ECON302",
+    "GREEK401",
+    "GREEK402",
+    "HIST311",
+    "HIST484",
+    "IS494277440",
+    "ITAL401",
+    "ITAL402",
+    "PRSIAN401",
+    "PRSIAN402"
+   ],
+   "unexplained": [
+    "IS494277440"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ECONC2002",
+    "HISTC1002",
+    "HISTC1002H",
+    "IS494"
+   ],
+   "flagged": [
+    "ECONC2002",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.5,
+    33.0
+   ],
+   "stated": [
+    29.5,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in International Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "evaluate, examine, and explain the role of the individual and society within the context of global interdependence.",
+    "formulate a critical understanding of social, political, and economic global issues and problems within a global context that is relevant to local experience.",
+    "evaluate, analyze, and critique various social science and humanities perspectives that explain human and environmental history in a global context.",
+    "investigate, analyze, and describe the causes and consequences of economic, political, and cultural globalization through a variety of social science perspectives.",
+    "detect, analyze, and discuss human difference, including difference based on socio-economic, political, cultural, and geographic status.",
+    "investigate, analyze, and discuss the effects of power imbalance in social and political contestation, historically and contemporaneously, with a focus on the experiences of actors who wield relatively less power in specific global contexts.",
+    "demonstrate basic oral and writing skills in a second language."
+   ],
+   "careers": [
+    "Foreign Service",
+    "Governmental Relations",
+    "Public Affairs",
+    "International Trade",
+    "Civil Service",
+    "Lobbying",
+    "Law",
+    "Fiscal Analysis",
+    "Teaching",
+    "Non-Governmental Organizations",
+    "Language Specialization",
+    "International Advocacy",
+    "International Consultancy"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 481",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IS 494",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 480",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Foreign Language (two semesters) - A minimum of 8 units from the following",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ARABIC 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARABIC 402",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CANT 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PNJABI 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PNJABI 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TGLG 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TGLG 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 302",
+    "why": "not in the text; catalog prints ECON C2002 (Principles of Macroeconomics) in its place"
+   },
+   {
+    "code": "HIST 311",
+    "why": "not in the text; catalog prints HIST C1002 (United States History since 1865) in its place"
+   },
+   {
+    "code": "HIST 484",
+    "why": "not in the text; catalog prints HIST C1002H (honors) in its place"
+   },
+   {
+    "code": "GREEK 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "GREEK 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "PRSIAN 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "PRSIAN 402",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Closed-list code 'IS494277440' (Topics in International Studies) is read as the catalog's IS 494; recorded with catalog_addition false. Reviewer should confirm.",
+   "The language block total is printed as '81': read as 8 units with footnote 1 ('Student must choose only 1 language to fulfill the 8 unit requirement').",
+   "Language courses are listed individually rather than as 'or' alternatives so the 8-unit, one-language rule can be met: Arabic, Korean, Punjabi, Tagalog and Vietnamese are printed as '401 and 402' pairs; Cantonese, French, Japanese, Mandarin and Russian are printed as 401 or 402 or 411 or 412 (two semesters of the same language).",
+   "The degree text says the program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; recorded as electives_fill_degree true, with no degree_total printed for this award.",
+   "Description also mentions 'The ISP core courses (30 units)'; the printed Total Units is 29.5 - 33.",
+   "IS 494 course description states its units cannot be counted toward the minimum 60 units required for admissions (UC transfer note)."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

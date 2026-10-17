@@ -1,0 +1,434 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "12260",
+ "shape": "certificate",
+ "title": "Early Childhood Education - Master Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=303",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12138,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12138,
+    "output_tokens": 3689,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3689,
+  "output_tokens_details": {
+   "thinking_tokens": 1076
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12233,
+ "ms": 27555,
+ "seconds": 28.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 31,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ECE331"
+   ],
+   "flagged": [
+    "ECE331"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    53.0,
+    53.0
+   ],
+   "stated": [
+    53.0,
+    53.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education - Master Teacher Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 53,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "(Development and Learning) Analyze and synthesize research and theories to support development and learning. Evaluate and implement developmentally appropriate and culturally relevant approaches to teaching and learning which support the whole child including foundational skills and concepts in language and literacy, math, science, art, health and wellness, and social relationships.",
+    "(Equity and Cultural Sustainability) Construct knowledge based on the principles of anti-bias education in order to design environments that promote justice, equity and inclusion for all children, families, and communities.",
+    "(Professionalism) Develop competencies, professional skills, and plans for professional growth. Integrate reflective practices to support professional growth as an Early Childhood professional. Understand and integrate the NAEYC Code of Ethics to support children, families, and other educators.",
+    "(Observation, Documentation and Assessment) Utilize authentic assessment strategies based on observation, reflection, documentation, and interpretation of childrenâ€™s development to inform teaching practices.",
+    "(Family Engagement) Incorporate strategies for building respectful and reciprocal relationships with families, children and the community in order to support children's development and learning. Develop knowledge and skills to provide a responsive curriculum and learning environment that reflects the children and the families in the program.",
+    "(Leadership) Understanding and commitment to leadership development that empowers, encourages, cultivates, and supports self and others to become agents of change and advocate for high-quality early care and education experiences for all children, support for families, and professional stature of educators."
+   ],
+   "careers": [
+    "master teacher",
+    "supervising teacher",
+    "lead teacher",
+    "mentor teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 404",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 415",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 424",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 16 units from the following",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 300",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 371",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 310",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 420",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VIET 401",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "DEAF 310",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Curriculum, Specialization Option",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECE 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 343",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Infant and Toddler Care, Specialization Option",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECE 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "School-Age Care, Specialization Option",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECE 356",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints 'Subtotal Units: 47' for the core plus 16-unit general education list, and 'Total Units: 53' after each specialization option; total_units recorded as 53.",
+   "Students select one Master Teacher specialization (6 units); the three specialization options are recorded as blocks in option_group 'Specialization'.",
+   "School-Age Care option lists ECE 356 and ECE 350 with no choose rule and 'Specialization Option Units: 6'; read as both required.",
+   "The 16-unit list (ENGL C1000, MATH, FCS/PSYC, HUM/PHIL/PHOTO, SPAN/VIET/DEAF) is printed as part of the certificate requirements for the permit's general education requirement, so it is recorded as a block; catalog requires at least one course in each of English Communication, Mathematical Concepts/Natural Sciences, Social and Behavioral Sciences, Arts and Humanities.",
+   "ECE 331 (Care and Education of Infants and Toddlers) is not in the closed list; recorded as catalog addition.",
+   "Outcomes copied without the 'PSLO n:' labels; the parenthetical area names are kept. 'childrenâ€™s' is copied as printed (text-encoding artifact for children's).",
+   "Career list taken from the Career Information section of the Master Teacher certificate."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

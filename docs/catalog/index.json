@@ -15619,8 +15619,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 377,
+   "count": 378,
    "docs": [
+    {
+     "created": "2026-10-17",
+     "governs": [],
+     "n": 407,
+     "path": "docs/session_407_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "hand-filed",
+      "display-build",
+      "ui-pass",
+      "decision-sheet"
+     ],
+     "title": "Session 407 handoff: the eight hand-filed catalogs loaded, Sheet 90, MAP Export's UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-17",
      "governs": [],
@@ -22109,5 +22128,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1160
+ "total": 1161
 }

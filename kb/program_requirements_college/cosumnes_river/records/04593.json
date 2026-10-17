@@ -1,0 +1,352 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "04593",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=121",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12573,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12573,
+    "output_tokens": 3906,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3906,
+  "output_tokens_details": {
+   "thinking_tokens": 1395
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12841,
+ "ms": 28147,
+ "seconds": 28.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 16,
+   "share": 0.875,
+   "missing": [
+    "ACCT125",
+    "ACCT153"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ACCT123",
+    "ACCT341",
+    "ACCT498"
+   ],
+   "flagged": [
+    "ACCT123",
+    "ACCT341",
+    "ACCT498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     36.0,
+     36.0
+    ],
+    "stated": [
+     36.0,
+     36.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Accounting",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "SYNTHESIZE GENERAL ACCOUNTING THEORY AND PRACTICE INTO FINANCIAL RECORDS This includes the ability to: A. Demonstrate a firm understanding and working knowledge of basic accounting terminology and the process by which transactions are analyzed and transformed into financial statements. B. Compute, classify, record, and verify numerical date, both manually and with computing equipment, in order to develop and maintain financial records.",
+    "ANALYZE BUSINESS INFORMATION AND INFER THE RESOLUTION OF KEY ISSUES (ANALYTICAL SKILLS) This includes the ability to: A. Demonstrate intelligent interpretation and use of financial statements in managing and analyzing business operations. B. Demonstrate the ability to identify key issues, research relevant data, and think critically, and analytically about the possible solutions for the financial problem encountered.",
+    "COMPOSE EFFECTIVE ACCOUNTING INFORMATION DOCUMENTS AND COMMUNICATE THEM TO APPROPRIATE USERS (COMMUNICATION SKILLS) This includes the ability to: A. Create accurate, professional, and appropriate accounting documents and reports for the business entity served. B. Receive and process written and oral financial information and prepare the appropriate response for management, investor, clients, or other fellow professionals. C. Work effectively, individually and as a member of a group.",
+    "INTEGRATE TECHNOLOGY INTO THE DEVELOPMENT OF ACCOUNTING INFORMATION (TECHNOLOGY SKILLS) This includes the ability to: A. Demonstrate effective use of all technology applicable to the accounting field. B. Demonstrate proficiency in the use of accounting software, spreadsheets, and databases applicable to accounting practice and procedures.",
+    "ANALYZE, SUMMARIZE AND INTERPRET FINANCIAL INFORMATION (CRITICAL THINKING SKILLS) This includes the ability to: A. Record, summarize, analyze, and interpret financial activities to permit individuals and organizations to make informed judgments and sensible business decisions. B. Comprehend an unrelated set of financial facts; identify and anticipate problems and find acceptable solutions for the business entity served.",
+    "EVALUATE ACTIONS FOR INTEGRITY AND HONESTY (ETHICS) This includes the ability to: A. Practice high ethical standards in all contacts with employers, clients, co workers, and general public. B. Demonstrate the ability to act with integrity and honesty and choose an ethical course of action.",
+    "SUPPORT ACTIONS THAT IMPROVE THE ABILITY TO INTERACT EFFECTIVELY IN DIVERSE ENVIRONMENTS AND WITH DIVERSE PERSONS. (DIVERSITY) This includes the ability to demonstrate the ability to relate and interact effectively in teams consisting of individuals with differing interest, gender, backgrounds, and professions."
+   ],
+   "careers": [
+    "Account Clerk",
+    "Accounting Technician",
+    "Accountant Trainee",
+    "Auditor",
+    "Bank Employee/Examiner",
+    "Certified Public Accountant",
+    "Cost Accountant",
+    "Insurance Employment",
+    "Revenue Agent (FTB/IRS)",
+    "Tax Preparer",
+    "Bookkeeper for: Accounts Receivable, Accounts Payable, General Ledger",
+    "Full-Charge Bookkeeper"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "BUSINESS CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 311",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 345",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 316",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 321",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 7 units from the following",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCT 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 123",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 128",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 125",
+    "why": "not in the text; the A.A. section lists ACCT 123 Federal and California Individual Income Taxation instead"
+   },
+   {
+    "code": "ACCT 153",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "degree_total of 60 is read from 'plus sufficient electives for a total of at least 60 units' stated specifically for the Accounting A.A.; it is a minimum ('at least'), reviewer may prefer null.",
+   "GE pattern is either the Local General Education Pattern or Cal-GETC; no GE units printed.",
+   "ACCT 123 appears in the catalog where the closed list has ACCT 125 (Federal and State Individual Taxation); possibly a renumbered course.",
+   "ACCT 341 and ACCT 498 are not in the closed list and are recorded as catalog additions.",
+   "The Accounting, Advanced Certificate on the following pages repeats the A.A. major requirements; only the A.A. section was read."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

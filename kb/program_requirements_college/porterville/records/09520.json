@@ -1,0 +1,291 @@
+{
+ "college": "Porterville College",
+ "control_number": "09520",
+ "shape": "degree",
+ "title": "Commercial Art",
+ "award": "A.A. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7743,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7743,
+    "output_tokens": 2440,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2440,
+  "output_tokens_details": {
+   "thinking_tokens": 863
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07977,
+ "ms": 20048,
+ "seconds": 21.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CMRTP102",
+    "CMRTP103"
+   ],
+   "flagged": [
+    "CMRTP102",
+    "CMRTP103"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Commercial Art Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PC General Education Pattern or Cal-GETC General Education Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will use a variety of techniques in various media to construct engaging and dynamic layouts and illustrations by applying the principles of design to the concept and components of the projects",
+    "Apply a range of approaches to using typography in projects",
+    "Identify the components of good storytelling and apply these elements in illustrated works and in motion media and 4D projects",
+    "Describe, deconstruct, and evaluate contemporary and historical examples of time-based media, illustrations, and layouts for their purposes and use of visual language",
+    "Create an original design or illustration for a specific client or audience by applying the creative process of research, brain-storm, refinement, critique, and finished project",
+    "Assemble a portfolio of finished drawings, paintings, illustrations, digital media, graphic designs, and time-based media that exhibit the technical skills and artistic vision necessary for entry-level work in the fields of illustration, graphic design, and time-based media"
+   ],
+   "careers": [
+    "graphic design",
+    "illustration",
+    "time-based media"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ART P103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART P106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMRT P102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMRT P103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ART P116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART P117",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART P119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART P124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT P101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT P103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is not printed in the extracted text (the excerpt begins mid-section on page 85); the heading used is taken from the description's wording 'The Commercial Art Associate in Arts Degree'.",
+   "No total for the major is printed; the core (16) and electives (5) blocks would sum to 21 but total_units is left null as not stated.",
+   "The page says 'Electives as needed to complete the 60 minimum units to complete the degree'; recorded as electives_fill_degree true, and degree_total left null since 60 reads as the general degree minimum rather than a printed award total. Reviewer may check.",
+   "ARTH C1200 is printed with a space; matched to closed-list ARTHC1200.",
+   "ART P117 is printed as 2 units in the catalog while the state file stores 3; catalog value recorded.",
+   "CMRT P102 and CMRT P103 are not in the closed list and are marked as catalog additions.",
+   "Program learning outcomes are printed as one semicolon-separated paragraph; split at semicolons into six outcomes. The word 'brain-storm' is kept with its printed hyphen.",
+   "Text following the Commercial Art section (Communication Studies 2.0 AA-T) belongs to another program and was ignored."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

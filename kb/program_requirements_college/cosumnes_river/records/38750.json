@@ -1,0 +1,300 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "38750",
+ "shape": "certificate",
+ "title": "Entrepreneurial Arts – Music Composition",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8205,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8205,
+    "output_tokens": 2948,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2948,
+  "output_tokens_details": {
+   "thinking_tokens": 1215
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09178,
+ "ms": 23174,
+ "seconds": 23.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 16,
+   "share": 0.875,
+   "missing": [
+    "BUS215",
+    "MUSM110"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    13.0,
+    14.0
+   ],
+   "stated": [
+    13.0,
+    14.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurial Arts: Music Composition Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 13,
+    "max": 14
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "STUDENT WILL ACQUIRE PHYSICAL SKILLS/DEXTERITY WITHIN A DISCIPLINE.",
+    "STUDENT WILL ESTABLISH AN HISTORICAL, GEOGRAPHICAL, AND CHRONOLOGICAL CONTEXT OF MUSIC.",
+    "STUDENT WILL LEARN AND USE CRITICAL LISTENING SKILLS TO DISCUSS AND CRITIQUE MUSICAL WORKS AND PERFORMANCES THROUGH SELF ANALYSIS, ENSEMBLE PARTICIPATION, AND PERFORMANCE EVALUATION.",
+    "STUDENT WILL BE PROFICIENT IN NEW TECHNOLOGIES FOR THE PURPOSES OR RESEARCH, COMPOSITION, LISTENING, PERFORMANCE, RECORDING, ARCHIVING, AND CROSS-DISCIPLINE COLLABORATION."
+   ],
+   "careers": [
+    "live performance in classical and/or commercial styles",
+    "composition",
+    "performance of original compositions",
+    "concert promotion",
+    "music marketing",
+    "music publishing and distribution",
+    "music licensing",
+    "project management",
+    "studio teaching",
+    "other assorted freelance gigging opportunities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Two units from the following",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "MUP 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 320",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 330",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 353",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 357",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 360",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSM 346",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 347",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 423",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 416",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUFHL 400",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 404",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 412",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 414",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 215",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSM 110",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section heading is not printed in the extracted text (it begins mid-section on page 502); heading taken from the description's name 'Entrepreneurial Arts: Music Composition Certificate'.",
+   "The ensemble row (MUP 310 or 320/330/353/357/360) carries footnote 1 'Two units from the following' and prints 2 units; recorded as a choose_units block of 2 units.",
+   "The row 'MUP 423 (2) or MUFHL 416 (3)' prints '2 - 3' units for the pair; recorded as MUP 423 (2) with alternative MUFHL 416 (3).",
+   "Catalog prints Total Units 13 - 14, but the listed choices can reach 15 (e.g., MUFHL 400 at 4 units in the theory block plus MUFHL 416 at 3). Also the award level named (16-30 units) does not match the printed 13-14 total; reviewer should check.",
+   "BUS 215 and MUSM 110 are in the closed list but not in this catalog section, suggesting the catalog version differs from the state Program Course File.",
+   "Outcome labels 'PSLO #1'-'PSLO #4' were removed as list numbers; outcomes copied otherwise as printed (including 'PURPOSES OR RESEARCH')."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

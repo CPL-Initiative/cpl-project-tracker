@@ -1,0 +1,283 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "20222",
+ "shape": "certificate",
+ "title": "Building Inspection Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=214",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11448,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11448,
+    "output_tokens": 2559,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2559,
+  "output_tokens_details": {
+   "thinking_tokens": 1058
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09697,
+ "ms": 20588,
+ "seconds": 20.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BIT154"
+   ],
+   "flagged": [
+    "BIT154"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Apply specific and measurable career and /or workforce learning objectives: Apply specific and measurable career and/or workforce learning objective through classroom study and independent assignments. (PSLO 4)"
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply specific and measurable career and /or workforce learning objectives: Appl"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Building Inspection Technology Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Interpret the model building codes: Interpret the model building codes and summarize the origins and evolution of building codes in this country. Identify the origin and organization of the model building codes. Interpret code requirements for plans, permits and inspections. Diagnose code compliance with a minimum of 80% accuracy, congruent with industry certification. (PSLO 1)",
+    "Analyze a set of construction drawings to determine completeness/code compliance: Analyze a set of construction drawings to determine completeness and code compliance. Develop a thorough understanding of the organization and purpose of construction drawings. Recognize deficiencies in a set of construction drawings submitted for plan review. (PSLO 2)",
+    "Develop skills and competencies: Develop skills and competencies for effective and competitive workforce performance. (PSLO 3)",
+    "Apply specific and measurable career and /or workforce learning objectives: Apply specific and measurable career and/or workforce learning objective through classroom study and independent assignments. (PSLO 4)",
+    "Ensure that the program is consistent with the college SLO’s: Ensure that the program is consistent with the college SLO’s and is providing the students and community with a valuable and meaningful service. (PSLO 5)"
+   ],
+   "careers": [
+    "Building Inspector",
+    "Plan Checker",
+    "Construction Supervisor",
+    "Foreman",
+    "Construction Management",
+    "Government Building Official"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BIT 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page opens with a Fire Technology/fire prevention SLO list and career list from the preceding program; these were not used for this certificate.",
+   "BIT 140 and BIT 141 are titled 'Residential/Commercial Electrical Code Requirements' in the catalog vs 'Electrical I/II' in the state file; BIT 102 title also differs slightly.",
+   "BIT 154 (California Green Building Standards Code) is not on the closed list and is recorded as a catalog addition.",
+   "Outcome 4 is split across a line at 'and/' + 'or'; recorded as 'and/or'. Outcomes span pages 214-215.",
+   "Employers named in the description (contractors, government agencies, architects, finance companies and developers) were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

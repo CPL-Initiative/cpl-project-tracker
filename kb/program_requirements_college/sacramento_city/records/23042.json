@@ -1,0 +1,211 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "23042",
+ "shape": "certificate",
+ "title": "Cosmetology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=298",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11634,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11634,
+    "output_tokens": 2160,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2160,
+  "output_tokens_details": {
+   "thinking_tokens": 972
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08974,
+ "ms": 17604,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cosmetology Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply technical knowledge and practical skills relating to the salon workplace.",
+    "utilize specialized learning and mastery connecting to the California State Board Exam.",
+    "analyze situations in the salon workplace by applying experience, knowledge, and skills in professionalism, salon business, and management.",
+    "measure salon readiness through acquired skills and evaluation.",
+    "formulate, demonstrate, and complete tasks needed to apply to the field of cosmetology.",
+    "incorporate and build on practical skills and the quality of their valuable work using the functional textbook study guide rubric self-assessment scale, available per chapter lesson.",
+    "complete all practical and operational requirements and hours to take the California State Board Cosmetology Exam.",
+    "extend and build on their theological knowledge and the quality of the foundation relating to their practical work using the textbook study guide Rubik's self-assessment scale.",
+    "identify operational, technical sequential skills needed to be successful in the salon workplace and to pass the California State Board Written Exam.",
+    "define California State Board Rules and Regulations, sanitation, disinfection, client protection, health, and safety as it pertains to the salon workplace and the California State Board Written Exam.",
+    "complete all theory/lecture requirements and hours to take the California State Board Cosmetology Written Exam.",
+    "apply science related subjects to the technical and practical skills learned."
+   ],
+   "careers": [
+    "salon owners",
+    "managers",
+    "hairstylist",
+    "hair colorist",
+    "hair cutting specialist",
+    "texture specialist",
+    "platform artist",
+    "educator",
+    "expert witness"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "COSM 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 115",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 117",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 135",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 137",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints COSM 115 and COSM 117 at 7.5 units each with new titles (Technical and Theoretical Foundations - Lecture; Foundational Skill Building - Laboratory); the state file stores 5 and 10 units under the former titles.",
+   "The requirements table begins on page 298 and the 'Total Units: 32' line appears on page 299 after a page break; the five listed courses sum to 32.",
+   "COSM 100 is described as a prerequisite for program entry but is listed in the Certificate Requirements table and counted in the total.",
+   "The description mentions a minimum of 1000 hours of training and a schedule naming COSM 150/COSM 151; those courses are not in the requirements table and were not placed.",
+   "Outcomes are copied as printed, including apparent typos ('theological', 'Rubik's').",
+   "Career text also says many cosmetologists are 'self- employed'; recorded only named roles."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

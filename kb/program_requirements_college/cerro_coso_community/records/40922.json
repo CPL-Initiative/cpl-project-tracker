@@ -1,0 +1,411 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "40922",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12013,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12013,
+    "output_tokens": 3605,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3605,
+  "output_tokens_details": {
+   "thinking_tokens": 1575
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12015,
+ "ms": 28165,
+ "seconds": 28.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 24,
+   "share": 0.792,
+   "missing": [
+    "ECONC2001",
+    "ENGLC102",
+    "ENGLC102H",
+    "HISTC132H",
+    "PHILC131"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "ECONC103",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ETHNC151",
+    "HISTC1002H",
+    "SOCIC131",
+    "SOCIC151"
+   ],
+   "flagged": [
+    "ECONC103",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ETHNC151",
+    "HISTC1002H",
+    "SOCIC131",
+    "SOCIC151"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    37.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 33.0-37.0; the catalog states 33.0-33.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     33.0,
+     37.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law, Public Policy, and Society Associate in Arts Degree for Transfer (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify sources of American law and articulate how a law is created.",
+    "Describe the American legal system, including jurisdictional requirements, state and federal court systems, and roles of those in the legal field.",
+    "Locate, critically read, and analyze relevant primary and secondary sources.",
+    "Apply laws, public policy, and/or societal or ethical theories to develop a solution to a legal issue, a public policy issue, and/or a societal concern.",
+    "Describe one’s ethical obligation to social responsibility under the laws."
+   ],
+   "careers": [
+    "law"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA C240",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA C190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADMJ C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ C115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ C131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD C131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH C111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI C151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN C151",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; List A prints ECON C103 Microeconomics instead"
+   },
+   {
+    "code": "ENGL C102",
+    "why": "not in the text; catalog prints ENGL C1003 Critical Thinking and Writing through Literature"
+   },
+   {
+    "code": "ENGL C102H",
+    "why": "not in the text; catalog prints ENGL C1003H"
+   },
+   {
+    "code": "HIST C132H",
+    "why": "not in the text; catalog prints HIST C1002H as the honors alternative"
+   },
+   {
+    "code": "PHIL C131",
+    "why": "named only in the Liberal Arts: Arts & Humanities section, not in this award's section"
+   }
+  ],
+  "notes": [
+   "Totals taken from the award's own description: '(60 units total, 33 units in the major)'; recorded 33 as total_units and 60 as degree_total. The generic 'minimum of 18 semester units in a major' sentence was not used as a total. Required block (27) plus List A (6) equals 33.",
+   "List A requires two courses (6 units) from two different areas (Criminal Justice, Business, Economics, Political Science, Diversity); the area constraint is not captured by the block structure.",
+   "POLS C103 (Introduction to Political Theory) in the catalog was matched to closed-list 'POLSC 103' (same title), treated as a formatting variant of the code; reviewer should confirm.",
+   "SOCI C161 is printed as 'Crime and Society' in the catalog while the closed list titles it 'Criminology'; treated as the same code.",
+   "Outcome text had PDF ligature artifacts ('Ɵ' for 'ti', 'ﬁ' for 'fi'); these were rendered as the intended letters.",
+   "No GE unit figure is printed; GE pattern is Cal-GETC (Option B). Text following the GE line belongs to the Liberal Arts degrees and was ignored."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

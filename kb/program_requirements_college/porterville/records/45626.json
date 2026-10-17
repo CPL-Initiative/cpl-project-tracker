@@ -1,0 +1,238 @@
+{
+ "college": "Porterville College",
+ "control_number": "45626",
+ "shape": "certificate",
+ "title": "Vocational Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7987,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7987,
+    "output_tokens": 1866,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1866,
+  "output_tokens_details": {
+   "thinking_tokens": 770
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06927,
+ "ms": 15339,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BIOLP52"
+   ],
+   "flagged": [
+    "BIOLP52"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    55.0,
+    55.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Incorporate professionalism, leadership, management, legal, and ethical principles to guide practice as a Vocational Nurse."
+   ],
+   "why": [
+    "not in the catalog text as printed: Incorporate professionalism, leadership, management, legal, and ethical principl"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [
+    "Licensed Vocational Nurse"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PROGRAMS OF STUDY",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide safe, therapeutic, patient-centered nursing care to diverse clients across the lifespan utilizing evidence-based practice in a variety of health care settings.",
+    "Exercise Clinical judgment to make patient-centered care decisions.",
+    "Participate in the quality improvement process to improve patient care outcomes.",
+    "Participate in teamwork and collaboration with members of the interdisciplinary team, the client, and the client’s support persons.",
+    "Use information ethics, professionalism management systems, and patient care technology to communicate and support safe client care.",
+    "Incorporate professionalism, leadership, management, legal, and ethical principles to guide practice as a Vocational Nurse."
+   ],
+   "careers": [
+    "vocational nurses",
+    "Licensed Vocational Nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "ENROLLMENT ELIGIBILITY - Prerequisite courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HCRS P008",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL P052",
+        "units": 2,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS P009",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS P100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VNRS P070",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRS P071",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRS P072",
+      "units": 16.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRS P073",
+      "units": 16.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt starts mid-section; the program's own heading (Vocational Nursing) is on the preceding page and not in the text, so section_heading uses the page header 'PROGRAMS OF STUDY'.",
+   "The HCRS P008/BIOL P052, HCRS P009 and NURS P100 courses are printed as prerequisites for enrollment (C or better required), not under REQUIRED CORE COURSES; recorded as a required block because the state closed list includes them. Reviewer should confirm whether they count toward the certificate.",
+   "No total units for the certificate are printed in the excerpt; total_units left null.",
+   "PDF extraction artifacts like 'V ocational' were normalized to 'Vocational' in outcomes and careers.",
+   "Text contains a duplicated/garbled NOTE paragraph about Business and Professions Code; it does not affect requirements."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

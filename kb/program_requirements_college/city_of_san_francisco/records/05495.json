@@ -1,0 +1,377 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "05495",
+ "shape": "degree",
+ "title": "Health Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=254",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10055,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10055,
+    "output_tokens": 2792,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2792,
+  "output_tokens_details": {
+   "thinking_tokens": 975
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09606,
+ "ms": 22513,
+ "seconds": 23.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "HIT74"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "HIT73B",
+    "HIT75",
+    "HIT77A",
+    "HIT77B",
+    "HIT79"
+   ],
+   "flagged": [
+    "HIT73B",
+    "HIT75",
+    "HIT77A",
+    "HIT77B",
+    "HIT79"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    47.0,
+    52.0
+   ],
+   "stated": [
+    47.0,
+    52.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health Information Technology – AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 47,
+    "max": 52
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the knowledge and record management skills necessary for HIM entry-level employment as a health information professional in various health care settings.",
+    "Apply the knowledge and computer skills necessary for HIM entry-level employment as a health information professional in various health care settings.",
+    "Demonstrate the behavioral, interpersonal, ethical, and professional skills necessary for HIM employment as a health information professional in various health care settings."
+   ],
+   "careers": [
+    "Health information professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "OPTION 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "anatomy_physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "anatomy_physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 112",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "First semester required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "HCT 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 50A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCT 67",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second semester required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "HIT 50B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 73A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third semester required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "HIT 72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIT 73B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Fourth semester required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "HIT 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 77B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIT 79",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIT 77A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIT 74",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIT65",
+    "why": "duplicate closed-list entry of HIT 65, placed as HIT 65"
+   }
+  ],
+  "notes": [
+   "The heading 'Health Information Technology – AS Degree' is printed at the bottom of page 254 after the preceding coding certificate's total; the A.S. section is read from page 255 through 'Total: 47.0-52.0' on page 256. The preceding section (page 254, Total 41.0-46.0) belongs to a coding certificate whose heading is cut off.",
+   "The anatomy and physiology choice carries a stated total 'Units 4.0-9.0' for the whole choice (Option 1 = 4 units; Option 2 = BIO 108 plus one of BIO 111 or BIO 112 = 8-9 units); per-option stated left null.",
+   "Option 2's 'one of the following Physiology courses' (BIO 111 or BIO 112) is recorded as one entry with an alternative inside the Option 2 block.",
+   "HIT 65 is printed with 3.0 units in the catalog while the state file stores 2 units.",
+   "The page says the associate degree also requires general education, but names no GE pattern and prints no degree total.",
+   "Page 255 begins mid-sentence ('Information Technician (RHIT) exam.'), the end of the summary sentence about the Registered Health Information Technician exam, displaced by layout."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

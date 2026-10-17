@@ -1,0 +1,196 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "46300",
+ "shape": "adt",
+ "title": "Mathematics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=734",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7089,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7089,
+    "output_tokens": 938,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 938,
+  "output_tokens_details": {
+   "thinking_tokens": 171
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04712,
+ "ms": 9311,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "CS110B",
+    "CS111B",
+    "CS131B",
+    "MATH110A",
+    "MATH110B",
+    "MATH110C",
+    "MATH120",
+    "MATH125",
+    "MATH130",
+    "PHYC4A",
+    "PHYC4AL"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: page 734 prints only MATH course descriptions (MATH 115 through MATH 9000), no Mathematics A.S.-T requirements section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS 110B",
+    "why": "no program requirements in the text; named only in the MATH 115 recommended prep"
+   },
+   {
+    "code": "CS 111B",
+    "why": "no program requirements in the text; named only in the MATH 115 recommended prep"
+   },
+   {
+    "code": "CS 131B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 110A",
+    "why": "no program requirements in the text; named only in the MATH 115 recommended prep"
+   },
+   {
+    "code": "MATH 110B",
+    "why": "no program requirements in the text; named only as a prerequisite"
+   },
+   {
+    "code": "MATH 110C",
+    "why": "no program requirements in the text; named only as a prerequisite"
+   },
+   {
+    "code": "MATH 120",
+    "why": "appears only as a course description, not in a program requirements list"
+   },
+   {
+    "code": "MATH 125",
+    "why": "appears only as a course description, not in a program requirements list"
+   },
+   {
+    "code": "MATH 130",
+    "why": "appears only as a course description, not in a program requirements list"
+   },
+   {
+    "code": "PHYC 4A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 4AL",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 734) is from the course descriptions section (MATH 115, 120, 125, 130, 9000, then the start of MED - Medical Assisting). It does not contain the Mathematics 2.0 A.S.-T degree requirements. No blocks, totals, outcomes or careers could be recorded.",
+   "A reviewer should locate the Mathematics A.S.-T program page in the 2026-27 CCSF catalog. That page belongs in the degree programs section, not the course listings.",
+   "The closed list includes MATH 130, a combined Linear Algebra and Differential Equations course. It is likely an alternative to MATH 120 + MATH 125 in the degree, but the text does not state this."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

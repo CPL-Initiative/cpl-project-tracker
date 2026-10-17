@@ -1,0 +1,934 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "17868",
+ "shape": "degree",
+ "title": "Liberal Arts - Arts and Humanities",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14277,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14277,
+    "output_tokens": 7296,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 7296,
+  "output_tokens_details": {
+   "thinking_tokens": 1691
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.20303,
+ "ms": 52364,
+ "seconds": 52.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 74,
+   "listed": 114,
+   "share": 0.649,
+   "missing": [
+    "ANTH303",
+    "ARCH300",
+    "ARCH332",
+    "ART300",
+    "ART302",
+    "ART304",
+    "ART305",
+    "ART312",
+    "ART320",
+    "ART323",
+    "ART324",
+    "ART325",
+    "ART327",
+    "ART328",
+    "ART361",
+    "ART370",
+    "ART372",
+    "ART430",
+    "ARTH300",
+    "ARTH309",
+    "ARTH311",
+    "ARTH312",
+    "ARTH324",
+    "ARTH328",
+    "ARTH332",
+    "ARTH333",
+    "DEAF310",
+    "DEAF312",
+    "DEAF314",
+    "DEAF316",
+    "ENGCW400",
+    "ENGCW410",
+    "ENGLT303",
+    "ENGLT310",
+    "ENGLT311",
+    "ENGLT320",
+    "ENGLT321",
+    "ENGLT330",
+    "ENGWR301",
+    "MUIV49545560"
+   ],
+   "unexplained": [
+    "MUIV49545560"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ENGL301",
+    "ENGLT336",
+    "MUFHL308",
+    "MUIVI495",
+    "SPAN413",
+    "SPAN415"
+   ],
+   "flagged": [
+    "ENGL301",
+    "ENGLT336",
+    "MUFHL308",
+    "SPAN413",
+    "SPAN415"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Liberal Arts - Arts and Humanities",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate an appreciation of artistic endeavors, cultural expressions, ideas and/or institutions through nonempirical, analytic, interpretive studies and critical thinking projects.",
+    "Articulate the development of and relationships between different civilizations, cultural traditions, ideas and/or institutions through the application of non-empirical, analytical reasoning.",
+    "Evaluate critically the analyses and interpretations by others (including significant historical or contemporary analyses and interpretations) of arts, ideas, skills (including language), and/or institutions.",
+    "Express clearly her or his own analyses and interpretations of arts, ideas, skills (including language), and/or institutions, and will properly use the vocabulary appropriate to the field."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGLT 336",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLT 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 343",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 345",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FMS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMS 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMS 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMS 488",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 364",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 380",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUFHL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 400",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 311",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 341",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 350",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 351",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 370",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 371",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 495",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 320",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 350",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 357",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUP 360",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 338",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 356",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 420",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 378",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 413",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 415",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 425",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 426",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 427",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 356",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 401",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 402",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 303",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARCH 300",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARCH 332",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 300",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 302",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 304",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 305",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 312",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 320",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 323",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 324",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 327",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 328",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 361",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 370",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 372",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART 430",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ART325",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 300",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 309",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 311",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 312",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 324",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 328",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 332",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ARTH 333",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "DEAF 310",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "DEAF 312",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "DEAF 314",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "DEAF 316",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGCW 400",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGCW 410",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGLT 303",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGLT 310",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGLT 311",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGLT 320",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGLT 321",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGLT 330",
+    "why": "not in the text; list begins on page 464, not in excerpt"
+   },
+   {
+    "code": "ENGWR 301",
+    "why": "catalog prints ENGL 301 College Composition and Literature instead (recorded as catalog addition)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-list on page 465; the section heading, description, block header and the first part of the course list (likely ANTH, ARCH, ART, ARTH, DEAF, ENGCW and early ENGLT courses) are on page 464, which is not in the text. Section heading inferred from the pattern of the other Liberal Arts headings ('A.A. in Liberal Arts - ...').",
+   "Block rule recorded as choose_units with minimum 18 based on 'Total Units: 18' and the parallel sections' 'A minimum of 18 units from the following: 18'; the block's own header was not in the excerpt, so stated is null. Reviewer should confirm on page 464.",
+   "MUIVI 495 (1-3 units) treated as the closed-list entry 'MUIV49545560 Independent Studies in Music Instrumental/Voice Instruction' (garbled code in state file); marked catalog_addition false.",
+   "ENGL 301 is printed where the closed list has ENGWR 301 (same title); recorded as catalog addition.",
+   "Degree text says the A.A. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; electives_fill_degree set true, degree_total left null as this is the standard 60-unit statement.",
+   "PSLO labels '(PSLO 1)'–'(PSLO 4)' omitted from outcomes as list numbering."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

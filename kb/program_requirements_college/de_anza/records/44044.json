@@ -1,0 +1,194 @@
+{
+ "college": "De Anza College",
+ "control_number": "44044",
+ "shape": "noncredit",
+ "title": "Project Management Practitioner",
+ "award": "Noncredit program",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7787,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7787,
+    "output_tokens": 902,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 902,
+  "output_tokens_details": {
+   "thinking_tokens": 166
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04919,
+ "ms": 7863,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    240.0,
+    240.0
+   ],
+   "stated": [
+    240.0,
+    240.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion Project Management Practitioner",
+   "measure": "hours",
+   "total_units": {
+    "min": 240,
+    "max": 240
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Manage projects by applying project management theory as defined by the Project Management Institute’s (PMI) Project Management Book of Knowledge (PMBOK)",
+    "Lead the creation of a project plan for an organization’s large-scale project with a large budget",
+    "Apply risk management techniques to a project to balance scope, quality, budget, scheduling and team morale",
+    "Write a vendor solicitation plan and use a collaborative approach for selecting vendors",
+    "Successfully manage a vendor through a project’s completion while providing all project participants with a clear picture of scope, quality, budget and schedule"
+   ],
+   "careers": [
+    "project managers",
+    "project management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 240,
+     "max": 240
+    },
+    "courses": [
+     {
+      "code": "CIS 395A",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 395B",
+      "units": 48,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 395C",
+      "units": 48,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 395D",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 395E",
+      "units": 48,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog labels this award a Certificate of Completion (noncredit); it is counted in hours, so all unit fields hold hours.",
+   "Page also prints Database Science Practitioner, Information Technology Technical Support and Introduction to Computer Science certificates; only the Project Management Practitioner section was read.",
+   "Course hours (60+48+48+36+48) sum to the printed 240-hour total."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

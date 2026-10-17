@@ -286,8 +286,8 @@
    "name": "MAP Export",
    "page": "index.html#map-export",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-17",
+   "outcome": "Never audited. Its credential list and record pane scrolled out of a keyboard's reach, the search box hid its focus ring, the list rows were click-only, and in dark the filled download button read 1.29:1; rows are now buttons with aria-pressed, both panes labeled focusable regions, focus shows the theme's ring, and controls are underlined words in place of the arrow and copy glyphs (#2200; light and dark re-measure clean)."
   },
   {
    "id": "cobi:exhibit-adoption",

@@ -1,0 +1,267 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "43808",
+ "shape": "degree",
+ "title": "Data Science",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=264",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10193,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10193,
+    "output_tokens": 2126,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2126,
+  "output_tokens_details": {
+   "thinking_tokens": 893
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08329,
+ "ms": 18905,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CISD357",
+    "CISD358",
+    "CISD359"
+   ],
+   "flagged": [
+    "CISD357",
+    "CISD358",
+    "CISD359"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Data Science",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "explain how data is useful in business or career.",
+    "demonstrate understanding of data management, integration, quality, and transformation.",
+    "evaluate the core concepts in data science and data application.",
+    "analyze data using statistical methods and techniques.",
+    "apply data analytics techniques for effective data-driven decision-making.",
+    "predict outcomes with supervised machine learning techniques."
+   ],
+   "careers": [
+    "data science",
+    "data scientist",
+    "data analyst",
+    "business analyst",
+    "computer programmer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements: CISA 323 and CISA 324",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Database",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISA 323",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 324",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Degree Requirements: or CISP 350",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Database",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISP 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISD 357",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISP 357",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISD 358",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISP 358",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISD 359",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISP 359",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISP 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first requirement row is printed as '[CISA 323 and CISA 324] or CISP 350' with a combined 3 - 4 units; recorded as two option blocks in option_group 'Database' (CISA 323 + CISA 324, or CISP 350). The printed 3 - 4 applies to the row as a whole, so neither option block carries a stated total.",
+   "CISD 357, CISD 358 and CISD 359 are printed as the primary codes with CISP 357/358/359 as 'or' alternatives; the CISD codes are not in the closed list and are marked catalog additions.",
+   "The page says the degree is completed with the required program, a GE pattern, 'plus sufficient electives for a total of at least 60 units'; read as electives filling the degree, with no printed degree total, so degree_total stays null.",
+   "Outcome 'apply data analytics techniques for effective data-driven decision-making.' is hyphen-broken across lines in the source ('decision-' / 'making'); rejoined as 'decision-making'.",
+   "Career Information also names hiring industries (Professional, Scientific and Technical Services; Information Technologies; Manufacturing; Finance and Insurance; Retail Trade); these were treated as industries rather than careers and not recorded."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

@@ -1,0 +1,340 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "32546",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=262",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12771,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12771,
+    "output_tokens": 2627,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2627,
+  "output_tokens_details": {
+   "thinking_tokens": 661
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10362,
+ "ms": 20788,
+ "seconds": 21.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 30,
+   "share": 0.433,
+   "missing": [
+    "ENGCW400",
+    "ENGCW410",
+    "ENGCW420",
+    "ENGCW430",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLT310",
+    "ENGLT311",
+    "ENGLT320",
+    "ENGLT321",
+    "ENGLT330",
+    "ENGLT340",
+    "ENGLT341",
+    "ENGLT345",
+    "ENGLT370",
+    "ENGWR301",
+    "ENGWR481"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    3.0,
+    4.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 3.0-4.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in English for Transfer (AA-T) (heading not in the excerpt; section begins mid-table at List C)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze poetry, drama, and prose (fiction and non-fiction) based on a knowledge of the fundamental elements of literature.",
+    "identify and distinguish major literary developments in British and American literature, identifying key authors and their major works, and recognize their historical, cultural, and literary significance.",
+    "assess relevant opposing views and respond critically to the arguments of others.",
+    "synthesize relevant material to compose academic essays that support insightful thesis statements with appropriate evidence and that develop arguments with analysis and relevant external sources, all with a concern for audience.",
+    "evaluate and integrate print and electronic sources in their essays, applying current MLA standards of documentation."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANTH 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 319",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 339",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 411",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 412",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGCW 400",
+    "why": "not in the visible AA-T section; appears only in the A.A. and Interdisciplinary sections (AA-T core/Lists A-B cut off before page 262)"
+   },
+   {
+    "code": "ENGCW 410",
+    "why": "not in the visible AA-T section; appears only in the A.A. and Interdisciplinary sections"
+   },
+   {
+    "code": "ENGCW 420",
+    "why": "not in the visible AA-T section; appears only in the A.A. and Interdisciplinary sections"
+   },
+   {
+    "code": "ENGCW 430",
+    "why": "not in the visible AA-T section; appears only in the A.A. and Interdisciplinary sections"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "named only in the A.A. section; AA-T core cut off"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "named only in the A.A. section; AA-T core cut off"
+   },
+   {
+    "code": "ENGLT 310",
+    "why": "not in the visible AA-T section; likely in cut-off core/List A"
+   },
+   {
+    "code": "ENGLT 311",
+    "why": "not in the visible AA-T section; likely in cut-off core/List A"
+   },
+   {
+    "code": "ENGLT 320",
+    "why": "not in the visible AA-T section; likely in cut-off core/List A"
+   },
+   {
+    "code": "ENGLT 321",
+    "why": "not in the visible AA-T section; likely in cut-off core/List A"
+   },
+   {
+    "code": "ENGLT 330",
+    "why": "named only in the Interdisciplinary Studies section; AA-T Lists A-B cut off"
+   },
+   {
+    "code": "ENGLT 340",
+    "why": "not in the visible AA-T section; likely in cut-off List B"
+   },
+   {
+    "code": "ENGLT 341",
+    "why": "not in the visible AA-T section; likely in cut-off List B"
+   },
+   {
+    "code": "ENGLT 345",
+    "why": "not in the visible AA-T section; likely in cut-off List B"
+   },
+   {
+    "code": "ENGLT 370",
+    "why": "not in the visible AA-T section; likely in cut-off List B"
+   },
+   {
+    "code": "ENGWR 301",
+    "why": "not in the text (catalog prints ENGL 301 in the A.A. section)"
+   },
+   {
+    "code": "ENGWR 481",
+    "why": "not in the text (catalog prints ENGL 481 in the A.A. section)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins on page 262 mid-table at List C; the AA-T heading, required core, List A and List B are on a prior page not included. Only List C could be recorded; a reviewer should check page 261 for the remaining blocks.",
+   "List C allows 3-4 units from List C 'or any course not used in List A or B'; recorded as a choose_units block with minimum 3 and stated 3-4.",
+   "Total Units: 18 recorded as total_units (major). The sentence that the AA-T 'may be obtained by completion of 60 transferable, semester units' was read as the standard degree statement, not a printed degree total; degree_total left null.",
+   "The same five outcomes are printed for both the AA-T and the A.A. in English; recorded here from the AA-T section."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

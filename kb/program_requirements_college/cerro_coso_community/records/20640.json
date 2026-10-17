@@ -1,0 +1,323 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "20640",
+ "shape": "certificate",
+ "title": "Vocational Nursing",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7714,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7714,
+    "output_tokens": 2426,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2426,
+  "output_tokens_details": {
+   "thinking_tokens": 717
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07938,
+ "ms": 18910,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "HCRSC230"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HCRSC180"
+   ],
+   "flagged": [
+    "HCRSC180"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    47.5,
+    47.5
+   ],
+   "stated": [
+    43.0,
+    43.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 47.5-47.5; the catalog states 43.0-43.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Vocational Nursing Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the etiology, pathophysiology, and signs and symptoms of disorders of all body systems and stages of development.",
+    "Demonstrate an understanding of the nursing process.",
+    "Take a leadership role in both the profession of Vocational Nursing and in the community.",
+    "Successfully pass the State Mandated NCLEX-PN Boards."
+   ],
+   "careers": [
+    "vocational nursing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Semester I",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HCRS C100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C107",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C113",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTC C070",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HCRS C204",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C214",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester III",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HCRS C205",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C207",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C208",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C216",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HCRS C180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HCRS C181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCRS C183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HCRSC 230",
+    "why": "not in the text; the catalog lists Pharmacology for Health Professionals as HCRS C180 instead (possible renumbering)"
+   }
+  ],
+  "notes": [
+   "Catalog codes (e.g., HCRS C100, EMTC C070) were matched to closed-list codes (HCRSC 100, EMTCC 70) as the same courses with different formatting.",
+   "HCRS C113 is titled 'Clinical Nursing I' in the catalog but 'Vocational Nursing Laboratory I' in the closed list; HCRS C206 is 'Obstetrics and Pediatric Nursing' vs 'Maternal/Child Nursing'; treated as the same courses by number.",
+   "HCRS C180 Pharmacology for Health Professionals is not in the closed list; the closed list has HCRSC 230 with the same title. Reviewer should check whether this is a renumbering.",
+   "Stated total is 43 units, but the printed required courses (14.5 + 15 + 15) plus 3 elective units sum to 47.5; reviewer should check.",
+   "The program description states 1,662 hours total, but the award is counted in units (43 units).",
+   "Conditions of Enrollment list prerequisite courses (BIOL C125 or BIOL C251 and BIOL C255, HCRS C132, HCRS C150, PSYC C1000 or PSYC C1000H); these are entrance prerequisites, not award requirements, and were not recorded as blocks.",
+   "Outcomes text contained PDF ligature artifacts (e.g., 'IdenƟfy', 'eƟology', 'VocaƟonal'); these were rendered as the printed words 'Identify', 'etiology', 'Vocational'.",
+   "Award title in the request ('18 or greater semester units') matches the single Certificate of Achievement on this page."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

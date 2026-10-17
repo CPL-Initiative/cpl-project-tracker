@@ -1,0 +1,279 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "45821",
+ "shape": "degree",
+ "title": "Enhanced Air Traffic Control",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=132",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12337,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12337,
+    "output_tokens": 2304,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2304,
+  "output_tokens_details": {
+   "thinking_tokens": 937
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09543,
+ "ms": 20388,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 15,
+   "share": 0.4,
+   "missing": [
+    "ATC200",
+    "ATC300",
+    "ATC301",
+    "ATC302",
+    "ATC303",
+    "ATC310",
+    "ATC311",
+    "ATC320",
+    "ATC321"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 10.0-10.0; the catalog states 29.0-29.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     10.0,
+     10.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Enhanced Air Traffic Control A.S. Degree (heading not shown; the section begins before the extracted page 132 text)",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "interpret and apply Federal Aviation Regulations that pertain to Air Traffic Control procedures.",
+    "utilize correct air-to-ground and ground-to-air communication terminology and phraseology.",
+    "interpret, prepare, and disseminate terminal and/or en-route weather reports.",
+    "correctly apply Air Traffic Control procedures in simulated terminal, or en-route air traffic control environments.",
+    "properly use air traffic control computer data entry systems and voice communication equipment."
+   ],
+   "careers": [
+    "Air Traffic Controllers",
+    "remote pilot operators",
+    "military controllers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements (continued; semester heading cut off before page 132)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATC 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 322",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 313",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 323",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATC 315",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATC 325",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ATC 200",
+    "why": "degree table begins before page 132 and is cut off; named only in the certificate section and enrollment process"
+   },
+   {
+    "code": "ATC 300",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 301",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 302",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 303",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 310",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 311",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 320",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   },
+   {
+    "code": "ATC 321",
+    "why": "degree table cut off before page 132; named only in the certificate section"
+   }
+  ],
+  "notes": [
+   "The extracted text starts mid-table on page 132; the A.S. degree heading, description and the first rows of its requirements (likely ATC 200, ATC 300-303, ATC 310/320, ATC 311/321 as in the certificate) are on the preceding page and not in the text. A reviewer should check page 131.",
+   "The certificate section printed after the degree (Enhanced Air Traffic Control Certificate, 29 units) was not used for this record.",
+   "Rows pair Terminal and En Route courses position by position ('ATC 312 or ATC 322'); these may represent a Terminal sequence versus an En Route sequence, but the catalog prints them as 'or' rows without a sequence heading, so they are recorded as alternatives.",
+   "degree_total 60 is taken from 'plus sufficient electives for a total of at least 60 units' in the award's own paragraph; electives are unspecified, so electives_fill_degree is true.",
+   "Student Learning Outcomes and Career Information are printed identically for the degree and the certificate; recorded from the degree section."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

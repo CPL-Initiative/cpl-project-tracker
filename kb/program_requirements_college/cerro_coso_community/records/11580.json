@@ -1,0 +1,179 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "11580",
+ "shape": "certificate",
+ "title": "Child Development Site Supervisor",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7821,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7821,
+    "output_tokens": 1658,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1658,
+  "output_tokens_details": {
+   "thinking_tokens": 678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06444,
+ "ms": 15775,
+ "seconds": 16.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "CHDVC100",
+    "CHDVC102",
+    "CHDVC104",
+    "CHDVC106",
+    "CHDVC121",
+    "CHDVC125",
+    "CHDVC200",
+    "CHDVC203"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no Child Development Site Supervisor section in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHDV C100",
+    "why": "not in a Site Supervisor section; the text has no such section. It appears in an untitled list at the top of the page (likely another certificate) and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C102",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C104",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C106",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C121",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C125",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C200",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   },
+   {
+    "code": "CHDV C203",
+    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+   }
+  ],
+  "notes": [
+   "The provided text (catalog page 76, PDF page 84) contains no section for the Child Development Site Supervisor Certificate of Achievement. Site Supervisor is mentioned only as a state permit type inside the Master Teacher certificate's description.",
+   "The top of the page has the tail of a course list whose heading is cut off at the previous page break. It holds CHDV C100 (code cut off), C102, C104, C106, C121, C125, C200 and C203, each 3 units. These are exactly the closed-list courses. The 'Teacher Permit Requirements: Teacher Certificate requirements...' paragraph follows it, which suggests this list belongs to the Child Development Teacher certificate rather than Site Supervisor. A reviewer should check the previous page and the actual Site Supervisor section; the next page may also hold it.",
+   "The Child Development Master Teacher Certificate of Achievement (33 units) and its program learning outcomes are printed on this page. They belong to that award and were not recorded here.",
+   "No blocks, totals, outcomes or careers were recorded because the named award's section is not in the text."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

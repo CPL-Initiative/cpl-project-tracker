@@ -1,0 +1,247 @@
+{
+ "college": "American River College",
+ "control_number": "20107",
+ "shape": "certificate",
+ "title": "Technical Communications",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=336",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6585,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6585,
+    "output_tokens": 1632,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1632,
+  "output_tokens_details": {
+   "thinking_tokens": 550
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05898,
+ "ms": 14086,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 11,
+   "share": 0.727,
+   "missing": [
+    "TECCOM300",
+    "TECCOM310",
+    "TECCOM330"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    12.0
+   ],
+   "stated": [
+    10.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Technical Communications Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze audience information needs.",
+    "compose concise, clearly written professional documents organized with the audiences' needs in mind.",
+    "design print and online resources that communicate organizations' values, enhance readability, and are easy to use.",
+    "demonstrate basic skills in the use of word processing, page design, and web design applications.",
+    "evaluate organizations' communication goals and needs based on technical writing principles."
+   ],
+   "careers": [
+    "technical writing",
+    "professional communication",
+    "technical communication",
+    "Technical communicators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTNM 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISA 330",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 305",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSTEC 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "TECCOM 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "TECCOM 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "TECCOM 330",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 'or' rows print a row range of 2 - 3 units (ARTNM 352 (3) or CISA 330 (2); CISA 305 (2) or BUSTEC 310 (3)); each course is recorded with its own parenthetical units.",
+   "Catalog total is 10 - 12 units, which falls below the 16-30 unit range of the award type named in the program record; reviewer should check the award type or catalog year.",
+   "CISW 321 is printed as 'Web Site Development' in the catalog, while the closed list titles it 'Web Site Development using Dreamweaver'.",
+   "None of the TECCOM courses on the closed list appear in this catalog section, although the description mentions Technical Communications courses.",
+   "The page footer reads 'Programs of Study – Art New Media'.",
+   "Careers are taken from the program description ('technical writing and professional communication careers', 'jobs in technical communication') and the Career Information section; employment settings (medical, scientific, etc.) were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

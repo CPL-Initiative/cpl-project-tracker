@@ -1,0 +1,546 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "04665",
+ "shape": "degree",
+ "title": "Kinesiology--Exercise Science",
+ "award": "A.A. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=476",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13088,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13088,
+    "output_tokens": 4940,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4940,
+  "output_tokens_details": {
+   "thinking_tokens": 1256
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.15115,
+ "ms": 36506,
+ "seconds": 36.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 66,
+   "share": 0.333,
+   "missing": [
+    "BIOL430",
+    "BIOL431",
+    "CHEM305",
+    "CHEM400",
+    "FITNS306",
+    "FITNS307",
+    "FITNS321",
+    "FITNS324",
+    "FITNS326",
+    "FITNS331",
+    "FITNS336",
+    "FITNS337",
+    "FITNS343",
+    "FITNS344",
+    "FITNS345",
+    "FITNS349",
+    "FITNS356",
+    "FITNS371",
+    "FITNS372",
+    "FITNS373",
+    "FITNS374",
+    "FITNS381",
+    "FITNS383",
+    "FITNS385",
+    "FITNS387",
+    "FITNS390",
+    "FITNS392",
+    "FITNS401",
+    "FITNS402",
+    "FITNS404",
+    "FITNS412",
+    "FITNS440",
+    "FITNS441",
+    "HEED300",
+    "HEED301",
+    "HEED353",
+    "KINES300",
+    "KINES410",
+    "KINES412",
+    "KINES418",
+    "KINES452",
+    "RECR300",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": [
+    "'Activity course list (heading and rule on preceding page, not in text)' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology--Exercise Science Associate in Arts (A.A.) degree (section heading on the preceding page, not in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "demonstrate an understanding of human development, both normal and abnormal, and the implications for program design.",
+    "identify and apply standards required by the profession of choice.",
+    "demonstrate an understanding of the basic structure of the human body and how its various systems respond.",
+    "demonstrate oral and written competence in the major field.",
+    "develop and articulate a statement of values or code of ethics related to the major that reflects one's respect for different ideas, peoples, and cultures and an understanding of the responsible uses of technology.",
+    "demonstrate continued personal and professional development by reviewing current literature, participating in associations, or sharing knowledge and experience with others."
+   ],
+   "careers": [
+    "teaching",
+    "coaching",
+    "various recreation positions",
+    "various health careers",
+    "athletic administration in elementary and secondary schools and colleges"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Activity course list (heading and rule on preceding page, not in text)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FITNS 442",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 443",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITNS 444",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 330",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 351",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 390",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 391",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 393",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 394",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PACT 410",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 302",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 303",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 304",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 321",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 322",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 330",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 331",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 333",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 340",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TMACT 341",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 430",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "BIOL 431",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "CHEM 305",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "CHEM 400",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 306",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 307",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 321",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 324",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 326",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 331",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 336",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 337",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 343",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 344",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 345",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 349",
+    "why": "not in the visible Exercise Science requirements; appears only as a course description"
+   },
+   {
+    "code": "FITNS 356",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 371",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 372",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 373",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 374",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 381",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 385",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 387",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 390",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 392",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 401",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 402",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 404",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 412",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 440",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS 441",
+    "why": "Exercise Science table cut off before this point; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "FITNS383",
+    "why": "Exercise Science table cut off before this point; FITNS 383 appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "HEED 300",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "HEED 301",
+    "why": "not in the text (Exercise Science table start missing)"
+   },
+   {
+    "code": "HEED 353",
+    "why": "not in the text (Exercise Science table start missing)"
+   },
+   {
+    "code": "KINES 300",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "KINES 410",
+    "why": "not in the text (Exercise Science table start missing)"
+   },
+   {
+    "code": "KINES 412",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "KINES 418",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "KINES 452",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "RECR 300",
+    "why": "not in the text (Exercise Science table start missing)"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "Exercise Science table starts on preceding page not in text; appears only in Teaching and Coaching section"
+   }
+  ],
+  "notes": [
+   "The text begins mid-table on page 476: the Exercise Science section heading, description and the start of its requirements table (page 475) are missing. Only the tail of an activity-course list (FITNS 442 through TMACT 341) is visible; its rule and minimum are not shown, so the block is recorded as choose_units with minimum null. A reviewer should fetch page 475.",
+   "Total Units: 31 is printed at the end of the Exercise Science table and recorded as total_units.",
+   "The page says the degree requires the program plus GE plus 'sufficient electives for a total of at least 60 units'; recorded electives_fill_degree true and degree_total null since no award-specific degree total figure is printed.",
+   "The A.A. in Kinesiology--Teaching and Coaching section that follows (Total Units: 33) was not read for this record.",
+   "The Student Learning Outcomes and Career Information for Exercise Science are identical to those printed for Teaching and Coaching."
+  ]
+ },
+ "extracted_run": "39047070975"
+}
