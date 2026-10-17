@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6990,
+  "input_tokens": 10103,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6990,
-    "output_tokens": 1396,
+    "input_tokens": 10103,
+    "output_tokens": 1291,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1396,
+  "output_tokens": 1291,
   "output_tokens_details": {
-   "thinking_tokens": 413
+   "thinking_tokens": 407
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05588,
- "ms": 11573,
- "seconds": 11.9,
+ "cost_usd": 0.06623,
+ "ms": 11672,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
@@ -110,7 +110,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Gerontology - Health (Academic Plan E033915D)",
+   "section_heading": "Gerontology/Health",
    "measure": "units",
    "total_units": {
     "min": 16.5,
@@ -136,13 +136,13 @@
     "Synthesize basic information about human development, nutrition and body functions to provide quality care and safety to the older-adult and across the continuum of care from wellness to illness."
    ],
    "careers": [
-    "healthcare industry",
-    "gerontology"
+    "gerontology",
+    "healthcare industry"
    ]
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Gerontology/Health required courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -206,13 +206,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's printed title is cut off before the extracted text begins (text starts at '(Academic Plan E033915D)'); section_heading uses the program title plus the academic plan number. Reviewer should confirm the printed heading.",
-   "Catalog prints codes with leading zeros (HLTHOCC 062, 063, 065); these match closed-list HLTHOCC 62, 63, 65.",
-   "HLTHOCC 064 (1 unit) is one of the 'four HLTHOCC Core courses' but is not in the closed list; recorded as catalog addition. FAM &CS 006, 021, 091 are also catalog additions.",
-   "The 'Total 16 .5' line is the printed table total (16.5 units); it was recorded as both the certificate total and the block's stated total.",
-   "Careers 'healthcare industry' and 'gerontology' are taken from description phrases 'work in the healthcare industry' and 'employment in the field of gerontology'.",
-   "Hyphenated line breaks in outcomes (e.g., 'develop -ment', 'qual -ity') were rejoined as single words."
+   "The catalog prints codes with leading zeros (HLTHOCC 062, 063, 065); these were matched to closed-list HLTHOCC 62, 63, 65.",
+   "HLTHOCC 064 (1 unit) and the three FAM &CS courses are not in the closed list and are recorded as catalog additions.",
+   "The section continues across pages 78-79. The description ('four HLTHOCC Core courses' plus 'three additional courses in ... FAM &CS') matches the seven listed courses and the 16.5 total.",
+   "Careers were read from the description: 'employment in the field of gerontology' and 'work in the healthcare industry'. A reviewer should confirm these count as career fields.",
+   "The same four HLTHOCC courses also appear in the Community Health Worker section, which was not read for this record."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

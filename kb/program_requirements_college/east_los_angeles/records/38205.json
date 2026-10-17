@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12450,
+  "input_tokens": 12532,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12450,
-    "output_tokens": 1556,
+    "input_tokens": 12532,
+    "output_tokens": 1550,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1556,
+  "output_tokens": 1550,
   "output_tokens_details": {
-   "thinking_tokens": 450
+   "thinking_tokens": 512
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08092,
- "ms": 12426,
- "seconds": 12.8,
+ "cost_usd": 0.08113,
+ "ms": 12700,
+ "seconds": 13.0,
  "parts": null,
  "error": null,
  "score": {
@@ -118,7 +118,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(Academic Plan E038205D) Certificate of Achievement in Songwriting & Arranging",
+   "section_heading": "Songwriting & Arranging (Academic Plan E038205D)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -150,7 +150,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Songwriting & Arranging required courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -226,23 +226,23 @@
   "missing_explained": [
    {
     "code": "MUSIC 111",
-    "why": "named only in the A.A.-T in Music section"
+    "why": "not in the text"
    },
    {
     "code": "MUSIC 121",
-    "why": "named only in the Music A.A. and A.A.-T sections"
+    "why": "named only in the Music A.A. section"
    },
    {
     "code": "MUSIC 122",
-    "why": "named only in the Music A.A. and A.A.-T sections"
+    "why": "named only in the Music A.A. section"
    },
    {
     "code": "MUSIC 161",
-    "why": "named only in the Commercial Music and Recording A.A. and Music A.A.-T sections"
+    "why": "named only in other certificate and A.A. sections"
    },
    {
     "code": "MUSIC 200",
-    "why": "named only in the Music A.A. and A.A.-T sections"
+    "why": "named only in the Music A.A. section"
    },
    {
     "code": "MUSIC 206",
@@ -254,11 +254,10 @@
    }
   ],
   "notes": [
-   "The certificate's title heading is cut off before the text starts; the section is identified by Academic Plan E038205D and its description names it 'Certificate of Achievement in Songwriting & Arranging', not 'Commercial Music: Music Arranging'. Reviewer should confirm this is the same award.",
-   "The catalog prints no block heading; 'Required Courses' is a descriptive name. The Total 18 is the certificate total and equals the block sum.",
-   "Catalog year read as 2026-2027 from page headers.",
-   "Several closed-list courses (MUSIC 206, MUSIC 281) do not appear anywhere in the text; the closed list may reflect an older version of the program."
+   "The text has no section titled 'Music Arranging'; the 'Songwriting & Arranging' Certificate of Achievement (E038205D), whose description cites careers in Commercial Music Arranging, was read as this award. Reviewer should confirm; closed-list courses MUSIC 111, 206 and 281 do not appear, suggesting the state file reflects an older version of the program.",
+   "The catalog prints no block name; the block name was supplied. The stated 18 is the certificate Total.",
+   "MUSIC 116 OR MUSIC 118 OR MUSIC 141 recorded as one choice with alternatives."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

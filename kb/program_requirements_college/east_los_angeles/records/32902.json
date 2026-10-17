@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8825,
+  "input_tokens": 10150,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8825,
-    "output_tokens": 1966,
+    "input_tokens": 10150,
+    "output_tokens": 2103,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1966,
+  "output_tokens": 2103,
   "output_tokens_details": {
-   "thinking_tokens": 616
+   "thinking_tokens": 686
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07462,
- "ms": 15280,
- "seconds": 15.6,
+ "cost_usd": 0.08266,
+ "ms": 16408,
+ "seconds": 16.7,
  "parts": null,
  "error": null,
  "score": {
@@ -295,14 +295,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading itself is not in the extracted text (it begins with '(Academic Plan E032902H)'); the heading recorded is taken from the degree name in the opening sentence.",
-   "List B ends with 'or any List A course not already used'; List A courses may therefore also satisfy List B.",
-   "The 18-unit figure is the generic ADT minimum for the major, not a stated major total, so total_units is null.",
-   "Total 60 is recorded as degree_total; ge_units 34 is from the Cal-GETC requirement sentence (34 semester/45 quarter units).",
-   "Page says 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' with no units printed, so electives_fill_degree is true.",
-   "ADM JUS 172 is marked as having a prerequisite.",
-   "Catalog page is from the 2026-2027 General Catalog."
+   "The excerpt begins with '(Academic Plan E032902H)'; the section's printed heading is not in the text, so the heading is taken from the description's degree name.",
+   "Catalog prints codes with leading zeros (ADM JUS 002, 004, 005, 067; PSYCH 091; ECON 020; BUS 015; SOC 001); these were matched to the closed-list codes ADM JUS 2, 4, 5, 67, PSYCH 91, ECON 20, BUS 15, SOC 1.",
+   "List B ends with 'or any List A course not already used'; List A courses may also satisfy List B.",
+   "ADM JUS 172 is marked as having a prerequisite (ADM JUS 005).",
+   "No major total printed; only the generic ADT statement of a minimum of 18 units in the major, which is not recorded as total_units. Required courses sum to 18 units.",
+   "Degree total 'Total 60' recorded in degree_total; Cal-GETC 34 semester units taken from the general ADT requirements text.",
+   "Additional CSU transferable units to reach 60 are required as needed; no units printed, so electives_fill_degree is true."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

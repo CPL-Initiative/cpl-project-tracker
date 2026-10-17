@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6441,
+  "input_tokens": 6445,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6441,
-    "output_tokens": 1272,
+    "input_tokens": 6445,
+    "output_tokens": 1091,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1272,
+  "output_tokens": 1091,
   "output_tokens_details": {
-   "thinking_tokens": 530
+   "thinking_tokens": 347
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0512,
- "ms": 11644,
- "seconds": 11.9,
+ "cost_usd": 0.0476,
+ "ms": 9946,
+ "seconds": 10.2,
  "parts": null,
  "error": null,
  "score": {
@@ -176,12 +176,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins at the Academic Plan line; the program title heading (Emergency First Responder Basic Training) is not printed in the provided text, presumably on the preceding page. Section identified by Academic Plan E040599E and its matching five courses.",
-   "Noncredit program, but the catalog prints no hours; it lists each course with 0 under a UNITS column. Measure recorded as units with the printed 0 values. No total hours or units is stated, so total_units is null.",
-   "The block name 'Required Courses' is supplied; the catalog prints the five courses in a table without a block heading and describes them as 'These five courses'.",
-   "The catalog prints VOC ED 353CE's title as 'First Aid and Basic Training CPR', while the closed list gives 'First Aid and Basic CPR Training'.",
-   "The catalog year is not known. The source PDF is the 2026-2027 General Catalog."
+   "The excerpt begins at '(Academic Plan E040599E)'; the program title heading (presumably 'Emergency First Responder Basic Training') appears to be on the preceding page and is not in the text, so the academic plan line is used as the section heading.",
+   "The catalog prints 0 in the UNITS column for each noncredit course and states no hours or total; measure left as 'units' with the printed 0 values, and total_units is null.",
+   "The block has no printed name; 'Required Courses' is a descriptive label. The description refers to 'these five courses', all of which are listed.",
+   "The catalog prints VOC ED 353CE's title as 'First Aid and Basic Training CPR', slightly different from the state file title.",
+   "The career field is taken from the description phrase 'in preparation for a career in emergency medical first response'.",
+   "The text that follows belongs to a different program (Engineering Technologies and Applications) and was not read."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

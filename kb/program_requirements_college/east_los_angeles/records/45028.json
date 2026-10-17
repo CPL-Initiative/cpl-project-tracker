@@ -1,0 +1,1508 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "45028",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=64",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 41569,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 14202
+ },
+ "cost_usd": 0.45032,
+ "ms": 69229,
+ "seconds": 69.8,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 278,
+   "share": 0.0,
+   "missing": [
+    "ADMJUS1",
+    "ADMJUS2",
+    "AFROAM19",
+    "AFROAM4",
+    "AFROAM5",
+    "ANATOMY1",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ANTHRO103",
+    "ANTHRO104",
+    "ANTHRO109",
+    "ANTHRO111",
+    "ANTHRO121",
+    "ANTHRO132",
+    "ARC132",
+    "ARC133",
+    "ART103",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ARTHIST100",
+    "ARTHIST121",
+    "ARTHIST126",
+    "ARTHIST130",
+    "ARTHIST131",
+    "ARTHIST136",
+    "ARTHIST140",
+    "ARTHIST141",
+    "ARTHIST151",
+    "ARTHIST162",
+    "ARTHIST171",
+    "ARTHIST181",
+    "ASIAN1",
+    "ASIAN11",
+    "ASIAN2",
+    "ASIAN20",
+    "ASIAN3",
+    "ASL2",
+    "ASL3",
+    "ASL4",
+    "ASL40",
+    "ASL45",
+    "ASTRON1",
+    "ASTRON5",
+    "BIOLOGY20",
+    "BIOLOGY22",
+    "BIOLOGY25",
+    "BIOLOGY3",
+    "BIOLOGY46",
+    "BIOLOGY51",
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "BIOLOGY9",
+    "BUS15",
+    "CHDEV11",
+    "CHEM101",
+    "CHEM102",
+    "CHEM201",
+    "CHEM211",
+    "CHEM212",
+    "CHEM221",
+    "CHEM51",
+    "CHEM65",
+    "CHICANO19",
+    "CHICANO2",
+    "CHICANO20",
+    "CHICANO25",
+    "CHICANO26",
+    "CHICANO27",
+    "CHICANO3",
+    "CHICANO30",
+    "CHICANO31",
+    "CHICANO32",
+    "CHICANO33",
+    "CHICANO34",
+    "CHICANO36",
+    "CHICANO37",
+    "CHICANO4",
+    "CHICANO42",
+    "CHICANO44",
+    "CHICANO46",
+    "CHICANO47",
+    "CHICANO50",
+    "CHICANO51",
+    "CHICANO52",
+    "CHICANO54",
+    "CHICANO57",
+    "CHICANO62",
+    "CHICANO7",
+    "CHICANO8",
+    "CHINESE3",
+    "COMM100",
+    "COMM121",
+    "COMM122",
+    "COMM190",
+    "COMMC1000",
+    "DANCEST457",
+    "EARTH1",
+    "EARTH2",
+    "ECON11",
+    "ECON20",
+    "ECON30",
+    "ECON60",
+    "ECONC2001",
+    "ECONC2002",
+    "EDUC203",
+    "ENGGEN221",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLISH101X",
+    "ENGLISH101Y",
+    "ENGLISH101Z",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH211",
+    "ENGLISH212",
+    "ENGLISH215",
+    "ENGLISH216",
+    "ENGLISH218",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH241",
+    "ENGLISH245",
+    "ENGLISH250",
+    "ENGLISH252",
+    "ENVSCI1",
+    "ENVSCI17",
+    "ENVSCI22",
+    "ESL110",
+    "FAM&CS31",
+    "FRENCH10",
+    "FRENCH26",
+    "FRENCH3",
+    "FRENCH4",
+    "FRENCH5",
+    "GEOG1",
+    "GEOG14",
+    "GEOG15",
+    "GEOG2",
+    "GEOG3",
+    "GEOG7",
+    "GEOLOGY1",
+    "GEOLOGY15",
+    "GEOLOGY2",
+    "GEOLOGY4",
+    "GEOLOGY6",
+    "GEOLOGY7",
+    "HEALTH5",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY1",
+    "HISTORY2",
+    "HISTORY20",
+    "HISTORY23",
+    "HISTORY5",
+    "HISTORY52",
+    "HISTORY6",
+    "HISTORY7",
+    "HISTORY78",
+    "HISTORY81",
+    "HISTORY82",
+    "HISTORY83",
+    "HISTORY86",
+    "HISTORY87",
+    "HISTORY97",
+    "HUMAN1",
+    "HUMAN60",
+    "HUMAN8",
+    "JAPAN3",
+    "JAPAN4",
+    "JAPAN9",
+    "JOURNAL105",
+    "KINMAJ111",
+    "LAW3",
+    "LAW8",
+    "LING1",
+    "MATH230",
+    "MATH235",
+    "MATH236",
+    "MATH245",
+    "MATH260",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH272",
+    "MATH275",
+    "MATH280",
+    "MATH284",
+    "MATH286",
+    "METEOR3",
+    "MICRO20",
+    "MUSIC111",
+    "MUSIC116",
+    "MUSIC118",
+    "MUSIC121",
+    "MUSIC122",
+    "MUSIC132",
+    "MUSIC141",
+    "OCEANO1",
+    "OCEANO10",
+    "PHILOS1",
+    "PHILOS12",
+    "PHILOS13",
+    "PHILOS14",
+    "PHILOS15",
+    "PHILOS19",
+    "PHILOS20",
+    "PHILOS28",
+    "PHILOS31",
+    "PHILOS33",
+    "PHILOS44",
+    "PHOTO121",
+    "PHOTO122",
+    "PHOTO123",
+    "PHYSICS101",
+    "PHYSICS102",
+    "PHYSICS103",
+    "PHYSICS11",
+    "PHYSICS21",
+    "PHYSICS22",
+    "PHYSICS6",
+    "PHYSICS7",
+    "PHYSIOL1",
+    "POLSC1000",
+    "POLSCI19",
+    "POLSCI2",
+    "POLSCI40",
+    "POLSCI5",
+    "POLSCI50",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH13",
+    "PSYCH14",
+    "PSYCH2",
+    "PSYCH29",
+    "PSYCH32",
+    "PSYCH41",
+    "PSYCH52",
+    "PSYCH91",
+    "PSYCH92",
+    "PSYCH93",
+    "SOC1",
+    "SOC11",
+    "SOC12",
+    "SOC13",
+    "SOC14",
+    "SOC2",
+    "SOC21",
+    "SOC22",
+    "SOC23",
+    "SOC3",
+    "SOC4",
+    "SOC7",
+    "SOC86",
+    "SPANISH10",
+    "SPANISH12",
+    "SPANISH16",
+    "SPANISH26",
+    "SPANISH3",
+    "SPANISH36",
+    "SPANISH4",
+    "SPANISH5",
+    "SPANISH6",
+    "SPANISH9",
+    "STATC1000",
+    "STATC1000E",
+    "TECTHTR367",
+    "THEATER100",
+    "THEATER101",
+    "THEATER110",
+    "THEATER121",
+    "THEATER259",
+    "THEATER505"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Studies Degrees",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOTO 122",
+    "why": "listed only in a General Studies degree emphasis list (heading cut off, GE Area 3 note), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHOTO 123",
+    "why": "listed only in a General Studies degree emphasis list (heading cut off), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POL SCI 5",
+    "why": "listed only in General Studies degree emphasis lists (as POL SCI 005), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SOC 86",
+    "why": "listed only in a General Studies degree emphasis list (as SOC 086), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 12",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 16",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 26",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "TECTHTR 367",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "THEATER 101",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "THEATER 121",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "THEATER 505",
+    "why": "listed only in a General Studies degree emphasis list, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANATOMY 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 103",
+    "why": "listed only in General Studies Natural Sciences and Social and Behavioral Sciences emphases, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 111",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASTRON 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASTRON 5",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 6",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 9",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 20",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 22",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 25",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 46",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHEM 51",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHEM 65",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHEM 201",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "EARTH 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "EARTH 2",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ENV SCI 22",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOG 3",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOG 15",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOLOGY 2",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOLOGY 4",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOLOGY 6",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOLOGY 7",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOLOGY 15",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "METEOR 3",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "OCEANO 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "OCEANO 10",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 11",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 21",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 22",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 101",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 102",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSICS 103",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "listed only in the General Studies Natural Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ADMJUS001",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis (as ADM JUS 001), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ADM JUS 2",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "AFRO AM 4",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "AFRO AM 5",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "AFRO AM 19",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 104",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 109",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ANTHRO 132",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASIAN 1",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASIAN 2",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASIAN 3",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASIAN 11",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ASL040",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis (as A S L 040), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "BIOLOGY 51",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 2",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 3",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 4",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 19",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 20",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 25",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 26",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 31",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 33",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 44",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CHICANO 50",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "CH DEV 11",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "COMM 100",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "COMM 121",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "COMM 122",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "COMM 190",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ECON 11",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ECON 30",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ECON 60",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "ENV SCI 17",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "FAM &CS 31",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "GEOG 14",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HEALTH 5",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis (as HIST C1001), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis (as HIST C1002), not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 5",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 20",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 23",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 78",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 81",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 82",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 83",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "HISTORY 97",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "JAPAN 9",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "JOURNAL 105",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "KIN MAJ 111",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "LAW 3",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "LAW 8",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POL SCI 40",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "POL SCI 50",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 13",
+    "why": "listed only in the General Studies Social and Behavioral Sciences emphasis, not in a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 29",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 32",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "PSYCH 92",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "SOC 1",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "SOC 2",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis, not a Cal-GETC certificate section"
+   },
+   {
+    "code": "SOC 3",
+    "why": "listed only in General Studies Social and Behavioral Sciences emphasis (cut off), not a Cal-GETC certificate section"
+   },
+   {
+    "code": "ARC 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARC 133",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 126",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 131",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 136",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 141",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 162",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 171",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 181",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASIAN 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASL002",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASL003",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASL004",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASL045",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 221",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 27",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 34",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 36",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 37",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 42",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 46",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 51",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 52",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 54",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 57",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 62",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHINESE 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANCEST 457",
+    "why": "not in the text"
+   },
+   {
+    "code": "E.S.L. 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "EDUC 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENG GEN 221",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 101X",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 101Y",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 101Z",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 211",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 212",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 216",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 218",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 241",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 245",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 250",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 252",
+    "why": "not in the text"
+   },
+   {
+    "code": "FRENCH 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "FRENCH 26",
+    "why": "not in the text"
+   },
+   {
+    "code": "FRENCH 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "FRENCH 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "FRENCH 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 230",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 235",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 236",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 245",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 260",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 261",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 262",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 263",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 272",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 275",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 280",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 284",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 286",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 116",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 118",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 28",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 44",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOTO 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYCH 91",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYCH 93",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 23",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEATER 259",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 64-66) does not contain a section for the Cal-GETC Certificate of Achievement. It prints General Studies degree Areas of Emphasis: the tail of a list whose heading is cut off (its note refers to LACCD GE Area 3, likely Arts and Humanities), 'Natural Sciences' and 'Social and Behavioral Sciences' (cut off at SOC 003). Each is a separate 60-unit degree with 'LACCD GE OR CAL-GETC PATTERN' and an 18-unit Area of Emphasis rule ('No more than two courses from any one subject area').",
+   "Because these lists belong to General Studies degrees, not to the named Cal-GETC certificate, no blocks, totals or GE fields were recorded for this award. section_heading gives only the page running head 'General Studies Degrees'. A reviewer should locate the actual Cal-GETC certificate section in the 2026-2027 ELAC catalog; the source page reference may be wrong.",
+   "The closed list looks like the Cal-GETC approved course list. Its courses appear in the text only as General Studies emphasis options.",
+   "Part 2: The supplied text (catalog pages 64-66) holds only General Studies degree Areas of Emphasis (end of Arts and Humanities list, Natural Sciences, Social and Behavioral Sciences); no section for the Cal-GETC Certificate of Achievement appears, so no blocks are recorded.",
+   "Part 2: The 'Total 60' and 'LACCD GE OR CAL-GETC PATTERN' lines belong to the General Studies A.A. degrees, not this certificate, so degree_total, ge_units and ge_pattern are left null.",
+   "Part 2: The text is cut off mid-list at SOC 003 on page 66; the Cal-GETC certificate section likely appears elsewhere in the catalog and should be checked.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "39063389278"
+}

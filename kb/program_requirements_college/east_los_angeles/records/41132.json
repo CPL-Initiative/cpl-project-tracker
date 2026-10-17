@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8757,
+  "input_tokens": 9155,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8757,
-    "output_tokens": 1522,
+    "input_tokens": 9155,
+    "output_tokens": 1532,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 1522,
+  "output_tokens": 1532,
   "output_tokens_details": {
    "thinking_tokens": 438
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06547,
- "ms": 14888,
- "seconds": 15.2,
+ "cost_usd": 0.06726,
+ "ms": 12554,
+ "seconds": 12.8,
  "parts": null,
  "error": null,
  "score": {
@@ -126,7 +126,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate of Science in Forensic Crime Scene Investigation (Academic Plan E041132C)",
+   "section_heading": "Associate of Science in Forensic Crime Scene Investigation",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -245,15 +245,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's printed title is not in the extracted text, which begins at '(Academic Plan E041132C)'; the heading recorded is taken from the description's wording 'The Associate of Science in Forensic Crime Scene Investigation'.",
-   "The stated block total of 30 comes from the line 'TOTAL UNITS FOR MAJOR 30'.",
-   "Additional degree-applicable units fill the degree to 60 units; no elective units are printed for them.",
+   "The section's heading is not printed in the excerpt (text begins with '(Academic Plan E041132C)'); heading taken from the program name used in the description ('The Associate of Science in Forensic Crime Scene Investigation').",
+   "'TOTAL UNITS FOR MAJOR 30' recorded as the block's stated total and total_units; 'Total 60' recorded as degree_total; LACCD General Education Plan 27 units as ge_units.",
+   "Page says 'Complete additional degree-applicable units, if needed, to reach 60 units' without printing units, so electives_fill_degree is true.",
    "Note on page: 6 units of major courses may be double-counted in LACCD GE Area 4b and 5.",
-   "ADM JUS 174 title printed with a typo ('Crminal Investigations').",
-   "The ADM JUS 172 and ADM JUS 173 entries carry an asterisk, which the page explains as 'This course has a prerequisite'.",
-   "The page footer of the following page shows the 2026-2027 General Catalog.",
-   "The following A.S.-T in Administration of Justice section was not read for this record."
+   "ADM JUS 172 and 173 are marked with an asterisk (prerequisite required).",
+   "ADM JUS 174 title printed with typo 'Offender Profiling in Crminal Investigations'.",
+   "Page 72 content (A.S.-T in Administration of Justice) belongs to a different award and was not used."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

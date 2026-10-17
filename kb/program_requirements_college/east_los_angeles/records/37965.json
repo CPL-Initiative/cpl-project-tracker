@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11295,
+  "input_tokens": 12648,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11295,
-    "output_tokens": 2954,
+    "input_tokens": 12648,
+    "output_tokens": 3149,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2954,
+  "output_tokens": 3149,
   "output_tokens_details": {
-   "thinking_tokens": 943
+   "thinking_tokens": 1094
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10426,
- "ms": 22987,
- "seconds": 23.3,
+ "cost_usd": 0.11357,
+ "ms": 24065,
+ "seconds": 24.5,
  "parts": null,
  "error": null,
  "score": {
@@ -125,7 +125,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Commercial Music and Recording Arts, Associate in Arts Degree (Academic Plan E037965C)",
+   "section_heading": "Commercial Music and Recording, Associate in Arts Degree",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -164,7 +164,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core Courses",
+    "name": "Required Core Courses: Complete the following 13 courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -278,7 +278,7 @@
     ]
    },
    {
-    "name": "Pathway Option 1: Performance",
+    "name": "Pathway Option 1: Performance: Complete the following courses",
     "rule": "all",
     "minimum": null,
     "option_group": "Pathway",
@@ -318,7 +318,7 @@
     ]
    },
    {
-    "name": "Pathway Option 1: Performance - Ensemble Electives",
+    "name": "Pathway Option 1: Performance: Ensemble Electives - Complete two courses from the following",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": "Pathway",
@@ -358,7 +358,7 @@
     ]
    },
    {
-    "name": "Pathway Option 2: Production Technology",
+    "name": "Pathway Option 2: Production Technology: Complete the following courses",
     "rule": "all",
     "minimum": null,
     "option_group": "Pathway",
@@ -392,13 +392,13 @@
    }
   ],
   "notes": [
-   "The section heading is not in the extracted text (page starts at the Academic Plan line); heading recorded from the program name and should be checked.",
-   "Core heading says 'Complete the following 13 courses 36', but 13 course rows (one being MUSIC 116 or 118 or 141) are listed, summing to 35 units, not 36; check the printed total.",
-   "Pathway Option 1 (Performance) is printed as 6 units and consists of two blocks: MUSIC 783-1 to 783-4 (4 units, all required) AND two ensemble courses (2 units). Both blocks share option_group 'Pathway' with Option 2; Option 1 requires both of its blocks.",
-   "Ensemble courses are repeatable; the same course may be taken twice to fulfill the ensemble requirement.",
-   "Degree total 60 includes LACCD GE Plan 27 units; additional degree-applicable units as needed to reach 60. 3 units from MUSIC 116/118/141 may double count in LACCD GE Area 3; GE Areas 4a and 7 are waived (high-unit major).",
-   "No major total is printed separately."
+   "Pathway Option 1 (Performance, 6 units printed for the option) consists of two blocks: the four Pop Music Workshop courses (4 units) AND two ensemble electives (2 units); both carry option_group 'Pathway' and must be completed together, as the alternative to Pathway Option 2 (6 units).",
+   "The core block states 36 units for 13 courses, but the printed course units sum to 35; reviewer should check.",
+   "Ensemble courses are repeatable; the same ensemble course may be taken twice to fulfill the 2-unit requirement.",
+   "Total 60 printed includes the LACCD General Education Plan (27); no separate major total printed. The page says to complete additional degree-applicable units if needed to reach 60.",
+   "3 units from MUSIC 116, MUSIC 118 or MUSIC 141 may be double counted in LACCD GE Area 3; LACCD GE Area 4a (3 units) and Area 7 (3 units) are waived for this high-unit major per AP 4100.",
+   "Section heading reads 'Commercial Music and Recording, Associate in Arts Degree' while the program title is 'Commercial Music and Recording Arts'."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

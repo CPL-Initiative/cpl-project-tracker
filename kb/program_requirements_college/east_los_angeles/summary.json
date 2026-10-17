@@ -2,19 +2,19 @@
  "college": "East Los Angeles College",
  "programs": 234,
  "with_closed_list": 147,
- "found": 120,
- "extracted": 120,
+ "found": 137,
+ "extracted": 137,
  "errors": 0,
- "passed_machine_checks": 82,
+ "passed_machine_checks": 86,
  "failed": {
-  "coverage": 2,
+  "coverage": 6,
   "invented": 2,
-  "arithmetic": 35,
+  "arithmetic": 48,
   "repeated": 0,
   "outcomes": 2
  },
- "cost_usd": 8.53,
- "cost_per_program": 0.0711,
+ "cost_usd": 10.74,
+ "cost_per_program": 0.0784,
  "not_found": [
   {
    "control_number": "24129",
@@ -23,45 +23,6 @@
    "near_miss": {
     "pages": [
      31
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "35087",
-   "title": "Environmental Studies: Social and Public Policy",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "pages": [
-     354,
-     355,
-     356,
-     357
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "35397",
-   "title": "Business Administration",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     54
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "35720",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     161
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
@@ -80,32 +41,12 @@
    }
   },
   {
-   "control_number": "37924",
-   "title": "Public Health Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     259,
-     260,
-     261
-    ],
-    "coverage": 0.875,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
    "control_number": "38090",
    "title": "Fitness Specialist Certification",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "pages": [
-     235,
-     236,
-     237,
-     238
-    ],
-    "coverage": 0.222,
-    "heading": "(Academic Plan E038090D)"
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
+    "coverage": 0.222
    }
   },
   {
@@ -113,26 +54,8 @@
    "title": "Cloud Computing",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "pages": [
-     32
-    ],
-    "coverage": 0.25,
-    "heading": "Academic Resources/Programs"
-   }
-  },
-  {
-   "control_number": "38168",
-   "title": "Commercial Music: Instrumental/Vocal Performer",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "pages": [
-     291,
-     292,
-     293,
-     294
-    ],
-    "coverage": 0.846,
-    "why": "the page prints neither the control number nor the title and award"
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=124",
+    "coverage": 0.25
    }
   },
   {
@@ -148,64 +71,10 @@
    }
   },
   {
-   "control_number": "38332",
-   "title": "Geo-Spatial Engineering and Technologies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "pages": [
-     196
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "38337",
-   "title": "Geo-Spatial Engineering and Technologies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "pages": [
-     199
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
    "control_number": "38340",
    "title": "Custodial Technician Training",
    "award": "Noncredit program",
    "near_miss": null
-  },
-  {
-   "control_number": "38427",
-   "title": "Basic Training Academy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "pages": [
-     320,
-     321,
-     322,
-     323
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "39800",
-   "title": "Engineering Technology: Mechanical",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "pages": [
-     195,
-     196,
-     197,
-     198
-    ],
-    "coverage": 0.6,
-    "why": "the page prints neither the control number nor the title and award"
-   }
   },
   {
    "control_number": "39801",
@@ -213,13 +82,11 @@
    "award": "A.S. Degree",
    "near_miss": {
     "pages": [
-     195,
-     196,
-     197,
-     198
+     198,
+     199
     ],
-    "coverage": 0.455,
-    "heading": "Engineering and Technologies Department"
+    "coverage": 0.545,
+    "why": "the page prints neither the control number nor the title and award"
    }
   },
   {
@@ -247,122 +114,14 @@
    }
   },
   {
-   "control_number": "41097",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     130,
-     131,
-     132,
-     133
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "43632",
-   "title": "Social Work and Human Services",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "pages": [
-     359,
-     360
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "43725",
-   "title": "Recreation and Leisure Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "pages": [
-     239,
-     240,
-     241,
-     242
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
    "control_number": "44374",
    "title": "Data Science",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "pages": [
-     32
-    ],
-    "coverage": 0.333,
-    "heading": "Academic Resources/Programs"
-   }
-  },
-  {
-   "control_number": "44595",
-   "title": "Public Health",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     259,
-     260,
-     261
-    ],
-    "coverage": 0.92,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "45028",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "pages": [
-     54
-    ],
-    "coverage": 0.424,
-    "heading": "Graduation Requirements"
-   }
-  },
-  {
-   "control_number": "45051",
-   "title": "Japanese",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "pages": [
-     35
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "45540",
-   "title": "Respiratory Therapy",
-   "award": "Baccalaureate of Science (B.S.) Degree.",
-   "near_miss": {
-    "pages": [
-     345
-    ],
-    "coverage": 0.625,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "45935",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     54
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127",
+    "coverage": 0.333
    }
   }
  ],
- "run": "39012077282"
+ "run": "39063389278"
 }

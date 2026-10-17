@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7448,
+  "input_tokens": 10050,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7448,
-    "output_tokens": 2220,
+    "input_tokens": 10050,
+    "output_tokens": 2444,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2220,
+  "output_tokens": 2444,
   "output_tokens_details": {
-   "thinking_tokens": 869
+   "thinking_tokens": 1084
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07419,
- "ms": 19146,
- "seconds": 19.4,
+ "cost_usd": 0.08908,
+ "ms": 20482,
+ "seconds": 20.8,
  "parts": null,
  "error": null,
  "score": {
@@ -128,7 +128,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science in Geology for Transfer Degree (Academic Plan E036177H)",
+   "section_heading": "Associate in Science in Geology for Transfer (Academic Plan E036177H)",
    "measure": "units",
    "total_units": {
     "min": 28,
@@ -159,7 +159,7 @@
   },
   "blocks": [
    {
-    "name": "Core Requirements: GEOLOGY 004",
+    "name": "Physical Geology: GEOLOGY 004",
     "rule": "all",
     "minimum": null,
     "option_group": "Physical Geology",
@@ -178,7 +178,7 @@
     ]
    },
    {
-    "name": "Core Requirements: GEOLOGY 001 and GEOLOGY 006",
+    "name": "Physical Geology: GEOLOGY 001 and GEOLOGY 006",
     "rule": "all",
     "minimum": null,
     "option_group": "Physical Geology",
@@ -204,7 +204,7 @@
     ]
    },
    {
-    "name": "Core Requirements",
+    "name": "CORE REQUIREMENTS",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -261,16 +261,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's heading is not in the extracted text; the text begins with '(Academic Plan E036177H)'. The section heading recorded here is taken from the description ('Associate in Science in Geology for Transfer Degree').",
-   "The catalog prints 'CORE REQUIREMENTS 28' over all core courses, including the Physical Geology choice. I recorded it as total_units because the core is split into blocks.",
-   "Physical Geology choice: GEOLOGY 004 (4) OR GEOLOGY 001 (3) AND GEOLOGY 006 (1). Each path is recorded as a block in option_group 'Physical Geology'.",
-   "Catalog prints codes with leading zeros (GEOLOGY 001, 002, 007), which I matched to the closed list's GEOLOGY 1, 2, 7.",
-   "GEOLOGY 007 is printed as 1 unit in the catalog, but the state file stores 2 units.",
-   "The ge_units figure of 34 comes from the requirements paragraph ('34 semester/45 quarter units'). The 'Cal-GETC GE Pattern' line prints no units.",
-   "Total 60 is the degree total. The catalog says 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS', so electives_fill_degree is true.",
-   "Program learning outcomes span a page break (pages 94-95). The fourth outcome continues on page 95.",
-   "The source PDF is the 2026-2027 General Catalog."
+   "The catalog prints 'CORE REQUIREMENTS 28' over the entire major (GEOLOGY 004 or GEOLOGY 001 + GEOLOGY 006, then GEOLOGY 002, 007, CHEM 101, 102, MATH 261, 262). Because the core list is the whole major, the 28 is recorded as total_units and not repeated in a block's stated value. The core list is split into an option pair plus the remaining required courses.",
+   "The first core entry is 'GEOLOGY 004 OR GEOLOGY 001 AND GEOLOGY 006'. It is recorded as two option blocks in option_group 'Physical Geology'.",
+   "The catalog prints GEOLOGY 007 at 1 unit; the state file stores 2 units. The catalog value is recorded.",
+   "Codes are recorded as printed (GEOLOGY 001, 002, 007). GEOLOGY 001 matches closed-list GEOLOGY 1, GEOLOGY 002 matches GEOLOGY 2, and GEOLOGY 007 matches GEOLOGY 7.",
+   "The degree total of 60 and the Cal-GETC pattern are printed. Cal-GETC units (34 semester) come from the ADT requirements paragraph. The page says to complete additional CSU units as needed to reach 60.",
+   "The outcomes list spans the page break between pages 94 and 95.",
+   "The preceding section on page 94 (Geography ADT, with its own outcomes and GEOLOGY 001 in List B) belongs to another program and was not used."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

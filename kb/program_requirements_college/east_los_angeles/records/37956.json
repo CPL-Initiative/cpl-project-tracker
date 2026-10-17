@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9584,
+  "input_tokens": 9926,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9584,
-    "output_tokens": 1329,
+    "input_tokens": 9926,
+    "output_tokens": 1359,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1329,
+  "output_tokens": 1359,
   "output_tokens_details": {
-   "thinking_tokens": 482
+   "thinking_tokens": 497
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06492,
- "ms": 12272,
- "seconds": 12.6,
+ "cost_usd": 0.06688,
+ "ms": 11545,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
@@ -80,7 +80,21 @@
    ],
    "why": [
     "the record says electives fill the degree total, but the catalog text names no electives"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -108,11 +122,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "(Academic Plan E037956C)",
+   "section_heading": "Chemistry Technician A.S. Degree (Academic Plan E037956C)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -203,12 +217,12 @@
    }
   ],
   "notes": [
-   "The excerpt begins at '(Academic Plan E037956C)'; the program's printed heading (likely 'Chemistry Technician A.S. Degree') is not in the text, so the academic plan line is used as section_heading.",
-   "The only major figure printed is 'REQUIRED CORE 25', recorded as the block's stated total; total_units left null since no separate major total is printed.",
-   "Page prints 'Total 60' (degree_total) and 'LACCD GENERAL EDUCATION PLAN 27' (ge_units); 'Complete additional degree-applicable units, if needed, to reach 60 units' read as electives_fill_degree.",
-   "Note on page: 3 units from CHEM 101 are double-counted in LACCD GE Area 5.",
-   "Catalog page header indicates 2026-2027 catalog."
+   "The extracted text begins with '(Academic Plan E037956C)'; the printed program/award heading is not shown, so the section heading is reconstructed from the program name and plan number. Reviewer should confirm this plan is the A.S. Degree.",
+   "total_units set to 25 from the 'REQUIRED CORE 25' line, which is the only major requirement printed; no separate major total is printed.",
+   "Page prints 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS', LACCD General Education Plan 27, and Total 60.",
+   "Note: 3 units from CHEM 101 will be double-counted in LACCD GE Area 5.",
+   "All core courses are marked as having a prerequisite."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

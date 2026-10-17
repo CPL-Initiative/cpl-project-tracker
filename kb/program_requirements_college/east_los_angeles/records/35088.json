@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10668,
+  "input_tokens": 12012,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10668,
-    "output_tokens": 2584,
+    "input_tokens": 12012,
+    "output_tokens": 2953,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2584,
+  "output_tokens": 2953,
   "output_tokens_details": {
-   "thinking_tokens": 793
+   "thinking_tokens": 1091
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09435,
- "ms": 19858,
- "seconds": 20.2,
+ "cost_usd": 0.10711,
+ "ms": 22777,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
@@ -380,12 +380,13 @@
    }
   ],
   "notes": [
-   "The program's title heading is not in the extracted text (page starts at '(Academic Plan E035088C)'); section identified by its description and position before the Geography ADT.",
-   "'RESTRICTED ELECTIVE: CHOOSE ONE COURSE FROM EACH CATEGORY' prints 9-10 units for the three categories combined; recorded as three choose-1 blocks with no per-block stated total.",
-   "No major total printed; core 19 plus restricted electives 9-10 not summed. Degree total 60 includes LACCD GE Plan 27; additional degree-applicable units as needed to reach 60.",
-   "Note: 9 units of major courses may be double counted in LACCD GE areas 2, 4b, and 5.",
-   "GEOG 001 in the catalog is titled Physical Geography; the closed list has no GEOG 1."
+   "The program title heading is not shown in the excerpt; the section begins with '(Academic Plan E035088C)' on page 93, which is used as the section heading.",
+   "Restricted electives: 'CHOOSE ONE COURSE FROM EACH CATEGORY 9-10' — the 9-10 unit total applies across the three category blocks combined, so each category block's stated is null.",
+   "No major total is printed; core is 19 units and restricted electives 9-10 units. Degree total 60 includes LACCD General Education Plan 27 units; additional degree-applicable units are completed as needed to reach 60.",
+   "Note printed: 9 units of major courses may be double counted in LACCD General Education areas 2, 4b, and 5.",
+   "GEOG 001 is printed as 'Physical Geography' and is not in the closed list (closed list has GEOG 3 only); recorded as catalog addition with GEOLOGY 001 and EARTH 001 as alternatives.",
+   "CHEM 101 has a prerequisite; ENV SCI 022 has a corequisite."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

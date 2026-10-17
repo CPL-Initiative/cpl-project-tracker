@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6436,
+  "input_tokens": 6749,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6436,
-    "output_tokens": 903,
+    "input_tokens": 6749,
+    "output_tokens": 905,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 903,
+  "output_tokens": 905,
   "output_tokens_details": {
-   "thinking_tokens": 375
+   "thinking_tokens": 333
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0438,
- "ms": 9314,
- "seconds": 9.6,
+ "cost_usd": 0.0451,
+ "ms": 9184,
+ "seconds": 9.5,
  "parts": null,
  "error": null,
  "score": {
@@ -128,7 +128,7 @@
   },
   "blocks": [
    {
-    "name": "Required courses",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -157,11 +157,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's heading falls before the excerpt; the text begins at '(Academic Plan E042013F)'. The section heading was taken from the program title and the description ('Certificate of Competency in English as a Second Language Academic Bridge').",
-   "The catalog prints the course list under a 'SUBJECT & NO.' header with no block name. The block name 'Required courses' was supplied, and the block was read as all required.",
-   "This is a noncredit program, but the catalog prints 0 in the units column and states no hours. Measure is therefore units, with 0 as printed. No total is stated.",
-   "ESL NC 055CE is in the catalog section but not in the closed list, so it is marked catalog_addition."
+   "The excerpt begins mid-section at '(Academic Plan E042013F)'; the program title heading appears to sit on the preceding page, so the section heading is taken from the program name plus the printed academic plan number. A reviewer should confirm it against the PDF.",
+   "The section prints no block name. The two courses are listed under 'SUBJECT & NO.' with no choice language, so they are recorded as a single all-required block named 'Required Courses'.",
+   "This noncredit Certificate of Competency prints no hours, only '0' in the units column beside each course. Measure is therefore recorded as units, using the 0 values as printed, and no total is given.",
+   "ESL NC 055CE (Reading and Vocabulary: Academic Bridge) is printed in the section but is not in the closed list, so it is marked as a catalog addition."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

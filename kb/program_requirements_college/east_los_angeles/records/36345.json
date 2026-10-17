@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11838,
+  "input_tokens": 12155,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11838,
-    "output_tokens": 2589,
+    "input_tokens": 12155,
+    "output_tokens": 2616,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2589,
+  "output_tokens": 2616,
   "output_tokens_details": {
-   "thinking_tokens": 871
+   "thinking_tokens": 1002
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09913,
- "ms": 20441,
- "seconds": 20.8,
+ "cost_usd": 0.10094,
+ "ms": 20711,
+ "seconds": 21.0,
  "parts": null,
  "error": null,
  "score": {
@@ -69,8 +69,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     54.0,
     59.0
@@ -84,8 +84,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    1.0,
+    6.0
    ]
   },
   "repeated": {
@@ -110,11 +112,11 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Economics for Transfer (Academic Plan E036345G)",
+   "section_heading": "Associate in Arts in Economics for Transfer",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -315,17 +317,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins at '(Academic Plan E036345G)'; the program heading itself is cut off, so section_heading is taken from the description ('Associate in Arts in Economics for Transfer Degree') plus the academic plan number.",
-   "Catalog year read from page footer: 2026-2027.",
-   "Core statistics requirement: ECON 020 or PSYCH 091 or STAT C1000 or STAT C1000E or BUS 015, recorded as one entry with alternatives; calculus: MATH 236 or MATH 261.",
-   "List B also allows 'Any List A course not already used above'; those List A courses are not repeated in the List B block.",
+   "Catalog prints codes with zero-padded numbers (ECON 020, PSYCH 091, BUS 015, CAOT 035, ECON 011, ECON 030, ECON 060); treated as the closed-list courses ECON 20, PSYCH 91, BUS 15, CAOT 35, ECON 11, ECON 30, ECON 60, not catalog additions.",
+   "Asterisks on MATH 236, MATH 261, ACCTG 002, MATH 262, MATH 263, MATH 270 mark prerequisites and were dropped from the codes.",
+   "List B also allows 'Any List A course not already used above'; List A courses are not repeated in the List B block.",
    "List A note: 'Only one computer course may be taken' (CAOT 035 or CIS 101).",
-   "The 18-unit figure is the generic ADT minimum for the major, not a printed major total, so total_units is null.",
-   "ge_units 34 is taken from the general ADT requirement text '(34 semester/45 quarter units)' for Cal-GETC; the 'Cal-GETC GE Pattern' line itself prints no units.",
-   "Degree total 60 is printed as 'Total 60' for this award; remaining units filled by 'additional CSU units, if needed, to reach 60 CSU transferable units'.",
-   "Catalog codes printed with leading zeros (ECON 020, PSYCH 091, BUS 015, CAOT 035, etc.) match closed-list codes without leading zeros.",
-   "ACCTG 001, ACCTG 002 and CIS 101 are not in the closed list and are marked as catalog additions."
+   "No major total is printed; the 'minimum of 18 semester units' in the ADT boilerplate is not recorded as total_units. Degree total 60 is printed in the table.",
+   "ge_units 34 is taken from the boilerplate requirement text '(34 semester/45 quarter units)' for Cal-GETC; the table line 'Cal-GETC GE Pattern' prints no units.",
+   "Remaining units filled with 'additional CSU units, if needed, to reach 60 CSU transferable units'."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }
