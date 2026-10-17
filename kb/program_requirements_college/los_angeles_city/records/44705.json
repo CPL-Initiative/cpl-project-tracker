@@ -1,0 +1,146 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "44705",
+ "shape": "noncredit",
+ "title": "Tutor Training I",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=349",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7979,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7979,
+    "output_tokens": 580,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 580,
+  "output_tokens_details": {
+   "thinking_tokens": 162
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04352,
+ "ms": 6222,
+ "seconds": 6.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "VOCED88CE",
+    "VOCED89CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 Units, 1 Hrs, 0 Units, 3 Hrs"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "NONCREDIT COURSES",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOC ED 088CE",
+    "why": "no program requirements section in the text; named only as the prerequisite of VOC ED 089CE"
+   },
+   {
+    "code": "VOC ED 089CE",
+    "why": "no program requirements section in the text; appears only as a course description"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 349) holds noncredit course descriptions only. It prints no requirements section, total or outcomes for the Tutor Training I noncredit program, so no blocks were recorded.",
+   "The program section is likely on another catalog page. A reviewer should locate it.",
+   "VOC ED 089CE is described as '0 Units (RPT 98) (Lec 1 Hrs)'. That figure is weekly lecture hours, not program hours, so it was not used as a total.",
+   "The measure is set to hours because this is a noncredit program; no hours total is printed in the text."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

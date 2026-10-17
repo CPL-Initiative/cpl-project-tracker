@@ -1,0 +1,259 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02727",
+ "shape": "degree",
+ "title": "Business Information Worker",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11385,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11385,
+    "output_tokens": 1566,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1566,
+  "output_tokens_details": {
+   "thinking_tokens": 398
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07686,
+ "ms": 13360,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Develop a solution to a business problem using the most appropriate business application software.",
+    "Construct business presentations that are accurate, well-organized, and are appropriate to the audience and purpose.",
+    "Develop accurate accounting reports using appropriate spreadsheet and accounting software."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop a solution to a business problem using the most appropriate business app",
+    "not in the catalog text as printed: Construct business presentations that are accurate, well-organized, and are appr",
+    "not in the catalog text as printed: Develop accurate accounting reports using appropriate spreadsheet and accounting"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MAJOR CORE COURSES (39 UNITS)",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop a solution to a business problem using the most appropriate business application software.",
+    "Apply software tools to function effectively as a team member using collaborative web-based workspaces.",
+    "Construct business presentations that are accurate, well-organized, and are appropriate to the audience and purpose.",
+    "Develop accurate accounting reports using appropriate spreadsheet and accounting software.",
+    "Organize customer service tasks using customer relationship management software."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES (39 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "CAOT 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 043",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 048",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 084",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 098",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.A. degree's heading, description and any general education/degree total appear to be on the preceding page (page 82), which is not in the supplied text; the section was identified as the degree by its 'MAJOR CORE COURSES (39 UNITS)' requirement block at the top of page 83, which precedes the Certificate of Achievement section. Reviewer should confirm.",
+   "Total of 39 units taken from the 'MAJOR CORE COURSES (39 UNITS)' heading; no degree total or GE pattern appears in the supplied text.",
+   "Careers named in the Certificate of Achievement description (office and executive administrative support, etc.) were not recorded because they belong to the certificate section, not the A.A. degree section.",
+   "Codes recorded as printed with leading zeros (e.g., CAOT 001 = closed-list CAOT 1)."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

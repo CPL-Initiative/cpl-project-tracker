@@ -1,0 +1,168 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "24387",
+ "shape": "noncredit",
+ "title": "CAREER DISCOVERY SKILLS",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7404,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7404,
+    "output_tokens": 714,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 714,
+  "output_tokens_details": {
+   "thinking_tokens": 222
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0439,
+ "ms": 6474,
+ "seconds": 7.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Career Discovery Skills Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use tools and resources to assist in career decision-making process.",
+    "Develop an effective resume that matches a job description.",
+    "Prepare for an employment interview, including developing responses, describing experience, and dressing for success."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 236CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 238CE",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is counted in hours: 'Total Lecture Hrs: 54' is recorded as total_units, and course hours are as printed (18 + 36 = 54).",
+   "The page then prints other College & Career Readiness certificates (Document Essentials, Computer Skills for the Workplace, Introduction to Computers); they were not read.",
+   "The description names no specific careers, only general career decision-making, so careers is empty."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

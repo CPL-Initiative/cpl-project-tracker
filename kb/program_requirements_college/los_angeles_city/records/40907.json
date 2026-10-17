@@ -1,0 +1,167 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "40907",
+ "shape": "noncredit",
+ "title": "ADULT BASIC EDUCATION",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7450,
+    "output_tokens": 758,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 758,
+  "output_tokens_details": {
+   "thinking_tokens": 240
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04496,
+ "ms": 7793,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    153.0,
+    153.0
+   ],
+   "stated": [
+    153.0,
+    153.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Adult Basic Education Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 153,
+    "max": 153
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Improve and apply reading, writing, and mathematical skills for successful completion of the high school equivalency test, workforce preparation and training courses, and college-level courses.",
+    "Utilize effective study skills learned to support success in test preparation, academic or workforce courses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 023CE",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 034CE",
+      "units": 117,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of competency counted in hours; total from 'Total Lecture Hrs: 153', which equals the 36 + 117 hours printed beside the two required courses.",
+   "The heading reads 'REQUIRED COURSE' (singular), but two courses are listed under it; both are recorded as required.",
+   "The page also prints Academic Preparation and College Readiness Math Fundamentals I certificates; those sections were not read."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

@@ -1,0 +1,174 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "42058",
+ "shape": "noncredit",
+ "title": "ENGLISH FOR SPEAKERS OF OTHER LANGUAGES - LEVEL I",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7699,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7699,
+    "output_tokens": 993,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 993,
+  "output_tokens_details": {
+   "thinking_tokens": 329
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05066,
+ "ms": 8604,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    162.0,
+    270.0
+   ],
+   "stated": [
+    162.0,
+    270.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Identify and write alphabetical letters and numerals to communicate basic information in English such as name, address, phone number, and apply information to complete simplified forms."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify and write alphabetical letters and numerals to communicate basic inform"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English for Speakers of Other Languages - Level I Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 162,
+    "max": 270
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and write alphabetical letters and numerals to communicate basic information in English such as name, address, phone number, and apply information to complete simplified forms.",
+    "Answer simple questions with non-verbals, Yes/No, one word responses, or short phrases.",
+    "Recognize and produce sentences with basic English word order."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL NC 110CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL NC 221CE",
+      "units": 54,
+      "units_max": 162,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is printed as a Certificate of Competency (noncredit); requirements are counted in hours ('Total Lecture Hrs: 162 - 270').",
+   "The catalog titles ESL NC 110CE 'ENGLISH AS A SECOND LANGUAGE - LITERACY', while the closed list titles it 'English as a Second Language - Introductory'; same code, so treated as the same course.",
+   "Outcomes were copied with PDF line-break hyphenation rejoined ('com -municate' read as 'communicate') and doubled spaces in outcome 1 read as single spaces.",
+   "The description mentions 'enhanced job opportunities' but names no specific career, so careers is empty.",
+   "The page continues with Level II, Literacy Level ESL and Vocational ESL I certificates; those sections were not read."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

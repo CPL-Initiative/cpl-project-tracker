@@ -1,0 +1,261 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "40232",
+ "shape": "adt",
+ "title": "UCTP CHEMISTRY",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11495,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11495,
+    "output_tokens": 1687,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1687,
+  "output_tokens_details": {
+   "thinking_tokens": 527
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07972,
+ "ms": 13045,
+ "seconds": 13.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    53.0,
+    53.0
+   ],
+   "stated": [
+    72.0,
+    75.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     53.0
+    ],
+    "stated": [
+     53.0,
+     53.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Solve problems using algebra, analyze graphical data, and convert between scientific units.",
+    "Communicate scientific processes by writing laboratory reports that include data in tabular and graphical format and summarize results to explain the phenomena studied."
+   ],
+   "why": [
+    "not in the catalog text as printed: Solve problems using algebra, analyze graphical data, and convert between scient",
+    "not in the catalog text as printed: Communicate scientific processes by writing laboratory reports that include data"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "UCTP Chemistry Associate in Science for UC Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 53,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 72,
+    "max": 75
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe chemical and physical structures and reactions and mechanisms of chemical formation be able to synthesize.",
+    "Solve problems using algebra, analyze graphical data, and convert between scientific units.",
+    "Apply the scientific method by forming hypothesis based on observation.",
+    "Design and implement simple experiments, work independently, and draw reasonable conclusions.",
+    "Communicate scientific processes by writing laboratory reports that include data in tabular and graphical format and summarize results to explain the phenomena studied.",
+    "Design a synthesis of complex molecules from simple starting materials."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 53,
+     "max": 53
+    },
+    "courses": [
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major Units: 53 recorded as total_units; 'Total Units: 72-75' recorded as degree_total.",
+   "GE pattern is Cal-GETC (one course each from Areas 1A, 1B, 3A or 3B, 4, 5B, and 6); the page prints no GE unit figure.",
+   "The 'minimum of 18 semester units' line is the district's general major requirement (AP 4100), not this award's total.",
+   "CHEM 060 and MATH 260 appear only as prerequisites in footnotes, not as program requirements; not placed in blocks.",
+   "Outcomes: hyphens from line-break word splits (e.g., 'con -vert', 'summa -rize') were rejoined as single words.",
+   "The major core table continues across a page break (pages 139-140); PHYSICS 102 and 103 appear on page 140.",
+   "No careers are named in the UCTP Chemistry section."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

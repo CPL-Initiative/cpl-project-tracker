@@ -1,0 +1,326 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "08238",
+ "shape": "certificate",
+ "title": "CHILD DEVELOPMENT MASTER TEACHER",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13207,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13207,
+    "output_tokens": 2324,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2324,
+  "output_tokens_details": {
+   "thinking_tokens": 690
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09931,
+ "ms": 18746,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHDEV11"
+   ],
+   "flagged": [
+    "CHDEV11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Apply methods and principles of effective supervision and mentoring in early childhood programs to develop positive staff relationships and support professional growth.",
+    "Apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to the Early Care and Education profession."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply methods and principles of effective supervision and mentoring in early chi",
+    "not in the catalog text as printed: Apply ethical standards and professional behaviors that demonstrate understandin"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Master Teacher Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate an understanding of the needs, characteristics, and multiple influences that support optimal development in all areas of development for children from birth to age eight.",
+    "Apply methods and principles of effective supervision and mentoring in early childhood programs to develop positive staff relationships and support professional growth.",
+    "Design, implement, and evaluate developmentally appropriate environments, curriculum, and teacher/child interactions, while applying the skills of observation and assessment.",
+    "Apply effective guidance and interaction strategies that support a child’s social learning, identity, and self-confidence in an early childhood classroom setting.",
+    "Apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to the Early Care and Education profession."
+   ],
+   "careers": [
+    "Master Teacher",
+    "Mentor Teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (34 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "CH DEV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 042",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 065",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SPECIALIZATION - OPTION 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CH DEV 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SPECIALIZATION - OPTION 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CH DEV 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SPECIALIZATION - OPTION 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CH DEV 048",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAM &CS 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (CH DEV 001, FAM &CS 031); matched to closed-list codes CH DEV 1, FAM &CS 31 etc.",
+   "CH DEV 011 (Child, Family, and Community) is required in the catalog but absent from the closed list; recorded as catalog addition.",
+   "Elective heading reads 'SELECT ONE 6 UNIT SPECIALIZATION'; the 6 units is recorded as stated on each specialization option block.",
+   "Required 34 units + one 6-unit specialization = 40, matching 'Major Units: 40'.",
+   "Description says the certificate meets the major requirements for the A.A. in Child Development; no degree total or GE pattern printed in this section."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

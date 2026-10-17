@@ -1,0 +1,244 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "39854",
+ "shape": "certificate",
+ "title": "CLOUD COMPUTING",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=146",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12520,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12520,
+    "output_tokens": 1312,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1312,
+  "output_tokens_details": {
+   "thinking_tokens": 389
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07632,
+ "ms": 12026,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CS101",
+    "CS119"
+   ],
+   "flagged": [
+    "CS101",
+    "CS119"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Design Infrastructure as a Service (IaaS) solutions by provisioning computing instances, establishing virtual private networks, managing databases and storage within a secure online environment.",
+    "Analyze performance metrics of a cloud architecture to respond dynamically to information and computing technology workloads and optimize service costs.",
+    "Collaborate in a team designing business solutions in an industry aligned project."
+   ],
+   "why": [
+    "not in the catalog text as printed: Design Infrastructure as a Service (IaaS) solutions by provisioning computing in",
+    "not in the catalog text as printed: Analyze performance metrics of a cloud architecture to respond dynamically to in",
+    "not in the catalog text as printed: Collaborate in a team designing business solutions in an industry aligned projec"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [
+    "cloud technicians"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cloud Computing Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design Infrastructure as a Service (IaaS) solutions by provisioning computing instances, establishing virtual private networks, managing databases and storage within a secure online environment.",
+    "Analyze performance metrics of a cloud architecture to respond dynamically to information and computing technology workloads and optimize service costs.",
+    "Collaborate in a team designing business solutions in an industry aligned project."
+   ],
+   "careers": [
+    "cloud architect",
+    "cloud support associate",
+    "cloud engineer",
+    "cloud technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (15 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 192",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 194",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 195",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSES (6 UNITS)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 219",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CS 101 and CS 119 appear in the Cloud Computing section but are not in the closed list; recorded as catalog additions.",
+   "Elective heading says '(6 UNITS)' without 'choose'; read as choose 6 units from the three 3-unit electives.",
+   "Description states 'Some preparation in information technology or computer programming is recommended' (no specific courses named).",
+   "Hyphenated line breaks in outcomes (e.g., 'provi -sioning', 'net -works') were rejoined as single words."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

@@ -1,0 +1,521 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02767",
+ "shape": "degree",
+ "title": "Humanities",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15125,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15125,
+    "output_tokens": 3289,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3289,
+  "output_tokens_details": {
+   "thinking_tokens": 678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12628,
+ "ms": 25647,
+ "seconds": 26.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 76,
+   "share": 0.0,
+   "missing": [
+    "AFROAM20",
+    "AFROAM7",
+    "ANTHRO102",
+    "ANTHRO121",
+    "ANTHRO151",
+    "ART501",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ARTHIST103",
+    "ARTHIST130",
+    "ARTHIST139",
+    "ARTHIST140",
+    "ARTHIST151",
+    "ARTHIST171",
+    "CHICANO44",
+    "CHICANO7",
+    "CHICANO8",
+    "CHINESE10",
+    "CINEMA18",
+    "CINEMA4",
+    "COMM122",
+    "ENGLC1001",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH211",
+    "ENGLISH212",
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH216",
+    "ENGLISH218",
+    "ENGLISH219",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH252",
+    "ENGLISH255",
+    "ENGLISH270",
+    "FRENCH10",
+    "HISTORY7",
+    "HISTORY73",
+    "HUMAN30",
+    "HUMAN31",
+    "HUMAN6",
+    "HUMAN61",
+    "HUMAN8",
+    "JAPAN9",
+    "KOREAN10",
+    "LING1",
+    "LING2",
+    "MUSIC111",
+    "MUSIC116",
+    "MUSIC121",
+    "MUSIC122",
+    "MUSIC135",
+    "MUSIC136",
+    "MUSIC141",
+    "PHILOS14",
+    "PHILOS30",
+    "PHILOS32",
+    "PHILOS40",
+    "PHOTO34",
+    "PHOTO501",
+    "POLSCI19",
+    "RUSSIAN10",
+    "SOC11",
+    "SOC2",
+    "SOC22",
+    "SOC31",
+    "SPANISH10",
+    "SPANISH9",
+    "THEATER100",
+    "THEATER110"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Humanities A.A. Degree section not present in the supplied text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AFRO AM 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFRO AM 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTHRO 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 501",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 130",
+    "why": "named only in the Chinese AA section (as ART HIST 130)"
+   },
+   {
+    "code": "ARTHIST 139",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 171",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 44",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHINESE 10",
+    "why": "named only in the Chinese AA and certificate sections"
+   },
+   {
+    "code": "CINEMA 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "named only in an Armenian certificate outcome"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 211",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 212",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 214",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "ENGLISH 216",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 218",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "ENGLISH 252",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 255",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "ENGLISH 270",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "FRENCH 10",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HISTORY 7",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HISTORY 73",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HUMAN 30",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HUMAN 31",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HUMAN 6",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HUMAN 61",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "HUMAN 8",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "JAPAN 9",
+    "why": "only in unattributed list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "KOREAN 10",
+    "why": "only in unattributed list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "LING 1",
+    "why": "only in unattributed list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "LING 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "MUSIC 116",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "MUSIC 121",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "MUSIC 122",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "MUSIC 135",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "MUSIC 136",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "PHILOS 14",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "PHILOS 30",
+    "why": "only in unattributed list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "PHILOS 32",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "PHILOS 40",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "PHOTO 34",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "PHOTO 501",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "RUSSIAN 10",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "SOC 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "only in unattributed list on page 125, likely another program"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "only in unattributed list on page 125, likely another program"
+   }
+  ],
+  "notes": [
+   "The supplied text (PDF pages 125-128) does not contain the Humanities A.A. Degree section; it covers the tail of an unnamed course list, then American Sign Language, Armenian and Chinese programs.",
+   "Page 125 begins mid-list with no heading; the list includes foreign language, journalism and history courses and ends 'OR ANY COURSES NOT LISTED ABOVE APPROVED FOR LACCD GE AREA 3; CAL-GETC AREA 3A, 3B; CSU GE-BREADTH AREA C1, C2; IGETC AREA 3A, 3B', which suggests a Liberal Arts: Arts and Humanities area list rather than the Humanities A.A. It was not attributed to this award.",
+   "Reviewer should locate the Humanities section elsewhere in the catalog (the page anchor may be off) and re-extract."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

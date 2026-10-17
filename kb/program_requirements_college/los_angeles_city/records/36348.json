@@ -1,0 +1,192 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "36348",
+ "shape": "certificate",
+ "title": "RUSSIAN LANGUAGE AND CIVILIZATION: INTERMEDIATE LEVEL",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7747,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7747,
+    "output_tokens": 981,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 981,
+  "output_tokens_details": {
+   "thinking_tokens": 249
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05061,
+ "ms": 8417,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Proficiency Intermediate High Level.",
+    "Listen and comprehend spoken discourse at the ACTFL Proficiency Intermediate High Level.",
+    "Read and comprehend written discourse at the ACTFL Proficiency Intermediate High Level."
+   ],
+   "why": [
+    "not in the catalog text as printed: Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Profi",
+    "not in the catalog text as printed: Listen and comprehend spoken discourse at the ACTFL Proficiency Intermediate Hig",
+    "not in the catalog text as printed: Read and comprehend written discourse at the ACTFL Proficiency Intermediate High"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Russian Language and Civilization - Intermediate Level Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Proficiency Intermediate High Level.",
+    "Write at the ACTFL Proficiency Intermediate High Level.",
+    "Listen and comprehend spoken discourse at the ACTFL Proficiency Intermediate High Level.",
+    "Read and comprehend written discourse at the ACTFL Proficiency Intermediate High Level.",
+    "Define fundamental aspects of Russian culture at the ACTFL Intermediate Range."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (16 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "RUSSIAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements list at the top of page 134 (RUSSIAN 001, 002, 007, 010) belongs to the preceding Elementary Level certificate and was not recorded.",
+   "Catalog prints codes with leading zeros (RUSSIAN 003, 004, 007, 010); these match closed-list RUSSIAN 3, 4, 7, 10.",
+   "Outcomes words hyphenated across line breaks (For-eign, Profi-ciency) were rejoined."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

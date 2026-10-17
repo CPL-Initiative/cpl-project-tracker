@@ -1,0 +1,196 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "45934",
+ "shape": "noncredit",
+ "title": "Doula Training Program",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9536,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9536,
+    "output_tokens": 1360,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1360,
+  "output_tokens_details": {
+   "thinking_tokens": 536
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06534,
+ "ms": 11157,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    117.0,
+    117.0
+   ],
+   "stated": [
+    117.0,
+    117.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Utilize trauma-informed, culturally responsive, and evidence-based practices to provide effective emotional and physical support during pregnancy, labor, birth, and the postpartum period."
+   ],
+   "why": [
+    "not in the catalog text as printed: Utilize trauma-informed, culturally responsive, and evidence-based practices to "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Doula Training Program Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 117,
+    "max": 117
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate foundational knowledge and applied skills in doula care, medical terminology, basic life support, and professional communication to support safe and compassionate client care.",
+    "Utilize trauma-informed, culturally responsive, and evidence-based practices to provide effective emotional and physical support during pregnancy, labor, birth, and the postpartum period.",
+    "Develop workforce readiness and professional competencies to pursue employment or entrepreneurship as a doula in a variety of healthcare and community settings."
+   ],
+   "careers": [
+    "doulas",
+    "certified doula providers",
+    "obstetrical nursing",
+    "lactation consulting",
+    "midwifery",
+    "doula education and training",
+    "community health work"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 483CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 435CE",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 379CE",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 404CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints this award as a Certificate of Completion (noncredit) with 'Total Lecture Hrs: 117'; all figures are hours.",
+   "The required core hours (54 + 36 + 9 + 18) sum to the printed 117 hours.",
+   "Line-break hyphenations in the outcomes ('evi -dence-based', 'phys -ical') were read as 'evidence-based' and 'physical'.",
+   "'certified doula providers' is taken from the statement that graduates will meet the requirements to serve as certified doula providers in California; the five career pathways come from the description's 'career pathways such as' list.",
+   "VOC ED 483CE also appears as an elective in the separate Entrepreneurship for Care Providers certificate; that section was not used."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

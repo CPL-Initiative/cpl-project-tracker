@@ -1,0 +1,330 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02749",
+ "shape": "degree",
+ "title": "Radiologic Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10576,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10576,
+    "output_tokens": 2570,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2570,
+  "output_tokens_details": {
+   "thinking_tokens": 688
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0937,
+ "ms": 20315,
+ "seconds": 20.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "RADTEC243",
+    "RADTEC260"
+   ],
+   "flagged": [
+    "RADTEC243",
+    "RADTEC260"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    105.5,
+    105.5
+   ],
+   "stated": [
+    105.5,
+    105.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Employ patient care practices based on acceptable ethical behavior and established standards within their scope of practice.",
+    "Pass the American Registry of Radiologic Technology examination in radiography."
+   ],
+   "why": [
+    "not in the catalog text as printed: Employ patient care practices based on acceptable ethical behavior and establish",
+    "not in the catalog text as printed: Pass the American Registry of Radiologic Technology examination in radiography."
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PROGRAM REQUIREMENTS — MAJOR CORE COURSES (105.5 UNITS) (Radiologic Technology A.S. Degree; program heading is on the preceding page, not in the excerpt)",
+   "measure": "units",
+   "total_units": {
+    "min": 105.5,
+    "max": 105.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Position the patient to demonstrate the requested anatomy required by the physician to show the presence or absence of disease.",
+    "Effectively and efficiently assess the patient’s condition and communicate relative information to doctors, the patient, family members, and other hospital staff.",
+    "Administer ionizing radiation, ethically and judiciously, to the patient following the principle of “as low as reasonably achievable.”",
+    "Employ patient care practices based on acceptable ethical behavior and established standards within their scope of practice.",
+    "Pass the registration and licensing examinations offered by state and national accrediting organizations.",
+    "Pass the American Registry of Radiologic Technology examination in radiography."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 105.5,
+     "max": 105.5
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 103",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 104",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 108",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 206",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 207",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 209",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 210",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 240",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RAD TEC 260",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RAD TEC 280",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 281",
+      "units": 14,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 282",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RAD TEC 283",
+      "units": 13,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section: the A.S. degree's heading, 'Major Units' line, description and any career statements are on the preceding page and not in the text; careers left empty for that reason.",
+   "total_units taken from the block heading 'MAJOR CORE COURSES (105.5 UNITS)', the only requirement block for the A.S.; the printed course units sum to 105.5.",
+   "No general education pattern, GE units or degree total appear in the excerpt for the A.S. degree.",
+   "Catalog units differ from the state file for several courses (e.g., RAD TEC 103/104 4.5 vs 4, RAD TEC 108 1.5 vs 1, RAD TEC 280 9 vs 7.5, RAD TEC 281 14 vs 12, RAD TEC 282 4.5 vs 4, RAD TEC 283 13 vs 12); catalog units recorded.",
+   "ANATOMY 001 and PHYSIOL 001 are printed with leading zeros; treated as closed-list ANATOMY 1 and PHYSIOL 1.",
+   "RAD TEC 243 and RAD TEC 260 are not in the closed list and are marked as catalog additions.",
+   "The Mammography Certificate, Clinical Education Skills Certificate and Fluoroscopy Skills Certificate sections that follow were not used."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

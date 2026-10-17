@@ -1,0 +1,217 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "24344",
+ "shape": "noncredit",
+ "title": "English as a Second Language - Civics",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11429,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11429,
+    "output_tokens": 1193,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1193,
+  "output_tokens_details": {
+   "thinking_tokens": 250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06958,
+ "ms": 10260,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    972.0,
+    972.0
+   ],
+   "stated": [
+    972.0,
+    972.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English a a Second Language - Civics Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 972,
+    "max": 972
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate fundamental reading, writing, listening, and speaking skills in English."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESLCVCS 030CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 031CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 032CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 033CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 034CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 041CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 042CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 043CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 044CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is printed as 'English a a Second Language - Civics' (apparent typo for 'as a'); the award is a Certificate of Competency (State Code 24344).",
+   "The section's description refers to 'The Beginning English as a Second Language certificate of competency', which appears to be carried over from another program; reviewer should check.",
+   "ESLCVCS 043CE is printed with the title 'ESL & CIVICS - INTERMEDIATE HIGH A' (same as 034CE); the closed list titles it 'ESL & Civics - Intermediate B'. Recorded by code.",
+   "Total Lecture Hrs 972 equals the nine required courses at 108 hours each.",
+   "The text at the top of page 237 (REQUIRED COURSES ESLCVCS 032CE, ESL NC 049CE, etc., and elective courses) belongs to the preceding program, not this award, and was not used."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

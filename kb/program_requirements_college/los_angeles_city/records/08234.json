@@ -1,0 +1,342 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "08234",
+ "shape": "degree",
+ "title": "THEATER ACADEMY ACTING",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10731,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10731,
+    "output_tokens": 2054,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2054,
+  "output_tokens_details": {
+   "thinking_tokens": 498
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.084,
+ "ms": 15963,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "THEATER200"
+   ],
+   "flagged": [
+    "THEATER200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    55.0,
+    55.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 55.0-55.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.0,
+     55.0
+    ],
+    "stated": [
+     55.0,
+     55.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Identify and comprehend in theatre literature, specific styles, practices, systems, aesthetics, and historical context of storytelling through creative expression.",
+    "Perform in scenes or serve as technicians, designers, or production crew in fully realized play productions."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify and comprehend in theatre literature, specific styles, practices, syste",
+    "not in the catalog text as printed: Perform in scenes or serve as technicians, designers, or production crew in full"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theater Academy Acting Associate of Arts (AA) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 55,
+    "max": 55
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and comprehend in theatre literature, specific styles, practices, systems, aesthetics, and historical context of storytelling through creative expression.",
+    "Perform in scenes or serve as technicians, designers, or production crew in fully realized play productions.",
+    "Demonstrate excellence in team practices and professional ethics."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES (55 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 55,
+     "max": 55
+    },
+    "courses": [
+     {
+      "code": "THEATER 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 105-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 105-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 105-3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 105-4",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 235-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 242-1",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 242-2",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 242-3",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 242-4",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 272",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 274-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 276-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 277",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 294-1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 294-2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 345",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended before THEATER 270 (students with no prior acting experience)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEATER 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major Units: 55 recorded as total_units; 'Total Units: Minimum of 60' recorded as degree_total (printed as a minimum). No GE pattern or GE units are named in this section.",
+   "THEATER 200 is only strongly recommended (footnote on THEATER 270) for students with no prior acting experience; recorded as a recommended block and not counted toward the total.",
+   "The text at the top of page 201 (THEATER 294-1/335-1/345/425-1 OR rows and LIST A) belongs to a preceding program and was not used.",
+   "Career fields (acting; teaching drama; entertainment and performance; production and directing) are named only in the Professional Actor Training certificate sections, not in the AA section, so careers is empty.",
+   "Core course units sum to 55, matching the printed major total."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

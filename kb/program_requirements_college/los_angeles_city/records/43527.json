@@ -1,0 +1,236 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "43527",
+ "shape": "certificate",
+ "title": "ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10694,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10694,
+    "output_tokens": 1790,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1790,
+  "output_tokens_details": {
+   "thinking_tokens": 632
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07858,
+ "ms": 14453,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Writing will demonstrate a clear understanding of the requirements of clear exposition for college-level written communication such as analysis of evidence, appropriate inferences from the evidence, and coherent focus on the argument.",
+    "Writing will demonstrate critical thinking practices such as: use of qualified generalizations, syllogistic reasoning, analysis, inference, evaluation, and synthesis.",
+    "Writing will demonstrate understanding of the need to incorporate and synthesize literary traditions and literary theories."
+   ],
+   "why": [
+    "not in the catalog text as printed: Writing will demonstrate a clear understanding of the requirements of clear expo",
+    "not in the catalog text as printed: Writing will demonstrate critical thinking practices such as: use of qualified g",
+    "not in the catalog text as printed: Writing will demonstrate understanding of the need to incorporate and synthesize"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Milestone - Language Arts, Written Communication Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Essay writing will follow MLA guidelines, include a clearly stated thesis or argument, and develop support in well-organized and unified paragraphs.",
+    "Writing will demonstrate a clear understanding of the requirements of clear exposition for college-level written communication such as analysis of evidence, appropriate inferences from the evidence, and coherent focus on the argument.",
+    "Essay writing will be logically organized and focused on a single unifying idea.",
+    "Writing will demonstrate critical thinking practices such as: use of qualified generalizations, syllogistic reasoning, analysis, inference, evaluation, and synthesis.",
+    "Writing will demonstrate understanding of the need to incorporate and synthesize literary traditions and literary theories."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE E.S.L. (12 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "E.S.L. 006A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E.S.L. 008",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CORE TRANSFER-LEVEL ENGLISH (3-4 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLISH 101Z",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "E.S.L. 110",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CORE ENGLISH (3 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGLISH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints E.S.L. 008; it is read as the closed list's E.S.L. 8 (Advanced ESL Composition), so it is not marked as a catalog addition.",
+   "Total of 18-19 units taken from 'Major Units: 18-19' and 'REQUIRED COURSES (18-19 UNITS)'.",
+   "The catalog titles ENGLISH 102 here as 'COLLEGE READING AND COMPOSITION I'; elsewhere and in the closed list it is 'College Reading and Composition II' — likely a catalog misprint.",
+   "Each 'OR' group is recorded as a single required entry with alternatives.",
+   "The PSLOs and requirements at the top of page 118, which include E.S.L. 006C and COMM courses, belong to a preceding program and were not used.",
+   "The career fields named under the Linguistics certificates belong to those programs and were not recorded."
+  ]
+ },
+ "extracted_run": "39006380342"
+}
