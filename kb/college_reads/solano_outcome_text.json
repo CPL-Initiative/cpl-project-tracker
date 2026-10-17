@@ -1,0 +1,20 @@
+{
+ "_readme": "S405 SkyCholla, 2026-10-17. Solano's extraction (run 39035226783) failed the outcomes check on 135 of 162 records ('not in the catalog text as printed'), as LA City and Pierce did before the scorer read the spaced line-break hyphen (S403). This read prints the PDF text around two failing outcomes (Landscape: 'Design and draft landscape plan.'; Business: 'Recognize and describe the importance of marketing, law, economics') so a session can see how the PDF's text differs and add the reading to _readings() in the scorer. One load, no model call.",
+ "college": "Solano Community College",
+ "questions": {
+  "outcome_spacing": "How the PDF text prints the two outcomes: spacing, hyphens, line breaks, ligatures."
+ },
+ "keywords": [
+  "landscape\\s*plan",
+  "importance\\s*of\\s*marketing",
+  "Estimate\\s*the\\s*cost"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "outcome_spacing"
+   ],
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf"
+  }
+ ]
+}
