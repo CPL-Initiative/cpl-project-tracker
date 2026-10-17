@@ -780,12 +780,13 @@
    "RADTEC283"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 109",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 109",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=109",
+   "title": "108 LACC 2026-2027 COLLEGE CATALOG",
+   "h1": "108 LACC 2026-2027 COLLEGE CATALOG",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    109,
     110,
     111
    ],
@@ -793,7 +794,7 @@
    "heading_named": false
   },
   "listed": 20,
-  "text_chars": 8809
+  "text_chars": 14015
  },
  {
   "control_number": "02750",
@@ -1301,19 +1302,20 @@
    "TV7"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193",
-   "title": "192 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "192 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=192",
+   "title": "LACC 2026-2027 COLLEGE CATALOG 191",
+   "h1": "LACC 2026-2027 COLLEGE CATALOG 191",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    192,
     193
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 5477
+  "text_chars": 9145
  },
  {
   "control_number": "08224",
@@ -9204,7 +9206,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.921,
+  "coverage": 0.989,
   "codes_found": [
    "AFROAM4",
    "AFROAM5",
@@ -9214,6 +9216,7 @@
    "ANTHRO121",
    "ANTHRO151",
    "ASIAN1",
+   "ASL3",
    "CHDEV1",
    "CHDEV11",
    "CHICANO4",
@@ -9222,6 +9225,8 @@
    "CHICANO7",
    "CHICANO8",
    "CHINESE10",
+   "CHINESE3",
+   "CHINESE4",
    "COMM100",
    "COMM121",
    "COMM122",
@@ -9229,6 +9234,8 @@
    "ECONC2002",
    "FAM&CS31",
    "FRENCH10",
+   "FRENCH3",
+   "FRENCH4",
    "GEOG14",
    "GEOG2",
    "GEOG7",
@@ -9247,6 +9254,7 @@
    "HUMAN61",
    "HUMAN8",
    "JAPAN14",
+   "JAPAN3",
    "JAPAN4",
    "JAPAN9",
    "JOURNAL105",
@@ -9290,20 +9298,21 @@
    "SPANISH9"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
-   "title": "168 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "168 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=168",
+   "title": "History AA-T C046527G 18-20 Y",
+   "h1": "History AA-T C046527G 18-20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    168,
     169,
     170,
     171
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 89,
-  "text_chars": 12003
+  "text_chars": 16000
  }
 ]

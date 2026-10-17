@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 258,
- "started": "2026-10-17T08:44:14Z",
+ "started": "2026-10-17T17:36:12Z",
  "pdf": {
   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
   "access": "ok",
@@ -263,14 +263,15 @@
    {
     "control_number": "02749",
     "pages": [
+     109,
      110,
      111
     ],
     "named": false,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 110] LACC 2026-2027 COLLEGE CATALOG 109 ABOUT OUR CAREER AND ACADEMIC PATHWAYS Registry of Radiologic Technologists and the California Department of Public Health – Radiologic Health Branch (CDPH-RHB). An advi - s"
+    "opens": "[page 109] 108 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS Department Chair: Julie Washenik For more information visit: Academic Department website RADIOLOGIC TECHNOLOGY OVERVIEW Radiologic Tech"
    },
    {
     "control_number": "02750",
@@ -425,13 +426,14 @@
    {
     "control_number": "08220",
     "pages": [
+     192,
      193
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 193] 192 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (12 UNITS) T V 001 EVOLUTION OF TELEVISION ........................ 3 T V 004 MULTI-CAM TV STU"
+    "opens": "[page 192] LACC 2026-2027 COLLEGE CATALOG 191 ABOUT OUR CAREER AND ACADEMIC PATHWAYS Beginning Cinema & Television Production Skills Certificate Major Units: 12 (TOP Code: 060420; Academic Plan: C060422J) The Beginnin"
    },
    {
     "control_number": "08224",
@@ -3078,15 +3080,16 @@
    {
     "control_number": "46527",
     "pages": [
+     168,
      169,
      170,
      171
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "cn_printed": true,
     "titled": true,
-    "coverage": 0.921,
-    "opens": "[page 169] 168 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS JAPAN 004 INTERMEDIATE JAPANESE II ........................ 5 KOREAN 003 INTERMEDIATE KOREAN I ........................... 5 KOREAN "
+    "coverage": 0.989,
+    "opens": "[page 168] History AA-T C046527G 18-20 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loans. Please consult with Fina"
    }
   ],
   "unproven": [
@@ -3101,7 +3104,7 @@
   ]
  },
  "loads": 1,
- "seconds": 105.4,
+ "seconds": 115.2,
  "found": 241,
  "by_method": {
   "no_closed_list": 2,
@@ -3151,10 +3154,6 @@
    "35344",
    "40889"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110": [
-   "02749",
-   "46432"
-  ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166": [
    "02750",
    "39561"
@@ -3175,10 +3174,6 @@
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175": [
    "02760",
    "21629"
-  ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193": [
-   "08220",
-   "21619"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=145": [
    "08224",
@@ -3637,586 +3632,26 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_city",
-  "kept": 182,
-  "programs": 59,
+  "kept": 237,
+  "programs": 4,
   "list": [
    {
-    "control_number": "02720",
-    "title": "FINANCE AND BANKING",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
-    "coverage": 0.9,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02726",
-    "title": "REAL ESTATE",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02727",
-    "title": "Business Information Worker",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02729",
-    "title": "Cinema Production",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=186",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02748",
-    "title": "Dental Prosthetic Technology",
+    "control_number": "02749",
+    "title": "Radiologic Technology",
     "award": "A.S. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=94",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=109",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "02754",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02755",
-    "title": "PHYSICS",
-    "award": "A.S. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=160",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02767",
-    "title": "Humanities",
+    "control_number": "08220",
+    "title": "TELEVISION PRODUCTION",
     "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=120",
-    "coverage": 0.961,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "was_coverage": 0.513,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08235",
-    "title": "APPLIED PHOTOGRAPHY",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=212",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=192",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=213",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08236",
-    "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08237",
-    "title": "CHILD DEVELOPMENT TEACHER",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08246",
-    "title": "Addiction Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=174",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19591",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21609",
-    "title": "Business Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=75",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21610",
-    "title": "Finance and Banking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21611",
-    "title": "MANAGEMENT",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21613",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21628",
-    "title": "Human Services: Generalist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=176",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24016",
-    "title": "WORKFORCE LITERACY SKILLS",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24294",
-    "title": "CUSTOMER SERVICE SKILLS",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31030",
-    "title": "EARLY CHILDHOOD EDUCATION",
-    "award": "A.S. T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31547",
-    "title": "TECHNICAL THEATER LEVEL 2",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=204",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=205",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32832",
-    "title": "ART HISTORY",
-    "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124",
-    "coverage": 0.734,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "was_coverage": 0.511,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33120",
-    "title": "STUDIO ARTS",
-    "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=252",
-    "coverage": 0.763,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=208",
-    "was_coverage": 0.868,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33121",
-    "title": "ADMINISTRATION OF JUSTICE",
-    "award": "A.S. T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33147",
-    "title": "ENGLISH",
-    "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=115",
-    "coverage": 0.857,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33157",
-    "title": "THEATRE ARTS",
-    "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=200",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35337",
-    "title": "SPANISH LANGUAGE AND CIVILIZATION: INTERMEDIATE LEVEL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35338",
-    "title": "SPANISH LANGUAGE AND CIVILIZATION: ELEMENTARY LEVEL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35341",
-    "title": "KOREAN LANGUAGE AND CIVILIZATION - INTERMEDIATE LEVEL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=132",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38827",
-    "title": "CYBERSECURITY",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38856",
-    "title": "CHILDREN WITH SPECIAL NEEDS",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38859",
-    "title": "PRE-ALLIED HEALTH",
-    "award": "A.S. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=106",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39316",
-    "title": "Fixed Prosthodontics",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39349",
-    "title": "Removable Prosthodontics",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39617",
-    "title": "GUESTROOM ATTENDANT",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39703",
-    "title": "INTRODUCTION TO COMPUTERS",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40138",
-    "title": "Phlebotomy Technician",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=353",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40593",
-    "title": "PROFESSIONAL ACTOR TRAINING LEVEL 2",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
-    "coverage": 0.5,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40596",
-    "title": "PROFESSIONAL ACTOR TRAINING LEVEL 3",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
-    "coverage": 0.739,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40644",
-    "title": "CINEMATOGRAPHY",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=189",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40888",
-    "title": "FRENCH LANGUAGE AND CIVILIZATION – ELEMENTARY LEVEL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=129",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40889",
-    "title": "FRENCH LANGUAGE AND CIVILIZATION – INTERMEDIATE LEVEL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40999",
-    "title": "C++ PROGRAMMING",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41000",
-    "title": "JAVA PROGRAMMING",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=148",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41252",
-    "title": "ENGLISH AS A SECOND LANGUAGE - PRONUNCIATION",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41478",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=181",
-    "coverage": 0.983,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=179",
-    "was_coverage": 0.983,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42057",
-    "title": "ENGLISH AS A SECOND LANGUAGE - CONVERSATION",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42568",
-    "title": "Business Information Worker: Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42797",
-    "title": "Linguistics – English/ESL",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=118",
-    "coverage": 0.933,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=119",
-    "was_coverage": 0.933,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "43855",
-    "title": "Creative Writing",
-    "award": "A.A. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=117",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44592",
-    "title": "American Language & Culture: Beginning High",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44599",
-    "title": "American Language & Culture: Intermediate High",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44603",
-    "title": "Health & Fitness Center Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44638",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=100",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46097",
-    "title": "​​Physics 2.0​",
-    "award": "A.S. T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=159",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46149",
-    "title": "​​Introduction to Fixed and Removable Prosthodontics​",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46374",
-    "title": "Food, Science and Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4226,11 +3661,21 @@
     "award": "A.A- T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=177",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=177",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "46527",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=168",
+    "coverage": 0.989,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
+    "was_coverage": 0.921,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39018419466"
+ "run": "39054399543"
 }
