@@ -1628,7 +1628,9 @@ def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None,
     step = P.procedure_catalog(reg.get("procedure"))
     if step and step["format"] == "pdf":
         got = P.load(reader, step["start"], cache, False)
-        href = P.follow_link(got.get("links") or [], step["follow"])
+        # A menu link can carry the same words as the file's ("2026 - 2027" at East LA): a PDF step follows a PDF.
+        pdfs = [ln for ln in got.get("links") or [] if ".pdf" in (ln.get("href") or "").lower().split("?")[0]]
+        href = P.follow_link(pdfs, step["follow"])
         report["procedure_step"] = {"start": step["start"], "follow": step["follow"], "href": href,
                                     "status": got.get("status"), "access": got.get("access")}
         if href:

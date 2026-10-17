@@ -1581,6 +1581,28 @@ check(C.is_pdf_catalog({"catalog_platform": "pdf"}) and C.is_pdf_catalog({"catal
       and not C.is_pdf_catalog({"catalog_platform": "courseleaf", "catalog_url": "https://x.edu/catalog/"}),
       "a PDF catalog is known by its platform, its format or its address")
 
+
+class StepReader:
+    pass
+
+
+def _step_load(reader, url, cache, late):
+    return {"status": 200, "access": "ok", "links": [
+        {"text": "2026 - 2027", "href": "https://www.elac.edu/academic-resources/catalog/2026-2027"},
+        {"text": "2026 - 2027", "href": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf"}]}
+
+
+_real_load = P.load
+P.load = _step_load
+try:
+    rep = {}
+    url, wait = C.pdf_start(StepReader(), {"procedure": {"catalog": {
+        "start": "https://www.elac.edu/academic-resources/catalog", "follow": "2026 - 2027", "format": "pdf"}}}, {}, rep)
+finally:
+    P.load = _real_load
+check(url and url.endswith("2026%202027.pdf"),
+      "a PDF step follows the PDF, not the menu link with the same words: %r" % url)
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
