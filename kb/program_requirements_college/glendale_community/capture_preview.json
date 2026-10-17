@@ -1,0 +1,5183 @@
+{
+ "college": "Glendale Community College",
+ "catalog_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+ "platform": "pdf",
+ "catalog_year": "2025-2026",
+ "programs": 317,
+ "with_closed_list": 267,
+ "started": "2026-10-17T18:20:32Z",
+ "pdf": {
+  "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 20627651,
+  "pages_total": 303,
+  "error": null,
+  "chars_total": 1647209,
+  "pypdf_accepted": 190,
+  "sample": [
+   "p91: 'AVIATION AND TRANSPORTATION\\nCERTIFICATE\\nA VIATION ADMINISTRATION \\nThis degree or certiﬁ cate is designed for those who wish to enter \\ncivil aviation work as clerks, agents, station and traﬃ  c manag-\\ners, or ﬁ xed base operators. Program Le'",
+   "p182: '   160\\nINSPECTION AND CODES FOR \\nELECTRICIANS\\n3.0  Units  \\nECT 160 is a course designed to introduce \\nthe student to the National Electrical Code \\n(NEC) using national, state and local codes.  \\nI n c l u d e d  i n  t h e  c o u r s e  a r '"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "02547",
+    "pages": [
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 136] 109 SKETCHING TECHNIQUES FOR ARCHITECTS AND INTERIOR DESIGNERS 3.0 Units ARCH 109 covers tools, materials, and techniques for producing sketches for architectural projects. The student will apply te"
+   },
+   {
+    "control_number": "02548",
+    "pages": [
+     116,
+     117
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 116] AA-T — ART HISTORY The AA-T in Art History provides students with a strong a c a d e m i c f o u n d a t i o n i n t h e ﬁ eld and preparation for upper division baccalaureate study. Students who have c"
+   },
+   {
+    "control_number": "02549",
+    "pages": [
+     160,
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.583,
+    "opens": "[page 160] 120 BUSINESS LAW I 3.0 Units BUSAD 120 is the study of law as it inﬂ uences business conduct, including the evolution of legal theories and business law. Students will discuss Constitutional Law and o"
+   },
+   {
+    "control_number": "02550",
+    "pages": [
+     128,
+     129,
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 128] ACCOUNTING 50 ACCOUNTING INTERNSHIP 1.0 to 3.0 Units ACCTG 50 is a discipline-speci ﬁ c course, which allows students to earn from 1-3 units for structured, supervised work on-campus or o ﬀ -campus in the"
+   },
+   {
+    "control_number": "02551",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+   },
+   {
+    "control_number": "02552",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 81] LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES EMPHASIS AA DEGREE This program is designed for students who wish to have a broad knowledge of the social and behavioral sciences, and is recom- mended for transfe"
+   },
+   {
+    "control_number": "02553",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+   },
+   {
+    "control_number": "02555",
+    "pages": [
+     252,
+     253
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 252] 170 SPORTS PSYCHOLOGY 3.0 Units PSYC 170 is designed for students who would like to develop a proﬁ ciency in using psycho- logical knowledge and skills to improve athletic performance and promote the we"
+   },
+   {
+    "control_number": "02556",
+    "pages": [
+     170
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 170] COMPUTER APPLICATION & BUSINESS OFFICE TECHNOLOGIES 101 BUSINESS OFFICE PROCEDURES 3.0 Units CABOT 101 is an in-depth study of general oﬃ ce procedures, including the selection of oﬃ ce supplies; pro"
+   },
+   {
+    "control_number": "02557",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 82] MASS COMMUNICATIONS AA DEGREE This program prepares students to recognize and replicate the methods by which the Mass Media inform and persuade, with language or pictures, and the cognitive and emotional imp"
+   },
+   {
+    "control_number": "02569",
+    "pages": [
+     267
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 267] 123 OCCUPATIONAL WELDING III 3.0 Units WELD 123 is third in a series of occupational welding courses designed to prepare the student for employment in the welding industry. It covers basic preparation"
+   },
+   {
+    "control_number": "02570",
+    "pages": [
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 132] 110 COUNSELING TECHNIQUES AND CASE MANAGEMENT 3.0 Units ADST 110 is designed to prepare the student for the ﬁ eld experiences of the addiction counseling internship. It examines several models of add"
+   },
+   {
+    "control_number": "02571",
+    "pages": [
+     146,
+     147
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.789,
+    "opens": "[page 146] 102H HONORS ART HISTORY: RENAISSANCE-MODERN 3.0 Units A R T H 1 0 2 H i s a s u r v e y o f w e s t e r n a r c h i - tecture, painting, and sculpture from the Renaissance to modern times. The v"
+   },
+   {
+    "control_number": "02572",
+    "pages": [
+     231,
+     232,
+     233,
+     234
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.514,
+    "opens": "[page 231] 140 APPLIED MUSIC LESSONS 0.5 Units MUSIC 140 is a course in individual and ensemble performance. Students receive eight hours of private instruction on a solo i n s t r u m e n t o r v o i c e . E"
+   },
+   {
+    "control_number": "02575",
+    "pages": [
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 242] 140 FINE ART PHOTOGRAPHY 3.0 Units PHOTO 140 includes learning fine art approaches in photography. Students are guided through artistic styles, project and theme development, and technical and design"
+   },
+   {
+    "control_number": "02580",
+    "pages": [
+     237,
+     238
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 237] 210 FUNDAMENTALS OF NURSING 3.5 Units NS 210 provides the foundation of nurs- ing knowledge, skills, and caring a tt itudes upon which subsequent nursing courses build. This course introduces fundament"
+   },
+   {
+    "control_number": "02587",
+    "pages": [
+     189,
+     190,
+     191
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 189] 102 CRITICAL THINKING AND LITERARY ANALYSIS 3.0 Units ENGL 102 helps students to develop and reﬁ ne their critical thinking and writing skills beyond the level achieved in ENGL 101 as those skills ap"
+   },
+   {
+    "control_number": "02588",
+    "pages": [
+     168,
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 168] 104 ARGUMENTATION AND DEBATE 3.0 Units COMM 104 provides students with instruc- tion and practice in the principles of argumentation and the various forms of debate. It includes the analysis of propos"
+   },
+   {
+    "control_number": "02598",
+    "pages": [
+     130,
+     131
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] 235 FRAUD EXAMINATION 3.0 Units ACCTG 235 is an advanced course that addresses the principles and methodology of fraud detection and deterrence. The course i n c l u d e s s u c h t o p i c s a s "
+   },
+   {
+    "control_number": "02599",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 166] 160 GUIDING CHILDREN AND ADOLESCENTS 3.0 Units CHLDV 160 provides an overview of the developmental, environmental, and cultural factors that impact the behavior of children and adolescents; examines "
+   },
+   {
+    "control_number": "02602",
+    "pages": [
+     201,
+     202
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.714,
+    "opens": "[page 201] FIRE TECHNOLOGY 101 PRINCIPLES OF FIRE EMERGENCY SERVICES 3.0 Units FIRE 101 provides an overview to ﬁ re protec- tion and emergency services. Students will learn about career opportunities in ﬁ re prot"
+   },
+   {
+    "control_number": "02612",
+    "pages": [
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 200] 139 INTRODUCTION TO EDITING 3.0 Units (Previously MEDIA 112) FTVM 139 is an intermediate-level media p r o d u c t i o n c l a s s . E m p h a s i s i s o n e d i t i n g techniques and aestheti"
+   },
+   {
+    "control_number": "02615",
+    "pages": [
+     154
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 154] 125 INSTRUMENT RATING GROUND SCHOOL 3.0 Units AT 125 introduces the student to the use of radio navigation, weather brieﬁ ng, advanced navigation, standard instrument approaches, procedures and Feder"
+   },
+   {
+    "control_number": "09482",
+    "pages": [
+     181,
+     182
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 181] 102 PRINCIPLES OF MACROECONOMICS 3.0 Units ECON 102 is an introductory course focus- ing on aggregate economic analysis. Topics include: market systems, aggregate measures of economic activity, macroe"
+   },
+   {
+    "control_number": "10055",
+    "pages": [
+     179,
+     180
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 179] 125 TAP DANCE I 1.5 Units DANCE 125 provides students with practical experience in basic tap dance techniques. Through discussion and movement, students will learn coordination, rhythm, and perfor- ma"
+   },
+   {
+    "control_number": "10057",
+    "pages": [
+     234,
+     235,
+     236
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.571,
+    "opens": "[page 234] 184 ELECTRONIC MUSIC I 2.0 Units MUSIC 184 introduces the techniques and elements of electronic music production. Students will explore analog and digital synthesis techniques and will learn to craft "
+   },
+   {
+    "control_number": "11143",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.643,
+    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+   },
+   {
+    "control_number": "11144",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.643,
+    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+   },
+   {
+    "control_number": "11145",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 68] GENERAL BUSINESS This degree is designed for students who are interested in a broad knowledge of business. Students completing this degree are interested in working in a medium or large business envi- ronment"
+   },
+   {
+    "control_number": "11161",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.8,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "11163",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "11175",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 142] 180 SCULPTURE FUNDAMENTALS 3.0 Units ART 180 is an introduction to fundamen- tal sculptural principles, techniques, and concepts using a wide range of materials and practices. Students practice various"
+   },
+   {
+    "control_number": "11177",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 177] DANCE It is recommended that a variety of activities be taken during a student’s att endance at Glendale College. Courses in dance satisfy the physical education requirement. Child Development 158, Dance "
+   },
+   {
+    "control_number": "11189",
+    "pages": [
+     164,
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 135 CHILD GROWTH AND DEVELOPMENT 3.0 Units CHLDV 135 examines the major physi- cal, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from birth th"
+   },
+   {
+    "control_number": "11190",
+    "pages": [
+     164,
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 135 CHILD GROWTH AND DEVELOPMENT 3.0 Units CHLDV 135 examines the major physi- cal, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from birth th"
+   },
+   {
+    "control_number": "11193",
+    "pages": [
+     72
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 72] COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE This degree or certi ﬁ cate is designed to train students to meet the rapidly growing need for quali ﬁ ed hardware/software technicians, having a blend of"
+   },
+   {
+    "control_number": "12498",
+    "pages": [
+     140,
+     141,
+     142,
+     143
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.529,
+    "opens": "[page 140] 137 GRAPHIC DESIGN: PORTFOLIO 3.0 Units ART 137 focuses on the preparation and presentation of a Graphic Design portfolio in both print and digital mediums. The content of the portfolio is drawn from "
+   },
+   {
+    "control_number": "12499",
+    "pages": [
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 139] 130 2-D FOUNDATIONS 3.0 Units ART 130 is an introduction to the concepts, history and application of two-dimensional art and composition. The course includes the study of the basic principles of line,"
+   },
+   {
+    "control_number": "12500",
+    "pages": [
+     140,
+     141,
+     142,
+     143
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.643,
+    "opens": "[page 140] 137 GRAPHIC DESIGN: PORTFOLIO 3.0 Units ART 137 focuses on the preparation and presentation of a Graphic Design portfolio in both print and digital mediums. The content of the portfolio is drawn from "
+   },
+   {
+    "control_number": "12501",
+    "pages": [
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 242] 140 FINE ART PHOTOGRAPHY 3.0 Units PHOTO 140 includes learning fine art approaches in photography. Students are guided through artistic styles, project and theme development, and technical and design"
+   },
+   {
+    "control_number": "12571",
+    "pages": [
+     128,
+     129
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 128] ACCOUNTING 50 ACCOUNTING INTERNSHIP 1.0 to 3.0 Units ACCTG 50 is a discipline-speci ﬁ c course, which allows students to earn from 1-3 units for structured, supervised work on-campus or o ﬀ -campus in the"
+   },
+   {
+    "control_number": "15584",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.529,
+    "opens": "[page 121] AS-T — NUTRITION AND DIETETICS The AS-T in Nutrition and Dietetics provides students with a strong academic foundation in the ﬁ eld and be prepared for upper division baccalaureate study. Students who have c"
+   },
+   {
+    "control_number": "17645",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "17760",
+    "pages": [
+     252,
+     253
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 252] 170 SPORTS PSYCHOLOGY 3.0 Units PSYC 170 is designed for students who would like to develop a proﬁ ciency in using psycho- logical knowledge and skills to improve athletic performance and promote the we"
+   },
+   {
+    "control_number": "18660",
+    "pages": [
+     202
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 202] 117 FIRE ACADEMY II 12.0 Units F I R E 1 1 7 i s d e s i g n e d t o t r a i n s t u d e n t s i n the theory and practice of fire fighting technology. Topics include use and applica- tion of s"
+   },
+   {
+    "control_number": "18661",
+    "pages": [
+     104
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 104] FIRE ACADEMY CERTIFICATE NON-DEGREE VERDUGO FIRE ACADEMY Program Learning Outcomes: U pon com p leti on o f this pro- gram, students will be able to discuss the skills required for ﬁ re prevention techniques;"
+   },
+   {
+    "control_number": "19110",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.654,
+    "opens": "[page 177] DANCE It is recommended that a variety of activities be taken during a student’s att endance at Glendale College. Courses in dance satisfy the physical education requirement. Child Development 158, Dance "
+   },
+   {
+    "control_number": "19111",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.654,
+    "opens": "[page 177] DANCE It is recommended that a variety of activities be taken during a student’s att endance at Glendale College. Courses in dance satisfy the physical education requirement. Child Development 158, Dance "
+   },
+   {
+    "control_number": "19269",
+    "pages": [
+     227,
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 227] 101 HEALTHCARE OCCUPATIONS 2.0 Units MO A 1 01 is an overview of health occupa- tions and provides the study of basic medi- cal mathematics and terminology; career foundations, including healthcare of t"
+   },
+   {
+    "control_number": "19366",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "19555",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+   },
+   {
+    "control_number": "19558",
+    "pages": [
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 93] FINANCIAL PLANNING & INVESTMENT II This certiﬁ cate program is tailored for individuals interested in the business side of ﬁ nancial planning and investments. Stu- dents will grasp ﬁ nance terminology and arti"
+   },
+   {
+    "control_number": "19559",
+    "pages": [
+     160,
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 160] 120 BUSINESS LAW I 3.0 Units BUSAD 120 is the study of law as it inﬂ uences business conduct, including the evolution of legal theories and business law. Students will discuss Constitutional Law and o"
+   },
+   {
+    "control_number": "19560",
+    "pages": [
+     92,
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.583,
+    "opens": "[page 92] BIOTECHNOLOGY RESEARCH LAB ASSISTANT CERTIFICATE The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through"
+   },
+   {
+    "control_number": "19561",
+    "pages": [
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 93] FINANCIAL PLANNING & INVESTMENT II This certiﬁ cate program is tailored for individuals interested in the business side of ﬁ nancial planning and investments. Stu- dents will grasp ﬁ nance terminology and arti"
+   },
+   {
+    "control_number": "19564",
+    "pages": [
+     252,
+     253
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 252] 170 SPORTS PSYCHOLOGY 3.0 Units PSYC 170 is designed for students who would like to develop a proﬁ ciency in using psycho- logical knowledge and skills to improve athletic performance and promote the we"
+   },
+   {
+    "control_number": "19565",
+    "pages": [
+     252,
+     253
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 252] 170 SPORTS PSYCHOLOGY 3.0 Units PSYC 170 is designed for students who would like to develop a proﬁ ciency in using psycho- logical knowledge and skills to improve athletic performance and promote the we"
+   },
+   {
+    "control_number": "19566",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 161] 163 SOCIAL MEDIA MARKETING I 3.0 Units BUSAD 163 orients students to the ﬁ eld of digital marketing by introducing the components, characteristics, metrics, goals, platforms, and history of social med"
+   },
+   {
+    "control_number": "19567",
+    "pages": [
+     170
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 170] COMPUTER APPLICATION & BUSINESS OFFICE TECHNOLOGIES 101 BUSINESS OFFICE PROCEDURES 3.0 Units CABOT 101 is an in-depth study of general oﬃ ce procedures, including the selection of oﬃ ce supplies; pro"
+   },
+   {
+    "control_number": "19569",
+    "pages": [
+     185,
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] 101 ENGINEERING DRAFTING AND BASIC DESIGN 3.0 Units ENGR 101 covers the fundamentals of traditional board drafting, descriptive geometry, orthographic projection and the graphical communication of te"
+   },
+   {
+    "control_number": "19570",
+    "pages": [
+     267
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 267] 123 OCCUPATIONAL WELDING III 3.0 Units WELD 123 is third in a series of occupational welding courses designed to prepare the student for employment in the welding industry. It covers basic preparation"
+   },
+   {
+    "control_number": "19573",
+    "pages": [
+     237,
+     238
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 237] 210 FUNDAMENTALS OF NURSING 3.5 Units NS 210 provides the foundation of nurs- ing knowledge, skills, and caring a tt itudes upon which subsequent nursing courses build. This course introduces fundament"
+   },
+   {
+    "control_number": "19574",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 166] 160 GUIDING CHILDREN AND ADOLESCENTS 3.0 Units CHLDV 160 provides an overview of the developmental, environmental, and cultural factors that impact the behavior of children and adolescents; examines "
+   },
+   {
+    "control_number": "19576",
+    "pages": [
+     164,
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 135 CHILD GROWTH AND DEVELOPMENT 3.0 Units CHLDV 135 examines the major physi- cal, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from birth th"
+   },
+   {
+    "control_number": "19578",
+    "pages": [
+     164,
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 135 CHILD GROWTH AND DEVELOPMENT 3.0 Units CHLDV 135 examines the major physi- cal, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from birth th"
+   },
+   {
+    "control_number": "19581",
+    "pages": [
+     201,
+     202
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.714,
+    "opens": "[page 201] FIRE TECHNOLOGY 101 PRINCIPLES OF FIRE EMERGENCY SERVICES 3.0 Units FIRE 101 provides an overview to ﬁ re protec- tion and emergency services. Students will learn about career opportunities in ﬁ re prot"
+   },
+   {
+    "control_number": "21299",
+    "pages": [
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 136] 109 SKETCHING TECHNIQUES FOR ARCHITECTS AND INTERIOR DESIGNERS 3.0 Units ARCH 109 covers tools, materials, and techniques for producing sketches for architectural projects. The student will apply te"
+   },
+   {
+    "control_number": "21308",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "21314",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 142] 180 SCULPTURE FUNDAMENTALS 3.0 Units ART 180 is an introduction to fundamen- tal sculptural principles, techniques, and concepts using a wide range of materials and practices. Students practice various"
+   },
+   {
+    "control_number": "21315",
+    "pages": [
+     231,
+     232,
+     233,
+     234
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.514,
+    "opens": "[page 231] 140 APPLIED MUSIC LESSONS 0.5 Units MUSIC 140 is a course in individual and ensemble performance. Students receive eight hours of private instruction on a solo i n s t r u m e n t o r v o i c e . E"
+   },
+   {
+    "control_number": "21317",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.517,
+    "opens": "[page 177] DANCE It is recommended that a variety of activities be taken during a student’s att endance at Glendale College. Courses in dance satisfy the physical education requirement. Child Development 158, Dance "
+   },
+   {
+    "control_number": "21318",
+    "pages": [
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 242] 140 FINE ART PHOTOGRAPHY 3.0 Units PHOTO 140 includes learning fine art approaches in photography. Students are guided through artistic styles, project and theme development, and technical and design"
+   },
+   {
+    "control_number": "21319",
+    "pages": [
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 139] 130 2-D FOUNDATIONS 3.0 Units ART 130 is an introduction to the concepts, history and application of two-dimensional art and composition. The course includes the study of the basic principles of line,"
+   },
+   {
+    "control_number": "21320",
+    "pages": [
+     72
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 72] COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE This degree or certi ﬁ cate is designed to train students to meet the rapidly growing need for quali ﬁ ed hardware/software technicians, having a blend of"
+   },
+   {
+    "control_number": "21323",
+    "pages": [
+     130,
+     131
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] 235 FRAUD EXAMINATION 3.0 Units ACCTG 235 is an advanced course that addresses the principles and methodology of fraud detection and deterrence. The course i n c l u d e s s u c h t o p i c s a s "
+   },
+   {
+    "control_number": "24010",
+    "pages": [
+     277,
+     278,
+     279
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 277] 61 LEARNING LAB AND SUPPORT FOR HIGH SCHOOL AND HIGH SCHOOL EQUIVALENCY 0 Units ABSE 61 is a learning lab designed for both high school and high school equivalency students who want additional instructio"
+   },
+   {
+    "control_number": "24011",
+    "pages": [
+     285,
+     286,
+     287,
+     288
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 285] SHORT TERM VOCATIONAL 11 BEGINNING KEYBOARDING 0 Units STV 11 is an individualized class where students learn keyboarding by touch, or how to type on a computer without looking at the keyboard. Students us"
+   },
+   {
+    "control_number": "24042",
+    "pages": [
+     270
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 270] ACCOUNT CLERK I CERTIFICATE This program prepares students for entry-level bookkeep- ing positions. Students learn to record customer and vendor data for service based sole proprietorships, and create ﬁ nan- "
+   },
+   {
+    "control_number": "24274",
+    "pages": [
+     277
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.6,
+    "opens": "[page 277] 61 LEARNING LAB AND SUPPORT FOR HIGH SCHOOL AND HIGH SCHOOL EQUIVALENCY 0 Units ABSE 61 is a learning lab designed for both high school and high school equivalency students who want additional instructio"
+   },
+   {
+    "control_number": "30031",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.571,
+    "opens": "[page 106] SPANISH LANGUAGE The degree or certiﬁ cate in Spanish Language provides a rigor- ous academic preparation in the Spanish language. Students are prepared to transfer to baccalaureate degree programs in Span- i"
+   },
+   {
+    "control_number": "30032",
+    "pages": [
+     170
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.8,
+    "opens": "[page 170] COMPUTER APPLICATION & BUSINESS OFFICE TECHNOLOGIES 101 BUSINESS OFFICE PROCEDURES 3.0 Units CABOT 101 is an in-depth study of general oﬃ ce procedures, including the selection of oﬃ ce supplies; pro"
+   },
+   {
+    "control_number": "30561",
+    "pages": [
+     159,
+     160
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.538,
+    "opens": "[page 159] BUSINESS ADMINISTRATION 50 BUSINESS INTERNSHIP 1.0 to 3.0 Units BUSAD 50 is a discipline-speci ﬁ c course, which allows students to earn from 1-3 units for structured, supervised work on-campus or off-c"
+   },
+   {
+    "control_number": "30814",
+    "pages": [
+     117,
+     118
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 117] AA-T — COMMUNICATION STUDIES 2.0 The AA-T in Communication Studies 2.0 provides students with a strong academic foundation in the field and preparation for upper division baccalaureate study. Students who h"
+   },
+   {
+    "control_number": "31597",
+    "pages": [
+     275,
+     276,
+     277,
+     278
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.564,
+    "opens": "[page 275] 27 APPLIED MATHEMATICS 0 Units A B S E 2 7 i s d e s i g n e d t o h e l p s t u d e n t s u s e mathematical principles and computations in everyday living and business transactions. This course "
+   },
+   {
+    "control_number": "32168",
+    "pages": [
+     130,
+     131,
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 130] 235 FRAUD EXAMINATION 3.0 Units ACCTG 235 is an advanced course that addresses the principles and methodology of fraud detection and deterrence. The course i n c l u d e s s u c h t o p i c s a s "
+   },
+   {
+    "control_number": "32178",
+    "pages": [
+     204,
+     205
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 204] 103 WORLD REGIONAL GEOGRAPHY 3.0 Units GEOG 103 surveys the world’s major cultural and physical regions. Students focus on regions that help them understand contemporary global issues and concerns, s"
+   },
+   {
+    "control_number": "32199",
+    "pages": [
+     248
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 248] 50 PHYSICS INTERNSHIP 1.0 to 3.0 Units PHY 50 is a discipline-speciﬁ c course which allows students to earn from 1-3 units for structured, supervised work on-campus or oﬀ -campus in the ﬁ eld of physic"
+   },
+   {
+    "control_number": "32267",
+    "pages": [
+     117,
+     118
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 117] AS-T — BUSINESS ADMINISTRATION 2.0 The AS-T in Business Administration 2.0 provides stu dents wi th a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students"
+   },
+   {
+    "control_number": "32394",
+    "pages": [
+     257,
+     258
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.583,
+    "opens": "[page 257] 171 GLOBAL ISSUES 3.0 Units SOC 171 introduces students to the origins, current status, and future trends of major transnational issues confronting the global community. Topics can include population "
+   },
+   {
+    "control_number": "32420",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 121] AS-T — NUTRITION AND DIETETICS The AS-T in Nutrition and Dietetics provides students with a strong academic foundation in the ﬁ eld and be prepared for upper division baccalaureate study. Students who have c"
+   },
+   {
+    "control_number": "32462",
+    "pages": [
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.548,
+    "opens": "[page 122] AA-T — PSYCHOLOGY T h e A A - T i n P s y c h o l o g y p r o v i d e s s t u d e n t s w i t h a s t r o n g academic foundation in the ﬁ eld and preparation for upper division baccalaureate study."
+   },
+   {
+    "control_number": "32463",
+    "pages": [
+     208,
+     209,
+     210
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.512,
+    "opens": "[page 208] 105 TWENTIETH CENTURY CENTRAL AMERICA AND THE CARIBBEAN 3.0 Units HIST 105 is an introductory course focusing on the contemporary political, economic, and social history in Central America and the Ca"
+   },
+   {
+    "control_number": "32605",
+    "pages": [
+     121,
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 121] AA-T — PHILOSOPHY The AA-T in Philosophy provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA-T in Phil"
+   },
+   {
+    "control_number": "32607",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.676,
+    "opens": "[page 116] AA-T — ANTHROPOLOGY The AA-T in Anthropology provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA - T i"
+   },
+   {
+    "control_number": "32707",
+    "pages": [
+     263,
+     264,
+     265,
+     266
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 263] 104 ACTING FUNDAMENTALS II 3.0 Units THTR 104 follows THTR 103, and continues the exploration of theories and techniques used to interpret dramatic writing through the acting of scenes and monologues."
+   },
+   {
+    "control_number": "32738",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 166] 160 GUIDING CHILDREN AND ADOLESCENTS 3.0 Units CHLDV 160 provides an overview of the developmental, environmental, and cultural factors that impact the behavior of children and adolescents; examines "
+   },
+   {
+    "control_number": "33294",
+    "pages": [
+     146,
+     147
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.577,
+    "opens": "[page 146] 102H HONORS ART HISTORY: RENAISSANCE-MODERN 3.0 Units A R T H 1 0 2 H i s a s u r v e y o f w e s t e r n a r c h i - tecture, painting, and sculpture from the Renaissance to modern times. The v"
+   },
+   {
+    "control_number": "33295",
+    "pages": [
+     119,
+     120,
+     121,
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 119] AA-T — GEOGRAPHY The AA-T in Geography provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA-T in Geogra"
+   },
+   {
+    "control_number": "33598",
+    "pages": [
+     138,
+     139,
+     140,
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 138] 117 ARMENIAN FOR THE ARMENIAN SPEAKING III 5.0 Units ARMEN 117 emphasizes critical thinking and writing skills using Armenian literature. S t u d e n t s r e a d c o m p l e t e w o r k s o f ﬁ c"
+   },
+   {
+    "control_number": "33665",
+    "pages": [
+     233,
+     234,
+     235,
+     236
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.607,
+    "opens": "[page 233] 165 PIANO WORKSHOP III 1.0 Unit MUSIC 165 is for Level Three advanced students who can bene ﬁ t from individual study and supervised practice time. Piano Workshop III allows students to study solo re"
+   },
+   {
+    "control_number": "33911",
+    "pages": [
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.6,
+    "opens": "[page 228] 191 INTRODUCTION TO PUBLIC HEALTH & COMMUNITY 3.0 Units MOA 191 introduces key public health concepts, the history, present and future direction of public health, and how the core areas of pub li c h"
+   },
+   {
+    "control_number": "33934",
+    "pages": [
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.6,
+    "opens": "[page 228] 191 INTRODUCTION TO PUBLIC HEALTH & COMMUNITY 3.0 Units MOA 191 introduces key public health concepts, the history, present and future direction of public health, and how the core areas of pub li c h"
+   },
+   {
+    "control_number": "35473",
+    "pages": [
+     263,
+     264,
+     265
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 263] 104 ACTING FUNDAMENTALS II 3.0 Units THTR 104 follows THTR 103, and continues the exploration of theories and techniques used to interpret dramatic writing through the acting of scenes and monologues."
+   },
+   {
+    "control_number": "35585",
+    "pages": [
+     262,
+     263
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.643,
+    "opens": "[page 262] THEATRE ARTS T h e a t re A r t s c o nt a i n s s e v e n f a m i li e s (S e e p age 1 2 3 for more information on course families): • Acting (THTR 100, 103, 104, 111, 140) • Directing, Playwriting"
+   },
+   {
+    "control_number": "36102",
+    "pages": [
+     281,
+     282
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 281] 55 ENGLISH AS A SECOND LANGUAGE LEVEL 5 FOR WORK 0 Units ESL 55 is for students at the advanced level of English. This course provides English language listening, speaking, reading, writing, grammar, and"
+   },
+   {
+    "control_number": "36107",
+    "pages": [
+     281,
+     282
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 281] 55 ENGLISH AS A SECOND LANGUAGE LEVEL 5 FOR WORK 0 Units ESL 55 is for students at the advanced level of English. This course provides English language listening, speaking, reading, writing, grammar, and"
+   },
+   {
+    "control_number": "36155",
+    "pages": [
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 132] 110 COUNSELING TECHNIQUES AND CASE MANAGEMENT 3.0 Units ADST 110 is designed to prepare the student for the ﬁ eld experiences of the addiction counseling internship. It examines several models of add"
+   },
+   {
+    "control_number": "36270",
+    "pages": [
+     199,
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.567,
+    "opens": "[page 199] 112 INTRODUCTION TO SCREENWRITING 3.0 Units FTVM 112 is a basic introductory course in narrative script writing for ﬁ lm and episodic television. Emphasis is placed upon the essentials of screenplay "
+   },
+   {
+    "control_number": "36416",
+    "pages": [
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.522,
+    "opens": "[page 187] 156 PROGRAMMING AND PROBLEM- SOLVING IN MATLAB 3.0 Units E N G R 1 5 6 p r o v i d e s a n i n t r o d u c t i o n t o MATLAB to provide students with a working knowledge of computer based proble"
+   },
+   {
+    "control_number": "36419",
+    "pages": [
+     185,
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] 101 ENGINEERING DRAFTING AND BASIC DESIGN 3.0 Units ENGR 101 covers the fundamentals of traditional board drafting, descriptive geometry, orthographic projection and the graphical communication of te"
+   },
+   {
+    "control_number": "36424",
+    "pages": [
+     185,
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] 101 ENGINEERING DRAFTING AND BASIC DESIGN 3.0 Units ENGR 101 covers the fundamentals of traditional board drafting, descriptive geometry, orthographic projection and the graphical communication of te"
+   },
+   {
+    "control_number": "36536",
+    "pages": [
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 186] 122 ENGINEERING GRAPHICS 3.0 Units ENGR 122 presents the fundamental prin- ciples of engineering graphical communi- cation and drawing using computer aided design (CAD) software as an integral teach- in"
+   },
+   {
+    "control_number": "36596",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 79] INFORMATION TECHNOLOGY AS DEGREE This degree prepares students for employment in a variety of jobs, including work as network and computer systems admin- istrators, computer support specialists and data base a"
+   },
+   {
+    "control_number": "36667",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+   },
+   {
+    "control_number": "36710",
+    "pages": [
+     138
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 138] 117 ARMENIAN FOR THE ARMENIAN SPEAKING III 5.0 Units ARMEN 117 emphasizes critical thinking and writing skills using Armenian literature. S t u d e n t s r e a d c o m p l e t e w o r k s o f ﬁ c"
+   },
+   {
+    "control_number": "36711",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+   },
+   {
+    "control_number": "36712",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+   },
+   {
+    "control_number": "36713",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+   },
+   {
+    "control_number": "36714",
+    "pages": [
+     257,
+     258
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.538,
+    "opens": "[page 257] 171 GLOBAL ISSUES 3.0 Units SOC 171 introduces students to the origins, current status, and future trends of major transnational issues confronting the global community. Topics can include population "
+   },
+   {
+    "control_number": "36717",
+    "pages": [
+     138
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 138] 117 ARMENIAN FOR THE ARMENIAN SPEAKING III 5.0 Units ARMEN 117 emphasizes critical thinking and writing skills using Armenian literature. S t u d e n t s r e a d c o m p l e t e w o r k s o f ﬁ c"
+   },
+   {
+    "control_number": "36720",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+   },
+   {
+    "control_number": "36722",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 85] CHEMISTRY Program Learning Outcomes: Upon completion of this program, students will be able to compare and contrast the general chem- istry performance exam taken at Glendale Community College with the nation"
+   },
+   {
+    "control_number": "36723",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 85] CHEMISTRY Program Learning Outcomes: Upon completion of this program, students will be able to compare and contrast the general chem- istry performance exam taken at Glendale Community College with the nation"
+   },
+   {
+    "control_number": "36724",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 85] CHEMISTRY Program Learning Outcomes: Upon completion of this program, students will be able to compare and contrast the general chem- istry performance exam taken at Glendale Community College with the nation"
+   },
+   {
+    "control_number": "36725",
+    "pages": [
+     84,
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 84] NURSING - SEE REGISTERED NURSING PHOTOGRAPHY AS DEGREE OR CERTIFICATE DIGITAL PHOTOGRAPHY This d egree o r certiﬁ ca te is d esi gned to prep are stu d en ts fo r work as professional photographers and photogr"
+   },
+   {
+    "control_number": "36726",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 77] ITALIAN LANGUAGE The degree or certiﬁ cate in Italian Language provides rigorous academic preparation in Italian Language. Students are pre- pared to transfer to baccalaureate degree programs in Italian or Ro"
+   },
+   {
+    "control_number": "36727",
+    "pages": [
+     257,
+     258
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.538,
+    "opens": "[page 257] 171 GLOBAL ISSUES 3.0 Units SOC 171 introduces students to the origins, current status, and future trends of major transnational issues confronting the global community. Topics can include population "
+   },
+   {
+    "control_number": "36728",
+    "pages": [
+     190,
+     191
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 190] 111 WOMEN IN LITERATURE 3.0 Units ENGL 111 is a comparative study of the roles assigned to women in literature by both male and female authors. The course critically examines the literary and cultural"
+   },
+   {
+    "control_number": "37854",
+    "pages": [
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 186] 122 ENGINEERING GRAPHICS 3.0 Units ENGR 122 presents the fundamental prin- ciples of engineering graphical communi- cation and drawing using computer aided design (CAD) software as an integral teach- in"
+   },
+   {
+    "control_number": "37855",
+    "pages": [
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 187] 156 PROGRAMMING AND PROBLEM- SOLVING IN MATLAB 3.0 Units E N G R 1 5 6 p r o v i d e s a n i n t r o d u c t i o n t o MATLAB to provide students with a working knowledge of computer based proble"
+   },
+   {
+    "control_number": "37856",
+    "pages": [
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 186] 122 ENGINEERING GRAPHICS 3.0 Units ENGR 122 presents the fundamental prin- ciples of engineering graphical communi- cation and drawing using computer aided design (CAD) software as an integral teach- in"
+   },
+   {
+    "control_number": "37857",
+    "pages": [
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] 122 ENGINEERING GRAPHICS 3.0 Units ENGR 122 presents the fundamental prin- ciples of engineering graphical communi- cation and drawing using computer aided design (CAD) software as an integral teach- in"
+   },
+   {
+    "control_number": "37952",
+    "pages": [
+     118,
+     119
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.533,
+    "opens": "[page 118] The AA-T in Elementary Teacher Education provides students with a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AA-T in Elem"
+   },
+   {
+    "control_number": "38717",
+    "pages": [
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.577,
+    "opens": "[page 122] AA-T — PSYCHOLOGY T h e A A - T i n P s y c h o l o g y p r o v i d e s s t u d e n t s w i t h a s t r o n g academic foundation in the ﬁ eld and preparation for upper division baccalaureate study."
+   },
+   {
+    "control_number": "39285",
+    "pages": [
+     117,
+     118,
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 117] AS-T — BUSINESS ADMINISTRATION 2.0 The AS-T in Business Administration 2.0 provides stu dents wi th a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students"
+   },
+   {
+    "control_number": "39289",
+    "pages": [
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.594,
+    "opens": "[page 122] AA-T — PSYCHOLOGY T h e A A - T i n P s y c h o l o g y p r o v i d e s s t u d e n t s w i t h a s t r o n g academic foundation in the ﬁ eld and preparation for upper division baccalaureate study."
+   },
+   {
+    "control_number": "40808",
+    "pages": [
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 165] 150 INTRODUCTION TO CURRICULUM 3.0 Units CHLDV 150 provides an overview of prin- ciples involved in planning, implementing and evaluating developmentally appropriate curriculum. It includes processes f"
+   },
+   {
+    "control_number": "40814",
+    "pages": [
+     119,
+     120,
+     121,
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 119] AS-T — GEOLOGY The AS-T in Geology provides students with a strong academic foundation in the ﬁ eld and preparation for upper division bac- calaureate study. Students who have completed the AS-T in Geology w"
+   },
+   {
+    "control_number": "40846",
+    "pages": [
+     272
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 272] HOME CAREGIVER This program is designed to train students for employment as personal care assistants in the home, addressing the trend of the fastest growing segments of the elder care market. The certiﬁ ca"
+   },
+   {
+    "control_number": "40847",
+    "pages": [
+     272
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 272] HOME CAREGIVER This program is designed to train students for employment as personal care assistants in the home, addressing the trend of the fastest growing segments of the elder care market. The certiﬁ ca"
+   },
+   {
+    "control_number": "40863",
+    "pages": [
+     223,
+     224,
+     225
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 223] 103E CALCULUS AND ANALYTIC GEOMETRY I 5.0 Units MATH 103E is the ﬁ rst of a sequence of three courses combining the subject ma tt er of analytic geometry and calculus. Functions and their graphs are "
+   },
+   {
+    "control_number": "41379",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "41573",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "41650",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "41651",
+    "pages": [
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] 260 INTRODUCTION TO WEB SITE DEVELOPMENT 3.0 Units CS/IS 260 provides students with training and experience in developing and managing Web sites using HTML (HyperText Markup Language) and CSS (Cascad"
+   },
+   {
+    "control_number": "41729",
+    "pages": [
+     227,
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 227] 101 HEALTHCARE OCCUPATIONS 2.0 Units MO A 1 01 is an overview of health occupa- tions and provides the study of basic medi- cal mathematics and terminology; career foundations, including healthcare of t"
+   },
+   {
+    "control_number": "41730",
+    "pages": [
+     227,
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 227] 101 HEALTHCARE OCCUPATIONS 2.0 Units MO A 1 01 is an overview of health occupa- tions and provides the study of basic medi- cal mathematics and terminology; career foundations, including healthcare of t"
+   },
+   {
+    "control_number": "41767",
+    "pages": [
+     158,
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 158] 140 INTRODUCTION TO BIOTECHNOLOGY 4.0 Units BIOL 140 is a general introduction of biology as it relates to the ﬁ eld of biotechnology. Topics include the fundamental chemi- cal processes common in pro"
+   },
+   {
+    "control_number": "41768",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 92] The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through strengthening and building on the basic biotech"
+   },
+   {
+    "control_number": "41775",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 92] The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through strengthening and building on the basic biotech"
+   },
+   {
+    "control_number": "41776",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 92] BIOTECHNOLOGY RESEARCH LAB ASSISTANT CERTIFICATE The Biotechnology Research Lab Assistant Certificate of Achievement Program is the second level that introduces stu- dents to the ﬁ eld of biotechnology through"
+   },
+   {
+    "control_number": "41825",
+    "pages": [
+     241,
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] 100 DIGITAL PHOTOGRAPHY I 3.0 Units PHOTO 100 is an introductory digital photography course. Students will become acquainted with basic digital camera features, photo composition, and concep- t u a l "
+   },
+   {
+    "control_number": "41827",
+    "pages": [
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 242] 140 FINE ART PHOTOGRAPHY 3.0 Units PHOTO 140 includes learning fine art approaches in photography. Students are guided through artistic styles, project and theme development, and technical and design"
+   },
+   {
+    "control_number": "41828",
+    "pages": [
+     241,
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 241] 100 DIGITAL PHOTOGRAPHY I 3.0 Units PHOTO 100 is an introductory digital photography course. Students will become acquainted with basic digital camera features, photo composition, and concep- t u a l "
+   },
+   {
+    "control_number": "42126",
+    "pages": [
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 242] 140 FINE ART PHOTOGRAPHY 3.0 Units PHOTO 140 includes learning fine art approaches in photography. Students are guided through artistic styles, project and theme development, and technical and design"
+   },
+   {
+    "control_number": "42263",
+    "pages": [
+     271
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 271] DRAFTING AND BASIC DESIGN CERTIFICATE This program is designed to introduce to and prepare non- credit students for CTE Engineering programs for credit. Ba- sic drafting skills, industry standards, and technic"
+   },
+   {
+    "control_number": "42378",
+    "pages": [
+     241,
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] 100 DIGITAL PHOTOGRAPHY I 3.0 Units PHOTO 100 is an introductory digital photography course. Students will become acquainted with basic digital camera features, photo composition, and concep- t u a l "
+   },
+   {
+    "control_number": "43038",
+    "pages": [
+     117,
+     118,
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 117] AS-T — BUSINESS ADMINISTRATION 2.0 The AS-T in Business Administration 2.0 provides stu dents wi th a strong academic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students"
+   },
+   {
+    "control_number": "44359",
+    "pages": [
+     183
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] 244 MEDICAL EMERGENCIES 3.5 Units EMS 244 expands on the paramedic student’s knowledge to formulate a ﬁ eld impression and implement a treatment plan. This course will cover principles of epidemiology"
+   },
+   {
+    "control_number": "44484",
+    "pages": [
+     101,
+     102,
+     103,
+     104
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 101] ENGINEERING TECHNOLOGY - CAD & DESIGN DRAFTING CERTIFICATE This certi ﬁ cate prepares students with training to work in industry as a CAD designer, engineering drafter or drafting technician or technologist"
+   },
+   {
+    "control_number": "44485",
+    "pages": [
+     101,
+     102,
+     103,
+     104
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 101] ENGINEERING TECHNOLOGY - CAD & DESIGN DRAFTING CERTIFICATE This certi ﬁ cate prepares students with training to work in industry as a CAD designer, engineering drafter or drafting technician or technologist"
+   },
+   {
+    "control_number": "44486",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.647,
+    "opens": "[page 102] ADVANCED ESL: LANGUAGE & COMMUNICATION PATHWAY The Advanced ESL: Language & Communication Pathway certiﬁ cate is designed to prepare non-native English speakers to succeed in Language and Communication acad"
+   },
+   {
+    "control_number": "44568",
+    "pages": [
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 200] 139 INTRODUCTION TO EDITING 3.0 Units (Previously MEDIA 112) FTVM 139 is an intermediate-level media p r o d u c t i o n c l a s s . E m p h a s i s i s o n e d i t i n g techniques and aestheti"
+   },
+   {
+    "control_number": "44569",
+    "pages": [
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 200] 139 INTRODUCTION TO EDITING 3.0 Units (Previously MEDIA 112) FTVM 139 is an intermediate-level media p r o d u c t i o n c l a s s . E m p h a s i s i s o n e d i t i n g techniques and aestheti"
+   },
+   {
+    "control_number": "44570",
+    "pages": [
+     75,
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 75] ENGLISH: CREATIVE WRITING AA DEGREE The English Creative Writing AA degree is designed to pro- vide students with a solid foundation of creative writing skills. Students will understand genre, literary concep"
+   },
+   {
+    "control_number": "44571",
+    "pages": [
+     197,
+     198,
+     199,
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 197] 47 FILM TELEVISION AND MEDIA ARTS NATIONAL FIELD STUDIES 1.0 to 3.0 Units FTVM 47 provides college credit for travel and study in a target area in the United States at the student’s own expense in pro"
+   },
+   {
+    "control_number": "44572",
+    "pages": [
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 200] 139 INTRODUCTION TO EDITING 3.0 Units (Previously MEDIA 112) FTVM 139 is an intermediate-level media p r o d u c t i o n c l a s s . E m p h a s i s i s o n e d i t i n g techniques and aestheti"
+   },
+   {
+    "control_number": "44773",
+    "pages": [
+     230
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 230] 122 HISTORY OF JAZZ 3.0 Units MUSIC 122 traces the evolution of jazz music from its earliest inﬂ uences in the nineteenth century to current styles. Special emphasis is placed on understanding how to "
+   },
+   {
+    "control_number": "44775",
+    "pages": [
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 110] MUSIC THEORY This certiﬁ cate is designed to help students entering the music ﬁ eld. Students will develop musical artistry and pro ﬁ ciency, learn to analyze and recognize musical pa tt erns, and gain a br"
+   },
+   {
+    "control_number": "44951",
+    "pages": [
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.524,
+    "opens": "[page 117] AA-T — COMMUNICATION STUDIES 2.0 The AA-T in Communication Studies 2.0 provides students with a strong academic foundation in the field and preparation for upper division baccalaureate study. Students who h"
+   },
+   {
+    "control_number": "45057",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 161] 163 SOCIAL MEDIA MARKETING I 3.0 Units BUSAD 163 orients students to the ﬁ eld of digital marketing by introducing the components, characteristics, metrics, goals, platforms, and history of social med"
+   },
+   {
+    "control_number": "45108",
+    "pages": [
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.733,
+    "opens": "[page 122] AS-T PUBLIC HEALTH The AS-T in Public Health provides students with a strong aca- demic foundation in the ﬁ eld and preparation for upper division baccalaureate study. Students who have completed the AS-T in "
+   },
+   {
+    "control_number": "45150",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 121] AS-T — NUTRITION AND DIETETICS The AS-T in Nutrition and Dietetics provides students with a strong academic foundation in the ﬁ eld and be prepared for upper division baccalaureate study. Students who have c"
+   },
+   {
+    "control_number": "45211",
+    "pages": [
+     234,
+     235,
+     236
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.733,
+    "opens": "[page 234] 184 ELECTRONIC MUSIC I 2.0 Units MUSIC 184 introduces the techniques and elements of electronic music production. Students will explore analog and digital synthesis techniques and will learn to craft "
+   },
+   {
+    "control_number": "45212",
+    "pages": [
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.571,
+    "opens": "[page 110] MUSIC THEORY This certiﬁ cate is designed to help students entering the music ﬁ eld. Students will develop musical artistry and pro ﬁ ciency, learn to analyze and recognize musical pa tt erns, and gain a br"
+   },
+   {
+    "control_number": "45393",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.571,
+    "opens": "[page 161] 163 SOCIAL MEDIA MARKETING I 3.0 Units BUSAD 163 orients students to the ﬁ eld of digital marketing by introducing the components, characteristics, metrics, goals, platforms, and history of social med"
+   },
+   {
+    "control_number": "45394",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 161] 163 SOCIAL MEDIA MARKETING I 3.0 Units BUSAD 163 orients students to the ﬁ eld of digital marketing by introducing the components, characteristics, metrics, goals, platforms, and history of social med"
+   },
+   {
+    "control_number": "45395",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 81] LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES EMPHASIS AA DEGREE This program is designed for students who wish to have a broad knowledge of the social and behavioral sciences, and is recom- mended for transfe"
+   },
+   {
+    "control_number": "45397",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 67] BIOTECHNOLOGY AS DEGREE The AS degree in Biotechnology provides a strong foundation for transfer to a college (two- or four- year) to complete a BS in Biotechnology. It also prepares students with the foundat"
+   },
+   {
+    "control_number": "45399",
+    "pages": [
+     194
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 194] 151 READING AND COMPOSITION V 4.0 Units ESL 151 is designed students at the advanced level of academic English as a second language. The course provides extensive practice in thesis-based essays, crit"
+   },
+   {
+    "control_number": "45596",
+    "pages": [
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 136] 109 SKETCHING TECHNIQUES FOR ARCHITECTS AND INTERIOR DESIGNERS 3.0 Units ARCH 109 covers tools, materials, and techniques for producing sketches for architectural projects. The student will apply te"
+   },
+   {
+    "control_number": "45682",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] 163 SOCIAL MEDIA MARKETING I 3.0 Units BUSAD 163 orients students to the ﬁ eld of digital marketing by introducing the components, characteristics, metrics, goals, platforms, and history of social med"
+   },
+   {
+    "control_number": "45854",
+    "pages": [
+     287,
+     288
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 287] 83 CELL PHONE BASICS 0 Units STV 83 introduces smart phone use for beginners. Students learn about basic cell phone se tt ings, OS con ﬁ guration, phone call basics, SMS (texting), contacts, cameral use,"
+   },
+   {
+    "control_number": "45996",
+    "pages": [
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 169] COMPUTER AIDED MANUFACTURING 210 COMPUTER AIDED MANUFACTURING BASIC MILLING 3.0 Units CAM 210 introduces the use of computers in programming numerical control milling machines. Students write and edit "
+   },
+   {
+    "control_number": "46004",
+    "pages": [
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 169] COMPUTER AIDED MANUFACTURING 210 COMPUTER AIDED MANUFACTURING BASIC MILLING 3.0 Units CAM 210 introduces the use of computers in programming numerical control milling machines. Students write and edit "
+   },
+   {
+    "control_number": "46050",
+    "pages": [
+     169
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 169] COMPUTER AIDED MANUFACTURING 210 COMPUTER AIDED MANUFACTURING BASIC MILLING 3.0 Units CAM 210 introduces the use of computers in programming numerical control milling machines. Students write and edit "
+   },
+   {
+    "control_number": "46051",
+    "pages": [
+     233,
+     234
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.6,
+    "opens": "[page 233] 165 PIANO WORKSHOP III 1.0 Unit MUSIC 165 is for Level Three advanced students who can bene ﬁ t from individual study and supervised practice time. Piano Workshop III allows students to study solo re"
+   },
+   {
+    "control_number": "46052",
+    "pages": [
+     264,
+     265
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.8,
+    "opens": "[page 264] 124 MUSICAL THEATRE HISTORY 3.0 Units THTR 124 explores the rich and diverse history of musical theatre from its origins to the present day. Students will learn the origins of musical theatre, analyze"
+   },
+   {
+    "control_number": "46053",
+    "pages": [
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 200] 139 INTRODUCTION TO EDITING 3.0 Units (Previously MEDIA 112) FTVM 139 is an intermediate-level media p r o d u c t i o n c l a s s . E m p h a s i s i s o n e d i t i n g techniques and aestheti"
+   },
+   {
+    "control_number": "46054",
+    "pages": [
+     265,
+     266
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.714,
+    "opens": "[page 265] 163 REHEARSAL AND PERFORMANCE IN CONTEMPORARY THEATRE PRODUCTION 2.0 to 4.0 Units THTR 163 is a workshop designed to support a contemporary theatre production. Students in this course are formed into "
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 175.2,
+ "found": 190,
+ "by_method": {
+  "no_closed_list": 50,
+  "not_found": 77,
+  "pdf_pages": 190
+ },
+ "shared_pages": {
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136": [
+   "02547",
+   "21299",
+   "45596"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116": [
+   "02548",
+   "32607"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=160": [
+   "02549",
+   "19559"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128": [
+   "02550",
+   "12571"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67": [
+   "02551",
+   "02553",
+   "11143",
+   "11144",
+   "19555",
+   "45397"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81": [
+   "02552",
+   "45395"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=252": [
+   "02555",
+   "17760",
+   "19564",
+   "19565"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=170": [
+   "02556",
+   "19567",
+   "30032"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=267": [
+   "02569",
+   "19570"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132": [
+   "02570",
+   "36155"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=146": [
+   "02571",
+   "33294"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=231": [
+   "02572",
+   "21315"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=242": [
+   "02575",
+   "12501",
+   "21318",
+   "41827",
+   "42126"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=237": [
+   "02580",
+   "19573"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=130": [
+   "02598",
+   "21323",
+   "32168"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=166": [
+   "02599",
+   "19574",
+   "32738"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=201": [
+   "02602",
+   "19581"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=200": [
+   "02612",
+   "44568",
+   "44569",
+   "44572",
+   "46053"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=234": [
+   "10057",
+   "45211"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175": [
+   "11161",
+   "11163",
+   "17645",
+   "19366",
+   "21308",
+   "41379",
+   "41573",
+   "41650",
+   "41651"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=142": [
+   "11175",
+   "21314"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=177": [
+   "11177",
+   "19110",
+   "19111",
+   "21317"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=164": [
+   "11189",
+   "11190",
+   "19576",
+   "19578"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72": [
+   "11193",
+   "21320"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=140": [
+   "12498",
+   "12500"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=139": [
+   "12499",
+   "21319"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121": [
+   "15584",
+   "32420",
+   "32605",
+   "45150"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=227": [
+   "19269",
+   "41729",
+   "41730"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93": [
+   "19558",
+   "19561"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92": [
+   "19560",
+   "41768",
+   "41775",
+   "41776"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161": [
+   "19566",
+   "45057",
+   "45393",
+   "45394",
+   "45682"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=185": [
+   "19569",
+   "36419",
+   "36424"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277": [
+   "24010",
+   "24274"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117": [
+   "30814",
+   "32267",
+   "39285",
+   "43038",
+   "44951"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=257": [
+   "32394",
+   "36714",
+   "36727"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122": [
+   "32462",
+   "38717",
+   "39289",
+   "45108"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263": [
+   "32707",
+   "35473"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119": [
+   "33295",
+   "40814"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=138": [
+   "33598",
+   "36710",
+   "36717"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=233": [
+   "33665",
+   "46051"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=228": [
+   "33911",
+   "33934"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=281": [
+   "36102",
+   "36107"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=187": [
+   "36416",
+   "37855"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=186": [
+   "36536",
+   "37854",
+   "37856",
+   "37857"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77": [
+   "36667",
+   "36711",
+   "36712",
+   "36713",
+   "36720",
+   "36726"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85": [
+   "36722",
+   "36723",
+   "36724"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272": [
+   "40846",
+   "40847"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=241": [
+   "41825",
+   "41828",
+   "42378"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101": [
+   "44484",
+   "44485"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110": [
+   "44775",
+   "45212"
+  ],
+  "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169": [
+   "45996",
+   "46004",
+   "46050"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "02603",
+   "title": "Social Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.299
+   }
+  },
+  {
+   "control_number": "02611",
+   "title": "Machinist",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=220",
+    "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "10412",
+   "title": "Animation, Visual Effects, and Game Design",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+    "coverage": 0.308
+   }
+  },
+  {
+   "control_number": "11147",
+   "title": "Bookkeeping",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "coverage": 0.083
+   }
+  },
+  {
+   "control_number": "11151",
+   "title": "Administrative Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "11153",
+   "title": "Receptionist/Office Clerk",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=112",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "11155",
+   "title": "Mass Communications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "11159",
+   "title": "Computer Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.235
+   }
+  },
+  {
+   "control_number": "11162",
+   "title": "Computer Software Technician",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.143
+   }
+  },
+  {
+   "control_number": "11176",
+   "title": "Theatre Arts: General",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "coverage": 0.088
+   }
+  },
+  {
+   "control_number": "11191",
+   "title": "Child Development: Master Teacher",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+    "coverage": 0.083
+   }
+  },
+  {
+   "control_number": "12502",
+   "title": "Entertainment Art",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+    "coverage": 0.417
+   }
+  },
+  {
+   "control_number": "12503",
+   "title": "Interdisciplinary Humanities: Creativity",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=212",
+    "coverage": 0.244
+   }
+  },
+  {
+   "control_number": "12570",
+   "title": "Tax Preparer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=113",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "12574",
+   "title": "Fitness Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+    "coverage": 0.321
+   }
+  },
+  {
+   "control_number": "16972",
+   "title": "Insurance Specialist: Property & Casualty",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+    "coverage": 0.462
+   }
+  },
+  {
+   "control_number": "18638",
+   "title": "Liberal Arts: Arts and Humanities Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "18639",
+   "title": "Liberal Arts: Science and Mathematics Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "coverage": 0.226
+   }
+  },
+  {
+   "control_number": "18640",
+   "title": "Liberal Arts: Social and Behavioral Sciences Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "coverage": 0.131
+   }
+  },
+  {
+   "control_number": "19365",
+   "title": "Insurance Professional II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "19546",
+   "title": "Medical Front Office",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "19556",
+   "title": "Bookkeeping",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "coverage": 0.095
+   }
+  },
+  {
+   "control_number": "19562",
+   "title": "Administrative Assistant",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+    "coverage": 0.273
+   }
+  },
+  {
+   "control_number": "19563",
+   "title": "Insurance Specialist: Property & Casualty",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+    "coverage": 0.462
+   }
+  },
+  {
+   "control_number": "19571",
+   "title": "Machinist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=220",
+    "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "19575",
+   "title": "Child Development: Master Teacher",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+    "coverage": 0.083
+   }
+  },
+  {
+   "control_number": "19577",
+   "title": "Child Development: Site Supervisor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+    "coverage": 0.071
+   }
+  },
+  {
+   "control_number": "21302",
+   "title": "Cinematography and Editing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=95",
+    "coverage": 0.273
+   }
+  },
+  {
+   "control_number": "21303",
+   "title": "Mass Communications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "21304",
+   "title": "Animation, Visual Effects, and Game Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+    "coverage": 0.308
+   }
+  },
+  {
+   "control_number": "21305",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+    "coverage": 0.158
+   }
+  },
+  {
+   "control_number": "21306",
+   "title": "Computer Science",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.235
+   }
+  },
+  {
+   "control_number": "21307",
+   "title": "Computer Software Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.143
+   }
+  },
+  {
+   "control_number": "24161",
+   "title": "Account Clerk II",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.125
+   }
+  },
+  {
+   "control_number": "24297",
+   "title": "Introduction to Hospitality and Tourism",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "24322",
+   "title": "Medical Front Office Clerk",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "24327",
+   "title": "General Office Clerk III",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "24356",
+   "title": "General Office Clerk I",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+    "coverage": 0.222
+   }
+  },
+  {
+   "control_number": "24377",
+   "title": "General Office Clerk II",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "24381",
+   "title": "Dental Administrative Assistant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "24432",
+   "title": "Certificate of Secondary Education Completion",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=274",
+    "coverage": 0.423
+   }
+  },
+  {
+   "control_number": "30744",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
+    "coverage": 0.316
+   }
+  },
+  {
+   "control_number": "30813",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+    "coverage": 0.255
+   }
+  },
+  {
+   "control_number": "31928",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
+    "coverage": 0.299
+   }
+  },
+  {
+   "control_number": "32234",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
+    "coverage": 0.372
+   }
+  },
+  {
+   "control_number": "35029",
+   "title": "Digital Content Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "35283",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+    "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "35597",
+   "title": "Administrative Medical Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "35628",
+   "title": "Administrative Medical Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "36480",
+   "title": "Medical Front Office",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "coverage": 0.375
+   }
+  },
+  {
+   "control_number": "36580",
+   "title": "Business Information Worker (BIW)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
+    "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "36598",
+   "title": "IT Technician II: Help Desk User Support",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "36599",
+   "title": "IT Technician II: Help Desk User Support",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "36600",
+   "title": "IT Technician III",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "coverage": 0.308
+   }
+  },
+  {
+   "control_number": "36601",
+   "title": "IT Technician III",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+    "coverage": 0.308
+   }
+  },
+  {
+   "control_number": "37070",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "37071",
+   "title": "Information Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "coverage": 0.111
+   }
+  },
+  {
+   "control_number": "37960",
+   "title": "Computer Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+    "coverage": 0.158
+   }
+  },
+  {
+   "control_number": "38144",
+   "title": "English: Creative Writing",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "coverage": 0.308
+   }
+  },
+  {
+   "control_number": "38973",
+   "title": "Customer Service",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "39406",
+   "title": "Foreign Languages",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+    "coverage": 0.233
+   }
+  },
+  {
+   "control_number": "39905",
+   "title": "Fitness Specialist",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+    "coverage": 0.345
+   }
+  },
+  {
+   "control_number": "39910",
+   "title": "Sports Coaching",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "coverage": 0.32
+   }
+  },
+  {
+   "control_number": "39912",
+   "title": "Sports Coaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "coverage": 0.32
+   }
+  },
+  {
+   "control_number": "41826",
+   "title": "Digital Photography Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "42738",
+   "title": "Digital Content Specialist",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
+    "coverage": 0.286
+   }
+  },
+  {
+   "control_number": "44351",
+   "title": "Intermediate ESL: Academic & Career Preparation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "44360",
+   "title": "Advanced ESL: Business, Entrepreneurship & Management Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
+    "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "44487",
+   "title": "Advanced ESL: People, Power & Perspective Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "44488",
+   "title": "Advanced ESL: STEM Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "coverage": 0.438
+   }
+  },
+  {
+   "control_number": "44489",
+   "title": "Advanced ESL: Visual & Performing Arts Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "coverage": 0.438
+   }
+  },
+  {
+   "control_number": "44640",
+   "title": "Data Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.414
+   }
+  },
+  {
+   "control_number": "44774",
+   "title": "Music Theory",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "45068",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=49",
+    "coverage": 0.093
+   }
+  },
+  {
+   "control_number": "45101",
+   "title": "Data Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=99",
+    "coverage": 0.273
+   }
+  },
+  {
+   "control_number": "45396",
+   "title": "Human Resources Assistant I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "45681",
+   "title": "Insurance Professional I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+    "coverage": 0.167
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 117,
+  "0.8-1.0": 40,
+  "1.0": 33
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 190,
+  "list": [
+   {
+    "control_number": "02547",
+    "title": "Architectural Drafting & Design",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02548",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02549",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=160",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02550",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02551",
+    "title": "Financial Planning & Investment",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02552",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02553",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02555",
+    "title": "Real Estate Broker",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=252",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02556",
+    "title": "General Office",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=170",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02557",
+    "title": "Mass Communications",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02569",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=267",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02570",
+    "title": "Addiction Studies Counseling",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02571",
+    "title": "Visual Arts: Art History",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=146",
+    "coverage": 0.789,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02572",
+    "title": "Music",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=231",
+    "coverage": 0.514,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02575",
+    "title": "Photography",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=242",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02580",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=237",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02587",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=189",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02588",
+    "title": "Speech/Communication",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=168",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02598",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02599",
+    "title": "Child Development: Teacher",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=166",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02602",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=201",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02612",
+    "title": "Film, Television and Media Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=200",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02615",
+    "title": "Flight Attendant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=154",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09482",
+    "title": "Electronics Technology Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=181",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10055",
+    "title": "Choreographic Studies & Dance Technique",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=179",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10057",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=234",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11143",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11144",
+    "title": "Entrepreneurship/Small Business",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11145",
+    "title": "International Business",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11161",
+    "title": "Computer Programmer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11163",
+    "title": "Computer Support Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11175",
+    "title": "Ceramics",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=142",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11177",
+    "title": "Choreographic Studies & Dance Technique",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=177",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11189",
+    "title": "Child Development: Infant/Toddler",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11190",
+    "title": "Child Development: School-Age Care",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11193",
+    "title": "Dietetic Services Supervisor",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12498",
+    "title": "Two-Dimensional Art",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=140",
+    "coverage": 0.529,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12499",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=139",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12500",
+    "title": "Three-Dimensional Art",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=140",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12501",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=242",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12571",
+    "title": "Computerized Accounting Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15584",
+    "title": "Health Science",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
+    "coverage": 0.529,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17645",
+    "title": "Web Development",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17760",
+    "title": "Real Estate Appraisal",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=252",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18660",
+    "title": "Verdugo Fire Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18661",
+    "title": "Verdugo Recruit Fire Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19110",
+    "title": "Dance Teaching",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=177",
+    "coverage": 0.654,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19111",
+    "title": "Dance Teaching",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=177",
+    "coverage": 0.654,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19269",
+    "title": "Basic Medical Billing and Coding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=227",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19366",
+    "title": "Unix-Linux System Administrator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19555",
+    "title": "General Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19558",
+    "title": "Financial Planning & Investment II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19559",
+    "title": "Management II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=160",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19560",
+    "title": "Entrepreneurship/Small Business II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19561",
+    "title": "International Business II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19564",
+    "title": "Real Estate Appraisal",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=252",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19565",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=252",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19566",
+    "title": "Marketing II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19567",
+    "title": "General Office",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=170",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19569",
+    "title": "Engineering Technology - CAD",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19570",
+    "title": "Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=267",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19573",
+    "title": "Registered Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=237",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19574",
+    "title": "Child Development: Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=166",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19576",
+    "title": "Child Development: School-Age Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19578",
+    "title": "Child Development: Infant/Toddler",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19581",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=201",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21299",
+    "title": "Architectural Drafting & Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21308",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21314",
+    "title": "Ceramics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=142",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21315",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=231",
+    "coverage": 0.514,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21317",
+    "title": "Choreographic Studies & Dance Technique",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=177",
+    "coverage": 0.517,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21318",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=242",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21319",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=139",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21320",
+    "title": "Dietetic Services Supervisor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21323",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24010",
+    "title": "Adult Basic Education",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24011",
+    "title": "Account Clerk I",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=285",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24042",
+    "title": "Beginning ESL",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24274",
+    "title": "High School Equivalency (HSE)",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30031",
+    "title": "Human Resources Assistant II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30032",
+    "title": "Dental Front Office / Billing and Coding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=170",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30561",
+    "title": "Insurance Specialist: Life and Health Associate's Degree Major",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=159",
+    "coverage": 0.538,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30814",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31597",
+    "title": "Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=275",
+    "coverage": 0.564,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32168",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=130",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32178",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=204",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32199",
+    "title": "PHYSICS",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=248",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32267",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32394",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=257",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32420",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32462",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.548,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32463",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=208",
+    "coverage": 0.512,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32605",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32607",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+    "coverage": 0.676,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32707",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32738",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=166",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33294",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=146",
+    "coverage": 0.577,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33295",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33598",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=138",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33665",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=233",
+    "coverage": 0.607,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33911",
+    "title": "Medical Coding Specialist",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=228",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33934",
+    "title": "Medical Coding Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=228",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35473",
+    "title": "Theatre Arts: Acting",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35585",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36102",
+    "title": "Advanced ESL",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=281",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36107",
+    "title": "Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=281",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36155",
+    "title": "Addiction Studies Counseling",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36270",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=199",
+    "coverage": 0.567,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36416",
+    "title": "Civil Engineering",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=187",
+    "coverage": 0.522,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36419",
+    "title": "Engineering Technology - CAD",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36424",
+    "title": "Mechanical/Aerospace/Manufacturing Engineering",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36536",
+    "title": "Electrical Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=186",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36596",
+    "title": "IT Technician I: Computer Retail Sales and Support",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36667",
+    "title": "Italian Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36710",
+    "title": "Armenian Language",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=138",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36711",
+    "title": "French Language",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36712",
+    "title": "Italian Language",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36713",
+    "title": "Japanese Language",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36714",
+    "title": "Spanish Language",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=257",
+    "coverage": 0.538,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36717",
+    "title": "Armenian Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=138",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36720",
+    "title": "French Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36722",
+    "title": "Physical Science - Physics",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36723",
+    "title": "Physical Science - Earth Science",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36724",
+    "title": "Physical Science - Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36725",
+    "title": "Physical Science - Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36726",
+    "title": "Japanese Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36727",
+    "title": "Spanish Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=257",
+    "coverage": 0.538,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36728",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=190",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37854",
+    "title": "Computer Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=186",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37855",
+    "title": "Civil Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=187",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37856",
+    "title": "Electrical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=186",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37857",
+    "title": "Mechanical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37952",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
+    "coverage": 0.533,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38717",
+    "title": "Social Justice: Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.577,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39285",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39289",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.594,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40808",
+    "title": "Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=165",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40814",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40846",
+    "title": "Administrative Medical Assisting",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40847",
+    "title": "Certified Nursing Aide",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40863",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=223",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41379",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41573",
+    "title": "Information Technology Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41650",
+    "title": "Computer Networking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41651",
+    "title": "Cybersecurity Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41729",
+    "title": "Healthcare Administration",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=227",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41730",
+    "title": "Healthcare Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=227",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41767",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=158",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41768",
+    "title": "Biotechnology Research Lab Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41775",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41776",
+    "title": "Biotechnology Research Lab Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41825",
+    "title": "Photographic Lighting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41827",
+    "title": "Digital Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=242",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41828",
+    "title": "Drone Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=241",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42126",
+    "title": "Digital Photography",
+    "award": "A.S. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=242",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42263",
+    "title": "Google Workspace",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42378",
+    "title": "Traditional Photography",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43038",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44359",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44484",
+    "title": "Advanced ESL: Health, Wellness & Public Safety Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44485",
+    "title": "Advanced ESL: Industrial Technology & Aviation Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44486",
+    "title": "Advanced ESL: Language & Communication Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+    "coverage": 0.647,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44568",
+    "title": "Documentary Film Production",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=200",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44569",
+    "title": "Documentary Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=200",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44570",
+    "title": "Film Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44571",
+    "title": "Film Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=197",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44572",
+    "title": "Grip and Lighting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=200",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44773",
+    "title": "Music History",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=230",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44775",
+    "title": "Piano",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44951",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+    "coverage": 0.524,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45057",
+    "title": "Social Media Marketing I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45108",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45150",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45211",
+    "title": "Voice",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=234",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45212",
+    "title": "World Music",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45393",
+    "title": "Social Media Marketing II",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45394",
+    "title": "Marketing I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45395",
+    "title": "Management I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45397",
+    "title": "Financial Planning & Investment I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45399",
+    "title": "Entrepreneurship/Small Business I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45596",
+    "title": "Interior Architecture & Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45682",
+    "title": "International Business I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45854",
+    "title": "Microsoft Office 365 Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=287",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45996",
+    "title": "CNC & CAM 3 Axis Mill",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46004",
+    "title": "CNC & CAM Lathe Y-Axis",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46050",
+    "title": "CNC & CAM Mill Advanced",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46051",
+    "title": "EnTech Audio",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=233",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46052",
+    "title": "EnTech Lighting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=264",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46053",
+    "title": "Film and Television Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=200",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46054",
+    "title": "EnTech General",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=265",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39057600516"
+}
