@@ -1,0 +1,246 @@
+{
+ "college": "Barstow Community College",
+ "control_number": "18489",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.S. Degree",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12588,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12588,
+    "output_tokens": 1552,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1552,
+  "output_tokens_details": {
+   "thinking_tokens": 255
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08139,
+ "ms": 12788,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 21,
+   "share": 0.0,
+   "missing": [
+    "CDEVC1000",
+    "CHLD11A",
+    "CHLD12A",
+    "CHLD14",
+    "CHLD15",
+    "CHLD15A",
+    "CHLD17",
+    "CHLD17A",
+    "CHLD19A",
+    "CHLD19B",
+    "CHLD19C",
+    "CHLD20",
+    "CHLD25",
+    "CHLD30",
+    "CHLD30A",
+    "CHLD35",
+    "CHLD35A",
+    "CHLD49",
+    "CHLD6",
+    "CHLD61",
+    "CHLD9"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program section in text (course descriptions for CDEV/CHLD only)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "Requirements not in the text; only a course description (CDEV C1000) appears"
+   },
+   {
+    "code": "CHLD 11A",
+    "why": "Not in the text; requirements section absent"
+   },
+   {
+    "code": "CHLD 12A",
+    "why": "Not in the text; requirements section absent"
+   },
+   {
+    "code": "CHLD 14",
+    "why": "Requirements not in the text; only the tail of the CDEV 14 description appears"
+   },
+   {
+    "code": "CHLD 15",
+    "why": "Requirements not in the text; only a course description (CDEV 15, formerly CHLD 15)"
+   },
+   {
+    "code": "CHLD 15A",
+    "why": "Requirements not in the text; only a course description (CDEV 15A, formerly CHLD 15A)"
+   },
+   {
+    "code": "CHLD 17",
+    "why": "Requirements not in the text; only a course description (CDEV 17, formerly CHLD 17)"
+   },
+   {
+    "code": "CHLD 17A",
+    "why": "Requirements not in the text; only a course description"
+   },
+   {
+    "code": "CHLD 19A",
+    "why": "Requirements not in the text; only a course description (CDEV 19A, formerly CHLD 19A)"
+   },
+   {
+    "code": "CHLD 19B",
+    "why": "Requirements not in the text; only a course description"
+   },
+   {
+    "code": "CHLD 19C",
+    "why": "Requirements not in the text; only a course description (CDEV 19C, formerly CHLD 19C)"
+   },
+   {
+    "code": "CHLD 20",
+    "why": "Requirements not in the text; only a course description (CDEV 20, formerly CHLD 20)"
+   },
+   {
+    "code": "CHLD 25",
+    "why": "Requirements not in the text; only a course description (CDEV 25, formerly CHLD 25)"
+   },
+   {
+    "code": "CHLD 30",
+    "why": "Requirements not in the text; only a course description (CDEV 30, formerly CHLD 30)"
+   },
+   {
+    "code": "CHLD 30A",
+    "why": "Requirements not in the text; only a course description (CDEV 30A, formerly CHLD 30A)"
+   },
+   {
+    "code": "CHLD 35",
+    "why": "Requirements not in the text; only a course description (CDEV 35, formerly CHLD 35)"
+   },
+   {
+    "code": "CHLD 35A",
+    "why": "Requirements not in the text; only a course description (CDEV 35A, formerly CHLD 35A)"
+   },
+   {
+    "code": "CHLD 49",
+    "why": "Requirements not in the text; only a course description (CDEV 49, formerly CHLD 49)"
+   },
+   {
+    "code": "CHLD 6",
+    "why": "Requirements not in the text; only a course description (CDEV 6, formerly CHLD 6)"
+   },
+   {
+    "code": "CHLD 61",
+    "why": "Requirements not in the text; only a course description (CDEV 61, formerly CHLD 61)"
+   },
+   {
+    "code": "CHLD 9",
+    "why": "Requirements not in the text; only a course description (CDEV 9, formerly CHLD 9)"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 134-137) contains only course descriptions for CDEV/CHLD courses, not the Child Development A.S. degree requirements; the program section is likely on a different page of the catalog and should be retrieved.",
+   "Most CHLD courses have been renumbered as CDEV (e.g., CDEV 15 'formerly offered as CHLD 15'); CDEV C1000 was formerly CHLD 4. A reviewer should map closed-list codes to the new CDEV codes once the requirements section is found.",
+   "No program outcomes, careers, totals, or GE pattern appear in the text."
+  ]
+ },
+ "extracted_run": "39006332820"
+}

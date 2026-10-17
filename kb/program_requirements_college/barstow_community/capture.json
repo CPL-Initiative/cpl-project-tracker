@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 76,
  "with_closed_list": 76,
- "started": "2026-10-17T05:26:13Z",
+ "started": "2026-10-17T05:28:38Z",
  "pdf": {
   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 28.0,
+ "seconds": 26.7,
  "found": 71,
  "by_method": {
   "not_found": 5,
@@ -885,5 +885,5 @@
    }
   ]
  },
- "run": "39006186515"
+ "run": "39006332820"
 }
