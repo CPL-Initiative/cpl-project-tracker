@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 171,
  "with_closed_list": 163,
- "started": "2026-10-17T12:58:56Z",
+ "started": "2026-10-17T13:07:55Z",
  "pdf": {
   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
   "access": "ok",
@@ -2108,7 +2108,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 132.4,
+ "seconds": 132.2,
  "found": 162,
  "by_method": {
   "no_closed_list": 8,
@@ -3941,5 +3941,5 @@
    }
   ]
  },
- "run": "39034617226"
+ "run": "39035226783"
 }

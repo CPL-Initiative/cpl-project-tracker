@@ -1,0 +1,242 @@
+{
+ "college": "Solano Community College",
+ "control_number": "07795",
+ "shape": "degree",
+ "title": "Sports Medicine-Athletic Training",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=331",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8758,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8758,
+    "output_tokens": 1656,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1656,
+  "output_tokens_details": {
+   "thinking_tokens": 583
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06815,
+ "ms": 13829,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record says electives fill the degree total, but the catalog text names no electives"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Recognize and identify common athletic injuries and the role the certified athletic trainer plays in injury assessment.",
+    "Complete athletic training competency skills required in first 2 years of ATEP Athletic Training programs. Develop and apply strategies to prevent the incidence and/or severity of injury and illnesses",
+    "Assess patient status and develop treatment and rehabilitation that are consistent with contemporary disablement models",
+    "Identify, in the laboratory, major microscopic and gross structures of the major systems of the human body."
+   ],
+   "why": [
+    "not in the catalog text as printed: Recognize and identify common athletic injuries and the role the certified athle",
+    "not in the catalog text as printed: Complete athletic training competency skills required in first 2 years of ATEP A",
+    "not in the catalog text as printed: Assess patient status and develop treatment and rehabilitation that are consiste",
+    "not in the catalog text as printed: Identify, in the laboratory, major microscopic and gross structures of the major"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sports Medicine/Athletic Training Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Recognize and identify common athletic injuries and the role the certified athletic trainer plays in injury assessment.",
+    "Complete athletic training competency skills required in first 2 years of ATEP Athletic Training programs. Develop and apply strategies to prevent the incidence and/or severity of injury and illnesses",
+    "Apply clinical and decision making skills to respond to acute injury and illness; including emergencies",
+    "Assess patient status and develop treatment and rehabilitation that are consistent with contemporary disablement models",
+    "Identify, in the laboratory, major microscopic and gross structures of the major systems of the human body."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BIOL 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 040A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPMD 054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 045C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPMD 055A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPMD 055B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPMD 071",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes BIOL 004, CHEM 010, SPMD 054, SPMD 071 match closed-list BIOL004, CHEM 10, SPMD 54, SPMD 71 (zero-padding/spacing differences only).",
+   "degree_total 60 taken from the program's own sentence: '25-unit major, General Education, and electives as needed to complete a minimum of 60 units'; electives_fill_degree set true. Reviewer may judge whether this sentence counts as a printed degree total.",
+   "General Education pattern is not named on the page, so ge_pattern is null.",
+   "PDF ligature artifacts (e.g. 'AthleƟ c', 'ﬁ rst') were read as 'Athletic', 'first', etc. in outcomes and heading.",
+   "Outcome 2 as printed contains two sentences under one list number; recorded as one entry as printed.",
+   "Page 332 contains course descriptions (including SPMD 056A/056B, not part of this major); no course outcomes printed."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

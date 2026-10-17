@@ -1,0 +1,149 @@
+{
+ "college": "Solano Community College",
+ "control_number": "46370",
+ "shape": "certificate",
+ "title": "Certified Nursing Assistant",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7443,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7443,
+    "output_tokens": 649,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 649,
+  "output_tokens_details": {
+   "thinking_tokens": 188
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04275,
+ "ms": 7022,
+ "seconds": 7.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "NURS103",
+    "NURS111"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "NURS - Nursingg",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NURS 111",
+    "why": "appears only as a course description; no program requirements section in the text"
+   },
+   {
+    "code": "NURS103",
+    "why": "not in the text except as the equivalent course named under NURS 503's description; no program requirements section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 380) is the NURS course description listing, not the Certified Nursing Assistant Certificate of Achievement program section. No requirements, totals, outcomes or careers for the award are printed, so no blocks were recorded.",
+   "The section heading is printed as 'NURS - Nursingg' (likely a typo for 'Nursing').",
+   "NURS 103 itself has no description in this text; only NURS 503 (0.0 units, noncredit equivalent) is described, listing NURS 103 as its equivalent course. A reviewer should locate the program page for the certificate.",
+   "Career settings named in the NURS 104/504 descriptions (home health agencies, hospice) come from course descriptions and were not recorded as program careers."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

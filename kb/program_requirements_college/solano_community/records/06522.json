@@ -1,0 +1,277 @@
+{
+ "college": "Solano Community College",
+ "control_number": "06522",
+ "shape": "degree",
+ "title": "Automotive Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12945,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12945,
+    "output_tokens": 2228,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2228,
+  "output_tokens_details": {
+   "thinking_tokens": 922
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09634,
+ "ms": 18182,
+ "seconds": 18.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record says electives fill the degree total, but the catalog text names no electives"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     45.0
+    ],
+    "stated": [
+     45.0,
+     45.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Demonstrate the ability to properly service and repair automotive engines, automatic and manual transmissions and transaxles.",
+    "Demonstrate the ability to properly service and repair automotive brakes, steering and suspension systems.",
+    "Demonstrate the ability to properly service and repair automotive electrical, engine performance, HVAC and hybrid/alternative fuel vehicles.",
+    "Demonstrate effective workplace skills including oral and written communication and proper disposal and handling of hazardous waste materials"
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate the ability to properly service and repair automotive engines, autom",
+    "not in the catalog text as printed: Demonstrate the ability to properly service and repair automotive brakes, steeri",
+    "not in the catalog text as printed: Demonstrate the ability to properly service and repair automotive electrical, en",
+    "not in the catalog text as printed: Demonstrate effective workplace skills including oral and written communication "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [
+    "apprentice technicians",
+    "specialists in one of the many areas in the automotive service and repair industry"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technician Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate the ability to properly service and repair automotive engines, automatic and manual transmissions and transaxles.",
+    "Demonstrate the ability to properly service and repair automotive brakes, steering and suspension systems.",
+    "Demonstrate the ability to properly service and repair automotive electrical, engine performance, HVAC and hybrid/alternative fuel vehicles.",
+    "Demonstrate effective workplace skills including oral and written communication and proper disposal and handling of hazardous waste materials"
+   ],
+   "careers": [
+    "apprentice technicians",
+    "parts specialists",
+    "service consultants",
+    "specialists in one of the many areas in the automotive service and repair industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "ATEC 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 131",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 132",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 133",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 134",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 136",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 138",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 139",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints ATEC 070; recorded as printed and matched to closed-list ATEC 70.",
+   "The required-course list is interrupted by a page footer (counselor/prerequisite/Class Finder text) after ATEC 134; the list continues with ATEC 135-140 and the 'Required Major Total Units 45' line, read as one block.",
+   "degree_total 60 taken from the award's own sentence: '45-unit major, General Education, and electives as needed to complete a minimum of 60 units'; reviewer may judge whether this is a generic degree minimum. No GE pattern is named and no GE or elective units are printed.",
+   "The extracted text contains PDF ligature artifacts (e.g., 'AutomoƟ ve', 'eﬀ ecƟ ve'); outcomes and careers were transcribed with these repaired to the printed words ('automotive', 'effective', etc.).",
+   "Program outcomes lead-in ('...will be technically proficient in entry level skills as defined by NATEF by demonstrating:') omitted per instructions.",
+   "Certificate sections that follow (Automatic Transmissions and Transaxles, Electrical and Body Systems, Maintenance and Light Repair) were not used."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

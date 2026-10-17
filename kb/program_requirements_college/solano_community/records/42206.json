@@ -1,0 +1,189 @@
+{
+ "college": "Solano Community College",
+ "control_number": "42206",
+ "shape": "certificate",
+ "title": "Nail Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=223",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6846,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6846,
+    "output_tokens": 1282,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1282,
+  "output_tokens_details": {
+   "thinking_tokens": 474
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05302,
+ "ms": 11432,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Demonstrate critical thinking skills as related to decision making and problem solving in the workplace.",
+    "Create and design appropriate professional and educational samples for a career portfolio.",
+    "Identify and implement measures to ensure public safety and disease prevention"
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate critical thinking skills as related to decision making and problem s",
+    "not in the catalog text as printed: Create and design appropriate professional and educational samples for a career ",
+    "not in the catalog text as printed: Identify and implement measures to ensure public safety and disease prevention"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nail Technology Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Meet minimum requirements to sit for the California State Board of Barber and Cosmetology Manicurist license.",
+    "Exhibit entry level skills to begin work in a spa or salon as a nail technician.",
+    "Demonstrate critical thinking skills as related to decision making and problem solving in the workplace.",
+    "Create and design appropriate professional and educational samples for a career portfolio.",
+    "Identify and implement measures to ensure public safety and disease prevention"
+   ],
+   "careers": [
+    "manicurist/nail technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "COSM 131",
+      "units": 14,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCED 070",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCED 071",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints OCED 070 and OCED 071 with a leading zero; these match closed-list OCED 70 and OCED 71.",
+   "Outcomes text contained PDF ligature extraction artifacts (e.g., 'criƟ cal', 'porƞ olio', 'IdenƟ fy', 'prevenƟ on'); these were rendered as the printed words 'critical', 'portfolio', 'Identify', 'prevention'. Reviewer may verify.",
+   "The outcomes lead-in refers to 'the Cosmetology Certificate of Achievement/Associate in Science', which may indicate the outcomes list was copied from the Cosmetology program; it is printed within the Nail Technology section and recorded here.",
+   "Outcome 5 runs directly into the 'Program Requirements' heading with no ending punctuation; the heading was excluded from the outcome.",
+   "Total 17 units from 'Required Major Total Units' and 'the 17-unit major'."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

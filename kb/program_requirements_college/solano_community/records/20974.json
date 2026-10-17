@@ -1,0 +1,212 @@
+{
+ "college": "Solano Community College",
+ "control_number": "20974",
+ "shape": "certificate",
+ "title": "Airframe Maintenance Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9596,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9596,
+    "output_tokens": 1833,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1833,
+  "output_tokens_details": {
+   "thinking_tokens": 757
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07504,
+ "ms": 15526,
+ "seconds": 16.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate proficient, entry-level aviation maintenance skills in airframe, powerplant, or airframe and powerplant with emphasis on aircraft engines, aircraft structures, and aircraft systems.",
+    "Have a working knowledge to inspect, maintain, service and repair aircraft electrical, engine (piston and turbine), airframe structure, flight control, hydraulic, pneumatic, fuel, navigation and instrument systems and other aircraft components specified by Federal Aviation Regulation Part 147.",
+    "Obtain the knowledge and skills to pass oral, practical and written Federal Aviation Administration (FAA) examination in general and airframe/powerplant subjects."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate proficient, entry-level aviation maintenance skills in airframe, pow",
+    "not in the catalog text as printed: Have a working knowledge to inspect, maintain, service and repair aircraft elect",
+    "not in the catalog text as printed: Obtain the knowledge and skills to pass oral, practical and written Federal Avia"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Airframe and Powerplant Maintenance Technician — AIRFRAME REQUIRED COURSES",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficient, entry-level aviation maintenance skills in airframe, powerplant, or airframe and powerplant with emphasis on aircraft engines, aircraft structures, and aircraft systems.",
+    "Have a working knowledge to inspect, maintain, service and repair aircraft electrical, engine (piston and turbine), airframe structure, flight control, hydraulic, pneumatic, fuel, navigation and instrument systems and other aircraft components specified by Federal Aviation Regulation Part 147.",
+    "Obtain the knowledge and skills to pass oral, practical and written Federal Aviation Administration (FAA) examination in general and airframe/powerplant subjects."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "AIRFRAME REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AERO 102",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 105",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 118",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "GENERAL REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "AERO 055",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 103",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page combines Airframe, Powerplant, and Airframe & Powerplant certificates and A.S. degrees; this record reads only the Airframe section plus the General Required Courses it includes ('General Required Courses ... 20', 'Required Major Total units 41').",
+   "The program outcomes are printed once for all Airframe, Powerplant, and combination certificates and A.S. degrees; this award shares that list.",
+   "Outcome text normalized from PDF ligature artifacts (e.g., 'proﬁ cient' -> 'proficient', 'aviaƟ on' -> 'aviation'); a reviewer may wish to verify against the printed page.",
+   "AERO 055 as printed corresponds to closed-list AERO 55; recorded as printed and not treated as a catalog addition.",
+   "AERO 118 is listed at 1 unit in the requirements list, while its course description shows 0.5 to 1.5 units and the state file stores 0.5; recorded 1 as printed in the requirements.",
+   "The page states a 41-unit major for the Airframe certificate; no degree total applies to this certificate."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

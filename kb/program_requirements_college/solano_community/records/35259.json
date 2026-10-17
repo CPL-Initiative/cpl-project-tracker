@@ -1,0 +1,194 @@
+{
+ "college": "Solano Community College",
+ "control_number": "35259",
+ "shape": "certificate",
+ "title": "Sports Broadcasting",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=204",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7123,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7123,
+    "output_tokens": 1233,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1233,
+  "output_tokens_details": {
+   "thinking_tokens": 493
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05315,
+ "ms": 11058,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Obtain and demonstrate skill set for entry level positions in broadcasting and electronic media productions.",
+    "Amass a minimum of 200 experience hours working on sports production tasks and to acquire recorded audio/video content to compile a demo tape.",
+    "Broadcast production assignments totaling 200 hours, exams, self-evaluation journals, and viewer response and evaluations.",
+    "Demonstrate ability to work as an individual as well as an effective team member on sports productions."
+   ],
+   "why": [
+    "not in the catalog text as printed: Obtain and demonstrate skill set for entry level positions in broadcasting and e",
+    "not in the catalog text as printed: Amass a minimum of 200 experience hours working on sports production tasks and t",
+    "not in the catalog text as printed: Broadcast production assignments totaling 200 hours, exams, self-evaluation jour",
+    "not in the catalog text as printed: Demonstrate ability to work as an individual as well as an effective team member"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sports Broadcasting Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Obtain and demonstrate skill set for entry level positions in broadcasting and electronic media productions.",
+    "Amass a minimum of 200 experience hours working on sports production tasks and to acquire recorded audio/video content to compile a demo tape.",
+    "Broadcast production assignments totaling 200 hours, exams, self-evaluation journals, and viewer response and evaluations.",
+    "Demonstrate ability to work as an individual as well as an effective team member on sports productions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "COMM 075A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 075B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 080A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 080B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Outcomes copied with PDF ligature extraction artifacts repaired (e.g. 'posiƟ ons' as 'positions', 'eﬀ ecƟ ve' as 'effective'); line breaks read as spaces.",
+   "Required Major Total Units printed as 12, also stated in the description as the '12-unit major'.",
+   "The text names no specific careers; outcome 1 mentions 'entry level positions in broadcasting and electronic media productions' but it is an outcome, not a careers list, so careers left empty.",
+   "Course descriptions following the program (COMM C1000, COMM C1004) belong to the course listing, not this certificate."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

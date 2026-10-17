@@ -1,0 +1,242 @@
+{
+ "college": "Solano Community College",
+ "control_number": "44532",
+ "shape": "degree",
+ "title": "Administrative Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12677,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12677,
+    "output_tokens": 1962,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1962,
+  "output_tokens_details": {
+   "thinking_tokens": 788
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08995,
+ "ms": 16610,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "CIS91"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BSOT106"
+   ],
+   "flagged": [
+    "BSOT106"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate a high degree of competency and a broad knowledge of skills as they relate to general office procedures.",
+    "Demonstrate mastery of the modern (QWERTY/alphanumeric) typewriting keyboard under timed conditions with established speed and accuracy.",
+    "Demonstrate professional level document processing skills related to the development, formatting, and use of standard business correspondence."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate a high degree of competency and a broad knowledge of skills as they ",
+    "not in the catalog text as printed: Demonstrate mastery of the modern (QWERTY/alphanumeric) typewriting keyboard und",
+    "not in the catalog text as printed: Demonstrate professional level document processing skills related to the develop"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant Certificate of Achievement and Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a high degree of competency and a broad knowledge of skills as they relate to general office procedures.",
+    "Demonstrate mastery of the modern (QWERTY/alphanumeric) typewriting keyboard under timed conditions with established speed and accuracy.",
+    "Demonstrate professional level document processing skills related to the development, formatting, and use of standard business correspondence."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18.5,
+     "max": 18.5
+    },
+    "courses": [
+     {
+      "code": "BUS 092",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 097",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 106",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 066",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 073",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 054A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 054B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 162",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 91",
+    "why": "not in the Administrative Assistant section; the catalog lists BSOT 106 MS Outlook instead (CIS 091 appears only in the Medical Administrative Assistant section)"
+   }
+  ],
+  "notes": [
+   "The section covers both the Certificate of Achievement and the A.S.; the 18.5-unit major and the outcomes list are shared by both awards.",
+   "The A.S. requires the major plus general education requirements and electives, but the page names no GE pattern, prints no degree total, GE units, or elective units.",
+   "Catalog prints codes with leading zeros (BUS 092, CIS 050, CIS 066, CIS 073); treated as the closed-list BUS 92, CIS 50, CIS 66, CIS 73.",
+   "BUS 097 is titled 'Work Readiness' in the catalog vs. 'Skills for Workplace Success' in the state file.",
+   "BSOT 106 MS Outlook (1 unit) replaces the closed-list CIS 91 Microsoft Outlook (1.5 units); recorded as a catalog addition. Listed units sum to 18.5, matching the printed total.",
+   "Outcome text was normalized from PDF ligature extraction artifacts (e.g., 'oﬃ  ce' -> 'office', 'formaƫ  n g' -> 'formatting', 'Ɵ med' -> 'timed'); reviewer should verify against the original."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

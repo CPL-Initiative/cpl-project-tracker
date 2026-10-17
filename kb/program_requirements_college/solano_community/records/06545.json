@@ -1,0 +1,373 @@
+{
+ "college": "Solano Community College",
+ "control_number": "06545",
+ "shape": "degree",
+ "title": "English",
+ "award": "A.A. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=267",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12776,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12776,
+    "output_tokens": 2963,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2963,
+  "output_tokens_details": {
+   "thinking_tokens": 903
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11036,
+ "ms": 23156,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGL39"
+   ],
+   "flagged": [
+    "ENGL39"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Demonstrate an ability to compose and communicate using appropriate rhetorical patterns and writing strategies.",
+    "Demonstrate college-level reading, writing, and analytical skills.",
+    "Demonstrate an understanding of the importance and influence of literature’s study of the human condition in shaping and reflecting intellectual history and cultural identity.",
+    "Demonstrate, through the study and analysis of literature from a variety of cultural or ethnic backgrounds and sexual orientations, an ability to recognize and examine assumptions about difference and social norms and an understanding of how the experience of reading literature from different perspectives can better prepare one for meaningful participation in a diverse global community.",
+    "Explore and demonstrate through creative writing and/or analytical techniques, the practice and study of diverse literatures and publishing."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate an ability to compose and communicate using appropriate rhetorical p",
+    "not in the catalog text as printed: Demonstrate college-level reading, writing, and analytical skills.",
+    "not in the catalog text as printed: Demonstrate an understanding of the importance and influence of literature's stu",
+    "not in the catalog text as printed: Demonstrate, through the study and analysis of literature from a variety of cult",
+    "not in the catalog text as printed: Explore and demonstrate through creative writing and/or analytical techniques, t"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [
+    "fields related to English"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in English (heading not printed in the extracted text; section begins with the program description on page 267)",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate an ability to compose and communicate using appropriate rhetorical patterns and writing strategies.",
+    "Demonstrate college-level reading, writing, and analytical skills.",
+    "Demonstrate an understanding of the importance and influence of literature’s study of the human condition in shaping and reflecting intellectual history and cultural identity.",
+    "Demonstrate, through the study and analysis of literature from a variety of cultural or ethnic backgrounds and sexual orientations, an ability to recognize and examine assumptions about difference and social norms and an understanding of how the experience of reading literature from different perspectives can better prepare one for meaningful participation in a diverse global community.",
+    "Explore and demonstrate through creative writing and/or analytical techniques, the practice and study of diverse literatures and publishing."
+   ],
+   "careers": [
+    "English",
+    "fields related to English"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 036",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 039",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 058",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List D: (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 049",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 059",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMN 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading itself is not shown in the extracted text; the page begins with the A.A. in English description.",
+   "List B also allows 'Any course(s) from List A not already used'; List C allows 'Any course(s) from List A or B not already used'; List D allows 'Any course from List A, B, or C not already used'. These open-ended options are not recorded as separate entries.",
+   "Catalog codes are printed with leading zeros (ENGL 030, HUMN 001) and were matched to closed-list codes without them (ENGL 30, HUMN 1).",
+   "ENGL 049 English Honors is printed at 3 units in List D, while the state file stores 1 unit; reviewer should check.",
+   "ENGL 039 Introduction to LGBTQ+ Literature and Culture is not on the closed list and is marked as a catalog addition. ENGL 044 title is printed 'Introduction to Shakespear'.",
+   "The text says the degree is obtained by completing the 25-unit major, General Education, and electives as needed to complete a minimum of 60 units; recorded as electives_fill_degree true with degree_total null, since 60 is a stated minimum rather than a printed award total. The GE pattern is not named (just 'General Education'), so ge_pattern is null.",
+   "The program outcomes are printed for the Associate in Arts in English specifically. Ligature artifacts in the PDF extraction (e.g., 'paƩ erns', 'wriƟ ng') were read as the intended words.",
+   "Text states students completing the A.A. in English also satisfy requirements for the AA-T in English."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

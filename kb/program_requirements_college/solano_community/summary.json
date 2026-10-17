@@ -1,0 +1,30 @@
+{
+ "college": "Solano Community College",
+ "programs": 171,
+ "with_closed_list": 163,
+ "found": 162,
+ "extracted": 162,
+ "errors": 0,
+ "passed_machine_checks": 7,
+ "failed": {
+  "coverage": 25,
+  "invented": 6,
+  "arithmetic": 55,
+  "repeated": 0,
+  "outcomes": 135
+ },
+ "cost_usd": 13.17,
+ "cost_per_program": 0.0813,
+ "not_found": [
+  {
+   "control_number": "18616",
+   "title": "Interdisciplinary Studies: Wellness & Self Development",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=230",
+    "coverage": 0.241
+   }
+  }
+ ],
+ "run": "39035226783"
+}

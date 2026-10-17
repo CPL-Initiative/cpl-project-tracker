@@ -1,0 +1,296 @@
+{
+ "college": "Solano Community College",
+ "control_number": "36034",
+ "shape": "degree",
+ "title": "Astronomy",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8881,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8881,
+    "output_tokens": 2281,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2281,
+  "output_tokens_details": {
+   "thinking_tokens": 795
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08114,
+ "ms": 18961,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record says electives fill the degree total, but the catalog text names no electives"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.0,
+     39.0
+    ],
+    "stated": [
+     39.0,
+     39.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Explain and discuss basic astronomical phenomena including, but not limited to: gravitation, the seasons, the phases of the Moon, eclipses.",
+    "Apply the laws of  to explain the properties of planets, stars, galaxies, and the Universe.",
+    "Explain and discuss the impact and history of scientific theories and their importance in the advancement of astronomy.",
+    "Demonstrate proficiency in applying scientific procedures for making observations and measurements typical of modern astronomical research."
+   ],
+   "why": [
+    "not in the catalog text as printed: Explain and discuss basic astronomical phenomena including, but not limited to: ",
+    "not in the catalog text as printed: Apply the laws of to explain the properties of planets, stars, galaxies, and the",
+    "not in the catalog text as printed: Explain and discuss the impact and history of scientific theories and their impo",
+    "not in the catalog text as printed: Demonstrate proficiency in applying scientific procedures for making observation"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Astronomy",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Explain and discuss basic astronomical phenomena including, but not limited to: gravitation, the seasons, the phases of the Moon, eclipses.",
+    "Apply the laws of  to explain the properties of planets, stars, galaxies, and the Universe.",
+    "Explain and discuss the impact and history of scientific theories and their importance in the advancement of astronomy.",
+    "Demonstrate proficiency in applying scientific procedures for making observations and measurements typical of modern astronomical research."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTR C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 007",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 008",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ASTR 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 050",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text prints no explicit section heading; the heading recorded is taken from the opening sentence 'The Associate in Science in Astronomy...'.",
+   "Catalog prints zero-padded codes (MATH 022, PHYS 006/007/008, ASTR 030/040/045/050, CHEM 001, CIS 022); these were matched to closed-list codes MATH 22, PHYS 6/7/8, ASTR 30/40/45/50, CHEM 1, CIS 22 and not flagged as additions.",
+   "MATH C2210 and MATH C2220 are printed at 5 units in the requirements list; the state file stores 4 units each. Printed units recorded. Block units sum to the printed 39-unit major total with these values.",
+   "degree_total of 60 taken from 'electives as needed to complete a minimum of 60 units' in this award's description; GE pattern is referred to only as 'General Education' with no named pattern or units, so ge_pattern and ge_units are null.",
+   "Outcome 2 is printed with a missing word ('Apply the laws of  to explain...'); recorded as printed with the gap.",
+   "PDF ligature extraction artifacts (e.g., 'gravitaƟ on', 'scienƟ ﬁ c') were rendered as the intended letters ('gravitation', 'scientific') in outcomes; reviewer may verify.",
+   "ASTR 049 appears only in course descriptions, not in the program requirements; not placed. Course descriptions on page 146 contain no course-level outcomes."
+  ]
+ },
+ "extracted_run": "39035226783"
+}
