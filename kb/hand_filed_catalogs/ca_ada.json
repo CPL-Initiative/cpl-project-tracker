@@ -1,0 +1,17 @@
+{
+ "college": "Cañada College",
+ "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf",
+ "fetched_by": "Sam Lee",
+ "fetched_at": "2026-10-17",
+ "catalog_year": "2026-2027",
+ "copy_url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf",
+ "sha256": "",
+ "addenda": [
+  {
+   "title": "2026-2027 Catalog Addendum (2026-10-12)",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/2026-2027-catalog-addendum.pdf",
+   "copy_url": "https://github.com/user-attachments/files/33613724/2026-2027-catalog-addendum.pdf"
+  }
+ ],
+ "note": "The Catalog Rights edition of the 2026-2027 catalog (published at the start of fall 2026) and the 10/12/26 addendum, both linked from canadacollege.edu/catalogschedule/addendum.php (college page read 39075421421). Sam downloaded them in a browser and posted them to the catalog-files release (2026-10-17, Open Asks Sheet 92 card 1); robots.txt refuses /current/ to readers."
+}
