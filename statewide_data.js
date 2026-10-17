@@ -238583,134 +238583,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPPRI-FSKS-1-001|MAPPRI-FSKS1-1-001",
-      "exhibit_ids": [
-        "MAPPRI-FSKS-1-001",
-        "MAPPRI-FSKS1-1-001"
-      ],
-      "title": "Fire Service Knowledge, Skills, and Training",
-      "unified_title": "Fire Service Knowledge, Skills, and Training",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Service Knowledge, Skills, and Training"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Rio Hondo College"
-      ],
-      "potential": 59,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 60,
-      "credit_recs": [
-        {
-          "course": "FTEC 101",
-          "credit": "3 hours in Fire Protection Organization"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPPRI-FSKS-1-001",
-          "title": "Fire Service Knowledge, Skills, and Training",
-          "units": 0,
-          "lines": 0
-        },
-        {
-          "id": "MAPPRI-FSKS1-1-001",
-          "title": "Fire Service Knowledge, Skills, and Training",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Rio Hondo College": 3.0
-      },
-      "adopter_lines": {
-        "Rio Hondo College": 1
-      },
-      "adopter_rec_idx": {
-        "Rio Hondo College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPICI-CFI21-1-001",
       "exhibit_ids": [
         "MAPICI-CFI21-1-001"
@@ -239072,6 +238944,268 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 0.25,
       "peer_units_max": 0.25,
       "rec_units_total": 0.25
+    },
+    {
+      "exhibit_id": "MAPPRI-FSKS1-1-001",
+      "exhibit_ids": [
+        "MAPPRI-FSKS1-1-001"
+      ],
+      "title": "Fire Service Knowledge, Skills, and Training",
+      "unified_title": "Fire Service Knowledge, Skills, and Training",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Service Knowledge, Skills, and Training"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Rio Hondo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FTEC 101",
+          "credit": "3 hours in Fire Protection Organization"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRI-FSKS1-1-001",
+          "title": "Fire Service Knowledge, Skills, and Training",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Rio Hondo College": 3.0
+      },
+      "adopter_lines": {
+        "Rio Hondo College": 1
+      },
+      "adopter_rec_idx": {
+        "Rio Hondo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRI-FSKS2-1-001",
+      "exhibit_ids": [
+        "MAPPRI-FSKS2-1-001"
+      ],
+      "title": "Fire Service Knowledge, Skills and Training",
+      "unified_title": "Fire Service Knowledge, Skills and Training",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Service Knowledge, Skills and Training"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Rio Hondo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FTEC 102",
+          "credit": "3 hours in Principles of Fire & Emergency Services Safety & Survival"
+        },
+        {
+          "course": "FTEC 103",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FTEC 104",
+          "credit": "3 hours in Fire Prevention Technology"
+        },
+        {
+          "course": "FTEC 105",
+          "credit": "3 hours in Building Construction for Fire Protectection"
+        },
+        {
+          "course": "FTEC 106",
+          "credit": "3 hours in Fire Protection Equipment and Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRI-FSKS2-1-001",
+          "title": "Fire Service Knowledge, Skills and Training",
+          "units": 15.0,
+          "lines": 5
+        }
+      ],
+      "adopter_units": {
+        "Rio Hondo College": 15.0
+      },
+      "adopter_lines": {
+        "Rio Hondo College": 5
+      },
+      "adopter_rec_idx": {
+        "Rio Hondo College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "peer_units_median": 15.0,
+      "peer_units_max": 15.0,
+      "rec_units_total": 15.0
     },
     {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
@@ -391558,6 +391692,103 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.25
     },
     {
+      "exhibit_id": "MAPPRI-WFSK-1-001",
+      "exhibit_ids": [
+        "MAPPRI-WFSK-1-001"
+      ],
+      "title": "Wildland Fire Service Knowledge, Skills, and Training",
+      "unified_title": "Wildland Fire Service Knowledge, Skills, and Training",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Service Knowledge, Skills, and Training"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Rio Hondo College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "WFT 101",
+          "credit": "3 hours in Wildland Fire Behavior"
+        },
+        {
+          "course": "WFT 102",
+          "credit": "3 hours in Wildland Firefighter Safety and Survival"
+        },
+        {
+          "course": "WFT 103",
+          "credit": "3 hours in Wildland Fire Operation"
+        },
+        {
+          "course": "WFT 104",
+          "credit": "3 hours in Wildland Fire Investigation, Prevention, and Public"
+        },
+        {
+          "course": "WFT 105",
+          "credit": "3 hours in Wildland Fire Logistics, Finance and Planning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRI-WFSK-1-001",
+          "title": "Wildland Fire Service Knowledge, Skills, and Training",
+          "units": 15.0,
+          "lines": 5
+        }
+      ],
+      "adopter_units": {
+        "Rio Hondo College": 15.0
+      },
+      "adopter_lines": {
+        "Rio Hondo College": 5
+      },
+      "adopter_rec_idx": {
+        "Rio Hondo College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "peer_units_median": 15.0,
+      "peer_units_max": 15.0,
+      "rec_units_total": 15.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ACI-1-001",
       "exhibit_ids": [
         "MAPCBEN-ACI-1-001"
@@ -459741,6 +459972,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.4
       },
       {
+        "college": "Rio Hondo College",
+        "credit_recs": 58,
+        "exhibits": 17,
+        "disciplines": 4,
+        "ccc_collaborative": 8,
+        "industry_certs": 45,
+        "pct": 0.4
+      },
+      {
         "college": "Citrus College",
         "credit_recs": 54,
         "exhibits": 47,
@@ -459801,15 +460041,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 10,
         "ccc_collaborative": 0,
         "industry_certs": 21,
-        "pct": 0.3
-      },
-      {
-        "college": "Rio Hondo College",
-        "credit_recs": 48,
-        "exhibits": 15,
-        "disciplines": 4,
-        "ccc_collaborative": 8,
-        "industry_certs": 45,
         "pct": 0.3
       },
       {
@@ -459924,8 +460155,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6174,
-        "exhibits": 2340,
+        "credit_recs": 6173,
+        "exhibits": 2339,
         "courses": 350,
         "colleges": 88,
         "ccc_collaborative": 35,
@@ -459942,9 +460173,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1546,
-        "exhibits": 581,
-        "courses": 669,
+        "credit_recs": 1556,
+        "exhibits": 583,
+        "courses": 679,
         "colleges": 54,
         "ccc_collaborative": 535,
         "pct": 10.7
@@ -460136,14 +460367,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7559,
         "exhibits": 2862,
         "colleges": 83,
-        "pct": 52.2
+        "pct": 52.1
       },
       {
         "cpl_type": "Industry Certification",
         "credit_recs": 4023,
         "exhibits": 1270,
         "colleges": 81,
-        "pct": 27.8
+        "pct": 27.7
       },
       {
         "cpl_type": "Credit By Exam",
@@ -460154,8 +460385,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 418,
-        "exhibits": 342,
+        "credit_recs": 427,
+        "exhibits": 343,
         "colleges": 32,
         "pct": 2.9
       },
@@ -460180,14 +460411,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 8967,
         "exhibits": 3940,
         "colleges": 91,
-        "pct": 61.9
+        "pct": 61.8
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3034,
-        "exhibits": 1210,
+        "credit_recs": 3043,
+        "exhibits": 1211,
         "colleges": 78,
-        "pct": 20.9
+        "pct": 21.0
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -460249,8 +460480,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12769,
-        "exhibits": 6094,
+        "credit_recs": 12778,
+        "exhibits": 6095,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.1
@@ -460675,8 +460906,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-17T13:00:56",
-  "total_credit_recs": 14494,
+  "generated_at": "2026-10-17T15:43:15",
+  "total_credit_recs": 14503,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
