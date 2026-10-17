@@ -1,0 +1,204 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "30770",
+ "shape": "noncredit",
+ "title": "EMLS NC: Literacy Foundations",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=315",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7696,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7696,
+    "output_tokens": 1334,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1334,
+  "output_tokens_details": {
+   "thinking_tokens": 514
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05746,
+ "ms": 11360,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    227.5,
+    271.25
+   ],
+   "stated": [
+    227.5,
+    227.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 227.5-271.25; the catalog states 227.5-227.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foundations of Literacy Skills - Complete",
+   "measure": "hours",
+   "total_units": {
+    "min": 227.5,
+    "max": 227.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Read everyday signs and warnings;",
+    "Communicate basic personal information and follow simple directions; and",
+    "Write basic information and ﬁll out simple forms."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 2 courses (175 hours):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 175,
+     "max": 175
+    },
+    "courses": [
+     {
+      "code": "EMLS 702",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 703",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete 1 elective course (52.50-96.25 hours):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 52.5,
+     "max": 96.25
+    },
+    "courses": [
+     {
+      "code": "EMLS 701",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 713CP",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 713RW",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-page with the requirements table titled 'Foundations of Literacy Skills - Complete 227.50 Hours'; the program's own heading and description are likely on the preceding page (not supplied), so no careers or description could be read.",
+   "The table prints '0' in the Hours/Units column (units, not hours); no per-course hours are printed, so course units fields are null. Block hour totals (175; 52.50-96.25) are recorded in stated.",
+   "The elective block is printed as 'or' rows; read as choose 1 of EMLS 701, EMLS 713CP, EMLS 713RW, consistent with the Notes ('Complete one course').",
+   "Outcomes are printed under 'Program Student Learning Outcomes' within this section and recorded as printed (ligature 'ﬁ' retained)."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

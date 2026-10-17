@@ -1,0 +1,258 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "36078",
+ "shape": "degree",
+ "title": "Film Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=149",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9503,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9503,
+    "output_tokens": 2054,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2054,
+  "output_tokens_details": {
+   "thinking_tokens": 713
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07909,
+ "ms": 18334,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Film Studies (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a technical and theoretical understanding of cinema, including narrative forms, genres, and the complex interplay of image, sound, and motion.",
+    "Demonstrate a broad-based understanding of the historical and aesthetic development of world cinema from its origins to the present day, including the impact of historical movements and new technologies.",
+    "Demonstrate the ability to work as part of a production team to effectively plan, organize, and execute the production of a short digital ﬁlm project.",
+    "Demonstrate fluency in the vocabulary of ﬁlm production and criticism.",
+    "Demonstrate skills in the critical analysis of cinema by identifying how speciﬁc formal techniques are used to functionally support ﬁlm narratives.",
+    "Demonstrate an understanding of the roles and responsibilities of various industry professionals in both the artistic and commercial side of motion picture production, distribution and exhibition.",
+    "Demonstrate an understanding of motion pictures as a technology, business, cultural product, global entertainment medium, and industrial art form."
+   ],
+   "careers": [
+    "ﬁlm and television industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Film Studies Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FMA 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 14",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FMA 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 17",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Information Learning Resources Requirement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIR 10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside the courses in the 3-unit choice list (FMA 6, 11, 17, 22, 44); units left null.",
+   "The Film Studies (AA) section contains boilerplate describing ADT requirements (60 CSU-transferable units, Cal-GETC, minimum 18 units in the major). ge_pattern recorded as Cal-GETC from that text, but this appears to be transfer-degree boilerplate printed in an A.A. section; reviewer should verify the actual GE pattern for this local A.A. The 60-unit sentence is generic and not recorded as degree_total.",
+   "Careers entry taken from 'prepare students for careers in the ﬁlm and television industries' in the program description.",
+   "Text following the Film Studies section (Film, Television, & Electronic Media AS-T and Fire Science) was ignored."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

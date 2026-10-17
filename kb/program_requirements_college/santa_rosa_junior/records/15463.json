@@ -1,0 +1,628 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "15463",
+ "shape": "degree",
+ "title": "Dental Hygiene",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8961,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8961,
+    "output_tokens": 5796,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5796,
+  "output_tokens_details": {
+   "thinking_tokens": 1988
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.15176,
+ "ms": 45346,
+ "seconds": 45.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 45,
+   "listed": 56,
+   "share": 0.804,
+   "missing": [
+    "ANAT1",
+    "CHLD45",
+    "COMMC1004",
+    "EMLS10",
+    "ENGLC1000",
+    "MATH10",
+    "MATH101",
+    "PHYZ1",
+    "PSYC9",
+    "SOCIC1000",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CHLD68",
+    "COMM6",
+    "DE51",
+    "SOC1"
+   ],
+   "flagged": [
+    "CHLD68",
+    "COMM6",
+    "DE51",
+    "SOC1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    80.5,
+    80.5
+   ],
+   "stated": [
+    97.5,
+    97.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 80.5-80.5; the catalog states 97.5-97.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dental Hygiene (A.S.) — heading not in extracted text; section begins on preceding page",
+   "measure": "units",
+   "total_units": {
+    "min": 97.5,
+    "max": 97.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Formulate comprehensive and individualized care plans that are patient centered on current scientiﬁc evidence.",
+    "Use critical thinking and evidence based problem-solving to evaluate treatment modalities and promote patient health and wellness.",
+    "Discern and manage the ethical issues of dental hygiene practice in a rapidly changing health environment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete a combination totaling at least 5.00 units from the following:",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM 60",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3AL",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Prerequisite courses (continued; heading on preceding page)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MICR 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICR 60",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDNT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FDNT 62",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 9",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 3",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 5",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Commission on Dental Accreditation of the American Dental Assoc. Requirements: Select any combination totaling at least 3.00 units from the following (Communication)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Commission on Dental Accreditation of the American Dental Assoc. Requirements: Select any combination totaling at least 3.00 units from the following (Psychology)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Commission on Dental Accreditation of the American Dental Assoc. Requirements: Select any combination totaling at least 3.00 units from the following (Sociology/Cultural Diversity)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 68",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COUN 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 34",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Dental Hygiene Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DE 51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DE 55A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DE 55B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 69",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 70",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 71A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 71B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 71C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 71D",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 71E",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 72",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 75",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 76",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 78",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 79",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 80",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 81",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 83",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 85",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 86",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANAT 1",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "PHYZ 1",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "EMLS 10",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "MATH 10",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "MATH 101",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "PSYC 9",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; likely on the preceding page cut off from the extract"
+   },
+   {
+    "code": "CHLD 45",
+    "why": "catalog prints CHLD 68 with the same title instead; recorded as CHLD 68"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "catalog prints COMM 6 Interpersonal Communication instead; recorded as COMM 6"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "catalog prints SOC 1 Introduction to Sociology instead; recorded as SOC 1"
+   }
+  ],
+  "notes": [
+   "The extract begins mid-section on page 140; the Dental Hygiene heading and the first prerequisite rows (likely ANAT 1, PHYZ 1, English, math/statistics) are on the preceding page and not in the text. The running header 'DM: 3D Modeling & Animation (AS)' is a page header, not this section's heading.",
+   "The 5-unit chemistry block offers CHEM 60 alone, or CHEM 3A & CHEM 3AL & CHEM 8 together; each course is listed once and the combined path is described here.",
+   "MICR 5, FDNT 10 and COMM 3 rows (with their 'or' options) appear outside any visible heading; recorded as a required block whose heading is cut off. The 4 units printed beside MICR 5 differ from the state file's 5.",
+   "Catalog prints 'ENGL 1001 (ENGL C1001)', 'COMM 1000 (COMM C1000)' and 'PSYC 1000 (PSYC C1000)'; recorded with the C-ID-style codes that match the closed list.",
+   "Sociology/cultural diversity block: SOC 30 alone, or SOC 1 paired with one of CHLD 68, COUN 7, HIST 21, HUM 6, PSYC 34 or THAR 6. SOC 1 is listed once.",
+   "Block names for the three 3-unit choices add a parenthetical subject label for distinction; the catalog prints only 'Select any combination totaling at least 3.00 units from the following:' under the Commission on Dental Accreditation heading.",
+   "COMM 7 may count toward both the Communication and Cultural Diversity requirements per catalog notes, though it is printed only in the Communication list.",
+   "DE 55B printed with a space; the closed list stores 'DE55B'. Treated as the same course.",
+   "Total Hours/Units 97.5 is recorded as total_units; it covers prerequisites and core and no GE pattern or degree total is printed in the extract.",
+   "Program Student Learning Outcomes are printed for the program; recorded for this A.S. award.",
+   "The 3D Modeling & Animation description following the section belongs to another program; no careers taken from it."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

@@ -1,0 +1,267 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "38700",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=121",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7849,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7849,
+    "output_tokens": 1864,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1864,
+  "output_tokens_details": {
+   "thinking_tokens": 525
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06868,
+ "ms": 15847,
+ "seconds": 16.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "MATHC2210"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH1A"
+   ],
+   "flagged": [
+    "MATH1A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the scientiﬁc method to investigate and evaluate biological phenomena and summarize results in written scientiﬁc format;",
+    "Perform laboratory techniques independently including microscopy, with a high level of expertise synthesize evolutionary mechanisms, trends, and history with biodiversity;",
+    "Integrate the levels of biological organization including cell mechanisms, anatomy, physiology, genetics, ecology, and evolution;",
+    "Investigate human interactions with all levels of biological processes emphasizing the principles deﬁning ecosystems, communities, population ecology, and global human impacts;",
+    "Apply knowledge of biological organisms and principles in preparation for upper-division courses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 2.1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 2.2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 2.3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3AL",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 27",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete any combination totaling at least 8.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 20A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 20B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH 1A Calculus, First Course instead"
+   }
+  ],
+  "notes": [
+   "The Biology AS-T program heading falls on the preceding page and is not in the extracted text; the section was identified by its Major Requirements table and outcomes preceding the Business Administration 2.0 (AS-T) heading. section_heading uses 'Major Requirements'.",
+   "Physics block prints courses as paired sequences (PHYS 20A & PHYS 20B; PHYS 40 & PHYS 42) under a choose-units rule of at least 8 units; no units printed beside individual physics courses.",
+   "MATH 27 is printed without units as an 'or' alternative to MATH 1A; closed list stores it as 'MATH27'. MATH 1A is not on the closed list (closed list has MATH C2210).",
+   "Notes state STAT C1000 or MATH 16 or MATH 25 will fulfill Math requirements for this AS-T; not recorded as block alternatives.",
+   "The 60 semester unit requirement is stated as a general ADT rule, not recorded as degree_total."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

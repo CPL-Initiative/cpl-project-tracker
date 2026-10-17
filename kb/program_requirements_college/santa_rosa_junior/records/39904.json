@@ -1,0 +1,158 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "39904",
+ "shape": "certificate",
+ "title": "Weld: Gas Metal Arc: GMAW",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6856,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6856,
+    "output_tokens": 898,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 898,
+  "output_tokens_details": {
+   "thinking_tokens": 256
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04538,
+ "ms": 8923,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "MACH161",
+    "WELD102",
+    "WELD113",
+    "WELD170"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the supplied text (only an associate degree's Major Requirements section appears)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MACH 161",
+    "why": "named only in another award's Major Requirements section, not in a GMAW certificate section"
+   },
+   {
+    "code": "WELD 102",
+    "why": "named only in another award's Major Requirements section, not in a GMAW certificate section"
+   },
+   {
+    "code": "WELD 113",
+    "why": "named only in another award's Major Requirements section, not in a GMAW certificate section"
+   },
+   {
+    "code": "WELD 170",
+    "why": "named only in another award's Major Requirements section, not in a GMAW certificate section"
+   }
+  ],
+  "notes": [
+   "The supplied page 215 text does not contain a section for the Weld: Gas Metal Arc: GMAW Certificate of Achievement. It shows associate degree / ADT boilerplate, then a 'Major Requirements' list totaling 25 units (MACH 51.1A, MACH 161, MACH 162, WELD 101-104, WELD 113, WELD 114A, WELD 114B, WELD 170) with Program Student Learning Outcomes. That 25-unit total is above this award's 8 to fewer than 16 unit range, so it appears to belong to a different award, probably a welding/fabrication degree, with no program heading printed.",
+   "No blocks, totals or outcomes were recorded because the named certificate's section is absent. The GMAW certificate's requirements are likely on an adjacent page and should be checked by a reviewer.",
+   "The Program Student Learning Outcomes on this page were not copied because they belong to the 25-unit major shown, not to this certificate."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

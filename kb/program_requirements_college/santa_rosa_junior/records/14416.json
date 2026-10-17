@@ -1,0 +1,259 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "14416",
+ "shape": "degree",
+ "title": "Pharmacy Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=188",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7880,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7880,
+    "output_tokens": 2342,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2342,
+  "output_tokens_details": {
+   "thinking_tokens": 870
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07836,
+ "ms": 19097,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CSKL334"
+   ],
+   "flagged": [
+    "CSKL334"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.5,
+    19.5
+   ],
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Pharmacologically classify a drug after having been presented with its generic name, brand (trade) name, chemical name and indication;",
+    "interpret current federal and state legislation and name the agencies regulating the practice of pharmacy;",
+    "create patient proﬁles utilizing information obtained from the prescription and the patient;",
+    "read and write proper medical notation on the drug order and interpret information on drug labels and stock bottles;",
+    "calculate the oral dosages of drugs, both solid and liquid forms based on currently accepted pharmaceutical mathematics;",
+    "describe the pharmacological action, therapeutic effects, common side effects, doses and drug interactions of common medications prescribed to treat dysfunction of selected body systems; and",
+    "describe common pharmaceutical measuring, weighing and compounding devices and accurately use the metric, apothecary, avoirdupois and household systems to count and measure."
+   ],
+   "careers": [
+    "pharmacy technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Pharmacy Technician Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19.5,
+     "max": 19.5
+    },
+    "courses": [
+     {
+      "code": "PHT 102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 154A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 154B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 155",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 156",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 157",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 157L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Other Notes (suggested before PHT 150)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSKL 334",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program's own heading (e.g., 'Pharmacy Technician (AS)') is not in the supplied text; the excerpt begins mid-section on page 188 (running header 'Philosophy (AA)'). section_heading uses the 'Major Requirements' heading printed in this section.",
+   "The Associate Degree Requirements text includes ADT boilerplate (60 CSU-transferable units, Cal-GETC, minimum 18 units in the major), which appears unusual for a local A.S. degree; ge_pattern recorded as Cal-GETC because the page names it, but a reviewer should verify. The 60-unit sentence was not treated as a degree total.",
+   "Catalog titles differ slightly from the state file for PHT 154A ('Retail Externship 1' vs 'Retail Clinical 1') and PHT 157L ('Hospital Pharmacy Externship' vs 'Hospital Pharmacy Clinical Experience'); codes match.",
+   "CSKL 334 (How to Take an Online Class) is only suggested before PHT 150; recorded as recommended, no units printed.",
+   "Program Student Learning Outcomes copied with their printed trailing punctuation (semicolons, '; and').",
+   "Careers: the text names workplaces (retail pharmacies, hospital pharmacies, etc.) rather than job titles; only 'pharmacy technician' recorded as the occupation."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

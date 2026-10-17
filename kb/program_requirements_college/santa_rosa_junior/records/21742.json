@@ -1,0 +1,284 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21742",
+ "shape": "certificate",
+ "title": "Child Development: Teacher",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=127",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8273,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8273,
+    "output_tokens": 2060,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2060,
+  "output_tokens_details": {
+   "thinking_tokens": 678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07429,
+ "ms": 16949,
+ "seconds": 17.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 29,
+   "share": 0.0,
+   "missing": [
+    "CDEVC1000",
+    "CHLD1101",
+    "CHLD1102",
+    "CHLD111A",
+    "CHLD183",
+    "CHLD1851",
+    "CHLD1852",
+    "CHLD186",
+    "CHLD220",
+    "CHLD45",
+    "CHLD51",
+    "CHLD53A",
+    "CHLD53B",
+    "CHLD54",
+    "CHLD552",
+    "CHLD555",
+    "CHLD556",
+    "CHLD557",
+    "CHLD66",
+    "CHLD791",
+    "CHLD792",
+    "CHLD794",
+    "CHLD82",
+    "CHLD901",
+    "CHLD902",
+    "CHLD903",
+    "CHLD904",
+    "CHLD95",
+    "CHLD96"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (the excerpt prints only 'Child Development (AA)')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "certificate section not in text; CHLD 10 Child Growth and Development named only in the Child Development (AA) section"
+   },
+   {
+    "code": "CHLD 110.1",
+    "why": "not in text"
+   },
+   {
+    "code": "CHLD 110.2",
+    "why": "not in text"
+   },
+   {
+    "code": "CHLD 111A",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 183",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 185.1",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 186",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 220",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 45",
+    "why": "not in text by this code (the AA lists CHLD 68 with the same title)"
+   },
+   {
+    "code": "CHLD 51",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 53A",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 53B",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 54",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 55.2",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 55.5",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 55.6",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 55.7",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 79.1",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 79.2",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 79.4",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 82",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 90.1",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 90.2",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 90.3",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 90.4",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 95",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD 96",
+    "why": "certificate section not in text; named only in the AA section"
+   },
+   {
+    "code": "CHLD1852",
+    "why": "certificate section not in text; CHLD 185.2 named only in the AA section"
+   },
+   {
+    "code": "CHLD66",
+    "why": "certificate section not in text; CHLD 66 named only in the AA section"
+   }
+  ],
+  "notes": [
+   "The catalog excerpt (page 127) contains only the Child Development (AA) degree section (Total Hours/Units 29) and the tail of a preceding chemistry program; the Child Development: Teacher Certificate of Achievement section is not in the text, so no blocks were recorded. A reviewer should fetch the certificate's own page/section.",
+   "The Program Student Learning Outcomes printed at the top of the page are chemistry outcomes belonging to the preceding program and were not recorded.",
+   "The AA description names careers in 'Child Care and Preschool Education'; not recorded because it belongs to the AA section, not the certificate.",
+   "The AA section's ADT language (Cal-GETC, 18 units) appears inconsistent with a local AA; not used."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

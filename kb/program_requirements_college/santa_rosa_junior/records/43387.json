@@ -1,0 +1,193 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "43387",
+ "shape": "noncredit",
+ "title": "Academic Prep: Math",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=218",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7710,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7710,
+    "output_tokens": 1512,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1512,
+  "output_tokens_details": {
+   "thinking_tokens": 692
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06108,
+ "ms": 13812,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    96.25,
+    96.25
+   ],
+   "stated": [
+    96.25,
+    96.25
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Apply the mathematical skills required in performing operations and/or problem-solving related to pre-algebra."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply the mathematical skills required in performing operations and/or problem-s"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Academic Prep: Math (Certificate of Competency)",
+   "measure": "hours",
+   "total_units": {
+    "min": 96.25,
+    "max": 96.25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate and/or interpret mathematical information, relationships, and/or concepts related to pre-algebra.",
+    "Apply the mathematical skills required in performing operations and/or problem-solving related to pre-algebra.",
+    "Communicate mathematical information symbolically, visually and/or numerically using appropriate terminology related to pre-algebra.",
+    "Evaluate and/or interpret mathematical information, relationships, and/or concepts related to beginning algebra."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 1 core course (48.125 hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48.125,
+     "max": 48.125
+    },
+    "courses": [
+     {
+      "code": "CSKL 403",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete 1 elective course (48.125 hours)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 48.125,
+     "max": 48.125
+    },
+    "courses": [
+     {
+      "code": "CSKL 401",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSKL 402",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit and counted in hours: 'Academic Preparedness: Mathematics - Complete 96.25 Hours'.",
+   "The Hours/Units column prints 0 beside CSKL 403 and CSKL 401 (nothing beside CSKL 402); these are units, not hours, so course units are left null. The block headings state 48.125 hours per course, recorded as each block's stated.",
+   "The elective is printed as 'CSKL 401 ... or CSKL 402' under 'Complete 1 elective course'; recorded as a choose-1-course block with both courses.",
+   "The outcomes list ends at item 4 at the end of the extracted text; it may continue on the next page (e.g., further beginning-algebra outcomes). Reviewer should check."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

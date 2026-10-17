@@ -1,0 +1,120 @@
+{
+ "college": "Santa Rosa Junior College",
+ "programs": 283,
+ "with_closed_list": 279,
+ "found": 268,
+ "extracted": 268,
+ "errors": 1,
+ "passed_machine_checks": 147,
+ "failed": {
+  "coverage": 56,
+  "invented": 11,
+  "arithmetic": 78,
+  "repeated": 2,
+  "outcomes": 38
+ },
+ "cost_usd": 22.48,
+ "cost_per_program": 0.0839,
+ "not_found": [
+  {
+   "control_number": "06583",
+   "title": "Automotive Technology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=119",
+    "coverage": 0.143
+   }
+  },
+  {
+   "control_number": "21723",
+   "title": "Automotive Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=119",
+    "coverage": 0.143
+   }
+  },
+  {
+   "control_number": "33164",
+   "title": "Hospitality, Event and Tourism Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=498",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "35249",
+   "title": "Pest Control Adviser",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=94",
+    "coverage": 0.293
+   }
+  },
+  {
+   "control_number": "35878",
+   "title": "Kines: Sports Medicine Prep",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=505",
+    "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "36080",
+   "title": "AE: Starting a Small Business",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=231",
+    "coverage": 0.364
+   }
+  },
+  {
+   "control_number": "36760",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
+    "coverage": 0.385
+   }
+  },
+  {
+   "control_number": "37014",
+   "title": "Cal-GETC GE Pattern",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=117",
+    "coverage": 0.157
+   }
+  },
+  {
+   "control_number": "37015",
+   "title": "CSU GE Pattern",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=201",
+    "coverage": 0.306
+   }
+  },
+  {
+   "control_number": "42872",
+   "title": "Hospitality Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=125",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "44902",
+   "title": "Hospitality: Event Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=498",
+    "coverage": 0.375
+   }
+  }
+ ],
+ "run": "39006464249"
+}

@@ -1,0 +1,298 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "16965",
+ "shape": "degree",
+ "title": "Medical Assisting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7997,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7997,
+    "output_tokens": 2369,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2369,
+  "output_tokens_details": {
+   "thinking_tokens": 719
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07937,
+ "ms": 18749,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "PSYCC1000"
+   ],
+   "unexplained": [
+    "PSYCC1000"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PSYC1000(PSYCC1000)"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.5,
+    40.5
+   ],
+   "stated": [
+    40.5,
+    40.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Demonstrate ability to greet patients, answer telephones, schedule appointments, maintain and filing client medical records, complete insurance forms, arrange hospital admissions and laboratory services, handle billing, bookkeeping, and physician correspondence;",
+    "Demonstrate ability to perform other clinical tasks such as preparing and administering medications as directed by a physician, authorizing drug refills as directed, telephoning prescriptions to a pharmacy, preparing clients for x-rays, taking EKG's, removing sutures and changing dressings; and"
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate ability to greet patients, answer telephones, schedule appointments,",
+    "not in the catalog text as printed: Demonstrate ability to perform other clinical tasks such as preparing and admini"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements (Medical Assisting A.S.; program heading falls on the preceding page)",
+   "measure": "units",
+   "total_units": {
+    "min": 40.5,
+    "max": 40.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate ability to greet patients, answer telephones, schedule appointments, maintain and filing client medical records, complete insurance forms, arrange hospital admissions and laboratory services, handle billing, bookkeeping, and physician correspondence;",
+    "Demonstrate ability to perform clinical tasks such as taking and recording vital signs and medical histories, explaining treatment procedures to clients, preparing clients for examinations, and assisting during examinations;",
+    "Collect and prepare laboratory specimens and perform basic laboratory tests on the premises, dispose of contaminated supplies, and sterilize medical instruments;",
+    "Present in an instructional manner information about medication and special diets;",
+    "Demonstrate ability to perform other clinical tasks such as preparing and administering medications as directed by a physician, authorizing drug refills as directed, telephoning prescriptions to a pharmacy, preparing clients for x-rays, taking EKG's, removing sutures and changing dressings; and",
+    "Arrange examining room instruments and equipment, purchase and maintain supplies and equipment, and keep waiting and examining rooms neat and clean."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Medical Assisting Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANAT 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLC 140",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLC 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIR 10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 161",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 168",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Medical Assisting: Administrative and Clinical",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MA 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 167",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 169",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 174",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 176",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 1000 (PSYC C1000)",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-section on page 174; the Medical Assisting program heading and description are on the preceding page and not in the text, so careers could not be read from the description. The running header 'Medium Heavy Truck Technology (AS)' belongs to the next program.",
+   "The boilerplate preceding the major table mentions Cal-GETC and a minimum of 18 units in a major, followed by 'ADTs also require...'; this reads as Associate Degree for Transfer template text repeated for every degree on the page, so ge_pattern was left null. Reviewer should confirm the GE pattern for this A.S.",
+   "Closed-list codes HLC140, MA168, MA176 match catalog codes HLC 140, MA 168, MA 176 (spacing difference only). PSYC C1000 is printed as 'PSYC 1000 (PSYC C1000)'.",
+   "Block units sum to 16.5 + 24 = 40.5, matching the printed Total Hours/Units 40.5.",
+   "Outcomes copied with the PDF ligature 'ﬁ' rendered as 'fi'."
+  ]
+ },
+ "extracted_run": "39006464249"
+}
