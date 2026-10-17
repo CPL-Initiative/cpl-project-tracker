@@ -1,0 +1,199 @@
+{
+ "college": "Las Positas College",
+ "control_number": "37504",
+ "shape": "noncredit",
+ "title": "ESL College Reading and Writing Pathway",
+ "award": "Noncredit program",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1973",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6888,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6888,
+    "output_tokens": 934,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 934,
+  "output_tokens_details": {
+   "thinking_tokens": 221
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04623,
+ "ms": 7605,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    252.0,
+    252.0
+   ],
+   "stated": [
+    252.0,
+    504.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 252.0-252.0; the catalog states 252.0-504.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL College Reading and Writing Pathway (NCY): Program Requirements",
+   "measure": "hours",
+   "total_units": {
+    "min": 252,
+    "max": 504
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Comprehend a variety of authentic reading materials at the intermediate level.",
+    "Matriculate into credit, transfer-level esl courses.",
+    "Use foundational grammar, including all verb tenses and types of sentences.",
+    "Utilize a variety of study skills and strategies for language acquisition.",
+    "Write paragraphs and essays with control of organization, development and language at the intermediate level."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 126,
+     "max": 126
+    },
+    "courses": [
+     {
+      "code": "NESL 221B",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One or More",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 126,
+     "max": 378
+    },
+    "courses": [
+     {
+      "code": "NESL 221A",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NESL 231A",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NESL 231B",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; course figures (126.0) and total (252.0-504.0) are hours.",
+   "List A says 'Select One or More' (126-378 Hours); recorded as choose_courses with minimum 1.",
+   "The first outcome follows the lead-in 'Upon completion of this program, students will be able to:' on the same line; lead-in omitted.",
+   "Outcome text 'transfer-level esl courses' copied with lowercase 'esl' as printed."
+  ]
+ },
+ "extracted_run": "38984747530"
+}
