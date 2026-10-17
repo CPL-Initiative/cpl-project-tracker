@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply principles of mathematics, physics, and engineering to analyze and solve civil engineering problems.",
-    "Demonstrate the ability to use industry-standard tools and software to prepare and interpret engineering drawings and design documents.",
-    "Communicate technical information effectively in written, oral, and graphical forms.",
-    "Demonstrate ability to work effectively in teams and apply professional and ethical standards in engineering contexts."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply principles of mathematics, physics, and engineering to analyze and solve c",
-    "not in the catalog text as printed: Demonstrate the ability to use industry-standard tools and software to prepare a",
-    "not in the catalog text as printed: Communicate technical information effectively in written, oral, and graphical fo",
-    "not in the catalog text as printed: Demonstrate ability to work effectively in teams and apply professional and ethi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -245,5 +235,6 @@
    "Description mentions transfer and 'entry-level employment in the civil and infrastructure industries'; only the explicitly named job titles were recorded as careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

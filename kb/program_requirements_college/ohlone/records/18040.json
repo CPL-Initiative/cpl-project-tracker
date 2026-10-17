@@ -88,19 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of the major concepts, theoretical perspectives, empirical findings, and/or historical trends in the social sciences.",
-    "Develop an appreciation for the importance of social science scholarship by gaining a comprehension of both continuity and change over time as they position themselves and their society within the larger social science narrative.",
-    "Develop effective communication skills by reading secondary and primary source material; discussing course content with the instructor and their classmates; and writing basic essay arguments using social science evidence."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of the major concepts, theoretical perspectives, empirical",
-    "not in the catalog text as printed: Develop an appreciation for the importance of social science scholarship by gain",
-    "not in the catalog text as printed: Develop effective communication skills by reading secondary and primary source m"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -708,5 +700,6 @@
    "Text following the Social Science section (Sociology for Transfer ADT on page 72) belongs to another program and was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

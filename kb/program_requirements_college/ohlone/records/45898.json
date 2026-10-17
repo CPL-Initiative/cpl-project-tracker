@@ -82,23 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply principles of mathematics, physics, and engineering to analyze and solve mechanical, aerospace, and manufacturing problems.",
-    "Demonstrate ability to design, implement, and evaluate mechanical and manufacturing systems using CAD and laboratory techniques.",
-    "Demonstrate proficiency with industry-standard tools, software, and measurement practices.",
-    "Communicate technical information effectively in written, oral, and graphical forms.",
-    "Demonstrate ability to work effectively in teams and apply professional and ethical standards in engineering contexts."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply principles of mathematics, physics, and engineering to analyze and solve m",
-    "not in the catalog text as printed: Demonstrate ability to design, implement, and evaluate mechanical and manufactur",
-    "not in the catalog text as printed: Demonstrate proficiency with industry-standard tools, software, and measurement ",
-    "not in the catalog text as printed: Communicate technical information effectively in written, oral, and graphical fo",
-    "not in the catalog text as printed: Demonstrate ability to work effectively in teams and apply professional and ethi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -111,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -256,5 +244,6 @@
    "The following Music for Transfer section belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

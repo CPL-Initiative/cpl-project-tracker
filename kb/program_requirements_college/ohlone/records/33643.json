@@ -82,25 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Apply fundamental knowledge of computing and the current use of technology techniques, skills, and tools necessary for the computing practice.",
-    "Demonstrate the ability to locate, critically evaluate, and solve business problems with technology solutions using qualitative and quantitative information.",
-    "Demonstrate a fundamental ability to identify and analyze user needs in the selection, creation, evaluation, and administration of computer-based systems.",
-    "Provide information technology technical assistance to computer and network users.",
-    "Demonstrate a basic knowledge and skills of computer programming language.",
-    "Demonstrate broad understanding of Information Technology related knowledge in the area of Networking, Operating Systems, Cybersecurity, and Programming Languages."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply fundamental knowledge of computing and the current use of technology techn",
-    "not in the catalog text as printed: Demonstrate the ability to locate, critically evaluate, and solve business probl",
-    "not in the catalog text as printed: Demonstrate a fundamental ability to identify and analyze user needs in the sele",
-    "not in the catalog text as printed: Provide information technology technical assistance to computer and network user",
-    "not in the catalog text as printed: Demonstrate a basic knowledge and skills of computer programming language.",
-    "not in the catalog text as printed: Demonstrate broad understanding of Information Technology related knowledge in t"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -113,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -338,5 +324,6 @@
    "Careers taken from the program description: 'IT support technician or IT system administrator' and the description of 'Computer network technicians'."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

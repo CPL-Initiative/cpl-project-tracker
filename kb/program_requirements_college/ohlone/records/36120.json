@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply anthropological principles and methods of inquiry to the study of human diversity locally, regionally, and globally.",
-    "Apply anthropological knowledge and demonstrate intercultural sensitivity to contemporary issues within a culture and cross-culturally.",
-    "Demonstrate an understanding of science, the scientific method, the concept of culture, and major anthropological concepts related to human biological and cultural evolution."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply anthropological principles and methods of inquiry to the study of human di",
-    "not in the catalog text as printed: Apply anthropological knowledge and demonstrate intercultural sensitivity to con",
-    "not in the catalog text as printed: Demonstrate an understanding of science, the scientific method, the concept of c"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -262,5 +254,6 @@
    "The following Applied Mathematics certificate section was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

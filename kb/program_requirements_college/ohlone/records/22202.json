@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate competence to work independently to setup, configure, and maintain a network; stand-alone or network application; and a network system.",
-    "Demonstrate techniques to troubleshoot situations that impact a network; stand-alone or network application; and a network system.",
-    "Demonstrate a basic computer programming language knowledge and skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate competence to work independently to setup, configure, and maintain a",
-    "not in the catalog text as printed: Demonstrate techniques to troubleshoot situations that impact a network; stand-a",
-    "not in the catalog text as printed: Demonstrate a basic computer programming language knowledge and skills."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -221,5 +213,6 @@
    "Career entry 'Network administrators' is taken from the certificate description, which describes the occupation rather than explicitly stating employment outcomes."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

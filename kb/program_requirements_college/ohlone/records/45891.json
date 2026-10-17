@@ -82,23 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate knowledge of fundamental computer science concepts such as software and hardware architecture, object-oriented programming, logic, and discrete structures.",
-    "Design an algorithm to address a problem using psuedocode and implement a computer program to solve the problem.",
-    "Demonstrate knowledge of the basic data structures: stacks, lists, trees, graphs, queues, and sets.",
-    "Analyze which of several methods involving data structures is most appropriate for solving a particular problem, then implement them in appropriate applications, such as sorting and searching.",
-    "Demonstrate ability to apply computer science knowledge to real-world situations across various fields."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of fundamental computer science concepts such as software ",
-    "not in the catalog text as printed: Design an algorithm to address a problem using psuedocode and implement a comput",
-    "not in the catalog text as printed: Demonstrate knowledge of the basic data structures: stacks, lists, trees, graphs",
-    "not in the catalog text as printed: Analyze which of several methods involving data structures is most appropriate f",
-    "not in the catalog text as printed: Demonstrate ability to apply computer science knowledge to real-world situations"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -111,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -266,5 +254,6 @@
    "Career entry 'technology' taken from 'prepares students for a dynamic career in technology'."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

@@ -82,23 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Employ skills and processes required for working in print and interactive design.",
-    "Demonstrate skill with a variety of graphic design techniques, both analog and digital.",
-    "Utilize problem solving techniques in developing creative graphic designs solutions that include design thinking, prototyping, and research.",
-    "Demonstrate effective development, interpretation, and expression of ideas through written, oral, and/or visual communication.",
-    "Understand and consider diverse artistic expressions and communicate effectively in a team environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Employ skills and processes required for working in print and interactive design",
-    "not in the catalog text as printed: Demonstrate skill with a variety of graphic design techniques, both analog and d",
-    "not in the catalog text as printed: Utilize problem solving techniques in developing creative graphic designs soluti",
-    "not in the catalog text as printed: Demonstrate effective development, interpretation, and expression of ideas throu",
-    "not in the catalog text as printed: Understand and consider diverse artistic expressions and communicate effectively"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -108,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -222,5 +210,6 @@
    "Certificate also requires at least six units at Ohlone College and a 2.0 GPA in Major Field courses."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

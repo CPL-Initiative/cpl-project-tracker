@@ -90,17 +90,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Gain knowledge and skills to succeed in a variety of science or technological careers.",
-    "Gain knowledge and skills to succeed in science majors at a baccalaureate university."
-   ],
-   "why": [
-    "not in the catalog text as printed: Gain knowledge and skills to succeed in a variety of science or technological ca",
-    "not in the catalog text as printed: Gain knowledge and skills to succeed in science majors at a baccalaureate univer"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -113,7 +107,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -282,5 +276,6 @@
    "Career entry 'science or technological careers' taken from the program description ('a variety of science or technological careers'); reviewer may wish to confirm it counts as a career field."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

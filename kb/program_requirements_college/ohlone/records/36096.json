@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate the ability to communicate effectively in ASL with multiculturally diverse members of the Deaf Community in all types of settings.",
-    "Apply knowledge and skills in ASL and Deaf culture to demonstrate critical thinking through understanding, advocacy, and advancement of issues that impact the lives of Deaf children and adults.",
-    "Utilize knowledge from Deaf Studies and the ability to communicate in ASL with multiculturally diverse members of the Deaf community at the level that will support employment in various professional and paraprofessional occupations in which ASL and knowledge in Deaf Studies is essential."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the ability to communicate effectively in ASL with multiculturally d",
-    "not in the catalog text as printed: Apply knowledge and skills in ASL and Deaf culture to demonstrate critical think",
-    "not in the catalog text as printed: Utilize knowledge from Deaf Studies and the ability to communicate in ASL with m"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -246,5 +238,6 @@
    "The following Animation and 3D Modeling certificate section was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

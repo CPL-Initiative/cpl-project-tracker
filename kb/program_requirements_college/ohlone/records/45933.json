@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Apply diverse methods and preparatory actions to gain employment within the theatre industry."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply diverse methods and preparatory actions to gain employment within the thea"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -198,5 +194,6 @@
    "Career entry 'professional theatre' taken from 'launch their careers in professional theatre'; reviewer may check whether this counts as a career field."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

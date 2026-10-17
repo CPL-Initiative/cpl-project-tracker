@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Discuss and describe information about the environment, cultures, histories, politics, arts, and economics of people around the globe and explain their interdependence and interconnectedness.",
-    "Illustrate cultural competence through the ability to interact effectively in international and multicultural settings based on an integrated understanding of global issues and perspectives.",
-    "Access and analyze the concept of global interdependence with reference to various characteristics of globalization and to specific global problems.",
-    "Recognize and connect concepts related to political, economic, cultural, and ecological globalization with events discussed in contemporary news."
-   ],
-   "why": [
-    "not in the catalog text as printed: Discuss and describe information about the environment, cultures, histories, pol",
-    "not in the catalog text as printed: Illustrate cultural competence through the ability to interact effectively in in",
-    "not in the catalog text as printed: Access and analyze the concept of global interdependence with reference to vario",
-    "not in the catalog text as printed: Recognize and connect concepts related to political, economic, cultural, and eco"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -263,5 +253,6 @@
    "Total Required Units: 21.0 (also stated as 'Complete 21 semester units in the Global Studies major') recorded as total_units."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

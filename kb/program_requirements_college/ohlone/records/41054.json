@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Explore and use various programs to provide useful output from a variety of datasets.",
-    "Prepare a strategy, including effective practice and sequential thinking, for success in programming and other transfer level classes."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explore and use various programs to provide useful output from a variety of data",
-    "not in the catalog text as printed: Prepare a strategy, including effective practice and sequential thinking, for su"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -170,5 +164,6 @@
    "The 'Total Required Hours: 36.0' line is recorded as both the award total and the MAJOR FIELD block's stated total, since the block is the whole award."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Show a basic understanding of hand stitching, sewing machine stitching techniques, draping, cutting, and the construction process typical for costume industries.",
-    "Apply the basic techniques of theatrical make-up using the appropriate materials and safety procedures.",
-    "Demonstrate an understanding of how costume design affects the overall theatrical experience as it applies to performance."
-   ],
-   "why": [
-    "not in the catalog text as printed: Show a basic understanding of hand stitching, sewing machine stitching technique",
-    "not in the catalog text as printed: Apply the basic techniques of theatrical make-up using the appropriate materials",
-    "not in the catalog text as printed: Demonstrate an understanding of how costume design affects the overall theatrica"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -203,5 +195,6 @@
    "Careers recorded from 'entry-level jobs in costuming and make-up'; the industries listed (theatres, theme parks, motion pictures, television, conventions) were read as settings, not careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

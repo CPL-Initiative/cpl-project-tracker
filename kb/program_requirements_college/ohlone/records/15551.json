@@ -111,21 +111,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Appraise and evaluate the development of Western music based on its relevance to musical evolution in the rest of the world.",
-    "Comprehend and integrate the language of written, aural, and conceptual music.",
-    "Demonstrate proficiency at an increasing level of mastery of his/her primary instrument.",
-    "Analyze and categorize extant musical compositions and, in turn, employ appropriate stylistic and historical criteria to synthesize successful original music."
-   ],
-   "why": [
-    "not in the catalog text as printed: Appraise and evaluate the development of Western music based on its relevance to",
-    "not in the catalog text as printed: Comprehend and integrate the language of written, aural, and conceptual music.",
-    "not in the catalog text as printed: Demonstrate proficiency at an increasing level of mastery of his/her primary ins",
-    "not in the catalog text as printed: Analyze and categorize extant musical compositions and, in turn, employ appropri"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -655,5 +645,6 @@
    "The 60-unit sentence is a generic associate degree requirement, not recorded as degree_total. GE: Ohlone College or Cal-GETC; no GE units printed."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

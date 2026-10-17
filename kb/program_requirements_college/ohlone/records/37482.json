@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify, describe, and analyze cultural, political, historical, and institutional systems affecting construction of privilege and oppression.",
-    "Identify, describe, and critique ideological assumptions underlying social institutions and systems of representation and how they intersect with assumptions including (but not limited to) gender, race, class, nationality, disability, age, and sexual identity.",
-    "Examine and apply theories and research on socialization and acculturation that inform identity and group affiliation(s), in various historical eras and global communities.",
-    "Identify, analyze, and apply social justice strategies, including (but not limited to) social, cultural, and historical context of social movements, dialogic communication strategies across differences, alliance building, collaboration, and/or advocacy and resistance."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify, describe, and analyze cultural, political, historical, and institution",
-    "not in the catalog text as printed: Identify, describe, and critique ideological assumptions underlying social insti",
-    "not in the catalog text as printed: Examine and apply theories and research on socialization and acculturation that ",
-    "not in the catalog text as printed: Identify, analyze, and apply social justice strategies, including (but not limit"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 13,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -374,5 +364,6 @@
    "Catalog codes use hyphens (e.g., ETHN-100); matched to closed-list codes with spaces."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Support the data management needs of business through the design, implementation, and maintenance of relational databases.",
-    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners."
-   ],
-   "why": [
-    "not in the catalog text as printed: Support the data management needs of business through the design, implementation",
-    "not in the catalog text as printed: Demonstrate appreciation of the ICT career field and the need to be lifelong lea"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -200,5 +194,6 @@
    "The certificate description mentions 'Graduates of the associate degree' sitting for certification exams, apparently text carried over from the A.S. description."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

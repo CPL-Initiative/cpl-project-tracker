@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of and assess the significance of the cause and effect relationship among various issues, groups, and events; key social, political, and economic forces; and major concepts and theoretical perspectives in history.",
-    "Understand the interpretive nature of the field of history by analyzing, interpreting, and differentiating between primary and secondary sources used by each discipline.",
-    "Construct hypotheses demonstrating critical thinking, reading, and writing skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of and assess the significance of the cause and effect rel",
-    "not in the catalog text as printed: Understand the interpretive nature of the field of history by analyzing, interpr",
-    "not in the catalog text as printed: Construct hypotheses demonstrating critical thinking, reading, and writing skill"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 13,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -444,5 +436,6 @@
    "Text after page 44 belongs to Human Development Studies and was not used."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply industrial standards for documentation of laboratory procedures and results.",
-    "Demonstrate the use of common laboratory equipment such as micropipettes, spectrophotometers, electrophoresis equipment, pH meters, thermocyclers, bioreactors, etc.",
-    "Prepare buffers and other laboratory stock and working solutions to proper specifications.",
-    "Identify and compare the roles and responsibilities of the primary functional areas of biotechnology operations: Product Development, Regulatory Affairs, Manufacturing, Quality Assurance, and Quality Control."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply industrial standards for documentation of laboratory procedures and result",
-    "not in the catalog text as printed: Demonstrate the use of common laboratory equipment such as micropipettes, spectr",
-    "not in the catalog text as printed: Prepare buffers and other laboratory stock and working solutions to proper speci",
-    "not in the catalog text as printed: Identify and compare the roles and responsibilities of the primary functional ar"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -241,5 +231,6 @@
    "The 22.5 unit total is printed as 'Total Required Units' beneath the Major Field list and is recorded both as the award total and as the block's stated total."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

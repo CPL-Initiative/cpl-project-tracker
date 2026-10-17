@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Evaluate and discuss various forms of art within a social, cultural, and aesthetic perspective."
-   ],
-   "why": [
-    "not in the catalog text as printed: Evaluate and discuss various forms of art within a social, cultural, and aesthet"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -366,5 +362,6 @@
    "The page continues with the Art History for Transfer ADT and Biology ADT sections, which were not read for this award."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

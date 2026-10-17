@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify the physical location of support service offices and articulate the steps required for accessing services such as learning labs, tutorial services, counseling services, etc.",
-    "Apply effective study skills, note taking methodology, and time management techniques."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify the physical location of support service offices and articulate the ste",
-    "not in the catalog text as printed: Apply effective study skills, note taking methodology, and time management techn"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -180,5 +174,6 @@
    "The page also prints the following Development of Self-Concept for Success in the Workforce and Digital Arts sections. Those sections were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

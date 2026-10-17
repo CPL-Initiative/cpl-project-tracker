@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Use Beginning Level ASL principles appropriately in a variety of expressive and receptive situations.",
-    "Demonstrate correct Beginning Level ASL grammar in both expressive and receptive communication.",
-    "Demonstrate Beginning Level knowledge of Deaf Culture, Deaf Education, and the Deaf Community."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use Beginning Level ASL principles appropriately in a variety of expressive and ",
-    "not in the catalog text as printed: Demonstrate correct Beginning Level ASL grammar in both expressive and receptive",
-    "not in the catalog text as printed: Demonstrate Beginning Level knowledge of Deaf Culture, Deaf Education, and the D"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -176,5 +168,6 @@
    "The following section (College and Career Advancement) belongs to a different program and was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

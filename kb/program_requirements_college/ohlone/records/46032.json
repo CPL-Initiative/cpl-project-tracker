@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate enhanced collaborative skills and the ability to engage in effective teamwork in a production environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate enhanced collaborative skills and the ability to engage in effective"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -220,5 +216,6 @@
    "The career entry 'virtual production' is taken from 'entry-level careers in virtual production' in the program description."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

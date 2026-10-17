@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate foundational knowledge, skills, craftsmanship, and aesthetic sensibility of video production, editing, animation, and motion graphics design.",
-    "Articulate and apply industry relevant terminology and make connections to other disciplines.",
-    "Utilize research and pre-visualization techniques to create storyboards and prototypes that demonstrate and verify the effectiveness of concepts, narratives, and design solutions.",
-    "Demonstrate the ability to function within a team by fostering effective communication, mutual respect, and shared decision-making to accomplish common goals."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate foundational knowledge, skills, craftsmanship, and aesthetic sensibi",
-    "not in the catalog text as printed: Articulate and apply industry relevant terminology and make connections to other",
-    "not in the catalog text as printed: Utilize research and pre-visualization techniques to create storyboards and prot",
-    "not in the catalog text as printed: Demonstrate the ability to function within a team by fostering effective communi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -214,5 +204,6 @@
    "Career entry 'related industries' was not recorded as it names no specific field."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

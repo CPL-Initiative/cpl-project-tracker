@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Conduct a thorough assessment of current landscape and environmental characteristics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Conduct a thorough assessment of current landscape and environmental characteris"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,5 +165,6 @@
    "The description says the certificate is useful for 'current or future business owners'; this was read as an intended audience rather than a named career, so careers is empty. A reviewer may wish to check."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

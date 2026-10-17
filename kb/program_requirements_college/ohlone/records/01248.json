@@ -88,15 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of real estate listings, deposit receipts, escrows, and financing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of real estate listings, deposit receipts, escrows, and fi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -109,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -245,5 +241,6 @@
    "The Certificate of Achievement section that follows was not read for this record."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

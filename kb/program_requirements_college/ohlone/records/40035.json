@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Operate relevant fabrication and manufacturing equipment such as CNC machines, mills, lathes, laser cutters, smart factories, 3D printers, etc.",
-    "Demonstrate understanding of Smart Advanced Manufacturing Processes including, but not limited, to Industrial Internet of Things (IIoT)/Industry Standard 4.0.",
-    "Apply basic scientific and engineering principles to solve problems in the manufacturing industry."
-   ],
-   "why": [
-    "not in the catalog text as printed: Operate relevant fabrication and manufacturing equipment such as CNC machines, m",
-    "not in the catalog text as printed: Demonstrate understanding of Smart Advanced Manufacturing Processes including, b",
-    "not in the catalog text as printed: Apply basic scientific and engineering principles to solve problems in the manuf"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 10,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -356,5 +348,6 @@
    "Catalog codes are printed with hyphens (e.g., CAOT-150, ENGI-101) and match the closed-list codes; none treated as catalog additions."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

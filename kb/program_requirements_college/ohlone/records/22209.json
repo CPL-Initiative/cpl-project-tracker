@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate critical thinking and problem-solving skills as they apply to event planning, pre-production, and on-site production.",
-    "Apply the basic techniques of stage management, including script analysis, managing auditions, running of rehearsals, laying out a scale floor plan, and the recording and calling of cues in a live production.",
-    "Show a basic understanding of budgeting and accounting for live events, including vendor selection, staffing, and cost to profit ratios."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate critical thinking and problem-solving skills as they apply to event ",
-    "not in the catalog text as printed: Apply the basic techniques of stage management, including script analysis, manag",
-    "not in the catalog text as printed: Show a basic understanding of budgeting and accounting for live events, includin"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -202,5 +194,6 @@
    "Career field taken from the description: 'entry-level jobs in the events management industry in both entertainment and corporate America'."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate a conceptual understanding and practical ability to plan, actualize, and complete an industry-standard multimedia/interactive design project.",
-    "Communicate ideas and projects effectively verbally, visually, and in writing using techniques that are tailored to audiences and users.",
-    "Apply critical thinking, research, aesthetic judgments, and problem formulation and solutions in creating Digital Media projects."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate a conceptual understanding and practical ability to plan, actualize,",
-    "not in the catalog text as printed: Communicate ideas and projects effectively verbally, visually, and in writing us",
-    "not in the catalog text as printed: Apply critical thinking, research, aesthetic judgments, and problem formulation "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -211,5 +203,6 @@
    "Only the Certificate of Achievement section (page 26) was read; the following Associate in Arts section and its Options belong to a different award."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

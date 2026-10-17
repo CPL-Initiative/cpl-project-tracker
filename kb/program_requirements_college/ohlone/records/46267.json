@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Learn the foundation mathematics necessary for further studies in engineering, mathematics, and science.",
-    "Demonstrate a rudimentary level of knowledge for the construction of formal proofs.",
-    "Apply the knowledge of problem solving techniques towards the solution of problems in engineering and science."
-   ],
-   "why": [
-    "not in the catalog text as printed: Learn the foundation mathematics necessary for further studies in engineering, m",
-    "not in the catalog text as printed: Demonstrate a rudimentary level of knowledge for the construction of formal proo",
-    "not in the catalog text as printed: Apply the knowledge of problem solving techniques towards the solution of proble"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -243,5 +235,6 @@
    "The following pages (Mechanical, Aerospace, and Manufacturing Engineering A.S.; Music for Transfer) belong to other programs and were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

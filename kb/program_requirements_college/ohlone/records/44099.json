@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze, describe, and apply the fundamental technical requirements of the virtual production workflows.",
-    "Demonstrate proficiency with game engines, 3D animation, 3D graphics, 3D modeling, and 3D rendering.",
-    "Employ creative, conceptual, and problem-solving skills including research, prototyping, and previsualization techniques.",
-    "Demonstrate the ability to work on a production team and take responsibility for one’ s role."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, describe, and apply the fundamental technical requirements of the virtu",
-    "not in the catalog text as printed: Demonstrate proficiency with game engines, 3D animation, 3D graphics, 3D modelin",
-    "not in the catalog text as printed: Employ creative, conceptual, and problem-solving skills including research, prot",
-    "not in the catalog text as printed: Demonstrate the ability to work on a production team and take responsibility for"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -246,5 +236,6 @@
    "Career entry 'Virtual Production' taken from 'designed to prepare students for jobs in Virtual Production'."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

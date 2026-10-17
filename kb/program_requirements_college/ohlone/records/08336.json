@@ -86,21 +86,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Practice within the laws and regulations of California and the ethical tenets of the American Physical Therapy Association.",
-    "Apply evidence based knowledge, skills, and demeanor that engender comprehensive assistance to the patient and the supervising physical therapist so that treatment goals may be reached effectively and expeditiously.",
-    "Self-evaluate learning needs to advance in the profession and improve skills for providing patient care.",
-    "Effectively communicate with patients, colleagues, and other members of the health care team using oral, written, and non-verbal communication skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Practice within the laws and regulations of California and the ethical tenets of",
-    "not in the catalog text as printed: Apply evidence based knowledge, skills, and demeanor that engender comprehensive",
-    "not in the catalog text as printed: Self-evaluate learning needs to advance in the profession and improve skills for",
-    "not in the catalog text as printed: Effectively communicate with patients, colleagues, and other members of the heal"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -113,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -369,5 +359,6 @@
    "Careers: only the occupation 'Physical Therapist Assistants' is named; work settings (HMOs, hospitals, etc.) were not recorded as careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

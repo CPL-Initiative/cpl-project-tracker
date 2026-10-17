@@ -88,19 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate the correct operating procedures in the use of common lab equipment such as compound and dissecting microscopes, spectrophotometers, pH meter, electrophoresis gel apparatus, micropipetters, and centrifuges.",
-    "Demonstrate an understanding of the scientific method through the performance of experiments and the subsequent analysis of the experimentally obtained data.",
-    "Explain and evaluate the major scientific themes in biology, chemistry, and physics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the correct operating procedures in the use of common lab equipment ",
-    "not in the catalog text as printed: Demonstrate an understanding of the scientific method through the performance of",
-    "not in the catalog text as printed: Explain and evaluate the major scientific themes in biology, chemistry, and phys"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -113,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -296,5 +288,6 @@
    "Career text ('entry-level jobs that require two years of college-level science and math') appears in the A.S. section description and names no specific career; careers left empty."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

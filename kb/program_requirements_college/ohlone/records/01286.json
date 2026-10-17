@@ -82,25 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Examine factors affecting child development in family relationships, while demonstrating an understanding of diverse family and cultural groups, their rituals and traditions in the United States of America.",
-    "Demonstrate understanding, application, and implementation of Developmentally Appropriate Practices (DAP) in the Early Childhood Environment (ECE) and reporting to agencies as needed within a variety of curriculum philosophies; and development of child and professional portfolios.",
-    "Demonstrate the ability to identify and describe typical development, basic needs, major theories, problem areas, and the impact of familial, community, and social influences on a child’ s development.",
-    "Illustrate the understanding of biological, psychological, physical, and linguistic development processes of children from conception through adolescence.",
-    "Demonstrate knowledge of a variety of observation and assessment methods and tools used to assess children’ s typical and atypical development and behavior; apply assessment data to develop developmentally appropriate classroom and individual curriculum plans, guidance and discipline plans, developmentally appropriate environments, and the development of both child and professional portfolios.",
-    "Observe young children, assess the learning environment, and recognize developmentally appropriate activities in early childhood educational settings. Plan, prepare, set-up, and evaluate developmentally appropriate curriculum activities for young children."
-   ],
-   "why": [
-    "not in the catalog text as printed: Examine factors affecting child development in family relationships, while demon",
-    "not in the catalog text as printed: Demonstrate understanding, application, and implementation of Developmentally Ap",
-    "not in the catalog text as printed: Demonstrate the ability to identify and describe typical development, basic need",
-    "not in the catalog text as printed: Illustrate the understanding of biological, psychological, physical, and linguis",
-    "not in the catalog text as printed: Demonstrate knowledge of a variety of observation and assessment methods and too",
-    "not in the catalog text as printed: Observe young children, assess the learning environment, and recognize developme"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -113,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -235,5 +221,6 @@
    "Text following the major table (Economics for Transfer ADT) belongs to another program and was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

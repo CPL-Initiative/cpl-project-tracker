@@ -86,19 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Display the ability to create and maintain professional relationships and appropriate cultural responsiveness and sensitivity with diverse multicultural stakeholders including members of the Deaf community, professional interpreters, and interpreter agencies through effective interpersonal and cross-cultural communication skills.",
-    "Demonstrate critical thinking skills and construct ethically appropriate and socially-just responses and decision making that recognizes diverse multicultural and intersectional experiences and perspectives by assessing competencies and impacts on recipients of interpreter-mediated communication in various interpreting situations.",
-    "Perform entry-level sign language interpreting skills in settings commensurate with entry qualifications, such as in post-secondary or community service where graduates are able to exercise autonomous professional judgment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Display the ability to create and maintain professional relationships and approp",
-    "not in the catalog text as printed: Demonstrate critical thinking skills and construct ethically appropriate and soc",
-    "not in the catalog text as printed: Perform entry-level sign language interpreting skills in settings commensurate w"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -298,5 +290,6 @@
    "The description mentions 'entry-level positions' interpreting between ASL and English and 'a career pathway for individuals who desire to work in the Deaf community' but names no specific career or job title, so careers is left empty; reviewer may wish to check."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

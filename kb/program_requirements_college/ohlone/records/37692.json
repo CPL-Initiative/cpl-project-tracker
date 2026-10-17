@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Assess the preservation of natural resources and the potential impact of societies overusing natural resources.",
-    "Discuss and describe the origins, diversity, and distribution of basic cultural patterns, with particular attention given to language; religion; urbanization; political and economic patterns; and human-environment interactions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Assess the preservation of natural resources and the potential impact of societi",
-    "not in the catalog text as printed: Discuss and describe the origins, diversity, and distribution of basic cultural "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -203,5 +197,6 @@
    "Career 'physical and cultural geography' kept as printed rather than split into two entries."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

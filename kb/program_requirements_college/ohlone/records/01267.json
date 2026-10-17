@@ -82,25 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Apply traditional and interactive design methodologies, including prototyping, evaluation, and iterative processes, to develop innovative projects.",
-    "Demonstrate proficiency in utilizing a variety of graphic imaging and sketching techniques, and prototyping applications.",
-    "Analyze the cognitive, sensory, and physical aspects of user interaction to inform the design of engaging and accessible interactive products.",
-    "Select, adapt, and apply suitable design approaches and techniques to define design problems and implement user-centric solutions.",
-    "Produce a high-quality portfolio of graphic designs and interactive design projects.",
-    "Exemplify efficient and constructive peer communications and teamwork in both remote and face-to-face environments."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply traditional and interactive design methodologies, including prototyping, e",
-    "not in the catalog text as printed: Demonstrate proficiency in utilizing a variety of graphic imaging and sketching ",
-    "not in the catalog text as printed: Analyze the cognitive, sensory, and physical aspects of user interaction to info",
-    "not in the catalog text as printed: Select, adapt, and apply suitable design approaches and techniques to define des",
-    "not in the catalog text as printed: Produce a high-quality portfolio of graphic designs and interactive design proje",
-    "not in the catalog text as printed: Exemplify efficient and constructive peer communications and teamwork in both re"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -113,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -291,5 +277,6 @@
    "The Certificate of Achievement in Graphic Design section that follows was not read for this record."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

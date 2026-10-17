@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply industrial standards in recording laboratory procedures and results in a laboratory notebook.",
-    "Demonstrate the use of common laboratory equipment such as micropipettes, spectrophotometers, electrophoresis equipment, pH meters, thermocyclers, bioreactors, etc.",
-    "Prepare buffers and other laboratory stock and working solutions to proper specifications."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply industrial standards in recording laboratory procedures and results in a l",
-    "not in the catalog text as printed: Demonstrate the use of common laboratory equipment such as micropipettes, spectr",
-    "not in the catalog text as printed: Prepare buffers and other laboratory stock and working solutions to proper speci"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -226,5 +218,6 @@
    "Other sections that follow (Biostatistics, Research Associate, Biotechnology Operations, Business) were not used."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

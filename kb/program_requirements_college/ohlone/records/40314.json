@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Create computer programs to effectively accomplish specific tasks or address identified problems, utilizing programming structures (such as sequence, iteration, and selection) and object-oriented programming concepts.",
-    "Recognize the importance of logical arguments and lower-level computing concepts in effective design, development, and implementation of computer programs."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create computer programs to effectively accomplish specific tasks or address ide",
-    "not in the catalog text as printed: Recognize the importance of logical arguments and lower-level computing concepts"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -192,5 +186,6 @@
    "Other sections on the page (Cybersecurity, A.S. Data Science, Database Administration) were not used."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

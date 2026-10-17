@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze, discuss, and differentiate works of art and architecture in terms of historical context and cultural values.",
-    "Analyze, discuss, and distinguish the roles of art, architecture, and the artist from the art historical periods covered in the sequence of required art history courses."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, discuss, and differentiate works of art and architecture in terms of hi",
-    "not in the catalog text as printed: Analyze, discuss, and distinguish the roles of art, architecture, and the artist"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -428,5 +422,6 @@
    "The preceding Associate in Arts in Art section on the same page was not read for this record."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

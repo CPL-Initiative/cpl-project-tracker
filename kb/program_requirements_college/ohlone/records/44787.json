@@ -82,25 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate both technical and aesthetic aspects of video production and knowledge of basic production techniques.",
-    "Conceive and execute basic approaches to editing footage into cohesive form.",
-    "Demonstrate the ability to write a clear and concise script regardless of medium or format, using video if necessary, and present that story to an audience.",
-    "Operate digital video equipment in a studio, a television control room, or outdoors, including the ability to identify and evaluate lighting needs and set up and calibrate video lighting instruments.",
-    "Recognize the basic physics of sound; recognize qualities of the sound wave, frequency, pitch.",
-    "Identify acoustic principles related to recording sound and demonstrate recording, editing, mixing and balancing techniques; and recognize and demonstrate the skills needed for successful teamwork in film, television, or electronic media."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate both technical and aesthetic aspects of video production and knowled",
-    "not in the catalog text as printed: Conceive and execute basic approaches to editing footage into cohesive form.",
-    "not in the catalog text as printed: Demonstrate the ability to write a clear and concise script regardless of medium",
-    "not in the catalog text as printed: Operate digital video equipment in a studio, a television control room, or outdo",
-    "not in the catalog text as printed: Recognize the basic physics of sound; recognize qualities of the sound wave, fre",
-    "not in the catalog text as printed: Identify acoustic principles related to recording sound and demonstrate recordin"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -113,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -296,5 +282,6 @@
    "The text names transfer baccalaureate degrees (Television; Film and Media Studies; Film and Electronic Arts; Cinema and Television Arts) but no careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

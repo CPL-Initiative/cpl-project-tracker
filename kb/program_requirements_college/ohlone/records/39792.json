@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Employ industry standard software tools and processes to create high quality models including characters, props, and environments.",
-    "Conceptualize, design, and create 3D animations for a variety of applications including video/animation production and game design projects.",
-    "Communicate design concepts both clearly and effectively, and both orally and in writing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Employ industry standard software tools and processes to create high quality mod",
-    "not in the catalog text as printed: Conceptualize, design, and create 3D animations for a variety of applications in",
-    "not in the catalog text as printed: Communicate design concepts both clearly and effectively, and both orally and in"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -230,5 +222,6 @@
    "'Total Required Units: 24.0' is recorded as both total_units and the Major Field block's stated total."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

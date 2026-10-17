@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Use technical skills and professional workmanship by demonstrating proficiency in using Digital Arts and Interactive Design software.",
-    "Apply conceptual skills by innovating, brainstorming, sketching, problem-solving, building prototypes and scenarios, and constructing narratives.",
-    "Demonstrate visual communication by demonstrating the ability to design projects that communicate specific ideas and illustrate concepts of design."
+    "Apply conceptual skills by innovating, brainstorming, sketching, problem-solving, building prototypes and scenarios, and constructing narratives."
    ],
    "why": [
-    "not in the catalog text as printed: Use technical skills and professional workmanship by demonstrating proficiency i",
-    "not in the catalog text as printed: Apply conceptual skills by innovating, brainstorming, sketching, problem-solving",
-    "not in the catalog text as printed: Demonstrate visual communication by demonstrating the ability to design projects"
+    "not in the catalog text as printed: Apply conceptual skills by innovating, brainstorming, sketching, problem-solving"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -393,5 +389,6 @@
    "The certificate section printed just above this one, with an 18.0-19.0 unit total, was not used."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

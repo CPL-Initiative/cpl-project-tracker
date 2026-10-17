@@ -90,21 +90,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Create professional-quality visual content that demonstrates effective use of design principles, typography, color theory, and composition.",
-    "Apply industry-standard software and production workflows to complete digital illustration, graphic design, and web design projects.",
-    "Integrate design thinking and creative-technical skills to produce cohesive branding, marketing, and interactive design solutions tailored to diverse audiences and user needs.",
-    "Evaluate and refine design solutions by assessing their effectiveness, technical accuracy, and alignment with client or audience needs."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create professional-quality visual content that demonstrates effective use of de",
-    "not in the catalog text as printed: Apply industry-standard software and production workflows to complete digital il",
-    "not in the catalog text as printed: Integrate design thinking and creative-technical skills to produce cohesive bran",
-    "not in the catalog text as printed: Evaluate and refine design solutions by assessing their effectiveness, technical"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -114,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -202,5 +192,6 @@
    "Other sections on the page (Internship Preparation for Multilingual Learners; Introduction to Permaculture, Design, and Entrepreneurship) belong to other programs and were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

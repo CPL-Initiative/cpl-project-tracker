@@ -88,15 +88,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Demonstrate leadership as a member of the interprofessional management team in providing client care."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate leadership as a member of the interprofessional management team in p"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -109,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -307,5 +303,6 @@
    "The catalog states admission requirements must be completed before applying to the nursing program; references to advanced placement, LVN-RN and the 30-unit option point to external webpages."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

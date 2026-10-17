@@ -99,21 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Build critical thinking and quantitative skills by gaining insight into the thought processes of physical approximation and physical modeling, by practicing the appropriate application of mathematics to the description of physical reality, and by searching for a physical interpretation of mathematical results.",
-    "Demonstrate basic experimental skills by the practice of setting up and conducting an experiment with due regards to minimizing measurement error and by the thoughtful discussion and interpretation of data.",
-    "Demonstrate basic communication and technical skills by working in groups on a laboratory experiment.",
-    "Retain information from course to course by aiming at proficiency in the correct use of all the fundamental laws and equations to solve integrated problems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Build critical thinking and quantitative skills by gaining insight into the thou",
-    "not in the catalog text as printed: Demonstrate basic experimental skills by the practice of setting up and conducti",
-    "not in the catalog text as printed: Demonstrate basic communication and technical skills by working in groups on a l",
-    "not in the catalog text as printed: Retain information from course to course by aiming at proficiency in the correct"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -254,5 +244,6 @@
    "The following A.S. in Physics and Political Science AA-T sections were not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

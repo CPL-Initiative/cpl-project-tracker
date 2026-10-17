@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate understanding of business functions, practices, and related theories and be able to integrate this functional knowledge in order to address business problems.",
-    "Possess quantitative and technological skills enabling them to analyze and interpret business data and to improve business performance.",
-    "Demonstrate knowledge of today’ s domestic and global business environment (e.g., legal, regulatory, political, cultural, and economic)."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate understanding of business functions, practices, and related theories",
-    "not in the catalog text as printed: Possess quantitative and technological skills enabling them to analyze and inter",
-    "not in the catalog text as printed: Demonstrate knowledge of today' s domestic and global business environment (e.g."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -257,5 +249,6 @@
    "The following sections (Business Administration 2.0 AS-T and Cal-GETC Certification) belong to other awards and were not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

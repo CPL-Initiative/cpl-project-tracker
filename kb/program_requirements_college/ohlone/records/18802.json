@@ -82,21 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply industrial standards in recording laboratory procedures and results in a laboratory notebook.",
-    "Demonstrate the use of common laboratory equipment such as micropipettes, spectrophotometers, electrophoresis equipment, pH meters, thermocyclers, bioreactors, etc.",
-    "Employ the correct mathematical rules of operation, and be able to apply these to the preparation of reagents, buffers, pH adjustments, etc.",
-    "Demonstrate an understanding of key concepts in molecular biology and biotechnology as they relate to the biotechnology industry."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply industrial standards in recording laboratory procedures and results in a l",
-    "not in the catalog text as printed: Demonstrate the use of common laboratory equipment such as micropipettes, spectr",
-    "not in the catalog text as printed: Employ the correct mathematical rules of operation, and be able to apply these t",
-    "not in the catalog text as printed: Demonstrate an understanding of key concepts in molecular biology and biotechnol"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -300,5 +290,6 @@
    "The certificates of achievement (Bio-Manufacturing, Biostatistics, Research Associate, Operations) on the following pages were not read for this record."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

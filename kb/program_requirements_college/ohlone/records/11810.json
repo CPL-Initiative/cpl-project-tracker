@@ -116,12 +116,10 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Setup, configure, maintain, and troubleshoot computer systems, stand-alone application, and/or various computer operating systems (client, server, and network).",
-    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners."
+    "Setup, configure, maintain, and troubleshoot computer systems, stand-alone application, and/or various computer operating systems (client, server, and network)."
    ],
    "why": [
-    "not in the catalog text as printed: Setup, configure, maintain, and troubleshoot computer systems, stand-alone appli",
-    "not in the catalog text as printed: Demonstrate appreciation of the ICT career field and the need to be lifelong lea"
+    "not in the catalog text as printed: Setup, configure, maintain, and troubleshoot computer systems, stand-alone appli"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -363,5 +361,6 @@
    "Theatre Arts for Transfer section following on the page was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

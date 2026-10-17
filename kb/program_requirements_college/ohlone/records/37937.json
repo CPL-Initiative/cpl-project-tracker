@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze, appraise, and differentiate the development of major theories and concepts in the sub-fields of political science.",
-    "Assess the cause-and-effect relationship between historical, socio-economic, geographical, and cultural factors on political institutions, groups, events, and processes.",
-    "Demonstrate critical, analytical, research, and writing skills, and construct original hypotheses."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, appraise, and differentiate the development of major theories and conce",
-    "not in the catalog text as printed: Assess the cause-and-effect relationship between historical, socio-economic, geo",
-    "not in the catalog text as printed: Demonstrate critical, analytical, research, and writing skills, and construct or"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -278,5 +270,6 @@
    "Text continues into the Psychology and Public Health ADT sections, which were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

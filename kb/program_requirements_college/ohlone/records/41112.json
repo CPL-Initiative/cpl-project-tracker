@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply and incorporate the elements and principles of design within the context of animation, games, and motion graphics.",
-    "Demonstrate practical experience in 2D and 3D animation, storyboarding skills, and motion graphics.",
-    "Use terminology and methods common to all animation and motion graphics processes."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply and incorporate the elements and principles of design within the context o",
-    "not in the catalog text as printed: Demonstrate practical experience in 2D and 3D animation, storyboarding skills, a",
-    "not in the catalog text as printed: Use terminology and methods common to all animation and motion graphics processe"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -194,5 +186,6 @@
    "The text names industries/media (animated features, video games, film, television) but no specific careers, so careers is empty."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

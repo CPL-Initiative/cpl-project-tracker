@@ -82,21 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate understanding of basic relevant smart manufacturing tools and equipment.",
-    "Interpret basic manufacturing Blue Prints, Standard Operating Procedures (SoPs), and Manufacturing Processes Instructions (MPIs).",
-    "Apply understanding of basic Smart Manufacturing processes in daily manufacturing line operations, material handling, and inventory.",
-    "Demonstrate understanding of relevant safety guidelines in smart manufacturing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate understanding of basic relevant smart manufacturing tools and equipm",
-    "not in the catalog text as printed: Interpret basic manufacturing Blue Prints, Standard Operating Procedures (SoPs),",
-    "not in the catalog text as printed: Apply understanding of basic Smart Manufacturing processes in daily manufacturin",
-    "not in the catalog text as printed: Demonstrate understanding of relevant safety guidelines in smart manufacturing."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -179,5 +169,6 @@
    "The following section (STEM Concepts) belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

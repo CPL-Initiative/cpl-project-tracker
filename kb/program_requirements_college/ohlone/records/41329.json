@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply and relate the scientific method and synthesize its role in the development of scientific thought.",
-    "Critically evaluate scientific information and examine its significance and impact on society and the environment.",
-    "Demonstrate an understanding of the interdisciplinary nature of environmental issues."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply and relate the scientific method and synthesize its role in the developmen",
-    "not in the catalog text as printed: Critically evaluate scientific information and examine its significance and impa",
-    "not in the catalog text as printed: Demonstrate an understanding of the interdisciplinary nature of environmental is"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -208,5 +200,6 @@
    "Total Required Units: 18.0 printed for the Major Field list; recorded as total_units and as the block's stated total."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

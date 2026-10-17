@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Support the data management needs of business through the design, implementation, and maintenance of relational databases.",
-    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners.",
-    "Demonstrate a basic database computer programming language knowledge and skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Support the data management needs of business through the design, implementation",
-    "not in the catalog text as printed: Demonstrate appreciation of the ICT career field and the need to be lifelong lea",
-    "not in the catalog text as printed: Demonstrate a basic database computer programming language knowledge and skills."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -306,5 +298,6 @@
    "The Deaf Education certificate section that follows on the page was ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

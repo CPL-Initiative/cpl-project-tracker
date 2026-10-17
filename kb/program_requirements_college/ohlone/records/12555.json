@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Show a basic working knowledge of entertainment technology skills as they relate to sound, stagecraft, stage lighting, live event management, or costume.",
-    "Demonstrate a basic understanding of how to creatively express ideas in terms of design in scenery, costume, lighting, sound, and/or the operation of scenery, lighting, and sound as it relates to the entertainment industries of stage, television, and live and recorded events.",
-    "Show a basic understanding of how to artistically transform a given space or character into anything one can imagine through scenery, lighting, sound, or costume."
-   ],
-   "why": [
-    "not in the catalog text as printed: Show a basic working knowledge of entertainment technology skills as they relate",
-    "not in the catalog text as printed: Demonstrate a basic understanding of how to creatively express ideas in terms of",
-    "not in the catalog text as printed: Show a basic understanding of how to artistically transform a given space or cha"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -288,5 +280,6 @@
    "Careers: the only job title named is 'skilled technicians' (for theme parks, motion pictures, concerts, theatres, conventions, and live event industries); those settings are industries rather than titles."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply basic scientific and engineering principles to solve problems in the manufacturing industry.",
-    "Operate relevant Smart Manufacturing Equipment such as Smart CNC Machines, Industrial Robotic Arms, Smart Factories, and Mechatronic Systems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply basic scientific and engineering principles to solve problems in the manuf",
-    "not in the catalog text as printed: Operate relevant Smart Manufacturing Equipment such as Smart CNC Machines, Indus"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -238,5 +232,6 @@
    "The career titles (Smart Factory Technician, Robotic Technician, etc.) appear only in the A.S. section and were not recorded for this certificate; 'entry-level manufacturing technicians' is from the certificate description."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

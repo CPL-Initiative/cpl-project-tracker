@@ -88,17 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Communicate contractual obligations to the client and document the various types of alternative dispute resolutions.",
-    "Explain how the property management field provides a service for property owners."
-   ],
-   "why": [
-    "not in the catalog text as printed: Communicate contractual obligations to the client and document the various types",
-    "not in the catalog text as printed: Explain how the property management field provides a service for property owners"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
@@ -108,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -211,5 +205,6 @@
    "The catalog prints 'Total Required Units: 17.0' for the certificate, which sums the five listed courses."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

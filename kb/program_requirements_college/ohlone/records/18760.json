@@ -82,25 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Recognize the social, economic, and environmental impacts of humans on the earth.",
-    "Apply an understanding of science and ecological principles to modern life so students may critically analyze and understand information affecting the environment.",
-    "Describe the effects of current, past, and future energy and resource use, and compare and contrast possible solutions to environmental problems.",
-    "Evaluate environmental policies, laws, and regulations, their value, implementation, and effects.",
-    "Examine the inherent environmental, social, and economic outcomes of living sustainably on current and future generations.",
-    "Explore a variety of environmental field and laboratory techniques that will emphasize different fields of environmental studies."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize the social, economic, and environmental impacts of humans on the earth",
-    "not in the catalog text as printed: Apply an understanding of science and ecological principles to modern life so st",
-    "not in the catalog text as printed: Describe the effects of current, past, and future energy and resource use, and c",
-    "not in the catalog text as printed: Evaluate environmental policies, laws, and regulations, their value, implementat",
-    "not in the catalog text as printed: Examine the inherent environmental, social, and economic outcomes of living sust",
-    "not in the catalog text as printed: Explore a variety of environmental field and laboratory techniques that will emp"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 11,
@@ -113,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -271,5 +257,6 @@
    "Total Required Units: 22.0 recorded as total_units (major only)."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

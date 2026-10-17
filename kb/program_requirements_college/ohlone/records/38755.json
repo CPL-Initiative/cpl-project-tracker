@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Evaluate and critique art objects for contextual, formal, and technical success.",
-    "Demonstrate an understanding of the historical and contemporary aspects of three-dimensional art and apply that knowledge to the students’ own work.",
-    "Apply the basic techniques presented to the media selected for a particular project and integrate history, theory, and criticism."
-   ],
-   "why": [
-    "not in the catalog text as printed: Evaluate and critique art objects for contextual, formal, and technical success.",
-    "not in the catalog text as printed: Demonstrate an understanding of the historical and contemporary aspects of three",
-    "not in the catalog text as printed: Apply the basic techniques presented to the media selected for a particular proj"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -240,5 +232,6 @@
    "The description names fields of continued study (sculpture, glass, ceramics, installation arts) but no careers; careers left empty."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

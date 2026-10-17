@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply the reading skills necessary to participate in additional ESL and other coursework, including the reading of intermediate-level novels, stories, or nonfiction narratives.",
-    "Write coherent English sentences and paragraphs fluently enough to proceed to further ESL and other coursework."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply the reading skills necessary to participate in additional ESL and other co",
-    "not in the catalog text as printed: Write coherent English sentences and paragraphs fluently enough to proceed to fu"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -170,5 +164,6 @@
    "The catalog requires all courses to be completed at Ohlone College."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

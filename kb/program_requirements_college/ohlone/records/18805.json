@@ -82,19 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply industrial standards in recording laboratory procedures and results in a laboratory notebook.",
-    "Demonstrate the use of common laboratory equipment such as micropipettes, spectrophotometers, electrophoretic equipment, pH meters, thermocyclers, bioreactors, etc.",
-    "Prepare buffers and other laboratory stock and working solutions to proper specifications."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply industrial standards in recording laboratory procedures and results in a l",
-    "not in the catalog text as printed: Demonstrate the use of common laboratory equipment such as micropipettes, spectr",
-    "not in the catalog text as printed: Prepare buffers and other laboratory stock and working solutions to proper speci"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -249,5 +241,6 @@
    "The 'Total Required Units: 26.5' line is printed below the Major Field table; it is recorded both as total_units and as the block's stated total, since the Major Field courses are the certificate's only requirements."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

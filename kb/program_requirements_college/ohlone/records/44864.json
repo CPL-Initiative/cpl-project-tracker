@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Identify proactive factors for disease prevention and risk factors for disease and disability.",
-    "Identify factors that influence personal and public health including those related to public policy, socioeconomics, and the environment that contribute to health disparities and leading causes of morbidity and mortality.",
-    "Develop the preliminary skills to serve as an effective advocate for community/public health."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify proactive factors for disease prevention and risk factors for disease a",
-    "not in the catalog text as printed: Identify factors that influence personal and public health including those relat",
-    "not in the catalog text as printed: Develop the preliminary skills to serve as an effective advocate for community/p"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -274,5 +266,6 @@
    "The following Pure Mathematics certificate section belongs to another program and was not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

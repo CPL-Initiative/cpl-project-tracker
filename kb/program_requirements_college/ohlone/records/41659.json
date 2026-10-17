@@ -86,21 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze, express, and create conceptual and physical qualities of works of art in ceramics.",
-    "Identify historical and contemporary methods and styles of ceramic art both locally and globally.",
-    "Demonstrate advanced techniques in ceramic construction (pinch, coil, soft slab, hard slab, sgraffito); additive and subtractive techniques; wheel work and glaze application (dipping, spraying and brushing); mid-range and high fire glazes.",
-    "Analyze their process of making and its connection to the history of ceramics and its connection to form and/or functional craft."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, express, and create conceptual and physical qualities of works of art i",
-    "not in the catalog text as printed: Identify historical and contemporary methods and styles of ceramic art both loca",
-    "not in the catalog text as printed: Demonstrate advanced techniques in ceramic construction (pinch, coil, soft slab,",
-    "not in the catalog text as printed: Analyze their process of making and its connection to the history of ceramics an"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -113,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -261,5 +251,6 @@
    "Career entry 'ceramic arts' comes from 'preparation for employment in the field of ceramic arts'; reviewer may check whether it should count as a career field."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

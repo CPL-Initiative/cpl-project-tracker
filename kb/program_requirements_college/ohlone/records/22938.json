@@ -88,23 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate an understanding of the social, economic, and psychological impacts of race and racism on diverse populations.",
-    "Apply an understanding of social and cultural concepts and principles to modern life to critically analyze and understand information affecting human development.",
-    "Describe the issues of current, past, and future development of the human condition and compare and contrast possible solutions to environmental, cultural, and evolutionary developments.",
-    "Compare and contrast the inequitable implementation of policies, laws, and regulations.",
-    "Develop an understanding intersectionality to gain an awareness of structural inequalities and individual privilege and marginalization."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate an understanding of the social, economic, and psychological impacts ",
-    "not in the catalog text as printed: Apply an understanding of social and cultural concepts and principles to modern ",
-    "not in the catalog text as printed: Describe the issues of current, past, and future development of the human condit",
-    "not in the catalog text as printed: Compare and contrast the inequitable implementation of policies, laws, and regul",
-    "not in the catalog text as printed: Develop an understanding intersectionality to gain an awareness of structural in"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -919,5 +907,6 @@
    "The text names transfer majors (Ethnic Studies, Human Development, Sociology, Psychology, Anthropology) but no careers; careers left empty."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

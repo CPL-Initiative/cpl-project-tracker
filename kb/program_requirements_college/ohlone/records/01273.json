@@ -82,19 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate the cognitive, psychomotor, and affective skills necessary to assist the physician in the diagnosis, treatment, and management of patients with cardiopulmonary diseases and disorders.",
-    "Demonstrate appropriate critical thinking skills, time management skills, interpersonal communication skills, and technical skills necessary to provide competent respiratory care in multidisciplinary care settings.",
-    "Integrate intentional, respectful communication with caring presence to effectively relate with individuals, families, groups, communities, and colleagues of diverse sociocultural backgrounds in various healthcare settings."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the cognitive, psychomotor, and affective skills necessary to assist",
-    "not in the catalog text as printed: Demonstrate appropriate critical thinking skills, time management skills, interp",
-    "not in the catalog text as printed: Integrate intentional, respectful communication with caring presence to effectiv"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -424,5 +416,6 @@
    "No career titles are named outright; the text mentions licensure examinations for Respiratory Care Practitioners (RRT) and Registered Respiratory Therapist status, which are not recorded as careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

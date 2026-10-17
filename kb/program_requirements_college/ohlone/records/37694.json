@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Learn the foundation mathematics necessary for further studies in engineering, mathematics, and science.",
-    "Demonstrate a rudimentary level of knowledge for the construction of formal proofs."
-   ],
-   "why": [
-    "not in the catalog text as printed: Learn the foundation mathematics necessary for further studies in engineering, m",
-    "not in the catalog text as printed: Demonstrate a rudimentary level of knowledge for the construction of formal proo"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -184,5 +178,6 @@
    "The description mentions subsequent courses in math, physics, computer science, and engineering, but names no careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

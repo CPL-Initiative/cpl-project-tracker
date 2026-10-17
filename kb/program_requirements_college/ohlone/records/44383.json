@@ -84,15 +84,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate enhanced collaborative skills and the ability to engage in effective teamwork in a production environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate enhanced collaborative skills and the ability to engage in effective"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -308,5 +304,6 @@
    "The first outcome is copied as printed, including its apparent missing word ('toolsets virtual production specializations')."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

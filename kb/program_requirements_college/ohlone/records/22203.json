@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate confidence to work independently to setup, configure, and maintain a desktop computer (client or server); stand-alone application; and/or computer system.",
-    "Demonstrate techniques to troubleshoot situations that impact the operation of a desktop computer (client or server); stand-alone application; and/or computer system.",
-    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate confidence to work independently to setup, configure, and maintain a",
-    "not in the catalog text as printed: Demonstrate techniques to troubleshoot situations that impact the operation of a",
-    "not in the catalog text as printed: Demonstrate appreciation of the ICT career field and the need to be lifelong lea"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -242,5 +234,6 @@
    "Certificate also requires at least six units at Ohlone College and a 2.0 GPA in Major Field and Supporting Courses."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

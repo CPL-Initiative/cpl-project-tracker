@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate the listening/speaking skills necessary to participate successfully in oral English exchanges in a variety of academic, personal, and/or professional settings.",
-    "Demonstrate an ability to communicate and listen effectively using language specific to Smart Manufacturing Technology."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the listening/speaking skills necessary to participate successfully ",
-    "not in the catalog text as printed: Demonstrate an ability to communicate and listen effectively using language spec"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -173,5 +167,6 @@
    "Career entry taken from 'readiness to enter the Smart Manufacturing Technology field'; reviewer may confirm it counts as a named career field."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

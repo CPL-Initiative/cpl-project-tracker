@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Explain and apply fundamental economic concepts, including the construction of the primary economic models.",
-    "Explain the current economic conditions in the United States and identify appropriate fiscal and monetary policy options in relation to the U.S. economy.",
-    "Demonstrate an understanding of the major elements of the world of business and its related terminology."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain and apply fundamental economic concepts, including the construction of t",
-    "not in the catalog text as printed: Explain the current economic conditions in the United States and identify approp",
-    "not in the catalog text as printed: Demonstrate an understanding of the major elements of the world of business and "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -231,5 +223,6 @@
    "Business options named (accounting, finance, human resources management, etc.) are degree options at the university, not careers, so careers left empty."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

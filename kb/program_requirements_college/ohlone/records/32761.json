@@ -99,21 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Examine factors affecting child development in family relationships, while demonstrating an understanding of diverse family and cultural groups, their rituals, and traditions in the United States of America.",
-    "Demonstrate understanding, application, and implementation of Developmentally Appropriate Practices (DAP) in the Early Childhood Environment (ECE) and reporting to agencies as needed within a variety of curriculum philosophies; and development of child and professional portfolios.",
-    "Demonstrate the ability to identify and describe typical development, basic needs, major theories, problem areas, and the impact of familial, community, and social influences on a child’ s development.",
-    "Demonstrate knowledge of a variety of observation and assessment methods and tools used to assess children’ s typical and atypical development and behavior. Apply assessment data to develop developmentally appropriate classroom and individual curriculum plans, guidance and discipline plans, developmentally appropriate environments, and the development of both child and professional portfolios."
-   ],
-   "why": [
-    "not in the catalog text as printed: Examine factors affecting child development in family relationships, while demon",
-    "not in the catalog text as printed: Demonstrate understanding, application, and implementation of Developmentally Ap",
-    "not in the catalog text as printed: Demonstrate the ability to identify and describe typical development, basic need",
-    "not in the catalog text as printed: Demonstrate knowledge of a variety of observation and assessment methods and too"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -237,5 +227,6 @@
    "Text mentions specialization requiring an additional six to nine units, but names no courses; not recorded as a block."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

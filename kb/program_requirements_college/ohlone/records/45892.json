@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate appropriate uses of a variety of practical computation, simulation, modeling tools, and techniques to analyze real-world data from a variety of domains.",
-    "Apply computational thinking, analysis, and inference skills (including the ability to decompose problems, identify patterns, and analyze algorithm efficiency/accuracy) to formulate and test hypotheses, draw robust inferences from limited data, and interpret whether causality can be determined.",
-    "Design an algorithm to address a problem using psuedocode and implement a computer program to solve the problem."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate appropriate uses of a variety of practical computation, simulation, ",
-    "not in the catalog text as printed: Apply computational thinking, analysis, and inference skills (including the abil",
-    "not in the catalog text as printed: Design an algorithm to address a problem using psuedocode and implement a comput"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -274,5 +266,6 @@
    "CNET-142 also appears in the Database Administration sections, which were not read for this record."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

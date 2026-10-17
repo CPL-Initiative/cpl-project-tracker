@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Understand and correctly apply appropriate communication protocols used in the fire service.",
-    "Don and doff personal protective equipment properly and use self-contained breathing apparatus.",
-    "Demonstrate a force entry into a structure, exit a hazardous area safely as a team, and connect to a water supply to extinguish fire."
-   ],
-   "why": [
-    "not in the catalog text as printed: Understand and correctly apply appropriate communication protocols used in the f",
-    "not in the catalog text as printed: Don and doff personal protective equipment properly and use self-contained breat",
-    "not in the catalog text as printed: Demonstrate a force entry into a structure, exit a hazardous area safely as a te"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -175,5 +167,6 @@
    "The page goes on to unrelated programs (Front End Development/User Experience Design and Game Design and Animation). Those sections were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

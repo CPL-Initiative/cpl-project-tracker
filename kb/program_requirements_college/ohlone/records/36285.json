@@ -88,17 +88,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate the listening/speaking skills necessary to participate successfully in oral English exchanges in a variety of academic, personal, and/or professional settings.",
-    "Demonstrate the reading/writing skills necessary to comprehend English texts intended for developmental (or higher level) English courses and write clear, coherent English paragraphs for academic and/or personal purposes."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the listening/speaking skills necessary to participate successfully ",
-    "not in the catalog text as printed: Demonstrate the reading/writing skills necessary to comprehend English texts int"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -230,5 +224,6 @@
    "ESL-984LS is printed at 54.0 hours versus 90.0 for the other courses, giving the 54.0-90.0 range for the choice block."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

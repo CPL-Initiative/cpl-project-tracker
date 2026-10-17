@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Write correctly structured academic sentences with appropriate punctuation, grammar.",
-    "Develop and practice reading strategies that can be applied to a variety of reading situations and purposes."
-   ],
-   "why": [
-    "not in the catalog text as printed: Write correctly structured academic sentences with appropriate punctuation, gram",
-    "not in the catalog text as printed: Develop and practice reading strategies that can be applied to a variety of read"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -171,5 +165,6 @@
    "The following sections (Advanced Virtual Production: Animation; Animation Essential Skills) belong to other programs and were not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

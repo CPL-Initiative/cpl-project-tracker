@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Design an algorithm using pseudocode and implement a computer program to solve the problem. Demonstrate debugging techniques to find and resolve logic errors discovered during testing.",
-    "Demonstrate knowledge of fundamental computer science concepts such as software and hardware architecture, logic, and discrete structures.",
-    "Demonstrate knowledge of the basic data structures: stacks, lists, trees, graphs, queues, and sets. Analyze which of several methods involving data structures is most appropriate for solving a particular problem, then implement them in appropriate applications, such as sorting and searching."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design an algorithm using pseudocode and implement a computer program to solve t",
-    "not in the catalog text as printed: Demonstrate knowledge of fundamental computer science concepts such as software ",
-    "not in the catalog text as printed: Demonstrate knowledge of the basic data structures: stacks, lists, trees, graphs"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -222,5 +214,6 @@
    "Only the page 21 Computer Science for Transfer section was read; the A.S. in Computer Science, certificates and Data Science sections on later pages were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

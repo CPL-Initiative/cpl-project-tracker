@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate a basic understanding of the safe and effective use of hand tools and power tools used in stagecraft.",
-    "Show an understanding of the basic techniques of set construction, including studio and traditional flats and platform construction.",
-    "Display an understanding of basic scene painting techniques including dry brush, scumble, stipple, spatter, and wet blends, and their use in creating successful scenic art.",
-    "Show an understanding of safe rigging practices used in theaters and entertainment venues."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate a basic understanding of the safe and effective use of hand tools an",
-    "not in the catalog text as printed: Show an understanding of the basic techniques of set construction, including stu",
-    "not in the catalog text as printed: Display an understanding of basic scene painting techniques including dry brush,",
-    "not in the catalog text as printed: Show an understanding of safe rigging practices used in theaters and entertainme"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -238,5 +228,6 @@
    "Careers: the text says entry-level jobs as skilled technicians for theme parks, motion pictures, concerts, theatres, conventions, and live event industries; those settings are industries rather than job titles and were not listed as careers. The description also mentions jobs in set construction and fabrication for the entertainment industry."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

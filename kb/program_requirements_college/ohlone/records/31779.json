@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Administer assessment techniques to gather baseline data with respect to cardiorespiratory endurance; muscular strength and endurance; flexibility; and body composition.",
-    "Analyze the basic structure of the cardiorespiratory and musculoskeletal systems and how they respond to fitness training.",
-    "Design an appropriate individual fitness plan considering client health history, goals, and abilities.",
-    "Appreciate the value and importance of regular fitness activity in decreasing the risk factors associated with chronic diseases."
-   ],
-   "why": [
-    "not in the catalog text as printed: Administer assessment techniques to gather baseline data with respect to cardior",
-    "not in the catalog text as printed: Analyze the basic structure of the cardiorespiratory and musculoskeletal systems",
-    "not in the catalog text as printed: Design an appropriate individual fitness plan considering client health history,",
-    "not in the catalog text as printed: Appreciate the value and importance of regular fitness activity in decreasing th"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 8,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -339,5 +329,6 @@
    "Careers taken from the program description ('careers in a variety of health science professions including ... personal training, physical therapy, ...'); the description also mentions entry-level jobs in the fitness industry and vocational areas of group fitness instruction and personal training."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

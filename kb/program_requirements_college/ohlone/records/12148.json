@@ -82,19 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Describe the operations and benefits of link aggregation and Cisco VLAN Trunk Protocol (VTP).",
-    "Configure and troubleshoot basic operations of routers in a complex routed network for IPv4 and IPv6.",
-    "Configure and troubleshoot advanced operations of routers and implement RIP, OSPF, and EIGRP routing protocols for IPv4 and IPv6."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe the operations and benefits of link aggregation and Cisco VLAN Trunk Pr",
-    "not in the catalog text as printed: Configure and troubleshoot basic operations of routers in a complex routed netwo",
-    "not in the catalog text as printed: Configure and troubleshoot advanced operations of routers and implement RIP, OSP"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -305,5 +297,6 @@
    "Catalog prints codes with hyphens (e.g., CNET-142); these match closed-list codes (CNET 142)."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

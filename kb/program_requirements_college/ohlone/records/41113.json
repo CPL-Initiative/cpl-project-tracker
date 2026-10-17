@@ -83,16 +83,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Utilize design thinking processes and creat e proto types to examine, demonstrate, and verify effective user interface design solutions.",
-    "Demonstrate fluency in visual design principles and concepts of user-centric design.",
-    "Effectively work with teams and peers and present ideas and feedback in a precise and persuasive manner.",
-    "Demonstrate the ability to write well-structured, standards-compliant, and accessible HTML, CSS, and JavaScript code and successfully utilize debugging tools."
+    "Demonstrate fluency in visual design principles and concepts of user-centric design."
    ],
    "why": [
-    "not in the catalog text as printed: Utilize design thinking processes and creat e proto types to examine, demonstrat",
-    "not in the catalog text as printed: Demonstrate fluency in visual design principles and concepts of user-centric des",
-    "not in the catalog text as printed: Effectively work with teams and peers and present ideas and feedback in a precis",
-    "not in the catalog text as printed: Demonstrate the ability to write well-structured, standards-compliant, and acces"
+    "not in the catalog text as printed: Demonstrate fluency in visual design principles and concepts of user-centric des"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -210,5 +204,6 @@
    "The following section (Virtual Production Fundamentals) belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

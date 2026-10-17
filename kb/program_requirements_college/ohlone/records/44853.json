@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply study skills and techniques needed to achieve academic success and continue the lifelong learning process.",
-    "Demonstrate ability to research and utilize educational, career, and college/community resources."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply study skills and techniques needed to achieve academic success and continu",
-    "not in the catalog text as printed: Demonstrate ability to research and utilize educational, career, and college/com"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -188,5 +182,6 @@
    "Outcome list numbers appear after the text in the extraction; they were dropped and line breaks joined."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

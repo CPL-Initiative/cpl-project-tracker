@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Apply basic scientific methods, scientific reasoning, engineering principles, techniques, and/or basic formulas to solve problems related to engineering technology.",
-    "Demonstrate effective communication and teamwork by contributing productively to the success of team-based engineering technology projects."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply basic scientific methods, scientific reasoning, engineering principles, te",
-    "not in the catalog text as printed: Demonstrate effective communication and teamwork by contributing productively to"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -238,5 +232,6 @@
    "Printed total 16.0-19.0 is consistent with the minimum and maximum of the listed choices."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

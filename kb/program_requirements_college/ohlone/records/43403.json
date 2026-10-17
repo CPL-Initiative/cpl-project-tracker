@@ -82,21 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Develop the ability to effectively and ethically communicate with diverse audiences in multiple contexts to meet the goals of the intended communication.",
-    "Demonstrate through performance and analysis the importance and power of both verbal and nonverbal communication.",
-    "Analyze the symbolic nature of communication and how it creates and maintains individual realities as it relates to intersectional identities, and how this impacts group and cultural identities and social reality.",
-    "Evaluate information and argumentation to support claims in communicated messages."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop the ability to effectively and ethically communicate with diverse audien",
-    "not in the catalog text as printed: Demonstrate through performance and analysis the importance and power of both ve",
-    "not in the catalog text as printed: Analyze the symbolic nature of communication and how it creates and maintains in",
-    "not in the catalog text as printed: Evaluate information and argumentation to support claims in communicated message"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -352,5 +342,6 @@
    "No careers are named in the ADT section."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

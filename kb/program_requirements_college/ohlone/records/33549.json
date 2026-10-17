@@ -99,17 +99,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Examine the workings of the criminal justice system by applying key definitions, concepts, and principles to law enforcement, courts, and correctional settings.",
-    "Discuss the sources and the historical development of criminal law and identify the structure of statutes and codes, legislative bills and referenda."
-   ],
-   "why": [
-    "not in the catalog text as printed: Examine the workings of the criminal justice system by applying key definitions,",
-    "not in the catalog text as printed: Discuss the sources and the historical development of criminal law and identify "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -302,5 +296,6 @@
    "The program heading above the requirements section is not visible in the extracted text; section_heading uses the requirements heading."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

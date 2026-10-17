@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply knowledge of the activities of business and government and of the environments in which they operate.",
-    "Demonstrate knowledge of financial accounting, including content, concepts, and structure of the various statements, both for internal and external use.",
-    "Understand the process of identifying, gathering, measuring, summarizing, and analyzing financial data in business organizations, including the use of computer based information."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply knowledge of the activities of business and government and of the environm",
-    "not in the catalog text as printed: Demonstrate knowledge of financial accounting, including content, concepts, and ",
-    "not in the catalog text as printed: Understand the process of identifying, gathering, measuring, summarizing, and an"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -201,5 +193,6 @@
    "Certificate also requires at least six units at Ohlone College and a 2.0 GPA in Major Field courses."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

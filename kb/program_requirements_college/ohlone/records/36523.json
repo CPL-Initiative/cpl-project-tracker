@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Discuss and describe the significant issues in the natural and human world based on articulating one’ s identity in a global context.",
-    "Relate and question concepts as they pertain to political, economic, cultural, and ecological globalization.",
-    "Discuss and describe the impact of international events and systems at the regional, national, and local levels."
-   ],
-   "why": [
-    "not in the catalog text as printed: Discuss and describe the significant issues in the natural and human world based",
-    "not in the catalog text as printed: Relate and question concepts as they pertain to political, economic, cultural, a",
-    "not in the catalog text as printed: Discuss and describe the impact of international events and systems at the regio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -209,5 +201,6 @@
    "No careers are named in the certificate section."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

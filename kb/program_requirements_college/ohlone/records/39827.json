@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply digital media production skills and demonstrate an understanding of tools and processes related to visual and interactive design.",
-    "Employ creative, conceptual, and problem-solving skills including research, prototyping, and previsualization techniques.",
-    "Create media content for a diverse range of clients or industries using different modalities.",
-    "Demonstrate efficient communication strategies and work effectively within a team."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply digital media production skills and demonstrate an understanding of tools ",
-    "not in the catalog text as printed: Employ creative, conceptual, and problem-solving skills including research, prot",
-    "not in the catalog text as printed: Create media content for a diverse range of clients or industries using differen",
-    "not in the catalog text as printed: Demonstrate efficient communication strategies and work effectively within a tea"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 9,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -214,5 +204,6 @@
    "Requirements also state 'Complete three courses at Ohlone College.'"
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

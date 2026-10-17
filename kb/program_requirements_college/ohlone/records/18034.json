@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Enrich and deepen self-knowledge by exploring different academic experiences.",
-    "Articulate and understand their experiences through effective writing, reading, speaking, and various modes of artistic expression.",
-    "Demonstrate fundamental knowledge and basic skills appropriate to their personal and professional goals in their chosen area of specialization."
-   ],
-   "why": [
-    "not in the catalog text as printed: Enrich and deepen self-knowledge by exploring different academic experiences.",
-    "not in the catalog text as printed: Articulate and understand their experiences through effective writing, reading, ",
-    "not in the catalog text as printed: Demonstrate fundamental knowledge and basic skills appropriate to their personal"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -401,5 +393,6 @@
    "Career text on this page belongs to the Language Emphasis section and is not recorded; no careers appear in the Humanities portion of the excerpt."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

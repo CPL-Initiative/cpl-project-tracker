@@ -84,21 +84,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze, describe, and apply the technology requirements of the virtual production workflow.",
-    "Demonstrate proficiency with game engines, 3D computer graphics, visual effects, and film production.",
-    "Create projects using the virtual production process with industry-standard software.",
-    "Demonstrate enhanced collaborative skills and the ability to engage in effective teamwork in a real-time environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, describe, and apply the technology requirements of the virtual producti",
-    "not in the catalog text as printed: Demonstrate proficiency with game engines, 3D computer graphics, visual effects,",
-    "not in the catalog text as printed: Create projects using the virtual production process with industry-standard soft",
-    "not in the catalog text as printed: Demonstrate enhanced collaborative skills and the ability to engage in effective"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -339,5 +329,6 @@
    "The career entry 'virtual production' is taken from 'entry-level careers in virtual production'."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

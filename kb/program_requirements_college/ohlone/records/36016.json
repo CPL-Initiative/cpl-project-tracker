@@ -87,19 +87,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze and interpret various kinds of literary texts, including poems, short stories, essays, novels, and plays.",
-    "Effectively express their interpretations of literary texts in clear, coherent prose.",
-    "Demonstrate knowledge of works, genres, and periods of American, English, and world literature."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze and interpret various kinds of literary texts, including poems, short st",
-    "not in the catalog text as printed: Effectively express their interpretations of literary texts in clear, coherent p",
-    "not in the catalog text as printed: Demonstrate knowledge of works, genres, and periods of American, English, and wo"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -112,7 +104,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -480,5 +472,6 @@
    "Total Required Units: 19.0 recorded as total_units; requirement item e) also states 19 semester units in the major."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

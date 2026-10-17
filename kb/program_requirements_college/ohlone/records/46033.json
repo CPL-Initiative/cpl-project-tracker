@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Learn and practice technical and nontechnical language needed for the internship application process and the internship workplace."
-   ],
-   "why": [
-    "not in the catalog text as printed: Learn and practice technical and nontechnical language needed for the internship"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -166,5 +162,6 @@
    "Codes printed with hyphens (CS-945, ESL-945); they match closed-list CS 945 and ESL 945."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

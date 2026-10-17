@@ -82,23 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Create animations, game design documents, prototypes, assets, and game levels using industry-standard tools and production methods.",
-    "Conceptualize and design compelling visual narratives and gameplay, as well as evaluate audience/player engagement.",
-    "Lead, or participate in, an interdisciplinary team-oriented game and animation production project, manage scheduling, resource allocation, and milestone achievement.",
-    "Demonstrate an understanding of the historical, cultural, sociological, ethical, and psychological aspects of games and animations.",
-    "Develop a professional portfolio demonstrating creative and intellectual accomplishments."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create animations, game design documents, prototypes, assets, and game levels us",
-    "not in the catalog text as printed: Conceptualize and design compelling visual narratives and gameplay, as well as e",
-    "not in the catalog text as printed: Lead, or participate in, an interdisciplinary team-oriented game and animation p",
-    "not in the catalog text as printed: Demonstrate an understanding of the historical, cultural, sociological, ethical,",
-    "not in the catalog text as printed: Develop a professional portfolio demonstrating creative and intellectual accompl"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -111,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -291,5 +279,6 @@
    "DAID-127 title printed as '3D Pr ototyping' (text extraction artifact)."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

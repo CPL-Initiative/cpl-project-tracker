@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate competence to work independently to setup, configure, and maintain a desktop computer (client or server); stand-alone application; and/or computer system.",
-    "Demonstrate techniques to troubleshoot situations that impact the operation of a desktop computer (client or server); stand-alone application; and/or computer system.",
-    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners.",
-    "Demonstrate the understanding of IT service management concepts such as IT processes, procedures, tasks, and checklists as part of ITIL framework."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate competence to work independently to setup, configure, and maintain a",
-    "not in the catalog text as printed: Demonstrate techniques to troubleshoot situations that impact the operation of a",
-    "not in the catalog text as printed: Demonstrate appreciation of the ICT career field and the need to be lifelong lea",
-    "not in the catalog text as printed: Demonstrate the understanding of IT service management concepts such as IT proce"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -259,5 +249,6 @@
    "Careers taken from the A.S. description: technician roles named in the program description."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

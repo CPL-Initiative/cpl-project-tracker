@@ -82,23 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply principles of mathematics, physics, and electrical engineering to analyze and solve engineering problems.",
-    "Demonstrate ability to design, implement, and test electrical and electronic circuits and systems.",
-    "Demonstrate ability to use industry-standard tools and laboratory practices for analysis, measurement, and documentation.",
-    "Communicate technical information effectively in written, oral, and graphical forms.",
-    "Demonstrate ability to work effectively in teams and apply professional and ethical standards in engineering contexts."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply principles of mathematics, physics, and electrical engineering to analyze ",
-    "not in the catalog text as printed: Demonstrate ability to design, implement, and test electrical and electronic cir",
-    "not in the catalog text as printed: Demonstrate ability to use industry-standard tools and laboratory practices for ",
-    "not in the catalog text as printed: Communicate technical information effectively in written, oral, and graphical fo",
-    "not in the catalog text as printed: Demonstrate ability to work effectively in teams and apply professional and ethi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -111,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -247,5 +235,6 @@
    "The following Certificate of Achievement in Engineering Technology Fundamentals and English ADT sections were ignored."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

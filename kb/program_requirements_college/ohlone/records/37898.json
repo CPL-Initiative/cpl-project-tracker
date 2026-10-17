@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Learn the foundation mathematics necessary for further studies in engineering, mathematics, and science.",
-    "Apply problem solving techniques towards the solution of problems in engineering and science."
-   ],
-   "why": [
-    "not in the catalog text as printed: Learn the foundation mathematics necessary for further studies in engineering, m",
-    "not in the catalog text as printed: Apply problem solving techniques towards the solution of problems in engineering"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -202,5 +196,6 @@
    "Certificate also requires at least six units at Ohlone College and a 2.0 GPA in Major Field courses."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

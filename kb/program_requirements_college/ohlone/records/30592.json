@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of the major concepts, theoretical perspectives, empirical findings, and/or historical trends in psychology.",
-    "Recognize the basic principles of the scientific method; explain the different research methods used in psychology; be able to locate primary source scholarly documents; and/or effectively use APA style.",
-    "Apply psychological principles to better understand, recognize, and appreciate personal, social, and/or multicultural diversity issues."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of the major concepts, theoretical perspectives, empirical",
-    "not in the catalog text as printed: Recognize the basic principles of the scientific method; explain the different r",
-    "not in the catalog text as printed: Apply psychological principles to better understand, recognize, and appreciate p"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -394,5 +386,6 @@
    "BIOL-130 is titled 'Biology in the Real World' in the catalog but 'Essential Biology' in the closed list; same code."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

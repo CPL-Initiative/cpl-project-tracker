@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate practical fluency through basic object identification, response to questions, and dialog prompts; and second-year ACTFL-level conversations in paired and group discussions.",
-    "Demonstrate higher level grammar constructs through debate and advanced composition, including the indicative as well as the rhetorical moods.",
-    "Relate the similarities and identify the differences between their own and Hispanic cultures."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate practical fluency through basic object identification, response to q",
-    "not in the catalog text as printed: Demonstrate higher level grammar constructs through debate and advanced composit",
-    "not in the catalog text as printed: Relate the similarities and identify the differences between their own and Hispa"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -217,5 +209,6 @@
    "No careers are named in the section."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }

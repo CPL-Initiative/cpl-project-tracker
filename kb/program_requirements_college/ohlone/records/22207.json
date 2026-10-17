@@ -86,19 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate a basic knowledge of how sound systems work in a theatrical, live event, and television environment.",
-    "Demonstrate the basic knowledge of computerized audio software as it relates to recording, editing, and playback of audio tracks.",
-    "Demonstrate the basic knowledge of how sound is used in both live and pre-recorded productions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate a basic knowledge of how sound systems work in a theatrical, live ev",
-    "not in the catalog text as printed: Demonstrate the basic knowledge of computerized audio software as it relates to ",
-    "not in the catalog text as printed: Demonstrate the basic knowledge of how sound is used in both live and pre-record"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -108,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -213,5 +205,6 @@
    "Career entry 'skilled audio technicians' is from the description; industries listed (theme parks, motion pictures, concerts, etc.) were treated as employers' industries, not careers."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }
