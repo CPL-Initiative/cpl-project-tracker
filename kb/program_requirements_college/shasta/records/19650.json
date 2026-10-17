@@ -1,0 +1,228 @@
+{
+ "college": "Shasta College",
+ "control_number": "19650",
+ "shape": "certificate",
+ "title": "Diesel Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=92",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12369,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12369,
+    "output_tokens": 1295,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1295,
+  "output_tokens_details": {
+   "thinking_tokens": 274
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07538,
+ "ms": 10751,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.5,
+    36.5
+   ],
+   "stated": [
+    36.5,
+    36.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Diesel Technology Certificate: SC Program: CT.3134",
+   "measure": "units",
+   "total_units": {
+    "min": 36.5,
+    "max": 36.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the basic theory of the subject matter or system for the course of instruction based on industry standards.",
+    "Analyze a scenario based upon an equipment system failure/problem/complaint.",
+    "Employ a systematic approach to troubleshooting a system malfunction and prepare a solution.",
+    "Demonstrate the correct tools/supplies required to diagnose/repair a malfunction.",
+    "Verify if the path of repair was correct by testing and/or completing a work order/report."
+   ],
+   "careers": [
+    "mechanic trade related to heavy equipment and diesel engines"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36.5,
+     "max": 36.5
+    },
+    "courses": [
+     {
+      "code": "DIES 48",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 161",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 164",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 166",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 169",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIES 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read the Diesel Technology Certificate (CT.3134) section on page 93 only; the Diesel Technology A.S. (AS.1175) on page 92 is a separate award with additional courses (DIES 94, ENGL C1000, INDE 1, MATH 73) not recorded here.",
+   "Total 'TOTAL UNITS FOR CERTIFICATE 36.5' is recorded as total_units and as the block's stated total; it matches the sum of the listed courses.",
+   "Career entry taken from the program description phrase 'entry into the mechanic trade related to heavy equipment and diesel engines'; reviewer may confirm it counts as a named career field."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

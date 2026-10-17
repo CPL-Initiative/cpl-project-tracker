@@ -1,0 +1,345 @@
+{
+ "college": "Shasta College",
+ "control_number": "09485",
+ "shape": "degree",
+ "title": "Business Information Systems Professional",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12479,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12479,
+    "output_tokens": 2115,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2115,
+  "output_tokens_details": {
+   "thinking_tokens": 588
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09222,
+ "ms": 16130,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BSOT94",
+    "CIS83"
+   ],
+   "flagged": [
+    "BSOT94",
+    "CIS83"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    66.0,
+    66.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [
+    "the blocks and general education sum to 66.0-66.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.0,
+     38.0
+    ],
+    "stated": [
+     38.0,
+     38.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Information Systems Professional Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 7,
+    "max": 7
+   },
+   "ge_pattern": "SCGE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Operate the alphabetic, numeric, and symbol keys by touch with proper typing technique.",
+    "Type for 5 minutes at a minimum net speed of 50 words a minute with five errors or less.",
+    "Expand and apply knowledge of Microsoft Word to complete business documents.",
+    "Increase abilities related to formatting business letters, memos, tables, mail merge, and reports including employment documents.",
+    "Answer, with at least 70 percent accuracy, questions on objective tests covering technical information."
+   ],
+   "careers": [
+    "Administrative Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 11",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 64",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 80",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 84",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 92",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 94",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSOT 152",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 166",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSOT 171",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 66",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 20",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RECOMMENDED COURSES (not required)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 83",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Core courses sum to 38, matching the printed Major 38.",
+   "Degree table prints Major 38, General Education (SCGE) 21, Additional Electives 7*, Degree Total 60, with a note that the number will vary depending on units that double count; the 7 elective units are recorded as degree_elective_units.",
+   "BUAD 66 and CIS 1 are marked with * as usable for General Education requirements.",
+   "BSOT 94 (Business Systems and Office Tech WEE) and recommended CIS 83 are not in the closed list.",
+   "Career taken from the description: 'This degree prepares you to be an advanced-level Administrative Assistant.'"
+  ]
+ },
+ "extracted_run": "39006384701"
+}

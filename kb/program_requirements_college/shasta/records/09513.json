@@ -1,0 +1,459 @@
+{
+ "college": "Shasta College",
+ "control_number": "09513",
+ "shape": "degree",
+ "title": "Dental Hygiene",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8768,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8768,
+    "output_tokens": 3293,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3293,
+  "output_tokens_details": {
+   "thinking_tokens": 970
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10093,
+ "ms": 26992,
+ "seconds": 27.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 12,
+   "codes": [
+    "ANAT1",
+    "CHEM2A",
+    "CHEM2B",
+    "COMM54",
+    "COMMC1000",
+    "COMMC1004",
+    "ENGLC1000",
+    "MICR1",
+    "NUTR25",
+    "PHY1",
+    "PSYCC1000",
+    "SOCIC1000"
+   ],
+   "flagged": [
+    "ANAT1",
+    "CHEM2A",
+    "CHEM2B",
+    "COMM54",
+    "COMMC1000",
+    "COMMC1004",
+    "ENGLC1000",
+    "MICR1",
+    "NUTR25",
+    "PHY1",
+    "PSYCC1000",
+    "SOCIC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    118.0,
+    118.0
+   ],
+   "stated": [
+    103.0,
+    103.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [
+    "the blocks and general education sum to 118.0-118.0; the catalog prints 103.0-103.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     97.0,
+     97.0
+    ],
+    "stated": [
+     97.0,
+     97.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dental Hygiene (A.S. Degree) — heading not printed in the excerpt; text begins mid-section on page 82",
+   "measure": "units",
+   "total_units": {
+    "min": 97,
+    "max": 97
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "General Education (SCGE)",
+   "degree_total": {
+    "min": 103,
+    "max": 103
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Ninety- five percent of those students who are eligible to sit for the Mock National Board Dental Hygiene Examination will pass their examination on the first attempt.",
+    "Upon completion and passing the mock NBDHE examination, ninety percent of those students who sit for the mock State Board Exam will pass their examination on the first attempt."
+   ],
+   "careers": [
+    "dental hygienist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PREREQUISITE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 41,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "ANAT 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHY 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MICR 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 2A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 2B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 54",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 56,
+     "max": 56
+    },
+    "courses": [
+     {
+      "code": "DNTL 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 13",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 14",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 20",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 25",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 26",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 31",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 32",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 33",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 34",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 35",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 40",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 41",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 42",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 43",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 45",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 82; the program heading is not printed in the text provided.",
+   "The page prints two major figures: 'TOTAL MAJOR UNITS: 56' under the core DNTL courses, and 'Major 97' in the A.S. degree requirements table. 97 = 56 core + 41 prerequisite units, so total_units is recorded as 97 and the admission prerequisites are recorded as a required block; a reviewer should confirm whether total_units should instead be 56.",
+   "Degree table: Major 97, General Education (SCGE) 21, Additional Electives 0, Degree Total 103*. 97+21=118, not 103; the asterisk presumably reflects prerequisites that double-count for GE (marked '*May be used to fulfill General Education requirements').",
+   "COMM 54 OR COMM C1000 (no units printed beside COMM C1000); COMM C1004 is accepted only if completed with C or higher during or prior to Spring 2014, recorded as an alternative.",
+   "Prerequisites must be completed before application (science courses with C or higher and 2.5 science GPA); additional graduation requirements (Humanities, multicultural awareness, Intermediate Algebra competency) carry no units in the text.",
+   "DNTL 35 is printed as 'Clinic II Seminar' while the state file names it 'Clinical II Seminar'.",
+   "The Health General Studies emphasis that follows belongs to a different program and was not read."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

@@ -1,0 +1,205 @@
+{
+ "college": "Shasta College",
+ "control_number": "39683",
+ "shape": "certificate",
+ "title": "Business Administration - Business Entrepreneurship",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10256,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10256,
+    "output_tokens": 1257,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1257,
+  "output_tokens_details": {
+   "thinking_tokens": 386
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06616,
+ "ms": 11215,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration – Business Entrepreneurship Certificate (SC Program: CT.3055)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design an Entrepreneurship Financial Plan using current technology that determines financing to start the business and necessary capital to operate the business for the first year.",
+    "Compose a Business Plan that incorporates the Marketing Plan and Financial Plan, and details the goals of the organization, including the mission statement.",
+    "Analyze industries and economic trends to determine profitability and viability of starting a business."
+   ],
+   "careers": [
+    "entrepreneur"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUAD 39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUAD 77",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAD 120",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the 3 units on the BUAD 55 line of the 'BUAD 55 OR BUAD 77' row; BUAD 77 has no units printed beside it, and 3 was recorded for it as part of the same row.",
+   "The catalog prints BUAD 56 as 'Entrepreneurial Structures'; the closed list title is 'Entrepreneurial Structure'.",
+   "The section is labeled only 'Certificate:' with program code CT.3055. It states Chancellor's Office approval, which is consistent with the Certificate of Achievement award.",
+   "BUAD 39, 40, 42, 55, 56, 77 and 120 also appear in the following General Business (AS.1497) emphasis list. That list was not read for this award."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

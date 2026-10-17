@@ -1,0 +1,426 @@
+{
+ "college": "Shasta College",
+ "control_number": "06453",
+ "shape": "degree",
+ "title": "Early Childhood Education",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12055,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12055,
+    "output_tokens": 3658,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3658,
+  "output_tokens_details": {
+   "thinking_tokens": 1391
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12138,
+ "ms": 29594,
+ "seconds": 30.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     15.0,
+     15.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science: SC Program: AS.1190",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 9,
+    "max": 9
+   },
+   "ge_pattern": "SCGE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 15,
+    "max": 15
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply an understanding of principles of child development in planning inclusive and developmentally appropriate curriculum and environments.",
+    "Exhibit skill in observation and documentation as a vehicle for child and program assessment and curriculum design.",
+    "Create environments that are healthy, respectful and supportive to children and their families.",
+    "Utilize positive guidance of young children based on an understanding of cognitive, physical, and social and emotional development of children.",
+    "Identify professional standards and expectations as based upon NA EYC’S Code of Ethical Conduct.",
+    "Discuss current trends and issues in the field of Early Childhood Education.",
+    "Perform common tasks online and access resources and information in regard to current best practices in early education.",
+    "Identify and exhibit the ability to interact successfully with children and adults from an ever changing society."
+   ],
+   "careers": [
+    "teachers",
+    "directors",
+    "preschools",
+    "Head Start",
+    "child care programs",
+    "infant- toddler",
+    "school age",
+    "family child care"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ECE 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECE 9",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECE 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 6",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 147",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ADMINISTRATION IN ECE SPECIALIZATION",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 16",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "INFANT/TODDLER TEACHING SPECIALIZATION",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SPECIAL NEEDS IN EARLY CHILDHOOD EDUCATION/ EARLY INTERVENTION SPECIALIZATION",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section read is the A.S. Degree (AS.1190); the AS-T in ECE above it and the certificates below it were ignored.",
+   "Core block stated 30 comes from the description sentence 'Students need to complete 30 units of required core courses'; the core list itself prints no total.",
+   "ECE 1 OR ECE 9 is one row with 3 units printed once; 3 units assigned to the ECE 9 alternative as well. Catalog notes ECE 9 is recommended for transfer students.",
+   "Specializations are recommended (not required) ways to meet the 6-unit restricted elective requirement; recorded as recommended blocks. Their courses also appear in the Restricted Electives block, which is where they count.",
+   "ECE 16 is printed with 3 units in Restricted Electives but 2 units in the Administration specialization; reviewer should check. ECE 16 is needed for Master Teacher permit or higher.",
+   "A School-Age Teaching specialization is named in the text but no courses are printed for it.",
+   "Degree summary: Major 36, General Education (SCGE) 15, Additional Electives 9*, Degree Total 60; electives number varies with double counting. Description says 'at least 9 general elective units'."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

@@ -1,0 +1,295 @@
+{
+ "college": "Shasta College",
+ "control_number": "43880",
+ "shape": "degree",
+ "title": "Addiction Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=55",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10899,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10899,
+    "output_tokens": 2378,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2378,
+  "output_tokens_details": {
+   "thinking_tokens": 756
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09116,
+ "ms": 19930,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    67.0,
+    67.0
+   ],
+   "stated": [
+    64.0,
+    64.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [
+    "the blocks and general education sum to 67.0-67.0; the catalog prints 64.0-64.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     46.0,
+     46.0
+    ],
+    "stated": [
+     46.0,
+     46.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Addiction Studies Associate in Science: SC Program: AS.1603",
+   "measure": "units",
+   "total_units": {
+    "min": 46,
+    "max": 46
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "General Education (SCGE)",
+   "degree_total": {
+    "min": 64,
+    "max": 64
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate competent performance of the Twelve Core Functions and Global Criteria in their Supervised Practicum Internships, evidenced by written supervisor review in both Supervised Internships, ADS 94 and ADS 21.",
+    "Apply CAADE ethical standards as evidenced by completion of the Ethics and Professional Development course, and the signed Ethics Code submitted in the supervised ADS 94 and ADS 21 courses.",
+    "Analyze and describe the physiological and pharmacological aspects of substance abuse and dependence. This includes how drugs affect different body system, cause side effects, and impacts the community as a whole.",
+    "Demonstrate the ability to competently conduct and follow a client from the point of program entry to discharge and complete all treatment planning and case management connected to that case.",
+    "Demonstrate an understanding of the laws, regulations, and ethical codes of the substance use disorder treatment profession.",
+    "Utilize effective communication and active listening skills and group counseling facilitation skills.",
+    "Apply Human Services behavioral core skills and experiential training in an addiction treatment setting."
+   ],
+   "careers": [
+    "chemical dependency and drug/alcohol counselors",
+    "substance use prevention and intervention specialists",
+    "certified drug/alcohol counselor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 21",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS 94",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUSV 70",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints SOCI C1000; the closed list stores it as SOCIC1000 (no space, no units). Treated as the same course, catalog_addition false.",
+   "The outcomes list for the A.S. section is numbered 1, 2, 3, 3, 4, 5, 6 (duplicate 3) and its lead-in refers to 'the certificate' although it sits in the A.S. section; recorded as the A.S. outcomes.",
+   "The A.S. description also contains a sentence 'This certificate is approved...' apparently copied from certificate text.",
+   "Degree summary: Major 46, General Education (SCGE) 21, Additional Electives 0*, Degree Total 64; 46+21=67 exceeds 64 because PSYC C1000, SOCI C1000 and HUSV 70 may double count toward GE. Additional Electives printed as 0 recorded in degree_elective_units.",
+   "ADS 12 printed in the A.S. list as 'Basic Addiction Counseling Skills' (title shorter than the closed list's)."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

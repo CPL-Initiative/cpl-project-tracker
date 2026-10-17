@@ -1,0 +1,300 @@
+{
+ "college": "Shasta College",
+ "control_number": "06430",
+ "shape": "degree",
+ "title": "Welding Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8627,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8627,
+    "output_tokens": 1932,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1932,
+  "output_tokens_details": {
+   "thinking_tokens": 572
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07315,
+ "ms": 15592,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    63.0,
+    63.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [
+    "the blocks and general education sum to 63.0-63.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     41.5,
+     41.5
+    ],
+    "stated": [
+     41.5,
+     41.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SC Program: AS.1490",
+   "measure": "units",
+   "total_units": {
+    "min": 41.5,
+    "max": 41.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0.5,
+    "max": 0.5
+   },
+   "ge_pattern": "General Education (SCGE)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate competencies in job safety skills and awareness of workplace hazards.",
+    "Follow written and oral instructions in the interpretation of simple drawings and sketches, including welding symbols and the execution of the fabrication process.",
+    "Set up, maintain, and adjust welding related equipment.",
+    "Acquire skills and knowledge to make a successful transition to an entry-level position in the work force.",
+    "Pass workmanship tests using common welding processes."
+   ],
+   "careers": [
+    "certified welders"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DIES 48",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDE 1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDE 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 118",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 178",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 182",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 183",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 184",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 186",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 188",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.S. section begins at the top of page 94 with 'SC Program: AS.1490'; the program title heading appears to sit on the previous page and is not in the text, so the program code line is used as section_heading.",
+   "MATH 73 is marked with an asterisk: 'May be used to fulfill General Education requirements. See a counselor.' It is kept in the core block.",
+   "Additional Electives 0.5 is marked with an asterisk; the footnote (printed with a ♦) says the number will vary depending on units that double count. Recorded as degree_elective_units 0.5 as printed.",
+   "The core courses sum to 41.5, matching the printed Major total.",
+   "The program learning outcomes are printed under the degree section ('Upon successful completion of this degree'); the certificate section prints an identical list.",
+   "The certificate (CT.3430) and the AWS certification sections that follow were not used for this record."
+  ]
+ },
+ "extracted_run": "39006384701"
+}
