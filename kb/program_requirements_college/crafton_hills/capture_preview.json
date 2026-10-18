@@ -1,0 +1,248 @@
+{
+ "college": "Crafton Hills College",
+ "catalog_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+ "platform": "smartcatalog",
+ "catalog_year": "2026-2027",
+ "programs": 118,
+ "with_closed_list": 79,
+ "started": "2026-10-18T06:24:49Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
+  "status": 404,
+  "listed": 0,
+  "nested": 0,
+  "program_pages": 0,
+  "refused": null,
+  "errors": null
+ },
+ "index_fallback": 3,
+ "pages_read": 229,
+ "child_pages": 226,
+ "banner_h1": "2026-2027 Catalog",
+ "loads": 231,
+ "seconds": 1149.6,
+ "found": 74,
+ "by_method": {
+  "no_closed_list": 39,
+  "not_found": 3,
+  "page_claimed": 2,
+  "sitemap_page": 74
+ },
+ "shared_pages": {
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t": [
+   "30556",
+   "43530"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t": [
+   "30559",
+   "46391"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t": [
+   "31385",
+   "41140"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t": [
+   "31770",
+   "46553"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t": [
+   "33545",
+   "46384"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30347",
+   "title": "Japanese",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38418",
+   "title": "Foundations in English Language and Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4879,
+     "content": 16556,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44342",
+   "title": "Technical Theatre",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.125,
+    "net": 1,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6061,
+     "content": 17659,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "37876",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t",
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement"
+   ]
+  },
+  {
+   "control_number": "41365",
+   "title": "Computer Information Systems: Programming",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 15,
+  "1.0": 53
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/crafton_hills",
+  "kept": 64,
+  "programs": 10,
+  "list": [
+   {
+    "control_number": "33105",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/kinesiology-kin/kinesiology-associate-in-arts-for-transfer-degree",
+    "coverage": 0.94,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35822",
+    "title": "Workforce Literacy Skills",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/workforce-literacy-skills",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38464",
+    "title": "Basic Skills in Math Elementary Level",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-math-elementary-level",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42455",
+    "title": "Certified Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/certified-nursing-assistant",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43604",
+    "title": "Acute Care Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/acute-care-nursing-assistant",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43611",
+    "title": "Home Health Aide",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/home-health-aide",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44042",
+    "title": "Essential ASL and Deaf Culture for Customer Service Professionals",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/essential-asl-and-deaf-culture-for-customer-service-professionals",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44088",
+    "title": "Mathematics for Medical Professionals",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/mathematics-for-medical-professionals",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44803",
+    "title": "Phlebotomy Technician",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/phlebotomy-technician",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45083",
+    "title": "Personal Trainer",
+    "award": "Noncredit program",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/personal-trainer",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "39103866118"
+}
