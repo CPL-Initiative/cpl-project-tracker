@@ -13037,6 +13037,11 @@
      "created": "2026-10-18",
      "governs": [
       "commons_progress.js",
+      "commons.js",
+      "kb/_build_commons_status.py",
+      "kb/status/commons.json",
+      "tests/commons.test.js",
+      "tests/commons_status_build_test.py",
       "program_requirements.js",
       "tests/commons_progress.test.js",
       "kb/status/program-requirements.json",
