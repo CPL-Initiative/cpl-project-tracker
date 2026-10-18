@@ -51,13 +51,14 @@ unchanged since. No sheet is open; Sheet 95 (https://claude.ai/artifact/M5oRGgFT
 3. **Open Asks Sheet 96, card 1 (yours to build at your first checkpoint, after the first saving run):** a rule
    procedure's settlement saves at the rule's word, the course-identity rule's 0.8 included (96 of its 125 are the
    college's own course title). Proceeded on the recommendation; `--undo course-identity` reverses it. Put the NEEDS SAM
-   marker in the CER lane in the same change as the card (the builder refuses a marker with no card), remove Sheet 94's
+   marker in the CER lane in the same change as the card (the builder refuses a marker with no card); Fable asks for a
+   second card, the Sierra read of every complete record (#2230), also proceeded on the recommendation. Remove Sheet 94's
    four answered cards from `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py` (their lanes record the
    rulings), set `SHEET_ID` to `2026-10-18-open-asks-96`, inject the reply chips, publish with `{db: {}, comments: {}}`.
    Note: Sheet 95's source was never committed to the vault; its builder entry is missing too.
-4. **Fable's review of the Commons mock-up** was requested through the Agent tool and had not returned at sign-off. Read it
-   from S416's transcript if you can; otherwise ask again with the file and the five review questions in the commons lane's
-   spirit (definitions of complete, the two stamps, the order control, house voice), revise, and hand Sam the link.
+4. **Fable's review of the Commons mock-up** returned after the checkpoint and is recorded in the commons lane: revise on
+   its five points, and build Sheet 96 with both proceeded-on cards (the CER save rule and the Sierra read) before Sam
+   sees the page, so its calls cell reads the store.
 5. **Subscriptions let go:** S416 dropped its subscription to #2230 and cancelled its 16:18Z check-in; #2231 was never
    subscribed. Subscribe to both when you take them.
 
