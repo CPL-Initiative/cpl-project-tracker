@@ -9,7 +9,7 @@ status: current
 # You are Session 414
 
 Your moniker is **SkyChamise**. Session 413 (**SkyPinyon**, `session_01GkhqqwcMQYMzRDbdyk4kAN`, from 05:28Z on
-2026-10-18) checkpointed at about 655,000 tokens of runway. If the routine started you, follow
+2026-10-18) checkpointed with the full Rule 9 list (#2223); the sign-off turn ran at the context EMERGENCY line, after the checkpoint was written. If the routine started you, follow
 `docs/reference/scheduled_sessions.md` first.
 
 ## Sam's words this run
@@ -31,15 +31,15 @@ empty at 07:36Z.
   Reference (All, Industry credentials, the Initiated sign-off until card 3). It opens on Held when the night's report
   holds titles; each held title opens alone in Unclassified. The UI pass for `cobi:credential-reference` (ledger
   recorded): row headings h5 to h3, dark badges no fill, four new seeded targets.
-- **#2222 (open at sign-off), the slashed course subject:** the harvest's code net and scorer read `CNA/N 621` and the
+- **#2222 (merged, `81b2c7ff`), the slashed course subject:** the harvest's code net and scorer read `CNA/N 621` and the
   slash-free `CNAN626` the state's file sometimes stores. Crafton Hills: 76 of 79 hold records (12 loaded this run),
   51 passing. Display build `3f93779f0115`: 15,782 programs at 113 colleges.
 - Four `cpl_memory` rows (`author = 'SkyPinyonS413'`), logged.
 
 ## In flight at sign-off (check each first)
 
-1. **#2222:** merge on a green `test`, then dispatch `program-requirements-college.yml` on `main` with `step=display`
-   (any `college=`; the job applies the build `cpl_pathways_roep_data.js` carries).
+1. **The display apply of `3f93779f0115`** (dispatched on `main` at sign-off, `step=display`): read its applied record
+   (`Applied record: the page's display build (run N)` on `main`); if it failed, dispatch it again.
 
 ## Priority after that
 
@@ -73,4 +73,4 @@ empty at 07:36Z.
 
 ## Subscriptions and check-ins
 
-#2222 is watched; S413 releases it at sign-off. No check-in is pending.
+S413 released every subscription at sign-off (#2222 merged; #2223 and CPLBrain #380 merged or left to merge on green). No check-in is pending.
