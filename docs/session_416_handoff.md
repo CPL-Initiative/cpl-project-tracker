@@ -35,11 +35,14 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 
 ## In flight at sign-off (check each first)
 
-1. **#2226** (draft, branch `claude/practical-meitner-68kfwt`). Mark it ready, wait for `test` on its head, then
-   squash-merge it and dispatch `program-requirements-college.yml` on `main` with `step=display`. Read the
-   `Applied record` commit it files.
-2. Branches `claude/s414-slash-delta`, `claude/s415-taft-cal-getc` and `claude/s415-delta-degree-read` are merged
-   into #2226's branch.
+1. **#2226 merged** (`e9e78465`, 13:31Z) and build `48cb66f19cff` is applied on `main` (run 39132016937,
+   `c30bb8f6e`). Nothing to redo.
+2. **The Pipeline tab's UI pass** (`cobi:pipeline`) belongs to the session Sam opened by hand
+   (`session_016aCF9Tqxm7khy34U1dQwca`): #2228, which it merges itself once `test` passes. Its ledger entry names two
+   notes for checkpoint step 7: the tab's roadmap rows 1e-5d and 3 are not in CLAUDE.md section 11, and
+   `docs/reference/mid_lifecycle.md` records re-mints only to 2026-09-04 while the tab names 2026-09-30. Check
+   #2228 merged, then `python3 scripts/ui_pass.py --next` for the next view.
+3. CPLBrain#382 (Sheet 94, the session note) merged.
 
 ## Priority after that
 
@@ -68,10 +71,10 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 ## Not refreshed this checkpoint
 
 - The Pipeline tab: its phases did not move. `kb/README.md`, `README.md`: nothing they cover changed.
-- The UI pass: skipped for scope; `cobi:pipeline` stays due (`python3 scripts/ui_pass.py --next`).
+- The UI pass: `cobi:pipeline` is held by the hand-opened session (above).
 - No KB note crossed the bar.
 
 ## Subscriptions and check-ins
 
-S415 holds no PR subscription, check-in or artifact watch (remote sessions cannot watch an artifact). Subscribe to
-#2226 when you pick it up.
+S415 held no PR subscription, check-in or artifact watch (remote sessions cannot watch an artifact); nothing to
+let go.
