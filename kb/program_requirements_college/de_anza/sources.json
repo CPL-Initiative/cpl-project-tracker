@@ -250,7 +250,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.654,
+  "coverage": 0.981,
   "codes_found": [
    "MUSI12A",
    "MUSI12B",
@@ -268,36 +268,54 @@
    "MUSI18A",
    "MUSI18B",
    "MUSI18C",
+   "MUSI1A",
+   "MUSI1B",
+   "MUSI1C",
+   "MUSI1D",
    "MUSI20",
    "MUSI21",
    "MUSI22",
    "MUSI25",
    "MUSI31",
    "MUSI34",
+   "MUSI35",
+   "MUSI3A",
    "MUSI3B",
    "MUSI3C",
+   "MUSI41W",
    "MUSI42",
    "MUSI44A",
    "MUSI45",
    "MUSI4A",
    "MUSI4B",
    "MUSI4C",
+   "MUSI50A",
+   "MUSI50B",
+   "MUSI50C",
    "MUSI51",
    "MUSI53",
+   "MUSI6A",
+   "MUSI6B",
+   "MUSI6C",
+   "MUSI77",
+   "MUSI77X",
    "MUSI8",
-   "MUSI9A"
+   "MUSI9A",
+   "MUSI9B",
+   "MUSI9C"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=127",
-   "title": "Additional completion of one of the following general education patterns: De Anza General Education or",
-   "h1": "Additional completion of one of the following general education patterns: De Anza General Education or",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
+   "title": "This A.A. degree program provides a foundation in music for students interested in a career in the musical entertainment",
+   "h1": "This A.A. degree program provides a foundation in music for students interested in a career in the musical entertainment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    127
+    134,
+    135
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -305,7 +323,7 @@
    }
   },
   "listed": 52,
-  "text_chars": 4444
+  "text_chars": 7770
  },
  {
   "control_number": "05969",
@@ -971,12 +989,73 @@
   "title": "Film/TV: Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.656,
+  "codes_found": [
+   "FTV17G",
+   "FTV17H",
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV27",
+   "FTV29",
+   "FTV30",
+   "FTV31",
+   "FTV39",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV44A",
+   "FTV44B",
+   "FTV48S",
+   "FTV48T",
+   "FTV48U",
+   "FTV48V",
+   "FTV56A",
+   "FTV57A",
+   "FTV57B",
+   "FTV59",
+   "FTV60B",
+   "FTV60C",
+   "FTV64A",
+   "FTV64B",
+   "FTV64C",
+   "FTV65",
+   "FTV6A",
+   "FTV70A",
+   "FTV71J",
+   "FTV74",
+   "FTV75G",
+   "FTV78W",
+   "FTV78X",
+   "FTV92",
+   "FTV98G",
+   "FTV98H",
+   "FTV98J",
+   "THEA80A"
+  ],
+  "source": {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+   "title": "F/TV 22 - Beginning 16mm",
+   "h1": "F/TV 22 - Beginning 16mm",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    215,
+    216,
+    217
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
+   }
+  },
   "listed": 64,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "07091",
@@ -1255,16 +1334,75 @@
    "SOC10"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
-   "title": "Course Title Units",
-   "h1": "Course Title Units",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
+   "title": "Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed",
+   "h1": "Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    46,
-    47,
     48,
     49
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
+   }
+  },
+  "listed": 35,
+  "text_chars": 9364
+ },
+ {
+  "control_number": "09226",
+  "title": "Film/TV: Animation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.63,
+  "codes_found": [
+   "ARTS4A",
+   "FTV10",
+   "FTV10H",
+   "FTV17G",
+   "FTV17H",
+   "FTV20",
+   "FTV27",
+   "FTV29",
+   "FTV2C",
+   "FTV2CH",
+   "FTV30",
+   "FTV31",
+   "FTV3A",
+   "FTV56A",
+   "FTV66A",
+   "FTV67A",
+   "FTV68A",
+   "FTV6A",
+   "FTV7",
+   "FTV70A",
+   "FTV71J",
+   "FTV72G",
+   "FTV72H",
+   "FTV72J",
+   "FTV74",
+   "FTV75G",
+   "FTV75K",
+   "FTV88",
+   "THEA80A"
+  ],
+  "source": {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=214",
+   "title": "F/TV 2C - Contemporary",
+   "h1": "F/TV 2C - Contemporary",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    214,
+    215,
+    216,
+    217
    ],
    "extractor": "pypdf",
    "heading_named": false,
@@ -1274,20 +1412,8 @@
     "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
    }
   },
-  "listed": 35,
-  "text_chars": 16000
- },
- {
-  "control_number": "09226",
-  "title": "Film/TV: Animation",
-  "award": "A.A. Degree",
-  "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
   "listed": 46,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "10108",
@@ -3251,7 +3377,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.862,
+  "coverage": 0.94,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
@@ -3276,13 +3402,20 @@
    "BUS89",
    "BUS90",
    "CIS2",
+   "COMM7",
+   "COMM7H",
    "ECON1",
    "ECON1H",
+   "ES1",
    "ES6",
    "ESCI19",
+   "FREN1",
+   "FREN2",
    "FREN3",
    "GEO1",
    "GEO10",
+   "GERM1",
+   "GERM2",
    "GERM3",
    "GERM4",
    "HIST16A",
@@ -3303,6 +3436,7 @@
    "HIST6CH",
    "HIST7A",
    "HIST7B",
+   "HNDI1",
    "HNDI2",
    "HNDI3",
    "HUMI10",
@@ -3324,6 +3458,7 @@
    "KORE2",
    "KORE3",
    "KORE4",
+   "LIB1",
    "LING1",
    "MAND1",
    "MAND2",
@@ -3355,17 +3490,18 @@
    "WMST3C"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=100",
-   "title": "One year (three quarters) of college-level world language or three years of high school world language or the",
-   "h1": "One year (three quarters) of college-level world language or three years of high school world language or the",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+   "title": "HNDI 3 Elementary Hindi (Third Quarter) 5",
+   "h1": "HNDI 3 Elementary Hindi (Third Quarter) 5",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    99,
     100,
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3373,7 +3509,7 @@
    }
   },
   "listed": 116,
-  "text_chars": 10065
+  "text_chars": 15395
  },
  {
   "control_number": "16757",
@@ -4245,12 +4381,73 @@
   "title": "Film/TV: Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.656,
+  "codes_found": [
+   "FTV17G",
+   "FTV17H",
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV27",
+   "FTV29",
+   "FTV30",
+   "FTV31",
+   "FTV39",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV44A",
+   "FTV44B",
+   "FTV48S",
+   "FTV48T",
+   "FTV48U",
+   "FTV48V",
+   "FTV56A",
+   "FTV57A",
+   "FTV57B",
+   "FTV59",
+   "FTV60B",
+   "FTV60C",
+   "FTV64A",
+   "FTV64B",
+   "FTV64C",
+   "FTV65",
+   "FTV6A",
+   "FTV70A",
+   "FTV71J",
+   "FTV74",
+   "FTV75G",
+   "FTV78W",
+   "FTV78X",
+   "FTV92",
+   "FTV98G",
+   "FTV98H",
+   "FTV98J",
+   "THEA80A"
+  ],
+  "source": {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+   "title": "F/TV 22 - Beginning 16mm",
+   "h1": "F/TV 22 - Beginning 16mm",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    215,
+    216,
+    217
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
+   }
+  },
   "listed": 64,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "23070",
@@ -5346,18 +5543,19 @@
    "VIET6"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
-   "title": "HNDI 3 Elementary Hindi (Third Quarter) 5",
-   "h1": "HNDI 3 Elementary Hindi (Third Quarter) 5",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=98",
+   "title": "The Global Studies Certificate of Achievement-Advanced is an interdisciplinary program that prepares students to be",
+   "h1": "The Global Studies Certificate of Achievement-Advanced is an interdisciplinary program that prepares students to be",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    98,
     99,
     100,
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -5365,7 +5563,7 @@
    }
   },
   "listed": 63,
-  "text_chars": 15395
+  "text_chars": 16000
  },
  {
   "control_number": "30618",
@@ -5943,17 +6141,34 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.772,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL40A",
+   "BIOL40B",
+   "BIOL40C",
    "CHEM30A",
    "DANC22",
+   "DANC22K",
+   "DANC22L",
+   "DANC22M",
+   "DANC23A",
+   "DANC23B",
+   "DANC23C",
+   "DANC23L",
+   "DANC23M",
+   "DANC24A",
+   "DANC24B",
+   "DANC25A",
    "DANC25B",
    "DANC37A",
    "DANC37B",
    "DANC37C",
    "KNES11A",
    "KNES11AX",
+   "KNES12D",
+   "KNES12DX",
+   "KNES12E",
+   "KNES12EX",
    "KNES15A",
    "KNES15AX",
    "KNES15C",
@@ -5970,6 +6185,12 @@
    "KNES19EX",
    "KNES19G",
    "KNES19GX",
+   "KNES1A",
+   "KNES1B",
+   "KNES1C",
+   "KNES1CX",
+   "KNES1D",
+   "KNES1DX",
    "KNES22A",
    "KNES22AX",
    "KNES22B",
@@ -5988,6 +6209,8 @@
    "KNES26BX",
    "KNES29A",
    "KNES29B",
+   "KNES2A",
+   "KNES2AX",
    "KNES2B",
    "KNES2BX",
    "KNES31A",
@@ -6025,6 +6248,7 @@
    "KNES39BX",
    "KNES39C",
    "KNES39CX",
+   "KNES45",
    "KNES5A",
    "KNES5AX",
    "KNES5B",
@@ -6035,14 +6259,77 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=115",
-   "title": "Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed",
-   "h1": "Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=114",
+   "title": "Kinesiology for Transfer",
+   "h1": "Kinesiology for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    114,
     115,
     116
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
+   }
+  },
+  "listed": 114,
+  "text_chars": 12744
+ },
+ {
+  "control_number": "31308",
+  "title": "Film/TV: Screenwriting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.585,
+  "codes_found": [
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV29",
+   "FTV30",
+   "FTV31",
+   "FTV39",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV44A",
+   "FTV44B",
+   "FTV56A",
+   "FTV57A",
+   "FTV57B",
+   "FTV59",
+   "FTV60B",
+   "FTV60C",
+   "FTV64A",
+   "FTV64B",
+   "FTV64C",
+   "FTV65",
+   "FTV6A",
+   "FTV75G",
+   "FTV78W",
+   "FTV78X",
+   "FTV92",
+   "FTV98G",
+   "FTV98H",
+   "FTV98J"
+  ],
+  "source": {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+   "title": "F/TV 22 - Beginning 16mm",
+   "h1": "F/TV 22 - Beginning 16mm",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    215,
+    216,
+    217
    ],
    "extractor": "pypdf",
    "heading_named": false,
@@ -6052,20 +6339,8 @@
     "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
    }
   },
-  "listed": 114,
-  "text_chars": 9496
- },
- {
-  "control_number": "31308",
-  "title": "Film/TV: Screenwriting",
-  "award": "A.A. Degree",
-  "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
   "listed": 53,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "31498",
@@ -6182,12 +6457,39 @@
   "title": "Film/TV: Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV27",
+   "FTV39",
+   "FTV57A",
+   "FTV6A"
+  ],
+  "source": {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+   "title": "F/TV 22 - Beginning 16mm",
+   "h1": "F/TV 22 - Beginning 16mm",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    215,
+    216,
+    217
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "31511",
@@ -8265,7 +8567,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.628,
+  "coverage": 0.953,
   "codes_found": [
    "ADMJ1",
    "ADMJ6",
@@ -8274,14 +8576,28 @@
    "ANTH2H",
    "BUS18",
    "CETH10",
+   "COMM10",
+   "COMM10H",
+   "COMM15",
+   "COMM15H",
+   "COMM8",
+   "COMM8H",
    "ECON1",
    "ECON1H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
    "HIST17B",
    "HIST17BH",
    "HIST17C",
    "HIST17CH",
    "HUMA20",
    "PARA75",
+   "PHIL7",
+   "PHIL7H",
+   "PHIL8",
+   "PHIL8H",
    "POLI10",
    "POLI2",
    "POLI5",
@@ -8296,17 +8612,18 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
-   "title": "Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed",
-   "h1": "Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
+   "title": "IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only",
+   "h1": "IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    47,
     48,
     49
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -8314,7 +8631,7 @@
    }
   },
   "listed": 43,
-  "text_chars": 9364
+  "text_chars": 16000
  },
  {
   "control_number": "39415",
@@ -8923,12 +9240,37 @@
   "title": "Film/TV: Animation",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV17G",
+   "FTV17H",
+   "FTV66A",
+   "FTV67A",
+   "FTV68A",
+   "FTV6A",
+   "FTV70A",
+   "FTV72G"
+  ],
+  "source": {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=216",
+   "title": "F/TV 57A - Documentary",
+   "h1": "F/TV 57A - Documentary",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    216
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 7828
  },
  {
   "control_number": "41792",
@@ -9100,19 +9442,19 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
-   "title": "Program Requirements",
-   "h1": "Program Requirements",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116",
+   "title": "IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information.",
+   "h1": "IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    116,
     117,
     118,
-    119,
-    120
+    119
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -9303,18 +9645,19 @@
    "WMST26"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
-   "title": "SPAN 2 Elementary Spanish (Second Quarter) 5",
-   "h1": "SPAN 2 Elementary Spanish (Second Quarter) 5",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
+   "title": "Apply the appropriate use of sight translation in various settings",
+   "h1": "Apply the appropriate use of sight translation in various settings",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    120,
     121,
     122,
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -9322,7 +9665,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 15154
+  "text_chars": 16000
  },
  {
   "control_number": "41864",
@@ -10383,19 +10726,19 @@
    "WMST8"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
-   "title": "NAIS 12 Ethnic Studies and the Historical Experiences of Native Americans 4",
-   "h1": "NAIS 12 Ethnic Studies and the Historical Experiences of Native Americans 4",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
+   "title": "Intercultural Studies Degrees and Certificates",
+   "h1": "Intercultural Studies Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    108,
     109,
     110,
-    111,
-    112
+    111
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -11473,12 +11816,36 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.571,
+  "coverage": 0.987,
   "codes_found": [
+   "ADMJ29",
+   "AFAM10",
+   "AFAM25",
+   "ASAM1",
+   "ASAM10",
+   "BUS50",
+   "BUS65",
+   "CETH10",
    "CETH19",
+   "CETH29",
+   "CETH50",
    "CETH8",
+   "CHLX10",
+   "CHLX26",
    "COMM15",
    "COMM15H",
+   "COMM17",
+   "COMM17H",
+   "ES2",
+   "ICS17",
+   "ICS17H",
+   "ICS19",
+   "ICS25",
+   "ICS26",
+   "ICS27",
+   "ICS27H",
+   "ICS2A",
+   "ICS36",
    "ICS80",
    "ICS80W",
    "ICS80X",
@@ -11494,6 +11861,12 @@
    "ICS82X",
    "ICS82Y",
    "ICS82Z",
+   "INTL33",
+   "NAIS11",
+   "POLI15",
+   "POLI16",
+   "POLI17",
+   "POLI17H",
    "POLI64",
    "POLI64X",
    "POLI64Y",
@@ -11516,22 +11889,25 @@
    "SOSC83Z",
    "WMST1",
    "WMST24",
+   "WMST25",
+   "WMST26",
    "WMST27",
    "WMST29",
    "WMST8"
   ],
   "source": {
-   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
-   "title": "SOC 5 / INTL 8 Sociology of Globalization and Social Change 4",
-   "h1": "SOC 5 / INTL 8 Sociology of Globalization and Social Change 4",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123",
+   "title": "The Leadership and Social Change Certificate of Achievement prepares students to be community leaders, agents of",
+   "h1": "The Leadership and Social Change Certificate of Achievement prepares students to be community leaders, agents of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    123,
     124,
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -11539,7 +11915,7 @@
    }
   },
   "listed": 77,
-  "text_chars": 11787
+  "text_chars": 15179
  },
  {
   "control_number": "46568",

@@ -46,36 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 20,
    "listed": 20,
-   "share": 0.85,
-   "missing": [
-    "FTV17G",
-    "FTV67A",
-    "FTV70A"
-   ],
-   "unexplained": [
-    "FTV17G",
-    "FTV67A",
-    "FTV70A"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 2,
    "codes": [
     "ARTS16A",
-    "ARTS57",
-    "F/TV17G",
-    "F/TV67A",
-    "F/TV70A"
+    "ARTS57"
    ],
    "flagged": [
     "ARTS16A",
     "ARTS57"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -356,5 +345,6 @@
    "No careers named; the description mentions 'freelance opportunities' and 'your unique voice as an illustrator' but no explicit career list, so careers left empty."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

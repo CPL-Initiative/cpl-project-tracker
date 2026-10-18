@@ -46,31 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 11,
    "listed": 11,
-   "share": 0.727,
-   "missing": [
-    "THART124X2",
-    "THART134X4",
-    "THART179"
-   ],
-   "unexplained": [
-    "THART124X2",
-    "THART134X4",
-    "THART179"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "THART/S124X2",
-    "THART/S134X4",
-    "THART/S179"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -295,5 +283,6 @@
    "Outcomes are printed for the degree under 'A student receiving a degree in this field will be able to:'."
   ]
  },
- "extracted_run": "39093935031"
+ "extracted_run": 39116269641,
+ "read_run": "39093935031"
 }

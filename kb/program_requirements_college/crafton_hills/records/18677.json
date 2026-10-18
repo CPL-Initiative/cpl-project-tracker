@@ -46,43 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 60,
+   "placed": 67,
    "listed": 67,
-   "share": 0.896,
-   "missing": [
-    "THART124X2",
-    "THART134X4",
-    "THART140X2",
-    "THART145",
-    "THART176",
-    "THART179",
-    "THART245"
-   ],
-   "unexplained": [
-    "THART124X2",
-    "THART134X4",
-    "THART140X2",
-    "THART145",
-    "THART176",
-    "THART179",
-    "THART245"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
-   "codes": [
-    "THART/S124X2",
-    "THART/S134X4",
-    "THART/S140X2",
-    "THART/S145",
-    "THART/S176",
-    "THART/S179",
-    "THART/S245"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -123,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -719,5 +695,6 @@
    "Outcomes are introduced by 'A student receiving a degree in this field will be able to:'."
   ]
  },
- "extracted_run": "39093935031"
+ "extracted_run": 39116269641,
+ "read_run": "39093935031"
 }

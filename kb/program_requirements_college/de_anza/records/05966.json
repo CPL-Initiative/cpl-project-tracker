@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=127",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9209,
+  "input_tokens": 10014,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9209,
-    "output_tokens": 2710,
+    "input_tokens": 10014,
+    "output_tokens": 3983,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,100 +30,63 @@
     "model": null
    }
   ],
-  "output_tokens": 2710,
+  "output_tokens": 3983,
   "output_tokens_details": {
-   "thinking_tokens": 415
+   "thinking_tokens": 636
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09104,
- "ms": 20858,
- "seconds": 21.7,
+ "cost_usd": 0.11972,
+ "ms": 29121,
+ "seconds": 30.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 51,
    "listed": 52,
-   "share": 0.0,
+   "share": 0.981,
    "missing": [
-    "MUSI12A",
-    "MUSI12B",
-    "MUSI12C",
-    "MUSI13A",
-    "MUSI13B",
-    "MUSI13C",
-    "MUSI14A",
-    "MUSI14B",
-    "MUSI14C",
-    "MUSI14D",
-    "MUSI16A",
-    "MUSI16B",
-    "MUSI17",
-    "MUSI18A",
-    "MUSI18B",
-    "MUSI18C",
-    "MUSI1A",
-    "MUSI1B",
-    "MUSI1C",
-    "MUSI1D",
-    "MUSI20",
-    "MUSI21",
-    "MUSI22",
-    "MUSI25",
-    "MUSI31",
-    "MUSI34",
-    "MUSI35",
-    "MUSI3A",
-    "MUSI3B",
-    "MUSI3C",
-    "MUSI41W",
-    "MUSI42",
-    "MUSI44A",
-    "MUSI45",
-    "MUSI4A",
-    "MUSI4B",
-    "MUSI4C",
-    "MUSI5",
-    "MUSI50A",
-    "MUSI50B",
-    "MUSI50C",
-    "MUSI51",
-    "MUSI53",
-    "MUSI6A",
-    "MUSI6B",
-    "MUSI6C",
-    "MUSI77",
-    "MUSI77X",
-    "MUSI8",
-    "MUSI9A",
-    "MUSI9B",
-    "MUSI9C"
+    "MUSI5"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "MUSI15A",
+    "MUSI15B",
+    "MUSI41V",
+    "MUSI77Y"
+   ],
+   "flagged": [
+    "MUSI15A",
+    "MUSI15B",
+    "MUSI41V",
+    "MUSI77Y"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    46.0,
+    46.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
+    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
    ]
   },
   "repeated": {
@@ -131,31 +94,28 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "(Music A.A. Degree section not found in text)",
+   "section_heading": "Music A.A. Degree",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -166,236 +126,477 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 90,
+    "max": 90
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate, through successful public performance, a synthesis of technique, memory, musicality and stage presence in both group and solo presentations",
+    "Demonstrate proficiency equivalent to national lower-division curriculum standards in music literacy for all historical periods, ear training and keyboard harmony",
+    "Distinguish musical cultures, historical periods, forms and composers from each other while demonstrating an understanding of the roles of music in human culture",
+    "Produce, notate and perform music using contemporary technologies"
+   ],
+   "careers": [
+    "musical entertainment industry"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "MUSI 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 3B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 3C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUSI 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 1C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 1D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "MUSI 15A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSI 15B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSI 20",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 21",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 22",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 31",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 34",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 35",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 41V",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSI 41W",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 42",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 45",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MUSI 6A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 6B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 6C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 9A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 9B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 9C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 12A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 12B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 12C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 13A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 13B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 13C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 14A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 14B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 14C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 14D",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 16A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 16B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 17",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 18A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 18B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 18C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 25",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 44A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 50A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 50B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 50C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 77",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 77X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 77Y",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "MUSI 001A",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 001B",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 001C",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 001D",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 003A",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 003B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 003C",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 004A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 004B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 004C",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 006A",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 006B",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 006C",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 009A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 009B",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 009C",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 012A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 012B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 012C",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 013A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 013B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 013C",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 014A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 014B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 014C",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 014D",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 016A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 016B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 018A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 018B",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 018C",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 041W",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 044A",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 050A",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 050B",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 050C",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 077X",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 17",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 20",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 21",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 22",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 25",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 31",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 34",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 35",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 42",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 45",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
     "code": "MUSI 5",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 51",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 53",
-    "why": "appears only in another program's area list, not the Music A.A. section"
-   },
-   {
-    "code": "MUSI 77",
-    "why": "not in the text; Music A.A. section absent"
-   },
-   {
-    "code": "MUSI 8",
-    "why": "appears only in another program's area list, not the Music A.A. section"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text (page 127) does not contain the Music A.A. Degree section. It begins mid-list with MUSI 3B and continues into discipline area lists (Native American and Indigenous Studies, Persian, Philosophy, Photography, Russian, Sign Language, Spanish, Theater Arts, Vietnamese, Women's Studies), each headed '(N Units)'. This appears to be an interdisciplinary degree's course list (e.g., a Liberal Arts/Arts and Humanities-type degree requiring 90 quarter units with De Anza GE or Cal-GETC), not the Music A.A.",
-   "The Music area heading and its opening rows (likely including MUSI 1A-1D, 3A) are cut off above the page break; the actual Music A.A. requirements are probably on another page.",
-   "No blocks, totals, GE pattern, outcomes or careers recorded because the named award's section is not in the text; a reviewer should fetch the correct page for the Music A.A. Degree."
+   "The excerpt does not print the program heading; section_heading 'Music A.A. Degree' is inferred from the program description ('This A.A. degree program...'). Reviewer should confirm the printed heading on page 134.",
+   "'Total Required: 90 Units' (quarter units) follows the GE sentence 'electives as needed to reach at least 90 units', so it is recorded as degree_total; the catalog prints no total for the major (block totals are 24 + 4 + 12 + 6).",
+   "List C is split across a page break; the GE/electives sentence is printed between MUSI 12B and MUSI 12C, and the list continues on page 135.",
+   "Lists A, B and C are read as choose-units blocks using the printed unit totals (4, 12, 6 units); the catalog prints no explicit 'select' wording.",
+   "The catalog encourages private instruction (not provided by the college); no course is named, so no recommended block was recorded.",
+   "Catalog codes like MUSI 3A, 41W, 77X were matched to closed-list codes MUSI 003A, 041W, 077X. MUSI 15A, 15B, 41V and 77Y are not on the closed list and are marked catalog additions.",
+   "The text following the music section (Nursing LVN Transition to RN A.S.) belongs to another program and was ignored."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "39115772038"
 }

@@ -339,12 +339,46 @@
   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "BLDGCTQ101",
+   "ECONMT100",
+   "ECONMT119",
+   "ECONMT174",
+   "PHYSICS12",
+   "REFA/C100",
+   "REFA/C101",
+   "REFA/C161",
+   "REFA/C162",
+   "REFA/C164",
+   "REFA/C165",
+   "REFA/C176",
+   "REFA/C187",
+   "REFA/C188",
+   "REFA/C199",
+   "REFA/C208",
+   "REFA/C209",
+   "REFA/C210",
+   "REFA/C250",
+   "REFA/C301",
+   "REFA/C941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+   "title": "T002904C A.S. 21* 42 6 48",
+   "h1": "T002904C A.S. 21* 42 6 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140,
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 7199
  },
  {
   "control_number": "02905",
@@ -577,16 +611,16 @@
    "ECONMT941"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
+   "title": "T002910C A.S. 21* 42 6 48",
+   "h1": "T002910C A.S. 21* 42 6 48",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    135,
+    136,
     137,
-    138,
-    139,
-    140
+    138
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -725,12 +759,46 @@
   "title": "Welding, Gas and Electric",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDG/E100",
+   "WELDG/E101",
+   "WELDG/E112",
+   "WELDG/E113",
+   "WELDG/E121",
+   "WELDG/E124",
+   "WELDG/E125",
+   "WELDG/E131",
+   "WELDG/E132",
+   "WELDG/E133",
+   "WELDG/E141",
+   "WELDG/E142",
+   "WELDG/E143",
+   "WELDG/E20",
+   "WELDG/E200",
+   "WELDG/E210",
+   "WELDG/E30",
+   "WELDG/E40",
+   "WELDG/E50",
+   "WELDGE121",
+   "WELDGE131"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 8819
  },
  {
   "control_number": "02917",
@@ -1221,7 +1289,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 0.636,
   "codes_found": [
    "BLDGCTQ101",
    "BLDGCTQ102",
@@ -1233,7 +1301,10 @@
    "ECONMT173",
    "ECONMT174",
    "OPMAINT228",
-   "OPMAINT229"
+   "OPMAINT229",
+   "REFA/C123",
+   "REFA/C124",
+   "REFA/C125"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
@@ -1435,16 +1506,16 @@
    "ECONMT941"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
+   "title": "T008481C A.A. 21* 40 8 48",
+   "h1": "T008481C A.A. 21* 40 8 48",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    135,
+    136,
     137,
-    138,
-    139,
-    140
+    138
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -1487,7 +1558,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "BLDGCTQ101",
    "BLDGCTQ102",
@@ -1504,7 +1575,8 @@
    "PLUMBNG29",
    "PLUMBNG31",
    "PLUMBNG33",
-   "PLUMBNG941"
+   "PLUMBNG941",
+   "WELDG/E201A"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
@@ -2766,12 +2838,46 @@
   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "BLDGCTQ101",
+   "ECONMT100",
+   "ECONMT119",
+   "ECONMT174",
+   "PHYSICS12",
+   "REFA/C100",
+   "REFA/C101",
+   "REFA/C161",
+   "REFA/C162",
+   "REFA/C164",
+   "REFA/C165",
+   "REFA/C176",
+   "REFA/C187",
+   "REFA/C188",
+   "REFA/C199",
+   "REFA/C208",
+   "REFA/C209",
+   "REFA/C210",
+   "REFA/C250",
+   "REFA/C301",
+   "REFA/C941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+   "title": "T021842D C 42 6 48",
+   "h1": "T021842D C 42 6 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140,
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 7033
  },
  {
   "control_number": "21844",
@@ -3040,16 +3146,16 @@
    "ECONMT941"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
+   "title": "T021852D C 40 8 48",
+   "h1": "T021852D C 40 8 48",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    135,
+    136,
     137,
-    138,
-    139,
-    140
+    138
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -3124,16 +3230,16 @@
    "ECONMT941"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
+   "title": "T021853D C 42 6 48",
+   "h1": "T021853D C 42 6 48",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    135,
+    136,
     137,
-    138,
-    139,
-    140
+    138
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -3196,7 +3302,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "BLDGCTQ101",
    "BLDGCTQ102",
@@ -3213,7 +3319,8 @@
    "PLUMBNG29",
    "PLUMBNG31",
    "PLUMBNG33",
-   "PLUMBNG941"
+   "PLUMBNG941",
+   "WELDG/E201A"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
@@ -3282,12 +3389,46 @@
   "title": "Welding, Gas and Electric",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDG/E100",
+   "WELDG/E101",
+   "WELDG/E112",
+   "WELDG/E113",
+   "WELDG/E121",
+   "WELDG/E124",
+   "WELDG/E125",
+   "WELDG/E131",
+   "WELDG/E132",
+   "WELDG/E133",
+   "WELDG/E141",
+   "WELDG/E142",
+   "WELDG/E143",
+   "WELDG/E20",
+   "WELDG/E200",
+   "WELDG/E210",
+   "WELDG/E30",
+   "WELDG/E40",
+   "WELDG/E50",
+   "WELDGE121",
+   "WELDGE131"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 8819
  },
  {
   "control_number": "21862",
@@ -3852,7 +3993,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.812,
+  "coverage": 0.938,
   "codes_found": [
    "BLDGCTQ10",
    "ECONMT100",
@@ -3866,7 +4007,9 @@
    "ECONMT173",
    "ECONMT205",
    "ECONMT215",
-   "ELECL601"
+   "ELECL601",
+   "REFA/C110",
+   "REFA/C165"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
@@ -4140,7 +4283,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.917,
   "codes_found": [
    "BLDGCTQ10",
    "CRPNTRY111A",
@@ -4150,7 +4293,9 @@
    "ECONMT116",
    "ECONMT119",
    "ECONMT129",
-   "ECONMT173"
+   "ECONMT173",
+   "REFA/C110",
+   "REFA/C165"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
@@ -4174,7 +4319,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.565,
+  "coverage": 0.696,
   "codes_found": [
    "BLDGCTQ10",
    "BLDGCTQ12",
@@ -4188,7 +4333,10 @@
    "ECONMT129",
    "ECONMT171",
    "ECONMT173",
-   "ECONMT205"
+   "ECONMT205",
+   "REFA/C100",
+   "REFA/C110",
+   "REFA/C165"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
@@ -4212,7 +4360,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.762,
+  "coverage": 0.905,
   "codes_found": [
    "BLDGCTQ10",
    "BLDGCTQ12",
@@ -4229,7 +4377,10 @@
    "ECONMT129",
    "ECONMT171",
    "ECONMT173",
-   "ECONMT205"
+   "ECONMT205",
+   "REFA/C100",
+   "REFA/C110",
+   "REFA/C165"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
@@ -4378,7 +4529,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 0.72,
   "codes_found": [
    "BLDGCTQ10",
    "BLDGCTQ12",
@@ -4394,7 +4545,10 @@
    "ECONMT129",
    "ECONMT171",
    "ECONMT173",
-   "ECONMT205"
+   "ECONMT205",
+   "REFA/C100",
+   "REFA/C110",
+   "REFA/C165"
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
@@ -4554,12 +4708,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.824,
   "codes_found": [
    "ANATOMY1",
    "CHEM101",
    "CHEM51",
-   "HEALTH11",
    "HEALTH12",
    "KIN180",
    "KIN237",
@@ -4589,42 +4742,32 @@
    "KIN3502",
    "KIN3511",
    "KIN3512",
-   "KIN3513",
    "KIN3661",
    "KIN3662",
    "KIN387",
    "KIN3911",
-   "KIN47",
-   "KINATH504",
-   "KINATH516",
    "KINMAJ100",
    "KINMAJ101",
-   "PHYSICS101",
    "PHYSICS6",
    "PHYSIOL1",
-   "PSYCC1000",
-   "PSYCH91",
-   "SOC1",
    "STATC1000",
    "STATC1000E"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
+   "title": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24",
+   "h1": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62,
-    63,
-    64,
-    65
+    193,
+    194
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 51,
-  "text_chars": 16000
+  "text_chars": 4634
  },
  {
   "control_number": "33225",
@@ -6521,24 +6664,62 @@
   "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDG/E113",
+   "WELDG/E132",
+   "WELDG/E141",
+   "WELDG/E142",
+   "WELDG/E143",
+   "WELDG/E50"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 8819
  },
  {
   "control_number": "41759",
   "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDG/E124",
+   "WELDG/E133",
+   "WELDG/E30",
+   "WELDG/E40",
+   "WELDGE121",
+   "WELDGE131"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 8819
  },
  {
   "control_number": "42144",

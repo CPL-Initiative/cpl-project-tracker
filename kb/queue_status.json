@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T08:11:49Z",
-  "session": 413,
-  "moniker": "SkyPinyon",
-  "run": "Sam's session",
+  "written_at": "2026-10-18T10:49:17Z",
+  "session": 414,
+  "moniker": "SkyChamise",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_414_handoff.md",
+  "handoff": "docs/session_415_handoff.md",
   "unchecked": [
     {
       "college": "Allan Hancock College",
@@ -37150,6 +37150,20 @@
       "loaded": "2026-10-17"
     },
     {
+      "college": "De Anza College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "05966",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "De Anza College",
+      "program": "Private Security",
+      "award": "A.A. Degree",
+      "control_number": "07103",
+      "loaded": "2026-10-18"
+    },
+    {
       "college": "East Los Angeles College",
       "program": "Acting for Stage and Screen",
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -61755,6 +61769,69 @@
       "loaded": "2026-10-17"
     },
     {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Electrical Construction and Maintenance:  Electrician",
+      "award": "A.S. Degree",
+      "control_number": "02910",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Electrical Construction and Maintenance:  Electrician",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21853",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41754",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+      "award": "A.S. Degree",
+      "control_number": "02904",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21842",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "32948",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Shielded Metal Arc Welding (SMAW) Structural Steel",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41759",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Welding, Gas and Electric",
+      "award": "A.S. Degree",
+      "control_number": "02916",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "program": "Welding, Gas and Electric",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21861",
+      "loaded": "2026-10-18"
+    },
+    {
       "college": "Los Angeles Valley College",
       "program": "21st Century Employability Skills - Advanced",
       "award": "Noncredit program",
@@ -65099,6 +65176,1077 @@
       "award": "Noncredit program",
       "control_number": "42202",
       "loaded": "2026-10-17"
+    },
+    {
+      "college": "Merced College",
+      "program": "ART",
+      "award": "A.A. Degree",
+      "control_number": "03494",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20804",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Administration in Early Childhood Education",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38916",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31120",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Administrative Medical Office Professional",
+      "award": "A.A. Degree",
+      "control_number": "03478",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Administrative Medical Office Professional",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19501",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Administrative Office Professional",
+      "award": "A.A. Degree",
+      "control_number": "03476",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Administrative Office Professional",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19499",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Adult Literacy",
+      "award": "Noncredit program",
+      "control_number": "40176",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agricultural Leadership",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45766",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Animal Science",
+      "award": "A.S. T Degree",
+      "control_number": "40072",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19494",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Business",
+      "award": "A.S. Degree",
+      "control_number": "19759",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "33885",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Education",
+      "award": "A.S. Degree",
+      "control_number": "43197",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "40215",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Agriculture Systems – Agriculture Foundation",
+      "award": "Noncredit program",
+      "control_number": "44165",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Animal Science",
+      "award": "A.S. Degree",
+      "control_number": "03468",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Animal Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19492",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "33207",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Applied Al and Cloud Computing",
+      "award": "A.S. Degree",
+      "control_number": "42692",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Applied Al and Cloud Computing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43058",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Applied Computer Al Systems Professional",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41411",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Athletic Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42572",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Automotive Electric & Hybrid Systems Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46060",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Automotive Master Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20812",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Automotive Master Technician",
+      "award": "A.S. Degree",
+      "control_number": "36258",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Automotive Technology Level 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "10439",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Automotive Technology Level 2",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "10438",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Basic Electronics",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "19502",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Basic Skills for Adults with Disabilities",
+      "award": "Noncredit program",
+      "control_number": "24412",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35569",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Biotechnology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19654",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Biotechnology Pre-Professional",
+      "award": "A.S. Degree",
+      "control_number": "35038",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Biotechnology-Industry",
+      "award": "A.S. Degree",
+      "control_number": "12308",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "40896",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "COMPUTER SCIENCE",
+      "award": "A.S. T Degree",
+      "control_number": "31816",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "33622",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "College Preparation Skills",
+      "award": "Noncredit program",
+      "control_number": "43466",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "College Success",
+      "award": "Noncredit program",
+      "control_number": "43465",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Commercial Refrigeration Technician",
+      "award": "A.S. Degree",
+      "control_number": "16245",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Commercial Refrigeration Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20811",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43347",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42801",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Computer Technology Essentials",
+      "award": "Noncredit program",
+      "control_number": "40932",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Computer Technology and Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "41472",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Court Interpreter",
+      "award": "Noncredit program",
+      "control_number": "24382",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Criminal Justice",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20815",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Crop Science",
+      "award": "A.S. Degree",
+      "control_number": "03465",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Crop Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20801",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Crop Science Advanced",
+      "award": "A.S. Degree",
+      "control_number": "42460",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Culinary Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41384",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Cybersecurity",
+      "award": "A.S. Degree",
+      "control_number": "42691",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Cybersecurity",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43044",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Dental Assisting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45853",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Diagnostic Medical Sonography",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19508",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Diagnostic Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "03505",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Diagnostic Radiologic Technology",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "19507",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Dietetic Services Supervisor/Dietary Manager",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17936",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Digital Arts",
+      "award": "A.A. Degree",
+      "control_number": "37204",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Drone Media",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41050",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "ENGLISH",
+      "award": "A.A- T Degree",
+      "control_number": "32211",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "ESL Advanced Skills",
+      "award": "Noncredit program",
+      "control_number": "40228",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "ESL Beginning Skills Program",
+      "award": "Noncredit program",
+      "control_number": "31644",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "ESL Intermediate Skills Program",
+      "award": "Noncredit program",
+      "control_number": "31645",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "ESL Workforce Training",
+      "award": "Noncredit program",
+      "control_number": "40738",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31867",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Early Childhood Educator I",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45388",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Early Childhood Educator II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45131",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Early Intervention Assistant Specialization",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22932",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "35530",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Electronics Technician",
+      "award": "A.S. Degree",
+      "control_number": "16242",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "33174",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "45852",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "03483",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "07718",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Environmental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "03466",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Essential Skills for Employment and Job Retention",
+      "award": "Noncredit program",
+      "control_number": "40737",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Families in Crisis Specialization",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22930",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20817",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Fitness Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39148",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "French",
+      "award": "A.A. Degree",
+      "control_number": "03497",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "GEOLOGY",
+      "award": "A.S. T Degree",
+      "control_number": "31861",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "General Agriculture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19491",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "General Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "19758",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "General Business",
+      "award": "A.A. Degree",
+      "control_number": "03470",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "General Business",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19497",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "GeoSpatial Applications: Social Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44431",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "33880",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Geospatial Technology and Applications: Agriculture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44429",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Geospatial Technology and Applications: Environmental and Earth Sciences",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44416",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "German",
+      "award": "A.A. Degree",
+      "control_number": "03498",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "HVAC Technician",
+      "award": "A.S. Degree",
+      "control_number": "16244",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32642",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Human Services",
+      "award": "A.A. Degree",
+      "control_number": "03530",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Human Services",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19370",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "IT Security Foundations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41385",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "IT Support Professional",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41428",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Industrial Electrical Technician",
+      "award": "A.S. Degree",
+      "control_number": "07724",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Industrial Electrical Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19506",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Industrial Maintenance Technology",
+      "award": "A.S. Degree",
+      "control_number": "07723",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Industrial Maintenance Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20809",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Infant/Toddler Care",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22926",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Instrumentation and Process Control Technology",
+      "award": "A.S. Degree",
+      "control_number": "07720",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Instrumentation and Process Control Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20808",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "32191",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "MUSIC",
+      "award": "A.A. Degree",
+      "control_number": "19668",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Management/Supervisory Training",
+      "award": "A.A. Degree",
+      "control_number": "03474",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Management/Supervisory Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20805",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "07713",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Marketing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20806",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46489",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Mathematics College Preparatory Basic Skills",
+      "award": "Noncredit program",
+      "control_number": "36388",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Mathematics College Preparatory Basic Skills II",
+      "award": "Noncredit program",
+      "control_number": "37390",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Medical Assistant",
+      "award": "Noncredit program",
+      "control_number": "24015",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Multi-Language Learner Specialization",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45669",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "32886",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Networking Technology",
+      "award": "A.S. Degree",
+      "control_number": "16243",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Networking Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19503",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Nursing, Registered",
+      "award": "A.S. Degree",
+      "control_number": "03501",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Nursing, Vocational",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19373",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "35572",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Nutrition and Foods",
+      "award": "A.S. Degree",
+      "control_number": "03507",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Nutrition and Foods",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19368",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Paramedicine: Pre-Professional",
+      "award": "A.S. Degree",
+      "control_number": "42503",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Paramedicine: Pre-Professional",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42504",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Pest Control Advisor",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16654",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32312",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Photography",
+      "award": "A.A. Degree",
+      "control_number": "07728",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20814",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46490",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Pipe Welding Technology",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42573",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "40266",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Professional Truck Driver Class A CDL Training",
+      "award": "Noncredit program",
+      "control_number": "40213",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "03514",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30631",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "45001",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Reading and Writing College Preparatory Basic Skills",
+      "award": "Noncredit program",
+      "control_number": "32944",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Registered Nursing LVN to RN Option",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42642",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "SPANISH",
+      "award": "A.A- T Degree",
+      "control_number": "32207",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "School-Age Care Specialization",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22928",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Social Justice Studies, Ethnic Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41857",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Social and Behavioral Science",
+      "award": "A.A. Degree",
+      "control_number": "17928",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "33625",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32987",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "System Administrator",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41427",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Teaching Online Education",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44715",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Technical Office Occupations",
+      "award": "Noncredit program",
+      "control_number": "24014",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Theatre Arts",
+      "award": "A.A. Degree",
+      "control_number": "03496",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32614",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "UCTP: Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "40854",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Welding Technology",
+      "award": "A.A. Degree",
+      "control_number": "03493",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Merced College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20813",
+      "loaded": "2026-10-18"
     },
     {
       "college": "Merritt College",
@@ -110259,8 +111407,8 @@
     }
   ],
   "next_step": {
-    "title": "Apply the Crafton build, then the slash rereads",
-    "text": "Merge the slash-subject fix and apply its display build, then read De Anza, Glendale and Los Angeles Trade-Technical again so their 36 misread checks score right; then the Coursedog walk for Merced."
+    "title": "Apply build 7e4a2a9c5ba7, then San Joaquin Delta's held rescore",
+    "text": "Apply the display build of 15,946 programs at 114 colleges once #2224 merges, then decide San Joaquin Delta's rescore, whose later degree-total check reads 28 more records as failing; then Taft's degree totals and Cañada's reader change."
   },
   "calls": [
     {
@@ -110280,20 +111428,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-18T05:50:00Z",
-      "text": "Taft College's catalog was read: 58 of 63 listed programs found and extracted, 24 passing the machine checks."
+      "at": "2026-10-18T09:20:00Z",
+      "text": "The display build of 15,782 programs at 113 colleges was applied."
     },
     {
-      "at": "2026-10-18T05:52:00Z",
-      "text": "Taft College's 55 program records were loaded, unchecked."
+      "at": "2026-10-18T09:40:00Z",
+      "text": "Records at Glendale, De Anza, Los Angeles Trade Technical and Crafton Hills that misread a slashed course code were rescored and replaced: 33 in all."
     },
     {
-      "at": "2026-10-18T07:25:00Z",
-      "text": "The display build of 15,770 programs at 113 colleges was applied."
+      "at": "2026-10-18T10:36:00Z",
+      "text": "Merced College's catalog was read for the first time: 154 of 172 listed programs found, 153 records loaded, 125 passing the machine checks."
     },
     {
-      "at": "2026-10-18T07:59:00Z",
-      "text": "Twelve more Crafton Hills records were loaded after the reader learned to read a course code with a slash in it: 76 of 79 listed programs now hold records."
+      "at": "2026-10-18T10:40:00Z",
+      "text": "The display build of 15,946 programs at 114 colleges was written, to apply once its pull request merges."
     }
   ],
   "headline": [
@@ -110367,11 +111515,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-18T08:12:00Z"
+    "at": "2026-10-18T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-18",
-    "gaps": 3824,
+    "gaps": 3828,
     "parts": {
       "links": {
         "catalog": [
@@ -110388,11 +111536,11 @@
         ]
       },
       "roep": [
-        18282,
+        18297,
         20282
       ],
       "coci": [
-        14469,
+        14615,
         20282
       ],
       "outcomes": {
@@ -110401,12 +111549,12 @@
           89192
         ],
         "plo": [
-          14469,
+          14615,
           20282
         ]
       },
       "careers": [
-        13419,
+        13565,
         20282
       ]
     }

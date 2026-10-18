@@ -1,0 +1,177 @@
+{
+ "college": "Merced College",
+ "control_number": "40737",
+ "shape": "noncredit",
+ "title": "Essential Skills for Employment and Job Retention",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mccd.edu/programs/49301.NC/requisites-ojrrt",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6118,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6118,
+    "output_tokens": 1010,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1010,
+  "output_tokens_details": {
+   "thinking_tokens": 382
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04467,
+ "ms": 9503,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 2,
+   "share": 0.5,
+   "missing": [
+    "WRK712"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WRL712"
+   ],
+   "flagged": [
+    "WRL712"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "49301.NC - Essential Skills for Employment and Job Retention (NC)",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Essentials Skills for Employment and Job Retention",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "WRK 710",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRL 712",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WRK 712",
+    "why": "not in the text as printed; the catalog prints 'WRL 712', likely a typo for WRK 712"
+   }
+  ],
+  "notes": [
+   "This is a noncredit program, but the catalog prints no hours. It states 'Total Credits 0.0 - 0.0' for the program and for each course, so measure is 'units' and the printed 0.0 credits are recorded. Hours could not be recorded.",
+   "The catalog prints 'WRL 712', which is not in the closed list. It is recorded as printed with catalog_addition true. It is very likely a typo for closed-list course WRK 712 (Essential Skills for Job Retention); a reviewer should confirm.",
+   "The block heading is printed as 'Essentials Skills for Employment and Job Retention' (with 'Essentials'), and the page title reads 'Essential Skills'.",
+   "Both courses are read as required ('all'), since each is listed with no choice rule.",
+   "The text prints no program learning outcomes and no careers."
+  ]
+ },
+ "extracted_run": "39117489616"
+}

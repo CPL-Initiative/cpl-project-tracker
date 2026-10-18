@@ -181,7 +181,9 @@ def listed_key(code: str | None, listed: dict) -> str:
     """A placed code's key in the closed list: its normal form, or the listed code it
     names once a subject's slash is set aside. The state's file stores some slashed
     subjects without the slash (Crafton Hills' CNAN633, which its page prints CNA/N 633,
-    S413), and the two would read as one course missing and another invented."""
+    S413), and the two would read as one course missing and another invented. Others
+    it stores with the letters after the slash dropped (THART124X2 for the page's
+    THART/S 124X2, S414); that reading is tried only when the first finds none."""
     k = norm_code(code)
     if k in listed or "/" not in k:
         return k
@@ -189,6 +191,9 @@ def listed_key(code: str | None, listed: dict) -> str:
     for lk in listed:
         if lk.replace("/", "") == bare:
             return lk
+    m = re.match(r"([A-Z&]+)/[A-Z]+(\d.*)$", k)
+    if m and m.group(1) + m.group(2) in listed:
+        return m.group(1) + m.group(2)
     return k
 
 
