@@ -46,28 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 20,
    "listed": 20,
-   "share": 0.9,
-   "missing": [
-    "FTV2B",
-    "FTV2BH"
-   ],
-   "unexplained": [
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "F/TV2B",
-    "F/TV2BH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -308,5 +299,6 @@
    "Text after the Italian section (Japanese, Korean, Mandarin certificates and degree) belongs to other programs and was ignored."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

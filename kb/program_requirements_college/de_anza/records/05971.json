@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 21,
-   "share": 0.952,
-   "missing": [
-    "FTV20"
-   ],
-   "unexplained": [
-    "FTV20"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "F/TV20"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -336,5 +330,6 @@
    "The same outcomes list is printed for the COA-A and the A.A.; the A.A. section's own copy is recorded."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

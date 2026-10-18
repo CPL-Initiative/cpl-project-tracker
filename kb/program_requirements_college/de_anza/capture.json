@@ -1,11 +1,11 @@
 {
  "college": "De Anza College",
- "catalog_url": "https://www.deanza.edu/catalog/",
- "platform": "custom_html",
+ "catalog_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf",
+ "platform": "pdf",
  "catalog_year": "2025-2026",
  "programs": 248,
  "with_closed_list": 243,
- "started": "2026-10-17T15:52:40Z",
+ "started": "2026-10-18T09:15:59Z",
  "pdf": {
   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf",
   "access": "hand_filed",
@@ -14,7 +14,7 @@
   "pages_total": 337,
   "error": null,
   "chars_total": 2334245,
-  "pypdf_accepted": 227,
+  "pypdf_accepted": 233,
   "sample": [
    "p102: 'Health Technologies Degrees and Certificates\\nCertificate of Achievement (COA) \\xa0\\nBusiness Office Clerk\\nStudents in the Business Office Clerk Certificate of Achievement learn basic medical coding, health insurance claims\\nbilling, collections '",
    "p203: 'ELIT 41 - Ethnic Literature of\\nthe United States\\n4.0 Units Credit - Degree Applicable\\nExamines significant authors, movements, and traditions (continuing as well as\\nemerging) in a diverse range of ethnic literature of the United States.\\nGen'"
@@ -45,6 +45,7 @@
      45
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.952,
@@ -59,6 +60,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -71,6 +73,7 @@
      144
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -82,6 +85,7 @@
      63
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -96,6 +100,7 @@
      53
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -104,13 +109,15 @@
    {
     "control_number": "05966",
     "pages": [
-     127
+     134,
+     135
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.654,
-    "opens": "[page 127] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+    "coverage": 0.981,
+    "opens": "[page 134] This A.A. degree program provides a foundation in music for students interested in a career in the musical entertainment industry or pursuing a bachelor's degree in Music. Students are encouraged to take priva"
    },
    {
     "control_number": "05969",
@@ -119,6 +126,7 @@
      141
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.842,
@@ -130,6 +138,7 @@
      141
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.882,
@@ -144,6 +153,7 @@
      55
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.952,
@@ -158,6 +168,7 @@
      106
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.969,
@@ -169,6 +180,7 @@
      73
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -182,6 +194,7 @@
      49
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -196,6 +209,7 @@
      49
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -208,6 +222,7 @@
      71
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -221,6 +236,7 @@
      112
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -232,6 +248,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -246,10 +263,25 @@
      77
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 74] The Business Programming A.A. degree program creates programming- savvy entrepreneurs who can make decisions about finances and technology, and who understand how to run an enterprise from both the technology a"
+   },
+   {
+    "control_number": "07090",
+    "pages": [
+     215,
+     216,
+     217
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.656,
+    "opens": "[page 215] F/TV 22 - Beginning 16mm Motion Picture Production 4.0 Units Credit - Degree Applicable This course provides an introduction to the basic theory, terminology, and practice of 16mm motion picture production thr"
    },
    {
     "control_number": "07091",
@@ -260,6 +292,7 @@
      63
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -272,6 +305,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.938,
@@ -284,6 +318,7 @@
      137
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.975,
@@ -296,6 +331,7 @@
      139
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -304,16 +340,30 @@
    {
     "control_number": "07103",
     "pages": [
-     46,
-     47,
      48,
      49
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 46] Course Title Units ADMJ 1 / POLI 10 Introduction to Administration of Justice 4 ADMJ 3 / PARA 3 / POLI 13 Concepts of Criminal Law 4 ADMJ 5 Community Relations 4 ADMJ 56 Practical Writing for Administration of "
+    "opens": "[page 48] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units COMM D008. or COMM D008H may not be selected if already taken from Requ"
+   },
+   {
+    "control_number": "09226",
+    "pages": [
+     214,
+     215,
+     216,
+     217
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.63,
+    "opens": "[page 214] F/TV 2C - Contemporary World Cinema 4.0 Units Credit - Degree Applicable This course is a critical survey of contemporary world cinema as art, business, technology, and cultural artifact. It provides the criti"
    },
    {
     "control_number": "10108",
@@ -322,6 +372,7 @@
      45
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.957,
@@ -334,6 +385,7 @@
      82
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -347,6 +399,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -361,6 +414,7 @@
      62
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -375,6 +429,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -389,6 +444,7 @@
      86
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -402,6 +458,7 @@
      87
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -416,6 +473,7 @@
      54
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -430,6 +488,7 @@
      57
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -443,6 +502,7 @@
      57
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -457,6 +517,7 @@
      105
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -469,6 +530,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -481,6 +543,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -492,6 +555,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -506,6 +570,7 @@
      93
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -519,6 +584,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -531,6 +597,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -543,6 +610,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -556,6 +624,7 @@
      64
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
@@ -569,6 +638,7 @@
      64
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.917,
@@ -583,6 +653,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -596,6 +667,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -607,6 +679,7 @@
      65
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -620,6 +693,7 @@
      137
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.962,
@@ -633,6 +707,7 @@
      71
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -647,6 +722,7 @@
      105
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -658,6 +734,7 @@
      71
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -672,6 +749,7 @@
      132
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.959,
@@ -685,6 +763,7 @@
      133
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.97,
@@ -699,6 +778,7 @@
      127
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.895,
@@ -707,14 +787,16 @@
    {
     "control_number": "16510",
     "pages": [
+     99,
      100,
      101
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.862,
-    "opens": "[page 100] One year (three quarters) of college-level world language or three years of high school world language or the equivalent. HNDI 2 Elementary Hindi (Second Quarter) 5 HNDI 3 Elementary Hindi (Third Quarter) 5 Op"
+    "coverage": 0.94,
+    "opens": "[page 99] HNDI 3 Elementary Hindi (Third Quarter) 5 Option 4: (15 Units) Course Title Units ITAL 1 Elementary Italian (First Quarter) 5 ITAL 2 Elementary Italian (Second Quarter) 5 ITAL 3 Elementary Italian (Third Quarte"
    },
    {
     "control_number": "16757",
@@ -723,6 +805,7 @@
      105
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -737,6 +820,7 @@
      87
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -751,6 +835,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -764,6 +849,7 @@
      114
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.925,
@@ -776,6 +862,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -790,6 +877,7 @@
      87
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -803,6 +891,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -816,6 +905,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -829,6 +919,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -841,6 +932,7 @@
      71
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -852,6 +944,7 @@
      90
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -863,6 +956,7 @@
      90
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -877,6 +971,7 @@
      106
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.969,
@@ -889,6 +984,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -901,6 +997,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -914,6 +1011,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -928,6 +1026,7 @@
      79
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -940,6 +1039,7 @@
      45
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.957,
@@ -952,10 +1052,25 @@
      144
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.947,
     "opens": "[page 143] The Certificate of Achievement in Real Estate provides the student with a thorough understanding of the California residential real estate market from a buyer’s, seller’s and real estate professional’s perspec"
+   },
+   {
+    "control_number": "23067",
+    "pages": [
+     215,
+     216,
+     217
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.656,
+    "opens": "[page 215] F/TV 22 - Beginning 16mm Motion Picture Production 4.0 Units Credit - Degree Applicable This course provides an introduction to the basic theory, terminology, and practice of 16mm motion picture production thr"
    },
    {
     "control_number": "23070",
@@ -966,6 +1081,7 @@
      77
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -980,6 +1096,7 @@
      82
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -992,6 +1109,7 @@
      79
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1006,6 +1124,7 @@
      78
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1020,6 +1139,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1034,6 +1154,7 @@
      62
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1048,6 +1169,7 @@
      63
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1061,6 +1183,7 @@
      64
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.917,
@@ -1074,6 +1197,7 @@
      64
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
@@ -1085,6 +1209,7 @@
      63
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1096,6 +1221,7 @@
      86
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1110,6 +1236,7 @@
      86
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1123,6 +1250,7 @@
      87
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1137,6 +1265,7 @@
      53
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1151,6 +1280,7 @@
      55
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.952,
@@ -1163,6 +1293,7 @@
      105
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1176,6 +1307,7 @@
      71
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1188,6 +1320,7 @@
      139
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1200,6 +1333,7 @@
      49
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1214,6 +1348,7 @@
      112
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1222,15 +1357,17 @@
    {
     "control_number": "23097",
     "pages": [
+     98,
      99,
      100,
      101
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 99] HNDI 3 Elementary Hindi (Third Quarter) 5 Option 4: (15 Units) Course Title Units ITAL 1 Elementary Italian (First Quarter) 5 ITAL 2 Elementary Italian (Second Quarter) 5 ITAL 3 Elementary Italian (Third Quarte"
+    "opens": "[page 98] The Global Studies Certificate of Achievement-Advanced is an interdisciplinary program that prepares students to be well-versed in world history, global issues and perspectives, geography and cultural competenc"
    },
    {
     "control_number": "30618",
@@ -1238,6 +1375,7 @@
      89
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.902,
@@ -1249,6 +1387,7 @@
      134
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1263,6 +1402,7 @@
      55
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1274,6 +1414,7 @@
      141
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1285,6 +1426,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1299,6 +1441,7 @@
      78
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1310,6 +1453,7 @@
      57
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1322,6 +1466,7 @@
      60
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1334,6 +1479,7 @@
      73
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1345,6 +1491,7 @@
      60
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1358,6 +1505,7 @@
      60
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1369,6 +1517,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1383,6 +1532,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1397,6 +1547,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1405,14 +1556,30 @@
    {
     "control_number": "31293",
     "pages": [
+     114,
      115,
      116
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.772,
-    "opens": "[page 115] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units DANC 25B Theory and Technique of Salsa Dance II 1 DANC 37A Theory and "
+    "coverage": 1.0,
+    "opens": "[page 114] Kinesiology for Transfer The Kinesiology major consists of courses appropriate for the Associate in Arts in Kinesiology for Transfer degree, which provides a foundational understanding of the discipline, a bre"
+   },
+   {
+    "control_number": "31308",
+    "pages": [
+     215,
+     216,
+     217
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.585,
+    "opens": "[page 215] F/TV 22 - Beginning 16mm Motion Picture Production 4.0 Units Credit - Degree Applicable This course provides an introduction to the basic theory, terminology, and practice of 16mm motion picture production thr"
    },
    {
     "control_number": "31498",
@@ -1420,6 +1587,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1432,6 +1600,7 @@
      82
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1443,10 +1612,25 @@
      82
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 82] The Certificate of Achievement in Web Development certifies that the student can create web pages and client side programming for web pages. Program Learning Outcomes Upon completion, students will be able to C"
+   },
+   {
+    "control_number": "31504",
+    "pages": [
+     215,
+     216,
+     217
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 215] F/TV 22 - Beginning 16mm Motion Picture Production 4.0 Units Credit - Degree Applicable This course provides an introduction to the basic theory, terminology, and practice of 16mm motion picture production thr"
    },
    {
     "control_number": "31511",
@@ -1454,6 +1638,7 @@
      79
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1466,6 +1651,7 @@
      79
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1480,6 +1666,7 @@
      109
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1491,6 +1678,7 @@
      142
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.943,
@@ -1503,6 +1691,7 @@
      71
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1515,6 +1704,7 @@
      86
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1529,6 +1719,7 @@
      87
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1543,6 +1734,7 @@
      77
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1557,6 +1749,7 @@
      116
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.92,
@@ -1571,6 +1764,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1585,6 +1779,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1596,6 +1791,7 @@
      102
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1608,6 +1804,7 @@
      88
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.931,
@@ -1619,6 +1816,7 @@
      107
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1632,6 +1830,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.867,
@@ -1643,6 +1842,7 @@
      145
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1656,6 +1856,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1668,6 +1869,7 @@
      87
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1679,6 +1881,7 @@
      49
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1690,6 +1893,7 @@
      93
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1701,6 +1905,7 @@
      93
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1712,6 +1917,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1725,6 +1931,7 @@
      125
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1739,6 +1946,7 @@
      131
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.915,
@@ -1752,6 +1960,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1766,6 +1975,7 @@
      49
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1779,6 +1989,7 @@
      57
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1791,6 +2002,7 @@
      114
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.882,
@@ -1803,6 +2015,7 @@
      114
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1815,6 +2028,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1826,6 +2040,7 @@
      142
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -1837,6 +2052,7 @@
      140
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1851,6 +2067,7 @@
      111
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.978,
@@ -1862,6 +2079,7 @@
      65
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1874,6 +2092,7 @@
      300
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1886,6 +2105,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1897,6 +2117,7 @@
      120
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1911,6 +2132,7 @@
      79
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1925,6 +2147,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1937,6 +2160,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1948,6 +2172,7 @@
      301
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1959,6 +2184,7 @@
      302
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1967,14 +2193,16 @@
    {
     "control_number": "39390",
     "pages": [
+     47,
      48,
      49
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.628,
-    "opens": "[page 48] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units COMM D008. or COMM D008H may not be selected if already taken from Requ"
+    "coverage": 0.953,
+    "opens": "[page 47] IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only one version of the course. Required Core: (27 Units) Course Title Units ADMJ 3 / PARA 3 / POLI 13 Co"
    },
    {
     "control_number": "39415",
@@ -1985,6 +2213,7 @@
      113
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1996,6 +2225,7 @@
      299
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2007,6 +2237,7 @@
      300
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2018,6 +2249,7 @@
      300
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2029,6 +2261,7 @@
      301
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2041,6 +2274,7 @@
      302
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2052,6 +2286,7 @@
      302
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2063,6 +2298,7 @@
      303
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2074,6 +2310,7 @@
      307
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -2085,6 +2322,7 @@
      306
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2096,6 +2334,7 @@
      306
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2107,6 +2346,7 @@
      306
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2118,6 +2358,7 @@
      305
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2129,6 +2370,7 @@
      304
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2143,10 +2385,23 @@
      48
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 45] Associate in Arts (A.A.) Degree Accounting This program prepares Business students for transfer to a four-year institution as Accounting majors. Students gain the skills needed for a professional job in accou"
+   },
+   {
+    "control_number": "41327",
+    "pages": [
+     216
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 216] F/TV 57A - Documentary Production Fundamentals I 4.0 Units Credit - Degree Applicable This course will cover the nonfiction concepts, principles, and techniques as related to the production of a documentary vi"
    },
    {
     "control_number": "41792",
@@ -2156,6 +2411,7 @@
      69
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.882,
@@ -2169,6 +2425,7 @@
      57
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2183,6 +2440,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.733,
@@ -2191,16 +2449,17 @@
    {
     "control_number": "41859",
     "pages": [
+     116,
      117,
      118,
-     119,
-     120
+     119
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
-    "opens": "[page 117] Program Requirements IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive"
+    "opens": "[page 116] IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only one "
    },
    {
     "control_number": "41860",
@@ -2211,6 +2470,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -2225,6 +2485,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2239,6 +2500,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -2247,15 +2509,17 @@
    {
     "control_number": "41863",
     "pages": [
+     120,
      121,
      122,
      123
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.917,
-    "opens": "[page 121] SPAN 2 Elementary Spanish (Second Quarter) 5 SPAN 3 Elementary Spanish (Third Quarter) 5 SPAN D001. need not be taken if students have completed these units in another college and are cleared into SPAN D002. b"
+    "opens": "[page 120] Apply the appropriate use of sight translation in various settings Program Requirements IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some cours"
    },
    {
     "control_number": "41864",
@@ -2266,6 +2530,7 @@
      125
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -2278,6 +2543,7 @@
      139
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2289,6 +2555,7 @@
      139
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2300,6 +2567,7 @@
      139
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2311,6 +2579,7 @@
      304
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2322,6 +2591,7 @@
      303
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2333,6 +2603,7 @@
      77
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2347,6 +2618,7 @@
      49
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2359,6 +2631,7 @@
      83
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2370,6 +2643,7 @@
      305
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2382,6 +2656,7 @@
      300
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2393,6 +2668,7 @@
      73
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2404,6 +2680,7 @@
      305
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2415,6 +2692,7 @@
      304
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2427,6 +2705,7 @@
      306
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2438,6 +2717,7 @@
      303
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2449,6 +2729,7 @@
      303
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2460,6 +2741,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2472,6 +2754,7 @@
      301
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2483,6 +2766,7 @@
      300
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2496,6 +2780,7 @@
      301
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2507,6 +2792,7 @@
      301
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2518,6 +2804,7 @@
      101
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.931,
@@ -2530,6 +2817,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2541,6 +2829,7 @@
      64
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2555,6 +2844,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2563,16 +2853,17 @@
    {
     "control_number": "45186",
     "pages": [
+     108,
      109,
      110,
-     111,
-     112
+     111
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 109] NAIS 12 Ethnic Studies and the Historical Experiences of Native Americans 4 List B - Complete from below or from List A (not already taken): (8 Units) Course Title Units AFAM 11 Sankofa: Roots of the African A"
+    "opens": "[page 108] Intercultural Studies Degrees and Certificates Certificate of Achievement (COA) Asian American Studies The Certificate of Achievement in Asian American Studies prepares students to be historically informed a"
    },
    {
     "control_number": "45187",
@@ -2583,6 +2874,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2597,6 +2889,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2611,6 +2904,7 @@
      124
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2622,6 +2916,7 @@
      92
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
@@ -2633,6 +2928,7 @@
      64
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2647,6 +2943,7 @@
      56
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.864,
@@ -2659,6 +2956,7 @@
      57
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2673,6 +2971,7 @@
      56
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.85,
@@ -2685,6 +2984,7 @@
      57
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2699,6 +2999,7 @@
      61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2711,6 +3012,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.7,
@@ -2722,6 +3024,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2736,6 +3039,7 @@
      132
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.6,
@@ -2748,6 +3052,7 @@
      258
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.556,
@@ -2760,6 +3065,7 @@
      133
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.533,
@@ -2771,6 +3077,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.895,
@@ -2783,6 +3090,7 @@
      211
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.667,
@@ -2794,6 +3102,7 @@
      303
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2807,6 +3116,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.522,
@@ -2818,6 +3128,7 @@
      178
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.625,
@@ -2831,6 +3142,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.545,
@@ -2839,14 +3151,16 @@
    {
     "control_number": "46513",
     "pages": [
+     123,
      124,
      125
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.571,
-    "opens": "[page 124] SOC 5 / INTL 8 Sociology of Globalization and Social Change 4 WMST 1 Introduction to Women's Studies 4 WMST 8 / CETH 8 Women of Color in the USA 4 WMST 24 Women and Gender in Global Perspectives 4 WMST 27 Wome"
+    "coverage": 0.987,
+    "opens": "[page 123] The Leadership and Social Change Certificate of Achievement prepares students to be community leaders, agents of change in the workplace and responsible participants in civic life in general. Students completi"
    },
    {
     "control_number": "46568",
@@ -2854,6 +3168,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.6,
@@ -2863,12 +3178,12 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 262.5,
- "found": 227,
+ "seconds": 343.2,
+ "found": 233,
  "by_method": {
   "no_closed_list": 5,
-  "not_found": 16,
-  "pdf_pages": 227
+  "not_found": 10,
+  "pdf_pages": 233
  },
  "shared_pages": {
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44": [
@@ -2892,6 +3207,10 @@
    "05965",
    "23086"
   ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134": [
+   "05966",
+   "30911"
+  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=140": [
    "05969",
    "38397"
@@ -2913,9 +3232,12 @@
    "05983",
    "43443"
   ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47": [
+   "05992",
+   "39390"
+  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46": [
    "05993",
-   "07103",
    "36776",
    "42171"
   ],
@@ -2938,6 +3260,12 @@
    "23070",
    "33336"
   ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215": [
+   "07090",
+   "23067",
+   "31308",
+   "31504"
+  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60": [
    "07091",
    "23079",
@@ -2952,6 +3280,10 @@
    "07102",
    "23094",
    "41885"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48": [
+   "07103",
+   "23095"
   ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=81": [
    "10112",
@@ -3035,10 +3367,6 @@
    "46311",
    "46313"
   ],
-  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124": [
-   "15965",
-   "46513"
-  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84": [
    "16759",
    "18850",
@@ -3082,14 +3410,6 @@
    "23083",
    "35776"
   ],
-  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48": [
-   "23095",
-   "39390"
-  ],
-  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109": [
-   "23096",
-   "45186"
-  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61": [
    "30943",
    "30958",
@@ -3128,6 +3448,14 @@
    "35923",
    "35924"
   ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123": [
+   "36263",
+   "46513"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108": [
+   "39225",
+   "45186"
+  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299": [
    "39288",
    "41152",
@@ -3136,7 +3464,8 @@
   ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120": [
    "39305",
-   "41862"
+   "41862",
+   "41863"
   ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301": [
    "39310",
@@ -3177,15 +3506,14 @@
    "42012",
    "44021"
   ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116": [
+   "41858",
+   "41859"
+  ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117": [
-   "41859",
    "41860",
    "45187",
    "45188"
-  ],
-  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121": [
-   "41863",
-   "45189"
   ],
   "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=139": [
    "41886",
@@ -3209,54 +3537,6 @@
   ]
  },
  "not_found": [
-  {
-   "control_number": "07090",
-   "title": "Film/TV: Production",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=96",
-    "coverage": 0.078
-   }
-  },
-  {
-   "control_number": "09226",
-   "title": "Film/TV: Animation",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=95",
-    "coverage": 0.283
-   }
-  },
-  {
-   "control_number": "23067",
-   "title": "Film/TV: Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=96",
-    "coverage": 0.078
-   }
-  },
-  {
-   "control_number": "31308",
-   "title": "Film/TV: Screenwriting",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=97",
-    "coverage": 0.132
-   }
-  },
-  {
-   "control_number": "31504",
-   "title": "Film/TV: Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": null
-  },
-  {
-   "control_number": "41327",
-   "title": "Film/TV: Animation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": null
-  },
   {
    "control_number": "45279",
    "title": "Cal-GETC",
@@ -3338,2286 +3618,176 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 14,
-  "0.8-1.0": 43,
-  "1.0": 170
+  "0.5-0.8": 15,
+  "0.8-1.0": 46,
+  "1.0": 172
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 227,
+  "against": "kb/program_requirements_college/de_anza",
+  "kept": 217,
+  "programs": 16,
   "list": [
-   {
-    "control_number": "05951",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05952",
-    "title": "Business Administration",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05954",
-    "title": "Real Estate",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=143",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05962",
-    "title": "Automotive Machining and Engine Repair",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05965",
-    "title": "Art History",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "05966",
     "title": "Music",
     "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=127",
-    "coverage": 0.654,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
+    "coverage": 0.981,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=127",
+    "was_coverage": 0.654,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "05969",
-    "title": "Photographic Arts (Film and Digital)",
+    "control_number": "07090",
+    "title": "Film/TV: Production",
     "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=140",
-    "coverage": 0.842,
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "coverage": 0.656,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05970",
-    "title": "Professional Photography (Film and Digital)",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=141",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05971",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05980",
-    "title": "Medical Assisting",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=103",
-    "coverage": 0.969,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05983",
-    "title": "Communication Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05992",
-    "title": "Law Enforcement",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05993",
-    "title": "Corrections/Probation",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05994",
-    "title": "Child Development",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05996",
-    "title": "Intercultural Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06005",
-    "title": "Marketing Management",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06006",
-    "title": "Business Programming",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07091",
-    "title": "Automotive Powertrain Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07099",
-    "title": "Environmental Resource Management and Pollution Prevention",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=92",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07101",
-    "title": "Registered Nurse (RN)",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=136",
-    "coverage": 0.975,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07102",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "07103",
     "title": "Private Security",
     "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "10108",
-    "title": "Accounting",
+    "control_number": "09226",
+    "title": "Film/TV: Animation",
     "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44",
-    "coverage": 0.957,
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=214",
+    "coverage": 0.63,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10112",
-    "title": "Systems Programming",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10114",
-    "title": "Network Administration",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10117",
-    "title": "Automotive Machining and Engine Repair Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10118",
-    "title": "Automotive Chassis Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10121",
-    "title": "Advanced Manufacturing and Prototyping Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10122",
-    "title": "CNC Research and Development Machinist",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10124",
-    "title": "Ceramics",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=51",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10125",
-    "title": "Painting",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10127",
-    "title": "Sculpture",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10132",
-    "title": "Lab Assisting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10133",
-    "title": "Medical Reception",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10134",
-    "title": "Medical Transcribing with Editing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10135",
-    "title": "Phlebotomy Technician I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10137",
-    "title": "Energy Management and Building Science",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10416",
-    "title": "Medical File Clerk",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10417",
-    "title": "Medical Records Clerk",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11040",
-    "title": "Network Programming",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11778",
-    "title": "Automotive Engine Performance",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11779",
-    "title": "Automotive Chassis and Powertrain",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11784",
-    "title": "Advanced Engine Performance Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12199",
-    "title": "Network Administration",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12727",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12821",
-    "title": "LVN Transition to RN",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=135",
-    "coverage": 0.962,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12827",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12869",
-    "title": "Business Office Clerk",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15181",
-    "title": "Early Intervention/Special Education Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15516",
-    "title": "Liberal Arts (Science, Math and Engineering Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
-    "coverage": 0.959,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15964",
-    "title": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=131",
-    "coverage": 0.97,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15965",
-    "title": "Liberal Arts (Arts and Letters Emphasis)",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "16510",
     "title": "Global Studies",
     "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=100",
-    "coverage": 0.862,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+    "coverage": 0.94,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=100",
+    "was_coverage": 0.862,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "16757",
-    "title": "Medical Laboratory Technology",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16759",
-    "title": "CNC Machinist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16975",
-    "title": "Cybersecurity",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16977",
-    "title": "Journalism",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=112",
-    "coverage": 0.925,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18004",
-    "title": "Management",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18850",
-    "title": "CNC Machinist",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19291",
-    "title": "Management",
+    "control_number": "23067",
+    "title": "Film/TV: Production",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67",
-    "coverage": 1.0,
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "coverage": 0.656,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19521",
-    "title": "Environmental Resource Management and Pollution Prevention",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19523",
-    "title": "Entrepreneurship",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19530",
-    "title": "Early Childhood Mental Health",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19531",
-    "title": "Energy Management and Building Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19532",
-    "title": "Energy Management and Building Science",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19534",
-    "title": "Medical Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=103",
-    "coverage": 0.969,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19536",
-    "title": "Marketing Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19537",
-    "title": "Project Management Practitioner",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19540",
-    "title": "Network Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19846",
-    "title": "Database Development Practitioner",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23063",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23065",
-    "title": "Real Estate",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=143",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23070",
-    "title": "Business Programming",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23071",
-    "title": "Systems Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23072",
-    "title": "Network Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23073",
-    "title": "Cybersecurity",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23077",
-    "title": "Advanced Engine Performance Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23078",
-    "title": "Automotive Machining and Engine Repair Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23079",
-    "title": "Automotive Powertrain Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23080",
-    "title": "Automotive Chassis and Powertrain",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23081",
-    "title": "Automotive Engine Performance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23082",
-    "title": "Automotive Machining and Engine Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23083",
-    "title": "Computer Aided Design - Mechanical",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23084",
-    "title": "Advanced Manufacturing and Prototyping Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23085",
-    "title": "CNC Research and Development Machinist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23086",
-    "title": "Art History",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23090",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23092",
-    "title": "Medical Laboratory Technology",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23093",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23094",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23095",
-    "title": "Private Security",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23096",
-    "title": "Intercultural Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "23097",
     "title": "Global Studies",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=98",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30618",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=89",
-    "coverage": 0.902,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30911",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30931",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30933",
-    "title": "Professional Photography (Film and Digital)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=141",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30943",
-    "title": "Smog Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30944",
-    "title": "Cybersecurity",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30952",
-    "title": "Advanced Automotive Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30953",
-    "title": "Automotive Machining and Engine Repair Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30954",
-    "title": "Communication Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30955",
-    "title": "Automotive Powertrain Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30956",
-    "title": "Automotive Chassis Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30958",
-    "title": "Intermediate Engine Performance Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30959",
-    "title": "Basic Engine Performance Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31272",
-    "title": "Business Administration",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31293",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=115",
-    "coverage": 0.772,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31498",
-    "title": "Programming in JAVA",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=114",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=115",
+    "was_coverage": 0.772,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "31500",
-    "title": "UNIX/LINUX Operating System",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31502",
-    "title": "Web Development",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31511",
-    "title": "Programming in C/C++",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31549",
-    "title": "Network Basics",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31805",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31820",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
-    "coverage": 0.943,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32006",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33329",
-    "title": "CNC Programming - CAD-CAM",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33330",
-    "title": "CNC Machinist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33336",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33338",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113",
-    "coverage": 0.92,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33366",
-    "title": "Mandarin Language and Culture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33456",
-    "title": "Mandarin Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33800",
-    "title": "Clinical Laboratory Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35500",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=87",
-    "coverage": 0.931,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35605",
-    "title": "Humanities",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35647",
-    "title": "Programming in Python",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35661",
-    "title": "Women's Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35730",
-    "title": "Environmental Resource Management and Pollution Prevention",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35776",
-    "title": "Quality Control Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35828",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=49",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35922",
-    "title": "Facility and Sustainable Building Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35923",
-    "title": "Facility and Sustainable Building Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35924",
-    "title": "Facility and Sustainable Building Management",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36263",
-    "title": "Leadership and Social Change",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36264",
-    "title": "Liberal Arts (Business and Computer Information Systems Emphasis)",
+    "control_number": "31308",
+    "title": "Film/TV: Screenwriting",
     "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
-    "coverage": 0.915,
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "coverage": 0.585,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "36775",
-    "title": "Automotive General Service Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36776",
-    "title": "Cyber Forensics and Investigations",
+    "control_number": "31504",
+    "title": "Film/TV: Production",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
-    "coverage": 1.0,
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "coverage": 0.667,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36817",
-    "title": "Spatial Art",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36818",
-    "title": "Public Relations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36854",
-    "title": "Public Relations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38149",
-    "title": "Management Information Systems Support",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38395",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38397",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39225",
-    "title": "Asian American Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
-    "coverage": 0.978,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39283",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39288",
-    "title": "Automotive Chassis Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39304",
-    "title": "Project Management Practitioner",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39305",
-    "title": "Mandarin Translation and Interpretation",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39307",
-    "title": "Database Development Practitioner",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39308",
-    "title": "Database Development Practitioner",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39309",
-    "title": "Project Management Practitioner",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39310",
-    "title": "General Service Technician",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39311",
-    "title": "Smog Technician",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=302",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "39390",
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
-    "coverage": 0.628,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
+    "coverage": 0.953,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
+    "was_coverage": 0.628,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "39415",
-    "title": "Social Justice Studies: General Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41152",
-    "title": "Advanced Engine Performance Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41153",
-    "title": "Automotive Machining and Engine Repair Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41154",
-    "title": "Automotive Powertrain Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41155",
-    "title": "Basic Engine Performance Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41156",
-    "title": "Intermediate Engine Performance Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41157",
-    "title": "Business Software Applications",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=302",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41158",
-    "title": "Introduction to Computer Science",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41159",
-    "title": "Real Estate Salesperson",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=307",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41160",
-    "title": "Commercial Lighting",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41161",
-    "title": "Photographic Retouching and Digital Post-Production",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41172",
-    "title": "Precalculus Bridge",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41174",
-    "title": "Math Basic Skills",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41176",
-    "title": "English as a Second Language Intermediate Level",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41326",
-    "title": "Community Service Officer",
+    "control_number": "41327",
+    "title": "Film/TV: Animation",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=45",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=216",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41792",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41793",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41858",
-    "title": "French Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116",
-    "coverage": 0.733,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "41859",
     "title": "German Language and Culture",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116",
     "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41860",
-    "title": "Italian Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41861",
-    "title": "Korean Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41862",
-    "title": "Russian Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41863",
     "title": "Spanish Language and Culture",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
     "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41864",
-    "title": "World Languages and Culture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=122",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41885",
-    "title": "Paralegal Studies - Corporate Law",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41886",
-    "title": "Paralegal Studies - Intellectual Property",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41887",
-    "title": "Paralegal Studies - Litigation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42012",
-    "title": "American English Pronunciation",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42062",
-    "title": "Information Technology Technical Support",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42169",
-    "title": "Information Technology Technical Support",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42171",
-    "title": "Forensic Criminal Investigation Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42186",
-    "title": "Additive Manufacturing Technology: 3D Design and Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43348",
-    "title": "English Writing, Grammar and Proofreading",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43374",
-    "title": "Alternative Fuels Technology",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43443",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44020",
-    "title": "English as a Second Language Low Advanced Level",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44021",
-    "title": "English as a Second Language High Intermediate Level",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44033",
-    "title": "Math Skills for Business",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44044",
-    "title": "Project Management Practitioner",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44045",
-    "title": "Database Science Practitioner",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44194",
-    "title": "Autonomous and Electric Vehicle Technician (Level 2)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44239",
-    "title": "Autonomous and Electric Vehicle Technician (Level 1)",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44240",
-    "title": "Autonomous and Electric Vehicle Technician (Level 2)",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44241",
-    "title": "Automotive Body Electrical",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44242",
-    "title": "EV and Fuel Vehicle Safety",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44325",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=101",
-    "coverage": 0.931,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44377",
-    "title": "Autonomous and Electric Vehicle Technician (Level 1)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44378",
-    "title": "Autonomous and Electric Vehicle Technology (Level 1)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45128",
-    "title": "Mandarin Language and Culture",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45186",
     "title": "Ethnic Studies",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45187",
-    "title": "Hindi Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45188",
-    "title": "Japanese Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45189",
-    "title": "Vietnamese Language and Culture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45492",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=92",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45499",
-    "title": "Automotive Technology Management",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45561",
-    "title": "Illustration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=53",
-    "coverage": 0.864,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45562",
-    "title": "UI/UX: User Interface/User Experience Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45563",
-    "title": "Illustration",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=53",
-    "coverage": 0.85,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45564",
-    "title": "UI/UX: User Interface/User Experience Design",
-    "award": "A.A. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46178",
-    "title": "Automotive Service and Repair",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46311",
-    "title": "Applied Mathematics",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46312",
-    "title": "Elementary Mathematics Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46313",
-    "title": "Mathematics for Business and Social Sciences",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46315",
-    "title": "Statistics",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=257",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46316",
-    "title": "Community Impact",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=132",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46339",
-    "title": "Engineering (Electrical Engineering Track)",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=130",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46394",
-    "title": "English as a Second Language Oral Communication",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=210",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46413",
-    "title": "Foundations of Data Science",
-    "award": "Noncredit program",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46510",
-    "title": "Applied Artificial Intelligence",
-    "award": "A.S. Degree",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
-    "coverage": 0.522,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46511",
-    "title": "Applied Artificial Intelligence",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=178",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46512",
-    "title": "Applied Artificial Intelligence",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "46513",
     "title": "Leadership and Social Change",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46568",
-    "title": "Foundations of Data Science",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123",
+    "coverage": 0.987,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
+    "was_coverage": 0.571,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39046890834"
+ "run": "39114559952"
 }

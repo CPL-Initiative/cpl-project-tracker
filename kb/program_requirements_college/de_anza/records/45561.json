@@ -46,31 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 22,
    "listed": 22,
-   "share": 0.864,
-   "missing": [
-    "FTV17G",
-    "FTV67A",
-    "FTV70A"
-   ],
-   "unexplained": [
-    "FTV17G",
-    "FTV67A",
-    "FTV70A"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "F/TV17G",
-    "F/TV67A",
-    "F/TV70A"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -108,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -346,5 +334,6 @@
    "Units are quarter units."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }
