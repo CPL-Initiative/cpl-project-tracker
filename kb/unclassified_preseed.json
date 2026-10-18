@@ -1,6 +1,6 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-18T16:52:57Z",
+ "_generated_at": "2026-10-18T17:37:27Z",
  "_queue_count": 1498,
  "_counts": {
   "staged": 1287,

@@ -1,6 +1,6 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-18T16:52:57Z",
+ "_generated_at": "2026-10-18T17:37:27Z",
  "procedures_hash": "575c290d755b",
  "queue": 1498,
  "saved_not_folded": 176,
