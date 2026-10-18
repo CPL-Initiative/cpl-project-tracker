@@ -331,6 +331,8 @@ check({P.norm_code(c) for c in ("CNA/N 621", "KIN/D 130A", "MATH/N 600")}
       <= C.page_codes("CNA/N 621 Nursing Assistant Theory\nKIN/D 130A Jazz Dance I\tMATH/N 600"),
       "the code net reads a subject with a slash (CNA/N 621), as the state's file stores it: %r"
       % sorted(C.page_codes("CNA/N 621 Nursing Assistant Theory")))
+check({"ESLN601", "CNAN626"} <= C.page_codes("ESL/N 601 Beginning ESL\nCNA/N 626 Home Health Aide Clinical"),
+      "the code net also reads the slash-free form the state's file sometimes stores (ESLN601 for ESL/N 601)")
 
 # ── curriQunet: the catalog's own JSON (S357) ──────────────────────────────
 print("curriQunet")
