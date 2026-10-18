@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1178,
-    "bytes": 12124743,
-    "over_budget": 9,
-    "handoff_max": 411,
+    "files": 1180,
+    "bytes": 12141293,
+    "over_budget": 8,
+    "handoff_max": 412,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60011,
+    "always_loaded_bytes": 60270,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60011,
+        "bytes": 60270,
         "over": 1
       },
       "other": {
         "files": 121,
-        "bytes": 3685882,
+        "bytes": 3686189,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10074,
+        "bytes": 10577,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2329443,
+        "bytes": 2335791,
         "over": 2
       },
       "kb_note": {
@@ -45,91 +45,91 @@
         "over": 0
       },
       "roadmap_lane": {
-        "files": 37,
-        "bytes": 354310,
-        "over": 3
+        "files": 38,
+        "bytes": 358175,
+        "over": 2
       },
       "handoff": {
-        "files": 382,
-        "bytes": 2947536,
+        "files": 383,
+        "bytes": 2952804,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 8,
       "house_voice": 23,
       "kb_note_dialect": 1,
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22337,
-      "bytes": 3002533265,
-      "heavy_bytes": 1937815084,
-      "heavy_share": 0.645,
+      "files": 22323,
+      "bytes": 3019365059,
+      "heavy_bytes": 1954582711,
+      "heavy_share": 0.647,
       "ignore_filters": [
-        "tracker-cp/kb/receipts",
-        "tracker-cp/kb/program_requirements_college",
-        "tracker-cp/kb/regional_cpl_out",
-        "tracker-cp/kb/reference",
-        "tracker-cp/cip_fitcheck",
-        "tracker-cp/kb/unclassified_fold",
-        "tracker-cp/tmc",
-        "tracker-cp/kb/course_outcomes",
-        "tracker-cp/unified_courses_member_desc.js",
-        "tracker-cp/kb/coci_minted_singletons.json",
-        "tracker-cp/kb/coci_minted_courses.json",
-        "tracker-cp/unified_courses_details.js",
-        "tracker-cp/kb/subj4_fold_out/2026-06-12/alias_map.json",
-        "tracker-cp/kb/subj4_dryrun/alias_map.json",
-        "tracker-cp/kb/subj4_apply/alias_map.json",
-        "tracker-cp/kb/coci_minted_memberships.json",
-        "tracker-cp/coci_lookup_data.js",
-        "tracker-cp/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
-        "tracker-cp/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
-        "tracker-cp/unified_courses_standalone.js",
-        "tracker-cp/kb/subj4_dryrun/collisions.json",
-        "tracker-cp/unified_courses_members.js",
-        "tracker-cp/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
-        "tracker-cp/statewide_data.js",
-        "tracker-cp/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4",
-        "tracker-cp/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
-        "tracker-cp/kb/row_audit/latest.json",
-        "tracker-cp/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
-        "tracker-cp/unified_courses_data.js",
-        "tracker-cp/kb/remint_dryrun/alias_map.json",
-        "tracker-cp/kb/cid_articulation_joins.json",
-        "tracker-cp/coci_lookup_desc_A.js",
-        "tracker-cp/tmc_college_courses.js",
-        "tracker-cp/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
-        "tracker-cp/kb/coci_articulations.json",
-        "tracker-cp/prototype/ccr_universe.json",
-        "tracker-cp/coci_lookup_desc_C.js",
-        "tracker-cp/coci_lookup_desc_E.js",
-        "tracker-cp/exports/unified_courses.xlsx",
-        "tracker-cp/kb/automerge_out/2026-06-13-titlelane/plan.json",
-        "tracker-cp/kb/coci_curation.json",
-        "tracker-cp/coci_lookup_desc_M.js",
-        "tracker-cp/coci_lookup_desc_P.js",
-        "tracker-cp/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
-        "tracker-cp/tools/first_light_candidates.json",
-        "tracker-cp/prototype/ccr_universe_members.json",
-        "tracker-cp/unified_courses_index.js",
-        "tracker-cp/unified_courses_suggestions.js",
-        "tracker-cp/regional_cpl_opportunity_bay.js",
-        "tracker-cp/kb/queue_status.json",
-        "tracker-cp/regional_cpl_opportunity_la.js",
-        "tracker-cp/credential_reference_data.js",
-        "tracker-cp/coci_lookup_desc_B.js",
-        "tracker-cp/coci_lookup_desc_H.js",
-        "tracker-cp/coci_lookup_desc_D.js",
-        "tracker-cp/prototype/noncredit_video/narration.mp3",
-        "tracker-cp/kb/remint_out/alias_map.json",
-        "tracker-cp/coci_programs_data.js",
-        "tracker-cp/kb/cr_reference_worklist.json",
-        "tracker-cp/coci_lookup_desc_F.js",
-        "tracker-cp/prototype/funding_video/narration_s1.mp3",
-        "tracker-cp/kb/authority_recode_out/2026-09-03/alias_map.json",
-        "tracker-cp/coci_lookup_desc_K.js"
+        "cpl-project-tracker/kb/receipts",
+        "cpl-project-tracker/kb/program_requirements_college",
+        "cpl-project-tracker/kb/regional_cpl_out",
+        "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/tmc",
+        "cpl-project-tracker/kb/course_outcomes",
+        "cpl-project-tracker/unified_courses_member_desc.js",
+        "cpl-project-tracker/kb/coci_minted_singletons.json",
+        "cpl-project-tracker/kb/coci_minted_courses.json",
+        "cpl-project-tracker/unified_courses_details.js",
+        "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/subj4_apply/alias_map.json",
+        "cpl-project-tracker/kb/coci_minted_memberships.json",
+        "cpl-project-tracker/coci_lookup_data.js",
+        "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
+        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
+        "cpl-project-tracker/unified_courses_standalone.js",
+        "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
+        "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+        "cpl-project-tracker/statewide_data.js",
+        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4",
+        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
+        "cpl-project-tracker/kb/row_audit/latest.json",
+        "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
+        "cpl-project-tracker/unified_courses_data.js",
+        "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/cid_articulation_joins.json",
+        "cpl-project-tracker/coci_lookup_desc_A.js",
+        "cpl-project-tracker/tmc_college_courses.js",
+        "cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+        "cpl-project-tracker/kb/coci_articulations.json",
+        "cpl-project-tracker/prototype/ccr_universe.json",
+        "cpl-project-tracker/coci_lookup_desc_C.js",
+        "cpl-project-tracker/coci_lookup_desc_E.js",
+        "cpl-project-tracker/exports/unified_courses.xlsx",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "cpl-project-tracker/kb/coci_curation.json",
+        "cpl-project-tracker/coci_lookup_desc_M.js",
+        "cpl-project-tracker/coci_lookup_desc_P.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "cpl-project-tracker/tools/first_light_candidates.json",
+        "cpl-project-tracker/prototype/ccr_universe_members.json",
+        "cpl-project-tracker/unified_courses_index.js",
+        "cpl-project-tracker/unified_courses_suggestions.js",
+        "cpl-project-tracker/regional_cpl_opportunity_bay.js",
+        "cpl-project-tracker/kb/queue_status.json",
+        "cpl-project-tracker/regional_cpl_opportunity_la.js",
+        "cpl-project-tracker/credential_reference_data.js",
+        "cpl-project-tracker/coci_lookup_desc_B.js",
+        "cpl-project-tracker/coci_lookup_desc_H.js",
+        "cpl-project-tracker/coci_lookup_desc_D.js",
+        "cpl-project-tracker/prototype/noncredit_video/narration.mp3",
+        "cpl-project-tracker/kb/remint_out/alias_map.json",
+        "cpl-project-tracker/coci_programs_data.js",
+        "cpl-project-tracker/kb/cr_reference_worklist.json",
+        "cpl-project-tracker/coci_lookup_desc_F.js",
+        "cpl-project-tracker/prototype/funding_video/narration_s1.mp3",
+        "cpl-project-tracker/kb/authority_recode_out/2026-09-03/alias_map.json",
+        "cpl-project-tracker/coci_lookup_desc_K.js"
       ]
     }
   },
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60011,
+        "bytes": 60270,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 11,
+        "over_by": 270,
         "ratio": 1.0
       },
-      "message": "60,011 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,270 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -441,19 +441,6 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20033,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 33,
-        "ratio": 1.0
-      },
-      "message": "20,033 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -543,20 +530,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 969128894,
+        "bytes": 986164234,
         "kind": "dir"
       },
-      "message": "directory totals 969,128,894 B inside the vault"
+      "message": "directory totals 986,164,234 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 133645710,
+        "bytes": 133376397,
         "kind": "dir"
       },
-      "message": "directory totals 133,645,710 B inside the vault"
+      "message": "directory totals 133,376,397 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1033,10 +1020,10 @@
       "fixable": false,
       "path": "kb/queue_status.json",
       "detail": {
-        "bytes": 3409987,
+        "bytes": 3411587,
         "kind": "file"
       },
-      "message": "3,409,987 B single file inside the vault"
+      "message": "3,411,587 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

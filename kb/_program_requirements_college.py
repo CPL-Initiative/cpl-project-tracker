@@ -365,7 +365,8 @@ HEADING_AWARD = re.compile(
     r"associate (?:in|of) (?:science|arts)(?: (?:for )?transfer(?: degree)?)?|"
     r"certificate of (?:achievement|accomplishment|completion|competency)|transfer degree|"
     r"\ba\.?\s?[as]\.?(?:\s*-\s*t)?\b|\bdegree\b|\bcertificate\b", re.I)
-LEVEL = re.compile(r"\blevel\s*(\d+|[ivx]+)\b", re.I)
+# Hartnell's PDF writes "Business Information Worker Level -1" (S411).
+LEVEL = re.compile(r"\blevel\s*-?\s*(\d+|[ivx]+)\b", re.I)
 # A page title ends in the site's name after a "|" or, in CourseLeaf's
 # breadcrumb form, a "<" ("Aging Studies, Associate of Arts Degree < Coastline College").
 TITLE_SPLIT = re.compile(r"\s*\|\s*|\s+<\s+")
@@ -637,6 +638,18 @@ def read_sitemap(reader, start: str) -> dict:
         except Exception as exc:
             out.setdefault("errors", []).append("%s: %s" % (url, str(exc).splitlines()[0][:160]))
     return out
+
+
+def child_base(page_url: str, platform: str | None) -> str:
+    """The address a page's children sit beneath. SmartCatalog writes a page's
+    address without a closing slash and its children beneath it: Crafton Hills'
+    credit-programs, then credit-programs/accounting-acct, then
+    accounting-acct/accounting-associate-of-arts-degree (page reads 39090262960
+    and 39090533458, S411), and it has no sitemap. child_pages() reads beneath an
+    address that ends in a slash, as CourseLeaf writes it."""
+    if platform == "smartcatalog" and page_url and not urllib.parse.urlparse(page_url).path.endswith("/"):
+        return page_url.split("#")[0].split("?")[0] + "/"
+    return page_url
 
 
 def index_links(reader, start: str, cache: dict) -> list[str]:
@@ -1662,6 +1675,113 @@ def _clean_heading(text: str, head: tuple, courses: list[dict]) -> bool:
     return not P.find_codes(line, courses)
 
 
+# Coursedog's whole-catalog PDF heads each program with its title and its program
+# code, the code's prefix naming the award ("Biology - AS.BIO", "Studio Arts for
+# Transfer (AA-T) - AAT.SART", "Sociology for Transfer (AA-T) - AAT-SOC", "Music -
+# CT.MUS"). In Hartnell's 427 pages (S411) the title-and-codes picker took 33 of 101
+# programs to the course-set reference pages at the back, or to a program the PDF
+# does not print, and 12 more to a sibling award's page: an A.A., its certificate and
+# its A.A.-T name the same courses. Where the catalog heads its programs so, a program
+# is read from the heading that names it, and from no page when none does.
+PDF_CODE_HEADING = re.compile(r"[ \t]+-\s+((AAT|AST|AA|AS|CT|NCCT|BS)[.\-][A-Z0-9]{2,}(?:\.[A-Z0-9]{2,})*)\b")
+PDF_CODE_AWARD = {"AA": "aa", "AS": "as", "AAT": "adt", "AST": "adt", "CT": "coa", "NCCT": "noncredit", "BS": "bs"}
+PDF_CODE_TRANSFER = re.compile(r"\bfor transfer\b", re.I)   # the code's prefix names the award
+PDF_CODE_SHARE = 0.5      # a catalog heading this share of its listed programs with a code heads them all
+
+
+def pdf_code_headings(pages: list[str]) -> list[dict]:
+    """Every "Title - CODE" heading: its page, code, award kind, where it starts,
+    and its title read from its own line and from the line before as well
+    ("Computer Science and Info Systems-Computer \\nScience Option - AS.CISCS").
+    pypdf can run two headings into one line ("Basic Computer Literacy - NCCT.BCL
+    Workforce and Academic Readiness - NCCT.WAR"): a title starts after the last code."""
+    out = []
+    for i, txt in enumerate(pages):
+        end = 0
+        for m in PDF_CODE_HEADING.finditer(txt or ""):
+            line = max(txt.rfind("\n", 0, m.start()) + 1, end)
+            prev = max(txt.rfind("\n", 0, line - 1) + 1, end) if line > end else line
+            out.append({"page": i, "code": m.group(1).replace("-", ".", 1), "kind": PDF_CODE_AWARD[m.group(2)],
+                        "at": prev, "titles": [txt[line:m.start()].strip(),
+                                               re.sub(r"\s+", " ", txt[prev:m.start()]).strip()]})
+            end = m.end()
+    return out
+
+
+def pdf_code_match(head: dict, program: dict) -> tuple[float, float]:
+    """heading_match() of the heading's better title reading, its award words set
+    aside: the code's prefix names the award, so only the kinds must agree."""
+    if head["kind"] != P.award_kind(program.get("award")):
+        return 0.0, 0.0
+    return max(heading_match({"h1": PDF_CODE_TRANSFER.sub(" ", t)}, program) for t in head["titles"])
+
+
+def pdf_code_assign(programs: list[dict], pages: list[str]) -> dict[str, dict | None] | None:
+    """{control number: the heading the program is read from, or None} where the
+    catalog heads its programs with codes; None where it does not. A code goes to
+    the programs whose title it names most fully, as page_winners() gives a page:
+    two state records of one catalog program (Communication Studies and
+    Communication Studies 2.0, both A.A.-T) share it, and Public Health Science
+    loses Public Health's. A program that loses moves to its next heading. A
+    code printed twice (Photography, under Art and again under its own name) is
+    read where its pages name the most listed courses."""
+    heads = pdf_code_headings(pages)
+    listed = [p for p in programs if p["closed_list"]]
+    if not listed or len({h["code"] for h in heads}) < PDF_CODE_SHARE * len(listed):
+        return None
+    by_code: dict[str, list[dict]] = {}
+    for h in heads:
+        by_code.setdefault(h["code"], []).append(h)
+    ranked = {}
+    for p in listed:
+        scored = []
+        for code, hs in by_code.items():
+            s = max(pdf_code_match(h, p) for h in hs)
+            if s[0] >= HIDDEN_HEADING_TITLE and s[1] >= HIDDEN_HEADING_OWN:
+                scored.append((s, code))
+        ranked[p["control_number"]] = [c for _, c in sorted(scored, reverse=True)]
+    pos = {cn: 0 for cn in ranked}
+    for _ in range(12):
+        claims: dict[str, list[str]] = {}
+        for cn, codes in ranked.items():
+            if pos[cn] < len(codes):
+                claims.setdefault(codes[pos[cn]], []).append(cn)
+        moved = False
+        for code, cns in claims.items():
+            if len(cns) < 2:
+                continue
+            share = {cn: max(pdf_code_match(h, next(p for p in listed if p["control_number"] == cn))[0]
+                             for h in by_code[code]) for cn in cns}
+            top = max(share.values())
+            for cn in cns:
+                if share[cn] < top:
+                    pos[cn] += 1
+                    moved = True
+        if not moved:
+            break
+    out: dict[str, dict | None] = {}
+    for p in listed:
+        cn, codes = p["control_number"], ranked[p["control_number"]]
+        if pos[cn] >= len(codes):
+            out[cn] = None
+            continue
+        hs = by_code[codes[pos[cn]]]
+        out[cn] = max(hs, key=lambda h: (len(P.find_codes("\n".join(pages[k] for k in _pdf_run(pages, h["page"],
+                                                                                              p["closed_list"])),
+                                                         p["closed_list"])), -h["page"]))
+    return out
+
+
+def _pdf_run(pages: list[str], best: int, courses: list[dict]) -> list[int]:
+    """The page and those after it, up to PDF_RUN_PAGES, while they name listed codes."""
+    run = [best]
+    for j in range(best + 1, min(best + 1 + PDF_RUN_PAGES, len(pages))):
+        if not P.find_codes(pages[j], courses):
+            break
+        run.append(j)
+    return run
+
+
 def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[list[int], int, tuple, bool]:
     """(run of page indexes, where the first prints the control number, its
     heading, whether it passed the title gate) for the program, or an empty
@@ -1697,12 +1817,7 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
     cands.sort(reverse=True)
 
     def run_from(best: int) -> list[int]:
-        run = [best]
-        for j in range(best + 1, min(best + 1 + PDF_RUN_PAGES, len(pages))):
-            if not P.find_codes(pages[j], courses):
-                break
-            run.append(j)
-        return run
+        return _pdf_run(pages, best, courses)
     for worst in (0, 1, 2):
         for _, _, i, at, head, titled, rank in cands:
             if rank > worst:
@@ -1723,12 +1838,17 @@ def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> l
     return _pdf_pick(pages, program, courses)[0]
 
 
-def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None) -> dict | None:
+def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None,
+             heading: dict | None = None) -> dict | None:
     """The program's pages as a source the extraction reads, in the shape
     source_record() takes: None when no page names a listed course. The text
     opens on the program's heading, so an A.S. and the certificate printed
-    after it each open on their own name."""
-    run, cn_at, head, titled = _pdf_pick(pages, program, courses)
+    after it each open on their own name. A code heading (pdf_code_assign())
+    names the run's first page."""
+    if heading:
+        run, cn_at, head, titled = _pdf_run(pages, heading["page"], courses), -1, (1.0, True, heading["at"]), True
+    else:
+        run, cn_at, head, titled = _pdf_pick(pages, program, courses)
     if not run:
         return None
     parts = []
@@ -1935,6 +2055,11 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         if m > n:
             pages, extractor = alt["pages"], alt["extractor"]
     report["pdf"]["extractor"] = extractor
+    coded = pdf_code_assign(programs, pages)
+    if coded is not None:
+        report["pdf"]["code_headings"] = {"codes": len({h["code"] for h in pdf_code_headings(pages)}),
+                                          "read_by_code": sum(1 for h in coded.values() if h),
+                                          "named_by_none": sorted(cn for cn, h in coded.items() if not h)}
     if hf:
         report["pdf"]["hand_filed"] = {k: hf["meta"].get(k) for k in HAND_FILED_KEYS + ("note",)}
         # Addenda filed with the catalog keep their provenance; the reader does not read them.
@@ -1947,8 +2072,12 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     for prog in programs:
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
+        elif coded is not None and not coded.get(prog["control_number"]):
+            rec = source_record(college, prog, reg, None, "not_found")
+            rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
-            best = pdf_best(start, pages, prog, prog["closed_list"], extractor)
+            best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
+                            (coded or {}).get(prog["control_number"]))
             if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
@@ -1959,6 +2088,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                 # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
                 report["pdf"].setdefault("picks", []).append(
                     {"control_number": prog["control_number"], "pages": best["pages"], "named": best["named"],
+                     "code": ((coded or {}).get(prog["control_number"]) or {}).get("code"),
                      "cn_printed": best["control_number_printed"], "titled": best["titled"],
                      "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220])})
             else:
@@ -2013,9 +2143,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
-    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html"):
-        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380) and Acalog (S389); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen, Acalog and own-HTML catalogs; %s reads %s" % (college, platform)
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog"):
+        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380), Acalog (S389) and SmartCatalog (S411,
+        # the generic road through child_base()); another platform names its own enumeration first.
+        report["stopped"] = ("this pass enumerates CourseLeaf, curriQunet, eLumen, Acalog, SmartCatalog and own-HTML catalogs; "
+                             "%s reads %s" % (college, platform))
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -2074,7 +2206,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if got.get("access") != "ok":
                 continue
             if platform not in ("curriqunet", "elumen", "acalog"):
-                for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
+                for kid in child_pages(child_base(got.get("final_url") or u, platform), got.get("links"), start, scope):
                     if kid not in seen and len(queue) < MAX_PAGES:
                         seen.add(kid)
                         queue.append(kid)
@@ -2166,6 +2298,19 @@ def has_record(path: str) -> bool:
         return False
 
 
+def filed_from(path: str, src: dict) -> bool:
+    """A filed record extracted from the page the source reads. A reconcile run
+    files its fresh sources beside the records it did not move, so sources.json
+    can name a page a record was never read from, and unchanged() then keeps it:
+    127 filed records stood so (Los Angeles City 69, Pierce 43, Santa Rosa 11; S411)."""
+    try:
+        with open(path) as fh:
+            rec = json.load(fh)
+    except (OSError, ValueError):
+        return False
+    return isinstance(rec.get("record"), dict) and rec.get("source_url") == (src.get("source") or {}).get("url")
+
+
 def unchanged(prev: dict | None, src: dict) -> bool:
     """A source read from the same page as the filed one, from the same text
     (visible or hidden), naming the same courses, so the filed record still
@@ -2192,8 +2337,7 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
         if (r.get("coverage") or 0) < bar or not r.get("text"):
             continue
         cn = r["control_number"]
-        filed = has_record(os.path.join(folder, "records", cn + ".json"))
-        if filed and unchanged(prev.get(cn), r):
+        if filed_from(os.path.join(folder, "records", cn + ".json"), r) and unchanged(prev.get(cn), r):
             kept += 1
             continue
         was = prev.get(cn) or {}
@@ -2252,7 +2396,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         for src in sources:
             path = os.path.join(keep_from, "records", src["control_number"] + ".json")
             if (src["control_number"] not in (force or ())
-                    and unchanged(prev.get(src["control_number"]), src) and has_record(path)):
+                    and unchanged(prev.get(src["control_number"]), src) and filed_from(path, src)):
                 with open(path) as fh:
                     _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
                 kept += 1

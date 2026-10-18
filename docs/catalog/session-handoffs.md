@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-382 document(s).
+383 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 412 | [Session 412 handoff: Sheet 93 and the CER on procedures; SmartCatalog and Merced reads; 182e810e207d](../session_412_handoff.md) | 2026-10-18 |
 | 411 | [Session 411 handoff: apply d6cc1fde7ea3, Hartnell's picks by program code, Merced's PDF call, SmartCatalog](../session_411_handoff.md) | 2026-10-18 |
 | 410 | [Session 410 handoff: the display apply, Hartnell through its Coursedog PDF, SmartCatalog's subject pages, Cañada's sheet](../session_410_handoff.md) | 2026-10-17 |
 | 409 | [Session 409 handoff: the display apply, Cuesta, Cañada's page, and Exhibit Adoption's UI pass](../session_409_handoff.md) | 2026-10-17 |

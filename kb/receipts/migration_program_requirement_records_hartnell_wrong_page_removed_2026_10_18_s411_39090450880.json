@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/program_requirement_records_hartnell_wrong_page_removed_2026-10-18_s411.sql",
+ "name": "program_requirement_records_hartnell_wrong_page_removed_2026_10_18_s411",
+ "version": "20261018023350",
+ "sha256": "c003bf48567916c515f14a02eae741281e35ee594ca3db4d457cd81bf31cb2cc",
+ "run": "39090450880",
+ "status": 201,
+ "response": "[{\"removed\":4}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

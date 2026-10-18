@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Engineering",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=202",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9652,
+  "input_tokens": 11110,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9652,
-    "output_tokens": 1805,
+    "input_tokens": 11110,
+    "output_tokens": 6502,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,58 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1805,
+  "output_tokens": 6502,
   "output_tokens_details": {
-   "thinking_tokens": 532
+   "thinking_tokens": 2085
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07471,
- "ms": 15949,
- "seconds": 16.3,
+ "cost_usd": 0.17448,
+ "ms": 50038,
+ "seconds": 50.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 28,
    "listed": 28,
-   "share": 0.0,
-   "missing": [
-    "BIO1",
-    "BIO2",
-    "BIO3",
-    "CHM12A",
-    "CHM12B",
-    "CHM1A",
-    "CHM1B",
-    "CSS1",
-    "CSS2A",
-    "CSS2B",
-    "CSS3",
-    "CSS7",
-    "EGN11",
-    "EGN1L",
-    "EGN1R",
-    "EGN2",
-    "EGN4",
-    "EGN5",
-    "EGN6",
-    "EGN8",
-    "MAT3A",
-    "MAT3B",
-    "MAT3C",
-    "MAT4",
-    "MAT5",
-    "PHY4A",
-    "PHY4B",
-    "PHY4C"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -93,13 +64,17 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    36.0,
+    52.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    71.0,
+    71.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
   "repeated": {
@@ -107,31 +82,28 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "A.S. Degree section not found; the text prints only the Engineering Certificate of Achievement section",
+   "section_heading": "Engineering - AS.EGN",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -142,140 +114,711 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 71,
+    "max": 71
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "employ science and mathematical skills commonly used in engineering fields.",
+    "design a system, component, or process to meet engineering requirements.",
+    "examine engineering problems and determine a strategy.",
+    "describe and differentiate modern engineering tools and practices."
+   ],
+   "careers": [
+    "engineering technologists",
+    "surveyors",
+    "construction managers",
+    "engineering",
+    "engineering technology",
+    "construction management",
+    "business",
+    "programming",
+    "teaching",
+    "research"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BIO 1",
-    "why": "not in the text"
+    "name": "Major Courses A - All Tracks",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN1R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSS2A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CSS1",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIO 2",
-    "why": "not in the text"
+    "name": "Major Courses B - Mechanical/Aerospace/Manufacturing Engineering Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major Courses B track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIO 3",
-    "why": "not in the text"
+    "name": "Major Courses B - Civil Engineering Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major Courses B track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHM 12A",
-    "why": "not in the text"
+    "name": "Major Courses B - Electrical Engineering Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major Courses B track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHM 12B",
-    "why": "not in the text"
+    "name": "Major Courses B - Computer/Software Engineering Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major Courses B track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHM 1A",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
+    "name": "Major Courses B - General Engineering Track",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Major Courses B track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHM 1B",
-    "why": "not in the text"
+    "name": "Major Electives - Mechanical/Aerospace/Manufacturing Engineering Track",
+    "rule": "choose_units",
+    "minimum": 23,
+    "option_group": "Major Electives track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CSS 1",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
+    "name": "Major Electives - Civil Engineering Track",
+    "rule": "choose_units",
+    "minimum": 22,
+    "option_group": "Major Electives track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CSS 2A",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
+    "name": "Major Electives - Electrical Engineering Track",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": "Major Electives track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CSS 2B",
-    "why": "not in the text"
+    "name": "Major Electives - Computer Engineering Track",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "Major Electives track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CSS 3",
-    "why": "not in the text"
-   },
-   {
-    "code": "CSS 7",
-    "why": "not in the text"
-   },
-   {
-    "code": "EGN 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "EGN 1L",
-    "why": "appears only as a course description; A.S. section not in text"
-   },
-   {
-    "code": "EGN 1R",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "EGN 4",
-    "why": "appears only as a course description; A.S. section not in text"
-   },
-   {
-    "code": "EGN 5",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "EGN 6",
-    "why": "appears only as a course description; A.S. section not in text"
-   },
-   {
-    "code": "EGN 8",
-    "why": "not in the text"
-   },
-   {
-    "code": "EGN2",
-    "why": "appears only as a course description; A.S. section not in text"
-   },
-   {
-    "code": "MAT 3A",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "MAT 3B",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "MAT 3C",
-    "why": "not in the text"
-   },
-   {
-    "code": "MAT 4",
-    "why": "not in the text"
-   },
-   {
-    "code": "MAT 5",
-    "why": "named only as a corequisite in the EGN6 course description; A.S. section not in text"
-   },
-   {
-    "code": "PHY 4A",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "PHY 4B",
-    "why": "named only as a prerequisite in the EGN6 course description; A.S. section not in text"
-   },
-   {
-    "code": "PHY 4C",
-    "why": "not in the text"
+    "name": "Major Electives - General Engineering Track",
+    "rule": "choose_units",
+    "minimum": 20,
+    "option_group": "Major Electives track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM12A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM12B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (pages 204-207) prints the Engineering Certificate of Achievement ('Degree: CT - Certificate of Achievement', Total Required Credits 24), followed by course descriptions. The A.S. Degree section is not in the text, so no blocks, totals or outcomes were recorded for the A.S. award.",
-   "The certificate section lists Required Major Courses (MAT3A, MAT3B, PHY4A, EGN1R, ENGLC1000 or ENGLC1000E) and Major Electives (at least 2 of EGN5, CSS1, CSS2A, CHM1A), total 24; its three program outcomes belong to the certificate and were not recorded for the A.S. degree.",
-   "The certificate section begins mid-sentence at the top of page 204; a reviewer should locate the A.S. Degree section, likely on an earlier page of the catalog PDF."
+   "The catalog prints no units beside any course in the requirement lists, so all course units are null.",
+   "'Total Required Credits 71' is recorded as degree_total: the requirements include the Cal-GETC requirement set, and the major courses alone (roughly 33-47 units by track) fall well short of 71. The page prints no separate major total and no units for Cal-GETC. Reviewer should confirm.",
+   "Students follow one track: the Major Courses B block and the Major Electives block must be from the same track. The two option_groups ('Major Courses B track', 'Major Electives track') are linked by track name. The electives list calls the computer track 'Computer Engineering Track', while Major Courses B calls it 'Computer/Software Engineering Track'.",
+   "The General Engineering Track electives must be courses not already used to fulfill the Major Courses B requirement.",
+   "The page states that students can double-count required courses and courses for General Education.",
+   "The page says electives (courses numbered 1-99) are required when degree units plus GE units total fewer than 60, and prints no units for them, so electives_fill_degree is true.",
+   "The program outcomes lead-in reads 'Upon completion of this course' but is printed under the A.S. program's Program Outcomes heading.",
+   "Codes are written as printed without a space (e.g., EGN1R) and match closed-list entries such as 'EGN 1R'.",
+   "The Engineering Fundamentals Certificate of Achievement (CT.EGN) on page 204 is a separate award and was not read."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39090050931"
 }

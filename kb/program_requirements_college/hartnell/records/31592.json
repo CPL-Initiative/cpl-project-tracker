@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Science and Information Systems-Network and Security",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6844,
+  "input_tokens": 7414,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6844,
-    "output_tokens": 1204,
+    "input_tokens": 7414,
+    "output_tokens": 1230,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,38 @@
     "model": null
    }
   ],
-  "output_tokens": 1204,
+  "output_tokens": 1230,
   "output_tokens_details": {
-   "thinking_tokens": 466
+   "thinking_tokens": 305
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05146,
- "ms": 11222,
- "seconds": 11.6,
+ "cost_usd": 0.05426,
+ "ms": 9760,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "CSS1",
-    "CSS169",
-    "CSS50",
-    "CSS51",
-    "CSS52",
-    "CSS53",
-    "CSS54",
-    "CSS55"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "CSS56"
+   ],
+   "flagged": [
+    "CSS56"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -76,10 +71,13 @@
     0.0,
     0.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "a required course in 'Required Major Electives' has no units"
    ]
   },
   "repeated": {
@@ -87,17 +85,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -108,11 +106,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Computer Science Info Systems-Network & Security Option - AS.PCN",
+   "section_heading": "Computer Science and Info Systems-Network & Security Option - CT.PCN",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 36,
+    "max": 36
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,50 +127,103 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "design, plan, and implement a small office network, incorporating current industry standards for performance, reliability, and security.",
+    "accurately communicate their work in a technical and nontechnical context.",
+    "assemble and configure a computer, install operating systems and software, and troubleshoot hardware, software and networking problems.",
+    "configure business and enterprise networking, storage and virtual equipment (servers and network devices), to create a reliable, secure, and efficient networking infrastructure."
+   ],
+   "careers": [
+    "network and security specialists",
+    "network and security field"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CSS 1",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 169",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 50",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 51",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 52",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 53",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 54",
-    "why": "named only in the A.S. section; no certificate section in text"
-   },
-   {
-    "code": "CSS 55",
-    "why": "named only in the A.S. section; no certificate section in text"
+    "name": "Required Major Electives",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSS1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS52",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS54",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS55",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS56",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSS169",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text holds only the A.S. Local Degree section (AS.PCN) for this program. It has no Certificate of Achievement section, so no blocks, totals, outcomes or careers are recorded for the certificate. The heading recorded is the only section present, which belongs to the A.S.; the certificate section is probably on another page of the PDF.",
-   "For reference, the A.S. section requires all of these courses: CSS1, CSS50, CSS51, CSS52, CSS53, CSS54, CSS55, CSS56 and CSS169. CSS56 (Storage Management and Virtualization) is not in the closed list. The A.S. also requires Local GE, prints 'Total Required Credits 60', and says electives fill the degree to 60 units.",
-   "The A.S. section prints four program outcomes (under the lead-in 'Upon completion of this course') and names 'network and security specialists' as a career. These are not recorded because they belong to the degree section, not to the certificate."
+   "The block is headed 'Required Major Electives' but the catalog says 'Complete ALL of the following Courses', so it is recorded as rule 'all'.",
+   "The catalog prints no units beside individual courses; units are left null. 'Total Required Credits 36' is recorded as total_units.",
+   "CSS56 (Storage Management and Virtualization) is not in the closed list and is recorded as a catalog addition.",
+   "Outcomes lead-in reads 'Upon completion of this course' although they are listed as Program Outcomes for this certificate.",
+   "The following section (Technical Support - CT.TS, page 159) belongs to a different award and was not read."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39090050931"
 }

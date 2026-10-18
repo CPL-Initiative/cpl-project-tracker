@@ -1,0 +1,34 @@
+{
+ "_readme": "Crafton Hills College's SmartCatalog (S411, SkySotol). Run 39077713662 (S409) found the front page linking Credit Programs and Noncredit Certificates, and Credit Programs listing one page per subject (\"Accounting (ACCT)\", 40 of them), with no sitemap. Run 39077970234 followed two subject pages, but its log's tail lost them. This plan reads the front page, the Credit Programs page at SmartCatalog's usual address with its subject links printed, and two subject pages, so the log stays short enough to read whole. If the Credit Programs address is wrong, the front page's followed link names the right one. Read 39090039420 confirmed the Credit Programs address and its 41 subjects (Accounting (ACCT) through Vocational Nursing (VNUR), with Cal-GETC and Multidisciplinary Studies), but the plan named that page twice and the reader skips a page it already read, so no subject page was read. This read starts at Credit Programs. Read 39090262960: each subject page lists its programs under \"In this section\" (Child Development: the AS-T, the AA-T, the A.A. and four certificates), one level below the subject. This read takes Accounting's subject page and follows its A.A. and Child Development's Teacher certificate.",
+ "college": "Crafton Hills College",
+ "questions": {
+  "program_index": "Where the catalog lists its programs: the Credit Programs page's address and its subject links.",
+  "program_page": "What a subject page holds: its programs' titles and awards, their course lists and units, or links to a page per program."
+ },
+ "keywords": [
+  "Associate in (?:Arts|Science)",
+  "Certificate of Achievement",
+  "A\\.[AS]\\.",
+  "Total (?:Units|Required)",
+  "Required Courses",
+  "Units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_page"
+   ],
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/accounting-acct",
+   "links": "accounting-acct/",
+   "follow": "Associate of Arts"
+  },
+  {
+   "answers": [
+    "program_page"
+   ],
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev",
+   "links": "child-development-cdev/",
+   "follow": "^Teacher Certificate"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "_readme": "Taft College's SmartCatalog (S411, SkySotol). Run 39077970234 (S409) read Taft's front page, but its log's tail lost it. This plan reads the front page alone with its program links printed, and follows two of them, so the log stays short enough to read whole. Read 39090039420 found the program index at /en/2026-2027/2026-2027-catalog/degrees-and-certificates, each program titled \"Title: Award\" (\"Biology: Associate of Science\"). This read starts there, prints its program links and follows two programs. Read 39090262960: a program on the index is a group page (Biology holds its description and outcomes; Welding Technology lists its A.S. and five certificates under \"In this section\"), and each award is one level below. This read takes Welding Technology's group page and follows its A.S. and Structural Code Welding.",
+ "college": "Taft College",
+ "questions": {
+  "program_index": "Where the catalog lists its programs, and whether it lists them by subject as Crafton Hills does.",
+  "program_page": "What a program's page holds: its title and award, its course list and units."
+ },
+ "keywords": [
+  "Associate in (?:Arts|Science)",
+  "Certificate of Achievement",
+  "A\\.[AS]\\.",
+  "Total (?:Units|Required)",
+  "Required Courses",
+  "Units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_page"
+   ],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/welding-technology",
+   "links": "welding-technology/",
+   "follow": "^Welding Technology: Associate|^Structural Code Welding"
+  }
+ ]
+}

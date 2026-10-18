@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Theatre Arts",
  "award": "A.A- T Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=391",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7464,
+  "input_tokens": 8419,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7464,
-    "output_tokens": 3948,
+    "input_tokens": 8419,
+    "output_tokens": 3672,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3948,
+  "output_tokens": 3672,
   "output_tokens_details": {
-   "thinking_tokens": 1648
+   "thinking_tokens": 1880
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10882,
- "ms": 32889,
- "seconds": 33.2,
+ "cost_usd": 0.10712,
+ "ms": 31713,
+ "seconds": 32.1,
  "parts": null,
  "error": null,
  "score": {
@@ -55,34 +55,12 @@
    "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 1,
    "codes": [
-    "ETH7",
-    "TAC15",
-    "TAC23",
-    "TAC27",
-    "TAC50",
-    "TAC51",
-    "TAC53",
-    "TAC54",
-    "TAC55",
-    "TAC58",
-    "TAC91",
-    "TAC92"
+    "TAC27"
    ],
    "flagged": [
-    "ETH7",
-    "TAC15",
-    "TAC23",
-    "TAC27",
-    "TAC50",
-    "TAC51",
-    "TAC53",
-    "TAC54",
-    "TAC55",
-    "TAC58",
-    "TAC91",
-    "TAC92"
+    "TAC27"
    ],
    "pass": true
   },
@@ -90,14 +68,17 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    24.0,
-    24.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "'Major Electives - Film, Television, Electronic Media Emphasis' chooses 2 courses but 0 carry units",
-    "the record names no total"
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
   "repeated": {
@@ -105,9 +86,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 3,
    "courses": 0,
-   "count": 4,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -115,21 +96,18 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 17,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "AA - Associate in Arts",
+   "section_heading": "Theatre Arts for Transfer (AA-T) - AAT.THA",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -140,29 +118,46 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local GE",
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
-    "demonstrate proficiency in theatre, and/or film, television, and electronic media terminology and performance skills, its basic theories, history and techniques, culminating in a media production or live performance on stage.",
-    "conduct and apply analysis and research skills of dramatic texts and instructional materials.",
-    "work effectively as an ensemble member in a fully produced production formulating alternative solutions to theatrical production situations.",
-    "analyze, interpret, and evaluate their own and others’ work in theatre & cinema as a patron and participant."
+    "Demonstrate proficiency in theatre terminology, and performance, design, and/or technical skills, through involvement in live collaborative production/s on stage.",
+    "Analyze, interpret, and evaluate theatrical elements and styles, literary and narrative techniques, and the cultural, theoretical, and historical implications thereof.",
+    "Engage in the creative process, and apply analysis and research in realizing dramatic texts and concepts."
    ],
-   "careers": []
+   "careers": [
+    "actor",
+    "teacher",
+    "professor",
+    "director",
+    "agent",
+    "announcer",
+    "casting director",
+    "critic",
+    "model",
+    "theatre technician",
+    "concert venue technician",
+    "theme park technician",
+    "stage manager",
+    "designer",
+    "art director",
+    "facilities manager",
+    "technical director"
+   ]
   },
   "blocks": [
    {
-    "name": "Required Major Courses",
-    "rule": "all",
-    "minimum": null,
+    "name": "Required Core",
+    "rule": "choose_courses",
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": null,
@@ -175,18 +170,11 @@
       "units_max": null,
       "alternatives": [
        {
-        "code": "TAC50",
+        "code": "TAC3",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC3",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -197,165 +185,70 @@
       "catalog_addition": false
      },
      {
-      "code": "TAC2",
-      "units": null,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "TAC53",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC30",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Required Major Courses - Production",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": "Production or Technical Design",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
       "code": "TAC20",
       "units": null,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC21",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC22",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC24",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC25",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC53",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC54",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Required Major Courses - Technical Design",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": "Production or Technical Design",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "TAC26",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC27",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC28",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC29",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC40",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "TAC91",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Major Electives - Theatre Emphasis",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": "Emphasis",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "TAC2",
-      "units": null,
-      "units_max": null,
       "alternatives": [
        {
-        "code": "ETH7",
+        "code": "TAC21",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC22",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC24",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC25",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC26",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC27",
         "units": null,
         "catalog_addition": true
+       },
+       {
+        "code": "TAC28",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC29",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC40",
+        "units": null,
+        "catalog_addition": false
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Major Electives - List A",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "TAC11",
       "units": null,
@@ -364,79 +257,71 @@
       "catalog_addition": false
      },
      {
-      "code": "TAC15",
+      "code": "TAC30",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "TAC23",
+      "code": "TAC2",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "TAC53",
+      "code": "TAC20",
       "units": null,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC55",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC92",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Major Electives - Film, Television, Electronic Media Emphasis",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": "Emphasis",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "TAC50",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC51",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC54",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "TAC58",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "alternatives": [
+       {
+        "code": "TAC21",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC22",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC24",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC25",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC26",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC27",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "TAC28",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC29",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "TAC40",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      }
     ]
    }
@@ -444,15 +329,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "IMPORTANT: The text appears to be the local Theatre Arts AA (it prints 'Degree AA - Associate in Arts', 'Program Goal Local' and 'Local GE'), not the A.A-T transfer degree named for this record. An AA-T would normally use CSU GE/IGETC/Cal-GETC. Many codes (TAC50, 53, 54, etc.) are absent from the closed list, which also suggests the closed list belongs to a different award. Reviewer should locate the actual AA-T section in the catalog.",
-   "The section's heading is cut off before page 390; section_heading uses the printed degree label.",
-   "No units are printed beside any course and no major or degree total is printed; units and totals left null.",
-   "'Pick 1 course from Production OR Technical Design' is recorded as two choose-1 blocks sharing option_group 'Production or Technical Design'; the requirement is one course total from either list.",
-   "The two Major Electives emphases are recorded with option_group 'Emphasis' on the reading that the student completes one emphasis; the text does not state this explicitly. Each says 'Complete 2 courses not taken in Required Major Courses'.",
-   "In the Theatre Emphasis list, ETH7 is printed as an 'OR' row after TAC2 and is recorded as TAC2's alternative.",
-   "The outcomes lead-in reads 'Upon completion of this course' but the outcomes are printed under Program Outcomes and recorded as program outcomes.",
-   "No careers are named in the provided text."
+   "REVIEW: The Theatre Arts AA-T section on page 391 prints no requirements list; its heading runs straight into 'Students can double-count required courses...'. The only requirements in the text (Required Core, Major Electives - List A, General Education: Cal-GETC) are printed on page 392 directly after the heading 'Film, Television and Electronic Media (AS-T) - AST.FTVE'. They consist entirely of theatre courses (Intro/History of Theatre, Acting I, play production; Acting II, Theatre Design, Script Analysis, production) that match the Theatre Arts TMC and this program's closed list, so they appear to be the Theatre Arts requirements misplaced by the PDF layout. They were recorded here on that basis; please verify against the source.",
+   "Cal-GETC as the GE pattern is likewise taken from the page 392 requirements block; the Theatre Arts section itself only says students can double-count required courses and General Education.",
+   "No units are printed beside any course, so all units are null. Codes are written as printed (e.g., 'TAC1').",
+   "Each block says 'Complete at least 3 of the following courses' and lists three entries, the last being a production course with many OR alternatives; recorded as choose_courses with minimum 3. In List A the student picks 3 of the 4 entries.",
+   "TAC27 (Scenic Painting, Properties, and Technical Production Techniques) is not in the closed list and is marked as a catalog addition.",
+   "Degree total 60 is from 'Total Required Credits 60'; electives (Courses Numbered 1-199) are required only when degree units plus GE units total fewer than 60, so electives_fill_degree is true.",
+   "The outcomes lead-in reads 'Upon completion of this course' but they are printed under 'Program Outcomes' for this award."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39090050931"
 }

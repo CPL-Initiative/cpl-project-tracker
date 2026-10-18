@@ -471,9 +471,13 @@ try:
     os.makedirs(os.path.join(_wx, "records"))
     json.dump([{"control_number": "1", "source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]},
                {"control_number": "2", "source": None, "coverage": 0.0, "codes_found": [], "method": "not_found"},
-               {"control_number": "4", "source": {"url": "w"}, "coverage": 1.0, "codes_found": ["D1"]}],
+               {"control_number": "4", "source": {"url": "w"}, "coverage": 1.0, "codes_found": ["D1"]},
+              {"control_number": "5", "source": {"url": "y#page=237"}, "coverage": 1.0, "codes_found": ["E1"]}],
               open(os.path.join(_wx, "sources.json"), "w"))
-    open(os.path.join(_wx, "records", "1.json"), "w").write(json.dumps({"record": {"blocks": []}}))
+    open(os.path.join(_wx, "records", "1.json"), "w").write(json.dumps({"record": {"blocks": []}, "source_url": "u"}))
+    # S411: a reconcile run filed the fresh sources (page 237) beside the record it did not move (page 236).
+    open(os.path.join(_wx, "records", "5.json"), "w").write(
+        json.dumps({"record": {"blocks": []}, "source_url": "y#page=236"}))
     # S361: a call that ran past max_tokens filed its row with no record; the next read asks again.
     open(os.path.join(_wx, "records", "4.json"), "w").write(
         json.dumps({"record": None, "error": "the record ran past max_tokens"}))
@@ -481,11 +485,13 @@ try:
         {"control_number": "1", "source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"], "text": "t"},
         {"control_number": "2", "source": {"url": "v"}, "coverage": 0.9, "codes_found": ["B1"], "text": "t"},
         {"control_number": "3", "source": None, "coverage": 0.0, "codes_found": [], "text": ""},
-        {"control_number": "4", "source": {"url": "w"}, "coverage": 1.0, "codes_found": ["D1"], "text": "t"}], folder=_wx)
-    check(wx["kept"] == 1 and wx["programs"] == 2 and [x["control_number"] for x in wx["list"]] == ["2", "4"]
+        {"control_number": "4", "source": {"url": "w"}, "coverage": 1.0, "codes_found": ["D1"], "text": "t"},
+        {"control_number": "5", "source": {"url": "y#page=237"}, "coverage": 1.0, "codes_found": ["E1"], "text": "t"}],
+        folder=_wx)
+    check(wx["kept"] == 1 and wx["programs"] == 3 and [x["control_number"] for x in wx["list"]] == ["2", "4", "5"]
           and wx["list"][0]["was_method"] == "not_found",
-          "a capture names the programs an extraction would send to the model (an errored record among them), "
-          "and keeps the rest: %r" % wx)
+          "a capture names the programs an extraction would send to the model (an errored record among them, and "
+          "one filed from another page than its source names), and keeps the rest: %r" % wx)
 finally:
     shutil.rmtree(_wx, ignore_errors=True)
 
@@ -1587,7 +1593,7 @@ check(rep_menu["acalog"]["catalog_year_read"] == "2025-2026" and rep_menu["acalo
 CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
 check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"] = read_year' in CS,
       "an Acalog year read from the page fills a registry row that names none, in the records and the report alike")
-check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html")' in CS
+check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
 # S404: a college's own HTML catalog takes the sitemap road, with the child-page walk and the link search.
@@ -1831,6 +1837,103 @@ HN_LIST = ("Complete at least 3 of the following courses:\n• ABT90 - Soil Scie
 check(all(P.code_pattern(c) and P.code_pattern(c).search(HN_LIST) for c in ("ABT 90", "STAT C1000", "ART 12A"))
       and {P.norm_code(c) for c in ("ABT 90", "STAT C1000", "ART 12A")} <= C.page_codes(HN_LIST),
       "an unspaced code (ABT90, STATC1000, ART12A) reads as its spaced form: %r" % sorted(C.page_codes(HN_LIST)))
+
+# Coursedog heads each program "Title - CODE", the prefix its award (Hartnell's PDF, S411). The title-and-
+# codes picker sent 33 of 101 programs to the course-set pages at the back or to programs the PDF does not
+# print, and 12 more to a sibling award's page. Where the catalog heads its programs so, the heading decides.
+def _hn(code, title):
+    return {"code": code, "title": title, "units": 3}
+
+
+HN_PAGES = [
+    "Biology - AS.BIO \nGeneral \nProgram Type \nA.S. Local Degree \n• BIO1 - Cells \n• BIO2 - Organisms \n"
+    "• CHM1A - Chemistry \nTotal Required Credits \n60",
+    "Biology for Transfer Degree (AS-T) - AST.BIO \nGeneral \n• BIO1 - Cells \n• BIO2 - Organisms \n• CHM1A - Chemistry",
+    "Computer Science and Info Systems-Computer \nScience Option - AS.CISCS \nGeneral \n• CSS1 - Intro \n• CSS2A - OOP",
+    "Sociology for Transfer (AA-T) - \nAAT-SOC \nGeneral \n• SOC1 - Intro \n• SOC2 - Problems",
+    "Business Information Worker Level -1 - CT.BIW1 \nGeneral \n• BUS1 - Office \n• BUS2 - Files",
+    "Business Information Worker Level -2 - CT.BIW2 \nGeneral \n• BUS1 - Office \n• BUS2 - Files \n• BUS3 - Data",
+    "Public Health for Transfer Degree (AS-T) - AST.PH2 \nGeneral \n• HES1 - Health \n• HES2 - Justice",
+    "Communication Studies 2.0 for Transfer Degree \n(AA-T) - AAT.COM2 \nGeneral \n• COM1 - Speech \n• COM2 - Groups",
+    "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR \nGeneral \n• NCC1 - Basics",
+    "Course Sets \nElectives (1-199) \n• BIO1 - Cells \n• BIO2 - Organisms \n• CHM1A - Chemistry \n• SOC1 - Intro \n"
+    "• SOC2 - Problems \n• KIN1 - Movement \n• KIN2 - Fitness",
+]
+heads = C.pdf_code_headings(HN_PAGES)
+byc = {h["code"]: h for h in heads}
+check(set(byc) == {"AS.BIO", "AST.BIO", "AS.CISCS", "AAT.SOC", "CT.BIW1", "CT.BIW2", "AST.PH2", "AAT.COM2",
+                   "NCCT.BCL", "NCCT.WAR"},
+      "every Title - CODE heading is read, a hyphen code (AAT-SOC) as its dotted form: %r" % sorted(byc))
+check(byc["AS.CISCS"]["titles"][1] == "Computer Science and Info Systems-Computer Science Option"
+      and byc["AAT.SOC"]["titles"][0] == "Sociology for Transfer (AA-T)"
+      and byc["NCCT.WAR"]["titles"][0] == "Workforce and Academic Readiness"
+      and byc["AS.BIO"]["kind"] == "as" and byc["AAT.SOC"]["kind"] == "adt" and byc["CT.BIW1"]["kind"] == "coa",
+      "a wrapped title reads with its line before, a code on the next line or after another heading reads: %r"
+      % [byc[c]["titles"] for c in ("AS.CISCS", "AAT.SOC", "NCCT.WAR")])
+
+HN_PROGS = [
+    {"control_number": "03537", "title": "Biology", "award": "A.S. Degree",
+     "closed_list": [_hn("BIO 1", "Cells"), _hn("BIO 2", "Organisms"), _hn("CHM 1A", "Chemistry")]},
+    {"control_number": "35107", "title": "Biology", "award": "A.S. T Degree",
+     "closed_list": [_hn("BIO 1", "Cells"), _hn("BIO 2", "Organisms"), _hn("CHM 1A", "Chemistry")]},
+    {"control_number": "08871", "title": "Computer Science and Information Systems-Computer Science",
+     "award": "A.S. Degree", "closed_list": [_hn("CSS 1", "Intro"), _hn("CSS 2A", "OOP")]},
+    {"control_number": "32036", "title": "Sociology", "award": "A.A- T Degree",
+     "closed_list": [_hn("SOC 1", "Intro"), _hn("SOC 2", "Problems")]},
+    {"control_number": "38224", "title": "Business Information Worker Level 1",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "closed_list": [_hn("BUS 1", "Office"), _hn("BUS 2", "Files")]},
+    {"control_number": "38232", "title": "Business Information Worker Level 2",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "closed_list": [_hn("BUS 1", "Office"), _hn("BUS 2", "Files"), _hn("BUS 3", "Data")]},
+    {"control_number": "44729", "title": "Public Health", "award": "A.S. T Degree",
+     "closed_list": [_hn("HES 1", "Health"), _hn("HES 2", "Justice")]},
+    {"control_number": "35458", "title": "Public Health Science", "award": "A.S. T Degree",
+     "closed_list": [_hn("HES 1", "Health"), _hn("HES 2", "Justice")]},
+    {"control_number": "31146", "title": "Communication Studies", "award": "A.A- T Degree",
+     "closed_list": [_hn("COM 1", "Speech"), _hn("COM 2", "Groups")]},
+    {"control_number": "43620", "title": "Communication Studies 2.0", "award": "A.A- T Degree",
+     "closed_list": [_hn("COM 1", "Speech"), _hn("COM 2", "Groups")]},
+    {"control_number": "32981", "title": "Kinesiology", "award": "A.A- T Degree",
+     "closed_list": [_hn("KIN 1", "Movement"), _hn("KIN 2", "Fitness")]},
+    {"control_number": "18353", "title": "Sociology", "award": "A.A. Degree",
+     "closed_list": [_hn("SOC 1", "Intro"), _hn("SOC 2", "Problems")]},
+]
+coded = C.pdf_code_assign(HN_PROGS, HN_PAGES)
+got = {cn: (h or {}).get("code") for cn, h in coded.items()}
+check(got["03537"] == "AS.BIO" and got["35107"] == "AST.BIO" and got["32036"] == "AAT.SOC"
+      and got["08871"] == "AS.CISCS",
+      "a program reads from the heading naming its title and award, never its sibling award's: %r" % got)
+check(got["38224"] == "CT.BIW1" and got["38232"] == "CT.BIW2",
+      "Level -1 and Level -2 are two levels: %r" % [got["38224"], got["38232"]])
+check(got["44729"] == "AST.PH2" and got["35458"] is None and got["31146"] == got["43620"] == "AAT.COM2",
+      "a heading goes to the programs it names most fully, ties sharing it: %r"
+      % [got["44729"], got["35458"], got["31146"], got["43620"]])
+check(got["32981"] is None and got["18353"] is None,
+      "a program no heading names (Kinesiology, an A.A. the PDF prints only as an A.A.-T) reads from no page, "
+      "never the course-set pages: %r" % [got["32981"], got["18353"]])
+hn_bio = C.pdf_best("hn.pdf", HN_PAGES, HN_PROGS[1], HN_PROGS[1]["closed_list"], "pypdf", coded["35107"])
+check(hn_bio["pages"][0] == 2 and hn_bio["named"] and hn_bio["coverage"] == 1.0
+      and hn_bio["url"] == "hn.pdf#page=2",
+      "the run opens on the heading's page: %r" % hn_bio["pages"])
+check(C.pdf_code_assign(HN_PROGS * 3, HN_PAGES[:2]) is None,
+      "a catalog that heads few programs with a code is read as before")
+
+# SmartCatalog (Crafton Hills, Taft; page reads 39090262960 and 39090533458, S411): no sitemap, and each level of the
+# catalog sits beneath the one above it with no closing slash: index, subject or group, program.
+SC = "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog"
+sc_kids = C.child_pages(C.child_base(SC + "/credit-programs", "smartcatalog"),
+                        [{"href": SC + "/credit-programs/accounting-acct"}, {"href": SC + "/credit-courses/acct-accounting"},
+                         {"href": SC + "/what-are-your-options"}, {"href": SC + "/credit-programs"}], SC)
+sc_prog = C.child_pages(C.child_base(SC + "/credit-programs/accounting-acct", "smartcatalog"),
+                        [{"href": SC + "/credit-programs/accounting-acct/accounting-associate-of-arts-degree"},
+                         {"href": SC + "/credit-programs"}], SC)
+check(sc_kids == [SC + "/credit-programs/accounting-acct"]
+      and sc_prog == [SC + "/credit-programs/accounting-acct/accounting-associate-of-arts-degree"],
+      "a SmartCatalog page's children are read beneath its address, never its course pages: %r" % [sc_kids, sc_prog])
+check(C.child_pages(C.child_base(SC + "/credit-programs", None), [{"href": SC + "/credit-programs/accounting-acct"}], SC) == []
+      and C.child_base(SC + "/credit-programs", "courseleaf") == SC + "/credit-programs",
+      "another platform's page without a closing slash still reads no children")
 
 if failures:
     print("FAIL: %d" % len(failures))

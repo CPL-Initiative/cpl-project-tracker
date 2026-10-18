@@ -316,3 +316,17 @@ bulk-write pattern. Pattern + the CCR/CSR scaling strategy:
 and we have an amazing foundation") — small surface (148 curator-reviewed
 entries), key-generating layer, includes the official-CCN-subject collision
 check that exists nowhere else; then the CCR mountain in leverage-ordered waves.
+
+## S411 SkySotol (2026-10-18): the procedures redesign, and a fold that stopped in July
+
+- **Sam's ask** (~02:55Z): the next UI pass makes the tab as simple as possible, and he adds procedures that sessions
+  apply, because he no longer has time to curate the list. Lane: `docs/reference/lanes/cer-procedures.md`.
+- **The fold has applied nothing since 2026-07-08.** `--apply-if-safe` holds every assignment when any conflicts: 18
+  conflicts, 176 clean assignments waiting (every daily report since 2026-07-15 reads the same). The tab's copy says
+  saved assignments fold "automatically on the next daily refresh". A gate that holds everything for one exception
+  hides its own backlog: report what it held, and hold only the exception.
+- **The backlog grew from 241 (2026-07-16) to 1,498 (2026-10-17)** with no KB entry since July; the classifier that
+  reads the skill as its prompt was never wired to a workflow.
+- **The mock-up** (https://claude.ai/artifact/Gu6HTwqSwMYLSy4C4xRag3) reduces seven view chips to three words (Needs
+  you, Procedures, Reference) and retires the Initiated sign-off and the Curate panel. Three calls went to Sheet 93.
+

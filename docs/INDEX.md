@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 552 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 382 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1165** | |
+| Reference (pull-side) | 57 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 383 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1167** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-18 (S411 SkySotol, hand-opened): `d6cc1fde7ea3` applied; Hartnell read by its Coursedog code headings (8 loaded, 14 moved to their own heading, 4 wrong-page rows removed under a receipt); a kept record must come from its source's page; SmartCatalog by the generic road and vendor-host page reads; display build `182e810e207d` (15,651 programs at 111 colleges, #2216). Sam asked for the CER on procedures: new lane `cer-procedures`, the v3 mock-up, Open Asks Sheet 93. Handoff 412 (SkyJoshua).
 - 2026-10-18 (S410 SkyYucca, hand-opened): `ffd6929a4f90` applied; Cañada filed from Sam's catalog-files copies (Sheet 92 card 1) and Hartnell read through a PDF catalog step that names its file; 62 and 68 loaded unchecked, display build `d6cc1fde7ea3` (15,647 programs at 111 colleges, #2213); TMC Builder's UI pass (#2214); four `cpl_memory` rows; no decision sheet open. Handoff 411 (SkySotol).
 - 2026-10-17 (S409 SkyOcotillo, hand-opened): `f949e7c0ea35` applied; Cuesta loaded 181 unchecked and display build `ffd6929a4f90` (15,517 programs at 109 colleges, #2210); Exhibit Adoption's UI pass, its table and matrix measured for the first time (#2211); Cañada's 2026-2027 PDF found behind its robots.txt refusal (Open Asks Sheet 92); the Coursedog and SmartCatalog hosts read; handoff 410 (SkyYucca).
 - 2026-10-17 (S408 SkyAgave, hand-opened): the code finder reads a run of numbers after one subject (#2206, Glendale 190 to 258 found); the outcomes check reads a list number at a line's end (#2207, Ohlone 125 failures to 8); East LA's rows carry their year; Desert, Pasadena, Glendale, Grossmont, Ohlone and LA Southwest loaded unchecked; display build `f949e7c0ea35` (15,336 programs at 108 colleges, #2208); handoff 409 (SkyOcotillo).

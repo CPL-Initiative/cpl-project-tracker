@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Theatre Performance",
  "award": "Noncredit program",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=396",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7237,
+  "input_tokens": 7621,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7237,
-    "output_tokens": 1215,
+    "input_tokens": 7621,
+    "output_tokens": 1742,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1215,
+  "output_tokens": 1742,
   "output_tokens_details": {
-   "thinking_tokens": 412
+   "thinking_tokens": 788
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05325,
- "ms": 11496,
- "seconds": 11.8,
+ "cost_usd": 0.06532,
+ "ms": 16195,
+ "seconds": 16.5,
  "parts": null,
  "error": null,
  "score": {
@@ -55,40 +55,38 @@
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "TAC325"
-   ],
-   "flagged": [
-    "TAC325"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    1260.0,
-    1260.0
+    0.0,
+    0.0
    ],
    "stated": [
-    1260.0,
-    1260.0
+    630.0,
+    630.0
    ],
    "against": "program",
-   "why": []
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,15 +98,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Courses",
+   "section_heading": "Theatre Performance - NCCT.TPER",
    "measure": "hours",
    "total_units": {
-    "min": 1260,
-    "max": 1260
+    "min": 630,
+    "max": 630
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,27 +123,25 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate proficiency in the acting techniques in scene work and memorization.",
+    "conduct preliminary research for the character, period, and/or production history associated with the chosen ensemble play.",
+    "demonstrate the organizational skills necessary to rehearse and perform within a fully-realized ensemble play.",
+    "effectively collaborate as a contributing member of a production team."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Non Credit",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 1260,
-     "max": 1260
+     "min": null,
+     "max": null
     },
     "courses": [
-     {
-      "code": "TAC325",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
      {
       "code": "TAC326",
       "units": null,
@@ -187,14 +183,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt prints no program heading for the Theatre Performance noncredit program. The section heading recorded is the 'Courses' label at the top of the page.",
-   "The six bulleted TAC3xx courses are followed by 'Non Credit - Total hours 1260'. I read them as the noncredit program's requirements, all required. The text states no selection rule, so a reviewer should confirm that all six are required.",
-   "No hours are printed beside the individual noncredit courses, so their units are null.",
-   "1260 total hours is recorded as the program total and as the block's stated total. Reviewer should verify this against the full catalog page.",
-   "TAC325 (Introduction to Revival Play Production) is not in the closed list and is recorded as a catalog addition.",
-   "TAC1, TAC2, TAC3 and TAC10 are listed unbulleted under 'Courses' and followed by credit course details (Credits 3, C-ID, CalGETC). They appear to be credit courses from a different program or the course listing. They are not placed in this noncredit program.",
-   "The page is cut off and the program description may be on the preceding page. No outcomes or careers appear in the excerpt."
+   "The PDF extraction places each program heading at the top of its page. The material printed before the program description on page 393 belongs to the previous program, a credit program with Cal-GETC and 60 total credits: the 'Analyze, interpret, and evaluate...' outcome and TAC57, TAC58, TAC59, TAC61, TAC54, TAC51, TAC50 and TAC53. It was excluded.",
+   "The Theatre Performance section was read as running from 'General / Program Type Non Credit - Completion' on page 393 through 'Non Credit - Total hours 630' on page 394. The Required Courses list continues across the page break: TAC329 and TAC340 appear on page 394 after the hoisted 'Theatre Production - NCCT.TPRO' heading. This reading matches the closed list.",
+   "The catalog prints no hours beside the individual courses, so course hours are null. Total hours of 630 were recorded in total_units.",
+   "The Theatre Performance and Theatre Production sections print identical descriptions and outcomes. Only the first outcome differs: this section ends it with a period, Theatre Production does not. Reviewer should confirm the sections were not swapped, since the performance-oriented outcomes sit beside stagecraft courses.",
+   "Outcomes were preceded by the lead-in 'Upon completion of this course, students will be able to:', which was omitted."
   ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39090050931"
 }

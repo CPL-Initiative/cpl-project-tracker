@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Early Childhood Education",
  "award": "A.S. Degree",
- "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9941,
+  "input_tokens": 10634,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9941,
-    "output_tokens": 3093,
+    "input_tokens": 10634,
+    "output_tokens": 2768,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 3093,
+  "output_tokens": 2768,
   "output_tokens_details": {
-   "thinking_tokens": 2013
+   "thinking_tokens": 1159
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10162,
- "ms": 27117,
- "seconds": 27.5,
+ "cost_usd": 0.0979,
+ "ms": 22492,
+ "seconds": 23.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 16,
    "listed": 17,
-   "share": 0.412,
+   "share": 0.941,
    "missing": [
-    "ECE1",
-    "ECE10",
-    "ECE11",
-    "ECE12",
-    "ECE19",
-    "ECE2",
-    "ECE4",
-    "ECE53",
-    "ECE54",
-    "ECE6"
+    "ECE11"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 2,
    "codes": [
+    "ECE8",
     "ECE9"
    ],
    "flagged": [
+    "ECE8",
     "ECE9"
    ],
    "pass": true
@@ -79,8 +72,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    31.0,
+    31.0
    ],
    "stated": [
     60.0,
@@ -89,7 +82,6 @@
    "against": "degree",
    "ge": null,
    "why": [
-    "'Program requirements list (continued from page 183; block heading and rule cut off)' chooses units but names no minimum",
     "the record names the degree total and the Local GE pattern, but no units for it"
    ]
   },
@@ -98,17 +90,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -119,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Early Childhood Education A.S. (heading not in the supplied text; only the tail of the section, printed at the top of page 184 before 'Early Childhood Education for Transfer (AS-T) - AST.ECE', is present)",
+   "section_heading": "Early Childhood Education - AS.ECE",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -140,13 +132,20 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "plan and organize activities, providing a safe and healthy learning environment, for optimum development of all young children in groups of 12 to 24 children.",
+    "assess and evaluate all children and learning environments to write reports according to state and federally mandated guidelines.",
+    "work with families and their children to build respectful, supportive relationships for optimum growth and development of young children",
+    "connect with community agencies and programs to support children, families, and the early education and care profession."
+   ],
+   "careers": [
+    "early education and care of young children"
+   ]
   },
   "blocks": [
    {
-    "name": "Program requirements list (continued from page 183; block heading and rule cut off)",
-    "rule": "choose_units",
+    "name": "Required Major Courses",
+    "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
@@ -154,6 +153,88 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "ECE1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE54",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "ECE9",
       "units": null,
@@ -216,47 +297,19 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ECE 1",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE1 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 2",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE2 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 4",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE4 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 6",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE6 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 10",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE10 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 12",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE12 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 19",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE19 appears only in the AS-T and certificate sections"
-   },
-   {
-    "code": "ECE 53",
-    "why": "A.S. core not in supplied text (page 183 missing); ECE53 appears only in the AS-T and certificate sections"
-   },
-   {
     "code": "ECE 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECE 54",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints 'Cognitive Activities and Materials' as ECE8, recorded as a catalog addition"
    }
   ],
-  "notes": []
+  "notes": [
+   "The Major Electives list breaks across pages 183-184; its remaining courses (ECE9 through ECE71) print under the AS-T heading on page 184 but belong to the A.S. section.",
+   "No units are printed beside any course; 'Total Required Credits 60' covers the whole degree with Local GE, so it is recorded as degree_total and total_units is null.",
+   "Electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60; no units printed, so electives_fill_degree is true.",
+   "The Child Development Permit table (Teacher Assistant, Associate Teacher, Teacher, Master Teacher, Site Supervisor, Program Director) is informational and not a degree requirement; its course mentions were not recorded as blocks. Permit level names were not recorded as careers.",
+   "ECE8 carries the closed list's ECE 11 title (Cognitive Activities and Materials) and may be a renumbering; ECE9 (Creative Expressions and Play in Early Childhood) is not in the closed list.",
+   "ECE12 is printed as 'Practicum: Field Teaching Experience' vs. closed-list title 'Preschool Theory and Practicum'.",
+   "Program outcomes lead-in says 'Upon completion of this course' though printed as Program Outcomes; the same outcomes list appears for the CT.ECE certificate (with a final period on the third outcome there)."
+  ]
  },
- "extracted_run": "39082134780"
+ "extracted_run": "39090050931"
 }
