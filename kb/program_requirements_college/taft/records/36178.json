@@ -1,0 +1,409 @@
+{
+ "college": "Taft College",
+ "control_number": "36178",
+ "shape": "certificate",
+ "title": "Court Reporting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/court-reporting/court-reporting-certificate-of-achievement",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8059,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8059,
+    "output_tokens": 2358,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2358,
+  "output_tokens_details": {
+   "thinking_tokens": 446
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0794,
+ "ms": 17668,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 18,
+   "codes": [
+    "ADMJ1501",
+    "CTRP631",
+    "CTRP632",
+    "CTRP633",
+    "CTRP634",
+    "CTRP641",
+    "CTRP642",
+    "CTRP643",
+    "CTRP644",
+    "CTRP651",
+    "CTRP652",
+    "CTRP653",
+    "CTRP661",
+    "CTRP662",
+    "CTRP663",
+    "CTRP710",
+    "HLED1541",
+    "HLED1543"
+   ],
+   "flagged": [
+    "ADMJ1501",
+    "CTRP631",
+    "CTRP632",
+    "CTRP633",
+    "CTRP634",
+    "CTRP641",
+    "CTRP642",
+    "CTRP643",
+    "CTRP644",
+    "CTRP651",
+    "CTRP652",
+    "CTRP653",
+    "CTRP661",
+    "CTRP662",
+    "CTRP663",
+    "CTRP710",
+    "HLED1541",
+    "HLED1543"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    81.0,
+    81.0
+   ],
+   "stated": [
+    46.0,
+    46.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 81.0-81.0; the catalog states 46.0-46.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Court Reporting: Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 46,
+    "max": 46
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Effectively perform routine court reporting duties",
+    "Pass the California Court Reporters Board Examination for Licensure",
+    "Apply appropriate ethical behavior in the profession",
+    "Exhibit professional qualities and attitude"
+   ],
+   "careers": [
+    "certified shorthand reporters"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADMJ 1501",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0510",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0515",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0570",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0575",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0580",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0590",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0654",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0664",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP0710",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0750",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLED 1543",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLED 1541",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "35 Additional Units of Speed Building classes",
+    "rule": "choose_courses",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 35,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "CTRP0631",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0632",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0633",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0634",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0641",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0642",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0643",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0644",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0651",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0652",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0653",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0661",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0662",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP0663",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements on this Certificate of Achievement page are printed under the heading 'Degree Requirements'; they were read as the certificate's requirements.",
+   "'Total Credit Hours: 46' equals the sum of the Required Core only (3+5+3+3+3+3+4+5+5+2+2+2+3+3 = 46) and appears to exclude the 35 additional units of speed building; recorded as printed, but the true certificate total may be 81. Reviewer should check.",
+   "Speed building block: heading reads '35 Additional Units of Speed Building classes' and 'Choose 7 Courses from the following' (7 x 5 = 35).",
+   "The State Requirements hours table (660 academic hours, 2300 machine shorthand hours) is the Court Reporters Board's requirement, not the award's measure; the award is counted in credits/units.",
+   "The description's GE requirement (39 - 49 units of General Education) applies to the A.S. degree, not this certificate; not recorded.",
+   "Catalog prints codes without spaces (e.g., CTRP0510, ENGLC1000); matched to closed-list CTRP 510, ENGL C1000, etc.",
+   "Description also states the A.S. degree requires 200 WPM shorthand speed and 45 WPM keyboarding speed."
+  ]
+ },
+ "extracted_run": "39100858309"
+}

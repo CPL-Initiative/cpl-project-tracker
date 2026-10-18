@@ -1,0 +1,321 @@
+{
+ "college": "Taft College",
+ "control_number": "30015",
+ "shape": "degree",
+ "title": "Liberal Arts Natural Science Life Science",
+ "award": "A.A. Degree",
+ "source_url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/liberal-arts-with-an-area-of-emphasis/liberal-arts-area-of-emphasis-natural-science-life-science-associate-in-arts",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8303,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8303,
+    "output_tokens": 2413,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2413,
+  "output_tokens_details": {
+   "thinking_tokens": 851
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08147,
+ "ms": 20313,
+ "seconds": 20.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 26,
+   "share": 0.692,
+   "missing": [
+    "ASTRC1000",
+    "ESCI1520",
+    "GEOG1510",
+    "MATHC2221",
+    "PHYS2221",
+    "PHYS2222",
+    "PHYS2223",
+    "PSCI1520"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts Area of Emphasis: Natural Science-Life Science: Associate of Arts",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select any 18 units from the following requirements",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOLC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOLC1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 1513",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2250",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2257",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2260",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 2370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1520",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 2211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 2212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1500",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1501",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1540",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHC2211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASTR C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 1520",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 1510",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2221",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 2221",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 2222",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 2223",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSCI 1520",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog says 'Select any 18 units from the following requirements' and then, under 'Maximum of one course may be selected from the following:', lists CHEM 1520, CHEM 2211, CHEM 2212, GEOL 1500, GEOL 1501, MATH 1540, MATHC2211 and STATC1000. All of these are recorded in one choose_units block of 18 units. At most one course from the CHEM/GEOL/MATH/STAT group may count toward the 18 units.",
+   "The page prints no explicit total for the major or the degree apart from the 'any 18 units' selection rule. total_units and degree_total were left null. Reviewer may consider 18 as the award total.",
+   "Codes BIOLC1001, BIOLC1000, MATHC2211 and STATC1000 are printed without a space. They match closed-list BIOL C1001, BIOL C1000, MATH C2211 and STAT C1000.",
+   "CHEM 2211 and CHEM 2212 are titled 'General Chemistry' and 'General Chemistry and Qualitative Analysis' in the catalog. The closed list titles them General Chemistry I and II.",
+   "No general education pattern, program learning outcomes or career titles are printed in this section. The 'Explore Majors & Careers' links are generic resources and name no careers for this program."
+  ]
+ },
+ "extracted_run": "39100858309"
+}

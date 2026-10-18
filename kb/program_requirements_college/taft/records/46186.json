@@ -1,0 +1,178 @@
+{
+ "college": "Taft College",
+ "control_number": "46186",
+ "shape": "certificate",
+ "title": "Speech Language Pathology Aide",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/early-care-education-and-family-studies/master-teacher-certificate-of-achievement",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7909,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7909,
+    "output_tokens": 1088,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1088,
+  "output_tokens_details": {
+   "thinking_tokens": 378
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0534,
+ "ms": 11892,
+ "seconds": 12.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "ASL1500",
+    "ECEF1571",
+    "ECEF1611",
+    "ECEF1612",
+    "PSYC2003",
+    "SLP1400",
+    "SLP1500",
+    "SLP1550"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Master Teacher: Certificate of Achievement (not the named award; no Speech Language Pathology Aide section in text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASL1500",
+    "why": "not in the text; page shows only the Master Teacher certificate"
+   },
+   {
+    "code": "ECEF 1571",
+    "why": "named only in the Master Teacher certificate section, not the Speech Language Pathology Aide award"
+   },
+   {
+    "code": "ECEF 1611",
+    "why": "named only in the Master Teacher certificate section (Option 2), not the Speech Language Pathology Aide award"
+   },
+   {
+    "code": "ECEF 1612",
+    "why": "named only in the Master Teacher certificate section (Option 2), not the Speech Language Pathology Aide award"
+   },
+   {
+    "code": "PSYC 2003",
+    "why": "named only in the Master Teacher certificate section, not the Speech Language Pathology Aide award"
+   },
+   {
+    "code": "SLP1400",
+    "why": "not in the text"
+   },
+   {
+    "code": "SLP1500",
+    "why": "not in the text"
+   },
+   {
+    "code": "SLP1550",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source URL and catalog text are for the Master Teacher: Certificate of Achievement (Total Credit Hours: 33), not the Speech Language Pathology Aide Certificate of Achievement. No section for the named award appears in the text, so no blocks, totals, outcomes or careers were recorded.",
+   "A reviewer should locate the correct Taft College 2026-2027 catalog page for the Speech Language Pathology Aide certificate; none of the SLP or ASL courses on the closed list appear in this text.",
+   "The Master Teacher page lists ECEF 1571 as 'Child Study and Assessment' and ECEF 1611/1612 under 'Option 2: Special Needs', which overlap the closed list but belong to a different award."
+  ]
+ },
+ "extracted_run": "39100858309"
+}
