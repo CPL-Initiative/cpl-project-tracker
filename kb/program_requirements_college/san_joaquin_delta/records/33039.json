@@ -77,7 +77,30 @@
     21.5
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.5,
+     55.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     4.5,
+     4.5
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -97,6 +120,9 @@
    "count": 9,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -135,7 +161,8 @@
     "research",
     "positions in private industry",
     "public service"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -278,5 +305,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

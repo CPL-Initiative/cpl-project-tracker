@@ -100,6 +100,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -234,5 +237,6 @@
    "Catalog also notes the certificate prepares students for the Outdoor Power Equipment Certification Exams and requires a grade of C or better in all courses."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

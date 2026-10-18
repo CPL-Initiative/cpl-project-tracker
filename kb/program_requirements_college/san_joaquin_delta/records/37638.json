@@ -106,7 +106,30 @@
    "against": "program",
    "why": [
     "the blocks sum to 18.0-21.0; the catalog states 18.0-18.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     5.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -126,6 +149,9 @@
    "count": 27,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -182,7 +208,8 @@
     "religious organizations",
     "social science",
     "social work"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -636,5 +663,14 @@
    "Program Learning Outcomes are printed for the program; the A.A-T degree is the award of this section."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

@@ -106,6 +106,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -320,5 +323,6 @@
    "No career titles are named beyond general reference to entry-level shipping and receiving positions; careers left empty."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

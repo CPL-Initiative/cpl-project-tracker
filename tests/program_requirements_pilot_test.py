@@ -1613,6 +1613,32 @@ deg = S.degree_check(new["program"], (60.0, 60.0), 24.0, 24.0, [], TAFT_ECE, "A.
 check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34}
       and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["fill"] == [2.0, 2.0],
       "Taft ECE AS-T reconciled: Cal-GETC 34, electives make up 2: %s" % json.dumps(deg))
+# San Joaquin Delta (S415): every degree page prints "Minimum Major Units Required: N", two GE patterns (27 and
+# Cal-GETC 34), advises double-counting, then "Minimum Degree Units Required: 60" (college-page-read 39122473643).
+SJD_DRAFT = ("Major Requirements - Restricted Electives \u00b7 Complete 3 units selected from: \u00b7 E TECH 80 Applied "
+             "Surveying Units: 3.5 \u00b7 Minimum Major Units Required: 18\nGeneral Education\nComplete one of the following "
+             "general education patterns:\nSan Joaquin Delta College Associate Degree General Education Pattern Units: 27\n"
+             "California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement Units: 34\nStudents are "
+             "advised to double-count courses in the major to also satisfy general education when possible.\n"
+             "Minimum Degree Units Required: 60 \u00b7 For more information:")
+sjd = {"program": {"total_units": {"min": 18, "max": 18}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 27, "max": 34}, "electives_fill_degree": False}, "blocks": []}
+check(not S.degree_check(sjd["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT, "A.S. Degree")["pass"],
+      "San Joaquin Delta Drafting as read: 18 and GE 27-34 against an exact 60 fails")
+new, notes = RC.reconcile(sjd, SJD_DRAFT, "San Joaquin Delta College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT, "A.S. Degree")
+check([n["field"] for n in notes] == ["degree_total_minimum"]
+      and deg["pass"] and deg.get("minimum") and deg["fill"] == [8.0, 15.0],
+      "San Joaquin Delta Drafting reconciled: the 60 is a minimum, courses the student chooses make up 8 to 15: %s"
+      % json.dumps(deg))
+check(S.degree_check(new["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT.replace("Restricted Electives", "Restricted"),
+                     "A.S. Degree")["pass"],
+      "a floor alone makes up a short sum, on a page that names no electives")
+nurse = {"program": {"total_units": {"min": 59.5, "max": 59.5}, "degree_total": {"min": 77.5, "max": 77.5},
+                     "ge_units": {"min": 27, "max": 34}}, "blocks": []}
+new, _ = RC.reconcile(nurse, SJD_DRAFT.replace("Required: 60", "Required: 77.5"), "San Joaquin Delta College", "A.S. Degree")
+check(S.degree_check(new["program"], (77.5, 77.5), 59.5, 59.5, [], SJD_DRAFT, "A.S. Degree")["pass"],
+      "San Joaquin Delta Nursing: a 59.5-unit major and GE double-counted past the minimum of 77.5 meet it")
 
 # Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
 # Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.

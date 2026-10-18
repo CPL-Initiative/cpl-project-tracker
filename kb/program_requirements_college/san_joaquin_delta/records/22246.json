@@ -89,7 +89,27 @@
     42.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     69.0,
+     76.0
+    ],
+    "stated": [
+     66.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -109,6 +129,9 @@
    "count": 6,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -142,7 +165,8 @@
     "First-Line Supervisor",
     "Administrative Executive",
     "Office Manager"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -340,5 +364,14 @@
    "Area A and Area B each state 'Complete 3 units selected from'; recorded as stated 3."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 66"
+  }
+ ]
 }

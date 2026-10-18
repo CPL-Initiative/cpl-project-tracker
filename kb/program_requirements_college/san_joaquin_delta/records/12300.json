@@ -84,7 +84,27 @@
     48.5
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     75.5,
+     82.5
+    ],
+    "stated": [
+     63.5,
+     63.5
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -104,6 +124,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -134,7 +157,8 @@
    ],
    "careers": [
     "Speech Language Pathology Assistant (SLPA)"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -347,5 +371,14 @@
    "Minimum Major Units Required: 48.5; Minimum Degree Units Required: 63.5."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 63.5"
+  }
+ ]
 }

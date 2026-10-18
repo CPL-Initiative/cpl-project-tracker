@@ -96,6 +96,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -285,5 +288,6 @@
    "'stagecraft' recorded as a career field from 'entry-level employment in the field of stagecraft'."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

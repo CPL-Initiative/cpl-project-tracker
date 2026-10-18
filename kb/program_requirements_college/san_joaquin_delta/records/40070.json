@@ -98,6 +98,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -229,5 +232,6 @@
    "The career 'paraprofessional' is taken from the program description ('a paraprofessional in a private or public K-8 school')."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

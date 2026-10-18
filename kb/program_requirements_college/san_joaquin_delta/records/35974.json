@@ -100,6 +100,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -199,5 +202,6 @@
    "Careers are taken from the description's list of industries where graduates may find employment (\"a variety of industries such as ...\")."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }
