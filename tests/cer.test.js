@@ -115,7 +115,7 @@ function runAssertions() {
       check("item4: local shows code + title", /BIT\s*375/.test(localTxt) && /10-Key on the Computer/i.test(localTxt));
       check("item4: local shows '(1 unit)'", /\(1 unit\)/.test(localTxt));
       // Item 6 — college-entered raw variants listed.
-      const h5s = Array.from(body.querySelectorAll("h5")).map(txt);
+      const h5s = Array.from(body.querySelectorAll("h3")).map(txt);
       check("item6: 'College-entered exhibit titles' heading", h5s.some((h) => /College-entered exhibit titles/.test(h)));
       check("item6: raw college title listed", /10-key on the computer/i.test(txt(body.querySelector(".cr-variants-list"))));
     }
@@ -130,7 +130,7 @@ function runAssertions() {
       atog.click();
       let ok = false;
       for (const body of Array.from(wrap.querySelectorAll("tr.cr-expanded .cr-expanded-body"))) {
-        const heads = Array.from(body.querySelectorAll("h5")).map(txt);
+        const heads = Array.from(body.querySelectorAll("h3")).map(txt);
         const ai = heads.findIndex((h) => /Audit signals/.test(h));
         const ci = heads.findIndex((h) => /Common-course identities/.test(h));
         if (ai >= 0 && (ci < 0 || ai < ci)) { ok = true; break; }

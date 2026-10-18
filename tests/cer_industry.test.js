@@ -15,6 +15,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_industry.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -102,7 +103,7 @@ function makeDom(opts) {
   return { window, log };
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const lane = (doc, re) => Array.from(doc.querySelectorAll(".cr-lane")).find((b) => re.test(b.textContent));
+const lane = (doc, re) => cerLane(doc, re);
 const gridRow = (doc, name) => Array.from(doc.querySelectorAll("tr"))
   .find((tr) => tr.querySelector(".cr-title-toggle") && txt(tr.querySelector(".cr-title-toggle")) === name);
 

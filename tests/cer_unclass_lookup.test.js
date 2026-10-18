@@ -11,6 +11,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_unclass_lookup.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -106,8 +107,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function openUnc() {
   const ctx = makeDom();
   await sleep(80);
-  Array.from(ctx.window.document.querySelectorAll(".cr-lane"))
-    .find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(ctx.window.document, /Unclassified/).click();
   await sleep(80);
   return ctx;
 }

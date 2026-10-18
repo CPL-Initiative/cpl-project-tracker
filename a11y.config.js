@@ -556,13 +556,41 @@ async function seedCcrList(page, theme) {
   await page.waitForTimeout(200);
 }
 
-// The CER's Industry credentials lane (2026-10-16 UI pass): the cobi sweep measures the
-// tab's first screen, the All lane. This opens the lane through its own button by
-// keyboard (a pointer click turns :focus-visible off for the focus check), then opens
-// the first articulated row so the industry record, its skills and links paint.
-async function seedCerIndustry(page, theme) {
+// The CER's views (S413): the tab opens on Needs you › Held when the procedures report
+// holds titles, so the cobi sweep measures that screen. A view or lane opens through its
+// own button by keyboard (a pointer click turns :focus-visible off for the focus check).
+async function openCerView(page, theme, view) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "credential-reference") location.hash = "credential-reference"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#tab-credential-reference #cr-view-" + view, { timeout: 60000 });
+  await page.evaluate((v) => document.getElementById("cr-view-" + v).focus(), view);
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(300);
+}
+
+// Reference › All, the credentials grid, a row open (S413: no longer the first screen).
+async function seedCerReference(page, theme) {
+  await openCerView(page, theme, "ref");
+  await page.waitForSelector("#tab-credential-reference tr.cr-row .cr-title-toggle", { timeout: 30000 });
+  await page.evaluate(() => document.querySelector("#tab-credential-reference tr.cr-row .cr-title-toggle").focus());
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(300);
+}
+
+// Procedures: each procedure, one opened to what it did.
+async function seedCerProcedures(page, theme) {
+  await openCerView(page, theme, "procs");
+  await page.waitForSelector("#tab-credential-reference .cr-proc-item button.cr-proc-word", { timeout: 30000 });
+  await page.evaluate(() => document.querySelector("#tab-credential-reference .cr-proc-item button.cr-proc-word").focus());
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(300);
+}
+
+// The CER's Industry credentials lane (2026-10-16 UI pass), in Reference. This opens the
+// view, then the lane through its own button by keyboard, then the first articulated row
+// so the industry record, its skills and links paint.
+async function seedCerIndustry(page, theme) {
+  await openCerView(page, theme, "ref");
   await page.waitForFunction(() => Array.from(document.querySelectorAll("#tab-credential-reference .cr-lane"))
     .some((b) => /Industry credentials \(\d/.test(b.textContent)), null, { timeout: 60000 });
   await page.evaluate(() => Array.from(document.querySelectorAll("#tab-credential-reference .cr-lane"))
@@ -2164,6 +2192,38 @@ module.exports = {
      which lands on the tab's first pathway, never paints it. One target per
      theme, seeded through the selector the reader uses, on the record with the
      most on screen (Cerritos Ironworker: an option fork, every CPL kind). */
+  "cer-reference": {
+    file: "index.html",
+    title: "Common Exhibit Reference: Reference, the credentials grid, a row open",
+    routes: [{ hash: "credential-reference", name: "reference" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCerReference(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cer-reference-dark": {
+    file: "index.html",
+    title: "Common Exhibit Reference: Reference, dark",
+    routes: [{ hash: "credential-reference", name: "reference-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCerReference(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cer-procedures": {
+    file: "index.html",
+    title: "Common Exhibit Reference: Procedures, one opened to what it did",
+    routes: [{ hash: "credential-reference", name: "procedures" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCerProcedures(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cer-procedures-dark": {
+    file: "index.html",
+    title: "Common Exhibit Reference: Procedures, dark",
+    routes: [{ hash: "credential-reference", name: "procedures-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCerProcedures(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "cer-industry": {
     file: "index.html",
     title: "Common Exhibit Reference: the Industry credentials lane, a record open",

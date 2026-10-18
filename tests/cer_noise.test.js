@@ -108,7 +108,7 @@ function runAssertions() {
     check("outlier badge is on the DANC (minority-subject) row",
       !!danceRow && !!danceRow.querySelector(".cr-art-outlier"));
 
-    const h5 = Array.from(body.querySelectorAll("h5")).map(txt)
+    const h5 = Array.from(body.querySelectorAll("h3")).map(txt)
       .find((h) => /Common-course identities/.test(h));
     check("header count reflects SHOWN identities (5)", !!h5 && /\(5 identities/.test(h5));
   }

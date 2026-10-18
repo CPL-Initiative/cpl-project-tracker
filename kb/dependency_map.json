@@ -1030,7 +1030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4276,
+     "line": 4360,
      "tabs": [
       "credential-reference"
      ]
@@ -1277,7 +1277,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1346
+     "line": 1374
     }
    ],
    "main_committers": []
@@ -1778,7 +1778,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 597
+     "line": 625
     }
    ],
    "main_committers": []
@@ -2842,7 +2842,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4296,
+     "line": 4380,
      "tabs": [
       "credential-reference"
      ]
@@ -3595,7 +3595,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1088
+     "line": 1116
     }
    ],
    "main_committers": []
@@ -4622,7 +4622,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 979
+     "line": 1007
     },
     {
      "id": "module:admin.js",
@@ -5334,7 +5334,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1285
+     "line": 1313
     },
     {
      "id": "module:college_briefing.js",
@@ -5859,7 +5859,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 6039,
+     "line": 6175,
      "tabs": [
       "credential-reference"
      ]
@@ -8429,7 +8429,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5814,
+     "line": 5903,
      "tabs": [
       "credential-reference"
      ]
@@ -10625,7 +10625,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5472,
+     "line": 5561,
      "tabs": [
       "credential-reference"
      ]
@@ -12085,7 +12085,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5495,
+     "line": 5584,
      "tabs": [
       "credential-reference"
      ]

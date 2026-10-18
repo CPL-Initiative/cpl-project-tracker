@@ -15,6 +15,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_v2_grid.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -90,8 +91,7 @@ function makeDom(opts) {
   return { window, log };
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const laneBtn = (doc, rx) => Array.from(doc.querySelectorAll(".cr-lane"))
-  .find((b) => rx.test(b.textContent));
+const laneBtn = (doc, rx) => cerLane(doc, rx);
 const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row"))
   .find((tr) => {
     const inp = tr.querySelector(".cr-title-in");
@@ -104,10 +104,14 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   const doc = window.document;
   await sleep(150);
 
-  const lanes = Array.from(doc.querySelectorAll(".cr-lane"));
-  // 7 since 2026-10-16: the read-only Industry credentials lane joined the six queues;
-  // 8 since 2026-10-18: the read-only Procedures lane (the procedures run's report).
-  check("lanes: 8 chips render", lanes.length === 8);
+  // S413: three views; with no procedures report the tab opens on Reference,
+  // whose four lanes are the only ones painted.
+  check("views: three render", doc.querySelectorAll("button.cr-view").length === 3);
+  check("views: no report, so the tab opens on Reference",
+    doc.getElementById("cr-view-ref").getAttribute("aria-pressed") === "true");
+  const lanes = Array.from(doc.querySelectorAll(".cr-lane")).map((b) => txt(b).replace(/\s*\(.*$/, ""));
+  check("lanes: Reference paints All, Industry credentials, Not initiated, Initiated",
+    lanes.join(" · ") === "All · Industry credentials · Not initiated · Initiated");
   check("lanes: All carries the row count", /All \(3\)/.test(txt(laneBtn(doc, /All/))));
   check("lanes: No-issuer count = 1 (Retail Management)",
     /No issuer \(1\)/.test(txt(laneBtn(doc, /No issuer/))));

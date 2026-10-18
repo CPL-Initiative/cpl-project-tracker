@@ -12,6 +12,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_wl_suggestions.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -76,7 +77,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   // A — no suggestions file.
   const wa = makeDom({ signedIn: true, withSuggs: false });
   await sleep(100);
-  Array.from(wa.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(wa.document, /Unclassified/).click();
   await sleep(100);
   check("absent: worklist rows render", wa.document.querySelectorAll(".cr-wl-table tbody tr").length === 3);
   check("absent: no chips, no crash", wa.document.querySelectorAll(".cr-wl-sugg").length === 0);
@@ -84,7 +85,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   // B — suggestions present, signed in.
   const wb = makeDom({ signedIn: true, withSuggs: true });
   await sleep(100);
-  Array.from(wb.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(wb.document, /Unclassified/).click();
   await sleep(100);
   const db = wb.document;
   const rows = Array.from(db.querySelectorAll(".cr-wl-table tbody tr"));
@@ -111,7 +112,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   // C — signed out: chips visible but disabled.
   const wc = makeDom({ signedIn: false, withSuggs: true });
   await sleep(100);
-  Array.from(wc.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(wc.document, /Unclassified/).click();
   await sleep(100);
   const chip = wc.document.querySelector(".cr-wl-sugg");
   check("signed-out: chip rendered but disabled", chip && chip.disabled === true);
