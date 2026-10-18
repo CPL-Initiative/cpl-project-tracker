@@ -1289,3 +1289,19 @@ titles and elements as we go."* Built and run this session (#2217, #2218, #2219)
   unsure title is asked again when its hints change.
 - **Rule 8's read could not see this week's memory rows**: the playbook's insert left `event_date` out (186
   rows), and the read ordered by it. Fixed in the read and the template.
+
+## 2026-10-18 — Session 413 (SkyPinyon): the follow-up pass and the tab's three views
+
+- **The follow-up pass (run 39103573166, `classify=200`):** 13 calls, all answered, $2.67 (the estimate was $1.50).
+  Of the 1,322 waiting titles, 1,287 now pre-fill (was 1,116) and 396 are held for a person (was 428); none is left
+  unasked. The 105 answers the non-breaking space had dropped came back with #2219's spacing-free match.
+- **The college's own course title settles a code-only title.** 195 records now carry hints; their title confidence sits
+  at 0.8 to 0.9 (131 at 0.9, 55 at 0.8), where the first pass put code-only titles in the low band. *Discipline Exam -
+  ADM JUS 006* reads *Patrol Procedures* at 0.92, *Portfolio for MUS 19* reads *Studies in Music Composition*. One to
+  watch: *Industry for GDDM 53* became the course's title *Adobe Photoshop 1*, where an industry certification would
+  name the credential (Adobe Certified Professional); a hint names the course, and an *Industry for* title names a
+  credential tied to it. A guidance procedure for that shape is a candidate.
+- **The tab now leads with the exceptions (#2221):** Needs you › Held is the first screen whenever the run holds titles,
+  and each held title opens alone in Unclassified, where its pre-filled proposal saves. The views are the S411 mock-up's;
+  the Initiated sign-off and the Curate panel stay until Open Asks Sheet 93 card 3. UI pass notes:
+  `docs/ui_pass_lessons.md` S413.

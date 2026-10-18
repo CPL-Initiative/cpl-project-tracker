@@ -64,12 +64,12 @@ The whole ecosystem, end-to-end:
    college-entered exhibit-title variants, and the local courses with units that
    articulate to it, an **Eligible (units)** column (credit waiting to be unlocked
    = eligible − transcribed, rolled up from MAP's Exhibit CRs Catalog) and a
-   **Eligible students** column, plus a **⚠ Triage** worklist that lets
-   reviewers assign a unified title to each raw MAP exhibit title with no credential
-   identity yet AND a **missing-issuer lane** with rule-staged pre-fills — editable
-   unified titles, issuing agency (with a ＋ add-second-agency affordance), training
-   agency, raw college-entered titles + originating-college chips — so a whole
-   triage pass completes in place), a
+   **Eligible students** column, in three views: **Needs you** (the titles the
+   nightly procedures run held for a person, the unclassified queue with each
+   title's pre-filled proposal, credentials with no issuer, and merges to
+   confirm), **Procedures** (each rule in plain words, who set it and what it
+   settled) and **Reference** (every credential and the industry credentials);
+   the tab opens on Needs you when the run held titles), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you

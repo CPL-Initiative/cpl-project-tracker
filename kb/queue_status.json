@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T05:21:05Z",
-  "session": 412,
-  "moniker": "SkyJoshua",
+  "written_at": "2026-10-18T08:11:49Z",
+  "session": 413,
+  "moniker": "SkyPinyon",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_413_handoff.md",
+  "handoff": "docs/session_414_handoff.md",
   "unchecked": [
     {
       "college": "Allan Hancock College",
@@ -30893,9 +30893,9 @@
     },
     {
       "college": "Crafton Hills College",
-      "program": "American Sign Language",
-      "award": "A.A. Degree",
-      "control_number": "30453",
+      "program": "Acute Care Nursing Assistant",
+      "award": "Noncredit program",
+      "control_number": "43604",
       "loaded": "2026-10-18"
     },
     {
@@ -30903,6 +30903,13 @@
       "program": "American Sign Language",
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "30451",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "30453",
       "loaded": "2026-10-18"
     },
     {
@@ -30917,6 +30924,13 @@
       "program": "Art History",
       "award": "A.A- T Degree",
       "control_number": "33037",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Basic Skills in Math Elementary Level",
+      "award": "Noncredit program",
+      "control_number": "38464",
       "loaded": "2026-10-18"
     },
     {
@@ -30949,9 +30963,23 @@
     },
     {
       "college": "Crafton Hills College",
+      "program": "CISCO Certified Network Associate",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41286",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
       "program": "California General Education Transfer Curriculum",
       "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
       "control_number": "45714",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Certified Nursing Assistant",
+      "award": "Noncredit program",
+      "control_number": "42455",
       "loaded": "2026-10-18"
     },
     {
@@ -30966,13 +30994,6 @@
       "program": "Child Development",
       "award": "A.A. Degree",
       "control_number": "04856",
-      "loaded": "2026-10-18"
-    },
-    {
-      "college": "Crafton Hills College",
-      "program": "CISCO Certified Network Associate",
-      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-      "control_number": "41286",
       "loaded": "2026-10-18"
     },
     {
@@ -31013,15 +31034,15 @@
     {
       "college": "Crafton Hills College",
       "program": "Computer Science",
-      "award": "A.S. Degree",
-      "control_number": "35451",
+      "award": "A.S. T Degree",
+      "control_number": "33068",
       "loaded": "2026-10-18"
     },
     {
       "college": "Crafton Hills College",
       "program": "Computer Science",
-      "award": "A.S. T Degree",
-      "control_number": "33068",
+      "award": "A.S. Degree",
+      "control_number": "35451",
       "loaded": "2026-10-18"
     },
     {
@@ -31068,6 +31089,13 @@
     },
     {
       "college": "Crafton Hills College",
+      "program": "Essential ASL and Deaf Culture for Customer Service Professionals",
+      "award": "Noncredit program",
+      "control_number": "44042",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
       "program": "Fine Arts",
       "award": "A.A. Degree",
       "control_number": "18677",
@@ -31078,6 +31106,13 @@
       "program": "Firefighter I Basic Training Academy",
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "37652",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Foundations in English Language and Communication",
+      "award": "Noncredit program",
+      "control_number": "38418",
       "loaded": "2026-10-18"
     },
     {
@@ -31110,6 +31145,20 @@
     },
     {
       "college": "Crafton Hills College",
+      "program": "Home Health Aide",
+      "award": "Noncredit program",
+      "control_number": "43611",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "33105",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
       "program": "Law, Public Policy, and Society",
       "award": "A.A- T Degree",
       "control_number": "46347",
@@ -31120,6 +31169,13 @@
       "program": "Library Support Staff",
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "44341",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "MUSIC",
+      "award": "A.A- T Degree",
+      "control_number": "33539",
       "loaded": "2026-10-18"
     },
     {
@@ -31145,6 +31201,13 @@
     },
     {
       "college": "Crafton Hills College",
+      "program": "Mathematics for Medical Professionals",
+      "award": "Noncredit program",
+      "control_number": "44088",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
       "program": "Multimedia: Graphic and Media Design",
       "award": "A.S. Degree",
       "control_number": "38513",
@@ -31159,16 +31222,23 @@
     },
     {
       "college": "Crafton Hills College",
-      "program": "MUSIC",
-      "award": "A.A- T Degree",
-      "control_number": "33539",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "37794",
       "loaded": "2026-10-18"
     },
     {
       "college": "Crafton Hills College",
-      "program": "Nutrition and Dietetics",
+      "program": "PHYSICS",
       "award": "A.S. T Degree",
-      "control_number": "37794",
+      "control_number": "31770",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Personal Trainer",
+      "award": "Noncredit program",
+      "control_number": "45083",
       "loaded": "2026-10-18"
     },
     {
@@ -31180,9 +31250,9 @@
     },
     {
       "college": "Crafton Hills College",
-      "program": "PHYSICS",
-      "award": "A.S. T Degree",
-      "control_number": "31770",
+      "program": "Phlebotomy Technician",
+      "award": "Noncredit program",
+      "control_number": "44803",
       "loaded": "2026-10-18"
     },
     {
@@ -31251,15 +31321,15 @@
     {
       "college": "Crafton Hills College",
       "program": "Spanish",
-      "award": "A.A- T Degree",
-      "control_number": "33106",
+      "award": "A.A. Degree",
+      "control_number": "04836",
       "loaded": "2026-10-18"
     },
     {
       "college": "Crafton Hills College",
       "program": "Spanish",
-      "award": "A.A. Degree",
-      "control_number": "04836",
+      "award": "A.A- T Degree",
+      "control_number": "33106",
       "loaded": "2026-10-18"
     },
     {
@@ -31274,6 +31344,13 @@
       "program": "Teacher",
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "11766",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Technical Theatre",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44342",
       "loaded": "2026-10-18"
     },
     {
@@ -31300,15 +31377,15 @@
     {
       "college": "Crafton Hills College",
       "program": "Vocational Nursing",
-      "award": "A.S. Degree",
-      "control_number": "46011",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46010",
       "loaded": "2026-10-18"
     },
     {
       "college": "Crafton Hills College",
       "program": "Vocational Nursing",
-      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-      "control_number": "46010",
+      "award": "A.S. Degree",
+      "control_number": "46011",
       "loaded": "2026-10-18"
     },
     {
@@ -31316,6 +31393,13 @@
       "program": "Web Development",
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "38537",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Crafton Hills College",
+      "program": "Workforce Literacy Skills",
+      "award": "Noncredit program",
+      "control_number": "35822",
       "loaded": "2026-10-18"
     },
     {
@@ -105897,6 +105981,391 @@
       "loaded": "2026-10-14"
     },
     {
+      "college": "Taft College",
+      "program": "AA-T Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "36763",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "AS-T in Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35547",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Administrative Medical Assisting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44615",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Advanced Academic Preparation for Multilingual Students",
+      "award": "Noncredit program",
+      "control_number": "46023",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "02107",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "31290",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Associate in Arts in Kinesiology",
+      "award": "A.A. Degree",
+      "control_number": "44343",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Associate in Arts in Kinesiology: Sport Management",
+      "award": "A.A. Degree",
+      "control_number": "44006",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Associate of Science in Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "46515",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "02091",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41771",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "CSU GE-Breadth",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38661",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "California General Education Transfer Curriculum (Cal-GETC)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45358",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Clinical Medical Assisting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44621",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "44611",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "44656",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Court Reporting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36178",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Court Reporting",
+      "award": "A.S. Degree",
+      "control_number": "44521",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Dental Hygiene",
+      "award": "A.S. Degree",
+      "control_number": "40806",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Dental Hygiene Administration: Bachelor’s of Science",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "43601",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Disability Services",
+      "award": "A.S. Degree",
+      "control_number": "40076",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31443",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Early Intervention Assistant I",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "15509",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Early Intervention Assistant II",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "15508",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "37366",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "40272",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Energy Technology",
+      "award": "A.S. Degree",
+      "control_number": "36928",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "43511",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32259",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Graphic Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14669",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "44612",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Industrial Electronics",
+      "award": "A.S. Degree",
+      "control_number": "41722",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Intermediate Academic Preparation for Multilingual Students",
+      "award": "Noncredit program",
+      "control_number": "46024",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "45145",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Law, Public Policy and Society",
+      "award": "A.A- T Degree",
+      "control_number": "43025",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Liberal Arts Allied Health",
+      "award": "A.A. Degree",
+      "control_number": "30009",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Liberal Arts Math and Science",
+      "award": "A.A. Degree",
+      "control_number": "30014",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Liberal Arts Natural Science Life Science",
+      "award": "A.A. Degree",
+      "control_number": "30015",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Liberal Arts Natural Science Physical Science",
+      "award": "A.A. Degree",
+      "control_number": "30016",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Listening and Speaking for Multilingual Students",
+      "award": "Noncredit program",
+      "control_number": "46021",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "02112",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "45767",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Occupational Safety and Health",
+      "award": "A.S. Degree",
+      "control_number": "16725",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44582",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Physical Education",
+      "award": "A.A. Degree",
+      "control_number": "02099",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Physical Science",
+      "award": "A.S. Degree",
+      "control_number": "02113",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Pipe Code Welding",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "36460",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "45469",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "45903",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Self Determination Program: Independent Facilitator",
+      "award": "Noncredit program",
+      "control_number": "46028",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Self-Determination Program: Person-Centered Planning",
+      "award": "Noncredit program",
+      "control_number": "46031",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "44749",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Structural Code Welding",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "36461",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31460",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Taft College",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "19722",
+      "loaded": "2026-10-18"
+    },
+    {
       "college": "Ventura College",
       "program": "Accounting Technician",
       "award": "A.S. Degree",
@@ -109790,14 +110259,14 @@
     }
   ],
   "next_step": {
-    "title": "Answer the 200, then Taft",
-    "text": "Merge the CER classifier fix and ask it about the 105 dropped titles and the 90 code-only titles that now have their college's course; then read Taft's capture-only read and extract and load it."
+    "title": "Apply the Crafton build, then the slash rereads",
+    "text": "Merge the slash-subject fix and apply its display build, then read De Anza, Glendale and Los Angeles Trade-Technical again so their 36 misread checks score right; then the Coursedog walk for Merced."
   },
   "calls": [
     {
       "title": "Three CER calls on Open Asks Sheet 93",
       "text": "Whether the nightly fold applies the 176 clean assignments, whether a sure classifier result saves under its procedure, and whether the Initiated sign-off and Curate panel retire.",
-      "if_no_reply": "Every proposal keeps pre-filling the tab, ready to save, and the build of the tab's last two views waits; the harvest goes on.",
+      "if_no_reply": "Every proposal keeps pre-filling the tab, the tab keeps opening on the titles held for a person, and the Initiated sign-off stays in Reference; the harvest goes on.",
       "link": "https://claude.ai/artifact/MZXYEqiNitiWGiTakDHUwW",
       "link_text": "Open Asks Sheet 93"
     }
@@ -109811,16 +110280,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-18T04:33:00Z",
-      "text": "The display build of 15,651 programs at 111 colleges was applied."
+      "at": "2026-10-18T05:50:00Z",
+      "text": "Taft College's catalog was read: 58 of 63 listed programs found and extracted, 24 passing the machine checks."
     },
     {
-      "at": "2026-10-18T04:58:00Z",
-      "text": "Crafton Hills' catalog was read: 64 of 79 listed programs found and extracted, 40 passing the machine checks."
+      "at": "2026-10-18T05:52:00Z",
+      "text": "Taft College's 55 program records were loaded, unchecked."
     },
     {
-      "at": "2026-10-18T05:20:00Z",
-      "text": "Crafton Hills' 64 program records were loaded, unchecked."
+      "at": "2026-10-18T07:25:00Z",
+      "text": "The display build of 15,770 programs at 113 colleges was applied."
+    },
+    {
+      "at": "2026-10-18T07:59:00Z",
+      "text": "Twelve more Crafton Hills records were loaded after the reader learned to read a course code with a slash in it: 76 of 79 listed programs now hold records."
     }
   ],
   "headline": [
@@ -109894,11 +110367,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-18T06:12:00Z"
+    "at": "2026-10-18T08:12:00Z"
   },
   "harvest": {
     "day": "2026-10-18",
-    "gaps": 3802,
+    "gaps": 3824,
     "parts": {
       "links": {
         "catalog": [
@@ -109915,11 +110388,11 @@
         ]
       },
       "roep": [
-        18149,
+        18282,
         20282
       ],
       "coci": [
-        14403,
+        14469,
         20282
       ],
       "outcomes": {
@@ -109928,12 +110401,12 @@
           89192
         ],
         "plo": [
-          14403,
+          14469,
           20282
         ]
       },
       "careers": [
-        13353,
+        13419,
         20282
       ]
     }
