@@ -1,119 +1,13 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. NOT saved to Supabase: credential_reference.js pre-fills each row; the curator reviews and clicks Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-18T04:47:22Z",
+ "_generated_at": "2026-10-18T06:22:56Z",
  "_queue_count": 1498,
  "_counts": {
-  "staged": 1116,
-  "needs_you": 428,
-  "not_yet_asked": 105
+  "staged": 1287,
+  "needs_you": 396,
+  "not_yet_asked": 0
  },
- "_residual": [
-  "AP  Statistics (Score of 4 or 5)",
-  "Advanced Engine Performance - Credit by Exam (ATEC 24 )",
-  "Advanced Medical - Surgical Nursing I - Credit by Exam (NURS 247 )",
-  "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )",
-  "Advanced Placement in Nursing - Credit by Exam (NURS 149 )",
-  "Aerospace Engineering - Credit by Exam (ETEC 15 )",
-  "Air Conditioning Fundamentals - Credit by Exam (ACR 21 )",
-  "An Orientation to Architecture - Credit by Exam (ARCH 100 )",
-  "Applied Color Theory - Credit by Exam (FASH 35 )",
-  "Architectural Color Rendering Techniques  - Credit by Exam (ARCH 172 )",
-  "Automotive Accident Reconstruction - Credit by Exam (ACRP 26 )",
-  "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-  "Automotive Collision Analysis - Credit by Exam (ACRP 24 )",
-  "Automotive Collision Investigation - Credit by Exam (ACRP 20 )",
-  "Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )",
-  "Automotive Electrical Systems - Credit by Exam (ATEC 25 )",
-  "Automotive Refinishing Applications - Credit by Exam (ACRP 2C )",
-  "Automotive Refinishing Materials and Equipment - Credit by Exam (ACRP 2B )",
-  "Automotive Repair Fraud - Credit by Exam (ACRP 22 )",
-  "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )",
-  "Basic Machine Tool Operation - Credit by Exam (MTT 46 )",
-  "Basic Welding for Allied Fields - Credit by Exam (WELD 15 )",
-  "Beginning Automotive Collision Repair I - Credit by Exam (ACRP 4A )",
-  "Beginning Automotive Collision Repair II - Credit by Exam (ACRP 4B )",
-  "Beginning Automotive Painting I - Credit by Exam (ACRP 5A )",
-  "Beginning Automotive Painting II - Credit by Exam (ACRP 5B )",
-  "Beginning Fashion Illustration - Credit by Exam (FASH 15 )",
-  "Brakes - Credit by Exam (ATEC 14 )",
-  "CAD Drawing and Modeling - Credit by Exam (ARCH 119 )",
-  "Clothing Construction I - Credit by Exam (FASH 10 )",
-  "Clothing Construction II - Credit by Exam (FASH 11 )",
-  "Commercial Refrigeration Applications - Credit by Exam (ACR 23 )",
-  "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
-  "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
-  "CompTIA Security+ Computer Hardware Systems - Credit by Exam (ECHT 148 )",
-  "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
-  "Computer Information Systems - Credit by Exam (CIS 13 )",
-  "Computer Integrated Manufacturing - Credit by Exam (ETEC 16 )",
-  "Construction Documentation I - Credit by Exam (ARCH 251 )",
-  "Design Process and Concepts - Credit by Exam (CADD 43 )",
-  "Digital Electronics for Engineering - Credit by Exam (ETEC 14 )",
-  "Digital Systems and Computer Logic I - Credit by Exam (ECHT 130 )",
-  "Electric Controls - Credit by Exam (ACR 30 )",
-  "Electrical Applications - Credit by Exam (ACR 5 )",
-  "Energy Efficient Residential, Commercial and Industrial Air Conditioning - Credit by Exam (ACR 25 )",
-  "Engine Diagnosis & Repair - Credit by Exam (ATEC 43 )",
-  "Engine Performance - Credit by Exam (ATEC 23 )",
-  "Engineering Design and Development - Credit by Exam (ETEC 18 )",
-  "Fashion Analysis and Selection - Credit by Exam (FASH 41 )",
-  "Fashion Merchandising - Credit by Exam (FASH 27 )",
-  "First Aid, Cardiopulmonary Resuscitation (CPR) and Basic Emergency Care - Credit by Exam (FAID 1 )",
-  "Fundamentals of Radiologic Technology - Credit by Exam (RTEC 111 )",
-  "General Metals - Credit by Exam (MTT 16 )",
-  "Geometrical Dimensioning and Tolerancing - Credit by Exam (CADD 45 )",
-  "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )",
-  "Heating Technologies - Credit by Exam (ACR 27 )",
-  "History of Fashion - Credit by Exam (FASH 31 )",
-  "History of Western Architecture - Credit by Exam (ARCH 104 )",
-  "Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )",
-  "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )",
-  "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )",
-  "Intermediate Automotive Refinishing I - Credit by Exam (ACRP 5C )",
-  "Intermediate Automotive Refinishing II - Credit by Exam (ACRP 5D )",
-  "Intermediate Gas Tungsten Arc Welding (GTAW) - Credit by Exam (WELD 40B )",
-  "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )",
-  "Intermediate Medical - Surgical Nursing II - Credit by Exam (NURS 242 )",
-  "Intermediate Shielded Metal Arc Welding (SMAW) - Credit by Exam (WELD 10B )",
-  "Introduction to Automotive Collision Repair - Credit by Exam (ACRP 1A )",
-  "Introduction to Automotive Service - Credit by Exam (ATEC 1 )",
-  "Introduction to CAD/CAM - Credit by Exam (MTT 10A )",
-  "Introduction to Computer Hardware Systems I - Credit by Exam (ECHT 140 )",
-  "Introduction to Conventional and CNC Machining - Credit by Exam (MTT 101 )",
-  "Introduction to Direct and Alternating Current Circuits - Credit by Exam (ECHT 110 )",
-  "Introduction to Electronics - Credit by Exam (ECHT 11 )",
-  "Introduction to Engine Performance - Credit by Exam (ATEC 21 )",
-  "Introduction to Engineering Design - Credit by Exam (ETEC 12 )",
-  "Introduction to Gas Tungsten Arc Welding (GTAW) - Credit by Exam (WELD 40A )",
-  "Introduction to Mechanical Drafting - Credit by Exam (CADD 5 )",
-  "Introduction to Microprocessors and Interfacing - Credit by Exam (ECHT 191 )",
-  "Introduction to Radiologic Technology - Credit by Exam (RTEC A )",
-  "Introduction to Shielded Metal Arc Welding (SMAW) - Credit by Exam (WELD 10A )",
-  "Keyboarding II - Credit by Exam (BUS 146 )",
-  "Machine Shop Calculations - Credit by Exam (MTT 40 )",
-  "Major Collision Analysis and Structural Repair - Credit by Exam (ACRP 1C )",
-  "Manufacturing Print Reading - Credit by Exam (MTT 2 )",
-  "Mechanical and Electrical Systems for Collision Repair Technicians - Credit by Exam (ACRP 1D )",
-  "Medical Surgical Nursing -  Older Adult - Credit by Exam (NURS 222 )",
-  "Mental Health Nursing - Credit by Exam (NURS 230 )",
-  "Non-Structural Collision Repair and Welding - Credit by Exam (ACRP 1B )",
-  "Nursing Fundamentals - Credit by Exam (NURS 220 )",
-  "Nursing Pharmacology - Credit by Exam (NURS 224 )",
-  "Obstetrical Patients and the Newborn - Credit by Exam (NURS 232 )",
-  "Operational Amplifiers and Linear Integrated Circuits - Credit by Exam (ECHT 124 )",
-  "Pediatric Nursing - Credit by Exam (NURS 234 )",
-  "Personal and Community Health Issues - Credit by Exam (C H 1 )",
-  "Principles of Engineering Technology - Credit by Exam (ETEC 10 )",
-  "Radiographic Positioning 1A - Credit by Exam (RTEC 123 )",
-  "Refrigeration and Air Conditioning Control Systems - Credit by Exam (ACR 6 )",
-  "Semiconductor Circuits - Credit by Exam (ECHT 120 )",
-  "Semiconductor Circuits II - Credit by Exam (ECHT 122 )",
-  "Solid Modeling, Assemblies and Two Dimensional (2D) Drawings - Credit by Exam (CADD 7 )",
-  "Structures Analysis - Timber - Credit by Exam (ARCH 258 )",
-  "Suspension and Four Wheel Alignment - Credit by Exam (ATEC 16 )",
-  "Textiles - Credit by Exam (FASH 20 )",
-  "Visual Merchandising - Credit by Exam (FASH 28 )"
- ],
+ "_residual": [],
  "staged": {
   "1st Receiver Ops & Decon": {
    "title": "First Receiver Operations and Decontamination",
@@ -4391,6 +4285,19 @@
    "note": "Matched the existing house family 'AP Statistics'; issuer from the curated credential KB.",
    "procedure": "brand-family"
   },
+  "AP  Statistics (Score of 4 or 5)": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.98,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 1"
+   ]
+  },
   "AR-1728-0135 Basic Military Police (STO2)": {
    "title": "Basic Military Police",
    "issuer": "American Council on Education (ACE)",
@@ -4764,6 +4671,21 @@
     "mechanism-collapses"
    ]
   },
+  "Advanced Engine Performance - Credit by Exam (ATEC 24 )": {
+   "title": "Engine Performance Advanced",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "cx hint mended by stripping the mechanism and course code. The leading level word moved to the end. Local course-Cx is kept apart from ASE L1 per Rule 8c-2.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
   "Advanced Incident Command Systems - Certification FEMA ICS 400": {
    "title": "ICS 400 — Advanced Incident Command System",
    "issuer": "Federal Emergency Management Agency (FEMA)",
@@ -4777,6 +4699,48 @@
     "Rule 1"
    ]
   },
+  "Advanced Medical - Surgical Nursing I - Credit by Exam (NURS 247 )": {
+   "title": "Medical-Surgical Nursing 1 Advanced",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Course title restyled with the level word last. Part 1 is kept distinct from the house 'Medical Surgical Nursing Advanced' and from part II; a curator could merge them.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )": {
+   "title": "Medical-Surgical Nursing 2 Preceptorship Advanced",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Preceptorship course restyled with the level word last. The resulting title is awkward and needs curator review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Advanced Placement in Nursing - Credit by Exam (NURS 149 )": {
+   "title": "Advanced Placement in Nursing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.76,
+   "note": "'Advanced Placement' here is a nursing advanced-standing course name, not a level word, so the order is kept. This is not a College Board AP exam.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
   "Advanced Wildland Firefighter - Certification NWCG S-131": {
    "title": "S-131 Advanced Wildland Firefighter",
    "issuer": "National Wildfire Coordinating Group (NWCG)",
@@ -4788,6 +4752,30 @@
     "Rule 8b",
     "brand-family",
     "issuer-issues-the-card"
+   ]
+  },
+  "Aerospace Engineering - Credit by Exam (ETEC 15 )": {
+   "title": "Aerospace Engineering",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Air Conditioning Fundamentals - Credit by Exam (ACR 21 )": {
+   "title": "Air Conditioning Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "American Government and Politics Military Training": {
@@ -4914,6 +4902,18 @@
    ],
    "trainer": "Alvord Unified School District (AUSD)"
   },
+  "Applied Color Theory - Credit by Exam (FASH 35 )": {
+   "title": "Applied Color Theory",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "Arc Welding High School Articulation": {
    "title": "Arc Welding",
    "issuer": "Local High School",
@@ -4937,6 +4937,19 @@
     "course-identity",
     "brand-family",
     "join-when-likely-one"
+   ]
+  },
+  "Architectural Color Rendering Techniques  - Credit by Exam (ARCH 172 )": {
+   "title": "Architectural Color Rendering Techniques",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "Architectural Design 1A and 1B (2 courses) HS-CNUD": {
@@ -5013,6 +5026,125 @@
    "rests_on": [
     "issuer-issues-the-card",
     "Rule 4"
+   ]
+  },
+  "Automotive Accident Reconstruction - Credit by Exam (ACRP 26 )": {
+   "title": "Automotive Accident Reconstruction",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Automotive Air Conditioning - Credit by Exam (ATEC 81 )": {
+   "title": "Automotive Air Conditioning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "This is local course-Cx. It is not folded into ASE A7 or the ASE-attributed 'Automotive Air Conditioner' family, per Rule 8c-2.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 8c"
+   ]
+  },
+  "Automotive Collision Analysis - Credit by Exam (ACRP 24 )": {
+   "title": "Automotive Collision Analysis",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Automotive Collision Investigation - Credit by Exam (ACRP 20 )": {
+   "title": "Automotive Collision Investigation",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )": {
+   "title": "Automotive Collision Repair for Non-Majors",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.84,
+   "note": "The non-majors survey course is kept apart from the house 'Automotive Collision Repair' as a likely narrower scope. A curator could merge them.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
+  "Automotive Electrical Systems - Credit by Exam (ATEC 25 )": {
+   "title": "Automotive Electrical Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title, so the mechanism phrase and course code ATEC 25 were stripped. Kept separate from 'Automotive Electrical Systems Advanced'.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Automotive Refinishing Applications - Credit by Exam (ACRP 2C )": {
+   "title": "Automotive Refinishing Applications",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title; the mechanism phrase and code ACRP 2C were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Automotive Refinishing Materials and Equipment - Credit by Exam (ACRP 2B )": {
+   "title": "Automotive Refinishing Materials and Equipment",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title; the mechanism phrase and code ACRP 2B were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Automotive Repair Fraud - Credit by Exam (ACRP 22 )": {
+   "title": "Automotive Repair Fraud",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title; the mechanism phrase and code ACRP 22 were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
    ]
   },
   "Automotive Service Excellence 1 (A1) - Engine Repair": {
@@ -5351,6 +5483,20 @@
    "note": "Rule 5c: the college's own title for BUS 74; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )": {
+   "title": "Basic Automotive Painting and Refinishing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Stripped the mechanism phrase and code ACRP 2A. The inner dash was read as 'and'; the catalog title may instead read 'Basic Automotive Painting - Refinishing'.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
   "Basic Baking & Past High School Articulation": {
    "title": "Basic Baking and Pastry",
    "issuer": "Local High School",
@@ -5404,6 +5550,34 @@
     "Rule 1"
    ]
   },
+  "Basic Machine Tool Operation - Credit by Exam (MTT 46 )": {
+   "title": "Basic Machine Tool Operation",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title; the mechanism phrase and code MTT 46 were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Basic Welding for Allied Fields - Credit by Exam (WELD 15 )": {
+   "title": "Basic Welding for Allied Fields",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title; the mechanism phrase and code WELD 15 were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
   "Beginning American College English MCC8028": {
    "title": "American College English Beginning",
    "issuer": "California Community Colleges",
@@ -5416,6 +5590,81 @@
     "level-words-last",
     "Rule 5g",
     "Rule 5c"
+   ]
+  },
+  "Beginning Automotive Collision Repair I - Credit by Exam (ACRP 4A )": {
+   "title": "Automotive Collision Repair 1 Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Stripped the mechanism phrase and code ACRP 4A, moved 'Beginning' to the end, and wrote the roman numeral in the house Arabic form. This is a sequenced course, so it was not folded into the broader 'Automotive Collision Repair' (Rule 8c-3).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Beginning Automotive Collision Repair II - Credit by Exam (ACRP 4B )": {
+   "title": "Automotive Collision Repair 2 Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Stripped the mechanism phrase and code ACRP 4B, moved 'Beginning' to the end, and wrote the roman numeral in Arabic form. Kept split from part 1 and from the broader family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Beginning Automotive Painting I - Credit by Exam (ACRP 5A )": {
+   "title": "Automotive Painting 1 Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Stripped the mechanism phrase and code ACRP 5A, moved 'Beginning' to the end, and wrote the roman numeral in Arabic form.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Beginning Automotive Painting II - Credit by Exam (ACRP 5B )": {
+   "title": "Automotive Painting 2 Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Stripped the mechanism phrase and code ACRP 5B, moved 'Beginning' to the end, and wrote the roman numeral in Arabic form.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Beginning Fashion Illustration - Credit by Exam (FASH 15 )": {
+   "title": "Fashion Illustration Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 1"
    ]
   },
   "Beginning Guitar- Credit by Exam and Portfolio": {
@@ -5464,6 +5713,21 @@
     "Rule 1",
     "Rule 2",
     "join-when-likely-one"
+   ]
+  },
+  "Brakes - Credit by Exam (ATEC 14 )": {
+   "title": "Brakes",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Took the catalog hint 'Brakes', which is the local course title of ATEC 14. Kept apart from ASE A5 because a local course exam is not an industry certification (Rule 8c-2). It could join the house family 'Automotive Brake Systems' if the curator judges them one credential.",
+   "procedure": "classifier",
+   "rests_on": [
+    "statewide-catalog",
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
    ]
   },
   "Building Trades & Construction 2 HS-SBCUSD": {
@@ -5539,6 +5803,20 @@
    "confidence": 0.85,
    "note": "CSLB license classification kept verbatim (Rule 8b — the C-#/Class code is the credential's identity; cslb.ca.gov/About_Us/Library/Licensing_Classifications). A statewide CCC-collaborative exhibit.",
    "procedure": "cslb-classification"
+  },
+  "CAD Drawing and Modeling - Credit by Exam (ARCH 119 )": {
+   "title": "CAD Drawing and Modeling",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint echoed the raw title; the mechanism phrase and code ARCH 119 were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
   },
   "CAD/CAM Engineering HS-LEUSD": {
    "title": "CAD/CAM Engineering",
@@ -7451,6 +7729,33 @@
     "Rule 9"
    ]
   },
+  "Clothing Construction I - Credit by Exam (FASH 10 )": {
+   "title": "Clothing Construction 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "Stripped the mechanism phrase and code FASH 10 and wrote the roman numeral in Arabic form. It may be the same course as the house family 'Apparel Construction 1', but the names differ, so it was not joined.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ]
+  },
+  "Clothing Construction II - Credit by Exam (FASH 11 )": {
+   "title": "Clothing Construction 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "Set the cx hint aside because it kept the mechanism phrase and the course code. Used the course title, with the numeral styled in house form.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Commercial Electrical DAS Journeyman": {
    "title": "Commercial Electrician Journeyman Certificate",
    "issuer": "California Division of Apprenticeship Standards (DAS)",
@@ -7475,6 +7780,33 @@
     "issuer-issues-the-card"
    ]
   },
+  "Commercial Refrigeration Applications - Credit by Exam (ACR 23 )": {
+   "title": "Commercial Refrigeration Applications",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "Used the course title. It may be the same as the house 'Commercial Refrigeration'; the merge was not confirmed, so it is left for review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )": {
+   "title": "CompTIA A+ Computer Hardware Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "This is a local course credit-by-exam (ECHT 144), not the CompTIA A+ industry certification, so per Rule 8c it is kept apart from that family. The course title is kept; review whether the CompTIA token should stay.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
+   ]
+  },
   "CompTIA Network Plus": {
    "title": "CompTIA Network+",
    "issuer": "CompTIA",
@@ -7485,6 +7817,48 @@
    "rests_on": [
     "brand-family",
     "Rule 4"
+   ]
+  },
+  "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )": {
+   "title": "CompTIA Network+ Computer Hardware Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "Local course credit-by-exam (ECHT 146), kept apart from the CompTIA Network+ certification per Rule 8c. The course title is kept.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
+   ]
+  },
+  "CompTIA Security+ Computer Hardware Systems - Credit by Exam (ECHT 148 )": {
+   "title": "CompTIA Security+ Computer Hardware Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "Local course credit-by-exam (ECHT 148), kept apart from the CompTIA Security+ certification per Rule 8c. The course title is kept.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
+   ]
+  },
+  "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )": {
+   "title": "CompTIA Server+ Computer Hardware Systems 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "Local course credit-by-exam (ECHT 142), kept apart from the CompTIA Server+ certification per Rule 8c. The course title is kept, with the numeral styled in house form.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
    ]
   },
   "Company Officer 2C: Fire Inspections and Investigations": {
@@ -7550,6 +7924,32 @@
    ],
    "trainer": "Jurupa Unified School District"
   },
+  "Computer Information Systems - Credit by Exam (CIS 13 )": {
+   "title": "Computer Information Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.65,
+   "note": "The title is broad. CIS 13 may correspond to the house 'Introduction to Computer Information Systems'; check this against the El Camino catalog.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Computer Integrated Manufacturing - Credit by Exam (ETEC 16 )": {
+   "title": "Computer Integrated Manufacturing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Computer Keyboarding": {
    "title": "Computer Keyboarding",
    "issuer": "California Community Colleges",
@@ -7570,6 +7970,19 @@
     "Rule 5f"
    ],
    "trainer": "Corona-Norco Unified School District"
+  },
+  "Construction Documentation I - Credit by Exam (ARCH 251 )": {
+   "title": "Construction Documentation 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.87,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
   },
   "Construction Fundamentals High School Articulation": {
    "title": "Construction Fundamentals",
@@ -8170,6 +8583,19 @@
     "Rule 5c"
    ]
   },
+  "Design Process and Concepts - Credit by Exam (CADD 43 )": {
+   "title": "Design Process and Concepts",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Digital Arts I 1&2 HS-BVROP": {
    "title": "Digital Arts 1",
    "issuer": "Baldy View Regional Occupational Program",
@@ -8226,6 +8652,19 @@
    ],
    "trainer": "Riverside Unified School District"
   },
+  "Digital Electronics for Engineering - Credit by Exam (ETEC 14 )": {
+   "title": "Digital Electronics for Engineering",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Digital Game Design HS-RUSD": {
    "title": "Digital Game Design",
    "issuer": "Riverside Unified School District",
@@ -8239,12 +8678,25 @@
    ],
    "trainer": "Riverside Unified School District"
   },
+  "Digital Systems and Computer Logic I - Credit by Exam (ECHT 130 )": {
+   "title": "Digital Systems and Computer Logic 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.87,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Discipline Exam - ADM JUS 002": {
    "title": "Concepts of Criminal Law",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.78,
-   "note": "Code-only title resolved via the LACCD course ADM JUS 002 = Concepts of Criminal Law (likely C-ID AJ 120). This joins the house family. Verify against COCI.",
+   "confidence": 0.88,
+   "note": "Took the catalog hint (LA Mission ADM JUS 002) and joined the existing house family. The likely anchor is C-ID AJ 120.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
@@ -8256,8 +8708,8 @@
    "title": "Legal Aspects of Evidence",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.78,
-   "note": "Code-only title resolved via the LACCD course ADM JUS 003 = Legal Aspects of Evidence (likely C-ID AJ 124). This joins the house family. Verify against COCI.",
+   "confidence": 0.88,
+   "note": "Took the catalog hint (LA Mission ADM JUS 003) and joined the existing house family. The likely anchor is C-ID AJ 124.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
@@ -8269,8 +8721,8 @@
    "title": "Principles and Procedures of the Justice System",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.75,
-   "note": "Code-only title resolved via the LACCD course ADM JUS 004 = Principles and Procedures of the Justice System (likely C-ID AJ 122). This joins the house family. Verify against COCI.",
+   "confidence": 0.88,
+   "note": "Took the catalog hint (LA Mission ADM JUS 004) and joined the existing house family. The likely anchor is C-ID AJ 122.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
@@ -8282,12 +8734,13 @@
    "title": "Criminal Investigation",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.78,
-   "note": "Code-only title resolved via the LACCD course ADM JUS 005 = Criminal Investigation (likely C-ID AJ 140). This joins the house family. Verify against COCI.",
+   "confidence": 0.92,
+   "note": "'Discipline Exam' is the Cx mechanism and is stripped. The title comes from the college catalog for ADM JUS 005 and joins the existing house family.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
    ]
   },
@@ -8295,12 +8748,13 @@
    "title": "Patrol Procedures",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.75,
-   "note": "Code-only title resolved via the LACCD course ADM JUS 006 = Patrol Procedures. This joins the house title. The issuer is CCC because this is a Cx row, although the house family lists POST. Verify against COCI.",
+   "confidence": 0.9,
+   "note": "The title comes from the catalog and joins the house family. The Cx issuer is California Community Colleges, not POST.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
    ]
   },
@@ -8308,12 +8762,13 @@
    "title": "Juvenile Procedures",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.78,
-   "note": "Code-only title resolved via the LACCD course ADM JUS 008 = Juvenile Procedures (likely C-ID AJ 220). This joins the house family. Verify against COCI.",
+   "confidence": 0.92,
+   "note": "The title comes from the catalog and joins the existing house family.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
    ]
   },
@@ -8321,12 +8776,13 @@
    "title": "Report Writing for Peace Officers",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.75,
-   "note": "Mechanism phrase 'Discipline Exam' stripped. Joined the house family on recall that LACCD ADM JUS 014 is Report Writing for Peace Officers. Verify against the LAMC COCI row.",
+   "confidence": 0.9,
+   "note": "The catalog title is case-normalized to match the house family. The Cx issuer is California Community Colleges.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
    ]
   },
@@ -8334,12 +8790,13 @@
    "title": "Probation and Parole",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.78,
-   "note": "LACCD ADM JUS 039 is recalled as Probation and Parole and joined to that house family. Verify against the LAMC COCI row.",
+   "confidence": 0.92,
+   "note": "The title comes from the catalog and joins the existing house family.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
    ]
   },
@@ -8347,48 +8804,171 @@
    "title": "Introduction to Corrections",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.8,
-   "note": "LACCD ADM JUS 075 is recalled as Introduction to Corrections, likely C-ID AJ 200. Joined that house family; verify the C-ID alignment in COCI.",
+   "confidence": 0.92,
+   "note": "The catalog title is case-normalized to match the house family.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
+   ]
+  },
+  "Discipline Exam - ADM JUS 104": {
+   "title": "Introduction to Forensic Science",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Discipline Exam - ADM JUS 111": {
+   "title": "Forensic Science Advanced",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The catalog title 'Advanced Forensic Science' is restyled with the level word moved last.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "level-words-last",
+    "Rule 5g"
+   ]
+  },
+  "Discipline Exam - ADM JUS 150": {
+   "title": "Understanding Street and Prison Gangs",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "The catalog title is case-normalized.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Discipline Exam - ADM JUS 160": {
    "title": "Police Organization and Administration",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.55,
-   "note": "Tentative recall that LACCD ADM JUS 160 is Police Organization and Administration, joined to that house family. Verify in COCI; fall back to the code form if wrong.",
+   "confidence": 0.9,
+   "note": "The title comes from the catalog and joins the house family. The Cx issuer is California Community Colleges, not POST.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "brand-family"
+   ]
+  },
+  "Discipline Exam - ADM JUS 204": {
+   "title": "Homicide Investigation",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Discipline Exam - ADM JUS 250": {
+   "title": "Forensic Photography",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Discipline Exam - ART 501": {
    "title": "Two-Dimensional Design Beginning",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.78,
-   "note": "LACCD ART 501 is recalled as Beginning Two-Dimensional Design, likely C-ID ARTS 100. The level word moved to the end and the row joins that house family with issuer CCC. Verify in COCI.",
+   "confidence": 0.88,
+   "note": "The catalog title 'Beginning Two-Dimensional Design' is restyled with the level word last, which joins the existing house title. The Cx issuer is California Community Colleges.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
+    "mechanism-collapses",
     "level-words-last",
-    "brand-family"
+    "Rule 5g",
+    "join-when-likely-one"
+   ]
+  },
+  "Discipline Exam - BIOTECH 002": {
+   "title": "Biotechnology 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.84,
+   "note": "The catalog title 'Biotechnology I' uses the house Arabic-numeral style. It is not folded into 'Applied Biotechnology 1' without evidence that they are the same course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Discipline Exam - CIS 101": {
    "title": "Introduction to Computers and Their Uses",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.65,
-   "note": "LACCD CIS 101 is recalled as Introduction to Computers and Their Uses and joined to that house family. Verify against the LAMC COCI row and any C-ID alignment.",
+   "confidence": 0.9,
+   "note": "The catalog title matches an existing house title. This is a college Cx row, so the issuer is California Community Colleges, not the high school.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "join-when-likely-one"
+   ]
+  },
+  "Discipline Exam - CIS 210": {
+   "title": "Introduction to Computer Networks",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The catalog title 'Introduction to Computer Networking' likely names the same course as the existing CCC family 'Introduction to Computer Networks', so it is joined there. The cx hint was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ]
+  },
+  "Discipline Exam - CIS 222": {
+   "title": "PC Maintenance and Troubleshooting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - CLN ART 050": {
+   "title": "Sanitation and Safety",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
@@ -8396,44 +8976,165 @@
     "brand-family"
    ]
   },
-  "Discipline Exam - CS 101": {
-   "title": "Introduction to Computers and Their Uses",
+  "Discipline Exam - CLN ART 060": {
+   "title": "Culinary Arts Orientation & Techniques",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.7,
-   "note": "LACCD CS 101 is believed to be titled 'Introduction to Computers and Their Uses', so the row joins that house family. The title needs verification against the LAMC COCI row.",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - CLN ART 101": {
+   "title": "Culinary Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The catalog title 'Culinary Fundamentals I' is joined to the existing CCC family 'Culinary Fundamentals' as likely the same course.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "brand-family",
     "join-when-likely-one"
+   ]
+  },
+  "Discipline Exam - CS 101": {
+   "title": "Introduction to Computer Science",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Discipline Exam - CS 119": {
+   "title": "Programming in Python",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - DRAFT 016": {
+   "title": "Blueprint Reading I",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Kept the catalog title. This was not joined to 'Blueprint Reading 1', which is the CTCNC apprenticeship course with a different CPL basis. It could fold into the CCC 'Blueprint Reading' family on review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - EGD TEK 101": {
+   "title": "Engineering Graphics",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Discipline Exam - MATH 240": {
    "title": "Trigonometry",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.8,
-   "note": "LACCD MATH 240 is Trigonometry, so the row joins the existing house family. Verify that no CCN or C-ID title outranks it.",
+   "confidence": 0.93,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "join-when-likely-one"
+    "brand-family"
+   ]
+  },
+  "Discipline Exam - MATH 242": {
+   "title": "Math for Land Surveyors and Drafters",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Discipline Exam - MGMT 033": {
-   "title": "Human Resource Management",
+   "title": "Human Capital Management",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.55,
-   "note": "LACCD MGMT 033 is believed to be the personnel/human resources management course, so the row joins that house family. This is an educated guess; verify against COCI.",
+   "confidence": 0.85,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - MULTIMD 100": {
+   "title": "Introduction to Multimedia Computer Applications",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - MULTIMD 240": {
+   "title": "Graphic Design for Multimedia",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Discipline Exam - MULTIMD 340": {
+   "title": "Vector Graphics",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Catalog course title for MULTIMD 340 replaces the mechanism-led cx hint.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "join-when-likely-one"
+    "mechanism-collapses"
+   ]
+  },
+  "Discipline Exam - MULTIMD 610": {
+   "title": "Introduction to Digital Video Production",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Catalog course title for MULTIMD 610 replaces the mechanism-led cx hint.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Driver/Operator: Aerial/Truck Operations": {
@@ -8634,6 +9335,32 @@
     "Rule 6"
    ]
   },
+  "Electric Controls - Credit by Exam (ACR 30 )": {
+   "title": "Electric Controls",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Mechanism phrase and course code stripped; content is the course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Electrical Applications - Credit by Exam (ACR 5 )": {
+   "title": "Electrical Applications",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Mechanism phrase and course code stripped; content is the course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Elem Spanish I High School Articulation": {
    "title": "Elementary Spanish 1",
    "issuer": "Local High School",
@@ -8818,6 +9545,60 @@
     "Rule 5c"
    ]
   },
+  "Energy Efficient Residential, Commercial and Industrial Air Conditioning - Credit by Exam (ACR 25 )": {
+   "title": "Energy Efficient Residential, Commercial and Industrial Air Conditioning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Mechanism phrase and course code stripped; content is the course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Engine Diagnosis & Repair - Credit by Exam (ATEC 43 )": {
+   "title": "Engine Diagnosis & Repair",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "Local course Cx; kept apart from ASE A1 per Rule 8c-2.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
+   ]
+  },
+  "Engine Performance - Credit by Exam (ATEC 23 )": {
+   "title": "Engine Performance",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.84,
+   "note": "Local course Cx at El Camino; not folded into ASE A8 — Engine Performance because industry cert vs local Cx is a split (Rule 8c-2).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 8c"
+   ]
+  },
+  "Engineering Design and Development - Credit by Exam (ETEC 18 )": {
+   "title": "Engineering Design and Development",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "College course ETEC 18 Cx; shares a name with a PLTW course but no PLTW signal, so CCC issuer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Entrepreneurship and Small Business HS-RUSD": {
    "title": "Entrepreneurship and Small Business",
    "issuer": "Riverside Unified School District (RUSD)",
@@ -8858,57 +9639,244 @@
    "trainer": "Coursera"
   },
   "Examination for FREN 1A": {
-   "title": "French 1",
+   "title": "French Beginning",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.65,
-   "note": "cx hint set aside because it kept the method word and the course code. FREN 1A is assumed to be first-semester French and joined to the house title French 1; the Las Positas course title is unverified.",
+   "confidence": 0.78,
+   "note": "Catalog title 'Beginning French' restyled with level word last; reviewer may join house 'French 1' if judged the same first-semester course.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "join-when-likely-one"
+    "level-words-last"
    ]
   },
   "Examination for FREN 1B": {
-   "title": "French — Level 2",
+   "title": "Elementary French",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.6,
-   "note": "cx hint set aside. FREN 1B is assumed to be second-semester French and joined to the house title French — Level 2; the Las Positas course title is unverified.",
+   "confidence": 0.75,
+   "note": "Catalog title for FREN 1B (second-semester French); possible join with house 'French — Level 2' left for review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for JAMS 12": {
+   "title": "Introduction to Photojournalism",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "join-when-likely-one"
+    "brand-family"
+   ]
+  },
+  "Examination for MUS 10A": {
+   "title": "Music Theory and Musicianship 3",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Examination for MUS 10B": {
+   "title": "Music Theory and Musicianship 4",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 145": {
+   "title": "Piano Technology 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 146": {
+   "title": "Piano Technology 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 147": {
+   "title": "Piano Technology 3",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Title comes from the Las Positas catalog title for MUS 147, not the cx echo. No CCN or C-ID was found; the catalog title is unusual, so review it.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 21A": {
+   "title": "Piano Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "brand-family",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Examination for MUS 21B": {
+   "title": "Piano Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "brand-family",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Examination for MUS 28": {
+   "title": "Keyboard Skills",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 35": {
+   "title": "Introduction to Music Technology",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 50": {
+   "title": "Live Concert Sound",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 8A": {
+   "title": "Music Theory and Musicianship 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for MUS 8B": {
+   "title": "Music Theory and Musicianship 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for PHTO 72": {
+   "title": "Introduction to Photojournalism",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
    ]
   },
   "Examination for SPAN 1A": {
-   "title": "Elementary Spanish 1",
+   "title": "Spanish Beginning",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.7,
-   "note": "The hint kept the mechanism phrase, so it is set aside. SPAN 1A is assumed to be the first-semester elementary Spanish course and is joined to the house family; verify against the Las Positas COCI title.",
+   "confidence": 0.85,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
+    "level-words-last",
     "Rule 5c",
-    "join-when-likely-one",
-    "mechanism-collapses"
+    "Rule 5g"
    ]
   },
   "Examination for SPAN 1B": {
-   "title": "Elementary Spanish 2",
+   "title": "Elementary Spanish",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.7,
-   "note": "The hint kept the mechanism phrase, so it is set aside. SPAN 1B is assumed to be the second-semester elementary Spanish course and is joined to the house family; verify against the Las Positas COCI title.",
+   "confidence": 0.75,
+   "note": "The Las Positas catalog titles SPAN 1B 'Elementary Spanish'. It is the second-semester course, so it may belong with the house family 'Elementary Spanish 2'; review.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c",
-    "join-when-likely-one",
-    "mechanism-collapses"
+    "Rule 5c"
+   ]
+  },
+  "Examination for THEA 10": {
+   "title": "Introduction to Dramatic Arts",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "FAA Airframe and Powerplant Mechanic Certificate": {
@@ -9061,6 +10029,32 @@
    "confidence": 0.8,
    "note": "Rule 5c: the college's own title for FIRE 43; issuer = CCC.",
    "procedure": "course-identity"
+  },
+  "Fashion Analysis and Selection - Credit by Exam (FASH 41 )": {
+   "title": "Fashion Analysis and Selection",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
+  },
+  "Fashion Merchandising - Credit by Exam (FASH 27 )": {
+   "title": "Fashion Merchandising",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
   },
   "Federal Law Enforcement Training Center (FLETC) classes for Geolocation and Electronic Tracking and Surveillance and any law enforcement certification": {
    "title": "FLETC Geolocation and Electronic Tracking and Surveillance Training",
@@ -9225,6 +10219,20 @@
     "Rule 6"
    ]
   },
+  "First Aid, Cardiopulmonary Resuscitation (CPR) and Basic Emergency Care - Credit by Exam (FAID 1 )": {
+   "title": "First Aid, Cardiopulmonary Resuscitation (CPR) and Basic Emergency Care",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "This is a local course credit-by-exam, so it is kept apart from industry First Aid/CPR certifications (Rule 8c-2).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 8c"
+   ]
+  },
   "Fitness for Life Military Training": {
    "title": "Fitness for Life (Military)",
    "issuer": "American Council on Education (ACE)",
@@ -9258,6 +10266,19 @@
     "course-identity",
     "join-when-likely-one",
     "Rule 5c"
+   ]
+  },
+  "Fundamentals of Radiologic Technology - Credit by Exam (RTEC 111 )": {
+   "title": "Fundamentals of Radiologic Technology",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "cx hint repeated the raw title. Stripped the mechanism phrase and the RTEC 111 code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "G Skin & Beauty Institute": {
@@ -9342,6 +10363,32 @@
    ],
    "trainer": "Corona-Norco Unified School District"
   },
+  "General Metals - Credit by Exam (MTT 16 )": {
+   "title": "General Metals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "cx hint repeated the raw title. Stripped the mechanism phrase and the MTT 16 code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Geometrical Dimensioning and Tolerancing - Credit by Exam (CADD 45 )": {
+   "title": "Geometrical Dimensioning and Tolerancing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Local course Cx. Kept apart from ASME GDTP Y14.5 Certification (industry cert vs local course, Rule 8c).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
   "Global Music Appreciation": {
    "title": "Global Music Appreciation",
    "issuer": "",
@@ -9352,6 +10399,19 @@
    "rests_on": [
     "Rule 9",
     "Rule 6"
+   ]
+  },
+  "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )": {
+   "title": "Graphic Communications I — Orthographic Drawings",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "cx hint repeated the raw title. Stripped the mechanism phrase, the ARCH 170 code and extra whitespace.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "HAZMAT Tech": {
@@ -9518,6 +10578,19 @@
     "Rule 5c"
    ]
   },
+  "Heating Technologies - Credit by Exam (ACR 27 )": {
+   "title": "Heating Technologies",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "cx hint repeated the raw title. Stripped the mechanism phrase and the ACR 27 code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "High Performance Electric Water Heaters": {
    "title": "High Performance Electric Water Heaters",
    "issuer": "California Community Colleges",
@@ -9528,6 +10601,19 @@
    "rests_on": [
     "course-identity",
     "Rule 5c"
+   ]
+  },
+  "History of Fashion - Credit by Exam (FASH 31 )": {
+   "title": "History of Fashion",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "cx hint repeated the raw title. Stripped the mechanism phrase and the FASH 31 code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "History of Video Games HS-CNUSD": {
@@ -9542,6 +10628,19 @@
     "Rule 5f"
    ],
    "trainer": "Corona-Norco Unified School District"
+  },
+  "History of Western Architecture - Credit by Exam (ARCH 104 )": {
+   "title": "History of Western Architecture",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "cx hint repeated the raw title. Stripped the mechanism phrase and the code. Kept apart from History of Architecture 1, which may be a different course scope.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
   },
   "Horticultural & Landscape Photography": {
    "title": "Horticultural & Landscape Photography",
@@ -10739,16 +11838,30 @@
    "note": "Rule 5c: the college's own title for ITEC 2; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )": {
+   "title": "Implications of Pathophysiology Concepts for Nurses",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "Stripped the mechanism phrase and the NURS 210 code. This could possibly join Pathophysiology for Nursing, but I kept the college's own course title pending review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Industry for AJ 50": {
    "title": "Introduction to Administration of Justice",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. Las Positas AJ 50 is assumed to be Introduction to Administration of Justice; verify in COCI. The industry credential behind it is unnamed and may be a POST academy, so the issuer needs review.",
+   "confidence": 0.65,
+   "note": "Code-only title. The catalog lookup for Las Positas AJ 50 matches the existing house family. The IC type hides which industry credential is involved, so the issuer is left at CCC for review.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c"
+    "Rule 5c",
+    "brand-family"
    ]
   },
   "Industry for AUTO A1": {
@@ -10942,6 +12055,103 @@
     "join-when-likely-one"
    ]
   },
+  "Industry for EMS 12": {
+   "title": "Paramedic Laboratory 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-as-exhibit: the title comes from the catalog course for Las Positas EMS 12. The underlying industry credential, likely paramedic licensure, is unnamed, so the CCC issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for EMS 13": {
+   "title": "Paramedic Laboratory 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-as-exhibit: the title comes from the catalog course for EMS 13. The industry credential is unnamed, so the issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for EMS 16": {
+   "title": "Paramedic Clinical Occupational Work Experience",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-as-exhibit: the title comes from the catalog course for EMS 16. The industry credential is unnamed, so the issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for EMS 17": {
+   "title": "Paramedic Field Internship",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-as-exhibit: the title comes from the catalog course for EMS 17. The industry credential is unnamed, so the issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for EMS 70": {
+   "title": "CPR for Healthcare Providers (BLS)",
+   "issuer": "American Heart Association (AHA)",
+   "via": "classifier",
+   "confidence": 0.65,
+   "note": "The catalog maps EMS 70 to CPR for Healthcare Providers. Under the Industry Certification type, the credential is likely the AHA BLS card, so this joins the house family. The issuer could also be the Red Cross.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "issuer-issues-the-card",
+    "join-when-likely-one"
+   ]
+  },
+  "Industry for GDDM 53": {
+   "title": "Adobe Photoshop 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "Course-as-exhibit: the title comes from the catalog course for GDDM 53 (Adobe Photoshop I). The industry cert, possibly Adobe Certified Professional, is unnamed, so the issuer is provisional. This may also join Introduction to Adobe Photoshop.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for GDDM 54": {
+   "title": "Adobe Illustrator I",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Catalog hint accepted: GDDM 54 at Las Positas resolves to the course title Adobe Illustrator I. The row is typed Industry Certification, so the issuer could instead be Adobe if an actual Adobe certification is meant; CCC is kept for review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for GDDM 64": {
+   "title": "Adobe InDesign I",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Catalog hint accepted: GDDM 64 at Las Positas resolves to the course title Adobe InDesign I. The row is typed Industry Certification, so the issuer could instead be Adobe if an actual Adobe certification is meant; CCC is kept for review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "Information Research LIBR10": {
    "title": "Information Research",
    "issuer": "California Community Colleges",
@@ -10969,6 +12179,62 @@
     "join-when-likely-one"
    ]
   },
+  "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )": {
+   "title": "Automotive Collision Repair 1 Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint's raw echo was mended: the mechanism and course code were stripped and the level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
+  },
+  "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )": {
+   "title": "Automotive Collision Repair 2 Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The mechanism and course code were stripped and the level word moved to the end. Part II is kept distinct from Part I.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
+  },
+  "Intermediate Automotive Refinishing I - Credit by Exam (ACRP 5C )": {
+   "title": "Automotive Refinishing 1 Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The mechanism and course code were stripped and the level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
+  },
+  "Intermediate Automotive Refinishing II - Credit by Exam (ACRP 5D )": {
+   "title": "Automotive Refinishing 2 Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The mechanism and course code were stripped and the level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
+  },
   "Intermediate Drawing": {
    "title": "Intermediate Drawing",
    "issuer": "California Community Colleges",
@@ -10976,6 +12242,20 @@
    "confidence": 0.8,
    "note": "Matched the existing house family 'Intermediate Drawing'; issuer from the curated credential KB.",
    "procedure": "brand-family"
+  },
+  "Intermediate Gas Tungsten Arc Welding (GTAW) - Credit by Exam (WELD 40B )": {
+   "title": "Gas Tungsten Arc Welding (GTAW) Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "This is a local course exam, kept apart from AWS welding certifications (Rule 8c-2). The level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
   },
   "Intermediate Law Enforcement- HS CE(MVUSD)": {
    "title": "Law Enforcement Intermediate",
@@ -10991,6 +12271,48 @@
     "course-identity"
    ],
    "trainer": "Moreno Valley Unified School District"
+  },
+  "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )": {
+   "title": "Medical-Surgical Nursing 1 Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The level word moved to the end and the part number was kept. Not folded into the unnumbered house family Medical-Surgical Nursing Intermediate; faculty could merge them later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
+  },
+  "Intermediate Medical - Surgical Nursing II - Credit by Exam (NURS 242 )": {
+   "title": "Medical-Surgical Nursing 2 Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The level word moved to the end and the part number was kept. This is distinct from Part I.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last",
+    "mechanism-collapses"
+   ]
+  },
+  "Intermediate Shielded Metal Arc Welding (SMAW) - Credit by Exam (WELD 10B )": {
+   "title": "Shielded Metal Arc Welding Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Joined the existing house family Shielded Metal Arc Welding Intermediate (CCC).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "level-words-last",
+    "join-when-likely-one"
+   ]
   },
   "Internetworking and TCP/IP": {
    "title": "Internetworking and TCP/IP",
@@ -11098,6 +12420,31 @@
    ],
    "trainer": "Corona-Norco Unified School District (CNUSD)"
   },
+  "Introduction to Automotive Collision Repair - Credit by Exam (ACRP 1A )": {
+   "title": "Introduction to Automotive Collision Repair",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "The mechanism and course code were stripped. A leading Introduction stays per Rule 5g.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last"
+   ]
+  },
+  "Introduction to Automotive Service - Credit by Exam (ATEC 1 )": {
+   "title": "Introduction to Automotive Service",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The mechanism and course code were stripped. The house family Automotive Service and Introduction is similar but not joined.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "Introduction to Business HS-CJUSD": {
    "title": "Introduction to Business",
    "issuer": "Colton Joint Unified School District (CJUSD)",
@@ -11126,6 +12473,43 @@
    ],
    "trainer": "Corona-Norco Unified School District (CNUSD)"
   },
+  "Introduction to CAD/CAM - Credit by Exam (MTT 10A )": {
+   "title": "Introduction to CAD/CAM",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "The mechanism and course code were stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Introduction to Computer Hardware Systems I - Credit by Exam (ECHT 140 )": {
+   "title": "Introduction to Computer Hardware Systems 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The mechanism and course code were stripped, and the numeral was written in the house arabic form.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Introduction to Conventional and CNC Machining - Credit by Exam (MTT 101 )": {
+   "title": "Introduction to Conventional and CNC Machining",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The mechanism and course code were stripped. Kept apart from Introduction to CNC Machining because this course is broader (conventional plus CNC).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
   "Introduction to Criminal Law - Military Training": {
    "title": "Introduction to Criminal Law",
    "issuer": "American Council on Education (ACE)",
@@ -11151,6 +12535,60 @@
    "rests_on": [
     "Rule 5f",
     "local-trainer-is-agency",
+    "Rule 1"
+   ]
+  },
+  "Introduction to Direct and Alternating Current Circuits - Credit by Exam (ECHT 110 )": {
+   "title": "Introduction to Direct and Alternating Current Circuits",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Cx hint was the raw title verbatim, so the mechanism phrase and course code ECHT 110 were stripped; title is El Camino's local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "mechanism-collapses"
+   ]
+  },
+  "Introduction to Electronics - Credit by Exam (ECHT 11 )": {
+   "title": "Introduction to Electronics",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code ECHT 11 were stripped from the cx hint; title is the local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Introduction to Engine Performance - Credit by Exam (ATEC 21 )": {
+   "title": "Introduction to Engine Performance",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Local course Cx (ATEC 21). Kept apart from ASE A8 — Engine Performance under Rule 8c-2 (industry cert vs local course exam).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "mechanism-collapses"
+   ]
+  },
+  "Introduction to Engineering Design - Credit by Exam (ETEC 12 )": {
+   "title": "Introduction to Engineering Design",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Local course Cx (ETEC 12). Not joined to PLTW Introduction to Engineering Design, because no PLTW signal is present.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
     "Rule 1"
    ]
   },
@@ -11197,6 +12635,21 @@
     "join-when-likely-one"
    ]
   },
+  "Introduction to Gas Tungsten Arc Welding (GTAW) - Credit by Exam (WELD 40A )": {
+   "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Joins the existing house title, which is a course-style name. The issuer stays CCC for this local Cx (WELD 40A) rather than AWS, so the issuer field discriminates.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4"
+   ]
+  },
   "Introduction to Geospatial Technology": {
    "title": "Introduction to Geospatial Technology",
    "issuer": "California Community Colleges",
@@ -11216,6 +12669,32 @@
     "Rule 5f",
     "local-trainer-is-agency",
     "join-when-likely-one"
+   ]
+  },
+  "Introduction to Mechanical Drafting - Credit by Exam (CADD 5 )": {
+   "title": "Introduction to Mechanical Drafting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code CADD 5 were stripped; title is the local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Introduction to Microprocessors and Interfacing - Credit by Exam (ECHT 191 )": {
+   "title": "Introduction to Microprocessors and Interfacing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code ECHT 191 were stripped; title is the local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "Introduction to Music-Credit by Exam": {
@@ -11269,6 +12748,19 @@
     "Rule 5e"
    ]
   },
+  "Introduction to Radiologic Technology - Credit by Exam (RTEC A )": {
+   "title": "Introduction to Radiologic Technology",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code RTEC A were stripped; title is the local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Introduction to Security-Portfolio": {
    "title": "Introduction to Security",
    "issuer": "California Community Colleges",
@@ -11279,6 +12771,20 @@
    "rests_on": [
     "course-identity",
     "Rule 5c"
+   ]
+  },
+  "Introduction to Shielded Metal Arc Welding (SMAW) - Credit by Exam (WELD 10A )": {
+   "title": "Introduction to Shielded Metal Arc Welding (SMAW)",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Local course Cx (WELD 10A). Kept apart from AWS Shielded Metal Arc Welding (SMAW) as a narrower introductory local course (Rule 8c).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "mechanism-collapses"
    ]
   },
   "Introduction to Wildland Fire Behavior - Certification NWCG S-190": {
@@ -11365,6 +12871,19 @@
     "course-identity",
     "Rule 5c",
     "Rule 1"
+   ]
+  },
+  "Keyboarding II - Credit by Exam (BUS 146 )": {
+   "title": "Keyboarding II",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Statewide catalog hint accepted; mechanism phrase and course code BUS 146 dropped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "statewide-catalog",
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Landscape Design: Perspective Sketching": {
@@ -11584,6 +13103,32 @@
    "note": "Rule 5c: title anchored to C-ID MUS 110; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "Machine Shop Calculations - Credit by Exam (MTT 40 )": {
+   "title": "Machine Shop Calculations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code MTT 40 were stripped; title is the local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Major Collision Analysis and Structural Repair - Credit by Exam (ACRP 1C )": {
+   "title": "Major Collision Analysis and Structural Repair",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Local course Cx (ACRP 1C). Kept apart from I-CAR Structural Certification (Rule 8c-2).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
   "Manufacturer/Vendor Specific Building Automation System (BAS) Certification": {
    "title": "Building Automation System (BAS) Manufacturer Certification",
    "issuer": "",
@@ -11594,6 +13139,19 @@
    "rests_on": [
     "Rule 1",
     "Rule 9"
+   ]
+  },
+  "Manufacturing Print Reading - Credit by Exam (MTT 2 )": {
+   "title": "Manufacturing Print Reading",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Local course title for MTT 2. Not folded into Machine Trades Print Reading because the names differ and a likely-one match is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "Marketing Management Certification issued by the American Marketing Association (AMA)": {
@@ -11618,6 +13176,19 @@
    "rests_on": [
     "Rule 6",
     "issuer-issues-the-card"
+   ]
+  },
+  "Mechanical and Electrical Systems for Collision Repair Technicians - Credit by Exam (ACRP 1D )": {
+   "title": "Mechanical and Electrical Systems for Collision Repair Technicians",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code ACRP 1D were stripped; title is the local course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "Mechatronics 1 HS-CRYROP": {
@@ -11675,6 +13246,19 @@
     "Rule 9"
    ]
   },
+  "Medical Surgical Nursing -  Older Adult - Credit by Exam (NURS 222 )": {
+   "title": "Medical Surgical Nursing — Older Adult",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.86,
+   "note": "Mechanism phrase, course code NURS 222 and the double space were removed. Kept distinct from the other medical-surgical nursing levels as a separate course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "Medical Terminology High School Articulation": {
    "title": "Medical Terminology",
    "issuer": "Local High School",
@@ -11687,6 +13271,20 @@
     "Rule 5f",
     "brand-family",
     "course-identity"
+   ]
+  },
+  "Mental Health Nursing - Credit by Exam (NURS 230 )": {
+   "title": "Mental Health Nursing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Removed the mechanism phrase and the course code (NURS 230). The title joins the existing house family Mental Health Nursing.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "Microsoft Certified: Power BI Data Analyst Associate": {
@@ -12003,6 +13601,43 @@
    "note": "Rule 5c: the college's own title for NC 195; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "NC.BUS-117A at College of the Canyons": {
+   "title": "Introduction to Entrepreneurship",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title comes from the catalog hint for College of the Canyons noncredit course NC.BUS-117A and joins the existing house family. The college's own noncredit is internal, so California Community Colleges is the issuer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ]
+  },
+  "NC.BUS-117B at College of the Canyons": {
+   "title": "Developing a Business Plan for Entrepreneurs",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title is the local course title from the catalog hint for NC.BUS-117B; the course-code raw was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "NC.PTA-100 at College of the Canyons": {
+   "title": "Preparing for Careers in Physical Therapy",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title is the local course title from the catalog hint for NC.PTA-100, with 'In' lower-cased.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "NCCER HVACR Level 1": {
    "title": "NCCER HVACR Level 1",
    "issuer": "NCCER",
@@ -12202,6 +13837,19 @@
     "Rule 4"
    ],
    "trainer": "U.S. Armed Forces"
+  },
+  "Non-Structural Collision Repair and Welding - Credit by Exam (ACRP 1B )": {
+   "title": "Non-Structural Collision Repair and Welding",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Removed the mechanism phrase and the course code (ACRP 1B). This is a local course exam, kept apart from I-CAR industry certs per Rule 8c-2.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
   },
   "Noncredit for AUTO A1": {
    "title": "Engine Repair",
@@ -12415,6 +14063,147 @@
     "Rule 1"
    ]
   },
+  "Noncredit for AVI 110": {
+   "title": "Drone Coding and Piloting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Mended the catalog hint 'Summer Camp Drone Coding and Piloting' by dropping the 'Summer Camp' delivery qualifier. The catalog join to AVI 110 is uncertain; review. This is a course, not the FAA Part 107 certificate.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for ENG 110": {
+   "title": "Craft of the Sentence",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Title is the Las Positas local course title from the catalog hint for ENG 110. The 'Noncredit for' phrasing is mechanism noise.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for ENG 115": {
+   "title": "Personalized Coaching for Academic Reading and Writing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Title is the Las Positas local course title from the catalog hint for ENG 115.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for ESL 113": {
+   "title": "Speaking and Listening Fluency for Academic and Professional Purposes",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Title is the Las Positas local course title from the catalog hint for ESL 113.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for ESL 123": {
+   "title": "Oral Communication Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Catalog title 'Intermediate Oral Communication' for ESL 123, with the level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Noncredit for ESL 126": {
+   "title": "Pronunciation and Fluency Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Catalog title 'Intermediate Pronunciation and Fluency' for ESL 126, with the level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Noncredit for ESL 133": {
+   "title": "Oral Communication Beginning",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Catalog title 'Beginning Oral Communication' for ESL 133, with the level word moved to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "Noncredit for ESL 136": {
+   "title": "Pronunciation and Fluency",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Title is the Las Positas local course title from the catalog hint for ESL 136. It stays distinct from the Intermediate level (ESL 126).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for MATH 101C": {
+   "title": "Concurrent Support for BSTEM Mathematics",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Title is the Las Positas local course title from the catalog hint for MATH 101C, a corequisite support course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Nursing Fundamentals - Credit by Exam (NURS 220 )": {
+   "title": "Fundamentals of Nursing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Removed the mechanism phrase and the course code. 'Nursing Fundamentals' was joined to the house family 'Fundamentals of Nursing' as likely the same course; faculty may split them later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Nursing Pharmacology - Credit by Exam (NURS 224 )": {
+   "title": "Nursing Pharmacology",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mechanism phrase and course code stripped; kept apart from 'Nursing Process: Pharmacology', a different course name.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
   "OSHA Certification": {
    "title": "OSHA Safety Training (generic)",
    "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
@@ -12426,6 +14215,18 @@
     "brand-family",
     "issuer-issues-the-card",
     "Rule 5d"
+   ]
+  },
+  "Obstetrical Patients and the Newborn - Credit by Exam (NURS 232 )": {
+   "title": "Obstetrical Patients and the Newborn",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "Official certification credential / certification document from American Correctional Association (ACA), Corrections Certification Program (CCP).": {
@@ -12452,6 +14253,18 @@
     "Rule 5b",
     "Rule 6",
     "Rule 9"
+   ]
+  },
+  "Operational Amplifiers and Linear Integrated Circuits - Credit by Exam (ECHT 124 )": {
+   "title": "Operational Amplifiers and Linear Integrated Circuits",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
    ]
   },
   "P.O.S.T Certificate or P.O.S.T Training Transcripts": {
@@ -12600,6 +14413,18 @@
    ],
    "trainer": "varies by academy"
   },
+  "Pediatric Nursing - Credit by Exam (NURS 234 )": {
+   "title": "Pediatric Nursing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "Personal Money Management High School to College Articulation": {
    "title": "Personal Money Management",
    "issuer": "Local High School",
@@ -12610,6 +14435,19 @@
    "rests_on": [
     "local-trainer-is-agency",
     "Rule 5f"
+   ]
+  },
+  "Personal and Community Health Issues - Credit by Exam (C H 1 )": {
+   "title": "Personal and Community Health",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Joined the existing 'Personal and Community Health' family as likely the same course content. Faculty may split it if 'Issues' marks a distinct course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
    ]
   },
   "Pest Control Adviser (PCA)": {
@@ -12682,6 +14520,67 @@
     "issuer-issues-the-card"
    ]
   },
+  "Portfolio Review - MULTIMD 100": {
+   "title": "Introduction to Multimedia Computer Applications",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Title taken from the college catalog title for MULTIMD 100 via the catalog hint.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Portfolio for ARTS 12A": {
+   "title": "Oil/Acrylic Painting: Beginning I",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The cx hint 'for ARTS 12A' was rejected; the catalog title was used instead. The level word is not leading, so the order is kept.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for ARTS 2A": {
+   "title": "Introduction to Drawing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint was rejected; the catalog title was used instead.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for ARTS 3A": {
+   "title": "Figure and Composition I",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The cx hint was rejected; the catalog title was used instead.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for ARTS 7A": {
+   "title": "Introduction to Watercolor Painting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint was rejected; the catalog title was used instead.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "Portfolio for Arts - 2D Foundations": {
    "title": "2-D Foundations",
    "issuer": "California Community Colleges",
@@ -12693,6 +14592,109 @@
     "course-identity",
     "Rule 5c",
     "mechanism-collapses"
+   ]
+  },
+  "Portfolio for JAMS 12": {
+   "title": "Introduction to Photojournalism",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Portfolio for JAMS 23": {
+   "title": "Digital Storytelling",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Portfolio for JAMS 3": {
+   "title": "Introduction to Public Relations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The cx hint was rejected; the catalog title was used instead.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for MUS 19": {
+   "title": "Studies in Music Composition",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The cx hint 'for MUS 19' was a strip error, so I set it aside. I used the catalog course title for Las Positas MUS 19. I did not fold it into 'Music Composition' because that may be a different course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for MUS 25": {
+   "title": "Teaching Beginning Piano",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Catalog course title for MUS 25, which matches an existing house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for MUS 27": {
+   "title": "Teaching Intermediate Piano",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Catalog course title for MUS 27, which matches an existing house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for MUS 35": {
+   "title": "Introduction to Music Technology",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Catalog course title for MUS 35, which matches an existing house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for PHTO 72": {
+   "title": "Introduction to Photojournalism",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Catalog course title for PHTO 72, which matches an existing house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
    ]
   },
   "Portfolio of spatial projects or map products demonstrating mastery": {
@@ -12746,6 +14748,19 @@
     "course-identity"
    ],
    "trainer": "Riverside Unified School District"
+  },
+  "Principles of Engineering Technology - Credit by Exam (ETEC 10 )": {
+   "title": "Principles of Engineering Technology",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
   },
   "Professional Certifications": {
    "title": "Generic Professional Certifications — College of the Canyons",
@@ -13070,6 +15085,19 @@
    "note": "Rule 5c: the college's own title for RUSS 1; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "Radiographic Positioning 1A - Credit by Exam (RTEC 123 )": {
+   "title": "Radiographic Positioning 1A",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
+  },
   "Recording I High School Articulation": {
    "title": "Recording 1",
    "issuer": "Local High School",
@@ -13081,6 +15109,19 @@
     "local-trainer-is-agency",
     "Rule 5f",
     "Rule 1"
+   ]
+  },
+  "Refrigeration and Air Conditioning Control Systems - Credit by Exam (ACR 6 )": {
+   "title": "Refrigeration and Air Conditioning Control Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
    ]
   },
   "Remote Sensing and Digital Image Processing": {
@@ -13319,6 +15360,33 @@
     "Rule 5c"
    ]
   },
+  "Semiconductor Circuits - Credit by Exam (ECHT 120 )": {
+   "title": "Semiconductor Circuits",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
+  },
+  "Semiconductor Circuits II - Credit by Exam (ECHT 122 )": {
+   "title": "Semiconductor Circuits II",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "This second-level course is a different course from ECHT 120, so I kept it split.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 4",
+    "Rule 5c"
+   ]
+  },
   "Shielded Metal Arc Welding (SMAW) Certification": {
    "title": "Shielded Metal Arc Welding (SMAW)",
    "issuer": "American Welding Society (AWS)",
@@ -13397,6 +15465,19 @@
     "Rule 5c"
    ]
   },
+  "Solid Modeling, Assemblies and Two Dimensional (2D) Drawings - Credit by Exam (CADD 7 )": {
+   "title": "Solid Modeling, Assemblies and Two Dimensional (2D) Drawings",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
+  },
   "Specialist Course Module F": {
    "title": "Specialist Course Module F",
    "issuer": "",
@@ -13434,6 +15515,19 @@
     "Rule 1"
    ]
   },
+  "Structures Analysis - Timber - Credit by Exam (ARCH 258 )": {
+   "title": "Structures Analysis - Timber",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
+  },
   "Studio Photography Techniques I": {
    "title": "Studio Photography Techniques 1",
    "issuer": "California Community Colleges",
@@ -13459,6 +15553,20 @@
     "Rule 6"
    ]
   },
+  "Suspension and Four Wheel Alignment - Credit by Exam (ATEC 16 )": {
+   "title": "Suspension and Four Wheel Alignment",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "This is a local course exam, so I kept it apart from ASE A4 under Rule 8c-2.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 8c",
+    "Rule 5c"
+   ]
+  },
   "TIG Welding (GTAW)-Credit by Exam": {
    "title": "TIG Welding (GTAW)",
    "issuer": "California Community Colleges",
@@ -13469,6 +15577,18 @@
    "rests_on": [
     "course-identity",
     "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
+  "Textiles - Credit by Exam (FASH 20 )": {
+   "title": "Textiles",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "The catalog hint was correct and I used it.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
     "Rule 5c"
    ]
   },
@@ -13648,6 +15768,19 @@
     "Rule 7"
    ],
    "trainer": "Virtual Lab School (The Ohio State University)"
+  },
+  "Visual Merchandising - Credit by Exam (FASH 28 )": {
+   "title": "Visual Merchandising",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Mended the cx hint by stripping the mechanism phrase and course code.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c"
+   ]
   },
   "WELD 770B (Non-Credit) Advanced Welding": {
    "title": "Welding Advanced",
