@@ -105,6 +105,7 @@
       if (attrs["aria-label"] != null) n.setAttribute("aria-label", String(attrs["aria-label"]));
       if (attrs["aria-pressed"] != null) n.setAttribute("aria-pressed", String(attrs["aria-pressed"]));
       if (attrs["aria-expanded"] != null) n.setAttribute("aria-expanded", String(attrs["aria-expanded"]));
+      if (attrs["aria-labelledby"] != null) n.setAttribute("aria-labelledby", String(attrs["aria-labelledby"]));
       if (attrs.scope != null) n.setAttribute("scope", String(attrs.scope));
       if (attrs.tabindex != null) n.setAttribute("tabindex", String(attrs.tabindex));
       // External links (an issuer's own page) open in a new tab, without opener.
@@ -1015,6 +1016,14 @@
     indFilter: { domain: "all", status: "all", map: "all", emerging: false },
     indShown: 100,
     indExpanded: {},  // catalog id -> bool
+    // The procedures run's report (kb/cer_procedures_out/latest.json, lazy,
+    // read-only): the Procedures lane — what each procedure settled and held,
+    // and the titles that need a person (Sam, 2026-10-18).
+    procReport: null,
+    procLoading: false,
+    procError: false,
+    procOpen: {},      // procedure id -> its examples shown
+    procNeedsShown: 25,
     // Grid paging (2026-10-16): the grid paints GRID_PAGE rows, then "Show more".
     // A cold load used to paint all ~2,000 rows three or four times, each a
     // multi-second freeze on a laptop (Chrome's "Page unresponsive"). gridKey
@@ -1788,6 +1797,7 @@
     renderLanes();
     if (state.worklistOpen) { renderWorklist(); return; }
     if (state.lane === "industry") { renderIndustry(); return; }
+    if (state.lane === "procs") { renderProcedures(); return; }
     // v2 triage lanes reuse the (already in-cell) worklist sections.
     if (state.lane === "unc" || state.lane === "noiss" || state.lane === "merge") {
       renderWorklist(state.lane === "unc" ? "unc" : state.lane);
@@ -2095,6 +2105,10 @@
           + (staged ? " " + staged + " pre-filled from the staged plan." : "") },
       { k: "merge", label: "Merge confirms", n: pendingMerges().length,
         title: "Saved renames that match an EXISTING credential — confirm the merge or re-title." },
+      { k: "procs", label: "Procedures",
+        n: state.procReport ? (state.procReport.procedures || []).length : null,
+        nText: state.procError ? "(unavailable)" : null,
+        title: "The rules that propose a title and issuer for each waiting exhibit every night, who set each one, and what it settled. Proposals pre-fill Unclassified; nothing saves until you click Save." },
       { k: "open",  label: "Not initiated", n: state.rows.length - doneN,
         title: "Awaiting a one-time curator sign-off. \"Initiated\" only records that a human reviewed the AI classification (who + when) — it never changes the data, and no other action is required. Work these at your own pace." },
       { k: "done",  label: "Initiated", n: doneN,
@@ -3581,6 +3595,7 @@
     state.worklistOpen = false;
     if (k === "unc" || k === "noiss" || k === "merge") ensureWorklistData();
     if (k === "industry") { state.indShown = INDUSTRY_PAGE; fetchIndustry(); }
+    if (k === "procs") { state.procNeedsShown = PROC_NEEDS_PAGE; fetchProcReport(); }
     render();
   }
 
@@ -5789,10 +5804,173 @@
     document.head.appendChild(st);
   }
 
-  // The two read-only overlays that arrive after the first paint (COS matches,
-  // the industry catalog) share ONE re-render instead of one each.
+  // ── Procedures lane (Sam, 2026-10-18: "I want to be able to add more
+  // procedures to have you classify and complete common exhibit titles and
+  // elements as we go") ─────────────────────────────────────────────────────
+  // kb/_cer_procedures.py writes the report each night: every procedure in
+  // force with who set it, when and their words, what it settled and held,
+  // and the titles that need a person. Read-only here: its proposals pre-fill
+  // the Unclassified lane, where a curator saves them.
+  var PROCEDURES_URL = "kb/cer_procedures_out/latest.json";
+  var PROC_NEEDS_PAGE = 25;
+
+  function fetchProcReport(opts) {
+    if (state.procReport || state.procLoading) return Promise.resolve();
+    state.procLoading = true;
+    state.procError = false;
+    return fetch(PROCEDURES_URL, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        state.procLoading = false;
+        if (!d || !Array.isArray(d.procedures)) { state.procError = true; return; }
+        state.procReport = d;
+      })
+      .catch(function () { state.procLoading = false; state.procError = true; })
+      .then(function () { if (!opts || !opts.quiet) { if (!state.worklistOpen) render(); } });
+  }
+
+  function procSourceLine(src) {
+    src = src || {};
+    var line = (src.who || "") + (src.date ? ", " + src.date : "");
+    if (src.words) line += ": \u201c" + src.words + "\u201d";
+    if (src.skill) line += " (skill " + src.skill + ")";
+    return line;
+  }
+
+  function renderProcedures() {
+    ensureProcCss();
+    var wrap = document.getElementById("cr-table-wrap");
+    var sum = document.getElementById("cr-summary");
+    if (!wrap) return;
+    clearNode(wrap);
+    if (sum) clearNode(sum);
+    var rep = state.procReport;
+    if (!rep) {
+      if (!state.procLoading && !state.procError) fetchProcReport();
+      wrap.appendChild(el("p", { class: "cr-wl-note" }, [state.procError
+        ? "The procedures report did not load. Reload the page to try again."
+        : "Loading the procedures…"]));
+      return;
+    }
+    if (sum) {
+      sum.appendChild(el("strong", null, [String(rep.proposed || 0)]));
+      sum.appendChild(document.createTextNode(" of " + (rep.waiting || 0)
+        + " waiting titles pre-filled in Unclassified · " + (rep.needs_you_count || 0)
+        + " need you · " + (rep.not_yet_asked || 0) + " not yet asked · run "
+        + String(rep._generated_at || "TBA").slice(0, 10)));
+    }
+    var panel = el("div", { class: "cr-proc" });
+
+    var needs = rep.needs_you || [];
+    var nh = el("section", { class: "cr-proc-sec", "aria-labelledby": "cr-proc-needs-h" });
+    nh.appendChild(el("h3", { id: "cr-proc-needs-h", class: "cr-proc-h" },
+      ["Needs you (" + needs.length + ")"]));
+    nh.appendChild(el("p", { class: "cr-proc-intro" }, [
+      "A title comes here only when no procedure settles it: two procedures disagree, the classifier "
+      + "is unsure, or saving it would join two issuers. Its proposal is already in Unclassified; "
+      + "save it there, change it, or tell a session the procedure that would have settled it."]));
+    if (!needs.length) {
+      nh.appendChild(el("p", { class: "cr-wl-note" }, ["Nothing needs you from the last run."]));
+    } else {
+      var list = el("ul", { class: "cr-proc-needs" });
+      needs.slice(0, state.procNeedsShown).forEach(function (n) {
+        var li = el("li", { class: "cr-proc-need" });
+        li.appendChild(el("div", { class: "cr-proc-raw" }, [n.raw_title]));
+        if (n.colleges && n.colleges.length) {
+          li.appendChild(el("div", { class: "cr-proc-meta" }, [n.colleges.join(", ")]));
+        }
+        var props = n.proposal ? [n.proposal] : (n.proposals || []);
+        props.forEach(function (pr) {
+          li.appendChild(el("div", { class: "cr-proc-prop" }, [
+            "Proposed: " + pr.title + (pr.issuer ? " \u00b7 issued by " + pr.issuer : "")
+            + (pr.procedure ? " \u00b7 by " + pr.procedure : "")]));
+        });
+        li.appendChild(el("div", { class: "cr-proc-why" }, ["Why it is here: " + n.why]));
+        list.appendChild(li);
+      });
+      nh.appendChild(list);
+      if (needs.length > state.procNeedsShown) {
+        var more = el("button", { type: "button", class: "cr-proc-word cr-proc-more" },
+          ["Show " + Math.min(PROC_NEEDS_PAGE, needs.length - state.procNeedsShown) + " more"]);
+        more.onclick = function () { state.procNeedsShown += PROC_NEEDS_PAGE; render(); };
+        nh.appendChild(more);
+      }
+    }
+    panel.appendChild(nh);
+
+    var procs = rep.procedures || [];
+    var ph = el("section", { class: "cr-proc-sec", "aria-labelledby": "cr-proc-list-h" });
+    ph.appendChild(el("h3", { id: "cr-proc-list-h", class: "cr-proc-h" },
+      ["Procedures in force (" + procs.length + ")"]));
+    ph.appendChild(el("p", { class: "cr-proc-intro" }, [
+      "Each night the rules below run in order, then the classifier reads every one of them and the "
+      + "skill and answers for the titles that remain. To add a procedure, write it in plain words for "
+      + "a session; it joins this list with your words and the date."]));
+    var ol = el("ol", { class: "cr-proc-list" });
+    procs.forEach(function (pr) {
+      var li = el("li", { class: "cr-proc-item" });
+      li.appendChild(el("h4", { class: "cr-proc-name" }, [pr.name]));
+      li.appendChild(el("p", { class: "cr-proc-rule" }, [pr.rule]));
+      li.appendChild(el("p", { class: "cr-proc-src" }, [procSourceLine(pr.source)]));
+      var kind = pr.kind === "rule" ? "Applied by rule" : pr.kind === "guidance"
+        ? "Read by the classifier" : "The classifier";
+      li.appendChild(el("p", { class: "cr-proc-tally" }, [kind + " \u00b7 settled " + (pr.settled || 0)
+        + " \u00b7 held " + (pr.held || 0)]));
+      var sample = pr.sample || [];
+      if (sample.length) {
+        var open = !!state.procOpen[pr.id];
+        var b = el("button", { type: "button", class: "cr-proc-word",
+          "aria-expanded": open ? "true" : "false" },
+          [open ? "Hide what it did" : "See what it did"]);
+        b.onclick = function () { state.procOpen[pr.id] = !state.procOpen[pr.id]; render(); };
+        li.appendChild(b);
+        if (open) {
+          var ul = el("ul", { class: "cr-proc-sample" });
+          sample.forEach(function (pair) {
+            ul.appendChild(el("li", null, [pair[0] + " \u2192 " + pair[1]]));
+          });
+          li.appendChild(ul);
+        }
+      }
+      ol.appendChild(li);
+    });
+    ph.appendChild(ol);
+    panel.appendChild(ph);
+    wrap.appendChild(panel);
+  }
+
+  function ensureProcCss() {
+    if (document.getElementById("cr-proc-css")) return;
+    var P = "#tab-credential-reference.cpl-tab-pane ";
+    var st = document.createElement("style");
+    st.id = "cr-proc-css";
+    st.textContent =
+      P + ".cr-proc{display:grid;gap:22px;padding:12px 4px;}" +
+      P + ".cr-proc-sec{display:grid;gap:10px;}" +
+      P + ".cr-proc-h{margin:0;font-size:1.05rem;color:var(--text-strong);}" +
+      P + ".cr-proc-intro{margin:0;font-size:.88rem;color:var(--text-body);max-width:var(--cpl-measure,none);}" +
+      P + ".cr-proc-needs," + P + ".cr-proc-list{margin:0;padding:0;list-style:none;display:grid;gap:10px;}" +
+      P + ".cr-proc-need," + P + ".cr-proc-item{background:var(--surface-opaque);border:1px solid var(--border);border-radius:6px;padding:12px 14px;display:grid;gap:6px;min-width:0;}" +
+      P + ".cr-proc-raw{color:var(--text-strong);font-weight:600;overflow-wrap:anywhere;}" +
+      P + ".cr-proc-meta," + P + ".cr-proc-src," + P + ".cr-proc-tally{margin:0;font-size:.82rem;color:var(--text-muted);overflow-wrap:anywhere;}" +
+      P + ".cr-proc-prop{font-size:.9rem;color:var(--text-strong);overflow-wrap:anywhere;}" +
+      P + ".cr-proc-why{font-size:.85rem;color:var(--text-body);border-left:3px solid var(--border-strong);padding-left:8px;}" +
+      P + ".cr-proc-name{margin:0;font-size:.95rem;color:var(--text-strong);}" +
+      P + ".cr-proc-rule{margin:0;font-size:.9rem;color:var(--text-body);}" +
+      P + ".cr-proc-tally{font-variant-numeric:tabular-nums;}" +
+      // Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall.
+      P + "button.cr-proc-word{all:unset;cursor:pointer;min-height:24px;justify-self:start;color:var(--accent-link);text-decoration:underline;text-underline-offset:3px;font-weight:600;font-size:.85rem;}" +
+      P + "button.cr-proc-word:focus-visible{outline:2px solid var(--accent-link);outline-offset:3px;border-radius:2px;}" +
+      P + ".cr-proc-sample{margin:0;padding-left:18px;font-size:.85rem;color:var(--text-body);display:grid;gap:4px;}" +
+      P + ".cr-proc-sample li{overflow-wrap:anywhere;}";
+    document.head.appendChild(st);
+  }
+
+  // The read-only overlays that arrive after the first paint (COS matches,
+  // the industry catalog, the procedures report) share ONE re-render.
   function loadOverlays() {
-    return Promise.all([fetchCosMatches({ quiet: true }), fetchIndustry({ quiet: true })])
+    return Promise.all([fetchCosMatches({ quiet: true }), fetchIndustry({ quiet: true }),
+      fetchProcReport({ quiet: true })])
       .then(function () { if (!state.worklistOpen) render(); });
   }
 

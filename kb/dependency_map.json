@@ -1030,7 +1030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4261,
+     "line": 4276,
      "tabs": [
       "credential-reference"
      ]
@@ -2842,7 +2842,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4281,
+     "line": 4296,
      "tabs": [
       "credential-reference"
      ]
@@ -5859,7 +5859,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5861,
+     "line": 6039,
      "tabs": [
       "credential-reference"
      ]
@@ -8408,7 +8408,18 @@
    "main_committers": []
   },
   "file:kb/cer_procedures_out/latest.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 5814,
+     "tabs": [
+      "credential-reference"
+     ]
+    }
+   ],
    "producers": [
     {
      "by": "workflow:cer-procedures.yml",
@@ -10599,7 +10610,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5457,
+     "line": 5472,
      "tabs": [
       "credential-reference"
      ]
@@ -10895,7 +10906,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 628,
+     "line": 629,
      "tabs": [
       "credential-reference"
      ]
@@ -11818,7 +11829,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 631,
+     "line": 632,
      "tabs": [
       "credential-reference"
      ]
@@ -12022,7 +12033,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 499,
+     "line": 500,
      "tabs": [
       "credential-reference"
      ]
@@ -12059,7 +12070,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5480,
+     "line": 5495,
      "tabs": [
       "credential-reference"
      ]
@@ -14799,7 +14810,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 488,
+     "line": 489,
      "tabs": [
       "credential-reference"
      ]
@@ -14835,7 +14846,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 477,
+     "line": 478,
      "tabs": [
       "credential-reference"
      ]
@@ -14887,7 +14898,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 625,
+     "line": 626,
      "tabs": [
       "credential-reference"
      ]
@@ -21449,7 +21460,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 286,
+     "line": 287,
      "tabs": [
       "credential-reference"
      ]
@@ -21459,7 +21470,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 344,
+     "line": 345,
      "tabs": [
       "credential-reference"
      ]
