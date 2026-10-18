@@ -1,8 +1,8 @@
 {
- "_readme": "Merced College's Coursedog catalog (S411, SkySotol). The catalog sits on catalog.mccd.edu and its scripts fetch the program list and a whole-catalog PDF from app.coursedog.com, which a read kept to the page's own domain never printed (run 39077970234, S409). Hartnell's catalog fetched its PDF address from app.coursedog.com's pdf-reports/catalogs/<catalogId> call; this read keeps that host's data calls so Merced's PDF address and catalogId print, and the reader requests nothing beyond what the pages' own scripts fetch.",
+ "_readme": "Merced College's Coursedog catalog (S411, SkySotol). The catalog sits on catalog.mccd.edu and its scripts call app.coursedog.com, which a read kept to the page's own domain never printed (run 39077970234, S409). The first read of this plan (run 39089955502) kept the vendor's calls: the program search names the school merced_colleague_ethos and catalogId QTM2GIg9kimBOfyC8Dbb, and neither page fetched a PDF while it loaded. Hartnell's catalog page fetched its PDF address from app.coursedog.com/api/v1/hartnell_colleague/pdf-reports/catalogs/<catalogId> (run 39077713662), so this read asks Merced's catalog for the same, once, robots.txt first.",
  "college": "Merced College",
  "outside_hosts": {
-  "app.coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu fetch the program list and the PDF address from it; the read keeps those responses and requests nothing of its own there."
+  "coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu call app.coursedog.com for its program list, and the vendor's public pdf-reports call answers with the catalog PDF's address, as Hartnell's did."
  },
  "questions": {
   "pdf_address": "The whole-catalog PDF's address and the catalogId the catalog's scripts fetch it by.",
@@ -19,15 +19,9 @@
  "pages": [
   {
    "answers": [
-    "pdf_address",
-    "program_codes"
+    "pdf_address"
    ],
-   "url": "https://catalog.mccd.edu/",
-   "network": true,
-   "network_hosts": [
-    "app.coursedog.com"
-   ],
-   "links": "pdf|download|print|programs"
+   "url": "https://app.coursedog.com/api/v1/merced_colleague_ethos/pdf-reports/catalogs/QTM2GIg9kimBOfyC8Dbb"
   },
   {
    "answers": [

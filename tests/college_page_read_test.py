@@ -202,7 +202,8 @@ for path in plans:
     name, plan = os.path.basename(path), json.load(open(path))
     for p in plan["pages"]:
         for h in p.get("network_hosts") or []:
-            check(h.lower() in {x.lower() for x in plan.get("outside_hosts") or {}},
+            from _program_source_census import registrable
+            check({h.lower(), registrable(h.lower())} & {x.lower() for x in plan.get("outside_hosts") or {}},
                   "%s: a network host (%s) is one the plan names with its reason" % (name, h))
 
 
