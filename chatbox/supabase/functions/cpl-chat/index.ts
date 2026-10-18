@@ -3523,9 +3523,14 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   let ctx = `\n\n--- Program Course Lists: ${college} (catalog data, as of ${PROGRAM_COURSES_AS_OF}) ---\n`;
   ctx += `These are the courses each program LISTS in the state's catalog data. Rules for using them:\n`;
   ctx += `- Name the program and its award, then list its courses by number and title.\n`;
-  // A complete record speaks for an Active program only (Sheet 95 card 2).
-  const checked = (g: any) => !!(recs && g.control && recs.get(String(g.control))
-    && (!g.status || g.status === "Active"));
+  // A complete record speaks for a live program only (Sheet 95 card 2): the
+  // statuses the harvest reads, kb/_program_requirements_college.py's
+  // STATUS_FILTER (Active, Active - Teachout Only, Approved). COCI marks most
+  // credit programs Approved: Mt. SAC's LVN-to-RN option is one, and an
+  // Active-only gate dropped its complete record in the A/B of 2026-10-18
+  // (run 39142613772, smoke 7l).
+  const liveProgram = (s: any) => !s || /^Active/.test(String(s)) || s === "Approved";
+  const checked = (g: any) => !!(recs && g.control && recs.get(String(g.control)) && liveProgram(g.status));
   if (shown.some(checked)) {
     ctx += `- A program marked CATALOG REQUIREMENTS carries the rules ${college}'s own catalog prints, read from that catalog and checked against the state's Program Course File. Say so when you quote it. For that program you may say a course is required, name each choice in the catalog's own words ("choose 1 course from List A"), and give the program total the catalog prints, naming the catalog and its year (for example "${college}'s 2026-2027 catalog"). Give only the totals printed there; never add units up yourself. Courses joined by "or" are one requirement, met by either.\n`;
     ctx += `- Every other program below only LISTS its courses: the data has no required/elective flag, so never call one of its courses required and never add up its units.\n`;

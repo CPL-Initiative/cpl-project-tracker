@@ -210,8 +210,20 @@ block("13. Sierra reads complete records only, by her own filter", () => {
   check("the filter is the machine-pass function's own three tests",
     /coverage', ''\) = 'true'/.test(VSQL) && /invented', ''\) = 'true'/.test(VSQL)
     && /arithmetic', ''\) in \('equal', 'unstated'\)/.test(VSQL));
-  check("a complete record speaks for an Active program only",
-    /const checked = \(g: any\) => !!\(recs && g\.control && recs\.get\(String\(g\.control\)\)\s*&& \(!g\.status \|\| g\.status === "Active"\)\);/.test(FN));
+  // The gate's statuses are the harvest's (STATUS_FILTER in kb/_program_requirements_college.py:
+  // Active, Active - Teachout Only, Approved). COCI marks most credit programs Approved; the first
+  // A/B of this change (run 39142613772, 2026-10-18) gated on Active alone and dropped Mt. SAC's
+  // complete LVN-to-RN record, so smoke 7l lost the catalog year.
+  check("a complete record speaks for a live program only",
+    /const checked = \(g: any\) => !!\(recs && g\.control && recs\.get\(String\(g\.control\)\) && liveProgram\(g\.status\)\);/.test(FN));
+  const gate = /const liveProgram = \(s: any\) => (.+);\n/.exec(FN);
+  const liveProgram = gate ? new Function("s", "return " + gate[1] + ";") : null;
+  check("the gate admits Approved, Active and Active - Teachout Only, a missing status, and refuses Inactive",
+    !!liveProgram && liveProgram("Approved") && liveProgram("Active") && liveProgram("Active - Teachout Only")
+    && liveProgram(undefined) && liveProgram(null) && !liveProgram("Inactive") && !liveProgram("Proposed"));
+  const HARVEST = fs.readFileSync("kb/_program_requirements_college.py", "utf8");
+  check("those are the statuses the harvest reads (STATUS_FILTER)",
+    /STATUS_FILTER = "or=\(status\.like\.Active\*,status\.eq\.Approved\)"/.test(HARVEST));
   check("the block says the record was read from the catalog and checked against the state's file",
     /read from the catalog and checked against the state's Program Course File/.test(FN));
   check("the handler passes the records into the block",
