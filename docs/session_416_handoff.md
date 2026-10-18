@@ -35,11 +35,11 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 
 ## In flight at sign-off (check each first)
 
-1. **#2226** (draft, branch `claude/practical-meitner-68kfwt`). Mark it ready, wait for `test` on its head, then
-   squash-merge it and dispatch `program-requirements-college.yml` on `main` with `step=display`. Read the
-   `Applied record` commit it files.
-2. Branches `claude/s414-slash-delta`, `claude/s415-taft-cal-getc` and `claude/s415-delta-degree-read` are merged
-   into #2226's branch.
+1. **#2226 merged** (`e9e78465`, 13:31Z) and its display apply was dispatched on `main` (`step=display`). Read its
+   applied record (`Applied record: the page's display build (run N)` on `main`); if it failed, dispatch it again.
+2. **The Pipeline tab's UI pass** (`cobi:pipeline`) belongs to the session Sam opened by hand
+   (`session_016aCF9Tqxm7khy34U1dQwca`, branch `claude/s415-ui-pipeline`). It merges its own PR; leave that view to it.
+3. CPLBrain#382 (Sheet 94, the session note) merged.
 
 ## Priority after that
 
@@ -68,10 +68,10 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 ## Not refreshed this checkpoint
 
 - The Pipeline tab: its phases did not move. `kb/README.md`, `README.md`: nothing they cover changed.
-- The UI pass: skipped for scope; `cobi:pipeline` stays due (`python3 scripts/ui_pass.py --next`).
+- The UI pass: `cobi:pipeline` is held by the hand-opened session (above).
 - No KB note crossed the bar.
 
 ## Subscriptions and check-ins
 
-S415 holds no PR subscription, check-in or artifact watch (remote sessions cannot watch an artifact). Subscribe to
-#2226 when you pick it up.
+S415 held no PR subscription, check-in or artifact watch (remote sessions cannot watch an artifact); nothing to
+let go.
