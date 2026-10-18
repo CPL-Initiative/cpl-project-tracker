@@ -10,61 +10,61 @@
     "other": 150000
   },
   "summary": {
-    "files": 1190,
-    "bytes": 12242666,
-    "over_budget": 9,
-    "handoff_max": 419,
+    "files": 1193,
+    "bytes": 12269302,
+    "over_budget": 8,
+    "handoff_max": 420,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60672,
+    "always_loaded_bytes": 60004,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60672,
+        "bytes": 60004,
         "over": 1
       },
       "other": {
         "files": 122,
-        "bytes": 3775742,
+        "bytes": 3798776,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11566,
+        "bytes": 10360,
         "over": 0
       },
       "lessons": {
-        "files": 82,
-        "bytes": 2278292,
+        "files": 83,
+        "bytes": 2269423,
         "over": 1
       },
       "kb_note": {
-        "files": 555,
-        "bytes": 2741378,
+        "files": 556,
+        "bytes": 2745842,
         "over": 0
       },
       "roadmap_lane": {
         "files": 39,
-        "bytes": 378844,
-        "over": 4
+        "bytes": 379921,
+        "over": 3
       },
       "handoff": {
-        "files": 390,
-        "bytes": 2996172,
+        "files": 391,
+        "bytes": 3004976,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 8,
       "house_voice": 23,
       "kb_note_dialect": 1,
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22689,
-      "bytes": 3099145379,
-      "heavy_bytes": 2025512228,
+      "files": 22696,
+      "bytes": 3099242302,
+      "heavy_bytes": 2025530273,
       "heavy_share": 0.654,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60672,
+        "bytes": 60004,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 672,
-        "ratio": 1.01
+        "over_by": 4,
+        "ratio": 1.0
       },
-      "message": "60,672 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,004 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -431,19 +431,6 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20713,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 713,
-        "ratio": 1.04
-      },
-      "message": "20,713 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
         "bytes": 21537,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -469,13 +456,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 730016,
+        "bytes": 731838,
         "limit": 150000,
         "lane": "other",
-        "over_by": 580016,
-        "ratio": 4.87
+        "over_by": 581838,
+        "ratio": 4.88
       },
-      "message": "730,016 B is 4.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "731,838 B is 4.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -543,20 +530,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1056334548,
+        "bytes": 1056341299,
         "kind": "dir"
       },
-      "message": "directory totals 1,056,334,548 B inside the vault"
+      "message": "directory totals 1,056,341,299 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 135497652,
+        "bytes": 135508946,
         "kind": "dir"
       },
-      "message": "directory totals 135,497,652 B inside the vault"
+      "message": "directory totals 135,508,946 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
