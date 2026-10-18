@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-10-17T19:40:02Z",
+ "started": "2026-10-18T09:15:56Z",
  "pdf": {
   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
   "access": "ok",
@@ -27,6 +27,7 @@
      65
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.846,
@@ -39,6 +40,7 @@
      67
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -51,6 +53,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -64,6 +67,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
@@ -76,6 +80,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -87,6 +92,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -98,6 +104,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -109,6 +116,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -121,6 +129,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -132,6 +141,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.75,
@@ -143,6 +153,7 @@
      88
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -154,6 +165,7 @@
      132
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -165,6 +177,7 @@
      66
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -176,6 +189,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -187,6 +201,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -199,6 +214,7 @@
      87
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.824,
@@ -210,6 +226,7 @@
      75
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.533,
@@ -222,6 +239,7 @@
      118
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.917,
@@ -233,6 +251,7 @@
      116
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -244,6 +263,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -255,6 +275,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -267,6 +288,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.701,
@@ -278,6 +300,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
@@ -289,6 +312,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -300,6 +324,7 @@
      91
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -312,6 +337,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -323,6 +349,7 @@
      70
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -334,6 +361,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -346,6 +374,7 @@
      66
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -358,6 +387,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -370,6 +400,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -381,6 +412,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -394,6 +426,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -405,6 +438,7 @@
      112
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -416,6 +450,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -430,6 +465,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -442,6 +478,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -453,6 +490,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -466,6 +504,7 @@
      99
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -477,6 +516,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -488,6 +528,7 @@
      70
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.607,
@@ -499,6 +540,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -510,6 +552,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -521,6 +564,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -532,6 +576,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -543,6 +588,7 @@
      66
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.824,
@@ -554,6 +600,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -565,6 +612,7 @@
      66
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -576,6 +624,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -588,6 +637,7 @@
      66
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -600,6 +650,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.537,
@@ -611,6 +662,7 @@
      113
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -623,6 +675,7 @@
      129
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -634,6 +687,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -646,6 +700,7 @@
      123
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.765,
@@ -659,6 +714,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -670,6 +726,7 @@
      88
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.917,
@@ -681,6 +738,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -695,6 +753,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.97,
@@ -706,6 +765,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.655,
@@ -718,6 +778,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.869,
@@ -729,6 +790,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -740,6 +802,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -751,6 +814,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.846,
@@ -762,6 +826,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.885,
@@ -774,6 +839,7 @@
      228
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -786,6 +852,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.933,
@@ -797,6 +864,7 @@
      114
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -808,6 +876,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -820,6 +889,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -831,6 +901,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -842,6 +913,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -854,6 +926,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -865,6 +938,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -878,6 +952,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -891,6 +966,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -902,6 +978,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -913,6 +990,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -924,6 +1002,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -936,6 +1015,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -947,6 +1027,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -958,6 +1039,7 @@
      88
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -969,6 +1051,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
@@ -981,6 +1064,7 @@
      87
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.824,
@@ -992,6 +1076,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1003,6 +1088,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1014,6 +1100,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1025,6 +1112,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1036,6 +1124,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1047,6 +1136,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1058,6 +1148,7 @@
      65
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.846,
@@ -1069,6 +1160,7 @@
      95
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.818,
@@ -1080,6 +1172,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -1092,6 +1185,7 @@
      66
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1105,6 +1199,7 @@
      73
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1119,6 +1214,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1130,6 +1226,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1141,6 +1238,7 @@
      88
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.917,
@@ -1152,6 +1250,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -1163,6 +1262,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1174,6 +1274,7 @@
      70
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.621,
@@ -1185,6 +1286,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1196,6 +1298,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1207,6 +1310,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1218,6 +1322,7 @@
      65
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1231,6 +1336,7 @@
      279
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1244,6 +1350,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1255,6 +1362,7 @@
      270
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1268,6 +1376,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1279,6 +1388,7 @@
      271
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1291,6 +1401,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1303,6 +1414,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1314,6 +1426,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
@@ -1328,6 +1441,7 @@
      109
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1339,6 +1453,7 @@
      71
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.8,
@@ -1352,6 +1467,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.846,
@@ -1365,6 +1481,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.737,
@@ -1377,6 +1494,7 @@
      118
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1391,6 +1509,7 @@
      278
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.564,
@@ -1405,6 +1524,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.851,
@@ -1417,6 +1537,7 @@
      117
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.96,
@@ -1428,6 +1549,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1439,6 +1561,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.545,
@@ -1451,6 +1574,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1463,6 +1587,7 @@
      118
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1474,6 +1599,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1487,6 +1613,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1499,6 +1626,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.871,
@@ -1510,6 +1638,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1522,6 +1651,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1536,6 +1666,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.971,
@@ -1550,6 +1681,7 @@
      266
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.909,
@@ -1561,6 +1693,7 @@
      69
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1572,6 +1705,7 @@
      116
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1586,6 +1720,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.75,
@@ -1597,6 +1732,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -1608,6 +1744,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1619,6 +1756,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1630,6 +1768,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1641,6 +1780,7 @@
      73
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -1653,6 +1793,7 @@
      117
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.818,
@@ -1667,6 +1808,7 @@
      265
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.708,
@@ -1679,6 +1821,7 @@
      263
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1691,6 +1834,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1703,6 +1847,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1714,6 +1859,7 @@
      270
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1725,6 +1871,7 @@
      270
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1736,6 +1883,7 @@
      132
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1748,6 +1896,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1761,6 +1910,7 @@
      102
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1772,6 +1922,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1785,6 +1936,7 @@
      102
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1796,6 +1948,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1809,6 +1962,7 @@
      102
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1820,6 +1974,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1834,6 +1989,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1848,6 +2004,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1862,6 +2019,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1875,6 +2033,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1888,6 +2047,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1900,6 +2060,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1911,6 +2072,7 @@
      77
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1923,6 +2085,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1935,6 +2098,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1947,6 +2111,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1958,6 +2123,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1969,6 +2135,7 @@
      77
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1981,6 +2148,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1992,6 +2160,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -2003,6 +2172,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -2014,6 +2184,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.8,
@@ -2026,6 +2197,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.727,
@@ -2038,6 +2210,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2049,6 +2222,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2060,6 +2234,7 @@
      98
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2074,6 +2249,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2088,6 +2264,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2100,6 +2277,7 @@
      74
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2112,6 +2290,7 @@
      74
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2123,6 +2302,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2134,6 +2314,7 @@
      74
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2146,6 +2327,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -2159,6 +2341,7 @@
      73
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2170,6 +2353,7 @@
      75
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.923,
@@ -2182,6 +2366,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.769,
@@ -2193,6 +2378,7 @@
      270
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2207,6 +2393,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.958,
@@ -2219,6 +2406,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.906,
@@ -2232,6 +2420,7 @@
      78
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2243,6 +2432,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2254,6 +2444,7 @@
      88
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.96,
@@ -2265,6 +2456,7 @@
      88
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.96,
@@ -2276,6 +2468,7 @@
      114
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2290,6 +2483,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2301,6 +2495,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2312,6 +2507,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2323,6 +2519,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2334,6 +2531,7 @@
      95
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2345,6 +2543,7 @@
      107
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2358,6 +2557,7 @@
      99
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2370,6 +2570,7 @@
      99
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2381,6 +2582,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2392,6 +2594,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2403,6 +2606,7 @@
      67
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.909,
@@ -2414,6 +2618,7 @@
      92
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
@@ -2425,6 +2630,7 @@
      92
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -2436,6 +2642,7 @@
      67
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.909,
@@ -2447,6 +2654,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2458,6 +2666,7 @@
      111
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2469,6 +2678,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2480,6 +2690,7 @@
      111
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2491,6 +2702,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2502,6 +2714,7 @@
      271
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2513,6 +2726,7 @@
      112
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2524,6 +2738,7 @@
      73
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
@@ -2538,6 +2753,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2550,6 +2766,7 @@
      102
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2561,6 +2778,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2575,6 +2793,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2589,6 +2808,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2603,6 +2823,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2617,6 +2838,7 @@
      105
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.765,
@@ -2631,6 +2853,7 @@
      105
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -2644,6 +2867,7 @@
      104
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.688,
@@ -2658,6 +2882,7 @@
      105
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.938,
@@ -2670,6 +2895,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -2682,6 +2908,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -2694,6 +2921,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2706,6 +2934,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2717,6 +2946,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2730,6 +2960,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.931,
@@ -2741,6 +2972,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2752,6 +2984,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2763,6 +2996,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2776,6 +3010,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2787,6 +3022,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2798,6 +3034,7 @@
      99
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2810,6 +3047,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2823,6 +3061,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2834,6 +3073,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2845,6 +3085,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2856,6 +3097,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
@@ -2867,6 +3109,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2878,6 +3121,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2891,6 +3135,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2903,6 +3148,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2915,6 +3161,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2927,6 +3174,7 @@
      137
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2938,6 +3186,7 @@
      107
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2949,6 +3198,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2961,6 +3211,7 @@
      272
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -2972,6 +3223,7 @@
      169
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.833,
@@ -2983,6 +3235,7 @@
      169
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.833,
@@ -2994,6 +3247,7 @@
      169
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -3005,6 +3259,7 @@
      83
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.6,
@@ -3017,6 +3272,7 @@
      265
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.8,
@@ -3028,6 +3284,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -3040,6 +3297,7 @@
      266
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.714,
@@ -3049,7 +3307,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 160.5,
+ "seconds": 123.6,
  "found": 258,
  "by_method": {
   "no_closed_list": 50,
@@ -3504,2591 +3762,10 @@
   "1.0": 180
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 258,
-  "list": [
-   {
-    "control_number": "02547",
-    "title": "Architectural Drafting & Design",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02548",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02549",
-    "title": "Business Administration",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02550",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02551",
-    "title": "Financial Planning & Investment",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02552",
-    "title": "Management",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02553",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02555",
-    "title": "Real Estate Broker",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02556",
-    "title": "General Office",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02557",
-    "title": "Mass Communications",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02569",
-    "title": "Welding",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02570",
-    "title": "Addiction Studies Counseling",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02571",
-    "title": "Visual Arts: Art History",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02572",
-    "title": "Music",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02575",
-    "title": "Photography",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02580",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02587",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02588",
-    "title": "Speech/Communication",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02598",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02599",
-    "title": "Child Development: Teacher",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02602",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02603",
-    "title": "Social Science",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 0.701,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02611",
-    "title": "Machinist",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02612",
-    "title": "Film, Television and Media Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02615",
-    "title": "Flight Attendant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09482",
-    "title": "Electronics Technology Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10055",
-    "title": "Choreographic Studies & Dance Technique",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10057",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10412",
-    "title": "Animation, Visual Effects, and Game Design",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11143",
-    "title": "General Business",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11144",
-    "title": "Entrepreneurship/Small Business",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11145",
-    "title": "International Business",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11151",
-    "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11153",
-    "title": "Receptionist/Office Clerk",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11155",
-    "title": "Mass Communications",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11159",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11161",
-    "title": "Computer Programmer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11162",
-    "title": "Computer Software Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11163",
-    "title": "Computer Support Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11175",
-    "title": "Ceramics",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11177",
-    "title": "Choreographic Studies & Dance Technique",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "coverage": 0.607,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11189",
-    "title": "Child Development: Infant/Toddler",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11190",
-    "title": "Child Development: School-Age Care",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11191",
-    "title": "Child Development: Master Teacher",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11193",
-    "title": "Dietetic Services Supervisor",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12498",
-    "title": "Two-Dimensional Art",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12499",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12500",
-    "title": "Three-Dimensional Art",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12501",
-    "title": "Photography",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12502",
-    "title": "Entertainment Art",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12503",
-    "title": "Interdisciplinary Humanities: Creativity",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 0.537,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12570",
-    "title": "Tax Preparer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12571",
-    "title": "Computerized Accounting Specialist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12574",
-    "title": "Fitness Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15584",
-    "title": "Health Science",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "coverage": 0.765,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16972",
-    "title": "Insurance Specialist: Property & Casualty",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17645",
-    "title": "Web Development",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17760",
-    "title": "Real Estate Appraisal",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18638",
-    "title": "Liberal Arts: Arts and Humanities Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
-    "coverage": 0.97,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18639",
-    "title": "Liberal Arts: Science and Mathematics Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
-    "coverage": 0.655,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18640",
-    "title": "Liberal Arts: Social and Behavioral Sciences Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 0.869,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18660",
-    "title": "Verdugo Fire Academy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18661",
-    "title": "Verdugo Recruit Fire Academy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19110",
-    "title": "Dance Teaching",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19111",
-    "title": "Dance Teaching",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 0.885,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19269",
-    "title": "Basic Medical Billing and Coding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=227",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19365",
-    "title": "Insurance Professional II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19366",
-    "title": "Unix-Linux System Administrator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19546",
-    "title": "Medical Front Office",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19555",
-    "title": "General Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19558",
-    "title": "Financial Planning & Investment II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19559",
-    "title": "Management II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19560",
-    "title": "Entrepreneurship/Small Business II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19561",
-    "title": "International Business II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19562",
-    "title": "Administrative Assistant",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19563",
-    "title": "Insurance Specialist: Property & Casualty",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19564",
-    "title": "Real Estate Appraisal",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19565",
-    "title": "Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19566",
-    "title": "Marketing II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19567",
-    "title": "General Office",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19569",
-    "title": "Engineering Technology - CAD",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19570",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19571",
-    "title": "Machinist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19573",
-    "title": "Registered Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19574",
-    "title": "Child Development: Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19575",
-    "title": "Child Development: Master Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19576",
-    "title": "Child Development: School-Age Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19577",
-    "title": "Child Development: Site Supervisor",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19578",
-    "title": "Child Development: Infant/Toddler",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19581",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21299",
-    "title": "Architectural Drafting & Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21302",
-    "title": "Cinematography and Editing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=95",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21303",
-    "title": "Mass Communications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21304",
-    "title": "Animation, Visual Effects, and Game Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21305",
-    "title": "Computer Information Systems",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21306",
-    "title": "Computer Science",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21307",
-    "title": "Computer Software Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21308",
-    "title": "Web Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21314",
-    "title": "Ceramics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21315",
-    "title": "Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21317",
-    "title": "Choreographic Studies & Dance Technique",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "coverage": 0.621,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21318",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21319",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21320",
-    "title": "Dietetic Services Supervisor",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21323",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24010",
-    "title": "Adult Basic Education",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=277",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24011",
-    "title": "Account Clerk I",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24042",
-    "title": "Beginning ESL",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24161",
-    "title": "Account Clerk II",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24327",
-    "title": "General Office Clerk III",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24356",
-    "title": "General Office Clerk I",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24377",
-    "title": "General Office Clerk II",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24381",
-    "title": "Dental Administrative Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30031",
-    "title": "Human Resources Assistant II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30032",
-    "title": "Dental Front Office / Billing and Coding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30561",
-    "title": "Insurance Specialist: Life and Health Associate's Degree Major",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30744",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
-    "coverage": 0.737,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30814",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31597",
-    "title": "Adult High School Diploma",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=275",
-    "coverage": 0.564,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31928",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
-    "coverage": 0.851,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32168",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32178",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32199",
-    "title": "PHYSICS",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32234",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32267",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32394",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32420",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32462",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "coverage": 0.871,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32463",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32605",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32607",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-    "coverage": 0.971,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32707",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32738",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33294",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33295",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33598",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33665",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33911",
-    "title": "Medical Coding Specialist",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33934",
-    "title": "Medical Coding Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35029",
-    "title": "Digital Content Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35283",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35473",
-    "title": "Theatre Arts: Acting",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
-    "coverage": 0.708,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35585",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35597",
-    "title": "Administrative Medical Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35628",
-    "title": "Administrative Medical Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36102",
-    "title": "Advanced ESL",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36107",
-    "title": "Intermediate ESL",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36155",
-    "title": "Addiction Studies Counseling",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36270",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36416",
-    "title": "Civil Engineering",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36419",
-    "title": "Engineering Technology - CAD",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36424",
-    "title": "Mechanical/Aerospace/Manufacturing Engineering",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36480",
-    "title": "Medical Front Office",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36536",
-    "title": "Electrical Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36580",
-    "title": "Business Information Worker (BIW)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36596",
-    "title": "IT Technician I: Computer Retail Sales and Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36598",
-    "title": "IT Technician II: Help Desk User Support",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36599",
-    "title": "IT Technician II: Help Desk User Support",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36600",
-    "title": "IT Technician III",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36601",
-    "title": "IT Technician III",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36667",
-    "title": "Italian Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36710",
-    "title": "Armenian Language",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36711",
-    "title": "French Language",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36712",
-    "title": "Italian Language",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36713",
-    "title": "Japanese Language",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36714",
-    "title": "Spanish Language",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36717",
-    "title": "Armenian Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36720",
-    "title": "French Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36722",
-    "title": "Physical Science - Physics",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36723",
-    "title": "Physical Science - Earth Science",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36724",
-    "title": "Physical Science - Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36725",
-    "title": "Physical Science - Astronomy",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36726",
-    "title": "Japanese Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36727",
-    "title": "Spanish Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36728",
-    "title": "Creative Writing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37070",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37071",
-    "title": "Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37854",
-    "title": "Computer Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37855",
-    "title": "Civil Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37856",
-    "title": "Electrical Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37857",
-    "title": "Mechanical Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37952",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37960",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38144",
-    "title": "English: Creative Writing",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38717",
-    "title": "Social Justice: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "coverage": 0.769,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38973",
-    "title": "Customer Service",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39285",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39289",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "coverage": 0.906,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39406",
-    "title": "Foreign Languages",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39905",
-    "title": "Fitness Specialist",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39910",
-    "title": "Sports Coaching",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39912",
-    "title": "Sports Coaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40808",
-    "title": "Transitional Kindergarten",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40814",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40846",
-    "title": "Administrative Medical Assisting",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40847",
-    "title": "Certified Nursing Aide",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40863",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41379",
-    "title": "Cloud Computing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41573",
-    "title": "Information Technology Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41650",
-    "title": "Computer Networking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41651",
-    "title": "Cybersecurity Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41729",
-    "title": "Healthcare Administration",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41730",
-    "title": "Healthcare Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41767",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41768",
-    "title": "Biotechnology Research Lab Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41775",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41776",
-    "title": "Biotechnology Research Lab Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41825",
-    "title": "Photographic Lighting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41826",
-    "title": "Digital Photography Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41827",
-    "title": "Digital Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41828",
-    "title": "Drone Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42126",
-    "title": "Digital Photography",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42263",
-    "title": "Google Workspace",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42378",
-    "title": "Traditional Photography",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42738",
-    "title": "Digital Content Specialist",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43038",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44351",
-    "title": "Intermediate ESL: Academic & Career Preparation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44359",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44360",
-    "title": "Advanced ESL: Business, Entrepreneurship & Management Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44484",
-    "title": "Advanced ESL: Health, Wellness & Public Safety Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44485",
-    "title": "Advanced ESL: Industrial Technology & Aviation Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44486",
-    "title": "Advanced ESL: Language & Communication Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "coverage": 0.765,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44487",
-    "title": "Advanced ESL: People, Power & Perspective Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44488",
-    "title": "Advanced ESL: STEM Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "coverage": 0.688,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44489",
-    "title": "Advanced ESL: Visual & Performing Arts Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44568",
-    "title": "Documentary Film Production",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44569",
-    "title": "Documentary Film Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44570",
-    "title": "Film Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44571",
-    "title": "Film Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44572",
-    "title": "Grip and Lighting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44640",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "coverage": 0.931,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44773",
-    "title": "Music History",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44774",
-    "title": "Music Theory",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44775",
-    "title": "Piano",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44951",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45057",
-    "title": "Social Media Marketing I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45101",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45108",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45150",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45211",
-    "title": "Voice",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45212",
-    "title": "World Music",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45393",
-    "title": "Social Media Marketing II",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45394",
-    "title": "Marketing I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45395",
-    "title": "Management I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45396",
-    "title": "Human Resources Assistant I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45397",
-    "title": "Financial Planning & Investment I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45399",
-    "title": "Entrepreneurship/Small Business I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45596",
-    "title": "Interior Architecture & Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45681",
-    "title": "Insurance Professional I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45682",
-    "title": "International Business I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45854",
-    "title": "Microsoft Office 365 Fundamentals",
-    "award": "Noncredit program",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45996",
-    "title": "CNC & CAM 3 Axis Mill",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46004",
-    "title": "CNC & CAM Lathe Y-Axis",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46050",
-    "title": "CNC & CAM Mill Advanced",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46051",
-    "title": "EnTech Audio",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46052",
-    "title": "EnTech Lighting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=264",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46053",
-    "title": "Film and Television Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46054",
-    "title": "EnTech General",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=265",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   }
-  ]
+  "against": "kb/program_requirements_college/glendale_community",
+  "kept": 258,
+  "programs": 0,
+  "list": []
  },
- "run": "39063367252"
+ "run": "39114562289"
 }

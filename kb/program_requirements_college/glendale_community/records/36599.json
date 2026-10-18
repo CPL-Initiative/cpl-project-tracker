@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 10,
    "listed": 10,
-   "share": 0.9,
-   "missing": [
-    "CSIS194"
-   ],
-   "unexplained": [
-    "CSIS194"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CS/IS194"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -229,5 +223,6 @@
    "The Program Learning Outcome is printed as a single sentence after the lead-in 'Upon completion of this program, students will be able to'; recorded as one outcome."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }

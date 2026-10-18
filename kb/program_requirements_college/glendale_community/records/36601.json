@@ -46,44 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "CSIS187",
-    "CSIS194"
-   ],
-   "unexplained": [
-    "CSIS187",
-    "CSIS194"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "CS/IS187",
-    "CS/IS194"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    42.0,
+    42.0
    ],
    "stated": [
     42.0,
     42.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -107,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -258,5 +247,6 @@
    "'IT whole-sale/retail' was hyphenated across a line break and read as 'wholesale'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }

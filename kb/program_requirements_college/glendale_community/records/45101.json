@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 11,
    "listed": 11,
-   "share": 0.909,
-   "missing": [
-    "CSIS211"
-   ],
-   "unexplained": [
-    "CSIS211"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CS/IS211"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -248,5 +242,6 @@
    "Career taken from 'prepare students for a career in Data Analytics.'"
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }

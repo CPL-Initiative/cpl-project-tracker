@@ -1,0 +1,2605 @@
+{
+ "college": "Glendale Community College",
+ "reread_run": "39115030331",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39114562289",
+ "at": "2026-10-18T09:22:39Z",
+ "posted": 14,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "02550",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02570",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02587",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12571",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15584",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19269",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19562",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24010",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30032",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30561",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31597",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32707",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32738",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35473",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35585",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36155",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41825",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44773",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44774",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45057",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45393",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45394",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45395",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45396",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45397",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45399",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45681",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45682",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45854",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46004",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46050",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46051",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46052",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46053",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46054",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 14,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "11159",
+  "11161",
+  "11162",
+  "21306",
+  "21307",
+  "36598",
+  "36599",
+  "36600",
+  "36601",
+  "37070",
+  "37071",
+  "37854",
+  "44640",
+  "45101"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 9,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Glendale Community College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39114562289;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 16,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 165",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 166",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 211",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 212",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 280",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select twenty units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 135",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 139",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 174",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 103E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 104E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 20,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "students will prepare a software project to implement a single scientific, mathematical, business, or technical function."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 37,
+      "min": 37
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "COMPUTER SCIENCE AS DEGREE OR CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 37,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Computer Science",
+   "control_number": "11159"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 5,
+    "placed": 4,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CS/IS 135",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select thirteen units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BUSAD 110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 139",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENTRE 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENTRE 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 13,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "hardware/software technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "the student will write a computer program using either C/C++, Java, or Visual Basic; and demonstrate the ability to independently create, save, modify and print a document using a word processing program and appropriate assistive technology."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Computer Programmer",
+   "control_number": "11161"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 7,
+    "placed": 6,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CS/IS 135",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select thirteen units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 139",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENTRE 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENTRE 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 13,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "hardware/software technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "write a computer program using either C/C++, Java, or Visual Basic; and demonstrate the ability to independently create, save, modify and print a document using a word processing program and appropriate assistive technology."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Computer Software Technician",
+   "control_number": "11162"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 17,
+    "placed": 16,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 165",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 166",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 211",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 212",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 280",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select twenty units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 135",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 139",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 174",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 103E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 104E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 20,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "students will prepare a software project to implement a single scientific, mathematical, business, or technical function."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 37,
+      "min": 37
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "COMPUTER SCIENCE AS DEGREE OR CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 37,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Computer Science",
+   "control_number": "21306"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 6,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CS/IS 135",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select thirteen units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 139",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENTRE 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENTRE 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 13,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "hardware/software technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "write a computer program using either C/C++, Java, or Visual Basic; and demonstrate the ability to independently create, save, modify and print a document using a word processing program and appropriate assistive technology."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "COMPUTER SOFTWARE TECHNICIAN AS DEGREE OR CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Computer Software Technician",
+   "control_number": "21307"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 9,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 204",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CABOT 260",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 186",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Computer User Support Specialists",
+      "Computer Network Support Specialists",
+      "IT retail supervisory positions"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "provide technical assistance to computer users and Support Specialists to analyze, test, troubleshoot, and evaluate existing network systems and Internet systems or a segment of a network system, and perform network maintenance to ensure networks operate correctly with minimal interruption."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "IT TECHNICIAN II: HELP DESK USER SUPPORT AS DEGREE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "IT Technician II: Help Desk User Support",
+   "control_number": "36598"
+  },
+  {
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "checks": {
+    "listed": 10,
+    "placed": 9,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 32,
+       "min": 32
+      },
+      "courses": [
+       {
+        "code": "BUSAD 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 204",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CABOT 260",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 186",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Computer User Support Specialists",
+      "Computer Network Support Specialists",
+      "IT retail supervisory positions"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "provide technical assistance to computer users and Support Specialists to analyze, test, troubleshoot, and evaluate existing network systems and Internet systems or a segment of a network system, and perform network maintenance to ensure networks operate correctly with minimal interruption."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "IT TECHNICIAN II: HELP DESK USER SUPPORT",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "IT Technician II: Help Desk User Support",
+   "control_number": "36599"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 11,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 204",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CABOT 260",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 174",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 186",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 187",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 193",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Computer Systems Analysts",
+      "Information Security Analysts",
+      "Network and Computer Systems Administrators",
+      "IT wholesale/retail supervisory positions"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "demonstrate system and network administration concepts; and understand and demonstrate Cyber Security concepts and their integration into Business Operations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 42
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "IT TECHNICIAN III AS DEGREE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 42,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "IT Technician III",
+   "control_number": "36600"
+  },
+  {
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "checks": {
+    "listed": 13,
+    "placed": 11,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 204",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CABOT 260",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 174",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 186",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 187",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 193",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Computer Systems Analysts",
+      "Information Security Analysts",
+      "Network and Computer Systems Administrators",
+      "IT wholesale/retail supervisory positions"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "demonstrate system and network administration concepts; and understand and demonstrate Cyber Security concepts and their integration into Business Operations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 42
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "IT TECHNICIAN III AS DEGREE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 42,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "IT Technician III",
+   "control_number": "36601"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 9,
+    "placed": 7,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 204",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select two course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 183",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 185",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 193",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "network and computer systems administrators",
+      "computer support specialists",
+      "data base administrators",
+      "computer and network security",
+      "digital forensics",
+      "data base management"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Students will demonstrate the proper server operation procedures, maintenance procedures and managing risk associated with real world networks.",
+      "Students will demonstrate installing, configuring and maintaining computer and mobile devices, including diagnosing, resolving and documenting common hardware and software.",
+      "Students will demonstrate and understanding of ethical concern associated with information technology including access, reliability, legal, ethical, and accuracy; identify types of computer crime; select, access, and use appropriate sources."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 22,
+      "min": 22
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "INFORMATION TECHNOLOGY AS DEGREE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 22,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Information Technology",
+   "control_number": "37070"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 7,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 204",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select two course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 183",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS/IS 185",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 193",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "network and computer systems administrators",
+      "computer support specialists",
+      "data base administrators",
+      "computer and network security",
+      "digital forensics",
+      "data base management"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Students will demonstrate the proper server operation procedures, maintenance procedures and managing risk associated with real world networks.",
+      "Students will demonstrate installing, configuring and maintaining computer and mobile devices, including diagnosing, resolving and documenting common hardware and software.",
+      "Students will demonstrate and understanding of ethical concern associated with information technology including access, reliability, legal, ethical, and accuracy; identify types of computer crime; select, access, and use appropriate sources."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 22,
+      "min": 22
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "INFORMATION TECHNOLOGY AS DEGREE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 22,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Information Technology",
+   "control_number": "37071"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 9,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 103E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 104E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHY 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of twelve units from the following courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGR 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 240",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 211",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "computer engineering"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "identify, formulate, and solve engineering problems by applying principles of engineering, science, and mathematics",
+      "apply the engineering design process to create engineering solutions that meet specified needs that integrates consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors",
+      "communicate technical information effectively with a range of audiences",
+      "function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet technical objectives",
+      "transfer to a bachelor’s degree program in order to finish preparing for a career in a specific discipline of computer engineering"
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 37,
+      "min": 37
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "COMPUTER ENGINEERING",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 37,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Computer Engineering",
+   "control_number": "37854"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 29,
+    "placed": 28,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 103E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 103E+",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "MATH 103EH",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 104E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 104EH",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 107H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 135",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 151",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS/IS 211",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 270",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "GEOG 155",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 200",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 200",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LIB 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILO 116",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 108H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 105",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 105H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON 102H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "data scientists"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze and clean data in databases.",
+      "Interpret and evaluate data trends, qualitative research, or patt erns in complex data sets using statistical techniques, analytic methods, and tools.",
+      "Create and monitor reports to preserve data quality, identify critical issues, ethical issue , trends in diversity and social justice, and potential solutions.",
+      "Acquire knowledge of how to apply Python and/or Java, dashboards, and other tools to data science in the areas of analysis and communicating data representation.",
+      "Obtain large data sets, process them, and analyze them utilizing techniques for matrix manipulation, data exploration, patt ern identiﬁ cation, and inferences."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "DATA SCIENCE AS DEGREE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Data Science",
+   "control_number": "44640"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 10,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 234",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 240",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 270",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select two courses from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "MATH 112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 194",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 211",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS/IS 241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Data Analytics"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use Python programming language and relevant Python libraries to analyze data.",
+      "Apply statistical methods and techniques to analyze large data sets.",
+      "Design and implement database systems.",
+      "Implement and use cloud based systems."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "DATA ANALYTICS CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=99",
+   "catalog_year": "2025-2026",
+   "extracted_run": 39063367252,
+   "program_title": "Data Analytics",
+   "control_number": "45101"
+  }
+ ]
+}

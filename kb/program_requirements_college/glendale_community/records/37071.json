@@ -46,49 +46,39 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "CSIS185",
-    "CSIS194"
-   ],
-   "unexplained": [
-    "CSIS185",
-    "CSIS194"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "CS/IS180",
-    "CS/IS183",
-    "CS/IS185",
-    "CS/IS194"
+    "CS/IS183"
    ],
    "flagged": [
     "CS/IS180",
     "CS/IS183"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    22.0,
+    22.0
    ],
    "stated": [
     22.0,
     22.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -273,5 +263,6 @@
    "The text states students 'choose any additional courses to total a minimum of 22 units'; no separate elective units are printed, so open_elective_units is null."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }
