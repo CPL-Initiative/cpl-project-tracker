@@ -108,7 +108,7 @@ function restDb(opts) {
     const items = select.split(",");
     const auth = h.Authorization || "";
     const a = { url: url, select: items, filters: {}, range: h.Range, prefer: h.Prefer, auth: auth, anon: auth === "Bearer " + ANON };
-    qp.forEach(function (v, k) { if (k !== "select" && k !== "order") a.filters[k] = v; });
+    qp.forEach(function (v, k) { if (k !== "select" && k !== "order" && k !== "limit") a.filters[k] = v; });
     db.asked.push(a);
     if (opts.fail) { const st = opts.fail(a); if (st) return res(st, { message: "failed" }); }
     if (items.indexOf("requirements_fp") >= 0 && a.anon) return res(401, { code: "42501", message: "permission denied for function requirements_fp" });
@@ -117,6 +117,8 @@ function restDb(opts) {
         const v = a.filters[k];
         if (/^eq\./.test(v)) return String(r[k]) === v.slice(3);
         if (/^is\.true$/.test(v)) return r[k] === true;
+        if (/^is\.null$/.test(v)) return r[k] == null;
+        if (/^not\.is\.null$/.test(v)) return r[k] != null;
         if (/^in\./.test(v)) return splitTop(v.slice(4, -1)).indexOf(String(r[k])) >= 0;
         throw new Error("the stand-in does not know the filter " + k + "=" + v);
       });
@@ -126,7 +128,8 @@ function restDb(opts) {
     });
     const total = rows.length;
     const m = /^(\d+)-(\d+)$/.exec(h.Range || "");
-    const from = m ? +m[1] : 0, to = Math.min(m ? +m[2] : total - 1, from + 999);
+    const lim = qp.get("limit") ? +qp.get("limit") : null;
+    const from = m ? +m[1] : 0, to = Math.min(m ? +m[2] : total - 1, from + 999, lim ? from + lim - 1 : Infinity);
     const slice = rows.slice(from, to + 1).map(function (r) {
       if (select === "*") return JSON.parse(JSON.stringify(r));
       const o = {};
@@ -159,7 +162,14 @@ function restDb(opts) {
       const want = decodeURIComponent((/control_number=in\.\(([^)]*)\)/.exec(url) || [])[1] || "").split(",").map(function (c) { return c.replace(/^"|"$/g, ""); });
       return res(200, want.filter(function (c) { return (opts.cips || {})[c]; }).map(function (c) { return { control_number: c, cip_code: opts.cips[c] }; }));
     }
-    if (/coci_college_programs\?/.test(url)) return res(200, [{ control_number: "x" }], "0-0/20282");
+    if (/coci_college_programs\?select=college,control_number&status=eq\.Active/.test(url)) {
+      // COCI's active programs, by key (S415): every record the stand-in holds unless the test names them.
+      const act = opts.active || db.rows.map(function (r) { return { college: r.college, control_number: r.control_number }; });
+      const m = /^(\d+)-(\d+)$/.exec(h.Range || "");
+      const from = m ? +m[1] : 0, to = Math.min(m ? +m[2] : act.length - 1, act.length - 1);
+      const slice = act.slice(from, to + 1);
+      return res(200, slice, (slice.length ? from + "-" + (from + slice.length - 1) : "*") + "/" + (h.Prefer === "count=exact" ? act.length : "*"));
+    }
     if (/queue_status/.test(url)) return opts.queue ? res(200, opts.queue) : res(404, null);
     return res(404, null);
   };
@@ -170,7 +180,9 @@ function pickAll(M) {
   const P = (M._state.review && M._state.review.records) || M._state.records || [];
   M._state.pick = P.map(function (p) { return p.college; }).filter(function (c, i, a) { return a.indexOf(c) === i; });
 }
-function recordReads(db) { return db.asked.filter(function (a) { return /program_requirement_records\?/.test(a.url); }); }
+function recordReads(db) { return db.asked.filter(function (a) { return /program_requirement_records\?/.test(a.url) && !a.filters.display; }); }
+// The Progress view's display-build reads (S415): the newest record's build, and the count of records with none.
+function buildReads(db) { return db.asked.filter(function (a) { return /program_requirement_records\?/.test(a.url) && !!a.filters.display; }); }
 // A read that asks for a whole record: the record, or the whole display.
 function asksFp(a) { return a.select.some(function (it) { return /^(requirements_fp|requirements_fp:idx_fp|idx_fp)$/.test(it); }); }
 function asksFull(a) { return a.select.some(function (it) { const p = it.replace(/^[A-Za-z_0-9]+:/, ""); return p === "record" || p === "display"; }); }
@@ -367,10 +379,12 @@ block("(6b)", function () {
   } });
   return M._load().then(function () { return new Promise(function (r) { setTimeout(r, 800); }); }).then(function () {
     // The index and the checked records' read each fail; a 5xx page gets one retry, never more.
-    const recs = asked.filter(function (u) { return /\/rest\/v1\/program_requirement_records\?select=/.test(u); });
+    const recs = asked.filter(function (u) { return /\/rest\/v1\/program_requirement_records\?select=/.test(u) && !/&display=/.test(u); });
     check("(6b) each failed records read is retried once, never more",
       recs.length === 4 && new Set(recs).size === 2, recs.join(" "));
-    check("(6b) both tables are read, the Progress view's three reads, the framing file and the districts beside them", asked.length === 10 &&
+    // The Progress view's reads: the addenda, COCI's active programs, the display build (two), the status file.
+    check("(6b) both tables are read, the Progress view's five reads, the framing file and the districts beside them", asked.length === 12 &&
+      asked.filter(function (u) { return /program_requirement_records\?.*&display=/.test(u); }).length === 2 &&
       asked.some(function (u) { return /\/rest\/v1\/program_source_registry\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/program_requirement_records\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/program_source_addenda\?select=/.test(u); }) &&
@@ -511,8 +525,9 @@ block("(6c)", function () {
 
 // ── (8) The Progress view (Sam, 2026-10-07; mock-up approved S343) ─────────
 // The failures this guards: You are here placed by hand instead of by what is left;
-// a count of zero where a read failed; the unchecked records counted from a read anon
-// cannot make; the routine's next run shown in the past.
+// a count of zero where a read failed; a count that waits on a person's check after Sam's
+// 2026-10-17 ruling ("I am trusting your procedures"), which held the view at 32 of 15,946
+// (S415); the routine's next run shown in the past.
 function progressFixture(nChecked) {
   const reg = [
     { college: "Irvine Valley College", catalog_url: "https://ivc.example/cat", catalog_year: "2026-2027",
@@ -539,9 +554,6 @@ function progressFixture(nChecked) {
     schema: 1, written_at: "2026-10-07T20:15:50Z", session: 342, moniker: "SkyBeacon", run: "Sam's session",
     decider: "Sam", handoff: "docs/session_343_handoff.md",
     next_run: { name: "CPL Queue", at: "2026-10-08T15:07:00Z", every_hours: 24 },
-    unchecked: [
-      { college: "Irvine Valley College", program: "Art", award: "A.A.", control_number: "10265", loaded: "2026-10-07" },
-      { college: "Santa Monica College", program: "Barbering", award: "A.S.", control_number: "43767", loaded: "2026-10-07" }],
     next_step: { title: "A procedure for each pilot college", text: "Five pilot colleges have none yet." },
     calls: [{ title: "Check two new records?", text: "Irvine Valley Art and Santa Monica Barbering.", if_no_reply: "both stay unchecked." }],
     notes: { addenda: "The reading agent starts after the Oct 11 census apply." },
@@ -551,12 +563,28 @@ function progressFixture(nChecked) {
     { college: "Cerritos College", status: "gone" }];
   return { reg: reg, recs: recs, queue: queue, addenda: addenda };
 }
-function progressReady(nChecked, errors) {
+// Two records no person checked (S415): Irvine Valley's Art fails the units check, Santa Monica's
+// Barbering passes but COCI does not list it as active. Neither is complete.
+function extraRecords() {
+  const art = JSON.parse(JSON.stringify(IRONWORKER));
+  art.college = "Irvine Valley College"; art.control_number = "10265"; art.program_title = "Art"; art.checked = false;
+  art.checks = { coverage: true, invented: true, arithmetic: "unequal" };
+  const barb = JSON.parse(JSON.stringify(IRONWORKER));
+  barb.college = "Santa Monica College"; barb.control_number = "43767"; barb.program_title = "Barbering"; barb.checked = false;
+  barb.checks = { coverage: true, invented: true, arithmetic: "equal" };
+  return [art, barb];
+}
+function progressReady(nChecked, errors, extra) {
   const f = progressFixture(nChecked == null ? 20 : nChecked);
   const m = loadModule();
   errors = errors || {};
-  m.M._state.registry = f.reg; m.M._state.records = f.recs; m.M._state.error = null; m.M._state.loading = false;
+  const recs = f.recs.concat(extra || []);
+  const keys = {};
+  recs.forEach(function (r) { if (r.control_number !== "43767") keys[r.college + "|" + r.control_number] = 1; });
+  m.M._state.registry = f.reg; m.M._state.records = recs; m.M._state.error = null; m.M._state.loading = false;
   m.M._state.progress = { addenda: errors.A ? null : f.addenda, active: errors.active ? null : 20282,
+    activeKeys: errors.active ? null : keys,
+    build: errors.B ? null : { build: "8292780f6cd5", built: "2026-10-06", unbuilt: 0 },
     queue: errors.Q ? null : f.queue, errors: errors, readAt: new Date("2026-10-07T21:40:00Z") };
   m.M._state.view = "progress";
   m.M._render();
@@ -582,7 +610,7 @@ block("(8)", function () {
     JSON.stringify(Object.keys(fams).sort().map(function (k) { return [k, fams[k]]; })) ===
     JSON.stringify(Object.keys(fresh.M.CIP_FAMS).sort().map(function (k) { return [k, fresh.M.CIP_FAMS[k]]; })));
 
-  const { root, M } = progressReady(20);
+  const { root, M } = progressReady(20, null, extraRecords());
   const txt = root.textContent;
   const steps = root.querySelectorAll(".prh-pg-steps > li");
   check("(8) five milestones", steps.length === 5 && M.MILESTONES.length === 5);
@@ -596,11 +624,12 @@ block("(8)", function () {
     /Next milestone/.test(steps[3].textContent) && /Later/.test(steps[4].textContent));
   check("(8) the facts count from the reads", /4 of 4 colleges/.test(steps[0].textContent) &&
     /1 of 3 published maps settled/.test(here.textContent) && /2 of 4 written/.test(steps[3].textContent) &&
-    /20 of 20,282/.test(steps[4].textContent), Array.prototype.map.call(steps, function (s) { return s.textContent; }).join(" | "));
+    /20 of 20,282 complete/.test(steps[4].textContent) && /20 programs confirmed by a person/.test(steps[1].textContent),
+    Array.prototype.map.call(steps, function (s) { return s.textContent; }).join(" | "));
   const left = root.querySelector(".prh-pg-left");
-  check("(8) what is left before the next milestone: maps, the unchecked records, the addenda",
-    !!left && /^3/.test(left.textContent) && /2 published maps to read or settle/.test(left.textContent) &&
-    /2 new records to check/.test(left.textContent) && /1 catalog addendum to read/.test(left.textContent), left && left.textContent);
+  check("(8) what is left before the next milestone: the maps and the addenda, never a record waiting on a person",
+    !!left && /^2/.test(left.textContent) && /2 published maps to read or settle/.test(left.textContent) &&
+    /1 catalog addendum to read/.test(left.textContent) && !/to check/.test(left.textContent), left && left.textContent);
 
   const parts = root.querySelectorAll(".prh-pg-grid > li");
   check("(8) eight parts", parts.length === 8 && M.PARTS.length === 8);
@@ -610,15 +639,17 @@ block("(8)", function () {
     /4 colleges have a catalog address; 3 name 2026-2027\./.test(byTitle["Catalog census"].textContent));
   check("(8) the census's next apply is a Sunday", /Weekly; next apply/.test(byTitle["Catalog census"].textContent) &&
     M.nextWeekly(new Date("2026-10-07T21:40:00Z"), 0, 10, 29).toISOString() === "2026-10-11T10:29:00.000Z");
-  check("(8) catalog reading adds the status file's unchecked records to the checked ones",
+  check("(8) catalog reading counts every record from the index, and the ones COCI does not list as active",
     /22 programs read at 4 colleges/.test(byTitle["Catalog reading"].textContent) &&
-    /Irvine Valley and Santa Monica added Oct 7/.test(byTitle["Catalog reading"].textContent), byTitle["Catalog reading"].textContent);
-  const checks = byTitle["The four checks"];
-  check("(8) the four checks wait on Sam, in crimson, by name",
-    checks.classList.contains("prh-pg-call") && /Waiting on Sam/.test(checks.textContent) && /20 of 22 programs checked/.test(checks.textContent) &&
-    /2 wait on Sam's reading/.test(checks.textContent), checks.textContent);
+    /1 is a program COCI does not list as active\./.test(byTitle["Catalog reading"].textContent), byTitle["Catalog reading"].textContent);
+  const checks = byTitle["The machine checks"];
+  check("(8) the machine checks count every record and wait on no one",
+    !!checks && checks.classList.contains("prh-pg-going") && !checks.classList.contains("prh-pg-call") &&
+    /21 of 22 records pass: every listed course placed, none added, the units add up\./.test(checks.textContent) &&
+    /1 fails: 1 on units\. The fix goes to the college's reading procedure\./.test(checks.textContent) && !/Waiting on/.test(checks.textContent),
+    checks && checks.textContent);
   const meter = checks.querySelector('.prh-pg-meter[role="img"]');
-  check("(8) a meter says its numbers in words", !!meter && meter.getAttribute("aria-label") === "20 of 22 checked");
+  check("(8) a meter says its numbers in words", !!meter && meter.getAttribute("aria-label") === "21 of 22 pass");
   check("(8) maps name the colleges read and count the refusals",
     /1 of the 3 published maps read/.test(byTitle["Program maps"].textContent) &&
     /Read: Irvine Valley\. 2 refused the reader\./.test(byTitle["Program maps"].textContent), byTitle["Program maps"].textContent);
@@ -628,10 +659,13 @@ block("(8)", function () {
   check("(8) addenda count live ones only, and a status-file note replaces the foot",
     /2 found at 2 colleges; 1 read\./.test(byTitle["Catalog addenda"].textContent) &&
     /The reading agent starts after the Oct 11 census apply\./.test(byTitle["Catalog addenda"].textContent), byTitle["Catalog addenda"].textContent);
-  check("(8) the CPL figures name the one build", /Build 8292780f6cd5 on every checked program \(20\)/.test(byTitle["CPL figures"].textContent) &&
-    /Built Oct 6/.test(byTitle["CPL figures"].textContent));
+  check("(8) the CPL figures read the live build: every record carries one, the newest named",
+    /Every record carries a display build; the newest is 8292780f6cd5\./.test(byTitle["CPL figures"].textContent) &&
+    /Built Oct 6/.test(byTitle["CPL figures"].textContent), byTitle["CPL figures"].textContent);
+  check("(8) Sierra's card says she quotes only the records a person confirmed",
+    /Sierra quotes the 20 records a person confirmed; CPL Pathways draws every record, each marked\./.test(byTitle["Sierra and CPL Pathways"].textContent));
   const partsSum = root.querySelector('details[data-sec="progress:parts"] > summary');
-  check("(8) the parts section's summary counts the done ones, so it reads shut", !!partsSum && /4 of 8 done/.test(partsSum.textContent),
+  check("(8) the parts section's summary counts the done ones, so it reads shut", !!partsSum && /3 of 8 done/.test(partsSum.textContent),
     partsSum && partsSum.textContent);
   const roadSum = root.querySelector('details[data-sec="progress:milestones"] > summary');
   check("(8) the milestones' summary names where the harvest is", !!roadSum && /You are here: Read program maps/.test(roadSum.textContent));
@@ -640,7 +674,8 @@ block("(8)", function () {
   check("(8) the header names the last run and links its handoff",
     /Last run S342 SkyBeacon \(Sam's session\), Oct 7, 1:15 PM PT/.test(meta.textContent) &&
     !!meta.querySelector('a[href$="/blob/main/docs/session_343_handoff.md"]'), meta.textContent);
-  check("(8) the header says what waits on Sam", /1 waiting on Sam/.test(meta.textContent) && !!meta.querySelector(".prh-pg-waiting"));
+  check("(8) the header says what waits on Sam, counted in calls", /1 call waiting on Sam/.test(meta.textContent) && !!meta.querySelector(".prh-pg-waiting"),
+    meta.textContent);
   check("(8) the routine's next run rolls forward past now",
     M.nextRun({ next_run: { at: "2026-10-08T15:07:00Z", every_hours: 24 } }, new Date("2026-10-10T16:00:00Z")).toISOString() === "2026-10-11T15:07:00.000Z" &&
     M.nextRun({ next_run: { at: "2026-10-08T15:07:00Z", every_hours: 0 } }, new Date("2026-10-10T16:00:00Z")) === null);
@@ -649,6 +684,14 @@ block("(8)", function () {
     /A procedure for each pilot college/.test(side.textContent) && !!side.querySelector(".prh-pg-call") &&
     /Needs Sam's call/.test(side.textContent) && /No reply: both stay unchecked\./.test(side.textContent) &&
     side.querySelectorAll(".prh-pg-log li").length === 2 && !!side.querySelector("time[datetime]"), side.textContent);
+
+  // Records loaded after the last display build wait for the next one, counted live.
+  const nb = progressReady(20, null, extraRecords());
+  nb.M._state.progress.build = { build: "8292780f6cd5", built: "2026-10-06", unbuilt: 2 };
+  nb.M._render();
+  const fig = Array.prototype.filter.call(nb.root.querySelectorAll(".prh-pg-grid > li"), function (li) { return li.querySelector("h4").textContent === "CPL figures"; })[0];
+  check("(8) records with no display build wait for the next one, by count",
+    /20 records carry a display build, the newest 8292780f6cd5; 2 wait for the next build\./.test(fig.textContent) && fig.classList.contains("prh-pg-going"), fig.textContent);
 
   // Fewer than the pilot's twenty checked: You are here moves back to Read the pilot.
   const early = progressReady(12);
@@ -667,16 +710,16 @@ block("(8b)", function () {
     /The queue's status file \(kb\/queue_status\.json\) could not be read \(kb\/queue_status\.json answered 404\)/.test(root.querySelector(".prh-pg-meta").textContent));
   const parts = {};
   Array.prototype.forEach.call(root.querySelectorAll(".prh-pg-grid > li"), function (p) { parts[p.querySelector("h4").textContent] = p; });
-  check("(8b) the four checks cannot be counted without the file, and say so",
-    /Could not be read/.test(parts["The four checks"].textContent) && !parts["The four checks"].querySelector(".prh-pg-meter"),
-    parts["The four checks"].textContent);
+  check("(8b) the machine checks count from the index, with or without the file",
+    /20 of 20 records pass/.test(parts["The machine checks"].textContent) && !!parts["The machine checks"].querySelector(".prh-pg-meter"),
+    parts["The machine checks"].textContent);
   check("(8b) the addenda part names its failed read", /The addenda table could not be read \(program_source_addenda answered 503\)/.test(parts["Catalog addenda"].textContent));
-  check("(8b) catalog reading falls back to the checked records it can see",
-    /20 checked programs read at 2 colleges/.test(parts["Catalog reading"].textContent), parts["Catalog reading"].textContent);
+  check("(8b) catalog reading counts the index; with COCI unread it names no inactive count",
+    /20 programs read at 2 colleges\./.test(parts["Catalog reading"].textContent) && !/not list as active/.test(parts["Catalog reading"].textContent),
+    parts["Catalog reading"].textContent);
   const left = root.querySelector(".prh-pg-left").textContent;
   check("(8b) an unknown count keeps the milestone open and is named, never zero",
-    /New records to check \(could not be read\)/.test(left) && /Catalog addenda to read \(could not be read\)/.test(left) &&
-    !/\b0 new records/.test(left), left);
+    /Catalog addenda to read \(could not be read\)/.test(left) && !/\b0 catalog addenda/.test(left), left);
   check("(8b) Every program says its count could not be read",
     /Could not be read/.test(root.querySelectorAll(".prh-pg-steps > li")[4].textContent));
   check("(8b) the side column says where its words come from", /could not be read/.test(root.querySelector(".prh-pg-side").textContent) &&
@@ -697,7 +740,13 @@ block("(8c)", function () {
     if (/program_source_registry/.test(url)) return ok(f.reg);
     if (/program_requirement_records/.test(url)) return ok(f.recs);
     if (/program_source_addenda/.test(url)) return Promise.resolve({ ok: false, status: 503 });
-    if (/coci_college_programs/.test(url)) return ok([{ control_number: "x" }], "0-0/20282");
+    if (/coci_college_programs/.test(url)) {
+      // COCI's 20,282 active programs, read by key a page at a time (S415).
+      const mm = /^(\d+)-(\d+)$/.exec((opts && opts.headers && opts.headers.Range) || "");
+      const from = mm ? +mm[1] : 0, to = Math.min(mm ? +mm[2] : 20281, 20281), rows = [];
+      for (let i = from; i <= to; i++) rows.push({ college: "College " + (i % 118), control_number: String(100000 + i) });
+      return ok(rows, from + "-" + to + "/20282");
+    }
     if (/queue_status/.test(url)) return ok(f.queue);
     return Promise.resolve({ ok: false, status: 404 });
   } });
@@ -710,7 +759,10 @@ block("(8c)", function () {
     const txt = root.textContent;
     const big = root.querySelector(".prh-pg-hl .prh-pg-n b");
     check("(8c) the count lands, in the headline and the Every program milestone",
-      !!big && big.textContent === "20,282" && /of 20,282/.test(txt), txt.slice(0, 500));
+      !!big && big.textContent === "20,282" && /of 20,282 complete/.test(txt), txt.slice(0, 500));
+    check("(8c) COCI's active programs are read by key, every page, so complete counts only active programs",
+      Object.keys(M._state.progress.activeKeys || {}).length === 20282 &&
+      asked.filter(function (a) { return /coci_college_programs\?select=college,control_number&status=eq\.Active/.test(a[0]); }).length === 21);
     check("(8c) a failed addenda read fails only its part", /You are here/.test(txt) &&
       /The addenda table could not be read \(program_source_addenda answered 503\)/.test(txt) && !/could not be read \(program_source_registry/.test(txt));
   });
@@ -791,9 +843,11 @@ block("(8e)", function () {
 // ── (9) Every section collapses, and one control opens or shuts them all ────
 // ── (10) The headline (Sam, 2026-10-08, for the Chancellor; yes to the mock-up, S347) ──
 // "the total count of college active program control numbers from COCI and the ones with
-// complete harvested ROEP data". The failures this guards: an unchecked record counted as
-// complete; a failed COCI read drawn as a zero; the band folded away by Collapse all; a
-// trend line that claims growth the history does not show.
+// complete harvested ROEP data". Complete: an active program whose record passes the machine
+// checks (S415). The failures this guards: a record on a program COCI does not list as active,
+// or one failing a check, counted as complete; a failed COCI read drawn as a zero; the band
+// folded away by Collapse all; a trend line that claims growth the history does not show,
+// or that reads the old person-checked counts as complete ones.
 block("(10)", function () {
   const p = progressReady(20);
   p.f.recs.forEach(function (r, i) {
@@ -812,30 +866,46 @@ block("(10)", function () {
   check("(10) the first number is COCI's active programs, at the registry's colleges",
     nums.length === 2 && nums[0].textContent === "20,282" && /active programs at 4 colleges/.test(band.textContent) &&
     /The state's program inventory \(COCI\), one control number each/.test(band.textContent), band && band.textContent);
-  check("(10) the second counts the checked records only, at their own colleges",
-    nums[1] && nums[1].textContent === "20" && /read from the college's catalog and checked/.test(band.textContent) &&
-    /Requirements, choices and totals, at 2 colleges/.test(band.textContent), band && band.textContent);
+  check("(10) the second counts the active programs whose record passes, at their own colleges; the unchecked active record counts too",
+    nums[1] && nums[1].textContent === "20" && /active programs harvested complete/.test(band.textContent) &&
+    /Read from the college's catalog and passing the machine checks: every listed course placed, none added, the units add up\. At 2 colleges\./.test(band.textContent),
+    band && band.textContent);
   const bar = band && band.querySelector('.prh-pg-bar[role="img"]');
-  check("(10) the bar says its numbers in words", !!bar && bar.getAttribute("aria-label") === "20 of 20,282 programs read and checked" &&
+  check("(10) the bar says its numbers in words", !!bar && bar.getAttribute("aria-label") === "20 of 20,282 active programs complete" &&
     /width:0\.1%/.test(bar.querySelector("i").getAttribute("style")), bar && bar.outerHTML);
   const within = band && band.querySelector(".prh-pg-within");
-  check("(10) beneath: how many carry outcomes and how many show a map",
-    !!within && /Of the 20: 19 also carry their published outcomes/.test(within.textContent) &&
-    /2 show the college's term-by-term map/.test(within.textContent) && !/Up from/.test(within.textContent), within && within.textContent);
+  check("(10) beneath: every record read, and the active programs no read has reached",
+    !!within && /21 records read at 3 colleges/.test(within.textContent) && /20,262 active programs not read yet/.test(within.textContent) &&
+    !within.querySelector(".prh-pg-hlgo") && !/Up from/.test(within.textContent), within && within.textContent);
   check("(10) the facts are exported for the checkpoint's own read",
     JSON.stringify(Object.assign({}, p.M.headlineFacts(p.M.progressContext(new Date())), { since: null })) ===
-    JSON.stringify({ active: 20282, colleges: 4, complete: 20, completeColleges: 2, outcomes: 19, maps: 2, since: null }));
+    JSON.stringify({ active: 20282, colleges: 4, complete: 20, completeColleges: 2, read: 21, readColleges: 3, failing: 0, unread: 20262, since: null }),
+    JSON.stringify(p.M.headlineFacts(p.M.progressContext(new Date()))));
+  // A record failing a check is never complete, and the band names the failures as a word that opens them.
+  p.f.recs[0].checks = Object.assign({}, p.f.recs[0].checks, { arithmetic: "unequal" });
+  p.M._render();
+  const fails = p.root.querySelector(".prh-pg-within .prh-pg-hlgo");
+  check("(10) a failing active record is not complete, and its count opens the failing records",
+    p.root.querySelectorAll(".prh-pg-hl .prh-pg-n b")[1].textContent === "19" && !!fails && fails.textContent === "1 fails a machine check",
+    fails && fails.textContent);
+  fails.click();
+  check("(10) and lands on them", p.M._state.view === "records" && p.root.querySelector("#prh-rshow").value === "fail" &&
+    /Showing 1 of 21/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
+  p.f.recs[0].checks = Object.assign({}, p.f.recs[0].checks, { arithmetic: "equal" });
+  p.M._state.view = "progress"; p.M._render();
   p.root.querySelector("header .prh-allctl button[data-all=close]").click();
   check("(10) Collapse all leaves the headline on screen", !!p.root.querySelector(".prh-pg-head .prh-pg-hl") &&
     !p.root.querySelector(".prh-pg-hl").closest("details"));
 
   // The history: the band names the first recorded count once the checked count passes it.
   p.M._state.progress.queue = Object.assign({}, p.f.queue, { headline: [
-    { day: "2026-10-08", active: 20282, checked: 18, colleges: 5 }, { day: "2026-10-09", active: 20282, checked: 19, colleges: 5 }] });
+    { day: "2026-10-08", active: 20282, checked: 5, colleges: 5 },
+    { day: "2026-10-18", active: 20282, complete: 18, colleges: 5 }, { day: "2026-10-19", active: 20282, complete: 19, colleges: 5 }] });
   p.M._render();
-  check("(10) up from the first recorded count, by day", /Up from 18 on Oct 8/.test(p.root.querySelector(".prh-pg-within").textContent),
+  check("(10) up from the first recorded complete count, by day; a person-checked entry is not one",
+    /Up from 18 complete on Oct 18/.test(p.root.querySelector(".prh-pg-within").textContent),
     p.root.querySelector(".prh-pg-within").textContent);
-  p.M._state.progress.queue.headline = [{ day: "2026-10-08", active: 20282, checked: 20, colleges: 5 }];
+  p.M._state.progress.queue.headline = [{ day: "2026-10-18", active: 20282, complete: 20, colleges: 5 }];
   p.M._render();
   check("(10) no growth claimed while the count stands where it was recorded", !/Up from/.test(p.root.querySelector(".prh-pg-hl").textContent));
 
@@ -844,8 +914,9 @@ block("(10)", function () {
   const hl = bad.root.querySelector(".prh-pg-hl");
   check("(10) a failed COCI read names itself in the band, with no bar and no zero",
     !!hl && /Could not be read/.test(hl.querySelector(".prh-pg-n b").textContent) &&
-    /COCI's count of active programs could not be read \(coci_college_programs gave no count\)/.test(hl.textContent) &&
-    !hl.querySelector(".prh-pg-bar") && hl.querySelectorAll(".prh-pg-n b")[1].textContent === "20", hl && hl.textContent);
+    /COCI's list of active programs could not be read \(coci_college_programs gave no count\)/.test(hl.textContent) &&
+    !hl.querySelector(".prh-pg-bar") && hl.querySelectorAll(".prh-pg-n b")[1].textContent === "Could not be read" &&
+    !/\b0 active programs/.test(hl.textContent), hl && hl.textContent);
 });
 
 // Sam, 2026-10-07: "make sure every section is collapsible and the tab has a
@@ -1841,7 +1912,7 @@ block("(23)", function () {
   const opens = Array.prototype.map.call(p.root.querySelectorAll(".prh-pg-grid > li"), function (li) {
     const b = li.querySelector(".prh-pg-open"); return b ? b.textContent : null; });
   check("(23) each of the eight parts carries the word that opens its list",
-    opens.length === 8 && opens.every(Boolean) && opens[1] === "Open the 22 records" && opens[2] === "Open the 20 checked", opens.join(" | "));
+    opens.length === 8 && opens.every(Boolean) && opens[1] === "Open the 20 records" && opens[2] === "Open the 20 records", opens.join(" | "));
   check("(23) a card that opens its list is the tap target: the word's ::after covers it, and an answer link rides above",
     p.root.querySelectorAll(".prh-pg-grid > li.prh-pg-opens").length === 8 &&
     /\.prh-pg-opens \.prh-pg-open::after \{ content:''; position:absolute; inset:0;/.test(SRC) &&
@@ -1854,20 +1925,19 @@ block("(23)", function () {
     p.M._state.view === "records" && p.M._state.rshow === "all" && p.M._state.rq === "" && p.M._state.rscope === "all" &&
     /Showing 20 of 20/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
 
-  p = progressReady(20);
-  part(p.root, "The four checks").querySelector(".prh-pg-open").click();
-  check("(23) the four checks open the checked records", p.M._state.view === "records" &&
-    p.root.querySelector("#prh-rshow").value === "checked");
+  p = progressReady(20, null, extraRecords());
+  const mc = part(p.root, "The machine checks").querySelector(".prh-pg-open");
+  check("(23) the machine checks open the records failing one", !!mc && mc.textContent === "Open the 1 failing", mc && mc.textContent);
+  mc.click();
+  check("(23) and land on Fail a machine check", p.M._state.view === "records" &&
+    p.root.querySelector("#prh-rshow").value === "fail" && /Showing 1 of 22/.test(p.root.querySelector(".prh-count").textContent),
+    p.root.querySelector(".prh-count").textContent);
 
-  // What waits on Sam: his reading, answered on Program records, signed in.
-  p = progressReady(20);
-  p.M._state.review = { email: "sam@example.org", records: p.f.recs }; p.M._state.view = "progress"; p.M._render();
-  const ans = part(p.root, "The four checks").querySelector(".prh-pg-answer");
-  check("(23) the four checks say where Sam answers: the records waiting on his reading",
-    !!ans && ans.textContent === "Read the 2 waiting on you" && ans.tagName === "BUTTON", ans && ans.textContent);
-  ans.click();
-  check("(23) and it opens Program records on Waiting on your reading",
-    p.M._state.view === "records" && p.root.querySelector("#prh-rshow").value === "waiting");
+  // Signed in, the machine checks still wait on no one: a person's confirm is optional (Sam, 2026-10-17).
+  p = progressReady(20, null, extraRecords());
+  p.M._state.review = { email: "sam@example.org", records: p.M._state.records }; p.M._state.view = "progress"; p.M._render();
+  check("(23) the machine checks carry no answer link, signed in or not",
+    !part(p.root, "The machine checks").querySelector(".prh-pg-answer"));
 
   p = progressReady(20);
   check("(23) a part with nothing waiting carries no answer link",
@@ -1892,15 +1962,22 @@ block("(23)", function () {
   p = progressReady(20);
   const chips = Array.prototype.slice.call(p.root.querySelectorAll(".prh-pg-left .prh-pg-chipgo"));
   check("(23) each item left before the next milestone is a word that opens its list",
-    chips.length === 3 && chips.every(function (b) { return b.tagName === "BUTTON"; }), chips.map(function (b) { return b.textContent; }).join(" | "));
-  chips.filter(function (b) { return /new records to check/.test(b.textContent); })[0].click();
-  check("(23) the new records to check open Program records", p.M._state.view === "records");
+    chips.length === 2 && chips.every(function (b) { return b.tagName === "BUTTON"; }), chips.map(function (b) { return b.textContent; }).join(" | "));
+  chips.filter(function (b) { return /catalog addendum to read/.test(b.textContent); })[0].click();
+  check("(23) the addendum to read opens the Catalogs view on the colleges listing one", p.M._state.view === "catalogs" &&
+    p.root.querySelector("#prh-show").value === "addenda");
 
   p = progressReady(20);
   const hl = p.root.querySelector(".prh-pg-hlgo");
-  check("(23) the headline's checked count opens the checked records", !!hl && hl.textContent === "Open the 20 checked");
+  check("(23) the headline's complete count opens the complete records", !!hl && hl.textContent === "Open the 20 complete");
   hl.click();
-  check("(23) and lands on them", p.M._state.view === "records" && p.root.querySelector("#prh-rshow").value === "checked");
+  check("(23) and lands on exactly them: active in COCI and passing", p.M._state.view === "records" &&
+    p.root.querySelector("#prh-rshow").value === "complete" && /Showing 20 of 20/.test(p.root.querySelector(".prh-count").textContent),
+    p.root.querySelector(".prh-count").textContent);
+  p = progressReady(20, null, extraRecords());
+  p.root.querySelector(".prh-pg-hlgo").click();
+  check("(23) a passing record on a program COCI does not list as active is not in the complete list",
+    /Showing 20 of 22/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
 
   // A call the status file places on a part puts its answer link on that card.
   p = progressReady(20);
@@ -1912,7 +1989,7 @@ block("(23)", function () {
   check("(23) a call placed on a part answers from its card, by its sheet link, in a new tab",
     !!onCensus && onCensus.getAttribute("href") === "https://claude.ai/artifact/sheet74" && onCensus.textContent === "Answer: Chaffey's note" &&
     onCensus.getAttribute("target") === "_blank", onCensus && onCensus.outerHTML);
-  const onChecks = Array.prototype.filter.call(part(p.root, "The four checks").querySelectorAll(".prh-pg-answer"), function (b) {
+  const onChecks = Array.prototype.filter.call(part(p.root, "The machine checks").querySelectorAll(".prh-pg-answer"), function (b) {
     return /Answer: Read Art/.test(b.textContent); })[0];
   check("(23) a call with no link opens its own card on the Progress view", !!onChecks);
   onChecks.click();
@@ -2022,22 +2099,28 @@ block("(24a)", function () {
     B.M._state.registry = HREG; B.M._state.records = JSON.parse(JSON.stringify(HARVEST)); B.M._state.error = null;
     B.M._state.progress = A.M._state.progress; B.M._state.districts = A.M._state.districts;
     const now = new Date("2026-10-13T21:00:00Z");
-    const keep = function (x) { return JSON.stringify({ checked: x.checked, unchecked: x.unchecked, readTotal: x.readTotal, colleges: x.recordColleges,
-      checkedDay: x.checkedDay, builds: x.builds, builtDay: x.builtDay, newest: x.newest, here: x.here, next: x.next }); };
+    const keep = function (x) { return JSON.stringify({ checked: x.checked, read: x.read, readColleges: x.readColleges,
+      passing: x.passing, failing: x.failing, failUnits: x.failUnits, failCourses: x.failCourses, failAdded: x.failAdded,
+      complete: x.complete, completeColleges: x.completeColleges, activeUnread: x.activeUnread, notActive: x.notActive,
+      checkedDay: x.checkedDay, build: x.build, builtDay: x.builtDay, here: x.here, next: x.next }); };
     const xa = A.M.progressContext(now), xb = B.M.progressContext(now);
     check("(24a) the Progress view's counts from the index match the counts from every full record", keep(xa) === keep(xb) &&
-      xa.checked === 4 && JSON.stringify(xa.builds) === JSON.stringify(["b1", "b2"]), keep(xa) + " vs " + keep(xb));
-    check("(24a) and so does the headline: checked, their colleges, outcomes printed, maps read",
+      xa.checked === 4 && xa.read === 28 && xa.passing === 26 && xa.failing === 2, keep(xa) + " vs " + keep(xb));
+    check("(24a) and so does the headline: complete, their colleges, every record read, the failing",
       JSON.stringify(A.M.headlineFacts(xa)) === JSON.stringify(B.M.headlineFacts(xb)) &&
-      A.M.headlineFacts(xa).outcomes === 2 && A.M.headlineFacts(xa).maps === 1 && A.M.headlineFacts(xa).completeColleges === 3,
+      A.M.headlineFacts(xa).complete === 26 && A.M.headlineFacts(xa).completeColleges === 6 && A.M.headlineFacts(xa).failing === 2,
       JSON.stringify(A.M.headlineFacts(xa)) + " vs " + JSON.stringify(B.M.headlineFacts(xb)));
+    check("(24a) the display build is read without a record's whole display, one row and one count",
+      buildReads(db).length === 2 && buildReads(db).every(function (a) { return !asksFull(a); }) &&
+      buildReads(db).some(function (a) { return a.filters.display === "is.null" && a.prefer === "count=exact"; }),
+      buildReads(db).map(function (a) { return a.url; }).join(" | "));
     [A, B].forEach(function (m) { m.M._state.view = "progress"; m.M._render(); });
     const pa = A.root.querySelector('[role="tabpanel"]').textContent, pb = B.root.querySelector('[role="tabpanel"]').textContent;
     check("(24a) the Progress view reads the same, word for word", pa === pb && pa.length > 500, pa.slice(0, 200) + " | " + pb.slice(0, 200));
     check("(24a) the view switch counts the same records", A.root.querySelector(".prh-switch").textContent === B.root.querySelector(".prh-switch").textContent);
     [A, B].forEach(function (m) { m.M._state.view = "records"; m.M._render(); });
     const ga = A.root.querySelector('details[data-sec="records:glance"]').textContent, gb = B.root.querySelector('details[data-sec="records:glance"]').textContent;
-    check("(24a) the Records view's glance counts the same: passing, totals agreeing, CPL held", ga === gb && /4 of 28 records pass all four checks/.test(ga), ga + " | " + gb);
+    check("(24a) the Records view's glance counts the same: passing, totals agreeing, CPL held", ga === gb && /26 of 28 records pass the machine checks/.test(ga), ga + " | " + gb);
     const ka = A.root.querySelector('.prh-dd[data-filter="college"] .prh-dd-list').textContent, kb = B.root.querySelector('.prh-dd[data-filter="college"] .prh-dd-list').textContent;
     check("(24a) and the College filter's counts for each college: its records and how many wait", ka === kb &&
       /Cabrillo College12 records, 10 wait on a reading/.test(ka), ka.slice(0, 300));

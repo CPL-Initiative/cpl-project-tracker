@@ -14849,7 +14849,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 57,
+   "count": 58,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15341,6 +15341,24 @@
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
      "updated": "2026-09-29"
+    },
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "path": "docs/reference/lanes/commons.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "commons",
+      "program-requirements",
+      "cer",
+      "ccr",
+      "cr-reference"
+     ],
+     "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-18"
     },
     {
      "created": "2026-08-28",
@@ -22321,5 +22339,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1172
+ "total": 1173
 }

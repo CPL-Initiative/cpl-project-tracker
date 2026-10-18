@@ -2,9 +2,8 @@
 """Guard for kb/queue_status.json and scripts/queue_status.py (S343).
 
 The Progress view on the Program Requirements tab reads the harvest's tables live and
-takes what no browser read can know from this file: the records waiting on a person's
-check, the session that last worked the queue, the routine's next firing, the next step,
-the calls waiting on Sam and what changed. A checkpoint that writes a malformed file
+takes what no browser read can know from this file: the session that last worked the
+queue, the routine's next firing, the next step, the calls waiting on Sam and what changed. A checkpoint that writes a malformed file
 leaves the view saying it could not read it; this guard fails first.
 
 Run from repo root: python3 tests/queue_status_test.py
@@ -34,6 +33,11 @@ bad = M.faults(Q)
 check("the committed status file is sound", not bad, "; ".join(bad))
 check("it names the handoff of the session that wrote it",
       Q.get("handoff") and os.path.exists(os.path.join(ROOT, Q["handoff"])))
+# The unchecked list (S415): no record waits on a person since Sam's 2026-10-17 ruling, and the
+# view counts every record itself. At 15,914 rows the list made this file 3.5 MB, read on
+# every visit to the tab.
+check("the committed file carries no unchecked list and stays small",
+      "unchecked" not in Q and os.path.getsize(M.PATH) < 200000, os.path.getsize(M.PATH))
 check("the headline's history starts with Sam's ask: 20 of 20,282 on 2026-10-08",
       (Q.get("headline") or [{}])[0] == {"day": "2026-10-08", "active": 20282, "checked": 20, "colleges": 5}, Q.get("headline"))
 
@@ -54,8 +58,8 @@ cases = [
     ("a missing written_at", lambda q: q.pop("written_at"), "written_at"),
     ("a local time in written_at", lambda q: q.__setitem__("written_at", "2026-10-07T13:15:50-07:00"), "written_at"),
     ("a handoff that does not exist", lambda q: q.__setitem__("handoff", "docs/session_9999_handoff.md"), "handoff"),
-    ("unchecked left out (the view cannot count them itself)", lambda q: q.pop("unchecked"), "unchecked"),
-    ("an unchecked record with no load date", lambda q: q["unchecked"].append({"college": "X College", "program": "Y", "control_number": "1"}), "loaded"),
+    ("an unchecked list that is not a list", lambda q: q.__setitem__("unchecked", "15914"), "unchecked must be a list"),
+    ("an unchecked record with no load date", lambda q: q.__setitem__("unchecked", [{"college": "X College", "program": "Y", "control_number": "1"}]), "loaded"),
     ("a note for a part the view does not have", lambda q: q.setdefault("notes", {}).__setitem__("funding", "x"), "names no part"),
     ("a glyph in a call", lambda q: q["calls"].append({"title": "Check ✅", "text": "x"}), "glyph"),
     ("markdown in the next step", lambda q: q["next_step"].__setitem__("text", "**Bold** words"), "markdown"),
@@ -76,6 +80,8 @@ cases = [
     ("the headline history left out", lambda q: q.pop("headline"), "headline must be a list"),
     ("a headline count written as text", lambda q: q["headline"].append({"day": "2099-01-01", "active": "20282", "checked": 20, "colleges": 5}), "active must be a whole number"),
     ("more checked than active", lambda q: q["headline"].append({"day": "2099-01-01", "active": 10, "checked": 20, "colleges": 5}), "cannot exceed"),
+    ("more complete than active", lambda q: q["headline"].append({"day": "2099-01-01", "active": 10, "complete": 20, "colleges": 5}), "complete cannot exceed"),
+    ("an entry that counts neither complete nor checked", lambda q: q["headline"].append({"day": "2099-01-01", "active": 10, "colleges": 5}), "needs complete"),
     ("a day recorded twice", lambda q: q["headline"].append(dict(q["headline"][-1])), "must come after"),
 ]
 q = copy.deepcopy(Q)
@@ -114,10 +120,16 @@ with tempfile.TemporaryDirectory() as d:
         s = json.load(f)
     today = [e for e in s["headline"] if e["day"] == s["written_at"][:10]]
     check("--headline records today's pair once; a second stamp the same day replaces it",
-          rc == 0 and len(today) == 1 and today[0] == {"day": s["written_at"][:10], "active": 20282, "checked": 22, "colleges": 6}
+          rc == 0 and len(today) == 1 and today[0] == {"day": s["written_at"][:10], "active": 20282, "complete": 22, "colleges": 6}
           and len(s["headline"]) in (before, before + 1), s["headline"])
     check("--headline keeps the earlier days, oldest first",
           s["headline"][0]["day"] == "2026-10-08" and [e["day"] for e in s["headline"]] == sorted(e["day"] for e in s["headline"]), s["headline"])
+
+# The headline's query: complete is an active program whose record passes the server's own
+# reading of the machine checks, the same three the view's machineFails() reads.
+check("the headline query counts active programs whose record passes the machine checks",
+      "status = 'Active'" in M.HEADLINE_SQL and "program_record_machine_pass(r.checks)" in M.HEADLINE_SQL
+      and " complete" in M.HEADLINE_SQL and "checked" not in M.HEADLINE_SQL, M.HEADLINE_SQL)
 
 # ── 4. the whole-harvest block (Sam, 2026-10-13: "an overall measure ... how far we are
 #       through the whole harvest process", the confirm step left out) ────────────────

@@ -11,15 +11,16 @@
  * Five views, each read LIVE from tables anon may SELECT (no snapshot to go stale):
  *   Progress     the harvest as a workflow (Sam, 2026-10-07: "a workflow dashboard to
  *                monitor the progress like the attached"): a headline pairing COCI's
- *                active programs with the checked ones (Sam, 2026-10-08, for the
- *                Chancellor; headlineBand below), five milestones with You are
+ *                active programs with the complete ones, whose record passes the
+ *                machine checks (Sam, 2026-10-08, for the Chancellor; S415 for
+ *                complete; headlineBand below), five milestones with You are
  *                here, the eight parts, and, from kb/queue_status.json (the last
  *                checkpoint's word), the next step, the calls waiting on Sam and what
  *                changed. Definitions in MILESTONES and PARTS below.
  *   Catalogs     program_source_registry, one row per college: where its catalog is,
  *                the year it names, the platform, its published program map.
  *   Records      program_requirement_records: each program read from its catalog, the
- *                four checks it passed, and the CPL its courses carry (display, built by
+ *                machine checks it passed, and the CPL its courses carry (display, built by
  *                kb/_build_roep_display.py under one build stamp).
  *   Sequences    the registry's program map columns: who publishes a term-by-term map
  *                and what the reader got when it asked.
@@ -243,7 +244,7 @@
     var li = document.getElementById("prh-pg-waitcount");
     if (li) {
       var n = Q.calls.filter(function (c) { return !callAnswered(c); }).length;
-      li.textContent = n ? n + " waiting on " + who : "Nothing waiting on " + who;
+      li.textContent = n ? n + (n === 1 ? " call" : " calls") + " waiting on " + who : "Nothing waiting on " + who;
       li.className = n ? "prh-pg-waiting" : "prh-quiet";
     }
     refreshTodo();
@@ -828,21 +829,46 @@
     });
   }
   /* The Progress view's own reads. Each fails on its own and says so in the part it
-     feeds; none of them fails the tab, and none resolves to a zero. */
+     feeds; none of them fails the tab, and none resolves to a zero.
+     COCI's active programs are read by key (S415), not counted: the headline's second number
+     is the active programs whose record passes the machine checks (Sam, 2026-10-08: "the ones
+     with complete harvested ROEP data"), and 1,331 of the 15,946 records read on 2026-10-18 are
+     on programs COCI does not list as active, so a count of records is not a count of them. */
+  var ACTIVE_SELECT = "college,control_number";
   function loadProgress() {
-    var G = { addenda: null, active: null, queue: null, errors: {}, readAt: new Date() };
+    var G = { addenda: null, active: null, activeKeys: null, build: null, queue: null, errors: {}, readAt: new Date() };
     function miss(k) { return function (e) { G.errors[k] = (e && e.message) || "the read failed"; }; }
-    var countHeaders = headers();
-    countHeaders.Prefer = "count=exact";
+    var buildCount = sessionHeaders();
+    buildCount.Prefer = "count=exact";
     return Promise.all([
       getJson(REST + "/program_source_addenda?select=college,status").then(function (r) { G.addenda = r || []; }, miss("A")),
-      fetch(REST + "/coci_college_programs?select=control_number&status=eq.Active&limit=1", { headers: countHeaders })
-        .then(function (r) {
-          if (!r.ok) throw new Error("coci_college_programs answered " + r.status);
-          var m = /\/(\d+)\s*$/.exec((r.headers && r.headers.get && r.headers.get("content-range")) || "");
-          if (!m) throw new Error("coci_college_programs gave no count");
-          G.active = Number(m[1]);
+      getAllRows(REST + "/coci_college_programs?select=" + ACTIVE_SELECT + "&status=eq.Active&order=college,control_number",
+        headers(), INDEX_PAGE, INDEX_PARALLEL).then(function (got) {
+          var keys = {};
+          (got || []).forEach(function (r) { keys[r.college + "|" + r.control_number] = 1; });
+          G.activeKeys = keys; G.active = (got || []).length;
         }).catch(miss("active")),
+      /* The display build: the newest record's, and how many records carry none yet. Both
+         read stored columns or one row's display, never a path over every row (S405), and go out
+         under the reader's own sign-in, as every record read does. */
+      Promise.all([
+        fetch(REST + "/program_requirement_records?select=build:display->>build,built:display->>built" +
+          "&display=not.is.null&order=loaded_at.desc&limit=1", { headers: sessionHeaders() })
+          .then(function (r) {
+            if (!r.ok) throw new Error("program_requirement_records answered " + r.status);
+            return r.json();
+          }),
+        fetch(REST + "/program_requirement_records?select=control_number&display=is.null&limit=1", { headers: buildCount })
+          .then(function (r) {
+            if (!r.ok) throw new Error("program_requirement_records answered " + r.status);
+            var m = /\/(\d+)\s*$/.exec((r.headers && r.headers.get && r.headers.get("content-range")) || "");
+            if (!m) throw new Error("program_requirement_records gave no count");
+            return Number(m[1]);
+          })
+      ]).then(function (got) {
+        var b = (got[0] || [])[0] || {};
+        G.build = { build: b.build || null, built: b.built || null, unbuilt: got[1] };
+      }).catch(miss("B")),
       fetch(QUEUE_URL, { cache: "no-store" })
         .then(function (r) {
           if (!r.ok) throw new Error(QUEUE_URL + " answered " + r.status);
@@ -2047,7 +2073,7 @@
     var Rv = state.review;
     var P = rows(), R = state.registry;
     var box = el("div");
-    box.appendChild(el("p", { cls: "prh-lede", text: "Each program read from its college's catalog: the required courses, the courses chosen from a list, and the electives. A record passes four checks: it places the courses the state's Program Course File lists, it adds no course the catalog does not print, its units add up to the catalog's total, and a person read it against the catalog. A misread changes the college's reading procedure, never the record." }));
+    box.appendChild(el("p", { cls: "prh-lede", text: "Each program read from its college's catalog: the required courses, the courses chosen from a list, and the electives. A record passes three machine checks: it places the courses the state's Program Course File lists, it adds no course the catalog does not print, and its units add up to the catalog's total. A person may also confirm it against the catalog. A misread changes the college's reading procedure, never the record." }));
     /* Who is reading: a lede beside the first one, so the view keeps only sections below it. */
     box.appendChild(el("div", { cls: "prh-lede prh-review-note" }, [
       Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status",
@@ -2059,19 +2085,21 @@
       box.appendChild(el("div", { cls: "prh-empty", text: "No program record has been loaded yet." }));
       return box;
     }
-    /* The glance counts every record, from the index. */
+    /* The glance counts every record, from the index. Passing is the three machine checks
+       (S415): a person's confirm is optional since Sam's 2026-10-17 ruling, so a count that
+       needed one read 32 while thousands passed. */
     var checks = P.map(recordChecks);
-    var passing = checks.filter(function (c) { return c.passes; }).length;
+    var passing = P.filter(function (p) { return machineFails(p).length === 0; }).length;
     var equal = checks.filter(function (c) { return c.arithmetic === "equal"; }).length;
     var withCpl = P.filter(function (p) { return p.display && p.display.counts && p.display.counts.here > 0; }).length;
     var colleges = {};
     P.forEach(function (p) { colleges[p.college] = 1; });
-    box.appendChild(section("records:glance", "At a glance", passing + " of " + P.length + " records pass all four checks", [
+    box.appendChild(section("records:glance", "At a glance", fmt(passing) + " of " + fmt(P.length) + " records pass the machine checks", [
       el("div", { cls: "prh-facts" }, [
-        fact(P.length + " at " + Object.keys(colleges).length, "programs read, at that many colleges"),
-        fact(passing + " of " + P.length, "records pass all four checks"),
-        fact(equal, "totals agree with the catalog's"),
-        fact(withCpl + " of " + P.length, "programs hold a course with CPL at the college")
+        fact(fmt(P.length) + " at " + Object.keys(colleges).length, "programs read, at that many colleges"),
+        fact(fmt(passing) + " of " + fmt(P.length), "records pass the machine checks"),
+        fact(fmt(equal), "totals agree with the catalog's"),
+        fact(fmt(withCpl) + " of " + fmt(P.length), "programs hold a course with CPL at the college")
       ])]));
     var reviewing = !!(Rv && Rv.records);
     var totals = {}, waits = {};
@@ -2253,7 +2281,8 @@
     var q = el("input", { id: "prh-rq", type: "search", placeholder: "Name or control number", autocomplete: "off" });
     q.value = state.rq;
     var shows = [["all", "All records"]].concat(reviewing ? [["waiting", "Waiting on your reading"]] : [])
-      .concat([["fail", "Fail a machine check"], ["pass", "Pass the machine checks"], ["checked", "Checked"]]);
+      .concat([["fail", "Fail a machine check"], ["pass", "Pass the machine checks"],
+        ["complete", "Complete: an active program, passing"], ["checked", "Confirmed by a person"]]);
     if (!shows.some(function (o) { return o[0] === state.rshow; })) state.rshow = "all";
     var showSel = el("select", { id: "prh-rshow" }, shows.map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
     showSel.value = state.rshow;
@@ -2371,9 +2400,16 @@
     return box;
   }
   function isWaiting(p) { var sl = stateLine(p); return !!(sl && sl.waiting); }
+  /* An active program in COCI (S415), from the Progress view's read of COCI's active keys: null
+     when that read failed, so no list passes off an unread state as "not active". */
+  function activeIn(p) {
+    var k = state.progress && state.progress.activeKeys;
+    return k ? !!k[keyOf(p)] : null;
+  }
   /* The Records view's filter, pure so a test reads it: the search matches the program's
      name or its control number; show narrows to the records waiting on the reader (when one
-     is signed in), those failing or passing the three machine checks, or the checked ones. */
+     is signed in), those failing or passing the three machine checks, the complete ones (an
+     active program in COCI, passing), or the ones a person confirmed. */
   /* college: "all" (or none), one college's name, or a list of them (the Records view's picks). */
   function filterRecords(P, q, show, college, waiting) {
     var t = String(q || "").trim().toLowerCase();
@@ -2385,6 +2421,7 @@
       if (show === "waiting") return waiting ? waiting(p) : true;
       if (show === "fail") return machineFails(p).length > 0;
       if (show === "pass") return machineFails(p).length === 0;
+      if (show === "complete") return machineFails(p).length === 0 && activeIn(p) === true;
       if (show === "checked") return !!p.checked;
       return true;
     });
@@ -2655,6 +2692,8 @@
     addenda: { view: "catalogs", show: "addenda", sec: "catalogs:registry" },
     records: { view: "records", sec: "records:find" },
     checked: { view: "records", rshow: "checked", sec: "records:find" },
+    fail: { view: "records", rshow: "fail", sec: "records:find" },
+    complete: { view: "records", rshow: "complete", sec: "records:find" },
     waiting: { view: "records", rshow: "waiting", sec: "records:find" },
     maps: { view: "sequences", sec: "sequences:colleges" },
     procedures: { view: "procedures" },
@@ -2666,7 +2705,7 @@
       when: function (x) { return x.censusDay ? x.censusDay + " census" : ""; },
       left: function (x) { return [[x.R.length - x.withUrl, "college needs a catalog address", "colleges need a catalog address", TO.noAddress]]; } },
     { id: "pilot", title: "Read the pilot",
-      fact: function (x) { return x.checked + " programs checked"; },
+      fact: function (x) { return x.checked + " programs confirmed by a person"; },
       when: function (x) { return x.checkedDay; },
       left: function (x) { return [[PILOT_PROGRAMS - x.checked, "pilot program to check", "pilot programs to check", TO.waiting]]; } },
     /* Sam, Open Asks Sheet 50 card 5 (2026-10-08, as proposed): a published map counts toward this
@@ -2676,16 +2715,20 @@
       fact: function (x) { return x.mapsSettled + " of " + x.mapsPublished + " published maps settled"; },
       left: function (x) {
         return [[x.mapsPublished - x.mapsSettled, "published map to read or settle", "published maps to read or settle", TO.maps],
-          [x.unchecked, "new record to check", "new records to check", TO.waiting],
           [x.addendaUnread, "catalog addendum to read", "catalog addenda to read", TO.addenda]];
       } },
     { id: "procedures", title: "A procedure per college",
       fact: function (x) { return x.procedures + " of " + x.R.length + " written"; },
       left: function (x) { return [[x.R.length - x.procedures, "college without a reading procedure", "colleges without a reading procedure", TO.noProcedure]]; } },
-    /* Reads as the headline's pair (Sam, 2026-10-08): the checked records of COCI's active programs. */
+    /* Reads as the headline's pair (Sam, 2026-10-08): COCI's active programs and the complete
+       ones. Left: the active programs no read has reached, and every record failing a machine
+       check, whose fix is its college's reading procedure. */
     { id: "every", title: "Every program", needs: ["active"],
-      fact: function (x) { return fmt(x.checked) + " of " + fmt(x.active); },
-      left: function (x) { return [[x.active == null ? null : x.active - x.readTotal, "active program to read", "active programs to read"]]; } }
+      fact: function (x) { return fmt(x.complete) + " of " + fmt(x.active) + " complete"; },
+      left: function (x) {
+        return [[x.activeUnread, "active program not read yet", "active programs not read yet"],
+          [x.failing, "record failing a machine check", "records failing a machine check", TO.fail]];
+      } }
   ];
   /* status(x) answers one of the STATUS keys; meter(x) answers [have, of, verb]; a note in
      the status file (notes.<id>) replaces a part's foot. */
@@ -2696,23 +2739,31 @@
       foot: function (x) { return "Weekly; next apply " + x.nextCensus; },
       open: function (x) { return ["Open the " + x.R.length + " colleges", TO.colleges]; } },
     { id: "reading", title: "Catalog reading",
-      status: function (x) { return x.checked >= PILOT_PROGRAMS ? "pilot" : x.readTotal ? "going" : "not"; },
-      what: function (x) {
-        return (x.unchecked == null ? x.checked + " checked programs" : x.readTotal + " programs") +
-          " read at " + x.recordColleges + " colleges.";
-      },
-      foot: function (x) { return x.newest; },
-      open: function (x) { return x.readTotal ? ["Open the " + fmt(x.readTotal) + " records", TO.records] : null; } },
-    { id: "checks", title: "The four checks", needs: ["Q"],
-      status: function (x) { return x.unchecked ? "call" : "done"; },
-      what: function (x) { return x.checked + " of " + x.readTotal + " programs checked."; },
-      meter: function (x) { return [x.checked, x.readTotal, "checked"]; },
+      status: function (x) { return !x.read ? "not" : x.activeUnread === 0 ? "done" : "going"; },
+      what: function (x) { return fmt(x.read) + " programs read at " + x.readColleges + (x.readColleges === 1 ? " college." : " colleges."); },
       foot: function (x) {
-        return x.unchecked ? x.unchecked + (x.unchecked === 1 ? " waits on " : " wait on ") + x.decider + "'s reading"
-          : "Every record read is checked";
+        return x.notActive ? fmt(x.notActive) + (x.notActive === 1 ? " is a program" : " are programs") + " COCI does not list as active." : "";
       },
-      open: function (x) { return x.checked ? ["Open the " + fmt(x.checked) + " checked", TO.checked] : null; },
-      answer: function (x) { return x.unchecked ? ["Read the " + fmt(x.unchecked) + " waiting on you", TO.waiting] : null; } },
+      open: function (x) { return x.read ? ["Open the " + fmt(x.read) + " records", TO.records] : null; } },
+    /* The machine checks (S415), as the server reads them (program_record_machine_pass): every
+       course the state's file lists is placed, nothing the catalog does not print is added, and
+       the units add up to the printed total (or the catalog prints none). A person's confirm
+       became optional with Sam's 2026-10-17 ruling ("I am trusting your procedures"); the 32 a
+       person confirmed are the pilot's, so this card no longer waits on anyone. */
+    { id: "checks", title: "The machine checks",
+      status: function (x) { return !x.read ? "not" : x.failing ? "going" : "done"; },
+      what: function (x) { return fmt(x.passing) + " of " + fmt(x.read) + " records pass: every listed course placed, none added, the units add up."; },
+      meter: function (x) { return [x.passing, x.read, "pass"]; },
+      foot: function (x) {
+        if (!x.failing) return x.read ? "Every record read passes." : "";
+        var by = [[x.failUnits, "units"], [x.failCourses, "listed courses"], [x.failAdded, "an added course"]]
+          .filter(function (f) { return f[0]; }).map(function (f) { return fmt(f[0]) + " on " + f[1]; });
+        return fmt(x.failing) + (x.failing === 1 ? " fails: " : " fail: ") + joinAnd(by) +
+          (by.length > 1 ? "; a record can fail more than one" : "") + ". The fix goes to the college's reading procedure.";
+      },
+      open: function (x) {
+        return x.failing ? ["Open the " + fmt(x.failing) + " failing", TO.fail] : x.read ? ["Open the " + fmt(x.read) + " records", TO.records] : null;
+      } },
     { id: "maps", title: "Program maps",
       status: function (x) { return x.mapsRead >= x.mapsPublished ? "done" : x.mapsRead ? "going" : "not"; },
       what: function (x) { return x.mapsRead + " of the " + x.mapsPublished + " published maps read."; },
@@ -2739,23 +2790,32 @@
       open: function (x) {
         return x.addendaColleges ? ["Open the " + x.addendaColleges + (x.addendaColleges === 1 ? " college" : " colleges") + " listing one", TO.addenda] : null;
       } },
-    { id: "figures", title: "CPL figures",
-      status: function (x) { return x.builds.length === 1 ? "done" : x.builds.length ? "going" : "not"; },
+    /* The display build (kb/_build_roep_display.py) writes each record's CPL figures. Read live:
+       the newest record's build, and how many records carry none yet (S415; it counted the
+       checked records only, so 15,914 records sat outside the card). */
+    { id: "figures", title: "CPL figures", needs: ["B"],
+      status: function (x) { return !x.build ? "not" : x.unbuilt ? "going" : "done"; },
       what: function (x) {
-        return x.builds.length === 1 ? "Build " + x.builds[0] + " on every checked program (" + x.checked + ")."
-          : x.builds.length ? x.builds.length + " builds across the checked programs." : "No checked program carries a display build.";
+        if (!x.build) return "No record carries a display build yet.";
+        return x.unbuilt ? fmt(x.read - x.unbuilt) + " records carry a display build, the newest " + x.build + "; " +
+          fmt(x.unbuilt) + (x.unbuilt === 1 ? " waits" : " wait") + " for the next build."
+          : "Every record carries a display build; the newest is " + x.build + ".";
       },
       foot: function (x) { return x.builtDay ? "Built " + x.builtDay : ""; },
-      open: function (x) { return x.checked ? ["Open the " + fmt(x.checked) + " checked programs", TO.checked] : null; } },
+      open: function (x) { return x.read ? ["Open the " + fmt(x.read) + " records", TO.records] : null; } },
+    /* Sierra quotes a record a person confirmed, and only that (cpl-chat's
+       fetchCheckedRequirements, checked=true); whether she should quote a record that passes the
+       machine checks is Sam's call (S415). */
     { id: "sierra", title: "Sierra and CPL Pathways",
       status: function () { return "live"; },
-      what: function () { return "Sierra quotes a checked program's requirements; CPL Pathways draws every record, each marked."; },
+      what: function (x) { return "Sierra quotes the " + fmt(x.checked) + " records a person confirmed; CPL Pathways draws every record, each marked."; },
       foot: function () { return ""; },
       open: function () { return ["Open CPL Pathways", TO.pathways]; } }
   ];
   var STATUS = { done: "Done", pilot: "Done for the pilot", live: "Live", going: "In progress", next: "Next",
     not: "Not started", call: "Waiting on " };
-  var SOURCE = { A: "The addenda table", active: "COCI's count of active programs", Q: "The queue's status file (" + QUEUE_URL + ")" };
+  var SOURCE = { A: "The addenda table", active: "COCI's list of active programs", B: "The display build read",
+    Q: "The queue's status file (" + QUEUE_URL + ")" };
 
   function toDate(v) {
     if (!v) return null;
@@ -2788,9 +2848,8 @@
 
   function progressContext(now) {
     var R = state.registry || [], P = rows(), G = state.progress || { errors: {} };
-    var Q = G.queue || null, A = G.addenda || null;
+    var Q = G.queue || null, A = G.addenda || null, K = G.activeKeys || null, B = G.build || null;
     var P1 = P.filter(function (p) { return p.checked; });
-    var unl = Q && Array.isArray(Q.unchecked) ? Q.unchecked : null;
     var published = R.filter(hasMap);
     var mapsRead = published.filter(function (r) { return r.sequence_access === "open"; });
     var mapsSettled = published.filter(function (r) {
@@ -2801,25 +2860,34 @@
     });
     var procs = R.filter(function (r) { return r.procedure; });
     var liveA = A ? A.filter(function (a) { return LIVE_ADDENDA.indexOf(a.status) >= 0; }) : null;
-    var colleges = {};
-    P1.forEach(function (p) { colleges[p.college] = 1; });
-    (unl || []).forEach(function (u) { colleges[u.college] = 1; });
-    var builds = [];
-    P1.forEach(function (p) { var b = p.display && p.display.build; if (b && builds.indexOf(b) < 0) builds.push(b); });
-    var newCols = [];
-    (unl || []).forEach(function (u) { var c = short(u.college); if (c && newCols.indexOf(c) < 0) newCols.push(c); });
+    /* Every record in the index, counted once: read, passing or failing (and on which check),
+       and, where COCI's active list was read, complete (an active program, passing). */
+    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0 };
+    P.forEach(function (p) {
+      colleges[p.college] = 1;
+      var f = machineFails(p), act = !!(K && K[keyOf(p)]);
+      if (f.length) {
+        n.fail++;
+        if (f.indexOf("units") >= 0) n.units++;
+        if (f.indexOf("courses") >= 0) n.courses++;
+        if (f.indexOf("off-list") >= 0) n.added++;
+      } else n.pass++;
+      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; } }
+    });
     var procList = procs.map(function (r) { return short(r.college) + (r.procedure.v != null ? " v" + r.procedure.v : ""); });
     var x = {
-      R: R, P: P1, A: A, Q: Q, active: G.active == null ? null : G.active, errors: G.errors || {}, now: now,
+      R: R, P: P1, A: A, B: B, Q: Q, active: G.active == null ? null : G.active, errors: G.errors || {}, now: now,
       decider: (Q && Q.decider) || "Sam",
       withUrl: R.filter(function (r) { return r.catalog_url; }).length,
       currentYear: R.filter(function (r) { return r.catalog_year === CURRENT_YEAR; }).length,
       censusDay: dayOf(latest(R.map(function (r) { return r.census_checked_at; }))),
       nextCensus: ptDay(nextWeekly(now, 0, 10, 29)),
-      checked: P1.length, unchecked: unl ? unl.length : null, readTotal: P1.length + (unl ? unl.length : 0),
+      checked: P1.length,
       checkedDay: dayOf(latest(P1.map(function (p) { return p.checked_at; }))),
-      recordColleges: Object.keys(colleges).length,
-      newest: newCols.length ? joinAnd(newCols) + " added " + dayOf(latest(unl.map(function (u) { return u.loaded; }))) : "",
+      read: P.length, readColleges: Object.keys(colleges).length,
+      passing: n.pass, failing: n.fail, failUnits: n.units, failCourses: n.courses, failAdded: n.added,
+      complete: K ? n.complete : null, completeColleges: K ? Object.keys(doneCols).length : null,
+      activeUnread: K && G.active != null ? G.active - n.onActive : null, notActive: K ? P.length - n.onActive : null,
       mapsPublished: published.length, mapsRead: mapsRead.length, mapsSettled: mapsSettled.length,
       mapsReadAt: mapsRead.map(function (r) { return short(r.college); }),
       mapsRefused: published.filter(function (r) { return r.sequence_access === "refused"; }).length,
@@ -2829,7 +2897,7 @@
       addendaColleges: liveA ? Object.keys(liveA.reduce(function (o, a) { o[a.college] = 1; return o; }, {})).length : null,
       addendaRead: liveA ? liveA.filter(function (a) { return a.status !== "listed"; }).length : null,
       addendaUnread: liveA ? liveA.filter(function (a) { return a.status === "listed"; }).length : null,
-      builds: builds, builtDay: dayOf(latest(P1.map(function (p) { return p.display && p.display.built; })))
+      build: B ? B.build : null, unbuilt: B ? B.unbuilt : null, builtDay: B ? dayOf(B.built) : ""
     };
     /* Where the harvest stands: every milestone before the first one with anything left is
        done; that one is You are here, the one after it is next. */
@@ -2866,28 +2934,26 @@
    * want to be able to show this to the Chancellor so she can get the BIG vision and
    * progress"; SkyView becomes the hub later. Yes to the mock-up (S347):
    * https://claude.ai/artifact/ME23x5taJpTKpx4RBwQ2Tr (prototype/roep_headline_mockup.html).
-   * Complete means checked: the four checks passed. COCI holds one Active row per control
-   * number (20,282 rows and numbers at 118 colleges, read 2026-10-08), so its exact count
-   * is the first number. The band sits in the view's head, beside the run status, so
-   * Collapse all leaves it on screen. Each checkpoint records the pair in the status file's
-   * headline list (scripts/queue_status.py --headline), and the band names the first
-   * recorded count once the checked count passes it. */
+   * Complete means an active program whose record passes the three machine checks (S415). It
+   * meant a person had checked the record until Sam's 2026-10-17 ruling ("No need to ask me for
+   * approval on all these items as I am trusting your procedures"); after that the person-checked
+   * count stood at 32 while 15,946 records were read, and the band read as if the harvest had
+   * stalled. COCI holds one Active row per control number (20,282 at 118 colleges), read by key so
+   * a record counts only when its program is active. The band sits in the view's head, beside the
+   * run status, so Collapse all leaves it on screen. Each checkpoint records the pair in the status
+   * file's headline list (scripts/queue_status.py --headline), and the band names the first
+   * recorded complete count once today's passes it. Under it, each number leads to its list:
+   * the records read, the ones failing a check, and the active programs no read has reached. */
   function headlineFacts(x) {
-    var P = x.P || [], cols = {};
-    P.forEach(function (p) { cols[p.college] = 1; });
     var hist = x.Q && Array.isArray(x.Q.headline) ? x.Q.headline.filter(function (h) {
-      return h && /^\d{4}-\d{2}-\d{2}$/.test(h.day || "") && typeof h.checked === "number";
+      return h && /^\d{4}-\d{2}-\d{2}$/.test(h.day || "") && typeof h.complete === "number";
     }) : [];
     var first = hist[0] || null;
     return {
       active: x.active, colleges: x.R.length,
-      complete: P.length, completeColleges: Object.keys(cols).length,
-      outcomes: P.filter(function (p) {
-        var o = p.record && p.record.program && p.record.program.outcomes;
-        return Array.isArray(o) && o.length > 0;
-      }).length,
-      maps: P.filter(function (p) { return !!(p.display && p.display.map && p.display.map.status === "read"); }).length,
-      since: first && first.checked < P.length ? { day: dayOf(first.day), checked: first.checked } : null
+      complete: x.complete, completeColleges: x.completeColleges,
+      read: x.read, readColleges: x.readColleges, failing: x.failing, unread: x.activeUnread,
+      since: first && x.complete != null && first.complete < x.complete ? { day: dayOf(first.day), complete: first.complete } : null
     };
   }
   function headlineBand(x) {
@@ -2899,23 +2965,29 @@
       : el("div", { cls: "prh-pg-n" }, [el("b", { cls: "prh-pg-unread", text: "Could not be read" }),
           el("span", { text: "active programs at " + h.colleges + " colleges" }),
           el("small", { text: missingText(["active"], x) })]);
-    var mine = el("div", { cls: "prh-pg-n prh-pg-mine" }, [el("b", { text: fmt(h.complete) }),
-      el("span", { text: "read from the college's catalog and checked" }),
-      el("small", { text: "Requirements, choices and totals, at " + h.completeColleges + (h.completeColleges === 1 ? " college" : " colleges") }),
-      h.complete > 0 ? goControl("Open the " + fmt(h.complete) + " checked", TO.checked, "prh-pg-hlgo") : null]);
+    var mine = read
+      ? el("div", { cls: "prh-pg-n prh-pg-mine" }, [el("b", { text: fmt(h.complete) }),
+          el("span", { text: "active programs harvested complete" }),
+          el("small", { text: "Read from the college's catalog and passing the machine checks: every listed course placed, none added, the units add up. At " +
+            h.completeColleges + (h.completeColleges === 1 ? " college." : " colleges.") }),
+          h.complete > 0 ? goControl("Open the " + fmt(h.complete) + " complete", TO.complete, "prh-pg-hlgo") : null])
+      : el("div", { cls: "prh-pg-n prh-pg-mine" }, [el("b", { cls: "prh-pg-unread", text: "Could not be read" }),
+          el("span", { text: "active programs harvested complete" }),
+          el("small", { text: missingText(["active"], x) })]);
     var kids = [el("div", { cls: "prh-pg-pair" }, [all, mine])];
     if (read && h.active > 0) {
       var pct = Math.max(0, Math.min(100, h.complete / h.active * 100));
-      kids.push(el("div", { cls: "prh-pg-bar", role: "img", "aria-label": fmt(h.complete) + " of " + fmt(h.active) + " programs read and checked" }, [
+      kids.push(el("div", { cls: "prh-pg-bar", role: "img", "aria-label": fmt(h.complete) + " of " + fmt(h.active) + " active programs complete" }, [
         el("i", { style: "width:" + (Math.round(pct * 100) / 100) + "%" })]));
     }
-    if (h.complete > 0 || h.since) {
+    if (h.read > 0) {
       kids.push(el("p", { cls: "prh-pg-within" }, [
-        h.complete > 0 ? el("span", {}, ["Of the " + fmt(h.complete) + ": ", el("b", { text: fmt(h.outcomes) }), " also carry their published outcomes"]) : null,
-        h.complete > 0 ? el("span", {}, [el("b", { text: fmt(h.maps) }), " show the college's term-by-term map"]) : null,
-        h.since ? el("span", { cls: "prh-quiet", text: "Up from " + fmt(h.since.checked) + " on " + h.since.day }) : null]));
+        el("span", {}, [el("b", { text: fmt(h.read) }), " records read at " + h.readColleges + (h.readColleges === 1 ? " college" : " colleges")]),
+        h.failing > 0 ? goControl(fmt(h.failing) + (h.failing === 1 ? " fails" : " fail") + " a machine check", TO.fail, "prh-pg-hlgo") : null,
+        h.unread != null ? el("span", {}, [el("b", { text: fmt(h.unread) }), " active " + (h.unread === 1 ? "program" : "programs") + " not read yet"]) : null,
+        h.since ? el("span", { cls: "prh-quiet", text: "Up from " + fmt(h.since.complete) + " complete on " + h.since.day }) : null]));
     }
-    return el("section", { cls: "prh-pg-hl", "aria-label": "Every program in the state, and how many the harvest holds" }, kids);
+    return el("section", { cls: "prh-pg-hl", "aria-label": "Every active program in the state, and how many the harvest holds complete" }, kids);
   }
 
   /* ── the whole harvest, one measure ──
@@ -3034,7 +3106,7 @@
         el("b", { text: nr ? stampOf(nr) : "not on record" })]));
       var waiting = (Array.isArray(Q.calls) ? Q.calls : []).filter(function (c) { return !callAnswered(c); }).length;
       meta.appendChild(el("li", { id: "prh-pg-waitcount", cls: waiting ? "prh-pg-waiting" : "prh-quiet",
-        text: waiting ? waiting + " waiting on " + x.decider : "Nothing waiting on " + x.decider }));
+        text: waiting ? waiting + (waiting === 1 ? " call" : " calls") + " waiting on " + x.decider : "Nothing waiting on " + x.decider }));
     } else {
       meta.appendChild(el("li", { cls: "prh-caution", text: missingText(["Q"], x) }));
     }
@@ -3554,7 +3626,7 @@
       var sel = state.view === v.id;
       var b = el("button", { role: "tab", id: "prh-tab-" + v.id, "aria-controls": "prh-panel",
         "aria-selected": sel ? "true" : "false", tabindex: sel ? "0" : "-1", type: "button" },
-        [v.label, n[v.id] == null ? null : el("span", { cls: "prh-n", text: String(n[v.id]) })]);
+        [v.label, n[v.id] == null ? null : el("span", { cls: "prh-n", text: fmt(n[v.id]) })]);
       /* The Records tab itself lists the reader's picks; only a count's word lists every college. */
       b.addEventListener("click", function () { if (v.id === "records") state.rscope = "pick"; choose(v.id, true); });
       b.addEventListener("keydown", function (e) {

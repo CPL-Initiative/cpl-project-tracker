@@ -2,19 +2,24 @@
 """queue_status.py — stamp and check kb/queue_status.json, the Progress view's status file.
 
 The Program Requirements tab's Progress view (program_requirements.js, Sam's 2026-10-07
-ask: "a workflow dashboard to monitor the progress") reads the harvest's tables live. Two
-things no browser read can know come from this file instead, written at every checkpoint
-(.claude/commands/checkpoint.md, step 12):
+ask: "a workflow dashboard to monitor the progress") reads the harvest's tables live,
+every record included (Sam, Open Asks Sheet 67). What no browser read can know comes from
+this file instead, written at every checkpoint (.claude/commands/checkpoint.md, step 12):
+the run, meaning the session that last worked the queue and its handoff, the CPL Queue
+routine's next firing, the next step, the calls waiting on Sam, and what changed
+(program_source_registry_history has no anon grant).
 
-  - the records waiting on a person's check: anon reads checked records only
-    (policy program_requirement_records_read), so the view cannot count them; and
-  - the run: the session that last worked the queue and its handoff, the CPL Queue
-    routine's next firing, the next step, the calls waiting on Sam, and what changed
-    (program_source_registry_history has no anon grant).
+The `unchecked` list (every record no person had checked) is no longer written: since
+Sam's 2026-10-17 ruling ("I am trusting your procedures") no record waits on a person,
+and the view counts every record from its own index. At 15,914 rows it made this file
+3.5 MB, read on every visit (S415). A file that still carries one is validated.
 
-It also keeps the headline's history (Sam, 2026-10-08: COCI's active programs beside the
-checked ones, "so she can get the BIG vision and progress"): one entry per day in
-`headline`, so the pair has a trend. The view reads the pair live; the list is the record.
+It also keeps the headline's history (Sam, 2026-10-08: COCI's active programs beside
+"the ones with complete harvested ROEP data", "so she can get the BIG vision and
+progress"): one entry per day in `headline`, so the pair has a trend. Complete means an
+active program's record passes the machine checks (program_record_machine_pass); entries
+before 2026-10-18 counted the records a person checked (`checked`). The view reads the
+pair live; the list is the record.
 
 Never widen a policy to fill the view; this file is the chosen alternative (S343, the
 handoff's option b).
@@ -23,11 +28,13 @@ Usage, from the repo root:
   python3 scripts/queue_status.py --check
       validate the committed file; exit 1 and name each fault
   python3 scripts/queue_status.py --stamp [--next-run 2026-10-08T15:07:00Z]
-                                          [--headline ACTIVE CHECKED COLLEGES]
+                                          [--headline ACTIVE COMPLETE COLLEGES]
       set written_at to now (UTC) and, if given, the routine's next firing (read it with
       get_trigger on the CPL Queue routine) and today's headline entry (read the three
-      counts with the SQL in .claude/commands/checkpoint.md step 12; a second stamp the
-      same day replaces that day's entry), then validate
+      counts with the query --headline-sql prints; a second stamp the same day replaces
+      that day's entry), then validate
+  python3 scripts/queue_status.py --headline-sql
+      print the headline's query (run it through the Supabase MCP)
 
   python3 scripts/queue_status.py --harvest-sql
       print the one query behind the whole-harvest measure (run it through the Supabase MCP)
@@ -106,7 +113,7 @@ def faults(q, root=ROOT, parts=None):
             need(isinstance(nr.get("every_hours"), (int, float)) and nr.get("every_hours") >= 0,
                  "next_run.every_hours must be a number of hours (0 for a one-time run)")
     un = q.get("unchecked")
-    need(isinstance(un, list), "unchecked must be a list (empty when every record read is checked)")
+    need(un is None or isinstance(un, list), "unchecked must be a list when present (no longer written; see the docstring)")
     for i, u in enumerate(un if isinstance(un, list) else []):
         w = "unchecked[%d]" % i
         if not isinstance(u, dict):
@@ -177,11 +184,15 @@ def faults(q, root=ROOT, parts=None):
             continue
         d = e.get("day")
         need(isinstance(d, str) and DAY.match(d or ""), w + ".day must be a date, YYYY-MM-DD")
-        for k in ("active", "checked", "colleges"):
+        need("complete" in e or "checked" in e, w + " needs complete (or checked, before 2026-10-18)")
+        for k in ("active", "colleges", "complete", "checked"):
+            if k in ("complete", "checked") and k not in e:
+                continue
             need(isinstance(e.get(k), int) and not isinstance(e.get(k), bool) and e.get(k) >= 0,
                  w + "." + k + " must be a whole number")
-        if isinstance(e.get("active"), int) and isinstance(e.get("checked"), int):
-            need(e["checked"] <= e["active"], w + ".checked cannot exceed active")
+        for k in ("complete", "checked"):
+            if isinstance(e.get("active"), int) and isinstance(e.get(k), int):
+                need(e[k] <= e["active"], w + "." + k + " cannot exceed active")
         if isinstance(d, str):
             need(d > prev, w + ".day must come after the entry before it (one entry per day, oldest first)")
             prev = d
@@ -197,6 +208,17 @@ def faults(q, root=ROOT, parts=None):
         need(isinstance(c.get("at"), str) and ISO.match(c.get("at") or ""), w + ".at must be an ISO time in UTC")
         text(c.get("text"), w + ".text")
     return out
+
+
+# The headline's pair (Sam, 2026-10-08): COCI's active programs, the ones whose record passes the
+# machine checks (complete), and the colleges they are at. The view counts the same live from its
+# index; program_record_machine_pass is the server's own reading of the checks.
+HEADLINE_SQL = """with act as (select college, control_number from coci_college_programs where status = 'Active'),
+c as (select r.college from program_requirement_records r
+      join act a on a.college = r.college and a.control_number = r.control_number
+      where public.program_record_machine_pass(r.checks))
+select (select count(*) from act) active, (select count(*) from c) complete,
+  (select count(distinct college) from c) colleges;"""
 
 
 # The whole harvest's counts, in one read (the Progress view's "The whole harvest" band). Programs
@@ -290,10 +312,10 @@ def harvest_faults(h):
     return out
 
 
-def add_headline(hist, day, active, checked, colleges):
+def add_headline(hist, day, active, complete, colleges):
     """hist with day's entry set to the pair: replaced when the day is already there."""
     hist = [e for e in (hist if isinstance(hist, list) else []) if not (isinstance(e, dict) and e.get("day") == day)]
-    hist.append({"day": day, "active": active, "checked": checked, "colleges": colleges})
+    hist.append({"day": day, "active": active, "complete": complete, "colleges": colleges})
     return sorted(hist, key=lambda e: str(e.get("day", "")))
 
 
@@ -306,8 +328,9 @@ def main(argv=None):
     ap.add_argument("--check", action="store_true", help="validate the committed file")
     ap.add_argument("--stamp", action="store_true", help="set written_at to now, then validate")
     ap.add_argument("--next-run", help="the CPL Queue routine's next firing, ISO UTC (get_trigger's next_run_at)")
-    ap.add_argument("--headline", nargs=3, type=int, metavar=("ACTIVE", "CHECKED", "COLLEGES"),
-                    help="today's pair: COCI's active programs, the checked records, their colleges")
+    ap.add_argument("--headline", nargs=3, type=int, metavar=("ACTIVE", "COMPLETE", "COLLEGES"),
+                    help="today's pair: COCI's active programs, the complete ones, their colleges (--headline-sql)")
+    ap.add_argument("--headline-sql", action="store_true", help="print the headline's query and exit")
     ap.add_argument("--harvest", metavar="ROW_JSON",
                     help="the whole-harvest query's row (--harvest-sql prints the query), as JSON")
     ap.add_argument("--harvest-sql", action="store_true", help="print the whole-harvest query and exit")
@@ -315,6 +338,9 @@ def main(argv=None):
     a = ap.parse_args(argv)
     if a.harvest_sql:
         print(HARVEST_SQL)
+        return 0
+    if a.headline_sql:
+        print(HEADLINE_SQL)
         return 0
     with open(a.path, encoding="utf-8") as f:
         q = json.load(f)

@@ -215,10 +215,10 @@ async function seedCollegeSelect(page) {
   await page.waitForTimeout(200);
 }
 
-// Seeds the Program Requirements tab's Progress view with the live shape of
-// 2026-10-07 (S343). The sweep aborts every request off the origin, so the
-// tab's Supabase reads fail; the status file (kb/queue_status.json) is served
-// and read for real. Each count matches what the tables held that day.
+// Seeds the Program Requirements tab's Progress view with the shape of
+// 2026-10-18 (S415; first seeded S343). The sweep aborts every request off the
+// origin, so the tab's Supabase reads fail; the status file (kb/queue_status.json)
+// is served and read for real.
 /* The docked Sierra, full screen with a conversation (S349). Seeded through
    the real path: the reader's role is confirmed on the chip, only the chat
    function's stream is stubbed, and six questions are asked, so the first one
@@ -429,16 +429,27 @@ async function seedProgress(page, theme) {
         census_checked_at: "2026-10-04T15:38:14Z",
         procedure: i === 1 ? { v: 1 } : i === 2 ? { v: 4 } : null });
     }
-    const recs = [];
-    for (let i = 0; i < 20; i++) recs.push({ college: ["Cerritos College", "San Diego Miramar College", "Mt. San Antonio College",
-      "Riverside City College", "West Los Angeles College"][i % 5], control_number: String(40000 + i), program_title: "Program " + i,
-      checked: true, checked_at: "2026-10-04T10:22:45Z", display: { build: "8292780f6cd5", built: "2026-10-06" },
-      record: { program: { outcomes: i === 7 ? [] : ["Outcome " + i] } } });
+    /* The 2026-10-18 shape (S415): every record in the index, 32 a person confirmed, the
+       rest passing or failing the machine checks, a few on programs COCI does not list as
+       active; COCI's active programs by key; the display build read live. */
+    const recs = [], keys = {};
+    for (let i = 0; i < 400; i++) {
+      const college = i < 20 ? ["Cerritos College", "San Diego Miramar College", "Mt. San Antonio College",
+        "Riverside City College", "West Los Angeles College"][i % 5] : "College " + (i % 114);
+      const fail = i % 9 === 4, units = i % 18 === 4;
+      const r = { college: college, control_number: String(40000 + i), program_title: "Program " + i,
+        checked: i < 32, checked_at: i < 32 ? "2026-10-04T10:22:45Z" : null,
+        checks: { coverage: !(fail && !units), invented: true, arithmetic: units ? "unequal" : "equal" },
+        display: { build: "48cb66f19cff", built: "2026-10-18" }, record: { program: { outcomes: ["Outcome " + i] } } };
+      recs.push(r);
+      if (i % 12 !== 11) keys[college + "|" + r.control_number] = 1;
+    }
     const addenda = [];
-    for (let i = 0; i < 79; i++) addenda.push({ college: "College " + (i % 52), status: "listed" });
+    for (let i = 0; i < 79; i++) addenda.push({ college: "College " + (i % 52), status: i < 8 ? "read" : "listed" });
     S.registry = reg; S.records = recs; S.error = null;
-    S.progress = { addenda: addenda, active: 20282, queue: S.progress.queue, errors: S.progress.errors || {},
-      readAt: new Date() };
+    S.progress = { addenda: addenda, active: 20282, activeKeys: keys,
+      build: { build: "48cb66f19cff", built: "2026-10-18", unbuilt: 0 },
+      queue: S.progress.queue, errors: S.progress.errors || {}, readAt: new Date() };
     S.view = "progress";
     M._render();
   });
