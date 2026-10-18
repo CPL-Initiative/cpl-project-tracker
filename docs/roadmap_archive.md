@@ -6018,3 +6018,8 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history moved at the S410 checkpoint (2026-10-18)
 
 - 2026-10-17 (S402 SkyToyon, Sam's session): two catalog-sweep waves, Lake Tahoe, Marin, Butte and Las Positas (#2186, build `40d138a9f533` applied), then Los Medanos and Mission (#2187, build `7c13e42917c5`); the eLumen reader takes catalog links written whole with a fragment (Los Medanos 7 to 83 of 97); the college workflow refuses a run naming no college; ten procedure records; Open Asks Sheet 87 asks to correct five registry rows; handoff 403 names SkyYarrow.
+
+### INDEX update history moved 2026-10-18 (S412)
+
+- 2026-10-17 (S403 SkyYarrow, the 08:12Z firing): two firings had both run as S403 and written a PDF reader each; one reader from the two (#2192, build `726bde512dfa`, 11,862 programs, East LA's 120 included); LA City and Pierce rescored free (outcomes failures 145 to 12 and 85 to 15); a reconcile now refuses a moved page, and the 49-row undo waits on Open Asks Sheet 88; harvest lessons S372-S385 moved to archive 2.
+- 2026-10-17 (S403 SkyYarrow, the CPL Queue routine): a whole-catalog PDF reader and the PDF wave, fifteen colleges loaded unchecked (1,725 records, #2189, build `7f4744e8e4ae`, 11,742 programs); Cerro Coso's robots.txt refuses its catalog PDF; the outcomes check fails on PDF text (open); handoff 404 (SkyBuckeye).

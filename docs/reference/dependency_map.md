@@ -505,7 +505,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/budget_snapshot.json` | scripts: `kb/_load_budget.py` | scripts: `kb/_load_budget.py` · committed by: `daily-dashboard.yml` |
 | `kb/catalog_framing.json` | tabs: `program-requirements` | — |
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
-| `kb/cer_classified.json` | none found | committed by: `cer-procedures.yml` |
+| `kb/cer_classified.json` | scripts: `kb/_cer_procedures.py` | scripts: `kb/_cer_procedures.py` · committed by: `cer-procedures.yml` |
 | `kb/cer_procedures.json` | scripts: `kb/_cer_procedures.py` | — |
 | `kb/cer_procedures_out/latest.json` | tabs: `credential-reference` | committed by: `cer-procedures.yml` |
 | `kb/cid_articulation_joins.json` | scripts: `excel_to_dashboard.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_title_consolidation_dryrun.py` | scripts: `kb/_join_cid_articulations.py` |

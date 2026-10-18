@@ -306,6 +306,78 @@ def rules_text(procs, skill_text, families):
     return "\n".join(lines) + "\n"
 
 
+# ── the college's own course, for a title that is only a code ──────────────
+# Rule 5c: "a code-only title invokes the lookup" (Sam, 2026-07-07). The
+# classifier cannot read the course catalog, so on the first pass it named
+# "Discipline Exam - CS 119" "Computer Science (CS 119)"; the college's own
+# course is Programming in Python. The run looks the code up in COCI at the
+# college that entered the title and hands the title on as a hint.
+_TRAIL_CODE = re.compile(r"(?:^|[\s:,(\-])(?:for\s+)?(?P<subj>[A-Za-z][A-Za-z&/.]{0,9}(?:\s[A-Za-z]{1,6})?)"
+                         r"[\s.\-]+0*(?P<num>\d{1,4}[A-Za-z]{0,2})\s*\)?\s*$")
+_NC_AT = re.compile(r"^NC\.(?P<subj>[A-Za-z]{2,8})-0*(?P<num>\d{1,4}[A-Za-z]{0,2})\s+at\s+", re.I)
+_METHOD_WORDS = re.compile(r"\b(?:discipline|examination|exam|portfolio|review|for|noncredit|non-credit|"
+                           r"industry|credit|by|cbe|challenge|test|completion)\b", re.I)
+_NOT_A_SUBJECT = re.compile(r"^(?:score|area|level|part|period|type|grade|unit|for)$", re.I)
+EXAM_BRANDS = {"AP", "IB", "CLEP", "AICE", "DSST"}
+
+
+def code_only(raw):
+    """(subject, number) when the title names a course by its code and little
+    else, or None. An exam brand's parenthetical is its local target course,
+    never its identity, so AP/IB/CLEP titles are never read this way."""
+    t = " ".join((raw or "").replace("\xa0", " ").split())
+    if not t or t.split()[0].strip('"').upper() in EXAM_BRANDS:
+        return None
+    m = _NC_AT.match(t)
+    if m:
+        return m.group("subj"), m.group("num")
+    m = _TRAIL_CODE.search(t)
+    if not m:
+        return None
+    subj = re.sub(r"^for\s+", "", m.group("subj"), flags=re.I)
+    if _NOT_A_SUBJECT.match(subj.split()[0]):
+        return None
+    rest = _METHOD_WORDS.sub(" ", t[:m.start()])
+    if len(re.findall(r"[A-Za-z]{3,}", rest)) >= 2:
+        return None  # the title already describes its course
+    return subj, m.group("num")
+
+
+def catalog_hints(raws, cards, index=None):
+    """raw → a hint naming the college's own course title, for each code-only
+    title COCI resolves to one title at the colleges that entered it. `index`
+    is _suggest_unclassified.build_coci_index()'s college-scoped index; it is
+    built only when some title needs it, and a missing catalog adds no hint."""
+    want = {r: code_only(r) for r in raws}
+    want = {r: v for r, v in want.items() if v}
+    if not want:
+        return {}
+    import _suggest_unclassified as sug
+    if index is None:
+        try:
+            index = sug.build_coci_index()[1]
+        except Exception as exc:  # openpyxl or the catalog file missing
+            print("catalog hints: the course catalog did not load (%s)" % str(exc).splitlines()[0][:120])
+            return {}
+    out = {}
+    for raw, (subj, num) in want.items():
+        found = {}
+        for college in (cards.get(raw) or {}).get("colleges") or []:
+            e = index.get((sug.norm_college(college), sug.norm_subj(subj), sug.norm_num(num)))
+            if e and e["titles"]:
+                found[e["titles"].most_common(1)[0][0]] = college
+        if len(found) == 1:
+            title, college = next(iter(found.items()))
+            out[raw] = {"title": _title_case(title.strip()), "issuer": ISSUER_CCC, "via": "catalog",
+                        "note": "%s's own course %s %s is titled %s in COCI." % (college, subj, num, title.strip())}
+    return out
+
+
+def hints_key(hints):
+    return hashlib.sha256(json.dumps([[h.get("title"), h.get("via")] for h in hints],
+                                     ensure_ascii=False).encode("utf-8")).hexdigest()[:10]
+
+
 def classifier_row(raw, colleges, meta, hints):
     return {"raw_title": raw,
             "cpl_types": [meta["cpl_type"]] if meta.get("cpl_type") else [],
@@ -348,11 +420,19 @@ def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post):
         for ch, got in pool.map(one, chunks):
             calls.append({"titles": len(ch), "error": got.get("error"),
                           "usage": got.get("usage"), "model": got.get("model"), "ms": got.get("ms")})
-            asked = {r["raw_title"] for r in ch}
+            # The model hands back a title with its non-breaking spaces as plain
+            # ones (105 of 1,118 on the first pass), so an answer is matched on
+            # the title's spacing-free form and keyed by the title as asked.
+            asked = {_spacing_key(r["raw_title"]): r["raw_title"] for r in ch}
             for rec in got.get("records") or []:
-                if rec.get("raw_title") in asked:
-                    out[rec["raw_title"]] = rec
+                raw = asked.get(_spacing_key(rec.get("raw_title")))
+                if raw is not None:
+                    out[raw] = dict(rec, raw_title=raw)
     return out, calls
+
+
+def _spacing_key(t):
+    return " ".join((t or "").replace("\xa0", " ").split())
 
 
 def cost_usd(calls):
@@ -385,7 +465,7 @@ def as_proposal(rec, families=()):
 
 # ── the run ──────────────────────────────────────────────────────────────────
 
-def run(classify_n=0, dry_run=False, key=None, call=post, now=None):
+def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True):
     procs = load_procedures()
     owners = lane_owners(procs)
     phash = procedures_hash(procs)
@@ -401,6 +481,9 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None):
     cred_issuers = load_cred_issuers()
 
     settled, hints, held = settle(waiting, lanes, suggestions, owners)
+    if catalog:
+        for raw, h in catalog_hints([r for r in waiting if r not in settled], cards).items():
+            hints.setdefault(raw, []).append(h)
     for raw, why in issuer_conflicts(settled, cred_issuers).items():
         held[raw] = {"why": why, "proposals": [{"procedure": settled[raw]["procedure"],
                                                 "title": settled[raw]["title"],
@@ -409,8 +492,14 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None):
 
     cache = json.load(open(CLASSIFIED, encoding="utf-8")) if os.path.exists(CLASSIFIED) else {}
     records = cache.get("records", {})
+    # Asked once; asked again only while unsure, when the procedures or the
+    # title's hints have changed since. A record from before hints were
+    # fingerprinted (the 2026-10-18 first pass) had every hint but the catalog's.
+    def asked_with(r):
+        return records[r].get("hints") or hints_key([h for h in hints.get(r, []) if h.get("via") != "catalog"])
     need = [r for r in waiting if r not in settled and (
-        r not in records or (records[r].get("rules") != phash and as_proposal(records[r])["confidence"] < SURE))]
+        r not in records or (as_proposal(records[r])["confidence"] < SURE and (
+            records[r].get("rules") != phash or asked_with(r) != hints_key(hints.get(r, [])))))]
     calls = []
     if classify_n and need:
         if not key:
@@ -425,7 +514,7 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None):
         got, calls = classify(rows, rules, key, call=call)
         stamp = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%d")
         for raw, rec in got.items():
-            records[raw] = dict(rec, rules=phash, asked=stamp)
+            records[raw] = dict(rec, rules=phash, hints=hints_key(hints.get(raw, [])), asked=stamp)
         print("classifier: asked %d of %d needing an answer; %d answered; %d calls; $%.2f"
               % (len(ask), len(need), len(got), len(calls), cost_usd(calls)))
 
