@@ -3,18 +3,18 @@
  "programs": 211,
  "with_closed_list": 188,
  "found": 178,
- "extracted": 172,
+ "extracted": 178,
  "errors": 0,
- "passed_machine_checks": 129,
+ "passed_machine_checks": 135,
  "failed": {
-  "coverage": 22,
+  "coverage": 19,
   "invented": 8,
   "arithmetic": 37,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd": 13.55,
- "cost_per_program": 0.0788,
+ "cost_usd": 14.21,
+ "cost_per_program": 0.0798,
  "not_found": [
   {
    "control_number": "02902",
@@ -127,5 +127,5 @@
    }
   }
  ],
- "run": "39114580707"
+ "run": "39115028720"
 }

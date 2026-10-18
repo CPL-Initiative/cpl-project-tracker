@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 211,
  "with_closed_list": 188,
- "started": "2026-10-18T09:16:25Z",
+ "started": "2026-10-18T09:23:23Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.lattc.edu/academic-resources/catalog",
@@ -2469,7 +2469,7 @@
   ]
  },
  "loads": 2,
- "seconds": 117.2,
+ "seconds": 168.7,
  "found": 178,
  "by_method": {
   "no_closed_list": 23,
@@ -2822,8 +2822,8 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_trade_technical",
-  "kept": 159,
-  "programs": 19,
+  "kept": 167,
+  "programs": 11,
   "list": [
    {
     "control_number": "02904",
@@ -2831,9 +2831,9 @@
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
     "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "was_coverage": 0.778,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "02910",
@@ -2841,7 +2841,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -2851,18 +2851,8 @@
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "08474",
-    "title": "Operation & Maintenance Engineering: Steam Plant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
-    "coverage": 0.636,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
-    "was_coverage": 0.5,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2871,18 +2861,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08484",
-    "title": "Plumbing: Construction Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
-    "was_coverage": 0.941,
     "was_method": "pdf_pages"
    },
    {
@@ -2891,9 +2871,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
     "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "was_coverage": 0.778,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21852",
@@ -2901,7 +2881,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -2911,18 +2891,8 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21856",
-    "title": "Plumbing: Construction Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
-    "was_coverage": 0.941,
     "was_method": "pdf_pages"
    },
    {
@@ -2931,58 +2901,8 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "30963",
-    "title": "Powerline Mechanic",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
-    "coverage": 0.938,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
-    "was_coverage": 0.812,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31082",
-    "title": "Solar Thermal Installation and Maintenance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "coverage": 0.917,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31089",
-    "title": "Solar Thermal Installation & Maintenance",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "coverage": 0.696,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "was_coverage": 0.565,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31090",
-    "title": "Energy Efficiency Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "coverage": 0.905,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "was_coverage": 0.762,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31280",
-    "title": "Photo Voltaic (PV) Solar Installation & Maintenance",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
-    "coverage": 0.72,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
-    "was_coverage": 0.6,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2991,8 +2911,8 @@
     "award": "A.A- T Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
     "coverage": 0.824,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
+    "was_coverage": 0.824,
     "was_method": "pdf_pages"
    },
    {
@@ -3001,9 +2921,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41759",
@@ -3011,11 +2931,11 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39114580707"
+ "run": "39115028720"
 }

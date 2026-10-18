@@ -1,0 +1,508 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "02904",
+ "shape": "degree",
+ "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9429,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9429,
+    "output_tokens": 4685,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4685,
+  "output_tokens_details": {
+   "thinking_tokens": 1932
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13142,
+ "ms": 37695,
+ "seconds": 39.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 27,
+   "share": 0.778,
+   "missing": [
+    "REFA/C123",
+    "REFA/C124",
+    "REFA/C125",
+    "REFA/C141",
+    "REFA/C143",
+    "REFA/C145"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "ECONMT115",
+    "ECONMT129",
+    "ECONMT173",
+    "REFA/C159",
+    "REFA/C160",
+    "REFA/C177",
+    "REFA/C201",
+    "REFA/C202",
+    "REFA/C203",
+    "REFA/C204",
+    "REFA/C401"
+   ],
+   "flagged": [
+    "ECONMT115",
+    "ECONMT129",
+    "ECONMT173",
+    "REFA/C159",
+    "REFA/C160",
+    "REFA/C177",
+    "REFA/C201",
+    "REFA/C202",
+    "REFA/C203",
+    "REFA/C204",
+    "REFA/C401"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    48.0,
+    49.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 48.0-49.0; the catalog states 48.0-48.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "HEATING, VENTILATING, AIR CONDITIONING & REFRIGERATION (HVACR) (formerly Refrigeration & Air Conditioning Mechanics) ▌ Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will maintain and repair air conditioning and refrigeration systems using appropriate test instruments and tools effectively and safely.",
+    "Students will analyze the proper operation of air conditioning and refrigeration systems by applying the principles of thermodynamics and electrical theory.",
+    "Students will certify the proper and efficient operation of air conditioning and refrigeration systems by measuring temperatures, pressures, combustion gasses, and air flow."
+   ],
+   "careers": [
+    "Heating, Air Conditioning, and Refrigeration Mechanics and Installers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Option 1: Day Program - Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Program option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "REF A/C 101",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONMT 173",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 201",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 301",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 401",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Evening Program - Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Program option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "REF A/C 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 187",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 164",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BLDGCTQ 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 164",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 165",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 187",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 199",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 209",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 941",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "REF A/C 123",
+    "why": "not in the text"
+   },
+   {
+    "code": "REF A/C 124",
+    "why": "not in the text"
+   },
+   {
+    "code": "REF A/C 125",
+    "why": "not in the text"
+   },
+   {
+    "code": "REF A/C 141",
+    "why": "not in the text"
+   },
+   {
+    "code": "REF A/C 143",
+    "why": "not in the text"
+   },
+   {
+    "code": "REF A/C 145",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The degree section prints 'Major Units: 42' and 'Elective Units: 6'; the summary table row 'T002904C A.S. 21* 42 6 48' prints 48 as the program total (42 required + 6 major electives), which matches the Day option (42 + 6) and the Evening option (43 + 5). total_units recorded as 48; reviewer should confirm the table column meanings, since column headers are not in the text.",
+   "ge_units 21 taken from the summary table row (21* with footnote that GE units may be fulfilled by any General Education Pattern); no specific GE pattern is named, so ge_pattern is null.",
+   "'At least 60 degree applicable units are required to earn an Associate degree' is a generic sentence, not recorded as degree_total.",
+   "Major Electives: Day Program requires at least 6 units; Evening Program requires at least 5 units. Block minimum recorded as 6 (Day); Evening students need only 5.",
+   "The Day option's 'Elective 3' rows in Semesters III and IV are filled from the Major Electives list and are not separate open electives.",
+   "Catalog states day and evening program courses should not be mixed.",
+   "PHYSICS 012 printed in the catalog corresponds to closed-list PHYSICS 12; treated as the same course.",
+   "Program learning outcomes are printed once for the Degree/Certificate program (and repeated with broken bullet formatting in the degree section); the A.S. shares this list. Outcomes recorded from the cleaner overview version."
+  ]
+ },
+ "extracted_run": "39115028720"
+}
