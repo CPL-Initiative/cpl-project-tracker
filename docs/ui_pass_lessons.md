@@ -292,7 +292,7 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
   h5, and in dark the college badges' half-white fill under hunter ink read 1.15:1. Headings are h3 in the body face at
   the old size (the global h3 rule paints the display serif, so the face is set back); badges paint no fill.
 - **A switch with no arrow keys is a group of pressed buttons, not a tablist.** The mock-up drew `role="tab"`; the tab
-  pattern promises arrow-key movement the switch does not have, so the views are `aria-pressed` buttons in a labelled
+  pattern promises arrow-key movement the switch does not have, so the views are `aria-pressed` buttons in a labeled
   group, the convention the tab's lanes already used.
 - **When only the view in use paints its lanes, a test reaches a lane the way a person does.** Fourteen CER tests
   clicked a lane button straight after load. `tests/_cer_views.js` opens the view that holds the lane, then finds it;

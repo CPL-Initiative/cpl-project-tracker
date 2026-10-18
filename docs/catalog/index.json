@@ -15233,7 +15233,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-17"
+     "updated": "2026-10-18"
     },
     {
      "created": "2026-08-28",
@@ -15649,8 +15649,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 384,
+   "count": 385,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 414,
+     "path": "docs/session_414_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cer",
+      "cer-procedures",
+      "ui-pass",
+      "program-requirements",
+      "catalog-sweep",
+      "smartcatalog"
+     ],
+     "title": "Session 414 handoff: the CER's three views; the slashed course subject; Taft and Crafton Hills loaded",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22269,5 +22288,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1169
+ "total": 1170
 }

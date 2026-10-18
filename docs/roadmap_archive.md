@@ -6023,3 +6023,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - 2026-10-17 (S403 SkyYarrow, the 08:12Z firing): two firings had both run as S403 and written a PDF reader each; one reader from the two (#2192, build `726bde512dfa`, 11,862 programs, East LA's 120 included); LA City and Pierce rescored free (outcomes failures 145 to 12 and 85 to 15); a reconcile now refuses a moved page, and the 49-row undo waits on Open Asks Sheet 88; harvest lessons S372-S385 moved to archive 2.
 - 2026-10-17 (S403 SkyYarrow, the CPL Queue routine): a whole-catalog PDF reader and the PDF wave, fifteen colleges loaded unchecked (1,725 records, #2189, build `7f4744e8e4ae`, 11,742 programs); Cerro Coso's robots.txt refuses its catalog PDF; the outcomes check fails on PDF text (open); handoff 404 (SkyBuckeye).
+
+### INDEX update history, moved verbatim (S413)
+
+- 2026-10-17 (S404 SkyBuckeye, the 10:12Z firing): own-HTML catalogs take the generic sitemap road (#2194); College of San Mateo loaded 55 unchecked (60 of 64 found, $4.98, build `928577b30f0f`); Los Rios's hosts still serve the reader 404; the MAP Data Quality UI pass (#2193); handoff 405 (SkyCholla).
