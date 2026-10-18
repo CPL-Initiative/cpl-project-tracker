@@ -1,0 +1,202 @@
+{
+ "college": "Cañada College",
+ "control_number": "31401",
+ "shape": "certificate",
+ "title": "Math for Surveying and Computer-aided Design",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8528,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8528,
+    "output_tokens": 1429,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1429,
+  "output_tokens_details": {
+   "thinking_tokens": 533
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06269,
+ "ms": 12268,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "MATH130"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CA Math for Surveying and Computer-Aided Design",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of math, science, and engineering or computer science to identify, formulate, and solve engineering/computer science problems.",
+    "Communicate eﬀectively and work well in situations that require teamwork.",
+    "Design and perform tests or experiments, analyze and interpret data, and prepare a report summarizing the results of the tests or experiments.",
+    "Develop a design or system given a set of requirements and speciﬁcations.",
+    "Use techniques, skills, and modern engineering and computer tools necessary for engineering or computer science practice"
+   ],
+   "careers": [
+    "engineering CAD technician",
+    "technical drafting positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major: Core and Selective Requirements — Complete Core Courses the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 130",
+    "why": "not in the text of this certificate's section"
+   }
+  ],
+  "notes": [
+   "The section for this certificate begins at 'CA Math for Surveying and Computer-Aided Design' on page 179 and ends with 'Total Required Units: 23' on page 180; the preceding requirements (Total 32-36) belong to a different engineering award and were not used.",
+   "Outcome 5 is printed without a final period; copied as printed.",
+   "Careers taken from the certificate's Career Opportunities paragraph. The description also repeats generic engineering job functions (research and development, testing, design, etc.) and industry sectors; these were not recorded as careers. The paragraph also mentions an entry level position surveying land for construction projects; reviewer may wish to add it.",
+   "The section title says 'Surveying' and the career text mentions land surveying equipment, but no surveying course appears in the requirements."
+  ]
+ },
+ "extracted_run": "39080930669"
+}
