@@ -38,7 +38,10 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 1. **#2226 merged** (`e9e78465`, 13:31Z) and its display apply was dispatched on `main` (`step=display`). Read its
    applied record (`Applied record: the page's display build (run N)` on `main`); if it failed, dispatch it again.
 2. **The Pipeline tab's UI pass** (`cobi:pipeline`) belongs to the session Sam opened by hand
-   (`session_016aCF9Tqxm7khy34U1dQwca`, branch `claude/s415-ui-pipeline`). It merges its own PR; leave that view to it.
+   (`session_016aCF9Tqxm7khy34U1dQwca`): #2228, which it merges itself once `test` passes. Its ledger entry names two
+   notes for checkpoint step 7: the tab's roadmap rows 1e-5d and 3 are not in CLAUDE.md section 11, and
+   `docs/reference/mid_lifecycle.md` records re-mints only to 2026-09-04 while the tab names 2026-09-30. Check
+   #2228 merged, then `python3 scripts/ui_pass.py --next` for the next view.
 3. CPLBrain#382 (Sheet 94, the session note) merged.
 
 ## Priority after that
