@@ -1,6 +1,6 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. NOT saved to Supabase: credential_reference.js pre-fills each row; the curator reviews and clicks Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-18T06:22:56Z",
+ "_generated_at": "2026-10-18T12:14:30Z",
  "_queue_count": 1498,
  "_counts": {
   "staged": 1287,

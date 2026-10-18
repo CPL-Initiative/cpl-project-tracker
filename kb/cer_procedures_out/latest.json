@@ -1,6 +1,6 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. Nothing here is saved; proposals pre-fill the tab.",
- "_generated_at": "2026-10-18T06:22:56Z",
+ "_generated_at": "2026-10-18T12:14:30Z",
  "procedures_hash": "575c290d755b",
  "queue": 1498,
  "saved_not_folded": 176,
@@ -316,12 +316,7 @@
    ]
   }
  ],
- "classifier_run": {
-  "calls": 13,
-  "answered": 13,
-  "errors": [],
-  "cost_usd": 2.67
- },
+ "classifier_run": null,
  "needs_you": [
   {
    "raw_title": "1st Receiver Ops & Decon",
