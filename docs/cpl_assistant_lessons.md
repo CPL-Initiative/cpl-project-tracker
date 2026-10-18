@@ -750,3 +750,10 @@ From `docs/reference/lanes/sierra-retrieval-corpus.md`, verbatim, to keep the la
 - ✅ **397 garbled course titles removed** (2026-09-27; `--rollback` restores).
 - ✅ **Timing log (#1834):** `chat_interactions.timings` per turn (first read: `cpl_memory` sierra-timing-first-read-2026-10-03).
 
+## S418 SkyMadrone (2026-10-18): the complete-records read deployed; a regressed mode must reach the changed code
+
+- **Three A/Bs, three different regressions.** Run 1 (39142613772) lost 7l to a real gate bug (Active-only; COCI marks most credit programs Approved; fixed in 57b25bb4). Run 2 (39145439350) regressed 7c and 9; run 3 (39147745774) regressed 7s alone, with 7c and 7l green and production ALL MODES OK each time.
+- **Trace the regressed mode's route to the diff before calling it systematic.** 7c (Orange County) and 7s (the San Gabriel Valley) name a place. `resolveAskedPlace` strips the place from `routeText` before `detectAndFetchCollegeProfile(routeText)` runs (index.ts 6404; "san gabriel valley" sits in the place table at 2697), so `singleProfile` is null for both, and the one block #2230 changes in the function, the complete-records read behind the program course lists (6552 to 6557), runs only when a single college is asked. A mode that cannot reach the changed code cannot regress from it. The A/B runs its two smokes one after the other, so contention is not a cause either. The candidate's 7s answer never used the regional course lists production's did, from the same context: model variance on a prose smoke, as the smoke's own header warns.
+- **Where the prose is.** The run artifact (prod.log, preview.log) sits on an Azure blob host the sandbox proxy refuses (403). The `ab` job log holds both runs' answers: `get_job_logs` with `tail_lines` 6000 (380K characters, saved to a file) and a slice per `MODE:` heading reads them side by side.
+- **Deployed from main at 17:52Z (run 39151585102) after the merge; the production smoke (run 39151861384) followed.** The lane records its result.
+

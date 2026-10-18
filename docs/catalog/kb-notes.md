@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-552 document(s).
+553 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -180,6 +180,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A receipt too large for the connector applies from the runner](../kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md) | methodology | published | 2026-10-10 | 2026-10-10 |
 | [A red merge ref can be main's, and every open PR inherits it](../kb-notes/methodology-a-red-merge-ref-can-be-mains.md) | methodology | published | 2026-10-14 | 2026-10-14 |
+| [A regressed mode must reach the changed code](../kb-notes/methodology-a-regressed-mode-must-reach-the-changed-code.md) | methodology | published | 2026-10-18 | 2026-10-18 |
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |

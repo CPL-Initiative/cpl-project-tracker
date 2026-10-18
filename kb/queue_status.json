@@ -1,16 +1,22 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T17:06:05Z",
-  "session": 417,
-  "moniker": "SkyManzanita",
+  "written_at": "2026-10-18T18:15:53Z",
+  "session": 418,
+  "moniker": "SkyMadrone",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_418_handoff.md",
+  "handoff": "docs/session_419_handoff.md",
   "next_step": {
-    "title": "Merge the workflow fix, run the first CER saving run, finish Open Asks Sheet 96",
-    "text": "Merge cpl-project-tracker#2232 (the save options quoted), dispatch cer-procedures.yml with save=on and read its receipt, dispatch daily-dashboard.yml so the 176 clean CER assignments fold today, then finish Sheet 96 from the receipt (CPLBrain#385) and hand Sam the revised Commons mock-up. Read the third A/B of #2230 (run 39147745774) before any Sierra deploy. Then the Commons step 1, the shared Progress module."
+    "title": "Hand Sam the Commons mock-up, read the first unattended saving night, then the shared Progress module",
+    "text": "Hand Sam the Commons mock-up at version 3 (its three asks are on the page) and read his reactions. Read the nightly cer-procedures run of 07:47Z, the first saving night with no one watching: its receipt in kb/cer_procedures_out/saved/ and the morning fold's applied.json. Then the Commons step 1, the shared Progress module lifted out of program_requirements.js with one status file per project and nothing changing on screen, its 417 checks guarding the lift."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "The Commons mock-up, version 3, waits on Sam's look",
+      "text": "Five reference rows in the Program Requirements shape with today's figures; the page asks whether this is the row, whether the starting order is right, and agrees that each definition of complete becomes a card when its Progress view is built. On no reply the build proceeds on the mock-up's row shape and starting order.",
+      "link": "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi"
+    }
+  ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
@@ -62,6 +68,30 @@
     {
       "at": "2026-10-18T17:03:00Z",
       "text": "The Commons mock-up was revised on Fable's review with every figure re-measured; the Program Requirements row reads 11,621 complete, 2,994 failing a check and 5,667 unread of 20,282 active."
+    },
+    {
+      "at": "2026-10-18T17:23:00Z",
+      "text": "Sam answered Open Asks Sheet 96: a rule procedure's settlement saves at the rule's word, the course-identity rule's 0.8 included (keep)."
+    },
+    {
+      "at": "2026-10-18T17:37:00Z",
+      "text": "The first CER saving run wrote 926 exhibit titles as 1,852 kb_curation rows under 7 procedure cohorts, none held by a live row."
+    },
+    {
+      "at": "2026-10-18T17:50:00Z",
+      "text": "The fold's first apply since July carried 1,102 saved assignments, 12 supersedes and 455 credential records into the reference and held the 18 conflicts; the reference holds 4,915 titles."
+    },
+    {
+      "at": "2026-10-18T17:53:00Z",
+      "text": "Sierra reads every complete record on production (#2230 deployed); the production smoke passed every mode at 18:07Z."
+    },
+    {
+      "at": "2026-10-18T18:00:00Z",
+      "text": "The Our Process page reads First Light's tokens in both themes (#2233)."
+    },
+    {
+      "at": "2026-10-18T18:10:00Z",
+      "text": "The Commons mock-up at version 3: Sheet 96 answered in the CER row, the two runs recorded, the Exhibit pair re-measured at 1,729 of 4,915 titles stamped."
     }
   ],
   "headline": [
