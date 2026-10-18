@@ -234,6 +234,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0]));
-  console.log(results.length + " checks, " + failed.length + " failed");
+  // The ledger (tests/lib/check_ledger.js) reads "N/N checks passed"; "49 checks, 0 failed"
+  // parsed as no count, so the floor S416 set read as lost (run 39144104428).
+  console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");
   process.exit(failed.length ? 1 : 0);
 })();

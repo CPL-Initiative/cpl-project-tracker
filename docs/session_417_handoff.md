@@ -59,7 +59,7 @@ unchanged since. No sheet is open; Sheet 95 (https://claude.ai/artifact/M5oRGgFT
 4. **Fable's review of the Commons mock-up** returned after the checkpoint and is recorded in the commons lane: revise on
    its five points, and build Sheet 96 with both proceeded-on cards (the CER save rule and the Sierra read) before Sam
    sees the page, so its calls cell reads the store.
-5. **Subscriptions let go:** S416 dropped its subscription to #2230 and cancelled its 16:18Z check-in; #2231 was never
+5. **Subscriptions let go:** S416 dropped its subscription to #2230 and canceled its 16:18Z check-in; #2231 was never
    subscribed. Subscribe to both when you take them.
 
 ## Priority after that
