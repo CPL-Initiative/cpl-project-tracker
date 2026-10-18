@@ -4008,6 +4008,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 /* Tokens only (S364, finishing S363's Budget pass): the widget and the hover take the
@@ -4498,7 +4501,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: October 18, 2026 at 6:21 AM PT</div>
+        <div class="last-updated">Last Updated: October 18, 2026 at 9:00 AM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='Error: '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='Error: '+e.message;b.disabled=false})">Manually Refresh COBI</button>
       </div>
     </div>
@@ -4595,7 +4598,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Oct 18, 2026 · 6:20 AM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Oct 18, 2026 · 8:59 AM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -5015,7 +5018,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-18T13:20:07</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-18T15:59:11</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -6379,10 +6382,10 @@
                 <div class="cpl-live-update" data-update-key="project:2.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-10-18</strong></span>
                         <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="2.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
-                    <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The Common Course Crosswalks effort has been renamed Common Course Reference (CCR) to better reflect its function as an alignment tool for CPL adoption. Work is underway to merge currently aligned courses into new common course reference names and numbers using a phased, AI-supported approach with HUMANS principles. Draft 1 of the complete CCR is currently in testing with production anticipated for Fall 2026.</div>
+                    <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Since May 2026, significant progress has been made on CCR assembly and curation, with S. Lee leading AI-based tool development including SkyView, an interactive systemwide instructional data viewer that may serve as the future platform for consolidating currently disconnected instructional data.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>No validated crosswalks completed yet. Development underway via three parallel approaches (Electrical, Carpentry Apprenticeship, and AI-assisted). Dependent on MAP Exhibit module releasing April 2026.</div>
                     <div class="notes-history" data-pid="2.3" style="display:none;margin-top:0.3rem;max-height:200px;overflow-y:auto;border-left:3px solid var(--gold-accent);padding-left:0.5rem;">
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:var(--navy-primary);background:var(--surface-muted);padding:0.1rem 0.35rem;border-radius:3px;">2026-04-08</span> <span style="font-size:0.6rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:var(--text-body);margin-top:0.1rem;line-height:1.3;">Common Course Crosswalk functionality is built into the next release of the revised MAP Exhibit module April release</div></div>
@@ -10501,8 +10504,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "October 18, 2026 at 6:21 AM PT",
-  "data_as_of": "October 18, 2026 at 6:21 AM PT",
+  "last_updated": "October 18, 2026 at 9:00 AM PT",
+  "data_as_of": "October 18, 2026 at 9:00 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "57,422",
@@ -10700,7 +10703,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       ],
       "live": true
     },
-    "_live_updated": "2026-10-18T13:20:52.956Z",
+    "_live_updated": "2026-10-18T15:59:54.549Z",
     "map_exhibits": {
       "value": "3,189",
       "label": "Common Exhibit Titles",
@@ -10793,7 +10796,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-10-18T13:20:07",
+    "_exhibit_updated": "2026-10-18T15:59:11",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -11041,8 +11044,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
           "goal_2930": "200",
           "stretch_2930": "400",
           "workplan_notes": "No validated crosswalks completed yet. Development underway via three parallel approaches (Electrical, Carpentry Apprenticeship, and AI-assisted). Dependent on MAP Exhibit module releasing April 2026.",
-          "update": "The Common Course Crosswalks effort has been renamed Common Course Reference (CCR) to better reflect its function as an alignment tool for CPL adoption. Work is underway to merge currently aligned courses into new common course reference names and numbers using a phased, AI-supported approach with HUMANS principles. Draft 1 of the complete CCR is currently in testing with production anticipated for Fall 2026.",
-          "update_date": "2026-07-02",
+          "update": "Since May 2026, significant progress has been made on CCR assembly and curation, with S. Lee leading AI-based tool development including SkyView, an interactive systemwide instructional data viewer that may serve as the future platform for consolidating currently disconnected instructional data.",
+          "update_date": "2026-10-18",
           "status": "In Progress",
           "pct": 30,
           "sprint_tag": "",
@@ -12333,6 +12336,11 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     ]
   },
   "live_updates": {
+    "project:2.3": {
+      "body": "Since May 2026, significant progress has been made on CCR assembly and curation, with S. Lee leading AI-based tool development including SkyView, an interactive systemwide instructional data viewer that may serve as the future platform for consolidating currently disconnected instructional data.",
+      "created_at": "2026-10-18T13:52:49.738802+00:00",
+      "date": "2026-10-18"
+    },
     "project:3.5": {
       "body": "We are up to 50 student success stories, collected from various statewide and role-based groups.",
       "created_at": "2026-10-15T20:49:44.894099+00:00",
@@ -12446,11 +12454,6 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     "project:3.6": {
       "body": "Colleges with \u003e75% JST documentation for reported veterans receive gold star recognition on the MAP Dashboard, which has increased participation and acceptance of this procedure. Icons will be integrated on the dashboard to recognize platform use levels and keep local staff informed of their progress.",
       "created_at": "2026-07-02T21:39:48.741223+00:00",
-      "date": "2026-07-02"
-    },
-    "project:2.3": {
-      "body": "The Common Course Crosswalks effort has been renamed Common Course Reference (CCR) to better reflect its function as an alignment tool for CPL adoption. Work is underway to merge currently aligned courses into new common course reference names and numbers using a phased, AI-supported approach with HUMANS principles. Draft 1 of the complete CCR is currently in testing with production anticipated for Fall 2026.",
-      "created_at": "2026-07-02T14:37:07.543515+00:00",
       "date": "2026-07-02"
     },
     "project:4.1": {
@@ -13965,8 +13968,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       "start": "2025-01-01",
       "end": "2026-06-30",
       "milestones": "April 2026: MAP Exhibit module (dependency); June 2026: 20+ validated crosswalks",
-      "update": "The Common Course Crosswalks effort has been renamed Common Course Reference (CCR) to better reflect its function as an alignment tool for CPL adoption. Work is underway to merge currently aligned courses into new common course reference names and numbers using a phased, AI-supported approach with HUMANS principles. Draft 1 of the complete CCR is currently in testing with production anticipated for Fall 2026.",
-      "update_date": "2026-07-02",
+      "update": "Since May 2026, significant progress has been made on CCR assembly and curation, with S. Lee leading AI-based tool development including SkyView, an interactive systemwide instructional data viewer that may serve as the future platform for consolidating currently disconnected instructional data.",
+      "update_date": "2026-10-18",
       "kpi_metric": "0",
       "kpi_unit": "Cumulative validated crosswalks created",
       "count_note": "",
