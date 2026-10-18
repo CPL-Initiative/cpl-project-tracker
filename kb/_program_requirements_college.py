@@ -1786,6 +1786,7 @@ PDF_HEADING_BONUS = 5     # codes a heading naming title and award is worth
 PDF_RUN_PAGES = 3         # pages after the start a program's list may continue onto
 PDF_CN_BONUS = 10         # codes the program's own control number printed on the page is worth
 PDF_LEADER = re.compile(r"\.{4,}|(?:\. ){4,}")   # a table of contents' dot leader
+PDF_WRAP_CHARS = 40       # a next line this short can be a heading's wrapped tail
 # A catalog that heads a section with the award's letters before the title: Cañada's prints
 # "AS Business Assistant", then "CA Business Assistant" with the same courses a few pages on
 # (S419; San Mateo's district catalogs share the style). AWARD_WORDS reads "AA-T" and "AS-T",
@@ -1811,15 +1812,25 @@ def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
     pats = P.AWARD_WORDS.get(kind, [])
     prefix = PDF_AWARD_PREFIX.get(kind)
     best, pos = (0.0, False, -1), 0
-    for line in (text or "").split("\n"):
+    lines = (text or "").split("\n")
+
+    def share_of(low: str) -> float:
+        return sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", low)) / len(tokens)
+    for k, line in enumerate(lines):
         # pypdf runs a heading into the paragraph after it ("Medical Assistant, Associate in Science
         # Degree (Academic Plan E002456C) A medical assistant interacts..."), so a line's opening is read.
         raw = line.strip()[:PDF_HEADING_CHARS]
         low = raw.lower()
         # A contents line ("Architectural Design ....... 2") names a program it does not hold.
         if low and tokens and not PDF_LEADER.search(low):
-            share = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", low)) / len(tokens)
+            share = share_of(low)
             award = any(re.search(a, low) for a in pats) or bool(prefix and prefix.match(raw))
+            # A long title wraps onto a short next line ("CA  Human Relations in the" / "Workplace",
+            # Cañada p155; S419): the wrapped tail counts toward the title, the award stays the line's.
+            if share < 1.0 and k + 1 < len(lines):
+                tail = lines[k + 1].strip()
+                if 0 < len(tail) <= PDF_WRAP_CHARS:
+                    share = max(share, share_of(low + " " + tail.lower()))
             if (share, award) > best[:2]:
                 best = (share, award, pos)
         pos += len(line) + 1
@@ -1997,9 +2008,16 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
         if at < 0 and not titled:
             continue
         n = len(P.find_codes(txt, courses))
-        if not n:
-            continue
         head = pdf_heading(txt, program)
+        if not n:
+            # A section whose heading closes one page and whose list opens the next (Cañada's "AS-T
+            # Mathematics 2.0" on p215, its courses on p216; "AA  Ethnic Studies" p183/184; S419): the
+            # heading page leads when its clean heading names the program and the award and the page
+            # after it names listed codes; the run and the coverage test then read both. Before this,
+            # the picker took the course availability table that named the codes (p127, p95).
+            if not (_clean_heading(txt, head, courses) and i + 1 < len(pages) and P.find_codes(pages[i + 1], courses)):
+                continue
+            n = len(P.find_codes("\n".join(pages[k] for k in _pdf_run(pages, i, courses)), courses))
         s = n + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0) + (PDF_CN_BONUS if at >= 0 else 0)
         clean = _clean_heading(txt, head, courses) or at >= 0
         cands.append((s, -i, i, at, head, titled, 0 if clean else 1 if not _descriptions(txt) else 2))

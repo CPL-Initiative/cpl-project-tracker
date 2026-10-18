@@ -1739,6 +1739,34 @@ for kind_line, prog in (("AA-T Political Science", {"title": "Political Science"
                         ("AA Ethnic Studies", {"title": "Ethnic Studies", "award": "A.A. Degree"})):
     check(C.pdf_heading(kind_line + "\nSome courses", prog)[:2] == (1.0, True),
           "the letters of every award kind are read: %r" % kind_line)
+# A long title wraps onto a short next line (Cañada p155, verbatim): the tail counts toward the title.
+hr = {"title": "Human Relations in the Workplace", "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"}
+HR_PAGE = ("Total Required Units: 21 - 22\nCA  Human Relations in the\nWorkplace\nThis certificate is an introduction to how to "
+           "effectively\nmanage interpersonal workplace relationships.\nBUS. 100 Introduction to Business 3 units\nBUS. 101 Human Relations in the\n"
+           "Workplace\n3 units\nBUS. 180 Marketing 3 units\nBUS. 401 Business Communications 3 units\nCOMM C1000 Public Speaking 3 units\n"
+           "COMM C1004 Interpersonal Communication 3 units\nTotal Required Units: 18")
+hr_head = C.pdf_heading(HR_PAGE, hr)
+check(hr_head[:2] == (1.0, True) and HR_PAGE[hr_head[2]:].startswith("CA  Human Relations in the"),
+      "a heading wrapped onto a short next line names the whole title, and the heading line, not the course line, is the one: %r" % (hr_head,))
+check(C.pdf_heading("Human Relations in the\nThis long paragraph names the workplace among many other words that follow it here.", hr)[0] < 1.0,
+      "a long next line is a paragraph, not a wrapped tail")
+# A heading that closes a page, its list on the next (Cañada p215/216, p183/184): the heading page leads
+# the run; before, the course availability table that named the codes won (p127, p95).
+MT_COURSES = [{"code": c} for c in ("MATH 253", "MATH 270", "MATH 275", "MATH C2210", "MATH C2220")]
+MT_PAGES = [
+    "Course availability by term\nMATH 253 fall\nMATH 270 spring\nMATH 275 fall\nMATH C2210 fall\nMATH C2220 spring\nPHYS 250 fall",
+    "MATHEMATICS\nAS-T  Associate in Science Degree for Transfer\nMathematics 2.0............................ 60 units\nAS-T  Mathematics 2.0\n"
+    "The Mathematics 2.0 Transfer Degree provides the foundation for studying engineering.\nProgram Learning Outcomes\n1. Use symbolic representations.",
+    "AS-T Degree Requirements: 60 units\nMATH 253 Calculus III 5 units\nMATH 270 Linear Algebra 3 units\nMATH 275 Differential Equations 3 units\n"
+    "MATH C2210 Calculus I 5 units\nMATH C2220 Calculus II 5 units\nTotal Required Major Units: 21",
+]
+mt = {"title": "Mathematics", "award": "A.S. T Degree"}
+mt_pick = C.pdf_best("https://x.edu/c.pdf", MT_PAGES, mt, MT_COURSES, "pypdf")
+check(mt_pick and mt_pick["pages"] == [2, 3] and mt_pick["named"] and mt_pick["coverage"] == 1.0
+      and mt_pick["text"].startswith("[page 2]\nAS-T  Mathematics 2.0"),
+      "the heading page leads the run onto the page that prints the list, ahead of the availability table: %r" % (mt_pick and mt_pick["pages"]))
+check(C.pdf_program_pages(MT_PAGES[:2] + ["General education\nENGL 100 4 units"], mt, MT_COURSES) == [0],
+      "a heading page whose next page names no listed course leads nothing; the codes' page is read")
 
 # East LA prints the control number in each heading, and lists every online course on pages up front.
 EL = ["Online courses\nACCT 101 ACCT 102 ACCT 210 BUS 120 BUS 001 ENGLISH 101",
