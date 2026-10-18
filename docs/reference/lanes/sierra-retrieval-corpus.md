@@ -83,6 +83,8 @@ one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sie
 
 **Statewide exhibits in full (S398-S399, live).** For a request for the whole set, Sierra receives the Fact Sheet's 164 statewide exhibits by program area (`fact-sheet/statewide_catalog.json`, rebuilt daily): #2164, deployed 2026-10-16 on Sam's go (Open Asks Sheet 85 card 7; deploy run 38943025631, production smoke 38943211844 green with mode 7w). **NEXT:** render the Fact Sheet's baked title lists from the catalog (132 baked, 50 current titles missing); retire the April vault note `map-exhibit-analysis.md`; curate the 22 "Other Statewide" exhibits into program areas.
 
+**RULED quote (Sam, Open Asks Sheet 95 card 2, 14:43Z 2026-10-18, his own call; `cpl_memory` `sam-sheet-95-rulings-2026-10-18`):** Sierra quotes a program's catalog requirements from a complete record (an active program whose record passes `program_record_machine_pass`), naming the catalog and year and saying it was read from the catalog and checked against the state's file; a failing record keeps the lists. `fetchCheckedRequirements` reads `checked=true` today (32 records). **NEXT:** the read change, smoke 7q's assertions, an A/B, the deploy dispatch.
+
 ## Where applied and transcribed credit comes from (2026-09-30)
 
 Sam asked Sierra for the military and non-military split of Chaffey's applied units and the exhibits behind them (his Training note on turn `1b9230ce`). Sheet [NT56gHRViNX9ZYnRg8r1KR](https://claude.ai/artifact/NT56gHRViNX9ZYnRg8r1KR) (`docs/visuals/2026-09-30-sierra-credit-source.html`), all seven items ruled the same day: 1 fix, 2 do, 3 hand to the funding lane (below), 4 and 5 build, 6 his ruling, 7 draft the Training rule after the data ships.

@@ -7,18 +7,10 @@
   "decider": "Sam",
   "handoff": "docs/session_416_handoff.md",
   "next_step": {
-    "title": "Cañada's 11 programs need a reader change",
-    "text": "Build 48cb66f19cff is applied to every record. Next, the PDF reader learns Cañada's shared pages 148 to 154 and its course availability table, then Merced's 18 programs without a page and Taft's other arithmetic failures."
+    "title": "Carry out Sheet 94's rulings, then Cañada's reader change",
+    "text": "Sam answered all four cards at 13:43Z: the nightly fold applies the clean CER assignments, a sure classifier result saves under its procedure, the Initiated sign-off and Curate panel retire, and Taft's step stays. Then the PDF reader learns Cañada's shared pages 148 to 154, then Merced's 18 programs without a page."
   },
-  "calls": [
-    {
-      "title": "Three CER calls and a Taft card on Open Asks Sheet 94",
-      "text": "Whether the nightly fold applies the 176 clean assignments, whether a sure classifier result saves under its procedure, whether the Initiated sign-off and Curate panel retire, and whether Taft's transfer degrees keep counting Cal-GETC as the statewide 34 units.",
-      "if_no_reply": "Every CER proposal keeps pre-filling the tab and the Initiated sign-off stays; Taft's step stays in place, since it proceeded on the recommendation; the harvest goes on.",
-      "link": "https://claude.ai/artifact/MnnWTiYhbHVq7LduzSfCH9",
-      "link_text": "Open Asks Sheet 94"
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
@@ -34,6 +26,10 @@
     {
       "at": "2026-10-18T13:15:00Z",
       "text": "San Joaquin Delta College's degree pages read their 60 units as a minimum: 71 records replaced, 154 of 203 passing the machine checks."
+    },
+    {
+      "at": "2026-10-18T13:43:00Z",
+      "text": "Sam answered Open Asks Sheet 94: apply the 176 clean CER assignments, let sure classifier results save under their procedure, retire the Initiated sign-off and Curate panel, and keep Taft's Cal-GETC step."
     },
     {
       "at": "2026-10-18T14:15:00Z",
