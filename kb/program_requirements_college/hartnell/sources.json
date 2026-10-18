@@ -34,7 +34,7 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 11620
@@ -67,7 +67,7 @@
     129
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 4982
@@ -99,7 +99,7 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 2995
@@ -109,53 +109,12 @@
   "title": "Kinesiology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.553,
-  "codes_found": [
-   "BIO11",
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM22",
-   "HED55",
-   "HED6",
-   "NUTR1",
-   "PEAC32",
-   "PEAC36",
-   "PEAC40",
-   "PEAC43",
-   "PEAC46",
-   "PEAC47",
-   "PEAC50",
-   "PEAC52",
-   "PEAC55",
-   "PEAC56",
-   "PEAC58",
-   "PEAC59",
-   "PEAC61",
-   "PEAC62",
-   "PETH1",
-   "PETH4",
-   "PHY10",
-   "PHY2A"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=421",
-   "title": "• HIS40 - History of Women in the U.S.",
-   "h1": "• HIS40 - History of Women in the U.S.",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    421,
-    422,
-    423,
-    424
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 49,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "03556",
@@ -203,7 +162,7 @@
     411
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 10572
@@ -229,22 +188,22 @@
    "NRN77"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=293",
-   "title": "Type",
-   "h1": "Type",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=292",
+   "title": "Nursing-Registered Nursing - AS.NRN",
+   "h1": "Nursing-Registered Nursing - AS.NRN",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    292,
     293,
     294,
-    295,
-    296
+    295
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 10002
+  "text_chars": 13270
  },
  {
   "control_number": "03571",
@@ -271,22 +230,22 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
-   "title": "OR MAT10 - Math for Liberal Arts",
-   "h1": "OR MAT10 - Math for Liberal Arts",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=304",
+   "title": "Nursing-Vocational Nursing - CT.NVN",
+   "h1": "Nursing-Vocational Nursing - CT.NVN",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    303,
     304,
     305,
-    306
+    306,
+    307
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 11478
+  "text_chars": 10269
  },
  {
   "control_number": "03585",
@@ -315,8 +274,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
-   "title": "The Associate in Science Degree in Administration of Justice for Transfer",
-   "h1": "The Associate in Science Degree in Administration of Justice for Transfer",
+   "title": "Administration of Justice - AS.ADJ",
+   "h1": "Administration of Justice - AS.ADJ",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -326,7 +285,7 @@
    "heading_named": true
   },
   "listed": 16,
-  "text_chars": 3605
+  "text_chars": 3798
  },
  {
   "control_number": "03588",
@@ -334,7 +293,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.882,
+  "coverage": 0.941,
   "codes_found": [
    "ECE1",
    "ECE10",
@@ -347,28 +306,29 @@
    "ECE27",
    "ECE4",
    "ECE53",
+   "ECE54",
    "ECE6",
    "ECE70A",
    "ECE70B",
    "ECE71"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
-   "title": "Early Childhood Education for Transfer (AS-T) -",
-   "h1": "Early Childhood Education for Transfer (AS-T) -",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
+   "title": "Early Childhood Education - AS.ECE",
+   "h1": "Early Childhood Education - AS.ECE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    183,
     184,
     185,
-    186,
-    187
+    186
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 17,
-  "text_chars": 10482
+  "text_chars": 12315
  },
  {
   "control_number": "08871",
@@ -385,54 +345,34 @@
    "CSS7"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
-   "title": "The Associate of Science in Computer Science and Information Systems -",
-   "h1": "The Associate of Science in Computer Science and Information Systems -",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=153",
+   "title": "Computer Science and Info Systems-Computer",
+   "h1": "Computer Science and Info Systems-Computer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    153,
     154,
     155,
-    156,
-    157
+    156
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 5,
-  "text_chars": 10201
+  "text_chars": 10812
  },
  {
   "control_number": "08872",
   "title": "Computer Science and Information Systems-Network and Security",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.556,
-  "codes_found": [
-   "CIS50",
-   "CIS51",
-   "CIS52",
-   "CSS1",
-   "CSS169"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
-   "title": "Computer Science and Info Systems-Network &",
-   "h1": "Computer Science and Info Systems-Network &",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    158,
-    159,
-    160,
-    161
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 9029
+  "text_chars": 0
  },
  {
   "control_number": "08880",
@@ -484,7 +424,7 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 17,
   "text_chars": 12665
@@ -525,7 +465,7 @@
     237
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 11780
@@ -555,8 +495,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
-   "title": "interactive digital media interface design. The AA degree in Digital Arts offers 3",
-   "h1": "interactive digital media interface design. The AA degree in Digital Arts offers 3",
+   "title": "Digital Arts - AA.DA",
+   "h1": "Digital Arts - AA.DA",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -569,407 +509,79 @@
    "heading_named": true
   },
   "listed": 14,
-  "text_chars": 12829
+  "text_chars": 13336
  },
  {
   "control_number": "11803",
   "title": "Agriculture Business with an Area of Emphasis",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.944,
-  "codes_found": [
-   "ABT101",
-   "ABT102",
-   "ABT103",
-   "ABT104",
-   "ABT105",
-   "ABT110",
-   "ABT130",
-   "ABT131",
-   "ABT132",
-   "ABT133",
-   "ABT134",
-   "ABT135",
-   "ABT49",
-   "ABT52",
-   "ABT53",
-   "ABT54",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT81",
-   "ABT83",
-   "ABT90",
-   "ABT92",
-   "ABT93",
-   "ABT94",
-   "ABT95",
-   "ABT96",
-   "ABT97",
-   "ABT98",
-   "ABT99",
-   "BUS18",
-   "BUS43",
-   "BUS50",
-   "COM2"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=413",
-   "title": "WLD157 - Pipe Welding WLD158 - Hard Facing and Surfacing",
-   "h1": "WLD157 - Pipe Welding WLD158 - Hard Facing and Surfacing",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    413,
-    414,
-    415,
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 36,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "12331",
   "title": "Agriculture Production",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.895,
-  "codes_found": [
-   "ABT101",
-   "ABT102",
-   "ABT103",
-   "ABT104",
-   "ABT105",
-   "ABT110",
-   "ABT130",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT83",
-   "ABT90",
-   "ABT92",
-   "ABT95",
-   "ABT99",
-   "BUS43",
-   "BUS50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415,
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 11086
+  "text_chars": 0
  },
  {
   "control_number": "15426",
   "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS32",
-   "CID25",
-   "CID26",
-   "CID27",
-   "CID29",
-   "CID64",
-   "CID65",
-   "CID74",
-   "CID76",
-   "CID78",
-   "CID84",
-   "CID86"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
-   "title": "• ART73 - Introduction to Digital Illustration for Animation",
-   "h1": "• ART73 - Introduction to Digital Illustration for Animation",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 5596
+  "text_chars": 0
  },
  {
   "control_number": "17910",
   "title": "General Studies: STEM",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.979,
-  "codes_found": [
-   "ABT90",
-   "ABT92",
-   "ANT1",
-   "AST1",
-   "AST1L",
-   "BIO1",
-   "BIO10",
-   "BIO11",
-   "BIO12",
-   "BIO18",
-   "BIO2",
-   "BIO20",
-   "BIO27",
-   "BIO3",
-   "BIO30",
-   "BIO42",
-   "BIO47",
-   "BIO48",
-   "BIO48L",
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM12A",
-   "CHM12B",
-   "CHM1A",
-   "CHM1B",
-   "CHM22",
-   "CHM23",
-   "GEL1",
-   "GEL2",
-   "GEL6",
-   "MAT2",
-   "MAT25",
-   "MAT3A",
-   "MAT3B",
-   "MAT3C",
-   "MAT4",
-   "MAT5",
-   "OCN1",
-   "PHY10",
-   "PHY2A",
-   "PHY2B",
-   "PHY32",
-   "PHY4A",
-   "PHY4B",
-   "PHY4C",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=420",
-   "title": "• WLD152 - Sheet Metal Fabrication",
-   "h1": "• WLD152 - Sheet Metal Fabrication",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    420,
-    421,
-    422,
-    423
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "17911",
   "title": "General Studies: Social and Behavioral Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.95,
-  "codes_found": [
-   "ABT53",
-   "ADJ1",
-   "ADJ3",
-   "ADJ51",
-   "ANT1",
-   "ANT10",
-   "ANT2",
-   "ANT20",
-   "COM4",
-   "ECE2",
-   "ECE53",
-   "ECE6",
-   "ECO10",
-   "ECONC2001",
-   "ECONC2002",
-   "ETH1",
-   "ETH12",
-   "ETH13",
-   "ETH2",
-   "ETH21",
-   "ETH3",
-   "ETH4",
-   "ETH5",
-   "ETH56",
-   "ETH6",
-   "ETH7",
-   "ETH8",
-   "GEG10",
-   "HED2",
-   "HED7",
-   "HES1",
-   "HIS10",
-   "HIS40",
-   "HIS46A",
-   "HIS46B",
-   "HIS47",
-   "HIS49A",
-   "HIS49B",
-   "HIS4A",
-   "HIS4B",
-   "HIS5A",
-   "HIS5B",
-   "HIS6",
-   "HISTC1001",
-   "NRN70",
-   "NVN70",
-   "PHL10",
-   "PHL15",
-   "PHL2",
-   "POL2",
-   "POL3",
-   "POL5",
-   "POL6",
-   "POLSC1000",
-   "PSY10",
-   "PSY12",
-   "PSY14",
-   "PSY15",
-   "PSY22",
-   "PSY25",
-   "PSY33",
-   "PSY41",
-   "PSY6",
-   "PSY9",
-   "PSYCC1000",
-   "SJS20",
-   "SJS22",
-   "SOC1",
-   "SOC15",
-   "SOC20",
-   "SOC30",
-   "SOC41",
-   "SOC42",
-   "SOC5",
-   "SOC8",
-   "TAC23"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=57",
-   "title": "ETH6 La Chicana , ETH8 Intr to Asian American Studies , ETH13 Intro to Nat America in the Sv , ETH21 Introduction to Afr",
-   "h1": "ETH6 La Chicana , ETH8 Intr to Asian American Studies , ETH13 Intro to Nat America in the Sv , ETH21 Introduction to Afr",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    57,
-    58,
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 81,
-  "text_chars": 14530
+  "text_chars": 0
  },
  {
   "control_number": "17912",
   "title": "General Studies: Arts and Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "ANT2",
-   "ANT20",
-   "ART10",
-   "ART19",
-   "ARTHC1100",
-   "ARTHC1200",
-   "ASL1",
-   "ASL2",
-   "ENG17",
-   "ENG22",
-   "ENG24",
-   "ENG26",
-   "ENG41",
-   "ENG44A",
-   "ENG44B",
-   "ENG46A",
-   "ENG46B",
-   "ENG47A",
-   "ENG47B",
-   "ENG48",
-   "ENGLC1002",
-   "ETH12",
-   "ETH56",
-   "ETH6",
-   "ETH7",
-   "HIS10",
-   "HIS40",
-   "HIS47",
-   "HIS49A",
-   "HIS49B",
-   "HIS4A",
-   "HIS4B",
-   "HIS5A",
-   "HIS5B",
-   "HIS6",
-   "HISTC1001",
-   "HISTC1002",
-   "MUS1A",
-   "MUS42",
-   "MUS5",
-   "MUS6",
-   "MUS7",
-   "MUS8",
-   "PHL10",
-   "PHL2",
-   "PHL5",
-   "SPA1",
-   "SPA1S",
-   "SPA1X",
-   "SPA2",
-   "SPA2S",
-   "SPA2X",
-   "SPA3S",
-   "SPA4S",
-   "TAC1",
-   "TAC2",
-   "TAC23",
-   "TAC3",
-   "TAC50",
-   "TAC92"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
-   "title": "CalGETC Area Overview",
-   "h1": "CalGETC Area Overview",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    58,
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 90,
-  "text_chars": 9072
+  "text_chars": 0
  },
  {
   "control_number": "17913",
@@ -988,190 +600,48 @@
   "title": "General Studies: Language and Rationality",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.645,
-  "codes_found": [
-   "ANT2",
-   "ANT20",
-   "ART10",
-   "ART19",
-   "ARTHC1100",
-   "ARTHC1200",
-   "ASL1",
-   "ASL2",
-   "ENG17",
-   "ENG22",
-   "ENG24",
-   "ENG26",
-   "ENG41",
-   "ENG44A",
-   "ENG44B",
-   "ENG46A",
-   "ENG46B",
-   "ENG47A",
-   "ENG47B",
-   "ENGLC1002",
-   "ETH12",
-   "ETH6",
-   "ETH7",
-   "HIS40",
-   "HIS47",
-   "PHL10",
-   "PHL2",
-   "SPA1",
-   "SPA1S",
-   "SPA1X",
-   "SPA2",
-   "SPA2S",
-   "SPA2X",
-   "SPA3S",
-   "SPA4S",
-   "TAC1",
-   "TAC2",
-   "TAC23",
-   "TAC3",
-   "TAC50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
-   "title": "CalGETC Area Overview",
-   "h1": "CalGETC Area Overview",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    58,
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 62,
-  "text_chars": 9072
+  "text_chars": 0
  },
  {
   "control_number": "17924",
   "title": "Liberal Arts: Pathway to Health Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.795,
-  "codes_found": [
-   "ANT1",
-   "BIO1",
-   "BIO10",
-   "BIO11",
-   "BIO12",
-   "BIO18",
-   "BIO27",
-   "BIO42",
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM12A",
-   "CHM12B",
-   "CHM1A",
-   "CHM1B",
-   "CHM22",
-   "HED2",
-   "HED6",
-   "HED7",
-   "HES1",
-   "HES3",
-   "NRN70",
-   "NUTR1",
-   "NUTR51",
-   "NVN70",
-   "PETH1",
-   "PHY10",
-   "PSY25",
-   "PSYCC1000",
-   "SOC1",
-   "SOC5"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=59",
-   "title": "in Amer His B, NRN70 Growth & Devel Across Lifespan , NVN70 Growth & Devel Across Lifespan , POL2 Intro to Comparative P",
-   "h1": "in Amer His B, NRN70 Growth & Devel Across Lifespan , NVN70 Growth & Devel Across Lifespan , POL2 Intro to Comparative P",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 39,
-  "text_chars": 4442
+  "text_chars": 0
  },
  {
   "control_number": "17977",
   "title": "Agriculture Business",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ABT110",
-   "ABT49",
-   "ABT52",
-   "ABT53",
-   "ABT54",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT90",
-   "ABT92",
-   "ABT99",
-   "BUS18",
-   "BUS43",
-   "BUS50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415,
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 11086
+  "text_chars": 0
  },
  {
   "control_number": "18353",
   "title": "Psychology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.833,
-  "codes_found": [
-   "PSY10",
-   "PSY14",
-   "PSY15",
-   "PSY22",
-   "PSYCC1000"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347",
-   "title": "The Associate in Arts for Transfer in Psychology (AA-T in Psychology) provides a",
-   "h1": "The Associate in Arts for Transfer in Psychology (AA-T in Psychology) provides a",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    347,
-    348,
-    349
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 9006
+  "text_chars": 0
  },
  {
   "control_number": "19106",
@@ -1190,156 +660,12 @@
   "title": "IGETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.97,
-  "codes_found": [
-   "ABT90",
-   "ADJ1",
-   "ADJ3",
-   "ADJ51",
-   "ANT1",
-   "ANT10",
-   "ANT2",
-   "ANT20",
-   "ART10",
-   "ARTHC1100",
-   "ARTHC1200",
-   "AST1",
-   "AST1L",
-   "BIO1",
-   "BIO10",
-   "BIO11",
-   "BIO12",
-   "BIO18",
-   "BIO2",
-   "BIO20",
-   "BIO27",
-   "BIO3",
-   "BIO30",
-   "BIO42",
-   "BIO47",
-   "BIO48",
-   "BIO48L",
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM12A",
-   "CHM12B",
-   "CHM1A",
-   "CHM1B",
-   "CHM22",
-   "COM3",
-   "COM4",
-   "COM8",
-   "COMMC1000",
-   "ECE2",
-   "ECO10",
-   "ECONC2001",
-   "ECONC2002",
-   "ENG17",
-   "ENG22",
-   "ENG24",
-   "ENG26",
-   "ENG41",
-   "ENG44A",
-   "ENG44B",
-   "ENG46A",
-   "ENG46B",
-   "ENG47A",
-   "ENG47B",
-   "ENGLC1000",
-   "ENGLC1001",
-   "ENGLC1002",
-   "ETH1",
-   "ETH12",
-   "ETH2",
-   "ETH3",
-   "ETH4",
-   "ETH5",
-   "ETH6",
-   "GEG10",
-   "GEL1",
-   "GEL2",
-   "GEL6",
-   "HED7",
-   "HIS10",
-   "HIS40",
-   "HIS46A",
-   "HIS46B",
-   "HIS47",
-   "HIS49A",
-   "HIS49B",
-   "HIS4A",
-   "HIS5A",
-   "HIS5B",
-   "HIS6",
-   "HISTC1001",
-   "MAT10",
-   "MAT12",
-   "MAT16",
-   "MAT2",
-   "MAT25",
-   "MAT3A",
-   "MAT3B",
-   "MAT3C",
-   "MAT4",
-   "MAT5",
-   "MUS5",
-   "MUS6",
-   "MUS7",
-   "MUS8",
-   "OCN1",
-   "PHL10",
-   "PHL2",
-   "PHY10",
-   "PHY2A",
-   "PHY2B",
-   "PHY32",
-   "PHY4A",
-   "PHY4B",
-   "PHY4C",
-   "POL2",
-   "POL3",
-   "POL5",
-   "POL6",
-   "POLSC1000",
-   "PSY10",
-   "PSY12",
-   "PSY14",
-   "PSY15",
-   "PSY22",
-   "PSY25",
-   "PSY6",
-   "PSYCC1000",
-   "SOC1",
-   "SOC15",
-   "SOC20",
-   "SOC41",
-   "SOC42",
-   "SOC5",
-   "SPA3S",
-   "SPA4S",
-   "TAC1",
-   "TAC23",
-   "TAC3",
-   "TAC50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=57",
-   "title": "ETH6 La Chicana , ETH8 Intr to Asian American Studies , ETH13 Intro to Nat America in the Sv , ETH21 Introduction to Afr",
-   "h1": "ETH6 La Chicana , ETH8 Intr to Asian American Studies , ETH13 Intro to Nat America in the Sv , ETH21 Introduction to Afr",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    57,
-    58,
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 134,
-  "text_chars": 14530
+  "text_chars": 0
  },
  {
   "control_number": "19518",
@@ -1361,89 +687,46 @@
    "SPA4S"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
-   "title": "The Associate in Arts in Spanish for Transfer (AA-T in Spanish) includes four",
-   "h1": "The Associate in Arts in Spanish for Transfer (AA-T in Spanish) includes four",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=382",
+   "title": "Programs",
+   "h1": "Programs",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    382,
     383,
     384,
-    385,
-    386
+    385
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 15,
-  "text_chars": 10192
+  "text_chars": 9905
  },
  {
   "control_number": "19718",
   "title": "Addiction Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.846,
-  "codes_found": [
-   "AOD1",
-   "AOD10",
-   "AOD2",
-   "AOD3",
-   "AOD4",
-   "AOD5",
-   "AOD6",
-   "AOD9",
-   "AOD99",
-   "BIO11",
-   "PSY41"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=422",
-   "title": "• SOC41 - Marriage and the Family",
-   "h1": "• SOC41 - Marriage and the Family",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    422
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 5318
+  "text_chars": 0
  },
  {
   "control_number": "19719",
   "title": "Addiction Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.889,
-  "codes_found": [
-   "AOD1",
-   "AOD2",
-   "AOD3",
-   "AOD4",
-   "AOD5",
-   "AOD6",
-   "AOD9",
-   "PSY25"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=422",
-   "title": "• SOC41 - Marriage and the Family",
-   "h1": "• SOC41 - Marriage and the Family",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    422
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 5318
+  "text_chars": 0
  },
  {
   "control_number": "21422",
@@ -1463,19 +746,19 @@
    "BUS50"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=129",
    "title": "Business Office Technology-Information Processing -",
    "h1": "Business Office Technology-Information Processing -",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    124
+    129
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2995
+  "text_chars": 2570
  },
  {
   "control_number": "21423",
@@ -1498,52 +781,34 @@
    "ART80"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
-   "title": "The Digital Arts program offers a certificate and associate degree in Digital Arts.",
-   "h1": "The Digital Arts program offers a certificate and associate degree in Digital Arts.",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=99",
+   "title": "Digital Arts - CT.DA",
+   "h1": "Digital Arts - CT.DA",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
-    97,
-    98,
-    99
+    99,
+    100,
+    101,
+    102
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 11,
-  "text_chars": 13153
+  "text_chars": 12504
  },
  {
   "control_number": "21424",
   "title": "Computer Science and Information Systems - Web Development Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS32",
-   "CID25",
-   "CID26",
-   "CID27",
-   "CID64",
-   "CID74"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
-   "title": "• ART73 - Introduction to Digital Illustration for Animation",
-   "h1": "• ART73 - Introduction to Digital Illustration for Animation",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 5596
+  "text_chars": 0
  },
  {
   "control_number": "21435",
@@ -1578,22 +843,22 @@
    "WLD158"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
-   "title": "Welding Technology - AS.WLD",
-   "h1": "Welding Technology - AS.WLD",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=409",
+   "title": "Welding Technology - CT.WLD",
+   "h1": "Welding Technology - CT.WLD",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    408,
     409,
     410,
-    411
+    411,
+    412
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 10572
+  "text_chars": 8980
  },
  {
   "control_number": "21444",
@@ -1614,22 +879,22 @@
    "PHO4"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
-   "title": "Photography - AA.PHO",
-   "h1": "Photography - AA.PHO",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=100",
+   "title": "Photography - CT.PHO",
+   "h1": "Photography - CT.PHO",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    97,
-    98,
-    99,
-    100
+    100,
+    101,
+    102,
+    103
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 12665
+  "text_chars": 12063
  },
  {
   "control_number": "21450",
@@ -1648,19 +913,22 @@
    "ADJ5"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
-   "title": "Administration of Justice - AS.ADJ",
-   "h1": "Administration of Justice - AS.ADJ",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
+   "title": "Administration of Justice - CT.ADJ Requirements",
+   "h1": "Administration of Justice - CT.ADJ Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    61
+    63,
+    64,
+    65,
+    66
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 3798
+  "text_chars": 9856
  },
  {
   "control_number": "24159",
@@ -1679,27 +947,12 @@
   "title": "Construction - Sustainable Construction: Construction Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "CMA57",
-   "CMA90",
-   "CMA91"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
-   "title": "• ART73 - Introduction to Digital Illustration for Animation",
-   "h1": "• ART73 - Introduction to Digital Illustration for Animation",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 5596
+  "text_chars": 0
  },
  {
   "control_number": "30822",
@@ -1790,19 +1043,22 @@
    "ECE6"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
-   "title": "Early Childhood Education - AS.ECE",
-   "h1": "Early Childhood Education - AS.ECE",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
+   "title": "Early Childhood Education for Transfer (AS-T) -",
+   "h1": "Early Childhood Education for Transfer (AS-T) -",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    183
+    184,
+    185,
+    186,
+    187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 4253
+  "text_chars": 10482
  },
  {
   "control_number": "31392",
@@ -1899,48 +1155,12 @@
   "title": "Agriculture Production",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.92,
-  "codes_found": [
-   "ABT101",
-   "ABT102",
-   "ABT103",
-   "ABT104",
-   "ABT105",
-   "ABT110",
-   "ABT130",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT81",
-   "ABT83",
-   "ABT90",
-   "ABT92",
-   "ABT93",
-   "ABT94",
-   "ABT95",
-   "ABT96",
-   "ABT97",
-   "ABT98",
-   "ABT99",
-   "BUS43",
-   "BUS50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415,
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 25,
-  "text_chars": 11086
+  "text_chars": 0
  },
  {
   "control_number": "31592",
@@ -1960,19 +1180,20 @@
    "CSS55"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
-   "title": "Computer Science Info Systems-Network & Security",
-   "h1": "Computer Science Info Systems-Network & Security",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
+   "title": "Computer Science and Info Systems-Network &",
+   "h1": "Computer Science and Info Systems-Network &",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    154
+    158,
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2354
+  "text_chars": 3932
  },
  {
   "control_number": "31593",
@@ -1992,20 +1213,22 @@
    "MAT3B"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
-   "title": "• ART73 - Introduction to Digital Illustration for Animation",
-   "h1": "• ART73 - Introduction to Digital Illustration for Animation",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
+   "title": "Computer Science and Info Systems-Computer",
+   "h1": "Computer Science and Info Systems-Computer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    416,
-    417
+    156,
+    157,
+    158,
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 11093
+  "text_chars": 9012
  },
  {
   "control_number": "31778",
@@ -2040,7 +1263,7 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 4479
@@ -2050,46 +1273,12 @@
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.955,
-  "codes_found": [
-   "ART10",
-   "BIO10",
-   "CHM22",
-   "COMMC1000",
-   "ECE6",
-   "ENGLC1000",
-   "ENGLC1000E",
-   "ENGLC1001",
-   "ENGLC1002",
-   "GEG10",
-   "GEL2",
-   "GEL6",
-   "HIS5A",
-   "HISTC1001",
-   "MAT12",
-   "MUS1A",
-   "PHY10",
-   "PHY32",
-   "POLSC1000",
-   "TAC1",
-   "TAC92"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
-   "title": "CalGETC Area Overview",
-   "h1": "CalGETC Area Overview",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    58,
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 22,
-  "text_chars": 9072
+  "text_chars": 0
  },
  {
   "control_number": "31971",
@@ -2112,22 +1301,22 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
-   "title": "Administration of Justice - CT.ADJ Requirements",
-   "h1": "Administration of Justice - CT.ADJ Requirements",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=62",
+   "title": "Administration of Justice for Transfer (AS-T) -",
+   "h1": "Administration of Justice for Transfer (AS-T) -",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    62,
     63,
     64,
-    65,
-    66
+    65
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 11,
-  "text_chars": 9856
+  "text_chars": 9441
  },
  {
   "control_number": "32036",
@@ -2217,19 +1406,21 @@
    "PHY4C"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
-   "title": "astronomy and physics. Transfer level astronomy curricula stress very strong",
-   "h1": "astronomy and physics. Transfer level astronomy curricula stress very strong",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=338",
+   "title": "Physics for Transfer (AS-T) - AST.PHY",
+   "h1": "Physics for Transfer (AS-T) - AST.PHY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    109
+    338,
+    339,
+    340
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 2504
+  "text_chars": 6509
  },
  {
   "control_number": "32375",
@@ -2300,7 +1491,7 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 9420
@@ -2351,50 +1542,12 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.742,
-  "codes_found": [
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM1A",
-   "HED2",
-   "HED55",
-   "PEAC32",
-   "PEAC36",
-   "PEAC40",
-   "PEAC41",
-   "PEAC43",
-   "PEAC46",
-   "PEAC47",
-   "PEAC50",
-   "PEAC52",
-   "PEAC55",
-   "PEAC56",
-   "PEAC58",
-   "PEAC59",
-   "PEAC61",
-   "PETH1",
-   "PHY2A",
-   "PHY4A"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=421",
-   "title": "• HIS40 - History of Women in the U.S.",
-   "h1": "• HIS40 - History of Women in the U.S.",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    421,
-    422,
-    423,
-    424
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 31,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "33050",
@@ -2421,19 +1574,20 @@
    "TAC40"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
-   "title": "major preparation coursework for transfer to a four-year Theatre Arts and/or Film,",
-   "h1": "major preparation coursework for transfer to a four-year Theatre Arts and/or Film,",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=391",
+   "title": "Theatre Arts for Transfer (AA-T) - AAT.THA Students can double-count required courses and courses for General",
+   "h1": "Theatre Arts for Transfer (AA-T) - AAT.THA Students can double-count required courses and courses for General",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    390
+    391,
+    392
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 15,
-  "text_chars": 3469
+  "text_chars": 6373
  },
  {
   "control_number": "33051",
@@ -2498,22 +1652,22 @@
    "MUS49"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=279",
-   "title": "offers courses that prepare music majors for transfer to four-year universities as",
-   "h1": "offers courses that prepare music majors for transfer to four-year universities as",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=280",
+   "title": "Music for Transfer (AA-T) - AAT.MUS",
+   "h1": "Music for Transfer (AA-T) - AAT.MUS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    279,
     280,
     281,
-    282
+    282,
+    283
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 13,
-  "text_chars": 12230
+  "text_chars": 11876
  },
  {
   "control_number": "33385",
@@ -2559,40 +1713,54 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "BIO1",
+   "BIO2",
+   "BIO3",
+   "CHM12A",
+   "CHM12B",
    "CHM1A",
+   "CHM1B",
    "CSS1",
    "CSS2A",
+   "CSS2B",
+   "CSS3",
+   "CSS7",
+   "EGN11",
    "EGN1L",
    "EGN1R",
    "EGN2",
    "EGN4",
    "EGN5",
    "EGN6",
+   "EGN8",
    "MAT3A",
    "MAT3B",
+   "MAT3C",
+   "MAT4",
    "MAT5",
    "PHY4A",
-   "PHY4B"
+   "PHY4B",
+   "PHY4C"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
-   "title": "Engineering Associate in Science Degree and/or transfer. This certificate is",
-   "h1": "Engineering Associate in Science Degree and/or transfer. This certificate is",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=202",
+   "title": "Engineering - AS.EGN",
+   "h1": "Engineering - AS.EGN",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    202,
+    203,
     204,
-    205,
-    206,
-    207
+    205
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 28,
-  "text_chars": 8390
+  "text_chars": 11919
  },
  {
   "control_number": "35065",
@@ -2637,7 +1805,7 @@
     390
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 26,
   "text_chars": 3843
@@ -2750,43 +1918,12 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BIO10",
-   "BIO11",
-   "BIO27",
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM1A",
-   "CHM22",
-   "HED2",
-   "HED6",
-   "HED7",
-   "HES1",
-   "HES2",
-   "HES3",
-   "PSY15",
-   "SOC1",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=247",
-   "title": "The Associate in Science in Public Health for Transfer (AS-T in Public Health) is",
-   "h1": "The Associate in Science in Public Health for Transfer (AS-T in Public Health) is",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    247,
-    248,
-    249
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 6750
+  "text_chars": 0
  },
  {
   "control_number": "35613",
@@ -2855,8 +1992,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=173",
-   "title": "The Associate of Science Degree in Construction Management and Architecture",
-   "h1": "The Associate of Science Degree in Construction Management and Architecture",
+   "title": "Construction Management and Architecture -",
+   "h1": "Construction Management and Architecture -",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2869,7 +2006,7 @@
    "heading_named": true
   },
   "listed": 20,
-  "text_chars": 10342
+  "text_chars": 10600
  },
  {
   "control_number": "36881",
@@ -2888,60 +2025,24 @@
   "title": "Manufacturing Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "CMA74",
-   "MFGT110",
-   "MFGT131",
-   "MFGT132",
-   "MFGT71",
-   "WLD151"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=260",
-   "title": "Agricultural Mechatronics - AS.MECHA",
-   "h1": "Agricultural Mechatronics - AS.MECHA",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    260
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 4094
+  "text_chars": 0
  },
  {
   "control_number": "37130",
   "title": "Computer Science and Information Systems - Mobile Development Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS32",
-   "CID25",
-   "CID27",
-   "CID64",
-   "CID65",
-   "CID76"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
-   "title": "• ART73 - Introduction to Digital Illustration for Animation",
-   "h1": "• ART73 - Introduction to Digital Illustration for Animation",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 5596
+  "text_chars": 0
  },
  {
   "control_number": "37916",
@@ -2980,35 +2081,12 @@
   "title": "Agriculture Plant Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.889,
-  "codes_found": [
-   "ABT53",
-   "ABT90",
-   "ABT92",
-   "CHM12A",
-   "CHM1A",
-   "CHM22",
-   "ECONC2001",
-   "MFGT71"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415,
-    416,
-    417,
-    418
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38211",
@@ -3080,7 +2158,7 @@
     129
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 8538
@@ -3119,7 +2197,7 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 8531
@@ -3145,8 +2223,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
-   "title": "A student completing the Engineering Fundamentals Certificate of Achievement",
-   "h1": "A student completing the Engineering Fundamentals Certificate of Achievement",
+   "title": "Engineering Fundamentals - CT.EGN",
+   "h1": "Engineering Fundamentals - CT.EGN",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3159,7 +2237,7 @@
    "heading_named": true
   },
   "listed": 10,
-  "text_chars": 8706
+  "text_chars": 8847
  },
  {
   "control_number": "38517",
@@ -3179,19 +2257,20 @@
    "TAC61"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
-   "title": "Theatre Performance - NCCT.TPER Outcome",
-   "h1": "Theatre Performance - NCCT.TPER Outcome",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=392",
+   "title": "Film, Television and Electronic Media (AS-T) -",
+   "h1": "Film, Television and Electronic Media (AS-T) -",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    392,
     393
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2790
+  "text_chars": 6710
  },
  {
   "control_number": "39248",
@@ -3217,22 +2296,22 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
-   "title": "OR MAT10 - Math for Liberal Arts",
-   "h1": "OR MAT10 - Math for Liberal Arts",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=302",
+   "title": "Nursing-Vocational Nursing - AS.NVN",
+   "h1": "Nursing-Vocational Nursing - AS.NVN",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    302,
     303,
     304,
-    305,
-    306
+    305
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 21,
-  "text_chars": 11478
+  "text_chars": 13859
  },
  {
   "control_number": "39564",
@@ -3280,7 +2359,7 @@
     74
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 11238
@@ -3299,8 +2378,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
-   "title": "The Certificate of Completion in Basic Computer Literacy is awarded upon the",
-   "h1": "The Certificate of Completion in Basic Computer Literacy is awarded upon the",
+   "title": "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR",
+   "h1": "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3310,7 +2389,7 @@
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 3782
+  "text_chars": 4020
  },
  {
   "control_number": "40742",
@@ -3340,8 +2419,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=159",
-   "title": "The Technical Support Certificate of Achievement combines information",
-   "h1": "The Technical Support Certificate of Achievement combines information",
+   "title": "Technical Support - CT.TS",
+   "h1": "Technical Support - CT.TS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3351,7 +2430,7 @@
    "heading_named": true
   },
   "listed": 5,
-  "text_chars": 1554
+  "text_chars": 1705
  },
  {
   "control_number": "41922",
@@ -3369,8 +2448,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
-   "title": "This Cisco Certified Network Associate (CCNA) Certificate of Achievement",
-   "h1": "This Cisco Certified Network Associate (CCNA) Certificate of Achievement",
+   "title": "Cisco Certified Network - CT.CCN Computer Science and Info Systems-Computer",
+   "h1": "Cisco Certified Network - CT.CCN Computer Science and Info Systems-Computer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3383,7 +2462,7 @@
    "heading_named": true
   },
   "listed": 5,
-  "text_chars": 8818
+  "text_chars": 9044
  },
  {
   "control_number": "41985",
@@ -3401,8 +2480,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=157",
-   "title": "The Cybersecurity Certificate of Achievement combines security in a networking",
-   "h1": "The Cybersecurity Certificate of Achievement combines security in a networking",
+   "title": "Cybersecurity - CT.CS Fundamentals • CSS2A - Object Oriented Programming",
+   "h1": "Cybersecurity - CT.CS Fundamentals • CSS2A - Object Oriented Programming",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3414,7 +2493,7 @@
    "heading_named": true
   },
   "listed": 5,
-  "text_chars": 5191
+  "text_chars": 5828
  },
  {
   "control_number": "42135",
@@ -3455,31 +2534,12 @@
   "title": "Food Safety",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ABT130",
-   "ABT131",
-   "ABT132",
-   "ABT133",
-   "ABT134",
-   "ABT135",
-   "ABT58"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 5488
+  "text_chars": 0
  },
  {
   "control_number": "43066",
@@ -3503,7 +2563,7 @@
     200
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 3550
@@ -3513,91 +2573,24 @@
   "title": "Sustainable Crop Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.944,
-  "codes_found": [
-   "ABT101",
-   "ABT102",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT81",
-   "ABT83",
-   "ABT90",
-   "ABT92",
-   "ABT93",
-   "ABT95",
-   "ABT96",
-   "ABT97",
-   "ABT98",
-   "ABT99",
-   "BUS43",
-   "BUS50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415,
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 11086
+  "text_chars": 0
  },
  {
   "control_number": "43121",
   "title": "Small Farm",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.923,
-  "codes_found": [
-   "ABT101",
-   "ABT102",
-   "ABT103",
-   "ABT104",
-   "ABT105",
-   "ABT130",
-   "ABT131",
-   "ABT135",
-   "ABT57",
-   "ABT58",
-   "ABT80",
-   "ABT81",
-   "ABT83",
-   "ABT90",
-   "ABT92",
-   "ABT93",
-   "ABT94",
-   "ABT95",
-   "ABT96",
-   "ABT97",
-   "ABT98",
-   "ABT99",
-   "BUS43",
-   "BUS50"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
-   "title": "• SJS22 - Introduction to Women's Studies",
-   "h1": "• SJS22 - Introduction to Women's Studies",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    415,
-    416
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 26,
-  "text_chars": 11086
+  "text_chars": 0
  },
  {
   "control_number": "43559",
@@ -3623,7 +2616,7 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 1692
@@ -3649,7 +2642,7 @@
     221
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 1637
@@ -3675,7 +2668,7 @@
     220
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 1531
@@ -3701,7 +2694,7 @@
     222
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 1711
@@ -3727,7 +2720,7 @@
     224
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 1657
@@ -3790,7 +2783,7 @@
     223
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 1574
@@ -3836,7 +2829,7 @@
     263
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 23,
   "text_chars": 10236
@@ -3847,8 +2840,12 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.636,
+  "coverage": 1.0,
   "codes_found": [
+   "ABT57",
+   "BUS50",
+   "CMA74",
+   "CMA81",
    "MFGT110",
    "MFGT111A",
    "MFGT111B",
@@ -3858,20 +2855,22 @@
    "WLD150"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=418",
-   "title": "• MAT24 - Trigonometry",
-   "h1": "• MAT24 - Trigonometry",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=261",
+   "title": "Foundations of Agricultural Mechatronics -",
+   "h1": "Foundations of Agricultural Mechatronics -",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    418,
-    419
+    261,
+    262,
+    263,
+    264
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 10431
+  "text_chars": 8217
  },
  {
   "control_number": "43883",
@@ -3912,8 +2911,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=281",
-   "title": "This certificate prepares students to transfer to four year university music",
-   "h1": "This certificate prepares students to transfer to four year university music",
+   "title": "Music - CT.MUS",
+   "h1": "Music - CT.MUS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3926,7 +2925,7 @@
    "heading_named": true
   },
   "listed": 16,
-  "text_chars": 9674
+  "text_chars": 9804
  },
  {
   "control_number": "44161",
@@ -3943,19 +2942,20 @@
    "TAC340"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=396",
-   "title": "Courses",
-   "h1": "Courses",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
+   "title": "Theatre Performance - NCCT.TPER Outcome",
+   "h1": "Theatre Performance - NCCT.TPER Outcome",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    396
+    393,
+    394
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 3346
+  "text_chars": 4511
  },
  {
   "control_number": "44525",
@@ -3977,8 +2977,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=384",
-   "title": "The Certificate of Achievement in Spanish includes four semesters of the study",
-   "h1": "The Certificate of Achievement in Spanish includes four semesters of the study",
+   "title": "Spanish - CT.SPA",
+   "h1": "Spanish - CT.SPA",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3991,7 +2991,7 @@
    "heading_named": true
   },
   "listed": 9,
-  "text_chars": 8710
+  "text_chars": 8844
  },
  {
   "control_number": "44537",
@@ -4016,19 +3016,20 @@
    "RCP805"
   ],
   "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=356",
-   "title": "Success in the B.S. Respiratory Care Program is based on application of",
-   "h1": "Success in the B.S. Respiratory Care Program is based on application of",
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=355",
+   "title": "Respiratory Care - BS.RC",
+   "h1": "Respiratory Care - BS.RC",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    355,
     356
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 13,
-  "text_chars": 1539
+  "text_chars": 7209
  },
  {
   "control_number": "44574",
@@ -4045,8 +3046,8 @@
   ],
   "source": {
    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
-   "title": "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR",
-   "h1": "Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR",
+   "title": "Workforce and Academic Readiness - NCCT.WAR",
+   "h1": "Workforce and Academic Readiness - NCCT.WAR",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4054,10 +3055,10 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 6094
+  "text_chars": 6060
  },
  {
   "control_number": "44729",
@@ -4107,183 +3108,11 @@
   "title": "CalGETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ABT53",
-   "ABT90",
-   "ABT92",
-   "ADJ1",
-   "ADJ3",
-   "ADJ51",
-   "ANT1",
-   "ANT10",
-   "ANT2",
-   "ANT20",
-   "ART10",
-   "ART19",
-   "ARTHC1100",
-   "ARTHC1200",
-   "AST1",
-   "AST1L",
-   "BIO1",
-   "BIO10",
-   "BIO11",
-   "BIO12",
-   "BIO18",
-   "BIO2",
-   "BIO20",
-   "BIO27",
-   "BIO3",
-   "BIO30",
-   "BIO42",
-   "BIO47",
-   "BIO48",
-   "BIO48L",
-   "BIO5",
-   "BIO6",
-   "BIO6L",
-   "CHM12A",
-   "CHM12B",
-   "CHM1A",
-   "CHM1B",
-   "CHM22",
-   "COM4",
-   "COMMC1000",
-   "ECE2",
-   "ECE53",
-   "ECE6",
-   "ECO10",
-   "ECONC2001",
-   "ECONC2002",
-   "ENG17",
-   "ENG22",
-   "ENG24",
-   "ENG26",
-   "ENG41",
-   "ENG44A",
-   "ENG44B",
-   "ENG46A",
-   "ENG46B",
-   "ENG47A",
-   "ENG47B",
-   "ENG48",
-   "ENGLC1000",
-   "ENGLC1000E",
-   "ENGLC1001",
-   "ENGLC1002",
-   "ETH1",
-   "ETH12",
-   "ETH13",
-   "ETH2",
-   "ETH21",
-   "ETH3",
-   "ETH4",
-   "ETH5",
-   "ETH56",
-   "ETH6",
-   "ETH7",
-   "ETH8",
-   "GEG10",
-   "GEL1",
-   "GEL2",
-   "GEL6",
-   "HED7",
-   "HES1",
-   "HES2",
-   "HIS10",
-   "HIS40",
-   "HIS46A",
-   "HIS46B",
-   "HIS47",
-   "HIS49A",
-   "HIS49B",
-   "HIS4A",
-   "HIS4B",
-   "HIS5A",
-   "HIS5B",
-   "HIS6",
-   "HISTC1001",
-   "HISTC1002",
-   "MAT10",
-   "MAT12",
-   "MAT16",
-   "MAT2",
-   "MAT25",
-   "MAT27",
-   "MAT3A",
-   "MAT3B",
-   "MAT3C",
-   "MAT4",
-   "MAT5",
-   "MUS1A",
-   "MUS42",
-   "MUS5",
-   "MUS6",
-   "MUS7",
-   "MUS8",
-   "NRN70",
-   "NVN70",
-   "OCN1",
-   "PETH1",
-   "PHL10",
-   "PHL2",
-   "PHL5",
-   "PHY10",
-   "PHY2A",
-   "PHY2B",
-   "PHY32",
-   "PHY4A",
-   "PHY4B",
-   "PHY4C",
-   "POL2",
-   "POL3",
-   "POL5",
-   "POL6",
-   "POLSC1000",
-   "PSY10",
-   "PSY12",
-   "PSY14",
-   "PSY15",
-   "PSY22",
-   "PSY25",
-   "PSY6",
-   "PSY9",
-   "PSYCC1000",
-   "SJS20",
-   "SJS22",
-   "SOC1",
-   "SOC15",
-   "SOC20",
-   "SOC30",
-   "SOC41",
-   "SOC42",
-   "SOC5",
-   "SOC8",
-   "SPA3S",
-   "SPA4S",
-   "STATC1000",
-   "TAC1",
-   "TAC2",
-   "TAC23",
-   "TAC3",
-   "TAC50",
-   "TAC92"
-  ],
-  "source": {
-   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
-   "title": "CalGETC Area Overview",
-   "h1": "CalGETC Area Overview",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    58,
-    59
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 159,
-  "text_chars": 9072
+  "text_chars": 0
  }
 ]

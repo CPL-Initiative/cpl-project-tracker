@@ -2,27 +2,123 @@
  "college": "Hartnell College",
  "programs": 112,
  "with_closed_list": 105,
- "found": 101,
- "extracted": 101,
+ "found": 73,
+ "extracted": 73,
  "errors": 0,
- "passed_machine_checks": 8,
+ "passed_machine_checks": 10,
  "failed": {
-  "coverage": 33,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 93,
+  "arithmetic": 63,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 8.03,
- "cost_per_program": 0.0795,
+ "cost_usd": 5.68,
+ "cost_per_program": 0.0778,
  "not_found": [
+  {
+   "control_number": "03547",
+   "title": "Kinesiology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "08872",
+   "title": "Computer Science and Information Systems-Network and Security",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+    "coverage": 0.222
+   }
+  },
+  {
+   "control_number": "11803",
+   "title": "Agriculture Business with an Area of Emphasis",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "12331",
+   "title": "Agriculture Production",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "15426",
+   "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17910",
+   "title": "General Studies: STEM",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17911",
+   "title": "General Studies: Social and Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17912",
+   "title": "General Studies: Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
   {
    "control_number": "17913",
    "title": "General Studies: Ethnic Groups in the United States",
    "award": "A.A. Degree",
    "near_miss": {
-    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
-    "coverage": 0.306
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17914",
+   "title": "General Studies: Language and Rationality",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17924",
+   "title": "Liberal Arts: Pathway to Health Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17977",
+   "title": "Agriculture Business",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "18353",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
    }
   },
   {
@@ -30,8 +126,103 @@
    "title": "CSU General Education Breadth",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=38",
-    "coverage": 0.018
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19107",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19718",
+   "title": "Addiction Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19719",
+   "title": "Addiction Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "21424",
+   "title": "Computer Science and Information Systems - Web Development Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "30621",
+   "title": "Construction - Sustainable Construction: Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "31591",
+   "title": "Agriculture Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "31804",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "32981",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "35458",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "36985",
+   "title": "Manufacturing Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "37130",
+   "title": "Computer Science and Information Systems - Mobile Development Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "37950",
+   "title": "Agriculture Plant Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
    }
   },
   {
@@ -39,16 +230,49 @@
    "title": "Law, Public Policy, and Society",
    "award": "A.A- T Degree",
    "near_miss": {
-    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=374",
-    "coverage": 0.048
+    "why": "the catalog heads each program with its code, and no heading names this one"
    }
   },
   {
    "control_number": "40742",
    "title": "High School Equivalency Preparation",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "42385",
+   "title": "Food Safety",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "43119",
+   "title": "Sustainable Crop Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "43121",
+   "title": "Small Farm",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "45096",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
   }
  ],
- "run": "39082134780"
+ "run": "39090050931"
 }
