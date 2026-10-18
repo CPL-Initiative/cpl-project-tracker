@@ -97,7 +97,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      3.5,
      4.0
@@ -146,7 +146,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate practical application of skills related to management and production of agricultural and horticultural crops, including various methods of plant propagation",
     "Recognize and describe characteristics of agricultural and horticultural crops, common or native to California, relative to growth and marketability",
@@ -161,7 +161,8 @@
     "quality control manager",
     "county and governmental compliance inspector",
     "sales and marketing of seed and other crop protecting agents"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -318,6 +319,20 @@
    "The page names transfer majors (Plant Science, Crop Science, Environmental Horticulture); these were not recorded as careers."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

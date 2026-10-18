@@ -71,7 +71,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     74.5,
     81.5
@@ -86,7 +86,7 @@
     34.0
    ],
    "why": [
-    "the blocks and general education sum to 74.5-81.5; the catalog prints 71.5-71.5 for the degree"
+    "the record says electives fill the degree total, but the catalog text names no electives"
    ],
    "major": {
     "pass": true,
@@ -145,7 +145,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate effective cost control and recipe conversions in a modern food service establishment.",
     "Demonstrate proper cooking methods and techniques required of the food service industry.",
@@ -154,7 +154,8 @@
    "careers": [
     "cooks",
     "sous chef"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -280,6 +281,20 @@
    "Careers taken from the description: 'work as cooks' and 'advance to sous chef level'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 71.5"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 71.5"
+  }
+ ]
 }

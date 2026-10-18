@@ -105,7 +105,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      8.0,
      8.0
@@ -154,7 +154,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate critical thinking and writing skills.",
     "Demonstrate an understanding of the impact of race, class and sex on individuals’ experience of historical events.",
@@ -162,7 +162,8 @@
     "Demonstrate a strong base of research skills, including the ability to evaluate and properly use primary and secondary sources.",
     "Demonstrate the ability to analyze a primary source."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -404,6 +405,20 @@
    "No careers are named in the program text."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

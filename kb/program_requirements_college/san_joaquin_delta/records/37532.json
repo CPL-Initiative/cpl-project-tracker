@@ -66,37 +66,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    51.0,
-    58.0
+    24.0,
+    24.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    24.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 51.0-58.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     24.0,
-     24.0
+     51.0,
+     58.0
     ],
     "stated": [
-     24.0,
-     24.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     2.0,
+     9.0
+    ]
    }
   },
   "repeated": {
@@ -121,7 +124,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -141,12 +144,13 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate clear and precise expressive and receptive skills in American Sign Language with appropriate grammatical accuracy.",
     "Demonstrate appropriate cultural awareness."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -254,6 +258,20 @@
    "All courses must be completed with a grade of C or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

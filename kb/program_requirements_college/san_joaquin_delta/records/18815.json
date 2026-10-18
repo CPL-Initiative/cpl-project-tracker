@@ -139,37 +139,40 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    45.0,
-    52.0
+    18.0,
+    18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 45.0-52.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     45.0,
+     52.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     8.0,
+     15.0
+    ]
    }
   },
   "repeated": {
@@ -214,14 +217,15 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate scientific literacy by identifying and applying the major components of the scientific method of inquiry.",
     "Analyze the similarities and differences between the ways knowledge is collected and applied in the discipline’s studies.",
     "Compare and contrast conflicting viewpoints from the perspective of two or more disciplines.",
     "Integrate and utilize knowledge from multiple disciplines to solve problems."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -856,6 +860,20 @@
    "Description mentions students interested in the 'health sciences field' or STEM disciplines; not recorded as careers since no career or occupation is named."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

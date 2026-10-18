@@ -72,37 +72,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    63.0,
-    70.0
+    36.0,
+    36.0
    ],
    "stated": [
-    60.0,
-    60.0
+    36.0,
+    36.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 63.0-70.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     36.0,
-     36.0
+     63.0,
+     70.0
     ],
     "stated": [
-     36.0,
-     36.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -127,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +147,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate the skills to use application software such as word processing, spreadsheet processing programs, and database management system.",
     "Demonstrate the skills to plan a web site that offers basic HTML features, develop the web site and then publish it to the web.",
@@ -157,7 +157,8 @@
    "careers": [
     "website development",
     "computer network maintenance"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -316,6 +317,20 @@
    "Catalog heading reads Summer 2026 - Summer 2027 College Catalog."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

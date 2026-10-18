@@ -95,7 +95,8 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -140,7 +141,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate the confidence to work independently to setup, configure, and harden a network, stand-alone or application network system.",
     "Demonstrate skills, knowledge, and training for employment as a Security Expert, Senior Security Administrator and Penetration Expert; ability to use the OSI model; and ability to logically solve and design a logical and physical topology with proper security implementations."
@@ -150,7 +151,8 @@
     "Security Expert",
     "Senior Security Administrator",
     "Penetration Expert"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -273,6 +275,20 @@
    "Catalog header says Summer 2026 - Summer 2027 College Catalog, consistent with the 2026-2027 year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60.5"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60.5"
+  }
+ ]
 }

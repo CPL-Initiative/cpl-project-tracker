@@ -124,7 +124,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      5.0,
      8.0
@@ -173,7 +173,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate the ability to identify and communicate the significance of age, class and socioeconomic status, criminal history, ethnicity, family and marital status, gender identity, immigrant status, nationality, perceived or actual physical or mental disability, political beliefs and ideological viewpoints, race, religion, and sexual orientation inequality in the distribution of life chances, such as education, health, housing, freedom, employment and career opportunities and environment.",
     "Understand and demonstrate the ability to explain the historical and contemporary impact, methods, and potential of legal, political, and social action, movements, and resistance on social justice, liberation, and social change of oppressive structures, systems, and institutions within law and society.",
@@ -208,7 +208,8 @@
     "religious organizations",
     "social science",
     "social work"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -662,6 +663,20 @@
    "Program Learning Outcomes are printed for the program; the A.A-T degree is the award of this section."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

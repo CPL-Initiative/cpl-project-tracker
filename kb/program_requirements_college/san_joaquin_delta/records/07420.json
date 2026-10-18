@@ -80,36 +80,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    39.5,
-    39.5
+    66.5,
+    73.5
    ],
    "stated": [
-    39.5,
-    39.5
+    66.5,
+    66.5
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the record says electives fill the degree total, but the catalog text names no electives"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     66.5,
-     73.5
+     39.5,
+     39.5
     ],
     "stated": [
-     66.5,
-     66.5
+     39.5,
+     39.5
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "within": true
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -134,7 +135,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -154,7 +155,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate the necessary skills to receive state and national certification in two areas: Heavy Duty Diesel Engine Emissions Control by the state of California Air Resource Board (ARB); and Air Conditioning Certification by Society of Automotive Engineers (SAE)."
    ],
@@ -164,7 +165,8 @@
     "technician for agricultural dealerships/repair shops",
     "technician for industrial engine dealers",
     "technician for marine engine repair facilities"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -273,6 +275,20 @@
    "Careers are taken from the program description's list of entry-level positions."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 66.5"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 66.5"
+  }
+ ]
 }

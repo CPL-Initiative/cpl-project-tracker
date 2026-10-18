@@ -93,7 +93,8 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -138,7 +139,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Transform information given from a mechanical drawing (print) into a Computer Numerically Controlled (CNC) program used to fabricate metal parts. The part will have these features: hole patterns, contours, and pockets.",
     "Create a metal part by developing a Computer Numerically Controlled (CNC) program. The overall project will consist of four components: tooling selection, spindle speed and feed rate calculations, CNC program, and dimensional accuracy of the part.",
@@ -158,7 +159,8 @@
     "research and development laboratories",
     "industrial maintenance",
     "millwright positions"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -282,6 +284,20 @@
    "All courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 61"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 61"
+  }
+ ]
 }

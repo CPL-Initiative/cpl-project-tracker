@@ -68,37 +68,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    50.0,
-    57.0
+    23.0,
+    23.0
    ],
    "stated": [
-    60.0,
-    60.0
+    23.0,
+    23.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 50.0-57.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     23.0,
-     23.0
+     50.0,
+     57.0
     ],
     "stated": [
-     23.0,
-     23.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     3.0,
+     10.0
+    ]
    }
   },
   "repeated": {
@@ -123,7 +126,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,7 +146,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate the ability to apply concepts and aesthetics to create and evaluate photographic images.",
     "Demonstrate skills in digital technologies. Including using a digital camera, properly preparing files to print, and creating a final portfolio.",
@@ -184,7 +187,8 @@
     "Studio and Wedding Photography",
     "Theater Production Photographer",
     "Wedding and Event Photographer"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -307,6 +311,20 @@
    "All courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

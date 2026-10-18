@@ -107,37 +107,40 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    46.0,
-    53.0
+    19.0,
+    19.0
    ],
    "stated": [
-    60.0,
-    60.0
+    19.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 46.0-53.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     19.0,
-     19.0
+     46.0,
+     53.0
     ],
     "stated": [
-     19.0,
-     19.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     7.0,
+     14.0
+    ]
    }
   },
   "repeated": {
@@ -182,7 +185,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate proficiency in at least one language other than English.",
     "Distinguish the theoretical perspectives of various cultures as they influence the historical, cultural, political, and artistic traditions of communities of color with a particular emphasis on agency and self-affirmation, within the area of global studies.",
@@ -199,7 +202,8 @@
     "Non-Profit Organizations",
     "Tourism",
     "Arts"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -714,6 +718,20 @@
    "Catalog heading year is Summer 2026 - Summer 2027, consistent with requested catalog year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

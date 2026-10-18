@@ -325,7 +325,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     45.0,
     52.0
@@ -340,7 +340,7 @@
     34.0
    ],
    "why": [
-    "the blocks and general education sum to 45.0-52.0; the catalog prints 60.0-60.0 for the degree"
+    "the record says electives fill the degree total, but the catalog text names no electives"
    ],
    "major": {
     "pass": true,
@@ -399,12 +399,13 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Students will demonstrate an introduction to the various fields in the arts and humanities. These courses will provide the background for a successful transition to a four-year degree.",
     "Students will demonstrate an introduction to the various fields in the social sciences. These courses will provide the background for a successful transition to a four-year degree."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -2116,6 +2117,20 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

@@ -92,8 +92,8 @@
     "the blocks sum to 27.0-28.5; the catalog states 27.0-27.0"
    ],
    "degree": {
-    "pass": true,
-    "status": "equal",
+    "pass": false,
+    "status": "incomplete",
     "computed": [
      61.0,
      62.5
@@ -107,8 +107,9 @@
      34.0,
      34.0
     ],
-    "why": [],
-    "overlap": true
+    "why": [
+     "the record says electives fill the degree total, but the catalog text names no electives"
+    ]
    }
   },
   "repeated": {
@@ -153,7 +154,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply accounting and legal concepts and principles in making decisions about business operations.",
     "Know how to use economic data sets/formulas in order to interpret and analyze data.",
@@ -167,7 +168,8 @@
     "Distinguish among primary functions within a business, such as human resources, management, marketing, accounting, finance, and production, considering the legal and ethical outcomes.",
     "Students will analyze an application problem and choose an appropriate mathematical model (from those covered in this course) to solve the problem."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -286,6 +288,20 @@
    "Text mentions 'career opportunities' generically but names no specific careers."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

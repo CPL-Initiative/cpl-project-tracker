@@ -62,37 +62,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    87.5,
-    87.5
+    60.5,
+    60.5
    ],
    "stated": [
-    81.5,
-    81.5
+    60.5,
+    60.5
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    27.0
-   ],
-   "why": [
-    "the blocks and general education sum to 87.5-87.5; the catalog prints 81.5-81.5 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     60.5,
-     60.5
+     87.5,
+     87.5
     ],
     "stated": [
-     60.5,
-     60.5
+     81.5,
+     81.5
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -117,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,7 +137,7 @@
     "min": 27,
     "max": 27
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Use standard lab tools and equipment pertinent to electron microscopy as well as light microscopy.",
     "Understand and identify the ultrastructure of biological material such as cells and tissues.",
@@ -152,7 +152,8 @@
     "Histotechnologists",
     "Staff Research Associates",
     "Structural Biology Lab Technicians"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -320,6 +321,20 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 81.5"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 81.5"
+  }
+ ]
 }

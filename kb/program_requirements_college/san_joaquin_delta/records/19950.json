@@ -113,7 +113,11 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     1.0
+    ]
    }
   },
   "repeated": {
@@ -158,7 +162,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Design and produce original garments and collections to industry standards.",
     "Analyze and evaluate the effects of changing demographics and psychographics on consumer behavior in relation to fashion and related products in today’s market.",
@@ -176,7 +180,8 @@
     "fashion illustrators",
     "designers",
     "design assistants"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -310,6 +315,20 @@
    "All courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

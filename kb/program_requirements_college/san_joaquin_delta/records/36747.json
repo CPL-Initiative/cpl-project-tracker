@@ -162,13 +162,14 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate knowledge of the field of law and the various classifications of the law, including being able to distinguish among the various parts of a contract.",
     "Demonstrate the ability to identify and explain the ideas and institutions that make up the American political system, including the legal field, to describe the evolution of civil liberties and rights in the United States and apply this knowledge to current events and legal issues, and to recognize the role of public opinion, interest groups, ethics and political parties regarding the electoral process, law, and public policy in society.",
     "Demonstrate the ability to effectively write and speak to persuade a diversity of audiences. The development of communication skills will also include demonstration of the ability to analyze, criticize, and advocate for ideas, to communicate for a variety of purposes, to read and comprehend a diversity of texts, and to think critically. Additionally, students will demonstrate the ability to develop awareness of society and its historical roots, as well as to appreciate diversity and to be sensitive to the impact of race, sex, and class on the American experience. Through this program, students will demonstrate the ability to organize information, to engage in argumentation to support a position, to evaluate and cite sources, to explain the historical development of American institutions in law and society, to demonstrate facility with numbers, and to conduct research."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -629,6 +630,20 @@
    "The description mentions preparation for law school and introduces the 'legal field'; no explicit careers or job titles named, so careers left empty."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39122702830,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }
