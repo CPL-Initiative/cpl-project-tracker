@@ -1,0 +1,24 @@
+{
+ "_readme": "Taft College's SmartCatalog (S411, SkySotol). Run 39077970234 (S409) read Taft's front page, but its log's tail lost it. This plan reads the front page alone with its program links printed, and follows two of them, so the log stays short enough to read whole.",
+ "college": "Taft College",
+ "questions": {
+  "program_index": "Where the catalog lists its programs, and whether it lists them by subject as Crafton Hills does.",
+  "program_page": "What a program's page holds: its title and award, its course list and units."
+ },
+ "keywords": [
+  "Associate in (?:Arts|Science)",
+  "Certificate of Achievement",
+  "A\\.[AS]\\.",
+  "Total (?:Units|Required)",
+  "Required Courses",
+  "Units"
+ ],
+ "pages": [
+  {
+   "answers": ["program_index", "program_page"],
+   "url": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "links": "program|degree|certificate|subject|area",
+   "follow": "Programs|Degrees"
+  }
+ ]
+}

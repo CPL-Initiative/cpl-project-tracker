@@ -1,0 +1,30 @@
+{
+ "_readme": "Crafton Hills College's SmartCatalog (S411, SkySotol). Run 39077713662 (S409) found the front page linking Credit Programs and Noncredit Certificates, and Credit Programs listing one page per subject (\"Accounting (ACCT)\", 40 of them), with no sitemap. Run 39077970234 followed two subject pages, but its log's tail lost them. This plan reads the front page, the Credit Programs page at SmartCatalog's usual address with its subject links printed, and two subject pages, so the log stays short enough to read whole. If the Credit Programs address is wrong, the front page's followed link names the right one.",
+ "college": "Crafton Hills College",
+ "questions": {
+  "program_index": "Where the catalog lists its programs: the Credit Programs page's address and its subject links.",
+  "program_page": "What a subject page holds: its programs' titles and awards, their course lists and units, or links to a page per program."
+ },
+ "keywords": [
+  "Associate in (?:Arts|Science)",
+  "Certificate of Achievement",
+  "A\\.[AS]\\.",
+  "Total (?:Units|Required)",
+  "Required Courses",
+  "Units"
+ ],
+ "pages": [
+  {
+   "answers": ["program_index"],
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "links": "program|certificate|subject",
+   "follow": "^Credit Programs"
+  },
+  {
+   "answers": ["program_index", "program_page"],
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs",
+   "links": "\\([A-Z]{2,5}\\)|credit-programs/",
+   "follow": "^Accounting|^Administration of Justice"
+  }
+ ]
+}
