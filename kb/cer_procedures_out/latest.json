@@ -1,13 +1,13 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. Nothing here is saved; proposals pre-fill the tab.",
- "_generated_at": "2026-10-18T04:01:56Z",
+ "_generated_at": "2026-10-18T04:29:03Z",
  "procedures_hash": "575c290d755b",
  "queue": 1498,
  "saved_not_folded": 176,
  "waiting": 1322,
- "proposed": 189,
- "needs_you_count": 0,
- "not_yet_asked": 1133,
+ "proposed": 204,
+ "needs_you_count": 5,
+ "not_yet_asked": 1118,
  "procedures": [
   {
    "id": "brand-family",
@@ -20,7 +20,7 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 53,
+   "settled": 63,
    "held": 0,
    "sample": [
     [
@@ -180,7 +180,7 @@
     "skill": "Rule 5c"
    },
    "settled": 125,
-   "held": 0,
+   "held": 3,
    "sample": [
     [
      "ACTG-51 APPLIED ACCOUNTING",
@@ -217,7 +217,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -232,7 +232,7 @@
     "skill": "Rule 5f"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -277,7 +277,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -290,11 +290,103 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 0,
-   "held": 0,
-   "sample": []
+   "settled": 10,
+   "held": 5,
+   "sample": [
+    [
+     "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
+     "AP 2-D Art and Design"
+    ],
+    [
+     "AP 3-D Art and Design (Score of 3 or higher)",
+     "AP 3-D Art and Design"
+    ],
+    [
+     "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
+     "AP 3-D Art and Design"
+    ],
+    [
+     "AP AP Computer Science Principles (Score of 4 or 5)",
+     "AP Computer Science Principles"
+    ],
+    [
+     "AP AP Studio Art- 2D Design",
+     "AP 2-D Art and Design"
+    ]
+   ]
   }
  ],
- "classifier_run": null,
- "needs_you": []
+ "classifier_run": {
+  "calls": 1,
+  "answered": 1,
+  "errors": [],
+  "cost_usd": 0.45
+ },
+ "needs_you": [
+  {
+   "raw_title": "1st Receiver Ops & Decon",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "First Receiver Operations and Decontamination",
+    "issuer": "",
+    "confidence": 0.75,
+    "note": "Abbreviations expanded. This is likely the hospital first-receiver hazmat course (often FEMA/CDP-aligned). The issuer cannot be identified from the text, so it is left null for review. It is not folded into the SFT decontamination family, because hospital first receiver ≠ fire first responder."
+   },
+   "colleges": [
+    "Palo Verde College"
+   ]
+  },
+  {
+   "raw_title": "3D Digital Modeling HS-CNUSD",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "3D Digital Modeling",
+    "issuer": "Corona-Norco Unified School District",
+    "confidence": 0.75,
+    "note": "Mended the cx hint: the HS-CNUSD suffix (Corona-Norco USD high school) is stripped from the title. The district becomes issuer and trainer in place of CCC."
+   },
+   "colleges": [
+    "Norco College"
+   ]
+  },
+  {
+   "raw_title": "AAG Industry Recognized Training",
+   "why": "the classifier is unsure (0.30)",
+   "proposal": {
+    "title": "AAG Industry Recognized Training",
+    "issuer": "",
+    "confidence": 0.3,
+    "note": "The AAG acronym is unresolved from the text alone, so the title is kept close to the raw form. The issuer is unknown and needs human input (Las Positas)."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "AGBUS 015: Computer Application to Agriculture",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Agricultural Computer Applications",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "The course code is stripped from the hs hint title. It is joined to the existing house family 'Agricultural Computer Applications', which is likely the same course content. Faculty may split it later."
+   },
+   "colleges": [
+    "Lemoore College"
+   ]
+  },
+  {
+   "raw_title": "AJ 111 Criminal Procedures",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Criminal Procedures",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "The exhibit is course-coded but typed as Industry Certification, so the course title is used and the hint is accepted. No C-ID/CCN anchor was verified. The issuer could be POST if this is a POST-academy equivalency; this needs review."
+   },
+   "colleges": [
+    "Mt. San Jacinto College"
+   ]
+  }
+ ]
 }

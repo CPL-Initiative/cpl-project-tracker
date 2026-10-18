@@ -1,0 +1,250 @@
+{
+ "_about": "The classifier's answers for the CER's unclassified titles (kb/_cer_procedures.py). `rules` is the procedures hash each was asked under.",
+ "records": {
+  "1st Receiver Ops & Decon": {
+   "raw_title": "1st Receiver Ops & Decon",
+   "unified_title": "First Receiver Operations and Decontamination",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 9",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Abbreviations expanded. This is likely the hospital first-receiver hazmat course (often FEMA/CDP-aligned). The issuer cannot be identified from the text, so it is left null for review. It is not folded into the SFT decontamination family, because hospital first receiver ≠ fire first responder.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "3D Digital Modeling HS-CNUSD": {
+   "raw_title": "3D Digital Modeling HS-CNUSD",
+   "unified_title": "3D Digital Modeling",
+   "issuing_agency": "Corona-Norco Unified School District",
+   "training_agency": "Corona-Norco Unified School District",
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "Rule 5f",
+    "local-trainer-is-agency",
+    "course-identity"
+   ],
+   "_notes": "Mended the cx hint: the HS-CNUSD suffix (Corona-Norco USD high school) is stripped from the title. The district becomes issuer and trainer in place of CCC.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AAG Industry Recognized Training": {
+   "raw_title": "AAG Industry Recognized Training",
+   "unified_title": "AAG Industry Recognized Training",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.3,
+   "confidence_issuer": 0.2,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "Rule 9"
+   ],
+   "_notes": "The AAG acronym is unresolved from the text alone, so the title is kept close to the raw form. The issuer is unknown and needs human input (Las Positas).",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AGBUS 015: Computer Application to Agriculture": {
+   "raw_title": "AGBUS 015: Computer Application to Agriculture",
+   "unified_title": "Agricultural Computer Applications",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "The course code is stripped from the hs hint title. It is joined to the existing house family 'Agricultural Computer Applications', which is likely the same course content. Faculty may split it later.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AJ 111 Criminal Procedures": {
+   "raw_title": "AJ 111 Criminal Procedures",
+   "unified_title": "Criminal Procedures",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The exhibit is course-coded but typed as Industry Certification, so the course title is used and the hint is accepted. No C-ID/CCN anchor was verified. The issuer could be POST if this is a POST-academy equivalency; this needs review.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
+   "raw_title": "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
+   "unified_title": "AP 2-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": "The hs hint misread the hyphen and is set aside. The row joins the AP house family.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP 3-D Art and Design (Score of 3 or higher)": {
+   "raw_title": "AP 3-D Art and Design (Score of 3 or higher)",
+   "unified_title": "AP 3-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": "The hs hint is set aside and the row joins the AP house family.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
+   "raw_title": "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
+   "unified_title": "AP 3-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 3"
+   ],
+   "_notes": "The hs hint is set aside. The historical/score decoration is stripped.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP AP Computer Science Principles (Score of 4 or 5)": {
+   "raw_title": "AP AP Computer Science Principles (Score of 4 or 5)",
+   "unified_title": "AP Computer Science Principles",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP AP Studio Art- 2D Design": {
+   "raw_title": "AP AP Studio Art- 2D Design",
+   "unified_title": "AP 2-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 3"
+   ],
+   "_notes": "Studio Art: 2-D Design is the former name of AP 2-D Art and Design, so the two are unified as one exam across renaming.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP AP Studio Art- 3D Design": {
+   "raw_title": "AP AP Studio Art- 3D Design",
+   "unified_title": "AP 3-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 3"
+   ],
+   "_notes": "Studio Art: 3-D Design is the former name of AP 3-D Art and Design.",
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP Art History (ARTH C1100)": {
+   "raw_title": "AP Art History (ARTH C1100)",
+   "unified_title": "AP Art History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP Art History (ARTH C1200)": {
+   "raw_title": "AP Art History (ARTH C1200)",
+   "unified_title": "AP Art History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP Art History (Score 3-5) (ARTH C1100)": {
+   "raw_title": "AP Art History (Score 3-5) (ARTH C1100)",
+   "unified_title": "AP Art History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  },
+  "AP Art History (Score 3-5) (ARTH C1200)": {
+   "raw_title": "AP Art History (Score 3-5) (ARTH C1200)",
+   "unified_title": "AP Art History",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.95,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "asked": "2026-10-18"
+  }
+ }
+}

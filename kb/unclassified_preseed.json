@@ -1,28 +1,13 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. NOT saved to Supabase: credential_reference.js pre-fills each row; the curator reviews and clicks Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-18T04:01:56Z",
+ "_generated_at": "2026-10-18T04:29:03Z",
  "_queue_count": 1498,
  "_counts": {
-  "staged": 189,
-  "needs_you": 0,
-  "not_yet_asked": 1133
+  "staged": 204,
+  "needs_you": 5,
+  "not_yet_asked": 1118
  },
  "_residual": [
-  "1st Receiver Ops & Decon",
-  "3D Digital Modeling HS-CNUSD",
-  "AAG Industry Recognized Training",
-  "AGBUS 015: Computer Application to Agriculture",
-  "AJ 111 Criminal Procedures",
-  "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
-  "AP 3-D Art and Design (Score of 3 or higher)",
-  "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
-  "AP AP Computer Science Principles (Score of 4 or 5)",
-  "AP AP Studio Art- 2D Design",
-  "AP AP Studio Art- 3D Design",
-  "AP Art History (ARTH C1100)",
-  "AP Art History (ARTH C1200)",
-  "AP Art History (Score 3-5) (ARTH C1100)",
-  "AP Art History (Score 3-5) (ARTH C1200)",
   "AP Art History - Area 3",
   "AP Art History - Score of 3 or higher - HISTORICAL Type 1",
   "AP Art History - Score of 3 or higher - HISTORICAL Type 2",
@@ -1143,6 +1128,44 @@
   "Windows Server Network Infrastructure-Portfolio"
  ],
  "staged": {
+  "1st Receiver Ops & Decon": {
+   "title": "First Receiver Operations and Decontamination",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Abbreviations expanded. This is likely the hospital first-receiver hazmat course (often FEMA/CDP-aligned). The issuer cannot be identified from the text, so it is left null for review. It is not folded into the SFT decontamination family, because hospital first receiver ≠ fire first responder.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 9",
+    "issuer-issues-the-card"
+   ]
+  },
+  "3D Digital Modeling HS-CNUSD": {
+   "title": "3D Digital Modeling",
+   "issuer": "Corona-Norco Unified School District",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Mended the cx hint: the HS-CNUSD suffix (Corona-Norco USD high school) is stripped from the title. The district becomes issuer and trainer in place of CCC.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 5f",
+    "local-trainer-is-agency",
+    "course-identity"
+   ],
+   "trainer": "Corona-Norco Unified School District"
+  },
+  "AAG Industry Recognized Training": {
+   "title": "AAG Industry Recognized Training",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.3,
+   "note": "The AAG acronym is unresolved from the text alone, so the title is kept close to the raw form. The issuer is unknown and needs human input (Las Positas).",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 9"
+   ]
+  },
   "ACTG-51 APPLIED ACCOUNTING": {
    "title": "Applied Accounting",
    "issuer": "California Community Colleges",
@@ -1158,6 +1181,19 @@
    "confidence": 0.85,
    "note": "Rule 5c: title anchored to C-ID AG-AB 104; issuer = CCC.",
    "procedure": "course-identity"
+  },
+  "AGBUS 015: Computer Application to Agriculture": {
+   "title": "Agricultural Computer Applications",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "The course code is stripped from the hs hint title. It is joined to the existing house family 'Agricultural Computer Applications', which is likely the same course content. Faculty may split it later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ]
   },
   "AGBUS 024: Agricultural Accounting": {
    "title": "Agricultural Accounting",
@@ -1231,6 +1267,18 @@
    "note": "Rule 5c: title anchored to C-ID AJ 140; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "AJ 111 Criminal Procedures": {
+   "title": "Criminal Procedures",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "The exhibit is course-coded but typed as Industry Certification, so the course title is used and the hint is accepted. No C-ID/CCN anchor was verified. The issuer could be POST if this is a POST-academy equivalency; this needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
   "AJ 118 Community and the Justice System": {
    "title": "Community and the Justice System",
    "issuer": "California Community Colleges",
@@ -1279,6 +1327,18 @@
    "note": "Rule 5c: title anchored to C-ID SOCI 160; issuer = CCC.",
    "procedure": "course-identity"
   },
+  "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
+   "title": "AP 2-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "The hs hint misread the hyphen and is set aside. The row joins the AP house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
   "AP 3-D Art and Design": {
    "title": "AP 3-D Art and Design",
    "issuer": "College Board",
@@ -1286,6 +1346,117 @@
    "confidence": 0.8,
    "note": "Matched the existing house family 'AP 3-D Art and Design'; issuer from the curated credential KB.",
    "procedure": "brand-family"
+  },
+  "AP 3-D Art and Design (Score of 3 or higher)": {
+   "title": "AP 3-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "The hs hint is set aside and the row joins the AP house family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
+  "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
+   "title": "AP 3-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "The hs hint is set aside. The historical/score decoration is stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 3"
+   ]
+  },
+  "AP AP Computer Science Principles (Score of 4 or 5)": {
+   "title": "AP Computer Science Principles",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
+  "AP AP Studio Art- 2D Design": {
+   "title": "AP 2-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Studio Art: 2-D Design is the former name of AP 2-D Art and Design, so the two are unified as one exam across renaming.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 3"
+   ]
+  },
+  "AP AP Studio Art- 3D Design": {
+   "title": "AP 3-D Art and Design",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Studio Art: 3-D Design is the former name of AP 3-D Art and Design.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 3"
+   ]
+  },
+  "AP Art History (ARTH C1100)": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
+  "AP Art History (ARTH C1200)": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
+  "AP Art History (Score 3-5) (ARTH C1100)": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
+  },
+  "AP Art History (Score 3-5) (ARTH C1200)": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 5d"
+   ]
   },
   "AP Calculus  BC/AB Subscore": {
    "title": "AP Calculus BC — AB Subscore",
