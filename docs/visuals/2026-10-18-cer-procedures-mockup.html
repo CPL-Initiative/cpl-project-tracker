@@ -1,0 +1,223 @@
+<title>Common Exhibit Reference v3</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one working column; a three-word view switch; each view leads with what needs doing. First Light v1.6 tokens. */
+:root{
+  --paper:#F4F2ED; --surface:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+  --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+  --seal-blue:#002F6D; --link:#002F6D; --green-progress:#2C601A; --red-alert:#920000;
+  --chip-bg:#E7ECF4; --chip-fg:#002F6D; --flag-bg:#F6E9E9; --ok-bg:#E8F0E4;
+  --f-display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-body:"Source Sans 3","Source Sans Pro","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15171B; --surface:#1E2127; --surface-subtle:#1A1D22; --surface-muted:#262A31;
+  --text-strong:#F1EFEA; --text-body:#D6D3CC; --text-muted:#A9A69F;
+  --border:rgba(241,239,234,.14); --border-strong:rgba(241,239,234,.32);
+  --seal-blue:#7DA1D4; --link:#9DB9E0; --green-progress:#89A67F; --red-alert:#CF8F8F;
+  --chip-bg:#24324A; --chip-fg:#C9D8EE; --flag-bg:#3A2626; --ok-bg:#243325; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15171B; --surface:#1E2127; --surface-subtle:#1A1D22; --surface-muted:#262A31;
+  --text-strong:#F1EFEA; --text-body:#D6D3CC; --text-muted:#A9A69F;
+  --border:rgba(241,239,234,.14); --border-strong:rgba(241,239,234,.32);
+  --seal-blue:#7DA1D4; --link:#9DB9E0; --green-progress:#89A67F; --red-alert:#CF8F8F;
+  --chip-bg:#24324A; --chip-fg:#C9D8EE; --flag-bg:#3A2626; --ok-bg:#243325; color-scheme:dark}
+body{background:var(--paper);color:var(--text-body);font:16px/1.5 var(--f-body)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1,h2,h3{font-family:var(--f-display);color:var(--text-strong);text-wrap:balance;margin:0}
+h1{font-size:clamp(1.6rem,3.4vw,2.2rem)} h2{font-size:1.3rem} h3{font-size:1.05rem;font-family:var(--f-body);font-weight:700}
+p{margin:0}
+.note{font-size:.9rem;color:var(--text-muted)}
+.head{display:grid;gap:6px}
+.status{font-variant-numeric:tabular-nums;color:var(--text-body)}
+.status b{color:var(--text-strong)}
+.switch{display:flex;gap:22px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:8px}
+button.word{all:unset;cursor:pointer;min-height:24px;color:var(--link);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+button.word:focus-visible{outline:2px solid var(--seal-blue);outline-offset:3px;border-radius:2px}
+.switch button.word[aria-selected="true"]{color:var(--text-strong);text-decoration-thickness:3px}
+.switch .count{font-variant-numeric:tabular-nums;color:var(--text-muted);font-weight:400}
+.banner{background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;padding:14px 16px;display:grid;gap:8px}
+.banner .acts{display:flex;gap:18px;flex-wrap:wrap}
+.list{display:grid;gap:10px}
+.item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 16px;display:grid;gap:8px;min-width:0}
+.item .raw{color:var(--text-strong);font-weight:600;overflow-wrap:anywhere}
+.item .meta{font-size:.88rem;color:var(--text-muted)}
+.prop{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.95rem}
+.prop dt{color:var(--text-muted)} .prop dd{margin:0;color:var(--text-strong);overflow-wrap:anywhere}
+.why{font-size:.9rem;background:var(--surface-subtle);border-left:3px solid var(--border-strong);padding:6px 10px}
+.acts{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-block;font-size:.8rem;padding:1px 8px;border-radius:10px;background:var(--chip-bg);color:var(--chip-fg)}
+.chip.off{background:var(--surface-muted);color:var(--text-muted)}
+.proc{display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:start}
+.proc .rule{grid-column:1/-1;font-size:.95rem}
+.proc .tally{font-variant-numeric:tabular-nums;font-size:.88rem;color:var(--text-muted);grid-column:1/-1}
+.form{background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;padding:16px;display:grid;gap:12px}
+.form label{display:grid;gap:4px;font-weight:600;color:var(--text-strong);font-size:.95rem}
+.form input,.form select,.form textarea{font:inherit;color:var(--text-strong);background:var(--surface-subtle);border:1px solid var(--border-strong);border-radius:4px;padding:6px 8px;min-width:0}
+.form textarea{min-height:64px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.preview{background:var(--ok-bg);border-radius:4px;padding:10px 12px;font-size:.92rem;display:grid;gap:6px}
+.preview ul{margin:0;padding-left:18px}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:6px}
+table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:.93rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;overflow-wrap:anywhere}
+th{color:var(--text-muted);font-weight:600;background:var(--surface-subtle)}
+td.n{font-variant-numeric:tabular-nums;text-align:right} th.n{text-align:right}
+.tools{display:flex;gap:10px;flex-wrap:wrap}
+.tools input,.tools select{font:inherit;padding:5px 8px;border:1px solid var(--border-strong);border-radius:4px;background:var(--surface);color:var(--text-strong);min-width:0}
+.tools input{flex:1 1 220px}
+.gone{display:grid;gap:4px;font-size:.93rem} .gone li{margin-left:18px}
+.asks{background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;padding:16px;display:grid;gap:10px}
+.asks ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.example{font-size:.8rem;color:var(--text-muted);font-style:italic}
+@media (max-width:560px){.row2{grid-template-columns:1fr}.proc{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <h1>Common Exhibit Reference</h1>
+    <p class="status"><b>1,986</b> credentials from <b>3,813</b> college-entered titles · <b>1,498</b> titles waiting · procedures run every night</p>
+    <p class="note">Mock-up for the S411 design pass. Figures are the exhibit audit of 2026-10-17; rows marked <i>example</i> show the shape, and the build fills them from the live queue.</p>
+  </header>
+
+  <nav class="switch" role="tablist" aria-label="Views">
+    <button class="word" role="tab" id="t-needs" aria-selected="true" aria-controls="v-needs">Needs you <span class="count">(18 + a handful a night)</span></button>
+    <button class="word" role="tab" id="t-procs" aria-selected="false" aria-controls="v-procs">Procedures <span class="count">(14)</span></button>
+    <button class="word" role="tab" id="t-ref" aria-selected="false" aria-controls="v-ref">Reference <span class="count">(1,986)</span></button>
+  </nav>
+
+  <!-- NEEDS YOU -->
+  <section id="v-needs" role="tabpanel" aria-labelledby="t-needs" class="list">
+    <div class="banner">
+      <h2>176 saved assignments have waited since July</h2>
+      <p>The nightly fold applies the assignments saved in this tab only when none of them conflict. Eighteen conflict, so it has applied none since 2026-07-08. The proposal: apply the 176 clean ones tonight and bring the 18 conflicts here, one card each.</p>
+      <div class="acts"><button class="word">Apply the 176</button><button class="word">Show the 18</button></div>
+    </div>
+
+    <p class="note">A title reaches this list only when no procedure settles it: no procedure fits, two procedures disagree, the classifier is unsure, or a merge would join two issuers. Everything else saves itself under the procedure that decided it, and any procedure can be undone in one step.</p>
+
+    <article class="item">
+      <span class="example">example</span>
+      <div class="raw">OSHA 30-Hour Construction Safety (union apprenticeship)</div>
+      <div class="meta">3 colleges · 41 students</div>
+      <dl class="prop"><dt>Proposed</dt><dd>OSHA 30-Hour Construction Outreach Training</dd><dt>Issued by</dt><dd>Occupational Safety and Health Administration</dd></dl>
+      <div class="why">Two procedures disagree: "the school is the agency" names the union apprenticeship; "OSHA issues the card" names OSHA (your ruling, 2026-10-05).</div>
+      <div class="acts"><button class="word">Accept</button><button class="word">Change</button><button class="word">Teach a procedure</button></div>
+    </article>
+
+    <article class="item">
+      <span class="example">example</span>
+      <div class="raw">Phlebotomy Tech I - hospital in-house course</div>
+      <div class="meta">1 college · 6 students</div>
+      <dl class="prop"><dt>Proposed</dt><dd>Certified Phlebotomy Technician I (CPT 1)</dd><dt>Issued by</dt><dd>California Department of Public Health</dd></dl>
+      <div class="why">The classifier is unsure (0.62): the title names an employer's course, and the state license has the same name.</div>
+      <div class="acts"><button class="word">Accept</button><button class="word">Change</button><button class="word">Teach a procedure</button></div>
+    </article>
+
+    <article class="item">
+      <span class="example">example</span>
+      <div class="raw">CompTIA A+ (220-1101)  and  A+ Core 1 Comptia</div>
+      <div class="meta">Merge of 2 credentials · 9 colleges</div>
+      <dl class="prop"><dt>Proposed</dt><dd>Merge into CompTIA A+</dd><dt>Issued by</dt><dd>CompTIA</dd></dl>
+      <div class="why">A merge across two exam codes. The merge rule (8c) merges them; you asked to see merges that drop an exam code.</div>
+      <div class="acts"><button class="word">Accept</button><button class="word">Change</button><button class="word">Teach a procedure</button></div>
+    </article>
+  </section>
+
+  <!-- PROCEDURES -->
+  <section id="v-procs" role="tabpanel" aria-labelledby="t-procs" class="list" hidden>
+    <p class="note">Each procedure is a rule in plain words. The nightly run applies the procedures in order, then asks the classifier, which reads every procedure, about the titles that remain. A result the classifier is sure of saves under that procedure; the rest come to Needs you.</p>
+
+    <form class="form" id="newproc" aria-labelledby="np-h">
+      <h2 id="np-h">Add a procedure</h2>
+      <label for="np-name">Name<input id="np-name" value="AP exams are College Board credentials"></label>
+      <label for="np-when">When a title<textarea id="np-when">names an Advanced Placement exam ("AP Biology", "Advanced Placement Calculus AB", "AP Chem score 4")</textarea></label>
+      <div class="row2">
+        <label for="np-do">Do this<select id="np-do"><option>Set the title and issuer</option><option>Set the issuer only</option><option>Merge into a credential</option><option>Bring it to me</option></select></label>
+        <label for="np-title">Title pattern<input id="np-title" value="AP [Subject] Exam"></label>
+      </div>
+      <label for="np-issuer">Issued by<input id="np-issuer" value="College Board"></label>
+      <div class="acts"><button class="word" type="button" id="np-try">Try it on the queue</button><button class="word" type="button">Save the procedure</button></div>
+      <div class="preview" id="np-preview" hidden>
+        <b>It would settle 31 of the 1,498 waiting titles and change none already settled.</b>
+        <ul><li>AP Biology  becomes  AP Biology Exam · College Board</li><li>Advanced Placement Calculus AB  becomes  AP Calculus AB Exam · College Board</li><li>AP Chem score 4  becomes  AP Chemistry Exam · College Board</li></ul>
+        <span class="example">example preview</span>
+      </div>
+    </form>
+
+    <h2>In force</h2>
+    <article class="item proc"><h3>Course identity names a Cx title</h3><span class="chip">on</span>
+      <p class="rule">A credit-by-exam or portfolio title takes the course's CCN title, then its C-ID title, then the local title; California Community Colleges issues it.</p>
+      <p class="tally">From the skill, rule 5c · settled 212 · held 0 · <button class="word">See what it did</button> · <button class="word">Turn off</button></p></article>
+    <article class="item proc"><h3>The issuer issues the card</h3><span class="chip">on</span>
+      <p class="rule">The body that issues the credential is the agency, not the college or employer that taught it. OSHA issues the OSHA card.</p>
+      <p class="tally">Sam, 2026-10-05 · settled 88 · held 3 · <button class="word">See what it did</button> · <button class="word">Turn off</button></p></article>
+    <article class="item proc"><h3>Brand families join the family</h3><span class="chip">on</span>
+      <p class="rule">A title that names a known credential family (AWS, CompTIA, Cisco, Microsoft) joins that family's credential, keeping its exam code.</p>
+      <p class="tally">Skill rules 5d and 8b · settled 340 · held 6 · <button class="word">See what it did</button> · <button class="word">Turn off</button></p></article>
+    <article class="item proc"><h3>Over-merge, and let faculty pull out</h3><span class="chip">on</span>
+      <p class="rule">When two titles likely name one credential, merge them; a faculty member may split them later.</p>
+      <p class="tally">Sam, 2026-09-20 · settled 121 · held 9 · <button class="word">See what it did</button> · <button class="word">Turn off</button></p></article>
+    <p class="note">Ten more come from the skill's rules and the July pre-seed lanes (statewide exams, CSLB licenses, high school articulation, apprenticeships, local trainers, level words to the end). The tallies above are examples; the build counts them from each night's receipt.</p>
+  </section>
+
+  <!-- REFERENCE -->
+  <section id="v-ref" role="tabpanel" aria-labelledby="t-ref" class="list" hidden>
+    <div class="tools">
+      <input id="ref-q" type="search" placeholder="Search a credential, a college's title or an issuer" aria-label="Search">
+      <select id="ref-type" aria-label="CPL type"><option>Any CPL type</option><option>Industry certification</option><option>Military</option><option>Credit by exam</option><option>Apprenticeship</option></select>
+      <select id="ref-by" aria-label="Decided by"><option>Decided by anyone</option><option>A procedure</option><option>A person</option></select>
+    </div>
+    <div class="tablewrap" role="region" aria-label="Credentials" tabindex="0">
+      <table>
+        <colgroup><col style="width:38%"><col style="width:30%"><col style="width:10%"><col style="width:10%"><col style="width:12%"></colgroup>
+        <thead><tr><th scope="col">Credential</th><th scope="col">Issued by</th><th scope="col" class="n">Colleges</th><th scope="col" class="n">Students</th><th scope="col">Decided by</th></tr></thead>
+        <tbody>
+          <tr><td>AWS Certified Cloud Practitioner</td><td>Amazon Web Services</td><td class="n">14</td><td class="n">212</td><td>Brand families</td></tr>
+          <tr><td>Emergency Medical Technician (EMT)</td><td>National Registry of EMTs</td><td class="n">38</td><td class="n">1,904</td><td>Sam, 2026-07-09</td></tr>
+          <tr><td>OSHA 30-Hour Construction Outreach Training</td><td>Occupational Safety and Health Administration</td><td class="n">11</td><td class="n">96</td><td>The issuer issues the card</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="example">example rows; a row opens its detail (articulations, college titles, the statewide recommendation) in place</p>
+
+    <div class="item">
+      <h2>What leaves the tab</h2>
+      <ul class="gone">
+        <li>The Initiated sign-off, its two views, the checkbox column and the bulk button. Its own tooltip says it changes nothing in the data.</li>
+        <li>The Curate panel. It repeats the row's own editing; the quality flag moves into the row.</li>
+        <li>Seven view chips become three words. Unclassified, No issuer and Merge confirms become Needs you; the industry list joins Reference as a filter.</li>
+        <li>Group by, the confidence band and the column chooser. Search and two filters remain.</li>
+        <li>The stale hints and the code paths no button reaches.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="asks" aria-labelledby="asks-h">
+    <h2 id="asks-h">What this asks of you</h2>
+    <ol>
+      <li><b>Apply the 176.</b> Let the fold apply clean assignments and hold only the conflicts.</li>
+      <li><b>Let procedures save.</b> A result the classifier is sure of saves under its procedure, reversible by procedure, where your July ruling kept pre-seeds "ready to save but not yet saved."</li>
+      <li><b>Retire the Initiated sign-off</b> and the Curate panel.</li>
+    </ol>
+    <p class="note">These arrive as cards on the standing sheet; this page is for reacting to the shape.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  var tabs=[["t-needs","v-needs"],["t-procs","v-procs"],["t-ref","v-ref"]];
+  function show(id){tabs.forEach(function(p){var on=p[0]===id;document.getElementById(p[0]).setAttribute("aria-selected",on?"true":"false");document.getElementById(p[1]).hidden=!on;});
+    try{localStorage.setItem("cer-v3-tab",id)}catch(e){}}
+  tabs.forEach(function(p){document.getElementById(p[0]).addEventListener("click",function(){show(p[0])});});
+  var m=(location.hash||"").replace("#","");
+  var start=m==="procedures"?"t-procs":m==="reference"?"t-ref":null;
+  try{start=start||localStorage.getItem("cer-v3-tab")}catch(e){}
+  if(start&&document.getElementById(start))show(start);
+  document.getElementById("np-try").addEventListener("click",function(){document.getElementById("np-preview").hidden=false;});
+  document.getElementById("newproc").addEventListener("submit",function(e){e.preventDefault();});
+})();
+</script>
