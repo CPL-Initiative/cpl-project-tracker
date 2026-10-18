@@ -105,8 +105,9 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   await sleep(150);
 
   const lanes = Array.from(doc.querySelectorAll(".cr-lane"));
-  // 7 since 2026-10-16: the read-only Industry credentials lane joined the six queues.
-  check("lanes: 7 chips render", lanes.length === 7);
+  // 7 since 2026-10-16: the read-only Industry credentials lane joined the six queues;
+  // 8 since 2026-10-18: the read-only Procedures lane (the procedures run's report).
+  check("lanes: 8 chips render", lanes.length === 8);
   check("lanes: All carries the row count", /All \(3\)/.test(txt(laneBtn(doc, /All/))));
   check("lanes: No-issuer count = 1 (Retail Management)",
     /No issuer \(1\)/.test(txt(laneBtn(doc, /No issuer/))));
