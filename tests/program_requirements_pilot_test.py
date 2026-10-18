@@ -1598,6 +1598,22 @@ check(RC.reconcile(cer_bio, CER_BIO.replace("(2) the General Education requireme
                    "Cerritos College", "A.A. Degree")[0]["program"].get("ge_units") is None,
       "the GE step needs the page's own words for the local pattern")
 
+# Taft (S415): a transfer degree names Cal-GETC and prints no units for it; its own Cal-GETC page prints none
+# (college-page-read 39122581817). The step sets the statewide 34; transferable electives make up the 60.
+TAFT_ECE = ("ECEF 1601\tDiversity in Early Care, Education and Family Studies\n3.00 Credits(s) \u00b7 Total Credit Hours: 24 "
+            "\u00b7 General Education Requirements: \u00b7 Option 1:\nCSU/UC - Completion of the California General Education "
+            "Transfer Curriculum (Cal-GETC) is required.\nElectives:\nAdditional transferable elective units may be used to "
+            "reach the required 60 units.\nTotal Credit Hours: 60 \u00b7 Transfer Degree Information")
+taft = {"program": {"total_units": {"min": 24, "max": 24}, "degree_total": {"min": 60, "max": 60}, "ge_pattern": "Cal-GETC",
+                    "ge_units": {"min": None, "max": None}, "electives_fill_degree": True}, "blocks": []}
+check(S.degree_check(taft["program"], (60.0, 60.0), 24.0, 24.0, [], TAFT_ECE, "A.S. T Degree")["status"] == "incomplete",
+      "Taft ECE AS-T as read: Cal-GETC named, no units")
+new, notes = RC.reconcile(taft, TAFT_ECE, "Taft College", "A.S. T Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 24.0, 24.0, [], TAFT_ECE, "A.S. T Degree")
+check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34}
+      and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["fill"] == [2.0, 2.0],
+      "Taft ECE AS-T reconciled: Cal-GETC 34, electives make up 2: %s" % json.dumps(deg))
+
 # Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
 # Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.
 OCC_MGMT = ("Restricted Electives3-4 ACCT A101Financial Accounting ACCT A102Managerial Accounting PHIL A120Ethics "
