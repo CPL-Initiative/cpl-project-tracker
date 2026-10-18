@@ -15667,8 +15667,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 388,
+   "count": 389,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 418,
+     "path": "docs/session_418_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cer-procedures",
+      "sierra-retrieval-corpus",
+      "commons",
+      "decision-sheets",
+      "ui-pass"
+     ],
+     "title": "Session 418 handoff: #2231 live, the first CER saving run staged behind a workflow fix, the Commons mock-up revised, Sheet 96 drafted",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22356,5 +22374,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1174
+ "total": 1175
 }

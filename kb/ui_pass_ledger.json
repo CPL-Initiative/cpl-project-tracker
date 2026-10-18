@@ -318,8 +318,8 @@
    "name": "Our Process",
    "page": "index.html#our-process",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-18",
+   "outcome": "First Light tokens in both themes (the tab had its own hex palette; 8 light-theme contrast failures), sections readable at rest instead of fading in from opacity 0, the TMC Builder button an underlined word without its pulsing dot; both themes pass at 390 and 1440 (PR claude/s417-our-process-ui-pass)."
   },
   {
    "id": "cobi:letters",

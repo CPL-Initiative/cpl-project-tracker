@@ -80,7 +80,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
   <header class="head">
     <h1>The Commons</h1>
     <p class="headline">Five common references, one tracking system. <b>Each row is a dash in the Program Requirements shape</b>: a universe and a definition of complete, machine checks that name an owner for every known issue, settled procedures, the calls waiting on Sam, and two run stamps.</p>
-    <p class="note">Mock-up for the Commons lane (Open Asks Sheet 95 card 1, Sam: "Yes, and include Common Subjects in the mix"). Figures are today's, 2026-10-18, read from the committed files and the lane state; a count opens its list in the reference's own tab. The build reads them live.</p>
+    <p class="note">Mock-up for the Commons lane (Open Asks Sheet 95 card 1, Sam: "Yes, and include Common Subjects in the mix"). Figures are today's, 2026-10-18: the committed files of 16:00Z, the live tables at 16:35Z, the lane state. The build reads them live. In the build a count opens the list it totals in the reference's own tab; today no tab reads a list from its address, so each count here opens the tab at its top, and the deep link is a build item.</p>
   </header>
 
   <div class="orderbar" role="group" aria-label="The order of the references">
@@ -108,30 +108,32 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
-          <p class="stand">15,946 records read at 114 colleges. The catalog sweep continues college by college; the next reader changes are Cañada's 11, Merced's 18, Taft's 24 and Delta's 44.</p>
+          <p class="stand">15,946 records read at 114 colleges, 1,331 of them for programs outside COCI's 20,282 active. The catalog sweep continues college by college; the next reader changes are Cañada's 11, Merced's 18, Taft's remaining arithmetic failures and Delta's 44.</p>
         </div>
         <div class="cell">
           <h3>Known issues</h3>
           <ul>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">3,343</a> records failing a check <span class="owner">· the college's reading procedure</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">5,667</a> active programs not read yet <span class="owner">· the harvest</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">3,828</a> gaps in the five harvest parts <span class="owner">· a college's catalog</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">2,994</a> active programs whose record fails a check <span class="owner">· the college's reading procedure</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">5,667</a> active programs with no record yet <span class="owner">· the harvest</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">3,828</a> gaps across the five harvest parts (links, ROEP, COCI, outcomes, careers) <span class="owner">· the harvest</span></li>
           </ul>
+
         </div>
         <div class="cell">
           <h3>Settled procedures</h3>
           <ul>
             <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">114</a> reading procedures, one per college read, versioned</li>
-            <li>A misread changes the procedure, never one record by hand</li>
+            <li>A misread is fixed in the procedure, and the records it touched are reread together</li>
           </ul>
           <h3>Calls waiting on Sam</h3>
-          <p><span class="state ok">None</span> <span class="note">Sheet 94 card 4 answered today.</span></p>
+          <p><span class="state ok">None open</span> <span class="note">Sheet 95 card 2 answered <em>quote</em> at 14:43Z (Sierra quotes every complete record); Sheet 94 card 4 answered <em>keep</em> at 13:43Z (Taft's Cal-GETC as 34).</span></p>
         </div>
         <div class="cell">
           <h3>Last run</h3>
-          <p class="stamp"><span>Machine: the daily build, today 13:18Z</span><span class="age">daily · 2 hours ago <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Machine: the display build 48cb66f19cff, applied today 14:15Z</span><span class="age">daily · <span class="state ok">current</span></span></p>
           <p class="stamp"><span>Session: S415 wrote the run log today 13:18Z</span><span class="age">each checkpoint · <span class="state ok">current</span></span></p>
         </div>
+
       </div>
     </li>
 
@@ -146,22 +148,23 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </span>
       </header>
       <div class="pair">
-        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">615</a> <small>of</small> 3,813 <small>college-entered titles confirmed by a person; 1,986 credentials</small></p>
-        <div class="meter" role="img" aria-label="615 of 3,813 titles confirmed by a person"><i style="width:16.1%"></i></div>
-        <p class="def">Complete: a title a person confirmed under a credential, or one a procedure settled and saved. A merge or a rename can reopen it; that is the difference in kind from a machine check.<span class="test">curator-confirmed</span><span class="test">procedure-settled</span></p>
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">615</a> <small>of</small> 3,813 <small>titles carry a review stamp; 1,986 credentials</small></p>
+        <div class="meter" role="img" aria-label="615 of 3,813 titles carry a review stamp"><i style="width:16.1%"></i></div>
+        <p class="def">Complete: a title carrying a review stamp under a credential (457 stamps are a person's, 158 a cohort's from one day, 2026-07-07), or one a procedure settled and saved. The 3,813 is the reference as written: 605 of its titles have left MAP's current data, and the 1,498 in the queue stand outside it. At the credential unit, 1,368 of 2,187 records carry a stamp. A merge or a rename can reopen a title, where a machine check stands until the data changes.<span class="test">curator-stamped</span><span class="test">procedure-settled</span></p>
       </div>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
-          <p class="stand">The procedures run nightly: 1,287 of 1,322 waiting titles carry a proposal. From tonight a proposal no reason holds saves under its procedure, 926 titles under 7 procedures, and the fold carries the clean saved assignments into the reference each morning.</p>
+          <p class="stand">The procedures run nightly: 1,287 of 1,322 waiting titles carry a proposal. From tonight a proposal no reason holds saves under its procedure, about 900 titles under 7 procedures (the receipt names the number), and the fold carries the clean saved assignments into the reference each morning: 176 clean and 12 supersedes wait on the first apply.</p>
         </div>
         <div class="cell">
           <h3>Known issues</h3>
           <ul>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">396</a> titles held for a person <span class="owner">· the classifier is unsure, two procedures disagree, or an issuer conflict</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">18</a> saved assignments the fold held <span class="owner">· a human-reviewed classification stands; a curator</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">1,498</a> titles in the queue <span class="owner">· the nightly run</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">396</a> titles held for a person <span class="owner">· a curator (the classifier unsure 355, a course code left in 23, a dangling word 10, two issuers 6, a method word 2)</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">18</a> saved assignments the fold holds <span class="owner">· a curator (a human-reviewed classification stands)</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">605</a> titles in the reference that have left MAP <span class="owner">· a curator (retire or keep)</span></li>
           </ul>
+
         </div>
         <div class="cell">
           <h3>Settled procedures</h3>
@@ -174,9 +177,10 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </div>
         <div class="cell">
           <h3>Last run</h3>
-          <p class="stamp"><span>Machine: the procedures run, today 12:14Z</span><span class="age">nightly 07:47Z · 3 hours ago <span class="state ok">current</span></span></p>
-          <p class="stamp"><span>Session: S416, today</span><span class="age">each checkpoint · <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Machine: the procedures run, today 12:14Z; the fold report, 16:00Z</span><span class="age">nightly 07:47Z · <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: S416 wrote the lane today</span><span class="age">each checkpoint · <span class="state ok">current</span></span></p>
         </div>
+
       </div>
     </li>
 
@@ -192,37 +196,39 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </span>
       </header>
       <div class="pair">
-        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">3,208</a> <small>of</small> 27,581 <small>cards ready for faculty</small></p>
-        <div class="meter" role="img" aria-label="3,208 of 27,581 cards ready"><i style="width:11.6%"></i></div>
-        <p class="def">Complete: a card the auditor scores 0.85 or better, with 17,033 at needs review and 7,334 at needs repair behind it. The score is the auditor's reading; a re-mint moves cards between tiers.<span class="test">scored by the auditor</span></p>
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">3,208</a> <small>of</small> 27,581 <small>cards the auditor scores 0.85 or better</small></p>
+        <div class="meter" role="img" aria-label="3,208 of 27,581 cards at 0.85 or better"><i style="width:11.6%"></i></div>
+        <p class="def">Complete: a card the auditor scores 0.85 or better; 17,033 sit at needs review, 7,334 at needs repair, 6 not ready. 14,511 cards carry a discipline no seed has touched, which caps them at 0.79, so this tier measures discipline curation and moves with the Common Subjects row.<span class="test">scored by the auditor</span></p>
       </div>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
-          <p class="stand">Built and stable: 16,482 identities and 33,423 stand-alone courses on one canvas, with the auditor's receipt on the Pipeline tab. The identity layer is staging, with re-mints under the playbook.</p>
+          <p class="stand">Built and stable: 16,478 identities and 33,418 stand-alone courses on the canvas (the 2026-09-08 layout; 33,421 stand-alone in today's build), with the auditor's receipt on the Pipeline tab. The identity layer is staging, with re-mints under the playbook.</p>
         </div>
         <div class="cell">
           <h3>Known issues</h3>
           <ul>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">4,179</a> unit anomalies <span class="owner">· a college's catalog</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">1,159</a> TOP and discipline disagreements <span class="owner">· a curator; TOP corroborates, never decides</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">5,750</a> blank descriptions <span class="owner">· COCI</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">4,179</a> unit anomalies <span class="owner">· a curator (an identity keeps its unit range)</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">1,159</a> TOP and discipline disagreements <span class="owner">· a curator (the subject map decides; TOP corroborates)</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">5,750</a> blank descriptions <span class="owner">· the colleges' COCI entries</span></li>
           </ul>
+
         </div>
         <div class="cell">
           <h3>Settled procedures</h3>
           <ul>
-            <li>TOP is a last-in-line signal; units never split an identity; a stored id resolves through the alias chain</li>
+            <li>TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain</li>
             <li>Re-mints follow the playbook, one cron window each</li>
           </ul>
           <h3>Calls waiting on Sam</h3>
-          <p><span class="state ok">None</span> <span class="note">The cross-listing lane carries its own sheet.</span></p>
+          <p><span class="state ok">None open</span> <span class="note">The cross-listing lane carries its own sheet.</span></p>
         </div>
         <div class="cell">
           <h3>Last run</h3>
-          <p class="stamp"><span>Machine: the auditor, today 13:23Z</span><span class="age">daily · 2 hours ago <span class="state ok">current</span></span></p>
-          <p class="stamp"><span>Session: <span class="state unread">could not be read</span></span><span class="age">this reference writes no run log yet; the lane file is the only session stamp, and the build will say so until a status file exists</span></p>
+          <p class="stamp"><span>Machine: the auditor, today 16:01Z</span><span class="age">daily · <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: <span class="state">no run log</span></span><span class="age">the lane moved 2026-09-29, 19 days ago; the build says so until a status file exists</span></p>
         </div>
+
       </div>
     </li>
 
@@ -237,37 +243,38 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </span>
       </header>
       <div class="pair">
-        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">156</a> <small>of</small> 2,159 <small>groups carry a decision; 30 by a curator</small></p>
-        <div class="meter" role="img" aria-label="156 of 2,159 groups carry a decision"><i style="width:7.2%"></i></div>
-        <p class="def">Complete: a group of recommendation wordings with a decision, by one of the four automatic rungs or by a curator. About 90 percent is a curator's judgment no matcher reaches.<span class="test">assigned by rung</span><span class="test">curator-decided</span></p>
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">156</a> <small>of</small> 2,159 <small>groups collapsed by a rung-1 to 4 rule</small></p>
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">30</a> <small>groups a curator decided: the 2026-09-20 sitting, 51 verdicts reaching 1,184 of 9,413 rows by its receipt</small></p>
+        <div class="meter" role="img" aria-label="156 of 2,159 groups collapsed by rule"><i style="width:7.2%"></i></div>
+        <p class="def">Complete: a group of recommendation wordings with a decision, by one of the four automatic rungs or by a curator. The two counts stay apart because a curator's decision lives in its own table. Most of the rest is a curator's judgment no matcher reaches.<span class="test">assigned by rung</span><span class="test">curator-decided</span></p>
       </div>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
-          <p class="stand">The worklist is live, ranked by collapse value; the top 50 strings carry 49.4 percent of all articulation rows. Sam works the head and the sessions watch which rungs he overrides. The military half is scoped.</p>
+          <p class="stand">The worklist is live, ranked by the rows a decision collapses. Sam works the head and the sessions watch which rungs he overrides. The military half is scoped.</p>
         </div>
         <div class="cell">
           <h3>Known issues</h3>
           <ul>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">1,936</a> groups at rung 5, where similarity suggests and never merges <span class="owner">· a curator</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">88</a> groups named by a unit range <span class="owner">· the catalogs disagree on units</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">185</a> strings the rungs collapse automatically <span class="owner">· the build</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">1,936</a> groups at rung 5, where similarity suggests a match for a curator to confirm <span class="owner">· a curator</span></li>
           </ul>
+
         </div>
         <div class="cell">
           <h3>Settled procedures</h3>
           <ul>
-            <li>Five rungs; grouping by key, never transitive; the course count gates a cartesian line</li>
+            <li>Five rungs; groups form on a shared key, each pair on its own; the course count gates a cartesian line</li>
             <li>0 hours reads as noncredit; a range names the group</li>
           </ul>
           <h3>Calls waiting on Sam</h3>
-          <p><span class="state ok">None</span></p>
+          <p><span class="state ok">None open</span></p>
         </div>
         <div class="cell">
           <h3>Last run</h3>
-          <p class="stamp"><span>Machine: the worklist build, 2026-10-17</span><span class="age">with the daily build · yesterday <span class="state ok">current</span></span></p>
-          <p class="stamp"><span>Session: the lane moved 2026-09-20</span><span class="age">28 days · <span class="state stale">stale</span> against a weekly check</span></p>
+          <p class="stamp"><span>Machine: the worklist build, with the daily build; last changed 2026-10-17</span><span class="age">daily · <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: <span class="state">no run log</span></span><span class="age">the lane moved 2026-09-29, 19 days ago · <span class="state stale">stale</span> against a weekly check</span></p>
         </div>
+
       </div>
     </li>
 
@@ -282,36 +289,38 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </span>
       </header>
       <div class="pair">
-        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">122</a> <small>of</small> 147 <small>disciplines with a confirmed canonical subject code</small></p>
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">122</a> <small>of</small> 147 <small>disciplines carry a curator-confirmed subject code</small></p>
         <div class="meter" role="img" aria-label="122 of 147 disciplines confirmed"><i style="width:83%"></i></div>
-        <p class="def">Complete: a discipline whose four-letter subject code a curator confirmed. Sam's addition to the Commons; the smallest universe here, and the one the course identities key on.<span class="test">curator-confirmed</span></p>
+        <p class="def">Complete: a discipline whose four-letter subject code a curator confirmed: 111 by a person, 11 by a session cohort under the doctrine. Sam's addition to the Commons; the smallest universe here, and the one the course identities key on.<span class="test">curator-confirmed</span></p>
       </div>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
-          <p class="stand">Phase 1e closed on 2026-06-12: every disciplined course identity carries its confirmed code. The Supabase picks sync into the committed seed each day.</p>
+          <p class="stand">Every disciplined course identity has carried its confirmed code since the fold of 2026-06-12. The Supabase picks sync into the committed seed each day, today at 16:00Z.</p>
         </div>
         <div class="cell">
           <h3>Known issues</h3>
           <ul>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">25</a> disciplines seeded from the data, unconfirmed <span class="owner">· a curator</span></li>
-            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">3</a> subject collisions, the cross-discipline re-keys <span class="owner">· bounded; a curator</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">25</a> disciplines on the data's modal code, unconfirmed <span class="owner">· a curator</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">2</a> codes on two disciplines each: AUTB (Agricultural Business, Auto Body), FTVE shared by design (Film and Media Studies, Media Production) <span class="owner">· a curator</span></li>
           </ul>
+
         </div>
         <div class="cell">
           <h3>Settled procedures</h3>
           <ul>
-            <li>A code is four letters; TOP corroborates a discipline and never decides it</li>
+            <li>A code is four letters; the subject map decides a discipline and TOP corroborates it</li>
             <li>A re-key goes through the alias chain and lands in one cron window</li>
           </ul>
           <h3>Calls waiting on Sam</h3>
-          <p><span class="state ok">None</span></p>
+          <p><span class="state ok">None open</span></p>
         </div>
         <div class="cell">
           <h3>Last run</h3>
-          <p class="stamp"><span>Machine: the daily sync, today</span><span class="age">daily <span class="state ok">current</span></span></p>
-          <p class="stamp"><span>Session: Phase 1e closed 2026-06-12</span><span class="age">on change · <span class="state ok">closed</span></span></p>
+          <p class="stamp"><span>Machine: the daily sync, today 16:00Z</span><span class="age">daily · <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: <span class="state">no run log</span></span><span class="age">the fold closed 2026-06-12; the seed carries 25 unconfirmed</span></p>
         </div>
+
       </div>
     </li>
   </ol>
@@ -319,10 +328,10 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
   <section class="legend" aria-labelledby="legend-h">
     <h2 id="legend-h">How to read a row</h2>
     <ul>
-      <li>The pair is each reference's own definition of complete, and the word beside it says the test behind the count: a machine check, a curator's confirmation, the auditor's score, an assignment by rung. The completes differ in kind, so a percentage stays inside its row and no column sorts on it.</li>
-      <li>Every known issue names its owner: a procedure, a college, a curator, or Sam. A count opens the list it totals in the reference's tab.</li>
-      <li>Two stamps, apart: the machine stamp is the last run of the thing that writes the data, read against its declared cadence; the session stamp is the last time a session moved the lane. A stamp past its cadence reads stale; a reference with no run log reads could not be read, never current.</li>
-      <li>A call waiting on Sam is read from the decision sheet's own store, so an answered card leaves the row the moment he answers.</li>
+      <li>The pair is each reference's own definition of complete, and the word beside it says the test behind the count: a machine check, a curator's stamp, the auditor's score, an assignment by rung. Each row's complete is its own kind of count, so a percentage stays inside its row and no column sorts on it.</li>
+      <li>Every known issue names the actor who can close it: a procedure, the harvest, a curator, or Sam. A cause sits in the parentheses. In the build a count opens the list it totals in the reference's tab.</li>
+      <li>Two stamps, apart: the machine stamp is the last run of the thing that writes the data, read against its declared cadence; the session stamp is the last time a session wrote the reference's run log. A stamp past its cadence reads stale. A reference with no run log says so, and a file that fails to load reads could not be read.</li>
+      <li>A call waiting on Sam is read from the decision sheet's own store, so an answered card leaves the row the moment he answers, and the row names the last card answered.</li>
     </ul>
   </section>
 
