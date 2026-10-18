@@ -12,6 +12,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_procedures_view.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -74,33 +75,83 @@ function makeDom(opts) {
     if (url.indexOf("issuer_preseed.json") >= 0) return respond({ staged: {} });
     if (url.indexOf("unclassified_preseed.json") >= 0) return respond({ staged: {} });
     if (url.indexOf("unclassified_suggestions.json") >= 0) return respond({ suggestions: {} });
-    if (url.indexOf("exhibit_audit/latest.json") >= 0) return respond({ title_cards: [] });
+    // The Unclassified queue: every held title but the first two is still waiting.
+    if (url.indexOf("exhibit_audit/latest.json") >= 0) return respond({ title_cards: needs.slice(2).map((n) => ({
+      raw_title: n.raw_title, tags: ["unclassified_in_map"], colleges: n.colleges })) });
     return respond([]);
   };
   window.eval(src);
   return { window, log };
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const lane = (doc, re) => Array.from(doc.querySelectorAll(".cr-lane")).find((b) => re.test(b.textContent));
 
 (async () => {
   const { window, log } = makeDom({});
   const doc = window.document;
   await sleep(150);
 
-  check("load: the report is fetched once, after the first paint",
+  check("load: the report is fetched once",
     log.urls.filter((u) => u.indexOf("cer_procedures_out/latest.json") >= 0).length === 1);
-  const pl = lane(doc, /^Procedures/);
-  check("lane: the Procedures chip carries the count in force", !!pl && /\(3\)/.test(txt(pl)));
 
-  pl.click();
-  await sleep(30);
-  check("lane: pressed state is exposed, not color alone",
-    lane(doc, /^Procedures/).getAttribute("aria-pressed") === "true");
+  // S413: three views, and the tab opens on Needs you › Held when the run
+  // held titles for a person.
+  const views = Array.from(doc.querySelectorAll("button.cr-view"));
+  check("views: three words, Needs you · Procedures · Reference",
+    views.map((v) => txt(v).replace(/\s*\(.*$/, "")).join(" · ") === "Needs you · Procedures · Reference");
+  check("views: a labelled group, the view in use said by aria-pressed",
+    /views/.test(doc.querySelector(".cr-views").getAttribute("aria-label"))
+    && views[0].getAttribute("aria-pressed") === "true" && views[2].getAttribute("aria-pressed") === "false");
+  check("views: Needs you counts the held titles", /Needs you \(41\)/.test(txt(views[0])));
+  check("views: Reference counts the credentials", /Reference \(1\)/.test(txt(views[2])));
+  const subs = Array.from(doc.querySelectorAll(".cr-sublanes button.cr-lane")).map((b) => txt(b).replace(/\s*\(.*$/, ""));
+  check("needs you: its lanes are Held, Unclassified, No issuer, Merge confirms",
+    subs.join(" · ") === "Held · Unclassified · No issuer · Merge confirms");
+  check("needs you: opens on Held", cerLane(doc, /^Held/).getAttribute("aria-pressed") === "true");
+
+  const needItems = () => Array.from(doc.querySelectorAll(".cr-proc-need"));
+  check("held: pages at 25 rather than painting every held title", needItems().length === 25);
+  check("held: the heading counts every held title",
+    /Held by the procedures \(41\)/.test(txt(doc.getElementById("cr-proc-needs-h"))));
+  const dis = needItems()[0];
+  check("held: a disagreement shows both proposals and who made each",
+    /by brand-family/.test(txt(dis)) && /by course-identity/.test(txt(dis)));
+  check("held: says why the title is here", /Why it is here: two procedures disagree/.test(txt(dis)));
+  check("held: names the colleges", /B College, C College/.test(txt(dis)));
   const summary = txt(doc.getElementById("cr-summary"));
   check("summary: says how many titles were pre-filled and how many need a person",
     /1100 of 1322 waiting titles pre-filled in Unclassified/.test(summary) && /41 need you/.test(summary));
   check("summary: carries the run's date", /2026-10-18/.test(summary));
+  doc.querySelector("button.cr-proc-more").click();
+  await sleep(30);
+  check("held: Show more reveals the rest", needItems().length === 41);
+
+  check("held: a title saved since the run says so, with nothing to open",
+    /No longer waiting/.test(txt(needItems()[1])) && !needItems()[1].querySelector("button.cr-proc-open"));
+  // Open in Unclassified: the title shows alone there, until asked for the rest.
+  const openBtn = needItems()[2].querySelector("button.cr-proc-open");
+  check("held: each title opens in Unclassified, a word", !!openBtn && txt(openBtn) === "Open in Unclassified");
+  openBtn.click();
+  await sleep(80);
+  check("open: Unclassified is the lane in use", cerLane(doc, /^Unclassified/).getAttribute("aria-pressed") === "true");
+  check("open: Unclassified shows the one title, and says so",
+    /Showing the one title opened from Held/.test(txt(doc.getElementById("cr-table-wrap")))
+    && doc.querySelectorAll(".cr-wl-row").length === 1
+    && /Held title 01/.test(txt(doc.querySelector(".cr-wl-row"))));
+  const every = doc.querySelector("button.cr-wl-every");
+  check("open: a word brings back every waiting title", !!every && txt(every) === "Show every waiting title");
+  every.click();
+  await sleep(30);
+  check("open: the single-title note leaves, and the queue comes back",
+    !doc.querySelector(".cr-wl-only") && doc.querySelectorAll(".cr-wl-row").length > 1);
+
+  const pl = cerLane(doc, /^Procedures/);
+  check("procedures: the view carries the count in force", !!pl && /\(3\)/.test(txt(pl)));
+  pl.click();
+  await sleep(30);
+  check("procedures: pressed state is exposed, not color alone",
+    cerLane(doc, /^Procedures/).getAttribute("aria-pressed") === "true");
+  check("procedures: one lane, so no lane row", !doc.querySelector(".cr-sublanes"));
+  check("procedures: the held list lives in Needs you now", !doc.querySelector(".cr-proc-need"));
 
   const items = Array.from(doc.querySelectorAll(".cr-proc-item"));
   check("procedures: every procedure in the report is listed", items.length === 3);
@@ -126,18 +177,6 @@ const lane = (doc, re) => Array.from(doc.querySelectorAll(".cr-lane")).find((b) 
   check("examples: show the title and what it became",
     /AP Statistics Exam → AP Statistics/.test(txt(first2.querySelector(".cr-proc-sample"))));
 
-  const needItems = () => Array.from(doc.querySelectorAll(".cr-proc-need"));
-  check("needs you: pages at 25 rather than painting every held title", needItems().length === 25);
-  check("needs you: the heading counts every held title", /Needs you \(41\)/.test(txt(doc.getElementById("cr-proc-needs-h"))));
-  const dis = needItems()[0];
-  check("needs you: a disagreement shows both proposals and who made each",
-    /by brand-family/.test(txt(dis)) && /by course-identity/.test(txt(dis)));
-  check("needs you: says why the title is here", /Why it is here: two procedures disagree/.test(txt(dis)));
-  check("needs you: names the colleges", /B College, C College/.test(txt(dis)));
-  doc.querySelector("button.cr-proc-more").click();
-  await sleep(30);
-  check("needs you: Show more reveals the rest", needItems().length === 41);
-
   check("headings: each section is a labelled region",
     Array.from(doc.querySelectorAll("section.cr-proc-sec")).every((s) =>
       doc.getElementById(s.getAttribute("aria-labelledby"))));
@@ -147,21 +186,39 @@ const lane = (doc, re) => Array.from(doc.querySelectorAll(".cr-lane")).find((b) 
   check("css: controls are underlined words, 24px tall, with a visible focus ring",
     /button\.cr-proc-word\{all:unset;[^}]*min-height:24px;[^}]*text-decoration:underline/.test(css)
     && /button\.cr-proc-word:focus-visible\{outline:2px solid/.test(css));
+  const all = Array.from(doc.querySelectorAll("style")).map((s) => s.textContent).join("");
+  check("css: views and lanes are underlined words with no fill, the one in use heavier",
+    /button\.cr-view,[^{]*button\.cr-lane\{border:0;[^}]*background:none;[^}]*text-decoration:underline/.test(all)
+    && /button\.cr-view\[aria-pressed=\\?"true\\?"\][^{]*\{[^}]*font-weight:700/.test(all));
 
-  lane(doc, /^All/).click();
+  check("css: college badges paint no fill (dark read hunter on half-white at 1.15:1, S413)",
+    /\.cr-badge-green\{background:none;/.test(all) && /\.cr-badge-orange\{background:none;/.test(all));
+  check("css: a row's section headings are h3 in the body face",
+    /\.cr-expanded-body h3:not\(\.cr-curation-h\)[^{]*\{[^}]*font-family:inherit/.test(all));
+
+  cerLane(doc, /^Reference/).click();
   await sleep(30);
-  check("grid: the reference comes back when the lane is left", !!doc.querySelector(".cr-title-toggle"));
+  check("reference: returns to the credentials grid", !!doc.querySelector(".cr-title-toggle"));
+  cerLane(doc, /^Needs you/).click();
+  await sleep(30);
+  check("views: a view reopens on the lane last used in it",
+    cerLane(doc, /^Unclassified/).getAttribute("aria-pressed") === "true");
 
-  // A report that fails to load leaves the grid working and says so on the chip.
+  // A report that fails to load opens on Reference, leaves the grid working,
+  // and says so on Held and Procedures.
   const bad = makeDom({ reportFails: true });
   await sleep(150);
   const bdoc = bad.window.document;
+  check("failure: the tab opens on Reference", bdoc.querySelector("button.cr-view[aria-pressed=true]").id === "cr-view-ref");
   check("failure: the grid still paints", !!bdoc.querySelector(".cr-title-toggle"));
-  check("failure: the chip says the report is unavailable", /unavailable/.test(txt(lane(bdoc, /^Procedures/))));
-  lane(bdoc, /^Procedures/).click();
+  check("failure: Procedures says the report is unavailable", /unavailable/.test(txt(cerLane(bdoc, /^Procedures/))));
+  cerLane(bdoc, /^Procedures/).click();
   await sleep(30);
-  check("failure: the lane says the report did not load",
+  check("failure: the view says the report did not load",
     /did not load/.test(txt(bdoc.getElementById("cr-table-wrap"))));
+  cerLane(bdoc, /^Needs you/).click();  // opening a view asks for the report again
+  await sleep(30);
+  check("failure: Held says unavailable after the retry fails", /unavailable/.test(txt(cerLane(bdoc, /^Held/))));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0]));

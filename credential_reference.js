@@ -946,7 +946,12 @@
     // One editable surface: `lane` picks a queue chip; "unc"/"noiss"/"merge"
     // render the (already in-cell) triage sections, everything else is the
     // main grid — which now edits in-cell too.
-    lane: "all",           // all | unc | noiss | merge | open | done
+    // S413: the lanes sit under three views (VIEWS). The tab opens on Needs you
+    // when the procedures held titles for a person, else on Reference (openingLane).
+    lane: "all",           // held | unc | noiss | merge | procs | all | industry | open | done
+    laneChosen: false,     // a click or a quickstart hint picked the lane: keep it
+    viewLast: { needs: "held", procs: "procs", ref: "all" },  // each view's last lane
+    wlOnly: null,          // a raw title opened from Held: Unclassified shows it alone
     cplTypeFilter: "all",  // new lean-filter row
     discFilter: "all",
     subjFilter: "all",     // SUBJ4 code (S110) — derived or subj_override
@@ -1798,6 +1803,7 @@
     if (state.worklistOpen) { renderWorklist(); return; }
     if (state.lane === "industry") { renderIndustry(); return; }
     if (state.lane === "procs") { renderProcedures(); return; }
+    if (state.lane === "held") { renderHeld(); return; }
     // v2 triage lanes reuse the (already in-cell) worklist sections.
     if (state.lane === "unc" || state.lane === "noiss" || state.lane === "merge") {
       renderWorklist(state.lane === "unc" ? "unc" : state.lane);
@@ -2071,7 +2077,8 @@
   }
 
   // ─── CER v2 lane chips (2026-07-09) — the Triage queues as filters over
-  // one surface. Injected before the toolbar (regen-proof).
+  // one surface; since S413 they sit under the three views (VIEWS, below).
+  // Injected before the toolbar (regen-proof).
   function renderLanes() {
     var tbEl = document.getElementById("cr-toolbar");
     if (!tbEl) return;
@@ -2095,7 +2102,12 @@
     state.rows.forEach(function (r) { if (r.curator_reviewed_at) doneN++; });
     var niQueue = issuerQueue();
     var staged = niQueue.filter(function (r) { return state.issuerPreseed[r.unified_title]; }).length;
+    var rep = state.procReport;
     var lanes = [
+      { k: "held",  label: "Held",
+        n: rep ? (rep.needs_you || []).length : null,
+        nText: state.procError ? "(unavailable)" : null,
+        title: "Titles no procedure settled last night: two procedures disagree, the classifier is unsure, or saving would join two issuers. Each opens in Unclassified with its proposal." },
       { k: "all",   label: "All", n: state.rows.length,
         title: "Every canonical credential." },
       { k: "unc",   label: "Unclassified", nText: uncN,
@@ -2118,17 +2130,60 @@
         nText: state.industryError ? "(unavailable)" : null,
         title: "IT, cybersecurity, data and AI credentials the issuers publish, with CIP field, issuer status and whether MAP carries them. Read-only; the weekly credential watch keeps it current." },
     ];
-    lanes.forEach(function (l) {
+    var byKey = {};
+    lanes.forEach(function (l) { byKey[l.k] = l; });
+    var cur = viewOf(state.lane);
+    var countOf = function (l) { return l.nText || (l.n == null ? "(…)" : "(" + l.n + ")"); };
+
+    // The three views are words; the one in use is heavier and says so with
+    // aria-pressed (S411 mock-up Gu6HTwqSwMYLSy4C4xRag3).
+    var tl = el("div", { class: "cr-views", role: "group", "aria-label": "Common Exhibit Reference views" });
+    VIEWS.forEach(function (v) {
+      var on = v.k === cur.k && !state.worklistOpen;
+      var head = byKey[v.lanes[0]];
+      var nText = v.k === "needs" ? countOf(head)
+        : v.k === "procs" ? countOf(byKey.procs) : countOf(byKey.all);
+      var b = el("button", { type: "button", class: "cr-view",
+        id: "cr-view-" + v.k, "aria-pressed": on ? "true" : "false", title: v.title });
+      b.appendChild(document.createTextNode(v.label + " "));
+      b.appendChild(el("span", { class: "cr-lane-n" }, [nText]));
+      b.onclick = function () { setLane(state.viewLast[v.k] || v.lanes[0]); };
+      tl.appendChild(b);
+    });
+    host.appendChild(tl);
+
+    if (cur.lanes.length < 2) return;
+    var sub = el("div", { class: "cr-sublanes", role: "group", "aria-label": cur.label });
+    cur.lanes.forEach(function (k) {
+      var l = byKey[k];
       var active = state.lane === l.k && !state.worklistOpen;
       var b = el("button", { type: "button", title: l.title,
         class: "cr-lane" + (active ? " active" : ""),
         "aria-pressed": active ? "true" : "false" });
       b.appendChild(document.createTextNode(l.label + " "));
-      b.appendChild(el("span", { class: "cr-lane-n" },
-        [l.nText || (l.n == null ? "(…)" : "(" + l.n + ")")]));
+      b.appendChild(el("span", { class: "cr-lane-n" }, [countOf(l)]));
       b.onclick = function () { setLane(l.k); };
-      host.appendChild(b);
+      sub.appendChild(b);
     });
+    host.appendChild(sub);
+  }
+
+  // Needs you leads (what a person must decide), then Procedures (the rules
+  // that decide the rest), then Reference (the credentials themselves). The
+  // Initiated sign-off stays in Reference until Open Asks Sheet 93 card 3.
+  var VIEWS = [
+    { k: "needs", label: "Needs you", lanes: ["held", "unc", "noiss", "merge"],
+      title: "What a person must decide: the titles the procedures held, the waiting titles, credentials with no issuer, and merges to confirm." },
+    { k: "procs", label: "Procedures", lanes: ["procs"],
+      title: "The rules that settle waiting titles every night, who set each one, and what it settled." },
+    { k: "ref", label: "Reference", lanes: ["all", "industry", "open", "done"],
+      title: "Every credential, the industry credentials, and the curator sign-off." },
+  ];
+  function viewOf(lane) {
+    for (var i = 0; i < VIEWS.length; i++) {
+      if (VIEWS[i].lanes.indexOf(lane) >= 0) return VIEWS[i];
+    }
+    return VIEWS[2];
   }
 
   // 💾 Save all (N) — toolbar slot, refreshed in place on every edit/save.
@@ -2723,7 +2778,7 @@
   // For anonymous viewers, surfaces the current curated state read-only.
   function renderCurationPanel(r) {
     var panel = el("div", { class: "cr-curation-panel" });
-    panel.appendChild(el("h5", { class: "cr-curation-h" }, ["Curation"]));
+    panel.appendChild(el("h3", { class: "cr-curation-h" }, ["Curation"]));
 
     if (!state.sess) {
       panel.appendChild(el("p", { class: "cr-curation-note" }, [
@@ -3110,8 +3165,8 @@
       "#tab-credential-reference .cr-badge-group{display:flex;flex-wrap:wrap;gap:4px;align-items:center;}" +
       "#tab-credential-reference .cr-badge-grouplabel{font-size:.72rem;font-weight:600;color:var(--text-muted);margin-right:4px;}" +
       "#tab-credential-reference .cr-college-badge{display:inline-block;padding:1px 7px;border-radius:9px;font-size:.68rem;font-weight:500;border:1px solid;}" +
-      "#tab-credential-reference .cr-badge-green{background:rgba(255,255,255,.5);color:var(--hunter);border-color:var(--border-strong);}" +
-      "#tab-credential-reference .cr-badge-orange{background:rgba(255,255,255,.5);color:var(--mustard-text);border-color:var(--border-strong);}" +
+      "#tab-credential-reference .cr-badge-green{background:none;color:var(--hunter);border-color:var(--border-strong);}" +
+      "#tab-credential-reference .cr-badge-orange{background:none;color:var(--mustard-text);border-color:var(--border-strong);}" +
       "#tab-credential-reference .cr-badge-more{font-size:.68rem;color:var(--cobalt);cursor:pointer;text-decoration:underline;}" +
       // Scope/CPL chips under the unified title on collapsed rows — ONE row
       // (Sam, 2026-07-08: chip stacking made the rows too tall). nowrap +
@@ -3294,12 +3349,11 @@
       // horizontal real estate is valuable; PC/laptop is the target).
       "#tab-credential-reference > .main-container{max-width:none;}" +
       // Lane chips (the Triage queues as filters over one surface).
-      "#tab-credential-reference .cr-lanes{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px;}" +
-      "#tab-credential-reference .cr-lane{border:1px solid var(--border-strong);background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);border-radius:16px;padding:4px 12px;font-size:.78rem;font-weight:600;cursor:pointer;}" +
-      "#tab-credential-reference .cr-lane:hover{background:var(--surface-muted,#ECE9E2);}" +
-      "#tab-credential-reference .cr-lane.active{background:var(--seal-blue);color:var(--on-seal-blue);border-color:var(--seal-blue);}" +
-      "#tab-credential-reference .cr-lane-n{color:var(--text-muted,#5C5C55);font-variant-numeric:tabular-nums;}" +
-      "#tab-credential-reference .cr-lane.active .cr-lane-n{color:var(--mustard-on-dark,#E3B341);}" +
+      // S413: the three views and their lanes are underlined words (CER_UI_PASS_CSS).
+      "#tab-credential-reference .cr-lanes{display:grid;gap:8px;margin:0 0 12px;}" +
+      "#tab-credential-reference .cr-views{display:flex;gap:6px 24px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:6px;}" +
+      "#tab-credential-reference .cr-sublanes{display:flex;gap:6px 18px;flex-wrap:wrap;}" +
+      "#tab-credential-reference .cr-lane-n{color:var(--text-muted);font-weight:400;font-variant-numeric:tabular-nums;}" +
       // In-cell inputs — quiet until hover/focus (the issuer-lane pattern
       // promoted to the whole grid).
       "#tab-credential-reference .cr-cellin{width:100%;font-size:.82rem;color:var(--text-strong,#1C1C1A);border:1px solid transparent;border-radius:5px;padding:4px 6px;background:transparent;font-family:inherit;box-sizing:border-box;text-align:left;}" +
@@ -3413,8 +3467,19 @@
     "#tab-credential-reference.cpl-tab-pane button.cr-curation-clear{color:var(--crimson);}" +
     // Disclosure + chip targets: 24px floor without changing their look.
     "#tab-credential-reference.cpl-tab-pane button.cr-caret,#tab-credential-reference.cpl-tab-pane button.cr-curate-toggle{min-width:24px;min-height:24px;}" +
-    "#tab-credential-reference.cpl-tab-pane button.cr-title-toggle,#tab-credential-reference.cpl-tab-pane button.cr-chip,#tab-credential-reference.cpl-tab-pane button.cr-lane{min-height:24px;}" +
-    "#tab-credential-reference.cpl-tab-pane button.cr-lane[aria-pressed=\"true\"]{font-weight:700;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-title-toggle,#tab-credential-reference.cpl-tab-pane button.cr-chip{min-height:24px;}" +
+    // A row's sections are h3 under the tab's h2 (they were h5, a skipped
+    // level, S413); the body face and size they had as h5.
+    "#tab-credential-reference.cpl-tab-pane .cr-expanded-body h3:not(.cr-curation-h),#tab-credential-reference.cpl-tab-pane .cr-ind-inrow>h3{margin:8px 0 4px;font-family:inherit;color:var(--navy-primary);font-size:.85rem;}" +
+    "#tab-credential-reference.cpl-tab-pane h3.cr-curation-h{font-family:inherit;}" +
+    // The view switch and its lanes (S413): words, the one in use darker,
+    // heavier and thickly underlined, and said so by aria-pressed.
+    "#tab-credential-reference.cpl-tab-pane button.cr-view,#tab-credential-reference.cpl-tab-pane button.cr-lane{border:0;border-radius:0;background:none;color:var(--cobalt);font-weight:600;" +
+      "padding:2px 0;min-height:24px;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-view{font-size:1rem;}#tab-credential-reference.cpl-tab-pane button.cr-lane{font-size:.85rem;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-view:hover,#tab-credential-reference.cpl-tab-pane button.cr-lane:hover{background:none;text-decoration-thickness:2px;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-view[aria-pressed=\"true\"],#tab-credential-reference.cpl-tab-pane button.cr-lane[aria-pressed=\"true\"]{color:var(--text-strong);font-weight:700;text-decoration-thickness:3px;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-view:focus-visible,#tab-credential-reference.cpl-tab-pane button.cr-lane:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;}" +
     // Phones: the grid scrolls inside its own frame; the bar wraps to one column.
     "@media (max-width:560px){#tab-credential-reference.cpl-tab-pane .cr-toolbar{flex-direction:column;align-items:stretch;}" +
       "#tab-credential-reference.cpl-tab-pane .cr-toolbar input.cr-filter,#tab-credential-reference.cpl-tab-pane .cr-search-wide{min-width:0;width:100%;}" +
@@ -3585,6 +3650,7 @@
   function closeWorklist() {
     state.worklistOpen = false;
     state.lane = "all";
+    state.viewLast.ref = "all";
     renderToolbar();
     render();
   }
@@ -3592,10 +3658,14 @@
   // in-cell editable); the rest filter the main grid.
   function setLane(k) {
     state.lane = k;
+    state.laneChosen = true;
+    state.viewLast[viewOf(k).k] = k;
     state.worklistOpen = false;
+    if (k !== "unc") state.wlOnly = null;
     if (k === "unc" || k === "noiss" || k === "merge") ensureWorklistData();
     if (k === "industry") { state.indShown = INDUSTRY_PAGE; fetchIndustry(); }
-    if (k === "procs") { state.procNeedsShown = PROC_NEEDS_PAGE; fetchProcReport(); }
+    if (k === "held") { state.procNeedsShown = PROC_NEEDS_PAGE; fetchProcReport(); }
+    if (k === "procs") fetchProcReport();
     render();
   }
 
@@ -3766,6 +3836,19 @@
       return !(a && a.title);
     });
     var shown = state.wlShowAll ? items : open;
+    // A title opened from Needs you › Held shows alone, until the curator asks
+    // for the rest.
+    if (state.wlOnly) {
+      shown = items.filter(function (it) { return it.raw_title === state.wlOnly; });
+      var only = el("p", { class: "cr-wl-note cr-wl-only" }, [shown.length
+        ? "Showing the one title opened from Held. "
+        : "That title is no longer waiting: saved or folded since the run. "]);
+      var every = el("button", { type: "button", class: "cr-wl-back cr-wl-every" },
+        ["Show every waiting title"]);
+      every.onclick = function () { state.wlOnly = null; renderWorklist("unc"); };
+      only.appendChild(every);
+      panel.appendChild(only);
+    }
     var toggle = el("div", { class: "cr-wl-toggle", role: "group", "aria-label": "Triage view" });
     [{ all: false, label: "Needs triage (" + open.length + ")" },
      { all: true, label: "All (" + items.length + ")" }].forEach(function (opt) {
@@ -3776,6 +3859,7 @@
         // clicking the ACTIVE chip re-renders too — after in-place saves the
         // visible rows can lag the count, and this is the reconcile affordance
         state.wlShowAll = opt.all;
+        state.wlOnly = null;
         renderWorklist();
       };
       toggle.appendChild(b);
@@ -5127,7 +5211,7 @@
     // directly under the Articulated / Potential-adopter section, where a
     // curator triaging a credential expects to find them (was at the bottom). ──
     if (r.audit_tag_total) {
-      div.appendChild(el("h5", { class: "cr-audit-h" }, ["Audit signals"]));
+      div.appendChild(el("h3", { class: "cr-audit-h" }, ["Audit signals"]));
       var ulA = el("ul", { class: "cr-audit-list" });
       Object.keys(r.audit_tags).sort().forEach(function (t) {
         ulA.appendChild(el("li", null, [el("code", null, [t]), " × " + r.audit_tags[t]]));
@@ -5259,7 +5343,7 @@
         return s + (a.local || []).filter(function (lc) { return lc.subj || lc.num || lc.t; }).length;
       }, 0);
       var nId = shownArts.length;
-      div.appendChild(el("h5", null, [
+      div.appendChild(el("h3", null, [
         nId
           ? ("Common-course identities articulating to this credential ("
              + nId + " " + (nId === 1 ? "identity" : "identities")
@@ -5300,7 +5384,7 @@
         div.appendChild(det);
       }
     } else {
-      div.appendChild(el("h5", null, ["No common-course articulations resolved"]));
+      div.appendChild(el("h3", null, ["No common-course articulations resolved"]));
       div.appendChild(el("p", { class: "cr-empty-note" }, [
         "This credential identity isn't tied to any common course in the COCI "
         + "articulation crosswalk. Could be a credential that articulates only "
@@ -5313,7 +5397,7 @@
     // The baked payload doesn't carry the per-variant list; we just show the
     // count, since the audit + curation work at the unified-title level.
     if (r.raw_variants && r.raw_variants.length) {
-      div.appendChild(el("h5", null, [
+      div.appendChild(el("h3", null, [
         "College-entered exhibit titles (" + r.raw_count + ")"
       ]));
       div.appendChild(el("p", { class: "cr-empty-note" }, [
@@ -5348,7 +5432,7 @@
 
     // ── Credential record(s) (issuer / trainer / confidence) ──
     if (r.credentials && r.credentials.length) {
-      div.appendChild(el("h5", null, [
+      div.appendChild(el("h3", null, [
         "Credential record" + (r.credentials.length > 1 ? "s" : "")
         + " (issuer / trainer attribution)"
       ]));
@@ -5371,7 +5455,7 @@
       });
     } else if (r.primary_issuer || r.primary_trainer) {
       // Baked payload shape — surface what we have at the row level.
-      div.appendChild(el("h5", null, ["Credential record"]));
+      div.appendChild(el("h3", null, ["Credential record"]));
       var d2 = el("div", { class: "cr-cred-record" });
       d2.appendChild(el("div", null, [
         "Issuer: " + (r.primary_issuer || "(none)")
@@ -5444,6 +5528,11 @@
     if (hint.quality_flag_only === true) { state.flagOnly = true; any = true; }
     if (typeof hint.search === "string" && hint.search) {
       state.search = hint.search.toLowerCase(); any = true;
+    }
+    // Every hint filters the credential grid, which lives in Reference.
+    if (any) {
+      state.lane = "all"; state.viewLast.ref = "all"; state.worklistOpen = false;
+      state.laneChosen = true;
     }
     return any;
   }
@@ -5726,7 +5815,7 @@
         + (c.cip.source || "rule") + ")"]));
     }
     if (c.skills && c.skills.domains && c.skills.domains.length) {
-      div.appendChild(el("h5", null, ["Skills the issuer publishes ("
+      div.appendChild(el("h3", null, ["Skills the issuer publishes ("
         + (c.skills.kind || "exam domains")
         + (c.skills.exam_version ? ", exam version " + c.skills.exam_version : "") + ")"]));
       var ul = el("ul", { class: "cr-ind-skills" });
@@ -5763,7 +5852,7 @@
     if (!c) return null;
     ensureIndustryCss();
     var box = el("div", { class: "cr-ind-inrow" });
-    box.appendChild(el("h5", null, ["Industry record"]));
+    box.appendChild(el("h3", null, ["Industry record"]));
     box.appendChild(industryRecordBody(c, industryChange(r)));
     return box;
   }
@@ -5837,12 +5926,10 @@
     return line;
   }
 
-  function renderProcedures() {
-    ensureProcCss();
-    var wrap = document.getElementById("cr-table-wrap");
+  // The report's paint shared by Held and Procedures: the summary line, or the
+  // loading / failure note. Returns the report, or null when it is not in.
+  function procReportOrNote(wrap) {
     var sum = document.getElementById("cr-summary");
-    if (!wrap) return;
-    clearNode(wrap);
     if (sum) clearNode(sum);
     var rep = state.procReport;
     if (!rep) {
@@ -5850,7 +5937,7 @@
       wrap.appendChild(el("p", { class: "cr-wl-note" }, [state.procError
         ? "The procedures report did not load. Reload the page to try again."
         : "Loading the procedures…"]));
-      return;
+      return null;
     }
     if (sum) {
       sum.appendChild(el("strong", null, [String(rep.proposed || 0)]));
@@ -5859,19 +5946,35 @@
         + " need you · " + (rep.not_yet_asked || 0) + " not yet asked · run "
         + String(rep._generated_at || "TBA").slice(0, 10)));
     }
-    var panel = el("div", { class: "cr-proc" });
+    return rep;
+  }
 
+  // Needs you › Held: the titles no procedure settled. Each opens in
+  // Unclassified, alone, where its proposal is already filled in to save.
+  function renderHeld() {
+    ensureProcCss();
+    var wrap = document.getElementById("cr-table-wrap");
+    if (!wrap) return;
+    clearNode(wrap);
+    var rep = procReportOrNote(wrap);
+    if (!rep) return;
+    var panel = el("div", { class: "cr-proc" });
     var needs = rep.needs_you || [];
     var nh = el("section", { class: "cr-proc-sec", "aria-labelledby": "cr-proc-needs-h" });
     nh.appendChild(el("h3", { id: "cr-proc-needs-h", class: "cr-proc-h" },
-      ["Needs you (" + needs.length + ")"]));
+      ["Held by the procedures (" + needs.length + ")"]));
     nh.appendChild(el("p", { class: "cr-proc-intro" }, [
       "A title comes here only when no procedure settles it: two procedures disagree, the classifier "
-      + "is unsure, or saving it would join two issuers. Its proposal is already in Unclassified; "
-      + "save it there, change it, or tell a session the procedure that would have settled it."]));
+      + "is unsure, or saving it would join two issuers. Open it in Unclassified to save its proposal "
+      + "or change it, or tell a session the procedure that would have settled it."]));
     if (!needs.length) {
       nh.appendChild(el("p", { class: "cr-wl-note" }, ["Nothing needs you from the last run."]));
     } else {
+      var waiting = null;
+      if (state.unclassified) {
+        waiting = {};
+        state.unclassified.forEach(function (it) { waiting[it.raw_title] = 1; });
+      }
       var list = el("ul", { class: "cr-proc-needs" });
       needs.slice(0, state.procNeedsShown).forEach(function (n) {
         var li = el("li", { class: "cr-proc-need" });
@@ -5882,10 +5985,19 @@
         var props = n.proposal ? [n.proposal] : (n.proposals || []);
         props.forEach(function (pr) {
           li.appendChild(el("div", { class: "cr-proc-prop" }, [
-            "Proposed: " + pr.title + (pr.issuer ? " \u00b7 issued by " + pr.issuer : "")
-            + (pr.procedure ? " \u00b7 by " + pr.procedure : "")]));
+            "Proposed: " + pr.title + (pr.issuer ? " · issued by " + pr.issuer : "")
+            + (pr.procedure ? " · by " + pr.procedure : "")]));
         });
         li.appendChild(el("div", { class: "cr-proc-why" }, ["Why it is here: " + n.why]));
+        if (waiting && !waiting[n.raw_title]) {
+          li.appendChild(el("div", { class: "cr-proc-meta" },
+            ["No longer waiting: saved or folded since the run."]));
+        } else {
+          var open = el("button", { type: "button", class: "cr-proc-word cr-proc-open" },
+            ["Open in Unclassified"]);
+          open.onclick = function () { setLane("unc"); state.wlOnly = n.raw_title; render(); };
+          li.appendChild(open);
+        }
         list.appendChild(li);
       });
       nh.appendChild(list);
@@ -5897,6 +6009,17 @@
       }
     }
     panel.appendChild(nh);
+    wrap.appendChild(panel);
+  }
+
+  function renderProcedures() {
+    ensureProcCss();
+    var wrap = document.getElementById("cr-table-wrap");
+    if (!wrap) return;
+    clearNode(wrap);
+    var rep = procReportOrNote(wrap);
+    if (!rep) return;
+    var panel = el("div", { class: "cr-proc" });
 
     var procs = rep.procedures || [];
     var ph = el("section", { class: "cr-proc-sec", "aria-labelledby": "cr-proc-list-h" });
@@ -5974,6 +6097,16 @@
       .then(function () { if (!state.worklistOpen) render(); });
   }
 
+  // The tab leads with what needs doing: Needs you › Held when last night's
+  // run held titles for a person; Reference when it held none or its report
+  // did not load. A lane already picked (a quickstart hint) stands.
+  function openingLane() {
+    if (state.laneChosen) return;
+    var held = state.procReport && (state.procReport.needs_you || []).length;
+    state.lane = held ? "held" : "all";
+    state.viewLast[viewOf(state.lane).k] = state.lane;
+  }
+
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
     state.sess = getSession();
@@ -5994,7 +6127,9 @@
     // working without a full generator run.
     var baked = window.CPL_CREDENTIAL_REFERENCE;
     if (baked && Array.isArray(baked.unified_titles)) {
-      fetchOverlay().then(function (overlay) {
+      Promise.all([fetchOverlay(), fetchProcReport({ quiet: true })]).then(function (parts) {
+        var overlay = parts[0];
+        openingLane();
         state.audit = null;  // baked payload carries pre-rolled audit_tags per row; no overlay needed
         state.rows = applyOverlay(
           baked.unified_titles.map(adaptBakedRow),
@@ -6014,8 +6149,9 @@
 
     // Fallback: runtime fetch of kb/*.json (slower; only used when the
     // baked file is absent — e.g. early local dev before first cron run).
-    Promise.all([fetchKb(), fetchOverlay()]).then(function (parts) {
+    Promise.all([fetchKb(), fetchOverlay(), fetchProcReport({ quiet: true })]).then(function (parts) {
       var kb = parts[0];
+      openingLane();
       state.audit = kb.audit;
       state.rows = applyOverlay(
         buildRows(kb.unifiedTitles, kb.credentials, kb.audit),

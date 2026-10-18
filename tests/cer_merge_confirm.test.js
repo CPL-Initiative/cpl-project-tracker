@@ -15,6 +15,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_merge_confirm.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -112,7 +113,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     const { window, log } = makeDom({});
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
+    cerLane(doc, /No issuer/).click();
     await sleep(120);
 
     const laneRow = rowFor(doc, "Administration of Justice 067");
@@ -142,7 +143,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     const { window, log } = makeDom({ confirmAnswer: false });
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
+    cerLane(doc, /No issuer/).click();
     await sleep(120);
     const laneRow = rowFor(doc, "Administration of Justice 067");
     laneRow.querySelector(".cr-ni-title-input").value = TARGET;
@@ -160,7 +161,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     const { window, log } = makeDom({});
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Merge/.test(b.textContent)).click();
+    cerLane(doc, /Merge/).click();
     await sleep(120);
 
     const title = doc.querySelector(".cr-mg-title");
@@ -190,7 +191,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     const { window, log } = makeDom({});
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Merge/.test(b.textContent)).click();
+    cerLane(doc, /Merge/).click();
     await sleep(120);
     const row = doc.querySelector(".cr-mg-row");
     const inp = row.querySelector(".cr-mg-input");

@@ -13,6 +13,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_wl_multiissuer_preseed.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -104,7 +105,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-wl-table tbod
   const { window, log } = makeDom({});
   const doc = window.document;
   await sleep(120);
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(doc, /Unclassified/).click();
   await sleep(120);
 
   // ── (2) C-ID / CCN title pre-seed ──────────────────────────────────────
@@ -205,7 +206,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-wl-table tbod
   // ── signed out: the ＋ affordance is withheld ────────────────────────────
   const so = makeDom({ signedIn: false });
   await sleep(120);
-  Array.from(so.window.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(so.window.document, /Unclassified/).click();
   await sleep(120);
   const soRow = rowFor(so.window.document, "Bare Row No Suggestion");
   check("signed-out: no ＋ add-issuer link on the triage row",

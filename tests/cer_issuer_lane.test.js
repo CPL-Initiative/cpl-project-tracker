@@ -12,6 +12,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_issuer_lane.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -117,9 +118,9 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   // v2 preloads worklist data at init, so by now the preseed's resurface row
   // is already counted (3 null-issuer + 1 staged-title resurface = 4).
   check("lanes: No-issuer chip carries the live queue count",
-    /No issuer \(4\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)))));
+    /No issuer \(4\)/.test(txt(cerLane(doc, /No issuer/))));
 
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
+  cerLane(doc, /No issuer/).click();
   await sleep(120);
 
   const laneTitle = doc.querySelector(".cr-ni-title");
@@ -132,7 +133,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("lane: staged pre-seeds sort first",
     txt(rows[0].querySelector(".cr-wl-rawt")) !== "10-Key Data Entry");
   check("toolbar: count follows the widened queue",
-    /No issuer \(4\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)))));
+    /No issuer \(4\)/.test(txt(cerLane(doc, /No issuer/))));
 
   const psRow = rowFor(doc, "Basic Welding CBE");
   check("lane: issuer input pre-filled from the staged plan",
@@ -205,7 +206,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("save: lane count decrements in place",
     /Missing issuing agency \(1\)/.test(txt(doc.querySelector(".cr-ni-title"))));
   check("save: toolbar no-issuer count follows",
-    /No issuer \(1\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)))));
+    /No issuer \(1\)/.test(txt(cerLane(doc, /No issuer/))));
   const dl = doc.getElementById("cr-unclass-issuers");
   check("datalist: the NEW agency is immediately pickable",
     !!dl && Array.from(dl.children).some((o) => o.value === "Proctored Testing Center"));
