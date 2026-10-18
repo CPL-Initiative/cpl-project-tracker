@@ -640,6 +640,18 @@ def read_sitemap(reader, start: str) -> dict:
     return out
 
 
+def child_base(page_url: str, platform: str | None) -> str:
+    """The address a page's children sit beneath. SmartCatalog writes a page's
+    address without a closing slash and its children beneath it: Crafton Hills'
+    credit-programs, then credit-programs/accounting-acct, then
+    accounting-acct/accounting-associate-of-arts-degree (page reads 39090262960
+    and 39090533458, S411), and it has no sitemap. child_pages() reads beneath an
+    address that ends in a slash, as CourseLeaf writes it."""
+    if platform == "smartcatalog" and page_url and not urllib.parse.urlparse(page_url).path.endswith("/"):
+        return page_url.split("#")[0].split("?")[0] + "/"
+    return page_url
+
+
 def index_links(reader, start: str, cache: dict) -> list[str]:
     """Without a sitemap: the catalog's front page, and each program index it
     links (the pilot's hub words), read once; every same-site link they hold."""
@@ -2131,9 +2143,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
-    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html"):
-        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380) and Acalog (S389); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen, Acalog and own-HTML catalogs; %s reads %s" % (college, platform)
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog"):
+        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380), Acalog (S389) and SmartCatalog (S411,
+        # the generic road through child_base()); another platform names its own enumeration first.
+        report["stopped"] = ("this pass enumerates CourseLeaf, curriQunet, eLumen, Acalog, SmartCatalog and own-HTML catalogs; "
+                             "%s reads %s" % (college, platform))
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -2192,7 +2206,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if got.get("access") != "ok":
                 continue
             if platform not in ("curriqunet", "elumen", "acalog"):
-                for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
+                for kid in child_pages(child_base(got.get("final_url") or u, platform), got.get("links"), start, scope):
                     if kid not in seen and len(queue) < MAX_PAGES:
                         seen.add(kid)
                         queue.append(kid)

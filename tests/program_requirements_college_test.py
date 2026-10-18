@@ -1593,7 +1593,7 @@ check(rep_menu["acalog"]["catalog_year_read"] == "2025-2026" and rep_menu["acalo
 CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
 check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"] = read_year' in CS,
       "an Acalog year read from the page fills a registry row that names none, in the records and the report alike")
-check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html")' in CS
+check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
 # S404: a college's own HTML catalog takes the sitemap road, with the child-page walk and the link search.
@@ -1918,6 +1918,22 @@ check(hn_bio["pages"][0] == 2 and hn_bio["named"] and hn_bio["coverage"] == 1.0
       "the run opens on the heading's page: %r" % hn_bio["pages"])
 check(C.pdf_code_assign(HN_PROGS * 3, HN_PAGES[:2]) is None,
       "a catalog that heads few programs with a code is read as before")
+
+# SmartCatalog (Crafton Hills, Taft; page reads 39090262960 and 39090533458, S411): no sitemap, and each level of the
+# catalog sits beneath the one above it with no closing slash: index, subject or group, program.
+SC = "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog"
+sc_kids = C.child_pages(C.child_base(SC + "/credit-programs", "smartcatalog"),
+                        [{"href": SC + "/credit-programs/accounting-acct"}, {"href": SC + "/credit-courses/acct-accounting"},
+                         {"href": SC + "/what-are-your-options"}, {"href": SC + "/credit-programs"}], SC)
+sc_prog = C.child_pages(C.child_base(SC + "/credit-programs/accounting-acct", "smartcatalog"),
+                        [{"href": SC + "/credit-programs/accounting-acct/accounting-associate-of-arts-degree"},
+                         {"href": SC + "/credit-programs"}], SC)
+check(sc_kids == [SC + "/credit-programs/accounting-acct"]
+      and sc_prog == [SC + "/credit-programs/accounting-acct/accounting-associate-of-arts-degree"],
+      "a SmartCatalog page's children are read beneath its address, never its course pages: %r" % [sc_kids, sc_prog])
+check(C.child_pages(C.child_base(SC + "/credit-programs", None), [{"href": SC + "/credit-programs/accounting-acct"}], SC) == []
+      and C.child_base(SC + "/credit-programs", "courseleaf") == SC + "/credit-programs",
+      "another platform's page without a closing slash still reads no children")
 
 if failures:
     print("FAIL: %d" % len(failures))
