@@ -1,0 +1,1307 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "reread_run": "39116228298",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39115770293",
+ "at": "2026-10-18T09:40:47Z",
+ "posted": 5,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "02907",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02926",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08469",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08493",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24136",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24459",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36231",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36965",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41014",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44055",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 5,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "08474",
+  "30963",
+  "31082",
+  "31090",
+  "31280"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Los Angeles Trade Technical College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39115770293;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 22,
+    "placed": 14,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "OPMAINT 228",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "OPMAINT 229",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "MAJOR ELECTIVES",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BLDGCTQ 007",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 008",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 009",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 014",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 102",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 111A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CRPNTRY 241",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMNT 100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMT 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMT 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMT 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECONMT 173",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMT 174",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 181",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMT 182",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PLUMBNG 028",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PLUMBNG 031",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PLUMBNG 145",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 159",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 160",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 161",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 162",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 164",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 165",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 176",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 177",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 187",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 188",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 202",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 203",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 204",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 208",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 199",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 101",
+        "units": 9,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 123",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 124",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 133",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 134",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 135",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "REF A/C 201",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 24,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "General maintenance and repair workers",
+      "general maintenance worker",
+      "general maintenance industry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify and describe the function of all major components of a high and low pressure boiler system utilizing technical manuals.",
+      "Perform calculations and measurements necessary in the operations and maintenance field in accordance with industry standards.",
+      "Troubleshoot a high and low pressure boiler system in utilizing appropriate materials and equipment, in accordance with industry safety standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 36,
+      "min": 36
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "OPERATION & MAINTENANCE ENGINEERING: STEAM PLANT — Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 36,
+   "total_min": 36,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Operation & Maintenance Engineering: Steam Plant",
+   "control_number": "08474"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 15,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": 36,
+       "min": 34
+      },
+      "courses": [
+       {
+        "code": "ECONMT 100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BLDGCTQ 102",
+          "units": 2,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 116",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECONMT 173",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 129",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ELECL 601",
+        "units": 15,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "MAJOR ELECTIVES",
+      "rule": "choose_units",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ECONMT 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 205",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 215",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 165",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "occupations in the utility industry sector",
+      "transmission and distribution occupations"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Identify problems with overhead and underground powerline equipment and systems following established procedures and using a variety of troubleshooting techniques.",
+      "Analyze and solve routine technical problems related to electrical technology and power distribution by applying the principles of mathematics and science.",
+      "Install, maintain and remove power poles, transformers, structures and other utility equipment."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 43,
+      "min": 40
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "POWERLINE WORKER ▌ Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 43,
+   "total_min": 40,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Powerline Mechanic",
+   "control_number": "30963"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 12,
+    "placed": 11,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECONMT 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECONMT 173",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "MATH 115",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 111A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 129",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 111B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 165",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 116",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "entry level laborer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Students will perform solar thermal installations and maintenance work utilizing hand and power tools.",
+      "Students will certify the proper and safe operation of solar thermal systems utilizing proper test equipment.",
+      "Students will analyze solar thermal problems and efficiency with the measurement of temperatures, pressures and flow rates."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 30,
+      "min": 30
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "SOLAR THERMAL INSTALLATION & MAINTENANCE ▌ Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 30,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Solar Thermal Installation and Maintenance",
+   "control_number": "31082"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 21,
+    "placed": 19,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses - Semester I",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECONMT 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 116",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECONMT 173",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "MATH 115",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Courses - Semester II",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECONMT 129",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 148",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Courses - Semester III",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "REF A/C 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 007",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 008",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Courses - Semester IV",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BLDGCTQ 009",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 012",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PLUMBING 028",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Major Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ECONMT 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 205",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 165",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 921",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "residential and commercial renewable energy-related occupations",
+      "renewable energy and/or energy efficiency occupations"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Use energy efficiency diagnostic tools such as door blowers and duct blasters to determine air infiltration into buildings.",
+      "Calculate energy usage in terms of electrical, mechanical and heat energy units.",
+      "Recommend alternative energy methods to reduce utility costs and provide green energy substitutes for fossil fuel energy forms."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 40
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ENERGY EFFICIENCY TECHNICIAN",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 40,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Energy Efficiency Technician",
+   "control_number": "31090"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 25,
+    "placed": 15,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": 38,
+       "min": 36
+      },
+      "courses": [
+       {
+        "code": "ECONMT 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 116",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECONMT 173",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "MATH 115",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BLDGCTQ 102",
+          "units": 2,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 129",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGTCQ 014",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECONMT 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 111B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 205",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BLDGCTQ 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECONMT 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "Plumbing 028",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CRPNTRY 148",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "MAJOR ELECTIVES",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "REF A/C 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REF A/C 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "solar energy"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Use hand and power tools, testing equipment, and P.P.E required for performing solar (PV) installation and maintenance work in accordance with industry standards.",
+      "Perform solar (PV) installation and maintenance work utilizing hand and power tools, testing equipment, and other P.P.E. in accordance to industry standards.",
+      "Function effectively individually and as a member of a technical team to execute energy efficiency operations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 40
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "PHOTO VOLTAIC (PV) SOLAR INSTALLATION & MAINTENANCE Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 40,
+   "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39054673977,
+   "program_title": "Photo Voltaic (PV) Solar Installation & Maintenance",
+   "control_number": "31280"
+  }
+ ]
+}
