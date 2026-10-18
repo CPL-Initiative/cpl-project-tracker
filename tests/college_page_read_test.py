@@ -191,6 +191,19 @@ check(not cpr.network_kept("https://www.google-analytics.com/collect", "fetch", 
       "a call to another host is never kept")
 check(not cpr.network_kept("https://rccd.curriqunet.com/Content/site.css", "stylesheet", page_url),
       "a stylesheet or image is not a data call")
+# S411: Merced's Coursedog catalog (catalog.mccd.edu) fetches its PDF from app.coursedog.com.
+mc_url, mc_pdf = "https://catalog.mccd.edu/programs", "https://app.coursedog.com/api/v1/ca/pdf-reports/catalogs/x"
+check(cpr.network_kept(mc_pdf, "fetch", mc_url, ("app.coursedog.com",))
+      and not cpr.network_kept(mc_pdf, "fetch", mc_url)
+      and not cpr.network_kept("https://cdn.coursedog.com/a.json", "fetch", mc_url, ("app.coursedog.com",))
+      and not cpr.network_kept("https://app.coursedog.com/logo.png", "image", mc_url, ("app.coursedog.com",)),
+      "a vendor host the plan names is kept, only its data calls, and no other host of the vendor's")
+for path in plans:
+    name, plan = os.path.basename(path), json.load(open(path))
+    for p in plan["pages"]:
+        for h in p.get("network_hosts") or []:
+            check(h.lower() in {x.lower() for x in plan.get("outside_hosts") or {}},
+                  "%s: a network host (%s) is one the plan names with its reason" % (name, h))
 
 
 class _Req:

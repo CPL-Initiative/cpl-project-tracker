@@ -1,0 +1,45 @@
+{
+ "_readme": "Merced College's Coursedog catalog (S411, SkySotol). The catalog sits on catalog.mccd.edu and its scripts fetch the program list and a whole-catalog PDF from app.coursedog.com, which a read kept to the page's own domain never printed (run 39077970234, S409). Hartnell's catalog fetched its PDF address from app.coursedog.com's pdf-reports/catalogs/<catalogId> call; this read keeps that host's data calls so Merced's PDF address and catalogId print, and the reader requests nothing beyond what the pages' own scripts fetch.",
+ "college": "Merced College",
+ "outside_hosts": {
+  "app.coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu fetch the program list and the PDF address from it; the read keeps those responses and requests nothing of its own there."
+ },
+ "questions": {
+  "pdf_address": "The whole-catalog PDF's address and the catalogId the catalog's scripts fetch it by.",
+  "program_codes": "How the program search names each program (title, code, award), to check the PDF's Title - CODE headings against."
+ },
+ "keywords": [
+  "pdf-reports",
+  "\\.pdf",
+  "catalogId",
+  "coursedog-pdfs",
+  "programs/search",
+  "[Dd]ownload"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "pdf_address",
+    "program_codes"
+   ],
+   "url": "https://catalog.mccd.edu/",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "links": "pdf|download|print|programs"
+  },
+  {
+   "answers": [
+    "pdf_address",
+    "program_codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "links": "pdf|download|print"
+  }
+ ]
+}

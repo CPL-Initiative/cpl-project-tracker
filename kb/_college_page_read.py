@@ -22,7 +22,9 @@ may also submit one of its
 forms (a public search such as a class schedule, never a sign-in): robots.txt
 for the form's action first, the same delay, and the fields it sent printed.
 A page with "network": true also prints the data its own scripts fetched from
-its own host while it loaded (no request of the reader's own).
+its own host while it loaded (no request of the reader's own), and from each
+vendor host its "network_hosts" names (a catalog on the college's domain whose
+scripts call the vendor's: Merced's catalog.mccd.edu calls app.coursedog.com).
 
 Usage (runner): python3 kb/_college_page_read.py kb/college_reads/cerritos_ironworker_ladder.json
 """
@@ -361,17 +363,21 @@ NETWORK_CAP = 40         # responses printed per page
 NETWORK_BODY = 1500      # characters of each body printed
 
 
-def network_kept(url: str, resource_type: str, page_url: str) -> bool:
-    """A fetch or XHR the page made to its own host."""
-    return resource_type in ("xhr", "fetch") and same_site(url, page_url)
+def network_kept(url: str, resource_type: str, page_url: str, hosts: tuple = ()) -> bool:
+    """A fetch or XHR the page made to its own host, or to a vendor host the plan
+    names. Merced's Coursedog catalog sits on catalog.mccd.edu and fetches its
+    program list and its PDF from app.coursedog.com, so a read kept to the page's
+    own domain printed none of those calls (run 39077970234, S409)."""
+    host = (urllib.parse.urlparse(url).hostname or "").lower()
+    return resource_type in ("xhr", "fetch") and (same_site(url, page_url) or host in hosts)
 
 
-def network_listen(page, page_url: str) -> tuple[list, object]:
+def network_listen(page, page_url: str, hosts: tuple = ()) -> tuple[list, object]:
     got: list = []
 
     def on_response(resp):
         try:
-            if network_kept(resp.url, resp.request.resource_type, page_url) and len(got) < NETWORK_CAP:
+            if network_kept(resp.url, resp.request.resource_type, page_url, hosts) and len(got) < NETWORK_CAP:
                 got.append(resp)
         except Exception:
             pass
@@ -394,13 +400,13 @@ def network_read(got: list) -> list[dict]:
 
 
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
-             rows: str | None = None, network: bool = False) -> dict:
+             rows: str | None = None, network: bool = False, network_hosts: tuple = ()) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
     out = {"url": url}
     if not is_pdf(url):
-        heard, listener = network_listen(reader.page, url) if network else ([], None)
+        heard, listener = network_listen(reader.page, url, network_hosts) if network else ([], None)
         got = reader.load(url)
         out.update({k: got.get(k) for k in ("status", "final_url", "content_type",
                                              "access", "error", "title")})
@@ -553,7 +559,8 @@ def main(argv: list[str] | None = None) -> int:
                     rec = read_one(reader, url, pattern, cache,
                                    expand=bool(target.get("expand")) and not parent,
                                    rows=None if parent else target.get("rows"),
-                                   network=bool(target.get("network")) and not parent)
+                                   network=bool(target.get("network")) and not parent,
+                                   network_hosts=tuple(h.lower() for h in target.get("network_hosts") or ()))
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent
