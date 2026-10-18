@@ -18,7 +18,8 @@ beside the reader change (merge it once `test` passes if it is still open). If t
 None to this session: his opening line only. At 19:08Z he wrote to Session 417 in its chat: *"Commons looks good.
 Just make sure I can collapse each and we have a collapse all button."* S417 heard it first-hand and built it (the
 mock-up's version 4, #2239); the ruling is `cpl_memory` `sam-approves-commons-mockup-collapse-2026-10-18` (verified;
-S418's duplicate is superseded in #2240). No sheet is open; Sheet 96 (https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui)
+S418's duplicate is superseded in #2240). At 20:03Z, again to S417: *"Keep the count and meter when collapsed."* The fold as built
+stands (a collapsed row keeps its title, words, count and meter); the same row carries both rulings. No sheet is open; Sheet 96 (https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui)
 is the latest answered. Rulings in force from today: Sheet 94 (apply, save, retire, keep), Sheet 95 (build the Commons in
 order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep), and the mock-up approval above.
 
