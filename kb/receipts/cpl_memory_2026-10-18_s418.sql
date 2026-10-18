@@ -48,3 +48,16 @@ values
  'SkyMadroneS418', '2026-10-18', 'proposed')
 on conflict (slug) do nothing
 returning slug;
+
+-- 19:12Z: Sam's Commons ruling, relayed verbatim by S417 (first-hand session) at 19:08Z. Idempotent on slug.
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, affects, source, related, author, event_date, status, verified_by, verified_at)
+values ('sam-commons-mockup-approved-collapse-controls-2026-10-18', 'decision', 'cpl',
+ 'Sam approved the Commons mock-up and asked for per-row collapse and a collapse-all control',
+ 'Sam, 17:31Z 2026-10-18, in chat to S417: "Commons looks good. Just make sure I can collapse each and we have a collapse all button." The revised mock-up (version 3, artifact JmaUvTxUqqrL4aPaq2rizi) stands as the Commons row; S417 builds per-row collapse and a collapse-all control on claude/s417-commons-collapse and owns the mock-up file and artifact from 19:08Z.',
+ 'Relayed verbatim by S417 SkyManzanita''s cross-session message to S418 at 19:08Z. S418 recorded it in docs/reference/lanes/commons.md, section 11''s Commons row, kb/queue_status.json and handoff 419. The lane''s step 1 (the shared Progress module) follows the collapse PR; the collapse pattern belongs in the shared row component.',
+ 'Sam liked the Commons page and wants each row to fold shut, plus one control that folds them all.',
+ array['commons'], array['docs/visuals/2026-10-18-commons-mockup.html'],
+ 'Sam in chat to S417 SkyManzanita, 2026-10-18 17:31Z (verbatim), relayed to S418 by S417''s cross-session message at 19:08Z', array['sam-sheet-95-rulings-2026-10-18','commons-mockup-revised-s417-2026-10-18'],
+ 'Sam Lee', '2026-10-18', 'verified', 'Sam Lee', now())
+on conflict (slug) do nothing
+returning slug;

@@ -1,22 +1,16 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T18:15:53Z",
+  "written_at": "2026-10-18T19:11:28Z",
   "session": 418,
   "moniker": "SkyMadrone",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_419_handoff.md",
   "next_step": {
-    "title": "Hand Sam the Commons mock-up, read the first unattended saving night, then the shared Progress module",
-    "text": "Hand Sam the Commons mock-up at version 3 (its three asks are on the page) and read his reactions. Read the nightly cer-procedures run of 07:47Z, the first saving night with no one watching: its receipt in kb/cer_procedures_out/saved/ and the morning fold's applied.json. Then the Commons step 1, the shared Progress module lifted out of program_requirements.js with one status file per project and nothing changing on screen, its 417 checks guarding the lift."
+    "title": "Read the first unattended saving night, then the shared Progress module after the collapse controls land",
+    "text": "Read the nightly cer-procedures run of 07:47Z, the first saving night with no one watching: its receipt in kb/cer_procedures_out/saved/ and the morning fold's applied.json. Session 417 is adding per-row collapse and a collapse-all control to the Commons mock-up Sam approved; once that lands, the Commons step 1, the shared Progress module lifted out of program_requirements.js with one status file per project and nothing changing on screen, its 417 checks guarding the lift."
   },
-  "calls": [
-    {
-      "title": "The Commons mock-up, version 3, waits on Sam's look",
-      "text": "Five reference rows in the Program Requirements shape with today's figures; the page asks whether this is the row, whether the starting order is right, and agrees that each definition of complete becomes a card when its Progress view is built. On no reply the build proceeds on the mock-up's row shape and starting order.",
-      "link": "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi"
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
@@ -92,6 +86,10 @@
     {
       "at": "2026-10-18T18:10:00Z",
       "text": "The Commons mock-up at version 3: Sheet 96 answered in the CER row, the two runs recorded, the Exhibit pair re-measured at 1,729 of 4,915 titles stamped."
+    },
+    {
+      "at": "2026-10-18T17:31:00Z",
+      "text": "Sam approved the Commons mock-up and asked for per-row collapse and a collapse-all control; Session 417 builds it."
     }
   ],
   "headline": [

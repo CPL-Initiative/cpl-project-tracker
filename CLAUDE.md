@@ -795,7 +795,7 @@ stays here.
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
 | **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · 114 colleges hold records; the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
-| **The Commons** | One tracking system for every common reference (Program Requirements, Exhibit, Course, CR), aligned dashes, and a Commons dash ordered by priority and completion. | 🔨 mock-up v3 published, waiting on Sam's look — [lane state](docs/reference/lanes/commons.md) |
+| **The Commons** | One tracking system for every common reference (Program Requirements, Exhibit, Course, CR), aligned dashes, and a Commons dash ordered by priority and completion. | 🔨 mock-up approved by Sam 2026-10-18; per-row collapse and a collapse-all control in progress (S417) — [lane state](docs/reference/lanes/commons.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

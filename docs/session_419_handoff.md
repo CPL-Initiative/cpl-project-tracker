@@ -17,7 +17,8 @@ beside the lane records (merge it once `test` passes if it is still open). If th
 
 None in chat: his opening line only. His ruling arrived through Open Asks Sheet 96's store at 17:23:15Z, card 1
 **keep**, his own call: a rule procedure's settlement saves at the rule's word, the course-identity rule's 0.8 included.
-No sheet is open; Sheet 96 (https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui) is the latest answered, Sheet 95
+At 17:31Z he wrote to Session 417 in its chat: *"Commons looks good. Just make sure I can collapse each and we have a
+collapse all button."* No sheet is open; Sheet 96 (https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui) is the latest answered, Sheet 95
 before it (14:43Z). Rulings in force from today: Sheet 94 (apply, save, retire, keep), Sheet 95 (build the Commons in
 order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep).
 
@@ -44,7 +45,8 @@ order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep).
 - **The Commons mock-up at version 3** (https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi, source
   `docs/visuals/2026-10-18-commons-mockup.html`): the CER row reads Sheet 96 as answered with the sheet's link, both
   runs, and an Exhibit pair re-measured from the 17:50Z files (1,729 of 4,915; 2,441 credentials; 1,825 of 2,644
-  records). **Sam has not seen the page.**
+  records). **Sam saw it at 17:31Z and approved it, asking for per-row collapse and a collapse-all control; S417 builds
+  that on `claude/s417-commons-collapse` and owns the mock-up file and artifact from 19:08Z.**
 - **The UI pass: Letters** passes AA in both themes at both widths with no finding; it reads no dataset. Its pane's
   inline styles carried two raw hex values (a border and a fill), swapped for tokens in the sibling PR
   `claude/s418-letters-tokens` (both HTMLs, Rule 4). Recorded in `kb/ui_pass_ledger.json`. The same sweep shows **cpl-news** failing (a heading skip h2 to h4 at "Suggest a story";
@@ -64,11 +66,12 @@ order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep).
 3. **Subscriptions let go:** S418 dropped #2235's subscription at sign-off, held no other PR subscription (#2233
    merged), armed one check-in (18:18Z, fired) and one artifact watch (the Commons mock-up, armed by the republish);
    watch either yourself if you want it to wake you.
+4. **S417's collapse PR** (`claude/s417-commons-collapse`): S417 merges it and republishes the artifact from main's version 3.
+   Leave the mock-up file and artifact alone while it is open.
 
 ## Priority after that
 
-1. Hand Sam the Commons mock-up link (version 3; the page's three asks are its decision sheet for now) and read his
-   reactions; then the Commons step 1: the Progress view lifted out of `program_requirements.js` into a shared module
+1. After S417's collapse PR lands, the Commons step 1: the Progress view lifted out of `program_requirements.js` into a shared module
    with one status file per project, nothing changing on screen, its 417 checks guarding the lift.
 2. The harvest: Cañada's 11, Merced's 18, Taft's remaining arithmetic failures, Delta's 44.
 3. The next UI pass (`python3 scripts/ui_pass.py --next`), with cpl-news's two findings first.
