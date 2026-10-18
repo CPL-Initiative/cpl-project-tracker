@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
 /* Layout: one working column of reference rows in the Program Requirements Progress shape, a header that
-   says what the Commons is, and one control that sets the order. First Light v1.6 tokens, as the S411 mock-up. */
+   says what the Commons is, and the controls that set the order and fold the rows. First Light v1.6 tokens, as the S411 mock-up. */
 :root{
   --paper:#F4F2ED; --surface:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
   --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
@@ -47,6 +47,8 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
 .ref header h2{flex:1 1 240px}
 .ref header .acts{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
 .pair{display:grid;gap:6px}
+.detail{display:grid;gap:14px;margin-top:-8px}
+.detail[hidden]{display:none}
 .pair .n{font-size:clamp(1.3rem,2.6vw,1.7rem);font-family:var(--f-display);color:var(--text-strong);font-variant-numeric:tabular-nums;line-height:1.15}
 .pair .n small{font-family:var(--f-body);font-size:.95rem;color:var(--text-muted);font-weight:400}
 .meter{height:6px;border-radius:3px;background:var(--border);overflow:hidden;max-width:520px}
@@ -83,8 +85,9 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
     <p class="note">Mock-up for the Commons lane (Open Asks Sheet 95 card 1, Sam: "Yes, and include Common Subjects in the mix"). Figures are today's, 2026-10-18: the committed files of 16:00Z (the Exhibit row's of 17:50Z, after the first saving run and fold), the live tables at 16:35Z, the lane state. The build reads them live. In the build a count opens the list it totals in the reference's own tab; today no tab reads a list from its address, so each count here opens the tab at its top, and the deep link is a build item.</p>
   </header>
 
-  <div class="orderbar" role="group" aria-label="The order of the references">
-    <span class="note">The order is Sam's: priority first, then completion. Move a reference with the words on its row; the build keeps the order you set here, this page keeps it only in your browser.</span>
+  <div class="orderbar" role="group" aria-label="The controls for the list">
+    <span class="note">The order is Sam's: priority first, then completion. Move a reference with the words on its row; the build keeps the order you set here, this page keeps it only in your browser. Collapse folds a row to its count and meter, and the page remembers that the same way.</span>
+    <button class="word" type="button" id="foldall">Collapse all</button>
     <button class="word" type="button" id="reset">Back to the starting order</button>
   </div>
 
@@ -98,13 +101,15 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
           <a href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">Open the tab</a>
           <button class="word up" type="button" aria-label="Move Program Requirements up">Move up</button>
           <button class="word down" type="button" aria-label="Move Program Requirements down">Move down</button>
+          <button class="word fold" type="button" aria-label="Collapse Program Requirements" aria-expanded="true" aria-controls="detail-requirements">Collapse</button>
         </span>
       </header>
       <div class="pair">
         <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">11,621</a> <small>of</small> 20,282 <small>complete at 113 colleges</small></p>
         <div class="meter" role="img" aria-label="11,621 of 20,282 complete"><i style="width:57.3%"></i></div>
-        <p class="def">Complete: an active program in COCI whose record passes the three machine checks, every listed course placed, none added, the units adding up.<span class="test">machine-checked</span></p>
       </div>
+      <div class="detail" id="detail-requirements">
+        <p class="def">Complete: an active program in COCI whose record passes the three machine checks, every listed course placed, none added, the units adding up.<span class="test">machine-checked</span></p>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
@@ -135,6 +140,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </div>
 
       </div>
+      </div>
     </li>
 
     <li class="ref" data-key="exhibit">
@@ -145,13 +151,15 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
           <a href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">Open the tab</a>
           <button class="word up" type="button" aria-label="Move Common Exhibit Reference up">Move up</button>
           <button class="word down" type="button" aria-label="Move Common Exhibit Reference down">Move down</button>
+          <button class="word fold" type="button" aria-label="Collapse Common Exhibit Reference" aria-expanded="true" aria-controls="detail-exhibit">Collapse</button>
         </span>
       </header>
       <div class="pair">
         <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">1,729</a> <small>of</small> 4,915 <small>titles carry a review stamp; 2,441 credentials</small></p>
         <div class="meter" role="img" aria-label="1,729 of 4,915 titles carry a review stamp"><i style="width:35.2%"></i></div>
-        <p class="def">Complete: a title carrying a review stamp under a credential (645 stamps are a person's, 1,084 a cohort's: 158 from one day, 2026-07-07, and 926 the procedures saved today), or one a procedure settled and saved. The 4,915 is the reference as written after today's fold: 605 of its titles have left MAP's current data, and the 396 still in the queue (1,498 before the fold) stand outside it. At the credential unit, 1,825 of 2,644 records carry a stamp. A merge or a rename can reopen a title, where a machine check stands until the data changes.<span class="test">curator-stamped</span><span class="test">procedure-settled</span></p>
       </div>
+      <div class="detail" id="detail-exhibit">
+        <p class="def">Complete: a title carrying a review stamp under a credential (645 stamps are a person's, 1,084 a cohort's: 158 from one day, 2026-07-07, and 926 the procedures saved today), or one a procedure settled and saved. The 4,915 is the reference as written after today's fold: 605 of its titles have left MAP's current data, and the 396 still in the queue (1,498 before the fold) stand outside it. At the credential unit, 1,825 of 2,644 records carry a stamp. A merge or a rename can reopen a title, where a machine check stands until the data changes.<span class="test">curator-stamped</span><span class="test">procedure-settled</span></p>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
@@ -182,6 +190,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </div>
 
       </div>
+      </div>
     </li>
 
     <li class="ref" data-key="course">
@@ -193,13 +202,15 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
           <a href="https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html">SkyView</a>
           <button class="word up" type="button" aria-label="Move Common Course Reference up">Move up</button>
           <button class="word down" type="button" aria-label="Move Common Course Reference down">Move down</button>
+          <button class="word fold" type="button" aria-label="Collapse Common Course Reference" aria-expanded="true" aria-controls="detail-course">Collapse</button>
         </span>
       </header>
       <div class="pair">
         <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">3,208</a> <small>of</small> 27,581 <small>cards the auditor scores 0.85 or better</small></p>
         <div class="meter" role="img" aria-label="3,208 of 27,581 cards at 0.85 or better"><i style="width:11.6%"></i></div>
-        <p class="def">Complete: a card the auditor scores 0.85 or better; 17,033 sit at needs review, 7,334 at needs repair, 6 not ready. 14,511 cards carry a discipline no seed has touched, which caps them at 0.79, so this tier measures discipline curation and moves with the Common Subjects row.<span class="test">scored by the auditor</span></p>
       </div>
+      <div class="detail" id="detail-course">
+        <p class="def">Complete: a card the auditor scores 0.85 or better; 17,033 sit at needs review, 7,334 at needs repair, 6 not ready. 14,511 cards carry a discipline no seed has touched, which caps them at 0.79, so this tier measures discipline curation and moves with the Common Subjects row.<span class="test">scored by the auditor</span></p>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
@@ -230,6 +241,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </div>
 
       </div>
+      </div>
     </li>
 
     <li class="ref" data-key="cr">
@@ -240,14 +252,16 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
           <a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">Open the tab</a>
           <button class="word up" type="button" aria-label="Move Common CR Reference up">Move up</button>
           <button class="word down" type="button" aria-label="Move Common CR Reference down">Move down</button>
+          <button class="word fold" type="button" aria-label="Collapse Common CR Reference" aria-expanded="true" aria-controls="detail-cr">Collapse</button>
         </span>
       </header>
       <div class="pair">
         <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">156</a> <small>of</small> 2,159 <small>groups collapsed by a rung-1 to 4 rule</small></p>
         <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">30</a> <small>groups a curator decided: the 2026-09-20 sitting, 51 verdicts reaching 1,184 of 9,413 rows by its receipt</small></p>
         <div class="meter" role="img" aria-label="156 of 2,159 groups collapsed by rule"><i style="width:7.2%"></i></div>
-        <p class="def">Complete: a group of recommendation wordings with a decision, by one of the four automatic rungs or by a curator. The two counts stay apart because a curator's decision lives in its own table. Most of the rest is a curator's judgment no matcher reaches.<span class="test">assigned by rung</span><span class="test">curator-decided</span></p>
       </div>
+      <div class="detail" id="detail-cr">
+        <p class="def">Complete: a group of recommendation wordings with a decision, by one of the four automatic rungs or by a curator. The two counts stay apart because a curator's decision lives in its own table. Most of the rest is a curator's judgment no matcher reaches.<span class="test">assigned by rung</span><span class="test">curator-decided</span></p>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
@@ -276,6 +290,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </div>
 
       </div>
+      </div>
     </li>
 
     <li class="ref" data-key="subjects">
@@ -286,13 +301,15 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
           <a href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">Open the tab</a>
           <button class="word up" type="button" aria-label="Move Common Subjects Reference up">Move up</button>
           <button class="word down" type="button" aria-label="Move Common Subjects Reference down">Move down</button>
+          <button class="word fold" type="button" aria-label="Collapse Common Subjects Reference" aria-expanded="true" aria-controls="detail-subjects">Collapse</button>
         </span>
       </header>
       <div class="pair">
         <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">122</a> <small>of</small> 147 <small>disciplines carry a curator-confirmed subject code</small></p>
         <div class="meter" role="img" aria-label="122 of 147 disciplines confirmed"><i style="width:83%"></i></div>
-        <p class="def">Complete: a discipline whose four-letter subject code a curator confirmed: 111 by a person, 11 by a session cohort under the doctrine. Sam's addition to the Commons; the smallest universe here, and the one the course identities key on.<span class="test">curator-confirmed</span></p>
       </div>
+      <div class="detail" id="detail-subjects">
+        <p class="def">Complete: a discipline whose four-letter subject code a curator confirmed: 111 by a person, 11 by a session cohort under the doctrine. Sam's addition to the Commons; the smallest universe here, and the one the course identities key on.<span class="test">curator-confirmed</span></p>
       <div class="cells">
         <div class="cell">
           <h3>Where it stands</h3>
@@ -322,6 +339,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
         </div>
 
       </div>
+      </div>
     </li>
   </ol>
 
@@ -337,6 +355,7 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
 
   <section class="asks" aria-labelledby="asks-h">
     <h2 id="asks-h">What this asks of Sam</h2>
+    <p class="note">Sam, 2026-10-18 19:08Z: "Commons looks good. Just make sure I can collapse each and we have a collapse all button." Each row now collapses on its own word and Collapse all folds the page (S417).</p>
     <ol>
       <li>Is this the row? Five cells after the pair: where it stands, known issues by owner, settled procedures with the calls under them, and the two stamps.</li>
       <li>Is the starting order right: Program Requirements, Exhibit, Course, CR, Subjects? The words on each row move it, and the build keeps what you set.</li>
@@ -368,10 +387,40 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
     });
   }
   function current() { return Array.prototype.map.call(list.children, function (li) { return li.getAttribute("data-key"); }); }
+  var FOLD = "commons-mockup-fold.v1";
+  var foldAll = document.getElementById("foldall");
+  function readFold() { try { var v = JSON.parse(localStorage.getItem(FOLD)); return Array.isArray(v) ? v : []; } catch (e) { return []; } }
+  function saveFold(keys) { try { localStorage.setItem(FOLD, JSON.stringify(keys)); } catch (e) {} }
+  function setFold(li, collapsed) {
+    li.querySelector(".detail").hidden = collapsed;
+    li.classList.toggle("collapsed", collapsed);
+    var b = li.querySelector(".fold");
+    b.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    b.setAttribute("aria-label", (collapsed ? "Expand " : "Collapse ") + li.querySelector("h2").textContent);
+    b.textContent = collapsed ? "Expand" : "Collapse";
+  }
+  function folded() {
+    return Array.prototype.filter.call(list.children, function (li) { return li.classList.contains("collapsed"); })
+      .map(function (li) { return li.getAttribute("data-key"); });
+  }
+  function syncFoldAll() { foldAll.textContent = folded().length === list.children.length ? "Expand all" : "Collapse all"; }
+  foldAll.addEventListener("click", function () {
+    var every = folded().length === list.children.length;
+    Array.prototype.forEach.call(list.children, function (li) { setFold(li, !every); });
+    saveFold(folded());
+    syncFoldAll();
+  });
   list.addEventListener("click", function (e) {
     var b = e.target.closest("button.word");
     if (!b) return;
     var li = b.closest(".ref");
+    if (b.classList.contains("fold")) {
+      setFold(li, !li.classList.contains("collapsed"));
+      saveFold(folded());
+      syncFoldAll();
+      b.focus();
+      return;
+    }
     if (b.classList.contains("up") && li.previousElementSibling) list.insertBefore(li, li.previousElementSibling);
     else if (b.classList.contains("down") && li.nextElementSibling) list.insertBefore(li.nextElementSibling, li);
     renumber();
@@ -381,5 +430,8 @@ button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:defaul
   document.getElementById("reset").addEventListener("click", function () { apply(start); save(start); });
   var saved = read();
   if (saved) apply(saved); else renumber();
+  var fold = readFold();
+  Array.prototype.forEach.call(list.children, function (li) { setFold(li, fold.indexOf(li.getAttribute("data-key")) >= 0); });
+  syncFoldAll();
 })();
 </script>
