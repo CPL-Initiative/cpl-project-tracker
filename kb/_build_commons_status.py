@@ -245,8 +245,10 @@ def row_course(root):
     ]
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open the tab"},
-                  {"href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", "text": "SkyView"}],
+        # The CCR is SkyView (Sam, 2026-10-18 20:40Z: "the CCR should be the same as SkyView now"): the row
+        # opens the map; the list tab, where the auditor's columns are, stays one word away and takes the counts.
+        "links": [{"href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", "text": "Open SkyView"},
+                  {"href": tab, "text": "The list"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"

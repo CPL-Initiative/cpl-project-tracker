@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-18T20:25:07Z",
+ "written_at": "2026-10-18T20:40:05Z",
  "rows": [
   {
    "key": "requirements",
@@ -158,12 +158,12 @@
    "tab": "#unified-courses",
    "links": [
     {
-     "href": "#unified-courses",
-     "text": "Open the tab"
+     "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "text": "Open SkyView"
     },
     {
-     "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
-     "text": "SkyView"
+     "href": "#unified-courses",
+     "text": "The list"
     }
    ],
    "status_file": null,
