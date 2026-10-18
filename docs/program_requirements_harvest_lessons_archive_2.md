@@ -757,3 +757,166 @@ on the college's harvest-tab row and My College to-dos; the MAP team sends.
 
 **NEXT.** The Acalog reader once Sunday's census apply moves Palo Verde's registry row; then Palo Verde's records re-read
 from 2026-27 and its course outcomes. The other 71 listed addenda wait for the reader to reach their colleges.
+
+<!-- S389-S393, moved verbatim from docs/program_requirements_harvest_lessons.md by the S419 compaction (2026-10-18) -->
+
+## S389 SkyPersimmon (2026-10-14): record shape 5, the re-read path, Southwestern loaded, and an Acalog reader
+
+**Sam's rulings this run.** Open Asks Sheet 78 (11:18Z): card 1 *Extract both* (Southwestern and Fresno City), card 2 *Record both figures*. In chat (~12:55Z): *"go ahead with Palo Verde's 19 now too"*. The greeting named S388, which the CPL Queue routine had already run; this session took S389 from handoff 389.
+
+- **Record shape 5 (#2110).** `program.degree_total`, `program.ge_units` and `program.electives_fill_degree`, each as printed. With no major total, the scorer adds blocks, open electives and general education against the degree total (`against: "degree"`); with electives filling the rest, both ends must fit under the total and `fill` names their units. Extraction function v7 and Sierra deployed from main (runs 38563081939, 38563093048).
+- **The re-read path (#2111).** `program_requirement_records_college_reread()` replaces a row only while unchecked, unread by a person and from an earlier run; the receipt holds every before-value. Applied by supabase-migrate (run 38560296996). `force=incomplete` re-extracts the incomplete records that place a course; `step=reread` posts the newest run's records.
+- **Palo Verde's 19 (#2114):** run 38567765687, $1.47, the same pages; replaced by run 38569469816. 11 equal against the degree total; 8 unequal: five transfer degrees print *Total 60* and no elective line (the major and CalGETC come to 52-59), two sum past 60 (courses counted for both the major and CalGETC), and Automotive 04436 recorded a 34-35 major total its 37-38 blocks miss.
+- **Cabrillo's 55 (#2115):** run 38565227455, $6.13, the same pages; replaced by run 38570011602. 13 equal, 42 unequal. Most of the 42 read 57-60 against 60: a major whose choices run (18-21) with general electives printed as a range that takes up the rest; the record keeps `open_elective_units` as one number. The page adds up; the record lost the electives' range. Two questions for Sam (Sheet 79): count a degree total inside the computed span as adding up, and count a transfer degree's 60 as filled by the electives the statute provides when the page prints none.
+- **Southwestern (#2115):** run 38563578596, 220 extracted, $13.77, 162 pass; load 38570038760 inserted 190 (30 place none). Dated reads gain Southwestern (3 MAP codes) and Fresno City (2). Display build `361c9f120c6f`. Fresno City's run 38563582873 was still extracting at the checkpoint.
+- **An Acalog reader (#2112, open).** El Camino: catoid 13, no site map, six program menus; 124 of 135 programs with a list found a page, 94 at full coverage (run 38565658064). Two fixes on the way: read the catalog over the scheme its own links use (El Camino serves http only; an https load of every menu was *unreachable*), and report each menu's title, links and a sample. San Joaquin Delta's capture dispatched.
+- **COCI Lookup UI pass (#2113).** Dark mode failed three ways (CSV control 1.29:1, chips 1.2:1, six filters with no focus ring); controls became underlined words, chips paint no fill.
+
+**What went wrong.**
+- **The pilot extraction ran on a push.** #2110 changed `kb/_program_requirements_extract.py`, the S361 guard (the script differs from main's) let the whole pilot run against function v6: 20 programs, about $1.6 nobody asked for (run 38560251804; it wrote nothing). A push now also needs a commit message starting with `[extract]`.
+- **Card 2 cost $7.60 against Sam's "about $6".** Cabrillo's pages are long: $0.11 a program, not $0.07.
+- **A generated file goes stale after any code commit,** not only the first: #2112's lints went red on the second Acalog commit. Run `scripts/check_generated.sh` before every push.
+- **Restacking a branch:** `git rebase onto` replays the old base commit; use `git rebase --onto <new> <old>`.
+
+**Patterns that worked.** Verify a re-read by diffing each record's `source_url`, coverage and arithmetic against main before posting it. One display build after several loads. A capture-only run with diagnostics in the report (each menu's title, links and a sample) turned two failed Acalog runs into fixes without a page-read plan.
+
+## S390 SkySaguaro (2026-10-14): San Joaquin Delta's Acalog capture
+
+- **San Joaquin Delta captures through the Acalog reader** (run 38569401921, capture only, 250 loads, 25 min): catoid 14,
+  no site map (404), three program menus. 203 of 233 programs with a list found a page, 125 at full coverage, 58 at
+  0.8-1.0, 20 at 0.5-0.8; 24 found none and 6 lost their page to a fuller program. On 15 of the 24 the best page
+  names none of the listed courses: six apprenticeship options, the two psychiatric technician programs, three
+  digital media certificates and four newer programs (45193-45195, 45583). Above Sheet 59's 85% bar.
+- **Its registry row names no catalog year, and the reader reads none from the page.** Extraction stamps
+  `catalog_year` from the registry, so Delta's records would carry none. Read the year from the catalog's own page into
+  the capture report before Delta extracts. El Camino's row names 2026-2027.
+
+## S390 SkySaguaro (2026-10-14): Southwestern and Fresno City to display, the SLO links, the Records filters
+
+**Sam's rulings this run.** In chat: the harvested SLOs need *"a link to them on each course listing"*; *"no scrub needed"* and
+*"my email is fine to have public"* (the tabled line); and the Program requirements tab loses its Sierra window, opens on
+Progress, and filters Records with dropdowns, adding CIP Sectors and SWP Regions (`cpl_memory` rows of 2026-10-14).
+
+- **#2115 merged:** Southwestern's procedure record v1 (receipt `program_source_procedure_southwestern_v1_2026-10-14_s390.sql`).
+- **Fresno City (#2120):** load 38584860918 inserted 211 (26 place none); display build `04872c826890` applied to all 3,478 rows
+  (run 38591098013); procedure record v1. A `step=display` dispatch applies the build the page already carries and builds
+  nothing: build with `kb/_build_roep_display.py` first. A canceled re-apply of the old build wrote identical values.
+- **SLO links (#2116):** the records print codes without a space (`PSYCH35`) and the outlines with one (`PSYCH 35`); joined on
+  a key without spaces or hyphens, 7,018 of 8,352 record courses find outcomes, against 4,141 on the exact code.
+- **The Records filters (#2121):** every record's control number is in `coci_college_programs`; 3,306 of 3,478 carry a CIP.
+  `map_colleges.swp_region` names nine regions. A full re-render on a late read wipes the view's status line; add the late
+  filter in place instead.
+- **Main went red on PII (#2117):** the 14:38Z daily run baked a reviewer's email into the tabled line; `pii_guard` failed
+  every PR's merge ref. The generator and the live render now print the date only.
+- **A test that reports on a fixed timer under-counts on a loaded runner** (`nav_groups_overlay`, 30 of 31): report on
+  `Promise.all` of its blocks (in #2116).
+
+**NEXT.** El Camino's extraction waits on Sheet 79 card 3; San Joaquin Delta needs its catalog year read before it extracts.
+
+## S391 SkyJuniper (2026-10-14): San Joaquin Delta's catalog year
+
+- **An Acalog page names its catalog in a menu, and the year is in that option's words.** Every Acalog page carries a select of
+  the college's catalogs, current and archived, each option's value its catoid. Run 38615275825 read Delta's: nine catalogs, the
+  current one (catoid 14) *Summer 2026 - Summer 2027 College Catalog*, the rest *2025-2026 San Joaquin Delta College Catalog
+  [ARCHIVED CATALOG]* and older. Read the option for the catoid being read, never the newest year the menu lists.
+- **The census's year reader takes adjacent pairs only** (*2026-2027*, *2026-27*). A catalog named by its terms reads as nothing
+  there, so the first run filed no year. The Acalog picker also reads two years a word or two apart, the second the first plus one;
+  the census reader is unchanged. Re-run 38619208635 filed 2026-2027.
+- **The registry row still names no year.** The capture fills it in memory where the registry names none, so the records and the
+  capture report carry it; a registry year that differs from the page's is reported, never overwritten.
+- **Delta's page is out of the session's reach** (the proxy refuses `catalog.deltacollege.edu`), and a run's artifact downloads from
+  a host the proxy also refuses. Read a page through a capture-only dispatch and the report it files on the branch.
+
+**Moved from the lane (S391 compaction),** verbatim: The re-read path (S389): `program_requirement_records_college_reread()` replaces a row only while it is unchecked, no person has read it and an earlier run read it, and returns the before-values the receipt files (`kb/receipts/program_requirement_records_college_reread_<slug>_<run>.json`, the rollback); a read dispatched with `force=incomplete` extracts those records again though their pages are unchanged, and `step=reread` posts the newest run's records.
+
+**NEXT.** San Joaquin Delta's extraction is an ask (about $12 to $22 for 203 programs); El Camino's is Sheet 79 card 3, carried.
+
+## Moved from the lane (S392 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, Phase 2 paragraph:
+
+✅ **Sheet 78 (Sam, 2026-10-14 11:18Z) carried out:** Southwestern (#2115) and Fresno City (#2120) extracted, loaded unchecked and displayed; the 79 re-read under record shape 5. 🔨 **Record shape 5 (S389):** `program.degree_total` and `program.ge_units` keep what a page prints for the degree and its general education, `program.electives_fill_degree` says electives make up the rest with no figure; with no major total the scorer adds the blocks, open electives and general education against the degree total (`against: "degree"`; with electives filling, every end must fit and `fill` names their units). The display, CPL Pathways and Sierra name the degree total instead of saying the catalog prints none. Extraction function version 7 deploys from `main`. The re-read path (S389, #2111): a newer read replaces a record only while unchecked and unread by a person, with before-values in its receipt (lessons S389; `force=incomplete`, `step=reread`). ✅ **Palo Verde's 19 re-read (S389; Sam, ~12:55Z: *"go ahead with Palo Verde's 19 now too"*):** run 38567765687 ($1.47, the same pages, coverage unchanged), replaced by run 38569469816 (19 of 19; receipt `kb/receipts/program_requirement_records_college_reread_palo_verde_38569469816.json`). 11 now equal against the degree total; 8 unequal (why: lessons S389). The 2026-27 Acalog read replaces all 52 rows the same way. ✅ **Cabrillo's 55 re-read and replaced (S389):** read 38565227455 ($6.13, the same pages), re-read 38570011602 (55 of 55, receipt beside Palo Verde's). 13 equal against the degree total; 42 unequal (mostly 57-60 against 60: open electives printed as a range, kept as one number; lessons S389). ✅ **Southwestern loaded (S389, card 1):** run 38563578596 ($13.77, 220 extracted, 162 pass), load 38570038760 inserted 190 (30 place none). Five of the 79 place none of their courses and stay out. Santiago Canyon's listing has no links.
+
+## S392 SkyTamarack (2026-10-14): Sheet 81 carried out, the degree check, the reconcile pass, El Camino and San Joaquin Delta
+
+**Sam's rulings and words this run.** Open Asks Sheet 81 (20:22Z, all his own call): count, adt, extract, public, extract. In
+session, after confirming Cabrillo Astronomy (06326) and marking Biology (06328) Needs a fix: the confirm step is a probe for
+procedure gaps that retires as they close; a reconcile pass searches the catalog text again after the harvest; each catalog's
+procedure carries its own steps; and "Highlight the mismatches in units in the summary row" (`cpl_memory` rows of 2026-10-14).
+
+- **Sheet 81 cards 1 and 2 (#2127).** `degree_verdict()`: a degree total inside the computed span adds up (`within`); a transfer
+  degree with no electives on its record is filled by transferable electives (`transfer`, `fill`; Ed. Code 66746(a)).
+  `kb/_program_requirements_rescore.py` re-reads only how the filed sum meets the printed total, because the closed list and page
+  text stay with the run. 35 rescored (one more than the sheet counted: Cabrillo AS-T 35651). The live `checks` moved through
+  `supabase-migrate.yml`: the repo's Supabase guard blocks a session's UPDATE, and the committed-file runner is the reviewed path.
+- **A runner's commit starts no CI.** The migrate job's receipt commit left #2127's head with no `test` run; a real follow-up
+  commit (the receipt's applied block) started it.
+- **The degree check (#2129, record shape 6, extraction v8).** About 1,560 associate degrees, 77 with a degree total: most records
+  were read before v7. Every Cabrillo degree page says "at least 30 units in the major", and the reading took it for the major
+  total. A page printing both totals now checks both; `degree_elective_units` keeps a degree's own electives; the **Major only**
+  gap marks 1,487 records. El Camino's v7 records read the degree total on 52 of 53 degrees, so v7's wording works.
+- **The summary row (#2128).** A units mismatch is a red word chip for either total, never the bare status; the For the college
+  summary takes the alert color; an equal degree check names "60 units for the degree" (it printed "Equal,  units").
+- **The reconcile pass (#2130).** Cabrillo's requirements tree prints "Complete the following number of credits: 60 · Cabrillo
+  College General Education 24", the major, and "General electives: any transferable or degree applicable course. 6" (page reads
+  38633618089, 38642988914). The first run (38639316727) changed 36 records: 7 now add up; 4 that passed against the major now
+  miss the degree (two transfer degrees whose major and Cal-GETC overlap past 60, Sheet 82 card 2; Theatre Arts and Physics,
+  whose reading dropped a Recommended Major Electives block). Re-read 38643400229 posted 35, none held.
+- **The re-read held every row a person had read**, while the Records view promised a rerun would fix it. It now holds a checked
+  row only (migrate 38639286293).
+- **El Camino and San Joaquin Delta (#2131):** 117 and 202 loaded unchecked; display build `0a22233cf694`, 3,797 rows.
+
+**What went wrong.** An amend after a push that had in fact landed forked the Delta branch (`check_generated.sh` prints its
+regenerate hint without failing, so a `&&` chain does not stop). A test fixture for "never overwrites" had a genuinely empty
+field. The first count of degree chips searched the receipt's JSON in the wrong key order (it sorts keys).
+
+**Patterns that worked.** Measure the blast radius live before answering a question about one record. Read the page on a runner
+before writing a reconcile pattern. Diff every reconciled record's check against main before posting it.
+
+## S393 SkySycamore (2026-10-14): Sheet 82 carried out, Cerritos's reconcile steps, an overnight schedule and a $40 go
+
+**Sam's rulings and words this run.** Sheet 82 (22:14Z, both his own call): *carry* and *overlap*. In session (~23:03Z),
+on the CPL Queue routine: *"set it and limit is $40 per college"* (`cpl_memory` `sam-extraction-standing-go-40-per-college-2026-10-14`):
+a college's extraction runs with no card up to $40, and the overnight schedule (hourly 10:12 PM to 6:12 AM Pacific) is his to
+set in the Routines form, because the platform refuses an agent's edit to a routine it did not create. And (~23:20Z, an idea
+for later): a weekly routine per district to keep the data fresh (`sam-weekly-refresh-per-district-idea-2026-10-14`; S393
+recommended a page fingerprint in the census instead, so only changed colleges are re-read).
+
+- **Card 2, overlap (#2136).** `degree_verdict()` passes a transfer degree whose sum runs past its printed total (`overlap`).
+  The rescore found exactly the ten the card counted (Cabrillo 8, Palo Verde 2); the live rows moved through
+  `supabase-migrate.yml` (run 38652994360; receipt `kb/receipts/program_requirement_records_rescore_2026-10-14_s393.json`).
+- **Card 1, carry (#2136).** The re-read function carries a confirm when the row's latest verdict is a confirm of the record
+  it replaces and the new record has the same `program_record_carry_basis` (every block and every other program field, as
+  jsonb). The basis leaves out the totals and the degree's figures, which are every field a reconcile step writes; a test
+  reads `kb/program_requirements_reconcile.json` and fails when a step writes a field the basis keeps. The carried row is a
+  confirm in the reviewer's name naming the verdict it carries; the receipt's rollback restores the row unchecked and
+  deletes the carried rows. Astronomy 06326 (replaced before the carry existed) was carried once by a guarded file (verdict
+  35); it reads checked.
+- **Astronomy needed the major total in the basis's exclusions.** Its rerun changed `degree_total` and `ge_units` and cleared
+  `total_units` (the misread "at least 30 units in the major"). "Only the degree's figures" read literally would not have
+  carried the card's own case. Proceeded on the recommendation; Sheet 83 asks Sam to keep or narrow it.
+- **A local Postgres proved the SQL before the live apply.** The container has Postgres 16 (`/usr/lib/postgresql/16/bin`;
+  initdb as the postgres user in a directory it owns, not the scratchpad, whose permissions reset). Stubs for `auth.role()`,
+  the roles and the two tables, then both chatbox files load as written. Seven carry cases, the rollback, and Astronomy's
+  one-time file against its real records (it carries once; a second apply refuses). The md5 of `jsonb::text` reads `3` and
+  `3.0` as different values; jsonb equality reads them as one, so the basis compares jsonb.
+- **Display build b87c61607e71** after the rescore, applied from `main` (Sam's standing go of 2026-10-10).
+- **Cerritos (the most Major only records, 148 of 148).** Its degree pages print the major's own total and *"Complete a
+  minimum of 60 units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives
+  as needed"* (college-page-read 38654411937). The GE units are on the catalog's CGEC page (*"CGEC, which is 24-28 units, is
+  intended to meet the GE requirements"*; site map read 38655666139, page read 38656043692): Areas 1 to 7 carry 24 units,
+  Area 8 three and Area 9 one, and a major of 32 units or more skips Areas 8 and 9. New: a `set` reconcile step (a figure the
+  catalog prints once for every degree on its own page, cited from both pages) and `degree_total_minimum` (the 60 is a floor:
+  a sum past it meets it, electives make up a sum short of it). Without the floor, every large Cerritos major (Automotive 42-43
+  + GE 24-28 = 66-71) would trade Major only for a false Check not met.
+
+- **Extraction v8 failed every call (#2138, v9 deployed).** The API refuses a schema with more than 16 union-typed parameters (*"Schemas contains too many parameters with union types (17 ...)"*); v8's `degree_elective_units` took v7's 15 to 17, so no extraction succeeded after its deploy. Found re-extracting Cabrillo 06350 and 06378 (run 38656003434, both filed with record null; that branch stays unmerged). v9 makes each span one nullable object and returns a null span as `{min: null, max: null}`; `tests/program_requirements_extract_schema_test.py` counts the unions from the source (v8: 17).
+- **Cerritos reconciled (#2139).** Reconcile 38656800189 (no model call) changed 93 records: Major only 148 to 56 (34 transfer degrees, 22 AA/AS left); no record moved from pass to fail. Re-read 38661017876 replaced 89, held 3 checked rows (02201, 02203, 02213 keep their earlier live record), and carried one confirm (02235 Photography, unchecked: another check fails), the carry's first live run. Display build `45fdd29240cb`.
+
+**What went wrong.** A `&&` chain after `check_generated.sh` pushed a stale catalog once more; read its output before pushing.
+(S394 correction: the script exits 1 when anything is stale. A pipe through `tail` hides that exit, as S383 found.) The builder of the open-asks sheet rewrites the current sheet's file when run with any argument,
+`--help` included; restore it with `git checkout`.
+
+**Patterns that worked.** Measure the class before building for one record (Major only per college, then the page). Read the
+page, then its catalog's site map, then the page the site map names: three runner reads, no model call. Test SQL on a local
+Postgres before the migrate job.

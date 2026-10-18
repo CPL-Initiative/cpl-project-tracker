@@ -54,7 +54,8 @@ it, the known issues each naming an owner, the settled procedures, the calls in 
 stamps. Every row collapses on its own word to its count and meter (19:08Z: *"Commons looks good. Just
 make sure I can collapse each and we have a collapse all button."*; 20:03Z: *"Keep the count and meter
 when collapsed."*), Collapse all folds the page, the words on a row move it, and the order and the fold
-stay in the browser.
+stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
+`sam-approves-commons-mockup-collapse-2026-10-18` (verified).
 
 - **The machine side** is `kb/status/commons.json`, written daily by `kb/_build_commons_status.py`
   (daily-dashboard.yml, after the builds it reads) from the committed files alone: Program Requirements
@@ -73,6 +74,17 @@ stay in the browser.
   passes at both widths; UI pass ledger `cobi:commons`.
 - The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
   source `docs/visuals/2026-10-18-commons-mockup.html`).
+
+**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is
+drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared
+status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`,
+a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`,
+`goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no
+whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen:
+`tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js`
+(30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`,
+the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it. Lessons:
+`docs/commons_lessons.md`.
 
 **What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
 list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live

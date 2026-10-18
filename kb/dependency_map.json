@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 661,
+  "file_datasets": 669,
   "external_services": 181,
-  "consumers": 447,
+  "consumers": 448,
   "workflows": 54,
   "data_js_files": 69,
   "tabs": 39
@@ -905,6 +905,13 @@
      "direction": "read",
      "how": "url",
      "line": 78
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 242
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -4922,6 +4929,13 @@
      "line": 698
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 96
+    },
+    {
      "id": "script:kb/_build_domain_cpl_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5199,7 +5213,7 @@
      "line": 0
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:commons_progress.js": {
@@ -7474,6 +7488,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_commons_status.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_cpl_pathway_ccr.py": {
    "consumers": [
     {
@@ -8449,6 +8476,13 @@
   "file:kb/cer_procedures.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 182
+    },
+    {
      "id": "script:kb/_cer_procedures.py",
      "kind": "script",
      "direction": "read",
@@ -8470,6 +8504,13 @@
      "tabs": [
       "credential-reference"
      ]
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 171
     }
    ],
    "producers": [
@@ -8487,6 +8528,19 @@
     {
      "by": "workflow:cer-procedures.yml",
      "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/cer_procedures_out/saved/saved_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 186
     }
    ],
    "served": false,
@@ -10790,6 +10844,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 286
+    },
+    {
      "id": "script:kb/_build_cr_reference.py",
      "kind": "script",
      "direction": "read",
@@ -11001,6 +11062,13 @@
      "direction": "read",
      "how": "literal",
      "line": 183
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 166
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -11390,6 +11458,13 @@
      "direction": "read",
      "how": "literal",
      "line": 85
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 323
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11896,6 +11971,13 @@
      "tabs": [
       "credential-reference"
      ]
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 169
     }
    ],
    "producers": [
@@ -12668,6 +12750,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/*/capture.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 118
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_college/*/records/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 100
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -12692,6 +12800,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/records/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 101
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_pilot/registry_read.json": {
@@ -13027,6 +13148,19 @@
     {
      "by": "workflow:supabase-migrate.yml",
      "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/cr_reference_decisions_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 289
     }
    ],
    "served": false,
@@ -14298,6 +14432,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 231
+    },
+    {
      "id": "workflow:overmerge-apply.yml",
      "kind": "workflow",
      "direction": "read",
@@ -14371,14 +14512,22 @@
    "main_committers": []
   },
   "file:kb/status/commons.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
+    }
+   ],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -14394,6 +14543,13 @@
      "tabs": [
       "program-requirements"
      ]
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 127
     },
     {
      "id": "script:scripts/queue_status.py",
@@ -14879,6 +15035,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/unclassified_fold/*/report.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 191
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/unclassified_preseed.json": {
    "consumers": [
     {
@@ -14992,6 +15161,13 @@
      "direction": "read",
      "how": "literal",
      "line": 182
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 162
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -15976,6 +16152,13 @@
      "direction": "read",
      "how": "literal",
      "line": 827
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 234
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -17508,6 +17691,19 @@
    "main_committers": []
   },
   "file:tests/college_page_read_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/commons_status_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -19311,6 +19507,13 @@
      "line": 856
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 235
+    },
+    {
      "id": "script:kb/_build_esl_fold_preview.py",
      "kind": "script",
      "direction": "read",
@@ -20004,7 +20207,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2747
+     "line": 2783
     }
    ],
    "main_committers": []
@@ -20016,7 +20219,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2834
+     "line": 2870
     }
    ],
    "main_committers": []
@@ -24753,6 +24956,7 @@
  ],
  "unresolved": [
   "chatbox/sync_program_courses.py",
+  "commons.js",
   "cpl_session.js",
   "kb/_program_requirements_extract.py",
   "reviewer_signin.js",
