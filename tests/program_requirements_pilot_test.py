@@ -103,6 +103,10 @@ check(_cna["coverage"]["missing"] == [] and _cna["invented"]["codes"] == [],
       % (_cna["coverage"]["missing"], _cna["invented"]["codes"]))
 check(S.listed_key("CNA/N 633", {"CNAN633": None}) == "CNAN633" and S.listed_key("KIN/D 130A", {}) == "KIN/D130A",
       "listed_key maps a slashed code to the listed slash-free one, and leaves an unlisted code in its own form")
+check(S.listed_key("THART/S 124X2", {"THART124X2": None}) == "THART124X2"
+      and S.listed_key("CNA/N 633", {"CNAN633": None, "CNA633": None}) == "CNAN633",
+      "listed_key reads a slashed subject the state's file stores without its letters after the slash, "
+      "only when the slash-free reading finds none")
 check(P.norm_code("REALES007") == P.norm_code("REAL ES 7"),
       "REALES007 and REAL ES 7 are one course")
 check(P.norm_code("IWAP 40.5") != P.norm_code("IWAP 40.05"),
