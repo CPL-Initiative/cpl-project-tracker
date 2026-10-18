@@ -78,3 +78,26 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 
 S415 held no PR subscription, check-in or artifact watch (remote sessions cannot watch an artifact); nothing to
 let go.
+
+## Since this handoff: the session Sam opened by hand beside S415 (2026-10-18, 12:50Z to ~15:10Z)
+
+`session_016aCF9Tqxm7khy34U1dQwca`, opened with S413's line; S415 stayed the queue's writer (agreed by message).
+Sam's words this run are in the vault (`braindump-2026-10-18-1430-commons-dash-one-tracking-system`) and `cpl_memory`.
+
+- **#2228 merged** (`b23d8123`): the Pipeline tab's UI pass (tokens only, diagrams follow the theme, statuses in words).
+- **#2229** (draft, `claude/s415-ui-progress`; mark it ready and merge once `test` passes on its head): the Program
+  Requirements Progress view counts **complete** as an active program whose record passes the machine checks, live
+  (11,621 of 20,282 at 113 colleges); `kb/queue_status.json` no longer carries `unchecked` (3.5 MB to 4 KB), and
+  checkpoint step 12 changed: record `--headline <active> <complete> <colleges>` from `--headline-sql`, and delete a
+  note the moment it stops being true.
+- **Open Asks Sheet 94 answered** (13:42-13:43Z, after S415 read its store): apply, save, retire, keep. The
+  cer-procedures lane holds the three to build; Taft's step stays. `cpl_memory` `sam-sheet-94-rulings-2026-10-18`.
+- **Open Asks Sheet 95 answered** (https://claude.ai/artifact/M5oRGgFTaXJNZNm2ugLW3K, 14:43Z): build the Commons in
+  order, *"and include Common Subjects in the mix"* (new lane [commons](reference/lanes/commons.md), with Fable's review);
+  Sierra quotes complete records ([sierra-retrieval-corpus](reference/lanes/sierra-retrieval-corpus.md)). No sheet is
+  open. `cpl_memory` `sam-sheet-95-rulings-2026-10-18`.
+
+**Priority for S416, before the harvest items above:** merge #2229 if the hand session has not; then Sheet 94's three
+CER builds (the fold applies clean assignments; sure results save under their procedure; retire the Initiated sign-off
+and Curate panel); then Sierra's complete-record quote (read change, smoke 7q, A/B, deploy); then the Commons row
+mock-up (to Fable, then Sam) beside step 1, the shared Progress module. The UI pass's next view: `ui_pass.py --next`.
