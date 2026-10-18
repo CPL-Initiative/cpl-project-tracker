@@ -9,7 +9,9 @@ The first eight, filed S406 from the files Sam posted to the `catalog-files` rel
 on 2026-10-17: De Anza (its 2025-2026 catalog and spring addendum; no 2026-2027 PDF
 exists) and City College of San Francisco (Cloudflare 403), American River, Cosumnes
 River, Folsom Lake and Sacramento City (404), and Cerro Coso and Porterville
-(robots.txt; Porterville with its two addenda).
+(robots.txt; Porterville with its two addenda). The ninth, filed S410: Cañada (its
+2026-2027 Catalog Rights edition and the 10/12/26 addendum; robots.txt refuses
+`/current/`). Its slug is `ca_ada`, since `slug_of()` keeps ASCII letters only.
 
 ## Filing one
 
