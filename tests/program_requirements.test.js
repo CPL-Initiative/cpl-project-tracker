@@ -662,8 +662,9 @@ block("(8)", function () {
   check("(8) the CPL figures read the live build: every record carries one, the newest named",
     /Every record carries a display build; the newest is 8292780f6cd5\./.test(byTitle["CPL figures"].textContent) &&
     /Built Oct 6/.test(byTitle["CPL figures"].textContent), byTitle["CPL figures"].textContent);
-  check("(8) Sierra's card says she quotes only the records a person confirmed",
-    /Sierra quotes the 20 records a person confirmed; CPL Pathways draws every record, each marked\./.test(byTitle["Sierra and CPL Pathways"].textContent));
+  check("(8) Sierra's card says she quotes the complete records (Sheet 95 card 2), never only the confirmed",
+    /Sierra quotes the \d[\d,]* complete records \(an active program whose record passes the machine checks\); CPL Pathways draws every record, each marked\./.test(byTitle["Sierra and CPL Pathways"].textContent)
+    && !/a person confirmed/.test(byTitle["Sierra and CPL Pathways"].textContent), byTitle["Sierra and CPL Pathways"].textContent);
   const partsSum = root.querySelector('details[data-sec="progress:parts"] > summary');
   check("(8) the parts section's summary counts the done ones, so it reads shut", !!partsSum && /3 of 8 done/.test(partsSum.textContent),
     partsSum && partsSum.textContent);
@@ -1110,7 +1111,7 @@ block("(12)", function () {
     check("(12) each record ends with Your reading, Confirm and Needs a fix", box && /Your reading/.test(box.textContent) &&
       box.querySelectorAll("button")[0].textContent === "Confirm" && box.querySelectorAll("button")[1].textContent === "Needs a fix");
     check("(12) a record passing its machine checks says confirming checks it, and its items stay with the college",
-      /confirming marks it checked and Sierra may quote it\. The 2 items for the college stay open with Irvine Valley/.test(box.textContent));
+      /so Sierra quotes it already; confirming records that you read it and marks it checked\. The 2 items for the college stay open with Irvine Valley/.test(box.textContent));
     box.querySelectorAll("button")[0].click();
     return tick().then(tick).then(function () {
       const post = r.posts[0];
@@ -1119,7 +1120,7 @@ block("(12)", function () {
         post.body.p_verdict === "confirm" && post.body.p_note === null && post.body.p_requirements_fp === "fp-art" &&
         post.opts.method === "POST" && post.opts.headers.Authorization === "Bearer tok", post && JSON.stringify(post.body));
       check("(12) the result is said, and the state line follows it",
-        box.querySelector(".prh-said").textContent === "Confirmed. The record is checked, and Sierra may quote it." &&
+        box.querySelector(".prh-said").textContent === "Confirmed. The record is checked; Sierra quotes it." &&
         /^Confirmed by you, Oct 8/.test(card.querySelector(".prh-state").textContent), card.querySelector(".prh-state").textContent);
       const fixBtn = box.querySelectorAll("button")[1];
       fixBtn.click();

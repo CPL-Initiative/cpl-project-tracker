@@ -3523,9 +3523,16 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   let ctx = `\n\n--- Program Course Lists: ${college} (catalog data, as of ${PROGRAM_COURSES_AS_OF}) ---\n`;
   ctx += `These are the courses each program LISTS in the state's catalog data. Rules for using them:\n`;
   ctx += `- Name the program and its award, then list its courses by number and title.\n`;
-  const checked = (g: any) => !!(recs && g.control && recs.get(String(g.control)));
+  // A complete record speaks for a live program only (Sheet 95 card 2): the
+  // statuses the harvest reads, kb/_program_requirements_college.py's
+  // STATUS_FILTER (Active, Active - Teachout Only, Approved). COCI marks most
+  // credit programs Approved: Mt. SAC's LVN-to-RN option is one, and an
+  // Active-only gate dropped its complete record in the A/B of 2026-10-18
+  // (run 39142613772, smoke 7l).
+  const liveProgram = (s: any) => !s || /^Active/.test(String(s)) || s === "Approved";
+  const checked = (g: any) => !!(recs && g.control && recs.get(String(g.control)) && liveProgram(g.status));
   if (shown.some(checked)) {
-    ctx += `- A program marked CATALOG REQUIREMENTS carries the rules ${college}'s own catalog prints, read from that catalog and checked against it. For that program you may say a course is required, name each choice in the catalog's own words ("choose 1 course from List A"), and give the program total the catalog prints, naming the catalog and its year (for example "${college}'s 2026-2027 catalog"). Give only the totals printed there; never add units up yourself. Courses joined by "or" are one requirement, met by either.\n`;
+    ctx += `- A program marked CATALOG REQUIREMENTS carries the rules ${college}'s own catalog prints, read from that catalog and checked against the state's Program Course File. Say so when you quote it. For that program you may say a course is required, name each choice in the catalog's own words ("choose 1 course from List A"), and give the program total the catalog prints, naming the catalog and its year (for example "${college}'s 2026-2027 catalog"). Give only the totals printed there; never add units up yourself. Courses joined by "or" are one requirement, met by either.\n`;
     ctx += `- Every other program below only LISTS its courses: the data has no required/elective flag, so never call one of its courses required and never add up its units.\n`;
     if (shown.some((g: any) => checked(g) && recs && (recs.get(String(g.control)) || {}).display)) {
       ctx += `- A CATALOG REQUIREMENTS course marked "CPL here" is credit for prior learning ${college} has articulated to it: a learner who holds that credential or training can ask ${college} to award it. Name the credentials the line names, and no others; a course with no mark carries no articulated CPL that the data shows.\n`;
@@ -3553,7 +3560,7 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
       const rec = recs ? recs.get(String(g.control)) : null;
       const titles = new Map<string, string>();
       for (const c of g.courses) if (c.course_code && c.course_title) titles.set(courseKey(c.course_code), c.course_title);
-      ctx += `CATALOG REQUIREMENTS, from ${college}'s ${rec.catalog_year || "current"} catalog (checked against the catalog):\n`;
+      ctx += `CATALOG REQUIREMENTS, from ${college}'s ${rec.catalog_year || "current"} catalog (read from the catalog and checked against the state's Program Course File):\n`;
       ctx += requirementLines(rec, titles, college);
       continue;
     }
@@ -3595,14 +3602,23 @@ async function fetchCollegeProgramCourses(college: string, query: string, sb: an
   return data && data.length > 0 ? data : null;
 }
 
-// The checked records for the programs a list read returned, keyed by control
-// number. Fails safe to null: no record means the program keeps "lists".
+// The complete records for the programs a list read returned, keyed by control
+// number. Complete (Sam, Open Asks Sheet 95 card 2, 2026-10-18): the record passes
+// the three machine checks, which is program_record_machine_pass() written as
+// PostgREST filters on the checks column, because the anon key may read the row
+// but not call the function. Until then the read took checked=true, the 32
+// records a person had confirmed; a confirm sets checked only when the machine
+// checks pass, so those 32 are inside this set. The caller keeps a record only
+// for an Active program. Fails safe to null: no record means the program keeps
+// "lists".
 async function fetchCheckedRequirements(college: string, rows: any[], sb: any): Promise<Map<string, any> | null> {
   const controls = [...new Set((rows || []).map((r: any) => r.control_number).filter(Boolean).map(String))];
   if (!college || controls.length === 0) return null;
   const { data, error } = await sb.from("program_requirement_records")
     .select("control_number,catalog_year,source_url,measure,total_min,total_max,record,display")
-    .eq("college", college).eq("checked", true).in("control_number", controls);
+    .eq("college", college)
+    .eq("checks->>coverage", "true").eq("checks->>invented", "true").in("checks->>arithmetic", ["equal", "unstated"])
+    .in("control_number", controls);
   if (error) {
     console.error("program_requirement_records unavailable:", error.message);
     return null;

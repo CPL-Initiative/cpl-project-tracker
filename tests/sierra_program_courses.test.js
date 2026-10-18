@@ -195,15 +195,37 @@ block("12. the record's own shapes read right", () => {
   check("a course number matches across spacing", M.courseKey("ANAT 10A") === M.courseKey("anat-10a"));
 });
 
-block("13. Sierra reads checked records only, by her own filter", () => {
+block("13. Sierra reads complete records only, by her own filter", () => {
   // Since Sam's Open Asks Sheet 67 (2026-10-12) the table's public read shows every row, each
   // unchecked one marked on the pages, so Sierra's own filter below is the one thing keeping
-  // an unchecked record out of her answers.
+  // an incomplete record out of her answers. Since Sheet 95 card 2 (2026-10-18) complete means
+  // the record passes the three machine checks (program_record_machine_pass, written as filters
+  // on the checks column because the anon key cannot call the function), for an Active program.
   const RSQL = fs.readFileSync("chatbox/supabase_program_requirement_records.sql", "utf8");
   check("the public read policy shows every row (Sheet 67), so the filter below carries the gate",
     /for select to anon, authenticated using \(true\)/.test(RSQL));
-  check("index.ts asks for checked rows by college and control number",
-    /\.from\("program_requirement_records"\)[\s\S]{0,200}\.eq\("college", college\)\.eq\("checked", true\)\.in\("control_number", controls\)/.test(FN));
+  check("index.ts asks for rows passing the three machine checks, by college and control number",
+    /\.from\("program_requirement_records"\)[\s\S]{0,300}\.eq\("college", college\)\s*\.eq\("checks->>coverage", "true"\)\.eq\("checks->>invented", "true"\)\.in\("checks->>arithmetic", \["equal", "unstated"\]\)\s*\.in\("control_number", controls\)/.test(FN));
+  const VSQL = fs.readFileSync("chatbox/supabase_program_record_verdicts.sql", "utf8");
+  check("the filter is the machine-pass function's own three tests",
+    /coverage', ''\) = 'true'/.test(VSQL) && /invented', ''\) = 'true'/.test(VSQL)
+    && /arithmetic', ''\) in \('equal', 'unstated'\)/.test(VSQL));
+  // The gate's statuses are the harvest's (STATUS_FILTER in kb/_program_requirements_college.py:
+  // Active, Active - Teachout Only, Approved). COCI marks most credit programs Approved; the first
+  // A/B of this change (run 39142613772, 2026-10-18) gated on Active alone and dropped Mt. SAC's
+  // complete LVN-to-RN record, so smoke 7l lost the catalog year.
+  check("a complete record speaks for a live program only",
+    /const checked = \(g: any\) => !!\(recs && g\.control && recs\.get\(String\(g\.control\)\) && liveProgram\(g\.status\)\);/.test(FN));
+  const gate = /const liveProgram = \(s: any\) => (.+);\n/.exec(FN);
+  const liveProgram = gate ? new Function("s", "return " + gate[1] + ";") : null;
+  check("the gate admits Approved, Active and Active - Teachout Only, a missing status, and refuses Inactive",
+    !!liveProgram && liveProgram("Approved") && liveProgram("Active") && liveProgram("Active - Teachout Only")
+    && liveProgram(undefined) && liveProgram(null) && !liveProgram("Inactive") && !liveProgram("Proposed"));
+  const HARVEST = fs.readFileSync("kb/_program_requirements_college.py", "utf8");
+  check("those are the statuses the harvest reads (STATUS_FILTER)",
+    /STATUS_FILTER = "or=\(status\.like\.Active\*,status\.eq\.Approved\)"/.test(HARVEST));
+  check("the block says the record was read from the catalog and checked against the state's file",
+    /read from the catalog and checked against the state's Program Course File/.test(FN));
   check("the handler passes the records into the block",
     /const reqs = await fetchCheckedRequirements\(singleProfile\.college, listRows, sb\);/.test(FN)
     && /singleProfile\.college\)\), reqs\);/.test(FN));
