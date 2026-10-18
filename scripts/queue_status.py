@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""queue_status.py — stamp and check kb/queue_status.json, the Progress view's status file.
+"""queue_status.py — stamp and check kb/status/<project>.json, a Progress view's status file.
 
 The Program Requirements tab's Progress view (program_requirements.js, Sam's 2026-10-07
 ask: "a workflow dashboard to monitor the progress") reads the harvest's tables live,
@@ -24,8 +24,13 @@ pair live; the list is the record.
 Never widen a policy to fill the view; this file is the chosen alternative (S343, the
 handoff's option b).
 
+Since S419 (the Commons' step 1, Sam's Open Asks Sheet 95 card 1) every common reference's
+Progress view reads its own file under kb/status/, drawn by the shared commons_progress.js;
+Program Requirements' is kb/status/program-requirements.json (kb/queue_status.json until
+S418). `--project <id>` names another project's file; the default is Program Requirements'.
+
 Usage, from the repo root:
-  python3 scripts/queue_status.py --check
+  python3 scripts/queue_status.py --check [--project program-requirements]
       validate the committed file; exit 1 and name each fault
   python3 scripts/queue_status.py --stamp [--next-run 2026-10-08T15:07:00Z]
                                           [--headline ACTIVE COMPLETE COLLEGES]
@@ -54,8 +59,19 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PATH = os.path.join(ROOT, "kb", "queue_status.json")
+# One status file per common reference, kb/status/<project>.json (S419, the Commons' step 1; Sam's
+# Open Asks Sheet 95 card 1). Program Requirements' was kb/queue_status.json from S343 to S418.
+PROJECT = "program-requirements"
+STATUS_DIR = os.path.join(ROOT, "kb", "status")
+PATH = os.path.join(ROOT, "kb", "status", "program-requirements.json")
 TAB = os.path.join(ROOT, "program_requirements.js")
+
+
+def path_for(project):
+    """The status file of a project, by its id (the file's basename)."""
+    if not re.match(r"^[a-z][a-z0-9-]*$", project or ""):
+        raise SystemExit("queue_status: a project id is lowercase words and hyphens, not %r" % (project,))
+    return os.path.join(STATUS_DIR, project + ".json")
 
 ISO = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$")
 DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -94,6 +110,7 @@ def faults(q, root=ROOT, parts=None):
     if not isinstance(q, dict):
         return ["the file must hold one JSON object"]
     need(q.get("schema") == 1, "schema must be 1")
+    text(q.get("project"), "project", required=False)
     need(isinstance(q.get("written_at"), str) and ISO.match(q.get("written_at") or ""),
          "written_at must be an ISO time in UTC (run --stamp)")
     need(isinstance(q.get("session"), int) and q.get("session") > 0, "session must be the session number")
@@ -334,8 +351,11 @@ def main(argv=None):
     ap.add_argument("--harvest", metavar="ROW_JSON",
                     help="the whole-harvest query's row (--harvest-sql prints the query), as JSON")
     ap.add_argument("--harvest-sql", action="store_true", help="print the whole-harvest query and exit")
-    ap.add_argument("--path", default=PATH)
+    ap.add_argument("--project", default=PROJECT, help="the project whose kb/status/<project>.json to read (default: Program Requirements')")
+    ap.add_argument("--path", default=None, help="a file elsewhere (the tests); otherwise --project names it")
     a = ap.parse_args(argv)
+    if a.path is None:
+        a.path = path_for(a.project)
     if a.harvest_sql:
         print(HARVEST_SQL)
         return 0

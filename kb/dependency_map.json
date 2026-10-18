@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 658,
+  "file_datasets": 659,
   "external_services": 181,
-  "consumers": 446,
+  "consumers": 447,
   "workflows": 54,
   "data_js_files": 69,
   "tabs": 38
@@ -1492,6 +1492,16 @@
   "external:github.com/CPL-Initiative/cpl-project-tracker": {
    "consumers": [
     {
+     "id": "module:commons_progress.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 42,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
+    {
      "id": "module:governance.js",
      "kind": "module",
      "direction": "read",
@@ -1506,7 +1516,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2645,
+     "line": 2544,
      "tabs": [
       "program-requirements"
      ]
@@ -5178,6 +5188,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:commons_progress.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:contracts.js": {
    "consumers": [
     {
@@ -8361,7 +8384,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 124,
+     "line": 126,
      "tabs": [
       "program-requirements"
      ]
@@ -12976,29 +12999,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:kb/queue_status.json": {
-   "consumers": [
-    {
-     "id": "module:program_requirements.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 119,
-     "tabs": [
-      "program-requirements"
-     ]
-    },
-    {
-     "id": "script:scripts/queue_status.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 57
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/receipts": {
    "consumers": [],
    "producers": [
@@ -14356,6 +14356,29 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/status/program-requirements.json": {
+   "consumers": [
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
+    {
+     "id": "script:scripts/queue_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/subj4_apply": {
    "consumers": [],
    "producers": [
@@ -15617,7 +15640,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 58
+     "line": 67
     }
    ],
    "served": true,
@@ -20588,7 +20611,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 740,
+     "line": 742,
      "tabs": [
       "program-requirements"
      ]
@@ -20656,7 +20679,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1755,
+     "line": 1654,
      "tabs": [
       "program-requirements"
      ]
@@ -22204,7 +22227,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 665,
+     "line": 667,
      "tabs": [
       "program-requirements"
      ]
@@ -22527,7 +22550,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 778,
+     "line": 780,
      "tabs": [
       "program-requirements"
      ]
@@ -22559,7 +22582,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 468,
+     "line": 470,
      "tabs": [
       "program-requirements"
      ]
@@ -22588,7 +22611,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 844,
+     "line": 846,
      "tabs": [
       "program-requirements"
      ]
@@ -22623,7 +22646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 630,
+     "line": 632,
      "tabs": [
       "program-requirements"
      ]
@@ -23279,6 +23302,9 @@
   ],
   "college_identity_data.js": [
    "college-identity"
+  ],
+  "commons_progress.js": [
+   "program-requirements"
   ],
   "contracts.js": [
    "contracts"

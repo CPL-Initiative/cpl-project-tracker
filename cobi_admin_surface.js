@@ -367,6 +367,7 @@ window.COBI_ADMIN_SURFACE = {
     },
     "program-requirements": {
       "modules": [
+        "commons_progress.js",
         "program_requirements.js"
       ],
       "reads": [

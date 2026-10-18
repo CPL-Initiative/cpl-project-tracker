@@ -32,6 +32,8 @@ function block(label, fn) {
 }
 
 const SRC = fs.readFileSync("program_requirements.js", "utf8");
+// The Commons' shared Progress module (S419): the tab's boot block loads it first, so the harness does too.
+const COMMONS = fs.readFileSync("commons_progress.js", "utf8");
 const DASH = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const INDEX = fs.readFileSync("index.html", "utf8");
 const NAV = fs.readFileSync("nav_groups.js", "utf8");
@@ -46,6 +48,9 @@ function loadModule(opts) {
   if (opts.noStorage) {
     Object.defineProperty(w, "localStorage", { get: function () { throw new Error("SecurityError"); } });
   }
+  const s0 = w.document.createElement("script");
+  s0.textContent = COMMONS;
+  w.document.body.appendChild(s0);
   const s = w.document.createElement("script");
   s.textContent = SRC;
   w.document.body.appendChild(s);
@@ -170,7 +175,7 @@ function restDb(opts) {
       const slice = act.slice(from, to + 1);
       return res(200, slice, (slice.length ? from + "-" + (from + slice.length - 1) : "*") + "/" + (h.Prefer === "count=exact" ? act.length : "*"));
     }
-    if (/queue_status/.test(url)) return opts.queue ? res(200, opts.queue) : res(404, null);
+    if (/kb\/status\//.test(url)) return opts.queue ? res(200, opts.queue) : res(404, null);
     return res(404, null);
   };
   return db;
@@ -390,7 +395,7 @@ block("(6b)", function () {
       asked.some(function (u) { return /\/rest\/v1\/program_source_addenda\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/coci_college_programs\?.*status=eq\.Active/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/map_colleges\?select=college_id,district/.test(u); }) &&
-      asked.indexOf("kb/queue_status.json") >= 0 && asked.indexOf("kb/catalog_framing.json") >= 0, asked.join(" "));
+      asked.indexOf("kb/status/program-requirements.json") >= 0 && asked.indexOf("kb/catalog_framing.json") >= 0, asked.join(" "));
     check("(6b) one failed table fails the read, naming it", /program_requirement_records answered 503/.test(root.textContent),
       root.textContent.slice(0, 300));
   });
@@ -704,11 +709,11 @@ block("(8)", function () {
 
 block("(8b)", function () {
   // Each read fails on its own and says so; none is drawn as a zero.
-  const { root } = progressReady(20, { Q: "kb/queue_status.json answered 404", A: "program_source_addenda answered 503",
+  const { root } = progressReady(20, { Q: "kb/status/program-requirements.json answered 404", A: "program_source_addenda answered 503",
     active: "coci_college_programs gave no count" });
   const txt = root.textContent;
   check("(8b) the header names the status file that could not be read",
-    /The queue's status file \(kb\/queue_status\.json\) could not be read \(kb\/queue_status\.json answered 404\)/.test(root.querySelector(".prh-pg-meta").textContent));
+    /The queue's status file \(kb\/status\/program-requirements\.json\) could not be read \(kb\/status\/program-requirements\.json answered 404\)/.test(root.querySelector(".prh-pg-meta").textContent));
   const parts = {};
   Array.prototype.forEach.call(root.querySelectorAll(".prh-pg-grid > li"), function (p) { parts[p.querySelector("h4").textContent] = p; });
   check("(8b) the machine checks count from the index, with or without the file",
@@ -748,14 +753,14 @@ block("(8c)", function () {
       for (let i = from; i <= to; i++) rows.push({ college: "College " + (i % 118), control_number: String(100000 + i) });
       return ok(rows, from + "-" + to + "/20282");
     }
-    if (/queue_status/.test(url)) return ok(f.queue);
+    if (/kb\/status\//.test(url)) return ok(f.queue);
     return Promise.resolve({ ok: false, status: 404 });
   } });
   M._state.view = "progress";
   return M._load().then(function () {
     const coci = asked.filter(function (a) { return /coci_college_programs/.test(a[0]); })[0];
     check("(8c) COCI's count asks for an exact count", !!coci && coci[1].headers.Prefer === "count=exact");
-    const q = asked.filter(function (a) { return /queue_status/.test(a[0]); })[0];
+    const q = asked.filter(function (a) { return /kb\/status\//.test(a[0]); })[0];
     check("(8c) the status file is read fresh", !!q && q[1].cache === "no-store");
     const txt = root.textContent;
     const big = root.querySelector(".prh-pg-hl .prh-pg-n b");
@@ -1916,8 +1921,8 @@ block("(23)", function () {
     opens.length === 8 && opens.every(Boolean) && opens[1] === "Open the 20 records" && opens[2] === "Open the 20 records", opens.join(" | "));
   check("(23) a card that opens its list is the tap target: the word's ::after covers it, and an answer link rides above",
     p.root.querySelectorAll(".prh-pg-grid > li.prh-pg-opens").length === 8 &&
-    /\.prh-pg-opens \.prh-pg-open::after \{ content:''; position:absolute; inset:0;/.test(SRC) &&
-    /\.prh-pg-answer \{ position:relative; z-index:1; \}/.test(SRC) && /\.prh-pg-part \{ position:relative;/.test(SRC));
+    /\.prh-pg-opens \.prh-pg-open::after \{ content:''; position:absolute; inset:0;/.test(COMMONS) &&
+    /\.prh-pg-answer \{ position:relative; z-index:1; \}/.test(COMMONS) && /\.prh-pg-part \{ position:relative;/.test(COMMONS));
 
   // A filter left from an earlier visit is cleared, so the list is exactly what the card counted.
   p.M._state.rq = "Welding"; p.M._state.pick = ["Cerritos College"];
