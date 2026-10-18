@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 118,
  "with_closed_list": 79,
- "started": "2026-10-18T06:55:27Z",
+ "started": "2026-10-18T07:36:45Z",
  "scope": null,
  "sitemap": {
   "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
@@ -21,13 +21,13 @@
  "child_pages": 226,
  "banner_h1": "2026-2027 Catalog",
  "loads": 231,
- "seconds": 1282.2,
- "found": 74,
+ "seconds": 1246.6,
+ "found": 76,
  "by_method": {
   "no_closed_list": 39,
-  "not_found": 3,
+  "not_found": 1,
   "page_claimed": 2,
-  "sitemap_page": 74
+  "sitemap_page": 76
  },
  "shared_pages": {
   "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t": [
@@ -59,58 +59,6 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "38418",
-   "title": "Foundations in English Language and Communication",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4879,
-     "content": 16556,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "44342",
-   "title": "Technical Theatre",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.125,
-    "net": 1,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6061,
-     "content": 17659,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
  "page_claimed": [
@@ -135,108 +83,28 @@
  "coverage_bands": {
   "0.5-0.8": 6,
   "0.8-1.0": 15,
-  "1.0": 53
+  "1.0": 55
  },
  "would_extract": {
   "against": "kb/program_requirements_college/crafton_hills",
-  "kept": 64,
-  "programs": 10,
+  "kept": 74,
+  "programs": 2,
   "list": [
    {
-    "control_number": "33105",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/kinesiology-kin/kinesiology-associate-in-arts-for-transfer-degree",
-    "coverage": 0.94,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35822",
-    "title": "Workforce Literacy Skills",
+    "control_number": "38418",
+    "title": "Foundations in English Language and Communication",
     "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/workforce-literacy-skills",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
    },
    {
-    "control_number": "38464",
-    "title": "Basic Skills in Math Elementary Level",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-math-elementary-level",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "42455",
-    "title": "Certified Nursing Assistant",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/certified-nursing-assistant",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "43604",
-    "title": "Acute Care Nursing Assistant",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/acute-care-nursing-assistant",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "43611",
-    "title": "Home Health Aide",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/home-health-aide",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44042",
-    "title": "Essential ASL and Deaf Culture for Customer Service Professionals",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/essential-asl-and-deaf-culture-for-customer-service-professionals",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44088",
-    "title": "Mathematics for Medical Professionals",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/mathematics-for-medical-professionals",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44803",
-    "title": "Phlebotomy Technician",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/phlebotomy-technician",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45083",
-    "title": "Personal Trainer",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/personal-trainer",
+    "control_number": "44342",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
@@ -244,5 +112,5 @@
    }
   ]
  },
- "run": "39105686804"
+ "run": "39108198761"
 }

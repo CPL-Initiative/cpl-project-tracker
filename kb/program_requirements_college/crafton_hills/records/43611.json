@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6942,
-    "output_tokens": 990,
+    "output_tokens": 995,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,35 @@
     "model": null
    }
   ],
-  "output_tokens": 990,
+  "output_tokens": 995,
   "output_tokens_details": {
-   "thinking_tokens": 283
+   "thinking_tokens": 289
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04757,
- "ms": 9197,
- "seconds": 9.9,
+ "cost_usd": 0.04767,
+ "ms": 9247,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 2,
+   "placed": 3,
    "listed": 3,
-   "share": 0.667,
-   "missing": [
-    "CNAN626"
-   ],
-   "unexplained": [
-    "CNAN626"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CNA/N626"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -174,12 +168,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit program counted in hours; 'TOTAL HOURS: 99' recorded as total_units, and course hours as printed (27, 24, 48).",
-   "Closed-list code 'CNAN626' (Home Health AideClinical) was matched to the catalog's 'CNA/N 626 Home Health Aide Clinical'; recorded as not a catalog addition. Reviewer should confirm.",
-   "The description says students must complete the non-credit courses 'HHA 100 and HHA 101' concurrently, which do not match the listed required courses (CNA/N 624, 625, 626); these appear to be outdated codes and were not recorded as courses.",
-   "The 'Length of completion' line mentions '12 units per semester', which seems inconsistent with a noncredit hours-based program; not used for any total.",
-   "'Home Health Aide' recorded as a career from the sentence about certification as a Home Health Aide."
+   "Noncredit certificate counted in hours; TOTAL HOURS: 99 recorded as total_units. Course hours (27 + 24 + 48) sum to the printed 99.",
+   "Closed-list code 'CNAN626' (Home Health AideClinical) is treated as the catalog's CNA/N 626 Home Health Aide Clinical; the formatting differs only in the slash and space.",
+   "The program description says students must complete the non-credit courses HHA 100 and HHA 101 concurrently; these codes do not appear in the requirement list and appear to be outdated course numbers. They were not recorded as blocks; a reviewer should check.",
+   "Length-of-completion text mentions '12 units per semester', which appears to be boilerplate inconsistent with a noncredit hours-based program.",
+   "Careers entry 'Home Health Aide' is taken from the description's statement about certification as a Home Health Aide."
   ]
  },
- "extracted_run": "39105686804"
+ "extracted_run": "39108198761"
 }

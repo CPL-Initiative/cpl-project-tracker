@@ -2,19 +2,19 @@
  "college": "Crafton Hills College",
  "programs": 118,
  "with_closed_list": 79,
- "found": 74,
- "extracted": 74,
+ "found": 76,
+ "extracted": 76,
  "errors": 0,
- "passed_machine_checks": 47,
+ "passed_machine_checks": 51,
  "failed": {
-  "coverage": 10,
-  "invented": 9,
+  "coverage": 8,
+  "invented": 7,
   "arithmetic": 20,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.27,
- "cost_per_program": 0.0712,
+ "cost_usd": 5.37,
+ "cost_per_program": 0.0707,
  "not_found": [
   {
    "control_number": "30347",
@@ -23,59 +23,7 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "38418",
-   "title": "Foundations in English Language and Communication",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4879,
-     "content": 16556,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "44342",
-   "title": "Technical Theatre",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.125,
-    "net": 1,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6061,
-     "content": 17659,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
- "run": "39105686804"
+ "run": "39108198761"
 }

@@ -1974,12 +1974,26 @@
   "title": "Foundations in English Language and Communication",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLN601",
+   "ESLN602",
+   "ESLN603",
+   "ESLN604"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
+   "title": "Crafton Hills College - Foundations in English Language and Communication",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2451
  },
  {
   "control_number": "38464",
@@ -2726,12 +2740,30 @@
   "title": "Technical Theatre",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THART100",
+   "THARTS122",
+   "THARTS123",
+   "THARTS129",
+   "THARTS134X4",
+   "THARTS145",
+   "THARTS164",
+   "THARTS165"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
+   "title": "Crafton Hills College - Technical Theatre Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2776
  },
  {
   "control_number": "44736",

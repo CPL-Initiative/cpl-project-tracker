@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6896,
-    "output_tokens": 780,
+    "output_tokens": 692,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,35 @@
     "model": null
    }
   ],
-  "output_tokens": 780,
+  "output_tokens": 692,
   "output_tokens_details": {
-   "thinking_tokens": 142
+   "thinking_tokens": 139
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04318,
- "ms": 7201,
- "seconds": 8.2,
+ "cost_usd": 0.04142,
+ "ms": 6696,
+ "seconds": 7.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 2,
+   "placed": 3,
    "listed": 3,
-   "share": 0.667,
-   "missing": [
-    "CNAN633"
-   ],
-   "unexplained": [
-    "CNAN633"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CNA/N633"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -172,13 +166,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit certificate counted in hours; total_units records 'TOTAL HOURS: 128', which equals the sum of the course hours (40 + 24 + 64).",
-   "Catalog prints CNA/N 633; the closed list stores it as CNAN633 (no slash or space). It was treated as the same course, so it is not marked as a catalog addition. A reviewer should confirm this.",
-   "The 'Length of completion' line mentions '12 units per semester'. It appears to be generic template text and was not used as a total.",
-   "The outcomes were printed under 'A student receiving a certificate in this field will be able to:'.",
-   "The text names no careers.",
-   "Admission requires current CNA state certification, or recent graduation from the Crafton Hills College CNA program with certification pending."
+   "Noncredit certificate counted in hours; total_units is the printed 'TOTAL HOURS: 128'.",
+   "The closed list prints the clinical course as 'CNAN633'; the catalog prints 'CNA/N 633'. These are treated as the same course, so it is not marked as a catalog addition.",
+   "The page's 'Length of completion' line mentions '12 units per semester'. This is a generic full-time statement and is not recorded as a total.",
+   "The page names no careers or job titles for this program."
   ]
  },
- "extracted_run": "39105686804"
+ "extracted_run": "39108198761"
 }
