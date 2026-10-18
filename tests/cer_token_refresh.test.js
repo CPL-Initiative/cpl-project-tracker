@@ -22,6 +22,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_token_refresh.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 
@@ -89,7 +90,7 @@ async function scenario1() {
   const { window, log } = makeDom({ expired: true });
   await sleep(80);
   const doc = window.document;
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(doc, /Unclassified/).click();
   await sleep(80);
   const tr = doc.querySelector(".cr-wl-table tbody tr");
   check("s1: worklist rendered with rows", !!tr);
@@ -111,7 +112,7 @@ async function scenario2() {
   const { window, log } = makeDom({ expired: true, refreshFails: true });
   await sleep(80);
   const doc = window.document;
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(doc, /Unclassified/).click();
   await sleep(80);
   const tr = doc.querySelector(".cr-wl-table tbody tr");
   const inp = tr.querySelector(".cr-wl-title-input");
@@ -129,7 +130,7 @@ async function scenario3() {
   const { window, log } = makeDom({ expired: false, writeStatus: 401 });
   await sleep(80);
   const doc = window.document;
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(doc, /Unclassified/).click();
   await sleep(80);
   const tr = doc.querySelector(".cr-wl-table tbody tr");
   const inp = tr.querySelector(".cr-wl-title-input");
@@ -151,9 +152,9 @@ async function scenario4() {
   const { window } = makeDom({ expired: false, overlayRows });
   await sleep(80);
   const doc = window.document;
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(doc, /Unclassified/).click();
   await sleep(80);
-  check("s4: lane counts OPEN items only", /Unclassified \(1\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)))));
+  check("s4: lane counts OPEN items only", /Unclassified \(1\)/.test(txt(cerLane(doc, /Unclassified/))));
   check("s4: awaiting-fold note rendered", /fold into the credential layer/.test(txt(doc.querySelector(".cr-worklist"))));
   const rows = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"));
   const openRow = rows.find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Two");
@@ -162,16 +163,16 @@ async function scenario4() {
   openRow.querySelector(".cr-wl-save").click();
   await sleep(120);
   check("s4: all-assigned flips the button to awaiting-fold",
-    /\(2 awaiting fold\)/.test(txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)))));
+    /\(2 awaiting fold\)/.test(txt(cerLane(doc, /Unclassified/))));
 
   const empty = makeDom({ expired: false, emptyAudit: true });
   await sleep(80);
-  Array.from(empty.window.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(empty.window.document, /Unclassified/).click();
   await sleep(80);
   check("s4: empty queue renders the queue-clear state",
     /Queue clear/.test(txt(empty.window.document.querySelector(".cr-worklist"))));
   check("s4: empty queue button reads (0)",
-    /Unclassified \(0\)/.test(txt(Array.from(empty.window.document.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)))));
+    /Unclassified \(0\)/.test(txt(cerLane(empty.window.document, /Unclassified/))));
 }
 
 (async () => {

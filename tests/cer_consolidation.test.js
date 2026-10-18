@@ -108,7 +108,7 @@ setTimeout(function () {
       !!refresherRow && !refresherRow.querySelector(".cr-art-merged"));
 
     // Header count reflects the 2 consolidated rows, not the 3 raw identities.
-    const h5 = Array.from(body.querySelectorAll("h5")).map(txt)
+    const h5 = Array.from(body.querySelectorAll("h3")).map(txt)
       .find((h) => /Common-course identities/.test(h));
     check("header count = 2 consolidated identities", !!h5 && /\(2 identities/.test(h5));
 

@@ -10,6 +10,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_overlay_pagination.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -75,7 +76,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const { window } = makeDom();
   await sleep(120);
   const doc = window.document;
-  Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)).click();
+  cerLane(doc, /Unclassified/).click();
   await sleep(250);
 
   check("pagination: more than one Range page was requested",
@@ -85,7 +86,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   // Every one of the 1,200 assignments must land — the button flips to
   // "awaiting fold" ONLY when zero rows read as open.
-  const label = txt(Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /Unclassified/.test(b.textContent)));
+  const label = txt(cerLane(doc, /Unclassified/));
   check("pagination: ALL 1,200 saved assignments visible (button reads awaiting-fold, not open)",
     /\(1200 awaiting fold\)/.test(label));
 

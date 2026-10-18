@@ -11,6 +11,7 @@
 // Run from repo root: `npm test` (or `node tests/cer_title_lookup.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { cerLane } = require("./_cer_views");
 
 const src = fs.readFileSync("credential_reference.js", "utf8");
 const results = [];
@@ -74,7 +75,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const { window, log } = makeDom({});
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
+    cerLane(doc, /No issuer/).click();
     await sleep(120);
     const row = doc.querySelector(".cr-ni-row");
     check("🔎 what-is-this renders in the TITLE column",
@@ -99,7 +100,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const { window, log } = makeDom({ proxy: true });
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
+    cerLane(doc, /No issuer/).click();
     await sleep(120);
     const row = doc.querySelector(".cr-ni-row");
     const aiBtn = row.querySelector(".cr-ni-tsuggest");
@@ -128,7 +129,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const { window, log } = makeDom({ proxy: true, proxyAnswer: "unknown" });
     const doc = window.document;
     await sleep(120);
-    Array.from(doc.querySelectorAll(".cr-lane")).find((b) => /No issuer/.test(b.textContent)).click();
+    cerLane(doc, /No issuer/).click();
     await sleep(120);
     const row = doc.querySelector(".cr-ni-row");
     row.querySelector(".cr-ni-tsuggest").click();
