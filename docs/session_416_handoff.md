@@ -35,8 +35,8 @@ writer. It writes nothing unless Sam gives it a separate lane. Rulings in force:
 
 ## In flight at sign-off (check each first)
 
-1. **#2226 merged** (`e9e78465`, 13:31Z) and its display apply was dispatched on `main` (`step=display`). Read its
-   applied record (`Applied record: the page's display build (run N)` on `main`); if it failed, dispatch it again.
+1. **#2226 merged** (`e9e78465`, 13:31Z) and build `48cb66f19cff` is applied on `main` (run 39132016937,
+   `c30bb8f6e`). Nothing to redo.
 2. **The Pipeline tab's UI pass** (`cobi:pipeline`) belongs to the session Sam opened by hand
    (`session_016aCF9Tqxm7khy34U1dQwca`): #2228, which it merges itself once `test` passes. Its ledger entry names two
    notes for checkpoint step 7: the tab's roadmap rows 1e-5d and 3 are not in CLAUDE.md section 11, and
