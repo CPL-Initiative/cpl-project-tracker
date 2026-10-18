@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 118,
  "with_closed_list": 79,
- "started": "2026-10-18T09:16:02Z",
+ "started": "2026-10-18T09:41:56Z",
  "scope": null,
  "sitemap": {
   "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 226,
  "banner_h1": "2026-2027 Catalog",
  "loads": 231,
- "seconds": 1155.5,
+ "seconds": 1229.3,
  "found": 76,
  "by_method": {
   "no_closed_list": 39,
@@ -91,5 +91,5 @@
   "programs": 0,
   "list": []
  },
- "run": "39114565984"
+ "run": "39116269641"
 }
