@@ -45,6 +45,12 @@ item (2026-10-17); extraction with no card up to $40 a college (2026-10-14).
 2. **Taft's capture-only read** (run 39097700126, `extract=0`): read its found count, then extraction, load, and
    one display build for the wave (Crafton plus Taft). Crafton's 13 not found: their near misses first.
 
+3. **`lints` is red on #2219 and on `main`, and it is not the PR's code:** `tests/roep_display_test.py` counts
+   15,693 full-college records (Crafton Hills' 64 filed and loaded) against `182e810e207d`'s receipt of 15,651.
+   The wave's display build fixes it (run `kb/_build_roep_display.py`, commit its two outputs, dispatch
+   `step=display`); do that, then merge #2219 on a green `test`. S412 closed on an **emergency** context
+   checkpoint after this note: every artifact above was refreshed except the UI pass and the Pipeline tab.
+
 ## Priority after that
 
 1. **Read Sheet 93's `replies`** (https://claude.ai/artifact/MZXYEqiNitiWGiTakDHUwW, current; store empty at
