@@ -4,9 +4,8 @@
 //   2. the ⤷ use-raw-title chip — ONLY on rows that are truly bare (no saved
 //      assignment, no 💡 suggestion, no ⚡ pre-seed); fills the title input
 //      with the raw title minus any course-code text
-//   3. "✓ Initiate all assigned" — marks every assignment's TARGET credential
-//      Initiated (reviewed_marker) so post-fold they skip ○ Not initiated;
-//      existing-row targets resolve to the row KEY, already-initiated skipped
+//   3. (retired 2026-10-18, Sam, Open Asks Sheet 94 card 3) the "Initiate all
+//      assigned" bar: nothing writes a reviewed_marker any more
 //
 // Run from repo root: `npm test` (or `node tests/cer_unclass_lookup.test.js`).
 const fs = require("fs");
@@ -157,22 +156,10 @@ const rowByRaw = (doc, raw) => Array.from(doc.querySelectorAll(".cr-wl-table tbo
   check("rawfill: NO chip when an ⚡ pre-seed prefills the row",
     !rowByRaw(doc, "Raw Preseeded").querySelector(".cr-wl-rawfill"));
 
-  // ── 3. Initiate all assigned ──
-  const initBtn = doc.getElementById("cr-wl-initall");
-  check("init-all: button present with the deduped, skip-initiated count (2)",
-    !!initBtn && txt(initBtn) === "Initiate all assigned (2)");
-  initBtn.click();
-  await sleep(60);
-  const markers = log.writes.filter((w) =>
-    w.body && w.body.field === "reviewed_marker");
-  const keys = markers.map((w) => w.body.course_id).sort();
-  check("init-all: writes reviewed_marker for the existing UNinitiated target (row key)",
-    keys.indexOf("_CREDENTIAL_REVIEW::Alpha Credential") >= 0);
-  check("init-all: writes reviewed_marker for the brand-new title (deduped across twin raws)",
-    keys.filter((k) => k === "_CREDENTIAL_REVIEW::Brand New Credential").length === 1);
-  check("init-all: SKIPS the already-initiated target", markers.length === 2
-    && keys.indexOf("_CREDENTIAL_REVIEW::Beta Credential") < 0);
-  check("init-all: button reports completion", txt(initBtn).indexOf("2 initiated") >= 0);
+  // ── 3. The Initiate-all bar is retired (Sheet 94 card 3) ──
+  check("init-all: the bar is gone", !doc.getElementById("cr-wl-initall"));
+  check("init-all: nothing writes a reviewed_marker",
+    !log.writes.some((w) => w.body && w.body.field === "reviewed_marker"));
 
   // ── report ──
   let fail = 0;

@@ -9,8 +9,14 @@ name: CER procedures
 # up to `classify` of the titles left, each title once, and again only when the procedures change.
 # The run writes three committed files: kb/unclassified_preseed.json (the tab's pre-fills),
 # kb/cer_classified.json (the classifier's cache) and kb/cer_procedures_out/latest.json (the
-# tallies and the Needs-you list). It writes nothing to Supabase: a proposal pre-fills the tab and
-# a curator saves it (Rule 5e). Letting a sure result save itself is Open Asks Sheet 93 card 2.
+# tallies and the Needs-you list).
+#
+# With save=on (the default since Sam's ruling of 2026-10-18, Open Asks Sheet 94 card 2) every
+# pre-fill no reason holds is also written to kb_curation as the tab's Save would write it, under
+# the cohort cer-procedure-<id>@bot of the procedure that decided it: a fresh read first (a live
+# row holds the save), INSERT-only with duplicates ignored, a receipt in kb/cer_procedures_out/
+# saved/ before the write. `python3 kb/_cer_procedures.py --undo <procedure>` takes a procedure's
+# rows back. save=preview lists what would save and writes no row. Governance: DR-07.
 #
 # Scheduled after the daily dashboard's primary cron (06:17), which refreshes the queue it reads.
 # Its own concurrency group: the daily run never writes these files, so a push rebases cleanly,
@@ -26,6 +32,12 @@ on:
         required: true
         default: "400"
         type: string
+      save:
+        description: "on saves every pre-fill no reason holds under its procedure; preview lists them and writes no row; off neither"
+        required: true
+        default: "on"
+        type: choice
+        options: [on, preview, off]
 
 concurrency:
   group: cer-procedures-${{ github.ref }}
@@ -57,10 +69,13 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           CLASSIFY: ${{ inputs.classify || '400' }}
+          SAVE: ${{ inputs.save || 'on' }}
         run: |
           set -euo pipefail
           case "$CLASSIFY" in ''|*[!0-9]*) echo "classify must be a whole number"; exit 1;; esac
-          python3 kb/_cer_procedures.py --classify "$CLASSIFY" | tee cer_procedures.log
+          case "$SAVE" in on|preview) SAVE_FLAG="--save $SAVE";; off) SAVE_FLAG="";; *) echo "save must be on, preview or off"; exit 1;; esac
+          # shellcheck disable=SC2086
+          python3 kb/_cer_procedures.py --classify "$CLASSIFY" $SAVE_FLAG | tee cer_procedures.log
           {
             echo "### CER procedures — $(date -u +%Y-%m-%d)"
             echo '```'
@@ -68,13 +83,17 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # always(): a save refused at the INSERT still wrote its receipt, and a receipt that never
+      # reaches main cannot undo anything.
       - name: Commit the run
+        if: ${{ always() }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/unclassified_preseed.json kb/cer_procedures_out/latest.json
           git add kb/cer_classified.json 2>/dev/null || true
+          git add kb/cer_procedures_out/saved 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

@@ -340,25 +340,10 @@
       .catch(function () { return {}; });
   }
 
-  function saveInitiated(unifiedTitle) {
-    return withFreshSession(function (sess) {
-      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_ANON,
-          "Authorization": "Bearer " + sess.access_token,
-          "Content-Type": "application/json",
-          "Prefer": "resolution=merge-duplicates,return=minimal"
-        },
-        body: JSON.stringify({
-          course_id: KEY_PREFIX + unifiedTitle,
-          field: FIELD_MARKER,
-          value: "1",
-          reviewer_email: sess.email
-        })
-      });
-    });
-  }
+  // The Initiated sign-off (a reviewed_marker row per credential) retired on
+  // 2026-10-18 (Sam, Open Asks Sheet 94 card 3): its own tooltip said it changed
+  // nothing in the data. Past sign-offs still load from the overlay above, for
+  // the export's Initiated columns and the Generated Title chip.
 
   // PR-4 — generic save for any per-field override. Uses the same
   // _CREDENTIAL_REVIEW::<unified_title> namespace with `field` discriminating.
@@ -963,7 +948,6 @@
     visCols: null,         // column-picker prefs (loaded from localStorage in init)
     sort: { key: "unified_title", dir: "asc" },
     expanded: {},  // unified_title → bool (row body open)
-    curateOpen: {},  // unified_title → bool (per-row Curate panel open; default collapsed)
     worklistOpen: false,  // unclassified-triage worklist replacing the main table
     unclassified: null,   // lazy: [{raw_title, band, …}] from the audit
     unclassLoading: false,
@@ -989,13 +973,6 @@
     // clicks "use a different email".
     pendingSignInEmail: null,
     pendingSignInError: null,
-    // PR-2: bulk-select state for the "Mark N initiated" workflow. Keys are
-    // unified_title strings (selected = true). Only non-already-initiated
-    // rows can be selected; selection is cleared after each successful
-    // bulk save.
-    selected: {},
-    bulkSaving: false,    // true while a batch save is in flight (UI lock)
-    bulkProgress: null,   // {done, total} during a save
     // PR-3: row grouping. "none" / "top" / "disc". Collapsed groups remember
     // their state across renders so toggling a filter doesn't re-expand
     // everything the curator just collapsed.
@@ -1005,7 +982,6 @@
     discGeAreas: {},     // MQ discipline → [GE divisions] (GE-Area coherence check)
     // PR-4: per-row, per-field edit-mode tracker for the curation panel.
     // shape: { "unified_title": { "field_name": "display" | "edit" | "saving" } }
-    curationEditing: {},
     // CareerOneStop authority matches (kb/cos_matches.json, lazy + optional):
     // unified_title → {name, org, tier, in_demand, …}. null until the file
     // exists + loads; renders the ✓/≈ COS chips + the summary attribution.
@@ -1029,6 +1005,7 @@
     procError: false,
     procOpen: {},      // procedure id -> its examples shown
     procNeedsShown: 25,
+    foldKept: {},      // raw title -> true once its saved assignment was cleared from Held
     // Grid paging (2026-10-16): the grid paints GRID_PAGE rows, then "Show more".
     // A cold load used to paint all ~2,000 rows three or four times, each a
     // multi-second freeze on a laptop (Chrome's "Page unresponsive"). gridKey
@@ -1081,19 +1058,6 @@
     return "";
   }
 
-  // Helpers for selection bookkeeping
-  function selectionEligible(r) {
-    // A row is eligible for "Mark initiated" only if not already initiated.
-    // Treats the curator overlay AND any future server-side reviewed_at the
-    // same way.
-    return !r.curator_reviewed_at;
-  }
-  function selectedRows() {
-    return state.rows.filter(function (r) {
-      return state.selected[r.unified_title] && selectionEligible(r);
-    });
-  }
-  function selectedCount() { return selectedRows().length; }
 
   // ─── CER v2 helpers (2026-07-09) ────────────────────────────────────────
 
@@ -1196,8 +1160,6 @@
   // Lane membership for the main-grid lanes ("unc"/"noiss"/"merge" render the
   // triage sections instead — see render()).
   function inLane(r, lane) {
-    if (lane === "open") return !r.curator_reviewed_at;
-    if (lane === "done") return !!r.curator_reviewed_at;
     return true;  // "all"
   }
 
@@ -1579,12 +1541,6 @@
     jsonBtn.onclick = exportJson;
     tb.appendChild(jsonBtn);
 
-    // Bulk-action button — refreshed in place by renderBulkAction() so the
-    // toolbar doesn't rebuild on every selection change (preserves focus +
-    // dropdown state).
-    tb.appendChild(el("span", { id: "cr-bulk", class: "cr-bulk" }));
-    renderBulkAction();
-
     // 💾 Save all — appears only with unsaved grid edits; refreshed in place.
     tb.appendChild(el("span", { id: "cr-saveall-slot" }));
     refreshSaveAll();
@@ -1594,92 +1550,6 @@
     tb.appendChild(el("span", { id: "cr-auth", class: "cr-auth" }));
     renderAuth();
     renderLanes();  // lane counts ride every toolbar refresh (in-place saves)
-  }
-
-  // Refresh ONLY the bulk-action widget. Called from render() after any
-  // state.selected mutation, so the toolbar doesn't have to rebuild end-to-end.
-  function renderBulkAction() {
-    var slot = document.getElementById("cr-bulk");
-    if (!slot) return;
-    clearNode(slot);
-    if (!state.sess) return;  // anonymous viewers see nothing here
-    if (state.bulkSaving && state.bulkProgress) {
-      var p = state.bulkProgress;
-      slot.appendChild(el("span", { class: "cr-bulk-progress" },
-        ["Saving " + p.done + " of " + p.total + "…"]));
-      return;
-    }
-    var n = selectedCount();
-    if (n === 0) return;
-    var btn = el("button", {
-      type: "button", class: "cr-bulk-btn",
-      title: "Mark all selected credentials as initiated (curator-acknowledged classification)."
-    }, ["Mark " + n + " initiated"]);
-    btn.onclick = function () { bulkMarkInitiated(); };
-    slot.appendChild(btn);
-    var clearLink = el("button", { type: "button", class: "cr-bulk-clear",
-      title: "Clear the current selection" }, ["clear"]);
-    clearLink.onclick = function (e) {
-      e.preventDefault();
-      state.selected = {};
-      render();
-    };
-    slot.appendChild(document.createTextNode(" · "));
-    slot.appendChild(clearLink);
-  }
-
-  // Sequential batch save — saveInitiated() per row, one at a time. Sequential
-  // (not Promise.all) keeps us under Supabase's per-second rate limit, surfaces
-  // any failures cleanly, and lets the curator see progress. Most batches are
-  // 5–50 rows so the wall-clock is fine.
-  function bulkMarkInitiated() {
-    var rows = selectedRows();
-    if (!rows.length || !state.sess || state.bulkSaving) return;
-    if (!confirm("Mark " + rows.length + " credential" + (rows.length === 1 ? "" : "s")
-        + " as initiated?\n\nThis records that you've reviewed the AI "
-        + "classification + issuer attribution for each row. It doesn't change "
-        + "the underlying data.")) return;
-    state.bulkSaving = true;
-    state.bulkProgress = { done: 0, total: rows.length };
-    render();
-    var ok = 0, fail = 0;
-    function next(i) {
-      if (i >= rows.length) {
-        state.bulkSaving = false;
-        state.bulkProgress = null;
-        state.selected = {};
-        toast(
-          "Initiated " + ok + (fail ? " · " + fail + " failed" : ""),
-          fail > 0
-        );
-        render();
-        return;
-      }
-      var r = rows[i];
-      saveInitiated(r.unified_title)
-        .then(function (resp) {
-          if (resp.ok) {
-            ok += 1;
-            r.curator_reviewed_at = new Date().toISOString();
-            r.curator_reviewed_by = state.sess.email;
-            state.overlay[r.unified_title] = {
-              reviewed_at: r.curator_reviewed_at,
-              reviewed_by: r.curator_reviewed_by,
-            };
-          } else {
-            fail += 1;
-          }
-        })
-        .catch(function () { fail += 1; })
-        .then(function () {
-          state.bulkProgress = { done: i + 1, total: rows.length };
-          // Re-render only the bulk widget for the in-flight progress text —
-          // full table re-render would be expensive per row.
-          renderBulkAction();
-          next(i + 1);
-        });
-    }
-    next(0);
   }
 
   function renderAuth() {
@@ -1777,13 +1647,9 @@
   function renderSummary(rows, filtered) {
     var sum = document.getElementById("cr-summary");
     if (!sum) return;
-    var revCount = 0;
-    rows.forEach(function (r) { if (r.curator_reviewed_at) revCount += 1; });
     clearNode(sum);
     sum.appendChild(el("strong", null, [String(filtered.length)]));
-    sum.appendChild(document.createTextNode(" of " + rows.length + " unified titles shown · "));
-    sum.appendChild(el("strong", null, [String(revCount)]));
-    sum.appendChild(document.createTextNode(" initiated · audit baseline: "
+    sum.appendChild(document.createTextNode(" of " + rows.length + " unified titles shown · audit baseline: "
       + (state.audit ? state.audit._generated_at.slice(0, 10) : "—")));
     // Required data-use attribution whenever CareerOneStop-derived matches
     // render (the ✓/≈ COS chips) — see the COS terms in
@@ -1812,7 +1678,6 @@
     var filtered = state.rows.filter(function (r) { return passesFilter(r, state); });
     filtered = sortRows(filtered, state.sort);
     renderSummary(state.rows, filtered);
-    renderBulkAction();
     refreshSaveAll();
 
     var wrap = document.getElementById("cr-table-wrap");
@@ -1823,7 +1688,6 @@
     var table = el("table", { class: "cr-table cr-grid-v2" });
     var vc = visCols();
     var COLS = [
-      { key: null,            label: "" },  // checkbox — header rendered separately below
       { key: null,            label: "" },  // expand caret
       { key: "unified_title", label: "Credential",
         title: "The canonical unified credential name. Edit right here (signed-in); the line beneath shows scope chips + the raw college-entered title(s)." },
@@ -1845,39 +1709,10 @@
     if (vc.elig) COLS.push({ key: "eligible", label: "Elig. units",
       title: "Statewide CPL credit-UNITS eligible for this credential (MAP Exhibit CRs Catalog). Credit units, not a headcount." });
     COLS.push({ key: "reviewed", label: "Status",
-      title: "Save appears on rows with unsaved in-cell edits. Init = a one-time review sign-off recording that you checked the AI classification (who + when) — it changes nothing in the data and is never required. ✎ opens the full Curate panel." });
+      title: "Save appears on a row with unsaved in-cell edits; Saved marks a row saved this visit." });
 
     var headerRow = el("tr");
     COLS.forEach(function (col, idx) {
-      // First column (idx 0) is the bulk-select checkbox. Header renders a
-      // "select all visible" checkbox that toggles every eligible row in the
-      // current filtered view (NOT the full dataset).
-      if (idx === 0) {
-        var thChk = el("th", { class: "cr-chk-cell" });
-        if (state.sess) {
-          var visibleEligible = filtered.filter(selectionEligible);
-          var allSelected = visibleEligible.length > 0
-            && visibleEligible.every(function (r) { return state.selected[r.unified_title]; });
-          var someSelected = !allSelected
-            && visibleEligible.some(function (r) { return state.selected[r.unified_title]; });
-          var headChk = el("input", { type: "checkbox", id: "cr-select-all",
-            title: "Select all eligible rows in the current filter view" });
-          headChk.checked = allSelected;
-          headChk.indeterminate = someSelected;
-          headChk.disabled = !!state.bulkSaving;
-          headChk.onchange = function () {
-            if (allSelected) {
-              visibleEligible.forEach(function (r) { delete state.selected[r.unified_title]; });
-            } else {
-              visibleEligible.forEach(function (r) { state.selected[r.unified_title] = true; });
-            }
-            render();
-          };
-          thChk.appendChild(headChk);
-        }
-        headerRow.appendChild(thChk);
-        return;
-      }
       var attrs = col.title ? { title: col.title } : null;
       var children = [col.label];
       if (col.key) {
@@ -2098,8 +1933,6 @@
       uncN = uncOpen ? "(" + uncOpen + ")"
         : uncAssigned ? "(" + uncAssigned + " awaiting fold)" : "(0)";
     }
-    var doneN = 0;
-    state.rows.forEach(function (r) { if (r.curator_reviewed_at) doneN++; });
     var niQueue = issuerQueue();
     var staged = niQueue.filter(function (r) { return state.issuerPreseed[r.unified_title]; }).length;
     var rep = state.procReport;
@@ -2107,11 +1940,11 @@
       { k: "held",  label: "Held",
         n: rep ? (rep.needs_you || []).length : null,
         nText: state.procError ? "(unavailable)" : null,
-        title: "Titles no procedure settled last night: two procedures disagree, the classifier is unsure, or saving would join two issuers. Each opens in Unclassified with its proposal." },
+        title: "Titles no procedure settled last night: two procedures disagree, the classifier is unsure, or saving would join two issuers; and saved assignments the fold held against a human-reviewed classification. Each waiting title opens in Unclassified with its proposal." },
       { k: "all",   label: "All", n: state.rows.length,
         title: "Every canonical credential." },
       { k: "unc",   label: "Unclassified", nText: uncN,
-        title: "Raw MAP exhibit titles with no credential identity yet — assign each a unified title. Saved assignments fold on the daily sync (\"awaiting fold\")." },
+        title: "Raw MAP exhibit titles with no credential identity yet. A procedure's sure proposal saves itself each night; the rest pre-fill for you. Saved assignments fold on the daily sync (\"awaiting fold\")." },
       { k: "noiss", label: "No issuer", n: niQueue.length,
         title: "Classified credentials still needing agency/title triage."
           + (staged ? " " + staged + " pre-filled from the staged plan." : "") },
@@ -2120,11 +1953,7 @@
       { k: "procs", label: "Procedures",
         n: state.procReport ? (state.procReport.procedures || []).length : null,
         nText: state.procError ? "(unavailable)" : null,
-        title: "The rules that propose a title and issuer for each waiting exhibit every night, who set each one, and what it settled. Proposals pre-fill Unclassified; nothing saves until you click Save." },
-      { k: "open",  label: "Not initiated", n: state.rows.length - doneN,
-        title: "Awaiting a one-time curator sign-off. \"Initiated\" only records that a human reviewed the AI classification (who + when) — it never changes the data, and no other action is required. Work these at your own pace." },
-      { k: "done",  label: "Initiated", n: doneN,
-        title: "A curator has signed off on the AI classification (the name · date stamp on the row). Purely a review receipt — the data is identical either way." },
+        title: "The rules that propose a title and issuer for each waiting exhibit every night, who set each one, and what it settled. A proposal no reason holds saves under its procedure; the rest pre-fill Unclassified for you." },
       { k: "industry", label: "Industry credentials",
         n: state.industry ? state.industry.length : null,
         nText: state.industryError ? "(unavailable)" : null,
@@ -2170,14 +1999,15 @@
 
   // Needs you leads (what a person must decide), then Procedures (the rules
   // that decide the rest), then Reference (the credentials themselves). The
-  // Initiated sign-off stays in Reference until Open Asks Sheet 93 card 3.
+  // Initiated sign-off's two lanes left Reference on 2026-10-18 (Sam, Open
+  // Asks Sheet 94 card 3).
   var VIEWS = [
     { k: "needs", label: "Needs you", lanes: ["held", "unc", "noiss", "merge"],
       title: "What a person must decide: the titles the procedures held, the waiting titles, credentials with no issuer, and merges to confirm." },
     { k: "procs", label: "Procedures", lanes: ["procs"],
       title: "The rules that settle waiting titles every night, who set each one, and what it settled." },
-    { k: "ref", label: "Reference", lanes: ["all", "industry", "open", "done"],
-      title: "Every credential, the industry credentials, and the curator sign-off." },
+    { k: "ref", label: "Reference", lanes: ["all", "industry"],
+      title: "Every credential, and the industry credentials." },
   ];
   function viewOf(lane) {
     for (var i = 0; i < VIEWS.length; i++) {
@@ -2328,9 +2158,9 @@
     refreshSaveAll();
   }
 
-  // Status/action cell — rebuilt in place as the row moves through
-  // clean → dirty → saved. Keeps the Mark-initiated flow + a compact ✎
-  // (quality flag + the rest live in the drawer's Curate panel).
+  // Status cell — rebuilt in place as the row moves through clean → dirty →
+  // saved. The Init sign-off and the ✎ Curate toggle left on 2026-10-18 (Sam,
+  // Open Asks Sheet 94 card 3); the quality flag sits in the open row.
   function refreshRowStatus(r, tr) {
     var td = tr.querySelector(".cr-action-cell");
     if (!td) return;
@@ -2346,59 +2176,6 @@
     }
     if (state.rowSaved[ut]) {
       td.appendChild(el("span", { class: "cr-rev-on" }, ["Saved"]));
-    }
-    if (r.curator_reviewed_at) {
-      var who = (r.curator_reviewed_by || "").split("@")[0];
-      var when = r.curator_reviewed_at.slice(0, 10);
-      td.appendChild(el("span", {
-        class: "cr-rev-on",
-        title: "Initiated by " + (r.curator_reviewed_by || "?") + " on " + when
-      }, ["Initiated by " + who + " · " + when]));
-    } else if (state.sess) {
-      var b = el("button", {
-        type: "button", class: "cr-action-btn",
-        title: "Mark this unified title as initiated (curator-acknowledged classification)."
-      }, ["Init"]);
-      b.onclick = function () {
-        if (!confirm("Mark \"" + r.unified_title + "\" initiated?\n\n"
-            + "This records that you've reviewed the AI classification + "
-            + "issuer attribution. It doesn't change the underlying data.")) return;
-        b.disabled = true; b.textContent = "Saving…";
-        saveInitiated(r.unified_title)
-          .then(function (resp) {
-            if (!resp.ok) {
-              b.disabled = false; b.textContent = "Init";
-              toast("Save failed (" + resp.status + ")", true); return;
-            }
-            r.curator_reviewed_at = new Date().toISOString();
-            r.curator_reviewed_by = state.sess.email;
-            state.overlay[r.unified_title] = state.overlay[r.unified_title] || {};
-            state.overlay[r.unified_title].reviewed_at = r.curator_reviewed_at;
-            state.overlay[r.unified_title].reviewed_by = r.curator_reviewed_by;
-            toast("Initiated · " + r.unified_title);
-            render();
-          })
-          .catch(function () {
-            b.disabled = false; b.textContent = "Init";
-            toast("Save failed (network)", true);
-          });
-      };
-      td.appendChild(b);
-    }
-    if (state.sess) {
-      var curOpenNow = !!state.curateOpen[ut];
-      var more = el("button", {
-        type: "button",
-        class: "cr-curate-toggle cr-action-curate" + (curOpenNow ? " is-open" : ""),
-        title: "More fields — quality flag, per-field history (opens the row's Curate panel)."
-      }, ["✎"]);
-      more.onclick = function () {
-        var open = !state.curateOpen[ut];
-        state.curateOpen[ut] = open;
-        if (open) state.expanded[ut] = true;
-        render();
-      };
-      td.appendChild(more);
     }
   }
 
@@ -2508,30 +2285,11 @@
     var tr = el("tr", { class: "cr-row" + (rowIsDirty(r) ? " cr-dirty" : "")
       + (state.rowSaved[ut] ? " cr-saved" : "") });
 
-    // Per-row checkbox (auth-gated) — bulk Mark-initiated.
-    var chkTd = el("td", { class: "cr-chk-cell" });
-    if (state.sess) {
-      var elig = selectionEligible(r);
-      var chk = el("input", {
-        type: "checkbox", class: "cr-row-chk",
-        title: elig ? "Select for bulk action" : "Already initiated — not eligible for bulk action",
-      });
-      chk.checked = !!state.selected[r.unified_title];
-      chk.disabled = !elig || !!state.bulkSaving;
-      chk.onchange = function () {
-        if (chk.checked) state.selected[r.unified_title] = true;
-        else delete state.selected[r.unified_title];
-        render();
-      };
-      chkTd.appendChild(chk);
-    }
-    tr.appendChild(chkTd);
-
     // Expand caret — the "dig in" affordance (drawer: variants, aligned
-    // courses, Curate panel with the retired columns).
+    // courses, the quality flag).
     var caretTd = el("td", { class: "cr-caret-cell" });
     var caret = el("button", { type: "button", class: "cr-caret",
-      title: "Open the full record — raw variants, aligned common courses, curation panel."
+      title: "Open the full record — raw variants, aligned common courses, the quality flag."
     }, [state.expanded[ut] ? "▾" : "▸"]);
     caret.onclick = function () {
       state.expanded[ut] = !state.expanded[ut];
@@ -2761,305 +2519,11 @@
       tr.appendChild(eligTd);
     }
 
-    // Status / actions — 💾 Save (dirty) · ✓ stamp/Init · ✎ more.
+    // Status — Save (dirty) · Saved.
     var actionTd = el("td", { class: "cr-action-cell" });
     tr.appendChild(actionTd);
     refreshRowStatus(r, tr);
     refreshMergeStrip(r, tr);
-    return tr;
-  }
-
-  // PR-4 — curation panel rendered at the top of each expanded row.
-  // For signed-in reviewers, lets them override display_title /
-  // issuing_agency / training_agency / quality_flag. Each row in the panel:
-  //   <label>      <value-or-input>   [edit | clear]
-  // Click the value to edit it (becomes an inline input/select). Enter or
-  // blur saves; Escape cancels. Clear (×) only appears when overridden.
-  // For anonymous viewers, surfaces the current curated state read-only.
-  function renderCurationPanel(r) {
-    var panel = el("div", { class: "cr-curation-panel" });
-    panel.appendChild(el("h3", { class: "cr-curation-h" }, ["Curation"]));
-
-    if (!state.sess) {
-      panel.appendChild(el("p", { class: "cr-curation-note" }, [
-        "Sign in via the toolbar to edit display title, issuing agency, training agency, or quality flag."
-      ]));
-      // Still surface any existing overrides as read-only badges so anonymous
-      // viewers see what curators have decided.
-      if (r.utitle_overridden_at || r.issuer_overridden_at ||
-          r.trainer_overridden_at || r.qflag_overridden_at) {
-        var ul = el("ul", { class: "cr-curation-readonly" });
-        if (r.utitle_overridden_at) {
-          ul.appendChild(el("li", null, [
-            "Display title: ", el("b", null, [r.display_title]),
-            " (curated · originally: " + r.unified_title + ")"
-          ]));
-        }
-        if (r.issuer_overridden_at) {
-          ul.appendChild(el("li", null, [
-            "Issuing agency: ", el("b", null, [r.primary_issuer || "(cleared)"]),
-            " (curated · originally: " + (r.original_primary_issuer || "(none)") + ")"
-          ]));
-        }
-        if (r.trainer_overridden_at) {
-          ul.appendChild(el("li", null, [
-            "Training agency: ", el("b", null, [r.primary_trainer || "(cleared)"]),
-            " (curated · originally: " + (r.original_primary_trainer || "(none)") + ")"
-          ]));
-        }
-        if (r.qflag_overridden_at) {
-          ul.appendChild(el("li", null, [
-            "Quality flag: ", el("b", null, [r.flag_label || "(cleared)"]),
-            " (curated · originally: " + (r.original_flag_label || "(none)") + ")"
-          ]));
-        }
-        panel.appendChild(ul);
-      }
-      return panel;
-    }
-
-    // Signed-in — render 4 editable fields.
-    var tbl = el("table", { class: "cr-curation-tbl" });
-    var tbody = el("tbody");
-
-    tbody.appendChild(renderCurationFieldRow({
-      r: r,
-      label: "Display title",
-      field: FIELD_UTITLE_OVERRIDE,
-      kind: "text",
-      currentValue: r.display_title || r.unified_title,
-      originalValue: r.unified_title,
-      isOverridden: !!r.utitle_overridden_at,
-      overriddenBy: r.utitle_overridden_by,
-      overriddenAt: r.utitle_overridden_at,
-      hint: "Rename is DISPLAY-ONLY. KB key + articulation joins stay on the original. A future Cred-Ref PR-5 will promote overrides into real KB renames with an alias map.",
-    }));
-
-    tbody.appendChild(renderCurationFieldRow({
-      r: r,
-      label: "Issuing agency",
-      field: FIELD_ISSUER_OVERRIDE,
-      kind: "text",
-      datalistId: "cr-issuer-list",   // re-use the existing toolbar datalist
-      currentValue: r.primary_issuer || "",
-      originalValue: r.original_primary_issuer || r.primary_issuer || "",
-      isOverridden: !!r.issuer_overridden_at,
-      overriddenBy: r.issuer_overridden_by,
-      overriddenAt: r.issuer_overridden_at,
-      hint: "Override the inferred issuer. Save \"\" (empty) to mark a credential as having no formal issuer (local exhibit, portfolio).",
-    }));
-
-    tbody.appendChild(renderCurationFieldRow({
-      r: r,
-      label: "Training agency",
-      field: FIELD_TRAINER_OVERRIDE,
-      kind: "text",
-      currentValue: r.primary_trainer || "",
-      originalValue: r.original_primary_trainer || r.primary_trainer || "",
-      isOverridden: !!r.trainer_overridden_at,
-      overriddenBy: r.trainer_overridden_by,
-      overriddenAt: r.trainer_overridden_at,
-      hint: "Override the inferred trainer (when distinct from the issuer).",
-    }));
-
-    tbody.appendChild(renderCurationFieldRow({
-      r: r,
-      label: "Quality flag",
-      field: FIELD_QFLAG_OVERRIDE,
-      kind: "select",
-      options: QFLAG_OPTIONS,
-      currentValue: r.flag_label || "",
-      originalValue: r.original_flag_label || r.flag_label || "",
-      isOverridden: !!r.qflag_overridden_at,
-      overriddenBy: r.qflag_overridden_by,
-      overriddenAt: r.qflag_overridden_at,
-      hint: "Set a quality flag (e.g. suspect_course_as_exhibit) or clear an inferred one. Used by the Credential Reference audit to triage data-entry artifacts.",
-    }));
-
-    tbl.appendChild(tbody);
-    panel.appendChild(tbl);
-    return panel;
-  }
-
-  // Renders one row of the curation table. Each row goes through three states:
-  //   1. display: show the value as text + an "edit" button
-  //   2. edit: show an input/select + Save/Cancel buttons
-  //   3. saving: show a spinner placeholder
-  // Per-row state lives in state.curationEditing[r.unified_title][field].
-  function renderCurationFieldRow(opts) {
-    var r = opts.r;
-    var rec = state.curationEditing[r.unified_title] || {};
-    var mode = rec[opts.field] || "display";  // "display" | "edit" | "saving"
-
-    var tr = el("tr", { class: "cr-curation-row" + (opts.isOverridden ? " cr-curation-overridden" : "") });
-    tr.appendChild(el("th", { class: "cr-curation-label", scope: "row" }, [
-      opts.label, opts.isOverridden ? el("span", { class: "cr-override-marker",
-        title: "Curated"
-      }, [" ✎"]) : ""
-    ]));
-
-    var valTd = el("td", { class: "cr-curation-value" });
-
-    if (mode === "saving") {
-      valTd.appendChild(el("span", { class: "cr-curation-saving" }, ["saving…"]));
-    } else if (mode === "edit") {
-      var input;
-      if (opts.kind === "select") {
-        input = el("select", { class: "cr-curation-input" });
-        opts.options.forEach(function (v) {
-          var o = el("option", { value: v }, [v === "" ? "(none)" : v]);
-          if (v === (opts.currentValue || "")) o.selected = true;
-          input.appendChild(o);
-        });
-      } else {
-        input = el("input", {
-          class: "cr-curation-input",
-          type: "text",
-          value: opts.currentValue || "",
-          autocomplete: "off"
-        });
-        if (opts.datalistId) input.setAttribute("list", opts.datalistId);
-      }
-      valTd.appendChild(input);
-
-      var saveBtn = el("button", {
-        type: "button", class: "cr-curation-save"
-      }, ["Save"]);
-      var cancelBtn = el("button", {
-        type: "button", class: "cr-curation-cancel"
-      }, ["Cancel"]);
-      valTd.appendChild(saveBtn);
-      valTd.appendChild(cancelBtn);
-
-      var doSave = function () {
-        var newVal = input.value;
-        // No-op guard — original value, no override existed → nothing to save.
-        if (!opts.isOverridden && newVal === opts.originalValue) {
-          rec[opts.field] = "display";
-          state.curationEditing[r.unified_title] = rec;
-          render();
-          return;
-        }
-        rec[opts.field] = "saving";
-        state.curationEditing[r.unified_title] = rec;
-        render();
-        // If new value equals the original AND we have an existing override,
-        // treat Save-as-original as a Clear — DELETE the override row.
-        var op = (opts.isOverridden && newVal === opts.originalValue)
-          ? clearOverride(r.unified_title, opts.field)
-          : saveOverride(r.unified_title, opts.field, newVal);
-        op.then(function (resp) {
-          if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
-          // Update overlay + row state locally so the UI is immediately consistent.
-          var ov = state.overlay[r.unified_title] || {};
-          if (opts.isOverridden && newVal === opts.originalValue) {
-            // Clear path
-            applyOverrideClear(r, opts.field);
-            delete ov[overlayKeyFor(opts.field)];
-            delete ov[overlayMetaKeyFor(opts.field, "by")];
-            delete ov[overlayMetaKeyFor(opts.field, "at")];
-          } else {
-            applyOverrideLocally(r, opts.field, newVal);
-            if (opts.field === FIELD_ISSUER_OVERRIDE) addIssuerOption(newVal);
-            ov[overlayKeyFor(opts.field)] = newVal;
-            ov[overlayMetaKeyFor(opts.field, "by")] = state.sess.email;
-            ov[overlayMetaKeyFor(opts.field, "at")] = new Date().toISOString();
-          }
-          state.overlay[r.unified_title] = ov;
-          rec[opts.field] = "display";
-          state.curationEditing[r.unified_title] = rec;
-          render();
-        }).catch(function (e) {
-          alert("Save failed: " + (e && e.message ? e.message : e));
-          rec[opts.field] = "edit";
-          state.curationEditing[r.unified_title] = rec;
-          render();
-        });
-      };
-      var doCancel = function () {
-        rec[opts.field] = "display";
-        state.curationEditing[r.unified_title] = rec;
-        render();
-      };
-
-      saveBtn.onclick = doSave;
-      cancelBtn.onclick = doCancel;
-      input.onkeydown = function (e) {
-        if (e.key === "Enter") { e.preventDefault(); doSave(); }
-        else if (e.key === "Escape") { e.preventDefault(); doCancel(); }
-      };
-      // Auto-focus the input when entering edit mode (and bring the panel
-      // into view — "＋ set" can open it from a row whose panel renders
-      // below the fold).
-      setTimeout(function () {
-        if (input.scrollIntoView) { try { input.scrollIntoView({ block: "center" }); } catch (e) {} }
-        input.focus(); if (input.select) input.select();
-      }, 0);
-    } else {
-      // display mode
-      var span = el("span", { class: "cr-curation-display" }, [
-        opts.currentValue
-          ? document.createTextNode(opts.currentValue)
-          : el("span", { class: "cr-null" }, ["(none)"])
-      ]);
-      valTd.appendChild(span);
-
-      var editBtn = el("button", {
-        type: "button", class: "cr-curation-edit",
-        title: "Edit · " + (opts.hint || "")
-      }, ["edit"]);
-      editBtn.onclick = function () {
-        rec[opts.field] = "edit";
-        state.curationEditing[r.unified_title] = rec;
-        render();
-      };
-      valTd.appendChild(editBtn);
-
-      if (opts.isOverridden) {
-        var clearBtn = el("button", {
-          type: "button", class: "cr-curation-clear",
-          title: "Clear override — restore original: \"" + (opts.originalValue || "(none)") + "\""
-        }, ["× clear"]);
-        clearBtn.onclick = function () {
-          if (!confirm("Clear this override and restore the original value (\""
-                       + (opts.originalValue || "(none)") + "\")?")) return;
-          rec[opts.field] = "saving";
-          state.curationEditing[r.unified_title] = rec;
-          render();
-          clearOverride(r.unified_title, opts.field)
-            .then(function (resp) {
-              if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
-              applyOverrideClear(r, opts.field);
-              var ov = state.overlay[r.unified_title] || {};
-              delete ov[overlayKeyFor(opts.field)];
-              delete ov[overlayMetaKeyFor(opts.field, "by")];
-              delete ov[overlayMetaKeyFor(opts.field, "at")];
-              state.overlay[r.unified_title] = ov;
-              rec[opts.field] = "display";
-              state.curationEditing[r.unified_title] = rec;
-              render();
-            }).catch(function (e) {
-              alert("Clear failed: " + (e && e.message ? e.message : e));
-              rec[opts.field] = "display";
-              state.curationEditing[r.unified_title] = rec;
-              render();
-            });
-        };
-        valTd.appendChild(clearBtn);
-      }
-    }
-
-    if (opts.isOverridden && opts.overriddenBy) {
-      valTd.appendChild(el("div", { class: "cr-curation-meta" }, [
-        "curated by " + opts.overriddenBy.split("@")[0]
-          + (opts.overriddenAt ? " on " + opts.overriddenAt.slice(0, 10) : "")
-          + " · originally: \"" + (opts.originalValue || "(none)") + "\""
-      ]));
-    } else if (opts.hint) {
-      valTd.appendChild(el("div", { class: "cr-curation-hint" }, [opts.hint]));
-    }
-
-    tr.appendChild(valTd);
     return tr;
   }
 
@@ -3181,13 +2645,8 @@
       "#tab-credential-reference table.cr-table td.cr-title-cell{text-align:left;max-width:none;min-width:30ch;}" +
       "#tab-credential-reference table.cr-table th:nth-child(2){text-align:left;}" +
       "#tab-credential-reference table.cr-table td{padding:6px 8px;}" +
-      // Curate panel is now opened from the row's Action cell (2026-06-03).
-      "#tab-credential-reference .cr-curate-toggle{background:var(--surface-muted);border:1px solid var(--border-strong);border-radius:6px;color:var(--text-strong);font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
-      "#tab-credential-reference .cr-curate-toggle:hover{background:var(--surface-muted);}" +
-      "#tab-credential-reference .cr-curate-toggle.is-open{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}" +
-      // Action cell stacks Curate over Mark-initiated / the ✓ initiated stamp.
+      // The Status cell: Save, or the Saved word.
       "#tab-credential-reference .cr-action-cell{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}" +
-      "#tab-credential-reference .cr-action-curate{margin-bottom:0;}" +
       // Merged Confidence cell — title figure leads, issuer rides muted.
       "#tab-credential-reference .cr-conf-sep{opacity:.45;}" +
       "#tab-credential-reference .cr-conf-issuer{opacity:.6;font-size:.92em;}" +
@@ -3306,9 +2765,10 @@
       // Curation panel: its label cells are <th> INSIDE .cr-table, so the main
       // table's sticky seal-blue th rule bled in (they rendered as black boxes
       // with dark slate text — Sam's screenshot). Neutralize + restyle quiet.
-      "#tab-credential-reference table.cr-table .cr-curation-tbl th{position:static;background:transparent;color:var(--text-muted);text-align:right;font-size:.8rem;z-index:auto;}" +
-      "#tab-credential-reference .cr-curation-panel{background:var(--surface-opaque,#fff);border:1px solid var(--border);border-left:4px solid var(--seal-blue);}" +
-      "#tab-credential-reference .cr-curation-input{background:var(--surface-opaque);color:var(--text-body,#3A3A36);border:1px solid var(--border-strong);border-radius:5px;padding:4px 6px;font-size:.82rem;min-width:24ch;}" +
+      // The quality flag in the open row (2026-10-18).
+      "#tab-credential-reference .cr-flag-row{margin:4px 0 10px;font-size:.85rem;color:var(--text-body);}" +
+      "#tab-credential-reference .cr-flag-row select.cr-flag-in{min-height:24px;margin-left:4px;}" +
+      "#tab-credential-reference .cr-flag-meta{color:var(--text-muted);font-size:.8rem;}" +
       // A bulk/row save that failed is loud (2026-07-08 — a partial batch
       // previously read as success unless you noticed the button text).
       "#tab-credential-reference .cr-wl-row.cr-wl-save-failed{background:var(--surface-subtle);outline:1px solid var(--crimson);}" +
@@ -3442,13 +2902,12 @@
   // on specificity rather than on order. Exceptions, per the spec: the lane
   // chips are a toggle set (weight + aria-pressed), a chip is a category, and
   // the caret / title / group toggles disclose a row.
-  var CER_CTRL = ["cr-action-btn", "cr-bulk-btn", "cr-bulk-clear", "cr-saveall",
+  var CER_CTRL = ["cr-saveall",
     "cr-wl-saveall", "cr-wl-save", "cr-wl-clear", "cr-wl-back", "cr-triage-btn",
     "cr-export-btn", "cr-ni-suggest", "cr-ni-suggest-chip", "cr-ni-tsuggest",
     "cr-ni-search", "cr-ni-tsearch", "cr-ni-add-issuer", "cr-mg-confirm",
     "cr-merge-confirm", "cr-mergesug-btn", "cr-mergesug-close", "cr-issuer-add",
-    "cr-grid-save", "cr-curation-save", "cr-curation-edit", "cr-curation-clear",
-    "cr-curation-cancel", "cr-badge-more", "cr-auth-link", "cr-ind-more",
+    "cr-grid-save", "cr-badge-more", "cr-auth-link", "cr-ind-more",
     "cr-ind-open"];
   function cerCtrlSel(suffix) {
     return CER_CTRL.map(function (c) {
@@ -3463,15 +2922,12 @@
     cerCtrlSel(":hover") + "{background:none;color:var(--cobalt);text-decoration-thickness:2px;}" +
     cerCtrlSel(":disabled") + "{background:none;color:var(--text-muted);text-decoration:none;cursor:wait;}" +
     cerCtrlSel(":focus-visible") + "{outline:2px solid var(--focus-ring);outline-offset:2px;}" +
-    // Clearing a curated value is the one destructive word: crimson, still a word.
-    "#tab-credential-reference.cpl-tab-pane button.cr-curation-clear{color:var(--crimson);}" +
     // Disclosure + chip targets: 24px floor without changing their look.
-    "#tab-credential-reference.cpl-tab-pane button.cr-caret,#tab-credential-reference.cpl-tab-pane button.cr-curate-toggle{min-width:24px;min-height:24px;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-caret{min-width:24px;min-height:24px;}" +
     "#tab-credential-reference.cpl-tab-pane button.cr-title-toggle,#tab-credential-reference.cpl-tab-pane button.cr-chip{min-height:24px;}" +
     // A row's sections are h3 under the tab's h2 (they were h5, a skipped
     // level, S413); the body face and size they had as h5.
-    "#tab-credential-reference.cpl-tab-pane .cr-expanded-body h3:not(.cr-curation-h),#tab-credential-reference.cpl-tab-pane .cr-ind-inrow>h3{margin:8px 0 4px;font-family:inherit;color:var(--navy-primary);font-size:.85rem;}" +
-    "#tab-credential-reference.cpl-tab-pane h3.cr-curation-h{font-family:inherit;}" +
+    "#tab-credential-reference.cpl-tab-pane .cr-expanded-body h3,#tab-credential-reference.cpl-tab-pane .cr-ind-inrow>h3{margin:8px 0 4px;font-family:inherit;color:var(--navy-primary);font-size:.85rem;}" +
     // The view switch and its lanes (S413): words, the one in use darker,
     // heavier and thickly underlined, and said so by aria-pressed.
     "#tab-credential-reference.cpl-tab-pane button.cr-view,#tab-credential-reference.cpl-tab-pane button.cr-lane{border:0;border-radius:0;background:none;color:var(--cobalt);font-weight:600;" +
@@ -3535,15 +2991,14 @@
           + " Retitling the exhibit is a curation step; open the row for the industry record." }, [ch.word]));
     }
     // "Generated Title" — the credential's Common Exhibit Title is an
-    // AI-generated draft, not yet curator-confirmed (Mark initiated) or renamed
-    // (✎). Shown on every AI-draft title so a curator can tell at a glance
-    // which exhibit titles are machine-generated vs human-confirmed (Sam's
-    // call, 2026-06-04). Curated/initiated rows surface ✓ / ✎ instead.
+    // AI-generated draft no person has confirmed by a past sign-off or a
+    // rename. Shown so a curator can tell at a glance which exhibit titles
+    // are machine-generated (Sam's call, 2026-06-04).
     if (!r.curator_reviewed_at && !r.utitle_overridden_at) {
       c.appendChild(el("span", { class: "cr-chip cr-chip-gen",
         title: "Common Exhibit Title is an AI-generated draft (title confidence "
           + (r.conf_modal != null ? r.conf_modal.toFixed(2) : "—")
-          + "), not yet curator-confirmed. Sign in and Mark initiated, or rename, to confirm it."
+          + ") no person has confirmed. Sign in and rename it to confirm it."
       }, ["Generated Title"]));
     }
     if (r.statewide) {
@@ -3900,78 +3355,6 @@
       ]));
     }
 
-    // ✓ Initiate all assigned (S110, Sam's pick: "pre-initiate assignments").
-    // Every ASSIGNED (awaiting-fold) row's TARGET credential gets the
-    // reviewed_marker now, so when the fold lands those credentials arrive
-    // ✓ Initiated instead of piling into the ○ Not initiated lane. Targets
-    // resolve to an existing row's KEY when the assigned title matches one
-    // (already-initiated ones are skipped); brand-new titles key by the
-    // assigned title — the fold mints that exact key.
-    if (state.sess) {
-      var seenT = {}, initTargets = [];
-      items.forEach(function (it2) {
-        var a2 = state.unclassAssign[it2.raw_title];
-        var t2 = a2 && a2.title;
-        if (!t2 || seenT[t2]) return;
-        seenT[t2] = true;
-        var match = null;
-        for (var ri = 0; ri < state.rows.length; ri++) {
-          var rr = state.rows[ri];
-          if (rr.unified_title === t2 || rr.display_title === t2) { match = rr; break; }
-        }
-        if (match) {
-          if (!match.curator_reviewed_at) initTargets.push({ key: match.unified_title, row: match });
-        } else {
-          initTargets.push({ key: t2, row: null });
-        }
-      });
-      if (initTargets.length) {
-        var initBar = el("div", { class: "cr-wl-preseed-bar" });
-        initBar.appendChild(el("span", null, [
-          "Initiate all marks the " + initTargets.length + " credential"
-          + (initTargets.length === 1 ? "" : "s") + " targeted by saved "
-          + "assignments as Initiated (already-initiated targets are skipped), "
-          + "so they don't land in Not initiated after the fold."
-        ]));
-        var initAll = el("button", { type: "button", class: "cr-wl-saveall",
-          id: "cr-wl-initall" }, ["Initiate all assigned (" + initTargets.length + ")"]);
-        initAll.onclick = function () {
-          if (!window.confirm("Mark " + initTargets.length + " assigned credential"
-              + (initTargets.length === 1 ? "" : "s") + " as Initiated?")) return;
-          initAll.disabled = true;
-          var done = 0, failed = 0, queue = initTargets.slice();
-          function step() {
-            if (!queue.length) {
-              initAll.textContent = failed
-                ? done + " initiated · " + failed + " failed — retry"
-                : done + " initiated";
-              initAll.disabled = !failed;
-              renderToolbar();
-              renderLanes();
-              return;
-            }
-            var batch = queue.splice(0, 8);
-            Promise.all(batch.map(function (tg) {
-              return saveInitiated(tg.key).then(function (resp) {
-                if (resp && resp.ok) {
-                  done++;
-                  if (tg.row) {
-                    tg.row.curator_reviewed_at = new Date().toISOString();
-                    tg.row.curator_reviewed_by = (state.sess && state.sess.email) || "";
-                  }
-                } else { failed++; }
-              }).catch(function () { failed++; });
-            })).then(function () {
-              initAll.textContent = "initiating… " + done + "/" + initTargets.length;
-              step();
-            });
-          }
-          step();
-        };
-        initBar.appendChild(initAll);
-        panel.appendChild(initBar);
-      }
-    }
     if (!shown.length) {
       // every row is assigned but not yet folded — say so instead of
       // rendering a bare table (the queue-clear state above only covers a
@@ -5162,6 +4545,58 @@
     return box;
   }
 
+  // The quality flag, in the row (Sam, Open Asks Sheet 94 card 3, 2026-10-18: the
+  // Curate panel that held it is retired; title, issuer, trainer, SUBJ and
+  // discipline edit in the grid's own cells). A signed-in curator sets or clears
+  // it from a select; a reader sees the word.
+  function renderFlagRow(r) {
+    var ut = r.unified_title;
+    var row = el("div", { class: "cr-flag-row" });
+    var meta = r.qflag_overridden_at
+      ? " · set by " + ((r.qflag_overridden_by || "").split("@")[0] || "a curator")
+        + (r.original_flag_label ? " · originally " + r.original_flag_label : "")
+      : "";
+    if (!state.sess) {
+      if (!r.flag_label) return null;
+      row.appendChild(el("span", null, ["Quality flag: " + r.flag_label + meta]));
+      return row;
+    }
+    var lab = el("label", { class: "cr-flag-label" }, ["Quality flag "]);
+    var sel = el("select", { class: "cr-cellin cr-flag-in" });
+    QFLAG_OPTIONS.forEach(function (v) {
+      var o = el("option", { value: v }, [v === "" ? "(none)" : v]);
+      if (v === (r.flag_label || "")) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.onchange = function () {
+      var v = sel.value;
+      sel.disabled = true;
+      var op = v ? saveOverride(ut, FIELD_QFLAG_OVERRIDE, v) : clearOverride(ut, FIELD_QFLAG_OVERRIDE);
+      op.then(function (resp) {
+        if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
+        var ov = state.overlay[ut] = state.overlay[ut] || {};
+        if (v) {
+          applyOverrideLocally(r, FIELD_QFLAG_OVERRIDE, v);
+          ov.qflag_override = v;
+          ov.qflag_overridden_by = state.sess.email;
+          ov.qflag_overridden_at = r.qflag_overridden_at;
+        } else {
+          applyOverrideClear(r, FIELD_QFLAG_OVERRIDE);
+          delete ov.qflag_override; delete ov.qflag_overridden_by; delete ov.qflag_overridden_at;
+        }
+        toast((v ? "Quality flag set · " : "Quality flag cleared · ") + (r.display_title || ut));
+        render();
+      }).catch(function () {
+        sel.disabled = false;
+        toast("Save failed", true);
+      });
+    };
+    lab.appendChild(sel);
+    row.appendChild(lab);
+    if (meta) row.appendChild(el("span", { class: "cr-flag-meta" }, [meta]));
+    return row;
+  }
+
   function renderExpandedRow(r, colSpan) {
     // Lets a signed-in reviewer edit 4 fields: display title, issuing agency,
     // training agency, quality flag. Display-override pattern: the original
@@ -5171,20 +4606,14 @@
     // declarations the very first append below threw a ReferenceError, which
     // aborted the table render and left the tab blank on expand. Restored
     // 2026-05-30 (matches the .cr-expanded / .cr-expanded-body CSS).
-    if (!state.curateOpen) state.curateOpen = {};
     var tr = el("tr", { class: "cr-expanded" });
     var td = el("td", { colspan: String(colSpan) });
     var div = el("div", { class: "cr-expanded-body" });
 
-    // ── Curation panel — toggled from the row's Action-cell "✎ Curate" button
-    // (moved out of the expanded body 2026-06-03 to save vertical space; the
-    // in-body toggle was redundant once the Action cell carries it). Shown only
-    // when the curator opened it; otherwise the expanded row leads straight into
-    // the enrichment block + identities table. Open-state persists in
-    // state.curateOpen across re-renders. ──
-    if (state.curateOpen[r.unified_title]) {
-      div.appendChild(renderCurationPanel(r));
-    }
+    // ── The quality flag leads the open row (the Curate panel that held it
+    // retired 2026-10-18, Sheet 94 card 3). ──
+    var flagRow = renderFlagRow(r);
+    if (flagRow) div.appendChild(flagRow);
 
     // ── System-level GE-Area credit for AP/IB/CLEP exams (2026-06-04). This
     // credit is set statewide (AP: AB 1985 / AA 17-20; IB+CLEP: title 5 §55052.5;
@@ -5966,7 +5395,9 @@
     nh.appendChild(el("p", { class: "cr-proc-intro" }, [
       "A title comes here only when no procedure settles it: two procedures disagree, the classifier "
       + "is unsure, or saving it would join two issuers. Open it in Unclassified to save its proposal "
-      + "or change it, or tell a session the procedure that would have settled it."]));
+      + "or change it, or tell a session the procedure that would have settled it. A saved assignment "
+      + "the nightly fold held against a human-reviewed classification comes here too: keep the "
+      + "reference's title, or tell a session to re-key the entry."]));
     if (!needs.length) {
       nh.appendChild(el("p", { class: "cr-wl-note" }, ["Nothing needs you from the last run."]));
     } else {
@@ -5988,8 +5419,14 @@
             "Proposed: " + pr.title + (pr.issuer ? " · issued by " + pr.issuer : "")
             + (pr.procedure ? " · by " + pr.procedure : "")]));
         });
+        if (n.fold_report && n.standing && n.standing.length) {
+          li.appendChild(el("div", { class: "cr-proc-prop" },
+            ["The reference classifies it as: " + n.standing.join("; ")]));
+        }
         li.appendChild(el("div", { class: "cr-proc-why" }, ["Why it is here: " + n.why]));
-        if (waiting && !waiting[n.raw_title]) {
+        if (n.fold_report) {
+          renderFoldHoldAction(li, n);
+        } else if (waiting && !waiting[n.raw_title]) {
           li.appendChild(el("div", { class: "cr-proc-meta" },
             ["No longer waiting: saved or folded since the run."]));
         } else {
@@ -6012,6 +5449,43 @@
     wrap.appendChild(panel);
   }
 
+  // A saved assignment the fold held (kb/_fold_unclassified.py, Sheet 94 card 1):
+  // the reference already classifies the raw under a human-reviewed entry and the
+  // saved assignment disagrees. Keeping the reference's title clears the saved
+  // assignment (the daily sync drops it from the overlay and the hold ends); the
+  // other way, re-keying a human-reviewed entry, is a session's reviewed change.
+  function renderFoldHoldAction(li, n) {
+    if (state.foldKept[n.raw_title]) {
+      li.appendChild(el("div", { class: "cr-proc-meta" },
+        ["The saved assignment is cleared; the reference's title stands."]));
+      return;
+    }
+    if (!state.sess) {
+      li.appendChild(el("div", { class: "cr-proc-meta" },
+        ["Sign in to keep the reference's title, which clears the saved assignment."]));
+      return;
+    }
+    var keep = el("button", { type: "button", class: "cr-proc-word cr-proc-keep" },
+      ["Keep the reference's title"]);
+    keep.onclick = function () {
+      keep.disabled = true;
+      clearUnclass(n.raw_title).then(function (resp) {
+        if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
+        state.foldKept[n.raw_title] = true;
+        delete state.unclassAssign[n.raw_title];
+        toast("Cleared the saved assignment · " + n.raw_title);
+        render();
+      }).catch(function () {
+        keep.disabled = false;
+        toast("Clear failed", true);
+      });
+    };
+    li.appendChild(keep);
+    li.appendChild(el("div", { class: "cr-proc-meta" },
+      ["To use the saved title instead, tell a session: the reference's entry is human-reviewed "
+       + "and changes by a reviewed re-key."]));
+  }
+
   function renderProcedures() {
     ensureProcCss();
     var wrap = document.getElementById("cr-table-wrap");
@@ -6027,8 +5501,9 @@
       ["Procedures in force (" + procs.length + ")"]));
     ph.appendChild(el("p", { class: "cr-proc-intro" }, [
       "Each night the rules below run in order, then the classifier reads every one of them and the "
-      + "skill and answers for the titles that remain. To add a procedure, write it in plain words for "
-      + "a session; it joins this list with your words and the date."]));
+      + "skill and answers for the titles that remain. A result no reason holds saves under the procedure "
+      + "that decided it, and a procedure's saves can be undone together. To add a procedure, write it in "
+      + "plain words for a session; it joins this list with your words and the date."]));
     var ol = el("ol", { class: "cr-proc-list" });
     procs.forEach(function (pr) {
       var li = el("li", { class: "cr-proc-item" });

@@ -309,10 +309,10 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     }
   }
 
-  // ── C. the curation-panel style neutralizer is injected (black-box fix) ──
+  // ── C. the injected style sheet: the Curate panel's rules left with it (Sheet 94 card 3) ──
   const css = bdoc.getElementById("cr-scope-css");
-  check("style: curation-label th bleed neutralized (no more black boxes)",
-    !!css && css.textContent.indexOf(".cr-curation-tbl th{position:static;background:transparent") >= 0);
+  check("style: no Curate panel rule remains in the injected sheet",
+    !!css && css.textContent.indexOf(".cr-curation-") < 0);
   check("style: worklist headers ride the seal blue, not ink",
     css.textContent.indexOf(".cr-wl-table th{text-align:left;background:var(--seal-blue)") >= 0);
 

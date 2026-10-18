@@ -1,0 +1,376 @@
+<title>The Commons</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one working column of reference rows in the Program Requirements Progress shape, a header that
+   says what the Commons is, and one control that sets the order. First Light v1.6 tokens, as the S411 mock-up. */
+:root{
+  --paper:#F4F2ED; --surface:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+  --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+  --seal-blue:#002F6D; --link:#002F6D; --cobalt:#1F4E9C; --green-progress:#2C601A; --red-alert:#920000; --mustard-text:#6B4E00;
+  --chip-bg:#E7ECF4; --chip-fg:#002F6D; --flag-bg:#F6E9E9; --ok-bg:#E8F0E4; --hold-bg:#F7EEDC;
+  --f-display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-body:"Source Sans 3","Source Sans Pro","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15171B; --surface:#1E2127; --surface-subtle:#1A1D22; --surface-muted:#262A31;
+  --text-strong:#F1EFEA; --text-body:#D6D3CC; --text-muted:#A9A69F;
+  --border:rgba(241,239,234,.14); --border-strong:rgba(241,239,234,.32);
+  --seal-blue:#7DA1D4; --link:#9DB9E0; --cobalt:#8FB0E0; --green-progress:#89A67F; --red-alert:#CF8F8F; --mustard-text:#D9B86A;
+  --chip-bg:#24324A; --chip-fg:#C9D8EE; --flag-bg:#3A2626; --ok-bg:#243325; --hold-bg:#3A3222; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15171B; --surface:#1E2127; --surface-subtle:#1A1D22; --surface-muted:#262A31;
+  --text-strong:#F1EFEA; --text-body:#D6D3CC; --text-muted:#A9A69F;
+  --border:rgba(241,239,234,.14); --border-strong:rgba(241,239,234,.32);
+  --seal-blue:#7DA1D4; --link:#9DB9E0; --cobalt:#8FB0E0; --green-progress:#89A67F; --red-alert:#CF8F8F; --mustard-text:#D9B86A;
+  --chip-bg:#24324A; --chip-fg:#C9D8EE; --flag-bg:#3A2626; --ok-bg:#243325; --hold-bg:#3A3222; color-scheme:dark}
+body{background:var(--paper);color:var(--text-body);font:16px/1.5 var(--f-body)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1,h2,h3{font-family:var(--f-display);color:var(--text-strong);text-wrap:balance;margin:0}
+h1{font-size:clamp(1.6rem,3.4vw,2.2rem)} h2{font-size:1.25rem} h3{font-size:.8rem;font-family:var(--f-body);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted)}
+p{margin:0}
+a{color:var(--link);text-underline-offset:3px}
+.note{font-size:.9rem;color:var(--text-muted)}
+.head{display:grid;gap:8px}
+.headline{font-variant-numeric:tabular-nums;color:var(--text-body)}
+.headline b{color:var(--text-strong)}
+button.word{all:unset;cursor:pointer;min-height:24px;color:var(--link);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+button.word:focus-visible,a:focus-visible{outline:2px solid var(--seal-blue);outline-offset:3px;border-radius:2px}
+button.word[disabled]{color:var(--text-muted);text-decoration:none;cursor:default}
+.orderbar{display:flex;gap:18px;flex-wrap:wrap;align-items:baseline;border-bottom:1px solid var(--border);padding-bottom:10px}
+.orderbar .note{flex:1 1 320px}
+.list{display:grid;gap:14px;list-style:none;margin:0;padding:0}
+.ref{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px;display:grid;gap:14px;min-width:0}
+.ref header{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
+.ref header .pos{font-variant-numeric:tabular-nums;color:var(--text-muted);font-weight:600;min-width:1.4em}
+.ref header h2{flex:1 1 240px}
+.ref header .acts{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
+.pair{display:grid;gap:6px}
+.pair .n{font-size:clamp(1.3rem,2.6vw,1.7rem);font-family:var(--f-display);color:var(--text-strong);font-variant-numeric:tabular-nums;line-height:1.15}
+.pair .n small{font-family:var(--f-body);font-size:.95rem;color:var(--text-muted);font-weight:400}
+.meter{height:6px;border-radius:3px;background:var(--border);overflow:hidden;max-width:520px}
+.meter i{display:block;height:100%;background:var(--cobalt)}
+.def{font-size:.92rem;color:var(--text-body)}
+.def .test{display:inline-block;font-size:.8rem;padding:1px 8px;border-radius:10px;background:var(--chip-bg);color:var(--chip-fg);margin-left:6px;vertical-align:middle}
+.cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px;border-top:1px solid var(--border);padding-top:12px}
+.cell{display:grid;gap:6px;min-width:0;align-content:start}
+.cell ul{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.cell li{font-size:.93rem;overflow-wrap:anywhere}
+.cell .n{font-variant-numeric:tabular-nums;color:var(--text-strong);font-weight:600}
+.owner{color:var(--text-muted)}
+.stand{font-size:.95rem}
+.stamp{font-size:.9rem;display:grid;gap:4px}
+.stamp .age{color:var(--text-muted)}
+.state{display:inline-block;font-size:.8rem;padding:1px 8px;border-radius:10px;background:var(--surface-muted);color:var(--text-body)}
+.state.stale{background:var(--hold-bg);color:var(--mustard-text)}
+.state.unread{background:var(--flag-bg);color:var(--red-alert)}
+.state.open{background:var(--hold-bg);color:var(--mustard-text)}
+.state.ok{background:var(--ok-bg);color:var(--green-progress)}
+.legend{background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;padding:14px 16px;display:grid;gap:8px;font-size:.93rem}
+.legend ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.asks{background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;padding:16px;display:grid;gap:10px}
+.asks ol{margin:0;padding-left:20px;display:grid;gap:8px}
+@media (max-width:900px){.cells{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cells{grid-template-columns:minmax(0,1fr)}.ref{padding:14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <h1>The Commons</h1>
+    <p class="headline">Five common references, one tracking system. <b>Each row is a dash in the Program Requirements shape</b>: a universe and a definition of complete, machine checks that name an owner for every known issue, settled procedures, the calls waiting on Sam, and two run stamps.</p>
+    <p class="note">Mock-up for the Commons lane (Open Asks Sheet 95 card 1, Sam: "Yes, and include Common Subjects in the mix"). Figures are today's, 2026-10-18, read from the committed files and the lane state; a count opens its list in the reference's own tab. The build reads them live.</p>
+  </header>
+
+  <div class="orderbar" role="group" aria-label="The order of the references">
+    <span class="note">The order is Sam's: priority first, then completion. Move a reference with the words on its row; the build keeps the order you set here, this page keeps it only in your browser.</span>
+    <button class="word" type="button" id="reset">Back to the starting order</button>
+  </div>
+
+  <ol class="list" id="refs" aria-label="The common references, in Sam's order">
+
+    <li class="ref" data-key="requirements">
+      <header>
+        <span class="pos" aria-hidden="true">1</span>
+        <h2>Program Requirements</h2>
+        <span class="acts">
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">Open the tab</a>
+          <button class="word up" type="button" aria-label="Move Program Requirements up">Move up</button>
+          <button class="word down" type="button" aria-label="Move Program Requirements down">Move down</button>
+        </span>
+      </header>
+      <div class="pair">
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">11,621</a> <small>of</small> 20,282 <small>complete at 113 colleges</small></p>
+        <div class="meter" role="img" aria-label="11,621 of 20,282 complete"><i style="width:57.3%"></i></div>
+        <p class="def">Complete: an active program in COCI whose record passes the three machine checks, every listed course placed, none added, the units adding up.<span class="test">machine-checked</span></p>
+      </div>
+      <div class="cells">
+        <div class="cell">
+          <h3>Where it stands</h3>
+          <p class="stand">15,946 records read at 114 colleges. The catalog sweep continues college by college; the next reader changes are Cañada's 11, Merced's 18, Taft's 24 and Delta's 44.</p>
+        </div>
+        <div class="cell">
+          <h3>Known issues</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">3,343</a> records failing a check <span class="owner">· the college's reading procedure</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">5,667</a> active programs not read yet <span class="owner">· the harvest</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">3,828</a> gaps in the five harvest parts <span class="owner">· a college's catalog</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>Settled procedures</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#program-requirements">114</a> reading procedures, one per college read, versioned</li>
+            <li>A misread changes the procedure, never one record by hand</li>
+          </ul>
+          <h3>Calls waiting on Sam</h3>
+          <p><span class="state ok">None</span> <span class="note">Sheet 94 card 4 answered today.</span></p>
+        </div>
+        <div class="cell">
+          <h3>Last run</h3>
+          <p class="stamp"><span>Machine: the daily build, today 13:18Z</span><span class="age">daily · 2 hours ago <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: S415 wrote the run log today 13:18Z</span><span class="age">each checkpoint · <span class="state ok">current</span></span></p>
+        </div>
+      </div>
+    </li>
+
+    <li class="ref" data-key="exhibit">
+      <header>
+        <span class="pos" aria-hidden="true">2</span>
+        <h2>Common Exhibit Reference</h2>
+        <span class="acts">
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">Open the tab</a>
+          <button class="word up" type="button" aria-label="Move Common Exhibit Reference up">Move up</button>
+          <button class="word down" type="button" aria-label="Move Common Exhibit Reference down">Move down</button>
+        </span>
+      </header>
+      <div class="pair">
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">615</a> <small>of</small> 3,813 <small>college-entered titles confirmed by a person; 1,986 credentials</small></p>
+        <div class="meter" role="img" aria-label="615 of 3,813 titles confirmed by a person"><i style="width:16.1%"></i></div>
+        <p class="def">Complete: a title a person confirmed under a credential, or one a procedure settled and saved. A merge or a rename can reopen it; that is the difference in kind from a machine check.<span class="test">curator-confirmed</span><span class="test">procedure-settled</span></p>
+      </div>
+      <div class="cells">
+        <div class="cell">
+          <h3>Where it stands</h3>
+          <p class="stand">The procedures run nightly: 1,287 of 1,322 waiting titles carry a proposal. From tonight a proposal no reason holds saves under its procedure, 926 titles under 7 procedures, and the fold carries the clean saved assignments into the reference each morning.</p>
+        </div>
+        <div class="cell">
+          <h3>Known issues</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">396</a> titles held for a person <span class="owner">· the classifier is unsure, two procedures disagree, or an issuer conflict</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">18</a> saved assignments the fold held <span class="owner">· a human-reviewed classification stands; a curator</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">1,498</a> titles in the queue <span class="owner">· the nightly run</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>Settled procedures</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#credential-reference">12</a> in force: 7 rules applied by code, 5 read by the classifier, each with who set it and their words</li>
+            <li>A procedure's saves undo together</li>
+          </ul>
+          <h3>Calls waiting on Sam</h3>
+          <p><span class="state open">1 open</span> <span class="note">Open Asks Sheet 96 card 1: a rule's settlement saves at the rule's word, the course-identity rule's 0.8 included. Proceeded on the recommendation; reply to reverse.</span></p>
+        </div>
+        <div class="cell">
+          <h3>Last run</h3>
+          <p class="stamp"><span>Machine: the procedures run, today 12:14Z</span><span class="age">nightly 07:47Z · 3 hours ago <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: S416, today</span><span class="age">each checkpoint · <span class="state ok">current</span></span></p>
+        </div>
+      </div>
+    </li>
+
+    <li class="ref" data-key="course">
+      <header>
+        <span class="pos" aria-hidden="true">3</span>
+        <h2>Common Course Reference</h2>
+        <span class="acts">
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">Open the tab</a>
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html">SkyView</a>
+          <button class="word up" type="button" aria-label="Move Common Course Reference up">Move up</button>
+          <button class="word down" type="button" aria-label="Move Common Course Reference down">Move down</button>
+        </span>
+      </header>
+      <div class="pair">
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">3,208</a> <small>of</small> 27,581 <small>cards ready for faculty</small></p>
+        <div class="meter" role="img" aria-label="3,208 of 27,581 cards ready"><i style="width:11.6%"></i></div>
+        <p class="def">Complete: a card the auditor scores 0.85 or better, with 17,033 at needs review and 7,334 at needs repair behind it. The score is the auditor's reading; a re-mint moves cards between tiers.<span class="test">scored by the auditor</span></p>
+      </div>
+      <div class="cells">
+        <div class="cell">
+          <h3>Where it stands</h3>
+          <p class="stand">Built and stable: 16,482 identities and 33,423 stand-alone courses on one canvas, with the auditor's receipt on the Pipeline tab. The identity layer is staging, with re-mints under the playbook.</p>
+        </div>
+        <div class="cell">
+          <h3>Known issues</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">4,179</a> unit anomalies <span class="owner">· a college's catalog</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">1,159</a> TOP and discipline disagreements <span class="owner">· a curator; TOP corroborates, never decides</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#unified-courses">5,750</a> blank descriptions <span class="owner">· COCI</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>Settled procedures</h3>
+          <ul>
+            <li>TOP is a last-in-line signal; units never split an identity; a stored id resolves through the alias chain</li>
+            <li>Re-mints follow the playbook, one cron window each</li>
+          </ul>
+          <h3>Calls waiting on Sam</h3>
+          <p><span class="state ok">None</span> <span class="note">The cross-listing lane carries its own sheet.</span></p>
+        </div>
+        <div class="cell">
+          <h3>Last run</h3>
+          <p class="stamp"><span>Machine: the auditor, today 13:23Z</span><span class="age">daily · 2 hours ago <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: <span class="state unread">could not be read</span></span><span class="age">this reference writes no run log yet; the lane file is the only session stamp, and the build will say so until a status file exists</span></p>
+        </div>
+      </div>
+    </li>
+
+    <li class="ref" data-key="cr">
+      <header>
+        <span class="pos" aria-hidden="true">4</span>
+        <h2>Common CR Reference</h2>
+        <span class="acts">
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">Open the tab</a>
+          <button class="word up" type="button" aria-label="Move Common CR Reference up">Move up</button>
+          <button class="word down" type="button" aria-label="Move Common CR Reference down">Move down</button>
+        </span>
+      </header>
+      <div class="pair">
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">156</a> <small>of</small> 2,159 <small>groups carry a decision; 30 by a curator</small></p>
+        <div class="meter" role="img" aria-label="156 of 2,159 groups carry a decision"><i style="width:7.2%"></i></div>
+        <p class="def">Complete: a group of recommendation wordings with a decision, by one of the four automatic rungs or by a curator. About 90 percent is a curator's judgment no matcher reaches.<span class="test">assigned by rung</span><span class="test">curator-decided</span></p>
+      </div>
+      <div class="cells">
+        <div class="cell">
+          <h3>Where it stands</h3>
+          <p class="stand">The worklist is live, ranked by collapse value; the top 50 strings carry 49.4 percent of all articulation rows. Sam works the head and the sessions watch which rungs he overrides. The military half is scoped.</p>
+        </div>
+        <div class="cell">
+          <h3>Known issues</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">1,936</a> groups at rung 5, where similarity suggests and never merges <span class="owner">· a curator</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">88</a> groups named by a unit range <span class="owner">· the catalogs disagree on units</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#cr-reference">185</a> strings the rungs collapse automatically <span class="owner">· the build</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>Settled procedures</h3>
+          <ul>
+            <li>Five rungs; grouping by key, never transitive; the course count gates a cartesian line</li>
+            <li>0 hours reads as noncredit; a range names the group</li>
+          </ul>
+          <h3>Calls waiting on Sam</h3>
+          <p><span class="state ok">None</span></p>
+        </div>
+        <div class="cell">
+          <h3>Last run</h3>
+          <p class="stamp"><span>Machine: the worklist build, 2026-10-17</span><span class="age">with the daily build · yesterday <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: the lane moved 2026-09-20</span><span class="age">28 days · <span class="state stale">stale</span> against a weekly check</span></p>
+        </div>
+      </div>
+    </li>
+
+    <li class="ref" data-key="subjects">
+      <header>
+        <span class="pos" aria-hidden="true">5</span>
+        <h2>Common Subjects Reference</h2>
+        <span class="acts">
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">Open the tab</a>
+          <button class="word up" type="button" aria-label="Move Common Subjects Reference up">Move up</button>
+          <button class="word down" type="button" aria-label="Move Common Subjects Reference down">Move down</button>
+        </span>
+      </header>
+      <div class="pair">
+        <p class="n"><a href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">122</a> <small>of</small> 147 <small>disciplines with a confirmed canonical subject code</small></p>
+        <div class="meter" role="img" aria-label="122 of 147 disciplines confirmed"><i style="width:83%"></i></div>
+        <p class="def">Complete: a discipline whose four-letter subject code a curator confirmed. Sam's addition to the Commons; the smallest universe here, and the one the course identities key on.<span class="test">curator-confirmed</span></p>
+      </div>
+      <div class="cells">
+        <div class="cell">
+          <h3>Where it stands</h3>
+          <p class="stand">Phase 1e closed on 2026-06-12: every disciplined course identity carries its confirmed code. The Supabase picks sync into the committed seed each day.</p>
+        </div>
+        <div class="cell">
+          <h3>Known issues</h3>
+          <ul>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">25</a> disciplines seeded from the data, unconfirmed <span class="owner">· a curator</span></li>
+            <li><a class="n" href="https://cpl-initiative.github.io/cpl-project-tracker/#canonical-subj4">3</a> subject collisions, the cross-discipline re-keys <span class="owner">· bounded; a curator</span></li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>Settled procedures</h3>
+          <ul>
+            <li>A code is four letters; TOP corroborates a discipline and never decides it</li>
+            <li>A re-key goes through the alias chain and lands in one cron window</li>
+          </ul>
+          <h3>Calls waiting on Sam</h3>
+          <p><span class="state ok">None</span></p>
+        </div>
+        <div class="cell">
+          <h3>Last run</h3>
+          <p class="stamp"><span>Machine: the daily sync, today</span><span class="age">daily <span class="state ok">current</span></span></p>
+          <p class="stamp"><span>Session: Phase 1e closed 2026-06-12</span><span class="age">on change · <span class="state ok">closed</span></span></p>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+  <section class="legend" aria-labelledby="legend-h">
+    <h2 id="legend-h">How to read a row</h2>
+    <ul>
+      <li>The pair is each reference's own definition of complete, and the word beside it says the test behind the count: a machine check, a curator's confirmation, the auditor's score, an assignment by rung. The completes differ in kind, so a percentage stays inside its row and no column sorts on it.</li>
+      <li>Every known issue names its owner: a procedure, a college, a curator, or Sam. A count opens the list it totals in the reference's tab.</li>
+      <li>Two stamps, apart: the machine stamp is the last run of the thing that writes the data, read against its declared cadence; the session stamp is the last time a session moved the lane. A stamp past its cadence reads stale; a reference with no run log reads could not be read, never current.</li>
+      <li>A call waiting on Sam is read from the decision sheet's own store, so an answered card leaves the row the moment he answers.</li>
+    </ul>
+  </section>
+
+  <section class="asks" aria-labelledby="asks-h">
+    <h2 id="asks-h">What this asks of Sam</h2>
+    <ol>
+      <li>Is this the row? Five cells after the pair: where it stands, known issues by owner, settled procedures with the calls under them, and the two stamps.</li>
+      <li>Is the starting order right: Program Requirements, Exhibit, Course, CR, Subjects? The words on each row move it, and the build keeps what you set.</li>
+      <li>Each reference's definition of complete, as the row states it, becomes a card on the standing sheet when its Progress view is built.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+(function () {
+  var list = document.getElementById("refs");
+  var KEY = "commons-mockup-order.v1";
+  var start = Array.prototype.map.call(list.children, function (li) { return li.getAttribute("data-key"); });
+  function read() { try { var v = JSON.parse(localStorage.getItem(KEY)); return Array.isArray(v) ? v : null; } catch (e) { return null; } }
+  function save(order) { try { localStorage.setItem(KEY, JSON.stringify(order)); } catch (e) {} }
+  function apply(order) {
+    var by = {};
+    Array.prototype.forEach.call(list.children, function (li) { by[li.getAttribute("data-key")] = li; });
+    order.filter(function (k) { return by[k]; }).forEach(function (k) { list.appendChild(by[k]); });
+    start.forEach(function (k) { if (order.indexOf(k) < 0) list.appendChild(by[k]); });
+    renumber();
+  }
+  function renumber() {
+    var items = list.children;
+    Array.prototype.forEach.call(items, function (li, i) {
+      li.querySelector(".pos").textContent = String(i + 1);
+      li.querySelector(".up").disabled = i === 0;
+      li.querySelector(".down").disabled = i === items.length - 1;
+    });
+  }
+  function current() { return Array.prototype.map.call(list.children, function (li) { return li.getAttribute("data-key"); }); }
+  list.addEventListener("click", function (e) {
+    var b = e.target.closest("button.word");
+    if (!b) return;
+    var li = b.closest(".ref");
+    if (b.classList.contains("up") && li.previousElementSibling) list.insertBefore(li, li.previousElementSibling);
+    else if (b.classList.contains("down") && li.nextElementSibling) list.insertBefore(li.nextElementSibling, li);
+    renumber();
+    save(current());
+    b.focus();
+  });
+  document.getElementById("reset").addEventListener("click", function () { apply(start); save(start); });
+  var saved = read();
+  if (saved) apply(saved); else renumber();
+})();
+</script>

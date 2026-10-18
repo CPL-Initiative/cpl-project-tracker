@@ -15667,8 +15667,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 387,
+   "count": 388,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 417,
+     "path": "docs/session_417_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cer-procedures",
+      "sierra-retrieval-corpus",
+      "commons",
+      "decision-sheets"
+     ],
+     "title": "Session 417 handoff: Sheet 94's CER rulings built (#2231), Sierra reads complete records (#2230), the Commons row mock-up",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22339,5 +22356,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1173
+ "total": 1174
 }

@@ -28,6 +28,7 @@ What each write shape requires of its receipt:
 | INSERT-only cohort (`ON CONFLICT DO NOTHING`) | the cohort `reviewer_email` (`<lane>-s<N>@bot`), row count, target table | delete (or mark superseded, where the table has a status column) by `reviewer_email` |
 | Guarded UPDATE (reviewed plan only) | per-row key + BEFORE-value of every changed column | re-apply the before-images |
 | DELETE | sessions do not bulk-delete; a reviewed plan that authorizes one must put FULL row images in the receipt | re-insert the row images |
+| Nightly procedure save (INSERT-only, `cer-procedure-<id>@bot`; `kb/_cer_procedures.py --save on`) | the receipt in `kb/cer_procedures_out/saved/` (every row, its cohort, the live rows that held) | `kb/_cer_procedures.py --undo <id>`: one DELETE by that procedure's cohort, receipted; a row the daily fold already carried into `kb/unified_titles.json` carries the cohort as `reviewed_by`, and the fold commit that carried it is reverted |
 
 ## The procedure
 

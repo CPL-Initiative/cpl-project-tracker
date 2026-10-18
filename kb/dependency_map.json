@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 656,
+  "file_datasets": 658,
   "external_services": 181,
   "consumers": 446,
   "workflows": 54,
@@ -1030,7 +1030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4360,
+     "line": 3743,
      "tabs": [
       "credential-reference"
      ]
@@ -2842,7 +2842,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4380,
+     "line": 3763,
      "tabs": [
       "credential-reference"
      ]
@@ -5859,7 +5859,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 6175,
+     "line": 5650,
      "tabs": [
       "credential-reference"
      ]
@@ -8390,14 +8390,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 82
     },
     {
      "id": "script:kb/_cer_procedures.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 64
+     "line": 82
     }
    ],
    "producers": [
@@ -8416,7 +8416,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 79
     }
    ],
    "served": true,
@@ -8429,7 +8429,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5903,
+     "line": 5332,
      "tabs": [
       "credential-reference"
      ]
@@ -8442,6 +8442,17 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/cer_procedures_out/saved": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/cid_articulation_joins.json": {
@@ -8653,14 +8664,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 85
+     "line": 88
     },
     {
      "id": "script:kb/_fold_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 85
+     "line": 88
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -10625,7 +10636,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5561,
+     "line": 4990,
      "tabs": [
       "credential-reference"
      ]
@@ -10921,7 +10932,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 629,
+     "line": 614,
      "tabs": [
       "credential-reference"
      ]
@@ -10959,7 +10970,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 81
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -11015,14 +11026,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 86
     },
     {
      "id": "script:kb/_fold_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 83
+     "line": 86
     },
     {
      "id": "script:kb/_match_cos_authority.py",
@@ -11844,7 +11855,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 632,
+     "line": 617,
      "tabs": [
       "credential-reference"
      ]
@@ -12048,7 +12059,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 500,
+     "line": 485,
      "tabs": [
       "credential-reference"
      ]
@@ -12085,7 +12096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5584,
+     "line": 5013,
      "tabs": [
       "credential-reference"
      ]
@@ -14784,7 +14795,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 80
+     "line": 83
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
@@ -14825,7 +14836,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 489,
+     "line": 474,
      "tabs": [
       "credential-reference"
      ]
@@ -14861,7 +14872,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 478,
+     "line": 463,
      "tabs": [
       "credential-reference"
      ]
@@ -14871,14 +14882,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 80
     },
     {
      "id": "script:kb/_fold_unclassified.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 81
+     "line": 84
     },
     {
      "id": "script:kb/_suggest_unclassified.py",
@@ -14913,7 +14924,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 626,
+     "line": 611,
      "tabs": [
       "credential-reference"
      ]
@@ -14938,6 +14949,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_cer_procedures.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -14993,14 +15011,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 85
     },
     {
      "id": "script:kb/_fold_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 82
+     "line": 85
     },
     {
      "id": "script:kb/_match_cos_authority.py",
@@ -17752,6 +17770,19 @@
    "main_committers": []
   },
   "file:tests/eths_remint_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/fold_unclassified_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -21485,7 +21516,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 345,
+     "line": 355,
      "tabs": [
       "credential-reference"
      ]
@@ -21588,6 +21619,13 @@
      "direction": "read",
      "how": "literal",
      "line": 78
+    },
+    {
+     "id": "script:kb/_cer_procedures.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 562
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -23377,7 +23415,8 @@
    "adds": [
     "kb/unclassified_preseed.json",
     "kb/cer_procedures_out/latest.json",
-    "kb/cer_classified.json"
+    "kb/cer_classified.json",
+    "kb/cer_procedures_out/saved"
    ],
    "push": null,
    "deploys": [],
@@ -23894,6 +23933,7 @@
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
+    "tests/fold_unclassified_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",

@@ -21,7 +21,36 @@ and want to further automate so curation is manageable."*
 
 ## Status
 
-🔨 **The procedures run is live, the classifier has made two passes (S412, S413), and the tab is three views: Needs you, Procedures, Reference (#2221, S413).**
+🔨 **Sheet 94's three rulings are built (S416, 2026-10-18, cpl-project-tracker#2231, a draft at S416's checkpoint; merge once `test` passes): the fold holds each conflict by itself, a sure result saves under its procedure, and the Initiated sign-off and the Curate panel left the tab.** The procedures run is live, the classifier has made two passes (S412, S413), and the tab is three views: Needs you, Procedures, Reference (#2221, S413).
+
+- **The fold holds per assignment (card 1, `kb/_fold_unclassified.py`).** V1 and V4 were an all-or-nothing hold; now a
+  conflict with a human-reviewed classification, or a raw whose articulation rows carry another title, holds only
+  itself and is listed in the report's `held` (with the standing title). On the real overlay the first apply folds 176
+  clean assignments and 12 supersedes, adds 157 credential records, and holds the 18 conflicts. The daily workflow
+  runs it unchanged (`--apply-if-safe`, which never fails the run). Guard: `tests/fold_unclassified_test.py`.
+- **The 18 conflicts are not in the queue.** The reference already classifies each raw under a human-reviewed entry
+  (a bulk review stamp of 2026-06-02), and the worklist assignment of the days after disagrees. The procedures run
+  reads the newest fold report's `held` and puts each on Needs you › Held with the standing title and a word, *Keep the
+  reference's title*, which clears the saved assignment (`clearUnclass`); the other way, re-keying a human-reviewed
+  entry, is a session's reviewed change.
+- **A sure result saves under its procedure (card 2, `kb/_cer_procedures.py --save on`, nightly default).** Every
+  pre-fill no reason holds (a rule procedure settled it, or the classifier is sure at 0.85 or better, a clean title,
+  no issuer conflict) is written to `kb_curation` as the tab's Save would write it, `_UNCLASSIFIED::<raw>` title and
+  issuer rows, under the cohort **`cer-procedure-<id>@bot`** of the procedure that decided it. Rule 10: a fresh
+  Range-paginated read first (a live row for the raw, whoever wrote it, holds the save), INSERT-only with duplicates
+  ignored, the receipt (`kb/cer_procedures_out/saved/saved_<ts>.json`) written before the INSERT and committed by the
+  workflow even when the run fails. **Undo by procedure:** `--undo <id>` deletes that cohort's rows in one call and
+  receipts them; rows the daily fold already carried into `kb/unified_titles.json` (their `reviewed_by` is the cohort)
+  are counted, and the fold commit that carried them is reverted. A rule procedure's settlement saves at the rule's
+  word, the course-identity rule's 0.8 included (the college's own course title, 96 of its 125; the 29 anchored to a
+  CCN or C-ID read 0.85). The first night's preview: 926 titles under 7 procedures (classifier 737, course-identity
+  125, brand-family 53, nccer-verbatim 5, statewide-catalog 3, cslb-classification 2, apprenticeship-trades 1).
+  `save=preview` on the workflow lists them and writes no row. Governance: `workflow:cer-procedures.yml` → DR-07.
+- **The sign-off and the Curate panel left (card 3, `credential_reference.js`).** Reference keeps All and Industry
+  credentials; the checkbox column, the bulk *Mark N initiated*, the Init button, the worklist's *Initiate all
+  assigned* bar and the Curate panel are gone, with their CSS in both HTMLs. The quality flag sits at the top of the
+  open row as a select for a signed-in curator (a word for a reader); the other four fields already edit in the grid's
+  cells. Past sign-offs still load from the overlay for the export's Initiated columns and the Generated Title chip.
 
 - **The store:** `kb/cer_procedures.json`, each procedure a rule in plain words with who set it, when, and
   their words. Seven **rule** procedures settle a title by code, in order: brand families, the statewide
@@ -85,8 +114,7 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
    2026-07-07 ruling that pre-seeds stay "ready to save, not yet saved".
 3. **retire:** the Initiated sign-off and the Curate panel leave the tab.
 
-**NEXT:** build the three rulings. Card 1: the fold change, with a test that a
-conflict holds only itself. Card 2: the save step, a bot cohort and a receipt in `cer-decision-apply.yml`'s shape.
-Card 3: retire the Initiated sign-off and the Curate panel, which leaves Reference with All and Industry credentials.
-Without replies, the nightly run keeps pre-filling and the tab keeps leading with Held. A guidance procedure for an
-*Industry for* title (the credential tied to a course, never the course's own title) is a candidate.
+**NEXT:** merge #2231; dispatch `cer-procedures.yml` with `save=preview`, read the counts, then `save=on`; dispatch `daily-dashboard.yml` so the 176 fold the same day; then put card 1 on Open Asks Sheet 96 with the receipt's numbers (a rule's settlement saves at the rule's word, the course-identity rule's 0.8 included; proceeded on the recommendation, `--undo course-identity` reverses it) and mark this lane as waiting on Sam in the same change, because the builder refuses a marker with no card (and reads the marker's two words anywhere in a lane, so this sentence avoids them). Then watch the first saving run (the receipt in `kb/cer_procedures_out/saved/`, the tab's Unclassified lane
+showing the cohort as the saver) and the next daily fold carrying the saved rows into the reference; then the 18 fold
+holds, one word each on Needs you. A guidance procedure for an *Industry for* title (the credential tied to a course,
+never the course's own title) is a candidate.

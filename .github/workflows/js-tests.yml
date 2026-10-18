@@ -300,9 +300,15 @@ jobs:
       - name: CER decision applier holds a curator's row
         run: python3 tests/cer_decision_apply_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
-      # gate holds residue, a disagreement is held, and nothing is saved.
-      - name: CER procedures run settles, holds and saves nothing
+      # gate holds residue, a disagreement is held, and a pre-fill no reason holds
+      # saves under its procedure's cohort, a live row holding the save (Sheet 94
+      # card 2).
+      - name: CER procedures run settles, holds, and saves only what is sure
         run: python3 tests/cer_procedures_test.py
+      # The CER fold (Sheet 94 card 1): a held assignment holds only itself; the
+      # clean ones beside it fold.
+      - name: CER fold holds each conflict by itself
+        run: python3 tests/fold_unclassified_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

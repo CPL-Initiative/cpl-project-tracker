@@ -9884,9 +9884,6 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-flag-cell { font-size:.78rem; }
             #tab-credential-reference .cr-flag-badge { display:inline-block; background:var(--college-flag); color:var(--mustard-text); padding:2px 7px; border-radius:10px; font-size:.7rem; }
             #tab-credential-reference .cr-rev-on { color:var(--hunter); font-weight:600; font-size:.75rem; white-space:nowrap; }
-            #tab-credential-reference .cr-action-btn { background:var(--seal-blue); color:var(--on-seal-blue); border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
-            #tab-credential-reference .cr-action-btn:hover { background:var(--btn-primary-hover); }
-            #tab-credential-reference .cr-action-btn:disabled { background:var(--surface-muted); cursor:wait; }
             #tab-credential-reference .cr-action-noop { color:var(--text-muted); }
             #tab-credential-reference .cr-auth { font-size:.85rem; color:var(--text-body); margin-left:auto; }
             #tab-credential-reference .cr-auth-link { color:var(--navy-primary); font-weight:600; text-decoration:underline; cursor:pointer; }
@@ -9910,30 +9907,6 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-expanded-body h5 { margin:8px 0 4px; color:var(--navy-primary); font-size:.85rem; }
             /* PR-4 — curation panel inside the expanded body. Top of body so
                edit affordances are immediately visible after expanding a row. */
-            #tab-credential-reference .cr-curation-panel { background:var(--surface-opaque); border:1px solid var(--border); border-left:4px solid var(--navy-primary); border-radius:6px; padding:10px 14px; margin:4px 0 14px; }
-            #tab-credential-reference .cr-curation-h { margin:0 0 6px !important; color:var(--navy-primary) !important; font-size:.85rem !important; }
-            #tab-credential-reference .cr-curation-note { color:var(--text-muted); font-size:.78rem; font-style:italic; margin:4px 0 0; }
-            #tab-credential-reference .cr-curation-readonly { list-style:none; margin:8px 0 0; padding:0; font-size:.78rem; color:var(--text-body); }
-            #tab-credential-reference .cr-curation-readonly li { padding:2px 0; }
-            #tab-credential-reference .cr-curation-tbl { border-collapse:collapse; margin-top:4px; font-size:.82rem; }
-            #tab-credential-reference .cr-curation-tbl th { text-align:right; padding:5px 10px 5px 0; color:var(--text-muted); font-weight:600; vertical-align:top; white-space:nowrap; width:130px; }
-            #tab-credential-reference .cr-curation-tbl td { padding:5px 0; vertical-align:top; }
-            #tab-credential-reference .cr-curation-row.cr-curation-overridden th { color:var(--navy-primary); }
-            #tab-credential-reference .cr-curation-display { color:var(--text-strong); }
-            #tab-credential-reference .cr-curation-display .cr-null { color:var(--text-muted); font-style:italic; }
-            #tab-credential-reference .cr-curation-input { font-size:.85rem; padding:3px 6px; border:1px solid var(--text-faint); border-radius:4px; min-width:280px; margin-right:6px; }
-            #tab-credential-reference select.cr-curation-input { min-width:auto; }
-            #tab-credential-reference .cr-curation-edit, #tab-credential-reference .cr-curation-clear, #tab-credential-reference .cr-curation-save, #tab-credential-reference .cr-curation-cancel { font-size:.7rem; padding:2px 7px; margin-left:6px; border:1px solid transparent; border-radius:4px; cursor:pointer; background:transparent; color:var(--navy-primary); }
-            #tab-credential-reference .cr-curation-edit:hover { background:var(--surface-subtle); }
-            #tab-credential-reference .cr-curation-clear { color:var(--crimson); }
-            #tab-credential-reference .cr-curation-clear:hover { background:var(--surface-subtle); }
-            #tab-credential-reference .cr-curation-save { background:var(--hunter); color:var(--on-accent); border-color:var(--hunter); }
-            #tab-credential-reference .cr-curation-save:hover { background:var(--hunter); }
-            #tab-credential-reference .cr-curation-cancel { color:var(--text-muted); }
-            #tab-credential-reference .cr-curation-cancel:hover { background:var(--surface-subtle); }
-            #tab-credential-reference .cr-curation-saving { color:var(--text-muted); font-style:italic; font-size:.78rem; }
-            #tab-credential-reference .cr-curation-meta { color:var(--text-muted); font-size:.72rem; margin-top:3px; font-style:italic; }
-            #tab-credential-reference .cr-curation-hint { color:var(--text-muted); font-size:.7rem; margin-top:2px; font-style:italic; max-width:480px; }
             #tab-credential-reference .cr-override-marker { color:var(--navy-primary); font-weight:600; cursor:help; }
             #tab-credential-reference .cr-variants-list { list-style:none; margin:0; padding:0; }
             #tab-credential-reference .cr-variants-list li { padding:3px 0; font-size:.85rem; }
@@ -9970,14 +9943,6 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-art-colleges { color:var(--text-body); font-size:.78rem; }
             #tab-credential-reference .cr-empty-note { color:var(--text-muted); font-size:.82rem; font-style:italic; margin:4px 0 12px; }
             /* PR-2: bulk-select + bulk "Mark N initiated" workflow */
-            #tab-credential-reference .cr-chk-cell { width:28px; min-width:28px; padding:6px 4px; text-align:center; }
-            #tab-credential-reference .cr-chk-cell input[type="checkbox"] { cursor:pointer; }
-            #tab-credential-reference .cr-chk-cell input[type="checkbox"][disabled] { opacity:0.35; cursor:not-allowed; }
-            #tab-credential-reference .cr-bulk { display:inline-flex; align-items:center; gap:6px; font-size:.82rem; color:var(--text-body); }
-            #tab-credential-reference .cr-bulk-btn { background:var(--hunter); color:var(--on-accent); border:none; padding:6px 12px; border-radius:6px; font-size:.82rem; font-weight:600; cursor:pointer; }
-            #tab-credential-reference .cr-bulk-btn:hover { background:var(--hunter); }
-            #tab-credential-reference .cr-bulk-clear { color:var(--navy-primary); font-size:.75rem; text-decoration:underline; cursor:pointer; }
-            #tab-credential-reference .cr-bulk-progress { background:var(--college-flag); color:var(--mustard-text); padding:4px 10px; border-radius:6px; font-size:.78rem; font-weight:600; border:1px solid var(--mustard-fill); }
             /* PR-3: TOP / Discipline grouping with collapsible category headers */
             #tab-credential-reference .cr-group-hdr td { background:var(--surface-subtle); padding:0 !important; border-top:2px solid var(--border-strong); border-bottom:1px solid var(--border-strong); }
             #tab-credential-reference .cr-group-toggle { width:100%; text-align:left; padding:8px 14px; background:transparent; border:none; cursor:pointer; font-size:.88rem; color:var(--navy-primary); font-weight:600; }
