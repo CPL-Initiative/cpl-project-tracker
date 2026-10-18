@@ -93,7 +93,30 @@
     19.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     7.0,
+     7.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -113,6 +136,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -141,7 +167,8 @@
     "Transfer to the CSU system as anthropology majors.",
     "Collaborate and communicate within group settings to achieve common goals."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -327,5 +354,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -166,5 +169,6 @@
    "Career taken from the description ('serve as the coordinator of curriculum and staff development'); 'Site Supervisor' appears only as a permit name ('Site Supervisor permit placement') and was not recorded as a career. Reviewer may check."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

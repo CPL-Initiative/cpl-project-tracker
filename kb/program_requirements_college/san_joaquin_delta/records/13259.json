@@ -83,7 +83,27 @@
     36.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -103,6 +123,9 @@
    "count": 2,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -134,7 +157,8 @@
    "careers": [
     "website development",
     "computer network maintenance"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -293,5 +317,14 @@
    "Catalog heading reads Summer 2026 - Summer 2027 College Catalog."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

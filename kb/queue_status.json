@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T10:49:17Z",
-  "session": 414,
-  "moniker": "SkyChamise",
+  "written_at": "2026-10-18T13:18:44Z",
+  "session": 415,
+  "moniker": "SkyRedbud",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_415_handoff.md",
+  "handoff": "docs/session_416_handoff.md",
   "unchecked": [
     {
       "college": "Allan Hancock College",
@@ -111407,16 +111407,16 @@
     }
   ],
   "next_step": {
-    "title": "Apply build 7e4a2a9c5ba7, then San Joaquin Delta's held rescore",
-    "text": "Apply the display build of 15,946 programs at 114 colleges once #2224 merges, then decide San Joaquin Delta's rescore, whose later degree-total check reads 28 more records as failing; then Taft's degree totals and Cañada's reader change."
+    "title": "Merge #2226 and apply build 48cb66f19cff",
+    "text": "Merge the San Joaquin Delta and Taft rescoring once its test passes and apply the display build of 15,946 programs at 114 colleges, then Cañada's reader change and Merced's 18 programs without a page."
   },
   "calls": [
     {
-      "title": "Three CER calls on Open Asks Sheet 93",
-      "text": "Whether the nightly fold applies the 176 clean assignments, whether a sure classifier result saves under its procedure, and whether the Initiated sign-off and Curate panel retire.",
-      "if_no_reply": "Every proposal keeps pre-filling the tab, the tab keeps opening on the titles held for a person, and the Initiated sign-off stays in Reference; the harvest goes on.",
-      "link": "https://claude.ai/artifact/MZXYEqiNitiWGiTakDHUwW",
-      "link_text": "Open Asks Sheet 93"
+      "title": "Three CER calls and a Taft card on Open Asks Sheet 94",
+      "text": "Whether the nightly fold applies the 176 clean assignments, whether a sure classifier result saves under its procedure, whether the Initiated sign-off and Curate panel retire, and whether Taft's transfer degrees keep counting Cal-GETC as the statewide 34 units.",
+      "if_no_reply": "Every CER proposal keeps pre-filling the tab and the Initiated sign-off stays; Taft's step stays in place, since it proceeded on the recommendation; the harvest goes on.",
+      "link": "https://claude.ai/artifact/MnnWTiYhbHVq7LduzSfCH9",
+      "link_text": "Open Asks Sheet 94"
     }
   ],
   "notes": {
@@ -111428,20 +111428,16 @@
   },
   "changes": [
     {
-      "at": "2026-10-18T09:20:00Z",
-      "text": "The display build of 15,782 programs at 113 colleges was applied."
+      "at": "2026-10-18T11:05:00Z",
+      "text": "The display build of 15,946 programs at 114 colleges was applied."
     },
     {
-      "at": "2026-10-18T09:40:00Z",
-      "text": "Records at Glendale, De Anza, Los Angeles Trade Technical and Crafton Hills that misread a slashed course code were rescored and replaced: 33 in all."
+      "at": "2026-10-18T13:05:00Z",
+      "text": "Taft College's transfer degrees now count Cal-GETC as 34 units: 17 records replaced, 34 of 58 passing the machine checks."
     },
     {
-      "at": "2026-10-18T10:36:00Z",
-      "text": "Merced College's catalog was read for the first time: 154 of 172 listed programs found, 153 records loaded, 125 passing the machine checks."
-    },
-    {
-      "at": "2026-10-18T10:40:00Z",
-      "text": "The display build of 15,946 programs at 114 colleges was written, to apply once its pull request merges."
+      "at": "2026-10-18T13:15:00Z",
+      "text": "San Joaquin Delta College's degree pages read their 60 units as a minimum: 71 records replaced, 154 of 203 passing the machine checks."
     }
   ],
   "headline": [
@@ -111515,7 +111511,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-18T11:12:00Z"
+    "at": "2026-10-19T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-18",
@@ -111536,7 +111532,7 @@
         ]
       },
       "roep": [
-        18297,
+        18443,
         20282
       ],
       "coci": [

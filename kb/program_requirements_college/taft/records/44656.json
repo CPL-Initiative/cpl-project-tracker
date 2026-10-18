@@ -67,34 +67,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     31.0,
     32.0
    ],
    "stated": [
-    60.0,
-    60.0
+    31.0,
+    32.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     31.0,
-     32.0
+     65.0,
+     66.0
     ],
     "stated": [
-     31.0,
-     32.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -119,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,8 +142,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -243,5 +245,20 @@
    "Codes recorded as printed without spaces (e.g., ENGR1540 = ENGR 1540, MATHC2211 = MATH C2211)."
   ]
  },
- "extracted_run": "39100858309"
+ "extracted_run": 39126711681,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Completion of the California General Education Transfer Curriculum (Cal-GETC) is required (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T))"
+  }
+ ],
+ "read_run": "39100858309"
 }

@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -168,5 +171,6 @@
    "Careers read from the description's list of trades and fields that use these skills (\"Various trades such as Steelworkers and Pipefitters ... as well as industrial/commercial maintenance, fabrication/repair facilities, and equipment manufacturing\"); reviewer may check whether the last three should count as career fields."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

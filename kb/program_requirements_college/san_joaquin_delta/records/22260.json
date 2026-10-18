@@ -106,6 +106,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -232,5 +235,6 @@
    "Career entry taken from 'prepares students for immediate employment in bakery and pastry positions'; workplaces named (commercial bakeries, pastry shops, cafés) not recorded as careers."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

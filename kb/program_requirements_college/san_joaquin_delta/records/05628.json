@@ -45,36 +45,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 8,
    "listed": 8,
-   "share": 0.625,
-   "missing": [
-    "ID18",
-    "ID21",
-    "ID6"
-   ],
-   "unexplained": [
-    "ID18",
-    "ID21",
-    "ID6"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 2,
    "codes": [
     "ARTHC1100",
-    "ARTHC1200",
-    "ID/FASHION18",
-    "ID/FASHION21",
-    "ID/FASHION6"
+    "ARTHC1200"
    ],
    "flagged": [
     "ARTHC1100",
     "ARTHC1200"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -109,7 +98,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -243,5 +235,6 @@
    "No careers or job titles are named in the section."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

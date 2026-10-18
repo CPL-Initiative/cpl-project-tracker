@@ -1,0 +1,77 @@
+---
+title: "Session 416 handoff: the degree floor (San Joaquin Delta) and Cal-GETC's 34 (Taft); build 48cb66f19cff"
+date: 2026-10-18
+session: 415 (SkyRedbud)
+tags: [handoff, program-requirements, catalog-sweep, reconcile]
+status: current
+---
+
+# You are Session 416
+
+Your moniker is **SkyCeanothus**. Session 415 (**SkyRedbud**, `session_01DLMPbZmBsYH633wm982U31`, from 11:13Z on
+2026-10-18) was started by Sam's routine and checkpointed with the Rule 9 list. If the routine started you, follow
+`docs/reference/scheduled_sessions.md` first.
+
+## Sam's words this run
+
+None: a scheduled session, no message from Sam. A session Sam opened by hand at 12:50Z
+(`session_016aCF9Tqxm7khy34U1dQwca`, with S413's opening line) agreed by message that S415 stays the queue's one
+writer. It writes nothing unless Sam gives it a separate lane. Rulings in force: the CER procedures ask
+(2026-10-18 ~02:55Z), no approval per item (2026-10-17), extraction with no card up to $40 a college (2026-10-14).
+
+## What shipped (S415), in cpl-project-tracker#2226
+
+- **San Joaquin Delta's held rescore, settled.** Its pages print "Minimum Degree Units Required: 60" and advise
+  double-counting (college-page-read 39122473643). Delta's reconcile steps now set `degree_total_minimum`, and
+  `degree_verdict()` lets a floor alone make up a short sum. Delta went from 152 to 154 passing with none lost
+  (reconcile 39128562020), and reread 39130341466 replaced 71 rows.
+- **Taft's transfer degrees count Cal-GETC as the statewide 34** (a reconcile step citing Monterey Peninsula's GE
+  page; Fable's option A). Taft went from 24 to 34 passing (reconcile 39126711681), and reread 39128567443 replaced 17.
+  The call is card 4 on Open Asks Sheet 94, proceeded on the recommendation.
+- **Display build `48cb66f19cff`: 15,946 programs at 114 colleges.** `7e4a2a9c5ba7` applied (run 39121763076).
+- **Open Asks Sheet 94** (https://claude.ai/artifact/MnnWTiYhbHVq7LduzSfCH9, current): Sheet 93's three CER cards
+  at the same positions, then the Taft card. Sheet 93 is superseded. Both stores were empty at 13:15Z.
+- Spend: none (reconcile and reread make no model call).
+
+## In flight at sign-off (check each first)
+
+1. **#2226** (draft, branch `claude/practical-meitner-68kfwt`). Mark it ready, wait for `test` on its head, then
+   squash-merge it and dispatch `program-requirements-college.yml` on `main` with `step=display`. Read the
+   `Applied record` commit it files.
+2. Branches `claude/s414-slash-delta`, `claude/s415-taft-cal-getc` and `claude/s415-delta-degree-read` are merged
+   into #2226's branch.
+
+## Priority after that
+
+1. **Cañada's 11** (a PDF reader change for pages 148-154 and the course availability table; capture-only read
+   S413, run 39103943654).
+2. **Merced's 18:** 10 page_claimed (a certificate and its degree naming one list, e.g. Child Development A.A.) and 8
+   not found (Diesel, Mechanized Agriculture). `kb/program_requirements_college/merced/capture.json`.
+3. **Taft's other arithmetic failures** (about 24: 8 name no total, 10 unequal at the major) and Delta's 44.
+4. **Sheet 94:** read its `replies` before acting on any card.
+
+## Patterns that worked
+
+- **Read the page before ruling on a rescore.** A four-page `kb/college_reads/` plan answered in two minutes what
+  the records could not.
+- **A reconcile files what it set; a later step never clears it.** To retry a step, revert the filing commits and
+  reconcile again from the clean records.
+- **When a reconcile reports 0 changed and no unread pages, suspect the pattern's spacing.** Use `\s+`; the
+  capture's innerText carries non-breaking spaces.
+
+## Lessons to honor
+
+- `gh run view --log` is refused here (403); use `get_job_logs` with `return_content` and parse `logs_content`.
+- `git pull` with no branch fetches every branch (minutes); fetch the one branch and `merge --ff-only`.
+- `kb/_build_roep_display.py` needs `openpyxl` (`python3 -m pip install openpyxl`).
+
+## Not refreshed this checkpoint
+
+- The Pipeline tab: its phases did not move. `kb/README.md`, `README.md`: nothing they cover changed.
+- The UI pass: skipped for scope; `cobi:pipeline` stays due (`python3 scripts/ui_pass.py --next`).
+- No KB note crossed the bar.
+
+## Subscriptions and check-ins
+
+S415 holds no PR subscription, check-in or artifact watch (remote sessions cannot watch an artifact). Subscribe to
+#2226 when you pick it up.

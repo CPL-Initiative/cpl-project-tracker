@@ -75,7 +75,30 @@
     32.5
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.5,
+     66.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     0.5
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -95,6 +118,9 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -126,7 +152,8 @@
     "Automation Technicians",
     "Industrial Mechanics",
     "Smart Systems Technicians"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -214,5 +241,14 @@
    "Catalog heading reads Summer 2026 - Summer 2027 College Catalog."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

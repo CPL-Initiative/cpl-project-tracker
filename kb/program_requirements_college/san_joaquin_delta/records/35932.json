@@ -89,7 +89,30 @@
     24.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     51.0,
+     58.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     2.0,
+     9.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -109,6 +132,9 @@
    "count": 10,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -147,7 +173,8 @@
     "audio engineering",
     "web design",
     "audio/video production"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -262,5 +289,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }
