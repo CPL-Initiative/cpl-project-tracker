@@ -1,0 +1,550 @@
+{
+ "college": "Merced College",
+ "control_number": "17928",
+ "shape": "degree",
+ "title": "Social and Behavioral Science",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8329,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8329,
+    "output_tokens": 4761,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4761,
+  "output_tokens_details": {
+   "thinking_tokens": 1849
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12854,
+ "ms": 36286,
+ "seconds": 36.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 35,
+   "share": 0.657,
+   "missing": [
+    "AGAB5",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "POLS2",
+    "POLSC1000",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOCI2",
+    "SOCI3",
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 18,
+   "codes": [
+    "AGBS11",
+    "GEOG12",
+    "HIST17A",
+    "HIST17AH",
+    "HIST17B",
+    "HIST17BH",
+    "HIST22",
+    "HIST23",
+    "POSC1",
+    "POSC2",
+    "PSYC15",
+    "PSYC1A",
+    "PSYC1AH",
+    "PSYC25",
+    "PSYC36",
+    "SOC1",
+    "SOC2",
+    "SOC3"
+   ],
+   "flagged": [
+    "AGBS11",
+    "GEOG12",
+    "HIST17A",
+    "HIST17AH",
+    "HIST17B",
+    "HIST17BH",
+    "HIST22",
+    "HIST23",
+    "POSC1",
+    "POSC2",
+    "PSYC15",
+    "PSYC1A",
+    "PSYC1AH",
+    "PSYC25",
+    "PSYC36",
+    "SOC1",
+    "SOC2",
+    "SOC3"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social and Behavioral Science (AA) (Total Credits 18.0 - 18.0)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Category 1 Select 12 units from the following:",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANTH02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST04A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST04B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POSC01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POSC02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC01B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC-01A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-01AH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Category 2 Select 6 units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AGBS11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGRI10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDV02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDV01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST09A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST09B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST17AH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLDV09",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC09",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST17B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST17BH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGAB 5",
+    "why": "not in the text; catalog prints AGBS11 Agricultural Economics instead (likely same course, different code)"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text; catalog prints HIST17A instead"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "not in the text; catalog prints HIST17AH instead"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text; catalog prints HIST17B instead"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "not in the text; catalog prints HIST17BH instead"
+   },
+   {
+    "code": "POLS 2",
+    "why": "not in the text; catalog prints POSC02 An Introduction to World Political Systems instead"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in the text; catalog prints POSC01 Essentials of American Political System instead"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text; catalog prints PSYC-01A Introduction to Psychology instead"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text; catalog prints PSYC-01AH Honors Introduction to Psychology instead"
+   },
+   {
+    "code": "SOCI02",
+    "why": "not in the text under this code; catalog prints SOC02 Contemporary Social Problems (likely same course)"
+   },
+   {
+    "code": "SOCI03",
+    "why": "not in the text under this code; catalog prints SOC03 Marriage and the Family (likely same course)"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text; catalog prints SOC-01 Introduction to Sociology instead"
+   }
+  ],
+  "notes": [
+   "The text is only the Requisites tab; the Program Overview tab (description, outcomes, careers) is not included, so outcomes and careers are empty.",
+   "Catalog prints older/unspaced course codes (e.g., ANTH02, CLDV09, PSYC01B); codes that differ from closed-list codes only by spacing, hyphen or leading zero were treated as matching. Codes with different subject or number (POSC01/02, SOC-01/02/03, PSYC-01A/AH, HIST17A/AH/B/BH, AGBS11) were marked catalog_addition true; they appear to correspond to closed-list courses POLS C1000, POLS 2, SOCIC1000, SOCI02, SOCI03, PSYC C1000/H, HIST C1001/H, HIST C1002/H, AGAB 5. Reviewer should confirm.",
+   "Each Category consists of nested 'Rule Group' lists ('At least one of the following') under 'The following number of Credits'; recorded as one choose_units block per Category, with honors twins (PSYC-01A/AH, HIST17A/AH, HIST17B/BH) and cross-listed CLDV09/PSYC09 as alternatives.",
+   "Catalog titles differ from closed-list titles for some courses: ANTH02 'Sociocultural Anthropology' vs 'Cultural Anthropology'; HUM15 'Comparative Cultures' vs 'Ethnicity and Culture'.",
+   "No degree total or general education pattern is printed on this page; total_units is the major total 18."
+  ]
+ },
+ "extracted_run": "39117489616"
+}

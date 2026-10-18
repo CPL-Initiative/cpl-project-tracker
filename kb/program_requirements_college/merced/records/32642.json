@@ -1,0 +1,445 @@
+{
+ "college": "Merced College",
+ "control_number": "32642",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7811,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7811,
+    "output_tokens": 3775,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3775,
+  "output_tokens_details": {
+   "thinking_tokens": 1494
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10674,
+ "ms": 30716,
+ "seconds": 31.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 28,
+   "share": 0.714,
+   "missing": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "POLS2",
+    "POLS3",
+    "POLS4",
+    "POLSC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "HIST17A",
+    "HIST17AH",
+    "HIST17B",
+    "HIST17BH",
+    "POSC1",
+    "POSC2",
+    "POSC3",
+    "POSC4"
+   ],
+   "flagged": [
+    "HIST17A",
+    "HIST17AH",
+    "HIST17B",
+    "HIST17BH",
+    "POSC1",
+    "POSC2",
+    "POSC3",
+    "POSC4"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.0-18.0; the catalog states 24.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "History (AAT) (Total Credits 24.0 - 24.0)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core: 12 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "HIST17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST17AH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST17B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST17BH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Diversity: 3 units",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST09A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST09B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM01H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM02H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective: 3 units including any HIST or HUM course from the Diversity list not used above.",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POSC01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POSC02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POSC04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST03A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST04A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST03B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST04B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST C1001",
+    "why": "not in the text; catalog prints HIST17A (United States History and United States Constitution) instead"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "not in the text; catalog prints HIST17AH instead"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text; catalog prints HIST17B (United States History and California State and Local Government) instead"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "not in the text; catalog prints HIST17BH instead"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in the text; catalog prints POSC01 Essentials of American Political System"
+   },
+   {
+    "code": "POLS 2",
+    "why": "not in the text under this code; catalog prints POSC02 with the same title"
+   },
+   {
+    "code": "POLS 3",
+    "why": "not in the text under this code; catalog prints POSC03 with the same title"
+   },
+   {
+    "code": "POLS 4",
+    "why": "not in the text under this code; catalog prints POSC04 with the same title"
+   }
+  ],
+  "notes": [
+   "Required Core is printed as '12 units (Total Credits 12.0 - 12.0)' but the only courses printed under it are two rule groups (HIST17A/HIST17AH and HIST17B/HIST17BH, 6 units). List A (6 units) is printed after the Elective block; it may belong to the Required Core. Core 6 + Diversity 3 + Elective 3 + List A 6 = 18, not the stated 24; reviewer should check whether the page is missing a block or misprints the core.",
+   "Each core and List A rule group is printed as 'At least one of the following' with Total Credits 3.0 - 6.0; recorded as one required course with its 'or' alternative.",
+   "HUM01H and HUM02H recorded as honors alternatives of HUM01 and HUM02 in the Diversity block.",
+   "Elective block also allows any HIST or HUM course from the Diversity list not used above.",
+   "Catalog codes HIST17A/AH/B/BH and POSC01-04 do not match closed-list codes (HIST C1001/C1001H/C1002/C1002H, POLS C1000/2/3/4); POSC02-04 share titles with POLS 2-4 and may be the same courses under a different subject prefix. Recorded as catalog additions.",
+   "Catalog codes printed without spaces (e.g., HIST03A, HUM01) were matched to closed-list codes (HIST 03A, HUM 1); some catalog titles differ from the closed list (e.g., ENGL18, HIST22, HIST23, HUM15).",
+   "No program learning outcomes, careers, degree total or GE pattern printed on this Requisites page."
+  ]
+ },
+ "extracted_run": "39117489616"
+}

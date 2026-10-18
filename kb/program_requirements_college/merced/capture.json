@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 182,
  "with_closed_list": 172,
- "started": "2026-10-18T09:31:05Z",
+ "started": "2026-10-18T10:00:59Z",
  "coursedog": {
   "root": "https://catalog.mccd.edu",
   "search": "https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=250&sortBy=catalogDisplayName%2CtranscriptDescription%2ClongName%2Cname&effectiveDatesRange=2026-10-18%2C2026-10-18&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
@@ -21,7 +21,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 196,
- "seconds": 1661.8,
+ "seconds": 1690.3,
  "found": 154,
  "by_method": {
   "no_closed_list": 10,
@@ -1912,5 +1912,5 @@
    }
   ]
  },
- "run": "39115547722"
+ "run": "39117489616"
 }
