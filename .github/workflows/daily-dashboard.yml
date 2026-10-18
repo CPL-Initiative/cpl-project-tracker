@@ -421,6 +421,12 @@ jobs:
             || echo "::warning title=Re-mint blast radius not rebuilt::kb/_build_remint_blast_radius.py failed — SkyView's re-mint footprint reads the previous curation until the next run, and js-tests' lints job reports it stale. Check the step log."
 
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
+      # The Commons tab's figures (Sam, 2026-10-18: "Build it as a tab now"): every common
+      # reference's complete pair, known issues, settled procedures and machine stamp, read
+      # from the committed files the steps above rebuilt. kb/status/commons.json; commons.js.
+      - name: Build the Commons status
+        run: python3 kb/_build_commons_status.py --quiet || echo "::warning title=Commons status not rebuilt::kb/_build_commons_status.py failed; the Commons tab reads the previous file until the next run. Check the step log."
+
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
 
@@ -518,6 +524,8 @@ jobs:
           # Projects Phase 2 PR-4: daily-cached Supabase snapshot
           # (graceful-degradation fallback for Supabase outages)
           git add kb/projects_snapshot.json 2>/dev/null || true
+          # The Commons tab's figures (the step before the copy): rebuilt every run.
+          git add kb/status/commons.json 2>/dev/null || true
           # Project lifecycle (Session 84): committed ledger of Tabled/Archived
           # projects (offline fallback + the "noted in the KB" record)
           git add kb/project_lifecycle.json 2>/dev/null || true

@@ -383,6 +383,16 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [],
       "measured": true
     },
+    "commons": {
+      "modules": [
+        "commons.js",
+        "commons_progress.js"
+      ],
+      "reads": [],
+      "writes": [],
+      "rpcs": [],
+      "measured": true
+    },
     "gr-priorities": {
       "modules": [
         "gr_priorities.js"

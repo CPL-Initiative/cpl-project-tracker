@@ -40,47 +40,82 @@ together and places them in some order of priority and completion and known issu
 | Reference | Tab | Lane | Where it stands |
 |---|---|---|---|
 | Program Requirements (Catalog ROEP) | `#program-requirements` | [program-requirements-harvest](program-requirements-harvest.md) | carries all five parts |
-| Common Exhibit Reference | `#credential-reference` | [cer-procedures](cer-procedures.md) | procedures run nightly; Sheet 94's rulings to build |
+| Common Exhibit Reference | `#credential-reference` | [cer-procedures](cer-procedures.md) | procedures run nightly; the first saving run and the first fold since July landed 2026-10-18 |
 | Common Course Reference, SkyView | `#unified-courses`, SkyView | [skyview-ccr-interface](skyview-ccr-interface.md) | built and stable; the auditor's receipt on the Pipeline tab |
 | Common CR Reference, with its military half | `#cr-reference` | [common-cr-reference](common-cr-reference.md), [military-ace-cr-reference](military-ace-cr-reference.md) | worklist live; the military half scoped |
 | Common Subjects Reference (Sam's addition, Sheet 95) | `#canonical-subj4` | [mid_lifecycle](../mid_lifecycle.md), Phase 1e | the canonical SUBJ4 code per discipline |
 
 ## Status
 
-**RULED (Sam, Open Asks Sheet 95 card 1, 14:43Z 2026-10-18, his own call, "build"; `cpl_memory` `sam-sheet-95-rulings-2026-10-18`):** *"Yes, and include Common Subjects in the mix."* The order: lift the Progress view out of `program_requirements.js` into one shared module and one status file per project (`kb/status/<project>.json`, today's `kb/queue_status.json` generalized), with nothing changing on screen and its 417 checks guarding the lift; then each reference's Progress view (Exhibit, Course, CR, Subjects), each with its definition of complete on a card for Sam; then the Commons tab from a mock-up: one row per reference with its complete pair, where it stands, known issues by owner, settled procedures, calls waiting on Sam and its last run, in the order he sets.
+**LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
+live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the
+mock-up's row without its prose: five rows in his order, each with the complete pair and the test behind
+it, the known issues each naming an owner, the settled procedures, the calls in the run log and the two
+stamps. Every row collapses on its own word to its count and meter (19:08Z: *"Commons looks good. Just
+make sure I can collapse each and we have a collapse all button."*; 20:03Z: *"Keep the count and meter
+when collapsed."*), Collapse all folds the page, the words on a row move it, and the order and the fold
+stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
+`sam-approves-commons-mockup-collapse-2026-10-18` (verified).
 
-**Fable's review of the plan (2026-10-18, at Sam's suggestion; advice, the calls stay Sam's):**
+- **The machine side** is `kb/status/commons.json`, written daily by `kb/_build_commons_status.py`
+  (daily-dashboard.yml, after the builds it reads) from the committed files alone: Program Requirements
+  from `coci_programs_data.js` and the harvest's record files (the mock-up's own method); Exhibit from
+  `kb/unified_titles.json`, `kb/credentials.json`, the exhibit audit, the procedures run's `latest.json`,
+  the saving receipts and the fold report; Course from the auditor's `kb/row_audit/latest.json`,
+  `prototype/ccr_universe.json` and the stand-alone build; CR from `kb/cr_reference_worklist.json` and
+  the curator receipts under `kb/receipts/`; Subjects from `kb/discipline_canonical_subj4.json`. A figure
+  a source cannot supply is null beside its error and reads *Could not be read* (the S343 rule). Guard:
+  `tests/commons_status_build_test.py` (66 checks).
+- **The session side** is each project's run log, `kb/status/<project>.json`: today Program Requirements
+  alone has one, so four rows read *no run log*. The tab reads a run log's session stamp, next step and
+  calls as its last checkpoint left them.
+- **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
+  `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
+  passes at both widths; UI pass ledger `cobi:commons`.
+- **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
+  right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
+  and every count on the row opens it. The Common Course Reference list left the COBI menu at 20:51Z through
+  `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
+  header; the run's receipt `kb/receipts/migration_cobi_nav_unified_courses_hidden_2026_10_18_s417_39165056506.json`;
+  the session's SQL guard holds an UPDATE for that path): `cobi_nav` row `unified-courses` is `hidden`, the `skyview`
+  launcher row kept. The tab and its list view stay reachable by deep link (`#unified-courses`,
+  `#unified-courses/list`) and the Admin tab can show the entry again.
+- The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
+  source `docs/visuals/2026-10-18-commons-mockup.html`).
 
-- *Complete differs in kind.* Program Requirements' complete is a machine state and nearly only grows; an Exhibit or
-  Course complete is a curator's judgment a merge or a re-mint can undo; Subjects counts a few hundred disciplines
-  against 20,282 programs. Each Commons row carries its definition's phrase and the test behind it (machine-checked,
-  curator-confirmed, assigned) beside the pair, and a percentage stays inside its row, never a sortable column.
-- *A status file is only as live as its writer.* One routine writes `kb/status/program-requirements.json`; the other references have
-  none. Keep the machine stamp (the nightly CER run, the auditor) apart from the session stamp (next step, calls), and
-  show each as an age against a declared cadence, so a stale row reads stale.
-- *Calls have one source.* The decision sheet's store holds Sam's answers; a Commons cell counting calls from a
-  status file shows an answered call as open. Read it the way the Progress view's `callAnswered` does.
-- *Order:* mock the Commons row, with today's real numbers filled by hand, before step 1 fixes the status-file shape:
-  the row's cells are that file's contract. Recommended: run the mock-up beside step 1, a small reorder of Sam's
-  "build"; he may say otherwise.
-- *What the mock-up must show:* five real rows at today's counts, including one stale row, one that could not be read
-  and one with a call open; each count opening its list; phone width; and the control Sam sets the order with. Show
-  the mock-up to Fable before Sam.
+**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is
+drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared
+status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`,
+a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`,
+`goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no
+whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen:
+`tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js`
+(30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`,
+the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it. Lessons:
+`docs/commons_lessons.md`.
 
-**The mock-up, revised on Fable's review (S417, 2026-10-18):** https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 2; source `docs/visuals/2026-10-18-commons-mockup.html`). Every figure re-measured from the committed files of 16:00Z and the live tables at 16:35Z: Program Requirements 11,621 complete, 2,994 failing a check and 5,667 unread sum to 20,282 (the first draft's 3,343 was wrong; 15,946 records at 114 colleges, 1,331 of them for programs outside the Active 20,282); the Exhibit pair reads 615 of 3,813 titles with a review stamp (457 a person's, 158 the 2026-07-07 cohort's; 605 have left MAP; 1,498 queued stand outside the 3,813; 1,368 of 2,187 credential records stamped); the Course tier names the 14,511 cards an untouched discipline caps at 0.79; the CR row keeps 156 collapsed by rule and 30 decided by a curator apart (the 51 verdicts reached 1,184 rows by their receipt, where this lane's neighbor says 1,459); Subjects 122 of 147 (111 a person's, 11 a session cohort's; 25 unconfirmed; 2 codes on two disciplines each, AUTB and FTVE). Course and CR both read no run log, CR stale at 19 days; row 1's two stamps are two events (the build applied 14:15Z, the run log 13:18Z); owners are actors with the cause in parentheses; the CR non-issues (88 range-named groups, 185 collapsed strings) left; the deep link behind a count is named a build item; the calls cells read Sheet 95 card 2 (quote, 14:43Z) and Sheet 94 card 4 as answered, and the CER row cites Sheet 96 card 1. **Fable's second card is not built:** Sheet 95 card 2 proposed exactly the read #2230 built and Sam answered quote, so it is a ruling, and the sheet never re-asks one. Sam has not seen the page.
+**What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
+list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
+read of the records' display facts, so the Program Requirements row carries two known issues, the failing
+and the unread. The CR row's curator decisions come from the committed receipt, so a new sitting lands a
+receipt under `kb/receipts/` or the figure stays at 30 (the live table is the authority). A call reads from
+the run log and stays open until a checkpoint removes it; the decision sheet's store is read only where the
+Progress view's `callAnswered` resolves a record. The machine stamps: Program Requirements the last college
+read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
+last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
+older than a week reads stale.
 
-**Version 3 (S418, 2026-10-18, same artifact):** the CER row's calls cell reads Sheet 96 card 1 as answered (*keep*, 17:23Z) with the sheet's link; its Where-it-stands cell carries the first saving run (926 titles under 7 procedures, 17:37Z) and the first fold since July (1,102 assignments, 12 supersedes, 455 credential records, the 18 conflicts held, 17:50Z); its pair is re-measured from the 17:50Z files: 1,729 of 4,915 titles carry a review stamp (645 a person's, the 457 plus the 176 waiting saves and 12 supersedes; 1,084 a cohort's, the 158 plus today's 926), 2,441 credentials (1,986 plus the 455), 1,825 of 2,644 credential records stamped, 396 still in the queue; its machine stamp names both runs. Sam saw it and approved it at 19:08Z (below).
+**Fable's advice, carried (2026-10-18):** complete differs in kind, so each row names the test behind its
+count and no column sorts on a share; the machine stamp and the session stamp stay apart, each against a
+declared cadence; a call has one source, which today is the run log, with the sheet's store a build item.
 
-**RULED (Sam, 19:08Z 2026-10-18, in chat to S417 SkyManzanita; `cpl_memory` `sam-approves-commons-mockup-collapse-2026-10-18`, verified):** *"Commons looks good. Just make sure I can collapse each and we have a collapse all button."* The mock-up stands as the Commons row. **Version 4 (S417, #2239, merged 19:23Z, same artifact):** a Collapse word per row, one Collapse all word that reads Expand all once every row is folded, the fold remembered in the browser like the order. **Sam, 20:03Z, to S417: *"Keep the count and meter when collapsed."*** The fold as built stands: a collapsed row keeps its title, its words, its count and its meter; the definition and the four cells fold (the same memory row carries both rulings). The collapse pattern belongs in the Commons row component step 3 builds.
+**RULED (Sam, Open Asks Sheet 95 card 1, 14:43Z, his own call, "build"; `cpl_memory`
+`sam-sheet-95-rulings-2026-10-18`):** *"Yes, and include Common Subjects in the mix."* Step 1, the shared
+Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons tab came next on Sam's
+20:10Z word. What remains of the order: a run log per project written at checkpoints, each reference's
+Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
+card for Sam.
 
-**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`, a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`, `goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen: `tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js` (30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`, the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it.
-
-**Fable's review of the mock-up (2026-10-18, after S416's checkpoint; advice, the calls stay Sam's):**
-
-- *Four cells fall short.* Every count links to a bare tab hash and the tab reads no list from the URL, so "a count opens its list" is a build item to name. An owner like "the catalogs disagree on units" is a cause; the actor is a curator. The CR row lists two non-issues (88 range-named groups, 185 collapsed strings). The Program Requirements pair plus its first two counts sum to 20,631 against 20,282.
-- *Definitions of complete.* Exhibit: the 615 carry a review stamp and no reviewer (416 on one day, 86 on the June 2 bulk stamp), so say "carries a review stamp"; the 3,813 omits the 1,498 queued and keeps 605 titles gone from MAP; the credential unit reads 1,368 of 2,187 records, and the first saving night adds about 900. Course: a seed-untouched discipline caps a card at 0.79 and 14,511 cards carry that tag, so the 0.85 tier measures discipline curation, a Subjects dependency. CR: 30 decided by a curator and 156 collapsed by rule are two figures, or count rows covered (51 verdicts reached 1,459 of 9,413). Subjects: 11 of the 122 were set by session cohorts, so 111 are a person's, and "closed" sits above 25 unconfirmed.
-- *The stamps.* Course and CR both lack a run log yet render two ways; say "no run log" for both and keep "could not be read" for a file that fails to load. Row 1's two stamps are one event (13:18Z is the session writing the status file; the display build applied at 14:15Z).
-- *Copy.* "X, never Y" appears six times; two asides to cut; "the completes differ in kind" is awkward.
-- *The one change before Sam sees it:* the calls cell. It cites Sheet 96 card 1, which is deferred, and reads "None" on Program Requirements beside a real proceeded-on call (Sierra reads every complete record, #2230). Calls read from the sheet's store: build Sheet 96 with both cards first, or label the cell a sample.
-
-**NEXT:** step 2, each reference's Progress view drawn from `commons_progress.js`, in the ruled order (Exhibit on the CER tab, then Course, CR, Subjects), each with its definition of complete on a card for Sam and its status file under `kb/status/`; then step 3, the Commons tab from the approved mock-up (version 4), its rows collapsing as Sam asked.
+**NEXT:** a run log per reference (`kb/status/exhibit.json`, `course.json`, `cr.json`, `subjects.json`)
+written at checkpoint step 12, so the four rows read a session stamp, a next step and calls; the deep link
+behind a count; then the per-reference Progress views from the shared module.

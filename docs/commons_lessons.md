@@ -5,6 +5,11 @@ updated: 2026-10-18
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
+  - commons.js
+  - kb/_build_commons_status.py
+  - kb/status/commons.json
+  - tests/commons.test.js
+  - tests/commons_status_build_test.py
   - program_requirements.js
   - tests/commons_progress.test.js
   - kb/status/program-requirements.json
@@ -62,3 +67,23 @@ Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress 
   `kb/status/`. The CER tab's host object must lend a section pattern with its class names, a count control that opens
   its own lists, and call-card helpers (or none, with `callRecords` returning null and `callAnswered` reading the
   sheet's store); the collapse pattern Sam asked for belongs in step 3's Commons row component.
+
+## S417 SkyManzanita (2026-10-18): the Commons tab, on Sam's word (step 3 before step 2)
+
+- **The mock-up's figures reproduce from the committed files alone.** Every number the mock-up showed, measured
+  against live tables at 16:35Z, came back from a committed file: the harvest's record files and
+  `coci_programs_data.js` give the Program Requirements pair; `kb/exhibit_audit/latest.json` carries "left MAP" (the
+  raw export is gitignored for PII); the auditor's `latest.json`, the CR worklist's `_stats` and the SUBJ4 seed carry
+  the rest. So the builder needs no key and runs in the daily workflow after the steps that write those files.
+- **A figure's stamp is the file's own field, never the clock.** The auditor's `_generated_at`, the fold report's
+  `_generated_at`, the seed's `_synced_at`, a receipt's `at` (hyphens in its time part: `17-37-29Z`, normalized). The
+  CR worklist carries no stamp, so its "last changed" comes from git, which a shallow checkout cannot answer; the
+  builder writes null there and the row reads *Could not be read*.
+- **A cohort's stamp is the reviewer's `@bot` suffix, never the day:** 2026-07-07 holds 258 person stamps beside the
+  158 preseed ones. Splitting by day would have misread the Exhibit pair.
+- **"No words on the cards" is the prose, not the labels.** Sam waved the definitions and the where-it-stands
+  narrative; a known issue still needs its words and its owner to mean anything, and the test behind a count stays as
+  a chip. The lane keeps the definitions for the cards each Progress view will carry.
+- **A screenshot of the served monolith waits for the load event.** The container's proxy fails every outbound
+  request, so `domcontentloaded` plus a selector wait timed out while `load` plus a function wait rendered the tab in
+  two seconds; the a11y sweep's own server does the same.
