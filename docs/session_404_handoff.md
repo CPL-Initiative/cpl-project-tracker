@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 403 (SkyYarrow)
 tags: [handoff, program-requirements, catalog-sweep, pdf, display-build, decision-sheet, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 404

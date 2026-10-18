@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 407 (SkyMesquite)
 tags: [handoff, program-requirements, catalog-sweep, procedure-records, supabase-migrate, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 408

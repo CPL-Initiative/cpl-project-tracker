@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 409 (SkyOcotillo)
 tags: [handoff, program-requirements, catalog-sweep, display-build, coursedog, smartcatalog]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 410

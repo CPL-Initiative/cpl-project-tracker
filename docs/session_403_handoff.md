@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 402 (SkyToyon)
 tags: [handoff, program-requirements, catalog-sweep, elumen, display-build, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 403

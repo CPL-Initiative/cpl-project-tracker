@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-17T23:24:01Z",
-  "session": 409,
-  "moniker": "SkyOcotillo",
+  "written_at": "2026-10-18T00:56:54Z",
+  "session": 410,
+  "moniker": "SkyYucca",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_410_handoff.md",
+  "handoff": "docs/session_411_handoff.md",
   "unchecked": [
     {
       "college": "Allan Hancock College",
@@ -10191,6 +10191,440 @@
       "award": "Noncredit program",
       "control_number": "43231",
       "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cañada College",
+      "program": "3D Animation and Videogame Art",
+      "award": "A.A. Degree",
+      "control_number": "16816",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "3D Animation and Videogame Art",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20430",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Advanced Optics and Photonics Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41512",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32400",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "32514",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Art History",
+      "award": "A.A. Degree",
+      "control_number": "30385",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Bilingualism and Biliteracy in English/Spanish",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "31755",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "33608",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "43514",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Business Administration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20425",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41287",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Business Assistant",
+      "award": "A.S. Degree",
+      "control_number": "43965",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Business Information Worker",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36721",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "10247",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "35834",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43478",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "32197",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Computer Science - C++",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "32527",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Computer Science - Java",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "32525",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Computer Science - Swift",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "32526",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Custom Dressmaking/Small Business Oriented",
+      "award": "A.S. Degree",
+      "control_number": "05717",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Custom Dressmaking/Small Business Oriented",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20438",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "DANCE",
+      "award": "A.A. Degree",
+      "control_number": "31856",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Digital Art and Animation",
+      "award": "A.A. Degree",
+      "control_number": "14443",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Digital Art and Animation",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20432",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31069",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Earth Science",
+      "award": "A.S. Degree",
+      "control_number": "30427",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "32716",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Engineering",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "35986",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32730",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Entrepreneurship and Small Business Management",
+      "award": "A.S. Degree",
+      "control_number": "43660",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Entrepreneurship and Small Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20426",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Environmental Science",
+      "award": "A.S. Degree",
+      "control_number": "35971",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "36056",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32295",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Geography",
+      "award": "A.A. Degree",
+      "control_number": "05735",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Graphic Design",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "15654",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32576",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Home Staging",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30853",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Inclusion Support",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40391",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "30910",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "36025",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Litigation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38824",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "43537",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Math for Surveying and Computer-aided Design",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "31401",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Multilingual Learner Teaching",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43790",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "33610",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Pathways to Student Success",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31911",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Payroll Specialist",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "33317",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32731",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Philosophy",
+      "award": "A.A. Degree",
+      "control_number": "05722",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Photonics and Laser Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41513",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "30881",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30834",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "37122",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30825",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33828",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32452",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Technical (Apparel Industry Oriented)",
+      "award": "A.S. Degree",
+      "control_number": "15052",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32795",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Video Game Design",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38514",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Cañada College",
+      "program": "Youth and School-Age",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37973",
+      "loaded": "2026-10-18"
     },
     {
       "college": "Cerritos College",
@@ -47368,6 +47802,482 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "21376",
       "loaded": "2026-10-17"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Administration of Justice",
+      "award": "A.S. Degree",
+      "control_number": "03585",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31971",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Advanced Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "40051",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Agricultural Mechatronics",
+      "award": "A.S. Degree",
+      "control_number": "43809",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "35613",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Astronomy",
+      "award": "A.S. Degree",
+      "control_number": "31778",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Automotive Technology - Advanced Diesel Technology",
+      "award": "A.S. Degree",
+      "control_number": "32529",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Basic Computer Literacy",
+      "award": "Noncredit program",
+      "control_number": "40261",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "03537",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35107",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "42135",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Business Information Worker Level 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38224",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Business Information Worker Level 2",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38232",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Business Office Technology--Information Processing",
+      "award": "A.S. Degree",
+      "control_number": "03545",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Business Office Technology: Bookkeeping",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "03539",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "35108",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Chicanx Studies",
+      "award": "A.A. Degree",
+      "control_number": "08904",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Cisco Certified Network Associate",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41922",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "31146",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43620",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "37916",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Construction Management and Architecture",
+      "award": "A.S. Degree",
+      "control_number": "36694",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Cybersecurity",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41985",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Digital Arts",
+      "award": "A.A. Degree",
+      "control_number": "08909",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Digital Arts",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21423",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Early Childhood Education",
+      "award": "A.S. Degree",
+      "control_number": "03588",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31268",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33385",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Emergency Medical Technician - Level 1",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43066",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Engineering Fundamentals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38501",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31392",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "English for Multilingual Speakers-Intermediate",
+      "award": "Noncredit program",
+      "control_number": "43776",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "English for Multilingual Speakers–Advanced",
+      "award": "Noncredit program",
+      "control_number": "43608",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "English for Multilingual Speakers–Beginning",
+      "award": "Noncredit program",
+      "control_number": "43607",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "English for Multilingual Speakers–High Intermediate",
+      "award": "Noncredit program",
+      "control_number": "43609",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "English for Multilingual Speakers–Low Intermediate",
+      "award": "Noncredit program",
+      "control_number": "43610",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.S. T Degree",
+      "control_number": "38517",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "First Line Supervisor",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43559",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "35105",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32930",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "IGETC",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19107",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30822",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33176",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Music",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43887",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Nursing--Vocational Nursing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "03571",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Nursing-Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "03570",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Photography",
+      "award": "A.A. Degree",
+      "control_number": "08886",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Photography",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21444",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31406",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32037",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "18353",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "44729",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "35458",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Respiratory Care",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "44537",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Social Justice",
+      "award": "A.A- T Degree",
+      "control_number": "38211",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32036",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33051",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Spanish",
+      "award": "A.A. Degree",
+      "control_number": "19518",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Spanish",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44525",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32375",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Technical Support",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41819",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "33050",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Theatre Arts & Cinema",
+      "award": "A.A. Degree",
+      "control_number": "35065",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Theatre Performance",
+      "award": "Noncredit program",
+      "control_number": "44161",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "39248",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "03562",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21439",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Workforce and Academic Readiness",
+      "award": "Noncredit program",
+      "control_number": "44574",
+      "loaded": "2026-10-18"
     },
     {
       "college": "Imperial Valley College",
@@ -108404,17 +109314,10 @@
     }
   ],
   "next_step": {
-    "title": "Read the display apply, then read Hartnell's catalog PDF",
-    "text": "Read the applied record of display build ffd6929a4f90 (run 39078224767), then read Hartnell through the whole-catalog PDF its Coursedog catalog publishes, once the reader takes course codes printed with no space."
+    "title": "Read the display apply, then fix Hartnell's picks",
+    "text": "Read the applied record of display build d6cc1fde7ea3, then pick each Hartnell program's pages by the code the Coursedog catalog prints beside its name and reread the 33 programs left out."
   },
-  "calls": [
-    {
-      "title": "Post Cañada's 2026-2027 catalog and addendum to the catalog-files release",
-      "text": "Both files sit under the catalog host's path that robots.txt refuses, so the reader cannot fetch them. A person may fetch a public file by hand. With no reply, Cañada stays without records.",
-      "link": "https://claude.ai/artifact/AZrSg3EREDme7kYsE7Nzwd",
-      "part": "reading"
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges.",
     "procedures": "76 colleges have one: the eLumen six and the first S402 wave's four were written on Oct 17, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
@@ -108424,28 +109327,28 @@
   },
   "changes": [
     {
-      "at": "2026-10-17T22:24:00Z",
-      "text": "Display build f949e7c0ea35 was applied: 15,336 programs written."
+      "at": "2026-10-17T23:52:00Z",
+      "text": "Cañada's 2026-2027 catalog and addendum, posted by Sam, were filed for the reader."
     },
     {
-      "at": "2026-10-17T22:25:00Z",
-      "text": "Cuesta College loaded 181 records, unchecked."
+      "at": "2026-10-17T23:54:00Z",
+      "text": "Display build ffd6929a4f90 was applied: 15,517 programs written."
     },
     {
-      "at": "2026-10-17T22:32:00Z",
-      "text": "Cañada's 2026-2027 catalog was found under the path its robots.txt refuses; Open Asks Sheet 92 asks for a copy."
+      "at": "2026-10-18T00:00:00Z",
+      "text": "Hartnell's catalog is now read from the whole-catalog file its catalog vendor publishes."
     },
     {
-      "at": "2026-10-17T23:08:00Z",
-      "text": "The Coursedog and SmartCatalog catalog hosts were read: Hartnell's catalog publishes a whole-catalog PDF."
+      "at": "2026-10-18T00:17:00Z",
+      "text": "Cañada College loaded 62 records, unchecked."
     },
     {
-      "at": "2026-10-17T23:14:00Z",
-      "text": "Display build ffd6929a4f90 (15,517 programs at 109 colleges) merged and its apply started."
+      "at": "2026-10-18T00:26:00Z",
+      "text": "Hartnell College loaded 68 records, unchecked."
     },
     {
-      "at": "2026-10-17T23:19:00Z",
-      "text": "The Exhibit Adoption tab's controls became underlined words, and its table and matrix pass AA in both themes."
+      "at": "2026-10-18T00:55:00Z",
+      "text": "Display build d6cc1fde7ea3 (15,647 programs at 111 colleges) went to be applied."
     }
   ],
   "headline": [
@@ -108508,6 +109411,12 @@
       "active": 20282,
       "checked": 32,
       "colleges": 7
+    },
+    {
+      "day": "2026-10-18",
+      "active": 20282,
+      "checked": 32,
+      "colleges": 7
     }
   ],
   "next_run": {
@@ -108516,8 +109425,8 @@
     "at": "2026-10-18T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-17",
-    "gaps": 3655,
+    "day": "2026-10-18",
+    "gaps": 3720,
     "parts": {
       "links": {
         "catalog": [
@@ -108534,11 +109443,11 @@
         ]
       },
       "roep": [
-        17694,
+        17936,
         20282
       ],
       "coci": [
-        14216,
+        14342,
         20282
       ],
       "outcomes": {
@@ -108547,12 +109456,12 @@
           89192
         ],
         "plo": [
-          14216,
+          14342,
           20282
         ]
       },
       "careers": [
-        13166,
+        13292,
         20282
       ]
     }

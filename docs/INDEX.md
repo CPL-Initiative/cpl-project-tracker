@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-17
+updated: 2026-10-18
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 381 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1164** | |
+| Session handoffs | 382 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1165** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-18 (S410 SkyYucca, hand-opened): `ffd6929a4f90` applied; Cañada filed from Sam's catalog-files copies (Sheet 92 card 1) and Hartnell read through a PDF catalog step that names its file; 62 and 68 loaded unchecked, display build `d6cc1fde7ea3` (15,647 programs at 111 colleges, #2213); TMC Builder's UI pass (#2214); four `cpl_memory` rows; no decision sheet open. Handoff 411 (SkySotol).
 - 2026-10-17 (S409 SkyOcotillo, hand-opened): `f949e7c0ea35` applied; Cuesta loaded 181 unchecked and display build `ffd6929a4f90` (15,517 programs at 109 colleges, #2210); Exhibit Adoption's UI pass, its table and matrix measured for the first time (#2211); Cañada's 2026-2027 PDF found behind its robots.txt refusal (Open Asks Sheet 92); the Coursedog and SmartCatalog hosts read; handoff 410 (SkyYucca).
 - 2026-10-17 (S408 SkyAgave, hand-opened): the code finder reads a run of numbers after one subject (#2206, Glendale 190 to 258 found); the outcomes check reads a list number at a line's end (#2207, Ohlone 125 failures to 8); East LA's rows carry their year; Desert, Pasadena, Glendale, Grossmont, Ohlone and LA Southwest loaded unchecked; display build `f949e7c0ea35` (15,336 programs at 108 colleges, #2208); handoff 409 (SkyOcotillo).
 - 2026-10-17 (S406 SkyIronwood, hand-opened): a hand-filed catalog is read from the copy a person posted, its hash pinned on the first fetch (#2199); the eight refused colleges loaded unchecked from Sam's copies (1,427 records, $131.00, build `fec9782a4dbc`, 13,851 programs at 100 colleges); Open Asks Sheet 90; MAP Export's UI pass (#2200); harvest lane compacted under its budget.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-17 (S404 SkyBuckeye, the 10:12Z firing): own-HTML catalogs take the generic sitemap road (#2194); College of San Mateo loaded 55 unchecked (60 of 64 found, $4.98, build `928577b30f0f`); Los Rios's hosts still serve the reader 404; the MAP Data Quality UI pass (#2193); handoff 405 (SkyCholla).
 - 2026-10-17 (S403 SkyYarrow, the 08:12Z firing): two firings had both run as S403 and written a PDF reader each; one reader from the two (#2192, build `726bde512dfa`, 11,862 programs, East LA's 120 included); LA City and Pierce rescored free (outcomes failures 145 to 12 and 85 to 15); a reconcile now refuses a moved page, and the 49-row undo waits on Open Asks Sheet 88; harvest lessons S372-S385 moved to archive 2.
 - 2026-10-17 (S403 SkyYarrow, the CPL Queue routine): a whole-catalog PDF reader and the PDF wave, fifteen colleges loaded unchecked (1,725 records, #2189, build `7f4744e8e4ae`, 11,742 programs); Cerro Coso's robots.txt refuses its catalog PDF; the outcomes check fails on PDF text (open); handoff 404 (SkyBuckeye).
-- 2026-10-17 (S402 SkyToyon, Sam's session): two catalog-sweep waves, Lake Tahoe, Marin, Butte and Las Positas (#2186, build `40d138a9f533` applied), then Los Medanos and Mission (#2187, build `7c13e42917c5`); the eLumen reader takes catalog links written whole with a fragment (Los Medanos 7 to 83 of 97); the college workflow refuses a run naming no college; ten procedure records; Open Asks Sheet 87 asks to correct five registry rows; handoff 403 names SkyYarrow.

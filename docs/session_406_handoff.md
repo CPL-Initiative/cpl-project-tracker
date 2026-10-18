@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 405 (SkyCholla)
 tags: [handoff, program-requirements, catalog-sweep, own-html, pdf, display-build, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 406

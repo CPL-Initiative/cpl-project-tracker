@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 401 (SkyManzanita)
 tags: [handoff, program-requirements, catalog-sweep, curriqunet, elumen, display-build]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 402

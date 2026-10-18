@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 408 (SkyAgave)
 tags: [handoff, program-requirements, catalog-sweep, display-build, ui-pass]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 409
