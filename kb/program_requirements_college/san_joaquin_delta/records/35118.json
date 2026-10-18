@@ -62,18 +62,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    60.5,
-    60.5
+    87.5,
+    87.5
    ],
    "stated": [
-    60.5,
-    60.5
+    81.5,
+    81.5
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [
+    "the blocks and general education sum to 87.5-87.5; the catalog prints 81.5-81.5 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.5,
+     60.5
+    ],
+    "stated": [
+     60.5,
+     60.5
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -94,7 +114,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -297,5 +320,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

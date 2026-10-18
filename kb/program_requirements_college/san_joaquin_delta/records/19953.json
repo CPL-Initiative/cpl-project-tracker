@@ -64,18 +64,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    35.0,
-    35.0
+    62.0,
+    69.0
    ],
    "stated": [
-    35.0,
-    35.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 62.0-69.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     35.0,
+     35.0
+    ],
+    "stated": [
+     35.0,
+     35.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -96,7 +116,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -457,5 +480,6 @@
    "Catalog prints DRAMA 23A title as 'Stage Costume: Costume Construction I' vs closed list 'Stage Costume'."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

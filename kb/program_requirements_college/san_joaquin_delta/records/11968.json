@@ -89,7 +89,26 @@
     37.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     71.0
+    ],
+    "stated": [
+     64.0,
+     64.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -109,6 +128,9 @@
    "count": 6,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -276,5 +298,6 @@
    "The two outcomes are under 'Program Learning Outcomes' for this AS degree; the description paragraph restates similar text but is not the outcomes list."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

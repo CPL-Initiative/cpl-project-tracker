@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -232,5 +235,6 @@
    "Careers taken from the description's 'entry-level positions including industrial occupations in metal shops, all maintenance positions, sheet metal and metal fabrication shops, and many apprenticeship programs'; shop types and apprenticeship programs were not recorded as careers."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

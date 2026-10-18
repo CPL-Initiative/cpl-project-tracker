@@ -77,7 +77,26 @@
    "against": "program",
    "why": [
     "the blocks sum to 26.0-32.0; the catalog states 24.0-24.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -97,6 +116,9 @@
    "count": 0,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -292,5 +314,6 @@
    "The catalog page header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

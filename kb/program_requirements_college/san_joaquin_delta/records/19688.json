@@ -79,7 +79,26 @@
     31.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     65.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -99,6 +118,9 @@
    "count": 3,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -290,5 +312,6 @@
    "Careers taken from 'Students entering the landscape industry...' and 'Graduates are employed by nurseries, landscape contractors, landscape architects and designers, public and private agencies, or are self-employed'; nurseries and agencies are employers rather than occupations and were not recorded."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

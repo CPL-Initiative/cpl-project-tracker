@@ -79,7 +79,30 @@
    "against": "program",
    "why": [
     "the blocks sum to 22.0-22.5; the catalog states 22.0-22.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.0,
+     56.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     3.5,
+     4.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -99,6 +122,9 @@
    "count": 7,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -292,5 +318,6 @@
    "The page names transfer majors (Plant Science, Crop Science, Environmental Horticulture); these were not recorded as careers."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

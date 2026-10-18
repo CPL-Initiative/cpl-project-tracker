@@ -45,31 +45,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 11,
    "listed": 11,
-   "share": 0.727,
-   "missing": [
-    "FASHION18",
-    "FASHION19",
-    "FASHION21"
-   ],
-   "unexplained": [
-    "FASHION18",
-    "FASHION19",
-    "FASHION21"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "FASHION/ID18",
-    "FASHION/ID19",
-    "FASHION/ID21"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -104,7 +92,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -235,5 +226,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

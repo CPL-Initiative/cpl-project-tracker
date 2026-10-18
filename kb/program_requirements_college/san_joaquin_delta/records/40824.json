@@ -107,18 +107,38 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    19.0,
-    19.0
+    46.0,
+    53.0
    ],
    "stated": [
-    19.0,
-    19.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 46.0-53.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     19.0,
+     19.0
+    ],
+    "stated": [
+     19.0,
+     19.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -138,6 +158,9 @@
    "count": 9,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -691,5 +714,6 @@
    "Catalog heading year is Summer 2026 - Summer 2027, consistent with requested catalog year."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

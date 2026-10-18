@@ -64,18 +64,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    51.0,
-    51.0
+    78.0,
+    85.0
    ],
    "stated": [
-    51.0,
-    51.0
+    72.0,
+    72.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 78.0-85.0; the catalog prints 72.0-72.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     51.0,
+     51.0
+    ],
+    "stated": [
+     51.0,
+     51.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -96,7 +116,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -257,5 +280,6 @@
    "The outcomes are printed under 'Program Learning Outcomes' for this program; no careers are named."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

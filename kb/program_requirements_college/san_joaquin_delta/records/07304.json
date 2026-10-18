@@ -112,6 +112,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -402,5 +405,6 @@
    "Unit values in the catalog differ from the state file for CSP 25 and CSP 31B (catalog prints 4; state file stores 3) and for CS 50SS (catalog prints 1-4; state file stores 1)."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

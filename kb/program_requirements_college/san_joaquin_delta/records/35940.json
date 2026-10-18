@@ -64,18 +64,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    43.0,
-    43.0
+    70.0,
+    77.0
    ],
    "stated": [
-    43.0,
-    43.0
+    64.0,
+    64.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 70.0-77.0; the catalog prints 64.0-64.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     43.0,
+     43.0
+    ],
+    "stated": [
+     43.0,
+     43.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -96,7 +116,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -225,5 +248,6 @@
    "All courses must be completed with a grade of C or better."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

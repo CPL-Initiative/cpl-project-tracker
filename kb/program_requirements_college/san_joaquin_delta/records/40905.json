@@ -94,6 +94,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -278,5 +281,6 @@
    "Careers taken from the description: 'entry-level employment or career advancement in tree care, ground operations, or climbing'."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }
