@@ -1,12 +1,13 @@
 {
- "_readme": "Merced College's Coursedog catalog (S411, SkySotol). The catalog sits on catalog.mccd.edu and its scripts call app.coursedog.com, which a read kept to the page's own domain never printed (run 39077970234, S409). The first read of this plan (run 39089955502) kept the vendor's calls: the program search names the school merced_colleague_ethos and catalogId QTM2GIg9kimBOfyC8Dbb, and neither page fetched a PDF while it loaded. Hartnell's catalog page fetched its PDF address from app.coursedog.com/api/v1/hartnell_colleague/pdf-reports/catalogs/<catalogId> (run 39077713662), so this read asks Merced's catalog for the same, once, robots.txt first.",
+ "_readme": "Merced College's Coursedog catalog (S411, SkySotol). The catalog sits on catalog.mccd.edu and its scripts call app.coursedog.com, which a read kept to the page's own domain never printed (run 39077970234, S409). The first read of this plan (run 39089955502) kept the vendor's calls: the program search names the school merced_colleague_ethos and catalogId QTM2GIg9kimBOfyC8Dbb, and neither page fetched a PDF while it loaded. Hartnell's catalog page fetched its PDF address from app.coursedog.com/api/v1/hartnell_colleague/pdf-reports/catalogs/<catalogId> (run 39077713662), so this read asks Merced's catalog for the same, once, robots.txt first. Run 39090140618: the pdf-reports call answers 404, so Merced's catalog publishes no whole-catalog PDF. Its program search names 191 programs by code (\"05000.AA\", Accounting (AA)). This read takes the sitemap and one program page, to see whether the rendered page prints the program's requirements.",
  "college": "Merced College",
  "outside_hosts": {
   "coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu call app.coursedog.com for its program list, and the vendor's public pdf-reports call answers with the catalog PDF's address, as Hartnell's did."
  },
  "questions": {
   "pdf_address": "The whole-catalog PDF's address and the catalogId the catalog's scripts fetch it by.",
-  "program_codes": "How the program search names each program (title, code, award), to check the PDF's Title - CODE headings against."
+  "program_codes": "How the program search names each program (title, code, award), to check the PDF's Title - CODE headings against.",
+  "program_page": "Whether a program's own page (/programs/<code>) prints its requirements once its scripts run, and whether a sitemap lists the program pages."
  },
  "keywords": [
   "pdf-reports",
@@ -14,26 +15,24 @@
   "catalogId",
   "coursedog-pdfs",
   "programs/search",
-  "[Dd]ownload"
+  "[Dd]ownload",
+  "Required",
+  "Units",
+  "Complete"
  ],
  "pages": [
   {
    "answers": [
-    "pdf_address"
+    "program_page"
    ],
-   "url": "https://app.coursedog.com/api/v1/merced_colleague_ethos/pdf-reports/catalogs/QTM2GIg9kimBOfyC8Dbb"
+   "url": "https://catalog.mccd.edu/sitemap.xml"
   },
   {
    "answers": [
-    "pdf_address",
-    "program_codes"
+    "program_page"
    ],
-   "url": "https://catalog.mccd.edu/programs",
-   "network": true,
-   "network_hosts": [
-    "app.coursedog.com"
-   ],
-   "links": "pdf|download|print"
+   "url": "https://catalog.mccd.edu/programs/05000.AA",
+   "expand": true
   }
  ]
 }
