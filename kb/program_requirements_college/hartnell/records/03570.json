@@ -1,0 +1,647 @@
+{
+ "college": "Hartnell College",
+ "control_number": "03570",
+ "shape": "degree",
+ "title": "Nursing-Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=293",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10165,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10165,
+    "output_tokens": 4057,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4057,
+  "output_tokens_details": {
+   "thinking_tokens": 1162
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1218,
+ "ms": 32113,
+ "seconds": 33.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 40,
+   "codes": [
+    "ANT2",
+    "BIO18",
+    "BIO27",
+    "BIO5",
+    "BIO6",
+    "BIO6L",
+    "CHM22",
+    "COM3",
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "HES1",
+    "HES2",
+    "HES3",
+    "HES80",
+    "LIB6",
+    "MAT10",
+    "MAT12",
+    "MAT16",
+    "MAT24",
+    "MAT25",
+    "MAT27",
+    "MAT3A",
+    "MAT3B",
+    "MAT3C",
+    "MAT4",
+    "MAT5",
+    "NRN225",
+    "NRN226",
+    "NRN227",
+    "NRN228",
+    "NRN5041",
+    "NRN5042",
+    "NRN5043",
+    "NRN5044",
+    "NRN70",
+    "NUTR1",
+    "PSY25",
+    "SOC1",
+    "STATC1000"
+   ],
+   "flagged": [
+    "ANT2",
+    "BIO18",
+    "BIO27",
+    "BIO5",
+    "BIO6",
+    "BIO6L",
+    "CHM22",
+    "COM3",
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "HES1",
+    "HES2",
+    "HES3",
+    "HES80",
+    "LIB6",
+    "MAT10",
+    "MAT12",
+    "MAT16",
+    "MAT24",
+    "MAT25",
+    "MAT27",
+    "MAT3A",
+    "MAT3B",
+    "MAT3C",
+    "MAT4",
+    "MAT5",
+    "NRN225",
+    "NRN226",
+    "NRN227",
+    "NRN228",
+    "NRN5041",
+    "NRN5042",
+    "NRN5043",
+    "NRN5044",
+    "NRN70",
+    "NUTR1",
+    "PSY25",
+    "SOC1",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    36.5,
+    36.5
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "a required course in 'Prerequisites' has no units",
+    "a required course in 'May be taken concurrently with NRN courses.' has no units",
+    "the record names the degree total and the Local GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Major Courses - After acceptance into the program",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO6L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO27",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHM22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLC1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1000E",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STATC1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAT3A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT3B",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT3C",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT4",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT5",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT10",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT12",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT16",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT24",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT25",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MAT27",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "May be taken concurrently with NRN courses.",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSY25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NRN70",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANT2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMMC1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COM3",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "1st Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NRN110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN46",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN47",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN48",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN49",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "2nd Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NRN56",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN57",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN58",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "3rd Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NRN66",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "4th Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NRN76",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN77",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Nursing and Health Sciences Success Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NRN50.41",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN50.42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN50.43",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN50.44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN226",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN227",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NRN228",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HES1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HES2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HES3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HES80",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LIB6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 293; the program's own title heading is not in the text, so section_heading uses the major-courses heading printed.",
+   "The requirement lists print no units beside courses; NRN unit values were taken from the course descriptions on pages 294-296 (NRN46 6.5, NRN47 1.5, NRN49 1.5, NRN56 8, NRN57 0.5, NRN58 0.5, NRN66 8). NRN48's description prints no credits; NRN110, NRN76 and NRN77 descriptions are not in the excerpt, so their units are null.",
+   "Prerequisite and concurrent support courses (BIO, CHM, ENGLC, STATC/MAT, PSY/NRN70, ANT2 and SOC1, COMMC1000/COM3) are recorded as required blocks since the catalog lists them as completion requirements; some may double-count toward GE. ANT2 AND SOC1 are both required and recorded as separate entries.",
+   "Ethnic Studies requirement is 'Local GE - Area 6' (a GE area), not placed in a block; ge_pattern recorded as 'Local GE' based on this reference.",
+   "'Total Required Credits 60' recorded as degree_total; the page says electives (courses numbered 1-199) are required when degree units plus GE units total fewer than 60, so electives_fill_degree is true. No major total is printed.",
+   "NRN77 is printed with the title 'Nursing Interventions and Scenarios (with Special Populations)', which differs from the closed list title 'Role Transition and Care Coordination Seminar'; likely a catalog error. NRN76 title also appears truncated.",
+   "Success courses are stated as 'recommended, not required' ('Complete at least 0 of the following courses').",
+   "No program learning outcomes or careers are printed in the excerpt."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

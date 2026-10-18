@@ -1,0 +1,54 @@
+{
+ "college": "Hartnell College",
+ "programs": 112,
+ "with_closed_list": 105,
+ "found": 101,
+ "extracted": 101,
+ "errors": 0,
+ "passed_machine_checks": 8,
+ "failed": {
+  "coverage": 33,
+  "invented": 0,
+  "arithmetic": 93,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 8.03,
+ "cost_per_program": 0.0795,
+ "not_found": [
+  {
+   "control_number": "17913",
+   "title": "General Studies: Ethnic Groups in the United States",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
+    "coverage": 0.306
+   }
+  },
+  {
+   "control_number": "19106",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=38",
+    "coverage": 0.018
+   }
+  },
+  {
+   "control_number": "39564",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=374",
+    "coverage": 0.048
+   }
+  },
+  {
+   "control_number": "40742",
+   "title": "High School Equivalency Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39082134780"
+}

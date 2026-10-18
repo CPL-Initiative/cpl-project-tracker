@@ -467,17 +467,23 @@ def procedure_catalog(procedure) -> dict | None:
     step = (procedure or {}).get("catalog") if isinstance(procedure, dict) else None
     if not isinstance(step, dict):
         return None
-    start, follow = step.get("start"), step.get("follow")
+    start, follow, file = step.get("start"), step.get("follow"), step.get("file")
     fmt = step.get("format") or "pdf"
-    if not (isinstance(start, str) and start.startswith("http") and isinstance(follow, str)
-            and follow.strip() and fmt in ("pdf", "html")):
+    # A catalog page whose scripts fetch the file links none: Hartnell's Coursedog
+    # catalog asks the vendor for a whole-catalog PDF on its public bucket (page
+    # read 39077713662, S409), so its step names the file and follows no link.
+    named = isinstance(file, str) and file.startswith("http") and fmt == "pdf"
+    if not (isinstance(start, str) and start.startswith("http") and fmt in ("pdf", "html")
+            and (named or (isinstance(follow, str) and follow.strip()))):
         return None
     # A whole catalog is one large file: Santa Monica's took longer than the
     # reader's usual 180 s and timed out (run 37543985175), so a catalog step
     # waits 600 s unless its record says otherwise (30 s to 1,500 s).
     wait = step.get("timeout_s")
     wait = wait if isinstance(wait, int) and 30 <= wait <= 1500 else CATALOG_PDF_WAIT_S
-    out = {"start": start, "follow": follow.strip(), "format": fmt, "timeout_s": wait}
+    out = {"start": start, "follow": (follow or "").strip(), "format": fmt, "timeout_s": wait}
+    if named:
+        out["file"] = file
     # The year of the file the step names, when the record names it ("2026-2027"):
     # a row naming the catalog's page names none (East LA, S403; S407).
     year = step.get("catalog_year")
@@ -956,7 +962,10 @@ def capture(reader, entry: dict, cache: dict) -> dict:
     start = reg.get("catalog_url")
     as_pdf = False
     step = procedure_catalog(reg.get("procedure"))
-    if step:
+    if step and step.get("file"):
+        rec["procedure_step"] = {"start": step["start"], "file": step["file"], "format": step["format"]}
+        start, as_pdf = step["file"], True
+    elif step:
         # The college's procedure names where its catalog starts and which link
         # to follow; when the link is missing, say so and read the registry's address.
         got = load(reader, step["start"], cache, False)

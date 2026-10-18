@@ -1,0 +1,186 @@
+{
+ "college": "Hartnell College",
+ "control_number": "37950",
+ "shape": "adt",
+ "title": "Agriculture Plant Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13439,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13439,
+    "output_tokens": 1284,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1284,
+  "output_tokens_details": {
+   "thinking_tokens": 412
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07944,
+ "ms": 11547,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "ABT53",
+    "ABT90",
+    "ABT92",
+    "CHM12A",
+    "CHM1A",
+    "CHM22",
+    "ECONC2001",
+    "MFGT71",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electives (1-199)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ABT 53",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "ABT 90",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "ABT 92",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "CHM 12A",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "CHM 1A",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "CHM 22",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "appears only in a generic 'Electives (1-199) Complete ANY' list of another section, not in an Agriculture Plant Science A.S.-T section"
+   },
+   {
+    "code": "MFGT 71",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text (text cuts off at LIB courses)"
+   }
+  ],
+  "notes": [
+   "The supplied text (PDF pages 415-417) does not contain the Agriculture Plant Science A.S.-T section. It is the tail of another program's listing: Cal-GETC area lists followed by a catch-all 'Electives (1-199) Complete ANY' list of nearly every course in the catalog, cut off mid-entry at 'LIB7 - Information Competency in the'.",
+   "No requirements, totals, outcomes or careers for the Agriculture Plant Science A.S.-T could be read; the correct catalog page for this award should be retrieved and reviewed.",
+   "The section_heading recorded is the only heading in the text that lists courses; it does not belong to this award."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

@@ -1,0 +1,587 @@
+{
+ "college": "Hartnell College",
+ "control_number": "17912",
+ "shape": "degree",
+ "title": "General Studies: Arts and Humanities",
+ "award": "A.A. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11960,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11960,
+    "output_tokens": 3558,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3558,
+  "output_tokens_details": {
+   "thinking_tokens": 824
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.119,
+ "ms": 25382,
+ "seconds": 25.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 90,
+   "share": 0.0,
+   "missing": [
+    "ANT2",
+    "ANT20",
+    "ART10",
+    "ART12A",
+    "ART15A",
+    "ART15B",
+    "ART19",
+    "ART3",
+    "ART70",
+    "ART72",
+    "ART80",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ASL1",
+    "ASL2",
+    "ENG17",
+    "ENG22",
+    "ENG24",
+    "ENG26",
+    "ENG31",
+    "ENG41",
+    "ENG44A",
+    "ENG44B",
+    "ENG46A",
+    "ENG46B",
+    "ENG47A",
+    "ENG47B",
+    "ENG48",
+    "ENGLC1002",
+    "ETH12",
+    "ETH56",
+    "ETH6",
+    "ETH7",
+    "HIS10",
+    "HIS40",
+    "HIS47",
+    "HIS49A",
+    "HIS49B",
+    "HIS4A",
+    "HIS4B",
+    "HIS5A",
+    "HIS5B",
+    "HIS6",
+    "HISTC1001",
+    "HISTC1002",
+    "MUS1A",
+    "MUS2",
+    "MUS20",
+    "MUS21",
+    "MUS25",
+    "MUS26",
+    "MUS42",
+    "MUS43",
+    "MUS46",
+    "MUS47",
+    "MUS48",
+    "MUS49",
+    "MUS5",
+    "MUS6",
+    "MUS7",
+    "MUS8",
+    "PHL10",
+    "PHL2",
+    "PHL5",
+    "PHO1",
+    "PHO2",
+    "PHO4",
+    "SPA1",
+    "SPA1S",
+    "SPA1X",
+    "SPA2",
+    "SPA2S",
+    "SPA2X",
+    "SPA3",
+    "SPA3S",
+    "SPA4S",
+    "TAC1",
+    "TAC2",
+    "TAC20",
+    "TAC21",
+    "TAC23",
+    "TAC24",
+    "TAC25",
+    "TAC26",
+    "TAC29",
+    "TAC3",
+    "TAC40",
+    "TAC50",
+    "TAC53",
+    "TAC92"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hartnell College Local General Education",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANT 2",
+    "why": "award section not in text; only in local GE Area 4 list"
+   },
+   {
+    "code": "ANT 20",
+    "why": "award section not in text; only in local GE Area 4 list"
+   },
+   {
+    "code": "ART 10",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ART 12A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 15A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 15B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 19",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ART 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 70",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 72",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 80",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ASL 2",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "ASL1",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "ENG 17",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 22",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 24",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 26",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENG 41",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 44A",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 44b",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 46A",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 46B",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 47A",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 47B",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENG 48",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "award section not in text; only in local GE Areas 1B/3 lists"
+   },
+   {
+    "code": "ETH 12",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ETH 56",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "ETH 6",
+    "why": "award section not in text; only in local GE Area 4 list"
+   },
+   {
+    "code": "ETH 7",
+    "why": "award section not in text; only in local GE Areas 3/6 lists"
+   },
+   {
+    "code": "HIS 10",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "HIS 40",
+    "why": "award section not in text; only in local GE lists"
+   },
+   {
+    "code": "HIS 47",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "HIS 49A",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "HIS 49B",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "HIS 4A",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "HIS 4B",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "HIS 5A",
+    "why": "award section not in text; only in local GE lists"
+   },
+   {
+    "code": "HIS 5B",
+    "why": "award section not in text; only in local GE lists"
+   },
+   {
+    "code": "HIS 6",
+    "why": "award section not in text; only in local GE lists"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "award section not in text; only in local GE lists"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "award section not in text; only in local GE lists"
+   },
+   {
+    "code": "MUS 1A",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "MUS 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 26",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 42",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "MUS 43",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 46",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 47",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 48",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 49",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 5",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "MUS 6",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "MUS 7",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "MUS 8",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "PHL 10",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "PHL 2",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "PHL 5",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "PHO 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHO 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHO2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPA 1",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "SPA 1S",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "SPA 1X",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "SPA 2",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "SPA 2S",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "SPA 2X",
+    "why": "award section not in text; only in local GE Area 7 list"
+   },
+   {
+    "code": "SPA 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPA 3S",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "SPA 4S",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "TAC 1",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "TAC 2",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "TAC 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 23",
+    "why": "award section not in text; only in local GE Areas 3/4 lists"
+   },
+   {
+    "code": "TAC 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 26",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 29",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 3",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "TAC 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 50",
+    "why": "award section not in text; only in local GE Area 3 list"
+   },
+   {
+    "code": "TAC 53",
+    "why": "not in the text"
+   },
+   {
+    "code": "TAC 92",
+    "why": "award section not in text; only in local GE Area 3 list"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39082134780"
+}

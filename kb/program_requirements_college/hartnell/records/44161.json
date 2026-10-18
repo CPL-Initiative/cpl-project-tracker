@@ -1,0 +1,200 @@
+{
+ "college": "Hartnell College",
+ "control_number": "44161",
+ "shape": "noncredit",
+ "title": "Theatre Performance",
+ "award": "Noncredit program",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=396",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7237,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7237,
+    "output_tokens": 1215,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1215,
+  "output_tokens_details": {
+   "thinking_tokens": 412
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05325,
+ "ms": 11496,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "TAC325"
+   ],
+   "flagged": [
+    "TAC325"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    1260.0,
+    1260.0
+   ],
+   "stated": [
+    1260.0,
+    1260.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Courses",
+   "measure": "hours",
+   "total_units": {
+    "min": 1260,
+    "max": 1260
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Non Credit",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 1260,
+     "max": 1260
+    },
+    "courses": [
+     {
+      "code": "TAC325",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TAC326",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TAC327",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TAC328",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TAC329",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TAC340",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt prints no program heading for the Theatre Performance noncredit program. The section heading recorded is the 'Courses' label at the top of the page.",
+   "The six bulleted TAC3xx courses are followed by 'Non Credit - Total hours 1260'. I read them as the noncredit program's requirements, all required. The text states no selection rule, so a reviewer should confirm that all six are required.",
+   "No hours are printed beside the individual noncredit courses, so their units are null.",
+   "1260 total hours is recorded as the program total and as the block's stated total. Reviewer should verify this against the full catalog page.",
+   "TAC325 (Introduction to Revival Play Production) is not in the closed list and is recorded as a catalog addition.",
+   "TAC1, TAC2, TAC3 and TAC10 are listed unbulleted under 'Courses' and followed by credit course details (Credits 3, C-ID, CalGETC). They appear to be credit courses from a different program or the course listing. They are not placed in this noncredit program.",
+   "The page is cut off and the program description may be on the preceding page. No outcomes or careers appear in the excerpt."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

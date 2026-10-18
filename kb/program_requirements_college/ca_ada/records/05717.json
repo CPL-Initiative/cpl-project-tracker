@@ -1,0 +1,257 @@
+{
+ "college": "Cañada College",
+ "control_number": "05717",
+ "shape": "degree",
+ "title": "Custom Dressmaking/Small Business Oriented",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6940,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6940,
+    "output_tokens": 2104,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2104,
+  "output_tokens_details": {
+   "thinking_tokens": 973
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06984,
+ "ms": 19439,
+ "seconds": 19.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "BUS150",
+    "FASH100",
+    "FASH111",
+    "FASH113",
+    "FASH115",
+    "FASH116",
+    "FASH118",
+    "FASH123",
+    "FASH162",
+    "FASH168"
+   ],
+   "flagged": [
+    "BUS150",
+    "FASH100",
+    "FASH111",
+    "FASH113",
+    "FASH115",
+    "FASH116",
+    "FASH118",
+    "FASH123",
+    "FASH162",
+    "FASH168"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CA  Custom Dressmaking/Small Business Oriented",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate design concepts clearly and concisely (i.e. visual, oral, and written).",
+    "Develop competitive industry standard skills in the respective fields.",
+    "Understand the elements and principles of design through discipline-specific implementation."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete Core Courses, 31 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "BUS. 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 168",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 195",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The only section for this program in the text is headed 'CA  Custom Dressmaking/Small Business Oriented' (a Certificate of Achievement label), though its description says 'An AS degree and certificate program are offered' and its requirements are titled 'Major: Core and Selective Requirements'. It is unclear whether these requirements are for the A.S. degree, the certificate, or both; a reviewer should check the full catalog page.",
+   "The text is cut off at the page break after FASH 195: the core list (stated 31 units, but only 31 units are listed so far) may continue, and any selective courses, the total major units, the GE pattern and the degree total are not in the text. Total units are therefore left null.",
+   "The requirements printed at the top of page 187 (FASH 196, 197, 199, total 28 units) belong to the preceding program (apparently a costume program), not to this award, and were not recorded.",
+   "The 'Career Opportunities' heading is followed by text that reads as a course description (fashion show course), not careers; no career titles were recorded. The description mentions employment in an apparel design firm or starting one's own business, which were not taken as career titles.",
+   "The Program Learning Outcomes are printed once for the program and appear to be shared by the degree and certificate; recorded here."
+  ]
+ },
+ "extracted_run": "39080930669"
+}

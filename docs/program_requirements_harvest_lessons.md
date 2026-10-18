@@ -794,6 +794,28 @@ reads checked against fingerprints computed in SQL, counts and titles both.
   S407 read LA Trade Tech, LA Mission and Desert through catalog steps and applied Sheets 90-91's registry corrections
   (Cuesta, the six hand-filed rows, Grossmont, Ohlone, Cañada, Pasadena, Glendale, LA Southwest) through the runner.
 
+## S410 SkyYucca (2026-10-18): Cañada by its hand-filed copy, Hartnell through a file step, build d6cc1fde7ea3
+
+- **`ffd6929a4f90` applied:** 15,517 written (run 39078224767, its applied record on `main`).
+- **Cañada (hand-filed):** Sam posted the 2026-2027 Catalog Rights edition and the 10/12/26 addendum to `catalog-files`
+  (Sheet 92 card 1). `kb/hand_filed_catalogs/ca_ada.json` cites the college's own addresses from page read 39075421421;
+  the pin step fixed both hashes (run 39080648854). `slug_of()` keeps ASCII letters only, so Cañada's slug is `ca_ada`.
+  73 of 75 found, $5.34, 47 passing; **62 loaded** (run 39082147619). The 11 left out are mostly business certificates
+  on the shared pages 148-154 and two picks on the course availability table (pages 121, 127).
+- **Hartnell (Coursedog PDF):** the catalog page fetches its PDF by script and links none, so a step that follows a
+  link had nothing to follow. #2213: a PDF step may name its `file`; the read loads no page for it. The code finder
+  already read the unspaced codes (`ABT90`, `STATC1000`); a test pins it. Procedure record v2 (execute_sql through
+  `program_source_procedure_set`, receipt in `kb/receipts/`). 101 of 105 found in one load, $8.03, 8 passing (the lists
+  print no units, so 88 are arithmetic incomplete); **68 loaded** (run 39082687082). The 33 left out: the picker took
+  the course-set reference pages at the back (413-424) or a sibling option's page; several Computer Science and
+  Information Systems options share one COCI title, and the extractor rightly refused. Coursedog prints each program's
+  code (`AS.CISC`) in its heading: a pick by that code is the fix.
+- **Dated reads:** a registry row's md5 is over the ten columns in their fixed order. Filed rows keep the order they
+  were written in, and some put `catalog_url` before `catalog_year`, so a hash in file order reads 23 rows as drifted
+  that are equal to live. All 111 equal in column order. **Build `d6cc1fde7ea3`: 15,647 programs at 111 colleges.**
+- **A record file keeps its insertion order.** Re-dumping `registry_read.json` sorted turned a two-college addition
+  into a 22,000-line diff; load, append and dump with the file's own indent.
+
 ## S409 SkyOcotillo (2026-10-17): Cuesta's wave, Cañada's robots-refused PDF, the Coursedog and SmartCatalog hosts
 
 - **`f949e7c0ea35` applied:** 15,336 written (run 39066977901, its applied record on `main`).

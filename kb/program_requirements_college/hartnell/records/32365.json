@@ -1,0 +1,171 @@
+{
+ "college": "Hartnell College",
+ "control_number": "32365",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6883,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6883,
+    "output_tokens": 931,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 931,
+  "output_tokens_details": {
+   "thinking_tokens": 277
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04615,
+ "ms": 9206,
+ "seconds": 9.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "MAT3A",
+    "MAT3B",
+    "MAT3C",
+    "PHY4A",
+    "PHY4B",
+    "PHY4C"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds only the end of an Astronomy AS - Associate in Science section, not Physics A.S. T",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 3A",
+    "why": "Physics A.S. T section not in the text; named only in the Astronomy AS section"
+   },
+   {
+    "code": "MAT 3B",
+    "why": "Physics A.S. T section not in the text; named only in the Astronomy AS section"
+   },
+   {
+    "code": "MAT 3C",
+    "why": "Physics A.S. T section not in the text; named only in the Astronomy AS section"
+   },
+   {
+    "code": "PHY 4A",
+    "why": "Physics A.S. T section not in the text; named only in the Astronomy AS section"
+   },
+   {
+    "code": "PHY 4B",
+    "why": "Physics A.S. T section not in the text; named only in the Astronomy AS section"
+   },
+   {
+    "code": "PHY 4C",
+    "why": "Physics A.S. T section not in the text; named only in the Astronomy AS section"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 109) is the tail of the Astronomy program section: it describes astronomy careers, labels the award 'AS - Associate in Science' with Program Goal 'Local', and requires AST1 and AST1L. It does not contain the Physics A.S. T (AS-T) section, so no requirements, outcomes, careers or totals were recorded for the named award.",
+   "The Astronomy AS section prints 'Total Required Credits 61', Local GE, and electives to reach 60 units; these were not recorded because they belong to a different award.",
+   "Reviewer should locate the Physics AS-T section, likely on a nearby page of the 2026-2027 Hartnell catalog PDF."
+  ]
+ },
+ "extracted_run": "39082134780"
+}
