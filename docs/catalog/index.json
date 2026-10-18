@@ -11044,7 +11044,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 87,
+   "count": 88,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12033,6 +12033,21 @@
      "title": "Excel \u2192 Supabase Migration \u2014 Workstream Lessons",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "path": "docs/exhibit_canonicalization_lessons_archive.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "exhibit-canonicalization",
+      "cer"
+     ],
+     "title": "Exhibit canonicalization lessons \u2014 archive (2026-05-24 PR-B through Session 32, 2026-06-04)",
+     "type": null,
+     "updated": "2026-10-18"
     },
     {
      "created": "2026-05-24",
@@ -15634,8 +15649,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 383,
+   "count": 384,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 413,
+     "path": "docs/session_413_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cer",
+      "cer-procedures",
+      "classifier",
+      "exhibit-canonicalization",
+      "program-requirements",
+      "smartcatalog"
+     ],
+     "title": "Session 413 handoff: the CER procedures run is live; the classifier's first pass; Crafton Hills loaded",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22235,5 +22269,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1167
+ "total": 1169
 }

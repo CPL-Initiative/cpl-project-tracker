@@ -1,0 +1,1245 @@
+---
+title: "Exhibit canonicalization lessons — archive (2026-05-24 PR-B through Session 32, 2026-06-04)"
+created: 2026-10-18
+updated: 2026-10-18
+tags: [lessons, archive, exhibit-canonicalization, cer]
+kb-status: internal
+obsidian-folder: cpl-project-tracker/lessons
+related:
+  - docs/exhibit_canonicalization_lessons.md
+---
+
+# Exhibit canonicalization lessons — archive
+
+Moved verbatim from `docs/exhibit_canonicalization_lessons.md` on 2026-10-18 (S412, SkyJoshua) when the
+docs lint flagged it at 150,822 bytes against its 120,000 budget. The current doc keeps the baseline audit
+and everything from 2026-07-07 on.
+
+## 2026-05-24 (later, Bruh Hex) — PR-B shipped: Credential Reference tab
+
+The curator surface for the credential-identity layer landed
+(`credential_reference.js`, ~750 lines). Modeled tightly on
+`canonical_subj4.js` — same Supabase auth pattern, same synthesized-key
+namespace pattern, same toolbar/body separation. New URL hash
+`#credential-reference`.
+
+**What shipped:**
+
+- New top-level tab "Credential Reference" between "Common Subject Code"
+  and "Pipeline" in the nav. CSS scoped to `#tab-credential-reference`
+  with a `cr-*` class prefix (parallel to CSC's `cs-*`).
+- Row grain: one per `unified_title` (1,969 rows). Shows the AI-classified
+  identity + raw-variant count + primary issuer + modal title confidence
+  + issuer confidence + audit-tag chip + quality_flag + curator-reviewed
+  state.
+- Click a row to expand → raw_title list (with per-variant confidence +
+  classification notes), credential record(s) (issuer + trainer with
+  confidences), audit-rule rollup.
+- Filters: confidence band (5 options), issuing-agency typeahead via
+  `<datalist>` over 126 issuers (with a `(none)` option for the 1,111
+  null-issuer local exhibits), audit-tag triage dropdown (auto-populated
+  from `state.audit._rules_active` if the audit overlay loaded, else
+  scans the data), quality-flag-only checkbox, free-text search across
+  unified_title / raw_title / issuer.
+- Curation action: **Mark initiated** — auth-gated button per row,
+  writes to Supabase `kb_curation` with `course_id` =
+  `_CREDENTIAL_REVIEW::<unified_title>`, field = `reviewed_marker`,
+  value = `1`. The row's `reviewed_at` + `reviewer_email` carry the
+  audit trail. Tab shows the live overlay state with a green "✓ user · date"
+  stamp.
+- Sortable columns: unified_title, raw_count, primary_issuer,
+  conf_modal, conf_issuer, audit_tag_total, flag_label, reviewed state.
+- Audit-tag chips color-graded by underlying confidence band
+  (warn/mix/muted) — visual mirror of the CSC tab's hinky chips.
+
+**Decisions made during the build:**
+
+- **Runtime fetch, not generated payload.** Fetches `kb/unified_titles.json`
+  (1.4 MB), `kb/credentials.json` (817 KB), and `kb/exhibit_audit/latest.json`
+  (1.2 MB) on tab init. Heavy but acceptable for MVP — matches the CSC tab's
+  fetch pattern. If perf bites, generate a baked-down `credential_reference_data.js`
+  via `excel_to_dashboard.py`.
+- **No JSON sync script.** MVP edits live in Supabase + the live overlay
+  only; `kb/_apply_credential_review.py` is deferred. Means the audit's
+  "0 titles reviewed" count never updates from Supabase until that script
+  ships — auditor will eventually get a `--include-supabase-overlay` flag
+  or a sync script will materialize curator edits into `unified_titles.json` /
+  `credentials.json`. Either is a follow-up PR; not blocking.
+- **Curation key namespace.** Used `_CREDENTIAL_REVIEW::<unified_title>` +
+  field `reviewed_marker`. The existing `_apply_curation.py` whitelist
+  (discipline / merge_into / unified_title / description) ignores this
+  namespace, so no risk of cross-contamination with the course-identity
+  layer's curation. Mirrors the CSC tab's `_CANON_SUBJ4::` pattern.
+- **"Mark initiated" semantics.** The button records curator
+  acknowledgment without changing the underlying classification. Full
+  override curation (edit unified_title / issuer / trainer / flag toggle)
+  is PR-B2 follow-up — keeps MVP scope tight.
+
+**Surface area inspection:**
+
+- `credential_reference.js` 753 lines, ~29 KB
+- `CPL_Dashboard.html` + `index.html` gain ~100 lines each (tab nav button,
+  pane chrome, CSS block, intro copy, script tag). Mirrored via `cp`
+  per Rule 4.
+- No daily-cron yaml changes. No `excel_to_dashboard.py` changes.
+
+**Open thread:** the EACR table is still the credential layer's primary
+end consumer (PR-C re-pivot, deferred). The Credential Reference tab
+shipped today curates the dataset upstream of that re-pivot; once PR-C
+lands, every "Mark initiated" sign-off on the credential layer raises
+quality of an EACR card downstream. PR-D (EACR-card stale/dup flag —
+NEW, scoped this session: tiny in-place button on existing EACR cards,
+no new tab, no CR overrides per user preference) is the next concrete
+step.
+
+## Next concrete step (2026-05-24, post PR-B)
+
+Start **PR-D** — the EACR-card stale/dup flag. User-scoped to the
+narrowest possible action set: a single button on each existing EACR
+card that writes a stale/dup flag to Supabase. No credit-rec overrides,
+no approval status, no notes. Lives ON the EACR cards (no new tab).
+Auth piggybacks on the unified_courses session.
+
+---
+
+## 2026-05-24 (later, Bruh Hex) — PR-D shipped: EACR-card stale/dup flag
+
+Small in-place addition to the existing EACR table
+(`statewide_interactive.js`, now 663 lines, +132). Per-row `<select>`
+with three options: — (no flag) / 🚩 stale / 🚩 dup. Anonymous viewers
+see flagged rows with a read-only 🚩 badge so the curator's annotation
+is publicly visible; the select itself only appears for signed-in
+reviewers.
+
+**Curation key namespace:** `_EACR_FLAG::<exhibit_card_key>` where the
+card key is `e.exhibit_id || e.title` (the same key the existing row
+selection / pagination state uses). Field = `flag`, value = `"stale" |
+"duplicate" | ""`. Standard kb_curation upsert via
+`Prefer: resolution=merge-duplicates`.
+
+**Auth:** piggybacks on the unified_courses.js session
+(sessionStorage `cpl_sb`). No new sign-in UI on the EACR table — by
+design, since the same allowed-reviewers list gates Common Course
+Reference + Credential Reference; once the curator is signed in there,
+the flag column lights up automatically.
+
+**UX details preserved from the user's narrow-scope direction:**
+
+- Stale/dup ONLY. No credit-rec overrides, no approval status enum, no
+  notes. (User explicitly said: "I don't want to override CRs; do want
+  to flag stale or dup cards.")
+- New column added as the 10th column at the table's right edge
+  (width: 78px) so it doesn't disturb the existing layout.
+- Tooltip on each select carries the audit trail ("Flagged stale by
+  user · on YYYY-MM-DD").
+- On change, the cell is disabled while the Supabase POST is in flight
+  + the value reverts on failure. No full re-render — just the title
+  attribute updates in place.
+
+**Init flow:** the table builds + first-renders synchronously without
+waiting for Supabase, so anonymous viewers see results immediately. The
+flag overlay loads asynchronously and triggers a re-render when it
+lands. This keeps perceived load time identical to before.
+
+**Open thread (parked):** an `_apply_eacr_flag.py` sync script that bakes
+the kb_curation flags into a generated artifact (analog of
+`_apply_canonical_subj4.py`) — so curator flags can drive downstream
+filtering / hiding in the dashboard's exhibit-analysis cards. Deferred
+because the MVP shows the badge inline on the EACR table and that's the
+80% case. Build it when flag-driven downstream behavior is needed.
+
+## Next concrete step (2026-05-24, post PR-D)
+
+Open threads in priority order:
+
+1. **PR-C (EACR Phase 4 re-pivot)** — still architecturally significant;
+   scope-first session before any build. Affects headline EACR adoption
+   numbers.
+2. **Re-classify the 194 unclassified-in-MAP titles** — requires
+   `ANTHROPIC_API_KEY` in the session env or local run of
+   `kb/classify_exhibits.py`.
+3. **PR-B2 — edit-override curation** on the Credential Reference tab
+   (unified_title rename, issuing_agency / training_agency override,
+   quality_flag toggle). Currently the tab is initiated-only; full
+   override is the natural follow-up.
+4. **`kb/_apply_credential_review.py`** — sync script for credential-
+   layer curation (bakes Supabase reviews into `unified_titles.json` /
+   `credentials.json`). Pairs with PR-B2.
+5. **`kb/_apply_eacr_flag.py`** — same shape, for the EACR-card flag
+   namespace. Pair with downstream consumption.
+
+---
+
+## 2026-05-25 (Bruh Hept) — PR-B follow-up hotfixes: tab couplings
+
+Two hidden coupling points in PR-B (#114) surfaced on the deployed
+dashboard the day after merge. Both fall under the same theme: **adding
+a new top-level tab actually requires touching FOUR places, not three**.
+The "three places" mental model (nav button, pane element, script tag)
+misses two more.
+
+### Coupling 1 — `VALID_TABS` whitelist (PR #117)
+
+`CPL_Dashboard.html` line 13013 carries an inline tab-router whitelist:
+
+    var VALID_TABS = ['dashboard', 'workplan-goals', 'budget',
+                      'vision-2030', 'unified-courses',
+                      'canonical-subj4', 'pipeline'];
+
+PR-B added the **Credential Reference** nav button + pane + script, but
+missed the whitelist. Clicking the tab button ran
+`activate('credential-reference')`, which checked
+`VALID_TABS.indexOf(...) === -1`, fell back to `'dashboard'`, and
+activated the Dashboard pane. From the curator's view, "the new
+Credential Reference seems to be a copy of the dashboard main."
+
+**Fix (PR #117):** append `'credential-reference'` to the array.
+One-line change, static template (not regenerated by
+`excel_to_dashboard.py`), mirrored to `index.html` per Rule 4.
+
+### Coupling 2 — magic-link redirect tab (this PR)
+
+`unified_courses.js` is the master auth-fragment handler — it parses
+`#access_token=…` after a magic-link round-trip, persists the session
+to `sessionStorage.cpl_sb`, and then sets the URL hash to bring the
+user back to a tab. The bring-them-back line was hardcoded:
+
+    location.hash = "unified-courses";
+
+So a curator who clicked "sign in to edit" from **Credential
+Reference** got the magic link, clicked it, landed back on the dashboard
+URL, and was bounced to the Common Course Reference tab. The sign-in
+**did** complete (the session is in sessionStorage and the
+Credential Reference tab is ready to write), but from their view "the
+login doesn't complete the process" — they're on a different tab and
+the sign-in widget on the original tab still says "sign in to edit."
+
+**Fix (this PR):** each tab's `signIn()` stashes its identifier in
+`sessionStorage.cpl_sb_return_tab` before sending the OTP request;
+`consumeAuthHash()` in `unified_courses.js` reads that key and uses
+it for the redirect hash, falling back to `"unified-courses"` if no
+key was stashed.
+
+### Updated mental model for "adding a new top-level tab"
+
+For Bruh Hept and beyond, a new curator tab needs FIVE touch points:
+
+  1. **Nav button** — `<button class="cpl-tab" data-tab="…">` in the
+     `<nav class="cpl-tabs">` block of `CPL_Dashboard.html`.
+  2. **Pane element** — `<div class="cpl-tab-pane" id="tab-…">` in
+     CPL_Dashboard.html.
+  3. **Script tag** — `<script src="…js"></script>` near the bottom
+     of CPL_Dashboard.html (and mirror to `index.html` per Rule 4).
+  4. **`VALID_TABS` whitelist** — line 13013 of CPL_Dashboard.html.
+  5. **Magic-link return tab** — the tab's `signIn()` writes
+     `sessionStorage.cpl_sb_return_tab = "<tab-name>"` so the master
+     auth handler in `unified_courses.js` can bring the curator back.
+
+Items 4 and 5 are easy to miss because nothing on the page surface
+points at them. The CSS pane-display rule (`.cpl-tab-pane.active`)
+silently hides any pane that the activate() function fails to mark.
+The auth redirect quietly happens regardless of where the curator
+started. Both fail loudly only when a curator actually exercises the
+flow on the deployed site — there's no PR-time test that catches
+either.
+
+A defensible follow-up (Bruh Hept or later) would refactor the
+inline tab JS into a `tabs.js` module that derives `VALID_TABS` from
+the `data-tab` attributes on the rendered nav buttons (single source
+of truth — no whitelist to maintain). Same shape for `consumeAuthHash`
+to use the same derived list. Out of scope for these hotfixes.
+
+---
+
+## 2026-05-25 (Bruh Hept, late session) — Cred-Ref PR-1/2/3 + sign-in UX overhaul
+
+Bruh Hept's run on the Credential Reference workstream. Started with two
+deployed-site bugs the curator reported the morning of 2026-05-25, then
+shipped three substantive PRs against the four-PR plan handed forward
+from Bruh Hex.
+
+### Hotfixes shipped (4 PRs)
+
+**PR #117 — `VALID_TABS` whitelist coupling.** The curator reported "the
+new Credential Reference seems to be a copy of the dashboard main."
+Root cause: PR-B added the tab nav button + pane + script tag, but the
+inline tab-router whitelist (`CPL_Dashboard.html` line 13013, `var
+VALID_TABS = [...]`) wasn't updated. Clicking the tab ran
+`activate('credential-reference')` → `indexOf === -1` → `tabName =
+'dashboard'` (fallback) → dashboard pane activated. From the curator's
+view, the tab "didn't work" — it WAS the dashboard. One-line fix.
+
+**PR #118 — Magic-link return-tab restore.** Sign-in flow completed
+successfully in Supabase but the curator saw "doesn't complete the
+process" — they signed in from Credential Reference, clicked the magic
+link in their email, and landed on the Common Course Reference tab
+instead. Root cause: `unified_courses.js`'s `consumeAuthHash()` (the
+master magic-link callback handler) hardcoded `location.hash =
+"unified-courses"` after persisting the session. Fix: each tab's
+`signIn()` stashes its identifier in `sessionStorage.cpl_sb_return_tab`
+before the OTP request; `consumeAuthHash()` reads it back and uses it
+for the redirect hash, defaulting to `"unified-courses"` when absent.
+Same fix applied to canonical_subj4.js (CSC tab had the same bug
+unreported).
+
+**PR #119 — Inline sign-in feedback panel.** Curator reported "magic
+link arrives but I don't see a splash that the email was sent."
+Root cause: the corner-toast feedback was easy to miss right after the
+prompt() dialog closed (3-second auto-fade, bottom-right). Replaced
+across all three curator tabs (credential_reference, canonical_subj4,
+unified_courses — the last had been using JS `alert()`, loud but
+clunky). New shape: prominent green inline panel **right where the
+"sign in to edit" link used to be**, with "✉ Magic link sent to
+{email}" + a "use a different email" link. Red error variant for
+failures with a "try again" link. Per-tab `pendingSignInEmail` /
+`pendingSignInError` state.
+
+**PR #120 — 429-aware error mapping.** Curator hit a Supabase rate
+limit during testing iterations and got the misleading message "Server
+returned 429. Confirm the email is in the allowed-reviewers list" —
+the email IS in the list; 429 means rate-limited, period. Added
+explicit 429 + 400/422 branches in credential_reference.js and
+canonical_subj4.js (`unified_courses.js` already had the 429 branch
+from an earlier session — Bruh Quad? — and it had never been mirrored).
+Now message-maps to the actual fault.
+
+### The 5-touch-points lesson
+
+These four hotfixes share a theme: **adding a new top-level tab requires
+touching FIVE places, not the three that look obvious.** The doc now
+captures the full list:
+
+  1. Nav button (`<button class="cpl-tab" data-tab="…">`)
+  2. Pane element (`<div class="cpl-tab-pane" id="tab-…">`)
+  3. Script tag (`<script src="…js">`)
+  4. **`VALID_TABS` whitelist** (line 13013 of `CPL_Dashboard.html`) ← easy miss
+  5. **Magic-link return-tab stash** in the tab's `signIn()` ← easy miss
+
+Items 4 and 5 fail loudly only when a curator exercises the deployed
+flow. There's no PR-time test that catches either. A `tabs.js` module
+that derives `VALID_TABS` from rendered nav buttons + exposes a helper
+for sign-in's return-tab registration would close this trap; out of
+scope here, queued for whichever session takes on the sidebar refactor.
+
+### The bigger refactor question
+
+Hept also debugged a curator email typo (`map@rccd.edu` → `mar@rccd.edu`)
+that created a phantom Supabase user account; Microsoft Outlook ATP /
+Safe Links pre-fetching the magic link before the curator could click
+it was a secondary issue flagged for future attention (workarounds:
+6-digit OTP code mode, or RCCD IT whitelist on `mail.app.supabase.io`).
+
+### Credential Reference PRs (3 of 4 shipped)
+
+**PR #121 — Cred-Ref PR-1: common-course join + Scope badge + Discipline
+column.** The big one. New `export_credential_reference()` in
+`excel_to_dashboard.py` joins `kb/unified_titles.json` + `credentials.json`
+with `kb/coci_articulations.json` + the minted/unified/singleton
+catalogs. Emits `credential_reference_data.js` (~1.5 MB lean, pre-joined +
+audit-tag rollup + `top_categories` map). Tab loads the baked global
+synchronously; runtime fetch of `kb/*.json` kept as fallback for local
+dev. Adds per-row Scope badge (🏛 Statewide if any articulation is CCC /
+CCC Collaborative; 🏠 Local otherwise; — if no articulations resolved)
+and Discipline column (modal MQ discipline across articulations).
+Expanded body leads with a per-identity table — color-coded by
+id_system (green CCN-ID / blue C-ID / yellow M-ID / purple Cluster),
+identity cell rowspan'd when one identity has multiple local-course
+rows. Stats: **1,969 unified titles · 1,726 articulated · 4,324 local-
+course lines · 90 statewide · 1,106 audit-flagged**.
+
+**PR #122 — Cred-Ref PR-2: select-all + bulk Mark initiated.** New
+first-column per-row checkbox (disabled when already initiated or
+during a save); header "select all visible eligible" (filtered-view-
+scoped, never the full 1,969); indeterminate state on partial
+selection. Toolbar widget shows green "✓ Mark N initiated" button +
+clear link when N > 0; swaps to yellow "Saving X of N…" during the
+sequential Supabase save. Per-row UI flips ✓ as each save completes
+(not at end). Confirm dialog before kickoff; final toast reports
+ok/failed counts.
+
+**PR #123 — Cred-Ref PR-3: TOP / Discipline grouping.** Toolbar "Group
+by:" dropdown (none / TOP category / Discipline). TOP mode buckets by
+2-digit TOP code with `TOP 12 — Health` headers (using the 22-entry
+`top_categories` map sourced from `kb/discipline_canonical_subj4.json`,
+the same source the CSC tab uses). Discipline mode buckets by MQ
+discipline. Group headers are colspan'd table rows with ▶/▼ twisty;
+click to toggle. Empty buckets ("(No TOP category)" / "(No discipline)")
+sink to the bottom. `state.collapsedGroups` keyed by `mode:key` to
+avoid clashes across mode switches; resets on mode change for
+predictability.
+
+### Architectural decisions taken this session (still queued)
+
+- **Excel → Supabase migration** (CLAUDE.md §11 new rows): finishing PR-4
+  first, then Phase 1 starts in a separate session with **Workplan Goals
+  tab as the proof-of-concept end-to-end** (Excel file's smallest tab; the
+  `workplan_goals` table already exists in Supabase per §8). Phase 2-4 do
+  Dashboard / Budget / Vision 2030 / Personnel in subsequent PRs.
+- **Sidebar navigation** (CLAUDE.md §11 PR-Sidebar-A + B): replaces top
+  tab nav entirely; left rail with all tabs; sign-in widget moves into
+  sidebar footer. Per-tab section TOC (PR-B) limited to Dashboard +
+  Pipeline (tabs with real sub-sections). Queued after Cred-Ref PR-4.
+- **Bigger refactor (parked)**: the `tabs.js` module that would close the
+  5-touch-points trap. Worth doing alongside or right after the sidebar
+  work, since the sidebar already restructures tab navigation.
+
+### Next concrete step (2026-05-25, post-Session-7 checkpoint)
+
+Land **Cred-Ref PR-4** — the edit-override curation. `unified_title`
+rename, `issuing_agency` override, `training_agency` override,
+`quality_flag` toggle. **Risk hot-spot:** any `unified_title` rename
+ripples into `kb/coci_articulations.json` (which inlines the field) —
+re-mint playbook discipline applies (alias map at write-time,
+`kb/_apply_credential_review.py` sync script for the daily cron,
+atomic land within one 10:17 UTC cron window).
+
+---
+
+## Session 8 — 2026-05-26, Octaman
+
+### What shipped this session (8 PRs, ~1 working session)
+
+| PR | What |
+|---|---|
+| #125 | EACR Phase 4 dry-run + alias map (PR-C0). `kb/_eacr_dryrun.py` projects every raw MAP row onto the post-pivot `(unified_title, issuing_agency, CPL Type, Collaborative Type)` key. Output: 3,217 raw IDs → 2,351 cards (27% collapse); 173 cards fold ≥2 raw IDs; 13 fold ≥5. Alias map written for downstream re-key. |
+| #126 | Disable CodeQL PR trigger (push + weekly cron only). Killed CodeQL fatigue on PRs that touch innocent DOM-builders the analyzer keeps flagging as `js/xss`. |
+| #127 | Re-classify 58 raw titles flagged `unclassified_in_map_only` in PR-A's audit. Cleared the auditor's `unclassified_in_map_only` queue to zero (was 58, now 0). |
+| #128 | EACR Phase 4 producer re-pivot (PR-C1). `_build_statewide_adoption()` grouping key changed from `(raw_title, cpl_type, collab_type)` → `(unified_title, issuing_agency, cpl_type, collab_type)`. 3,274 cards → 2,351 cards; new fields on every card: `unified_title`, `issuing_agency`, `training_agency`, `confidence_title`, `confidence_issuer`, `quality_flag`, `raw_titles[]`. Generator-side strip pattern added so repeat runs don't accumulate. |
+| #129 | Quick-start chat (Tier A) — natural-language tab routing on the dashboard's first screen. Cloudflare Worker proxy + JSON-mode router prompt; 1-of-8 classification. `quickstart.js` new file. |
+| #130 | Quick-start chat polish — swap model `claude-sonnet-4-5` → `claude-haiku-4-5-20251001` (4-6s → 1-2s round-trip), and a `navigateTo()` that pulses + scroll-to-tops when the destination is the active tab (the silent-no-op trap of `location.hash = current`). |
+| #131 | EACR Phase 4 consumer redesign (PR-C2). Card title now shows unified_title in bold + issuer subtitle in muted italic. New "Also entered as N variants" disclosure (310 cards have ≥2 raw variants; top fold = `AP World History: Modern / College Board` with 26 variants). Confidence badge ("needs review · 0.NN" at threshold 0.75). Quality-flag badge ("⚠ course-as-exhibit" on 193 cards). New Issuing Agency filter button. Migration script `kb/_eacr_flag_migrate.py` added for `_EACR_FLAG::*` curator-flag re-key. |
+| #132 | Hotfix to migration script — column name was `reviewed_by` (the in-memory JS object property), not `reviewer_email` (the actual Supabase column). PR-D's `fetchFlagOverlay()` aliases the column to the property; I read the rendering code and assumed the property name was the column name. Caught by Sam's first dry-run. |
+
+**Migration outcome:** Sam ran the dry-run after PR #132 merged — **zero existing flags**. The migration is a no-op for current state (PR-D shipped only 2 days ago; no one had flagged anything during the brief window). The script stays in the repo as future-proofing for any similar re-pivot.
+
+### EACR Phase 4 — actually finished now
+
+The "Approach B" re-pivot that's been parked in CLAUDE.md §9 since
+Session 6 is end-to-end shipped:
+
+  - PR-C0 (#125): dry-run + alias map (de-risk the producer change)
+  - PR-C0b (#127): close the unclassified gap before pivoting
+  - PR-C1 (#128): producer (`_build_statewide_adoption()` re-pivot)
+  - PR-C2 (#131): consumer (table renders unified cards)
+  - PR-C2 migration (#132 + dry-run): re-key existing flags (no-op)
+
+**Headline numbers:** 3,274 EACR cards → 2,351 cards (28% collapse).
+The 310 cards that fold ≥2 raw variants are exactly the title-drift
+duplicates the vision doc has been calling out for months. AP credits
+collapse hardest — every College-Board AP exam is now one card per
+exam with all variant spellings folded.
+
+### Lessons learned
+
+**1. The column-name vs object-property trap.** PR-D's
+`fetchFlagOverlay()` queries `reviewer_email` from Supabase but
+aliases it to a `reviewed_by` *key* on the in-memory JS object the
+rest of the code consumes. When writing the migration script in PR-C2
+I read the rendering code (`state.flags[eid].reviewed_by`) and
+assumed `reviewed_by` was the column name. PostgreSQL caught it
+cleanly ("Perhaps you meant `reviewed_at`?") and the fix was 5
+character-substitutions. **Future move:** when writing any Supabase
+client code, consult `kb_curation` schema via Supabase MCP
+`list_tables` BEFORE writing — don't infer columns from consumer code.
+
+**2. The generator-side strip pattern keeps paying off.** PR-C1 added
+a new strip block (`# strip prior PR-C1 emit so repeat runs don't
+accumulate`) following the EXHIBIT_CSS_MARKER precedent. Idempotency
+is a first-class concern for this pipeline (Rule 2) and every
+generator-injected block needs its own strip clause. Eight months in
+and the pattern is fully internalized; new contributors should learn
+it from the existing examples (line ~5093 of `excel_to_dashboard.py`).
+
+**3. Migration script as future-proofing, not always action.**
+PR-C2's `kb/_eacr_flag_migrate.py` was written assuming flags
+existed; the dry-run revealed zero. The right move was NOT to skip
+the script — the script is the *plan*, and the zero-row outcome is
+the *confirmation* that the plan didn't need to fire. Architectural
+correctness > immediate utility. The script stays in the repo for
+any future re-pivot.
+
+**4. Multi-PR architectural arc cadence.** Today's EACR arc landed in
+five PRs across one session: dry-run → cleanup → producer → consumer
+→ migration. The dry-run-first discipline (PR-C0 before PR-C1) is
+worth the extra PR — Sam reviewed the projected collapse numbers
+BEFORE the producer changed, which is the same discipline the
+CourseControlNumber re-mint used (PR #83 dry-run before PR #84
+land). **Pattern to keep:** any architectural pivot that re-keys
+identities ships in two PRs minimum: dry-run + alias map first,
+then atomic land using the alias map.
+
+**5. Side workstreams don't have to be one-shot.** The quick-start
+chat shipped in two iterations (PR #129 Tier A producer + PR #130
+polish for latency + already-on-tab visual feedback). Shipping the
+minimal viable version first and iterating on real user feedback
+beats trying to nail everything in one PR. The "already-on-tab
+no-op" was an issue Sam wouldn't have caught in the spec doc — only
+hands-on use surfaced it ("apprenticeship initiative" routed to
+Dashboard, where he already was, and nothing visibly changed).
+
+### Side workstream: Quick-start chat (PRs #129/#130)
+
+A new UI affordance on the dashboard's first screen — a single text
+input that the user types natural language into, the Claude API
+classifies which tab the user wants, and the dashboard navigates
+there. Tier A (this session) does pure routing (one of 8 tabs).
+**Tier B (deferred):** filter-hint hand-off — prompt like "review
+unclassified credentials" → `{tab: "credential-reference",
+filter_hint: "audit_tag=unclassified"}` → the Credential Reference
+tab consumes the hint and pre-populates the filter. **Architecture
+already in place** to support Tier B: the router response already
+returns JSON, just needs a `filter_hint` field + sessionStorage
+hand-off + each tab consumes the hint on init.
+
+Lessons from this side workstream:
+- **Haiku 4.5 is right for routing tasks.** Sonnet was overkill for
+  a 1-of-8 classification with a tight system prompt; Haiku cut
+  latency 3-4× with no quality regression.
+- **Hash-router silent no-op.** Setting `location.hash` to the
+  current hash fires no `hashchange` event, so the user gets no
+  feedback. Always provide an alternate visual signal (scroll,
+  pulse) when the destination matches current state.
+
+### Strategic roadmap (post-Session-8)
+
+| Workstream | Status |
+|---|---|
+| EACR Phase 4 re-pivot (Approach B) | ✅ end-to-end shipped this session |
+| Quick-start Tier A (routing) | ✅ shipped #129 + #130 |
+| Quick-start Tier B (filter-hint hand-off) | queued — 3-4 hr, low risk |
+| Cred-Ref PR-4 (edit-override curation) | **queued — Session 9, was Session 7's plan, bumped behind EACR** |
+| Sidebar PR-A/B (left rail + section TOC) | queued behind PR-4 |
+| Excel→Supabase Phase 1 (Workplan POC) | queued — separate multi-session arc |
+| EACR Phase 5 (audit-driven re-classify loop) | not yet scoped — Hept's exhibit audit can now drive PR-D flag → curator re-classify → daily cron consumer refresh |
+
+### Next concrete step (2026-05-26, post-Session-8 checkpoint)
+
+**Cred-Ref PR-4** — the edit-override curation queued in Session 7's
+handoff and bumped this session. Single PR: click any of
+`unified_title`, `issuing_agency`, `training_agency`, `quality_flag`
+on a Credential Reference row to edit inline; save to Supabase via
+`_CREDENTIAL_REVIEW::<unified_title>` namespace with per-field
+column. **Risk hot-spot:** `unified_title` rename ripples into
+`kb/coci_articulations.json` (which inlines the field) — re-mint
+playbook discipline applies (alias map at write-time, daily-cron
+sync via `kb/_apply_credential_review.py`, atomic land within one
+10:17 UTC cron window). Time: 3-4 hr.
+
+After PR-4 lands: **Quick-start Tier B** (filter-hint hand-off) is
+the natural quick win — it ties the chat to the curator workflow PR-4
+just shipped ("review unclassified credentials" → pre-populated audit
+filter on Credential Reference).
+
+
+---
+
+## 2026-05-27 — Session 11 (Bruh El): Cred-Ref-5a sync + bake-aware overlay
+
+### What shipped
+
+**PR #150** — `kb/_apply_credential_review.py` sync script. Mode A scope:
+non-identity overrides (`issuing_agency_override`, `training_agency_override`,
+`quality_flag_override`, `reviewed_marker`) fold into a git-canonical
+`kb/credential_review_overlay.json`, mirroring the `_apply_curation.py`
+pattern. Wired into daily workflow step 3 + step 6 commit. `unified_title_override`
+is recorded but NOT applied (Mode B / future PR-5b is the full re-mint
+playbook with alias-map + articulation re-key).
+
+**PR #152 (follow-up)** — bake-aware overlay. The deferred half of #150.
+`excel_to_dashboard.py:export_credential_reference()` now loads the overlay
+file and bakes overrides into `credential_reference_data.js`, preserving
+the AI baseline on parallel `_original_<field>` siblings. `applyOverlay()`
+rewritten to handle three cases per field:
+  - (a) Live overlay has override → wins; baseline (preferring baked
+    `_original_` over visible value) becomes `original_*` for the
+    "originally: X" hint.
+  - (b) No live override but baked `_original_` exists → curator cleared
+    the override between sync and now; revert to baseline.
+  - (c) Neither → no-op.
+
+### Lessons learned
+
+**1. Mode A / Mode B split — the discipline that lets a sync script ship safely.**
+Cred-Ref PR-4 deferred ALL of `_apply_credential_review.py` to "PR-5", with
+both parts entangled. Splitting into Mode A (safe non-identity edits, daily-
+cron-safe, no playbook needed) and Mode B (identity rename, re-mint playbook
+mandatory, atomic-window required) let Mode A ship today while Mode B stays
+parked for a separately-scoped session. **Generalizable pattern**: any
+curator-overlay → JSON sync should classify each field as "identity-touching"
+or "decoration-only" and ship the decoration sync first.
+
+**2. Bake-aware overlay needs to handle clear-after-bake, not just apply-on-top.**
+First-draft `applyOverlay()` just captured `r.original_primary_issuer = r.primary_issuer`
+before overwriting — which was correct when the baseline was always the AI
+value. After baking overrides, `r.primary_issuer` IS the override at
+applyOverlay-time, so the captured "original" became the override itself
+(wrong tooltip). Two fixes needed:
+  - Case (a): read baseline from `r._original_*` if present, else current value.
+  - Case (b): when no live override exists but `r._original_*` is set, the
+    curator cleared between sync and now — revert visible value to baseline.
+
+Without case (b), a curator clearing an override would see it stuck until
+the next 10:17 UTC sync. Subtle bug. The clear-then-reload test surfaces it.
+
+**3. The early-return-on-empty-overlay trap.**
+Previous `applyOverlay()` started with `if (!ov) return` — fine when overlay
+was the only source of truth. After baking, that early-return prevents case
+(b) from firing (which is exactly the case where `ov` is empty). New version
+visits every row regardless and checks per-field. Generalizable: **when
+adding a new data source to a function, audit early-returns; they may have
+been valid before the new source existed.**
+
+**4. Backwards-compat with the runtime-fetch path is free if you check for
+`_original_*` presence.**
+The dashboard has two row-build paths: baked (with bake-aware metadata) and
+runtime fetch (no metadata). The "look for `_original_*`, else fall through"
+pattern means runtime-fetched rows behave identically to pre-bake-aware
+applyOverlay. No conditional code paths for "are we coming from baked?";
+the presence of the metadata IS the signal.
+
+**5. Smoke test with mock rows beats deploying-and-praying.**
+For the sync script, mocked Supabase rows (5 lines of Python) confirmed:
+- Prefix filter correctly drops non-`_CREDENTIAL_REVIEW::*` rows
+- Unknown-field filter drops `bogus_field`
+- Rename overrides counted separately for the print summary
+- Latest reviewer/timestamp wins on a unified_title with multiple rows
+
+For the bake-aware overlay, mocked overlay JSON + handwritten payload row +
+running the per-field logic in Python (not even JS) verified the
+`_original_` capture. Crucial caveat: the JS implementation still needs
+real browser verification post-merge.
+
+### Strategic roadmap
+
+| What's next | Status |
+|---|---|
+| Cred-Ref PR-5b (rename promotion) — `unified_title_override` → actual rename + alias map + articulation re-key + atomic Supabase clear | parked (its own session; re-mint playbook mandatory) |
+| EACR card regrouping by issuer override (PR-C0/C1/C2 cards group by `(unified_title, issuing_agency, …)`, so an issuer override should regroup) | parked (deeper side effects; needs scoping) |
+| Description-similarity tie-breaker for borderline title matches (the open thread from §9) | parked |
+
+### Next concrete step
+
+When Sam decides Cred-Ref PR-5b is worth doing (curator usage signals
+demand for real renames vs display-only), scope it as its own session with
+a dry-run-first plan, alias-map output, atomic land within one cron window.
+Per `docs/coursecontrolnumber_remint.md`.
+
+---
+
+## 2026-05-27 — Cred-Ref PR-5b scoping (Bruh Dec)
+
+Scoped the rename-promotion work as a 3-PR sequence. No code written
+this checkpoint — just the inventory + design decisions, locked via
+AskUserQuestion so the next session has unambiguous direction.
+
+### Surface area (what a unified_title rename touches)
+
+Three source-of-truth files + Supabase + (downstream) two baked JS
+payloads. The structural hot-spot: `kb/credentials.json` is keyed by
+`unified_title`, so a rename is a **dict-key rewrite**, not a value
+edit:
+
+| File | Where the title lives | Change shape |
+|---|---|---|
+| `kb/unified_titles.json` | `entry.unified_title` value | value rewrite |
+| `kb/credentials.json` | dict KEY at `credentials[unified_title]` | **key rewrite** |
+| `kb/coci_articulations.json` | `articulation.unified_title` value | value rewrite |
+| Supabase `kb_curation` | `course_id = _CREDENTIAL_REVIEW::<unified_title>` | row re-key (PATCH new, drop old) |
+| `credential_reference_data.js`, `statewide_data.js` | baked | auto-regen daily |
+
+### Architectural principle locked (Sam's clarifying question)
+
+**Supersede, don't mutate, at the synthetic identity layer.** The
+rename only touches the synthetic *unified* layer; raw college-authored
+exhibit titles in `unified_titles.json` dict KEYS are immutable forever.
+Three reasons (worth stating because the principle generalizes beyond
+PR-5b):
+
+1. **MAP owns the raw layer.** Colleges authored those raw titles
+   through the CCCCO MAP authoring flow. We read them via the daily
+   scrape. They're historical record of "what this college typed at
+   scrape time." Mutating our copy would lie about that record AND get
+   overwritten on the next scrape.
+
+2. **The unified layer is the mutable one BY DESIGN.** That's its whole
+   job: a synthetic, curator-evolvable canonical name that absorbs raw
+   variants. Renaming the unified title is "we got the canonical wrong;
+   here's a better one." Renaming a raw title would be "this college
+   didn't really type what they typed" — a credibility-free claim.
+
+3. **Provenance compounds, doesn't replace.** Today the Credential
+   Reference tab shows raw_variants under each unified credential
+   (PR-5a's raw_count). PR-5b/0 adds `_original_ut` for the
+   unified-name history. A future second rename should extend the chain
+   (`_original_ut_history: [...]`), not flatten it. Compounding
+   provenance preserves the audit trail end-to-end: raw → unified v1
+   → v2 → v3.
+
+The principle was lifted into its own KB note —
+`docs/kb-notes/adr-supersede-dont-mutate-synthetic-layer.md` — because
+it applies cross-domain (M-ID → CID promotion follows the same
+pattern; raw → unified credential rename follows it; future synthetic
+layers will follow it).
+
+### Three-PR split (locked via AskUserQuestion)
+
+| PR | Scope | Risk |
+|---|---|---|
+| **PR-5b/0** | Bake `_original_ut` into `credential_reference_data.js` (display-override pattern matching PR-5a follow-up) + standing `_cred_rename_dryrun.py` report wired into daily cron | ~zero (additive, no mutation) |
+| **PR-5b/1** | Three apply scripts (credentials, articulations, supabase) + manual-trigger workflow. V1–V4 apply gates mirroring `_subj4_apply.py`. Alias map at `kb/cred_rename_out/<date>/alias_map.json` | medium (re-mint class) |
+| **PR-5b/2** | "Confirm merge" affordance in the Credential Reference tab for collision resolution | deferred until a curator hits a collision (zero today) |
+
+### Three design decisions locked (Sam picked all 3 recommendations)
+
+1. **PR split**: Three PRs. PR-5b/0 first because it's display-only +
+   observability with no rename application — the first real Mode-B
+   apply (in PR-5b/1) then fires with a curator + Sam in the loop on
+   whatever rename queue exists, not as a backlog surprise.
+
+2. **Collision policy**: **Reject + decision queue.** When a rename
+   target collides with an existing credential key, the dry-run flags
+   it in `collisions.json` and the apply refuses to touch the colliding
+   pair. Curator either picks a non-colliding target or explicitly
+   confirms a merge via a future PR-5b/2 UX. Auto-merge loses
+   provenance; auto-disambiguate produces titles the curator didn't
+   ask for. Reject is the only policy that preserves both safety AND
+   curator control.
+
+3. **Apply trigger**: **Manual `workflow_dispatch`.** Daily cron runs
+   the dry-run report so the queue stays visible; apply fires only on
+   explicit human trigger. Matches the re-mint playbook spirit; avoids
+   the auto-apply trap that Phase 1e's V4 gate caught a 386-row silent
+   overwrite in.
+
+### Open question (parked for PR-5b/1 design)
+
+When apply re-keys Supabase from `_CREDENTIAL_REVIEW::<OLD>` to
+`_CREDENTIAL_REVIEW::<NEW>`, do we **drop** the old row (clean) or
+**mark it `superseded_by: <NEW>`** (audit trail)? Sam paused on this
+mid-scoping; revisit when PR-5b/1 starts. Argument for supersede: same
+principle as supersede-don't-mutate at the JSON layer — preserves the
+record of what the curator originally typed before they refined the
+name. Argument for drop: the alias map at
+`kb/cred_rename_out/<date>/alias_map.json` already preserves the
+old→new mapping, so Supabase doesn't need to also carry it.
+
+### Lessons
+
+**Scope before code on architecturally significant work — even when
+you think you know what to build.** I had a plausible 1-PR plan in my
+head after the surface-area research; surfacing the split + collision
+policy + trigger choice via AskUserQuestion turned up a cleaner
+3-stage shape than what I'd have just coded. Bruh El flagged this
+exact pattern in the Session 12 handoff: "Bring the user a scoped plan
+BEFORE writing code for anything architecturally significant." +1.
+
+**Surface area research before scope discussion.** Spawned an Explore
+agent to do the inventory (file paths, key shapes, daily-cron
+sequence, re-mint playbook translation, risk hot-spots). Came back
+with a 600-word structured report I synthesized into the design
+options. The agent did one read; I'd have done five. Reuse the
+pattern for any architecturally significant scoping going forward.
+
+**Sam asks the question that crystallizes the principle.** Mid-scope,
+his "does this actually touch the original exhibit name or just
+supersede it?" question turned a tactical implementation detail into
+the architectural invariant that now governs the whole synthetic
+identity layer (and got its own KB note). Trust the user's pause-and-
+probe instinct; if a quick yes/no answer feels obvious, articulate the
+PRINCIPLE behind it, not just the answer.
+
+### Strategic roadmap (updated)
+
+| What's next | Status |
+|---|---|
+| **PR-5b/0** — display-override bake + standing dry-run report | scoped (Bruh Dec); next concrete code |
+| PR-5b/1 — apply infra + manual-trigger workflow | scoped; blocked on PR-5b/0 |
+| PR-5b/2 — collision-resolution UX | deferred (zero demand today) |
+| EACR card regrouping by issuer override (PR-C0/C1/C2 cards group by `(unified_title, issuing_agency, …)`, so an issuer override should regroup) | parked (deeper side effects; needs scoping) |
+| Description-similarity tie-breaker for borderline title matches | parked |
+
+### Next concrete step
+
+Ship **PR-5b/0**: bake `_original_ut` siblings into
+`credential_reference_data.js`, extend `credential_reference.js`'s
+`applyOverlay()` to render the unified_title display-override + the
+"originally:" disclosure, create `kb/_cred_rename_dryrun.py`, wire it
+into the daily cron as a report-only step. Zero source mutation. ~30
+lines of bake + ~150 lines of dry-run + 1 workflow step. Reversible
+in one revert if anything regresses.
+
+## 2026-05-27 (afternoon) — Cred-Ref PR-5b/0 shipped (Bruh Dec)
+
+PR-5b/0 landed within the same checkpoint window as the scoping. Both
+pieces of the plan in one PR: the display-override bake + the standing
+dry-run report. Zero source mutation; the moment a curator enters a
+rename in Supabase, both pieces fire — the dashboard renders the
+curator's preferred label immediately, the daily cron reports what a
+future apply would touch.
+
+### What landed
+
+**Bake (excel_to_dashboard.py:export_credential_reference, ~7 lines).**
+When the overlay carries a non-empty `unified_title_override`, the
+baked row picks up `display_title = <override>` + `_original_display_title
+= <ut>`. The `ut` field STAYS as the original — that's the overlay
+lookup key (Supabase rows are keyed by `_CREDENTIAL_REVIEW::<original>`,
+and `applyOverlay` does `overlay[r.unified_title]`). The pattern is
+**asymmetric to the other 3 overrides:** issuer/trainer/quality_flag
+all OVERWRITE the visible field in the bake because their overlay key
+(unified_title) is independent. For unified_title itself, the overlay
+KEY IS the field being overridden — overwriting `ut` would break the
+lookup. So `display_title` carries the override and `ut` stays put.
+This is exactly the supersede-don't-mutate principle (ADR) applied at
+the bake layer.
+
+**Row builder (credential_reference.js:adaptBakedRow, ~3 lines).**
+Surface `b.display_title` → `r.display_title` and
+`b._original_display_title` → `r._original_display_title` onto the
+runtime row. The existing `applyOverlay()` from PR-5a follow-up
+(case-A/B/C bake-aware logic) was already wired for `utitle_override`
++ `display_title` + `_original_display_title` — I just had to make the
+baked payload populate them. Existing render code at line 1108 already
+uses `r.display_title || r.unified_title`, so the cold-render-before-
+fetchOverlay path works immediately.
+
+**Dry-run script (kb/_cred_rename_dryrun.py, ~250 lines).** Re-runnable,
+read-only over `kb/credential_review_overlay.json` (synced from Supabase
+by `_apply_credential_review.py`). For each override:
+- Classifies as `clean` / `collision` / `skipped` (no-op) /
+  `no_credential_record` (warning)
+- Runs three gates:
+  - **V1**: no two renames in the batch target the same new name
+  - **V2**: every old name resolves to either credentials.json OR
+    unified_titles.json
+  - **V3**: every clean target is collision-free against credentials.json
+- Writes `kb/cred_rename_dryrun/{report.md, alias_map.json, collisions.json}`
+- Emits a console summary with PASS/FAIL per gate + `apply_safe` flag
+
+Verified with synthetic injection across all four paths (clean, collision,
+intra-batch collision, no-op). Calibration on real data: 0 overrides,
+clean exit, alias_map empty, no collisions. Infrastructure ready.
+
+**Daily workflow (.github/workflows/daily-dashboard.yml, Step 4c).**
+Added between the auditor (4b) and `cp CPL_Dashboard.html index.html`
+(5). Non-fatal — the dry-run is observability, not load-bearing.
+Three artifacts get `git add`ed alongside the auditor's output. They
+flow to vault auto-sync, so Sam sees the daily rename report in
+Obsidian without manual `git pull`.
+
+### Lessons
+
+**The hardest part was already done.** The JS side already had full
+`utitle_override` wiring (Lines 31, 34, 117-145, 377-411, 1108, 1546-
+1581) from PR-4's PR-5a follow-up. The bake was the only missing link.
+Surveying the existing code before writing new code saved an hour of
+re-implementing what was already there. **Pattern: read the consumer
+side first, then design the producer to fit it, not vice versa.**
+
+**Asymmetric override pattern caught.** For issuer/trainer/quality_flag,
+the bake overwrites the visible field. For unified_title, the bake
+adds a sibling field (`display_title`) and leaves `ut` alone. The
+difference: whether the field being overridden IS the overlay lookup
+key. Documented inline in the bake code so future readers don't
+"normalize" the pattern by overwriting `ut` and silently breaking
+overlay lookups.
+
+**V1/V2/V3 gates worth the up-front cost.** PR-5b/0 doesn't apply
+anything, so technically the gates are unnecessary today. But they
+get exercised on every daily-cron run, so by the time PR-5b/1 needs
+them, they're battle-tested against real overlay state. Plus the
+report.md already shows curators "what would happen if you apply
+now" — useful at the moment they enter a rename, not later.
+
+**Dry-run patterns are converging.** This is the third dry-run script
+in the project (`_remint_dryrun.py`, `_subj4_dryrun.py`,
+`_eacr_dryrun.py`, now `_cred_rename_dryrun.py`). The shared shape:
+read sources → project post-state → write `<dryrun-dir>/{report.md,
+alias_map.json, …}`. Eventually worth a `kb/_dryrun_lib.py` if a 5th
+shows up; not now (premature abstraction).
+
+### Strategic roadmap (updated)
+
+| What's next | Status |
+|---|---|
+| **PR-5b/1** — apply infra + manual workflow_dispatch | scoped; unblocked by PR-5b/0; needs PR-5b/1 design pass (Supabase row drop vs supersede decision still open) |
+| PR-5b/2 — collision-resolution UX in the tab | deferred (zero collisions today) |
+| EACR card regrouping by issuer override | parked (deeper side effects) |
+| Description-similarity tie-breaker | parked |
+
+### Next concrete step
+
+When ready, scope PR-5b/1: the three apply scripts (`_cred_rename_apply.py`,
+`_cred_rename_apply_articulations.py`, `_cred_rename_apply_supabase.py`)
++ `.github/workflows/cred-rename-apply.yml` manual-trigger workflow.
+Open question to resolve first: when Supabase re-keys
+`_CREDENTIAL_REVIEW::<OLD>` → `<NEW>`, drop the old row or mark
+`superseded_by: <NEW>`? The alias map preserves the mapping either way
+(at `kb/cred_rename_out/<date>/alias_map.json`); supersede preserves
+the Supabase-side audit trail too. Light scoping conversation before
+code.
+
+## 2026-05-27 (evening) — Cred-Ref PR-5b/1 shipped (Bruh Dec)
+
+PR-5b/1 closes Mode B. With this PR, a curator can enter a unified_title
+rename in the Credential Reference tab, watch the daily dry-run report
+queue it up (PR-5b/0), and then trigger `cred-rename-apply.yml` to land
+the rename atomically across `credentials.json` + `unified_titles.json`
++ `coci_articulations.json` + Supabase `kb_curation`.
+
+### What landed
+
+**`kb/_cred_rename_apply.py` (~225 lines).** Consumes
+`kb/cred_rename_dryrun/alias_map.json`, applies the three JSON updates,
+writes a frozen snapshot at `kb/cred_rename_out/<YYYY-MM-DD>/{alias_map.json,
+validation.md}`. Four gates baked in:
+- **V1**: reads the dry-run's `apply_safe` flag from the alias_map summary;
+  refuses to run if false. (Dry-run already ran V1/V2/V3 — this is the
+  re-check at apply time so a stale alias_map can't bypass.)
+- **V2**: per-rename check that the source unified_title exists in
+  credentials.json (else: counts as "already applied" or "not found").
+- **V3 drift re-check**: if credentials.json gained a key matching a
+  proposed rename target since the dry-run, abort. Catches the window
+  between dry-run and apply where a separate curator could land a
+  conflicting credential.
+- **V4 cardinality preservation**: per-rename, counts articulation records
+  referencing old + new BEFORE, counts new AFTER, asserts
+  `post[new] == pre[old] + pre[new]`. Catches a delete-disguised-as-rename
+  (a structural bug that wouldn't show in V1/V2/V3).
+
+The supersede-don't-mutate ADR governed key design choices:
+- `unified_titles.json` dict KEYS (raw college-authored strings) NEVER
+  touched — only the `unified_title` VALUE on each entry rewrites
+- Atomic writes (.tmp + rename) so a crash mid-write leaves no half-written
+  state
+- The alias_map snapshot at `kb/cred_rename_out/<date>/` is the canonical
+  audit trail — explicitly designed as the rollback input
+
+**`kb/_cred_rename_apply_supabase.py` (~180 lines).** Migrates the
+matching `_CREDENTIAL_REVIEW::*` rows in `kb_curation`:
+- DELETE rows where field=`unified_title_override` (the override is
+  fulfilled — keeping it would re-fire the next dry-run as a self-pointer)
+- PATCH other override rows (issuer/trainer/quality_flag/reviewed_marker)
+  from `_CREDENTIAL_REVIEW::<OLD>` → `_CREDENTIAL_REVIEW::<NEW>` so
+  curator intent on the credential's OTHER fields travels with the new
+  identity
+- Per-field rather than per-course_id PATCH so primary-key conflicts
+  (if curator set overrides on BOTH old and new pre-apply) fail per-field
+  and get logged rather than aborting the whole run
+
+Pre-fetches existing course_ids to skip aliases with no rows in Supabase
+(idempotency on re-runs). Per-row log at `kb/cred_rename_out/<date>/supabase_log.json`
+is the operator's retry input.
+
+**`.github/workflows/cred-rename-apply.yml` (~110 lines).** Five steps:
+fresh-sync overlay → re-run dry-run → JSON apply → Supabase apply →
+commit. `workflow_dispatch` only; `concurrency: daily-dashboard` shares
+the lock with the daily cron so `excel_to_dashboard.py` never reads
+kb files mid-mutation.
+
+### Lessons
+
+**Light beats heavy when the invariants are smaller.** Phase 1e's
+workflow had 7 steps, ~200 lines, including a post-apply re-run of the
+dry-run and a post-apply auditor re-run. Both made sense at 13k aliases
++ cleanup-receipt invariants (`subject_collision_signal=0`,
+`mid_id_off_scheme=0`) that the auditor enforced. For credential rename,
+there are NO equivalent invariants — there's no rule in `_row_audit.py`
+that fires on rename outcomes. So the post-apply re-checks would be
+ceremony, not safety. Cut them; trust the in-script V1–V4 gates. 5
+steps, ~110 lines.
+
+**V4 is the gate that mattered.** V1/V2/V3 came from the dry-run; V4
+(articulation cardinality) is unique to the apply step and catches the
+class of bug that V1/V2/V3 can't see: a logic error in the apply script
+that DELETES articulation records instead of renaming them. The per-rename
+expected-vs-actual count is cheap (Counter is O(N) over articulations)
+and the failure mode is loud. Worth keeping even in a "light" workflow.
+
+**Per-field Supabase PATCH instead of per-course_id.** The (course_id,
+field) primary key on kb_curation means a per-course_id PATCH-all would
+fail with a constraint violation if curator pre-set overrides on BOTH
+the old and new unified_title (rare but possible). Per-field PATCH lets
+each field's outcome get logged independently — partial-success rather
+than all-or-nothing. The supabase_log.json captures which fields landed
+and which didn't.
+
+**End-to-end synthetic test caught the V4 math early.** Wrote a quick
+shell test that picked a real credential with ≥1 articulation, monkey-
+patched the apply script to use a scratch dir, ran apply, verified
+mutations + idempotency + V4 cardinality on second run. Confirmed
+"already_applied" + "rekeyed=0" path works. ~30 lines of test, ~2
+minutes to write, caught nothing this time — but the structure is now
+in the lessons doc for future re-mint-class apply scripts.
+
+### Strategic roadmap (updated)
+
+| What's next | Status |
+|---|---|
+| **PR-5b/2** — collision-resolution UX in the tab | deferred (0 collisions today) |
+| EACR card regrouping by issuer override | parked (deeper side effects) |
+| Description-similarity tie-breaker | parked |
+
+### Next concrete step
+
+Mode B is feature-complete. Two operational follow-ups parked unless
+demand surfaces:
+1. **PR-5b/2** — only ships when a curator actually hits a collision
+   (target name already exists in credentials.json). Today: 0 collisions.
+2. **Supabase `_superseded_by` audit row** — could be added later if
+   curator-side Supabase history becomes valuable. Today: alias_map
+   snapshot is the canonical audit trail.
+
+Cred-Ref workstream is in maintenance mode unless curators flag a gap.
+
+---
+
+## Session 30 — CER economize + unclassified-triage worklist (2026-06-02)
+
+Two CER threads shipped (4 PRs total this session; the other two were the
+college short-name dataset #264 — see `docs/kb-notes/reference-college-short-names.md`).
+
+### CER economize (#265, cosmetic, consumer-only)
+
+Four curator asks from a live screenshot review, all in `credential_reference.js`
+(single static asset — no HTML/Rule-4; new CSS via the JS-injected `cr-scope-css`):
+1. **Curate panel → collapsed `✎ Curate` button** (persists in `state.curateOpen`)
+   so the expanded row leads with the useful info instead of the edit form.
+2. **"Scope" column folded into title-level chips** — the standalone 🏛 Statewide/
+   🏠 Local column was unclear next to the richer enrichment chips, so the compact
+   🏛 CCC / 🏠 Local / ⚙ Generated + CPL-type chips now render under each unified
+   title (column count 12 → 11). Judgment call: removed the column rather than
+   keeping both (flagged for Sam; trivially reversible).
+3. **Identity rows → one row per identity** (was rowspan'd per local course):
+   local codes inline (titles on hover), earning colleges a deduped short-name
+   union (full names on hover).
+4. **Unified Title left-justified** (overrides the global center-align via higher
+   specificity). jsdom 20/20.
+
+### CER unclassified-triage worklist (#266 PR-1, #267 PR-2)
+
+The original "CER triage" ask. **Measured first:** the unclassified set is **194
+raw titles** (not the handoff's stale "105") — `kb/exhibit_audit/latest.json`
+`title_cards` with `unified_title: null` + the `unclassified_in_map` tag. They're
+baked into the committed audit snapshot, so no dependency on the PII-purged
+`CustomReport_latest.json`.
+
+- **PR-1 (#266):** a worklist on the CER tab (toolbar `⚠ Triage unclassified (N)`)
+  that lazily fetches `latest.json`, lists each raw title, and lets a signed-in
+  reviewer assign an existing-or-new unified title (datalist typeahead over the
+  1,969 credentials) + optional issuer. Writes to a new `_UNCLASSIFIED::<raw>`
+  `kb_curation` namespace — **no schema migration**. In-place row updates on save
+  (so unsaved sibling input isn't wiped); progress counter; clear. Overlay-only
+  display (mirrors the original Cred-Ref PR-B MVP). jsdom 18/18.
+- **PR-2 (#267):** `kb/_apply_unclassified_triage.py` syncs the namespace into the
+  git-canonical overlay `kb/unclassified_assignments.json` (mirrors
+  `_apply_credential_review.py`; idempotent so an empty overlay produces no daily
+  churn) + daily-workflow step + git-add. Synthetic 9/9.
+
+**Sam chose the worklist over AI-classify-then-confirm** (the AskUserQuestion
+fork): a human assigns each of the 194. The AI-assist (the `exhibit-canonicalization`
+skill) stays available as a future accelerator.
+
+### What's next (CER triage PR-3 — the FOLD)
+
+The overlay only *records* assignments. **PR-3** is the dry-run-first apply that
+promotes confirmed entries into `kb/unified_titles.json` + `kb/credentials.json`
+so the raw titles leave the unclassified queue and appear as credential rows.
+That mutates a curated KB file and ripples into `coci_articulations.json`'s
+inlined `unified_title`, so it gets V-gates + its own PR (this is exactly how
+`credential_review_overlay.json` went sync-first, bake-consume-later).
+
+### Patterns this session
+
+- **`kb_curation` synthesized-namespace** = zero-migration curation surface (4th
+  use) → `docs/kb-notes/methodology-kb-curation-synthesized-namespace.md`.
+- **Runtime-fetch a committed snapshot** (audit `latest.json`) for a worklist —
+  single-file MVP, no producer/cron coupling.
+- **In-place DOM row updates** to avoid wiping unsaved sibling input on save.
+- **jsdom `url:` option** required or `sessionStorage` throws on opaque origin.
+
+### PR-3 — the FOLD (#270) + tire-kick (#269)
+
+Closed the loop: 3 real assignments entered live (`map@rccd.edu`, RLS write-gate
+confirmed via `pg_policies`) → synced (#269) → folded (#270). `kb/_fold_unclassified.py`
+(dry-run-first, V-gates V1–V4) adds the raw→unified entries to `unified_titles.json`,
+ensures `credentials.json`, and PRUNES the folded raws from `kb/exhibit_audit/latest.json`
+(the worklist's source — the exhibit auditor isn't in the daily cron + needs the purged
+CustomReport, so the fold keeps the snapshot current itself). 2 CLEAN adds, 1 SKIP
+(already classified — stale audit flag), 0 ripples; `unclassified_in_map` 194→192.
+
+**Lessons:**
+- **Match a generated file's on-disk JSON format when hand-editing it.** First apply
+  wrote `latest.json` with `indent=2` but the auditor writes it **minified**
+  (`separators=(",",":")`, no trailing newline) → a **55,588-line reformat diff** for a
+  2-card change. Always grep the generator's `json.dump(...)` and mirror its separators +
+  newline. (`unified_titles.json`/`credentials.json` ARE `indent=2` — match per file.)
+- **The dry-run earns its keep on messy real data:** one "unclassified" title was *already
+  classified* (stale 2026-05-24 audit snapshot) → SKIP not double-add; and all 3 raws
+  already had correct inlined `unified_title` in `coci_articulations.json` → 0 ripple. The
+  V-gates (SKIP/CONFLICT/ripple) turn those surprises into safe no-ops instead of clobbers.
+- **Idempotent additive fold, no workflow_dispatch ceremony:** reads the committed overlay,
+  only inserts NEW keys, diff is the review → ran `--apply` locally + committed. Re-runnable
+  as curators assign more (SKIPs folded, rejects conflicts).
+
+### Batch triage at scale (#272 + #273) — 194→67 backlog
+
+Cleared 125 of the 194 by **batching the safe class only: "duplicate raw spelling → an
+EXISTING credential."** Method (re-usable for the next pass):
+1. **Surface candidates** by normalized match of each unclassified raw to the set of
+   *existing* `unified_title` values — exact-normalized token-set (batch 1, score 1.0,
+   slam-dunk) then fuzzy ≥0.72 (batch 2). Require a **unique** existing target (drop any raw
+   that matches >1).
+2. **Hand-vet with an explicit exclude-list** for the traps the fuzzy score can't see:
+   level drift (`Fire Inspector 2B`→`1B`), AP Calculus AB/BC subscore ambiguity, mismatched
+   multi-code cert bundles (Wildland S-130/S-110…), generic targets (`IW-Welding`→`Welding
+   Certification`).
+3. **Batch-insert** to Supabase `_UNCLASSIFIED::` via a `jsonb_array_elements` INSERT (one
+   JSONB literal, apostrophes doubled for the `'…'` wrapper) → overlay sync → `--apply`.
+
+**Learnings:**
+- **The V4 ripple-gate found a real KB-consistency bug, not just noise:** it blocked batch 2's
+  apply on **3 punctuation-variant DUPLICATE credentials** — the KB carries the same credential
+  twice (`History of Architecture I` *and* `1`; `ASE A4 — Suspension & Steering` *and* `…and
+  Steering`; `… — Command & Control` *and* `…: Command and Control`). My matcher picked spelling
+  A; the articulation layer inlines spelling B. Fix: **re-assign to the spelling the articulation
+  already uses** (both are valid credentials) → 0 ripple. The dup credentials themselves are a
+  separate cleanup. Takeaway: a ripple often means "two valid spellings," not "wrong" — align to
+  the articulation layer.
+- **The audit snapshot is very stale:** ~half of each batch (30/56, 65/127) came back **SKIP —
+  already classified**. The 2026-05-24 `latest.json` over-reports unclassified. The fold's
+  prune was extended to drop **all** overlay-assigned raws now classified (CLEAN + SKIP), so the
+  worklist + `unclassified_in_map` count self-heal toward truth without a full audit re-run
+  (which needs the PII-purged CustomReport).
+- **Know when to STOP batching:** the remaining 67 are the long tail — **~50 need a NEW credential
+  minted** (new `unified_title` + issuer, a `credentials.json` add), not a fold-into-existing.
+  That's per-item judgment (the `exhibit-canonicalization` skill), NOT safe to fuzzy-batch.
+
+---
+
+## Session 31 — CER triage tail cleared (67 → 5) + the three V4-ripple resolution strategies (2026-06-03)
+
+Took the CER unclassified-triage backlog from **67 → 5** (5 folds) and economized the
+CER tab UI. 7 PRs merged (#276/#277/#278/#279/#280/#281/#282). No M-ID pipeline movement.
+
+### What shipped
+- **#276 / #278 — CER tab economy** (consumer-only `credential_reference.js`): dropped the
+  duplicate scope/CPL chips from the row body (title-level since Session 30) + moved **✎ Curate**
+  into the Action cell (#276); merged the two **Confidence** columns + folded the **Initiated**
+  stamp into Action → **11 → 9 columns** (#278). Cosmetic only.
+- **#277 (67→38), #279 (38→20)** — the safe "duplicate raw spelling → existing credential" class,
+  same method as Session 30's #272/#273.
+- **#280 Option A (20→16)** — 4 raws that tripped V4 because the articulation layer carried a
+  **different valid spelling** of the same target. Adopted the article's spelling.
+- **#281 group A (16→8)** — 8 bare-course-code local exhibits → best-judgment titles + local issuers
+  (new-credential adds; nothing to fold into).
+- **#282 group C (8→5)** — Sam's 3 module-vs-cert calls (see below).
+
+### The durable learning — three ways a CER fold resolves the V4 articulation-ripple gate
+
+`_fold_unclassified.py`'s **V4 gate** rejects any fold where the target `unified_title` would
+disagree with what `kb/coci_articulations.json` already inlines for that exhibit's rows. There
+are exactly three correct responses, decided by **why** the ripple fires:
+
+1. **Clean fold (no ripple).** The articulation rows already resolve to the exact target
+   spelling. Just fold. (Group C's POST + AUTO A1: their 8 / 2 article rows already said
+   `POST Basic Academy` / `ASE A1 — Engine Repair`.)
+2. **Adopt-the-article-spelling.** Two *valid* spellings of the **same** credential exist (a KB
+   duplicate, e.g. `History of Architecture I` vs `1`). The matcher picked spelling A; the
+   articulation inlines spelling B. **Re-assign the raw to spelling B** → 0 ripple. The duplicate
+   credential is a separate cleanup; do NOT overwrite the article. (#280 + Session 30 batch 2.)
+3. **Re-point-the-article-rows.** You're minting a **DISTINCT** credential, so the exhibit's
+   articulations should move WITH it. Edit the article rows to the new title, THEN fold → 0 ripple.
+   (#282 `Firefighter 1A`: kept distinct from `Firefighter 1` per Sam; re-pointed all **13**
+   article rows `Firefighter 1` → `Firefighter 1A`, format-preserved 13/13 diff, issuer SFT carried
+   onto the new credential via the overlay's `issuing_agency` field → `_fold_unclassified.py` adds
+   the credential record.)
+
+**Diagnostic that picks the strategy:** scan the exhibit's article rows first
+(`exhibit_title == raw`). If their `unified_title` already equals the target → (1). If it's a
+spelling variant of the target → (2). If you intend a NEW distinct credential → (3). Captured as
+the standalone note `docs/kb-notes/methodology-cer-fold-articulation-ripple-sync.md`.
+
+### Merge-hazard learning
+#282 hit `mergeable_state: dirty` because the **daily cron** (`6a0634d`) landed mid-flight and its
+Supabase sync rewrote `kb/unclassified_assignments.json`. The cron synced **before** my 19:32
+group-C insert, so its overlay had batches 1–4 (187) but not group C. Resolution: rebase onto main,
+`git checkout --ours` the overlay (main's cron version = authoritative Supabase state), **re-add only
+the 3 group-C entries** the cron missed (187 → 190), `git add` + `--continue`, `--force-with-lease`.
+The fold deliverable files (`unified_titles.json`/`credentials.json`/`coci_articulations.json`/
+`exhibit_audit/latest.json`) did NOT conflict — the cron doesn't touch them.
+
+### State / next
+- `unclassified_in_map` = **5** (down from 194 over Sessions 30–31). The 5 are un-classifiable: 3
+  bare `AUTO 600/601/602 Completion` (no content) + `Automotive` + `Inspection Portfolio Spring
+  2026 #1`. Left flagged.
+- The folded titles surface as raw variants under their credential rows on the next daily cron
+  (which bakes `credential_reference_data.js`).
+- Broader CER long-tail (~50 NEW credentials to mint) is the `exhibit-canonicalization` skill's
+  per-item domain — NOT safe to batch.
+
+---
+
+## Session 32 — CER refinement pass + the credential MERGE tool (2026-06-04)
+
+Sam's live screenshot review of the **Common Exhibit Reference** tab produced a
+7-item polish list. 3 PRs (#284 UI+producer, #285 the 10-Key merge + tool, #286
+CCR left-align). Two durable learnings beyond the UI tweaks.
+
+### Learning 1 — there is no "CPL-Type consolidation rule" in the CER to turn off
+Sam's instinct ("the different CPL types might have split them") was *half* right.
+"10-Key Data Entry" and "10-Key Numeric Data Entry" ARE the same exhibit — both
+`BIT 375 "10-Key on the Computer"` at Modesto JC (`course_id CNSR M10AA`), same
+credit rec — and the classifier DID split them by CPL type (Industry Certification
+vs Credit By Exam). **But the CER row grain is `unified_title`; it never
+groups/splits by CPL type.** The split was baked into `kb/unified_titles.json` as
+two AI titles. So "adjust the consolidation rules" had no rule to adjust — the fix
+is a **credential merge** (re-classification), not a render-time grouping change.
+The diagnostic that proves it: both rows' articulations share the **same
+`course_id` + same local course + same college**, differing only in
+`cpl_type_description`.
+
+### Learning 2 — the existing→existing MERGE is the sibling of the fold
+`_fold_unclassified.py` handles **unclassified→existing** (ADD a raw key). Merging
+two ALREADY-classified credentials is a different operation: **existing→existing**.
+New tool **`kb/_merge_credentials.py`** (dry-run + `--apply`, V1–V4 gates, receipt)
+driven by **`kb/credential_merges.json`** (`{loser, winner, reviewed_by,
+reviewed_at, reason}`). Per merge it:
+- re-points every raw whose `unified_title == loser` → winner in `unified_titles.json`
+  (stamps reviewed_by/at + a `_merge_note`; preserves `confidence_title`);
+- DROPs the loser record in `credentials.json` when the winner already has one
+  (winner authoritative); MOVEs it when the winner has none;
+- re-points every articulation `unified_title == loser` → winner in
+  `coci_articulations.json` (producers group by `course_id`, so the two records
+  collapse to one CER identity row; the differing `cpl_type` is preserved).
+
+**V-gates:** V1 no conflicts (loser==winner / empty) · V2 winner ends with ≥1 raw +
+a credential record · V3 (post-assert) no loser remnant in any of the 3 files · V4
+re-pointed articulation count == pre-scan count. The 10-Key apply: 1 raw + 1
+articulation re-pointed, orphan credential dropped, all gates OK → "10-Key Data
+Entry" `raw_count 2`, both CPL types, one identity row; Numeric gone (2014→2013).
+**This is a CLASS** — same exhibit under ≥2 CPL types → ≥2 near-duplicate titles.
+The next merges are a one-line add to `credential_merges.json`; a detector
+(articulations sharing `course_id`+local-course but differing `unified_title`)
+would surface the rest. Distilled: `docs/kb-notes/playbook-cer-credential-merge.md`.
+
+### Learning 3 — the search/expand crash was one baked-vs-fallback shape bug
+Both "search doesn't fire" (item 2) and "expand wedge stopped working" (item 7)
+were the **same** `TypeError`: `passesFilter` did `row.raw_variants.some(...)`, but
+**baked rows carry `raw_variants: null`** (only the runtime-fetch fallback path
+built it). On the first non-matching row, the throw aborted the whole `render()`,
+freezing search AND every expand wedge. One `|| []` guard. Distilled as the general
+rule `docs/kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md`: a
+consumer that supports both a baked payload and a runtime-fetch fallback must guard
+every field the baked path omits but the fallback fills. (Same review also baked
+the omitted fields properly — `raw_variants` + per-local-course `u` units — so item
+6 + item 4 got the data they needed.)
+
+### State / next
+- 3 PRs merged + live (CER producer ships live-on-merge by regenerating
+  `credential_reference_data.js` locally + committing; idempotent → cron no-op).
+- **Carryover:** build the CPL-type-duplicate detector (or keep adding merges
+  manually); then the Session-31 carryover stands (3 audience views, EACR v2
+  scope/generated-rec, MID curation, the 5 un-classifiable unclassifieds, the
+  ~50 NEW-credential long tail).
+
