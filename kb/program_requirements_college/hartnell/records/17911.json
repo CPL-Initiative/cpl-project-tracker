@@ -1,0 +1,546 @@
+{
+ "college": "Hartnell College",
+ "control_number": "17911",
+ "shape": "degree",
+ "title": "General Studies: Social and Behavioral Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=57",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14238,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14238,
+    "output_tokens": 4637,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4637,
+  "output_tokens_details": {
+   "thinking_tokens": 1429
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14969,
+ "ms": 34030,
+ "seconds": 34.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 80,
+   "share": 0.0,
+   "missing": [
+    "ABT53",
+    "ADJ1",
+    "ADJ3",
+    "ADJ51",
+    "ANT1",
+    "ANT10",
+    "ANT2",
+    "ANT20",
+    "AOD1",
+    "BUS32",
+    "COM4",
+    "ECE2",
+    "ECE53",
+    "ECE6",
+    "ECO10",
+    "ECONC2001",
+    "ECONC2002",
+    "EDU1",
+    "ETH1",
+    "ETH12",
+    "ETH13",
+    "ETH2",
+    "ETH21",
+    "ETH3",
+    "ETH4",
+    "ETH5",
+    "ETH56",
+    "ETH6",
+    "ETH7",
+    "ETH8",
+    "GEG10",
+    "HED2",
+    "HED7",
+    "HES1",
+    "HIS10",
+    "HIS40",
+    "HIS46A",
+    "HIS46B",
+    "HIS47",
+    "HIS49A",
+    "HIS49B",
+    "HIS4A",
+    "HIS4B",
+    "HIS5A",
+    "HIS5B",
+    "HIS6",
+    "HISTC1001",
+    "NRN70",
+    "NVN70",
+    "PETH5",
+    "PHL10",
+    "PHL15",
+    "PHL2",
+    "POL2",
+    "POL3",
+    "POL5",
+    "POL6",
+    "POLSC1000",
+    "PSY10",
+    "PSY12",
+    "PSY14",
+    "PSY15",
+    "PSY22",
+    "PSY25",
+    "PSY33",
+    "PSY41",
+    "PSY6",
+    "PSY9",
+    "PSYCC1000",
+    "SJS20",
+    "SJS22",
+    "SOC1",
+    "SOC15",
+    "SOC20",
+    "SOC30",
+    "SOC41",
+    "SOC42",
+    "SOC5",
+    "SOC8",
+    "TAC23"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ABT 53",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ADJ 1",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ADJ 3",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ADJ 51",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ANT 1",
+    "why": "only in general education Area 5 lists; program section not in text"
+   },
+   {
+    "code": "ANT 10",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ANT 2",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ANT 20",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "AOD 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "COM 4",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ECE 2",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ECE 53",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ECE 6",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "ECO 10",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "EDU 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 1",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 12",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "ETH 13",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 2",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 21",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 3",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 4",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 5",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ETH 56",
+    "why": "only in general education Area 3 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 6",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "ETH 7",
+    "why": "only in general education Area 3 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "ETH 8",
+    "why": "only in general education Area 4 and Area 6 lists; program section not in text"
+   },
+   {
+    "code": "GEG 10",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "HED 2",
+    "why": "only in a general education Area 7 list; program section not in text"
+   },
+   {
+    "code": "HED 7",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "HES 1",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "HIS 10",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "HIS 40",
+    "why": "only in general education Area 3 and Area 4 lists; program section not in text"
+   },
+   {
+    "code": "HIS 46A",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "HIS 46B",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "HIS 47",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "HIS 49A",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "HIS 49B",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "HIS 4A",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "HIS 4B",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "HIS 5A",
+    "why": "only in general education Area 3 and Area 4 lists; program section not in text"
+   },
+   {
+    "code": "HIS 5B",
+    "why": "only in general education Area 3 and Area 4 lists; program section not in text"
+   },
+   {
+    "code": "HIS 6",
+    "why": "only in general education Area 3 and Area 4 lists; program section not in text"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "only in general education Area 3 and Area 4 lists; program section not in text"
+   },
+   {
+    "code": "NRN 70",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "NRN70",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "NVN 70",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "PETH 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHL 10",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "PHL 15",
+    "why": "only in a general education Area 7 list; program section not in text"
+   },
+   {
+    "code": "PHL 2",
+    "why": "only in a general education Area 3 list; program section not in text"
+   },
+   {
+    "code": "POL 2",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "POL 3",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "POL 5",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "POL 6",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "PSY 10",
+    "why": "only in general education Area 5 lists; program section not in text"
+   },
+   {
+    "code": "PSY 12",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "PSY 14",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "PSY 15",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "PSY 22",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "PSY 25",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "PSY 33",
+    "why": "only in a general education Area 7 list; program section not in text"
+   },
+   {
+    "code": "PSY 41",
+    "why": "only in a general education Area 7 list; program section not in text"
+   },
+   {
+    "code": "PSY 6",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "PSY 9",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SJS 20",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SJS 22",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SOC 1",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SOC 15",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SOC 20",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SOC 30",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SOC 41",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "SOC 42",
+    "why": "only in a general education Area 4 list; program section not in text"
+   },
+   {
+    "code": "SOC 5",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "SOC 8",
+    "why": "only in general education Area 4 and Area 7 lists; program section not in text"
+   },
+   {
+    "code": "TAC 23",
+    "why": "only in general education Area 3 and Area 4 lists; program section not in text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 57-59) does not contain the General Studies: Social and Behavioral Sciences A.A. section. It holds the tail of one general education pattern's area lists, a CalGETC overview, and the Hartnell College Local General Education areas, ending at the 'Administration of Justice Department' heading. The program's own page is likely elsewhere in the PDF; the #page=57 link seems to point to the wrong page.",
+   "section_heading is left empty because no heading for this award appears in the text.",
+   "No blocks were recorded. The course lists shown are general education area lists, and general education courses never go in a block. All totals, outcomes and careers are left null or empty for the same reason.",
+   "A reviewer should pull the actual General Studies: Social and Behavioral Sciences page. It may state a requirement such as 18 units from the Area 4 list, but this text does not print one."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

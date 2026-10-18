@@ -1,0 +1,466 @@
+{
+ "college": "Hartnell College",
+ "control_number": "39248",
+ "shape": "degree",
+ "title": "Vocational Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10838,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10838,
+    "output_tokens": 4801,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4801,
+  "output_tokens_details": {
+   "thinking_tokens": 2239
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13937,
+ "ms": 42471,
+ "seconds": 42.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 21,
+   "share": 0.571,
+   "missing": [
+    "ENGLC1000",
+    "ENGLC1000E",
+    "ETH12",
+    "ETH7",
+    "HIS40",
+    "MUS5",
+    "MUS6",
+    "MUS7",
+    "MUS8"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "BIO5",
+    "BIO6",
+    "BIO6L",
+    "LIB6",
+    "NVN121",
+    "NVN1211",
+    "NVN123",
+    "NVN1231",
+    "NVN225",
+    "NVN226",
+    "NVN227"
+   ],
+   "flagged": [
+    "BIO5",
+    "BIO6",
+    "BIO6L",
+    "LIB6",
+    "NVN121",
+    "NVN1211",
+    "NVN123",
+    "NVN1231",
+    "NVN225",
+    "NVN226",
+    "NVN227"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    63.0,
+    63.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required General Education Courses (continued from previous page)' has no units",
+    "a required course in 'Complete at least 1 of the following courses: BIO5 AND BIO6 AND BIO6L' has no units",
+    "a required course in 'Required Major Courses - After acceptance into the program: 2nd Semester' has no units",
+    "a required course in 'Required Major Courses - After acceptance into the program: 3rd Semester' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing-Vocational Nursing A.S. Degree (heading on the preceding catalog page, not in the supplied text; the visible part of the section is page 303)",
+   "measure": "units",
+   "total_units": {
+    "min": 63,
+    "max": 63
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required General Education Courses (continued from previous page)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYCC1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete at least 1 of the following courses: BIO11",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete at least 1 of the following courses: BIO5 AND BIO6 AND BIO6L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO6L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Major Courses - After acceptance into the program: 1st Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NUTR51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR1",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NVN70",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY25",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NVN110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NVN119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NVN119.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NVN130A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Major Courses - After acceptance into the program: 2nd Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NVN121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NVN121.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NVN130B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Major Courses - After acceptance into the program: 3rd Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NVN123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NVN123.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NVN130C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Nursing and Health Sciences Success Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NVN225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NVN226",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NVN227",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "not in the visible A.S. text (section start is on the preceding page); named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "ENGL C1000E",
+    "why": "not in the visible A.S. text (section start is on the preceding page); named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "ETH 12",
+    "why": "not in the text; A.S. requires 3 units from Local GE Area 6 without listing courses"
+   },
+   {
+    "code": "ETH 7",
+    "why": "not in the text; A.S. requires 3 units from Local GE Area 6 without listing courses"
+   },
+   {
+    "code": "HIS 40",
+    "why": "not in the text; likely a Local GE Area 6 (Ethnic Studies) option, not listed"
+   },
+   {
+    "code": "MUS 5",
+    "why": "not in the text; likely a Local GE Area 6 (Ethnic Studies) option, not listed"
+   },
+   {
+    "code": "MUS 6",
+    "why": "not in the text; likely a Local GE Area 6 (Ethnic Studies) option, not listed"
+   },
+   {
+    "code": "MUS 7",
+    "why": "not in the text; likely a Local GE Area 6 (Ethnic Studies) option, not listed"
+   },
+   {
+    "code": "MUS 8",
+    "why": "not in the text; likely a Local GE Area 6 (Ethnic Studies) option, not listed"
+   }
+  ],
+  "notes": [
+   "The A.S. section begins on the page before page 303; its heading, description, program outcomes, careers and the start of the Required General Education Courses list (likely ENGL C1000/C1000E and a math/statistics row) are not in the supplied text.",
+   "The visible text starts mid-row with 'OR MAT10 ... OR MAT27'; the first course of that or-row is cut off, so the math row was not recorded (MAT10, MAT12, MAT16, MAT24, MAT25, MAT27 are alternatives to an unseen course).",
+   "'Complete at least 1 of the following courses' offers BIO11 alone or the set BIO5 AND BIO6 AND BIO6L; recorded as two option blocks sharing option_group 'Anatomy and Physiology'.",
+   "Ethnic Studies requirement: 'Earn at least 3 credits from the following: Local GE - Area 6' lists no courses, so no block was recorded; ETH/HIS/MUS closed-list courses are presumably the Area 6 options.",
+   "'Total Required Credits 63' is read as the A.S. major/program total (the page separately says electives are required when degree units plus GE units total fewer than 60), so degree_total is null and electives_fill_degree is true.",
+   "ge_pattern set to 'Local GE' from the reference to 'Local GE - Area 6'; the GE pattern name is not otherwise stated in the visible text.",
+   "No units are printed beside courses in the A.S. requirements, so all units are null.",
+   "Program outcomes and the description on page 304 belong to the Certificate of Achievement (CT.NVN) section and were not recorded for the A.S.; no careers are named in the visible A.S. section.",
+   "The A.S. 1st Semester row lists NVN70 OR PSY25; the CT section additionally lists NRN70, which does not appear in the A.S. section."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

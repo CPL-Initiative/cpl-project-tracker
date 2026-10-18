@@ -1,0 +1,241 @@
+{
+ "college": "Hartnell College",
+ "control_number": "38501",
+ "shape": "certificate",
+ "title": "Engineering Fundamentals",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9428,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9428,
+    "output_tokens": 1784,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1784,
+  "output_tokens_details": {
+   "thinking_tokens": 565
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07339,
+ "ms": 15651,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.0,
+    27.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.0-27.0; the catalog states 24.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Fundamentals Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate the ability to write computer programs and apply them towards solving engineering problems.",
+    "acquire, develop, and refine the prerequisite mathematics, physics, and chemistry foundational skills to be successful in sophomore level engineering courses such as Statics, Circuit Analysis, or Materials Science and Engineering.",
+    "formulate and demonstrate a plan to appropriately select the courses they will need to transfer to a four-year university."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MAT3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN1R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGN5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-page with the program description; the section heading is not printed in the text, so it is taken from the description's wording ('Engineering Fundamentals Certificate of Achievement').",
+   "The requirement lists print no units beside courses, so units are null. Course pages that follow give EGN1R 2 credits and EGN5 3 credits.",
+   "Total Required Credits 24 is recorded as total_units.",
+   "The outcomes lead-in reads 'Upon completion of this course' but is printed under Program Outcomes for this certificate. The outcomes are recorded as program outcomes, with their lowercase starts kept as printed.",
+   "The description gives major-based recommendations for which two Major Electives to choose: Civil/Mechanical, EGN 5 and CHM 1A; Computer/Software, CSS 1 and CSS 2A; Electrical, CSS 1 and (CSS 2A or CHM 1A). All of these courses are already in the Major Electives block, so no separate recommended block is recorded.",
+   "Codes are written as the catalog prints them, without a space (e.g., MAT3A = MAT 3A in the closed list).",
+   "Pages 205-207 are course descriptions (EGN1L, EGN1R, EGN2, EGN4, EGN5, EGN6), not program requirements; nothing from them is recorded as a requirement."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

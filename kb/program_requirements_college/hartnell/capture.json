@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 112,
  "with_closed_list": 105,
- "started": "2026-10-18T00:01:29Z",
+ "started": "2026-10-18T00:17:13Z",
  "procedure_step": {
   "start": "https://hartnell.catalog.prod.coursedog.com/",
   "file": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf"
@@ -1304,7 +1304,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 79.7,
+ "seconds": 75.6,
  "found": 101,
  "by_method": {
   "no_closed_list": 7,
@@ -2469,5 +2469,5 @@
    }
   ]
  },
- "run": "39081145201"
+ "run": "39082134780"
 }

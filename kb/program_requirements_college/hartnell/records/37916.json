@@ -1,0 +1,225 @@
+{
+ "college": "Hartnell College",
+ "control_number": "37916",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=155",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7011,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7011,
+    "output_tokens": 1467,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1467,
+  "output_tokens_details": {
+   "thinking_tokens": 369
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05738,
+ "ms": 12513,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science for Transfer (AS-T) - AST.CS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate the ability to communicate effectively with technical and non-technical colleagues through presentations and reports, and work effectively on a team project.",
+    "Design and construct significant computer application(s) using current programming languages and operating systems.",
+    "Describe the organization and operation of a computer architecture with respect to numerical representations and computations, digital logic, and computer components.",
+    "Demonstrate the ability to evaluate algorithms, select from a range of possible options, provide justification for that selection, and implement the algorithm using an appropriate programming language and context.",
+    "Demonstrate the ability to solve discrete mathematical problems, describe and apply discrete structures and logic principles, perform run-time analysis on algorithms and prove algorithm correctness.",
+    "Demonstrate understanding of mathematical applications to the physical world."
+   ],
+   "careers": [
+    "software developers",
+    "software engineers",
+    "researchers",
+    "teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSS2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY4B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., CSS2A); these match the closed-list codes (CSS 2A, etc.) and are not catalog additions.",
+   "The catalog prints no units beside the courses, so course units are null; the closed list gives 4 units each.",
+   "MAT3A is printed with 'AND MAT3B' on the same bullet; both are required and are recorded as separate entries.",
+   "'Total Required Credits 60' is recorded as degree_total; no separate major total is printed, so total_units is null.",
+   "Electives (Courses Numbered 1-99) are required only when degree units plus Cal-GETC units total fewer than 60; no elective units are printed, so electives_fill_degree is true.",
+   "No units are printed for Cal-GETC, so ge_units is null.",
+   "The outcomes lead-in reads 'Upon completion of this course' but the outcomes are listed under Program Outcomes for this degree."
+  ]
+ },
+ "extracted_run": "39082134780"
+}
