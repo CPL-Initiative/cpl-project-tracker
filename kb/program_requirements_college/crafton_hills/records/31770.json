@@ -1,0 +1,238 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "31770",
+ "shape": "adt",
+ "title": "PHYSICS",
+ "award": "A.S. T Degree",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7099,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7099,
+    "output_tokens": 1257,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1257,
+  "output_tokens_details": {
+   "thinking_tokens": 263
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05354,
+ "ms": 10561,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CSCI110",
+    "CSCI112",
+    "MATH265",
+    "MATH266"
+   ],
+   "flagged": [
+    "CSCI110",
+    "CSCI112",
+    "MATH265",
+    "MATH266"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    37.0
+   ],
+   "stated": [
+    36.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Physics 2.0 for Transfer (AS-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate concepts and results through well-organized lab reports.",
+    "Apply critical thinking skills and physical methods in solving problems appropriate for lower division physics courses.",
+    "Demonstrate general knowledge of physical concepts and principles appropriate for lower division courses in physics.",
+    "Demonstrate standard laboratory skills and techniques appropriate for lower division courses in physics."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYSIC 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIC 251",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIC 252",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 252",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 266",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSCI 112",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog labels the total 'TOTAL CREDIT HOURS: 36.00-37.00'; this is a credit program, so it is recorded as units (36-37). The range reflects the CSCI 110 (4) or CSCI 112 (3) choice.",
+   "Cal-GETC is named as the required GE pattern, but no GE unit figure and no degree total are printed.",
+   "The page names related fields for a bachelor's degree (Engineering, Astronomy, Astro-Physics, Computer Science, Mathematics) and 'continued study in mathematics and STEM fields'. These are study fields, not careers, so careers is left empty.",
+   "MATH 265, MATH 266, CSCI 110 and CSCI 112 are not in the closed list and are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

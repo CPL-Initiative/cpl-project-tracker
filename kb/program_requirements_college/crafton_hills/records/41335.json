@@ -1,0 +1,356 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "41335",
+ "shape": "certificate",
+ "title": "Computer Hardware Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6980,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6980,
+    "output_tokens": 2075,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2075,
+  "output_tokens_details": {
+   "thinking_tokens": 590
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06942,
+ "ms": 16365,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 6,
+   "share": 0.5,
+   "missing": [
+    "BUSAD105",
+    "BUSAD145",
+    "BUSAD200"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "CIS101",
+    "CIS105",
+    "CIS109",
+    "CIS113",
+    "CIS117",
+    "CIS125",
+    "CIS132",
+    "CIS133",
+    "CIS136",
+    "CIS137",
+    "CIS138",
+    "CIS141",
+    "CSCI110"
+   ],
+   "flagged": [
+    "CIS101",
+    "CIS105",
+    "CIS109",
+    "CIS113",
+    "CIS117",
+    "CIS125",
+    "CIS132",
+    "CIS133",
+    "CIS136",
+    "CIS137",
+    "CIS138",
+    "CIS141",
+    "CSCI110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    28.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 27.0-28.0; the catalog states 27.0-27.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Information Systems Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Discuss the impact of information technology on society and the workplace.",
+    "Work collaboratively in a team setting.",
+    "Demonstrate knowledge of individual parts that make up a stand-along PC computer system, and the relationships between components.",
+    "Demonstrate an understanding of the overall design and components of a LAN and WAN system."
+   ],
+   "careers": [
+    "entry-level positions in the field of Computer Information Systems"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 095",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AND (one of the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Students must complete at least twelve (12) additional units from the following courses",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 133",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 136",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 137",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 138",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 141",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSAD 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUSAD 145",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUSAD 200",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is titled 'Computer Information Systems Certificate of Achievement', not 'Computer Hardware Technician'; the closed list (with BUSAD courses) may belong to a different or renamed program. Reviewer should verify the page matches this award.",
+   "CIS 095 in the catalog is taken as the closed list's CIS 95.",
+   "CIS 113 and CSCI 110 appear both in the one-of programming choice and in the 12-unit elective list; presumably a course used for the programming requirement cannot also count toward the 12 elective units, but the page does not say.",
+   "Outcomes are printed under 'A student receiving a certificate in this field will be able to:'; 'stand-along' is copied as printed.",
+   "Total 27.00 printed as 'TOTAL CREDIT HOURS'; recorded as units."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

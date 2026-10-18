@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 118,
  "with_closed_list": 79,
- "started": "2026-10-18T02:50:41Z",
+ "started": "2026-10-18T04:35:06Z",
  "scope": null,
  "sitemap": {
   "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 226,
  "banner_h1": "2026-2027 Catalog",
  "loads": 231,
- "seconds": 1132.5,
+ "seconds": 1158.8,
  "found": 64,
  "by_method": {
   "no_closed_list": 39,
@@ -339,8 +339,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 2718,
-     "content": 14508,
+     "body": 4987,
+     "content": 16620,
      "tabs": 0
     },
     "tab_panels": []
@@ -1044,5 +1044,5 @@
    }
   ]
  },
- "run": "39091435061"
+ "run": "39093935031"
 }

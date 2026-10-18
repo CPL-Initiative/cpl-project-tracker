@@ -1,0 +1,359 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "04856",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.A. Degree",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6985,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6985,
+    "output_tokens": 2072,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2072,
+  "output_tokens_details": {
+   "thinking_tokens": 507
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06938,
+ "ms": 16523,
+ "seconds": 17.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "CD115",
+    "CD205"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "CDEV100",
+    "CDEV115",
+    "CDEV133",
+    "CDEV134",
+    "CDEV137",
+    "CDEV185",
+    "CDEV186",
+    "CDEV205",
+    "CDEV211",
+    "CDEV244",
+    "CDEV250",
+    "CDEV270",
+    "CDEV271",
+    "CDEV272"
+   ],
+   "flagged": [
+    "CDEV100",
+    "CDEV115",
+    "CDEV133",
+    "CDEV134",
+    "CDEV137",
+    "CDEV185",
+    "CDEV186",
+    "CDEV205",
+    "CDEV211",
+    "CDEV244",
+    "CDEV250",
+    "CDEV270",
+    "CDEV271",
+    "CDEV272"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Associate of Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate understanding of the needs, the characteristics and multiple influences on development of children birth to age eight as related to high-quality care and education of young children",
+    "Design, implement and evaluate environments and activities"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 244",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 270",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 272",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CD 115",
+    "why": "Catalog prints CDEV 115 Health, Safety and Nutrition instead; likely the same course under an older subject code"
+   },
+   {
+    "code": "CD 205",
+    "why": "Catalog prints CDEV 205 Child Development Practicum instead; likely the same course under an older subject code"
+   }
+  ],
+  "notes": [
+   "The total is printed as 'TOTAL CREDIT HOURS: 25.00', but the program is a credit degree, so it is recorded in units. Required courses sum to 25 units.",
+   "CDEV 115 and CDEV 205 are marked as catalog additions because the closed list stores them as CD 115 and CD 205. The titles and units match, so a reviewer may treat them as the same courses.",
+   "CDEV C1000H is printed as an alternative to CDEV C1000 on the same row. Only one unit figure (3.00) is printed for the row, so the honors course's units are left null.",
+   "The second program outcome appears cut off ('Design, implement and evaluate environments and activities'). It is recorded as printed, and the text may truncate further outcomes.",
+   "No general education pattern or degree total is printed on the page.",
+   "The description mentions teaching in preschool and in primary and intermediate grades, but it names no specific job title. Careers are left empty."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

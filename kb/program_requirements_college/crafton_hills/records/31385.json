@@ -1,0 +1,284 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "31385",
+ "shape": "adt",
+ "title": "Business Administration",
+ "award": "A.S. T Degree",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7192,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7192,
+    "output_tokens": 2035,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2035,
+  "output_tokens_details": {
+   "thinking_tokens": 715
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06947,
+ "ms": 17365,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "CIS101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ECONC2001",
+    "MATH102",
+    "MATHC2210",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "MATH102",
+    "MATHC2210",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    30.0
+   ],
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Business Administration 2.0 for Transfer (AS-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a significant understanding of the fundamental concepts of accounting, business law, economics, communication, and marketing.",
+    "Produce clearly written, concise analyses, and deliver clear, well-organized, persuasive oral presentations.",
+    "Use accounting information to make informed decisions about the internal operations of a company.",
+    "Demonstrate an understanding of the role planning, organizing, leading and controlling plays in organizational success.",
+    "Identify and apply ethical principles in management decision making.",
+    "Describe what marketing entails and shows how the components are implemented.",
+    "Analyze, interpret and present economic data.",
+    "Demonstrate their understanding of the role digital technologies play in the success of organizations and will demonstrate proficiency in the use of digital technologies by solving business problems using those technologies."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ACCT 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 209",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 141",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 120",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSAD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSAD 145",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 145",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 101",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The printed total 'TOTAL CREDIT HOURS: 28.00-30.00' is recorded as total_units in units (credit hours = units) and also as the block's stated total.",
+   "The 'OR' rows (MATH 102 / MATH 141 / MATH C2210; STAT C1000 / STAT C1000H / PSYC 120; BUSAD 100 / BUSAD 145 / COMM 145) are recorded as single entries with alternatives in the required core.",
+   "Units for honors twins and paired alternatives (ECON C2002H, ECON C2001H, STAT C1000H, COMM 145) are taken from the single figure printed on the shared row.",
+   "The description names fields of study for transfer majors (accounting, finance, international business, management, marketing), not careers; careers left empty.",
+   "No units printed for Cal-GETC and no degree total printed."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

@@ -1,0 +1,416 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "11766",
+ "shape": "certificate",
+ "title": "Teacher",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7426,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7426,
+    "output_tokens": 2921,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2921,
+  "output_tokens_details": {
+   "thinking_tokens": 991
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08812,
+ "ms": 23189,
+ "seconds": 24.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 8,
+   "share": 0.75,
+   "missing": [
+    "CD115",
+    "CD205"
+   ],
+   "unexplained": [
+    "CD115",
+    "CD205"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 15,
+   "codes": [
+    "ASL101",
+    "ASL101H",
+    "CDEV100",
+    "CDEV115",
+    "CDEV133",
+    "CDEV134",
+    "CDEV137",
+    "CDEV185",
+    "CDEV186",
+    "CDEV205",
+    "CDEV244",
+    "CDEV270",
+    "CDEVC1000H",
+    "ENGL155",
+    "ENGL155H"
+   ],
+   "flagged": [
+    "ASL101",
+    "ASL101H",
+    "CDEV100",
+    "CDEV133",
+    "CDEV134",
+    "CDEV137",
+    "CDEV185",
+    "CDEV186",
+    "CDEV244",
+    "CDEV270",
+    "CDEVC1000H",
+    "ENGL155",
+    "ENGL155H"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 36.0-36.0; the catalog states 36.0-37.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Master Teacher Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Exceed the Title 22 requirements for Teacher level employment in private sector programs",
+    "Meet Title 5 requirements for Teacher level employment in funded programs when adding 16 specified units of General Education",
+    "Design, implement and evaluate environments that support positive developmental play and learning",
+    "Design, implement and evaluate activities that support positive developmental plan and learning outcomes for young children"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 270",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Language and Literacy Specialization",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 155H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Infant/Toddler Specialization",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Special Needs Specialization",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 244",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASL 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ASL 101H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Students must complete at least twelve (12) additional units not included in their selected specialization from the following courses",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 244",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award mismatch: the program is 'Teacher', a Certificate of Achievement of 16 to fewer than 30 units, but the source page is the Master Teacher Certificate of Achievement totaling 36.00-37.00 units. The page may not be the right section for this award; reviewer should check whether a separate Teacher certificate page exists.",
+   "Closed-list codes CD 115 and CD 205 were matched to catalog CDEV 115 (Health, Safety and Nutrition) and CDEV 205 (Child Development Practicum) by number and title; the subject prefix differs (CD vs CDEV).",
+   "Specialization rule: 'at least six (6) units from one of the following areas of specialization'; each area recorded as a choose_units 6 block in option_group 'Specialization'. Special Needs totals 7 units if both courses taken.",
+   "Elective block excludes courses counted in the student's selected specialization (CDEV 134, 185, 186, 244 appear in both lists).",
+   "Outcomes printed under 'A student receiving a certificate in this field will be able to:'; copied verbatim including 'developmental plan'.",
+   "Page states length of completion 15 months; no careers section, so careers left empty."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

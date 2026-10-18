@@ -1,0 +1,372 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "43313",
+ "shape": "degree",
+ "title": "Respiratory Care",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/bachelor-of-science-in-respiratory-care",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10135,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10135,
+    "output_tokens": 3942,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3942,
+  "output_tokens_details": {
+   "thinking_tokens": 745
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11938,
+ "ms": 28768,
+ "seconds": 29.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 13,
+   "count": 49,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major/Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Lead and manage complex systems across Respiratory Care and allied health fields.",
+    "Work collaboratively with other leaders and managers to gather, analyze, and interpret data and implement positive changes within across health care fields.",
+    "Demonstrate understanding of, and be able to critically think through, processes involved in generating positive patient outcomes across complex health care systems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Upper-Level Major General Education",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "RESP 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Program Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "RESP 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 403",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 404",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 405",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 406",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 407",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 408",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 409",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RESP 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [
+   {
+    "code": "RESP 301",
+    "outcomes": [
+     "Analyze, compare, and evaluate a variety of moral theories (such as Utilitarianism, Kantianism, Natural Law, or Human Rights theory) that are relevant to problems in medical ethics.",
+     "Apply theories in normative ethics to specific problems or controversies in medical ethics, e.g., experimentation, informed consent, allocation of resources, use of technologies, abortion, medically assisted dying, etc."
+    ]
+   },
+   {
+    "code": "RESP 302",
+    "outcomes": [
+     "Analyze multiple identities through the lens of intersectionality such as ethnicity, gender, class, sexual orientation, and generational identity.",
+     "Utilize tools and strategies for intercultural communication and conflict resolution to appropriately work with communities specific to various professional settings",
+     "Transform theories to practice when addressing systems of oppression that are underlying in their professional settings"
+    ]
+   },
+   {
+    "code": "RESP 303",
+    "outcomes": [
+     "Apply child and adult learning theory to the creation and delivery of health care related curriculum.",
+     "Develop a lesson plan that includes outcomes, objectives, content, skills and abilities.",
+     "Develop an effective assessment tool for assessing lesson plan outcomes."
+    ]
+   },
+   {
+    "code": "RESP 401",
+    "outcomes": [
+     "Define quality improvement and performance improvement",
+     "Discuss the history and development of QI in health care",
+     "Explain the fundamental processes of QI",
+     "Demonstrate skill in the use of QI processes such as flow charts, diagrams, control charts, LEAN techniques etc.",
+     "Explain and utilize the PCDA, DMAIC cycles of improvement",
+     "Complete an individualized project related to quality improvement"
+    ]
+   },
+   {
+    "code": "RESP 402",
+    "outcomes": [
+     "Identify, apply, and evaluate advanced cardiopulmonary diagnostic procedures and",
+     "medical interventions performed by respiratory care practitioners.",
+     "Analyze disease-specific treatment options in cardiopulmonary and neurorespiratory care and recommend modifications based on evidence-based practice."
+    ]
+   },
+   {
+    "code": "RESP 403",
+    "outcomes": [
+     "Identify the components of normal human sleep.",
+     "Explain how sleep changes at different ages.",
+     "Assess daytime sleepiness and consequences.",
+     "Identify key components of sleep disorder breathing, parasomnias, narcolepsy, insomnia, periodic leg movement syndrome (PLMS) and restless leg syndrome (RLS).",
+     "Explain polysomnography, including 10-20 Electrode placement, required equipment, sleep stage scoring, abnormal event scoring, respiratory event scoring, and movement disorders.",
+     "Identify treatment options for patients with sleep disorders.",
+     "Identify when a patient should be referred for a sleep study."
+    ]
+   },
+   {
+    "code": "RESP 404",
+    "outcomes": [
+     "Apply professional practice principles such as confidentiality, legal and regulatory requirements, risk management, interpersonal communication, conflict resolution, and negotiation strategies in the context of the case management process.",
+     "Identify and apply strategies for assessing, planning, implementing, coordinating, monitoring, and evaluating options and services to promote quality and cost-effective outcomes.",
+     "Analyze patient case management plans created by the healthcare delivery team to coordinate resources and services necessary to accomplish client goals."
+    ]
+   },
+   {
+    "code": "RESP 405",
+    "outcomes": [
+     "Demonstrate advanced knowledge of pulmonary specialties discussed in this course, including: Pulmonary Rehabilitation models and patient education",
+     "Demonstrate advanced knowledge of pulmonary specialties discussed in this course, including: CLIA requirements for blood gas laboratory quality control",
+     "Demonstrate advanced knowledge of pulmonary specialties discussed in this course, including: Pulmonary Function techniques and assessment",
+     "Demonstrate advanced knowledge of pulmonary specialties discussed in this course, including: Exercise Testing techniques and outcomes assessment as it relates to pulmonary rehabilitation and patient education on disease processes"
+    ]
+   },
+   {
+    "code": "RESP 406",
+    "outcomes": [
+     "Describe the importance and implementation of early mobility in critical care",
+     "Lung ultrasound techniques and applications in monitoring methods to assess pathophysiology related to the systems",
+     "Uses of inhaled nitric oxide and FDA guidelines for its use",
+     "HeliOx therapy",
+     "Detailed aspects of ECMO and perfusion techniques"
+    ]
+   },
+   {
+    "code": "RESP 407",
+    "outcomes": [
+     "Critically review, analyze, and interpret published research.",
+     "Develop research design, conduct or review a study, critically assess and perform analysis of quality measurement."
+    ]
+   },
+   {
+    "code": "RESP 408",
+    "outcomes": [
+     "Differentiate approaches to care between neonatal/pediatric and adult patients.",
+     "Distinguish and apply appropriate advanced medical treatments and modalities",
+     "which can be utilized to appropriately care for neonatal and pediatric patients."
+    ]
+   },
+   {
+    "code": "RESP 409",
+    "outcomes": [
+     "Articulate a working foundation of leadership practices and theories for leading people and health organizations.",
+     "Integrate behaviors and actions of successful leaders and develop an individual current or future leadership style.",
+     "Distinguish the difference between leadership and management and use that knowledge to make strategic decisions and enhance organizational efficiencies and effectiveness through the development and implementation of plans."
+    ]
+   },
+   {
+    "code": "RESP 410",
+    "outcomes": [
+     "Draw on multiple sources of analysis, research, and critical thinking across the curriculum to develop addressing a problem and completing a project.",
+     "Demonstrate in a final presentation the full breadth of knowledge gained through the Respiratory Care program, focusing on one or more subject areas: cardiopulmonary pathophysiology, case management, health education, research methodology, and/or respiratory care leadership and management."
+    ]
+   }
+  ],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-page; the page title (Bachelor of Science in Respiratory Care) is not printed in the text, so section_heading uses the 'Major/Program Requirements' heading.",
+   "Preadmission Courses (RESP 130-137, 139, 230-237; 'Minimum of 41 Lower-Level Respiratory Care Units') are admission prerequisites, not part of the printed 40-unit total, and are not on the closed list; they were not recorded as a block.",
+   "Preadmission also requires 27+ GE units on CHC AA/AS GE or Cal-GETC and the 'Golden 4'; no GE pattern or GE units are printed as part of the B.S. requirements, so ge_pattern and ge_units are null.",
+   "TOTAL CREDIT HOURS: 40.00 (9 upper-level GE + 31 core) recorded as total_units; the catalog labels them credit hours but they are semester units.",
+   "Course outcomes for RESP 402 and RESP 408 each contain one outcome split across two bullets in the source; recorded as printed (two entries each) — reviewer should check whether they should be one outcome.",
+   "RESP 406 outcome bullets read as topic fragments; copied as printed."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

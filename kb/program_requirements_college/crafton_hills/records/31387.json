@@ -1,0 +1,299 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "31387",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/theatre-arts-associate-in-arts-for-transfer-degree-aa-t",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7092,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7092,
+    "output_tokens": 2290,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2290,
+  "output_tokens_details": {
+   "thinking_tokens": 793
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07417,
+ "ms": 18217,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 11,
+   "share": 0.727,
+   "missing": [
+    "THART124X2",
+    "THART134X4",
+    "THART179"
+   ],
+   "unexplained": [
+    "THART124X2",
+    "THART134X4",
+    "THART179"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "THART/S124X2",
+    "THART/S134X4",
+    "THART/S179"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Theatre Arts for Transfer (AA-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CAL-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to read an excerpt of a play news copy or other text using proper voice and diction.",
+    "Analyze a play text and then use the psychophysical techniques of the Stanislavski system to internalize an appropriate imagined reality in order to create believable characters, realities and interplay on stage.",
+    "Demonstrate the ability to co-operate in a group situation with other students to collectively prepare, organize and produce work either as an actor, musician, dancer, performer, director, technician or designer.",
+    "Demonstrate the ability to be successfully complete a design process in set, light, sound and costume design, and to prepare, construct and set up technical elements in collaboration with others in the technical production of a show.",
+    "Recognize and categorize different types of plays and theatrical styles according to historical period, genre and dramatic effect and how they are related to the social, political, or cultural issues in a given historical perio"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses: Introduction to Theatre OR World Drama I",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THART 100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 108",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THART 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: Beginning Performance Workshop OR Technical Theatre Workshop",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THART/S 124X2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART/S 134X4",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required List A Courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THART/S 124X2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART/S 134X4",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART/S 179",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART 226",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 226",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes as 'THART/S 124X2', 'THART/S 134X4', 'THART/S 179'; these were treated as the closed-list THART 124X2, THART 134X4 and THART 179 (catalog_addition false).",
+   "Closed list 'THART100' (no space) treated as the catalog's THART 100.",
+   "Units beside alternatives (THART 100H, ENGL 108, ENGL 226) are printed once per row (3.00); recorded only on the main course.",
+   "Core choice between THART 124X2 (3 units) or THART 134X4 taken three times (1 unit each) recorded as choose_units 3.",
+   "List A: THART/S 124X2 counts only if not taken in the core; THART/S 134X4 may be taken three times and counts only if not taken as part of the core.",
+   "The final program outcome is cut off in the text ('historical perio'); copied as printed.",
+   "Outcomes are printed for the degree under 'A student receiving a degree in this field will be able to:'."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

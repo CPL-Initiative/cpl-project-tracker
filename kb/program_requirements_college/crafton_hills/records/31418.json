@@ -1,0 +1,262 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "31418",
+ "shape": "certificate",
+ "title": "Retail Management (WAFC)",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/retail-management-certificate-of-achievement",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7114,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7114,
+    "output_tokens": 1645,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1645,
+  "output_tokens_details": {
+   "thinking_tokens": 432
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06136,
+ "ms": 13316,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BUSAD53",
+    "CIS101"
+   ],
+   "flagged": [
+    "BUSAD53",
+    "CIS101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Retail Management Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a significant understanding of the fundamental concepts of accounting, business law, economics, communication, and marketing.",
+    "Produce clearly written, concise analyses, and deliver clear, well-organized, persuasive oral presentations.",
+    "Use accounting information to make informed decisions about the internal operations of a company.",
+    "Demonstrate an understanding of the role planning, organizing, leading and controlling plays in organizational success.",
+    "Identify and apply ethical principles in management decision making.",
+    "Describe what marketing entails and shows how the components are implemented.",
+    "Analyze, interpret and present economic data."
+   ],
+   "careers": [
+    "retail management field",
+    "clerk",
+    "cashier",
+    "Assistant Manager",
+    "Manager",
+    "Upper Management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSAD 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 145",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 145",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 155",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARKET 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MARKET 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list stores 'COMM155' (no space, units not stored); treated as the same course as the catalog's 'COMM 155' and not flagged as a catalog addition.",
+   "The catalog prints 'TOTAL CREDIT HOURS: 32.00' for this credit certificate; recorded as 32 units in total_units.",
+   "The 'or' options share a single printed unit value (e.g., 'BUSAD 145 or COMM 145 ... 4.00'); that value is applied to each alternative.",
+   "Careers are taken from the program description: 'a career in the retail management field', entry roles 'clerk or cashier', and advancement to 'Assistant Manager, Manager, and Upper Management'.",
+   "Length of completion printed: 15 months total (2-3 semesters / 1 academic year, full-time at 12 units per semester).",
+   "Some outcomes refer to business law and economics, although no business law or economics course is listed in the requirements."
+  ]
+ },
+ "extracted_run": "39093935031"
+}

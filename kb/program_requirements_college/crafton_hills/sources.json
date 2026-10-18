@@ -1,0 +1,3105 @@
+[
+ {
+  "control_number": "04823",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04825",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04826",
+  "title": "Marketing Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04829",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04831",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04832",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04833",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04836",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN104"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/spanish-associate-of-arts-degree",
+   "title": "Crafton Hills College - Spanish - Associate of Arts Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2335
+ },
+ {
+  "control_number": "04837",
+  "title": "Respiratory Care",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT101",
+   "CHEM101",
+   "HIT101",
+   "MICRO102",
+   "RESP130",
+   "RESP131",
+   "RESP132",
+   "RESP133",
+   "RESP134",
+   "RESP135",
+   "RESP136",
+   "RESP137",
+   "RESP139",
+   "RESP230",
+   "RESP231",
+   "RESP232",
+   "RESP233",
+   "RESP234",
+   "RESP235",
+   "RESP236",
+   "RESP237",
+   "RESP238",
+   "RESP50",
+   "RESP51"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/respiratory-care-associate-of-science-degree",
+   "title": "Crafton Hills College - Respiratory Care - Associate of Science Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5061
+ },
+ {
+  "control_number": "04838",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04839",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04840",
+  "title": "Speech",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04841",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04842",
+  "title": "Religious Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04843",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04844",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04845",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04846",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04847",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04849",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04850",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04852",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04853",
+  "title": "Geography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04854",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04855",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04856",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CDEV112",
+   "CDEV126",
+   "CDEV132",
+   "CDEV182",
+   "CDEV212",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+   "title": "Crafton Hills College - Child Development - Associate of Arts Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2707
+ },
+ {
+  "control_number": "07491",
+  "title": "Emergency Medical Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11766",
+  "title": "Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CDEV112",
+   "CDEV126",
+   "CDEV132",
+   "CDEV182",
+   "CDEV212",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement",
+   "title": "Crafton Hills College - Master Teacher Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3762
+ },
+ {
+  "control_number": "11767",
+  "title": "Master Teacher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11768",
+  "title": "Site Supervisor",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17040",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17041",
+  "title": "Multiple Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17042",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18161",
+  "title": "CSU General Education - Breadth",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18162",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18598",
+  "title": "Liberal Studies - Teacher Preparation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18677",
+  "title": "Fine Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.896,
+  "codes_found": [
+   "ART105",
+   "ART120",
+   "ART121",
+   "ART124",
+   "ART126",
+   "ART132",
+   "ART175",
+   "ART226",
+   "ART232",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "COMM110",
+   "DANCE174X4",
+   "ENGL108",
+   "ENGL109",
+   "ENGL226",
+   "MUSIC100",
+   "MUSIC101",
+   "MUSIC102",
+   "MUSIC103",
+   "MUSIC103H",
+   "MUSIC120",
+   "MUSIC120H",
+   "MUSIC132",
+   "MUSIC133",
+   "MUSIC134",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC150X4",
+   "MUSIC164X4",
+   "MUSIC174X4",
+   "MUSIC179X4",
+   "MUSIC180X4",
+   "MUSIC190",
+   "MUSIC195",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC232",
+   "MUSIC233",
+   "MUSIC235",
+   "MUSIC236",
+   "THART100",
+   "THART100H",
+   "THART108",
+   "THART109",
+   "THART110",
+   "THART120",
+   "THART133",
+   "THART150A",
+   "THART150B",
+   "THART150C",
+   "THART150D",
+   "THART174X4",
+   "THART205",
+   "THART220",
+   "THART221",
+   "THART226",
+   "THART250"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multidisciplinary-studies/fine-arts-associate-of-arts-degree",
+   "title": "Crafton Hills College - Fine Arts - Associate of Arts Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 67,
+  "text_chars": 5563
+ },
+ {
+  "control_number": "18678",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18679",
+  "title": "Health Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20894",
+  "title": "Business Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20896",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20906",
+  "title": "Radiologic Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20907",
+  "title": "EMT-Paramedic",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30347",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30451",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL101",
+   "ASL102",
+   "ASL103",
+   "ASL104"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/american-sign-language-asl/american-sign-language-certificate-of-achievement",
+   "title": "Crafton Hills College - American Sign Language Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2431
+ },
+ {
+  "control_number": "30453",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL115"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/american-sign-language-asl/american-sign-language-associate-of-arts-degree",
+   "title": "Crafton Hills College - American Sign Language - Associate of Arts Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2569
+ },
+ {
+  "control_number": "30555",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "ECON100",
+   "ETHS141",
+   "ETHS141H",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC120",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI105",
+   "SOCI130",
+   "SOCI145",
+   "SOCI150",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/sociology-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Sociology for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3249
+ },
+ {
+  "control_number": "30556",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "COMM120",
+   "COMM125",
+   "COMM125H",
+   "COMM135",
+   "COMM140",
+   "COMM174",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H",
+   "ENGL120",
+   "JOUR120",
+   "JOUR135",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Communication Studies for Transfer 2.0 (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3404
+ },
+ {
+  "control_number": "30559",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CSCI110",
+   "CSCI120",
+   "MATH252",
+   "MATH265",
+   "MATH266",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSIC250"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Mathematics 2.0 for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3530
+ },
+ {
+  "control_number": "31355",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BIOLC1000",
+   "PSYC102",
+   "PSYC111",
+   "PSYC118",
+   "PSYC120",
+   "PSYC201",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/psychology-psyc/psychology-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Psychology for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3022
+ },
+ {
+  "control_number": "31384",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM150",
+   "CHEM151",
+   "GEOL100",
+   "GEOL100H",
+   "GEOL101",
+   "GEOL101H",
+   "GEOL112",
+   "GEOL160",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/geology-geol/geology-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Geology for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2692
+ },
+ {
+  "control_number": "31385",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ACCT208",
+   "ACCT209",
+   "BUSAD100",
+   "BUSAD145",
+   "BUSAD210",
+   "COMM145",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH141",
+   "PSYC120"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Business Administration 2.0 for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3127
+ },
+ {
+  "control_number": "31386",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "BUSAD145",
+   "COMM120",
+   "COMM145",
+   "ENGL108",
+   "ENGL109",
+   "ENGL120",
+   "ENGL127",
+   "ENGL150",
+   "ENGL155",
+   "ENGL155H",
+   "ENGL160",
+   "ENGL160H",
+   "ENGL162",
+   "ENGL163",
+   "ENGL164",
+   "ENGL165",
+   "ENGL170",
+   "ENGL175",
+   "ENGL226",
+   "ENGL232",
+   "ENGL250",
+   "ENGL260",
+   "ENGL261",
+   "ENGL270",
+   "ENGL271",
+   "ENGL275",
+   "ENGL280",
+   "ENGL281",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ETHS162",
+   "ETHS163",
+   "ETHS164",
+   "ETHS165",
+   "JOUR120",
+   "RELIG150",
+   "RELIG175",
+   "SPAN103",
+   "SPAN104",
+   "THART100",
+   "THART108",
+   "THART109",
+   "THART226"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/english-engl/english-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in English for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 47,
+  "text_chars": 4412
+ },
+ {
+  "control_number": "31387",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "ENGL108",
+   "ENGL226",
+   "THART100",
+   "THART100H",
+   "THART108",
+   "THART120",
+   "THART220",
+   "THART226"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/theatre-arts-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Theatre Arts for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3016
+ },
+ {
+  "control_number": "31388",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "ANTH110",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ASL102",
+   "ASL103",
+   "ASL104",
+   "ASL115",
+   "COMM135",
+   "COMM174",
+   "ECON100",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGL160",
+   "ENGL160H",
+   "ENGL163",
+   "ENGL280",
+   "ENGL281",
+   "ETHS107",
+   "ETHS141",
+   "ETHS141H",
+   "ETHS163",
+   "GEOG120",
+   "HIST107",
+   "HIST135",
+   "HIST145",
+   "HIST170",
+   "HIST170H",
+   "HIST171",
+   "HIST171H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM140",
+   "JOUR135",
+   "MUSIC103",
+   "MUSIC103H",
+   "MUSIC120",
+   "MUSIC120H",
+   "MUSIC134",
+   "PHIL101",
+   "PHIL101H",
+   "POLS102",
+   "POLS104",
+   "POLS106",
+   "POLS110",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "RELIG100",
+   "RELIG100H",
+   "RELIG101",
+   "RELIG101H",
+   "RELIG110",
+   "RELIG135",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "SPAN103",
+   "SPAN104"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/history-hist/history-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in History for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 69,
+  "text_chars": 5473
+ },
+ {
+  "control_number": "31389",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON100",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "HIST170",
+   "HIST170H",
+   "HIST171",
+   "HIST171H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "POLS104",
+   "POLS106",
+   "POLS110",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC120"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/political-science-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Political Science for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3242
+ },
+ {
+  "control_number": "31418",
+  "title": "Retail Management (WAFC)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT208",
+   "BUSAD103",
+   "BUSAD145",
+   "BUSAD155",
+   "BUSAD200",
+   "COMM145",
+   "COMM155",
+   "COMMC1004",
+   "COMMC1004H",
+   "MARKET100",
+   "MARKET106"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/retail-management-certificate-of-achievement",
+   "title": "Crafton Hills College - Retail Management Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 11,
+  "text_chars": 3043
+ },
+ {
+  "control_number": "31770",
+  "title": "PHYSICS",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH252",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSIC250",
+   "PHYSIC251",
+   "PHYSIC252"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Physics 2.0 for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3042
+ },
+ {
+  "control_number": "32014",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CDEV112",
+   "CDEV126",
+   "CDEV132",
+   "CDEV182",
+   "CDEV212",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/early-childhood-education-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Early Childhood Education for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2828
+ },
+ {
+  "control_number": "33027",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART113",
+   "ART120",
+   "ART121",
+   "ART124",
+   "ART125",
+   "ART126",
+   "ART132",
+   "ART175",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/art-art/studio-arts-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Studio Arts for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3013
+ },
+ {
+  "control_number": "33037",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ANTH100",
+   "ANTH102",
+   "ANTH102H",
+   "ART105",
+   "ART113",
+   "ART120",
+   "ART121",
+   "ART124",
+   "ART126",
+   "ART132",
+   "ART175",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ENGL150",
+   "ENGL160",
+   "ENGL160H",
+   "ENGL163",
+   "ENGL170",
+   "ENGL280",
+   "ENGL281",
+   "ETHS163",
+   "HIST170",
+   "HIST170H",
+   "HIST171",
+   "HIST171H",
+   "HUM140",
+   "PHIL101",
+   "PHIL101H",
+   "RELIG101",
+   "RELIG101H",
+   "RELIG113",
+   "RELIG150",
+   "SPAN103",
+   "SPAN104"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/art-art/art-history-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Art History for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 4029
+ },
+ {
+  "control_number": "33068",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI110",
+   "CSCI120",
+   "CSCI200",
+   "CSCI240",
+   "MATH200",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSIC250",
+   "PHYSIC251"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-science-csci/computer-science-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Computer Science for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2784
+ },
+ {
+  "control_number": "33105",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 116,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33106",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL163",
+   "ETHS163",
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN104"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/spanish-associate-of-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Spanish for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2558
+ },
+ {
+  "control_number": "33107",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "GEOG102",
+   "GEOG102H",
+   "GEOG110",
+   "GEOG110H",
+   "GEOG111",
+   "GEOG111H",
+   "GEOG114",
+   "GEOG115",
+   "GEOG120",
+   "GEOG126",
+   "GEOG175",
+   "GEOL100",
+   "GEOL100H",
+   "GEOL101",
+   "GEOL101H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/geography-geog/geography-associate-in-arts-for-transfer-degree-aat",
+   "title": "Crafton Hills College - Associate in Arts in Geography for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3294
+ },
+ {
+  "control_number": "33145",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANTH100",
+   "ANTH102",
+   "ANTH102H",
+   "ANTH110",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "COMM174",
+   "GEOG102",
+   "GEOG102H",
+   "GEOG120",
+   "GEOL100",
+   "GEOL100H",
+   "GEOL101",
+   "GEOL101H",
+   "GEOL160",
+   "HIST107",
+   "PSYC120",
+   "RELIG101",
+   "RELIG101H",
+   "RELIG110",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/anthropology-anth/anthropology-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Anthropology for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4529
+ },
+ {
+  "control_number": "33232",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ACCT208",
+   "ACCT209",
+   "BUSAD145",
+   "CIS101",
+   "COMM145",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH141",
+   "MATH160",
+   "MATH252",
+   "MATH265",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/economics-econ/economics-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Economics for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3438
+ },
+ {
+  "control_number": "33345",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL101",
+   "PHIL101H",
+   "PHIL103",
+   "PHIL107",
+   "PHIL109",
+   "PHIL110",
+   "RELIG101",
+   "RELIG101H",
+   "RELIG113"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/philosophy-phil/philosophy-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Philosophy for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2932
+ },
+ {
+  "control_number": "33539",
+  "title": "MUSIC",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC102",
+   "MUSIC141X4",
+   "MUSIC150X4",
+   "MUSIC174X4",
+   "MUSIC201",
+   "MUSIC202"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/music-music/music-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Music for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2799
+ },
+ {
+  "control_number": "33545",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.862,
+  "codes_found": [
+   "BIOLC1000",
+   "CDEV295",
+   "CDEVC1000",
+   "CHEM101",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "GEOG120",
+   "GEOL140",
+   "GEOL141",
+   "HIST170",
+   "HIST170H",
+   "HISTC1001",
+   "HISTC1001H",
+   "MATH106",
+   "MUSIC120",
+   "MUSIC120H",
+   "PHYSIC100",
+   "POLSC1000",
+   "POLSC1000H",
+   "THART100",
+   "THART100H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Elementary Teacher Education: Integrated Programs for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4770
+ },
+ {
+  "control_number": "33618",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM150",
+   "CHEM151",
+   "CHEM212",
+   "CHEM213",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSIC250",
+   "PHYSIC251"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/chemistry-chem/chemistry-associate-of-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Chemistry for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2652
+ },
+ {
+  "control_number": "35149",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL130",
+   "BIOL130H",
+   "BIOL131",
+   "BIOL131H",
+   "CHEM150",
+   "CHEM151",
+   "MATHC2210",
+   "PHYSIC110",
+   "PHYSIC111",
+   "PHYSIC250",
+   "PHYSIC251"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/biology-biol/biology-associate-of-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Biology for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2791
+ },
+ {
+  "control_number": "35451",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI110",
+   "CSCI120",
+   "CSCI200",
+   "CSCI240",
+   "MATH200",
+   "MATHC2210"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-science-csci/computer-science-associate-of-science",
+   "title": "Crafton Hills College - Computer Science - Associate of Science",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2622
+ },
+ {
+  "control_number": "35822",
+  "title": "Workforce Literacy Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35849",
+  "title": "Job Readiness Skills",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37652",
+  "title": "Firefighter I Basic Training Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRET115",
+   "KIN/F49"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/fire-technology-firet/firefighter-i-basic-training-academy-certificate-of-achievement",
+   "title": "Crafton Hills College - Firefighter I Basic Training Academy Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3832
+ },
+ {
+  "control_number": "37794",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT150",
+   "ANAT151",
+   "ANTH102",
+   "ANTH102H",
+   "CDEVC1000",
+   "CDEVC1000H",
+   "CHEM150",
+   "CHEM151",
+   "COMM125",
+   "COMM125H",
+   "COMMC1004",
+   "COMMC1004H",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGL120",
+   "HEALTH263",
+   "HEALTH263H",
+   "JOUR120",
+   "MATH160",
+   "MICRO102",
+   "MICRO150",
+   "PSYC120",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Nutrition and Dietetics for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4378
+ },
+ {
+  "control_number": "37876",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38418",
+  "title": "Foundations in English Language and Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38464",
+  "title": "Basic Skills in Math Elementary Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38495",
+  "title": "3D Modeling for Animation, Game Art and Visual Effects",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART121",
+   "MULTI100",
+   "MULTI111",
+   "MULTI150",
+   "MULTI155",
+   "MULTI214",
+   "MULTI250"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/3d-modeling-for-animation-game-art-and-visual-effects-associate-of-science-degree",
+   "title": "Crafton Hills College - 3D Modeling for Animation, Game Art, and Visual Effects - Associate of Science Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3121
+ },
+ {
+  "control_number": "38513",
+  "title": "Multimedia: Graphic and Media Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART120",
+   "ART124",
+   "MULTI100",
+   "MULTI111",
+   "MULTI130",
+   "MULTI131",
+   "MULTI214",
+   "MULTI230"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/multimedia-graphic-and-media-design-associate-of-science-degree",
+   "title": "Crafton Hills College -  Multimedia: Graphic and Media Design - Associate of Science Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2845
+ },
+ {
+  "control_number": "38518",
+  "title": "Cloud Technology Specialists",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS109",
+   "CIS130",
+   "CIS132",
+   "CIS133",
+   "CIS136"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cloud-technology-specialist-certificate-of-achievement",
+   "title": "Crafton Hills College - Cloud Technology Specialist Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 5,
+  "text_chars": 2547
+ },
+ {
+  "control_number": "38519",
+  "title": "Cybersecurity Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS109",
+   "CIS130",
+   "CIS136",
+   "CIS137",
+   "CIS138"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cybersecurity-specialist-certificate-of-achievement",
+   "title": "Crafton Hills College - Cybersecurity Specialist Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2803
+ },
+ {
+  "control_number": "38520",
+  "title": "3D Modeling for Animation, Game Art and Visual Effects",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MULTI100",
+   "MULTI111",
+   "MULTI150",
+   "MULTI155",
+   "MULTI214",
+   "MULTI250"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/3d-modeling-for-animation-game-art-and-visual-effects-certificate-of-achievement",
+   "title": "Crafton Hills College - 3D Modeling for Animation, Game Art, and Visual Effects Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2702
+ },
+ {
+  "control_number": "38521",
+  "title": "Graphic and Media Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART120",
+   "ART124",
+   "MULTI100",
+   "MULTI111",
+   "MULTI130",
+   "MULTI131",
+   "MULTI173",
+   "MULTI214",
+   "MULTI230"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/graphic-and-media-design-certificate-of-achievement",
+   "title": "Crafton Hills College - Graphic and Media Design Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2818
+ },
+ {
+  "control_number": "38537",
+  "title": "Web Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CIS161",
+   "CIS211",
+   "MULTI100",
+   "MULTI170",
+   "MULTI173"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/web-development-certificate-of-achievement",
+   "title": "Crafton Hills College - Web Development Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2504
+ },
+ {
+  "control_number": "38538",
+  "title": "User Interface Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS161",
+   "MULTI100",
+   "MULTI111",
+   "MULTI170",
+   "MULTI173"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/user-interface-design-certificate-of-achievement",
+   "title": "Crafton Hills College - User Interface Design Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2847
+ },
+ {
+  "control_number": "38539",
+  "title": "Multimedia: Web Development and Interface Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS111",
+   "CIS117",
+   "CIS211",
+   "MULTI100",
+   "MULTI111",
+   "MULTI173",
+   "MULTI214"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/multimedia-web-development-and-interface-design-associate-of-science-degree",
+   "title": "Crafton Hills College -  Multimedia: Web Development and Interface Design - Associate of Science Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3106
+ },
+ {
+  "control_number": "41025",
+  "title": "Computer Information Systems: Network Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS109",
+   "CIS130",
+   "CIS132",
+   "CIS134",
+   "CIS135",
+   "CIS140",
+   "CIS141",
+   "CIS142",
+   "CIS95"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-network-administration-associate-of-science-degree",
+   "title": "Crafton Hills College - Computer Information Systems: Network Administration - Associate of Science Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3165
+ },
+ {
+  "control_number": "41140",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT208",
+   "ACCT209",
+   "BUSAD100",
+   "BUSAD145",
+   "BUSAD210",
+   "COMM145",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH141",
+   "MATHC2210",
+   "PSYC120"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Business Administration 2.0 for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3127
+ },
+ {
+  "control_number": "41284",
+  "title": "Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD100",
+   "BUSAD210",
+   "MARKET100",
+   "MARKET106",
+   "MARKET110",
+   "MULTI100"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/marketing-market/marketing-associate-of-arts-degree",
+   "title": "Crafton Hills College - Marketing - Associate of Arts Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2569
+ },
+ {
+  "control_number": "41285",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "ACCT208",
+   "ACCT209",
+   "BUSAD100",
+   "BUSAD210",
+   "BUSAD53"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/accounting-acct/accounting-associate-of-arts-degree",
+   "title": "Crafton Hills College - Accounting - Associate of Arts Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2589
+ },
+ {
+  "control_number": "41286",
+  "title": "CISCO Certified Network Associate",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS140",
+   "CIS141",
+   "CIS142"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cisco-certified-network-associate-certificate-of-achievement",
+   "title": "Crafton Hills College - Cisco Certified Network Associate Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3041
+ },
+ {
+  "control_number": "41335",
+  "title": "Computer Hardware Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CIS130",
+   "CIS140",
+   "CIS95"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement",
+   "title": "Crafton Hills College - Computer Information Systems Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 6,
+  "text_chars": 2716
+ },
+ {
+  "control_number": "41365",
+  "title": "Computer Information Systems: Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41675",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.773,
+  "codes_found": [
+   "ART113",
+   "ASL115",
+   "COMM174",
+   "ENGL160",
+   "ENGL160H",
+   "ENGL163",
+   "ETHS106",
+   "ETHS107",
+   "ETHS132",
+   "ETHS141",
+   "ETHS163",
+   "HIST107",
+   "HIST150",
+   "PSYC120",
+   "PSYC201",
+   "SOCI105",
+   "SOCI145"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree",
+   "title": "Crafton Hills College - Associate in Art in Social Justice: Ethnic Studies for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5331
+ },
+ {
+  "control_number": "42455",
+  "title": "Certified Nursing Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43313",
+  "title": "Respiratory Care",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RESP301",
+   "RESP302",
+   "RESP303",
+   "RESP401",
+   "RESP402",
+   "RESP403",
+   "RESP404",
+   "RESP405",
+   "RESP406",
+   "RESP407",
+   "RESP408",
+   "RESP409",
+   "RESP410"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/bachelor-of-science-in-respiratory-care",
+   "title": "Crafton Hills College - Bachelor of Science in Respiratory Care",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 10906
+ },
+ {
+  "control_number": "43530",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "COMM120",
+   "COMM125",
+   "COMM125H",
+   "COMM135",
+   "COMM140",
+   "COMM174",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H",
+   "ENGL120",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "JOUR120",
+   "JOUR135",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Communication Studies for Transfer 2.0 (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3404
+ },
+ {
+  "control_number": "43604",
+  "title": "Acute Care Nursing Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43611",
+  "title": "Home Health Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44042",
+  "title": "Essential ASL and Deaf Culture for Customer Service Professionals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44088",
+  "title": "Mathematics for Medical Professionals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44341",
+  "title": "Library Support Staff",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIBR101",
+   "LIBR102",
+   "LIBR103",
+   "LIBR104",
+   "LIBR105",
+   "LIBR106",
+   "LIBR107"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/library-science-libr/library-support-staff-certificate-of-achievement",
+   "title": "Crafton Hills College - Library Support Staff Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3336
+ },
+ {
+  "control_number": "44342",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44736",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT150",
+   "ANAT151",
+   "BIOLC1000",
+   "CHEM101",
+   "CHEM150",
+   "GEOG175",
+   "HEALTH104",
+   "MICRO102",
+   "MICRO150",
+   "PSYC118",
+   "PSYC120",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI105",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/public-health-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Public Health for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3756
+ },
+ {
+  "control_number": "44803",
+  "title": "Phlebotomy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44826",
+  "title": "Basic Spanish Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN104"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/basic-spanish-language-certificate-of-achievement",
+   "title": "Crafton Hills College - Basic Spanish Language Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2368
+ },
+ {
+  "control_number": "45083",
+  "title": "Personal Trainer",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45714",
+  "title": "California General Education Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.949,
+  "codes_found": [
+   "ANAT101",
+   "ANAT150",
+   "ANAT151",
+   "ANTH100",
+   "ANTH102",
+   "ANTH102H",
+   "ANTH110",
+   "ANTH125",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC1001L",
+   "ART103",
+   "ART105",
+   "ART113",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ASL102",
+   "ASL103",
+   "ASL104",
+   "ASL105",
+   "ASL115",
+   "ASTRC1001",
+   "ASTRC1001L",
+   "BIOL123",
+   "BIOL130",
+   "BIOL130H",
+   "BIOL131",
+   "BIOL131H",
+   "BIOLC1000",
+   "CDEV126",
+   "CDEV182",
+   "CDEVC1000",
+   "CDEVC1000H",
+   "CHEM101",
+   "CHEM102",
+   "CHEM123",
+   "CHEM150",
+   "CHEM151",
+   "CHEM212",
+   "CHEM213",
+   "COMM135",
+   "COMM174",
+   "COMMC1000",
+   "COMMC1000H",
+   "CSCI200",
+   "DANCE200",
+   "DANCE200H",
+   "ECON100",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGL108",
+   "ENGL109",
+   "ENGL150",
+   "ENGL155",
+   "ENGL155H",
+   "ENGL160",
+   "ENGL160H",
+   "ENGL162",
+   "ENGL163",
+   "ENGL164",
+   "ENGL165",
+   "ENGL170",
+   "ENGL175",
+   "ENGL226",
+   "ENGL250",
+   "ENGL260",
+   "ENGL261",
+   "ENGL270",
+   "ENGL271",
+   "ENGL275",
+   "ENGL280",
+   "ENGL281",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ETHS106",
+   "ETHS107",
+   "ETHS132",
+   "ETHS141",
+   "ETHS141H",
+   "ETHS162",
+   "ETHS163",
+   "ETHS164",
+   "ETHS165",
+   "GEOG102",
+   "GEOG102H",
+   "GEOG110",
+   "GEOG110H",
+   "GEOG111",
+   "GEOG111H",
+   "GEOG114",
+   "GEOG115",
+   "GEOG120",
+   "GEOG126",
+   "GEOL100",
+   "GEOL100H",
+   "GEOL101",
+   "GEOL101H",
+   "GEOL112",
+   "GEOL113",
+   "GEOL140",
+   "GEOL141",
+   "GEOL150",
+   "GEOL150H",
+   "GEOL160",
+   "GEOL250",
+   "HEALTH104",
+   "HIST107",
+   "HIST135",
+   "HIST145",
+   "HIST150",
+   "HIST170",
+   "HIST170H",
+   "HIST171",
+   "HIST171H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM101",
+   "HUM102",
+   "HUM140",
+   "JOUR135",
+   "MATH102",
+   "MATH107",
+   "MATH115",
+   "MATH141",
+   "MATH160",
+   "MATH200",
+   "MATH252",
+   "MATH265",
+   "MATH266",
+   "MATHC2210",
+   "MATHC2220",
+   "MICRO102",
+   "MICRO150",
+   "MUSIC100",
+   "MUSIC103",
+   "MUSIC103H",
+   "MUSIC120",
+   "MUSIC120H",
+   "MUSIC134",
+   "OCEAN100",
+   "OCEAN101",
+   "OCEAN101H",
+   "PHIL101",
+   "PHIL101H",
+   "PHIL103",
+   "PHIL103H",
+   "PHIL105",
+   "PHIL105H",
+   "PHIL107",
+   "PHIL109",
+   "PHYSIC100",
+   "PHYSIC110",
+   "PHYSIC111",
+   "PHYSIC250",
+   "PHYSIC251",
+   "PHYSIC252",
+   "POLS102",
+   "POLS104",
+   "POLS106",
+   "POLS110",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC102",
+   "PSYC111",
+   "PSYC118",
+   "PSYC120",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "RELIG100",
+   "RELIG100H",
+   "RELIG101",
+   "RELIG101H",
+   "RELIG110",
+   "RELIG113",
+   "RELIG120",
+   "RELIG135",
+   "RELIG150",
+   "RELIG175",
+   "RELIG176",
+   "SOCI105",
+   "SOCI130",
+   "SOCI145",
+   "SOCI150",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "SPAN103",
+   "SPAN104",
+   "STATC1000",
+   "STATC1000H",
+   "THART100",
+   "THART100H",
+   "THART108",
+   "THART109",
+   "THART226"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement",
+   "title": "Crafton Hills College - Cal-GETC",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 215,
+  "text_chars": 7145
+ },
+ {
+  "control_number": "45730",
+  "title": "Transitional Kindergarten (TK) Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV132",
+   "CDEV133",
+   "CDEV134",
+   "CDEV137",
+   "CDEV182",
+   "CDEV212",
+   "CDEV250",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/transitional-kindergarten-teacher-certificate-of-achievement",
+   "title": "Crafton Hills College - Transitional Kindergarten (TK) Teacher Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2740
+ },
+ {
+  "control_number": "46010",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH102",
+   "VNUR10",
+   "VNUR11",
+   "VNUR11L",
+   "VNUR12",
+   "VNUR12L",
+   "VNUR13"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/vocational-nursing/vocational-nursing-certificate-of-achievement",
+   "title": "Crafton Hills College - Vocational Nursing - Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4276
+ },
+ {
+  "control_number": "46011",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH102",
+   "VNUR10",
+   "VNUR11",
+   "VNUR11L",
+   "VNUR12",
+   "VNUR12L",
+   "VNUR13"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/vocational-nursing/vocational-nursing-associate-of-science",
+   "title": "Crafton Hills College - Vocational Nursing- Associate of Science",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4276
+ },
+ {
+  "control_number": "46347",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.927,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "BUSAD210",
+   "COMM125",
+   "COMM125H",
+   "COMM174",
+   "COMMC1000",
+   "COMMC1000H",
+   "COUN100",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHS132",
+   "ETHS132H",
+   "ETHS141",
+   "ETHS141H",
+   "GEOG102",
+   "GEOG102H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL105",
+   "PHIL105H",
+   "POLS104",
+   "POLS106",
+   "POLS110",
+   "PSYC120",
+   "SOCI105",
+   "SOCI132H",
+   "SOCI145",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/law-public-policy-and-society-associate-in-arts-for-transfer-degree-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Law, Public Policy, and Society for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 4919
+ },
+ {
+  "control_number": "46384",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "BIOLC1000",
+   "CDEV295",
+   "CDEVC1000",
+   "CDEVC1000H",
+   "CHEM101",
+   "COMMC1000",
+   "COMMC1000H",
+   "DANCE200",
+   "DANCE200H",
+   "EDU290",
+   "ENGL155",
+   "ENGL155H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "GEOG102",
+   "GEOG102H",
+   "GEOG120",
+   "GEOL140",
+   "GEOL141",
+   "HIST145",
+   "HIST170",
+   "HIST170H",
+   "HISTC1001",
+   "HISTC1001H",
+   "MATH106",
+   "MUSIC120",
+   "MUSIC120H",
+   "PHYSIC100",
+   "POLSC1000",
+   "POLSC1000H",
+   "THART100",
+   "THART100H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t",
+   "title": "Crafton Hills College - Associate in Arts in Elementary Teacher Education: Integrated Programs for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4770
+ },
+ {
+  "control_number": "46391",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS113",
+   "CSCI110",
+   "CSCI112",
+   "CSCI120",
+   "CSCI240",
+   "MATH252",
+   "MATH265",
+   "MATH266",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSIC250"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Mathematics 2.0 for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3530
+ },
+ {
+  "control_number": "46553",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI110",
+   "CSCI112",
+   "MATH252",
+   "MATH265",
+   "MATH266",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSIC250",
+   "PHYSIC251",
+   "PHYSIC252"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t",
+   "title": "Crafton Hills College - Associate in Science in Physics 2.0 for Transfer (AS-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3254
+ }
+]

@@ -1,0 +1,465 @@
+{
+ "college": "Crafton Hills College",
+ "control_number": "46347",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/law-public-policy-and-society-associate-in-arts-for-transfer-degree-aa-t",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8909,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8909,
+    "output_tokens": 4123,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4123,
+  "output_tokens_details": {
+   "thinking_tokens": 1722
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1181,
+ "ms": 31784,
+ "seconds": 32.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 38,
+   "listed": 41,
+   "share": 0.927,
+   "missing": [
+    "SOC132",
+    "SOC141",
+    "SOC141H"
+   ],
+   "unexplained": [
+    "SOC132",
+    "SOC141",
+    "SOC141H"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "POLSC1000",
+    "POLSC1000H",
+    "SOCI132",
+    "SOCI141",
+    "SOCI141H"
+   ],
+   "flagged": [
+    "POLSC1000",
+    "POLSC1000H"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    33.0
+   ],
+   "stated": [
+    32.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Law, Public Policy, and Society for Transfer (AA-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CAL-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze American political and legal institutions.",
+    "Apply ethical reasoning and critical thinking.",
+    "Communicate effectively through speaking and writing.",
+    "Understand social behavior and economic principles.",
+    "Analyze historical and cultural contexts."
+   ],
+   "careers": [
+    "legal",
+    "governmental",
+    "public service fields"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSAD 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 125",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 125H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 105H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 120",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select two courses (6 units) from two of the areas listed below",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 102H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 132H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 132",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 132H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 102H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 141H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS 141",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS 141H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "In the core, ENGL C1001/C1001H OR COMM 125/125H, STAT C1000/C1000H OR PSYC 120, and HIST C1001/C1001H OR HIST C1002/C1002H are each recorded as one required entry with alternatives.",
+   "List A requires two courses from two different areas: Area 1 Economics (ECON C2001, ECON C2002), Area 2 Political Science (POLS 104, 106, 110), Area 3 Public Policy (SOCI 105), Area 4 Diversity (SOCI 105, ANTH 102, COMM 174, ETHS/SOCI 132, GEOG 102, SOCI/ETHS 141, SOCI 145), Area 5 College Success (COUN 100). Courses must not have been used above. SOCI 105 appears under both Area 3 and Area 4 and is listed once.",
+   "The catalog prints SOCI 132, SOCI 141 and SOCI 141H; the closed list stores them as SOC 132, SOC 141, SOC 141H (same titles). They were treated as the same courses, not catalog additions. Closed-list codes without spaces (ANTH102, SOCI105, SOCI132H, SOCI145) were matched to the catalog's spaced codes.",
+   "POLS C1000 and POLS C1000H (American Government and Politics) are not in the closed list and are marked as catalog additions.",
+   "The catalog labels the total 'TOTAL CREDIT HOURS: 32.00-33.00'; recorded as units (credit program). It equals the core (26-27) plus List A (6).",
+   "The outcomes are printed under 'A student receiving a degree/certificate in the field will be able to:' and were recorded for this award."
+  ]
+ },
+ "extracted_run": "39093935031"
+}
