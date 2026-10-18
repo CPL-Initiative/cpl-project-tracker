@@ -1,0 +1,20 @@
+{
+ "_readme": "S415 SkyRedbud, 2026-10-18. San Joaquin Delta's reconcile (run 39116289105, branch claude/s414-slash-delta) rescored 28 records that passed their major total against the degree total under record shape 6, and they fail: 18 + general education 27-34 = 45-52 against 60. The records read electives_fill_degree false. This read prints how each page words the degree's 60 units and its electives, so the call is made from the page. Four loads, no model call.",
+ "college": "San Joaquin Delta College",
+ "questions": {
+  "degree_line": "The words each page prints around the degree's unit total, general education and electives."
+ },
+ "keywords": [
+  "[^<>\"]{0,160}\\b60\\b[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,160}",
+  "[Mm]inimum[^<\"]{0,120}",
+  "General Education[^<\"]{0,80}",
+  "[Tt]otal[^<\"]{0,80}"
+ ],
+ "pages": [
+  {"answers": ["degree_line"], "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3296&print"},
+  {"answers": ["degree_line"], "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print"},
+  {"answers": ["degree_line"], "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3191&print"},
+  {"answers": ["degree_line"], "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3264&print"}
+ ]
+}
