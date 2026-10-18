@@ -33,8 +33,8 @@ was empty at 09:15Z (https://claude.ai/artifact/MZXYEqiNitiWGiTakDHUwW, current,
 
 ## In flight at sign-off (check each first)
 
-1. **#2224**: merge it when `test` is green on its head, if S414 did not (read the PR). Then dispatch
-   `program-requirements-college.yml` on `main` with `step=display`, and read its applied record on `main`.
+1. **#2224 merged** (`34eb3e48`, 11:05Z) and its display apply was dispatched on `main` (`step=display`). Read its
+   applied record (`Applied record: the page's display build (run N)` on `main`); if it failed, dispatch it again.
 2. **Branch `claude/s414-slash-delta`** (not in #2224): San Joaquin Delta's reconcile (run 39116289105) fixes its two
    `THART/S` records but rescored 204 others under the later degree-total check, 152 to 126 passing. Decide whether the
    28 new arithmetic failures are true readings before any reread; if they are, merge `main` into it, reread, and add
