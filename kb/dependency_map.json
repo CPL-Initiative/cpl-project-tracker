@@ -375,7 +375,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6780
+     "line": 6785
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -1172,7 +1172,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4920
+     "line": 4925
     }
    ],
    "main_committers": []
@@ -2128,7 +2128,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5785
+     "line": 5790
     }
    ],
    "main_committers": []
@@ -19659,7 +19659,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3587
+     "line": 3592
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -19789,7 +19789,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5550
+     "line": 5555
     }
    ],
    "main_committers": []
@@ -19881,7 +19881,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6394
+     "line": 6399
     }
    ],
    "main_committers": []
@@ -19971,7 +19971,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4243
+     "line": 4248
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -20147,7 +20147,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5554
+     "line": 5559
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -20351,7 +20351,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7039
+     "line": 7044
     },
     {
      "id": "module:sierra_training.js",
@@ -20373,7 +20373,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3849
+     "line": 3854
     },
     {
      "id": "script:kb/_course_title_cleanup_apply.py",
@@ -20545,7 +20545,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4256
+     "line": 4261
     }
    ],
    "main_committers": []
@@ -21746,7 +21746,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4566
+     "line": 4571
     },
     {
      "id": "module:college_briefing.js",
@@ -22504,7 +22504,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3612
+     "line": 3617
     },
     {
      "id": "module:cpl_pathways.js",
@@ -22826,7 +22826,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6153
+     "line": 6158
     },
     {
      "id": "module:sierra_training.js",
@@ -22858,7 +22858,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5241
+     "line": 5246
     },
     {
      "id": "module:sierra_training.js",
