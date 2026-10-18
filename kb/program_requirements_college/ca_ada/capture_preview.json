@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 127,
  "with_closed_list": 75,
- "started": "2026-10-18T07:17:52Z",
+ "started": "2026-10-18T19:53:38Z",
  "pdf": {
   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf",
   "access": "hand_filed",
@@ -66,39 +66,43 @@
    {
     "control_number": "05717",
     "pages": [
+     184,
+     185,
+     186,
      187
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 187] 187 DEGREES & CERTIFICATES 2. Develop competitive industry standard skills in the respective ﬁelds. 3. Understand the elements and principles of design through discipline-speciﬁc implementation. AS Degree Requ"
+    "opens": "[page 184] AS Custom Dressmaking/Small Business Oriented The fashion department gives students a thorough introduction to apparel design and manufacturing. Students are prepared to ﬁnd employment in an apparel design ﬁr"
    },
    {
     "control_number": "05722",
     "pages": [
+     222,
      223,
      224
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 223] 223 DEGREES & CERTIFICATES critical thinking and communication skills applicable to a wide range of professional contexts. Professions that are of particular relevance to philosophy include law, business, gove"
+    "opens": "[page 222] AA Philosophy Philosophy is a disciplined reﬂection on the human condition. It can be an analysis and criticism of ideas and statements, or an attempt to synthesize all experience and knowledge, or an explora"
    },
    {
     "control_number": "05735",
     "pages": [
      192
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 192] 192 MEDA 100 Introduction to Medical Assisting 3 units MGMT 100 Introduction to Business Management 3 units ENGL C1002 Introduction to Literature 3 units Total Required Units: 12 Total Required Units: 12 GEOGR"
+    "opens": "[page 192] AA Geography Geography provides insights about the earth as the human habitat. It is a way of looking at the earth, not an inventory of its contents. This viewpoint rests on fundamental interlocking concepts."
    },
    {
     "control_number": "10247",
@@ -108,7 +112,7 @@
      151,
      152
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -123,12 +127,12 @@
      169,
      170
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 167] 167 DEGREES & CERTIFICATES MART 372 Digital Illustration 3 units MART 376 Introduction to Digital Imaging 3 units MART 380 Advanced Digital Animation 3 units MART 394 Interaction Design 3 units MART 422 Introd"
+    "opens": "[page 167] AA Digital Art and Animation The Digital Art and Animation Department provides courses taught by faculty with extensive academic, professional, and industry experience. Students are guided through the departm"
    },
    {
     "control_number": "15052",
@@ -136,12 +140,12 @@
      186,
      187
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 186] 186 FASH 151 Fashion Merchandising 3 units FASH 225 Apparel Analysis 3 units FASH 226 Visual Merchandising and Display 3 units Total Required Major Units: 18 And required General Education coursework and elect"
+    "opens": "[page 186] AS Technical (Apparel Industry Oriented) The fashion department gives students a thorough introduction to apparel design and manufacturing. Students are prepared to ﬁnd employment in an apparel design ﬁrm or "
    },
    {
     "control_number": "15654",
@@ -149,12 +153,12 @@
      169,
      170
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 169] 169 DEGREES & CERTIFICATES MART 389 Digital Media Careers 1.5 units MART 390 Portfolio Creation 1.5 units Selective Courses, choose a minimum of 6 units from the following: Units MART 325 Digital Painting 3 un"
+    "opens": "[page 169] CA Graphic Design This certiﬁcate prepares students for the career of graphic design. Graphic Designers are typically responsible for graphic design production and pre press production. Graphic Designers crea"
    },
    {
     "control_number": "16816",
@@ -174,47 +178,47 @@
    {
     "control_number": "20425",
     "pages": [
+     151,
      152,
      153,
-     154,
-     155
+     154
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 152] 152 Career Opportunities The certiﬁcate of achievement in business administration supports entry-level employment in jobs requiring some general business skills. Program Learning Outcomes Students completing t"
+    "opens": "[page 151] 151 DEGREES & CERTIFICATES MGMT 100 Introduction to Business Management 3 units List B, complete 3 units from the following: Units ANTH 110 Cultural Anthropology 3 units COMM C1000 Introduction to Public Speak"
    },
    {
     "control_number": "20426",
     "pages": [
+     154,
      155,
      156,
-     157,
-     158
+     157
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 155] 155 DEGREES & CERTIFICATES program is to prepare students with relevant tools in exploring various pathways to entrepreneurship. Career Opportunities Career opportunities include small business owners, entrepr"
+    "opens": "[page 154] 154 BUS. 101 Human Relations in the Workplace 3 units BUS. 401 Business Communications 3 units MGMT 100 Introduction to Business Management 3 units Selective Courses, choose 3 units from the following: Units B"
    },
    {
     "control_number": "20427",
     "pages": [
-     149,
-     150,
-     151,
-     152
+     154,
+     155,
+     156,
+     157
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 149] 149 DEGREES & CERTIFICATES transportation. This program prepares students for mid- level supervision positions. Program Learning Outcomes Students completing this program will be able to: 1. Design and manage "
+    "opens": "[page 154] 154 BUS. 101 Human Relations in the Workplace 3 units BUS. 401 Business Communications 3 units MGMT 100 Introduction to Business Management 3 units Selective Courses, choose 3 units from the following: Units B"
    },
    {
     "control_number": "20430",
@@ -234,42 +238,41 @@
    {
     "control_number": "20432",
     "pages": [
-     167,
      168,
      169,
      170
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 167] 167 DEGREES & CERTIFICATES MART 372 Digital Illustration 3 units MART 376 Introduction to Digital Imaging 3 units MART 380 Advanced Digital Animation 3 units MART 394 Interaction Design 3 units MART 422 Introd"
+    "opens": "[page 168] 168 devices, apps, location-based entertainment, eLearning, accident re-creation, courtroom animation, simulations, product design. Program Learning Outcomes Students completing this program will be able to: 1"
    },
    {
     "control_number": "20438",
     "pages": [
      187
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 187] 187 DEGREES & CERTIFICATES 2. Develop competitive industry standard skills in the respective ﬁelds. 3. Understand the elements and principles of design through discipline-speciﬁc implementation. AS Degree Requ"
+    "opens": "[page 187] CA Custom Dressmaking/Small Business Oriented The fashion design department gives students a thorough introduction to apparel design and manufacturing. Students are prepared to ﬁnd employment in an apparel de"
    },
    {
     "control_number": "20440",
     "pages": [
-     186,
-     187
+     188,
+     189
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 186] 186 FASH 151 Fashion Merchandising 3 units FASH 225 Apparel Analysis 3 units FASH 226 Visual Merchandising and Display 3 units Total Required Major Units: 18 And required General Education coursework and elect"
+    "opens": "[page 188] CA Technical (Apparel Industry Oriented) The fashion department gives students a thorough introduction to apparel design and manufacturing. Students are prepared to ﬁnd employment in an apparel design ﬁrm or "
    },
    {
     "control_number": "30385",
@@ -293,24 +296,25 @@
      172,
      173
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 170] 170 MART 442 History of Video Games 3 units MART 443 Game Design Fundamentals 3 units MART 445 3D Game Scripting 3 units MART 446 Storytelling with Media 3 units MART 447 3D Level Design 3 units MART 450 Colla"
+    "opens": "[page 170] AS Earth Science A major in earth science prepares students for further study in the areas of geology, oceanography, meteorology and earth science. Each of these ﬁelds study features of the earth. Career Oppo"
    },
    {
     "control_number": "30741",
     "pages": [
-     127
+     215,
+     216
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 127] 127 COURSE AVAILABILITY PER SEMESTER Department Course Section Course Title Semester Oﬀered Digital Art and Animation MART 405 Storyboard Development for Animation and Interactive Media Every Fall Digital Art "
+    "opens": "[page 215] AS-T Mathematics 2.0 The Mathematics 2.0 Transfer Degree provides the foundation for studying engineering, the physical, biological, and health sciences, economics, business, computer science, statistics, and"
    },
    {
     "control_number": "30825",
@@ -344,12 +348,12 @@
      203,
      204
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 202] 202 CA Home Staging The Interior Design Department oﬀers courses designed for individuals interested in preparing for careers in the professional ﬁelds of interior design. Included in the program are a transf"
+    "opens": "[page 202] CA Home Staging The Interior Design Department oﬀers courses designed for individuals interested in preparing for careers in the professional ﬁelds of interior design. Included in the program are a transfer p"
    },
    {
     "control_number": "30881",
@@ -399,7 +403,7 @@
      179,
      180
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -412,7 +416,7 @@
      237,
      238
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -438,12 +442,12 @@
      191,
      192
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 190] 190 GENERAL STUDIES CA Certiﬁcate of Achievement Pathways to Student Success .......................................16 units Preparation for Academic Scholarship and Success (PASS)............................"
+    "opens": "[page 190] CA Pathways to Student Success The Pathways to Student Success certiﬁcate of achievement acknowledges students' completion of the ﬁrst level of college work in English, reading, math, and other academic and t"
    },
    {
     "control_number": "32197",
@@ -475,27 +479,29 @@
    {
     "control_number": "32400",
     "pages": [
+     139,
      140
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.727,
-    "opens": "[page 140] 140 Program Learning Outcomes Students completing this program will be able to: 1. Analyze social science concepts and theories. 2. Evaluate diverse viewpoints related to humans. 3. Produce evidence-based argu"
+    "opens": "[page 139] AA-T Anthropology Anthropology is the study of humanity. It introduces students to the concept of ethnocentrism and cross-cultural perspectives of the world. Anthropologists typically work in research organiz"
    },
    {
     "control_number": "32452",
     "pages": [
+     140,
      141,
      142
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 141] 141 DEGREES & CERTIFICATES Major: Core and Selective Requirements** Complete Core Courses, 15 units Units ARTH 102 Late Medieval, Renaissance and Baroque Art History 3 units ARTH 103 Art of Europe and America:"
+    "opens": "[page 140] AA-T Studio Arts The Studio Arts major provides students with a solid foundation in the practice of creating art. It is designed for students who wish to transfer to a four-year school as an Art Major. Career"
    },
    {
     "control_number": "32514",
@@ -516,7 +522,20 @@
      165,
      166
     ],
-    "named": false,
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] CA Computer Science - Java Completion of this Certiﬁcate of Achievement prepares students for work using the Java programming language. Career Opportunities A basic knowledge of computer structure and program"
+   },
+   {
+    "control_number": "32526",
+    "pages": [
+     165,
+     166
+    ],
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -524,24 +543,12 @@
     "opens": "[page 165] 165 DEGREES & CERTIFICATES 1. Apply knowledge of math, science and computer science to identify, formulate and solve computer science problems. 2. communicate eﬀectively and work well in situations that requir"
    },
    {
-    "control_number": "32526",
-    "pages": [
-     166
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 166] 166 Major: Core and Selective Requirements Complete Core Courses, 16 units Units CIS 118 Introduction to Computer Science 4 units CIS 242 Computer Architecture and Assembly Language 3 units CIS 262 Discrete Ma"
-   },
-   {
     "control_number": "32527",
     "pages": [
      165,
      166
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -616,27 +623,29 @@
    {
     "control_number": "32833",
     "pages": [
+     336,
      337,
      338
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.556,
-    "opens": "[page 337] 337 COURSE DESCRIPTIONS POLS 150 INTRODUCTION TO POLITICAL THEORY This class provides the foundation for the study of political science, politics and the nature of government. Examination of various fundamenta"
+    "coverage": 0.778,
+    "opens": "[page 336] Transfer Credit: CSU Political Science POLS 103 CRITICAL THINKING AND POLITICAL ANALYSIS This course examines the deﬁnitional and contextual nature of political analysis. It develops a critical thinking appro"
    },
    {
     "control_number": "33317",
     "pages": [
+     138,
      139
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 139] 139 DEGREES & CERTIFICATES deductions, processing requests for paycheck advances, and processing terminations. Career Opportunities Assistant Payroll Clerk, Payroll Clerk Program Learning Outcomes Students com"
+    "opens": "[page 138] 138 Career Opportunities The Certiﬁcate of Achievement is designed for those individuals that are interested in job opportunities at the entry level in bookkeeping and or computerized accounting data entry. Th"
    },
    {
     "control_number": "33608",
@@ -688,12 +697,12 @@
      175,
      176
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 173] 173 DEGREES & CERTIFICATES CHILDHOOD EDUCATION/ EDUCATION AA-T Associate in Arts Degree for Transfer Child and Adolescent Development............................60 units AS Associate in Science Degree Progra"
+    "opens": "[page 173] AA-T Child and Adolescent Development Knowledge of human growth and development gives a student an advantage in any pursuit that includes working with others. Majors explore growth and development from multip"
    },
    {
     "control_number": "35971",
@@ -706,20 +715,21 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 182] The Environmental Science AS degree provides a strong and broad scientiﬁc foundation to prepare students for transfer into bachelor's degree programs in Environmental Science or Environmental Studies. This AS "
+    "opens": "[page 182] AS Environmental Science The Environmental Science AS degree provides a strong and broad scientiﬁc foundation to prepare students for transfer into bachelor's degree programs in Environmental Science or Envir"
    },
    {
     "control_number": "35986",
     "pages": [
+     178,
      179,
      180
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 179] 179 DEGREES & CERTIFICATES Career Opportunities Engineering is one of the highest paid professions in the country. Engineering graduates work in a variety job functions (research and development, testing, desi"
+    "opens": "[page 178] 178 AS Engineering Engineering is one of the largest professions in the United States with over one million jobs in ﬁelds ranging from airplane design to pollution control. The four largest branches are civil"
    },
    {
     "control_number": "36025",
@@ -729,12 +739,12 @@
      230,
      231
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.885,
-    "opens": "[page 228] 228 AA-T Law, Public Policy, and Society This interdisciplinary area of emphasis focuses on the development of communication skills, introduces students to the legal ﬁeld, and prepares students for further st"
+    "opens": "[page 228] AA-T Law, Public Policy, and Society This interdisciplinary area of emphasis focuses on the development of communication skills, introduces students to the legal ﬁeld, and prepares students for further study "
    },
    {
     "control_number": "36056",
@@ -751,101 +761,103 @@
    {
     "control_number": "36721",
     "pages": [
+     152,
      153,
      154,
-     155,
-     156
+     155
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 153] 153 DEGREES & CERTIFICATES oﬃce and administrative support in a variety of ﬁelds or businesses. This certiﬁcate is a job readiness certiﬁcate for oﬃce workers, and was developed with local employers. Essential"
+    "opens": "[page 152] 152 Career Opportunities The certiﬁcate of achievement in business administration supports entry-level employment in jobs requiring some general business skills. Program Learning Outcomes Students completing t"
    },
    {
     "control_number": "36942",
     "pages": [
-     151,
-     152,
-     153,
-     154
+     156,
+     157,
+     158,
+     159
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.727,
-    "opens": "[page 151] 151 DEGREES & CERTIFICATES MGMT 100 Introduction to Business Management 3 units List B, complete 3 units from the following: Units ANTH 110 Cultural Anthropology 3 units COMM C1000 Introduction to Public Speak"
+    "opens": "[page 156] CA Marketing As an introduction to the world of marketing, this certiﬁcate is about creating customer value and engagement in a fast-changing, increasingly digital and social marketplace. Students will learn "
    },
    {
     "control_number": "37122",
     "pages": [
+     195,
      196,
      197,
-     198,
-     199
+     198
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 196] 196 1. View the client as a whole person in the context of family, culture, and community in assessing the client's strengths and needs. 2. Demonstrate a working knowledge of public and private entities that d"
+    "opens": "[page 195] 195 DEGREES & CERTIFICATES List B, Area 1, select 1 course, 3 units: (HIST 104 or 106 can be used to satisfy this area if not used in list A) Units ETHN 103 Asian American Studies 3 units ETHN 105 African Amer"
    },
    {
     "control_number": "37156",
     "pages": [
-     148,
-     149,
-     150,
-     151
+     152,
+     153,
+     154,
+     155
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 148] 148 BUS. 401 Business Communications 3 units EDUC 249 Redeﬁning Leadership: Individuals Eﬀecting Change 3 units Total Required Major Units: 29 And required General Education coursework and electives as needed "
+    "opens": "[page 152] CA Business Assistant The Business Assistant certiﬁcate oﬀers an advanced layer of core training for business and oﬃce assistants for a variety of duties. The business assistant curriculum enriches the chosen"
    },
    {
     "control_number": "37973",
     "pages": [
+     176,
      177
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 177] 177 DEGREES & CERTIFICATES and practical application involving issues related to youth learning and development. Career Opportunities Individuals taking this certiﬁcate will learn knowledge and skills to suppo"
+    "opens": "[page 176] 176 3. Positive Behavior Support, and 4. Culminating experience requiring observation and case-analysis Career Opportunities Paraprofessional (PreK-12); Early Intervention Assistant; Early Childhood Special Ed"
    },
    {
     "control_number": "37974",
     "pages": [
-     149,
-     150,
-     151,
-     152
+     155,
+     156,
+     157,
+     158
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 149] 149 DEGREES & CERTIFICATES transportation. This program prepares students for mid- level supervision positions. Program Learning Outcomes Students completing this program will be able to: 1. Design and manage "
+    "opens": "[page 155] CA Human Relations in the Workplace This certiﬁcate is an introduction to how to eﬀectively manage interpersonal workplace relationships. Students learn eﬀective professional business communication techniques"
    },
    {
     "control_number": "38514",
     "pages": [
+     169,
      170
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.929,
-    "opens": "[page 170] 170 MART 442 History of Video Games 3 units MART 443 Game Design Fundamentals 3 units MART 445 3D Game Scripting 3 units MART 446 Storytelling with Media 3 units MART 447 3D Level Design 3 units MART 450 Colla"
+    "coverage": 1.0,
+    "opens": "[page 169] 169 DEGREES & CERTIFICATES MART 389 Digital Media Careers 1.5 units MART 390 Portfolio Creation 1.5 units Selective Courses, choose a minimum of 6 units from the following: Units MART 325 Digital Painting 3 un"
    },
    {
     "control_number": "38824",
@@ -853,12 +865,12 @@
      221,
      222
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 221] 221 DEGREES & CERTIFICATES Major: Core and Selective Requirements Complete Core Courses, 18 units Units CBOT 435 Spreadsheets 3 units LEGL 241 Law Oﬃce Management 3 units LEGL 249 Introduction to the Legal Sys"
+    "opens": "[page 221] CA Litigation The Paralegal Program was developed in cooperation with the San Mateo County Bar Association and the San Mateo County Legal Secretaries Association (now the San Mateo County Legal Professionals "
    },
    {
     "control_number": "40391",
@@ -867,7 +879,7 @@
      176,
      177
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
@@ -877,15 +889,15 @@
    {
     "control_number": "40834",
     "pages": [
-     95,
-     96
+     183,
+     184
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 95] GENERAL EDUCATION AND DEGREE REQUIREMENT WORKSHEETS www.canadacollege.edu 2026-2027 Catalog 95 Continues on next page California General Education Transfer Curriculum (Cal-GETC) 2026-2027 Cal-GETC is a general "
+    "opens": "[page 183] AA Ethnic Studies Ethnic studies is a multidisciplinary ﬁeld focused on the analysis of socially-constructed categories such as race, ethnicity, gender, sexual identity, nationality and (non)citizenship. Usin"
    },
    {
     "control_number": "41287",
@@ -907,24 +919,25 @@
     "pages": [
      225
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 225] 225 DEGREES & CERTIFICATES 4. Use techniques, skills, and modern engineering and computer tools necessary for optics and photonics engineering practice. Major: Core Requirements Complete Core Courses, 18 units"
+    "opens": "[page 225] CA Advanced Optics and Photonics Technology This program provides advanced hands-on skills and training in industry-relevant science and engineering principles of the ﬁeld of Photonics and Laser technology (P"
    },
    {
     "control_number": "41513",
     "pages": [
+     224,
      225
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 225] 225 DEGREES & CERTIFICATES 4. Use techniques, skills, and modern engineering and computer tools necessary for optics and photonics engineering practice. Major: Core Requirements Complete Core Courses, 18 units"
+    "opens": "[page 224] CA Photonics and Laser Technology This program provides foundational hands-on skills and training in industry-relevant science and engineering principles of the ﬁeld of photonics and laser technology (PALT). "
    },
    {
     "control_number": "43478",
@@ -947,42 +960,42 @@
      149,
      150
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 147] 147 DEGREES & CERTIFICATES BUSINESS ADMINISTRATION/ MANAGEMENT AS Associate in Science Degree Program Business Administration............................................... 60 units Business Assistant........"
+    "opens": "[page 147] AS Business Administration This program is designed to give students an advanced understanding of business foundations including accounting and economics. Courses required for the major transfer core requirem"
    },
    {
     "control_number": "43537",
-    "pages": [
-     151,
-     152,
-     153,
-     154
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.812,
-    "opens": "[page 151] 151 DEGREES & CERTIFICATES MGMT 100 Introduction to Business Management 3 units List B, complete 3 units from the following: Units ANTH 110 Cultural Anthropology 3 units COMM C1000 Introduction to Public Speak"
-   },
-   {
-    "control_number": "43660",
     "pages": [
      150,
      151,
      152,
      153
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.938,
+    "coverage": 0.812,
     "opens": "[page 150] 150 Selective Courses, choose a minimum of 12-13 units from the following: List A: Choose a minimum of 3-4 units from the following: Units ACTG 100 Accounting Procedures 3 units ACTG 121 Financial Accounting 4"
+   },
+   {
+    "control_number": "43660",
+    "pages": [
+     149,
+     150,
+     151,
+     152
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] 149 DEGREES & CERTIFICATES transportation. This program prepares students for mid- level supervision positions. Program Learning Outcomes Students completing this program will be able to: 1. Design and manage "
    },
    {
     "control_number": "43790",
@@ -990,12 +1003,12 @@
      176,
      177
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 176] 176 3. Positive Behavior Support, and 4. Culminating experience requiring observation and case-analysis Career Opportunities Paraprofessional (PreK-12); Early Intervention Assistant; Early Childhood Special Ed"
+    "opens": "[page 176] CA Multilingual Learner Teaching The Multilingual Learner Teaching Certiﬁcate of Achievement provides educators the knowledge and skills necessary to ensure full access and active participation of multilingua"
    },
    {
     "control_number": "43965",
@@ -1005,33 +1018,33 @@
      150,
      151
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 148] 148 BUS. 401 Business Communications 3 units EDUC 249 Redeﬁning Leadership: Individuals Eﬀecting Change 3 units Total Required Major Units: 29 And required General Education coursework and electives as needed "
+    "opens": "[page 148] AS Business Assistant The Business Assistant Associate's Degree oﬀers an advanced layer of core training for business and oﬃce assistants for a variety of duties. The business assistant curriculum enriches th"
    },
    {
     "control_number": "45177",
     "pages": [
-     150,
-     151,
-     152,
-     153
+     154,
+     155,
+     156,
+     157
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 150] 150 Selective Courses, choose a minimum of 12-13 units from the following: List A: Choose a minimum of 3-4 units from the following: Units ACTG 100 Accounting Procedures 3 units ACTG 121 Financial Accounting 4"
+    "opens": "[page 154] CA Digital Marketing The Digital Marketing Certiﬁcate of Achievement extends the foundational digital marketing curriculum with a deeper focus on business principles and workplace skills. In addition to marke"
    }
   ],
   "unproven": []
  },
  "loads": 0,
- "seconds": 76.6,
+ "seconds": 67.4,
  "found": 73,
  "by_method": {
   "no_closed_list": 52,
@@ -1042,15 +1055,8 @@
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165": [
    "05700",
    "32525",
+   "32526",
    "32527"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187": [
-   "05717",
-   "20438"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=223": [
-   "05722",
-   "32731"
   ],
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192": [
    "05735",
@@ -1058,50 +1064,36 @@
   ],
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149": [
    "10247",
-   "20427",
-   "37974"
+   "43660"
   ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167": [
-   "14443",
-   "20432"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186": [
-   "15052",
-   "20440"
+  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169": [
+   "15654",
+   "38514"
   ],
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166": [
    "16816",
-   "20430",
-   "32526"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=141": [
-   "30385",
-   "32452"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170": [
-   "30427",
-   "38514"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179": [
-   "31401",
-   "35986"
+   "20430"
   ],
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151": [
-   "36942",
-   "41287",
-   "43537"
+   "20425",
+   "41287"
   ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148": [
-   "37156",
-   "43965"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225": [
-   "41512",
-   "41513"
-  ],
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150": [
-   "43660",
+  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154": [
+   "20426",
+   "20427",
    "45177"
+  ],
+  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183": [
+   "36056",
+   "40834"
+  ],
+  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152": [
+   "36721",
+   "37156"
+  ],
+  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176": [
+   "37973",
+   "43790"
   ]
  },
  "not_found": [
@@ -1127,14 +1119,275 @@
  "page_claimed": [],
  "coverage_bands": {
   "0.5-0.8": 4,
-  "0.8-1.0": 10,
-  "1.0": 59
+  "0.8-1.0": 8,
+  "1.0": 61
  },
  "would_extract": {
   "against": "kb/program_requirements_college/ca_ada",
-  "kept": 73,
-  "programs": 0,
-  "list": []
+  "kept": 47,
+  "programs": 26,
+  "list": [
+   {
+    "control_number": "05717",
+    "title": "Custom Dressmaking/Small Business Oriented",
+    "award": "A.S. Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "05722",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=222",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=223",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20425",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20426",
+    "title": "Entrepreneurship and Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=155",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20427",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20432",
+    "title": "Digital Art and Animation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=168",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20440",
+    "title": "Technical (Apparel Industry Oriented)",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=188",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30741",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=215",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=127",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32400",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=139",
+    "coverage": 0.727,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=140",
+    "was_coverage": 0.727,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32452",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=140",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=141",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32526",
+    "title": "Computer Science - Swift",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32833",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=336",
+    "coverage": 0.778,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=337",
+    "was_coverage": 0.556,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33317",
+    "title": "Payroll Specialist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=139",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35986",
+    "title": "Engineering",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=178",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36721",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=153",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36942",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=156",
+    "coverage": 0.727,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+    "was_coverage": 0.727,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37122",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=195",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=196",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37156",
+    "title": "Business Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37973",
+    "title": "Youth and School-Age",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=177",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37974",
+    "title": "Human Relations in the Workplace",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=155",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38514",
+    "title": "Video Game Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170",
+    "was_coverage": 0.929,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40834",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=95",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41513",
+    "title": "Photonics and Laser Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43537",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
+    "coverage": 0.812,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+    "was_coverage": 0.812,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43660",
+    "title": "Entrepreneurship and Small Business Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45177",
+    "title": "Digital Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ]
  },
- "run": "39103943654"
+ "run": "39160718966"
 }
