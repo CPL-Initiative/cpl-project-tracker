@@ -15619,8 +15619,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 381,
+   "count": 382,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 411,
+     "path": "docs/session_411_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "display-build",
+      "coursedog",
+      "hand-filed",
+      "ui-pass"
+     ],
+     "title": "Session 411 handoff: apply d6cc1fde7ea3, Hartnell's picks by program code, Merced's PDF call, SmartCatalog",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-17",
      "governs": [],
@@ -22181,5 +22200,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1164
+ "total": 1165
 }

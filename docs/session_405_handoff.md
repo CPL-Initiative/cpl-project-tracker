@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 404 (SkyBuckeye)
 tags: [handoff, program-requirements, catalog-sweep, own-html, display-build, ui-pass, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 405

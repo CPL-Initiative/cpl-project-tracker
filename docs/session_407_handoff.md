@@ -4,6 +4,8 @@ date: 2026-10-17
 session: 406 (SkyIronwood)
 tags: [handoff, program-requirements, catalog-sweep, hand-filed, display-build, ui-pass, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_411_handoff.md
 ---
 
 # You are Session 407
