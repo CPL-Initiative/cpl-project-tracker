@@ -1,0 +1,2349 @@
+[
+ {
+  "control_number": "02091",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "CHEM2211",
+   "CHEM2212"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/biology/biology-associate-of-science",
+   "title": "Taft College - Biology: Associate of Science",
+   "h1": "Biology: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4199
+ },
+ {
+  "control_number": "02092",
+  "title": "General Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02094",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02099",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2250",
+   "BIOL2257",
+   "HLED1510",
+   "PHED1511",
+   "PHED1520",
+   "PHED1523",
+   "PHED1524",
+   "PHED1528",
+   "PHED1529",
+   "PHED1532",
+   "PHED1533",
+   "PHED1535",
+   "PHED1542",
+   "PHED1623",
+   "PHED1629",
+   "PHED1632",
+   "PHED1643",
+   "PHED1644",
+   "PHED1646",
+   "PHED1649",
+   "PHED1721",
+   "PHED1723",
+   "PHED1724",
+   "PHED1728",
+   "PHED1729",
+   "PHED1732",
+   "PHED1734",
+   "PHED1735",
+   "PHED1742",
+   "PHED1823",
+   "PHED2146",
+   "PHED2505",
+   "PHED2506",
+   "PHED2507",
+   "PHED2509",
+   "PHED2510",
+   "PHED2511",
+   "PHED2514"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/liberal-arts-with-an-area-of-emphasis/liberal-arts-area-of-emphasis-health-and-physical-education-associate-in-arts",
+   "title": "Taft College - Liberal Arts Area of Emphasis: Health and Physical Education: Associate of Arts",
+   "h1": "Liberal Arts Area of Emphasis: Health and Physical Education: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 7061
+ },
+ {
+  "control_number": "02107",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ART1600",
+   "ART1610",
+   "ART1640",
+   "ART1800",
+   "ART1820",
+   "ARTHC1100",
+   "ARTHC1200",
+   "PHOT1510"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/art/art-associate-of-arts",
+   "title": "Taft College - Art: Associate of Arts",
+   "h1": "Art: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4610
+ },
+ {
+  "control_number": "02112",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "MATH2130",
+   "MATHC2211",
+   "MATHC2221",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/mathematics/mathematics-associate-in-arts",
+   "title": "Taft College - Mathematics: Associate of Science",
+   "h1": "Mathematics: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4192
+ },
+ {
+  "control_number": "02113",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "ASTRC1000",
+   "CHEM1510",
+   "CHEM2211",
+   "CHEM2212",
+   "GEOG1510",
+   "GEOL1500",
+   "GEOL1501",
+   "PSCI1520"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/physical-science/physical-science-associate-in-science",
+   "title": "Taft College - Physical Science: Associate of Science",
+   "h1": "Physical Science: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4399
+ },
+ {
+  "control_number": "02115",
+  "title": "Early Care, Education & Family Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10426",
+  "title": "Administrative Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14669",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1800",
+   "ART1811",
+   "ART1815",
+   "ART1820",
+   "ART1825",
+   "ART1830"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/graphic-arts/certificate",
+   "title": "Taft College - Certificate of Achievement: Graphic Design",
+   "h1": "Certificate of Achievement: Graphic Design",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3854
+ },
+ {
+  "control_number": "15508",
+  "title": "Early Intervention Assistant II",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECEF1501",
+   "ECEF1531",
+   "ECEF1561",
+   "ECEF1571",
+   "ECEF1581",
+   "ECEF1582",
+   "ECEF1583",
+   "ECEF1584",
+   "ECEF1590",
+   "ECEF1601",
+   "ECEF1611",
+   "ECEF1612"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/early-care-education-and-family-studies/early-intervention-assistant-ii-certificate-of-achievement",
+   "title": "Taft College - Early Intervention Assistant II: Certificate of Achievement",
+   "h1": "Early Intervention Assistant II: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5091
+ },
+ {
+  "control_number": "15509",
+  "title": "Early Intervention Assistant I",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECEF1501",
+   "ECEF1531",
+   "ECEF1581",
+   "ECEF1590",
+   "ECEF1601",
+   "ECEF1611"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/early-care-education-and-family-studies/early-intervention-assistant-i-certificate-of-achievement",
+   "title": "Taft College - Early Intervention Assistant I: Certificate of Achievement",
+   "h1": "Early Intervention Assistant I: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4171
+ },
+ {
+  "control_number": "16725",
+  "title": "Occupational Safety and Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENER1503",
+   "OSH1500",
+   "OSH1532",
+   "OSH1552",
+   "OSH2058",
+   "OSH2061",
+   "OSH2065",
+   "OSH555",
+   "OSH556",
+   "OSH565",
+   "OSH600",
+   "OSH602",
+   "OSH606",
+   "OSH607",
+   "OSH608",
+   "OSH612",
+   "OSH613",
+   "OSH615",
+   "OSH616",
+   "OSH625"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/occupational-safety-and-health/occupational-safety-and-health-associate-in-science",
+   "title": "Taft College - Occupational Safety and Health: Associate of Science",
+   "h1": "Occupational Safety and Health: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 6519
+ },
+ {
+  "control_number": "17861",
+  "title": "Direct Support Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18009",
+  "title": "Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19514",
+  "title": "Early Care, Education & Family Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19722",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD1500",
+   "WELD1510",
+   "WELD1520",
+   "WELD1530",
+   "WELD1540"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/welding-technology/welding-technology-associate-in-science",
+   "title": "Taft College - Welding Technology: Associate of Science",
+   "h1": "Welding Technology: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4266
+ },
+ {
+  "control_number": "19723",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20602",
+  "title": "Administrative Services",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20605",
+  "title": "Direct Support Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30009",
+  "title": "Liberal Arts Allied Health",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1513",
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2260",
+   "BIOL2370",
+   "BIOLC1000",
+   "CHEM1510",
+   "CHEM2211",
+   "CHEM2212",
+   "PSYC2200",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/liberal-arts-with-an-area-of-emphasis/liberal-arts-area-of-emphasis-allied-health-associate-in-arts",
+   "title": "Taft College - Liberal Arts Area of Emphasis: Allied Health: Associate of Arts",
+   "h1": "Liberal Arts Area of Emphasis: Allied Health: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4838
+ },
+ {
+  "control_number": "30010",
+  "title": "Liberal Arts Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30011",
+  "title": "Liberal Arts: Business and Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30012",
+  "title": "Liberal Arts: Communication",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30013",
+  "title": "Liberal Arts Health and Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30014",
+  "title": "Liberal Arts Math and Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.861,
+  "codes_found": [
+   "ASTRC1000",
+   "BIOL1513",
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2260",
+   "BIOL2370",
+   "BIOLC1000",
+   "BIOLC1001",
+   "CHEM1510",
+   "CHEM1520",
+   "CHEM2211",
+   "CHEM2212",
+   "ESCI1520",
+   "GEOG1510",
+   "GEOL1500",
+   "GEOL1501",
+   "MATH1500",
+   "MATH1505",
+   "MATH1510",
+   "MATH1520",
+   "MATH1530",
+   "MATH1540",
+   "MATH2130",
+   "MATH2140",
+   "MATHC2211",
+   "MATHC2221",
+   "PSCI1520",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/liberal-arts-with-an-area-of-emphasis/liberal-arts-area-of-emphasis-math-and-science-associate-in-arts",
+   "title": "Taft College - Liberal Arts Area of Emphasis: Math and Science: Associate of Arts",
+   "h1": "Liberal Arts Area of Emphasis: Math and Science: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 5866
+ },
+ {
+  "control_number": "30015",
+  "title": "Liberal Arts Natural Science Life Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.692,
+  "codes_found": [
+   "BIOL1513",
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2260",
+   "BIOL2370",
+   "BIOLC1000",
+   "BIOLC1001",
+   "CHEM1520",
+   "CHEM2211",
+   "CHEM2212",
+   "GEOL1500",
+   "GEOL1501",
+   "MATH1540",
+   "MATHC2211",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/liberal-arts-with-an-area-of-emphasis/liberal-arts-area-of-emphasis-natural-science-life-science-associate-in-arts",
+   "title": "Taft College - Liberal Arts Area of Emphasis: Natural Science-Life Science: Associate of Arts",
+   "h1": "Liberal Arts Area of Emphasis: Natural Science-Life Science: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 5020
+ },
+ {
+  "control_number": "30016",
+  "title": "Liberal Arts Natural Science Physical Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "ASTRC1000",
+   "CHEM1510",
+   "CHEM1520",
+   "CHEM2211",
+   "CHEM2212",
+   "ESCI1520",
+   "GEOG1510",
+   "GEOL1500",
+   "GEOL1501",
+   "MATH1540",
+   "MATHC2211",
+   "PSCI1520",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/liberal-arts-with-an-area-of-emphasis/liberal-arts-area-of-emphasis-natural-science-physical-science-associate-in-arts",
+   "title": "Taft College - Liberal Arts Area of Emphasis: Natural Science-Physical Science: Associate of Arts",
+   "h1": "Liberal Arts Area of Emphasis: Natural Science-Physical Science: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4813
+ },
+ {
+  "control_number": "30281",
+  "title": "Master Teacher in Early Care Education & Family Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30282",
+  "title": "Associate Teacher in Early Care, Education, and Family Studies",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30283",
+  "title": "Teacher in Early Care, Education, and Family Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30284",
+  "title": "Administrative Services II",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "BUSN1510",
+   "BUSN550",
+   "BUSN555"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/general-business/general-business-associate-in-science",
+   "title": "Taft College - General Business: Associate of Science",
+   "h1": "General Business: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4682
+ },
+ {
+  "control_number": "31290",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1600",
+   "ART1620",
+   "ARTH2030",
+   "ARTH2040",
+   "HIST2210",
+   "HUM2010"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/art-history-for-transfer",
+   "title": "Taft College - Art History for Transfer: : Associate in Arts",
+   "h1": "Art History for Transfer: : Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4252
+ },
+ {
+  "control_number": "31443",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECEF1500",
+   "ECEF1501",
+   "ECEF1531",
+   "ECEF1571",
+   "ECEF1590",
+   "ECEF1601"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/early-childhood-education-for-transfer/early-childhood-education-associate-in-science-degree-for-transfer",
+   "title": "Taft College - Early Childhood Education for Transfer: Associate in Science",
+   "h1": "Early Childhood Education for Transfer: Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4428
+ },
+ {
+  "control_number": "31460",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1600",
+   "ART1610",
+   "ART1620",
+   "ART1625",
+   "ART1631",
+   "ART1800",
+   "ART1811",
+   "ART1820",
+   "ART2010",
+   "ARTH2030",
+   "ARTH2040"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/studio-arts-for-transfer/studio-arts-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Studio Arts for Transfer: Associate in Arts",
+   "h1": "Studio Arts for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 5026
+ },
+ {
+  "control_number": "32259",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM1510",
+   "ECEF1561",
+   "ENGL1700",
+   "ENGL1725",
+   "ENGL1750",
+   "ENGL1775",
+   "ENGL2100",
+   "ENGL2150",
+   "ENGL2600",
+   "ENGL2650",
+   "ENGL2700",
+   "ENGL2750",
+   "ENGLC1003",
+   "HUM1500",
+   "SPAN1601",
+   "SPAN1602",
+   "SPAN2001",
+   "SPAN2002"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/english-for-transfer/english-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - English for Transfer: Associate in Arts",
+   "h1": "English for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5321
+ },
+ {
+  "control_number": "32456",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35547",
+  "title": "AS-T in Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "CHEM2211",
+   "CHEM2212",
+   "MATHC2211",
+   "PHYS2221",
+   "PHYS2222"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/biology-for-transfer/biology-associate-in-science-degree-for-transfer",
+   "title": "Taft College - Biology for Transfer: Associate in Science",
+   "h1": "Biology for Transfer: Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 8,
+  "text_chars": 4398
+ },
+ {
+  "control_number": "36178",
+  "title": "Court Reporting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTRP510",
+   "CTRP515",
+   "CTRP570",
+   "CTRP575",
+   "CTRP580",
+   "CTRP590",
+   "CTRP654",
+   "CTRP664",
+   "CTRP750",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/court-reporting/court-reporting-certificate-of-achievement",
+   "title": "Taft College - Court Reporting: Certificate of Achievement",
+   "h1": "Court Reporting: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4774
+ },
+ {
+  "control_number": "36460",
+  "title": "Pipe Code Welding",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTC500",
+   "WELD1500",
+   "WELD1510",
+   "WELD1540"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/welding-technology/pipe-code-welding-certificate-of-achievement",
+   "title": "Taft College - Pipe Code Welding: Certificate of Achievement",
+   "h1": "Pipe Code Welding: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3763
+ },
+ {
+  "control_number": "36461",
+  "title": "Structural Code Welding",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTC500",
+   "WELD1500",
+   "WELD1510",
+   "WELD1560"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/welding-technology/structural-code-welding-certificate-of-achievement",
+   "title": "Taft College - Structural Code Welding: Certificate of Achievement",
+   "h1": "Structural Code Welding: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3768
+ },
+ {
+  "control_number": "36763",
+  "title": "AA-T Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC1510",
+   "SPAN1601",
+   "SPAN1602",
+   "SPAN2001",
+   "SPAN2002"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/spanish-for-transfer/spanish-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Spanish for Transfer: Associate in Arts",
+   "h1": "Spanish for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 5,
+  "text_chars": 4542
+ },
+ {
+  "control_number": "36928",
+  "title": "Energy Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "BUSN1510",
+   "ENER1503",
+   "ENER1520",
+   "ENER1530",
+   "ENER1610",
+   "ENER1620",
+   "ENER1630",
+   "GEOL1501",
+   "MGMT1510",
+   "MGMT1530",
+   "MGMT1535",
+   "MGMT1545",
+   "MGMT1550",
+   "OSH1500"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/energy-technology/energy-technology-associate-in-science",
+   "title": "Taft College - Energy Technology: Associate of Science",
+   "h1": "Energy Technology: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5365
+ },
+ {
+  "control_number": "37366",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSAD2220",
+   "BSAD2221",
+   "BUSN1510",
+   "CIS2020",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH1520",
+   "MATH2130",
+   "MATHC2211",
+   "MATHC2221",
+   "PSYC2200",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/economics-for-transfer/economics-degree-for-transfer",
+   "title": "Taft College - Economics for Transfer: Associate in Arts",
+   "h1": "Economics for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4974
+ },
+ {
+  "control_number": "38661",
+  "title": "CSU GE-Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.81,
+  "codes_found": [
+   "ARTH2030",
+   "ARTH2040",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASTRC1000",
+   "BIOL1513",
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2260",
+   "BIOLC1000",
+   "BIOLC1001",
+   "CHEM1510",
+   "CHEM1520",
+   "CHEM2211",
+   "COMMC1000",
+   "DRAM1510",
+   "ECEF1531",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL2100",
+   "ENGL2150",
+   "ENGL2600",
+   "ENGL2650",
+   "ENGL2700",
+   "ENGL2750",
+   "ENGLC1000",
+   "ENGLC1003",
+   "ESCI1520",
+   "GEOG1510",
+   "GEOL1500",
+   "GEOL1501",
+   "HIST2202",
+   "HIST2204",
+   "HIST2210",
+   "HIST2270",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM2010",
+   "MATH1500",
+   "MATH1520",
+   "MATH1540",
+   "MATHC2211",
+   "MUSC1510",
+   "PHIL1501",
+   "PHIL1531",
+   "PHYS2221",
+   "POLSC1000",
+   "PSCI1520",
+   "PSYC2003",
+   "PSYC2030",
+   "PSYC2080",
+   "PSYC2200",
+   "PSYCC1000",
+   "SOC1510",
+   "SOC2038",
+   "SOC2110",
+   "SOC2120",
+   "SPAN1602",
+   "SPAN2001",
+   "SPAN2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/transfer-studies-cal-getc/csu-ge-breadth-certificate-of-achievement",
+   "title": "Taft College - Cal-GETC: Certificate of Achievement",
+   "h1": "Cal-GETC: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 79,
+  "text_chars": 11481
+ },
+ {
+  "control_number": "38662",
+  "title": "Intersegmental GE Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.877,
+  "codes_found": [
+   "ART1500",
+   "ARTH2030",
+   "ARTH2040",
+   "BIOL1513",
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2260",
+   "CHEM1510",
+   "CHEM1520",
+   "CHEM2211",
+   "COMM1507",
+   "COMMC1000",
+   "DRAM1510",
+   "ECEF1531",
+   "ENGL2600",
+   "ENGL2650",
+   "ENGL2700",
+   "ENGL2750",
+   "ENGLC1000",
+   "ESCI1520",
+   "GEOG1510",
+   "GEOL1500",
+   "GEOL1501",
+   "HIST2202",
+   "HIST2204",
+   "HIST2210",
+   "HIST2270",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM1500",
+   "MATH1500",
+   "MATH1505",
+   "MATH1520",
+   "MATH1540",
+   "MUSC1510",
+   "PHIL1501",
+   "PHIL1531",
+   "PHYS2221",
+   "POLSC1000",
+   "PSCI1520",
+   "PSYC2003",
+   "PSYC2030",
+   "PSYC2080",
+   "PSYC2200",
+   "PSYCC1000",
+   "SOC1510",
+   "SOC2038",
+   "SOC2110",
+   "SOC2120",
+   "SPAN1602",
+   "SPAN2001",
+   "SPAN2002",
+   "SPAN2500",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/requirements-for-degrees-and-certificates/associate-degree-and-general-education-philosophy",
+   "title": "Taft College - Associate Degree and General Education Philosophy",
+   "h1": "Associate Degree and General Education Philosophy",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 65,
+  "text_chars": 11476
+ },
+ {
+  "control_number": "40076",
+  "title": "Disability Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DS1501",
+   "DS1502",
+   "DS1503",
+   "DS1504",
+   "DS1505",
+   "DS1506",
+   "DS1507"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/disability-services/direct-support-education-associate-in-science",
+   "title": "Taft College - Disability Services: Associate of Science",
+   "h1": "Disability Services: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4436
+ },
+ {
+  "control_number": "40272",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1500",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BIOLC1000",
+   "COMMC1000",
+   "DRAM1510",
+   "ENGLC1000",
+   "ENGLC1002",
+   "ESCI1520",
+   "HIST2210",
+   "HISTC1001",
+   "MATH1505",
+   "MUSC1510",
+   "POLSC1000",
+   "PSCI1520",
+   "PSYC2003"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/elementary-teacher-education-for-transfer/economics-degree-for-transfer",
+   "title": "Taft College - Elementary Teacher Education for Transfer: Associate in Arts",
+   "h1": "Elementary Teacher Education for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5140
+ },
+ {
+  "control_number": "40806",
+  "title": "Dental Hygiene",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "DNTL1510",
+   "DNTL1511",
+   "DNTL1512",
+   "DNTL1513",
+   "DNTL1514",
+   "DNTL2020",
+   "DNTL2021",
+   "DNTL2024",
+   "DNTL2025",
+   "DNTL2026",
+   "DNTL2130",
+   "DNTL2131",
+   "DNTL2132",
+   "DNTL2133",
+   "DNTL2134",
+   "DNTL2135",
+   "DNTL2240",
+   "DNTL2242",
+   "DNTL2243"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/dental-hygiene/dental-hygiene-associate-in-science",
+   "title": "Taft College - Dental Hygiene: Associate of Science",
+   "h1": "Dental Hygiene: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4949
+ },
+ {
+  "control_number": "41722",
+  "title": "Industrial Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENER1503",
+   "ENER1510",
+   "ENER1530",
+   "ENER1540",
+   "ENER1610",
+   "ENER1620",
+   "OSH1500",
+   "OSH556"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/industrial-electronics/industrial-electronics-associate-in-science",
+   "title": "Taft College - Industrial Electronics: Associate of Science",
+   "h1": "Industrial Electronics: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4432
+ },
+ {
+  "control_number": "41771",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSAD2220",
+   "BSAD2221",
+   "BUSN1500",
+   "BUSN1510",
+   "BUSN2275",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH1520",
+   "MATHC2211",
+   "PSYC2200",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/business-administration-for-transfer/business-administration-for-transfer-associate-in-science",
+   "title": "Taft College - Business Administration for Transfer 2.0: Associate in Science",
+   "h1": "Business Administration for Transfer 2.0: Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4632
+ },
+ {
+  "control_number": "43025",
+  "title": "Law, Public Policy and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ1501",
+   "ADMJ1502",
+   "ADMJ1503",
+   "ADMJ1504",
+   "ADMJ1505",
+   "ADMJ1507",
+   "ADMJ1508",
+   "ADMJ1509",
+   "ADMJ1510",
+   "BUSN2275",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1003",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYC2200",
+   "SOC2038",
+   "SOC2110",
+   "SOC2120",
+   "STSU1500"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/associate-in-arts-in-law-public-policy-and-society-for-transfer-for-transfer/law-public-policy-and-society-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Law, Public Policy, and Society for Transfer: Associate in Arts",
+   "h1": "Law, Public Policy, and Society for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5856
+ },
+ {
+  "control_number": "43511",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2211",
+   "ENGR1500",
+   "ENGR1510",
+   "ENGR1540",
+   "ENGR1550",
+   "ENGR2000",
+   "ENGR2300",
+   "MATH2130",
+   "MATH2140",
+   "MATHC2211",
+   "MATHC2221",
+   "PHYS2221",
+   "PHYS2222",
+   "PHYS2223"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/engineering/engineering-associate-in-science",
+   "title": "Taft College - Engineering: Associate of Science",
+   "h1": "Engineering: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5151
+ },
+ {
+  "control_number": "43601",
+  "title": "Dental Hygiene Administration: Bachelor’s of Science",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNTL3015",
+   "DNTL3020",
+   "DNTL3025",
+   "DNTL3075",
+   "DNTL4030",
+   "DNTL4040",
+   "DNTL4045",
+   "DNTL4050",
+   "DNTL4075",
+   "DNTL4080",
+   "UDGE3005",
+   "UDGE3010",
+   "UDGE4035"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/dental-hygiene-bachelor-of-science/bachelor-of-science-dental-hygiene-administration",
+   "title": "Taft College - Dental Hygiene Administration: Bachelor of Science",
+   "h1": "Dental Hygiene Administration: Bachelor of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5591
+ },
+ {
+  "control_number": "44006",
+  "title": "Associate in Arts in Kinesiology: Sport Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2370",
+   "BSAD2220",
+   "CIS2020",
+   "COMMC1000",
+   "ECONC2001",
+   "HLED1510",
+   "KINE1500",
+   "KINE1510",
+   "KINE1520",
+   "KINE1530",
+   "KINE1540",
+   "MGMT1500",
+   "PHED1644",
+   "PSYC2200",
+   "RECR1510",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/kinesiology-sport-management-associate-in-arts/kinesiology-sport-management-associate-in-arts",
+   "title": "Taft College - Kinesiology Sport Management: Associate of Arts",
+   "h1": "Kinesiology Sport Management: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4965
+ },
+ {
+  "control_number": "44343",
+  "title": "Associate in Arts in Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.976,
+  "codes_found": [
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2370",
+   "BIOLC1001",
+   "HLED1510",
+   "KINE1500",
+   "KINE1540",
+   "PHED1508",
+   "PHED1511",
+   "PHED1520",
+   "PHED1523",
+   "PHED1524",
+   "PHED1528",
+   "PHED1529",
+   "PHED1532",
+   "PHED1533",
+   "PHED1534",
+   "PHED1535",
+   "PHED1542",
+   "PHED1615",
+   "PHED1623",
+   "PHED1629",
+   "PHED1632",
+   "PHED1643",
+   "PHED1646",
+   "PHED1649",
+   "PHED1721",
+   "PHED1723",
+   "PHED1724",
+   "PHED1728",
+   "PHED1734",
+   "PHED1735",
+   "PHED1823",
+   "PHED2146",
+   "PHED2506",
+   "PHED2507",
+   "PHED2508",
+   "PHED2509",
+   "PHED2510",
+   "PHED2511",
+   "PHED2514"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/kinesiology-associate-in-arts/kinesiology-associate-in-arts",
+   "title": "Taft College - Kinesiology: Associate of Arts",
+   "h1": "Kinesiology: Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 7338
+ },
+ {
+  "control_number": "44521",
+  "title": "Court Reporting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ1501",
+   "CTRP510",
+   "CTRP515",
+   "CTRP570",
+   "CTRP575",
+   "CTRP580",
+   "CTRP590",
+   "CTRP631",
+   "CTRP632",
+   "CTRP633",
+   "CTRP634",
+   "CTRP641",
+   "CTRP642",
+   "CTRP643",
+   "CTRP644",
+   "CTRP651",
+   "CTRP652",
+   "CTRP653",
+   "CTRP654",
+   "CTRP661",
+   "CTRP662",
+   "CTRP663",
+   "CTRP664",
+   "CTRP710",
+   "CTRP750"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/court-reporting/court-reporting-associate-in-science",
+   "title": "Taft College - Court Reporting: Associate of Science",
+   "h1": "Court Reporting: Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 6270
+ },
+ {
+  "control_number": "44582",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLED1600",
+   "HLED1601",
+   "HLED1602"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/paramedic/paramedic-certificate-of-achievement",
+   "title": "Taft College - Paramedic: Certificate of Achievement",
+   "h1": "Paramedic: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3775
+ },
+ {
+  "control_number": "44611",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "COMM1505",
+   "COMM1507",
+   "COMM1510",
+   "COMM1520",
+   "COMM1530",
+   "COMM1550",
+   "COMM1580",
+   "COMM1590",
+   "COMMC1000",
+   "ENGLC1003",
+   "PSYCC1000",
+   "SOC1510"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/communication-studies/business-administration-associate-in-science-degree-for-transfer",
+   "title": "Taft College - Communication Studies for Transfer 2.0: Associate in Arts",
+   "h1": "Communication Studies for Transfer 2.0: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4756
+ },
+ {
+  "control_number": "44612",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST2202",
+   "HIST2204",
+   "HIST2210",
+   "HIST2212",
+   "HIST2216",
+   "HIST2230",
+   "HIST2270",
+   "HISTC1001",
+   "HISTC1002",
+   "SOC2110",
+   "SOC2120",
+   "SPAN2500"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/history-for-transfer/history-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - History for Transfer: Associate in Arts",
+   "h1": "History for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5351
+ },
+ {
+  "control_number": "44615",
+  "title": "Administrative Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS1603",
+   "CIS1703",
+   "MEDA601",
+   "MEDA602",
+   "MEDA603",
+   "MEDA604",
+   "MEDA605",
+   "MEDA606",
+   "MEDA607",
+   "MEDA701"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/medical-assisting-administrative/certificate",
+   "title": "Taft College - Administrative Medical Assisting: Certificate of Achievement",
+   "h1": "Administrative Medical Assisting: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4299
+ },
+ {
+  "control_number": "44621",
+  "title": "Clinical Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDA601",
+   "MEDA602",
+   "MEDA603",
+   "MEDA604",
+   "MEDA608",
+   "MEDA609",
+   "MEDA610",
+   "MEDA801"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/medical-assisting-clinical/certificate",
+   "title": "Taft College - Clinical Medical Assisting: Certificate of Achievement",
+   "h1": "Clinical Medical Assisting: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4323
+ },
+ {
+  "control_number": "44656",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIOL2201",
+   "CHEM2211",
+   "COSC1545",
+   "COSC2100",
+   "ENGR1540",
+   "MATHC2211",
+   "MATHC2221",
+   "PHYS2221",
+   "PHYS2222"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/computer-science-for-transfer/associate-in-science",
+   "title": "Taft College - Computer Science for Transfer: Associate in Science",
+   "h1": "Computer Science for Transfer: Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4614
+ },
+ {
+  "control_number": "44749",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC2200",
+   "PSYC2205",
+   "PSYCC1000",
+   "SOC1510",
+   "SOC2038",
+   "SOC2110",
+   "SOC2120",
+   "SOC2141",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/sociology-for-transfer/sociology-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Sociology for Transfer: Associate in Arts",
+   "h1": "Sociology for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4602
+ },
+ {
+  "control_number": "45145",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2250",
+   "BIOL2257",
+   "CHEM2211",
+   "KINE1500",
+   "PHED1508",
+   "PHED1511",
+   "PHED1520",
+   "PHED1523",
+   "PHED1524",
+   "PHED1528",
+   "PHED1529",
+   "PHED1532",
+   "PHED1533",
+   "PHED1534",
+   "PHED1535",
+   "PHED1542",
+   "PHED1610",
+   "PHED1615",
+   "PSYC2200",
+   "PSYCC1000",
+   "SOC1510",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/kinesiology-for-transfer/kinesiology-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Kinesiology for Transfer: Associate in Arts",
+   "h1": "Kinesiology for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 6086
+ },
+ {
+  "control_number": "45358",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.793,
+  "codes_found": [
+   "ADMJ1501",
+   "ART1500",
+   "ARTH2030",
+   "ARTH2040",
+   "BIOL1513",
+   "BIOL2201",
+   "BIOL2202",
+   "BIOL2203",
+   "BIOL2250",
+   "BIOL2257",
+   "BIOL2258",
+   "BIOL2259",
+   "BIOL2260",
+   "CHEM1510",
+   "CHEM1520",
+   "CHEM2211",
+   "COMMC1000",
+   "DRAM1510",
+   "ECEF1531",
+   "ENGL1502",
+   "ENGL2100",
+   "ENGL2150",
+   "ENGL2600",
+   "ENGL2650",
+   "ENGL2700",
+   "ENGL2750",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ESCI1520",
+   "ETHN1510",
+   "GEOG1510",
+   "GEOL1500",
+   "GEOL1501",
+   "HIST2202",
+   "HIST2204",
+   "HIST2210",
+   "HIST2212",
+   "HIST2216",
+   "HIST2270",
+   "HUM2010",
+   "MATH1500",
+   "MATH1510",
+   "MATH1520",
+   "MATH1540",
+   "MATH2125",
+   "MUSC1510",
+   "PHIL1501",
+   "PHIL1531",
+   "PHYS2221",
+   "POLSC1000",
+   "POSC1502",
+   "PSCI1520",
+   "PSYC2003",
+   "PSYC2030",
+   "PSYC2050",
+   "PSYC2080",
+   "PSYC2200",
+   "PSYCC1000",
+   "SOC1510",
+   "SOC2038",
+   "SOC2120",
+   "SPAN1602",
+   "SPAN2001",
+   "SPAN2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/transfer-planning-guide/general-education-certification-process/taft-college-cal-getc",
+   "title": "Taft College - Taft College Cal-GETC",
+   "h1": "Taft College Cal-GETC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.714
+   }
+  },
+  "listed": 82,
+  "text_chars": 7554
+ },
+ {
+  "control_number": "45469",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "POSC1502",
+   "POSC1503",
+   "POSC1504",
+   "POSC1506",
+   "POSC1507",
+   "PSYC2200",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/political-science-for-transfer/associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Political Science for Transfer: Associate in Arts",
+   "h1": "Political Science for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6058
+ },
+ {
+  "control_number": "45767",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR1540",
+   "MATH2125",
+   "MATH2130",
+   "MATH2140",
+   "MATHC2211",
+   "MATHC2221",
+   "PHYS2221"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/mathematics-for-transfer-2/mathematics-associate-in-science-degree-for-transfer",
+   "title": "Taft College - Mathematics for Transfer 2.0: Associate in Science",
+   "h1": "Mathematics for Transfer 2.0: Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4424
+ },
+ {
+  "control_number": "45903",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC1501",
+   "PSYC1520",
+   "PSYC2030",
+   "PSYC2033",
+   "PSYC2050",
+   "PSYC2070",
+   "PSYC2080",
+   "PSYC2200",
+   "PSYC2205",
+   "PSYCC1000",
+   "SOC1510",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/psychology-for-transfer/copy-of-psychology-associate-in-arts-degree-for-transfer",
+   "title": "Taft College - Psychology for Transfer: Associate in Arts",
+   "h1": "Psychology for Transfer: Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4981
+ },
+ {
+  "control_number": "46021",
+  "title": "Listening and Speaking for Multilingual Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9300",
+   "ESL9310"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/english-as-a-second-language/copy-of-copy-of-certificate-of-competency-advanced-academic-preparation",
+   "title": "Taft College - English as a Second Language - Listening and Speaking for Multilingual Students: Certificate of Competency",
+   "h1": "English as a Second Language - Listening and Speaking for Multilingual Students: Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4066
+ },
+ {
+  "control_number": "46023",
+  "title": "Advanced Academic Preparation for Multilingual Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9110",
+   "ESL9210",
+   "ESL9310"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/english-as-a-second-language/copy-of-certificate-of-competency-advanced-academic-preparation",
+   "title": "Taft College - English as a Second Language - Advanced Academic Preparation for Multilingual Students: Certificate of Competency",
+   "h1": "English as a Second Language - Advanced Academic Preparation for Multilingual Students: Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4087
+ },
+ {
+  "control_number": "46024",
+  "title": "Intermediate Academic Preparation for Multilingual Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9100",
+   "ESL9200",
+   "ESL9300"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/english-as-a-second-language/certificate-of-competency-intermediate-academic-preparation",
+   "title": "Taft College - English as a Second Language - Intermediate Academic Preparation for Multilingual Students: Certificate of Competency",
+   "h1": "English as a Second Language - Intermediate Academic Preparation for Multilingual Students: Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4095
+ },
+ {
+  "control_number": "46028",
+  "title": "Self Determination Program: Independent Facilitator",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DS9250",
+   "DS9280"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/self-determination-program/independent-facilitator",
+   "title": "Taft College - Self Determination Program - Independent Facilitator (IF): Certificate of Completion",
+   "h1": "Self Determination Program - Independent Facilitator (IF): Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4092
+ },
+ {
+  "control_number": "46031",
+  "title": "Self-Determination Program: Person-Centered Planning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DS9250",
+   "DS9260"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/self-determination-program/person-centered-planning",
+   "title": "Taft College - Self Determination Program - Person-Centered Planning (PCP): Certificate of Completion",
+   "h1": "Self Determination Program - Person-Centered Planning (PCP): Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4092
+ },
+ {
+  "control_number": "46186",
+  "title": "Speech Language Pathology Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ECEF1571",
+   "ECEF1611",
+   "ECEF1612",
+   "PSYC2003"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/early-care-education-and-family-studies/master-teacher-certificate-of-achievement",
+   "title": "Taft College - Master Teacher: Certificate of Achievement",
+   "h1": "Master Teacher: Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4745
+ },
+ {
+  "control_number": "46197",
+  "title": "Environmental Health and Safety",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46198",
+  "title": "Speech Language Pathology Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46318",
+  "title": "Associate of Science in Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46319",
+  "title": "Liberal Arts Pre-Nursing / Pre-Dental Hygiene",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46515",
+  "title": "Associate of Science in Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.643,
+  "codes_found": [
+   "ADMJ1501",
+   "ADMJ1502",
+   "ADMJ1503",
+   "ADMJ1504",
+   "ADMJ1505",
+   "ADMJ1506",
+   "ADMJ1507",
+   "ADMJ1508",
+   "ADMJ1509"
+  ],
+  "source": {
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/criminal-justice-administration/criminal-justice-administration-associate-in-science",
+   "title": "Taft College - Criminal Justice Administration: Associate in Science",
+   "h1": "Criminal Justice Administration: Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 14,
+  "text_chars": 4558
+ }
+]

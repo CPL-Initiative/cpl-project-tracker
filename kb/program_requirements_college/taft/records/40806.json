@@ -1,0 +1,311 @@
+{
+ "college": "Taft College",
+ "control_number": "40806",
+ "shape": "degree",
+ "title": "Dental Hygiene",
+ "award": "A.S. Degree",
+ "source_url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/dental-hygiene/dental-hygiene-associate-in-science",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8072,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8072,
+    "output_tokens": 2624,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2624,
+  "output_tokens_details": {
+   "thinking_tokens": 772
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08477,
+ "ms": 21706,
+ "seconds": 22.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 20,
+   "share": 0.95,
+   "missing": [
+    "DNTL2444"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DNTL2244"
+   ],
+   "flagged": [
+    "DNTL2244"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 60,
+    "max": 60
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Additional-General-Education-Degree-Requirements",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 9,
+    "max": 9
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Legal and Ethical Principles. The graduates will be competent in the ethical and legal aspects of the Dental Hygiene profession.",
+    "Dental Hygiene Process of Care. The graduates will be competent in providing preventive and therapeutic dental hygiene services to patients of all ages, ethnicity, and socioeconomic levels.",
+    "Community Awareness. The graduates will participate in various community health programs that will focus on improving the oral health of individuals, families, and community groups.",
+    "Life Long Learning. The graduates will apply experience, skills, and knowledge to develop and implement a plan for professional growth.",
+    "Infection Control. The graduates will be competent in all aspects of infection control procedures and hazardous waste management.",
+    "Critical Thinking. The graduates will be competent in problem solving strategies related to comprehensive patient care and management of patients using current scientific evidence to formulate a patient-centered comprehensive care plan."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 60,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "DNTL 1510",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 1511",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 1512",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 1513",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 1514",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2020",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2021",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2024",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2025",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2026",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2132",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2133",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2134",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2240",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2243",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNTL 2244",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DNTL 2444",
+    "why": "not in the text; catalog prints DNTL 2244 Community Oral Health II (same title), likely the same course under a different number"
+   }
+  ],
+  "notes": [
+   "The text begins mid-page: a cut-off list (Statistics, Psychology, Cultural Diversity, Sociology, Speech-Communication via CSU GE/CalGETC areas) totaling 'Total Credit Hours: 39-45' appears to be prerequisite/general education coursework whose heading is missing; it was not recorded as a block. Reviewer should check the full page.",
+   "'Additional-General-Education-Degree-Requirements' (American History and Ideals 3, Arts and Humanities 3, Lifelong Learning 3) totals 9 and was recorded as ge_pattern/ge_units; no whole-degree total is printed.",
+   "total_units 60 is the printed 'Total Credit Hours: 60' under Program Requirements; the listed course units sum to 60.",
+   "Closed list stores 'DNTL1511' without a space and no units; matched to catalog DNTL 1511 Oral Radiology (2.50).",
+   "Catalog prints DNTL 2244 Community Oral Health II, while the closed list has DNTL 2444 with the same title; recorded DNTL 2244 as a catalog addition and listed DNTL 2444 as missing. Possible typo on one side.",
+   "No careers are named for the program; the 'Explore Majors & Careers' links are generic site resources."
+  ]
+ },
+ "extracted_run": "39100858309"
+}

@@ -1,0 +1,81 @@
+{
+ "college": "Taft College",
+ "programs": 80,
+ "with_closed_list": 63,
+ "found": 58,
+ "extracted": 58,
+ "errors": 0,
+ "passed_machine_checks": 24,
+ "failed": {
+  "coverage": 3,
+  "invented": 0,
+  "arithmetic": 34,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.14,
+ "cost_per_program": 0.0713,
+ "not_found": [
+  {
+   "control_number": "46197",
+   "title": "Environmental Health and Safety",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/occupational-safety-and-health/occupational-safety-and-health-associate-in-science",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.375,
+    "body": 0.375,
+    "content": 0.25,
+    "net": 3,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 3 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9805,
+     "content": 16684,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46198",
+   "title": "Speech Language Pathology Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46318",
+   "title": "Associate of Science in Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/administrative-services",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5862,
+     "content": 12561,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "39100858309"
+}
