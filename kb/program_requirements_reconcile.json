@@ -140,6 +140,23 @@
      "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
     }
    ]
+  },
+  "Taft College": {
+   "why": "Eleven of Taft's transfer-degree records add up their major and fail the degree check as incomplete: the page prints \"Total Credit Hours: 24\", \"Option 1: CSU/UC - Completion of the California General Education Transfer Curriculum (Cal-GETC) is required\", \"Additional transferable elective units may be used to reach the required 60 units\" and \"Total Credit Hours: 60\", and no units for Cal-GETC (college-page-read 39122581817, Early Childhood Education AS-T). Taft's own Cal-GETC page prints none either (same read). Cal-GETC is one statewide pattern of 34 semester units; the figure is cited from Monterey Peninsula's GE page (read 38759288106), as Monterey's step reads it, and San Joaquin Delta's degree pages print the same 34 (read 39122473643). S415 SkyRedbud proceeded on it on Fable's advice (option A of three: the narrowest fix, in the college's procedure, reversible by deleting this step) and put it to Sam as a card.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "pattern": "Completion\\s+of\\s+(?:the\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\()?Cal-GETC\\)?\\s+is\\s+required",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+    }
+   ]
   }
  }
 }
