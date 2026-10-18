@@ -804,3 +804,31 @@ From the Records view paragraph, verbatim:
 ## Moved from the lane (S413 compaction)
 
 **Outcomes (Sam, 2026-10-04 18:03Z):** grab published course and program outcomes, and compare harvested credential skills with course outcomes. 🔨 **Course outlines (Sam, 2026-10-12, `sam-capture-cor-system-link-2026-10-12`):** capture each college's course outline of record system link so the harvest reads course SLOs, for the skills match and for faculty assessment of CPL. Record shape 3, Sheet 70's rulings, the registry's `cor_*` fields, the census, the index and how each host prints its SLOs: lessons, *Moved from the lane (S376 compaction)* and *(S380 compaction)*. ✅ **`course_outcomes` is live** (Sam pasted `chatbox/supabase_course_outcomes.sql`, Open Asks Sheet 72 card 1; public read, insert-only `course_outcomes_load()` on the service role, a receipt per load). **Loaded, nine colleges, 7,450 courses, 20,891 SLOs** (live read, S388; by college: lessons, S398 compaction). `catalog=<slug>` in `kb/course_outcomes/.run` picks either form; each load is insert-only with a receipt naming its rollback. COBI shows the SLOs on Program records' course rows and in COCI Lookup (#2116, Sam 2026-10-14). The skills comparison waits for `kb/reference/industry_credential_skills.json` (not started).
+
+## S414 SkyChamise (2026-10-18): the Coursedog reader (Merced), the slash rescoring, a second slash shape
+
+- **A reconcile run rescores filed records for free.** `step=reconcile` (extract 0) captures the pages again and
+  rescores each filed record whose page it read, so a scorer fix needs no model call. Glendale 37 to 43 passing (14
+  replaced), De Anza 12 replaced, Los Angeles Trade Technical 5. A rescored record carries the reconcile run as its
+  `extracted_run`, and `step=reread` posts only the newest run's records: **reread before any extraction on the same
+  branch**, or the rescored records sit behind the newer run. Los Angeles Trade Technical's five had to be re-extracted
+  with `force=` for $0.66 after its six new programs were extracted first.
+- **A reconcile also rescores against everything the scorer learned since.** San Joaquin Delta's (run 39116289105)
+  fixed its two target records and rescored 204 others under the degree-total check that arrived after its read: 152 to
+  126 passing, 28 new arithmetic failures. Read a reconcile's summary before its reread; Delta is held.
+- **A second slash shape:** Crafton Hills prints `THART/S 124X2` and the state's file stores `THART124X2`, the letters
+  after the slash dropped. `listed_key()` tries that reading only when the slash-free one finds none, so `CNA/N 633`
+  still reads as `CNAN633` where both are listed. A scan of every filed record found it at Crafton Hills (2) and San
+  Joaquin Delta (2) only.
+- **The Coursedog reader.** Merced's page POSTs `app.coursedog.com/api/v1/cm/<school>/programs/search/$filters` for 20
+  programs at a time. Repeating the call from the browser context with only its content type answered **401** (run
+  39114886505): the page's own call carries headers the replay lacked. A Playwright route that rewrites the page's call
+  as it leaves (`limit=250`) and a response listener read all 191 at once; any further page is asked with every header
+  the page sent (`all_headers()`). Each program's Requisites tab shares one template suffix (`requisites-ojrrt`), so the
+  reader learns it from the first program's overview and loads the rest directly (181 of 188). The page's title names
+  only the code, so the heading the matcher reads is the program's name plus its award in words (`(AA)` as *associate in
+  arts*, `(CT)` as *certificate of achievement*). Capture-only 154 of 172 found, 95 at coverage 1.0 (run 39115547722);
+  extraction $9.14, 125 of 154 passing (run 39117489616); 153 loaded (run 39119871201). Ten programs lost their pages to
+  a sibling award naming the same list (Child Development A.A. to its certificates), eight found none (Diesel and
+  Mechanized Agriculture print few listed codes).
+- **Build `7e4a2a9c5ba7`: 15,946 programs at 114 colleges** (#2224).

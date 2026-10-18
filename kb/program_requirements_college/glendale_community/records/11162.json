@@ -46,24 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 7,
    "listed": 7,
-   "share": 0.857,
-   "missing": [
-    "CSIS139"
-   ],
-   "unexplained": [
-    "CSIS139"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "BUSAD110",
     "CS/IS130",
-    "CS/IS139",
     "ENTRE101",
     "ENTRE102"
    ],
@@ -73,7 +68,7 @@
     "ENTRE101",
     "ENTRE102"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -114,7 +109,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -258,5 +253,6 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }

@@ -1599,7 +1599,7 @@ check(rep_menu["acalog"]["catalog_year_read"] == "2025-2026" and rep_menu["acalo
 CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
 check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"] = read_year' in CS,
       "an Acalog year read from the page fills a registry row that names none, in the records and the report alike")
-check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog")' in CS
+check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog", "coursedog")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
 # S404: a college's own HTML catalog takes the sitemap road, with the child-page walk and the link search.
@@ -1940,6 +1940,51 @@ check(sc_kids == [SC + "/credit-programs/accounting-acct"]
 check(C.child_pages(C.child_base(SC + "/credit-programs", None), [{"href": SC + "/credit-programs/accounting-acct"}], SC) == []
       and C.child_base(SC + "/credit-programs", "courseleaf") == SC + "/credit-programs",
       "another platform's page without a closing slash still reads no children")
+
+# Coursedog (Merced; page reads 39089955502 and 39090533458, S411; reader S414): the program search's own
+# call names 20 of 191 programs, so the reader asks the same address with its page moved, and reads each
+# program's Requisites tab under a heading naming the program and its award in words.
+CD_CALL = ("https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters"
+           "?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=20&sortBy=catalogDisplayName%2Cname"
+           "&columns=name%2Ccode")
+moved = C.cd_search_url(CD_CALL, 100, 100)
+check("skip=100" in moved and "limit=100" in moved and "limit=20" not in moved
+      and "catalogId=QTM2GIg9kimBOfyC8Dbb" in moved and "sortBy=catalogDisplayName%2Cname" in moved
+      and moved.startswith("https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?"),
+      "the search's page moves and the rest of its address stays as the page asked: %r" % moved)
+cd_rows = C.cd_programs({"listLength": 3, "data": [
+    {"code": "05000.AA", "name": "Accounting (AA)", "catalogDisplayName": "", "status": "Active"},
+    {"code": "", "programGroupId": "13012.CT", "name": "Administration in Early Childhood Education (CT)"},
+    {"code": "99999.AA", "name": "Retired (AA)", "status": "Inactive"}]})
+check(cd_rows == [{"code": "05000.AA", "name": "Accounting (AA)"},
+                  {"code": "13012.CT", "name": "Administration in Early Childhood Education (CT)"}],
+      "the search's active programs by code and name: %r" % cd_rows)
+CD_BODY = ("05000.AA - Accounting (AA) · Download as PDF · Accounting · Program Overview · Requisites · "
+           "Accounting (AA) (Total Credits 30.0 - 30.0) · All of the following · Required\n"
+           "ACTG04A Financial Accounting (Total Credits 4.0 - 4.0)\nACTG04B Managerial Accounting (Total Credits 4.0 - 4.0)\n"
+           "AOM30 Introduction To Computer Applications (Total Credits 3.0 - 3.0)\nBUS18A Business Law (Total Credits 4.0 - 4.0)\n"
+           "MATH-10 Elementary Statistics (Total Credits 3.0 - 3.0)")
+cd_got = {"url": "https://catalog.mccd.edu/programs/05000.AA/requisites-ojrrt",
+          "final_url": "https://catalog.mccd.edu/programs/05000.AA/requisites-ojrrt",
+          "title": "05000.AA Program | Merced College Catalog", "body": CD_BODY, "content": CD_BODY}
+cd_aa = C.cd_page(cd_got, {"code": "05000.AA", "name": "Accounting (AA)"})
+cd_ct = C.cd_page(dict(cd_got, url=cd_got["url"].replace(".AA", ".CT"), final_url=cd_got["url"].replace(".AA", ".CT"),
+                       body=CD_BODY.replace("(AA)", "(CT)"), content=CD_BODY.replace("(AA)", "(CT)")),
+                  {"code": "05000.CT", "name": "Accounting (CT)"})
+check({"ACTG4A", "ACTG4B", "AOM30", "BUS18A", "MATH10"} <= cd_aa["codes"],
+      "the net reads Coursedog's run-together codes (ACTG04A, MATH-10): %r" % sorted(cd_aa["codes"]))
+cd_courses = [{"code": c} for c in ("ACTG 4A", "ACTG 4B", "AOM 30", "BUS 18A", "MATH 10")]
+cd_prog_aa = {"control_number": "1", "title": "Accounting", "award": "A.A. Degree", "closed_list": cd_courses}
+cd_prog_ct = {"control_number": "2", "title": "Accounting", "award": "Certificate of Achievement 18 to < 30 semester units",
+              "closed_list": cd_courses}
+cd_given = C.assign([cd_prog_aa, cd_prog_ct], [cd_ct, cd_aa])
+check((cd_given["1"]["best"] or {}).get("url", "").endswith("05000.AA/requisites-ojrrt")
+      and (cd_given["2"]["best"] or {}).get("url", "").endswith("05000.CT/requisites-ojrrt"),
+      "an A.A. and its certificate naming the same courses each read their own tab: %r"
+      % [(cd_given[k]["best"] or {}).get("url") for k in ("1", "2")])
+check(C.cd_award_words("Agriculture Business (AST)") == "associate in science for transfer"
+      and C.cd_award_words("Adult Literacy (NC)").startswith("noncredit") and C.cd_award_words("Accounting") == "",
+      "a program's letters name its award in words")
 
 if failures:
     print("FAIL: %d" % len(failures))

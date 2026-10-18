@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 88 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 57 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 385 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1170** | |
+| Session handoffs | 386 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1171** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-18 (S414 SkyChamise, the routine): the Coursedog reader (Merced: 154 of 172 found, 153 loaded, 125 passing, $9.14); the slash rescoring by free reconcile runs (Glendale 14, De Anza 12, LA Trade Technical 5, Crafton Hills 2 replaced) and the `THART/S` reading; display build `7e4a2a9c5ba7`, 15,946 programs at 114 colleges (#2224); San Joaquin Delta's rescore held.
 - 2026-10-18 (S413 SkyPinyon, hand-opened): #2219 landed through #2220 with the wave's display build (`3a5ed5d7bcf3`, 15,770 programs at 113 colleges; Taft loaded 55); the classifier's follow-up pass (1,287 of 1,322 pre-filled, 396 held, $2.67); the CER's three views, Needs you, Procedures, Reference (#2221, the UI pass); the harvest reads a slashed course subject (#2222: Crafton Hills 76 of 79, build `3f93779f0115`, 36 misread records at three colleges named for a reread).
 - 2026-10-18 (S412 SkyJoshua, hand-opened): the CER procedures run (#2217: store, quality gate, `cer-classify`, nightly workflow; first pass $8.30, 1,116 of 1,322 pre-filled, 428 held), the Procedures lane (#2218), #2219 open; `182e810e207d` applied; Crafton Hills loaded (64); Rule 8's read reaches undated rows; exhibit lessons compacted to an archive; handoff 413 (SkyPinyon).
 - 2026-10-18 (S411 SkySotol, hand-opened): `d6cc1fde7ea3` applied; Hartnell read by its Coursedog code headings (8 loaded, 14 moved to their own heading, 4 wrong-page rows removed under a receipt); a kept record must come from its source's page; SmartCatalog by the generic road and vendor-host page reads; display build `182e810e207d` (15,651 programs at 111 colleges, #2216). Sam asked for the CER on procedures: new lane `cer-procedures`, the v3 mock-up, Open Asks Sheet 93. Handoff 412 (SkyJoshua).
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-17 (S409 SkyOcotillo, hand-opened): `f949e7c0ea35` applied; Cuesta loaded 181 unchecked and display build `ffd6929a4f90` (15,517 programs at 109 colleges, #2210); Exhibit Adoption's UI pass, its table and matrix measured for the first time (#2211); Cañada's 2026-2027 PDF found behind its robots.txt refusal (Open Asks Sheet 92); the Coursedog and SmartCatalog hosts read; handoff 410 (SkyYucca).
 - 2026-10-17 (S408 SkyAgave, hand-opened): the code finder reads a run of numbers after one subject (#2206, Glendale 190 to 258 found); the outcomes check reads a list number at a line's end (#2207, Ohlone 125 failures to 8); East LA's rows carry their year; Desert, Pasadena, Glendale, Grossmont, Ohlone and LA Southwest loaded unchecked; display build `f949e7c0ea35` (15,336 programs at 108 colleges, #2208); handoff 409 (SkyOcotillo).
 - 2026-10-17 (S406 SkyIronwood, hand-opened): a hand-filed catalog is read from the copy a person posted, its hash pinned on the first fetch (#2199); the eight refused colleges loaded unchecked from Sam's copies (1,427 records, $131.00, build `fec9782a4dbc`, 13,851 programs at 100 colleges); Open Asks Sheet 90; MAP Export's UI pass (#2200); harvest lane compacted under its budget.
-- 2026-10-17 (S405 SkyCholla, the 12:12Z firing): own-HTML reads keep to the catalog's year (`year_scope()`); Coalinga, Skyline, West Valley, Copper Mountain, San Diego Continuing Education and Solano loaded unchecked; the scorer reads stand-in ligature glyphs (Solano, Santa Rosa reread); the hand-filed catalog step; display build `c111c9b05ca0` (12,424 programs, 92 colleges); Open Asks Sheet 89; handoff 406 (SkyIronwood).

@@ -46,33 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 54,
+   "placed": 58,
    "listed": 60,
-   "share": 0.9,
+   "share": 0.967,
    "missing": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH",
     "MAND4",
     "SIGN3"
    ],
-   "unexplained": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 17,
+   "count": 13,
    "codes": [
-    "F/TV2A",
-    "F/TV2AH",
-    "F/TV2B",
-    "F/TV2BH",
     "FREN1",
     "GERM1",
     "HNDI1",
@@ -102,7 +89,7 @@
     "SIGN1",
     "VIET1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -846,5 +833,6 @@
    "Careers recorded from 'future study or work in civil service or the private sector'; the description also mentions engaging with travel, law, business and nongovernmental organizations, not recorded as careers."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

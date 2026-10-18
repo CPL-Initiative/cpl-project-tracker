@@ -46,30 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "CSIS211"
-   ],
-   "unexplained": [
-    "CSIS211"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "CS/IS130",
-    "CS/IS166",
-    "CS/IS211"
+    "CS/IS166"
    ],
    "flagged": [
     "CS/IS130",
     "CS/IS166"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -309,5 +304,6 @@
    "The PLO text printed 'scientiﬁ c' with a PDF ligature break; recorded as 'scientific'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }

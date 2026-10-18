@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Spanish Language and Culture",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12463,
+  "input_tokens": 11858,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12463,
-    "output_tokens": 2211,
+    "input_tokens": 11858,
+    "output_tokens": 2765,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,42 @@
     "model": null
    }
   ],
-  "output_tokens": 2211,
+  "output_tokens": 2765,
   "output_tokens_details": {
-   "thinking_tokens": 597
+   "thinking_tokens": 1015
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09407,
- "ms": 17907,
- "seconds": 18.3,
+ "cost_usd": 0.10273,
+ "ms": 22506,
+ "seconds": 22.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 24,
    "listed": 24,
-   "share": 0.875,
-   "missing": [
-    "FTV2B",
-    "FTV2BH",
-    "SPAN1"
-   ],
-   "unexplained": [
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "F/TV2B",
-    "F/TV2BH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "unequal",
    "computed": [
-    14.0,
-    15.0
+    19.0,
+    20.0
    ],
    "stated": [
     18.0,
@@ -83,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 14.0-15.0; the catalog states 18.0-20.0"
+    "the blocks sum to 19.0-20.0; the catalog states 18.0-20.0"
    ]
   },
   "repeated": {
@@ -91,17 +81,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -112,7 +102,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Spanish Language and Culture",
+   "section_heading": "Certificate of Achievement (COA) Spanish Language and Culture",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -133,8 +123,15 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Engage in communicative tasks that require describing personal experiences in the present with some references to the past; expressing basic opinions about issues of relevance in one´s life; understanding main ideas and supporting details in aural and written discourse; producing discourse-level writing related to one ´s life experiences",
+    "Demonstrate an understanding of the diversity of cultural, historical, and regional contexts of Spanish- speaking peoples and cultures",
+    "Engage critically with constructions of cultural and social differences (as expressed through language) while examining one´s own cultural positionings and assumptions"
+   ],
+   "careers": [
+    "civil service",
+    "private sector"
+   ]
   },
   "blocks": [
    {
@@ -143,10 +140,17 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 10,
+     "max": 15
     },
     "courses": [
+     {
+      "code": "SPAN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "SPAN 2",
       "units": 5,
@@ -319,19 +323,14 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "SPAN 1",
-    "why": "not in the text; the start of the Spanish section (likely listing SPAN 1) falls on the previous page, cut off from the extract"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The extract begins mid-section on page 121; the Spanish Language and Culture heading, description, any program learning outcomes and careers, and the top of the Required Core (its heading, stated units and presumably SPAN 1) are on the preceding page and not in the text. section_heading uses the program title because the printed heading is not visible.",
-   "Required Core block name is assumed; its printed heading and unit total were cut off. The note says SPAN D001 need not be taken if students are cleared into SPAN D002, so the core is likely 10-15 units.",
-   "List A rule is conditional: one course if 15 units completed in the core, or two courses if 10 units completed. Recorded as choose_courses minimum 1 with stated 4-10 units; the two-course path applies when SPAN 1 is waived.",
-   "Honors and cross-listed twins (ANTH 2H, COMM 7H, COMM 16H, F / TV 2BH, WMST 26) are written as the catalog prints them and matched to closed-list codes ANTH 002H, COMM 007H, COMM 016H, F TV 02BH, WMST 26.",
-   "Outcomes and careers are empty because none for this award appear in the extracted text; the outcomes and careers visible belong to the Vietnamese, World Languages and Leadership sections."
+   "Required Core (10-15 units): SPAN 1 (printed as 'SPAN D001.') need not be taken if students completed these units at another college and are cleared into SPAN 2 by the Spanish Department; recorded as an 'all' block with stated 10-15.",
+   "List A minimum recorded as 1 course; students who skipped SPAN 1 (10 core units) must complete two List A courses.",
+   "Catalog codes ANTH 2H, COMM 7H, COMM 16H, F / TV 2B and F / TV 2BH were matched to closed-list ANTH 002H, COMM 007H, COMM 016H, F TV 002B and F TV 02BH (format differences only).",
+   "Outcomes copied with line breaks read as spaces, producing 'one ´s' and 'Spanish- speaking' where the PDF broke lines; reviewer may wish to check.",
+   "Careers: only 'work in civil service or the private sector' read as career fields; travel, law, business and NGOs are described as areas of engagement and academic areas (Anthropology, History, etc.) as fields of study, so not recorded."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "39115772038"
 }

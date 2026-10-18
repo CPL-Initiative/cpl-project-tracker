@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-385 document(s).
+386 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 415 | [Session 415 handoff: the Coursedog reader (Merced loaded); the slash rescoring at four colleges; build 7e4a2a9c5ba7](../session_415_handoff.md) | 2026-10-18 |
 | 414 | [Session 414 handoff: the CER's three views; the slashed course subject; Taft and Crafton Hills loaded](../session_414_handoff.md) | 2026-10-18 |
 | 413 | [Session 413 handoff: the CER procedures run is live; the classifier's first pass; Crafton Hills loaded](../session_413_handoff.md) | 2026-10-18 |
 | 412 | [Session 412 handoff: Sheet 93 and the CER on procedures; SmartCatalog and Merced reads; 182e810e207d](../session_412_handoff.md) | 2026-10-18 |

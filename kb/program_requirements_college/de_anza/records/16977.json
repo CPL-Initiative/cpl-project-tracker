@@ -46,32 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 37,
+   "placed": 38,
    "listed": 40,
-   "share": 0.925,
+   "share": 0.95,
    "missing": [
     "ENGLC1003",
-    "ENGLC1003H",
-    "FTV20"
+    "ENGLC1003H"
    ],
-   "unexplained": [
-    "FTV20"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "EWRT1B",
-    "EWRT1BH",
-    "F/TV20"
+    "EWRT1BH"
    ],
    "flagged": [
     "EWRT1B",
     "EWRT1BH"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -491,5 +487,6 @@
    "No careers are named in the A.A. section; job titles listed in the adjacent A.A.-T. section were not used."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

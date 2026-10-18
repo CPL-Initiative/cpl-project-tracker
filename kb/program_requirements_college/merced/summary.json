@@ -1,0 +1,229 @@
+{
+ "college": "Merced College",
+ "programs": 182,
+ "with_closed_list": 172,
+ "found": 154,
+ "extracted": 154,
+ "errors": 0,
+ "passed_machine_checks": 125,
+ "failed": {
+  "coverage": 6,
+  "invented": 5,
+  "arithmetic": 25,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 9.14,
+ "cost_per_program": 0.0594,
+ "not_found": [
+  {
+   "control_number": "03485",
+   "title": "Diesel Equipment Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/01200.AS/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.182,
+    "body": 0.091,
+    "content": 0.182,
+    "net": 2,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 2 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1427,
+     "content": 479202,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07710",
+   "title": "Mechanized Agriculture Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/01450.AS/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.083,
+    "body": 0.083,
+    "content": 0.083,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1490,
+     "content": 479383,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16653",
+   "title": "Compact Power Equipment",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1102,
+     "content": 476222,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "17943",
+   "title": "International Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1494,
+     "content": 480248,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19495",
+   "title": "Diesel Equipment Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/01200.CT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.091,
+    "body": 0.091,
+    "content": 0.091,
+    "net": 1,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 1 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1455,
+     "content": 477075,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19496",
+   "title": "Mechanized Agriculture Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/01450.CT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.083,
+    "body": 0.083,
+    "content": 0.083,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1434,
+     "content": 479081,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30638",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.4,
+    "net": 6,
+    "listed": 15,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1494,
+     "content": 480248,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44160",
+   "title": "Agriculture Systems – Agriculture Foundation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 952,
+     "content": 494959,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "39117489616"
+}

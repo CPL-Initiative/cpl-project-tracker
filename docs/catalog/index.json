@@ -15649,8 +15649,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 385,
+   "count": 386,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 415,
+     "path": "docs/session_415_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "coursedog",
+      "reconcile"
+     ],
+     "title": "Session 415 handoff: the Coursedog reader (Merced loaded); the slash rescoring at four colleges; build 7e4a2a9c5ba7",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22288,5 +22305,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1170
+ "total": 1171
 }
