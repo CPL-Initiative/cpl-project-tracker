@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Kinesiology",
  "award": "A.A- T Degree",
- "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14406,
+  "input_tokens": 8961,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14406,
-    "output_tokens": 2769,
+    "input_tokens": 8961,
+    "output_tokens": 4131,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,366 +30,539 @@
     "model": null
    }
   ],
-  "output_tokens": 2769,
+  "output_tokens": 4131,
   "output_tokens_details": {
-   "thinking_tokens": 515
+   "thinking_tokens": 1073
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.113,
- "ms": 20940,
- "seconds": 21.3,
+ "cost_usd": 0.11846,
+ "ms": 30463,
+ "seconds": 30.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 42,
    "listed": 51,
-   "share": 0.0,
+   "share": 0.824,
    "missing": [
-    "ANATOMY1",
-    "CHEM101",
-    "CHEM51",
     "HEALTH11",
-    "HEALTH12",
-    "KIN180",
-    "KIN237",
-    "KIN3001",
-    "KIN3002",
-    "KIN3003",
-    "KIN3011",
-    "KIN3012",
-    "KIN3013",
-    "KIN3031",
-    "KIN3032",
-    "KIN3033",
-    "KIN3034",
-    "KIN3071",
-    "KIN3072",
-    "KIN3291",
-    "KIN3292",
-    "KIN3293",
-    "KIN3301",
-    "KIN3302",
-    "KIN3303",
-    "KIN3321",
-    "KIN3341",
-    "KIN3342",
-    "KIN337",
-    "KIN3501",
-    "KIN3502",
-    "KIN3511",
-    "KIN3512",
     "KIN3513",
-    "KIN3661",
-    "KIN3662",
-    "KIN387",
-    "KIN3911",
     "KIN47",
     "KINATH504",
     "KINATH516",
-    "KINMAJ100",
-    "KINMAJ101",
     "PHYSICS101",
-    "PHYSICS6",
-    "PHYSIOL1",
     "PSYCC1000",
     "PSYCH91",
-    "SOC1",
-    "STATC1000",
-    "STATC1000E"
+    "SOC1"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "BIOLOGY3",
+    "BIOLOGY5"
+   ],
+   "flagged": [
+    "BIOLOGY3",
+    "BIOLOGY5"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    23.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 21.0-23.0; the catalog states 21.0-24.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     59.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     36.0,
+     36.0
+    ],
+    "why": [],
+    "fill": [
+     1.0,
+     3.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Not found: text shows only general education area lists (LACCD GE Areas 4-7 and Cal-GETC Requirements), not the Kinesiology A.A-T section",
+   "section_heading": "KINESIOLOGY ▌ Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 36,
+    "max": 36
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Describe the fundamental principles of Kinesiology, including anatomy and physiology, movement, health promotion, physiological response to exercise, mechanics, and how they relate to career choices.",
+    "Discuss the importance of lifelong participation in a fitness program as related to overall health and well-being.",
+    "Identify physical fitness concepts, healthy living practices, lifelong wellness, appropriate stress reduction techniques, sport, and physical skill development."
+   ],
+   "careers": [
+    "health care",
+    "coaching",
+    "sports officiating",
+    "athletic training"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "KIN MAJ 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANATOMY 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MOVEMENT BASED COURSE REQUIREMENTS",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "KIN 300-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 300-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 300-3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 301-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 301-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 301-3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 303-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 303-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 303-3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 303-4",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 330-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 330-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 330-3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 180",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 237",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 337",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 307-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 307-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 329-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 329-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 329-3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 332-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 334-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 334-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 350-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 350-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 351-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 351-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 366-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 366-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 387",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 391-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOLOGY 005",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 051",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 101",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN MAJ 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HEALTH 012",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ANATOMY 1",
-    "why": "only in a GE area list (as ANATOMY 001); Kinesiology A.A-T section not in the text"
-   },
-   {
-    "code": "CHEM 101",
-    "why": "only in a GE area list; Kinesiology A.A-T section not in the text"
-   },
-   {
-    "code": "CHEM 51",
-    "why": "only in a GE area list (as CHEM 051); Kinesiology A.A-T section not in the text"
-   },
-   {
     "code": "HEALTH 11",
-    "why": "only in GE Area 7 list (as HEALTH 011); program section not in the text"
-   },
-   {
-    "code": "HEALTH 12",
-    "why": "only in GE Area 7 list (as HEALTH 012); program section not in the text"
-   },
-   {
-    "code": "KIN 180",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 237",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 300-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 300-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 300-3",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 301-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 301-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 301-3",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 303-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 303-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 303-3",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 303-4",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 307-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 307-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 329-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 329-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 329-3",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 330-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 330-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 330-3",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 332-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 334-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 334-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 337",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 350-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 350-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 351 1",
-    "why": "only in GE Area 7 list (as KIN 351-1); program section not in the text"
-   },
-   {
-    "code": "KIN 351-2",
-    "why": "only in GE Area 7 list; program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "KIN 351-3",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 366-1",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 366-2",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 387",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN 391-1",
-    "why": "only in GE Area 7 list; program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "KIN 47",
-    "why": "only in GE Area 7 list (as KIN 047); program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "KIN ATH 504",
-    "why": "only in GE Area 7 list; program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "KIN ATH 516",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN MAJ 100",
-    "why": "only in GE Area 7 list; program section not in the text"
-   },
-   {
-    "code": "KIN MAJ 101",
-    "why": "only in GE Area 7 list; program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "PHYSICS 101",
-    "why": "only in a GE area list; program section not in the text"
-   },
-   {
-    "code": "PHYSICS 6",
-    "why": "only in a GE area list (as PHYSICS 006); program section not in the text"
-   },
-   {
-    "code": "PHYSIOL 1",
-    "why": "only in a GE area list (as PHYSIOL 001); program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "PSYC C1000",
-    "why": "only in GE area lists; program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "PSYCH 91",
-    "why": "only in Cal-GETC Area 2 list (as PSYCH 091); program section not in the text"
+    "why": "not in the text"
    },
    {
     "code": "SOC 1",
-    "why": "only in GE area lists (as SOC 001); program section not in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "only in Cal-GETC Area 2 list; program section not in the text"
-   },
-   {
-    "code": "STAT C1000E",
-    "why": "only in Cal-GETC Area 2 list; program section not in the text"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 62-65) contains only general education area lists (LACCD GE Areas 4-7 with Area 7 waivers, and the Cal-GETC Requirements Areas 1-5); it does not include the Kinesiology A.A-T program section, so no blocks, totals, outcomes or careers could be recorded.",
-   "Reviewer should locate the Kinesiology A.A-T page elsewhere in the 2026-2027 LATTC catalog; the source link page=62 appears to point to the GE section instead."
+   "Movement block: the catalog requires a maximum of one unit from each of three of the four movement areas (Aquatics, Combatives, Fitness, Team Sports); recorded as a single 3-unit block. KIN 180 is printed at 1.5 units.",
+   "Required Core says 'Select 11 units' but the three listed courses total exactly 11 units, so in effect all are required.",
+   "Restricted Electives: 'Select 2 courses', 7 units minimum; recorded 7 as stated.",
+   "GE units conflict: the page prints 'CSU or IGETC for CSU GE Pattern units 37-39' and also 'Cal-GETC 36 units'; the header line prints 'Cal-GETC 21-24'. Recorded Cal-GETC 36 as ge_units since the degree requirements name Cal-GETC; reviewer should check.",
+   "Degree total recorded as 'TOTAL CSU transferable units 60'; transferable electives as needed to reach 60 units.",
+   "Catalog prints ANATOMY 001, PHYSIOL 001, CHEM 051, HEALTH 012, PHYSICS 006 with leading zeros; matched to closed-list ANATOMY 1, PHYSIOL 1, CHEM 51, HEALTH 12, PHYSICS 6. KIN 351-1 matched to closed-list 'KIN 351 1'. KIN 307-1/307-2 printed as 'Run and Swim' vs closed list 'Swim and Run'.",
+   "Outcomes are printed for 'the Degree program' on this page and recorded for this award."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": "39115028720"
 }

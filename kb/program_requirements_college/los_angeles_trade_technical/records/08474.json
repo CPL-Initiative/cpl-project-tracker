@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12311,
-    "output_tokens": 3889,
+    "output_tokens": 3731,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,25 +30,25 @@
     "model": null
    }
   ],
-  "output_tokens": 3889,
+  "output_tokens": 3731,
   "output_tokens_details": {
-   "thinking_tokens": 973
+   "thinking_tokens": 820
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12702,
- "ms": 29019,
- "seconds": 29.6,
+ "cost_usd": 0.12386,
+ "ms": 28471,
+ "seconds": 29.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 15,
    "listed": 22,
-   "share": 0.636,
+   "share": 0.682,
    "missing": [
     "OPMAAP703",
     "OPMAAP704",
@@ -56,17 +56,14 @@
     "OPMAAP724",
     "OPMAAP740",
     "OPMAAP744",
-    "REFAC101",
     "REFAC209"
    ],
-   "unexplained": [
-    "REFAC101"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 32,
+   "count": 31,
    "codes": [
     "CRPNTRY111A",
     "CRPNTRY241",
@@ -79,7 +76,6 @@
     "PLUMBNG145",
     "PLUMBNG28",
     "PLUMBNG31",
-    "REFA/C101",
     "REFA/C111",
     "REFA/C133",
     "REFA/C134",
@@ -134,7 +130,7 @@
     "REFA/C204",
     "REFA/C208"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -165,14 +161,14 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -204,8 +200,7 @@
    ],
    "careers": [
     "General maintenance and repair workers",
-    "general maintenance worker",
-    "general maintenance industry"
+    "general maintenance worker"
    ]
   },
   "blocks": [
@@ -215,8 +210,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 12,
+     "max": 12
     },
     "courses": [
      {
@@ -241,8 +236,8 @@
     "minimum": 24,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 24,
+     "max": 24
     },
     "courses": [
      {
@@ -587,14 +582,14 @@
    }
   ],
   "notes": [
-   "The page begins mid-table: 'Engineering: Steam Plant T008474D C 12 24 36' (required 12, electives 24, major units 36) is the tail of a summary table cut off from the previous page.",
-   "The PLOs are printed under the program overview ('Upon completion of the Certificate program'), before the certificate heading; recorded for this award as the only award in the section.",
-   "BLDGCTQ 007/008/009/014 are printed with leading zeros; treated as closed-list BLDGCTQ 7/8/9/14. REF A/C 101 treated as closed-list REFAC101.",
-   "Catalog units differ from the state file for REF A/C 123 (3 vs 1), REF A/C 124 (3 vs 5); REF A/C 101 printed at 9 units.",
-   "Catalog titles differ from the state file for BLDGCTQ 014 ('Carpentry for Solar Installation') and ECONMT 119.",
-   "ECONMNT 100 is printed with subject 'ECONMNT' (likely a typo for ECONMT 100); recorded as printed and as a catalog addition.",
-   "Major electives block 'Select at least 24 units'; no separate block total printed, so stated is null."
+   "Text begins mid-table: 'Engineering: Steam Plant T008474D C 12 24 36' (required 12, electives 24, major 36); the table header is cut off before page 142.",
+   "Catalog prints BLDGCTQ 007/008/009/014 with leading zeros; matched to closed-list BLDGCTQ 7/8/9/14 and marked not additions.",
+   "REF A/C 101 'Refrigeration First Semester' (9 units) matched to closed-list REFAC101 'Air Conditioning and Refrigeration Principles and Practices-First Semester'; reviewer should confirm.",
+   "Unit discrepancies vs. state file: REF A/C 123 catalog 3 vs file 1; REF A/C 124 catalog 3 vs file 5.",
+   "ECONMNT 100 is printed with subject 'ECONMNT' (likely typo for ECONMT); recorded as printed.",
+   "The Program Learning Outcomes are printed in the program overview above the certificate heading and are stated for the Certificate program; recorded for this award.",
+   "Pages 144-145 (Plumbing programs) belong to other awards and were ignored."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": "39115770293"
 }
