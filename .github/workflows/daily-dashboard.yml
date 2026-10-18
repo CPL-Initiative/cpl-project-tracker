@@ -127,12 +127,15 @@ jobs:
             # assignments (_UNCLASSIFIED::<raw_title> rows) into the git-canonical
             # overlay kb/unclassified_assignments.json. Idempotent.
             python kb/_apply_unclassified_triage.py || echo "Unclassified triage sync failed — non-fatal"
-            # CER unclassified-triage PR-3 (gated auto-fold, added 2026-07-07): fold
-            # overlay assignments into kb/unified_titles.json + credentials.json when
-            # EVERY V-gate passes (clean adds + supersedes of unreviewed machine
-            # drafts only — the curator's reviewer-gated tab write IS the human act).
-            # Human-reviewed conflicts + unresolved articulation ripples still block
-            # and wait for the manual fold path; --apply-if-safe never fails the run.
+            # CER unclassified-triage PR-3 (auto-fold, added 2026-07-07): fold the
+            # overlay's saved assignments into kb/unified_titles.json + credentials.json
+            # (clean adds + supersedes of unreviewed machine drafts; the curator's
+            # reviewer-gated tab write, or a procedure's cohort save, IS the act).
+            # Since 2026-10-18 (Sam, Open Asks Sheet 94 card 1) a hold is per
+            # assignment: a conflict with a human-reviewed classification, or a raw
+            # whose articulation rows carry another title, holds only itself and is
+            # listed in the report's `held`; the CER procedures run brings those to
+            # the tab's Needs you. --apply-if-safe never fails the run.
             python kb/_fold_unclassified.py --apply-if-safe || echo "::warning title=Unclassified fold failed::kb/_fold_unclassified.py exited non-zero — curator triage assignments are stuck in the overlay until this passes. Check the step log."
           else
             echo "SUPABASE_SERVICE_KEY not set — skipping curation sync."

@@ -25,19 +25,36 @@ with no saved assignment, in order:
      hint. Results are cached in kb/cer_classified.json, so a title is asked
      about once, and again only when the procedures change.
 
-Writes, and nothing else:
+Writes:
   kb/unclassified_preseed.json   the tab's pre-fills (the file it already reads)
   kb/cer_classified.json         the classifier's cache
   kb/cer_procedures_out/latest.json   per-procedure tallies and the Needs-you list
+  kb/cer_procedures_out/saved/   a receipt for every save and every undo (--save)
 
-⚠️ NOTHING IS SAVED. Every proposal pre-fills the tab, ready to save (Rule 5e,
-Sam 2026-07-07: "leave them ready to save but not yet saved"). Letting a sure
-result save itself is Open Asks Sheet 93 card 2, unanswered at this writing.
+SAVING (Sam, Open Asks Sheet 94 card 2, 2026-10-18: "save"; it revises his
+2026-07-07 ruling that pre-seeds stay "ready to save but not yet saved"). With
+--save on, every pre-fill no reason holds (a rule procedure settled it, or the
+classifier is sure of it: confidence SURE or better, a clean title, no issuer
+conflict) is written to kb_curation as the tab's own Save would write it, under
+the cohort cer-procedure-<id>@bot of the procedure that decided it. Rule 10: a
+fresh read at write time (a live row for the raw, whoever wrote it, holds the
+save), INSERT-only with duplicates ignored, and the receipt is written before
+the INSERT. One procedure, one cohort: `--undo <procedure>` takes its rows back
+in one call. The daily sync then carries a saved row into the overlay and the
+fold into the knowledge base, each under that cohort. A pre-fill a reason holds
+comes to Needs you and waits for a person, as before.
+
+The fold's own holds come here too: kb/_fold_unclassified.py holds a saved
+assignment that conflicts with a human-reviewed classification by itself
+(Sheet 94 card 1); its report's `held` joins the Needs-you list.
 
 Run from repo root:
   python3 kb/_cer_procedures.py                 # rules + cached classifier results
   python3 kb/_cer_procedures.py --classify 400  # also ask about up to 400 titles
                                                 #   (runner, SUPABASE_SERVICE_KEY)
+  python3 kb/_cer_procedures.py --save on       # and save what no reason holds
+  python3 kb/_cer_procedures.py --save preview  # list what would save, write no row
+  python3 kb/_cer_procedures.py --undo brand-family   # take a procedure's rows back
   python3 kb/_cer_procedures.py --dry-run       # print the tallies, write nothing
 """
 import argparse
@@ -48,6 +65,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -63,6 +81,9 @@ SUGGESTIONS = os.path.join(HERE, "unclassified_suggestions.json")
 CREDENTIALS = os.path.join(HERE, "credentials.json")
 CLASSIFIED = os.path.join(HERE, "cer_classified.json")
 REPORT = os.path.join(HERE, "cer_procedures_out", "latest.json")
+SAVED_DIR = os.path.join(HERE, "cer_procedures_out", "saved")
+FOLD_DIR = os.path.join(HERE, "unclassified_fold")
+UT_PATH = os.path.join(HERE, "unified_titles.json")
 SKILL = os.path.join(ROOT, ".claude", "skills", "exhibit-canonicalization", "SKILL.md")
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
@@ -463,9 +484,228 @@ def as_proposal(rec, families=()):
     return out
 
 
+# ── what the fold held ───────────────────────────────────────────────────────
+
+def fold_held(fold_dir=FOLD_DIR):
+    """The saved assignments the last fold held, each with why. Since Sheet 94
+    card 1 (2026-10-18) kb/_fold_unclassified.py holds a conflict with a
+    human-reviewed classification, or a raw whose articulation rows carry another
+    title, by itself and lists it in its report's `held`; an older report listed
+    the conflicts as `conflict`. Each becomes a Needs-you entry."""
+    try:
+        days = sorted(d for d in os.listdir(fold_dir) if re.match(r"^\d{4}-\d{2}-\d{2}$", d))
+    except OSError:
+        return []
+    for day in reversed(days):
+        path = os.path.join(fold_dir, day, "report.json")
+        if not os.path.exists(path):
+            continue
+        try:
+            rep = json.load(open(path, encoding="utf-8"))
+        except ValueError:
+            continue
+        held = rep.get("held")
+        if held is None:
+            held = [dict(c, kind="conflict") for c in rep.get("conflict") or []]
+        out = []
+        for h in held:
+            who = (h.get("reviewed_by") or "").split("@")[0] or "a curator"
+            standing = h.get("standing")
+            if standing is None:  # an older report: read the titles out of the sentence
+                standing = sorted(set(re.findall(r"-> '([^']+)'", h.get("why") or "")))
+            out.append({"raw_title": h["raw"], "why": "the fold held the saved assignment: " + h["why"],
+                        "proposal": {"title": h.get("assigned") or "", "issuer": h.get("issuer") or "",
+                                     "procedure": "the assignment %s saved" % who},
+                        "standing": standing, "kind": h.get("kind") or "conflict", "fold_report": day})
+        return out
+    return []
+
+
+# ── saving under a procedure (Sheet 94 card 2) ───────────────────────────────
+
+UNCLASS = "_UNCLASSIFIED::"
+FIELD_TITLE = "unified_title_assignment"
+FIELD_ISSUER = "issuing_agency_assignment"
+PAGE = 1000          # Rule 10b: kb_curation reads are Range-paginated (#718)
+ATTEMPTS = 5
+TRANSIENT_HTTP = {429, 500, 502, 503, 504}
+RULING = ("Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of "
+          "saves under its procedure, reversible by procedure")
+
+
+def cohort_of(procedure_id):
+    """The reviewer_email a procedure's saves carry: cer-procedure-<id>@bot. One
+    procedure, one cohort, so a procedure is undone in one call."""
+    slug = re.sub(r"[^a-z0-9]+", "-", (procedure_id or "classifier").lower()).strip("-")
+    return "cer-procedure-%s@bot" % slug
+
+
+def _urlopen(req, timeout):
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        raw = resp.read()
+    return json.loads(raw) if raw else []
+
+
+def _write_json(path, obj):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+
+
+class Curation:
+    """kb_curation's _UNCLASSIFIED:: rows through PostgREST, with the service key
+    the workflow holds. The read is Range-paginated; the one write is an INSERT
+    that ignores duplicates, so a row already there, whoever wrote it, wins; the
+    one delete is by a procedure's cohort."""
+
+    def __init__(self, key, url=SUPABASE_URL, transport=_urlopen, sleep=time.sleep):
+        self.base = url.rstrip("/") + "/rest/v1/kb_curation"
+        self.key = key
+        self.transport = transport
+        self.sleep = sleep
+
+    def _send(self, method, params, body=None, headers=None):
+        qs = urllib.parse.urlencode(params, safe='(),."*', quote_via=urllib.parse.quote)
+        h = {"apikey": self.key, "Authorization": "Bearer " + self.key, "Accept": "application/json"}
+        if body is not None:
+            h["Content-Type"] = "application/json"
+        h.update(headers or {})
+        req = urllib.request.Request(self.base + "?" + qs, method=method, headers=h,
+                                     data=None if body is None else json.dumps(body).encode())
+        for attempt in range(ATTEMPTS):
+            try:
+                return self.transport(req, 60)
+            except urllib.error.HTTPError as exc:
+                if exc.code not in TRANSIENT_HTTP or attempt == ATTEMPTS - 1:
+                    raise
+            except (urllib.error.URLError, OSError):
+                if attempt == ATTEMPTS - 1:
+                    raise
+            self.sleep(2 ** attempt)
+
+    def saved(self):
+        """raw → its live title row, for every saved assignment, page by page."""
+        out, start = {}, 0
+        while True:
+            rows = self._send("GET", {"select": "course_id,field,value,reviewer_email,reviewed_at",
+                                      "course_id": "like." + UNCLASS + "*", "field": "eq." + FIELD_TITLE,
+                                      "order": "course_id"},
+                              headers={"Range-Unit": "items", "Range": "%d-%d" % (start, start + PAGE - 1)}) or []
+            for r in rows:
+                out[r["course_id"][len(UNCLASS):]] = r
+            if len(rows) < PAGE:
+                return out
+            start += PAGE
+
+    def insert(self, rows):
+        return self._send("POST", {"on_conflict": "course_id,field"}, rows,
+                          headers={"Prefer": "resolution=ignore-duplicates,return=representation"}) or []
+
+    def undo(self, cohort):
+        return self._send("DELETE", {"reviewer_email": "eq." + cohort, "course_id": "like." + UNCLASS + "*"},
+                          headers={"Prefer": "return=representation"}) or []
+
+
+def sure_rows(stage, report):
+    """kb_curation rows for every pre-fill no reason holds: the title under its
+    procedure's cohort, and the issuer when the proposal names one. A rule
+    procedure's settlement is sure by the rule; the classifier's is sure at SURE
+    or better, which is what keeps it out of needs_you."""
+    held = {n["raw_title"] for n in report.get("needs_you") or []}
+    rows = []
+    for raw in sorted(stage.get("staged") or {}):
+        p = stage["staged"][raw]
+        title = (p.get("title") or "").strip()
+        if raw in held or not title:
+            continue
+        proc = p.get("procedure") or "classifier"
+        cohort = cohort_of(proc)
+        rows.append({"course_id": UNCLASS + raw, "field": FIELD_TITLE, "value": title,
+                     "reviewer_email": cohort, "procedure": proc})
+        issuer = (p.get("issuer") or "").strip()
+        if issuer:
+            rows.append({"course_id": UNCLASS + raw, "field": FIELD_ISSUER, "value": issuer,
+                         "reviewer_email": cohort, "procedure": proc})
+    return rows
+
+
+def save_sure(stage, report, cur, run_id="", preview=False, now=None, out=print):
+    """Save every pre-fill no reason holds, under its procedure's cohort.
+
+    Rule 10, enforced here: a fresh read at write time (a live row for the raw,
+    whoever wrote it, holds the save: a curator's word, or last night's); the
+    INSERT ignores duplicates; the receipt is written BEFORE the INSERT and names
+    every row and its cohort, so --undo can take a procedure's rows back."""
+    rows = sure_rows(stage, report)
+    by_raw = {}
+    for r in rows:
+        by_raw.setdefault(r["course_id"][len(UNCLASS):], []).append(r)
+    live = cur.saved()
+    held = [{"raw_title": raw, "by": live[raw].get("reviewer_email"), "value": live[raw].get("value")}
+            for raw in by_raw if raw in live]
+    todo = [r for raw, rs in by_raw.items() if raw not in live for r in rs]
+    tally = {}
+    for r in todo:
+        if r["field"] == FIELD_TITLE:
+            tally[r["procedure"]] = tally.get(r["procedure"], 0) + 1
+    out("save: %d title(s) to save under %d procedure(s); %d held by a live row%s"
+        % (sum(tally.values()), len(tally), len(held), " (preview: nothing written)" if preview else ""))
+    for proc, n in sorted(tally.items(), key=lambda kv: (-kv[1], kv[0])):
+        out("  %-24s %4d  as %s" % (proc, n, cohort_of(proc)))
+    summary = {"to_save": sum(tally.values()), "by_procedure": tally, "held_live": len(held)}
+    if preview or not todo:
+        return summary
+    ts = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H-%M-%SZ")
+    os.makedirs(SAVED_DIR, exist_ok=True)
+    path = os.path.join(SAVED_DIR, "saved_%s.json" % ts)
+    receipt = {"table": "kb_curation", "mode": "save", "at": ts, "run_id": run_id, "ruling": RULING,
+               "procedures_hash": report.get("procedures_hash"),
+               "cohorts": sorted({r["reviewer_email"] for r in todo}),
+               "held_live": held, "rows": todo, "result": "pending"}
+    _write_json(path, receipt)
+    got = cur.insert([{k: r[k] for k in ("course_id", "field", "value", "reviewer_email")} for r in todo])
+    keys = {(g.get("course_id"), g.get("field")) for g in got}
+    receipt["inserted"] = [r for r in todo if (r["course_id"], r["field"]) in keys]
+    receipt["skipped_as_duplicate"] = [r for r in todo if (r["course_id"], r["field"]) not in keys]
+    receipt["result"] = "written"
+    _write_json(path, receipt)
+    out("saved: %d row(s) inserted, %d skipped as duplicate; receipt %s"
+        % (len(receipt["inserted"]), len(receipt["skipped_as_duplicate"]), os.path.relpath(path, ROOT)))
+    summary.update(inserted=len(receipt["inserted"]), skipped=len(receipt["skipped_as_duplicate"]), receipt=path)
+    return summary
+
+
+def undo_procedure(procedure, cur, now=None, out=print):
+    """Take back every row a procedure saved: one DELETE by its cohort. A curator's
+    later save on the same raw carries the curator's email, so it stays. Rows the
+    daily fold already carried into kb/unified_titles.json are counted, not
+    changed: revert the fold commit that carries them."""
+    cohort = cohort_of(procedure)
+    removed = cur.undo(cohort)
+    ts = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H-%M-%SZ")
+    folded = 0
+    try:
+        ut = json.load(open(UT_PATH, encoding="utf-8"))
+        folded = sum(1 for e in ut.values() if isinstance(e, dict) and e.get("reviewed_by") == cohort)
+    except (OSError, ValueError):
+        pass
+    os.makedirs(SAVED_DIR, exist_ok=True)
+    path = os.path.join(SAVED_DIR, "undo_%s.json" % ts)
+    _write_json(path, {"table": "kb_curation", "mode": "undo", "at": ts, "procedure": procedure,
+                       "cohort": cohort, "removed": removed, "already_folded": folded})
+    out("undo %s: %d row(s) removed from kb_curation; %d entries in kb/unified_titles.json carry this "
+        "cohort (revert the fold commit that carried them); receipt %s"
+        % (procedure, len(removed), folded, os.path.relpath(path, ROOT)))
+    return {"removed": len(removed), "already_folded": folded, "receipt": path}
+
+
 # ── the run ──────────────────────────────────────────────────────────────────
 
-def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True):
+def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True, save=None, cur=None,
+        run_id=""):
+    if save in ("on", "preview") and cur is None and not key and not dry_run:
+        # Before any file is written: a run that cannot save must not half-run.
+        sys.exit("--save needs SUPABASE_SERVICE_KEY (the fresh read and the write go through it).")
     procs = load_procedures()
     owners = lane_owners(procs)
     phash = procedures_hash(procs)
@@ -561,6 +801,12 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         if raw not in classified_proposals:
             needs_you.append({"raw_title": raw, "why": h["why"], "proposals": h["proposals"],
                               "colleges": cards[raw].get("colleges") or []})
+    # A saved assignment the fold held (Sheet 94 card 1) needs a person too. It is
+    # usually not in the queue: the reference already classifies the raw under a
+    # human-reviewed entry, and the saved assignment disagrees.
+    fold_holds = [dict(h, colleges=(cards.get(h["raw_title"]) or {}).get("colleges") or [])
+                  for h in fold_held()]
+    needs_you.extend(fold_holds)
     # A hint lane's proposal never pre-fills, even one the gate passes: on
     # today's queue those that pass still read "Kaiser High School" for
     # "EMT-405 Kaiser High School". The classifier sees each as a hint.
@@ -569,10 +815,12 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
     gen = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%M:%SZ")
     report = {
         "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, "
-                  "and the titles that need a person. Nothing here is saved; proposals pre-fill the tab.",
+                  "and the titles that need a person. A pre-fill no reason holds saves under its procedure "
+                  "(Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
         "_generated_at": gen, "procedures_hash": phash,
         "queue": len(queue), "saved_not_folded": len(queue) - len(waiting), "waiting": len(waiting),
         "proposed": len(staged), "needs_you_count": len(needs_you), "not_yet_asked": len(unasked),
+        "fold_held": len(fold_holds),
         "procedures": [dict(id=p["id"], name=p["name"], kind=p["kind"], rule=p["rule"],
                             source=p["source"], **by_proc[p["id"]]) for p in procs]
                       + [dict(id="classifier", name="The classifier decides the rest", kind="classifier",
@@ -588,8 +836,10 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
     stage = {
         "_about": ("Pre-fills for the CER's unclassified titles, written each night by "
                    "kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the "
-                   "classifier. NOT saved to Supabase: credential_reference.js pre-fills each row; "
-                   "the curator reviews and clicks Save. Rows with a saved assignment are never here."),
+                   "classifier. credential_reference.js pre-fills each row. A pre-fill no reason "
+                   "holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet "
+                   "94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved "
+                   "assignment are never here."),
         "_generated_at": gen, "_queue_count": len(queue),
         "_counts": {"staged": len(staged), "needs_you": len(needs_you), "not_yet_asked": len(unasked)},
         "_residual": sorted(unasked),
@@ -613,15 +863,28 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
                                  "asked under.", "records": dict(sorted(records.items()))},
                       f, indent=1, ensure_ascii=False)
             f.write("\n")
+    if save in ("on", "preview"):
+        save_sure(stage, report, cur or Curation(key), run_id=run_id, preview=(save == "preview"), now=now)
     return report, stage
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     ap.add_argument("--classify", type=int, default=0, help="ask the classifier about up to N titles")
+    ap.add_argument("--save", choices=["on", "preview"],
+                    help="save every pre-fill no reason holds under its procedure (on), "
+                         "or list what would save and write no row (preview)")
+    ap.add_argument("--undo", metavar="PROCEDURE", help="take back every kb_curation row this procedure saved")
     ap.add_argument("--dry-run", action="store_true", help="print the tallies; write nothing")
     args = ap.parse_args()
-    run(classify_n=args.classify, dry_run=args.dry_run, key=os.environ.get("SUPABASE_SERVICE_KEY"))
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if args.undo:
+        if not key:
+            sys.exit("--undo needs SUPABASE_SERVICE_KEY (the workflow holds it).")
+        undo_procedure(args.undo, Curation(key))
+        return
+    run(classify_n=args.classify, dry_run=args.dry_run, key=key, save=args.save,
+        run_id=os.environ.get("GITHUB_RUN_ID", ""))
 
 
 if __name__ == "__main__":

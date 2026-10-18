@@ -6,7 +6,8 @@
 //      cplCerColWidths.v1, ↺ reset in the ⚙ Columns panel)
 //   5. violet chip font colors → CO dark blue (var(--seal-blue))
 //   6. header row font color → white (was gold)
-//   7. Initiated / Not-initiated clarified in the lane-chip + Status tooltips
+//   7. (retired 2026-10-18, Sam, Open Asks Sheet 94 card 3) the Initiated sign-off:
+//      no lane, no Init button, no checkbox column, no Curate toggle
 //   8. cpl_type_override (the apprenticeship-tagging lane) — overlay-only
 //      kb_curation field consumed by cplTypesOf(): chips, the CPL-type
 //      filter, and the extracts all see the curated type
@@ -237,19 +238,17 @@ const visibleTitles = (doc) => Array.from(doc.querySelectorAll("tr.cr-row"))
   check("cpltype: JSON extract carries the curated type",
     JSON.stringify(carp.cpl_types) === JSON.stringify(["Apprenticeship"]));
 
-  // ── 7. Initiated clarified ──
-  const lanes = Array.from(doc.querySelectorAll(".cr-lane"));
-  const openLane = lanes.find((b) => txt(b).indexOf("Not initiated") >= 0);
-  const doneLane = lanes.find((b) => txt(b).indexOf("Initiated") === 0);
-  check("initiated: ○ lane tooltip says sign-off changes nothing + no action required",
-    /never changes the data/.test(openLane.title)
-    && /no other action is required/.test(openLane.title));
-  check("initiated: Initiated lane tooltip says it is purely a review receipt",
-    /review receipt/.test(doneLane.title));
+  // ── 7. The Initiated sign-off is retired (Sheet 94 card 3) ──
+  const lanes = Array.from(doc.querySelectorAll(".cr-lane, .cr-view"));
+  check("initiated: no lane names the sign-off",
+    !lanes.some((b) => /initiated/i.test(txt(b))));
   const statusTh = Array.from(doc.querySelectorAll(".cr-table th"))
     .find((th) => txt(th).indexOf("Status") === 0);
-  check("initiated: Status column tooltip repeats the changes-nothing contract",
-    /changes nothing in the data and is never required/.test(statusTh.title));
+  check("initiated: the Status column speaks only of Save and Saved",
+    /Save appears/.test(statusTh.title) && !/Init/.test(statusTh.title) && !/Curate/.test(statusTh.title));
+  check("initiated: no Init button, no checkbox, no Curate toggle in the grid",
+    !doc.querySelector(".cr-action-btn") && !doc.querySelector(".cr-row-chk")
+    && !doc.querySelector(".cr-curate-toggle"));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

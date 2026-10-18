@@ -330,3 +330,28 @@ check that exists nowhere else; then the CCR mountain in leverage-ordered waves.
 - **The mock-up** (https://claude.ai/artifact/Gu6HTwqSwMYLSy4C4xRag3) reduces seven view chips to three words (Needs
   you, Procedures, Reference) and retires the Initiated sign-off and the Curate panel. Three calls went to Sheet 93.
 
+
+## S416 SkyCeanothus (2026-10-18): Sheet 94's three rulings built
+
+- **A gate that holds everything for one exception hides its own backlog; a hold per item shows it.** The fold's V1
+  held 176 clean assignments behind 18 conflicts for three months, and the tab kept promising a fold on the next
+  refresh. Each assignment is now folded or held on its own, the report lists `held` with the standing title, and the
+  procedures run carries that list to Needs you. The test that pins it (`tests/fold_unclassified_test.py`) builds a
+  four-assignment knowledge base in a temp dir and points the module's path constants at it, so the whole `main()`
+  runs, receipts included.
+- **The held conflicts were invisible because they are not in the queue.** The reference classifies each of the 18
+  raws already, under a bulk review stamp of 2026-06-02; the worklist assignment came a day or two later. The audit
+  lists only raws with no entry, so the tab never showed them. A hold needs a place to be seen: the Held lane now
+  renders them with the standing title and one word, *Keep the reference's title*.
+- **A nightly writer's cohort is the procedure, not a session.** `<lane>-s<N>@bot` names who ran a session's write;
+  a save the procedures run makes every night has no session, and Sam's ruling is "reversible by procedure". So the
+  cohort is `cer-procedure-<id>@bot`, and undo is one DELETE by cohort. The receipt still lists every row.
+- **A fresh read of `kb_curation` must page.** The applier's one-shot GET is fine for a plan's few rows; the saver's
+  read of every `_UNCLASSIFIED::` title row is over a thousand, past PostgREST's cap (the 2026-07-07 lesson at the
+  tab's own fetch). The `Curation` client reads with `Range` headers and stops on a short page.
+- **A rule's settlement is sure by the rule.** The classifier's results save at 0.85 or better; a rule procedure's
+  settlement saves at the rule's word, including the course-identity rule's 0.8 (the college's own course title). The
+  lane records it so Sam can say otherwise.
+- **Removing a column moves a test's view.** `cer_v2_grid` found the No-issuer lane (in Needs you) and then read the
+  grid's headers; the check that used to switch it back to Reference was the Not-initiated lane. When a lane leaves,
+  find what else it did in the tests.

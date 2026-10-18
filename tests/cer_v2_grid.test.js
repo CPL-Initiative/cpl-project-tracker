@@ -110,12 +110,16 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   check("views: no report, so the tab opens on Reference",
     doc.getElementById("cr-view-ref").getAttribute("aria-pressed") === "true");
   const lanes = Array.from(doc.querySelectorAll(".cr-lane")).map((b) => txt(b).replace(/\s*\(.*$/, ""));
-  check("lanes: Reference paints All, Industry credentials, Not initiated, Initiated",
-    lanes.join(" · ") === "All · Industry credentials · Not initiated · Initiated");
+  check("lanes: Reference paints All and Industry credentials (the Initiated lanes left, Sheet 94 card 3)",
+    lanes.join(" · ") === "All · Industry credentials");
   check("lanes: All carries the row count", /All \(3\)/.test(txt(laneBtn(doc, /All/))));
   check("lanes: No-issuer count = 1 (Retail Management)",
     /No issuer \(1\)/.test(txt(laneBtn(doc, /No issuer/))));
-  check("lanes: Not-initiated = 3", /Not initiated \(3\)/.test(txt(laneBtn(doc, /Not initiated/))));
+  // Finding No issuer opened Needs you; the grid checks below read Reference.
+  laneBtn(doc, /^All/).click();
+  await sleep(30);
+  check("grid: no checkbox column and no select-all (the bulk sign-off left)",
+    !doc.querySelector("table.cr-table .cr-chk-cell") && !doc.getElementById("cr-select-all"));
   check("toolbar: the old ⚠ Triage button is GONE", !doc.querySelector(".cr-triage-btn"));
 
   const ths = Array.from(doc.querySelectorAll("table.cr-table thead th")).map(txt);

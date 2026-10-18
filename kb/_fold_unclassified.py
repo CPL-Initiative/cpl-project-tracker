@@ -47,27 +47,30 @@ orphaned by a supersede (no raw maps to them anymore, record unreviewed) are
 pruned. A target credential record that is unreviewed-machine with a NULL
 issuer gains the assignment's issuer (stamped curator).
 
-V-gates:
-  V1 apply_safe          — no CONFLICTs (human-reviewed disagreements only;
-                           unreviewed machine drafts route to SUPERSEDE).
+A HOLD IS PER ASSIGNMENT (Sam, Open Asks Sheet 94 card 1, 2026-10-18: "apply").
+Until then the fold applied nothing while any assignment conflicted (V1 was
+all-or-nothing): 18 conflicts held 176 clean assignments from 2026-07-08 to
+2026-10-18 while the tab promised they would fold on the next refresh. Now each
+assignment is folded or held on its own:
+  - a CONFLICT (a human-reviewed classification stands) holds only itself;
+  - a clean raw whose coci_articulations.json rows carry another unified_title
+    (the "two valid spellings" case, methodology strategy 3) holds only itself;
+  - everything else folds.
+The report and the receipt list `held`, each with why, and the nightly CER
+procedures run (kb/_cer_procedures.py) brings them to the tab's Needs you.
+
+V-gates (structural, enforced in the apply):
   V2 target_credential   — every assigned unified_title has a credentials.json
                            record after the fold.
   V3 additive_plus_declared — apply adds only NEW raw keys and modifies only the
                            DECLARED superseded spellings; count delta == #clean.
-  V4 no_articulation_ripple — for each folded raw, 0 coci_articulations.json records
-                           whose exhibit_title is that raw but whose inlined
-                           unified_title differs from the assignment, EXCEPT
-                           ripples on superseded raws (resolved by the in-apply
-                           re-point). Remaining ripples (clean-lane raws — the
-                           "two valid spellings" case) still block for the human
-                           call per the methodology note.
 
 Run from repo root:
   python3 kb/_fold_unclassified.py                  # dry-run (report only)
   python3 kb/_fold_unclassified.py --apply          # writes the KB + receipt
-  python3 kb/_fold_unclassified.py --apply-if-safe  # cron mode: apply when all
-                                                    # V-gates pass, else report +
-                                                    # exit 0 (never fails the run)
+  python3 kb/_fold_unclassified.py --apply-if-safe  # cron mode: the same apply,
+                                                    # and exit 0 whatever is held
+                                                    # (never fails the run)
 """
 import json
 import os
@@ -127,7 +130,7 @@ def classify(assignments, ut):
         rec = {"raw": raw, "assigned": assigned, "issuer": (a.get("issuing_agency") or "").strip(),
                "reviewed_by": a.get("reviewed_by"), "reviewed_at": a.get("reviewed_at")}
         if not assigned:
-            conflict.append({**rec, "why": "empty unified_title"})
+            conflict.append({**rec, "kind": "conflict", "why": "empty unified_title"})
             continue
         spellings = _spellings_of(raw, ut)
         disagreeing = [s for s in spellings if (ut[s].get("unified_title") or "") != assigned]
@@ -146,7 +149,9 @@ def classify(assignments, ut):
                               + "; ".join(f"{s!r} -> {e.get('unified_title')!r} ({_entry_ts(e)})"
                                           for s, e in held)})
             else:
-                conflict.append({**rec, "why": "human-reviewed classification stands: "
+                conflict.append({**rec, "kind": "conflict",
+                                 "standing": sorted({e.get("unified_title") or "" for _, e in held}),
+                                 "why": "human-reviewed classification stands: "
                                  + "; ".join(f"{s!r} -> {e.get('unified_title')!r}" for s, e in held)})
     return clean, skip, supersede, stale, conflict
 
@@ -179,21 +184,30 @@ def main():
         return
 
     clean, skip, supersede, stale, conflict = classify(assignments, ut)
-    fold_recs = clean + supersede
 
     # Articulation ripple scan (load the big file only when there's work to do).
     art = None
     ripples = []
-    if fold_recs:
+    if clean or supersede:
         art = load(ART_PATH)
-        ripples = articulation_ripples(fold_recs, art)
+        ripples = articulation_ripples(clean + supersede, art)
     # Ripples on SUPERSEDED raws are resolved by the in-apply re-point (the
     # displaced title is a machine draft, not a valid alternate spelling —
-    # methodology strategy 3). Ripples on CLEAN raws still block: those are the
-    # "two valid spellings" case that needs the human call.
+    # methodology strategy 3). A ripple on a CLEAN raw is the "two valid
+    # spellings" case that needs the human call: that raw is HELD, by itself.
     superseded_raws = {r["raw"].strip() for r in supersede}
     resolved_ripples = [x for x in ripples if (x["raw"] or "").strip() in superseded_raws]
     blocking_ripples = [x for x in ripples if (x["raw"] or "").strip() not in superseded_raws]
+    rippled_raws = {(x["raw"] or "").strip() for x in blocking_ripples}
+    held_ripple = [{**r, "kind": "ripple",
+                    "why": "its articulation rows carry another unified title: "
+                    + "; ".join(sorted({f"{x['has']!r}" for x in blocking_ripples
+                                        if (x["raw"] or "").strip() == r["raw"].strip()}))}
+                   for r in clean if r["raw"].strip() in rippled_raws]
+    clean = [r for r in clean if r["raw"].strip() not in rippled_raws]
+    # Each held assignment holds only itself (Sheet 94 card 1).
+    held = conflict + held_ripple
+    fold_recs = clean + supersede
 
     # Which assigned unified_titles lack a credentials.json record? (would be
     # added — deduped by target title, since two raws may mint the same one.)
@@ -283,12 +297,11 @@ def main():
             cred_prunes.append(t)
 
     # ---- V-gates ----
-    v1 = not conflict
+    # V1 (no conflicts) and V4 (no blocking ripples) were the all-or-nothing
+    # hold until 2026-10-18; each is now a per-assignment hold, listed in `held`.
     v2 = True  # every fold target either has a credential record or we add one below
     v3 = True  # enforced structurally: new keys + declared superseded spellings only
-    v4 = not blocking_ripples
-    gates = {"V1_apply_safe": v1, "V2_target_credential": v2,
-             "V3_additive_plus_declared": v3, "V4_no_articulation_ripple": v4}
+    gates = {"V2_target_credential": v2, "V3_additive_plus_declared": v3}
     apply_safe = all(gates.values())
 
     # ---- report ----
@@ -307,11 +320,11 @@ def main():
     print(f"  STALE (overlay outdated, report-only): {len(stale)}")
     for r in stale:
         print(f"     . {r['raw']!r} ({r['why']})")
-    print(f"  CONFLICT (rejected):{len(conflict)}")
-    for r in conflict:
-        print(f"     ! {r['raw']!r} ({r['why']})")
+    print(f"  HELD (each by itself):{len(held)}")
+    for r in held:
+        print(f"     ! {r['raw']!r} ({r['kind']}: {r['why']})")
     print(f"  articulation ripples: {len(ripples)} "
-          f"({len(resolved_ripples)} resolved by supersede re-point, {len(blocking_ripples)} blocking)")
+          f"({len(resolved_ripples)} resolved by supersede re-point, {len(blocking_ripples)} holding their raw)")
     for x in ripples[:10]:
         print(f"     ~ art[{x['idx']}] {x['raw']!r}: has {x['has']!r}, want {x['want']!r}")
     if issuer_fills:
@@ -322,14 +335,14 @@ def main():
     if cred_prunes:
         print(f"  orphaned machine credential records to prune: {cred_prunes}")
     print("  V-gates: " + ", ".join(f"{k}={'OK' if v else 'FAIL'}" for k, v in gates.items()))
-    print(f"  apply_safe: {apply_safe}")
+    print(f"  apply_safe: {apply_safe}  (held assignments never block the rest)")
 
     # NO-OP apply → no receipt writes. Two reasons: (1) the daily
     # --apply-if-safe run must not churn the receipts dir (a fresh
     # _generated_at every day would defeat the workflow's "no staged diff →
     # no commit" idempotency), and (2) a same-day re-run must not clobber the
     # day's REAL apply receipt with an all-zeros one.
-    if apply and not (fold_recs or conflict or blocking_ripples or issuer_adds):
+    if apply and not (fold_recs or held or issuer_adds):
         print("Nothing to fold — receipts left untouched.")
         return
 
@@ -339,7 +352,7 @@ def main():
         "mode": "apply" if apply else "dry-run",
         "gates": gates, "apply_safe": apply_safe,
         "clean": clean, "skip": skip, "supersede": supersede,
-        "stale": stale, "conflict": conflict,
+        "stale": stale, "conflict": conflict, "held": held,
         "credential_adds": cred_adds, "credential_issuer_fills": issuer_fills,
         "credential_issuer_adds": issuer_adds,
         "credential_prunes": cred_prunes,
@@ -357,10 +370,12 @@ def main():
         return
     if not apply_safe:
         if apply_if_safe:
-            print("APPLY SKIPPED (--apply-if-safe) — a V-gate failed; see the report. "
-                  "Conflicts/blocking ripples need the manual fold path.")
+            print("APPLY SKIPPED (--apply-if-safe) — a structural V-gate failed; see the report.")
             return
-        sys.exit("APPLY BLOCKED — a V-gate failed (see report). Resolve conflicts/ripples first.")
+        sys.exit("APPLY BLOCKED — a structural V-gate failed (see report).")
+    if not fold_recs and not issuer_adds:
+        print(f"Nothing to fold: {len(held)} assignment(s) held, each by itself (see the report).")
+        return
 
     # ---- apply ----
     # Phase-2 of the Rule-5c identity integration (2026-07-07): when the
@@ -505,7 +520,7 @@ def main():
             json.dump(cr, f, indent=2, ensure_ascii=False)
             f.write("\n")
 
-    applied = {"folded": clean, "superseded": supersede,
+    applied = {"folded": clean, "superseded": supersede, "held": held,
                "credential_added": cred_adds, "credential_issuer_fills": issuer_fills,
                "credential_issuer_adds": issuer_adds,
                "credential_pruned": cred_prunes,
@@ -522,7 +537,8 @@ def main():
           f"{len(issuer_fills)} issuer(s) filled, {len(issuer_adds)} additional "
           f"issuer record(s) appended, {len(cred_prunes)} orphan record(s) pruned, "
           f"{len(resolved_ripples)} articulation row(s) re-pointed, "
-          f"{pruned} audit card(s) pruned. Receipt: {os.path.relpath(OUTDIR, ROOT)}/")
+          f"{pruned} audit card(s) pruned, {len(held)} assignment(s) held. "
+          f"Receipt: {os.path.relpath(OUTDIR, ROOT)}/")
 
 
 if __name__ == "__main__":

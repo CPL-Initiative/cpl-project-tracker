@@ -7,14 +7,23 @@ procedure carries its words and date; a lane written for July's queue never sett
 only hints; the quality gate holds a title left with a dangling word, a method word or a course
 code; two procedures that disagree are held; the identity lookup refuses another college's
 course; a house family is kept as written while a new title is styled by Rule 5g; a failed
-classifier call is retried once; and nothing is ever written outside the run's three files.
+classifier call is retried once; and a dry run writes nothing.
+
+Saving (Sam, Open Asks Sheet 94 card 2, 2026-10-18): a pre-fill a reason holds never saves; a
+title and its issuer save as two rows under the cohort of the procedure that decided it; a live
+row for the raw, whoever wrote it, holds the save; the receipt exists before the INSERT; the
+INSERT ignores duplicates; the live read is Range-paginated; --undo deletes by one procedure's
+cohort and nothing else; a preview writes no row and no receipt; and the fold's held assignments
+join the Needs-you list.
 
 No network: the classifier is a stand-in. Run from repo root:
     python3 tests/cer_procedures_test.py
 """
+import glob
 import io
 import json
 import os
+import shutil
 import sys
 import tempfile
 from contextlib import redirect_stdout
@@ -223,6 +232,152 @@ try:
 except SystemExit:
     check("asking the classifier without the service key stops the run", True)
 cp.open = real_open
+
+# ── saving under a procedure (Sheet 94 card 2) ───────────────────────────────
+check("a procedure's cohort names it",
+      cp.cohort_of("brand-family") == "cer-procedure-brand-family@bot"
+      and cp.cohort_of("classifier") == "cer-procedure-classifier@bot"
+      and cp.cohort_of(None) == "cer-procedure-classifier@bot")
+U = cp.UNCLASS
+stage_t = {"staged": {
+    "AP Statistics Exam": {"title": "AP Statistics", "issuer": "College Board", "procedure": "brand-family",
+                           "confidence": 0.8},
+    "Pipe Welding-Credit by Exam": {"title": "Pipe Welding", "issuer": CCC, "procedure": "classifier",
+                                    "confidence": 0.9},
+    "Phlebotomy Tech I": {"title": "Phlebotomy Technician I", "issuer": "", "procedure": "classifier",
+                          "confidence": 0.62},
+    "No Issuer Named": {"title": "Forklift Operator", "issuer": "", "procedure": "classifier", "confidence": 0.9},
+    "Saved Already": {"title": "Something", "issuer": "X", "procedure": "classifier", "confidence": 0.95},
+}}
+report_t = {"procedures_hash": "abc",
+            "needs_you": [{"raw_title": "Phlebotomy Tech I", "why": "the classifier is unsure (0.62)"}]}
+rows = cp.sure_rows(stage_t, report_t)
+check("a pre-fill a reason holds never saves", not any(r["course_id"] == U + "Phlebotomy Tech I" for r in rows))
+ap_rows = [r for r in rows if r["course_id"] == U + "AP Statistics Exam"]
+check("a title and its issuer save as two rows under the procedure's cohort",
+      sorted(r["field"] for r in ap_rows) == [cp.FIELD_ISSUER, cp.FIELD_TITLE]
+      and all(r["reviewer_email"] == "cer-procedure-brand-family@bot" for r in ap_rows))
+check("a proposal with no issuer saves its title alone",
+      [r["field"] for r in rows if r["course_id"] == U + "No Issuer Named"] == [cp.FIELD_TITLE])
+
+
+class FakeCuration:
+    def __init__(self, live):
+        self.live = live
+        self.inserted = []
+        self.deleted = []
+        self.receipt_before_insert = None
+
+    def saved(self):
+        return dict(self.live)
+
+    def insert(self, rows):
+        self.receipt_before_insert = bool(glob.glob(os.path.join(cp.SAVED_DIR, "saved_*.json")))
+        self.inserted.extend(rows)
+        return [dict(r) for r in rows]
+
+    def undo(self, cohort):
+        self.deleted.append(cohort)
+        return [{"course_id": U + "x", "field": cp.FIELD_TITLE, "value": "v", "reviewer_email": cohort}]
+
+
+saved_dir_real = cp.SAVED_DIR
+tmpd = tempfile.mkdtemp(prefix="cer-save-")
+cp.SAVED_DIR = tmpd
+fake = FakeCuration({"Saved Already": {"course_id": U + "Saved Already", "field": cp.FIELD_TITLE,
+                                       "value": "The Curator's Title", "reviewer_email": "map@rccd.edu"}})
+with redirect_stdout(io.StringIO()):
+    summ = cp.save_sure(stage_t, report_t, fake, run_id="1", preview=True)
+check("a preview writes no row and no receipt",
+      not fake.inserted and not os.listdir(tmpd) and summ["to_save"] == 3 and summ["held_live"] == 1, summ)
+with redirect_stdout(io.StringIO()):
+    summ = cp.save_sure(stage_t, report_t, fake, run_id="1")
+check("a live row holds the raw, whoever wrote it",
+      not any(r["course_id"] == U + "Saved Already" for r in fake.inserted) and summ["held_live"] == 1)
+check("the receipt exists before the insert", fake.receipt_before_insert is True)
+check("the save writes the sure rows and nothing else", len(fake.inserted) == 5
+      and {r["course_id"] for r in fake.inserted}
+      == {U + "AP Statistics Exam", U + "Pipe Welding-Credit by Exam", U + "No Issuer Named"})
+rec = json.load(open(summ["receipt"], encoding="utf-8"))
+check("the receipt names the ruling, every row, its cohort and the live hold",
+      rec["ruling"].startswith("Open Asks Sheet 94 card 2") and len(rec["rows"]) == 5
+      and rec["result"] == "written" and len(rec["inserted"]) == 5
+      and rec["cohorts"] == ["cer-procedure-brand-family@bot", "cer-procedure-classifier@bot"]
+      and rec["held_live"][0]["by"] == "map@rccd.edu")
+with redirect_stdout(io.StringIO()):
+    u = cp.undo_procedure("brand-family", fake)
+check("undo deletes by the procedure's cohort and nothing else", fake.deleted == ["cer-procedure-brand-family@bot"])
+check("undo leaves a receipt naming what it removed",
+      os.path.basename(u["receipt"]).startswith("undo_")
+      and json.load(open(u["receipt"], encoding="utf-8"))["removed"][0]["reviewer_email"] == "cer-procedure-brand-family@bot")
+shutil.rmtree(tmpd)
+cp.SAVED_DIR = saved_dir_real
+
+sent = []
+
+
+def transport(req, timeout):
+    sent.append(req)
+    return []
+
+
+cur = cp.Curation("k", transport=transport, sleep=lambda s: None)
+cur.saved()
+cur.insert([{"course_id": U + "a", "field": cp.FIELD_TITLE, "value": "A", "reviewer_email": "c@bot"}])
+cur.undo("cer-procedure-x@bot")
+check("the live read is Range-paginated and scoped to the unclassified title rows",
+      sent[0].get_header("Range") == "0-999" and sent[0].get_header("Range-unit") == "items"
+      and "_UNCLASSIFIED" in sent[0].full_url and "unified_title_assignment" in sent[0].full_url)
+check("the insert ignores duplicates on (course_id, field)",
+      "ignore-duplicates" in sent[1].get_header("Prefer") and "on_conflict=course_id" in sent[1].full_url)
+check("the undo deletes by cohort within the unclassified namespace",
+      sent[2].get_method() == "DELETE" and "reviewer_email=eq.cer-procedure-x%40bot" in sent[2].full_url
+      and "_UNCLASSIFIED" in sent[2].full_url)
+
+
+class Flaky:
+    def __init__(self):
+        self.n = 0
+
+    def __call__(self, req, timeout):
+        self.n += 1
+        if self.n == 1:
+            raise cp.urllib.error.HTTPError(req.full_url, 503, "busy", {}, None)
+        return []
+
+
+fl = Flaky()
+cp.Curation("k", transport=fl, sleep=lambda s: None).saved()
+check("a transient error is retried", fl.n == 2)
+
+try:
+    with redirect_stdout(io.StringIO()):
+        cp.run(dry_run=False, key=None, catalog=False, save="on")
+    check("saving without the service key stops the run", False)
+except SystemExit:
+    check("saving without the service key stops the run", True)
+except Exception as exc:  # the run must stop at the key check, before any write
+    check("saving without the service key stops the run", False, repr(exc))
+
+# ── the fold's holds ─────────────────────────────────────────────────────────
+tmpf = tempfile.mkdtemp(prefix="fold-held-")
+os.makedirs(os.path.join(tmpf, "2026-10-17"))
+os.makedirs(os.path.join(tmpf, "2026-10-18"))
+json.dump({"conflict": [{"raw": "Old Style", "assigned": "A", "why": "old"}]},
+          open(os.path.join(tmpf, "2026-10-17", "report.json"), "w"))
+json.dump({"held": [{"raw": "ADJU 232", "assigned": "Juvenile Justice Procedures", "issuer": "",
+                     "reviewed_by": "map@rccd.edu", "kind": "conflict",
+                     "why": "human-reviewed classification stands: 'ADJU 232' -> 'Juvenile Law and Procedures'"}]},
+          open(os.path.join(tmpf, "2026-10-18", "report.json"), "w"))
+fh = cp.fold_held(tmpf)
+check("the newest fold report's held assignments become Needs-you entries",
+      len(fh) == 1 and fh[0]["raw_title"] == "ADJU 232" and fh[0]["why"].startswith("the fold held the saved assignment")
+      and fh[0]["proposal"]["title"] == "Juvenile Justice Procedures" and "map" in fh[0]["proposal"]["procedure"], fh)
+os.remove(os.path.join(tmpf, "2026-10-18", "report.json"))
+check("a report from before the per-item hold is read by its conflict list",
+      [h["raw_title"] for h in cp.fold_held(tmpf)] == ["Old Style"])
+shutil.rmtree(tmpf)
+check("no fold directory means nothing held", cp.fold_held(os.path.join(tmpf, "none")) == [])
 
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:

@@ -30,6 +30,10 @@ for (let i = 0; i < 40; i++) {
     proposal: { title: "Proposal " + i, issuer: "California Community Colleges", confidence: 0.62 },
     colleges: ["A College"] });
 }
+needs.push({ raw_title: "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+  why: "the fold held the saved assignment: human-reviewed classification stands: 'ADJU 232 - Juvenile Justice Procedures - Credit by Exam' -> 'Juvenile Law and Procedures'",
+  proposal: { title: "Juvenile Justice Procedures", issuer: "", procedure: "the assignment map saved" },
+  standing: ["Juvenile Law and Procedures"], kind: "conflict", fold_report: "2026-10-18", colleges: [] });
 needs.unshift({ raw_title: "CRIM-11 Introduction to Corrections", why: "two procedures disagree",
   proposals: [{ procedure: "brand-family", title: "Corrections", issuer: "X" },
               { procedure: "course-identity", title: "Introduction to Corrections", issuer: "California Community Colleges" }],
@@ -101,7 +105,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("views: a labelled group, the view in use said by aria-pressed",
     /views/.test(doc.querySelector(".cr-views").getAttribute("aria-label"))
     && views[0].getAttribute("aria-pressed") === "true" && views[2].getAttribute("aria-pressed") === "false");
-  check("views: Needs you counts the held titles", /Needs you \(41\)/.test(txt(views[0])));
+  check("views: Needs you counts the held titles", /Needs you \(42\)/.test(txt(views[0])));
   check("views: Reference counts the credentials", /Reference \(1\)/.test(txt(views[2])));
   const subs = Array.from(doc.querySelectorAll(".cr-sublanes button.cr-lane")).map((b) => txt(b).replace(/\s*\(.*$/, ""));
   check("needs you: its lanes are Held, Unclassified, No issuer, Merge confirms",
@@ -111,7 +115,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const needItems = () => Array.from(doc.querySelectorAll(".cr-proc-need"));
   check("held: pages at 25 rather than painting every held title", needItems().length === 25);
   check("held: the heading counts every held title",
-    /Held by the procedures \(41\)/.test(txt(doc.getElementById("cr-proc-needs-h"))));
+    /Held by the procedures \(42\)/.test(txt(doc.getElementById("cr-proc-needs-h"))));
   const dis = needItems()[0];
   check("held: a disagreement shows both proposals and who made each",
     /by brand-family/.test(txt(dis)) && /by course-identity/.test(txt(dis)));
@@ -119,11 +123,19 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("held: names the colleges", /B College, C College/.test(txt(dis)));
   const summary = txt(doc.getElementById("cr-summary"));
   check("summary: says how many titles were pre-filled and how many need a person",
-    /1100 of 1322 waiting titles pre-filled in Unclassified/.test(summary) && /41 need you/.test(summary));
+    /1100 of 1322 waiting titles pre-filled in Unclassified/.test(summary) && /42 need you/.test(summary));
   check("summary: carries the run's date", /2026-10-18/.test(summary));
   doc.querySelector("button.cr-proc-more").click();
   await sleep(30);
-  check("held: Show more reveals the rest", needItems().length === 41);
+  check("held: Show more reveals the rest", needItems().length === 42);
+  const foldItem = needItems()[41];
+  check("held: a saved assignment the fold held shows the standing title and why",
+    /The reference classifies it as: Juvenile Law and Procedures/.test(txt(foldItem))
+    && /Why it is here: the fold held the saved assignment/.test(txt(foldItem))
+    && /by the assignment map saved/.test(txt(foldItem)));
+  check("held: a fold hold offers no Open in Unclassified, and tells a reader to sign in",
+    !foldItem.querySelector("button.cr-proc-open")
+    && /Sign in to keep the reference's title/.test(txt(foldItem)));
 
   check("held: a title saved since the run says so, with nothing to open",
     /No longer waiting/.test(txt(needItems()[1])) && !needItems()[1].querySelector("button.cr-proc-open"));
@@ -194,7 +206,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("css: college badges paint no fill (dark read hunter on half-white at 1.15:1, S413)",
     /\.cr-badge-green\{background:none;/.test(all) && /\.cr-badge-orange\{background:none;/.test(all));
   check("css: a row's section headings are h3 in the body face",
-    /\.cr-expanded-body h3:not\(\.cr-curation-h\)[^{]*\{[^}]*font-family:inherit/.test(all));
+    /\.cr-expanded-body h3[^{]*\{[^}]*font-family:inherit/.test(all));
 
   cerLane(doc, /^Reference/).click();
   await sleep(30);

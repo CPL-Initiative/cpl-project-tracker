@@ -211,7 +211,7 @@ const gridRow = (doc, name) => Array.from(doc.querySelectorAll("tr"))
   check("First Light: no raw hex in the tab's injected CSS (a token fallback is allowed)",
     css.length > 1000 && bareHex(css).length === 0 && bareHex(ind).length === 0);
   check("First Light: controls are underlined words",
-    /button\.cr-action-btn[^{]*\{border:0;border-radius:0;background:none;color:var\(--cobalt\)[^}]*text-decoration:underline/.test(css));
+    /button\.cr-saveall[^{]*\{border:0;border-radius:0;background:none;color:var\(--cobalt\)[^}]*text-decoration:underline/.test(css));
   check("First Light: the tab ground is a theme token", css.indexOf("background:var(--cer-cream)") >= 0);
   check("a11y: sign-in is a button, not a link that acts",
     !!doc.querySelector("button.cr-auth-link") && !doc.querySelector("a.cr-auth-link"));
