@@ -96,3 +96,20 @@ order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep).
 - `kb/README.md`, `README.md`, the Pipeline tab: nothing they cover moved.
 - `kb/queue_status.json`: stamped (headline 20,282 active, 11,621 complete, 113 colleges, re-read live at 18:09Z; the
   whole-harvest row re-read at 18:09Z; next run 2026-10-19T05:12Z).
+
+## Emergency addendum (S418, 19:21Z 2026-10-18; Rule 9a, about 48,000 tokens left)
+
+After the checkpoint merged (#2235, 18:36Z):
+- #2236 (the Letters tokens) merged at 18:38Z.
+- Sam, 19:08Z, in chat to Session 417: *"Commons looks good. Just make sure I can collapse each and we have a collapse
+  all button."* S417 owns the mock-up file and artifact (version 4, with the fold, is live; source cpl-project-tracker#2239)
+  and wrote the row `sam-approves-commons-mockup-collapse-2026-10-18`; cite that one. The lines above saying Sam has
+  not seen the page, and priority 1, are superseded: the Commons step 1 follows #2239.
+- #2238 (S418's record of that ruling, carrying the wrong time 17:31Z) closed unmerged; its branch
+  `claude/s418-commons-ruling` holds lane, section 11, status-file and handoff text to lift with the time corrected.
+- S418's duplicate row `sam-commons-mockup-approved-collapse-controls-2026-10-18` is superseded through
+  `supabase-migrate.yml` on `claude/s418-memory-dup-supersede` (run 39158212210); its receipt PR merges on green
+  `test`. If it is still open when you read this, merge it.
+- Not refreshed here (emergency): the commons lane, section 11's Commons row, `kb/queue_status.json`'s call and next
+  step, the lessons docs and the vault note. Session 419 was told all of this by message at 19:19Z and holds the queue.
+  S418 holds no PR subscription, watch or check-in once its 19:23Z check-in has fired.
