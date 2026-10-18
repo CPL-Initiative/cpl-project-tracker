@@ -45,9 +45,12 @@ answered. Sheet 96 is a draft (below).
   https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi; source committed). Every figure re-measured; the corrections are
   in [commons](reference/lanes/commons.md). Fable's second card (the Sierra read) is not built: Sheet 95 card 2
   proposed exactly that read and Sam answered quote. The CER row cites Sheet 96 card 1 without a link yet.
-- **Open Asks Sheet 96, draft: CPLBrain#385** (`claude/dazzling-bell-6aj8bk`, `SHEET_ID 2026-10-18-open-asks-96`): one
-  card, the course-identity rule's 0.8 save threshold, with `__RECEIPT__` and `__EVIDENCE__` placeholders. Its
-  `coverage` check fails until the sheet HTML is built and committed and the tracker lane carries the marker.
+- **Open Asks Sheet 96 is published (https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui, S417 at Sam's ask):** one card, the
+  course-identity rule's 0.8 save threshold, built from the preview run's numbers; the HTML is committed in CPLBrain#385.
+  Read its `replies` store before acting. Its `coverage` check passes once the tracker's CER lane carries the marker
+  (a tracker PR, merged first). This was an EMERGENCY checkpoint at the end (Rule 9a): the lane marker, the Commons
+  mock-up's calls-cell link to the sheet, and the vault note's update are deferred to you; the rest of Rule 9's
+  artifacts were refreshed in #2234.
 - **The UI pass: Our Process (#2233, draft, `claude/s417-our-process-ui-pass`):** First Light tokens in both themes
   (8 light-theme contrast failures before), sections readable at rest, the TMC Builder button an underlined word. Both
   themes pass; `kb/ui_pass_ledger.json` records it in this checkpoint.
@@ -59,10 +62,9 @@ answered. Sheet 96 is a draft (below).
 1. **#2232:** merge once `test` passes; dispatch `cer-procedures.yml` with save=on (classify 400); read the receipt in
    `kb/cer_procedures_out/saved/`; dispatch `daily-dashboard.yml` so the 176 clean assignments fold today and read
    `kb/unclassified_fold/<date>/applied.json` (held should list 18).
-2. **Sheet 96:** fill the two placeholders from the receipt, build and inject the sheet (`kb/_decision_sheet_replies.py
-   --inject`), publish with `{db: {}, comments: {}}`, commit the HTML to CPLBrain#385, add the CER lane's marker in a
-   tracker PR and merge that first (the vault's coverage check reads the tracker's main), then merge #385. Put the
-   sheet's link in the mock-up's CER calls cell, republish, and hand Sam both links.
+2. **Sheet 96 (published):** read its `replies`; add the CER lane's marker (two words, with the sheet link) in a tracker
+   PR and merge that first (the vault's coverage check reads the tracker's main), then merge CPLBrain#385. Put the
+   sheet's link in the mock-up's CER calls cell and republish.
 3. **#2230:** the third A/B's grid; then flip out of draft, merge (squash), `cpl-chat-deploy.yml` from main with
    `confirm=DEPLOY`, then `cpl-chat-smoke.yml`.
 4. **#2233:** merge once `test` passes.
