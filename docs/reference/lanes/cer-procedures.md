@@ -77,14 +77,14 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
   by cohort). `kb_curation` has no reason column; Sheet 3 card 10 (2026-09-29) asked for a CER decisions store
   routed through Governance (DR-07).
 
-**NEEDS SAM** (Open Asks Sheet 93, three cards):
+**NEEDS SAM** (Open Asks Sheet 94 cards 1-3, carried from Sheet 93):
 
 1. Let the fold apply the clean assignments and hold only the conflicts (proposed: yes).
 2. Let a result the classifier is sure of save under its procedure, reversible by procedure; this revises his
    2026-07-07 ruling that pre-seeds stay "ready to save, not yet saved" (proposed: yes).
 3. Retire the Initiated sign-off and the Curate panel (proposed: yes).
 
-**NEXT:** read Sheet 93's replies (store still empty at 07:36Z, S413). Card 1: the fold change, with a test that a
+**NEXT:** read Sheet 94's replies (Sheet 93's store empty at 13:15Z, S415). Card 1: the fold change, with a test that a
 conflict holds only itself. Card 2: the save step, a bot cohort and a receipt in `cer-decision-apply.yml`'s shape.
 Card 3: retire the Initiated sign-off and the Curate panel, which leaves Reference with All and Industry credentials.
 Without replies, the nightly run keeps pre-filling and the tab keeps leading with Held. A guidance procedure for an
