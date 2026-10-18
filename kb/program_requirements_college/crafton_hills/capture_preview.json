@@ -1,0 +1,1048 @@
+{
+ "college": "Crafton Hills College",
+ "catalog_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+ "platform": "smartcatalog",
+ "catalog_year": "2026-2027",
+ "programs": 118,
+ "with_closed_list": 79,
+ "started": "2026-10-18T02:50:41Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
+  "status": 404,
+  "listed": 0,
+  "nested": 0,
+  "program_pages": 0,
+  "refused": null,
+  "errors": null
+ },
+ "index_fallback": 3,
+ "pages_read": 229,
+ "child_pages": 226,
+ "banner_h1": "2026-2027 Catalog",
+ "loads": 231,
+ "seconds": 1132.5,
+ "found": 64,
+ "by_method": {
+  "no_closed_list": 39,
+  "not_found": 13,
+  "page_claimed": 2,
+  "sitemap_page": 64
+ },
+ "shared_pages": {
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t": [
+   "30556",
+   "43530"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t": [
+   "30559",
+   "46391"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t": [
+   "31385",
+   "41140"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t": [
+   "31770",
+   "46553"
+  ],
+  "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t": [
+   "33545",
+   "46384"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30347",
+   "title": "Japanese",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33105",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/kinesiology-kin/kinesiology-associate-in-arts-for-transfer-degree",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.94,
+    "body": 0.94,
+    "content": 0.086,
+    "net": 25,
+    "listed": 116,
+    "why": "coarse net: the page's code tokens name 25 of 116 listed courses",
+    "error": null,
+    "chars": {
+     "body": 11606,
+     "content": 23048,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35822",
+   "title": "Workforce Literacy Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/workforce-literacy-skills",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4784,
+     "content": 16455,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38418",
+   "title": "Foundations in English Language and Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4879,
+     "content": 16556,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38464",
+   "title": "Basic Skills in Math Elementary Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-math-elementary-level",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4836,
+     "content": 16526,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42455",
+   "title": "Certified Nursing Assistant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/certified-nursing-assistant",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5614,
+     "content": 17252,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43604",
+   "title": "Acute Care Nursing Assistant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/acute-care-nursing-assistant",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5024,
+     "content": 16655,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43611",
+   "title": "Home Health Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/home-health-aide",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5420,
+     "content": 17050,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44042",
+   "title": "Essential ASL and Deaf Culture for Customer Service Professionals",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/essential-asl-and-deaf-culture-for-customer-service-professionals",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5367,
+     "content": 16999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44088",
+   "title": "Mathematics for Medical Professionals",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/mathematics-for-medical-professionals",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4664,
+     "content": 16283,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44342",
+   "title": "Technical Theatre",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.125,
+    "net": 1,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6061,
+     "content": 17659,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44803",
+   "title": "Phlebotomy Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/phlebotomy-technician",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2718,
+     "content": 14508,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45083",
+   "title": "Personal Trainer",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/personal-trainer",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5405,
+     "content": 17043,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "37876",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t",
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement"
+   ]
+  },
+  {
+   "control_number": "41365",
+   "title": "Computer Information Systems: Programming",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 14,
+  "1.0": 44
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 64,
+  "list": [
+   {
+    "control_number": "04836",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/spanish-associate-of-arts-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04837",
+    "title": "Respiratory Care",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/respiratory-care-associate-of-science-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04856",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11766",
+    "title": "Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18677",
+    "title": "Fine Arts",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multidisciplinary-studies/fine-arts-associate-of-arts-degree",
+    "coverage": 0.896,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30451",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/american-sign-language-asl/american-sign-language-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30453",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/american-sign-language-asl/american-sign-language-associate-of-arts-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30555",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/sociology-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30556",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30559",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31355",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/psychology-psyc/psychology-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31384",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/geology-geol/geology-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31385",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31386",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/english-engl/english-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31387",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/theatre-arts-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31388",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/history-hist/history-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31389",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/political-science-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31418",
+    "title": "Retail Management (WAFC)",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/retail-management-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31770",
+    "title": "PHYSICS",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32014",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/early-childhood-education-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33027",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/art-art/studio-arts-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33037",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/art-art/art-history-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33068",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-science-csci/computer-science-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33106",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/spanish-associate-of-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33107",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/geography-geog/geography-associate-in-arts-for-transfer-degree-aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33145",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/anthropology-anth/anthropology-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33232",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/economics-econ/economics-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33345",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/philosophy-phil/philosophy-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33539",
+    "title": "MUSIC",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/music-music/music-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33545",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t",
+    "coverage": 0.862,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33618",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/chemistry-chem/chemistry-associate-of-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35149",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/biology-biol/biology-associate-of-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35451",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-science-csci/computer-science-associate-of-science",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37652",
+    "title": "Firefighter I Basic Training Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/fire-technology-firet/firefighter-i-basic-training-academy-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37794",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38495",
+    "title": "3D Modeling for Animation, Game Art and Visual Effects",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/3d-modeling-for-animation-game-art-and-visual-effects-associate-of-science-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38513",
+    "title": "Multimedia: Graphic and Media Design",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/multimedia-graphic-and-media-design-associate-of-science-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38518",
+    "title": "Cloud Technology Specialists",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cloud-technology-specialist-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38519",
+    "title": "Cybersecurity Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cybersecurity-specialist-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38520",
+    "title": "3D Modeling for Animation, Game Art and Visual Effects",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/3d-modeling-for-animation-game-art-and-visual-effects-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38521",
+    "title": "Graphic and Media Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/graphic-and-media-design-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38537",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/web-development-certificate-of-achievement",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38538",
+    "title": "User Interface Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/user-interface-design-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38539",
+    "title": "Multimedia: Web Development and Interface Design",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/multimedia-web-development-and-interface-design-associate-of-science-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41025",
+    "title": "Computer Information Systems: Network Administration",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-network-administration-associate-of-science-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41140",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41284",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/marketing-market/marketing-associate-of-arts-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41285",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/accounting-acct/accounting-associate-of-arts-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41286",
+    "title": "CISCO Certified Network Associate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cisco-certified-network-associate-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41335",
+    "title": "Computer Hardware Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41675",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree",
+    "coverage": 0.773,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43313",
+    "title": "Respiratory Care",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/bachelor-of-science-in-respiratory-care",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43530",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44341",
+    "title": "Library Support Staff",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/library-science-libr/library-support-staff-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44736",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/public-health-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44826",
+    "title": "Basic Spanish Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/basic-spanish-language-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45714",
+    "title": "California General Education Transfer Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement",
+    "coverage": 0.949,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45730",
+    "title": "Transitional Kindergarten (TK) Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/transitional-kindergarten-teacher-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46010",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/vocational-nursing/vocational-nursing-certificate-of-achievement",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46011",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/vocational-nursing/vocational-nursing-associate-of-science",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46347",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/law-public-policy-and-society-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.927,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46384",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46391",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46553",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39091435061"
+}
