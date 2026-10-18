@@ -37,7 +37,10 @@ on:
         required: true
         default: "on"
         type: choice
-        options: [on, preview, off]
+        # Quoted: YAML reads a bare on and off as booleans, so a dispatch offered only
+        # true, preview and false and refused save=on (S417, 2026-10-18); the nightly
+        # run never noticed because the schedule takes the default.
+        options: ["on", "preview", "off"]
 
 concurrency:
   group: cer-procedures-${{ github.ref }}
