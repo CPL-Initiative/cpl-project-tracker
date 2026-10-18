@@ -227,7 +227,9 @@ def row_exhibit(root):
 
 # ── Common Course Reference ───────────────────────────────────────────────────────────────
 def row_course(root):
-    tab = "#unified-courses"
+    # SkyView alone (Sam, 2026-10-18 20:46Z: "SkyView alone, since CCR is included as part of it"): the row's
+    # home and every count open the map; the list tab (#unified-courses) left the menu the same minute.
+    tab = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     A = load_json(root, "kb/row_audit/latest.json")
     st, fr, tags = A["stats"], A["stats"]["faculty_readiness"], A["stats"]["tag_counts"]
     cap = figure(lambda: round(1 - A["_faculty_weights"]["discipline"] * (1 - A["_field_state_score"]["seed-untouched"]), 2))
@@ -239,16 +241,13 @@ def row_course(root):
         {"n": counts.get("identities"), "words": "identities and %s stand-alone courses on the canvas (the %s layout)%s"
          % (fmt(counts.get("stand_alone")), str(cv.get("_generated_from", ""))[:10],
             "; %s stand-alone in today's build" % fmt(len(today["n"]["rows"])) if today["n"] else ""),
-         "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", "error": canvas["error"]},
+         "open": tab, "error": canvas["error"]},
         {"words": "TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain"},
         {"words": "Re-mints follow the playbook, one cron window each"},
     ]
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
-        # The CCR is SkyView (Sam, 2026-10-18 20:40Z: "the CCR should be the same as SkyView now"): the row
-        # opens the map; the list tab, where the auditor's columns are, stays one word away and takes the counts.
-        "links": [{"href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", "text": "Open SkyView"},
-                  {"href": tab, "text": "The list"}],
+        "links": [{"href": tab, "text": "Open SkyView"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
@@ -359,7 +358,7 @@ def row_subjects(root):
 ROWS = [
     ("requirements", "Program Requirements", "#program-requirements", row_requirements),
     ("exhibit", "Common Exhibit Reference", "#credential-reference", row_exhibit),
-    ("course", "Common Course Reference", "#unified-courses", row_course),
+    ("course", "Common Course Reference", "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", row_course),
     ("cr", "Common CR Reference", "#cr-reference", row_cr),
     ("subjects", "Common Subjects Reference", "#canonical-subj4", row_subjects),
 ]

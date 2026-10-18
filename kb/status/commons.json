@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-18T20:40:05Z",
+ "written_at": "2026-10-18T20:46:39Z",
  "rows": [
   {
    "key": "requirements",
@@ -155,15 +155,11 @@
   {
    "key": "course",
    "title": "Common Course Reference",
-   "tab": "#unified-courses",
+   "tab": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
    "links": [
     {
      "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "text": "Open SkyView"
-    },
-    {
-     "href": "#unified-courses",
-     "text": "The list"
     }
    ],
    "status_file": null,
@@ -172,7 +168,7 @@
      "n": 3208,
      "of": 27581,
      "words": "cards the auditor scores 0.85 or better; 17,033 at needs review, 7,334 at needs repair, 6 not ready",
-     "open": "#unified-courses"
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     }
    ],
    "tests": [
@@ -183,25 +179,25 @@
      "n": 14511,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
-     "open": "#unified-courses"
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     },
     {
      "n": 4179,
      "words": "unit anomalies",
      "owner": "a curator (an identity keeps its unit range)",
-     "open": "#unified-courses"
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     },
     {
      "n": 1159,
      "words": "TOP and discipline disagreements",
      "owner": "a curator (the subject map decides; TOP corroborates)",
-     "open": "#unified-courses"
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     },
     {
      "n": 5750,
      "words": "blank descriptions",
      "owner": "the colleges' COCI entries",
-     "open": "#unified-courses"
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     }
    ],
    "procedures": [

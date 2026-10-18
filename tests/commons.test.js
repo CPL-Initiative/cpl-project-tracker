@@ -70,7 +70,7 @@ const STATUS = {
       procedures: [{ n: 12, words: "in force", open: "#credential-reference" }],
       machine: { what: "the saving run and the fold", at: "2026-10-18T17:47:11Z", every_hours: 24 }, sources: ["x"] },
     { key: "course", title: "Common Course Reference", tab: "#unified-courses",
-      links: [{ href: "https://example.org/prototype/skyview.html", text: "Open SkyView" }, { href: "#unified-courses", text: "The list" }],
+      links: [{ href: "https://example.org/prototype/skyview.html", text: "Open SkyView" }],
       status_file: null,
       pair: [{ n: 3208, of: 27581, words: "cards the auditor scores 0.85 or better", open: "#unified-courses" }], tests: ["scored by the auditor"],
       issues: [{ n: 4179, words: "unit anomalies", owner: "a curator", open: "#unified-courses" }],
@@ -155,9 +155,8 @@ function cellText(li, title) {
   check("a project with no run log says no run log", /Session: no run log/.test(cellText(co, "Last run").replace(/\s+/g, " ")) && /no run log/.test(cellText(co, "Calls waiting on Sam")));
   check("a daily machine stamp older than 36 hours reads stale", /daily · stale/.test(cellText(co, "Last run").replace(/\s+/g, " ")));
   const coLinks = Array.from(co.querySelectorAll(".cmn-acts a"));
-  check("the Course row opens SkyView first, in a new tab, with the list one word away",
-    txt(coLinks[0]) === "Open SkyView" && coLinks[0].getAttribute("target") === "_blank" && coLinks[0].getAttribute("href").endsWith("skyview.html")
-    && txt(coLinks[1]) === "The list" && coLinks[1].getAttribute("href") === "#unified-courses" && !coLinks[1].getAttribute("target"));
+  check("the Course row's one link opens SkyView in a new tab (SkyView alone, Sam 20:46Z)",
+    coLinks.length === 1 && txt(coLinks[0]) === "Open SkyView" && coLinks[0].getAttribute("target") === "_blank" && coLinks[0].getAttribute("href").endsWith("skyview.html"));
 
   const cr = byKey(t.d, "cr");
   check("a second pair line with no universe draws its count and words", cr.querySelectorAll(".cmn-n").length === 2 && /30 groups a curator decided/.test(txt(cr.querySelectorAll(".cmn-n")[1]).replace(/\s+/g, " ")));

@@ -72,9 +72,13 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
 - **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
   `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
   passes at both widths; UI pass ledger `cobi:commons`.
-- **The Course row opens SkyView** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
-  right?"*): its first word is *Open SkyView*, the map alone; *The list* (`#unified-courses`, the table with the
-  auditor's columns) stays one word away and takes the row's counts.
+- **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
+  right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
+  and every count on the row opens it. The Common Course Reference list leaves the COBI menu through
+  `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
+  header; the session's SQL guard holds an UPDATE for Sam's approval in the `database` environment): `cobi_nav` row
+  `unified-courses` set `hidden`, the `skyview` launcher row kept. The tab and its list view stay reachable by deep
+  link (`#unified-courses`, `#unified-courses/list`) and the Admin tab can show the entry again.
 - The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
   source `docs/visuals/2026-10-18-commons-mockup.html`).
 

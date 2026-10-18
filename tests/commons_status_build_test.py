@@ -44,7 +44,8 @@ check("five rows in the mock-up's order", [r.get("key") for r in rows] == ["requ
 for r in rows:
     key = r.get("key")
     pair = r.get("pair") or []
-    check(key + ": a title, a tab hash and a link to its tab", r.get("title") and str(r.get("tab", "")).startswith("#")
+    check(key + ": a title, a home (a tab hash or SkyView's page) and a link to it", r.get("title")
+          and (str(r.get("tab", "")).startswith("#") or str(r.get("tab", "")).endswith("/prototype/skyview.html"))
           and any(l.get("href") == r.get("tab") for l in r.get("links", [])))
     check(key + ": the row read without an error", not r.get("error"), r.get("error"))
     check(key + ": the complete pair is two whole numbers with the count inside the universe",
@@ -72,9 +73,9 @@ check("Program Requirements: the issues are the failing and the unread counts",
 ex = rows[1].get("facts") or {}
 check("Exhibit: a person's and a cohort's stamps sum to the stamped titles", ex.get("person") + ex.get("cohort") == ex.get("stamped") == rows[1]["pair"][0]["n"])
 co = rows[2]
-check("Course: the row opens SkyView first (the CCR is SkyView), the list one word away",
-      co["links"][0]["text"] == "Open SkyView" and co["links"][0]["href"].endswith("/prototype/skyview.html")
-      and co["links"][1] == {"href": "#unified-courses", "text": "The list"})
+check("Course: SkyView alone is the row's home, and every count opens it (Sam, 20:46Z)",
+      co["links"] == [{"href": co["tab"], "text": "Open SkyView"}] and co["tab"].endswith("/prototype/skyview.html")
+      and all(i.get("open") == co["tab"] for i in co["issues"]) and co["pair"][0]["open"] == co["tab"])
 cr = rows[3]
 check("CR: the curator's decisions are a second pair line with no universe", len(cr["pair"]) == 2 and "of" not in cr["pair"][1] and isinstance(cr["pair"][1].get("n"), int))
 sub = rows[4].get("facts") or {}
