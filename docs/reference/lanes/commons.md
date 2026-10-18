@@ -67,4 +67,6 @@ together and places them in some order of priority and completion and known issu
   and one with a call open; each count opening its list; phone width; and the control Sam sets the order with. Show
   the mock-up to Fable before Sam.
 
-**NEXT:** the Commons row mock-up (to Fable, then Sam) beside step 1, the shared Progress module (no change on screen).
+**The mock-up is published (S416, 2026-10-18):** https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi, source `docs/visuals/2026-10-18-commons-mockup.html`. Five rows at the day's counts in the Progress shape: the pair with its definition of complete and the test behind it (machine-checked, curator-confirmed, scored by the auditor, assigned by rung), where it stands, known issues by owner, settled procedures, the calls on Sam, and the machine and session stamps as ages against a cadence (the CR row's session stamp stale at 28 days, the Course row's could not be read, the CER row with one call open), with Move up and Move down setting the order. Fable's review was requested and had not returned at S416's checkpoint; Sam has not seen it.
+
+**NEXT:** read Fable's review (S416's transcript, or ask again with the file), revise, hand Sam the link; then step 1, the shared Progress module (no change on screen).

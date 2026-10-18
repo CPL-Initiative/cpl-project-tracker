@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T13:18:44Z",
-  "session": 415,
-  "moniker": "SkyRedbud",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-18T16:10:16Z",
+  "session": 416,
+  "moniker": "SkyCeanothus",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_416_handoff.md",
+  "handoff": "session_417_handoff.md",
   "next_step": {
-    "title": "Carry out Sheet 94's rulings, then Cañada's reader change",
-    "text": "Sam answered all four cards at 13:43Z: the nightly fold applies the clean CER assignments, a sure classifier result saves under its procedure, the Initiated sign-off and Curate panel retire, and Taft's step stays. Then the PDF reader learns Cañada's shared pages 148 to 154, then Merced's 18 programs without a page."
+    "title": "Merge #2231 and run the first saving night, then Sierra's deploy",
+    "text": "Merge the CER pull request once its test check passes, dispatch the procedures run as a preview and then for real, and dispatch the daily build so the 176 clean assignments fold. Then read the Sierra A/B, merge #2230, deploy and smoke. Then Open Asks Sheet 96 and the Commons mock-up's review."
   },
   "calls": [],
   "notes": {
@@ -38,6 +38,18 @@
     {
       "at": "2026-10-18T15:00:00Z",
       "text": "The Progress view counts a program complete when its record passes the machine checks, live from every record; the 32 a person confirmed stay on the pilot milestone."
+    },
+    {
+      "at": "2026-10-18T16:05:00Z",
+      "text": "Sheet 94's three CER rulings built in #2231: the fold holds each conflict by itself, a sure result saves under its procedure, the Initiated sign-off and Curate panel retire."
+    },
+    {
+      "at": "2026-10-18T15:52:00Z",
+      "text": "Sierra reads every complete record, an active program whose record passes the three machine checks (#2230, draft; its A/B is running)."
+    },
+    {
+      "at": "2026-10-18T15:58:00Z",
+      "text": "The Commons row mock-up is published for Fable's review, then Sam's."
     }
   ],
   "headline": [

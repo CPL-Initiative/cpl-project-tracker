@@ -355,3 +355,8 @@ check that exists nowhere else; then the CCR mountain in leverage-ordered waves.
 - **Removing a column moves a test's view.** `cer_v2_grid` found the No-issuer lane (in Needs you) and then read the
   grid's headers; the check that used to switch it back to Reference was the Not-initiated lane. When a lane leaves,
   find what else it did in the tests.
+- **Two heavy local runs at once empty the box.** The full jsdom suite beside a Chromium a11y sweep killed the
+  container (exit 137); run them one after the other. And `pkill -f "node tests/run.js"` matches the shell that runs
+  it, so it killed the command chain that was about to commit; name the process by exact command (`pkill -x node`).
+- **A `git add` of an ignored path exits non-zero and breaks an `&&` chain.** The worktree's `node_modules` symlink did
+  that, so the generated-file gate never ran there and the Sierra branch's dependency map reached CI stale.

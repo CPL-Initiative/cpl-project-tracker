@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1185,
-    "bytes": 12184965,
-    "over_budget": 7,
-    "handoff_max": 416,
+    "files": 1187,
+    "bytes": 12210401,
+    "over_budget": 9,
+    "handoff_max": 417,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60306,
+    "always_loaded_bytes": 60661,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60306,
+        "bytes": 60661,
         "over": 1
       },
       "other": {
         "files": 122,
-        "bytes": 3774168,
+        "bytes": 3774997,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10311,
+        "bytes": 10608,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2268695,
+        "bytes": 2271584,
         "over": 1
       },
       "kb_note": {
@@ -45,27 +45,28 @@
         "over": 0
       },
       "roadmap_lane": {
-        "files": 38,
-        "bytes": 361479,
-        "over": 2
+        "files": 39,
+        "bytes": 372983,
+        "over": 4
       },
       "handoff": {
-        "files": 387,
-        "bytes": 2972101,
+        "files": 388,
+        "bytes": 2981663,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 7,
+      "oversized_doc": 9,
       "house_voice": 23,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 63
+      "american_spelling": 1,
+      "vault_heavy_path": 62
     },
     "vault": {
-      "files": 22674,
-      "bytes": 3099385506,
-      "heavy_bytes": 2025898488,
-      "heavy_share": 0.654,
+      "files": 22681,
+      "bytes": 3097338759,
+      "heavy_bytes": 2023742574,
+      "heavy_share": 0.653,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -115,7 +116,6 @@
         "cpl-project-tracker/prototype/ccr_universe_members.json",
         "cpl-project-tracker/unified_courses_index.js",
         "cpl-project-tracker/unified_courses_suggestions.js",
-        "cpl-project-tracker/kb/queue_status.json",
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/credential_reference_data.js",
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60306,
+        "bytes": 60661,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 306,
+        "over_by": 661,
         "ratio": 1.01
       },
-      "message": "60,306 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,661 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -428,6 +428,32 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20681,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 681,
+        "ratio": 1.03
+      },
+      "message": "20,681 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20405,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 405,
+        "ratio": 1.02
+      },
+      "message": "20,405 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -463,6 +489,21 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "cancelled": {
+            "n": 1,
+            "prefer": "canceled"
+          }
+        }
+      },
+      "message": "1 British form — cancelled→canceled",
+      "path": "docs/session_417_handoff.md"
     },
     {
       "rule": "house_voice",
@@ -517,10 +558,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1055007952,
+        "bytes": 1056324859,
         "kind": "dir"
       },
-      "message": "directory totals 1,055,007,952 B inside the vault"
+      "message": "directory totals 1,056,324,859 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -897,10 +938,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715709,
+        "bytes": 6715708,
         "kind": "file"
       },
-      "message": "6,715,709 B single file inside the vault"
+      "message": "6,715,708 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -991,16 +1032,6 @@
         "kind": "file"
       },
       "message": "3,478,805 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/queue_status.json",
-      "detail": {
-        "bytes": 3472820,
-        "kind": "file"
-      },
-      "message": "3,472,820 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

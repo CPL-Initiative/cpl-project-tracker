@@ -21,7 +21,7 @@ and want to further automate so curation is manageable."*
 
 ## Status
 
-🔨 **Sheet 94's three rulings are built (S416, 2026-10-18): the fold holds each conflict by itself, a sure result saves under its procedure, and the Initiated sign-off and the Curate panel left the tab.** The procedures run is live, the classifier has made two passes (S412, S413), and the tab is three views: Needs you, Procedures, Reference (#2221, S413).
+🔨 **Sheet 94's three rulings are built (S416, 2026-10-18, cpl-project-tracker#2231, a draft at S416's checkpoint; merge once `test` passes): the fold holds each conflict by itself, a sure result saves under its procedure, and the Initiated sign-off and the Curate panel left the tab.** The procedures run is live, the classifier has made two passes (S412, S413), and the tab is three views: Needs you, Procedures, Reference (#2221, S413).
 
 - **The fold holds per assignment (card 1, `kb/_fold_unclassified.py`).** V1 and V4 were an all-or-nothing hold; now a
   conflict with a human-reviewed classification, or a raw whose articulation rows carry another title, holds only
@@ -114,7 +114,7 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
    2026-07-07 ruling that pre-seeds stay "ready to save, not yet saved".
 3. **retire:** the Initiated sign-off and the Curate panel leave the tab.
 
-**NEXT:** watch the first saving run (the receipt in `kb/cer_procedures_out/saved/`, the tab's Unclassified lane
+**NEXT:** merge #2231; dispatch `cer-procedures.yml` with `save=preview`, read the counts, then `save=on`; dispatch `daily-dashboard.yml` so the 176 fold the same day; then put card 1 on Open Asks Sheet 96 with the receipt's numbers (a rule's settlement saves at the rule's word, the course-identity rule's 0.8 included; proceeded on the recommendation, `--undo course-identity` reverses it) and add this lane's NEEDS SAM marker in the same change, because the builder refuses a marker with no card. Then watch the first saving run (the receipt in `kb/cer_procedures_out/saved/`, the tab's Unclassified lane
 showing the cohort as the saver) and the next daily fold carrying the saved rows into the reference; then the 18 fold
 holds, one word each on Needs you. A guidance procedure for an *Industry for* title (the credential tied to a course,
 never the course's own title) is a candidate.
