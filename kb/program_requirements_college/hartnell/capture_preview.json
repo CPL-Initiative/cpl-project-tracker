@@ -1,0 +1,1615 @@
+{
+ "college": "Hartnell College",
+ "catalog_url": "https://hartnell.catalog.prod.coursedog.com/",
+ "platform": "coursedog",
+ "catalog_year": "2026-2027",
+ "programs": 112,
+ "with_closed_list": 105,
+ "started": "2026-10-18T02:23:40Z",
+ "procedure_step": {
+  "start": "https://hartnell.catalog.prod.coursedog.com/",
+  "file": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf"
+ },
+ "pdf": {
+  "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 47558550,
+  "pages_total": 427,
+  "error": null,
+  "chars_total": 1078888,
+  "pypdf_accepted": 101,
+  "sample": [
+   "p129: 'Business Office Technology-Information Processing - \\nCT.BST \\nGeneral \\nProgram Type \\nCoA - CTE \\nMeta-Major \\nAgriculture, Business and \\nIndustries \\nDepartment Title \\nBusiness Education \\nCatalog Description \\nThe Business Office Technology prog'",
+   "p257: 'LIB6 - Information Competency in the Social Sciences \\nLIB7 - Information Competency in the Arts and \\nHumanities \\nMeta-Major \\nArts and Languages \\nSession Cycle \\nFall Only \\nCredits \\n1 \\nAllow Pass/No Pass \\nYes \\nLecture Hours \\n9 \\nLab Hours \\n27 '"
+  ],
+  "extractor": "pypdf",
+  "code_headings": {
+   "codes": 79,
+   "read_by_code": 74,
+   "named_by_none": [
+    "03547",
+    "11803",
+    "12331",
+    "15426",
+    "17910",
+    "17911",
+    "17912",
+    "17913",
+    "17914",
+    "17924",
+    "17977",
+    "18353",
+    "19106",
+    "19107",
+    "19718",
+    "19719",
+    "21424",
+    "30621",
+    "31591",
+    "31804",
+    "32981",
+    "35458",
+    "36985",
+    "37130",
+    "37950",
+    "39564",
+    "40742",
+    "42385",
+    "43119",
+    "43121",
+    "45096"
+   ]
+  },
+  "picks": [
+   {
+    "control_number": "03537",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": true,
+    "code": "AS.BIO",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] Biology - AS.BIO General Program Type A.S. Local Degree Meta-Major STEM Department Title Biological Science Additional Information Local Information Catalog Description The Biology program offers de"
+   },
+   {
+    "control_number": "03539",
+    "pages": [
+     128,
+     129
+    ],
+    "named": true,
+    "code": "CT.BOTB",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 128] Business Office Technology - Bookkeeping - CT.BOTB General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description The Business"
+   },
+   {
+    "control_number": "03545",
+    "pages": [
+     124
+    ],
+    "named": true,
+    "code": "AS.BST",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Business Office Technology-Information Processing - AS.BST General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description"
+   },
+   {
+    "control_number": "03562",
+    "pages": [
+     408,
+     409,
+     410,
+     411
+    ],
+    "named": true,
+    "code": "AS.WLD",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 408] Welding Technology - AS.WLD General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Welding Technology Additional Information Local Information Catalog "
+   },
+   {
+    "control_number": "03570",
+    "pages": [
+     292,
+     293,
+     294,
+     295
+    ],
+    "named": true,
+    "code": "AS.NRN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 292] Nursing-Registered Nursing - AS.NRN General Program Type A.S. CTE Degree Meta-Major Health Sciences Department Title Nursing, Registered Additional Information Local Information Catalog Description "
+   },
+   {
+    "control_number": "03571",
+    "pages": [
+     304,
+     305,
+     306,
+     307
+    ],
+    "named": true,
+    "code": "CT.NVN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 304] Nursing-Vocational Nursing - CT.NVN General Program Type CoA - CTE Meta-Major Health Sciences Department Title Nursing, Vocational Catalog Description The Hartnell College Vocational Nursing (VN) Prog"
+   },
+   {
+    "control_number": "03585",
+    "pages": [
+     61
+    ],
+    "named": true,
+    "code": "AS.ADJ",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Administration of Justice - AS.ADJ General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Administration of Justice Catalog Description The Associate in "
+   },
+   {
+    "control_number": "03588",
+    "pages": [
+     183,
+     184,
+     185,
+     186
+    ],
+    "named": true,
+    "code": "AS.ECE",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 183] Early Childhood Education - AS.ECE General Program Type A.S. Local Degree Meta-Major Social Sciences Department Title Early Childhood Education Additional Information Local Information Catalog Descri"
+   },
+   {
+    "control_number": "08871",
+    "pages": [
+     153,
+     154,
+     155,
+     156
+    ],
+    "named": true,
+    "code": "AS.CISCS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 153] Computer Science and Info Systems-Computer Science Option - AS.CISCS General Program Type A.A. Local Degree Meta-Major STEM Department Title Computer Sciences & Info Sys Additional Information Local"
+   },
+   {
+    "control_number": "08886",
+    "pages": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "named": true,
+    "code": "AA.PHO",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 97] Photography - AA.PHO General Program Type A.A. Local Degree Meta-Major Arts and Languages Department Title Photography, Art Additional Information Local Information Catalog Description Photography is"
+   },
+   {
+    "control_number": "08904",
+    "pages": [
+     234,
+     235,
+     236,
+     237
+    ],
+    "named": true,
+    "code": "AA.CHCX",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] Chicanx Studies - AA.CHCX General Program Type A.A. Local Degree Meta-Major Social Sciences Department Title Ethnic Studies Additional Information Local Information Catalog Description The Chicanx S"
+   },
+   {
+    "control_number": "08909",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "code": "AA.DA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Digital Arts - AA.DA General Program Type A.A. Local Degree Meta-Major Arts and Languages Department Title Art Additional Information Local Information Catalog Description The Digital Arts program of"
+   },
+   {
+    "control_number": "19518",
+    "pages": [
+     382,
+     383,
+     384,
+     385
+    ],
+    "named": true,
+    "code": "AA.SPA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 382] Programs Spanish - AA.SPA General Department Title Spanish Catalog Description The Spanish degree program includes four semesters of the study of Spanish, one of the world’s most influential languages a"
+   },
+   {
+    "control_number": "21422",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "code": "CT.BST",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] Business Office Technology-Information Processing - CT.BST General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description The "
+   },
+   {
+    "control_number": "21423",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "code": "CT.DA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Digital Arts - CT.DA General Program Type CoA - Local Meta-Major Arts and Languages Department Title Art Catalog Description The Digital Arts program offers a certificate and associate degree in Digita"
+   },
+   {
+    "control_number": "21439",
+    "pages": [
+     409,
+     410,
+     411,
+     412
+    ],
+    "named": true,
+    "code": "CT.WLD",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 409] Welding Technology - CT.WLD General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Welding Technology Catalog Description The Welding Technology program provi"
+   },
+   {
+    "control_number": "21444",
+    "pages": [
+     100,
+     101,
+     102,
+     103
+    ],
+    "named": true,
+    "code": "CT.PHO",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 100] Photography - CT.PHO General Program Type CoA - Local Meta-Major Arts and Languages Department Title Art, Photography Catalog Description Photography is an omnipresent, integral part of life in the 21"
+   },
+   {
+    "control_number": "21450",
+    "pages": [
+     63,
+     64,
+     65,
+     66
+    ],
+    "named": true,
+    "code": "CT.ADJ",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] Administration of Justice - CT.ADJ Requirements Type Completion Requirement Required Core Complete the following Complete ALL of the following Courses: • ADJ1 - Introduction to Administration of Justice "
+   },
+   {
+    "control_number": "30822",
+    "pages": [
+     270,
+     271,
+     272,
+     273
+    ],
+    "named": true,
+    "code": "AST.MAT",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 270] Mathematics for Transfer Degree (AS-T) - AST.MAT General Program Type A.S. - T Degree Meta-Major STEM Department Title Mathematics Additional Information Students: to ensure you're on track for transf"
+   },
+   {
+    "control_number": "31146",
+    "pages": [
+     148,
+     149,
+     150
+    ],
+    "named": true,
+    "code": "AAT.COM2",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] Communication Studies 2.0 for Transfer Degree (AA-T) - AAT.COM2 General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Communication Studies Additional Information Studen"
+   },
+   {
+    "control_number": "31268",
+    "pages": [
+     184,
+     185,
+     186,
+     187
+    ],
+    "named": true,
+    "code": "AST.ECE",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] Early Childhood Education for Transfer (AS-T) - AST.ECE • ECE9 - Creative Expressions and Play in Early Childhood • ECE20 - Infant and Toddler Development • ECE21 - Infant/Toddler Care and Education • ECE"
+   },
+   {
+    "control_number": "31392",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": true,
+    "code": "AAT.ENG",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 210] English for Transfer (AA-T) - AAT.ENG General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title English Additional Information Students: to ensure you're on track for transfe"
+   },
+   {
+    "control_number": "31406",
+    "pages": [
+     343,
+     344,
+     345
+    ],
+    "named": true,
+    "code": "AAT.POL",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 343] Political Science for Transfer (AA-T) - AAT.POL General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Political Science Additional Information Students: to ensure you're on "
+   },
+   {
+    "control_number": "31592",
+    "pages": [
+     158,
+     159
+    ],
+    "named": true,
+    "code": "CT.PCN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] Computer Science and Info Systems-Network & Security Option - CT.PCN General Program Type CoA - Local Meta-Major STEM Department Title Computer Sciences & Info Sys Catalog Description This certifica"
+   },
+   {
+    "control_number": "31593",
+    "pages": [
+     156,
+     157,
+     158,
+     159
+    ],
+    "named": true,
+    "code": "CT.CISC",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] Computer Science and Info Systems-Computer Science Option - CT.CISC General Program Type CoA - Local Meta-Major STEM Department Title Computer Sciences & Info Sys Catalog Description This Cisco Cert"
+   },
+   {
+    "control_number": "31778",
+    "pages": [
+     109,
+     110
+    ],
+    "named": true,
+    "code": "AS.AST",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] Astronomy - AS.AST General Program Type A.S. Local Degree Meta-Major STEM Department Title Astronomy Additional Information Local Information Catalog Description The Astronomy program introduces stu"
+   },
+   {
+    "control_number": "31971",
+    "pages": [
+     62,
+     63,
+     64,
+     65
+    ],
+    "named": true,
+    "code": "AST.ADJ",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] Administration of Justice for Transfer (AS-T) - AST.ADJ Electives (Courses Numbered 1-199) required when degree units plus GE units total fewer than 60. Total Required Credits 60 General Program Type A."
+   },
+   {
+    "control_number": "32036",
+    "pages": [
+     378,
+     379,
+     380,
+     381
+    ],
+    "named": true,
+    "code": "AAT.SOC",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 378] Sociology for Transfer (AA-T) - AAT-SOC General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Sociology Additional Information Students: to ensure you're on track for transf"
+   },
+   {
+    "control_number": "32037",
+    "pages": [
+     347,
+     348,
+     349
+    ],
+    "named": true,
+    "code": "AAT.PSY",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 347] Psychology for Transfer (AA-T) - AAT.PSY General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Psychology Additional Information Students: to ensure you're on track for tran"
+   },
+   {
+    "control_number": "32365",
+    "pages": [
+     338,
+     339,
+     340
+    ],
+    "named": true,
+    "code": "AST.PHY",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 338] Physics for Transfer (AS-T) - AST.PHY General Program Type A.S. - T Degree Meta-Major STEM Department Title Physics Additional Information Students: to ensure you're on track for transferring in your "
+   },
+   {
+    "control_number": "32375",
+    "pages": [
+     98,
+     99,
+     100,
+     101
+    ],
+    "named": true,
+    "code": "AAT.SART",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 98] Studio Arts for Transfer (AA-T) - AAT.SART General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Art Additional Information Students: to ensure you're on track for transfe"
+   },
+   {
+    "control_number": "32529",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": true,
+    "code": "AS.ADT",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Advanced Diesel Technology - AS.ADT General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Advanced Diesel Technology Catalog Description The Advanced D"
+   },
+   {
+    "control_number": "32930",
+    "pages": [
+     252,
+     253,
+     254,
+     255
+    ],
+    "named": true,
+    "code": "AAT.HIS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 252] History for Transfer (AA-T) - AAT.HIS General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title History Additional Information Students: to ensure you're on track for transferri"
+   },
+   {
+    "control_number": "33050",
+    "pages": [
+     391,
+     392
+    ],
+    "named": true,
+    "code": "AAT.THA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 391] Theatre Arts for Transfer (AA-T) - AAT.THA Students can double-count required courses and courses for General Education. Electives (Courses Numbered 1-199) required when degree units plus GE units total few"
+   },
+   {
+    "control_number": "33051",
+    "pages": [
+     383,
+     384,
+     385,
+     386
+    ],
+    "named": true,
+    "code": "AAT.SPA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 383] Spanish for Transfer (AA-T) - AAT.SPA General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Spanish Additional Information Students: to ensure you're on track for transfe"
+   },
+   {
+    "control_number": "33176",
+    "pages": [
+     280,
+     281,
+     282,
+     283
+    ],
+    "named": true,
+    "code": "AAT.MUS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 280] Music for Transfer (AA-T) - AAT.MUS General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Music Additional Information Students: to ensure you're on track for transferrin"
+   },
+   {
+    "control_number": "33385",
+    "pages": [
+     194,
+     195
+    ],
+    "named": true,
+    "code": "AAT.ECO",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 194] Economics for Transfer Degree (AA-T) - AAT.ECO General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Economics Additional Information Students: to ensure you're on track for"
+   },
+   {
+    "control_number": "33851",
+    "pages": [
+     202,
+     203,
+     204,
+     205
+    ],
+    "named": true,
+    "code": "AS.EGN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 202] Engineering - AS.EGN General Program Type A.S. Local Degree Meta-Major STEM Department Title Engineering Additional Information Local Information Catalog Description Engineering is the science and a"
+   },
+   {
+    "control_number": "35065",
+    "pages": [
+     390
+    ],
+    "named": true,
+    "code": "AA.TAC",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 390] Theater Arts & Cinema - AA.TAC General Program Type A.A. Local Degree Meta-Major Arts and Languages Department Title Theater Arts and Cinema Additional Information Local Information Catalog Descripti"
+   },
+   {
+    "control_number": "35105",
+    "pages": [
+     241,
+     242
+    ],
+    "named": true,
+    "code": "AST.GEL",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] Geology for Transfer Degree (AS-T) - AST.GEL General Program Type A.S. - T Degree Meta-Major STEM Department Title Geology Additional Information Students: to ensure you're on track for transferring i"
+   },
+   {
+    "control_number": "35107",
+    "pages": [
+     114,
+     115,
+     116,
+     117
+    ],
+    "named": true,
+    "code": "AST.BIO",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] Biology for Transfer Degree (AS-T) - AST.BIO General Program Type A.S. - T Degree Meta-Major STEM Department Title Biological Science Additional Information Students: to ensure you're on track for tra"
+   },
+   {
+    "control_number": "35108",
+    "pages": [
+     143,
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "code": "AST.CHM",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 143] Chemistry for Transfer Degree (AS-T) - AST.CHM General Program Type A.S. - T Degree Meta-Major STEM Department Title Chemistry Additional Information Students: to ensure you're on track for transferri"
+   },
+   {
+    "control_number": "35613",
+    "pages": [
+     82,
+     83,
+     84,
+     85
+    ],
+    "named": true,
+    "code": "AST.AGR",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Agriculture Business for Transfer Degree (AS-T) - AST.AGR General Program Type A.S. - T Degree Meta-Major Agriculture, Business and Industries Department Title Ag Business & Technology Additional Info"
+   },
+   {
+    "control_number": "36694",
+    "pages": [
+     173,
+     174,
+     175,
+     176
+    ],
+    "named": true,
+    "code": "AS.CMA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] Construction Management and Architecture - AS.CMA General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Construction Management & Arch Additional Info"
+   },
+   {
+    "control_number": "37916",
+    "pages": [
+     155
+    ],
+    "named": true,
+    "code": "AST.CS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] Computer Science for Transfer (AS-T) - AST.CS General Program Type A.S. - T Degree Meta-Major STEM Department Title Computer Sciences & Info Sys Additional Information Students: to ensure you're on t"
+   },
+   {
+    "control_number": "38211",
+    "pages": [
+     374,
+     375
+    ],
+    "named": true,
+    "code": "AAT.SJ",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 374] Social Justice for Transfer (AA-T) - AAT.SJ General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Social Justice Additional Information Students: to ensure you're on track f"
+   },
+   {
+    "control_number": "38224",
+    "pages": [
+     126,
+     127,
+     128,
+     129
+    ],
+    "named": true,
+    "code": "CT.BIW1",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Business Information Worker Level -1 - CT.BIW1 General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description This certificate "
+   },
+   {
+    "control_number": "38232",
+    "pages": [
+     127,
+     128,
+     129,
+     130
+    ],
+    "named": true,
+    "code": "CT.BIW2",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Business Information Worker Level -2 - CT.BIW2 General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description This certificate "
+   },
+   {
+    "control_number": "38501",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": true,
+    "code": "CT.EGN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] Engineering Fundamentals - CT.EGN General Program Type CoA - Local Meta-Major STEM Department Title Engineering Catalog Description A student completing the Engineering Fundamentals Certificate of Ach"
+   },
+   {
+    "control_number": "38517",
+    "pages": [
+     392,
+     393
+    ],
+    "named": true,
+    "code": "AST.FTVE",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 392] Film, Television and Electronic Media (AS-T) - AST.FTVE Requirements Simple Requirements Program Requirements Requirements Type Completion Requirement Required Core Complete three courses from the fol"
+   },
+   {
+    "control_number": "39248",
+    "pages": [
+     302,
+     303,
+     304,
+     305
+    ],
+    "named": true,
+    "code": "AS.NVN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 302] Nursing-Vocational Nursing - AS.NVN General Program Type A.S. CTE Degree Meta-Major Health Sciences Department Title Nursing, Vocational Additional Information Local Information Catalog Description "
+   },
+   {
+    "control_number": "40051",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": true,
+    "code": "AS.AAT",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Advanced Automotive Technology - AS.AAT General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Advanced Automotive Technology Catalog Description The Ad"
+   },
+   {
+    "control_number": "40261",
+    "pages": [
+     131
+    ],
+    "named": true,
+    "code": "NCCT.BCL",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR General Program Type Non Credit - Completion Meta-Major Agriculture, Business and Industries Department Title Business Edu"
+   },
+   {
+    "control_number": "41819",
+    "pages": [
+     159
+    ],
+    "named": true,
+    "code": "CT.TS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] Technical Support - CT.TS General Program Type CoA - Local Meta-Major STEM Department Title Computer Sciences & Info Sys Catalog Description The Technical Support Certificate of Achievement combines "
+   },
+   {
+    "control_number": "41922",
+    "pages": [
+     156,
+     157,
+     158,
+     159
+    ],
+    "named": true,
+    "code": "CT.CCN",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] Cisco Certified Network - CT.CCN Computer Science and Info Systems-Computer Science Option - CT.CISC General Program Type CoA - Local Meta-Major STEM Department Title Computer Sciences & Info Sys Cata"
+   },
+   {
+    "control_number": "41985",
+    "pages": [
+     157,
+     158,
+     159
+    ],
+    "named": true,
+    "code": "CT.CS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] Cybersecurity - CT.CS Fundamentals • CSS2A - Object Oriented Programming • CSS2B - Data Structures and Algorithms • CSS3 - Computer Architecture and Assembly Language Programming • CSS7 - Discrete Structur"
+   },
+   {
+    "control_number": "42135",
+    "pages": [
+     125
+    ],
+    "named": true,
+    "code": "AST.BUS2",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] Business Administration 2.0 for Transfer (AS-T) - AST.BUS2 General Program Type A.S. - T Degree Meta-Major Agriculture, Business and Industries Department Title Business Education Additional Informat"
+   },
+   {
+    "control_number": "43066",
+    "pages": [
+     199,
+     200
+    ],
+    "named": true,
+    "code": "CT.EMT",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 199] Emergency Medical Technician - CT.EMT General Program Type CoA - Local Meta-Major Health Sciences Department Title Emergency Medical Technician Catalog Description This certificate prepares students "
+   },
+   {
+    "control_number": "43559",
+    "pages": [
+     130
+    ],
+    "named": true,
+    "code": "CT.FS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] First Line Supervisor - CT.FS General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description This certificate prepares students"
+   },
+   {
+    "control_number": "43607",
+    "pages": [
+     221
+    ],
+    "named": true,
+    "code": "NCCT.ENGM.BEG",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 221] English for Multilingual Speakers-Beginning - NCCT.ENGM.BEG General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog Descript"
+   },
+   {
+    "control_number": "43608",
+    "pages": [
+     220
+    ],
+    "named": true,
+    "code": "NCCT.ENGM.ADV",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Programs English for Multilingual Speakers-Advanced - NCCT.ENGM.ADV General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog"
+   },
+   {
+    "control_number": "43609",
+    "pages": [
+     222
+    ],
+    "named": true,
+    "code": "NCCT.ENGM.HIGH",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 222] English for Multilingual Speakers-High Intermediate - NCCT.ENGM.HIGH General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog"
+   },
+   {
+    "control_number": "43610",
+    "pages": [
+     224
+    ],
+    "named": true,
+    "code": "NCCT.ENGM.LOW",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] English for Multilingual Speakers-Low Intermediate - NCCT.ENGM.LOW General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog D"
+   },
+   {
+    "control_number": "43620",
+    "pages": [
+     148,
+     149,
+     150
+    ],
+    "named": true,
+    "code": "AAT.COM2",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] Communication Studies 2.0 for Transfer Degree (AA-T) - AAT.COM2 General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Communication Studies Additional Information Studen"
+   },
+   {
+    "control_number": "43776",
+    "pages": [
+     223
+    ],
+    "named": true,
+    "code": "NCCT.ENGM.INT",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 223] English for Multilingual Speakers-Intermediate - NCCT.ENGM.INT General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog Descr"
+   },
+   {
+    "control_number": "43809",
+    "pages": [
+     260,
+     261,
+     262,
+     263
+    ],
+    "named": true,
+    "code": "AS.MECHA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.826,
+    "opens": "[page 260] Agricultural Mechatronics - AS.MECHA General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Manufacturing Technology Catalog Description The Associate's"
+   },
+   {
+    "control_number": "43821",
+    "pages": [
+     261,
+     262,
+     263,
+     264
+    ],
+    "named": true,
+    "code": "CT.MECHA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] Foundations of Agricultural Mechatronics - CT.MECHA • ABT90 - Soil Science • ABT99 - Occupational Cooperative Work Experience Education Complete ALL of the following Requirement Set: • Local GE Students"
+   },
+   {
+    "control_number": "43887",
+    "pages": [
+     281,
+     282,
+     283,
+     284
+    ],
+    "named": true,
+    "code": "CT.MUS",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 281] Music - CT.MUS General Program Type CoA - Local Meta-Major Arts and Languages Department Title Music Catalog Description This certificate prepares students to transfer to four year university music p"
+   },
+   {
+    "control_number": "44161",
+    "pages": [
+     393,
+     394
+    ],
+    "named": true,
+    "code": "NCCT.TPER",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] Theatre Performance - NCCT.TPER Outcome Analyze, interpret, and evaluate their own and others' work in theatre, film, television & electronic media as a patron and participant. Requirements Simple Requirem"
+   },
+   {
+    "control_number": "44525",
+    "pages": [
+     384,
+     385,
+     386,
+     387
+    ],
+    "named": true,
+    "code": "CT.SPA",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 384] Spanish - CT.SPA General Program Type CoA - Local Meta-Major Arts and Languages Department Title Spanish Catalog Description The Certificate of Achievement in Spanish includes four semesters of the st"
+   },
+   {
+    "control_number": "44537",
+    "pages": [
+     355,
+     356
+    ],
+    "named": true,
+    "code": "BS.RC",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 355] Respiratory Care - BS.RC General Program Type Bachelor of Science, B.S. Degree Meta-Major Health Sciences Department Title Respiratory Care Catalog Description The Bachelor of Science in Respiratory "
+   },
+   {
+    "control_number": "44574",
+    "pages": [
+     131,
+     132
+    ],
+    "named": true,
+    "code": "NCCT.WAR",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] Workforce and Academic Readiness - NCCT.WAR General Program Type Non Credit - Completion Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description The C"
+   },
+   {
+    "control_number": "44729",
+    "pages": [
+     247,
+     248,
+     249
+    ],
+    "named": true,
+    "code": "AST.PH2",
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] Public Health for Transfer Degree (AS-T) - AST.PH2 General Program Type A.S. - T Degree Meta-Major Health Sciences Department Title Health Services Additional Information Students: to ensure you're on"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 54.3,
+ "found": 73,
+ "by_method": {
+  "no_closed_list": 7,
+  "not_found": 32,
+  "pdf_pages": 73
+ },
+ "shared_pages": {
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148": [
+   "31146",
+   "43620"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156": [
+   "31593",
+   "41922"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131": [
+   "40261",
+   "44574"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03547",
+   "title": "Kinesiology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "08872",
+   "title": "Computer Science and Information Systems-Network and Security",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+    "coverage": 0.222
+   }
+  },
+  {
+   "control_number": "11803",
+   "title": "Agriculture Business with an Area of Emphasis",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "12331",
+   "title": "Agriculture Production",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "15426",
+   "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17910",
+   "title": "General Studies: STEM",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17911",
+   "title": "General Studies: Social and Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17912",
+   "title": "General Studies: Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17913",
+   "title": "General Studies: Ethnic Groups in the United States",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17914",
+   "title": "General Studies: Language and Rationality",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17924",
+   "title": "Liberal Arts: Pathway to Health Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "17977",
+   "title": "Agriculture Business",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "18353",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19106",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19107",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19718",
+   "title": "Addiction Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "19719",
+   "title": "Addiction Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "21424",
+   "title": "Computer Science and Information Systems - Web Development Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "30621",
+   "title": "Construction - Sustainable Construction: Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "31591",
+   "title": "Agriculture Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "31804",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "32981",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "35458",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "36985",
+   "title": "Manufacturing Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "37130",
+   "title": "Computer Science and Information Systems - Mobile Development Option",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "37950",
+   "title": "Agriculture Plant Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "39564",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "40742",
+   "title": "High School Equivalency Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "42385",
+   "title": "Food Safety",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "43119",
+   "title": "Sustainable Crop Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "43121",
+   "title": "Small Farm",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  },
+  {
+   "control_number": "45096",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "the catalog heads each program with its code, and no heading names this one"
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 2,
+  "0.8-1.0": 9,
+  "1.0": 62
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/hartnell",
+  "kept": 50,
+  "programs": 23,
+  "list": [
+   {
+    "control_number": "03570",
+    "title": "Nursing-Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=292",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=293",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03571",
+    "title": "Nursing--Vocational Nursing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=304",
+    "coverage": 0.938,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03588",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
+    "coverage": 0.941,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
+    "was_coverage": 0.882,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08871",
+    "title": "Computer Science and Information Systems-Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19518",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=382",
+    "coverage": 0.667,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21422",
+    "title": "Business Office Technology--Information Processing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21423",
+    "title": "Digital Arts",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21439",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=409",
+    "coverage": 0.917,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21444",
+    "title": "Photography",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=100",
+    "coverage": 0.9,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21450",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31268",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31592",
+    "title": "Computer Science and Information Systems-Network and Security",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31593",
+    "title": "Computer Science and Information Systems: Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31971",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=62",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32365",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=338",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33050",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=391",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33176",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=280",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=279",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33851",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=202",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
+    "was_coverage": 0.5,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38517",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=392",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39248",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=302",
+    "coverage": 0.667,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43821",
+    "title": "Foundations of Agricultural Mechatronics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=261",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=418",
+    "was_coverage": 0.636,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44161",
+    "title": "Theatre Performance",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=396",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44537",
+    "title": "Respiratory Care",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=355",
+    "coverage": 1.0,
+    "was_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=356",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ]
+ },
+ "run": "39089852947"
+}
