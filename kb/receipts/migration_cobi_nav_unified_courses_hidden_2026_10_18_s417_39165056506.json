@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql",
+ "name": "cobi_nav_unified_courses_hidden_2026_10_18_s417",
+ "version": "20261018205113",
+ "sha256": "c2b46e87dad97550ae559152cbdc2b625ea7c940f93c1d6ec98a4f8b4bc8e2c5",
+ "run": "39165056506",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
