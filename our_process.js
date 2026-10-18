@@ -16,14 +16,17 @@
 
   var CSS = `
   .opv {
-    --op-bg:#EAEEEC; --op-panel:#E1E7E4; --op-panel-2:#D7DEDB;
-    --op-ink:#102630; --op-ink-soft:#3C5158; --op-ink-faint:#6C8188;
-    --op-line:#C6D0CD; --op-line-2:#A9B7B3;
-    --op-amber:#B9772A; --op-amber-2:#D89A44; --op-teal:#197F78;
-    --op-indigo:#2A5378; --op-coral:#BC4E36;
-    --op-contour:rgba(16,34,43,0.055); --op-glow:rgba(185,119,42,0.14);
-    --op-serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",serif;
-    --op-sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    /* First Light's tokens, both themes (UI pass S417, 2026-10-18): the tab's own
+       blue-green palette read 3.49:1 and under on four pairs in the light theme.
+       The two alpha tints are derived from the paper ink and the mustard text. */
+    --op-bg:var(--paper); --op-panel:var(--surface-muted); --op-panel-2:var(--surface-2);
+    --op-ink:var(--text-strong); --op-ink-soft:var(--text-body); --op-ink-faint:var(--text-muted);
+    --op-line:var(--border); --op-line-2:var(--border-strong);
+    --op-amber:var(--mustard-text); --op-amber-2:var(--mustard-fill); --op-teal:var(--seal-blue);
+    --op-indigo:var(--cobalt); --op-coral:var(--crimson);
+    --op-contour:rgba(28,28,26,0.055); --op-glow:rgba(139,104,0,0.14);
+    --op-serif:'Playfair Display',Georgia,serif;
+    --op-sans:'Source Sans 3',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --op-mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
     position:relative; overflow:hidden; border:1px solid var(--op-line);
     border-radius:16px; background:var(--op-bg); color:var(--op-ink);
@@ -46,9 +49,12 @@
   .op-sec { position:relative; padding:clamp(44px,6vw,72px) 0; }
   .op-sec + .op-sec { border-top:1px solid var(--op-line); }
 
-  .op-reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
-  .op-reveal.op-in { opacity:1; transform:none; }
-  @media (prefers-reduced-motion: reduce) { .op-reveal { opacity:1; transform:none; transition:none; } }
+  /* A section rises into place as it enters the window; it is readable from the start
+     (UI pass S417: the fade from opacity 0 put the eyebrow and the altitude label under
+     AA while they were still coming in, 3.49:1 and 4.25:1 on paper). */
+  .op-reveal { transform:translateY(22px); transition:transform .7s ease; }
+  .op-reveal.op-in { transform:none; }
+  @media (prefers-reduced-motion: reduce) { .op-reveal { transform:none; transition:none; } }
 
   /* hero */
   .op-hero { padding-top:clamp(48px,7vw,84px); }
@@ -159,12 +165,10 @@
   .op-mockcap { font-family:var(--op-mono); font-size:10.5px; color:var(--op-ink-faint); letter-spacing:.03em; margin-top:11px; text-align:center; }
 
   .op-livecta { margin-top:40px; text-align:center; }
-  .op-livebtn { display:inline-flex; align-items:center; gap:11px; font-family:var(--op-mono); font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:#0A1C27; background:var(--op-amber); text-decoration:none; padding:14px 24px; border-radius:10px; box-shadow:0 14px 34px -20px var(--op-glow); transition:transform .25s ease, box-shadow .25s ease, background .25s ease; cursor:pointer; border:0; }
-  .op-livebtn:hover { transform:translateY(-3px); background:var(--op-amber-2); box-shadow:0 22px 46px -20px var(--op-glow); }
-  .op-livebtn .op-livedot { width:9px; height:9px; border-radius:50%; background:var(--op-teal); }
-  @keyframes op-lpulse { 0%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--op-teal) 70%, transparent);} 70%{ box-shadow:0 0 0 7px transparent;} 100%{ box-shadow:0 0 0 0 transparent;} }
-  .op-livebtn .op-livedot { animation:op-lpulse 2s ease-out infinite; }
-  @media (prefers-reduced-motion: reduce){ .op-livebtn .op-livedot { animation:none; } }
+  /* A control is an underlined word (Sam, 2026-10-09): the filled amber button read its
+     link color at 2.51:1 on the fill, and the pulsing dot was a glyph with its word beside it. */
+  .op-livebtn { display:inline-flex; align-items:center; min-height:24px; font-family:var(--op-mono); font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:var(--op-teal); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+  .op-livebtn:hover { color:var(--op-ink); }
   .op-livenote { font-family:var(--op-mono); font-size:11px; color:var(--op-ink-faint); letter-spacing:.03em; margin-top:12px; }
 
   .op-pull { font-family:var(--op-serif); font-size:clamp(20px,3vw,30px); line-height:1.35; color:var(--op-ink); max-width:24ch; margin:0 0 8px; font-style:italic; }
@@ -191,12 +195,12 @@
    * The guard is what the old rule was missing; dropping it puts the bug back.
    */
   var OP_DARK = `
-      --op-bg:#0A1C27; --op-panel:#0F2733; --op-panel-2:#143140;
-      --op-ink:#E9EFEC; --op-ink-soft:#AEC1C4; --op-ink-faint:#70878E;
-      --op-line:rgba(180,205,210,0.14); --op-line-2:rgba(180,205,210,0.27);
-      --op-amber:#E7AB53; --op-amber-2:#F2C578; --op-teal:#46C2B2;
-      --op-indigo:#7BA7CE; --op-coral:#E87C5C;
-      --op-contour:rgba(120,180,190,0.06); --op-glow:rgba(231,171,83,0.16);
+      --op-bg:var(--paper); --op-panel:var(--surface-subtle); --op-panel-2:var(--surface-muted);
+      --op-ink:var(--text-strong); --op-ink-soft:var(--text-body); --op-ink-faint:var(--text-muted);
+      --op-line:var(--border); --op-line-2:var(--border-strong);
+      --op-amber:var(--mustard-text); --op-amber-2:var(--mustard-fill); --op-teal:var(--cobalt);
+      --op-indigo:var(--cobalt); --op-coral:var(--crimson);
+      --op-contour:rgba(236,233,226,0.06); --op-glow:rgba(227,179,65,0.16);
   `;
   CSS += `
   @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .opv{${OP_DARK}} }
@@ -368,7 +372,7 @@
           </div>
         </div>
         <div class="op-livecta op-reveal">
-          <a class="op-livebtn" href="#tmc-builder"><span class="op-livedot"></span> See the TMC Builder live</a>
+          <a class="op-livebtn" href="#tmc-builder">See the TMC Builder live</a>
           <div class="op-livenote">Opens the live tool · Reference &amp; Curation → TMC Builder</div>
         </div>
       </div>
