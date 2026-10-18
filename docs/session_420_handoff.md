@@ -63,7 +63,13 @@ order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep), an
    `main`. Expect the eight to place their courses; Political Science may still fall short of the machine checks.
 3. **The nightly 07:47Z `cer-procedures.yml` run** is the first saving night with no one watching: read its receipt in
    `kb/cer_procedures_out/saved/` and the morning fold's `applied.json` (S418's item, still open).
-4. **The UI pass is due on cpl-news** (`python3 scripts/ui_pass.py --next`): two known findings, a heading skip h2 to
+4. **Session 417 is building the Commons tab now** (Sam, 20:10Z, to S417: *"Build it as a tab now. I can live without the
+   words on the cards—pretty self explanatory and I am the main user."*), on `claude/s417-commons-tab` off `main`, on top of
+   step 1: `commons.js`, `kb/_build_commons_status.py`, `kb/status/commons.json`, two tests, one nav button, pane and boot
+   block in both HTMLs, a daily-dashboard build step, the commons lane, the dependency map and the UI pass ledger are its
+   files. Leave them to it; check its PR before any Commons work, and take step 2 (each reference's Progress view) only
+   where its tab does not already draw it.
+5. **The UI pass is due on cpl-news** (`python3 scripts/ui_pass.py --next`): two known findings, a heading skip h2 to
    h4 at "Suggest a story" and `input.q` with no focus ring, in both themes. S419 had no room for the fix PR; the ledger
    keeps the view due.
 
@@ -74,10 +80,9 @@ order with Common Subjects; Sierra quotes complete records), Sheet 96 (keep), an
    a machine check (Delta's seven noncredit programs carry hours the arithmetic cannot add; seven coverage failures place
    fewer than the listed courses; most of the rest add a half-unit choice above a printed total). Read the records'
    `score` before naming a cause: the eleven were named unfound for two sessions and were not.
-2. The Commons step 2: each common reference's Progress view drawn from `commons_progress.js`, in the ruled order
-   (Exhibit on the CER tab first), each with its definition of complete on a card for Sam and a status file under
-   `kb/status/`. The host contract is in `docs/commons_lessons.md`; the collapse pattern Sam asked for belongs in step
-   3's Commons row component.
+2. The Commons after S417's tab lands: each common reference's Progress view drawn from `commons_progress.js` where the
+   tab does not already draw it (Exhibit on the CER tab first), each with its definition of complete on a card for Sam
+   and a status file under `kb/status/`. The host contract is in `docs/commons_lessons.md`.
 
 ## Patterns that worked
 
