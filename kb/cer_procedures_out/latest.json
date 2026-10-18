@@ -1,13 +1,14 @@
 {
- "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. Nothing here is saved; proposals pre-fill the tab.",
- "_generated_at": "2026-10-18T12:14:30Z",
+ "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
+ "_generated_at": "2026-10-18T16:52:57Z",
  "procedures_hash": "575c290d755b",
  "queue": 1498,
  "saved_not_folded": 176,
  "waiting": 1322,
  "proposed": 1287,
- "needs_you_count": 396,
+ "needs_you_count": 414,
  "not_yet_asked": 0,
+ "fold_held": 18,
  "procedures": [
   {
    "id": "brand-family",
@@ -5465,6 +5466,272 @@
    "colleges": [
     "Reedley College"
    ]
+  },
+  {
+   "raw_title": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'ADJU 232 - Juvenile Justice Procedures - Credit by Exam' -> 'Juvenile Law and Procedures'",
+   "proposal": {
+    "title": "Juvenile Justice Procedures",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Juvenile Law and Procedures"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "Automotive Technology MLR I & II - Irvine High School",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'Automotive Technology MLR I & II - Irvine High School' -> 'Automotive Technology Maintenance and Light Repair (MLR)'",
+   "proposal": {
+    "title": "Automotive Technology MLR I and II — Irvine High School",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Automotive Technology Maintenance and Light Repair (MLR)"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)' -> 'Business Management and Entrepreneurship'",
+   "proposal": {
+    "title": "Business Management and Entrepreneurship — Cajon High School",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Business Management and Entrepreneurship"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "Center for Financial Training: CFTA-0025 Human Resources Management;",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'Center for Financial Training: CFTA-0025 Human Resources Management;' -> 'Center for Financial Training (CFT) — Human Resources Management'",
+   "proposal": {
+    "title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Center for Financial Training (CFT) — Human Resources Management"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors' -> 'Anatomy and Physiology Honors'",
+   "proposal": {
+    "title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Anatomy and Physiology Honors"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "Credit by Exam: History Of Architecture I",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'Credit by Exam: History Of Architecture I' -> 'History of Architecture 1'",
+   "proposal": {
+    "title": "History of Architecture I",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "History of Architecture 1"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "DANCETQ 141 - Modern Dance Techniques I",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'DANCETQ 141 - Modern Dance Techniques I' -> 'Modern Dance Techniques 1'",
+   "proposal": {
+    "title": "Modern Dance Techniques I",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Modern Dance Techniques 1"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'GEOG 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'",
+   "proposal": {
+    "title": "Introduction to Geographic Information Systems",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Introduction to Geographic Information Systems and Laboratory"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "GIS 025 - Introduction to Geographic Information Systems and Laboratory",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'GIS 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'",
+   "proposal": {
+    "title": "Introduction to Geographic Information Systems",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Introduction to Geographic Information Systems and Laboratory"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'",
+   "proposal": {
+    "title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'MDAST 323 - Medical Assisting Clinical - Indsutry Certification' -> 'Medical Assisting Clinical Procedures'",
+   "proposal": {
+    "title": "Medical Assisting Clinical",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Medical Assisting Clinical Procedures"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'MDAST 325 - Medical Assisting Lab Procedures - Industry Certification' -> 'Medical Assisting Laboratory Procedures'",
+   "proposal": {
+    "title": "Medical Assisting Lab Procedures",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Medical Assisting Laboratory Procedures"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "McDonald's Corporation MCD-0051 Business Leadership Practices;",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: \"McDonald's Corporation MCD-0051 Business Leadership Practices;\" -> \"McDonald's Business Leadership Practices\"",
+   "proposal": {
+    "title": "McDonald's MCD-0051 Business Leadership Practices",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: \"McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;\" -> \"McDonald's Mid-Management Foundations Curriculum\"",
+   "proposal": {
+    "title": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "Music Skills II - Credit by Exam",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'Music Skills II - Credit by Exam' -> 'Music Skills 2'",
+   "proposal": {
+    "title": "Music Skills II",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Music Skills 2"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "NURSING 402 - Pharmacology",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'NURSING 402 - Pharmacology' -> 'Pharmacology'",
+   "proposal": {
+    "title": "Pharmacology (Nursing)",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Pharmacology"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "PLNT SC 812 - Landscape Installation and Maintenance I",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'PLNT SC 812 - Landscape Installation and Maintenance I' -> 'Landscape Installation and Maintenance 1'",
+   "proposal": {
+    "title": "Landscape Installation and Maintenance I",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Landscape Installation and Maintenance 1"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
+  },
+  {
+   "raw_title": "PLNT SC 827 - Sustainable Gardening for Landscapes",
+   "why": "the fold held the saved assignment: human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'",
+   "proposal": {
+    "title": "Sustainable Gardening for Landscapes",
+    "issuer": "",
+    "procedure": "the assignment map saved"
+   },
+   "standing": [
+    "Sustainable Gardening for Landscapes (Horticulture)"
+   ],
+   "kind": "conflict",
+   "fold_report": "2026-10-18",
+   "colleges": []
   }
  ]
 }
