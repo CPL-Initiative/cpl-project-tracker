@@ -140,6 +140,40 @@
      "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
     }
    ]
+  },
+  "Taft College": {
+   "why": "Eleven of Taft's transfer-degree records add up their major and fail the degree check as incomplete: the page prints \"Total Credit Hours: 24\", \"Option 1: CSU/UC - Completion of the California General Education Transfer Curriculum (Cal-GETC) is required\", \"Additional transferable elective units may be used to reach the required 60 units\" and \"Total Credit Hours: 60\", and no units for Cal-GETC (college-page-read 39122581817, Early Childhood Education AS-T). Taft's own Cal-GETC page prints none either (same read). Cal-GETC is one statewide pattern of 34 semester units; the figure is cited from Monterey Peninsula's GE page (read 38759288106), as Monterey's step reads it, and San Joaquin Delta's degree pages print the same 34 (read 39122473643). S415 SkyRedbud proceeded on it on Fable's advice (option A of three: the narrowest fix, in the college's procedure, reversible by deleting this step) and put it to Sam as a card.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "pattern": "Completion\\s+of\\s+(?:the\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\()?Cal-GETC\\)?\\s+is\\s+required",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+    }
+   ]
+  },
+  "San Joaquin Delta College": {
+   "why": "San Joaquin Delta's reconcile (run 39116289105) read 28 associate degrees that pass their major total as failing the degree total under record shape 6: an 18-unit major and general education 27-34 against 60, or a 59.5-unit major past the 77.5 printed. Every degree page prints \"Minimum Major Units Required: N\", the general education patterns (\"San Joaquin Delta College Associate Degree General Education Pattern Units: 27\", \"Cal-GETC ... Units: 34\"), \"Students are advised to double-count courses in the major to also satisfy general education when possible ... the units will only be counted once in computing the total number of units for the degree\" and \"Minimum Degree Units Required: 60\" (college-page-read 39122473643: Engineering Computer-Aided Drafting A.S., Modern Policing A.S., Nursing R.N. A.S., Electron Microscopy A.S.). The degree total is a floor: units short of it come from courses the student chooses, and a sum past it double-counts. The major total is right as read, so no step clears it. A step setting electives_fill_degree from the same words (S415, reconcile 39122702830) turned 15 records whose pages name no electives to failing under the scorer's electives check; the scorer now reads a floor alone as letting units the student chooses make up a short sum, so the step was dropped.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "degree_total",
+     "pattern": "Minimum Degree Units Required: (?P<min>\\d+(?:\\.\\d+)?)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "pattern": "Minimum Degree Units Required: \\d+(?:\\.\\d+)?"
+    }
+   ]
   }
  }
 }

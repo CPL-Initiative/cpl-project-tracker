@@ -88,7 +88,26 @@
    "against": "program",
    "why": [
     "the blocks sum to 52.0-53.0; the catalog states 52.0-52.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     86.0,
+     87.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -108,6 +127,9 @@
    "count": 1,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -138,7 +160,8 @@
    ],
    "careers": [
     "elementary school teaching"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -337,5 +360,14 @@
    "Career entry 'elementary school teaching' is taken from the program description ('students are introduced to elementary school teaching'); reviewer may confirm it should count as a career field."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

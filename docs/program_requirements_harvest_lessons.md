@@ -832,3 +832,28 @@ From the Records view paragraph, verbatim:
   a sibling award naming the same list (Child Development A.A. to its certificates), eight found none (Diesel and
   Mechanized Agriculture print few listed codes).
 - **Build `7e4a2a9c5ba7`: 15,946 programs at 114 colleges** (#2224).
+
+## S415 SkyRedbud (2026-10-18): a printed degree floor (San Joaquin Delta), Cal-GETC's 34 (Taft), build 48cb66f19cff
+
+- **Read the page before calling a rescore right or wrong.** Delta's 28 new arithmetic failures (S414) were the
+  scorer reading "Minimum Degree Units Required: 60" as an exact total: an 18-unit major and GE 27-34 came short, and
+  Nursing's 59.5 plus GE ran past 77.5. A four-page read (college-page-read 39122473643) showed the floor and the
+  page's advice to double-count major courses toward GE. Four loads settled what the records alone could not.
+- **A floor alone makes up a short sum.** The first step set `electives_fill_degree` from the floor's words, and the
+  scorer's guard ("the record says electives fill the degree total, but the catalog text names no electives") failed
+  15 records whose pages name none. `degree_verdict()`'s minimum branch now passes a short sum on
+  `degree_total_minimum` alone, with `fill` naming the units; Delta's steps set only the floor. One record elsewhere
+  reads differently on its next rescore: Orange Coast 10278 (37 + GE 18 under its minimum of 60).
+- **A reconcile files what it set, and a later step never clears it.** The first run's `electives_fill_degree: true`
+  stayed in the filed records, so the second run changed nothing for the 15. Reverting both filing commits and
+  reconciling again from the clean records gave 154 passing (from 152), none lost; reread 39130341466 replaced 71.
+- **Taft: Cal-GETC is the statewide 34.** Ten transfer degrees add up their major and name Cal-GETC with no units;
+  Taft's own Cal-GETC page prints none (read 39122581817). Fable, asked once, chose a Taft step citing the figure
+  over loosening the scorer (which would stop the degree check catching real misreads) or leaving the flag (which
+  would never clear). The step cites Monterey Peninsula's GE page; 24 to 34 passing, reread 39128567443 replaced 17.
+  Its card is on the sheet for Sam.
+- **A reconcile step's pattern needs `\s+`.** The first Taft run matched nothing: the capture's text is innerText,
+  and Taft's titles carry non-breaking spaces. The same words with `\s+` matched all ten. When a reconcile reports
+  "0 filed records changed" and no unread pages, suspect the pattern's spacing first.
+- **`gh run view --log` is refused here** (the log host answers 403); `get_job_logs` with `return_content` returns
+  it, saved to a file when long. Parse its `logs_content` field.

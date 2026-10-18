@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -253,5 +256,6 @@
    "Program learning outcomes are printed on the certificate page itself."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

@@ -149,6 +149,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -1509,5 +1512,6 @@
    "Text is cut off at the end in the Languages Other than English section, after the requirements."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

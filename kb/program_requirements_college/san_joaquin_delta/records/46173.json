@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -205,5 +208,6 @@
    "Careers list includes 'technician' (job title) and the fields named in 'employment in fields such as ...'; workplace settings (industry, research laboratories, medical schools, hospitals, colleges and universities) were not recorded as careers."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-386 document(s).
+387 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 416 | [Session 416 handoff: the degree floor (San Joaquin Delta) and Cal-GETC's 34 (Taft); build 48cb66f19cff](../session_416_handoff.md) | 2026-10-18 |
 | 415 | [Session 415 handoff: the Coursedog reader (Merced loaded); the slash rescoring at four colleges; build 7e4a2a9c5ba7](../session_415_handoff.md) | 2026-10-18 |
 | 414 | [Session 414 handoff: the CER's three views; the slashed course subject; Taft and Crafton Hills loaded](../session_414_handoff.md) | 2026-10-18 |
 | 413 | [Session 413 handoff: the CER procedures run is live; the classifier's first pass; Crafton Hills loaded](../session_413_handoff.md) | 2026-10-18 |

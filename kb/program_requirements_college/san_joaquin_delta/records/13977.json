@@ -98,6 +98,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -212,5 +215,6 @@
    "'Medical front-office positions' recorded as a career field; the six listed job titles follow it in the description."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

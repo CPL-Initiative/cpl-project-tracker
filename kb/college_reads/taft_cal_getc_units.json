@@ -1,0 +1,19 @@
+{
+ "_readme": "S415 SkyRedbud, 2026-10-18. Eleven of Taft's transfer-degree records print the major's total and 'Total Credit Hours: 60', name 'Completion of Cal-GETC is required' and print no units for it, so the degree check reads them incomplete (e.g. 31443, Early Childhood Education AS-T). This read prints how the program page words its general education and where the catalog states Cal-GETC's units, so a reconcile step can cite the catalog's own figure. Two loads plus the links it follows, no model call.",
+ "college": "Taft College",
+ "questions": {
+  "ge_units": "The units the catalog states for Cal-GETC, and how a transfer degree page names it."
+ },
+ "keywords": [
+  "Cal-GETC[^<\"]{0,200}",
+  "[^<>\"]{0,120}\\b34\\b[^<\"]{0,120}",
+  "[Tt]otal [Cc]redit [Hh]ours[^<\"]{0,60}",
+  "[Ee]lective[^<\"]{0,160}"
+ ],
+ "pages": [
+  {"answers": ["ge_units"],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/early-childhood-education-for-transfer/early-childhood-education-associate-in-science-degree-for-transfer",
+   "links": "Cal-GETC|General Education|graduation|transfer",
+   "follow": "Cal-GETC|general-education"}
+ ]
+}

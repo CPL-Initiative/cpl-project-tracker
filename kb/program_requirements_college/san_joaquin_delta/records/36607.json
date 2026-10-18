@@ -92,6 +92,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -166,5 +169,6 @@
    "Admission requires a completed undergraduate degree in speech language pathology/communication sciences and disorders; others must complete the SLPA AS degree."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

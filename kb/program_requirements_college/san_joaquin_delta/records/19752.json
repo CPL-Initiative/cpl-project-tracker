@@ -97,6 +97,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -147,5 +150,6 @@
   ],
   "notes": []
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

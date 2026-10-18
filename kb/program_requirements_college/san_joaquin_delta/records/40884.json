@@ -94,6 +94,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -187,5 +190,6 @@
    "Career entry taken from description: 'employment in entry level front of the house positions in the hospitality industry'; the listed settings (restaurants, hotels, country clubs, resorts, catering) were read as workplaces, not careers."
   ]
  },
- "extracted_run": "38631691511"
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }
