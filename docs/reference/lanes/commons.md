@@ -49,4 +49,22 @@ together and places them in some order of priority and completion and known issu
 
 **RULED (Sam, Open Asks Sheet 95 card 1, 14:43Z 2026-10-18, his own call, "build"; `cpl_memory` `sam-sheet-95-rulings-2026-10-18`):** *"Yes, and include Common Subjects in the mix."* The order: lift the Progress view out of `program_requirements.js` into one shared module and one status file per project (`kb/status/<project>.json`, today's `kb/queue_status.json` generalized), with nothing changing on screen and its 417 checks guarding the lift; then each reference's Progress view (Exhibit, Course, CR, Subjects), each with its definition of complete on a card for Sam; then the Commons tab from a mock-up: one row per reference with its complete pair, where it stands, known issues by owner, settled procedures, calls waiting on Sam and its last run, in the order he sets.
 
-**NEXT:** step 1, the shared Progress module (no change on screen).
+**Fable's review of the plan (2026-10-18, at Sam's suggestion; advice, the calls stay Sam's):**
+
+- *Complete differs in kind.* Program Requirements' complete is a machine state and nearly only grows; an Exhibit or
+  Course complete is a curator's judgment a merge or a re-mint can undo; Subjects counts a few hundred disciplines
+  against 20,282 programs. Each Commons row carries its definition's phrase and the test behind it (machine-checked,
+  curator-confirmed, assigned) beside the pair, and a percentage stays inside its row, never a sortable column.
+- *A status file is only as live as its writer.* One routine writes `kb/queue_status.json`; the other references have
+  none. Keep the machine stamp (the nightly CER run, the auditor) apart from the session stamp (next step, calls), and
+  show each as an age against a declared cadence, so a stale row reads stale.
+- *Calls have one source.* The decision sheet's store holds Sam's answers; a Commons cell counting calls from a
+  status file shows an answered call as open. Read it the way the Progress view's `callAnswered` does.
+- *Order:* mock the Commons row, with today's real numbers filled by hand, before step 1 fixes the status-file shape:
+  the row's cells are that file's contract. Recommended: run the mock-up beside step 1, a small reorder of Sam's
+  "build"; he may say otherwise.
+- *What the mock-up must show:* five real rows at today's counts, including one stale row, one that could not be read
+  and one with a call open; each count opening its list; phone width; and the control Sam sets the order with. Show
+  the mock-up to Fable before Sam.
+
+**NEXT:** the Commons row mock-up (to Fable, then Sam) beside step 1, the shared Progress module (no change on screen).
