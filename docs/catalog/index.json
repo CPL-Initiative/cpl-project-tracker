@@ -14834,7 +14834,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 56,
+   "count": 57,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14874,6 +14874,21 @@
      "title": "Annual Workplan Goals / adding, moving and counting sub-activities \u2014 lane state",
      "type": null,
      "updated": "2026-10-13"
+    },
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "path": "docs/reference/lanes/cer-procedures.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "cer",
+      "exhibit-canonicalization"
+     ],
+     "title": "CER procedures and the simpler CER tab \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-18"
     },
     {
      "created": "2026-09-08",
@@ -15619,8 +15634,28 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 382,
+   "count": 383,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 412,
+     "path": "docs/session_412_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "coursedog",
+      "smartcatalog",
+      "cer",
+      "exhibit-canonicalization",
+      "ui-pass"
+     ],
+     "title": "Session 412 handoff: Sheet 93 and the CER on procedures; SmartCatalog and Merced reads; 182e810e207d",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22200,5 +22235,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1165
+ "total": 1167
 }

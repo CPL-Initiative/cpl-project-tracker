@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T00:56:54Z",
-  "session": 410,
-  "moniker": "SkyYucca",
+  "written_at": "2026-10-18T03:09:34Z",
+  "session": 411,
+  "moniker": "SkySotol",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_411_handoff.md",
+  "handoff": "docs/session_412_handoff.md",
   "unchecked": [
     {
       "college": "Allan Hancock College",
@@ -48085,13 +48085,6 @@
     },
     {
       "college": "Hartnell College",
-      "program": "IGETC",
-      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-      "control_number": "19107",
-      "loaded": "2026-10-18"
-    },
-    {
-      "college": "Hartnell College",
       "program": "Mathematics",
       "award": "A.S. T Degree",
       "control_number": "30822",
@@ -48155,23 +48148,9 @@
     },
     {
       "college": "Hartnell College",
-      "program": "Psychology",
-      "award": "A.A. Degree",
-      "control_number": "18353",
-      "loaded": "2026-10-18"
-    },
-    {
-      "college": "Hartnell College",
       "program": "Public Health",
       "award": "A.S. T Degree",
       "control_number": "44729",
-      "loaded": "2026-10-18"
-    },
-    {
-      "college": "Hartnell College",
-      "program": "Public Health Science",
-      "award": "A.S. T Degree",
-      "control_number": "35458",
       "loaded": "2026-10-18"
     },
     {
@@ -48200,13 +48179,6 @@
       "program": "Spanish",
       "award": "A.A- T Degree",
       "control_number": "33051",
-      "loaded": "2026-10-18"
-    },
-    {
-      "college": "Hartnell College",
-      "program": "Spanish",
-      "award": "A.A. Degree",
-      "control_number": "19518",
       "loaded": "2026-10-18"
     },
     {
@@ -109311,13 +109283,77 @@
       "award": "A.S. Degree",
       "control_number": "07027",
       "loaded": "2026-10-17"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Computer Science and Information Systems-Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "08871",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Business Office Technology--Information Processing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21422",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Administration of Justice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21450",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Computer Science and Information Systems-Network and Security",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "31592",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Computer Science and Information Systems: Computer Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31593",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32365",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "33851",
+      "loaded": "2026-10-18"
+    },
+    {
+      "college": "Hartnell College",
+      "program": "Foundations of Agricultural Mechatronics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43821",
+      "loaded": "2026-10-18"
     }
   ],
   "next_step": {
-    "title": "Read the display apply, then fix Hartnell's picks",
-    "text": "Read the applied record of display build d6cc1fde7ea3, then pick each Hartnell program's pages by the code the Coursedog catalog prints beside its name and reread the 33 programs left out."
+    "title": "Apply the display build, then read Sheet 93",
+    "text": "Apply display build 182e810e207d from main, read Crafton Hills' capture preview, then carry Sam's Sheet 93 replies into the CER procedures lane and start the CER build."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "Three CER calls on Open Asks Sheet 93",
+      "text": "Whether the nightly fold applies the 176 clean assignments, whether a sure classifier result saves under its procedure, and whether the Initiated sign-off and Curate panel retire.",
+      "if_no_reply": "The CER stays as it is and the build waits; the harvest goes on.",
+      "link": "https://claude.ai/artifact/MZXYEqiNitiWGiTakDHUwW",
+      "link_text": "Open Asks Sheet 93"
+    }
+  ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges.",
     "procedures": "76 colleges have one: the eLumen six and the first S402 wave's four were written on Oct 17, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
@@ -109327,28 +109363,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-17T23:52:00Z",
-      "text": "Cañada's 2026-2027 catalog and addendum, posted by Sam, were filed for the reader."
+      "at": "2026-10-18T02:22:00Z",
+      "text": "The reader learned to find each program in a Coursedog catalog PDF by the program code printed beside its name."
     },
     {
-      "at": "2026-10-17T23:54:00Z",
-      "text": "Display build ffd6929a4f90 was applied: 15,517 programs written."
+      "at": "2026-10-18T02:31:00Z",
+      "text": "Hartnell gained 8 records and 14 of its records moved to their own program's pages."
     },
     {
-      "at": "2026-10-18T00:00:00Z",
-      "text": "Hartnell's catalog is now read from the whole-catalog file its catalog vendor publishes."
+      "at": "2026-10-18T02:33:00Z",
+      "text": "Four Hartnell records that showed another program's requirements were removed, each kept whole in a receipt."
     },
     {
-      "at": "2026-10-18T00:17:00Z",
-      "text": "Cañada College loaded 62 records, unchecked."
+      "at": "2026-10-18T02:41:00Z",
+      "text": "Display build 182e810e207d covers 15,651 programs at 111 colleges."
     },
     {
-      "at": "2026-10-18T00:26:00Z",
-      "text": "Hartnell College loaded 68 records, unchecked."
-    },
-    {
-      "at": "2026-10-18T00:55:00Z",
-      "text": "Display build d6cc1fde7ea3 (15,647 programs at 111 colleges) went to be applied."
+      "at": "2026-10-18T02:49:00Z",
+      "text": "The reader learned to walk SmartCatalog catalogs, and Crafton Hills was read without extraction."
     }
   ],
   "headline": [
@@ -109426,7 +109458,7 @@
   },
   "harvest": {
     "day": "2026-10-18",
-    "gaps": 3720,
+    "gaps": 3748,
     "parts": {
       "links": {
         "catalog": [
@@ -109443,11 +109475,11 @@
         ]
       },
       "roep": [
-        17936,
+        18087,
         20282
       ],
       "coci": [
-        14342,
+        14347,
         20282
       ],
       "outcomes": {
@@ -109456,12 +109488,12 @@
           89192
         ],
         "plo": [
-          14342,
+          14347,
           20282
         ]
       },
       "careers": [
-        13292,
+        13297,
         20282
       ]
     }
