@@ -212,7 +212,18 @@ save but not yet saved." Lanes (Session 103):
 
 A row with a live assignment is never prefilled (a curator pick always wins),
 and rows no lane covers honestly stay in the file's `_residual` list for
-hand-triage. Regenerate after queue/family changes; live-assigned raws can be
+hand-triage.
+
+**Since 2026-10-18 the staged file is written every night by the procedures
+run** (`kb/_cer_procedures.py`, `cer-procedures.yml`; the procedures and their
+sources are `kb/cer_procedures.json`). Only the lanes that retarget to a name
+that already exists, or keep an issuer's own name, settle a title (family,
+statewide, NCCER, CSLB, the apprenticeship trades, singles) together with the
+Rule 5c identity lookup; the **cx, hs and ic lanes only hint** the classifier,
+because their strip rules misread the 2026 queue ("Portfolio for MUS 27" →
+"for MUS 27", "EMT-405 Kaiser High School" → "Kaiser High School"). A quality
+gate holds any proposal left with a dangling word, a method word or a course
+code. Every proposal still pre-fills; none saves. Regenerate after queue/family changes; live-assigned raws can be
 excluded via `--assigned-md5 <file>` (md5(raw) hashes — fetch them via the
 Supabase MCP when the sandbox can't reach Supabase directly).
 

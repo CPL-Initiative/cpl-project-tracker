@@ -140,15 +140,21 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
 Insert new rows (JSON handles escaping; `status` per the gate):
 
 ```sql
-insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, author)
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, author, event_date)
 select x.slug, x.kind, coalesce(x.org,'cpl'), x.title, x.summary, x.detail, x.plain,
-       x.tags, x.source, coalesce(x.related,'{}'::text[]), x.status, '<MonikerSNN>'
+       x.tags, x.source, coalesce(x.related,'{}'::text[]), x.status, '<MonikerSNN>',
+       coalesce(x.event_date, current_date)
 from jsonb_to_recordset($json$[ {"slug":"…","kind":"…","title":"… (3-6 word label)","summary":"…","detail":"…",
        "plain":"… (REQUIRED — what you would tell a colleague who does not work on this: no filenames, no column names, no identifiers, and a concrete example where the summary is abstract. Never omit: see rule 5.)",
        "tags":["…"],"source":"…","status":"proposed"} ]$json$::jsonb)
   as x(slug text, kind text, org text, title text, summary text, detail text, plain text,
-       tags text[], source text, related text[], status text);
+       tags text[], source text, related text[], status text, event_date date);
 ```
+
+`event_date` is the day the fact happened, and today when the row omits it. Before 2026-10-18
+this template left it out, so 186 rows carried none and sorted after every dated row: Rule 8's
+read, ordered by `event_date` and cut at 40, never reached them (S412). The read now orders by
+`coalesce(event_date, created_at::date)`.
 
 Promote / stale / supersede (curator or corroboration):
 
@@ -218,7 +224,7 @@ corpus had 182 rows, 174 of them predating that session, 85 verified.
 select slug, title, summary, status, event_date from cpl_memory
 where status <> 'superseded'
   and (tags && array['<workstream-tag>'] or summary ilike '%<keyword>%')
-order by event_date desc nulls last limit 40;
+order by coalesce(event_date, created_at::date) desc limit 40;
 ```
 
 ### A human-sourced row may not be silently superseded

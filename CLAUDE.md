@@ -147,7 +147,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    select slug, title, summary, status, event_date from cpl_memory
    where status <> 'superseded'
      and (tags && array['<workstream-tag>'] or summary ilike '%<keyword>%')
-   order by event_date desc nulls last limit 40;
+   order by coalesce(event_date, created_at::date) desc limit 40;
    ```
 
    Skipping it re-derives facts the table already holds (2026-08-10: three in
@@ -782,7 +782,7 @@ stays here.
 | **Noncredit CIP categories** | Which of the CO's ten noncredit CIP categories a program belongs to — and what that means for CDCP eligibility and funding. | 🔨 in progress · open work — [lane state](docs/reference/lanes/noncredit-cip-categories.md) |
 | **Reviewer session lifetime & scope** | What "signed in" means, how long it lasts, and which browser tab has it. | ✅ live · open work — [lane state](docs/reference/lanes/reviewer-session-lifetime.md) |
 | **Org & phrase scope / auth model** | Which sites exist, which phrase opens which, and whether shared phrases survive at all. | 🔨 in progress · open work — [lane state](docs/reference/lanes/org-phrase-scope-auth.md) |
-| **CER procedures / the simpler CER tab** | Sam adds a rule in plain words; the nightly run applies the rules, then the classifier; Sam sees only the exceptions. | 🔨 designed · NEEDS SAM — [lane state](docs/reference/lanes/cer-procedures.md) |
+| **CER procedures / the simpler CER tab** | Sam adds a rule in plain words; the nightly run applies the rules, then the classifier; Sam sees only the exceptions. | 🔨 in progress · NEEDS SAM — [lane state](docs/reference/lanes/cer-procedures.md) |
 | **EACR — Exhibit & CR Adoption** | One place to see every exhibit, its credit recommendations, and the colleges that could adopt it. | ✅ live · open work — [lane state](docs/reference/lanes/eacr-exhibit-cr-adoption.md) |
 | **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
 | **Public/private repo split** | Separate the public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI and the methodology. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
