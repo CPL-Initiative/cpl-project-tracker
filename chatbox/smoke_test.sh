@@ -849,20 +849,24 @@ answer_must_match -i "2026[-–/ ](20)?27" "7l ⭐ names the 2026-2027 catalog i
 # C1000 and ENGL C1000H both. An honors pair is one choice.
 answer_must_not_match -i "rather than (as )?(substitutes|alternatives)|(are|as) not (substitutes|alternatives)|take both (the )?honors" "7l ⭐ never tells the visitor an honors pair is two courses to take"
 
-# ── MODE 7q: catalog requirements only where a record is checked (S326) ───────
+# ── MODE 7q: catalog requirements only where a record is complete (S326, S416) ─
 # Sam, open-asks sheet 29 card 4 (2026-10-04, "yes"): where a program's record
-# passed all four checks, Sierra may say required and give the total the
-# catalog prints; every other program keeps "lists". The public reads every row
-# (Sam, Open Asks Sheet 67) and cpl-chat reads checked rows only, so the
-# retrieval assert is the anon key reading Mt. SAC's LVN-to-RN record, and the
-# answer assert is the old negative on a college that holds no record at all.
+# passed the checks, Sierra may say required and give the total the catalog
+# prints; every other program keeps "lists". Since Open Asks Sheet 95 card 2
+# (2026-10-18, "quote") complete means the record passes the three machine
+# checks, read as PostgREST filters on the checks column (the anon key reads the
+# row, not the function); a person's confirm sets checked only when they pass, so
+# the 32 confirmed records sit inside the set. The public reads every row (Open
+# Asks Sheet 67), so the retrieval assert is the anon key reading Mt. SAC's
+# LVN-to-RN record THROUGH THAT FILTER, and the answer assert is the old negative
+# on a college that holds no record at all.
 echo "===================================================================="
-echo "MODE: 7q catalog requirements for a checked record; lists for every other program"
-qrow="$(curl -sS --max-time 30 "$REST_BASE/program_requirement_records?select=control_number,catalog_year,total_min,total_max&college=eq.Mt.%20San%20Antonio%20College&control_number=eq.08086" \
+echo "MODE: 7q catalog requirements for a complete record; lists for every other program"
+qrow="$(curl -sS --max-time 30 "$REST_BASE/program_requirement_records?select=control_number,catalog_year,total_min,total_max&college=eq.Mt.%20San%20Antonio%20College&control_number=eq.08086&checks-%3E%3Ecoverage=eq.true&checks-%3E%3Einvented=eq.true&checks-%3E%3Earithmetic=in.(equal,unstated)" \
   -H "apikey: $ANON" -H "Authorization: Bearer $ANON")"
 case "$qrow" in
-  *'"08086"'*'"2026-2027"'*) echo "  [assert ok] 7q ⭐ the anon key reads the checked LVN-to-RN record (2026-2027 catalog)" ;;
-  *) echo "::error::7q ⭐ the anon key read $(printf '%s' "$qrow" | head -c 200) for Mt. SAC 08086 — expected its checked record. Check that kb/receipts/program_requirement_records_load_2026-10-04.sql was applied."; fail=1 ;;
+  *'"08086"'*'"2026-2027"'*) echo "  [assert ok] 7q ⭐ the anon key reads the complete LVN-to-RN record through the machine-check filter (2026-2027 catalog)" ;;
+  *) echo "::error::7q ⭐ the anon key read $(printf '%s' "$qrow" | head -c 200) for Mt. SAC 08086 through the machine-check filter — expected its complete record. Check that kb/receipts/program_requirement_records_load_2026-10-04.sql was applied and that its checks pass."; fail=1 ;;
 esac
 run "7q program course list without a checked record (El Camino, Welding)" \
   '{"query":"What courses are in the Welding program at El Camino College?","session_id":"smoke-ci","history":[]}'

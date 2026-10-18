@@ -195,15 +195,25 @@ block("12. the record's own shapes read right", () => {
   check("a course number matches across spacing", M.courseKey("ANAT 10A") === M.courseKey("anat-10a"));
 });
 
-block("13. Sierra reads checked records only, by her own filter", () => {
+block("13. Sierra reads complete records only, by her own filter", () => {
   // Since Sam's Open Asks Sheet 67 (2026-10-12) the table's public read shows every row, each
   // unchecked one marked on the pages, so Sierra's own filter below is the one thing keeping
-  // an unchecked record out of her answers.
+  // an incomplete record out of her answers. Since Sheet 95 card 2 (2026-10-18) complete means
+  // the record passes the three machine checks (program_record_machine_pass, written as filters
+  // on the checks column because the anon key cannot call the function), for an Active program.
   const RSQL = fs.readFileSync("chatbox/supabase_program_requirement_records.sql", "utf8");
   check("the public read policy shows every row (Sheet 67), so the filter below carries the gate",
     /for select to anon, authenticated using \(true\)/.test(RSQL));
-  check("index.ts asks for checked rows by college and control number",
-    /\.from\("program_requirement_records"\)[\s\S]{0,200}\.eq\("college", college\)\.eq\("checked", true\)\.in\("control_number", controls\)/.test(FN));
+  check("index.ts asks for rows passing the three machine checks, by college and control number",
+    /\.from\("program_requirement_records"\)[\s\S]{0,300}\.eq\("college", college\)\s*\.eq\("checks->>coverage", "true"\)\.eq\("checks->>invented", "true"\)\.in\("checks->>arithmetic", \["equal", "unstated"\]\)\s*\.in\("control_number", controls\)/.test(FN));
+  const VSQL = fs.readFileSync("chatbox/supabase_program_record_verdicts.sql", "utf8");
+  check("the filter is the machine-pass function's own three tests",
+    /coverage', ''\) = 'true'/.test(VSQL) && /invented', ''\) = 'true'/.test(VSQL)
+    && /arithmetic', ''\) in \('equal', 'unstated'\)/.test(VSQL));
+  check("a complete record speaks for an Active program only",
+    /const checked = \(g: any\) => !!\(recs && g\.control && recs\.get\(String\(g\.control\)\)\s*&& \(!g\.status \|\| g\.status === "Active"\)\);/.test(FN));
+  check("the block says the record was read from the catalog and checked against the state's file",
+    /read from the catalog and checked against the state's Program Course File/.test(FN));
   check("the handler passes the records into the block",
     /const reqs = await fetchCheckedRequirements\(singleProfile\.college, listRows, sb\);/.test(FN)
     && /singleProfile\.college\)\), reqs\);/.test(FN));

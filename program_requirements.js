@@ -1935,7 +1935,7 @@
     var lede = "Confirm says the record reads the catalog as printed. " + (fails.length
       ? "The " + fails.join(" and ") + (fails.length === 1 ? " check is" : " checks are") +
         " not met, so the record stays unchecked after you confirm, until its reading procedure takes the fix and a rerun passes. Needs a fix sends your note to that procedure instead."
-      : "The record passes the three machine checks, so confirming marks it checked and Sierra may quote it." +
+      : "The record passes the three machine checks, so Sierra quotes it already; confirming records that you read it and marks it checked." +
         (forCollege ? " The " + (forCollege === 1 ? "item" : forCollege + " items") + " for the college stay open with " +
           shortCollege(p.college) + "; they concern the catalog itself and do not hold the record back." : ""));
     var said = el("p", { cls: "prh-said", "aria-live": "polite" });
@@ -1971,7 +1971,7 @@
       postVerdict(p, "confirm", null).then(function (res) {
         done(res, "confirm", null);
         if (onSaved) { onSaved("Confirmed " + p.program_title + (res.checked ? "; it is checked." : "; it stays unchecked until its checks pass.")); return; }
-        said.textContent = res.checked ? "Confirmed. The record is checked, and Sierra may quote it."
+        said.textContent = res.checked ? "Confirmed. The record is checked; Sierra quotes it."
           : "Confirmed and logged. The record stays unchecked until its checks pass.";
       }, function (e) { said.textContent = verdictError(e); }).then(function () { busy(false); });
     });
@@ -2803,12 +2803,12 @@
       },
       foot: function (x) { return x.builtDay ? "Built " + x.builtDay : ""; },
       open: function (x) { return x.read ? ["Open the " + fmt(x.read) + " records", TO.records] : null; } },
-    /* Sierra quotes a record a person confirmed, and only that (cpl-chat's
-       fetchCheckedRequirements, checked=true); whether she should quote a record that passes the
-       machine checks is Sam's call (S415). */
-    { id: "sierra", title: "Sierra and CPL Pathways",
+    /* Sierra quotes a complete record: an active program whose record passes the three machine
+       checks (Sam, Open Asks Sheet 95 card 2, 2026-10-18; cpl-chat's fetchCheckedRequirements
+       reads the checks column). A person's confirm no longer gates her. */
+    { id: "sierra", title: "Sierra and CPL Pathways", needs: ["active"],
       status: function () { return "live"; },
-      what: function (x) { return "Sierra quotes the " + fmt(x.checked) + " records a person confirmed; CPL Pathways draws every record, each marked."; },
+      what: function (x) { return "Sierra quotes the " + fmt(x.complete) + " complete records (an active program whose record passes the machine checks); CPL Pathways draws every record, each marked."; },
       foot: function () { return ""; },
       open: function () { return ["Open CPL Pathways", TO.pathways]; } }
   ];
