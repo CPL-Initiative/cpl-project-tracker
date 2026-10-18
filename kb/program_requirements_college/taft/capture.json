@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 80,
  "with_closed_list": 63,
- "started": "2026-10-18T11:21:14Z",
+ "started": "2026-10-18T12:19:27Z",
  "scope": null,
  "sitemap": {
   "url": "https://taftcollege.smartcatalogiq.com/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 103,
  "banner_h1": null,
  "loads": 172,
- "seconds": 846.1,
+ "seconds": 838.8,
  "found": 58,
  "by_method": {
   "no_closed_list": 17,
@@ -127,5 +127,5 @@
   "programs": 0,
   "list": []
  },
- "run": "39122794174"
+ "run": "39126711681"
 }
