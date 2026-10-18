@@ -1,5 +1,5 @@
 {
- "_readme": "Taft College's SmartCatalog (S411, SkySotol). Run 39077970234 (S409) read Taft's front page, but its log's tail lost it. This plan reads the front page alone with its program links printed, and follows two of them, so the log stays short enough to read whole.",
+ "_readme": "Taft College's SmartCatalog (S411, SkySotol). Run 39077970234 (S409) read Taft's front page, but its log's tail lost it. This plan reads the front page alone with its program links printed, and follows two of them, so the log stays short enough to read whole. Read 39090039420 found the program index at /en/2026-2027/2026-2027-catalog/degrees-and-certificates, each program titled \"Title: Award\" (\"Biology: Associate of Science\"). This read starts there, prints its program links and follows two programs.",
  "college": "Taft College",
  "questions": {
   "program_index": "Where the catalog lists its programs, and whether it lists them by subject as Crafton Hills does.",
@@ -15,10 +15,13 @@
  ],
  "pages": [
   {
-   "answers": ["program_index", "program_page"],
-   "url": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
-   "links": "program|degree|certificate|subject|area",
-   "follow": "Programs|Degrees"
+   "answers": [
+    "program_index",
+    "program_page"
+   ],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates",
+   "links": "degrees-and-certificates/",
+   "follow": "^Biology: Associate of Science|^Welding Technology"
   }
  ]
 }
