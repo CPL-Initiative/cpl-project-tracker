@@ -1233,6 +1233,44 @@ def load_assigned_md5():
     return hashes, hashlib
 
 
+def newest_live_values():
+    """The newest committed live-values receipt (not just today's): a re-run on
+    a later day must not silently drop the verified curator titles from family
+    matching; say loudly which receipt (if any) was used."""
+    out_root = os.path.join(os.path.dirname(STAGE_PATH), "preseed_out")
+    candidates = sorted(
+        p for p in (os.path.join(out_root, d, "live_values.json")
+                    for d in (os.listdir(out_root) if os.path.isdir(out_root) else []))
+        if os.path.exists(p))
+    if not candidates:
+        print("live-values receipt: NONE — family matching uses committed "
+              "kb/unified_titles.json only (fetch + verify a fresh receipt "
+              "via the Supabase MCP for best convergence)")
+        return {}
+    live_values = json.load(open(candidates[-1], encoding="utf-8"))
+    print(f"live-values receipt: {candidates[-1]} ({len(live_values)} verified titles)")
+    return live_values
+
+
+def stage_lanes(queue, weight, assigned):
+    """Every staged lane over the queue with its indexes built: (staged, residual,
+    raw_meta). kb/_cer_procedures.py runs the same lanes as its rule procedures."""
+    live_values = newest_live_values()
+    families = build_family_index(weight, live_values)
+    roster, raw_meta = load_statewide()
+    issuers_cred = load_credential_issuers()
+    sw_issuer = {r["title"]: r["issuer"] for r in roster if r.get("issuer")}
+
+    def issuer_of(t):
+        return sw_issuer.get(t) or issuers_cred.get(t) or ""
+    sw_index, fam_index = build_stage_indexes(weight, live_values, roster)
+    print(f"statewide catalog: {len(roster)} CCC-collaborative records | "
+          f"raw-meta {len(raw_meta)} | curated issuers {len(issuers_cred)}")
+    staged, residual = build_stage_plan(queue, families, assigned,
+                                        sw_index, fam_index, issuer_of, raw_meta)
+    return staged, residual, raw_meta
+
+
 def main():
     apply = "--apply" in sys.argv
     stage = "--stage" in sys.argv
@@ -1246,34 +1284,7 @@ def main():
             r.encode("utf-8")).hexdigest() in hashes}
 
     if stage:
-        # newest committed live-values receipt (not just today's) — a re-run on
-        # a later day must not silently drop the verified curator titles from
-        # family matching; say loudly which receipt (if any) was used.
-        out_root = os.path.join(os.path.dirname(STAGE_PATH), "preseed_out")
-        candidates = sorted(
-            p for p in (os.path.join(out_root, d, "live_values.json")
-                        for d in (os.listdir(out_root) if os.path.isdir(out_root) else []))
-            if os.path.exists(p))
-        live_values = {}
-        if candidates:
-            live_values = json.load(open(candidates[-1], encoding="utf-8"))
-            print(f"live-values receipt: {candidates[-1]} ({len(live_values)} verified titles)")
-        else:
-            print("live-values receipt: NONE — family matching uses committed "
-                  "kb/unified_titles.json only (fetch + verify a fresh receipt "
-                  "via the Supabase MCP for best convergence)")
-        families = build_family_index(weight, live_values)
-        roster, raw_meta = load_statewide()
-        issuers_cred = load_credential_issuers()
-        sw_issuer = {r["title"]: r["issuer"] for r in roster if r.get("issuer")}
-
-        def issuer_of(t):
-            return sw_issuer.get(t) or issuers_cred.get(t) or ""
-        sw_index, fam_index = build_stage_indexes(weight, live_values, roster)
-        print(f"statewide catalog: {len(roster)} CCC-collaborative records | "
-              f"raw-meta {len(raw_meta)} | curated issuers {len(issuers_cred)}")
-        staged, residual = build_stage_plan(queue, families, assigned,
-                                            sw_index, fam_index, issuer_of, raw_meta)
+        staged, residual, _raw_meta = stage_lanes(queue, weight, assigned)
         by_via = {}
         for rec in staged.values():
             by_via[rec["via"]] = by_via.get(rec["via"], 0) + 1

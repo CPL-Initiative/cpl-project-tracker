@@ -1,0 +1,300 @@
+{
+ "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. Nothing here is saved; proposals pre-fill the tab.",
+ "_generated_at": "2026-10-18T04:01:56Z",
+ "procedures_hash": "575c290d755b",
+ "queue": 1498,
+ "saved_not_folded": 176,
+ "waiting": 1322,
+ "proposed": 189,
+ "needs_you_count": 0,
+ "not_yet_asked": 1133,
+ "procedures": [
+  {
+   "id": "brand-family",
+   "name": "Brand families join the family",
+   "kind": "rule",
+   "rule": "A title that names a known credential family (College Board AP and CLEP exams, a house family already in the reference) joins that family's title as written, with the family's issuer.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-07",
+    "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
+    "skill": "Rule 5d"
+   },
+   "settled": 53,
+   "held": 0,
+   "sample": [
+    [
+     "AP 3-D Art and Design",
+     "AP 3-D Art and Design"
+    ],
+    [
+     "AP Calculus  BC/AB Subscore",
+     "AP Calculus BC — AB Subscore"
+    ],
+    [
+     "AP Chinese Language & Culture",
+     "AP Chinese Language and Culture"
+    ],
+    [
+     "AP Comparative Government & Politics",
+     "AP Comparative Government and Politics"
+    ],
+    [
+     "AP Drawing",
+     "AP Drawing"
+    ]
+   ]
+  },
+  {
+   "id": "statewide-catalog",
+   "name": "The statewide catalog names it",
+   "kind": "rule",
+   "rule": "A title that matches an exhibit in MAP's statewide CCC-collaborative catalog takes that exhibit's title and issuer.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-07",
+    "words": "use the MAP statewide CRs to match some of the exhibits",
+    "skill": "Rule 5e"
+   },
+   "settled": 3,
+   "held": 0,
+   "sample": [
+    [
+     "Cisco Certified Network Associate",
+     "Cisco Certified Network Associate (CCNA)"
+    ],
+    [
+     "Flux-Cored Arc Welding (FCAW) Certification",
+     "Flux Cored Arc Welding (FCAW)"
+    ],
+    [
+     "Shielded Metal Arc Welding (SMAW) Certification",
+     "Shielded Metal Arc Welding (SMAW)"
+    ]
+   ]
+  },
+  {
+   "id": "nccer-verbatim",
+   "name": "NCCER keeps its own names",
+   "kind": "rule",
+   "rule": "An NCCER title keeps NCCER's catalog naming, levels and all, and NCCER issues it.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-07",
+    "words": "his NCCER Welding Level 1 family (house precedent)",
+    "skill": "Rule 5e"
+   },
+   "settled": 5,
+   "held": 0,
+   "sample": [
+    [
+     "NCCER HVACR Level 1",
+     "NCCER HVACR Level 1"
+    ],
+    [
+     "NCCER HVACR Level 2",
+     "NCCER HVACR Level 2"
+    ],
+    [
+     "NCCER HVACR Level 3",
+     "NCCER HVACR Level 3"
+    ],
+    [
+     "NCCER HVACR Level 4",
+     "NCCER HVACR Level 4"
+    ],
+    [
+     "NCCER Welding Level 2 Certification",
+     "NCCER Welding Level 2 Certification"
+    ]
+   ]
+  },
+  {
+   "id": "cslb-classification",
+   "name": "Contractor classifications stay as written",
+   "kind": "rule",
+   "rule": "A California contractor classification (C-20, Class A) keeps its code and name, and the Contractors State License Board (CSLB) issues it.",
+   "source": {
+    "who": "Session 104",
+    "date": "2026-07-07",
+    "words": "kept verbatim per Rule 8b, the issuer-assigned code",
+    "skill": "Rules 5e, 8b"
+   },
+   "settled": 2,
+   "held": 0,
+   "sample": [
+    [
+     "C-20 Warm-Air Heating, Ventilating and Air-Conditioning Contractor",
+     "C-20 Warm-Air Heating, Ventilating and Air-Conditioning Contractor"
+    ],
+    [
+     "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
+     "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor"
+    ]
+   ]
+  },
+  {
+   "id": "apprenticeship-trades",
+   "name": "Apprenticeships take the trade's house name",
+   "kind": "rule",
+   "rule": "A carpentry journeyman certificate, a Carpenters trade apprenticeship or an Ironworkers period takes the house shape for its trade, with the joint apprenticeship committee the Division of Apprenticeship Standards names as issuer.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-07",
+    "words": "the Journeyman Certificate- Apprenticeship Carpentry family and the DIR DAS carpenter page (occupation 2180)",
+    "skill": "Rule 5e"
+   },
+   "settled": 1,
+   "held": 0,
+   "sample": [
+    [
+     "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, CA",
+     "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher"
+    ]
+   ]
+  },
+  {
+   "id": "judgment-singles",
+   "name": "One-off titles decided once",
+   "kind": "rule",
+   "rule": "A title a session or curator already decided by hand, with its reasoning, keeps that decision.",
+   "source": {
+    "who": "Sessions 103-104",
+    "date": "2026-07-07",
+    "words": "each with its reasoning receipted in the note",
+    "skill": "Rule 5e"
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  },
+  {
+   "id": "course-identity",
+   "name": "A course names its own exam",
+   "kind": "rule",
+   "rule": "A credit-by-exam, portfolio or course-coded title takes the course's Common Course Number title, then its C-ID title, then the college's own course title, never the mechanism; California Community Colleges issues it. A title that names a school or district goes to the classifier, because the school issues it (Rule 5f).",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-07",
+    "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
+    "skill": "Rule 5c"
+   },
+   "settled": 125,
+   "held": 0,
+   "sample": [
+    [
+     "ACTG-51 APPLIED ACCOUNTING",
+     "Applied Accounting"
+    ],
+    [
+     "AGBUS 010: Introduction to Agriculture Business",
+     "Introduction to Agriculture Business"
+    ],
+    [
+     "AGBUS 024: Agricultural Accounting",
+     "Agricultural Accounting"
+    ],
+    [
+     "AGBUS 040: Introductory Agricultural Economics",
+     "Agriculture Economics"
+    ],
+    [
+     "AGEH-01 Elements of Landscape Horticulture",
+     "Elements of Landscape Horticulture"
+    ]
+   ]
+  },
+  {
+   "id": "issuer-issues-the-card",
+   "name": "The issuer issues the card",
+   "kind": "guidance",
+   "rule": "The issuing agency is the body that issues the credential, never the college, school or employer that teaches toward it. OSHA cards are issued by U.S. Occupational Safety and Health Administration (OSHA), under that exact name.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-10-05",
+    "words": "they would not be the issuing agency, osha would.",
+    "skill": null,
+    "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  },
+  {
+   "id": "local-trainer-is-agency",
+   "name": "A named school is the agency",
+   "kind": "guidance",
+   "rule": "A high school, ROP, adult school or noncredit provider named in the title comes out of the title and becomes the issuing and training agency; a real outside issuer (PLTW) is never replaced by the school. A title that says high school without naming one takes Local High School as issuer.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-08",
+    "words": "strip the school, make it the agency",
+    "skill": "Rule 5f"
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  },
+  {
+   "id": "level-words-last",
+   "name": "Level words go last",
+   "kind": "guidance",
+   "rule": "A leading Beginning, Intermediate or Advanced moves to the end of the title; Intro becomes Introduction; an official proper name keeps its own order.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-08",
+    "words": "level words move to the end of the title",
+    "skill": "Rule 5g"
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  },
+  {
+   "id": "mechanism-collapses",
+   "name": "How it was assessed never splits a credential",
+   "kind": "guidance",
+   "rule": "Exam, portfolio, challenge and similar method words collapse into one credential; an industry certification and a local course exam stay apart; a narrower competency never folds into a broader one.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-07-14",
+    "words": "the credential-merge doctrine: what folds and what stays distinct",
+    "skill": "Rule 8c"
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  },
+  {
+   "id": "join-when-likely-one",
+   "name": "Join, and let faculty pull out",
+   "kind": "guidance",
+   "rule": "When two titles likely name one credential and Rule 8c does not keep them apart, give them one title; faculty may pull them apart later.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-09-20",
+    "words": "it is better to over merge and give faculty the chance to pull them out rather than the other way around. It's easier to respond to a decision than to make one.",
+    "skill": null
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  },
+  {
+   "id": "classifier",
+   "name": "The classifier decides the rest",
+   "kind": "classifier",
+   "rule": "Every title no rule settles goes to the classifier, which reads the skill and every procedure above.",
+   "source": {
+    "who": "Sam",
+    "date": "2026-10-18",
+    "words": "have you classify and complete common exhibit titles"
+   },
+   "settled": 0,
+   "held": 0,
+   "sample": []
+  }
+ ],
+ "classifier_run": null,
+ "needs_you": []
+}

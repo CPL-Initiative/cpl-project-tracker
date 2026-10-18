@@ -1,0 +1,108 @@
+{
+  "_about": "The Common Exhibit Reference's procedures: each a rule in plain words, with who set it and when. kb/_cer_procedures.py reads this file every night. A rule procedure settles a waiting title by code (its `lanes` name the pre-seed lanes or the identity lookup that apply it, in this order); every guidance procedure is read by the classifier with the exhibit-canonicalization skill. A proposal is never saved here: it pre-fills the tab, ready to save (Rule 5e, Sam 2026-07-07). To add one, write its words and source; to turn one off, set on to false. Lane state: docs/reference/lanes/cer-procedures.md.",
+  "procedures": [
+    {
+      "id": "brand-family",
+      "name": "Brand families join the family",
+      "kind": "rule",
+      "on": true,
+      "rule": "A title that names a known credential family (College Board AP and CLEP exams, a house family already in the reference) joins that family's title as written, with the family's issuer.",
+      "lanes": ["family"],
+      "source": {"who": "Sam", "date": "2026-07-07", "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?", "skill": "Rule 5d"}
+    },
+    {
+      "id": "statewide-catalog",
+      "name": "The statewide catalog names it",
+      "kind": "rule",
+      "on": true,
+      "rule": "A title that matches an exhibit in MAP's statewide CCC-collaborative catalog takes that exhibit's title and issuer.",
+      "lanes": ["statewide"],
+      "source": {"who": "Sam", "date": "2026-07-07", "words": "use the MAP statewide CRs to match some of the exhibits", "skill": "Rule 5e"}
+    },
+    {
+      "id": "nccer-verbatim",
+      "name": "NCCER keeps its own names",
+      "kind": "rule",
+      "on": true,
+      "rule": "An NCCER title keeps NCCER's catalog naming, levels and all, and NCCER issues it.",
+      "lanes": ["nccer"],
+      "source": {"who": "Sam", "date": "2026-07-07", "words": "his NCCER Welding Level 1 family (house precedent)", "skill": "Rule 5e"}
+    },
+    {
+      "id": "cslb-classification",
+      "name": "Contractor classifications stay as written",
+      "kind": "rule",
+      "on": true,
+      "rule": "A California contractor classification (C-20, Class A) keeps its code and name, and the Contractors State License Board (CSLB) issues it.",
+      "lanes": ["cslb"],
+      "source": {"who": "Session 104", "date": "2026-07-07", "words": "kept verbatim per Rule 8b, the issuer-assigned code", "skill": "Rules 5e, 8b"}
+    },
+    {
+      "id": "apprenticeship-trades",
+      "name": "Apprenticeships take the trade's house name",
+      "kind": "rule",
+      "on": true,
+      "rule": "A carpentry journeyman certificate, a Carpenters trade apprenticeship or an Ironworkers period takes the house shape for its trade, with the joint apprenticeship committee the Division of Apprenticeship Standards names as issuer.",
+      "lanes": ["journeyman", "carpenters", "ironworker"],
+      "source": {"who": "Sam", "date": "2026-07-07", "words": "the Journeyman Certificate- Apprenticeship Carpentry family and the DIR DAS carpenter page (occupation 2180)", "skill": "Rule 5e"}
+    },
+    {
+      "id": "judgment-singles",
+      "name": "One-off titles decided once",
+      "kind": "rule",
+      "on": true,
+      "rule": "A title a session or curator already decided by hand, with its reasoning, keeps that decision.",
+      "lanes": ["single"],
+      "source": {"who": "Sessions 103-104", "date": "2026-07-07", "words": "each with its reasoning receipted in the note", "skill": "Rule 5e"}
+    },
+    {
+      "id": "course-identity",
+      "name": "A course names its own exam",
+      "kind": "rule",
+      "on": true,
+      "rule": "A credit-by-exam, portfolio or course-coded title takes the course's Common Course Number title, then its C-ID title, then the college's own course title, never the mechanism; California Community Colleges issues it. A title that names a school or district goes to the classifier, because the school issues it (Rule 5f).",
+      "lanes": ["identity"],
+      "source": {"who": "Sam", "date": "2026-07-07", "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title", "skill": "Rule 5c"}
+    },
+    {
+      "id": "issuer-issues-the-card",
+      "name": "The issuer issues the card",
+      "kind": "guidance",
+      "on": true,
+      "rule": "The issuing agency is the body that issues the credential, never the college, school or employer that teaches toward it. OSHA cards are issued by U.S. Occupational Safety and Health Administration (OSHA), under that exact name.",
+      "source": {"who": "Sam", "date": "2026-10-05", "words": "they would not be the issuing agency, osha would.", "skill": null, "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"}
+    },
+    {
+      "id": "local-trainer-is-agency",
+      "name": "A named school is the agency",
+      "kind": "guidance",
+      "on": true,
+      "rule": "A high school, ROP, adult school or noncredit provider named in the title comes out of the title and becomes the issuing and training agency; a real outside issuer (PLTW) is never replaced by the school. A title that says high school without naming one takes Local High School as issuer.",
+      "source": {"who": "Sam", "date": "2026-07-08", "words": "strip the school, make it the agency", "skill": "Rule 5f"}
+    },
+    {
+      "id": "level-words-last",
+      "name": "Level words go last",
+      "kind": "guidance",
+      "on": true,
+      "rule": "A leading Beginning, Intermediate or Advanced moves to the end of the title; Intro becomes Introduction; an official proper name keeps its own order.",
+      "source": {"who": "Sam", "date": "2026-07-08", "words": "level words move to the end of the title", "skill": "Rule 5g"}
+    },
+    {
+      "id": "mechanism-collapses",
+      "name": "How it was assessed never splits a credential",
+      "kind": "guidance",
+      "on": true,
+      "rule": "Exam, portfolio, challenge and similar method words collapse into one credential; an industry certification and a local course exam stay apart; a narrower competency never folds into a broader one.",
+      "source": {"who": "Sam", "date": "2026-07-14", "words": "the credential-merge doctrine: what folds and what stays distinct", "skill": "Rule 8c"}
+    },
+    {
+      "id": "join-when-likely-one",
+      "name": "Join, and let faculty pull out",
+      "kind": "guidance",
+      "on": true,
+      "rule": "When two titles likely name one credential and Rule 8c does not keep them apart, give them one title; faculty may pull them apart later.",
+      "source": {"who": "Sam", "date": "2026-09-20", "words": "it is better to over merge and give faculty the chance to pull them out rather than the other way around. It's easier to respond to a decision than to make one.", "skill": null}
+    }
+  ]
+}
