@@ -302,8 +302,8 @@
    "name": "TMC Builder",
    "page": "index.html#tmc-builder",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-18",
+   "outcome": "Measured the directory at 390 and 1440 in both themes: 90 source links under 24px, the college picker 38px past the 390px edge, the empty-ADT dash at 2.27:1, and three dark chips and names at 1.08-1.24:1 from raw hex. Fixed with tokens, 24px links, a shrinking picker, underlined-word buttons; neutral raw colors replaced (104 to 68 hex). Clean in both themes. Left: the status-chip palettes and the GE panel's gold tints, and the detail view, which the sweep does not reach without a seeded target."
   },
   {
    "id": "cobi:pipeline",
