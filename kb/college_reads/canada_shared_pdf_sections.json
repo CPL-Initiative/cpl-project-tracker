@@ -1,27 +1,31 @@
 {
- "_readme": "S419 SkyCottonwood, 2026-10-18. Eleven of Cañada's 73 extracted records place no listed course (summary.json: failed.coverage 11; the load kept 62). Each model note says the text it was handed holds a sibling's section: the CA Business Assistant's pages 148-151 print the AS Business Assistant, the AS Business Administration's pages 165-166 print the Computer Science certificates. The business certificates share pages 148-154, and the PDF picker (_pdf_pick) chose a run that covers the listed codes without the program's own heading. This read prints the pages whose text names any of the eleven sections' headings (the catalog heads a section 'CA <Title>' or 'AS <Title>'), the contents lines among them, so the picker's fix can be built and tested on the catalog's own words. One load of the hand-filed copy (kb/hand_filed_catalogs/ca_ada.json; robots.txt refuses the college's /current/), no model call.",
+ "_readme": "S419 SkyCottonwood, 2026-10-18. Eleven of Cañada's 73 extracted records place no listed course (summary.json: failed.coverage 11; the load kept 62). Each model note says the text it was handed holds a sibling's section: the CA Business Assistant's pages 148-151 print the AS Business Assistant, the AS Business Administration's pages 165-166 print the Computer Science certificates. The business certificates share pages 148-154, and the PDF picker (_pdf_pick) chose a run that covers the listed codes without the program's own heading. This read prints the pages whose text names any of the eleven sections' headings (the catalog heads a section 'CA <Title>' or 'AS <Title>'), the contents lines among them, so the picker's fix can be built and tested on the catalog's own words. One load of the hand-filed copy (kb/hand_filed_catalogs/ca_ada.json; robots.txt refuses the college's /current/), no model call. Second read (19:40Z): the first printed two pages, 148 and 150, because the catalog's text carries two spaces after the award's letters ('AS  Business Assistant') and the patterns allowed one; every pattern now reads any spacing, and two name a certificate heading in words beside the title in case the certificates are headed otherwise.",
  "college": "Cañada College",
  "questions": {
   "sections": "Which PDF page prints each of the eleven programs' own section heading, and which other programs share that page."
  },
  "keywords": [
-  "\\bCA Business Assistant",
+  "\\bCA\\s+Business Assistant",
   "\\bAS\\s+Business Assistant",
-  "\\bAS Business Administration",
-  "\\bCA Business Management",
-  "\\bAS Business Management",
-  "\\bCA Human Relations",
-  "\\bCA Digital Marketing",
-  "\\bCA Marketing\\b",
-  "\\bAS Marketing\\b",
-  "\\bAA Theater Arts",
-  "\\bCA Technical",
-  "\\bAS-T Mathematics",
-  "\\bAA-T Political Science",
-  "\\bAA Ethnic Studies"
+  "\\bAS\\s+Business Administration",
+  "\\bCA\\s+Business Management",
+  "\\bCA\\s+Human Relations",
+  "\\bCA\\s+Digital Marketing",
+  "\\bCA\\s+Marketing\\b",
+  "\\bCA\\s+Technical",
+  "\\bAA\\s+Theater Arts",
+  "\\bAS-T\\s+Mathematics",
+  "\\bAA-T\\s+Political Science",
+  "\\bAA\\s+Ethnic Studies",
+  "Certificate of Achievement[^\\n]{0,80}(?:Business Assistant|Digital Marketing|Human Relations|Business Management)",
+  "(?:Business Assistant|Digital Marketing|Human Relations in the Workplace)[^\\n]{0,40}Certificate"
  ],
  "pages": [
-  {"answers": ["sections"],
-   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf"}
+  {
+   "answers": [
+    "sections"
+   ],
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf"
+  }
  ]
 }

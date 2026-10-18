@@ -1707,6 +1707,39 @@ toc = ["Contents\nAccounting, Associate in Science ........ 4\nACCT 101 ACCT 102
 check(C.pdf_program_pages(toc, {"title": "Accounting", "award": "A.S. Degree"}, AC_COURSES)[0] == 3,
       "a contents line with a dot leader names no program")
 
+# ── the award's letters before the title (S419): Cañada prints "AS Business Assistant", then
+# "CA Business Assistant" with the same courses a few pages on. Without the letters read as the
+# award, both pages scored alike and the earlier one won, so the certificate's extraction was
+# handed the A.S. section and placed no listed course (11 of Cañada's 73 records).
+CN_COURSES = [{"code": c} for c in ("ACTG 121", "BUS 100", "BUS 101", "BUS 103", "BUS 401", "CBOT 432", "CBOT 435")]
+CN_PAGES = [
+    "Business\nAS Business Assistant\nThe degree prepares students for office work.\nACTG 121 Financial Accounting 4\n"
+    "BUS 100 Introduction to Business 3\nBUS 101 Human Relations 3\nBUS 103 Business Communication 3\n"
+    "BUS 401 Business Law 3\nCBOT 432 Word Processing 3\nCBOT 435 Spreadsheets 3\nACTG 200 Managerial Accounting 4\nTotal 27",
+    "As the student completes the Business Assistant courses, the sequence below applies.\nBUS 100 fall\nBUS 101 spring",
+    "CA Business Assistant\nACTG 121 Financial Accounting 4\nBUS 100 Introduction to Business 3\nBUS 101 Human Relations 3\n"
+    "BUS 103 Business Communication 3\nBUS 401 Business Law 3\nCBOT 432 Word Processing 3\nCBOT 435 Spreadsheets 3\nTotal 22",
+]
+cn_ca = {"title": "Business Assistant", "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"}
+cn_as = {"title": "Business Assistant", "award": "A.S. Degree"}
+check(C.pdf_heading(CN_PAGES[2], cn_ca)[:2] == (1.0, True) and C.pdf_heading(CN_PAGES[0], cn_as)[:2] == (1.0, True)
+      and C.pdf_heading(CN_PAGES[0], cn_ca)[:2] == (1.0, False),
+      "the award's letters before the title name the award: CA for a certificate, AS for an A.S., not the other's")
+check(C.pdf_heading(CN_PAGES[1], cn_as)[1] is False,
+      "a sentence opening 'As the student' names no award: the letters count only before a capitalized word")
+cn_pick = C.pdf_best("https://x.edu/c.pdf", CN_PAGES, cn_ca, CN_COURSES, "pypdf")
+check(cn_pick and cn_pick["pages"] == [3] and cn_pick["named"] and cn_pick["coverage"] == 1.0
+      and cn_pick["text"].startswith("[page 3]\nCA Business Assistant"),
+      "the certificate is read from its own page, the one headed CA, not the earlier A.S. page naming the same courses: %r"
+      % (cn_pick and cn_pick["pages"]))
+check(C.pdf_program_pages(CN_PAGES, cn_as, CN_COURSES)[0] == 0,
+      "the A.S. keeps its own page, headed AS")
+for kind_line, prog in (("AA-T Political Science", {"title": "Political Science", "award": "A.A- T Degree"}),
+                        ("AS-T Mathematics", {"title": "Mathematics", "award": "A.S. T Degree"}),
+                        ("AA Ethnic Studies", {"title": "Ethnic Studies", "award": "A.A. Degree"})):
+    check(C.pdf_heading(kind_line + "\nSome courses", prog)[:2] == (1.0, True),
+          "the letters of every award kind are read: %r" % kind_line)
+
 # East LA prints the control number in each heading, and lists every online course on pages up front.
 EL = ["Online courses\nACCT 101 ACCT 102 ACCT 210 BUS 120 BUS 001 ENGLISH 101",
       "Business Department\nAccounting (Academic Plan E013343D) This certificate prepares students for work "
