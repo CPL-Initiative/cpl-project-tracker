@@ -1457,15 +1457,15 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
 # A Coursedog catalog on a college's own domain (catalog.mccd.edu) draws its
 # program search from the vendor: the page POSTs app.coursedog.com/api/v1/cm/
 # <school>/programs/search/$filters?catalogId=...&skip=0&limit=20 and prints 20
-# of 191 programs. The reader hears that call while /programs loads and asks the
-# same address again with a larger limit, with the body the page sent. Each
+# of 191 programs. The reader rewrites that call's limit as the page makes it,
+# so the page's own headers carry it. Each
 # program's page opens on an overview tab (/programs/05000.AA/program-overview-
 # aoYks); its Requisites tab prints the list with credits ("ACTG04A Financial
 # Accounting (Total Credits 4.0 - 4.0)"; page read 39090533458, S411). The tab's
 # suffix is the catalog's template, so the reader learns it from the first
 # program and goes straight to it after, back to the overview when it misses.
 CD_SEARCH = re.compile(r"/programs/search/", re.I)
-CD_LIMIT = 100
+CD_LIMIT = 250
 CD_REQUISITES = re.compile(r"^\s*requisites\b", re.I)
 # The award a program's name ends in, "Accounting (AA)", in the words the award
 # matcher reads (P.AWARD_WORDS); a certificate's letters vary by college.
@@ -1503,30 +1503,56 @@ def cd_programs(data: dict) -> list[dict]:
 
 
 def cd_list(reader, start: str, report: dict) -> list[dict]:
-    """Every program the catalog's search names, by the call its own page makes."""
+    """Every program the catalog's search names. The page's own search call is
+    asked for CD_LIMIT programs instead of 20 (a route rewrites its address), and
+    its answer is read as it arrives: the vendor answered a second call made
+    without the page's own headers 401 (run 39114886505). Past CD_LIMIT the call is
+    made again with every header the page sent."""
     from _program_source_census import site_root
     root = site_root(start).rstrip("/")
     heard: list = []
 
-    def on_request(req):
-        if req.method == "POST" and CD_SEARCH.search(req.url) and not heard:
-            heard.append({"url": req.url, "body": req.post_data,
-                          "headers": {k: v for k, v in (req.headers or {}).items()
-                                      if k.lower() in ("content-type", "accept")}})
-    reader.page.on("request", on_request)
+    def on_route(route):
+        req = route.request
+        if req.method == "POST" and not heard:
+            try:
+                heard.append({"url": req.url, "body": req.post_data,
+                              "headers": {k: v for k, v in req.all_headers().items()
+                                          if not k.startswith(":") and k.lower() not in ("host", "content-length")}})
+            except Exception:
+                pass
+            route.continue_(url=cd_search_url(req.url, 0, CD_LIMIT))
+        else:
+            route.continue_()
+    answers: list = []
+
+    def on_response(resp):
+        if CD_SEARCH.search(resp.url) and resp.request.method == "POST" and not answers:
+            try:
+                answers.append(resp.json())
+            except Exception as exc:
+                answers.append({"error": str(exc).splitlines()[0][:160]})
+    reader.page.route(CD_SEARCH, on_route)
+    reader.page.on("response", on_response)
     try:
         reader.load(root + "/programs")
         reader.page.wait_for_timeout(2500)
     finally:
-        reader.page.remove_listener("request", on_request)
+        reader.page.unroute(CD_SEARCH, on_route)
+        reader.page.remove_listener("response", on_response)
     info = report.setdefault("coursedog", {"root": root})
-    if not heard:
-        info["error"] = "the program search made no search call"
+    if not heard or not answers or "error" in answers[0]:
+        info["error"] = ("the program search made no search call" if not heard
+                         else "the search call's answer was not read: %s" % (answers[:1] or "none"))
         return []
-    call, programs, total, errors = heard[0], [], None, []
+    call, errors = heard[0], []
     info["search"] = cd_search_url(call["url"], 0, CD_LIMIT)
-    skip = 0
-    while total is None or skip < total:
+    data = answers[0]
+    total = int(data.get("listLength") or 0)
+    programs = cd_programs(data)
+    # The vendor may answer fewer than asked: page on from the rows it gave.
+    skip = len(data.get("data") or [])
+    while 0 < skip < total:
         time.sleep(reader.delay)
         reader.loads += 1
         try:
@@ -1539,12 +1565,10 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
         except Exception as exc:
             errors.append("skip %d: %s" % (skip, str(exc).splitlines()[0][:160]))
             break
-        total = int(data.get("listLength") or 0)
-        got = cd_programs(data)
-        programs += [p for p in got if p["code"] not in {q["code"] for q in programs}]
+        programs += [p for p in cd_programs(data) if p["code"] not in {q["code"] for q in programs}]
         if not data.get("data"):
             break
-        skip += CD_LIMIT
+        skip += len(data["data"])
     info.update(listed=total, programs=len(programs), errors=errors)
     return programs
 
