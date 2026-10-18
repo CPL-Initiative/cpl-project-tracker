@@ -48,3 +48,8 @@ values
  'SkyMadroneS418', '2026-10-18', 'proposed')
 on conflict (slug) do nothing
 returning slug;
+
+-- 19:12Z: S418 inserted sam-commons-mockup-approved-collapse-controls-2026-10-18 (Sam's Commons approval, from S417's
+-- relay, time 17:31Z). S417 had written the same ruling first-hand as sam-approves-commons-mockup-collapse-2026-10-18
+-- and corrected the time to 19:08Z, so S418's row is superseded through supabase-migrate.yml:
+-- kb/receipts/cpl_memory_commons_duplicate_superseded_2026-10-18_s418.sql (this branch's kb/migrations/.apply; run 39158212210).
