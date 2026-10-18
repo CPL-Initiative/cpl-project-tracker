@@ -11,3 +11,21 @@ values ('sam-sheet-96-rulings-2026-10-18', 'decision', 'cpl',
  'Sam Lee', '2026-10-18', 'verified', 'Sam Lee', now())
 on conflict (slug) do nothing
 returning slug;
+
+-- 17:58Z: S417 had written the same ruling at 17:29Z as sam-sheet-96-ruling-2026-10-18 (richer: the store's
+-- documents and the submit comment verbatim). The cited row keeps those quotes; the earlier duplicate is
+-- superseded explicitly (same source, same fact). Rollback: set its status back to 'verified' and clear superseded_by.
+update public.cpl_memory
+set detail = detail || ' Store detail (S417 read, 17:29Z): doc 1 {by: sam, item: 1, v: keep, note: empty, fu: false, t: 2026-10-18T17:23:15.026Z}; doc done {ruled: 1, items: 1, through: 1, sent: true}; submit comment (thread 8fb38942-84ed-4d13-a17d-cd2a587b71aa): "Decisions done on 2026-10-18-open-asks-96 - 1 of 1 items your own call. 1 keep - reviewed through 1 (the whole sheet)." Verifies S416''s proposed row rule-settlement-saves-at-the-rules-word-2026-10-18 (marked verified 17:23Z).',
+    tags = array['decision-sheet','decision-sheets','cer-procedures','rule-10'],
+    updated_at = now()
+where slug = 'sam-sheet-96-rulings-2026-10-18'
+returning slug;
+
+update public.cpl_memory
+set status = 'superseded',
+    superseded_by = 'sam-sheet-96-rulings-2026-10-18',
+    detail = detail || ' Superseded by S418 (17:58Z): the same ruling was written twice, by S417 at 17:29Z and by S418 at 17:43Z before S417''s row was seen; sam-sheet-96-rulings-2026-10-18 keeps this row''s store quotes and is the row the CER lane, the vault and cpl-project-tracker#2235 cite. Same source, same fact, nothing lost.',
+    updated_at = now()
+where slug = 'sam-sheet-96-ruling-2026-10-18'
+returning slug;
