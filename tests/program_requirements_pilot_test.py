@@ -1612,10 +1612,13 @@ check(not S.degree_check(sjd["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT
       "San Joaquin Delta Drafting as read: 18 and GE 27-34 against an exact 60 fails")
 new, notes = RC.reconcile(sjd, SJD_DRAFT, "San Joaquin Delta College", "A.S. Degree")
 deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT, "A.S. Degree")
-check([n["field"] for n in notes] == ["degree_total_minimum", "electives_fill_degree"]
+check([n["field"] for n in notes] == ["degree_total_minimum"]
       and deg["pass"] and deg.get("minimum") and deg["fill"] == [8.0, 15.0],
       "San Joaquin Delta Drafting reconciled: the 60 is a minimum, courses the student chooses make up 8 to 15: %s"
       % json.dumps(deg))
+check(S.degree_check(new["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT.replace("Restricted Electives", "Restricted"),
+                     "A.S. Degree")["pass"],
+      "a floor alone makes up a short sum, on a page that names no electives")
 nurse = {"program": {"total_units": {"min": 59.5, "max": 59.5}, "degree_total": {"min": 77.5, "max": 77.5},
                      "ge_units": {"min": 27, "max": 34}}, "blocks": []}
 new, _ = RC.reconcile(nurse, SJD_DRAFT.replace("Required: 60", "Required: 77.5"), "San Joaquin Delta College", "A.S. Degree")
