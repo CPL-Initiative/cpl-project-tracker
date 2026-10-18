@@ -111,7 +111,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      7.0,
      7.0
@@ -168,7 +168,8 @@
     "Demonstrate the skills required to perform stage crew duties at the proficient level in public theatre presentation.",
     "Demonstrate a proficient knowledge of theatre history."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -358,6 +359,14 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

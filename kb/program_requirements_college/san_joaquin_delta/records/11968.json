@@ -107,7 +107,8 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -164,7 +165,8 @@
     "surveyor",
     "engineering technician",
     "technical support position in the field of engineering"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -298,6 +300,14 @@
    "The two outcomes are under 'Program Learning Outcomes' for this AS degree; the description paragraph restates similar text but is not the outcomes list."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 64"
+  }
+ ]
 }

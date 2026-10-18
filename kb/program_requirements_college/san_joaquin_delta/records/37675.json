@@ -99,7 +99,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      4.5,
      6.0
@@ -165,7 +165,8 @@
     "quality assurance specialist",
     "USDA meat inspector and grader",
     "animal pharmaceutical sales and service"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -301,6 +302,14 @@
    "ECON C2002 and CHEM 3A are not in the closed list and are marked catalog_addition."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

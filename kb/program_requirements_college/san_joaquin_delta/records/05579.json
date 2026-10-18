@@ -81,8 +81,8 @@
     "the blocks sum to 41.0-41.5; the catalog states 41.0-41.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
      68.0,
      75.5
@@ -96,9 +96,9 @@
      27.0,
      34.0
     ],
-    "why": [
-     "the blocks and general education sum to 68.0-75.5; the catalog prints 60.0-60.0 for the degree"
-    ]
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -169,7 +169,8 @@
     "Sales Agent",
     "Sales Representative",
     "Wholesale Produce Agent"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -462,6 +463,14 @@
    "The description's lead-in text 'Agriculture Business A' appears truncated (likely 'A.S.')."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

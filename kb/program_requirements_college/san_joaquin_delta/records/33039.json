@@ -95,7 +95,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      4.5,
      4.5
@@ -161,7 +161,8 @@
     "research",
     "positions in private industry",
     "public service"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -304,6 +305,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

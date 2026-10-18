@@ -107,7 +107,8 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -159,7 +160,8 @@
     "Students will successfully perform production stage crew duties for live theatrical productions.",
     "Students will successfully perform stagecraft procedures and techniques."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -358,6 +360,14 @@
    "No careers are named in the text."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

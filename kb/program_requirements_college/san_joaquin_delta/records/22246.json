@@ -78,37 +78,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    69.0,
-    76.0
+    42.0,
+    42.0
    ],
    "stated": [
-    66.0,
-    66.0
+    42.0,
+    42.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 69.0-76.0; the catalog prints 66.0-66.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     42.0,
-     42.0
+     69.0,
+     76.0
     ],
     "stated": [
-     42.0,
-     42.0
+     66.0,
+     66.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -133,7 +133,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -165,7 +165,8 @@
     "First-Line Supervisor",
     "Administrative Executive",
     "Office Manager"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -363,6 +364,14 @@
    "Area A and Area B each state 'Complete 3 units selected from'; recorded as stated 3."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 66"
+  }
+ ]
 }

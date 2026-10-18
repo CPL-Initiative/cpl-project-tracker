@@ -89,7 +89,8 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -145,7 +146,8 @@
     "California Peace Officer",
     "Deputy Sheriff",
     "Level I Reserve Officer"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -191,6 +193,14 @@
    "All major courses require a grade of C or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 63.5"
+  }
+ ]
 }

@@ -95,7 +95,8 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -157,7 +158,8 @@
     "manager in the electrical industry",
     "entry-level Electrician",
     "Electrical Technician"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -254,6 +256,14 @@
    "Career entries drawn from the program description and the program learning outcomes text."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 67.5"
+  }
+ ]
 }

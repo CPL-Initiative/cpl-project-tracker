@@ -102,7 +102,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      2.0,
      2.0
@@ -159,7 +159,8 @@
     "Demonstrate the appropriate use of terminology pertinent to the media or the field.",
     "Recognize and identify the historical context, including the social, political, economic, and religious background, of art."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -299,6 +300,14 @@
    "Minimum Degree Units Required: 60 recorded as degree_total; Cal-GETC 34 units recorded as ge_units. No open elective units printed."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

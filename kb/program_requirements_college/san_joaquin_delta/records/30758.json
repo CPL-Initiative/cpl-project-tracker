@@ -100,7 +100,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      7.0,
      7.0
@@ -153,7 +153,8 @@
    "outcomes": [
     "Demonstrate a knowledge and understanding of the variety of causes for human cognition, emotions, and behavior."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -263,6 +264,14 @@
    "No careers named; the description mentions 'working with clients in a supervised therapy setting' but names no job title or career field."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

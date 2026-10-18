@@ -98,7 +98,11 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     6.0
+    ]
    }
   },
   "repeated": {
@@ -152,7 +156,8 @@
    "careers": [
     "Paralegal (Legal Assistant)",
     "legal support professional"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -302,6 +307,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

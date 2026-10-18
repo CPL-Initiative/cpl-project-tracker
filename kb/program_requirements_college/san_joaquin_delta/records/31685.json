@@ -93,7 +93,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      1.0,
      1.0
@@ -148,7 +148,8 @@
     "Utilize various observational techniques to assess childrens’ learning and development and use the results to plan developmentally, culturally and linguistically appropriate curriculum.",
     "Describe and distinguish major theories of child development to support in planning appropriate early experiences for children."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -229,6 +230,14 @@
    "The description says the degree prepares students to teach in child care and development programs and to participate in society as child advocates; these were not recorded as careers because no job title or occupation is named explicitly. Reviewer may wish to check."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

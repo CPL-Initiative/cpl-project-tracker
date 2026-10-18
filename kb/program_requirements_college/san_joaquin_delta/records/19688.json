@@ -97,7 +97,11 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     2.0
+    ]
    }
   },
   "repeated": {
@@ -153,7 +157,8 @@
     "landscape industry",
     "landscape contractors",
     "landscape architects and designers"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -312,6 +317,14 @@
    "Careers taken from 'Students entering the landscape industry...' and 'Graduates are employed by nurseries, landscape contractors, landscape architects and designers, public and private agencies, or are self-employed'; nurseries and agencies are employers rather than occupations and were not recorded."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

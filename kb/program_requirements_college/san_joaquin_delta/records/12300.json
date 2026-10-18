@@ -73,37 +73,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    75.5,
-    82.5
+    48.5,
+    48.5
    ],
    "stated": [
-    63.5,
-    63.5
+    48.5,
+    48.5
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 75.5-82.5; the catalog prints 63.5-63.5 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     48.5,
-     48.5
+     75.5,
+     82.5
     ],
     "stated": [
-     48.5,
-     48.5
+     63.5,
+     63.5
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -128,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -157,7 +157,8 @@
    ],
    "careers": [
     "Speech Language Pathology Assistant (SLPA)"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -370,6 +371,14 @@
    "Minimum Major Units Required: 48.5; Minimum Degree Units Required: 63.5."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 63.5"
+  }
+ ]
 }

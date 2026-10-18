@@ -153,7 +153,8 @@
     "Demonstrate proficiency in basic computer applications in career specific contexts related to agri-business such as word processing, spread sheet, and internet.",
     "Develop proficiency of understanding of the scientific process to understand the larger agriculture industry."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -346,6 +347,14 @@
    "STAT C1000E alternative printed as 'Units 4.5' (no colon)."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

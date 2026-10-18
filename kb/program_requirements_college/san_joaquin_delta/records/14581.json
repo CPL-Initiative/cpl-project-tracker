@@ -103,7 +103,11 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     7.0
+    ]
    }
   },
   "repeated": {
@@ -158,7 +162,8 @@
     "Produce consistent baked products by following standardized recipes and applying quality-control practices.",
     "Use culinary math for scaling, recipe adjustments, costing, yield, and inventory purposes."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -254,6 +259,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

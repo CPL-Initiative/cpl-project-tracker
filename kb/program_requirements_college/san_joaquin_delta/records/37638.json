@@ -124,7 +124,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      5.0,
      8.0
@@ -208,7 +208,8 @@
     "religious organizations",
     "social science",
     "social work"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -662,6 +663,14 @@
    "Program Learning Outcomes are printed for the program; the A.A-T degree is the award of this section."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

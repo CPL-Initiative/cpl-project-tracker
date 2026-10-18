@@ -95,7 +95,11 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     7.0
+    ]
    }
   },
   "repeated": {
@@ -149,7 +153,8 @@
     "Demonstrate proficient written theory skills.",
     "Demonstrate an understanding of the standards required to be a successful professional musician."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -314,6 +319,14 @@
    "The catalog page header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

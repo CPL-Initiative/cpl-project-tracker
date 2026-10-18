@@ -160,7 +160,8 @@
    ],
    "careers": [
     "elementary school teaching"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -359,6 +360,14 @@
    "Career entry 'elementary school teaching' is taken from the program description ('students are introduced to elementary school teaching'); reviewer may confirm it should count as a career field."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

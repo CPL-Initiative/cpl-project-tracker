@@ -97,7 +97,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      3.5,
      4.0
@@ -161,7 +161,8 @@
     "quality control manager",
     "county and governmental compliance inspector",
     "sales and marketing of seed and other crop protecting agents"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -318,6 +319,14 @@
    "The page names transfer majors (Plant Science, Crop Science, Environmental Horticulture); these were not recorded as careers."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }

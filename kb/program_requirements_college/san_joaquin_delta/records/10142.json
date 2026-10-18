@@ -70,37 +70,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    74.5,
-    81.5
+    47.5,
+    47.5
    ],
    "stated": [
-    71.5,
-    71.5
+    47.5,
+    47.5
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 74.5-81.5; the catalog prints 71.5-71.5 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     47.5,
-     47.5
+     74.5,
+     81.5
     ],
     "stated": [
-     47.5,
-     47.5
+     71.5,
+     71.5
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -125,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -154,7 +154,8 @@
    "careers": [
     "cooks",
     "sous chef"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -280,6 +281,14 @@
    "Careers taken from the description: 'work as cooks' and 'advance to sous chef level'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 71.5"
+  }
+ ]
 }

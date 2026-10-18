@@ -69,37 +69,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    48.0,
-    55.0
+    21.0,
+    21.0
    ],
    "stated": [
-    60.0,
-    60.0
+    21.0,
+    21.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education sum to 48.0-55.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     21.0,
-     21.0
+     48.0,
+     55.0
     ],
     "stated": [
-     21.0,
-     21.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     5.0,
+     12.0
+    ]
    }
   },
   "repeated": {
@@ -124,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -152,7 +155,8 @@
     "Develop a strong base of research skills, including the ability to evaluate and properly use primary and secondary sources.",
     "Demonstrate the ability to analyze a primary source."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -340,6 +344,14 @@
    "Minimum Degree Units Required: 60 printed as this award's degree total."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39128562020,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  }
+ ]
 }
