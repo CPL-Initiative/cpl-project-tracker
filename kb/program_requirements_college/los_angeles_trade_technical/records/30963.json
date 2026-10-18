@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11070,
-    "output_tokens": 2366,
+    "output_tokens": 2191,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2366,
+  "output_tokens": 2191,
   "output_tokens_details": {
-   "thinking_tokens": 916
+   "thinking_tokens": 718
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0916,
- "ms": 20131,
- "seconds": 20.7,
+ "cost_usd": 0.0881,
+ "ms": 17691,
+ "seconds": 18.6,
  "parts": null,
  "error": null,
  "score": {
@@ -95,7 +95,7 @@
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
@@ -134,7 +134,8 @@
    ],
    "careers": [
     "occupations in the utility industry sector",
-    "transmission and distribution occupations"
+    "transmission and distribution occupations",
+    "entry-level positions in the utility sector"
    ]
   },
   "blocks": [
@@ -283,14 +284,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog titles this degree 'Powerline Worker' (T030963C); the overview calls it an A.S. in Renewable Energy Generation, Transmission, and Distribution with a Powerline Mechanic emphasis. Matched to the requested Powerline Mechanic A.S.",
-   "Major Units 40-43 recorded as total_units; the text states 34-36 units of Required Courses, but the listed required courses sum to 34 units.",
-   "BLDGCTQ 010 is printed with a leading zero; treated as closed-list BLDGCTQ 10. REF A/C 105 treated as closed-list REFAC105.",
-   "ge_units 21 taken from the program summary table (GE Units 21*); the footnote says any General Education Pattern may fulfill it, so ge_pattern is null.",
-   "The sentence 'At least 60 degree applicable units are required to earn an Associate degree' is generic and not recorded as degree_total.",
-   "ELECL 601 is listed as 15 units (600 Hours); the award is counted in units."
+   "The catalog titles this degree 'Powerline Worker' (A.S., T030963C); the overview describes an A.S. in Renewable Energy Generation, Transmission, and Distribution with a Powerline Mechanic emphasis. Read as the requested Powerline Mechanic A.S.",
+   "BLDGCTQ 010 in the catalog matched to closed-list BLDGCTQ 10 (leading zero); REF A/C 105 matched to closed-list REFAC105 (spacing/punctuation).",
+   "BLDGCTQ 102 (alternative to ECONMT 100) is not in the closed list.",
+   "Major Units 40-43 recorded as total_units; GE units 21 taken from the summary table. The statement that at least 60 degree applicable units are required is generic and not recorded as degree_total; GE may be met by any General Education Pattern, so ge_pattern is null.",
+   "Required Courses block stated 34-36 is from the prose; the listed courses sum to 34.",
+   "Careers taken from the Program Overview shared by the degree and certificates."
   ]
  },
- "extracted_run": 39114580707,
- "read_run": "39054673977"
+ "extracted_run": "39115770293"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 13097,
-    "output_tokens": 3375,
+    "output_tokens": 3544,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3375,
+  "output_tokens": 3544,
   "output_tokens_details": {
-   "thinking_tokens": 1333
+   "thinking_tokens": 1679
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11989,
- "ms": 26790,
- "seconds": 27.4,
+ "cost_usd": 0.12327,
+ "ms": 28106,
+ "seconds": 28.9,
  "parts": null,
  "error": null,
  "score": {
@@ -113,7 +113,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ENERGY EFFICIENCY TECHNICIAN",
+   "section_heading": "ENERGY EFFICIENCY TECHNICIAN ▌ Associate in Science Degree",
    "measure": "units",
    "total_units": {
     "min": 40,
@@ -146,13 +146,13 @@
   },
   "blocks": [
    {
-    "name": "Required Courses - Semester I",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 36,
+     "max": 38
     },
     "courses": [
      {
@@ -193,19 +193,7 @@
        }
       ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Required Courses - Semester II",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "ECONMT 129",
       "units": 3,
@@ -226,19 +214,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Required Courses - Semester III",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "REF A/C 100",
       "units": 3,
@@ -266,19 +242,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Required Courses - Semester IV",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "BLDGCTQ 009",
       "units": 3,
@@ -366,15 +330,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Required course total is stated as 36-38 units; the 38 reflects the MATH 115 or higher alternative printed at 3-5 units. MATH 115 is recorded as an alternative with units 3; the catalog says 'MATH 115 or higher' (3-5).",
-   "Major Electives header reads '1 or more courses from the following list', while the program text and award table state 4 units of Major Electives; recorded as choose_units 4. The semester plan shows three 'Elective(s) 2' rows (6 units), which conflicts with the stated 4 elective units.",
-   "ge_units 21 taken from the award table row 'Technician T031090C A.S. 21* 36-38 4 40-42' (title cut off at page top); the asterisk notes any GE pattern may be used, so ge_pattern is null. The 60-unit sentence is generic and not recorded as degree_total.",
-   "The requirements paragraph names the degree 'Renewable Energy Technician W/ Energy Efficiency Emphasis' though the section heading is Energy Efficiency Technician.",
-   "Codes printed with leading zeros were matched to the closed list: BLDGCTQ 010 = BLDGCTQ 10, BLDGCTQ 007 = BLDGCTQ 7, BLDGCTQ 012 = BLDGCTQ012, PLUMBING 028 = PLUMBNG 28, REF A/C 105 = REFAC105. BLDGCTQ 008 is not in the closed list.",
-   "BLDGCTQ 921 is printed at 4 units; the state file stores 2.",
-   "Semester blocks are recorded separately as printed; all are required courses."
+   "The award table row at the top of page 138 is cut off; only 'Technician T031090C A.S. 21* 36-38 4 40-42' is visible (GE 21*, required 36-38, major electives 4, major 40-42). GE units of 21 taken from that row; the footnote says any GE pattern may be used, so ge_pattern is null.",
+   "Narrative calls the degree 'Renewable Energy Technician W/ Energy Efficiency Emphasis' while the heading is 'Energy Efficiency Technician'.",
+   "Major Electives heading says '1 or more courses from the following list'; recorded as choose_units 4 based on the narrative '4 unit of Major Electives' and the table's 4 elective units. The semester plan, however, shows three 'Elective(s) 2' lines (6 units), inconsistent with 4; reviewer should check. These semester elective lines were treated as the major electives, not open electives.",
+   "MATH 115 is printed as 'MATH 115 or higher Elementary Algebra (3-5)'; recorded as an alternative with 3 units (low end); 'or higher' allows higher math courses.",
+   "Required courses are printed by semester (I-IV); combined into one 'all' block. Stated 36-38 reflects the MATH alternative's unit range.",
+   "BLDGCTQ 921 is printed with 4 units though the state file stores 2.",
+   "'At least 60 degree applicable units are required to earn an Associate degree' is a generic statement, not recorded as degree_total."
   ]
  },
- "extracted_run": 39114580707,
- "read_run": "39054673977"
+ "extracted_run": "39115770293"
 }

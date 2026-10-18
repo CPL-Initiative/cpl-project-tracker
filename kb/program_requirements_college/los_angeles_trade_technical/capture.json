@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 211,
  "with_closed_list": 188,
- "started": "2026-10-18T09:23:23Z",
+ "started": "2026-10-18T09:34:14Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.lattc.edu/academic-resources/catalog",
@@ -2469,7 +2469,7 @@
   ]
  },
  "loads": 2,
- "seconds": 168.7,
+ "seconds": 145.2,
  "found": 178,
  "by_method": {
   "no_closed_list": 23,
@@ -2822,120 +2822,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_trade_technical",
-  "kept": 167,
-  "programs": 11,
-  "list": [
-   {
-    "control_number": "02904",
-    "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
-    "coverage": 0.778,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02910",
-    "title": "Electrical Construction and Maintenance:  Electrician",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02916",
-    "title": "Welding, Gas and Electric",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08481",
-    "title": "Electrical Construction & Maintenance: Construction Technician",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21842",
-    "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
-    "coverage": 0.778,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21852",
-    "title": "Electrical Construction & Maintenance: Construction Technician",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21853",
-    "title": "Electrical Construction and Maintenance:  Electrician",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21861",
-    "title": "Welding, Gas and Electric",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32948",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
-    "coverage": 0.824,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41754",
-    "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41759",
-    "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ]
+  "kept": 178,
+  "programs": 0,
+  "list": []
  },
- "run": "39115028720"
+ "run": "39115770293"
 }

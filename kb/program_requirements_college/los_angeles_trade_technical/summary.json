@@ -13,7 +13,7 @@
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd": 14.21,
+ "cost_usd": 14.2,
  "cost_per_program": 0.0798,
  "not_found": [
   {
@@ -127,5 +127,5 @@
    }
   }
  ],
- "run": "39115028720"
+ "run": "39115770293"
 }
