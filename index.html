@@ -10030,41 +10030,6 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     <div class="cpl-tab-pane" id="tab-pipeline" data-tab="pipeline" role="tabpanel" aria-labelledby="tab-pipeline"
         data-sections='[{"slug":"roadmap","id":"pl-section-roadmap","label":"Phase roadmap"},{"slug":"lifecycle","id":"pl-section-lifecycle","label":"M-ID lifecycle"},{"slug":"audit","id":"pl-section-audit","label":"Auditor receipt"},{"slug":"remint","id":"pl-section-remint","label":"Recent re-mint"}]'>
         <div class="main-container">
-        <style>
-            #tab-pipeline h2 { margin-bottom:4px; }
-            #tab-pipeline .pl-sub { font-weight:400; color:var(--text-muted); font-size:1rem; }
-            #tab-pipeline .pl-intro { color:var(--text-muted); margin:0 0 18px; max-width:var(--cpl-measure,none); }
-            #tab-pipeline .pl-section { margin:24px 0 32px; }
-            #tab-pipeline .pl-section h3 { margin-bottom:4px; color:var(--navy-primary); font-size:1.1rem; }
-            #tab-pipeline .pl-section-sub { color:var(--text-muted); font-size:.88rem; margin:0 0 12px; }
-            #tab-pipeline .pl-card { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:10px; padding:18px 20px; }
-            #tab-pipeline .pl-mermaid { background:var(--surface-opaque); overflow:auto; }
-            #tab-pipeline .pl-mermaid .mermaid { font-family:inherit; min-width:min(600px, 100%); }
-            #tab-pipeline .pl-status { color:#6b7280; font-size:.78rem; margin-top:6px; font-style:italic; }
-            #tab-pipeline .pl-receipt { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:10px; }
-            #tab-pipeline .pl-stat { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:8px; padding:14px 16px; }
-            #tab-pipeline .pl-stat .pl-stat-label { font-size:.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; }
-            #tab-pipeline .pl-stat .pl-stat-value { font-size:1.6rem; font-weight:700; color:var(--navy-primary); margin-top:4px; font-family:ui-monospace,Menlo,monospace; }
-            #tab-pipeline .pl-stat .pl-stat-delta { font-size:.78rem; color:#6b7280; margin-top:2px; }
-            #tab-pipeline .pl-stat.ok .pl-stat-value { color:#166534; }
-            #tab-pipeline .pl-stat.warn .pl-stat-value { color:#92400e; }
-            #tab-pipeline .pl-stat.err .pl-stat-value { color:#991b1b; }
-            #tab-pipeline .pl-receipt-badge { display:inline-block; font-size:.7rem; padding:2px 8px; border-radius:10px; background:#dcfce7; color:#166534; margin-left:6px; vertical-align:middle; }
-            #tab-pipeline .pl-roadmap { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-top:10px; }
-            #tab-pipeline .pl-phase { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:8px; padding:10px 12px; font-size:.82rem; }
-            #tab-pipeline .pl-phase .pl-phase-id { font-weight:700; color:var(--navy-primary); font-family:ui-monospace,Menlo,monospace; }
-            #tab-pipeline .pl-phase .pl-phase-title { color:var(--text-body); margin:4px 0; }
-            #tab-pipeline .pl-phase .pl-phase-status { font-size:.7rem; padding:2px 7px; border-radius:10px; }
-            #tab-pipeline .pl-phase.done { border-left:4px solid #16a34a; }
-            #tab-pipeline .pl-phase.done .pl-phase-status { background:#dcfce7; color:#166534; }
-            #tab-pipeline .pl-phase.active { border-left:4px solid var(--gold-accent); background:#FFFBEC; }
-            #tab-pipeline .pl-phase.active .pl-phase-status { background:#FEF3C7; color:#92400E; }
-            #tab-pipeline .pl-phase.parked { border-left:4px solid #cbd5e1; color:var(--text-muted); }
-            #tab-pipeline .pl-phase.parked .pl-phase-status { background:var(--surface-1,#eef2f7); color:var(--text-muted); }
-            #tab-pipeline .pl-loading { color:#9ca3af; font-style:italic; padding:20px; text-align:center; }
-            #tab-pipeline .pl-footer { margin-top:24px; color:var(--text-muted); font-size:.78rem; text-align:center; }
-            #tab-pipeline .pl-footer a { color:var(--navy-primary); text-decoration:none; border-bottom:1px dotted #94a3b8; }
-        </style>
 
         <h2>Pipeline <span class="pl-sub">— M-ID lifecycle, audit health, and phase progress</span></h2>
         <p class="pl-intro">A progress board for the Common Course Reference identity work. Tracks (1) where each M-ID currently sits in the staging → MC-submission → CIDx-approval pipeline, (2) the auditor's cleanup-receipt invariants for the most recent re-mint, and (3) status across the multi-phase roadmap.</p>
@@ -10080,7 +10045,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
         <div class="pl-section" id="pl-section-lifecycle">
             <h3>M-ID lifecycle</h3>
             <p class="pl-section-sub">How a synthetic course identity matures from a Phase-B seed into an ASCCC-approved C-ID. Counts pulled from the latest auditor run.</p>
-            <div id="pl-lifecycle" class="pl-card pl-mermaid pl-loading">loading…</div>
+            <div id="pl-lifecycle" class="pl-card pl-mermaid pl-loading" role="region" aria-label="M-ID lifecycle diagram" tabindex="0">loading…</div>
             <div id="pl-lifecycle-status" class="pl-status"></div>
         </div>
 
@@ -10098,7 +10063,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             <p class="pl-section-sub"><strong>Session 304 (2026-09-30, SkyHinge)</strong> &mdash; Sam ruled on sheet 4, card 9: <em>&ldquo;Move them to ATHL.&rdquo;</em> <code>kb/_athl_four_remint.py</code> pinned the four by id and by the ETHS id each left, and moved <code>KINE M12OI</code>&ndash;<code>M12OL</code> to <code>ATHL M11FQ</code>&ndash;<code>M11FT</code>, beside the six intercollegiate titles. All gates passed; only the four records, SkyView&rsquo;s layout and the chain stamps changed. The land ran in one cron window: #1770 merged, <code>supabase-rekey.yml</code> succeeded, and the read-back found no row on the eight ids.</p>
             <p class="pl-section-sub"><strong>Prior &mdash; Session 303 (2026-09-29, SkyWarp)</strong> &mdash; Sam ruled on 2026-09-29 (open-asks sheet 3, card 3) to re-mint the 43 stand-alone and missed ETHS identities the way the 31 moved, and to leave the 42 merged ones on their ids. <code>kb/_eths_remint.py</code> moved 40 (32 KINE, 7 ATHL, 1 PEDS) and held 3 with no second signal beside the title (<code>ETHS M10LH</code>, <code>M10PP</code>, <code>M90AB</code>). All 40 took gap-filled codes: 37 stand-alones in band 1 and 3 corroborated rows after the 31 in continuation band 2 (<code>KINE M2023</code>&ndash;<code>M2025</code>). The land ran in one cron window: #1755 merged, <code>supabase-rekey.yml</code> verified 0 old keys, and the read-back found 0 rows on the old ids and 4 rows plus 3 merge pointers on the new ones. Sheet 4 then ruled Grossmont&rsquo;s four KINE <em>Advanced Techniques and Strategies of &hellip;</em> titles over to ATHL, a small re-mint still to run.</p>
             <p class="pl-section-sub"><strong>Prior &mdash; Session 296 (2026-09-28, SkyBeacon)</strong> &mdash; Sam ruled on 2026-09-22 to re-mint the 31 ETHS identities that are physical-activity courses: the colleges&rsquo; code ES means Exercise Science, and the June fold read it as Ethnic Studies. <code>kb/_eths_remint.py</code> routed each by its members&rsquo; title (26 KINE, 4 ATHL, 1 PEDS) with a second signal beside the title, and the land moved 61 merge pointers, 23 curation keys and the Supabase rows in one cron window (#1722, #1723). KINE&rsquo;s band 1 was full, so 22 ids opened continuation band 2 (<code>KINE M2001</code>&ndash;<code>M2022</code>).</p>
-            <div id="pl-workflow" class="pl-card pl-mermaid pl-loading">loading…</div>
+            <p class="pl-section-sub">The diagram shows the first re-mint, Phase 1e (2026-05-23). Later re-mints follow its shape: a dry run with gates, an apply in one cron window, and a receipt read back.</p>
+            <div id="pl-workflow" class="pl-card pl-mermaid pl-loading" role="region" aria-label="Phase 1e re-mint workflow diagram" tabindex="0">loading…</div>
         </div>
 
         <div class="pl-footer">
