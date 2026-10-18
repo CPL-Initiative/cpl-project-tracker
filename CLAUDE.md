@@ -147,7 +147,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    select slug, title, summary, status, event_date from cpl_memory
    where status <> 'superseded'
      and (tags && array['<workstream-tag>'] or summary ilike '%<keyword>%')
-   order by event_date desc nulls last limit 40;
+   order by coalesce(event_date, created_at::date) desc limit 40;
    ```
 
    Skipping it re-derives facts the table already holds (2026-08-10: three in
