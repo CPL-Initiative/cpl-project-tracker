@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-87 document(s).
+88 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -60,6 +60,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [EACR — college scope, the CER fold, and the accessibility pass](../eacr_scope_lessons.md) | `eacr_scope_lessons.md` | 2026-08-16 | 2026-09-25 |
 | [Engineering Practices — Decisions & Lessons (dev infra, testing, design system)](../engineering_practices_lessons.md) | `engineering_practices_lessons.md` | 2026-06-04 |  |
 | [Excel → Supabase Migration — Workstream Lessons](../excel_to_supabase_lessons.md) | `excel_to_supabase_lessons.md` | 2026-05-28 |  |
+| [Exhibit canonicalization lessons — archive (2026-05-24 PR-B through Session 32, 2026-06-04)](../exhibit_canonicalization_lessons_archive.md) | `exhibit_canonicalization_lessons_archive.md` | 2026-10-18 | 2026-10-18 |
 | [Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)](../exhibit_canonicalization_lessons.md) | `exhibit_canonicalization_lessons.md` | 2026-05-24 |  |
 | [Fire & Emergency Services CPL eligibility — statewide vs local (StarEmber)](../fire_ems_eligibility_lessons.md) | `fire_ems_eligibility_lessons.md` | 2026-07-20 |  |
 | [First Light — daily plein air art, the theme spec, and the design sprint](../first_light_lessons.md) | `first_light_lessons.md` | 2026-06-12 | 2026-06-23 |

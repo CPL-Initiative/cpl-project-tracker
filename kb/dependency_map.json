@@ -8384,14 +8384,29 @@
    "main_committers": []
   },
   "file:kb/cer_classified.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "script:kb/_cer_procedures.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
+     "id": "script:kb/_cer_procedures.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 64
+    }
+   ],
    "producers": [
     {
      "by": "workflow:cer-procedures.yml",
      "how": "commit"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:kb/cer_procedures.json": {

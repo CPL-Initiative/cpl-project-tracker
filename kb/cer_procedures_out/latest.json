@@ -1,13 +1,13 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. Nothing here is saved; proposals pre-fill the tab.",
- "_generated_at": "2026-10-18T04:47:22Z",
+ "_generated_at": "2026-10-18T06:22:56Z",
  "procedures_hash": "575c290d755b",
  "queue": 1498,
  "saved_not_folded": 176,
  "waiting": 1322,
- "proposed": 1116,
- "needs_you_count": 428,
- "not_yet_asked": 105,
+ "proposed": 1287,
+ "needs_you_count": 396,
+ "not_yet_asked": 0,
  "procedures": [
   {
    "id": "brand-family",
@@ -20,8 +20,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 555,
-   "held": 91,
+   "settled": 579,
+   "held": 85,
    "sample": [
     [
      "AP 3-D Art and Design",
@@ -56,8 +56,8 @@
     "words": "use the MAP statewide CRs to match some of the exhibits",
     "skill": "Rule 5e"
    },
-   "settled": 3,
-   "held": 0,
+   "settled": 4,
+   "held": 1,
    "sample": [
     [
      "Cisco Certified Network Associate",
@@ -179,8 +179,8 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 179,
-   "held": 187,
+   "settled": 315,
+   "held": 154,
    "sample": [
     [
      "ACTG-51 APPLIED ACCOUNTING",
@@ -217,7 +217,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 24,
-   "held": 40,
+   "held": 41,
    "sample": []
   },
   {
@@ -246,8 +246,8 @@
     "words": "level words move to the end of the title",
     "skill": "Rule 5g"
    },
-   "settled": 2,
-   "held": 26,
+   "settled": 17,
+   "held": 37,
    "sample": []
   },
   {
@@ -261,8 +261,8 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 18,
-   "held": 72,
+   "settled": 58,
+   "held": 53,
    "sample": []
   },
   {
@@ -276,8 +276,8 @@
     "words": "it is better to over merge and give faculty the chance to pull them out rather than the other way around. It's easier to respond to a decision than to make one.",
     "skill": null
    },
-   "settled": 25,
-   "held": 79,
+   "settled": 27,
+   "held": 82,
    "sample": []
   },
   {
@@ -290,8 +290,8 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 600,
-   "held": 428,
+   "settled": 737,
+   "held": 396,
    "sample": [
     [
      "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
@@ -317,10 +317,10 @@
   }
  ],
  "classifier_run": {
-  "calls": 75,
-  "answered": 75,
+  "calls": 13,
+  "answered": 13,
   "errors": [],
-  "cost_usd": 8.3
+  "cost_usd": 2.67
  },
  "needs_you": [
   {
@@ -831,6 +831,45 @@
    ]
   },
   {
+   "raw_title": "Advanced Medical - Surgical Nursing I - Credit by Exam (NURS 247 )",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Medical-Surgical Nursing 1 Advanced",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Course title restyled with the level word last. Part 1 is kept distinct from the house 'Medical Surgical Nursing Advanced' and from part II; a curator could merge them."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Medical-Surgical Nursing 2 Preceptorship Advanced",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "Preceptorship course restyled with the level word last. The resulting title is awkward and needs curator review."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "Advanced Placement in Nursing - Credit by Exam (NURS 149 )",
+   "why": "the classifier is unsure (0.76)",
+   "proposal": {
+    "title": "Advanced Placement in Nursing",
+    "issuer": "California Community Colleges",
+    "confidence": 0.76,
+    "note": "'Advanced Placement' here is a nursing advanced-standing course name, not a level word, so the order is kept. This is not a College Board AP exam."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Advanced Wildland Firefighter - Certification NWCG S-131",
    "why": "the classifier is unsure (0.80)",
    "proposal": {
@@ -880,6 +919,19 @@
    },
    "colleges": [
     "San Bernardino Valley College"
+   ]
+  },
+  {
+   "raw_title": "An Orientation to Architecture - Credit by Exam (ARCH 100 )",
+   "why": "the classifier's title has a dangling word",
+   "proposal": {
+    "title": "An Orientation to Architecture",
+    "issuer": "California Community Colleges",
+    "confidence": 0.88,
+    "note": ""
+   },
+   "colleges": [
+    "El Camino College"
    ]
   },
   {
@@ -1026,6 +1078,19 @@
    ]
   },
   {
+   "raw_title": "Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )",
+   "why": "the classifier is unsure (0.84)",
+   "proposal": {
+    "title": "Automotive Collision Repair for Non-Majors",
+    "issuer": "California Community Colleges",
+    "confidence": 0.84,
+    "note": "The non-majors survey course is kept apart from the house 'Automotive Collision Repair' as a likely narrower scope. A curator could merge them."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Automotive Service Excellence MIL3 - Drive Train",
    "why": "the classifier is unsure (0.75)",
    "proposal": {
@@ -1117,6 +1182,19 @@
    ]
   },
   {
+   "raw_title": "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Basic Automotive Painting and Refinishing",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Stripped the mechanism phrase and code ACRP 2A. The inner dash was read as 'and'; the catalog title may instead read 'Basic Automotive Painting - Refinishing'."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Basic Baking & Past High School Articulation",
    "why": "the classifier is unsure (0.72)",
    "proposal": {
@@ -1169,6 +1247,58 @@
    ]
   },
   {
+   "raw_title": "Beginning Automotive Collision Repair I - Credit by Exam (ACRP 4A )",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Automotive Collision Repair 1 Beginning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Stripped the mechanism phrase and code ACRP 4A, moved 'Beginning' to the end, and wrote the roman numeral in the house Arabic form. This is a sequenced course, so it was not folded into the broader 'Automotive Collision Repair' (Rule 8c-3)."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "Beginning Automotive Collision Repair II - Credit by Exam (ACRP 4B )",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Automotive Collision Repair 2 Beginning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Stripped the mechanism phrase and code ACRP 4B, moved 'Beginning' to the end, and wrote the roman numeral in Arabic form. Kept split from part 1 and from the broader family."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "Beginning Automotive Painting I - Credit by Exam (ACRP 5A )",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Automotive Painting 1 Beginning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Stripped the mechanism phrase and code ACRP 5A, moved 'Beginning' to the end, and wrote the roman numeral in Arabic form."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "Beginning Automotive Painting II - Credit by Exam (ACRP 5B )",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Automotive Painting 2 Beginning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Stripped the mechanism phrase and code ACRP 5B, moved 'Beginning' to the end, and wrote the roman numeral in Arabic form."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Biotech Fundamental High School Articulation",
    "why": "the classifier is unsure (0.72)",
    "proposal": {
@@ -1192,6 +1322,19 @@
    },
    "colleges": [
     "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Brakes - Credit by Exam (ATEC 14 )",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Brakes",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Took the catalog hint 'Brakes', which is the local course title of ATEC 14. Kept apart from ASE A5 because a local course exam is not an industry certification (Rule 8c-2). It could join the house family 'Automotive Brake Systems' if the curator judges them one credential."
+   },
+   "colleges": [
+    "El Camino College"
    ]
   },
   {
@@ -1754,6 +1897,19 @@
    ]
   },
   {
+   "raw_title": "Clothing Construction I - Credit by Exam (FASH 10 )",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Clothing Construction 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "Stripped the mechanism phrase and code FASH 10 and wrote the roman numeral in Arabic form. It may be the same course as the house family 'Apparel Construction 1', but the names differ, so it was not joined."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Commercial Electrical DAS Journeyman",
    "why": "the classifier is unsure (0.65)",
    "proposal": {
@@ -1764,6 +1920,71 @@
    },
    "colleges": [
     "San Bernardino Valley College"
+   ]
+  },
+  {
+   "raw_title": "Commercial Refrigeration Applications - Credit by Exam (ACR 23 )",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Commercial Refrigeration Applications",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "Used the course title. It may be the same as the house 'Commercial Refrigeration'; the merge was not confirmed, so it is left for review."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "CompTIA A+ Computer Hardware Systems",
+    "issuer": "California Community Colleges",
+    "confidence": 0.72,
+    "note": "This is a local course credit-by-exam (ECHT 144), not the CompTIA A+ industry certification, so per Rule 8c it is kept apart from that family. The course title is kept; review whether the CompTIA token should stay."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "CompTIA Network+ Computer Hardware Systems",
+    "issuer": "California Community Colleges",
+    "confidence": 0.72,
+    "note": "Local course credit-by-exam (ECHT 146), kept apart from the CompTIA Network+ certification per Rule 8c. The course title is kept."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "CompTIA Security+ Computer Hardware Systems - Credit by Exam (ECHT 148 )",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "CompTIA Security+ Computer Hardware Systems",
+    "issuer": "California Community Colleges",
+    "confidence": 0.72,
+    "note": "Local course credit-by-exam (ECHT 148), kept apart from the CompTIA Security+ certification per Rule 8c. The course title is kept."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
+   "raw_title": "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "CompTIA Server+ Computer Hardware Systems 2",
+    "issuer": "California Community Colleges",
+    "confidence": 0.72,
+    "note": "Local course credit-by-exam (ECHT 142), kept apart from the CompTIA Server+ certification per Rule 8c. The course title is kept, with the numeral styled in house form."
+   },
+   "colleges": [
+    "El Camino College"
    ]
   },
   {
@@ -1829,6 +2050,19 @@
    },
    "colleges": [
     "Norco College"
+   ]
+  },
+  {
+   "raw_title": "Computer Information Systems - Credit by Exam (CIS 13 )",
+   "why": "the classifier is unsure (0.65)",
+   "proposal": {
+    "title": "Computer Information Systems",
+    "issuer": "California Community Colleges",
+    "confidence": 0.65,
+    "note": "The title is broad. CIS 13 may correspond to the house 'Introduction to Computer Information Systems'; check this against the El Camino catalog."
+   },
+   "colleges": [
+    "El Camino College"
    ]
   },
   {
@@ -2248,52 +2482,13 @@
    ]
   },
   {
-   "raw_title": "Discipline Exam - ADM JUS 002",
-   "why": "the classifier is unsure (0.78)",
-   "proposal": {
-    "title": "Concepts of Criminal Law",
-    "issuer": "California Community Colleges",
-    "confidence": 0.78,
-    "note": "Code-only title resolved via the LACCD course ADM JUS 002 = Concepts of Criminal Law (likely C-ID AJ 120). This joins the house family. Verify against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 003",
-   "why": "the classifier is unsure (0.78)",
-   "proposal": {
-    "title": "Legal Aspects of Evidence",
-    "issuer": "California Community Colleges",
-    "confidence": 0.78,
-    "note": "Code-only title resolved via the LACCD course ADM JUS 003 = Legal Aspects of Evidence (likely C-ID AJ 124). This joins the house family. Verify against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
    "raw_title": "Discipline Exam - ADM JUS 004",
-   "why": "the classifier is unsure (0.75)",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
    "proposal": {
     "title": "Principles and Procedures of the Justice System",
     "issuer": "California Community Colleges",
-    "confidence": 0.75,
-    "note": "Code-only title resolved via the LACCD course ADM JUS 004 = Principles and Procedures of the Justice System (likely C-ID AJ 122). This joins the house family. Verify against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 005",
-   "why": "the classifier is unsure (0.78)",
-   "proposal": {
-    "title": "Criminal Investigation",
-    "issuer": "California Community Colleges",
-    "confidence": 0.78,
-    "note": "Code-only title resolved via the LACCD course ADM JUS 005 = Criminal Investigation (likely C-ID AJ 140). This joins the house family. Verify against COCI."
+    "confidence": 0.88,
+    "note": "Took the catalog hint (LA Mission ADM JUS 004) and joined the existing house family. The likely anchor is C-ID AJ 122."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2301,25 +2496,12 @@
   },
   {
    "raw_title": "Discipline Exam - ADM JUS 006",
-   "why": "the classifier is unsure (0.75)",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
    "proposal": {
     "title": "Patrol Procedures",
     "issuer": "California Community Colleges",
-    "confidence": 0.75,
-    "note": "Code-only title resolved via the LACCD course ADM JUS 006 = Patrol Procedures. This joins the house title. The issuer is CCC because this is a Cx row, although the house family lists POST. Verify against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 008",
-   "why": "the classifier is unsure (0.78)",
-   "proposal": {
-    "title": "Juvenile Procedures",
-    "issuer": "California Community Colleges",
-    "confidence": 0.78,
-    "note": "Code-only title resolved via the LACCD course ADM JUS 008 = Juvenile Procedures (likely C-ID AJ 220). This joins the house family. Verify against COCI."
+    "confidence": 0.9,
+    "note": "The title comes from the catalog and joins the house family. The Cx issuer is California Community Colleges, not POST."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2327,77 +2509,12 @@
   },
   {
    "raw_title": "Discipline Exam - ADM JUS 014",
-   "why": "the classifier is unsure (0.75)",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
    "proposal": {
     "title": "Report Writing for Peace Officers",
     "issuer": "California Community Colleges",
-    "confidence": 0.75,
-    "note": "Mechanism phrase 'Discipline Exam' stripped. Joined the house family on recall that LACCD ADM JUS 014 is Report Writing for Peace Officers. Verify against the LAMC COCI row."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 039",
-   "why": "the classifier is unsure (0.78)",
-   "proposal": {
-    "title": "Probation and Parole",
-    "issuer": "California Community Colleges",
-    "confidence": 0.78,
-    "note": "LACCD ADM JUS 039 is recalled as Probation and Parole and joined to that house family. Verify against the LAMC COCI row."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 075",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Introduction to Corrections",
-    "issuer": "California Community Colleges",
-    "confidence": 0.8,
-    "note": "LACCD ADM JUS 075 is recalled as Introduction to Corrections, likely C-ID AJ 200. Joined that house family; verify the C-ID alignment in COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 104",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Administration of Justice (ADM JUS 104)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC ADM JUS 104 to get the real title."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 111",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Administration of Justice (ADM JUS 111)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC ADM JUS 111."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 150",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Administration of Justice (ADM JUS 150)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC ADM JUS 150."
+    "confidence": 0.9,
+    "note": "The catalog title is case-normalized to match the house family. The Cx issuer is California Community Colleges."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2405,38 +2522,12 @@
   },
   {
    "raw_title": "Discipline Exam - ADM JUS 160",
-   "why": "the classifier is unsure (0.55)",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
    "proposal": {
     "title": "Police Organization and Administration",
     "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "Tentative recall that LACCD ADM JUS 160 is Police Organization and Administration, joined to that house family. Verify in COCI; fall back to the code form if wrong."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 204",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Administration of Justice (ADM JUS 204)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC ADM JUS 204."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - ADM JUS 250",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Administration of Justice (ADM JUS 250)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC ADM JUS 250."
+    "confidence": 0.9,
+    "note": "The title comes from the catalog and joins the house family. The Cx issuer is California Community Colleges, not POST."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2444,12 +2535,12 @@
   },
   {
    "raw_title": "Discipline Exam - ART 501",
-   "why": "the classifier is unsure (0.78)",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)",
    "proposal": {
     "title": "Two-Dimensional Design Beginning",
     "issuer": "California Community Colleges",
-    "confidence": 0.78,
-    "note": "LACCD ART 501 is recalled as Beginning Two-Dimensional Design, likely C-ID ARTS 100. The level word moved to the end and the row joins that house family with issuer CCC. Verify in COCI."
+    "confidence": 0.88,
+    "note": "The catalog title 'Beginning Two-Dimensional Design' is restyled with the level word last, which joins the existing house title. The Cx issuer is California Community Colleges."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2457,12 +2548,12 @@
   },
   {
    "raw_title": "Discipline Exam - BIOTECH 002",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.84)",
    "proposal": {
-    "title": "Biotechnology (BIOTECH 002)",
+    "title": "Biotechnology 1",
     "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC BIOTECH 002."
+    "confidence": 0.84,
+    "note": "The catalog title 'Biotechnology I' uses the house Arabic-numeral style. It is not folded into 'Applied Biotechnology 1' without evidence that they are the same course."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2470,12 +2561,12 @@
   },
   {
    "raw_title": "Discipline Exam - CIS 101",
-   "why": "the classifier is unsure (0.65)",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)",
    "proposal": {
     "title": "Introduction to Computers and Their Uses",
     "issuer": "California Community Colleges",
-    "confidence": 0.65,
-    "note": "LACCD CIS 101 is recalled as Introduction to Computers and Their Uses and joined to that house family. Verify against the LAMC COCI row and any C-ID alignment."
+    "confidence": 0.9,
+    "note": "The catalog title matches an existing house title. This is a college Cx row, so the issuer is California Community Colleges, not the high school."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2485,10 +2576,10 @@
    "raw_title": "Discipline Exam - CIS 148",
    "why": "the classifier's title has a course code left in",
    "proposal": {
-    "title": "Computer Information Systems (CIS 148)",
+    "title": "Introduction to Web Development HTML5 & CSS",
     "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC CIS 148."
+    "confidence": 0.85,
+    "note": "The cx hint was set aside because it kept the mechanism phrase. The title comes from the catalog course title for CIS 148, with HTML capitalization fixed."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2496,51 +2587,12 @@
   },
   {
    "raw_title": "Discipline Exam - CIS 210",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "Computer Information Systems (CIS 210)",
+    "title": "Introduction to Computer Networks",
     "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC CIS 210."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - CIS 222",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Information Systems (CIS 222)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Course title not known from text, so the code-form fallback is used. Needs a COCI lookup for LAMC CIS 222."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - CLN ART 050",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Culinary Arts (CLN ART 050)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected because it kept the mechanism and code. The LAMC course title for CLN ART 050 could not be verified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - CLN ART 060",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Culinary Arts (CLN ART 060)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected because it kept the mechanism and code. The LAMC course title is unverified, so the discipline (code) fallback is used; confirm against COCI."
+    "confidence": 0.8,
+    "note": "The catalog title 'Introduction to Computer Networking' likely names the same course as the existing CCC family 'Introduction to Computer Networks', so it is joined there. The cx hint was set aside."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2548,38 +2600,12 @@
   },
   {
    "raw_title": "Discipline Exam - CLN ART 101",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "Culinary Arts (CLN ART 101)",
+    "title": "Culinary Fundamentals",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The course is likely the introductory culinary course, but its LAMC title is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - CS 101",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "Introduction to Computers and Their Uses",
-    "issuer": "California Community Colleges",
-    "confidence": 0.7,
-    "note": "LACCD CS 101 is believed to be titled 'Introduction to Computers and Their Uses', so the row joins that house family. The title needs verification against the LAMC COCI row."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - CS 119",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Science (CS 119)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The LAMC title for CS 119 is unverified, so the discipline (code) fallback is used; confirm against COCI."
+    "confidence": 0.8,
+    "note": "The catalog title 'Culinary Fundamentals I' is joined to the existing CCC family 'Culinary Fundamentals' as likely the same course."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2587,25 +2613,12 @@
   },
   {
    "raw_title": "Discipline Exam - DRAFT 016",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.78)",
    "proposal": {
-    "title": "Drafting (DRAFT 016)",
+    "title": "Blueprint Reading I",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The LAMC title for DRAFT 016 is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - EGD TEK 101",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Engineering Graphics and Design Technology (EGD TEK 101)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. EGD TEK 101 is likely the introductory engineering graphics course, but its title is unverified, so the discipline (code) fallback is used; confirm against COCI."
+    "confidence": 0.78,
+    "note": "Kept the catalog title. This was not joined to 'Blueprint Reading 1', which is the CTCNC apprenticeship course with a different CPL basis. It could fold into the CCC 'Blueprint Reading' family on review."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2619,97 +2632,6 @@
     "issuer": "California Community Colleges",
     "confidence": 0.5,
     "note": "Cx hint rejected. The LAMC title for IND TEK 104 is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MATH 240",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Trigonometry",
-    "issuer": "California Community Colleges",
-    "confidence": 0.8,
-    "note": "LACCD MATH 240 is Trigonometry, so the row joins the existing house family. Verify that no CCN or C-ID title outranks it."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MATH 242",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Mathematics (MATH 242)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The LAMC title for MATH 242 is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MGMT 033",
-   "why": "the classifier is unsure (0.55)",
-   "proposal": {
-    "title": "Human Resource Management",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "LACCD MGMT 033 is believed to be the personnel/human resources management course, so the row joins that house family. This is an educated guess; verify against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MULTIMD 100",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Multimedia (MULTIMD 100)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. MULTIMD 100 is likely the introductory multimedia course, but its title is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MULTIMD 240",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Multimedia (MULTIMD 240)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The LAMC title for MULTIMD 240 is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MULTIMD 340",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Multimedia (MULTIMD 340)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The LAMC title for MULTIMD 340 is unverified, so the discipline (code) fallback is used; confirm against COCI."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Discipline Exam - MULTIMD 610",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Multimedia (MULTIMD 610)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Cx hint rejected. The LAMC title for MULTIMD 610 is unverified, so the discipline (code) fallback is used; confirm against COCI."
    },
    "colleges": [
     "Los Angeles Mission College"
@@ -2924,6 +2846,19 @@
    ]
   },
   {
+   "raw_title": "Engine Performance - Credit by Exam (ATEC 23 )",
+   "why": "the classifier is unsure (0.84)",
+   "proposal": {
+    "title": "Engine Performance",
+    "issuer": "California Community Colleges",
+    "confidence": 0.84,
+    "note": "Local course Cx at El Camino; not folded into ASE A8 — Engine Performance because industry cert vs local Cx is a split (Rule 8c-2)."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Entrepreneurship and Small Business HS-RUSD",
    "why": "the classifier is unsure (0.60)",
    "proposal": {
@@ -2964,12 +2899,12 @@
   },
   {
    "raw_title": "Examination for FREN 1A",
-   "why": "the classifier is unsure (0.65)",
+   "why": "the classifier is unsure (0.78)",
    "proposal": {
-    "title": "French 1",
+    "title": "French Beginning",
     "issuer": "California Community Colleges",
-    "confidence": 0.65,
-    "note": "cx hint set aside because it kept the method word and the course code. FREN 1A is assumed to be first-semester French and joined to the house title French 1; the Las Positas course title is unverified."
+    "confidence": 0.78,
+    "note": "Catalog title 'Beginning French' restyled with level word last; reviewer may join house 'French 1' if judged the same first-semester course."
    },
    "colleges": [
     "Las Positas College"
@@ -2977,77 +2912,12 @@
   },
   {
    "raw_title": "Examination for FREN 1B",
-   "why": "the classifier is unsure (0.60)",
+   "why": "the classifier is unsure (0.75)",
    "proposal": {
-    "title": "French — Level 2",
+    "title": "Elementary French",
     "issuer": "California Community Colleges",
-    "confidence": 0.6,
-    "note": "cx hint set aside. FREN 1B is assumed to be second-semester French and joined to the house title French — Level 2; the Las Positas course title is unverified."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for JAMS 12",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Journalism and Media Studies (JAMS 12)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Code-only title, so the Rule 5c fallback <Discipline> (<code>) is used. A COCI lookup of Las Positas JAMS 12 is needed for the real course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 10A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 10A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Code-only title, so the discipline (code) fallback is used. A COCI lookup of Las Positas MUS 10A is needed for the real course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 10B",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 10B)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Code-only title, so the discipline (code) fallback is used. A COCI lookup of Las Positas MUS 10B is needed for the real course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 145",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 145)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Code-only title, so the discipline (code) fallback is used. A COCI lookup of Las Positas MUS 145 is needed for the real course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 146",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 146)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "Code-only title, so the discipline (code) fallback is used. A COCI lookup of Las Positas MUS 146 is needed for the real course title."
+    "confidence": 0.75,
+    "note": "Catalog title for FREN 1B (second-semester French); possible join with house 'French — Level 2' left for review."
    },
    "colleges": [
     "Las Positas College"
@@ -3055,129 +2925,12 @@
   },
   {
    "raw_title": "Examination for MUS 147",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "Music (MUS 147)",
+    "title": "Piano Technology 3",
     "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 147 is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 21A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 21A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 21A is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 21B",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 21B)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 21B is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 28",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 28)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 28 is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 35",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 35)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 35 is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 50",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 50)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 50 is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 8A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 8A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 8A is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for MUS 8B",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 8B)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for MUS 8B is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for PHTO 72",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Photography (PHTO 72)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for PHTO 72 is not available here, so the code-form fallback is used; the COCI lookup should replace it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for SPAN 1A",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "Elementary Spanish 1",
-    "issuer": "California Community Colleges",
-    "confidence": 0.7,
-    "note": "The hint kept the mechanism phrase, so it is set aside. SPAN 1A is assumed to be the first-semester elementary Spanish course and is joined to the house family; verify against the Las Positas COCI title."
+    "confidence": 0.8,
+    "note": "Title comes from the Las Positas catalog title for MUS 147, not the cx echo. No CCN or C-ID was found; the catalog title is unusual, so review it."
    },
    "colleges": [
     "Las Positas College"
@@ -3185,25 +2938,12 @@
   },
   {
    "raw_title": "Examination for SPAN 1B",
-   "why": "the classifier is unsure (0.70)",
+   "why": "the classifier is unsure (0.75)",
    "proposal": {
-    "title": "Elementary Spanish 2",
+    "title": "Elementary Spanish",
     "issuer": "California Community Colleges",
-    "confidence": 0.7,
-    "note": "The hint kept the mechanism phrase, so it is set aside. SPAN 1B is assumed to be the second-semester elementary Spanish course and is joined to the house family; verify against the Las Positas COCI title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Examination for THEA 10",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Theater (THEA 10)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "The hint kept the mechanism phrase, so it is set aside. The Las Positas COCI title for THEA 10 is not available here (it may be an introduction-to-theater course), so the code-form fallback is used."
+    "confidence": 0.75,
+    "note": "The Las Positas catalog titles SPAN 1B 'Elementary Spanish'. It is the second-semester course, so it may belong with the house family 'Elementary Spanish 2'; review."
    },
    "colleges": [
     "Las Positas College"
@@ -3626,13 +3366,26 @@
    ]
   },
   {
+   "raw_title": "Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Implications of Pathophysiology Concepts for Nurses",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "Stripped the mechanism phrase and the NURS 210 code. This could possibly join Pathophysiology for Nursing, but I kept the college's own course title pending review."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Industry for AJ 50",
-   "why": "the classifier is unsure (0.40)",
+   "why": "the classifier is unsure (0.65)",
    "proposal": {
     "title": "Introduction to Administration of Justice",
     "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "Code-only title. Las Positas AJ 50 is assumed to be Introduction to Administration of Justice; verify in COCI. The industry credential behind it is unnamed and may be a POST academy, so the issuer needs review."
+    "confidence": 0.65,
+    "note": "Code-only title. The catalog lookup for Las Positas AJ 50 matches the existing house family. The IC type hides which industry credential is involved, so the issuer is left at CCC for review."
    },
    "colleges": [
     "Las Positas College"
@@ -3744,12 +3497,12 @@
   },
   {
    "raw_title": "Industry for EMS 12",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.60)",
    "proposal": {
-    "title": "Emergency Medical Services (EMS 12)",
+    "title": "Paramedic Laboratory 1",
     "issuer": "California Community Colleges",
-    "confidence": 0.35,
-    "note": "Code-only course reference at Las Positas; COCI lookup needed for the course title and the industry credential behind it (likely EMR/EMT-related), so issuer is provisional."
+    "confidence": 0.6,
+    "note": "Course-as-exhibit: the title comes from the catalog course for Las Positas EMS 12. The underlying industry credential, likely paramedic licensure, is unnamed, so the CCC issuer is provisional."
    },
    "colleges": [
     "Las Positas College"
@@ -3757,12 +3510,12 @@
   },
   {
    "raw_title": "Industry for EMS 13",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.60)",
    "proposal": {
-    "title": "Emergency Medical Services (EMS 13)",
+    "title": "Paramedic Laboratory 2",
     "issuer": "California Community Colleges",
-    "confidence": 0.35,
-    "note": "Code-only course reference at Las Positas; COCI lookup needed for the course title and the underlying industry credential, so issuer is provisional."
+    "confidence": 0.6,
+    "note": "Course-as-exhibit: the title comes from the catalog course for EMS 13. The industry credential is unnamed, so the issuer is provisional."
    },
    "colleges": [
     "Las Positas College"
@@ -3770,12 +3523,12 @@
   },
   {
    "raw_title": "Industry for EMS 16",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.60)",
    "proposal": {
-    "title": "Emergency Medical Services (EMS 16)",
+    "title": "Paramedic Clinical Occupational Work Experience",
     "issuer": "California Community Colleges",
-    "confidence": 0.35,
-    "note": "Code-only course reference at Las Positas; COCI lookup needed for the course title and the underlying industry credential, so issuer is provisional."
+    "confidence": 0.6,
+    "note": "Course-as-exhibit: the title comes from the catalog course for EMS 16. The industry credential is unnamed, so the issuer is provisional."
    },
    "colleges": [
     "Las Positas College"
@@ -3783,12 +3536,12 @@
   },
   {
    "raw_title": "Industry for EMS 17",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.60)",
    "proposal": {
-    "title": "Emergency Medical Services (EMS 17)",
+    "title": "Paramedic Field Internship",
     "issuer": "California Community Colleges",
-    "confidence": 0.35,
-    "note": "Code-only course reference at Las Positas; COCI lookup needed for the course title and the underlying industry credential, so issuer is provisional."
+    "confidence": 0.6,
+    "note": "Course-as-exhibit: the title comes from the catalog course for EMS 17. The industry credential is unnamed, so the issuer is provisional."
    },
    "colleges": [
     "Las Positas College"
@@ -3796,12 +3549,12 @@
   },
   {
    "raw_title": "Industry for EMS 70",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.65)",
    "proposal": {
-    "title": "Emergency Medical Services (EMS 70)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "Title is only a course code (Las Positas EMS 70) behind an Industry Certification type. The industry credential is not named, so the title falls back to <Discipline> (<code>) pending a COCI lookup. The issuer is provisional; it may really be an EMS certifying body."
+    "title": "CPR for Healthcare Providers (BLS)",
+    "issuer": "American Heart Association (AHA)",
+    "confidence": 0.65,
+    "note": "The catalog maps EMS 70 to CPR for Healthcare Providers. Under the Industry Certification type, the credential is likely the AHA BLS card, so this joins the house family. The issuer could also be the Red Cross."
    },
    "colleges": [
     "Las Positas College"
@@ -3809,12 +3562,12 @@
   },
   {
    "raw_title": "Industry for GDDM 53",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.55)",
    "proposal": {
-    "title": "Graphic Design and Digital Media (GDDM 53)",
+    "title": "Adobe Photoshop 1",
     "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "Code-only title (Las Positas GDDM 53) under an Industry Certification type. The underlying industry cert (likely Adobe) is unnamed. The title awaits a COCI course-title lookup and the issuer is provisional."
+    "confidence": 0.55,
+    "note": "Course-as-exhibit: the title comes from the catalog course for GDDM 53 (Adobe Photoshop I). The industry cert, possibly Adobe Certified Professional, is unnamed, so the issuer is provisional. This may also join Introduction to Adobe Photoshop."
    },
    "colleges": [
     "Las Positas College"
@@ -3822,12 +3575,12 @@
   },
   {
    "raw_title": "Industry for GDDM 54",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.70)",
    "proposal": {
-    "title": "Graphic Design and Digital Media (GDDM 54)",
+    "title": "Adobe Illustrator I",
     "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "Code-only title (Las Positas GDDM 54) under an Industry Certification type. The underlying industry cert is unnamed. The title awaits a COCI lookup and the issuer is provisional."
+    "confidence": 0.7,
+    "note": "Catalog hint accepted: GDDM 54 at Las Positas resolves to the course title Adobe Illustrator I. The row is typed Industry Certification, so the issuer could instead be Adobe if an actual Adobe certification is meant; CCC is kept for review."
    },
    "colleges": [
     "Las Positas College"
@@ -3835,12 +3588,12 @@
   },
   {
    "raw_title": "Industry for GDDM 64",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.70)",
    "proposal": {
-    "title": "Graphic Design and Digital Media (GDDM 64)",
+    "title": "Adobe InDesign I",
     "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "Code-only title (Las Positas GDDM 64) under an Industry Certification type. The underlying industry cert is unnamed. The title awaits a COCI lookup and the issuer is provisional."
+    "confidence": 0.7,
+    "note": "Catalog hint accepted: GDDM 64 at Las Positas resolves to the course title Adobe InDesign I. The row is typed Industry Certification, so the issuer could instead be Adobe if an actual Adobe certification is meant; CCC is kept for review."
    },
    "colleges": [
     "Las Positas College"
@@ -4052,6 +3805,19 @@
    },
    "colleges": [
     "Napa Valley College"
+   ]
+  },
+  {
+   "raw_title": "Introduction to Gas Tungsten Arc Welding (GTAW) - Credit by Exam (WELD 40A )",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Joins the existing house title, which is a course-style name. The issuer stays CCC for this local Cx (WELD 40A) rather than AWS, so the issuer field discriminates."
+   },
+   "colleges": [
+    "El Camino College"
    ]
   },
   {
@@ -4315,32 +4081,6 @@
    ]
   },
   {
-   "raw_title": "NC.BUS-117A at College of the Canyons",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Business (NC.BUS-117A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Code-only noncredit Cx title. The College of the Canyons course title was not resolvable here, so it falls back to <Discipline> (<code>). The hint echoed the raw title with a college suffix and was set aside. Needs a COCI lookup."
-   },
-   "colleges": [
-    "College of the Canyons"
-   ]
-  },
-  {
-   "raw_title": "NC.BUS-117B at College of the Canyons",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Business (NC.BUS-117B)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Code-only noncredit Cx title, so it falls back to <Discipline> (<code>). It is kept separate from 117A as a distinct course. Needs a COCI lookup for the real course title."
-   },
-   "colleges": [
-    "College of the Canyons"
-   ]
-  },
-  {
    "raw_title": "NC.HLSCI-249 at College of the Canyons",
    "why": "the classifier's title has a course code left in",
    "proposal": {
@@ -4348,19 +4088,6 @@
     "issuer": "California Community Colleges",
     "confidence": 0.5,
     "note": "Code-only noncredit Cx title, so it falls back to <Discipline> (<code>). HLSCI is read as Health Science. Needs a COCI lookup for the real course title."
-   },
-   "colleges": [
-    "College of the Canyons"
-   ]
-  },
-  {
-   "raw_title": "NC.PTA-100 at College of the Canyons",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Physical Therapist Aide (NC.PTA-100)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "Code-only noncredit Cx title. Reading PTA as Physical Therapist Aide is a guess. Needs a COCI lookup for the real course title."
    },
    "colleges": [
     "College of the Canyons"
@@ -4667,12 +4394,12 @@
   },
   {
    "raw_title": "Noncredit for AVI 110",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.60)",
    "proposal": {
-    "title": "Aviation (AVI 110)",
+    "title": "Drone Coding and Piloting",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course AVI 110; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.6,
+    "note": "Mended the catalog hint 'Summer Camp Drone Coding and Piloting' by dropping the 'Summer Camp' delivery qualifier. The catalog join to AVI 110 is uncertain; review. This is a course, not the FAA Part 107 certificate."
    },
    "colleges": [
     "Las Positas College"
@@ -4680,12 +4407,12 @@
   },
   {
    "raw_title": "Noncredit for ENG 110",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English (ENG 110)",
+    "title": "Craft of the Sentence",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ENG 110; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Title is the Las Positas local course title from the catalog hint for ENG 110. The 'Noncredit for' phrasing is mechanism noise."
    },
    "colleges": [
     "Las Positas College"
@@ -4693,12 +4420,12 @@
   },
   {
    "raw_title": "Noncredit for ENG 115",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English (ENG 115)",
+    "title": "Personalized Coaching for Academic Reading and Writing",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ENG 115; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Title is the Las Positas local course title from the catalog hint for ENG 115."
    },
    "colleges": [
     "Las Positas College"
@@ -4706,12 +4433,12 @@
   },
   {
    "raw_title": "Noncredit for ESL 113",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English as a Second Language (ESL 113)",
+    "title": "Speaking and Listening Fluency for Academic and Professional Purposes",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ESL 113; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Title is the Las Positas local course title from the catalog hint for ESL 113."
    },
    "colleges": [
     "Las Positas College"
@@ -4719,12 +4446,12 @@
   },
   {
    "raw_title": "Noncredit for ESL 123",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English as a Second Language (ESL 123)",
+    "title": "Oral Communication Intermediate",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ESL 123; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Catalog title 'Intermediate Oral Communication' for ESL 123, with the level word moved to the end."
    },
    "colleges": [
     "Las Positas College"
@@ -4732,12 +4459,12 @@
   },
   {
    "raw_title": "Noncredit for ESL 126",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English as a Second Language (ESL 126)",
+    "title": "Pronunciation and Fluency Intermediate",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ESL 126; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Catalog title 'Intermediate Pronunciation and Fluency' for ESL 126, with the level word moved to the end."
    },
    "colleges": [
     "Las Positas College"
@@ -4745,12 +4472,12 @@
   },
   {
    "raw_title": "Noncredit for ESL 133",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English as a Second Language (ESL 133)",
+    "title": "Oral Communication Beginning",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ESL 133; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Catalog title 'Beginning Oral Communication' for ESL 133, with the level word moved to the end."
    },
    "colleges": [
     "Las Positas College"
@@ -4758,12 +4485,12 @@
   },
   {
    "raw_title": "Noncredit for ESL 136",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "English as a Second Language (ESL 136)",
+    "title": "Pronunciation and Fluency",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside: it copied the mechanism phrase. Las Positas noncredit course ESL 136; the COCI title is unknown, so the discipline (code) fallback is used. Needs a lookup."
+    "confidence": 0.8,
+    "note": "Title is the Las Positas local course title from the catalog hint for ESL 136. It stays distinct from the Intermediate level (ESL 126)."
    },
    "colleges": [
     "Las Positas College"
@@ -4875,15 +4602,28 @@
   },
   {
    "raw_title": "Noncredit for MATH 101C",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier is unsure (0.78)",
    "proposal": {
-    "title": "Mathematics (MATH 101C)",
+    "title": "Concurrent Support for BSTEM Mathematics",
     "issuer": "California Community Colleges",
-    "confidence": 0.6,
-    "note": "Mended the cx hint, which kept 'Noncredit for' and the code. Could not resolve the Las Positas COCI title for MATH 101C, so the discipline(code) fallback is used."
+    "confidence": 0.78,
+    "note": "Title is the Las Positas local course title from the catalog hint for MATH 101C, a corequisite support course."
    },
    "colleges": [
     "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Nursing Fundamentals - Credit by Exam (NURS 220 )",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Fundamentals of Nursing",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Removed the mechanism phrase and the course code. 'Nursing Fundamentals' was joined to the house family 'Fundamentals of Nursing' as likely the same course; faculty may split them later."
+   },
+   "colleges": [
+    "El Camino College"
    ]
   },
   {
@@ -5004,6 +4744,19 @@
    ]
   },
   {
+   "raw_title": "Personal and Community Health Issues - Credit by Exam (C H 1 )",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Personal and Community Health",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Joined the existing 'Personal and Community Health' family as likely the same course content. Faculty may split it if 'Issues' marks a distinct course."
+   },
+   "colleges": [
+    "El Camino College"
+   ]
+  },
+  {
    "raw_title": "Photography II- HS CE(VVUSD)",
    "why": "the classifier is unsure (0.70)",
    "proposal": {
@@ -5030,71 +4783,6 @@
    ]
   },
   {
-   "raw_title": "Portfolio Review - MULTIMD 100",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Multimedia (MULTIMD 100)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint set aside because it kept the mechanism word and the course code. Portfolio review for LA Mission MULTIMD 100. Code-only fallback; a COCI lookup should supply the course title (likely Introduction to Multimedia)."
-   },
-   "colleges": [
-    "Los Angeles Mission College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for ARTS 12A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Art (ARTS 12A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for ARTS 12A' set aside because it leaves a dangling word. Code-only fallback for Las Positas ARTS 12A; a COCI lookup should supply the C-ID or local course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for ARTS 2A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Art (ARTS 2A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for ARTS 2A' set aside because it leaves a dangling word. Code-only fallback for Las Positas ARTS 2A (possibly a drawing course); a COCI lookup should supply the C-ID or local course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for ARTS 3A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Art (ARTS 3A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for ARTS 3A' set aside because it leaves a dangling word. Code-only fallback for Las Positas ARTS 3A; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for ARTS 7A",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Art (ARTS 7A)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for ARTS 7A' set aside because it leaves a dangling word. Code-only fallback for Las Positas ARTS 7A; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
    "raw_title": "Portfolio for Arts - 2D Foundations",
    "why": "the classifier is unsure (0.75)",
    "proposal": {
@@ -5109,25 +4797,12 @@
   },
   {
    "raw_title": "Portfolio for ENG 19A",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier's title has a dangling word",
    "proposal": {
-    "title": "English (ENG 19A)",
+    "title": "Journal of Arts and Literature A",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for ENG 19A' set aside because it leaves a dangling word. Code-only fallback for Las Positas ENG 19A (likely creative writing); a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for JAMS 12",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Journalism and Media Studies (JAMS 12)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for JAMS 12' set aside because it leaves a dangling word. Code-only fallback for Las Positas JAMS 12; a COCI lookup should supply the C-ID or local course title."
+    "confidence": 0.82,
+    "note": "Catalog title; this appears cross-listed with JAMS 19A, so both share one title."
    },
    "colleges": [
     "Las Positas College"
@@ -5135,103 +4810,12 @@
   },
   {
    "raw_title": "Portfolio for JAMS 19A",
-   "why": "the classifier's title has a course code left in",
+   "why": "the classifier's title has a dangling word",
    "proposal": {
-    "title": "Journalism and Media Studies (JAMS 19A)",
+    "title": "Journal of Arts and Literature A",
     "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for JAMS 19A' set aside because it leaves a dangling word. Code-only fallback for Las Positas JAMS 19A; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for JAMS 23",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Journalism and Media Studies (JAMS 23)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for JAMS 23' set aside because it leaves a dangling word. Code-only fallback for Las Positas JAMS 23; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for JAMS 3",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Journalism and Media Studies (JAMS 3)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for JAMS 3' set aside because it leaves a dangling word. Code-only fallback for Las Positas JAMS 3; a COCI lookup should supply the C-ID or local course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for MUS 19",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 19)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for MUS 19' set aside because it leaves a dangling word. Code-only fallback for Las Positas MUS 19; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for MUS 25",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 25)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for MUS 25' set aside because it leaves a dangling word. Code-only fallback for Las Positas MUS 25; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for MUS 27",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 27)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "Hint 'for MUS 27' set aside because it leaves a dangling word. Code-only fallback for Las Positas MUS 27; a COCI lookup should supply the course title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for MUS 35",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Music (MUS 35)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.6,
-    "note": "The cx hint 'for MUS 35' was a broken strip, so it was set aside. The Las Positas MUS 35 course title is not known from the text, so the Rule 5c code fallback applies; a COCI lookup should supply the real title."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio for PHTO 72",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Photography (PHTO 72)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.6,
-    "note": "The cx hint 'for PHTO 72' was a broken strip, so it was set aside. The Las Positas PHTO 72 course title is unknown, so the Rule 5c code fallback applies; a COCI lookup should supply the real title."
+    "confidence": 0.82,
+    "note": "Catalog title; this appears cross-listed with ENG 19A, so both share one title."
    },
    "colleges": [
     "Las Positas College"

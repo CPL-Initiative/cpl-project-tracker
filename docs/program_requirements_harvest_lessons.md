@@ -893,3 +893,12 @@ From the Records view paragraph, verbatim:
   the proxy refuses the log archive host: re-read those with a plan of their own.
 - **The Exhibit Adoption UI pass (#2211)** shipped; its record is in the UI ledger. A `transition: all` on a control
   hid a focus ring that existed (noted in `/a11y-pass`).
+
+## 2026-10-18 — Session 412 (SkyJoshua)
+
+- `182e810e207d` applied: 15,651 written (run 39093644832, 67 minutes; the last apply took 61).
+- Crafton Hills by the SmartCatalog walk: 229 pages, 64 of 79 listed programs found, all 64 extracted ($4.68),
+  40 pass the machine checks (run 39093935031); load dispatched behind Taft's capture-only read.
+- **A newer pending run in a concurrency group cancels the older pending one.** With one run active on `main`,
+  dispatch the next only once the active one has started the queue's previous pending run; Taft's read was
+  queued only after Crafton's had started, and Crafton's load only after Taft's started.

@@ -153,6 +153,46 @@ check("a failed call is retried once", calls[0] == 15 and len(calls) == 3)
 check("every asked title is answered after the retry", len(got) == 20)
 check("an answer for a title nobody asked about is dropped", "never asked" not in got)
 
+
+def nbsp_back(body, key):
+    # The model returns "ATEC 24\xa0)" as "ATEC 24 )" (105 titles on the first pass).
+    return {"records": [dict(rec, raw_title=" ".join(r["raw_title"].replace("\xa0", " ").split()))
+                        for r in body["rows"]]}
+
+
+nb = "Advanced Engine Performance - Credit by Exam (ATEC 24\xa0)"
+got2, _ = cp.classify([{"raw_title": nb}], "rules", "key", chunk=15, workers=1, call=nbsp_back)
+check("an answer whose spacing the model normalized is kept, keyed by the title as asked",
+      list(got2) == [nb] and got2[nb]["raw_title"] == nb, got2)
+
+# ── the college's own course, for a code-only title ─────────────────────────
+check("a trailing course code is read", cp.code_only("Discipline Exam - CS 119") == ("CS", "119"))
+check("'Examination for' is not part of the subject",
+      cp.code_only("Examination for JAMS 12") == ("JAMS", "12"))
+check("a two-word subject is read", cp.code_only("Discipline Exam - ADM JUS 104") == ("ADM JUS", "104"))
+check("a College of the Canyons noncredit code is read",
+      cp.code_only("NC.BUS-117A at College of the Canyons") == ("BUS", "117A"))
+check("an exam brand's target course is never its identity",
+      cp.code_only("AP Calculus AB - MATH 110A") is None and cp.code_only("AP Chemistry (CHEM 1A)") is None)
+check("a score is never a course code", cp.code_only("Agile Score of 3") is None)
+check("a title that describes its course needs no lookup",
+      cp.code_only("Pediatric Nursing - Credit by Exam (NURS 234)") is None)
+from collections import Counter  # noqa: E402
+fake = {("ELACCOLLEGE", "CS", "119"): {"titles": Counter({"PROGRAMMING IN PYTHON": 3})},
+        ("TWOCOLLEGEA", "MUS", "10"): {"titles": Counter({"Music Theory": 1})},
+        ("TWOCOLLEGEB", "MUS", "10"): {"titles": Counter({"Guitar I": 1})}}
+ch = cp.catalog_hints(["Discipline Exam - CS 119", "Examination for MUS 10", "Portfolio for ART 9"],
+                      {"Discipline Exam - CS 119": {"colleges": ["ELAC College"]},
+                       "Examination for MUS 10": {"colleges": ["Two College A", "Two College B"]},
+                       "Portfolio for ART 9": {"colleges": ["Nowhere"]}}, index=fake)
+check("the college's own title is handed on, title-cased",
+      ch.get("Discipline Exam - CS 119", {}).get("title") == "Programming in Python"
+      and ch["Discipline Exam - CS 119"]["via"] == "catalog")
+check("two colleges naming the course differently give no hint", "Examination for MUS 10" not in ch)
+check("a code the catalog does not hold gives no hint", "Portfolio for ART 9" not in ch)
+check("a changed hint changes the key a title was asked under",
+      cp.hints_key([{"title": "a", "via": "cx"}]) != cp.hints_key([{"title": "a", "via": "cx"}, ch["Discipline Exam - CS 119"]]))
+
 # ── the whole run, against the committed queue ───────────────────────────────
 wrote = []
 real_open = open
@@ -166,7 +206,7 @@ def guarded_open(path, mode="r", *a, **k):
 
 cp.open = guarded_open
 with redirect_stdout(io.StringIO()):
-    report, stage = cp.run(dry_run=True)
+    report, stage = cp.run(dry_run=True, catalog=False)
 check("a dry run writes nothing", wrote == [], wrote)
 check("the run proposes titles from the committed queue", stage["_counts"]["staged"] > 0)
 check("no pre-fill comes from a hint lane",
@@ -178,7 +218,7 @@ check("the report tallies every procedure in force",
       {p["id"] for p in procs} <= {p["id"] for p in report["procedures"]})
 try:
     with redirect_stdout(io.StringIO()):
-        cp.run(classify_n=5, dry_run=True, key=None)
+        cp.run(classify_n=5, dry_run=True, key=None, catalog=False)
     check("asking the classifier without the service key stops the run", False)
 except SystemExit:
     check("asking the classifier without the service key stops the run", True)
