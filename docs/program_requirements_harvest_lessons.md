@@ -794,6 +794,54 @@ reads checked against fingerprints computed in SQL, counts and titles both.
   S407 read LA Trade Tech, LA Mission and Desert through catalog steps and applied Sheets 90-91's registry corrections
   (Cuesta, the six hand-filed rows, Grossmont, Ohlone, Cañada, Pasadena, Glendale, LA Southwest) through the runner.
 
+## S411 SkySotol (2026-10-18): Hartnell by its code headings, the reconcile trap, Merced and SmartCatalog mapped
+
+- **`d6cc1fde7ea3` applied:** 15,647 written (run 39084444048, its applied record on `main`).
+- **Coursedog's PDF heads each program "Title - CODE"** (`Biology - AS.BIO`; a hyphen form, `AAT-SOC`; a code on the
+  next line, `- \nAST.ADJ`; two headings run into one line by pypdf, `... - NCCT.BCL Workforce and Academic Readiness -
+  NCCT.WAR`). The prefix names the award (AA, AS, AAT, AST, CT, NCCT, BS). `pdf_code_assign()` reads them where a
+  catalog heads half its listed programs so, gives each code to the programs whose title it names most fully
+  (`page_winners()`'s rule: ties share, Communication Studies and Communication Studies 2.0 both A.A.-T; Public Health
+  Science loses Public Health's), and leaves a program no heading names unread. The headings' titles drop "for
+  transfer" before matching, or every A.A.-T reads at half its own words. `LEVEL` reads "Level -1".
+- **Hartnell, measured on the PDF locally** (the vendor's S3 bucket answers the session; `app.coursedog.com` does not):
+  of the 33 left out, 8 read from their own heading and 24 from none. **The PDF does not print 31 of Hartnell's 105
+  listed programs** (Kinesiology, Addiction Studies, the General Studies emphases, Agriculture Production, Small Farm,
+  CalGETC, and others). Among the 68 loaded, 14 moved from a sibling award's page to their own (Digital Arts CoA had
+  read the A.A.'s page; the two Early Childhood Education degrees were swapped). The runner's capture matched to the
+  program (run 39089852947: 74 by code, 23 to extract). Extraction run 39090050931, $2.05; load 39090337524 (8
+  inserted), reread 39090450992 (14 replaced). Network and Security A.S. stays out: the catalog renumbered CIS 50-55
+  as CSS50-55, and COCI still lists CIS.
+- **Four loaded rows read another program's page and no heading names them** (Psychology A.A. and Spanish A.A. from
+  their A.A.-T's page; IGETC from the Cal-GETC lists; Public Health Science from Public Health's). Spanish A.A.'s own
+  section prints no requirements, so its new record places none. Removed under a receipt holding each row whole
+  (Sheet 68's procedure; Sam's "remove" rulings on wrong-page rows and his 2026-10-17 go), through
+  `supabase-migrate.yml` (run 39090450880, 4 removed): the repo's guard holds a delete sent by `execute_sql`.
+- **The reconcile trap.** A reconcile run files its fresh `sources.json` beside the records it did not move, so a later
+  extraction read compared the moved pages with themselves and kept the old records: 127 filed records stood on another
+  page than their source names (Los Angeles City 69, Pierce 43, Santa Rosa 11). `filed_from()` keeps a record only when
+  it was extracted from the page its source reads. **Test a reader change with a capture-only read** (`extract=0`):
+  its preview's `would_extract` names each moved program, and it replaces nothing.
+- **Build `182e810e207d`: 15,651 programs at 111 colleges.** Every filed registry row equal to live.
+- **Merced (Coursedog on catalog.mccd.edu).** A page read may keep a named vendor host's data calls (`network_hosts`):
+  the program search names the school `merced_colleague_ethos`, catalogId `QTM2GIg9kimBOfyC8Dbb`, 191 programs coded
+  by TOP and award (`05000.AA`, Accounting (AA)). The vendor's `pdf-reports/catalogs/<catalogId>` answers 404: no
+  whole-catalog PDF. No sitemap. A program page opens on its overview tab; its Requisites tab
+  (`/programs/05000.AA/requisites-ojrrt`) prints the list whole, with credits (`ACTG04A Financial Accounting (Total
+  Credits 4.0 - 4.0)`), and each page offers its own PDF.
+- **SmartCatalog (Crafton Hills, Taft): index, then a subject or group page, then the program.** Crafton's Credit
+  Programs lists 41 subjects (`accounting-acct`); each subject lists its programs under "In this section"; the program
+  page prints its required courses, units and total (`BUSAD 053 Business Computations 3.00 ... Total Credit Hours:
+  21.00`). Taft's Degrees and Certificates lists each program as "Title: Award"; an entry may be a group (Welding
+  Technology lists its A.S. and five certificates) or the program itself. A page read skips a page it already read, so a
+  plan never names a page another page's follow reaches.
+
+## Moved from the lane (S411 compaction)
+
+From the Records view paragraph, verbatim:
+
+**The index reads stored columns (S405; Sam, 2026-10-17: *"Prog Req tab in COBI loads very slow--we need to find a way to optimize it as we continue to grow it to the full CCC catalog"*).** Each Range page is an OFFSET, which evaluates every skipped row; three paths into `display` and the signed-in `requirements_fp` made the last public page of 11,969 take 9.4 s (anon's limit 3 s) and a signed-in pass 16 s more, growing with the square of the table. Four STORED generated columns (`idx_fp`, `idx_display_arithmetic`, `idx_display_reviewer`, `idx_display_here`; `chatbox/supabase_program_requirement_records_index_columns_2026_10_17_s405.sql`) take the same page to 22 ms, and the index reads 1,000-row pages four at a time. Guard: `tests/program_requirements.test.js` (6e).
+
 ## S410 SkyYucca (2026-10-18): Cañada by its hand-filed copy, Hartnell through a file step, build d6cc1fde7ea3
 
 - **`ffd6929a4f90` applied:** 15,517 written (run 39078224767, its applied record on `main`).
