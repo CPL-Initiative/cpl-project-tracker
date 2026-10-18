@@ -48,6 +48,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      # The college's own course title for a code-only exhibit comes from the COCI
+      # course list (kb/reference/coci_course_list.xlsx); openpyxl reads it.
+      - name: Install the catalog reader
+        run: pip install "$(grep -i '^openpyxl==' requirements.txt)"
+
       - name: Run the procedures
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
