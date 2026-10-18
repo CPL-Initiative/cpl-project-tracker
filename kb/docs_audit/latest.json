@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1183,
-    "bytes": 12169202,
+    "files": 1184,
+    "bytes": 12177397,
     "over_budget": 7,
-    "handoff_max": 414,
+    "handoff_max": 415,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60290,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 122,
-        "bytes": 3773034,
+        "bytes": 3773629,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10396,
+        "bytes": 10344,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2263451,
+        "bytes": 2266240,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 38,
-        "bytes": 361017,
+        "bytes": 361285,
         "over": 2
       },
       "handoff": {
-        "files": 385,
-        "bytes": 2963109,
+        "files": 386,
+        "bytes": 2967704,
         "over": 0
       }
     },
@@ -62,10 +62,10 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22472,
-      "bytes": 3040314544,
-      "heavy_bytes": 1973988806,
-      "heavy_share": 0.649,
+      "files": 22664,
+      "bytes": 3074392283,
+      "heavy_bytes": 2008052867,
+      "heavy_share": 0.653,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -115,8 +115,8 @@
         "cpl-project-tracker/prototype/ccr_universe_members.json",
         "cpl-project-tracker/unified_courses_index.js",
         "cpl-project-tracker/unified_courses_suggestions.js",
-        "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/kb/queue_status.json",
+        "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
@@ -443,13 +443,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 729205,
+        "bytes": 729632,
         "limit": 150000,
         "lane": "other",
-        "over_by": 579205,
+        "over_by": 579632,
         "ratio": 4.86
       },
-      "message": "729,205 B is 4.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "729,632 B is 4.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -517,20 +517,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1004409750,
+        "bytes": 1037415078,
         "kind": "dir"
       },
-      "message": "directory totals 1,004,409,750 B inside the vault"
+      "message": "directory totals 1,037,415,078 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 134510447,
+        "bytes": 135534315,
         "kind": "dir"
       },
-      "message": "directory totals 134,510,447 B inside the vault"
+      "message": "directory totals 135,534,315 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -995,22 +995,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/queue_status.json",
+      "detail": {
+        "bytes": 3472981,
+        "kind": "file"
+      },
+      "message": "3,472,981 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "regional_cpl_opportunity_bay.js",
       "detail": {
         "bytes": 3443439,
         "kind": "file"
       },
       "message": "3,443,439 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/queue_status.json",
-      "detail": {
-        "bytes": 3438116,
-        "kind": "file"
-      },
-      "message": "3,438,116 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -6027,3 +6027,4 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history, moved verbatim (S413)
 
 - 2026-10-17 (S404 SkyBuckeye, the 10:12Z firing): own-HTML catalogs take the generic sitemap road (#2194); College of San Mateo loaded 55 unchecked (60 of 64 found, $4.98, build `928577b30f0f`); Los Rios's hosts still serve the reader 404; the MAP Data Quality UI pass (#2193); handoff 405 (SkyCholla).
+- 2026-10-17 (S405 SkyCholla, the 12:12Z firing): own-HTML reads keep to the catalog's year (`year_scope()`); Coalinga, Skyline, West Valley, Copper Mountain, San Diego Continuing Education and Solano loaded unchecked; the scorer reads stand-in ligature glyphs (Solano, Santa Rosa reread); the hand-filed catalog step; display build `c111c9b05ca0` (12,424 programs, 92 colleges); Open Asks Sheet 89; handoff 406 (SkyIronwood).
