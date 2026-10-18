@@ -66,37 +66,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    67.5,
-    74.5
+    40.5,
+    40.5
    ],
    "stated": [
-    67.5,
-    67.5
+    40.5,
+    40.5
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     40.5,
-     40.5
+     67.5,
+     74.5
     ],
     "stated": [
-     40.5,
-     40.5
+     67.5,
+     67.5
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
    }
   },
   "repeated": {
@@ -121,7 +120,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -141,7 +140,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate the skills, knowledge, and training for employment as an entry-level Electrician or Electrical Technician. The student demonstrates the understanding of electrical theory, AC/DC circuits, safety, code requirements, and components that make up the electrical distribution system.",
     "Demonstrate the knowledge of safety practices required for installations and repairs of electrical wiring.",
@@ -158,8 +157,7 @@
     "manager in the electrical industry",
     "entry-level Electrician",
     "Electrical Technician"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -256,20 +254,6 @@
    "Career entries drawn from the program description and the program learning outcomes text."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 67.5"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 67.5"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

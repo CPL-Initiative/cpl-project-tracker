@@ -60,37 +60,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    46.0,
-    46.0
+    73.0,
+    80.0
    ],
    "stated": [
-    46.0,
-    46.0
+    70.0,
+    70.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 73.0-80.0; the catalog prints 70.0-70.0 for the degree"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     73.0,
-     80.0
+     46.0,
+     46.0
     ],
     "stated": [
-     70.0,
-     70.0
+     46.0,
+     46.0
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "minimum": true,
-    "fill": null
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -115,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -135,7 +135,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate the application of sample preparation techniques to routine and unique specimens.",
     "Demonstrate the application of sample preparation techniques to routine and unique specimens.",
@@ -147,8 +147,7 @@
     "Evaluate a system for failures and proper pump down times to make judgement of optimum functionality and efficiency.",
     "Demonstrate the ability to understand theory and operations of various TEM platforms."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -293,20 +292,6 @@
    "The description mentions 'various career opportunities in all sectors of fields related to microscopy' but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 70"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 70"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

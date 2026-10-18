@@ -64,37 +64,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    59.0,
-    59.0
+    25.0,
+    25.0
    ],
    "stated": [
-    60.0,
-    60.0
+    25.0,
+    25.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     25.0,
-     25.0
+     59.0,
+     59.0
     ],
     "stated": [
-     25.0,
-     25.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     1.0,
+     1.0
+    ]
    }
   },
   "repeated": {
@@ -119,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -139,14 +142,13 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate understanding of early childhood principles and practices required for employment including maintaining health and safety standards, creating appropriate early learning environments, complying with state licensing regulations and guiding childrens’ behavior with respectful and supportive method.",
     "Utilize various observational techniques to assess childrens’ learning and development and use the results to plan developmentally, culturally and linguistically appropriate curriculum.",
     "Describe and distinguish major theories of child development to support in planning appropriate early experiences for children."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -227,20 +229,6 @@
    "The description says the degree prepares students to teach in child care and development programs and to participate in society as child advocates; these were not recorded as careers because no job title or occupation is named explicitly. Reviewer may wish to check."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

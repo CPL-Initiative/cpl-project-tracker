@@ -97,11 +97,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
-    "fill": [
-     0.0,
-     2.0
-    ]
+    "within": true
    }
   },
   "repeated": {
@@ -146,7 +142,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Implement fundamental horticultural knowledge to identify and solve practical challenges associated with the Horticulture industry.",
     "Understand and apply fundamental knowledge related to identification, management, and production of horticultural crops.",
@@ -157,8 +153,7 @@
     "landscape industry",
     "landscape contractors",
     "landscape architects and designers"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -317,20 +312,6 @@
    "Careers taken from 'Students entering the landscape industry...' and 'Graduates are employed by nurseries, landscape contractors, landscape architects and designers, public and private agencies, or are self-employed'; nurseries and agencies are employers rather than occupations and were not recorded."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

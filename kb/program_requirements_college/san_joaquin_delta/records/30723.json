@@ -101,8 +101,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
-    "fill": null
+    "within": true
    }
   },
   "repeated": {
@@ -147,15 +146,14 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate an appreciation of the environment and safety for themselves, others, and our community.",
     "Demonstrate skills and knowledge in the area of their concentration.",
     "Reinforce their previous learning by applying knowledge of measurements, calculations, scientific concepts and principles to the working knowledge of sophisticated automotive equipment.",
     "Demonstrate skills that promote personal and social development. Students will engage with professional communities that require adherence to requirements and encourage leadership within these business organizations."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -319,20 +317,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 69"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 69"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

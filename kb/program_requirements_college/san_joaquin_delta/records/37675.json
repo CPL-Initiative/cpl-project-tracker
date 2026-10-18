@@ -99,7 +99,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
+    "transfer": true,
     "fill": [
      4.5,
      6.0
@@ -148,7 +148,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate real-world skills in animal husbandry in the areas of management, production, breeding, nutrition, health, safety and handling.",
     "Explain and demonstrate methods and ethical practices used in preparing animals for both the commercial and exhibitions markets.",
@@ -165,8 +165,7 @@
     "quality assurance specialist",
     "USDA meat inspector and grader",
     "animal pharmaceutical sales and service"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -302,20 +301,6 @@
    "ECON C2002 and CHEM 3A are not in the closed list and are marked catalog_addition."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

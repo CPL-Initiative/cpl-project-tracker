@@ -64,37 +64,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    59.5,
-    66.5
+    32.5,
+    32.5
    ],
    "stated": [
-    60.0,
-    60.0
+    32.5,
+    32.5
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     32.5,
-     32.5
+     59.5,
+     66.5
     ],
     "stated": [
-     32.5,
-     32.5
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
    }
   },
   "repeated": {
@@ -119,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -139,7 +138,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Operate and program industrial robots.",
     "Create a Ladder Logic Diagram to control a Programmable Logic Controller.",
@@ -149,8 +148,7 @@
     "Automation Technicians",
     "Industrial Mechanics",
     "Smart Systems Technicians"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -238,20 +236,6 @@
    "Catalog heading reads Summer 2026 - Summer 2027 College Catalog."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

@@ -68,37 +68,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    61.0,
-    61.0
+    27.0,
+    27.0
    ],
    "stated": [
-    60.0,
-    60.0
+    27.0,
+    27.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     27.0,
-     27.0
+     61.0,
+     61.0
     ],
     "stated": [
-     27.0,
-     27.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -123,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,15 +142,14 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate preparation for transfer to the CSU and major in Geology or a related science.",
     "Demonstrate basic scientific literacy in Geology and related disciplines.",
     "Apply the scientific method to solve problems in Geology.",
     "Integrate concepts from other disciplines (e.g., Mathematics, Chemistry) to solve problems in Geology."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -252,20 +250,6 @@
    "All core courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

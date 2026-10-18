@@ -107,8 +107,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
-    "fill": null
+    "within": true
    }
   },
   "repeated": {
@@ -153,15 +152,14 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Students will demonstrate skills required in performance techniques.",
     "Students will demonstrate a knowledge of theatre history.",
     "Students will successfully perform production stage crew duties for live theatrical productions.",
     "Students will successfully perform stagecraft procedures and techniques."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -360,20 +358,6 @@
    "No careers are named in the text."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

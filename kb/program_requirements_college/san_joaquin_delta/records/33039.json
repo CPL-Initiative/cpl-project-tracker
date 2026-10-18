@@ -95,7 +95,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
+    "transfer": true,
     "fill": [
      4.5,
      4.5
@@ -144,7 +144,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Measure physiological functions.",
     "Demonstrate knowledge of basic physiology and kinesiology, and the physical and psychological adaptations of exercise.",
@@ -161,8 +161,7 @@
     "research",
     "positions in private industry",
     "public service"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -305,20 +304,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

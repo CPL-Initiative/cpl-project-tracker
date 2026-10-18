@@ -74,37 +74,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    53.0,
-    60.0
+    26.0,
+    26.0
    ],
    "stated": [
-    60.0,
-    60.0
+    26.0,
+    26.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     26.0,
-     26.0
+     53.0,
+     60.0
     ],
     "stated": [
-     26.0,
-     26.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
    }
   },
   "repeated": {
@@ -129,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -149,7 +148,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Perform effectively in a bakery or pastry establishment by applying professional baking techniques, station organization, and teamwork.",
     "Demonstrate baking principles by applying correct mixing methods, dough handling skills, and professional pastry techniques.",
@@ -159,8 +158,7 @@
     "Produce consistent baked products by following standardized recipes and applying quality-control practices.",
     "Use culinary math for scaling, recipe adjustments, costing, yield, and inventory purposes."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -256,20 +254,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

@@ -95,11 +95,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
-    "fill": [
-     0.0,
-     7.0
-    ]
+    "within": true
    }
   },
   "repeated": {
@@ -144,7 +140,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Develop fundamental competencies in current music technology.",
     "Demonstrate proficient keyboard skills.",
@@ -153,8 +149,7 @@
     "Demonstrate proficient written theory skills.",
     "Demonstrate an understanding of the standards required to be a successful professional musician."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -319,20 +314,6 @@
    "The catalog page header reads 'Summer 2026 - Summer 2027 College Catalog'."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

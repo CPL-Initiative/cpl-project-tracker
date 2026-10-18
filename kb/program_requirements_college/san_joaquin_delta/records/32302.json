@@ -111,7 +111,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
+    "transfer": true,
     "fill": [
      7.0,
      7.0
@@ -160,7 +160,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate the skills required to perform at a proficient level in individual and ensemble acting exercises including: scene study, voice and movement, audition techniques.",
     "Demonstrate the skills required to perform at a proficient level in stagecraft techniques and practices including scenic, lighting, costume and sound design and production.",
@@ -168,8 +168,7 @@
     "Demonstrate the skills required to perform stage crew duties at the proficient level in public theatre presentation.",
     "Demonstrate a proficient knowledge of theatre history."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -359,20 +358,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

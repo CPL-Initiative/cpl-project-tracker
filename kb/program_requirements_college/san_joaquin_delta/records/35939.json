@@ -64,37 +64,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    50.5,
-    50.5
+    77.5,
+    84.5
    ],
    "stated": [
-    50.5,
-    50.5
+    71.5,
+    71.5
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 77.5-84.5; the catalog prints 71.5-71.5 for the degree"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     77.5,
-     84.5
+     50.5,
+     50.5
     ],
     "stated": [
-     71.5,
-     71.5
+     50.5,
+     50.5
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "minimum": true,
-    "fill": null
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -119,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -139,13 +139,12 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate knowledge of the theory and application of mathematics, chemistry and physics as applied in the engineering field.",
     "Demonstrate knowledge of the theory and application of the engineering design process."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -301,20 +300,6 @@
    "Catalog heading reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 71.5"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 71.5"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

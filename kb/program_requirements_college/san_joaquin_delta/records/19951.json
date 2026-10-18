@@ -94,40 +94,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    18.0,
-    18.0
+    45.0,
+    52.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 45.0-52.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     45.0,
-     52.0
+     18.0,
+     18.0
     ],
     "stated": [
-     60.0,
-     60.0
+     18.0,
+     18.0
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "minimum": true,
-    "fill": [
-     8.0,
-     15.0
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -152,7 +149,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -172,7 +169,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate the skills and knowledge needed for a comprehensive foundation in physical education.",
     "Identify the psychological aspects and dynamics of individual and team sports.",
@@ -188,8 +185,7 @@
     "sports psychology",
     "personal fitness training",
     "sports medicine"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -960,20 +956,6 @@
    "All courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

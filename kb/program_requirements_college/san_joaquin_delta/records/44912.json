@@ -69,37 +69,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    48.0,
-    48.0
+    75.0,
+    82.0
    ],
    "stated": [
-    48.0,
-    48.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 75.0-82.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     75.0,
-     82.0
+     48.0,
+     48.0
     ],
     "stated": [
-     60.0,
-     60.0
+     48.0,
+     48.0
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "minimum": true,
-    "fill": null
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -124,7 +124,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -144,7 +144,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate a comprehensive understanding of criminal, civil, and constitutional law, including the California Penal Code and landmark cases, and apply this knowledge to ensure lawful and fair enforcement practices that respect civil rights.",
     "Analyze and uphold ethical principles, demonstrating integrity, accountability, and fairness in all aspects of policing, decision-making, and interactions with the public, in alignment with the ethical standards mandated by AB 89.",
@@ -155,8 +155,7 @@
    ],
    "careers": [
     "Peace Officer"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -382,20 +381,6 @@
    "Career 'Peace Officer' taken from the program description ('their role as a Peace Officer')."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

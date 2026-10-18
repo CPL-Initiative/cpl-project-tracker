@@ -68,37 +68,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    63.5,
-    70.5
+    36.5,
+    36.5
    ],
    "stated": [
-    63.5,
-    63.5
+    36.5,
+    36.5
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     36.5,
-     36.5
+     63.5,
+     70.5
     ],
     "stated": [
-     36.5,
-     36.5
+     63.5,
+     63.5
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
    }
   },
   "repeated": {
@@ -123,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,7 +142,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate skills, knowledge, and training for employment as a Junior Network Administrator; ability to use the OSI model; and ability to logically solve and design a logical and physical topology.",
     "Demonstrate the confidence to work independently to setup, configure, and maintain a network, stand-alone or application network system.",
@@ -155,8 +154,7 @@
     "network system installer",
     "network system sales/marketing",
     "independent network services contractor"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -258,20 +256,6 @@
    "All courses must be completed with a grade of C or better."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 63.5"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 63.5"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

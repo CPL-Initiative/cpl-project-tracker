@@ -66,40 +66,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    23.0,
-    23.0
+    50.0,
+    57.0
    ],
    "stated": [
-    23.0,
-    23.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 50.0-57.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     50.0,
-     57.0
+     23.0,
+     23.0
     ],
     "stated": [
-     60.0,
-     60.0
+     23.0,
+     23.0
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "minimum": true,
-    "fill": [
-     3.0,
-     10.0
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -124,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -144,7 +141,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate a working knowledge of production techniques, including backstage, management, and costuming.",
     "Demonstrate an understanding and appreciation for the principal historical, theoretical, and critical approaches to dance as a performing art.",
@@ -152,8 +149,7 @@
     "Demonstrate the skills required to perform at a proficient level in a variety of dance styles including ballet, jazz, modern.",
     "Demonstrate a working knowledge of choreography (theoretical and empirical)."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -329,20 +325,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

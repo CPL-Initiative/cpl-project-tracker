@@ -104,8 +104,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
-    "fill": null
+    "within": true
    }
   },
   "repeated": {
@@ -150,15 +149,14 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate fulfillment of the lower-division requirements for any accredited baccalaureate institution.",
     "Apply the skills that are preparation for participation in the Basic Corrections Peace Officer Academy or entry level job skills in corrections."
    ],
    "careers": [
     "corrections"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -372,20 +370,6 @@
    "Program Learning Outcomes are printed for the program as a whole (single AS award on page)."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

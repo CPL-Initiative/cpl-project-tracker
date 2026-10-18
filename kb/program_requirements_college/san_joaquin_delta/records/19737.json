@@ -66,40 +66,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    18.0,
-    18.0
+    45.0,
+    52.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": [
+    27.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 45.0-52.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     45.0,
-     52.0
+     18.0,
+     18.0
     ],
     "stated": [
-     60.0,
-     60.0
+     18.0,
+     18.0
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     34.0
-    ],
-    "why": [],
-    "minimum": true,
-    "fill": [
-     8.0,
-     15.0
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -124,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -144,7 +141,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Create a plan for achievement of personal, educational and life goals and will demonstrate knowledge of personal financial concepts and apply it to the home setting.",
     "Use the Dietary Guidelines for Americans to create and critique a diet plan for individuals and the family and will evaluate nutritional claims using principles of the scientific method.",
@@ -153,8 +150,7 @@
     "Produce projects that demonstrate entry-level skills.",
     "Recognize effective strategies for developing meaningful relationships and communication within families."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -249,20 +245,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

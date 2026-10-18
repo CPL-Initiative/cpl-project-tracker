@@ -111,7 +111,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
+    "transfer": true,
     "fill": [
      7.0,
      7.0
@@ -160,15 +160,14 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Integrate concepts from other disciplines (e.g., Mathematics, Sociology, Geology) and apply them to issues in anthropology.",
     "Develop critical thinking skills and problem solving techniques for problems in anthropology.",
     "Transfer to the CSU system as anthropology majors.",
     "Collaborate and communicate within group settings to achieve common goals."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -354,20 +353,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

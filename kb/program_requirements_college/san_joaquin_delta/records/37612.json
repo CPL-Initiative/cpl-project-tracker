@@ -98,11 +98,7 @@
      34.0
     ],
     "why": [],
-    "minimum": true,
-    "fill": [
-     0.0,
-     6.0
-    ]
+    "within": true
    }
   },
   "repeated": {
@@ -147,7 +143,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate substantive legal knowledge and practical skills for positions as paralegals/legal assistants as a means of improving their own quality of life and the accessibility, quality and affordability of legal services for the people of the State of California.",
     "Demonstrate strong written and oral communication skills to produce legal documents, to ethically and effectively interact with others, and to complete tasks performed by paralegal/legal assistants.",
@@ -156,8 +152,7 @@
    "careers": [
     "Paralegal (Legal Assistant)",
     "legal support professional"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -307,20 +302,6 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

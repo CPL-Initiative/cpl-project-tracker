@@ -151,7 +151,7 @@
     "min": 34,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate best practices in the development and implementation of lesson plans and assessments, which are built on state standards.",
     "Develop a professional teaching portfolio to include papers on classroom management, classroom environment, and classroom procedures based on observations and one-on-one tutoring completed in local elementary classrooms.",
@@ -160,8 +160,7 @@
    ],
    "careers": [
     "elementary school teaching"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -360,20 +359,6 @@
    "Career entry 'elementary school teaching' is taken from the program description ('students are introduced to elementary school teaching'); reviewer may confirm it should count as a career field."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

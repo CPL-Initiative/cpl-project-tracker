@@ -135,7 +135,7 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate understanding of basic networking concepts and ability to utilize that knowledge to configure a basic networking device and solve basic network security problems.",
     "Demonstrate understanding of basic Operating System concepts and ability to utilize that knowledge to setup the Operating System of a computer system.",
@@ -148,8 +148,7 @@
     "programming",
     "web site development",
     "computer network maintenance"
-   ],
-   "degree_total_minimum": true
+   ]
   },
   "blocks": [
    {
@@ -406,20 +405,6 @@
    "Unit values in the catalog differ from the state file for CSP 25 and CSP 31B (catalog prints 4; state file stores 3) and for CS 50SS (catalog prints 1-4; state file stores 1)."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 60"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }

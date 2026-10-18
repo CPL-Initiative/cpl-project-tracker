@@ -60,37 +60,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    82.0,
-    89.0
+    55.0,
+    55.0
    ],
    "stated": [
-    82.0,
-    82.0
+    55.0,
+    55.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     55.0,
-     55.0
+     82.0,
+     89.0
     ],
     "stated": [
-     55.0,
-     55.0
+     82.0,
+     82.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
    }
   },
   "repeated": {
@@ -115,7 +114,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -135,13 +134,12 @@
     "min": 27,
     "max": 34
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Score 60 or higher on the AED test administered by Caterpillar and/or Association of Equipment Dealers.",
     "Use precision measuring tools to identify serviceable parts from worn parts."
    ],
-   "careers": [],
-   "degree_total_minimum": true
+   "careers": []
   },
   "blocks": [
    {
@@ -286,20 +284,6 @@
    "Catalog page header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39122702830,
- "read_run": 39116289105,
- "reconciled": [
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Minimum Degree Units Required: 82"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Minimum Degree Units Required: 82"
-  }
- ]
+ "extracted_run": 39116289105,
+ "read_run": "38631691511"
 }
