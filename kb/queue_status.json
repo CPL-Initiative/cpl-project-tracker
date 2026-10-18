@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-18T16:10:16Z",
+  "written_at": "2026-10-18T16:12:23Z",
   "session": 416,
   "moniker": "SkyCeanothus",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "session_417_handoff.md",
+  "handoff": "docs/session_417_handoff.md",
   "next_step": {
     "title": "Merge #2231 and run the first saving night, then Sierra's deploy",
     "text": "Merge the CER pull request once its test check passes, dispatch the procedures run as a preview and then for real, and dispatch the daily build so the 176 clean assignments fold. Then read the Sierra A/B, merge #2230, deploy and smoke. Then Open Asks Sheet 96 and the Commons mock-up's review."
