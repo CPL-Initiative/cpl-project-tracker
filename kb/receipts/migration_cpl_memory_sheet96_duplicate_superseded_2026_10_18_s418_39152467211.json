@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_sheet96_duplicate_superseded_2026-10-18_s418.sql",
+ "name": "cpl_memory_sheet96_duplicate_superseded_2026_10_18_s418",
+ "version": "20261018180602",
+ "sha256": "c6a71f61fa4030cae0bdb41f4136395112ec3a71e73c38db131ab6fb60ab2bac",
+ "run": "39152467211",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
