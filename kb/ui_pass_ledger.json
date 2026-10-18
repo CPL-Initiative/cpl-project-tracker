@@ -310,8 +310,8 @@
    "name": "Pipeline",
    "page": "index.html#pipeline",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-18",
+   "outcome": "S415, never audited before. Measured at 390 and 1440 in both themes: two status lines at 4.32:1 (3.45 to 3.78:1 in dark), the receipt numbers at 2.34 and 2.36:1 in dark, the queued phase card cream under light text in dark, both diagrams light in dark with white label boxes, the lifecycle diagram's labels about 9px on a desktop and unreadable at 390, its two boxes out of a keyboard's reach, 15px footer links, and Mermaid floating on @10. The CSS moved from both HTMLs into pipeline.js on tokens (no raw hex left); the diagrams take their colors from the tokens and repaint on a theme change; the lifecycle runs top to bottom; statuses are words; the boxes are named focusable regions; the counts carry the Unified Courses triage labels, adding the three rules that filter names and this tab did not (unit anomaly 4,179, cross-discipline over-merge 1,253, subject-code outlier 324); Mermaid pinned to 10.9.3. Clean in both themes, also measured once with Mermaid served locally. Left for checkpoint step 7: roadmap rows 1e-5d and 3 are not in CLAUDE.md section 11, and mid_lifecycle.md records re-mints only to 2026-09-04 while this tab names 2026-09-30."
   },
   {
    "id": "cobi:our-process",
