@@ -74,11 +74,12 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
   passes at both widths; UI pass ledger `cobi:commons`.
 - **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
   right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
-  and every count on the row opens it. The Common Course Reference list leaves the COBI menu through
+  and every count on the row opens it. The Common Course Reference list left the COBI menu at 20:51Z through
   `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
-  header; the session's SQL guard holds an UPDATE for Sam's approval in the `database` environment): `cobi_nav` row
-  `unified-courses` set `hidden`, the `skyview` launcher row kept. The tab and its list view stay reachable by deep
-  link (`#unified-courses`, `#unified-courses/list`) and the Admin tab can show the entry again.
+  header; the run's receipt `kb/receipts/migration_cobi_nav_unified_courses_hidden_2026_10_18_s417_39165056506.json`;
+  the session's SQL guard holds an UPDATE for that path): `cobi_nav` row `unified-courses` is `hidden`, the `skyview`
+  launcher row kept. The tab and its list view stay reachable by deep link (`#unified-courses`,
+  `#unified-courses/list`) and the Admin tab can show the entry again.
 - The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
   source `docs/visuals/2026-10-18-commons-mockup.html`).
 
