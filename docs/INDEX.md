@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 553 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 88 | [`catalog/lessons.md`](catalog/lessons.md) |
+| KB notes | 554 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 58 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 390 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1177** | |
+| Session handoffs | 391 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1180** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-18 (S419 SkyCottonwood, hand-opened): the Commons' step 1 landed (#2237: the Progress view drawn by the shared `commons_progress.js`, nothing changing on screen, the status file under `kb/status/`) and Sam approved the mock-up (19:08Z, to S417; version 4 collapses per row and all at once); Cañada's PDF picker reads the catalog's three heading shapes (#2241; the capture-only run moved 26 pages, eight of the eleven empty records onto their own headings); `docs/commons_lessons.md` and a KB note on the shared-view pattern added.
 - 2026-10-18 (S418 SkyMadrone, hand-opened): the first CER saving run (926 titles as 1,852 `kb_curation` rows under 7 cohorts) and the fold's first apply since July (1,102 assignments, 12 supersedes, 455 credential records, 18 held; 4,915 titles); Sheet 96 answered *keep* at 17:23Z; #2230 deployed after the third A/B (7s traced to variance: a place question never reaches the changed block); the Our Process UI pass (#2233) and S417's checkpoint (#2234) merged; the Commons mock-up at version 3 with its Exhibit pair re-measured; the stale S338 checkpoint PR closed.
 - 2026-10-18 (S417 SkyManzanita): #2231 merged and the CER lane's first saving run staged (preview 926 under 7; #2232 quotes the workflow's save options); the Commons mock-up revised on Fable's review with every figure re-measured; #2230's live-program gate fixed after the A/B lost 7l; the Our Process UI pass (#2233); Open Asks Sheet 96 drafted (CPLBrain#385); handoff 418 (SkyMadrone).
 - 2026-10-18 (S416 SkyCeanothus): Sheet 94's three CER rulings built (#2231: the per-item fold hold, the procedure save with its receipt and undo, the sign-off and Curate panel retired); Sierra reads complete records (#2230); the Commons row mock-up; lessons S416 in `cer_v2_redesign_lessons.md`.
@@ -129,7 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-18 (S414 SkyChamise, the routine): the Coursedog reader (Merced: 154 of 172 found, 153 loaded, 125 passing, $9.14); the slash rescoring by free reconcile runs (Glendale 14, De Anza 12, LA Trade Technical 5, Crafton Hills 2 replaced) and the `THART/S` reading; display build `7e4a2a9c5ba7`, 15,946 programs at 114 colleges (#2224); San Joaquin Delta's rescore held.
 - 2026-10-18 (S413 SkyPinyon, hand-opened): #2219 landed through #2220 with the wave's display build (`3a5ed5d7bcf3`, 15,770 programs at 113 colleges; Taft loaded 55); the classifier's follow-up pass (1,287 of 1,322 pre-filled, 396 held, $2.67); the CER's three views, Needs you, Procedures, Reference (#2221, the UI pass); the harvest reads a slashed course subject (#2222: Crafton Hills 76 of 79, build `3f93779f0115`, 36 misread records at three colleges named for a reread).
 - 2026-10-18 (S412 SkyJoshua, hand-opened): the CER procedures run (#2217: store, quality gate, `cer-classify`, nightly workflow; first pass $8.30, 1,116 of 1,322 pre-filled, 428 held), the Procedures lane (#2218), #2219 open; `182e810e207d` applied; Crafton Hills loaded (64); Rule 8's read reaches undated rows; exhibit lessons compacted to an archive; handoff 413 (SkyPinyon).
-- 2026-10-18 (S411 SkySotol, hand-opened): `d6cc1fde7ea3` applied; Hartnell read by its Coursedog code headings (8 loaded, 14 moved to their own heading, 4 wrong-page rows removed under a receipt); a kept record must come from its source's page; SmartCatalog by the generic road and vendor-host page reads; display build `182e810e207d` (15,651 programs at 111 colleges, #2216). Sam asked for the CER on procedures: new lane `cer-procedures`, the v3 mock-up, Open Asks Sheet 93. Handoff 412 (SkyJoshua).
-- 2026-10-18 (S410 SkyYucca, hand-opened): `ffd6929a4f90` applied; Cañada filed from Sam's catalog-files copies (Sheet 92 card 1) and Hartnell read through a PDF catalog step that names its file; 62 and 68 loaded unchecked, display build `d6cc1fde7ea3` (15,647 programs at 111 colleges, #2213); TMC Builder's UI pass (#2214); four `cpl_memory` rows; no decision sheet open. Handoff 411 (SkySotol).
-- 2026-10-17 (S409 SkyOcotillo, hand-opened): `f949e7c0ea35` applied; Cuesta loaded 181 unchecked and display build `ffd6929a4f90` (15,517 programs at 109 colleges, #2210); Exhibit Adoption's UI pass, its table and matrix measured for the first time (#2211); Cañada's 2026-2027 PDF found behind its robots.txt refusal (Open Asks Sheet 92); the Coursedog and SmartCatalog hosts read; handoff 410 (SkyYucca).
-- 2026-10-17 (S408 SkyAgave, hand-opened): the code finder reads a run of numbers after one subject (#2206, Glendale 190 to 258 found); the outcomes check reads a list number at a line's end (#2207, Ohlone 125 failures to 8); East LA's rows carry their year; Desert, Pasadena, Glendale, Grossmont, Ohlone and LA Southwest loaded unchecked; display build `f949e7c0ea35` (15,336 programs at 108 colleges, #2208); handoff 409 (SkyOcotillo).

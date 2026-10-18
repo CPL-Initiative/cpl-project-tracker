@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-553 document(s).
+554 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -206,6 +206,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A share target inside a bounded allocation is reached by solving one weight](../kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md) | methodology | published | 2026-10-14 | 2026-10-14 |
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A shared view borrows the host's primitives and owns the shape](../kb-notes/methodology-a-shared-view-borrows-the-host-s-primitives.md) | methodology | published | 2026-10-18 | 2026-10-18 |
 | [A sign-in form is no proof of a closed system, and a catalog host is no proof of a public outline](../kb-notes/methodology-a-sign-in-form-is-no-proof-of-a-closed-system.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |

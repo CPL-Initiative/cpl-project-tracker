@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-18T19:32:19Z",
+  "written_at": "2026-10-18T20:05:29Z",
   "session": 419,
   "moniker": "SkyCottonwood",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_419_handoff.md",
+  "handoff": "docs/session_420_handoff.md",
   "next_step": {
-    "title": "The harvest's four colleges, then each reference's Progress view from the shared module",
-    "text": "Cañada's 11 records placing no listed course (the extractor's text held a sibling program's section), Merced's 18 unfound, Taft's 21 and Delta's 50 records failing a machine check. Then the Commons step 2: each common reference's Progress view drawn from commons_progress.js, with its definition of complete on a card for Sam. The nightly cer-procedures run of 07:47Z is the first saving night with no one watching; read its receipt and the morning fold's applied.json."
+    "title": "Extract Cañada's 26 moved pages, then the harvest's other colleges and the Commons step 2",
+    "text": "The reader now reads Cañada's three heading shapes and the capture-only run moved 26 programs' pages, eight of the eleven empty records onto their own headings: dispatch the extraction (step read, extract 1, about two dollars under Sam's standing go), then reread, load and the display build on main. Then Merced's 18 unfound, Taft's 21 and San Joaquin Delta's 50 records failing a machine check, and the Commons step 2, each common reference's Progress view drawn from the shared module with its definition of complete on a card for Sam. The nightly cer-procedures run of 07:47Z is the first saving night with no one watching; read its receipt and the morning fold."
   },
   "calls": [],
   "notes": {
@@ -95,6 +95,10 @@
     {
       "at": "2026-10-18T19:28:00Z",
       "text": "The Progress view is drawn by commons_progress.js, the Commons' shared module, with nothing changing on screen; the status file moved to kb/status/program-requirements.json."
+    },
+    {
+      "at": "2026-10-18T19:55:00Z",
+      "text": "Cañada: the PDF picker reads the award's letters before a title, a title wrapped onto the next line, and a heading page whose list opens the next page; the capture-only run moved 26 programs' pages, eight of the eleven empty records onto their own headings. The extraction waits."
     }
   ],
   "headline": [

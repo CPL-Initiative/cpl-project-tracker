@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 553,
+   "count": 554,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3706,6 +3706,27 @@
      "title": "A shared credential can only scope to a surface that is exclusive to its group",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-10-18",
+     "governs": [
+      "commons_progress.js",
+      "program_requirements.js",
+      "tests/commons_progress.test.js",
+      "tests/program_requirements.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-shared-view-borrows-the-host-s-primitives.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "commons",
+      "front-end",
+      "program-requirements",
+      "refactoring"
+     ],
+     "title": "A shared view borrows the host's primitives and owns the shape",
+     "type": "methodology",
+     "updated": "2026-10-18"
     },
     {
      "created": "2026-10-12",
@@ -11063,7 +11084,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 88,
+   "count": 89,
    "docs": [
     {
      "created": "2026-08-14",
@@ -13011,6 +13032,29 @@
      "title": "The checkpoint's UI pass \u2014 lessons",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-18",
+     "governs": [
+      "commons_progress.js",
+      "program_requirements.js",
+      "tests/commons_progress.test.js",
+      "kb/status/program-requirements.json",
+      "scripts/queue_status.py"
+     ],
+     "path": "docs/commons_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "commons",
+      "program-requirements",
+      "cer-procedures",
+      "skyview",
+      "common-cr-reference"
+     ],
+     "title": "The Commons \u2014 lessons",
+     "type": null,
+     "updated": "2026-10-18"
     },
     {
      "created": "2026-10-06",
@@ -15686,8 +15730,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 390,
+   "count": 391,
    "docs": [
+    {
+     "created": "2026-10-18",
+     "governs": [],
+     "n": 420,
+     "path": "docs/session_420_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "program-requirements-harvest",
+      "cer-procedures",
+      "ui-pass"
+     ],
+     "title": "Session 420 handoff: the Commons' step 1 landed and Sam approved the mock-up, Ca\u00f1ada's picker reads the catalog's three heading shapes, the extraction of its 26 moved pages waits",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22411,5 +22472,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1177
+ "total": 1180
 }

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-390 document(s).
+391 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 420 | [Session 420 handoff: the Commons' step 1 landed and Sam approved the mock-up, Cañada's picker reads the catalog's three heading shapes, the extraction of its 26 moved pages waits](../session_420_handoff.md) | 2026-10-18 |
 | 419 | [Session 419 handoff: the first CER saving run and fold landed, Sheet 96 answered, Sierra's complete-records read live, the Commons mock-up v3 waiting on Sam](../session_419_handoff.md) | 2026-10-18 |
 | 418 | [Session 418 handoff: #2231 live, the first CER saving run staged behind a workflow fix, the Commons mock-up revised, Sheet 96 drafted](../session_418_handoff.md) | 2026-10-18 |
 | 417 | [Session 417 handoff: Sheet 94's CER rulings built (#2231), Sierra reads complete records (#2230), the Commons row mock-up](../session_417_handoff.md) | 2026-10-18 |

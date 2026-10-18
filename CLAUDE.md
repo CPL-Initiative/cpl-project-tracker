@@ -720,9 +720,8 @@ build-phase history (the phase narrative, counts, artifact locations).
 
 ## 11. M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway
 
-M-IDs are not just identity surrogates — they're staging points in a strategic
-pipeline toward ASCCC C-ID approval. The dual-score auditor at
-`kb/_row_audit.py` and any future curation work depend on this framing.
+M-IDs are staging points in a pipeline toward ASCCC C-ID approval; the auditor at
+`kb/_row_audit.py` depends on this framing.
 
 **Lifecycle/MC/CIDx prose + the Session-25 strategic roadmap and archived
 session narratives moved to
@@ -752,39 +751,39 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 96](https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui), answered 17:23Z, nothing open; Sheet 95 answered 14:43Z). Answering
+> (latest: [Open Asks Sheet 96](https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui), answered 2026-10-18, nothing open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
 |---|---|---|
-| 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (build when ≥5 clusters exist) |
+| 1b (3/3) | Curate-write Repair-from-members action | parked (build when ≥5 clusters exist) |
 | 1c | More audit rules in `kb/_row_audit.py` — **9 of 10 landed**; `cluster_title_drift` still queued. | in progress — [lane state](docs/reference/lanes/audit-rules.md) |
-| **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own top-level tab if the page gets dense (Sam's prior preference: one page with two sections). | parked unless curator usage signals demand |
-| **Excel→Supabase Phase 2-4** | Retire the master `.xlsx`; Supabase is the system of record. | 🔨 in progress · open work — [lane state](docs/reference/lanes/excel-to-supabase.md) |
+| **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own tab if the page gets dense (Sam's preference: one page, two sections). | parked unless curator usage signals demand |
+| **Excel→Supabase Phase 2-4** | Retire the master `.xlsx`; Supabase is the record. | 🔨 in progress · open work — [lane state](docs/reference/lanes/excel-to-supabase.md) |
 | **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ live · open work — [lane state](docs/reference/lanes/nc-learning-partners.md) |
 | **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`. | ✅ live · open work — [lane state](docs/reference/lanes/map-users-student-contact.md) |
 | **Partner crosswalks** | "Which of the occupations we train for can our students already get college credit for, and where?" — plus the college-facing half: "and what can THIS college carry?" | ✅ live · open work — [lane state](docs/reference/lanes/partner-crosswalks.md) |
 | **Governance & team enablement** | Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam. | ✅ live · open work — [lane state](docs/reference/lanes/governance-team-enablement.md) |
 | **Sierra retrieval + corpus** | Sierra answers credential questions off the CURATED layer, not the raw freehand titles colleges typed into MAP. | ✅ live · open work — [lane state](docs/reference/lanes/sierra-retrieval-corpus.md) |
 | **Sierra's page redesign** | A cleaner public Sierra after america.gov: First Light's paintings, the audience chips, one conversation. | ✅ live · open work — [lane state](docs/reference/lanes/sierra-page-redesign.md) |
-| **Sierra: false absences + the statewide flag** | Why Sierra says "none" when there is plenty, why she disagreed with the Fact Sheet, and why she reported three colleges out of nine. | ✅ live · open work — [lane state](docs/reference/lanes/sierra-false-absences.md) |
+| **Sierra: false absences + the statewide flag** | Why Sierra says "none" when there is plenty, and why she disagreed with the Fact Sheet. | ✅ live · open work — [lane state](docs/reference/lanes/sierra-false-absences.md) |
 | **Local course ↔ CR alignment** | "Which of MY courses should I articulate against this credit recommendation, and how did other colleges do it?" — so faculty don't guess. | ✅ live · open work — [lane state](docs/reference/lanes/local-course-cr-alignment.md) |
 | **Common CR Reference** | A canonical vocabulary of credit recommendations — what the CER did for freehand credential titles, for the freehand recommendation text. | ✅ live · open work — [lane state](docs/reference/lanes/common-cr-reference.md) |
 | **Military (ACE) CR Reference** | The same vocabulary question for the 98% of MAP's CR rows from ACE-reviewed military training. | ✅ live · open work — [lane state](docs/reference/lanes/military-ace-cr-reference.md) |
 | **College CR evidence ("we approved it, but we have no CR")** | A college names courses it will award for a CPL type but holds no credit recommendation — and MAP needs one before an articulation can exist. | ✅ live · open work — [lane state](docs/reference/lanes/college-cr-evidence.md) |
 | **Disposition grain / student detail** | What a college has ACTED on, not just what credit exists. | ✅ live — [lane state](docs/reference/lanes/disposition-grain-student-detail.md) |
 | **CPL clean-up worklist** | What to fix in the CPL data, in what order, and who fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/cpl-cleanup-worklist.md) |
-| **$50k / ESS 25-82 tab** | Turn the three bare outcome checkmarks into where-you-are / where-you-should-be / how-to-get-there, so colleges get unstuck and award real CPL in MAP. | 🔨 in progress · open work — [lane state](docs/reference/lanes/ess-25-82-tab.md) |
+| **$50k / ESS 25-82 tab** | Turn the three outcome checkmarks into where-you-are, where-you-should-be and how-to-get-there, so colleges award real CPL in MAP. | 🔨 in progress · open work — [lane state](docs/reference/lanes/ess-25-82-tab.md) |
 | **Implementation Funding tab / the $35M model** | The priorities, their shares and factors, what counts toward each, and the college-by-college allocation. | ✅ live · open work — [lane state](docs/reference/lanes/implementation-funding.md) |
 | **My College (college action page) / MAP-team queue** | One page where a college picks itself and gets its stats, its opportunities and its to-dos; the same engine runs the MAP team's backlog. | ✅ live · open work — [lane state](docs/reference/lanes/my-college-action-page.md) |
 | **College & district identity** | Every college and district name variant resolving to MAP's `college_id` and the CCCCO MIS district code. | ✅ live · open work — [lane state](docs/reference/lanes/college-district-identity.md) |
-| **Admin tab / the side menu as data** | One place to manage the COBI side menu — order, grouping, naming, which sites show what, who sees it — beside what actually protects each tab. | ✅ live · open work — [lane state](docs/reference/lanes/admin-tab-side-menu.md) |
+| **Admin tab / the side menu as data** | One place to manage the COBI side menu (order, grouping, naming, who sees what) beside what protects each tab. | ✅ live · open work — [lane state](docs/reference/lanes/admin-tab-side-menu.md) |
 | **Noncredit CIP categories** | Which of the CO's ten noncredit CIP categories a program belongs to — and what that means for CDCP eligibility and funding. | 🔨 in progress · open work — [lane state](docs/reference/lanes/noncredit-cip-categories.md) |
 | **Reviewer session lifetime & scope** | What "signed in" means, how long it lasts, and which browser tab has it. | ✅ live · open work — [lane state](docs/reference/lanes/reviewer-session-lifetime.md) |
 | **Org & phrase scope / auth model** | Which sites exist, which phrase opens which, and whether shared phrases survive at all. | 🔨 in progress · open work — [lane state](docs/reference/lanes/org-phrase-scope-auth.md) |
-| **CER procedures / the simpler CER tab** | Sam adds a rule in plain words; the nightly run applies the rules, then the classifier; Sam sees only the exceptions. | ✅ live · open work (the first saving run and the first fold since July landed 2026-10-18) — [lane state](docs/reference/lanes/cer-procedures.md) |
+| **CER procedures / the simpler CER tab** | Sam adds a rule in plain words; the nightly run applies the rules, then the classifier; Sam sees only the exceptions. | ✅ live · open work — [lane state](docs/reference/lanes/cer-procedures.md) |
 | **EACR — Exhibit & CR Adoption** | One place to see every exhibit, its credit recommendations, and the colleges that could adopt it. | ✅ live · open work — [lane state](docs/reference/lanes/eacr-exhibit-cr-adoption.md) |
-| **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
+| **GR register / CO policy & regulation review** | Every CO priority area's regulatory and Ed. Code revisions under consideration, with the artifacts informing them. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
 | **Public/private repo split** | Separate the public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI and the methodology. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
 | **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports, load them, keep them fresh. | ✅ live · open work — [lane state](docs/reference/lanes/map-custom-reports.md) |
 | **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet. | 🔨 in progress · open work — [lane state](docs/reference/lanes/discipline-crosslist.md) |
@@ -794,17 +793,14 @@ stays here.
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · 114 colleges hold records; the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
-| **The Commons** | One tracking system for every common reference (Program Requirements, Exhibit, Course, CR), aligned dashes, and a Commons dash ordered by priority and completion. | 🔨 mock-up approved by Sam (2026-10-18; v4 collapses per row and all at once); step 1, the shared Progress module, landed (#2237); next, each reference's Progress view — [lane state](docs/reference/lanes/commons.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | 🔨 mock-up approved (Sam, 2026-10-18); step 1 landed (#2237); next, each reference's Progress view — [lane state](docs/reference/lanes/commons.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
 | 6 | CIDx submission automation (the eventual goal) | parked (the destination) |
-| 7 | M-ID → CID substitution workflow on approval | parked (governed by Rule 7 once re-locked at faculty publication) |
+| 7 | M-ID → CID substitution workflow on approval | parked (Rule 7 governs once re-locked) |
 
-The auditor is the foundational instrument for the whole pipeline: every phase
-upstream of CIDx submission produces a higher trust score and graduates rows
-from one readiness tier to the next.
 
 ## Troubleshooting
 
