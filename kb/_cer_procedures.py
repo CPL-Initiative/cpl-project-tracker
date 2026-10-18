@@ -348,11 +348,19 @@ def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post):
         for ch, got in pool.map(one, chunks):
             calls.append({"titles": len(ch), "error": got.get("error"),
                           "usage": got.get("usage"), "model": got.get("model"), "ms": got.get("ms")})
-            asked = {r["raw_title"] for r in ch}
+            # The model hands back a title with its non-breaking spaces as plain
+            # ones (105 of 1,118 on the first pass), so an answer is matched on
+            # the title's spacing-free form and keyed by the title as asked.
+            asked = {_spacing_key(r["raw_title"]): r["raw_title"] for r in ch}
             for rec in got.get("records") or []:
-                if rec.get("raw_title") in asked:
-                    out[rec["raw_title"]] = rec
+                raw = asked.get(_spacing_key(rec.get("raw_title")))
+                if raw is not None:
+                    out[raw] = dict(rec, raw_title=raw)
     return out, calls
+
+
+def _spacing_key(t):
+    return " ".join((t or "").replace("\xa0", " ").split())
 
 
 def cost_usd(calls):

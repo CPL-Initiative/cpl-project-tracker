@@ -153,6 +153,18 @@ check("a failed call is retried once", calls[0] == 15 and len(calls) == 3)
 check("every asked title is answered after the retry", len(got) == 20)
 check("an answer for a title nobody asked about is dropped", "never asked" not in got)
 
+
+def nbsp_back(body, key):
+    # The model returns "ATEC 24\xa0)" as "ATEC 24 )" (105 titles on the first pass).
+    return {"records": [dict(rec, raw_title=" ".join(r["raw_title"].replace("\xa0", " ").split()))
+                        for r in body["rows"]]}
+
+
+nb = "Advanced Engine Performance - Credit by Exam (ATEC 24\xa0)"
+got2, _ = cp.classify([{"raw_title": nb}], "rules", "key", chunk=15, workers=1, call=nbsp_back)
+check("an answer whose spacing the model normalized is kept, keyed by the title as asked",
+      list(got2) == [nb] and got2[nb]["raw_title"] == nb, got2)
+
 # ── the whole run, against the committed queue ───────────────────────────────
 wrote = []
 real_open = open
