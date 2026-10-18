@@ -283,6 +283,13 @@ CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?
 # Fullerton, C at Cypress. The net read HORT 001 and found none of Nursery Management's 14
 # listed courses on its own page; 312 of 326 Fullerton programs went unfound (run 38670930336).
 CODE_TOKEN_3 = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})[ \u00a0]([A-Z])\b")
+# A subject may carry a slash, as the state's file stores it: Crafton Hills' noncredit CNA/N 621
+# and its Kinesiology KIN/D 130A. The net read N 621 and turned ten noncredit programs away from
+# their own pages, each placing every listed course (capture-only run 39091435061, S413); the
+# exact test already reads the slash (SUBJ_JOIN, Glendale's CS/IS, S408). The state's file
+# sometimes drops the slash (Foundations in English Language's ESLN601, Home Health Aide's
+# CNAN626, where the page prints ESL/N 601), so the net reads both forms.
+CODE_TOKEN_4 = re.compile(r"\b([A-Z][A-Z&]{0,7}/[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
 
 
 def page_codes(text: str) -> set[str]:
@@ -293,7 +300,9 @@ def page_codes(text: str) -> set[str]:
     t = text or ""
     return ({P.norm_code(a + " " + b) for a, b in CODE_TOKEN.findall(t)} |
             {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)} |
-            {P.norm_code(a + " " + b + c) for a, b, c in CODE_TOKEN_3.findall(t)})
+            {P.norm_code(a + " " + b + c) for a, b, c in CODE_TOKEN_3.findall(t)} |
+            {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_4.findall(t)} |
+            {P.norm_code(a.replace("/", "") + " " + b) for a, b in CODE_TOKEN_4.findall(t)})
 
 
 def page_net(got: dict) -> set[str]:

@@ -177,6 +177,21 @@ def alternatives(course: dict) -> list[dict]:
     return out
 
 
+def listed_key(code: str | None, listed: dict) -> str:
+    """A placed code's key in the closed list: its normal form, or the listed code it
+    names once a subject's slash is set aside. The state's file stores some slashed
+    subjects without the slash (Crafton Hills' CNAN633, which its page prints CNA/N 633,
+    S413), and the two would read as one course missing and another invented."""
+    k = norm_code(code)
+    if k in listed or "/" not in k:
+        return k
+    bare = k.replace("/", "")
+    for lk in listed:
+        if lk.replace("/", "") == bare:
+            return lk
+    return k
+
+
 def placed_codes(record: dict) -> list[tuple[str, dict, dict]]:
     """(normalized code, the entry naming it, block) for every code the record
     places, alternatives included. The entry carries that code's own
@@ -204,7 +219,7 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
         if own:
             vals += own
         elif not hours:
-            u = listed.get(norm_code(entry.get("code")))
+            u = listed.get(listed_key(entry.get("code"), listed))
             if u is not None:
                 vals.append(u)
     if not vals:
@@ -527,7 +542,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         k = norm_code(c.get("code"))
         if k:
             listed[k] = _num(c.get("units"))
-    placed = placed_codes(record)
+    placed = [(listed_key(e.get("code"), listed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}
 
     missing = sorted(k for k in listed if k not in placed_keys)

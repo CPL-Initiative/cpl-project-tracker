@@ -1374,12 +1374,131 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.94,
+  "codes_found": [
+   "ANAT150",
+   "ANAT151",
+   "CHEM150",
+   "DANCE101",
+   "DANCE102",
+   "DANCE103",
+   "DANCE104",
+   "DANCE130A",
+   "DANCE130B",
+   "DANCE143A",
+   "DANCE143B",
+   "DANCE163A",
+   "DANCE163B",
+   "DANCE163C",
+   "DANCE163D",
+   "HEALTH102",
+   "KIN/D130A",
+   "KIN/D130B",
+   "KIN/D143A",
+   "KIN/D143B",
+   "KIN/D163A",
+   "KIN/D163B",
+   "KIN/D163C",
+   "KIN/D163D",
+   "KIN/D167A",
+   "KIN/F105A",
+   "KIN/F105B",
+   "KIN/F105C",
+   "KIN/F105D",
+   "KIN/F106A",
+   "KIN/F106B",
+   "KIN/F106C",
+   "KIN/F106D",
+   "KIN/F107A",
+   "KIN/F107B",
+   "KIN/F108A",
+   "KIN/F108B",
+   "KIN/F108C",
+   "KIN/F109A",
+   "KIN/F109B",
+   "KIN/F112A",
+   "KIN/F112B",
+   "KIN/F127A",
+   "KIN/F127B",
+   "KIN/F127C",
+   "KIN/F127D",
+   "KIN/F153A",
+   "KIN/F166A",
+   "KIN/F166B",
+   "KIN/F168A",
+   "KIN/F168B",
+   "KIN/F168C",
+   "KIN/F168D",
+   "KIN/F190A",
+   "KIN/F190B",
+   "KIN/F190C",
+   "KIN/F190D",
+   "KIN/F191A",
+   "KIN/F191B",
+   "KIN/S111A",
+   "KIN/S111B",
+   "KIN/S116A",
+   "KIN/S116B",
+   "KIN/S116C",
+   "KIN/S116D",
+   "KIN/S120A",
+   "KIN/S120B",
+   "KIN/S120C",
+   "KIN/S120D",
+   "KIN/S133A",
+   "KIN/S133B",
+   "KIN/S133C",
+   "KIN/S133D",
+   "KIN/S138A",
+   "KIN/S138B",
+   "KIN/S148A",
+   "KIN/S148B",
+   "KIN/S148C",
+   "KIN/S148D",
+   "KIN/S159A",
+   "KIN/S159B",
+   "KIN/S159C",
+   "KIN/S159D",
+   "KIN/S160A",
+   "KIN/S164A",
+   "KIN/S164B",
+   "KIN/S164C",
+   "KIN/S164D",
+   "KIN/S179A",
+   "KIN/S179B",
+   "KIN/S193A",
+   "KIN/S193B",
+   "KIN/S193C",
+   "KIN/S193D",
+   "KIN/X190AX3",
+   "KIN/X190BX3",
+   "KIN/X190CX3",
+   "KIN/X191AX3",
+   "KIN/X191BX3",
+   "KIN/X191CX3",
+   "KIN200",
+   "KIN231",
+   "PHYSIC110",
+   "PHYSIC250",
+   "PSYC120",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/kinesiology-kin/kinesiology-associate-in-arts-for-transfer-degree",
+   "title": "Crafton Hills College - Associate in Arts in Kinesiology for Transfer (AA-T) Degree",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 116,
-  "text_chars": 0
+  "text_chars": 8123
  },
  {
   "control_number": "33106",
@@ -1732,12 +1851,28 @@
   "title": "Workforce Literacy Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL/N607",
+   "MATH/N605",
+   "WFP/N601",
+   "WFP/N602",
+   "WFP/N603",
+   "WFP/N604"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/workforce-literacy-skills",
+   "title": "Crafton Hills College - Workforce Literacy Skills",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2642
  },
  {
   "control_number": "35849",
@@ -1839,24 +1974,53 @@
   "title": "Foundations in English Language and Communication",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLN601",
+   "ESLN602",
+   "ESLN603",
+   "ESLN604"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
+   "title": "Crafton Hills College - Foundations in English Language and Communication",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2451
  },
  {
   "control_number": "38464",
   "title": "Basic Skills in Math Elementary Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH/N600",
+   "MATH/N601",
+   "MATH/N602",
+   "MATH/N603",
+   "MATH/N604"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-math-elementary-level",
+   "title": "Crafton Hills College - Basic Skills in Math Elementary Level",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2597
  },
  {
   "control_number": "38495",
@@ -2342,12 +2506,25 @@
   "title": "Certified Nursing Assistant",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNA/N621",
+   "CNA/N622",
+   "CNA/N623"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/certified-nursing-assistant",
+   "title": "Crafton Hills College - Certified Nursing Assistant",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3129
  },
  {
   "control_number": "43313",
@@ -2434,48 +2611,100 @@
   "title": "Acute Care Nursing Assistant",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNA/N631",
+   "CNA/N632",
+   "CNAN633"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/acute-care-nursing-assistant",
+   "title": "Crafton Hills College - Acute Care Nursing Assistant",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2576
  },
  {
   "control_number": "43611",
   "title": "Home Health Aide",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNA/N624",
+   "CNA/N625",
+   "CNAN626"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/home-health-aide",
+   "title": "Crafton Hills College - Home Health Aide",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2918
  },
  {
   "control_number": "44042",
   "title": "Essential ASL and Deaf Culture for Customer Service Professionals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL/N601",
+   "ASL/N602",
+   "ASL/N603"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/essential-asl-and-deaf-culture-for-customer-service-professionals",
+   "title": "Crafton Hills College - Essential ASL and Deaf Culture for Customer Service Professionals",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2857
  },
  {
   "control_number": "44088",
   "title": "Mathematics for Medical Professionals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH/N611",
+   "MATH/N612",
+   "MATH/N613"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/mathematics-for-medical-professionals",
+   "title": "Crafton Hills College - Mathematics for Medical Professionals",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2438
  },
  {
   "control_number": "44341",
@@ -2511,12 +2740,30 @@
   "title": "Technical Theatre",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THART100",
+   "THARTS122",
+   "THARTS123",
+   "THARTS129",
+   "THARTS134X4",
+   "THARTS145",
+   "THARTS164",
+   "THARTS165"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
+   "title": "Crafton Hills College - Technical Theatre Certificate of Achievement",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2776
  },
  {
   "control_number": "44736",
@@ -2561,12 +2808,24 @@
   "title": "Phlebotomy Technician",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNA/N650",
+   "CNA/N651"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/phlebotomy-technician",
+   "title": "Crafton Hills College - Phlebotomy Technician",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2474
  },
  {
   "control_number": "44826",
@@ -2599,12 +2858,25 @@
   "title": "Personal Trainer",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSE/N600",
+   "KIN/N950",
+   "KIN/N960"
+  ],
+  "source": {
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/personal-trainer",
+   "title": "Crafton Hills College - Personal Trainer",
+   "h1": "2026-2027 Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2610
  },
  {
   "control_number": "45714",

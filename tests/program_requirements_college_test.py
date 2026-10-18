@@ -327,6 +327,12 @@ check({"COS60A1", "COS60B3", "BAK80", "THE30"} <= C.page_codes("COS-60A1 Cosmeto
       "the code net reads a number ending in letters and digits (COS 60A1), as the exact test does")
 check({"HORT1F", "HORT164F"} <= C.page_codes("HORT 001 F · Principles of Horticulture I\t4 · HORT 164 F\nPlant ID"),
       "the code net reads NOCCCD's campus letter written as its own word (HORT 001 F), as the state's file stores it")
+check({P.norm_code(c) for c in ("CNA/N 621", "KIN/D 130A", "MATH/N 600")}
+      <= C.page_codes("CNA/N 621 Nursing Assistant Theory\nKIN/D 130A Jazz Dance I\tMATH/N 600"),
+      "the code net reads a subject with a slash (CNA/N 621), as the state's file stores it: %r"
+      % sorted(C.page_codes("CNA/N 621 Nursing Assistant Theory")))
+check({"ESLN601", "CNAN626"} <= C.page_codes("ESL/N 601 Beginning ESL\nCNA/N 626 Home Health Aide Clinical"),
+      "the code net also reads the slash-free form the state's file sometimes stores (ESLN601 for ESL/N 601)")
 
 # ── curriQunet: the catalog's own JSON (S357) ──────────────────────────────
 print("curriQunet")

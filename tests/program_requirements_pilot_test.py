@@ -93,6 +93,16 @@ for code, text in REFUSE:
 
 check(P.norm_code("IWAP 40.1") == P.norm_code("IWAP 40.10") == "IWAP401",
       "IWAP 40.1 and IWAP 40.10 are one course")
+# The state's file stores some slashed subjects without the slash (Crafton Hills' CNAN633,
+# printed CNA/N 633): the scorer reads the two as one course, neither missing nor invented (S413).
+_cna = S.score({"program": {"total_units": 128, "measure": "hours"}, "blocks": [{"rule": "all", "courses": [
+    {"code": "CNA/N 621", "units": 40}, {"code": "CNA/N 622", "units": 40}, {"code": "CNA/N 633", "units": 48}]}]},
+    [{"code": "CNA/N 621", "units": None}, {"code": "CNA/N 622", "units": None}, {"code": "CNAN633", "units": None}])
+check(_cna["coverage"]["missing"] == [] and _cna["invented"]["codes"] == [],
+      "a slashed code on the page is the slash-free code the state's file lists: %r %r"
+      % (_cna["coverage"]["missing"], _cna["invented"]["codes"]))
+check(S.listed_key("CNA/N 633", {"CNAN633": None}) == "CNAN633" and S.listed_key("KIN/D 130A", {}) == "KIN/D130A",
+      "listed_key maps a slashed code to the listed slash-free one, and leaves an unlisted code in its own form")
 check(P.norm_code("REALES007") == P.norm_code("REAL ES 7"),
       "REALES007 and REAL ES 7 are one course")
 check(P.norm_code("IWAP 40.5") != P.norm_code("IWAP 40.05"),
