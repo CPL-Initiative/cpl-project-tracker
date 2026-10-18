@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Guard for kb/queue_status.json and scripts/queue_status.py (S343).
+"""Guard for kb/status/program-requirements.json and scripts/queue_status.py (S343; the file was
+kb/queue_status.json until S419 moved every common reference's status file under kb/status/).
 
 The Progress view on the Program Requirements tab reads the harvest's tables live and
 takes what no browser read can know from this file: the session that last worked the

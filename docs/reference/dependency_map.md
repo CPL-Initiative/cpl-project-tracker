@@ -355,6 +355,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
+| `commons_progress.js` | pages: `CPL_Dashboard.html` | — |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
@@ -625,7 +626,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/projects_snapshot.json` | scripts: `kb/_load_projects.py`, `nudges/build_nudges.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
-| `kb/queue_status.json` | tabs: `program-requirements` · scripts: `scripts/queue_status.py` | — |
 | `kb/receipts` | none found | committed by: `course-outcomes-load.yml`, `program-requirements-college.yml`, `supabase-migrate.yml` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
@@ -669,6 +669,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/row_audit/latest.json` | tabs: `pipeline`, `unified-courses` · workflows: `overmerge-apply.yml`, `phase-1e-apply.yml` | committed by: `daily-dashboard.yml` |
 | `kb/sjcoe_occupation_scope_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
+| `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `scripts/queue_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
 | `kb/subj4_dryrun` | none found | committed by: `phase-1e-apply.yml`, `phase-1e-sync.yml` |
@@ -1125,5 +1126,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 658 file
-datasets · 181 external services · 446 consumers · 54 workflows · 38 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 659 file
+datasets · 181 external services · 447 consumers · 54 workflows · 38 tabs.

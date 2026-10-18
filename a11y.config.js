@@ -217,7 +217,7 @@ async function seedCollegeSelect(page) {
 
 // Seeds the Program Requirements tab's Progress view with the shape of
 // 2026-10-18 (S415; first seeded S343). The sweep aborts every request off the
-// origin, so the tab's Supabase reads fail; the status file (kb/queue_status.json)
+// origin, so the tab's Supabase reads fail; the status file (kb/status/program-requirements.json)
 // is served and read for real.
 /* The docked Sierra, full screen with a conversation (S349). Seeded through
    the real path: the reader's role is confirmed on the chip, only the chat

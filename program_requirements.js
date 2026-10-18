@@ -13,10 +13,11 @@
  *                monitor the progress like the attached"): a headline pairing COCI's
  *                active programs with the complete ones, whose record passes the
  *                machine checks (Sam, 2026-10-08, for the Chancellor; S415 for
- *                complete; headlineBand below), five milestones with You are
- *                here, the eight parts, and, from kb/queue_status.json (the last
- *                checkpoint's word), the next step, the calls waiting on Sam and what
- *                changed. Definitions in MILESTONES and PARTS below.
+ *                complete; HEADLINE below), five milestones with You are
+ *                here, the eight parts, and, from kb/status/program-requirements.json
+ *                (the last checkpoint's word), the next step, the calls waiting on Sam
+ *                and what changed. Definitions in MILESTONES and PARTS below; the view
+ *                itself is drawn by commons_progress.js, the Commons' shared module (S419).
  *   Catalogs     program_source_registry, one row per college: where its catalog is,
  *                the year it names, the platform, its published program map.
  *   Records      program_requirement_records: each program read from its catalog, the
@@ -112,11 +113,12 @@
   /* A filter that lists at most this many colleges reads their records at once; a wider one
      reads each college when its section opens, so a region never pulls 20 MB unasked. */
   var EAGER_COLLEGES = 4;
-  /* Written by every checkpoint (.claude/commands/checkpoint.md, scripts/queue_status.py):
-     what no browser read can know. anon reads every record (Sam, Open Asks Sheet 67) but has
-     no grant on program_source_registry_history, so the day's changes, and the unchecked list
-     the Progress view counts, come from here. */
-  var QUEUE_URL = "kb/queue_status.json";
+  /* This project's status file, one of kb/status/<project>.json (S419, the Commons' step 1; it was
+     kb/queue_status.json from S343). Written by every checkpoint (.claude/commands/checkpoint.md
+     step 12, scripts/queue_status.py): what no browser read can know. anon reads every record
+     (Sam, Open Asks Sheet 67) but has no grant on program_source_registry_history, so the day's
+     changes, the next step and the calls come from here; commons_progress.js reads it. */
+  var QUEUE_URL = "kb/status/program-requirements.json";
   /* Which catalog hosts let another site frame their pages, measured from COBI's origin by
      scripts/catalog_framing.py on a runner (the session container cannot reach college sites)
      and committed by a session. A host not in it is unknown: the side by side view frames it
@@ -869,14 +871,7 @@
         var b = (got[0] || [])[0] || {};
         G.build = { build: b.build || null, built: b.built || null, unbuilt: got[1] };
       }).catch(miss("B")),
-      fetch(QUEUE_URL, { cache: "no-store" })
-        .then(function (r) {
-          if (!r.ok) throw new Error(QUEUE_URL + " answered " + r.status);
-          return r.json();
-        }).then(function (j) {
-          if (!j || typeof j !== "object" || !j.written_at) throw new Error(QUEUE_URL + " names no written_at");
-          G.queue = j;
-        }).catch(miss("Q"))
+      CP.readStatus(QUEUE_URL).then(function (j) { G.queue = j; }).catch(miss("Q"))
     ]).then(function () { state.progress = G; });
   }
 
@@ -1083,11 +1078,9 @@
       ".prh-todo-go:hover { text-decoration-thickness:2px; }",
       ".prh-todo-go.prh-todo-clear { color:var(--cobalt); }",
       ".prh-todo-what { font-size:.875rem; color:var(--text-muted); }",
-      ".prh-pg-call, .prh-pg-answered { scroll-margin-top:16px; }",
       /* the done mark: a check drawn in CSS, ghosted, always beside the word that says it */
       ".prh-done-mark { display:inline-block; width:5px; height:10px; margin:0 8px 2px 2px; border-right:2px solid var(--seal-blue-text); border-bottom:2px solid var(--seal-blue-text); transform:rotate(45deg); vertical-align:middle; }",
       ".prh-callrec:not(.prh-answered) .prh-done-mark { visibility:hidden; }",
-      ".prh-pg-answered .prh-sec-label { color:var(--seal-blue-text); }",
       ".prh h2 { margin:0; color:var(--text-strong); font-size:clamp(1.4rem, 2.6vw, 1.9rem); line-height:1.2; display:flex; flex-wrap:wrap; align-items:center; gap:10px; }",
       ".prh h3 { margin:0; color:var(--text-strong); font-size:1.05rem; }",
       ".prh h4 { margin:0 0 6px; color:var(--text-strong); font-size:.95rem; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
@@ -1236,77 +1229,7 @@
       ".prh-sec-b { padding:2px 14px 14px; min-width:0; }",
       ".prh-sec-b > .prh-facts { margin-block:4px 0; }",
       ".prh-sec-b > .prh-card { border:0; padding:4px 0 0; margin:0; background:none; }",
-      /* the Progress view: the mock-up's layout on COBI's tokens; cobalt marks where the harvest is,
-         crimson only what waits on a person */
-      ".prh-pg { display:grid; gap:20px; }",
-      ".prh-pg-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; }",
-      ".prh-pg-head h3 { margin:0; font-size:clamp(1.35rem, 3vw, 1.8rem); color:var(--text-strong); }",
-      ".prh-pg .prh-sec-t { font-size:1rem; }",
-      ".prh-pg-sub { color:var(--text-muted); font-size:1rem; }",
-      ".prh-pg-meta { display:flex; flex-wrap:wrap; gap:6px 18px; margin:0; padding:0; list-style:none; width:100%; font-size:.9375rem; }",
-      ".prh-pg-meta b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
-      ".prh-pg-meta a { color:var(--cobalt); font-weight:700; }",
-      ".prh-pg-waiting { color:var(--crimson); font-weight:700; }",
-      ".prh-pg-lede { margin:0; }",
-      ".prh-pg-hl { width:100%; box-sizing:border-box; margin-top:6px; background:var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:20px 20px 16px; display:grid; gap:14px; }",
-      ".prh-pg-pair { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:16px 28px; align-items:end; }",
-      ".prh-pg-n { display:grid; gap:4px; min-width:0; }",
-      ".prh-pg-n b { font-family:'Playfair Display', Georgia, serif; font-size:clamp(2.2rem, 6vw, 3.4rem); line-height:1; color:var(--text-strong); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }",
-      ".prh-pg-n.prh-pg-mine b { color:var(--cobalt); }",
-      ".prh-pg-n b.prh-pg-unread { font-family:inherit; font-size:1.15rem; line-height:1.3; color:var(--mustard-text); }",
-      ".prh-pg-n span { font-size:1rem; color:var(--text-body); }",
-      ".prh-pg-n small { font-size:.875rem; color:var(--text-muted); }",
-      ".prh-pg-bar { height:10px; border-radius:5px; background:var(--surface-muted); overflow:hidden; }",
-      ".prh-pg-bar i { display:block; height:100%; min-width:4px; background:var(--cobalt); }",
-      ".prh-pg-within { margin:0; display:flex; flex-wrap:wrap; gap:6px 22px; font-size:.9375rem; border-top:1px solid var(--border); padding-top:12px; }",
-      ".prh-pg-within b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
-      ".prh-pg-within .prh-quiet { color:var(--text-muted); }",
-      ".prh-pg-label { font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin:0; }",
-      ".prh-pg-whole { width:100%; box-sizing:border-box; background:var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:18px 20px 14px; display:grid; gap:12px; }",
-      ".prh-pg-whole-n { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }",
-      ".prh-pg-whole-n b { font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.9rem, 5vw, 2.6rem); line-height:1; color:var(--cobalt); font-variant-numeric:tabular-nums; }",
-      ".prh-pg-whole-n span { color:var(--text-body); }",
-      ".prh-pg-whole ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px 24px; }",
-      ".prh-pg-whole li { display:grid; gap:4px; min-width:0; font-size:.9375rem; }",
-      ".prh-pg-whole li b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
-      ".prh-pg-whole li small, .prh-pg-whole p { font-size:.875rem; color:var(--text-muted); margin:0; }",
-      ".prh-pg .prh-sec { margin:0; }",
-      ".prh-pg-road > .prh-sec-b { padding:30px 16px 16px; }",
-      ".prh-pg-steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); }",
-      ".prh-pg-step { position:relative; display:grid; justify-items:center; align-content:start; text-align:center; gap:4px; padding:34px 4px 0; min-width:0; }",
-      ".prh-pg-step::before { content:\"\"; position:absolute; top:15px; left:-50%; width:100%; border-top:3px solid var(--text-strong); }",
-      ".prh-pg-step:first-child::before { display:none; }",
-      ".prh-pg-step.prh-pg-next::before, .prh-pg-step.prh-pg-later::before { border-top:3px dashed var(--border-strong); }",
-      ".prh-pg-step.prh-pg-here::before { border-top-color:var(--cobalt); }",
-      ".prh-pg-node { position:absolute; top:4px; width:24px; height:24px; border-radius:50%; box-sizing:border-box; background:var(--surface-opaque); border:3px solid var(--border-strong); }",
-      ".prh-pg-done .prh-pg-node { background:var(--text-strong); border-color:var(--text-strong); }",
-      ".prh-pg-here .prh-pg-node { border-color:var(--cobalt); box-shadow:0 0 0 6px color-mix(in srgb, var(--cobalt) 14%, transparent); background:radial-gradient(circle, var(--cobalt) 0 5px, var(--surface-opaque) 6px); }",
-      ".prh-pg-step h4 { margin:0; font-size:1rem; color:var(--text-strong); }",
-      ".prh-pg-state { font-size:.875rem; color:var(--text-muted); }",
-      ".prh-pg-here .prh-pg-state { color:var(--cobalt); font-weight:700; }",
-      ".prh-pg-fact { font-size:.875rem; color:var(--text-body); font-variant-numeric:tabular-nums; }",
-      ".prh-pg-youare { position:absolute; top:-22px; font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--cobalt); white-space:nowrap; }",
-      ".prh-pg-left { margin:18px 0 0; padding-top:14px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; }",
-      ".prh-pg-big { font-size:1.6rem; font-weight:700; color:var(--text-strong); line-height:1; font-variant-numeric:tabular-nums; }",
-      ".prh-pg-chip { font-size:.875rem; padding:3px 10px; border-radius:999px; border:1px solid var(--border-strong); background:var(--surface-subtle); color:var(--text-body); }",
-      ".prh-pg-main { display:grid; grid-template-columns:minmax(0, 1fr) 320px; gap:20px; align-items:start; }",
-      ".prh-pg-parts { min-width:0; }",
-      ".prh-pg-grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; }",
-      ".prh-pg-part { position:relative; background:var(--surface-subtle); border:1px solid var(--border); border-radius:10px; padding:14px; display:grid; grid-template-rows:auto auto 1fr auto; gap:8px; min-width:0; }",
-      /* The card is the tap target for its list (S381): the open word's ::after covers the card,
-         and an answer link rides above it. */
-      ".prh-pg-go { margin:0; }",
-      ".prh-pg-opens .prh-pg-open::after { content:''; position:absolute; inset:0; border-radius:10px; }",
-      ".prh-pg-part.prh-pg-opens:hover { border-color:var(--cobalt); }",
-      ".prh-pg-opens .prh-pg-open:focus-visible::after { outline:2px solid var(--cobalt); outline-offset:-2px; }",
-      ".prh-pg-answer { position:relative; z-index:1; }",
-      ".prh-pg-hlgo { justify-self:start; }",
-      ".prh-pg-part h4 { margin:0; font-size:1rem; color:var(--text-strong); }",
-      ".prh-pg-status { font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",
-      ".prh-pg-part.prh-pg-going { border-color:var(--cobalt); }",
-      ".prh-pg-part.prh-pg-going .prh-pg-status { color:var(--cobalt); }",
-      ".prh-pg-call { border-color:var(--crimson); background:color-mix(in srgb, var(--crimson) 7%, var(--surface-opaque)); }",
-      ".prh-pg-links { display:flex; flex-wrap:wrap; gap:.4rem 1rem; margin:.5rem 0 0; }",
+      /* the Progress view's own CSS (prh-pg-*) is injected by commons_progress.js, the Commons' shared module (S419) */
       ".prh-word { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
       ".prh-word:hover { text-decoration-thickness:2px; }",
       ".prh-word:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
@@ -1315,30 +1238,6 @@
       ".prh-callrec > summary { display:flex; flex-wrap:wrap; align-items:center; gap:.2rem .75rem; min-height:44px; padding:.35rem 0; cursor:pointer; }",
       ".prh-callrec-t { flex:1 1 12rem; min-width:0; }",
       ".prh-callrec-b { padding:0 0 .75rem; }",
-      ".prh-pg-part.prh-pg-call .prh-pg-status, .prh-pg-box.prh-pg-call .prh-sec-label { color:var(--crimson); }",
-      ".prh-pg-part.prh-pg-unread .prh-pg-status { color:var(--mustard-text); }",
-      ".prh-pg-what { margin:0; font-size:.9rem; font-variant-numeric:tabular-nums; }",
-      ".prh-pg-foot { margin:0; font-size:.8125rem; color:var(--text-muted); }",
-      ".prh-pg-meter { height:6px; border-radius:3px; background:var(--border); overflow:hidden; }",
-      ".prh-pg-meter i { display:block; height:100%; background:var(--cobalt); }",
-      ".prh-pg-side { display:grid; gap:14px; min-width:0; }",
-      ".prh-pg-box > .prh-sec-b { display:grid; gap:8px; }",
-      ".prh-pg-box p { margin:0; font-size:.9rem; }",
-      ".prh-pg-box a { color:var(--cobalt); font-weight:600; }",
-      ".prh-pg-log { list-style:none; margin:0; padding:0; display:grid; gap:8px; }",
-      ".prh-pg-log li { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:10px; font-size:.875rem; }",
-      ".prh-pg-log time { color:var(--text-muted); font-variant-numeric:tabular-nums; white-space:nowrap; }",
-      "@media (max-width: 1180px) { .prh-pg-main { grid-template-columns:minmax(0, 1fr); } .prh-pg-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
-      "@media (max-width: 760px) { .prh-pg-steps { grid-template-columns:minmax(0, 1fr); gap:18px; }" +
-        " .prh-pg-step { justify-items:start; text-align:left; padding:0 0 0 40px; gap:2px; }" +
-        /* vertical: each step draws the line down from its own node to the next one,
-           styled by where it leads, so the line runs node to node whatever the text's height */
-        " .prh-pg-step::before { display:none; }" +
-        " .prh-pg-step:not(:last-child)::after { content:\"\"; position:absolute; left:11px; top:24px; bottom:-18px; border-left:3px solid var(--text-strong); }" +
-        " .prh-pg-step.prh-pg-into-here::after { border-left-color:var(--cobalt); }" +
-        " .prh-pg-step.prh-pg-into-next::after, .prh-pg-step.prh-pg-into-later::after { border-left:3px dashed var(--border-strong); }" +
-        " .prh-pg-node { top:0; left:0; } .prh-pg-youare { position:static; order:-1; } .prh-pg-road > .prh-sec-b { padding-top:8px; } }",
-      "@media (max-width: 560px) { .prh-pg-pair { grid-template-columns:minmax(0, 1fr); } .prh-pg-grid { grid-template-columns:minmax(0, 1fr); } .prh-pg-log li { grid-template-columns:minmax(0, 1fr); gap:0; } }",
       /* side by side: the catalog page beside the record, each scrolling on its own; stacked below 900px */
       "html.prh-split-open, html.prh-split-open body { overflow:hidden; }",
       ".prh-split { position:fixed; inset:0; z-index:10000; background:var(--paper); display:grid; grid-template-rows:auto minmax(0, 1fr); }",
@@ -2665,12 +2564,14 @@
    * https://claude.ai/artifact/6Pco7R1NVB5S45evjjfJsr (prototype/roep_progress_mockup.html).
    *
    * MILESTONES and PARTS are definitions. A session changes a milestone's words, what it
-   * measures, or what is left before it HERE, and never touches the renderer below them.
+   * measures, or what is left before it HERE, and never touches the renderer, which is
+   * commons_progress.js's since S419 (the Commons' shared Progress module; its lane,
+   * docs/reference/lanes/commons.md, names what it draws for every common reference).
    * Every function reads the context x that progressContext() builds from the live reads
    * and the status file:
    *   x.R  the registry, every college       x.P  the records anon may read (checked only)
    *   x.A  the addenda                       x.active  COCI's active programs
-   *   x.Q  kb/queue_status.json, the last checkpoint's word
+   *   x.Q  kb/status/program-requirements.json, the last checkpoint's word
    * x.A, x.active and x.Q are null when their read failed; a definition that needs one
    * names it in `needs`, and the view then says the read failed instead of drawing a zero.
    *
@@ -2812,39 +2713,28 @@
       foot: function () { return ""; },
       open: function () { return ["Open CPL Pathways", TO.pathways]; } }
   ];
-  var STATUS = { done: "Done", pilot: "Done for the pilot", live: "Live", going: "In progress", next: "Next",
-    not: "Not started", call: "Waiting on " };
   var SOURCE = { A: "The addenda table", active: "COCI's list of active programs", B: "The display build read",
     Q: "The queue's status file (" + QUEUE_URL + ")" };
-
-  function toDate(v) {
-    if (!v) return null;
-    var d = /^\d{4}-\d{2}-\d{2}$/.test(String(v)) ? new Date(v + "T12:00:00Z") : new Date(v);
-    return isNaN(d.getTime()) ? null : d;
+  /* The view itself is drawn by commons_progress.js, the Commons' shared Progress module (S419;
+     Sam, Open Asks Sheet 95 card 1, 2026-10-18: "Yes, and include Common Subjects in the mix").
+     The definitions above and the context below stay this project's; the renderer, the status
+     file read, the milestone arithmetic, the time words and the Progress CSS are shared with
+     every common reference's Progress view. The boot block loads the module first; should it
+     fail to load, the Progress view says so and the other views read as usual. */
+  var CP = window.CPL_COMMONS_PROGRESS || missingProgressModule();
+  function missingProgressModule() {
+    var blank = function () { return ""; }, none = function () { return null; };
+    return { toDate: none, ptDay: blank, dayOf: blank, joinAnd: function (a) { return a.join(", "); }, latest: none,
+      nextWeekly: function (now) { return now; }, nextRun: none, since: none, wholeFacts: none,
+      steps: function (ms) { return { steps: ms.map(function (m) { return { m: m, missing: [], left: [], state: "later" }; }), here: null, next: null }; },
+      readStatus: function (url) { return Promise.reject(new Error("commons_progress.js did not load, so " + url + " was not read")); },
+      render: function () {
+        return el("div", { cls: "prh-empty", role: "alert",
+          text: "The Progress view's shared module (commons_progress.js) could not be loaded. The other views read as usual; reload the tab to try again." });
+      } };
   }
-  function ptDay(d) { return d.toLocaleDateString("en-US", { timeZone: PT, month: "short", day: "numeric" }); }
-  function ptTime(d) { return d.toLocaleTimeString("en-US", { timeZone: PT, hour: "numeric", minute: "2-digit" }) + " PT"; }
-  function dayOf(v) { var d = toDate(v); return d ? ptDay(d) : ""; }
-  function stampOf(v) { var d = toDate(v); return d ? ptDay(d) + ", " + ptTime(d) : ""; }
-  function timeOf(v, now) { var d = toDate(v); return !d ? "" : ptDay(d) === ptDay(now) ? ptTime(d) : ptDay(d) + ", " + ptTime(d); }
+  var ptDay = CP.ptDay, dayOf = CP.dayOf, joinAnd = CP.joinAnd, latest = CP.latest, nextWeekly = CP.nextWeekly, nextRun = CP.nextRun;
   function short(c) { return String(c || "").replace(/\s+College$/, ""); }
-  function joinAnd(a) { return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
-  function latest(vals) { return vals.filter(Boolean).sort().pop() || null; }
-  /* The census applies on main every Sunday at 10:29 UTC (program-source-census.yml). */
-  function nextWeekly(now, dow, h, m) {
-    var d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, m));
-    d.setUTCDate(d.getUTCDate() + (dow - d.getUTCDay() + 7) % 7);
-    if (d <= now) d.setUTCDate(d.getUTCDate() + 7);
-    return d;
-  }
-  /* The routine's next firing, as the checkpoint read it, rolled forward past now. */
-  function nextRun(q, now) {
-    var r = q && q.next_run, at = r && toDate(r.at);
-    if (!at) return null;
-    var step = (Number(r.every_hours) || 0) * 3600000;
-    while (step && at <= now) at = new Date(at.getTime() + step);
-    return at > now ? at : null;
-  }
 
   function progressContext(now) {
     var R = state.registry || [], P = rows(), G = state.progress || { errors: {} };
@@ -2899,33 +2789,11 @@
       addendaUnread: liveA ? liveA.filter(function (a) { return a.status === "listed"; }).length : null,
       build: B ? B.build : null, unbuilt: B ? B.unbuilt : null, builtDay: B ? dayOf(B.built) : ""
     };
-    /* Where the harvest stands: every milestone before the first one with anything left is
-       done; that one is You are here, the one after it is next. */
-    var hereAt = -1;
-    x.steps = MILESTONES.map(function (m, i) {
-      var missing = (m.needs || []).filter(function (k) { return x[k] == null; });
-      var left = m.left(x).filter(function (l) { return l[0] == null || l[0] > 0; });
-      if (hereAt < 0 && left.length) hereAt = i;
-      return { m: m, missing: missing, left: left };
-    });
-    x.steps.forEach(function (s, i) {
-      s.state = hereAt < 0 || i < hereAt ? "done" : i === hereAt ? "here" : i === hereAt + 1 ? "next" : "later";
-    });
-    x.here = hereAt < 0 ? null : MILESTONES[hereAt].id;
-    x.next = hereAt < 0 || hereAt + 1 >= MILESTONES.length ? null : MILESTONES[hereAt + 1].id;
+    /* Where the harvest stands (the shared module's arithmetic): every milestone before the
+       first one with anything left is done; that one is You are here, the one after it is next. */
+    var st = CP.steps(MILESTONES, x);
+    x.steps = st.steps; x.here = st.here; x.next = st.next;
     return x;
-  }
-  function missingText(keys, x) {
-    return keys.map(function (k) { return SOURCE[k] + " could not be read (" + (x.errors[k] || "not read yet") + ")."; }).join(" ");
-  }
-  /* Each part, as the view shows it: [status key, status words, what, foot, meter]. */
-  function partView(p, x) {
-    var missing = (p.needs || []).filter(function (k) { return x[k] == null; });
-    if (missing.length) return { key: "unread", word: "Could not be read", what: missingText(missing, x), foot: "", meter: null };
-    var key = p.status(x);
-    var note = x.Q && x.Q.notes && typeof x.Q.notes[p.id] === "string" ? x.Q.notes[p.id] : null;
-    return { key: key, word: key === "call" ? STATUS.call + x.decider : STATUS[key], what: p.what(x),
-      foot: note != null ? note : p.foot(x), meter: p.meter ? p.meter(x) : null };
   }
 
   /* ── the headline: every program in the state beside the ones the harvest holds ──
@@ -2945,50 +2813,36 @@
    * recorded complete count once today's passes it. Under it, each number leads to its list:
    * the records read, the ones failing a check, and the active programs no read has reached. */
   function headlineFacts(x) {
-    var hist = x.Q && Array.isArray(x.Q.headline) ? x.Q.headline.filter(function (h) {
-      return h && /^\d{4}-\d{2}-\d{2}$/.test(h.day || "") && typeof h.complete === "number";
-    }) : [];
-    var first = hist[0] || null;
     return {
       active: x.active, colleges: x.R.length,
       complete: x.complete, completeColleges: x.completeColleges,
       read: x.read, readColleges: x.readColleges, failing: x.failing, unread: x.activeUnread,
-      since: first && x.complete != null && first.complete < x.complete ? { day: dayOf(first.day), complete: first.complete } : null
+      since: CP.since(x.Q, x.complete)
     };
   }
-  function headlineBand(x) {
-    var h = headlineFacts(x), read = h.active != null;
-    var all = read
-      ? el("div", { cls: "prh-pg-n" }, [el("b", { text: fmt(h.active) }),
-          el("span", { text: "active programs at " + h.colleges + " colleges" }),
-          el("small", { text: "The state's program inventory (COCI), one control number each" })])
-      : el("div", { cls: "prh-pg-n" }, [el("b", { cls: "prh-pg-unread", text: "Could not be read" }),
-          el("span", { text: "active programs at " + h.colleges + " colleges" }),
-          el("small", { text: missingText(["active"], x) })]);
-    var mine = read
-      ? el("div", { cls: "prh-pg-n prh-pg-mine" }, [el("b", { text: fmt(h.complete) }),
-          el("span", { text: "active programs harvested complete" }),
-          el("small", { text: "Read from the college's catalog and passing the machine checks: every listed course placed, none added, the units add up. At " +
-            h.completeColleges + (h.completeColleges === 1 ? " college." : " colleges.") }),
-          h.complete > 0 ? goControl("Open the " + fmt(h.complete) + " complete", TO.complete, "prh-pg-hlgo") : null])
-      : el("div", { cls: "prh-pg-n prh-pg-mine" }, [el("b", { cls: "prh-pg-unread", text: "Could not be read" }),
-          el("span", { text: "active programs harvested complete" }),
-          el("small", { text: missingText(["active"], x) })]);
-    var kids = [el("div", { cls: "prh-pg-pair" }, [all, mine])];
-    if (read && h.active > 0) {
-      var pct = Math.max(0, Math.min(100, h.complete / h.active * 100));
-      kids.push(el("div", { cls: "prh-pg-bar", role: "img", "aria-label": fmt(h.complete) + " of " + fmt(h.active) + " active programs complete" }, [
-        el("i", { style: "width:" + (Math.round(pct * 100) / 100) + "%" })]));
+  /* The band's definition, drawn by the shared module: the universe, the complete ones, the bar's
+     words, and the counts under it that lead to their lists. */
+  var HEADLINE = {
+    label: "Every active program in the state, and how many the harvest holds complete",
+    needs: ["active"],
+    all: { n: function (x) { return x.active; },
+      words: function (x) { return "active programs at " + x.R.length + " colleges"; },
+      small: "The state's program inventory (COCI), one control number each" },
+    mine: { n: function (x) { return x.complete; },
+      words: "active programs harvested complete",
+      small: function (x) {
+        return "Read from the college's catalog and passing the machine checks: every listed course placed, none added, the units add up. At " +
+          x.completeColleges + (x.completeColleges === 1 ? " college." : " colleges.");
+      },
+      open: function (x) { return x.complete > 0 ? ["Open the " + fmt(x.complete) + " complete", TO.complete] : null; } },
+    barLabel: function (x) { return fmt(x.complete) + " of " + fmt(x.active) + " active programs complete"; },
+    within: function (x) {
+      if (!(x.read > 0)) return null;
+      return [{ n: x.read, words: " records read at " + x.readColleges + (x.readColleges === 1 ? " college" : " colleges") },
+        x.failing > 0 ? { go: [fmt(x.failing) + (x.failing === 1 ? " fails" : " fail") + " a machine check", TO.fail] } : null,
+        x.activeUnread != null ? { n: x.activeUnread, words: " active " + (x.activeUnread === 1 ? "program" : "programs") + " not read yet" } : null];
     }
-    if (h.read > 0) {
-      kids.push(el("p", { cls: "prh-pg-within" }, [
-        el("span", {}, [el("b", { text: fmt(h.read) }), " records read at " + h.readColleges + (h.readColleges === 1 ? " college" : " colleges")]),
-        h.failing > 0 ? goControl(fmt(h.failing) + (h.failing === 1 ? " fails" : " fail") + " a machine check", TO.fail, "prh-pg-hlgo") : null,
-        h.unread != null ? el("span", {}, [el("b", { text: fmt(h.unread) }), " active " + (h.unread === 1 ? "program" : "programs") + " not read yet"]) : null,
-        h.since ? el("span", { cls: "prh-quiet", text: "Up from " + fmt(h.since.complete) + " complete on " + h.since.day }) : null]));
-    }
-    return el("section", { cls: "prh-pg-hl", "aria-label": "Every active program in the state, and how many the harvest holds complete" }, kids);
-  }
+  };
 
   /* ── the whole harvest, one measure ──
    * Sam, 2026-10-13, in chat: "Can you add an overall measure on our prog reqs dash to
@@ -3013,192 +2867,21 @@
       halves: [["slo", "course SLOs"], ["plo", "program PLOs"]], open: ["Open the records", TO.records] },
     { id: "careers", title: "Career data", note: "Active programs read for the careers their catalog names", open: ["Open the records", TO.records] }
   ];
-  function pairOk(v) { return Array.isArray(v) && v.length === 2 && typeof v[0] === "number" && typeof v[1] === "number" && v[1] > 0; }
-  function share(v) { return Math.max(0, Math.min(1, v[0] / v[1])); }
-  function wholeFacts(x) {
-    var H = x.Q && x.Q.harvest && typeof x.Q.harvest === "object" ? x.Q.harvest : null;
-    var parts = H && H.parts && typeof H.parts === "object" ? H.parts : null;
-    if (!parts) return null;
-    var out = [];
-    for (var i = 0; i < WHOLE.length; i++) {
-      var d = WHOLE[i], v = parts[d.id], f = { def: d };
-      if (d.halves) {
-        if (!v || typeof v !== "object") return null;
-        f.halves = d.halves.map(function (h) { return { words: h[1], pair: v[h[0]] }; });
-        if (!f.halves.every(function (h) { return pairOk(h.pair); })) return null;
-        f.share = f.halves.reduce(function (a, h) { return a + share(h.pair); }, 0) / f.halves.length;
-      } else {
-        if (!pairOk(v)) return null;
-        f.pair = v;
-        f.share = share(v);
-      }
-      out.push(f);
-    }
-    return { day: H.day, parts: out, share: out.reduce(function (a, f) { return a + f.share; }, 0) / out.length };
-  }
-  function pctOf(v) { var p = v * 100; return p > 0 && p < 1 ? "under 1%" : Math.round(p) + "%"; }
-  function wholeBand(x) {
-    var w = wholeFacts(x);
-    var kids = [];
-    if (!w) {
-      kids.push(el("p", { text: x.Q ? "The whole harvest: not counted yet; the next checkpoint stamps the counts." : missingText(["Q"], x) }));
-      return el("section", { cls: "prh-pg-whole", "aria-label": "The whole harvest" }, kids);
-    }
-    kids.push(el("div", { cls: "prh-pg-whole-n" }, [el("b", { text: "About " + pctOf(w.share) }), " ",
-      el("span", { text: "of the whole harvest, counted " + (w.day ? dayOf(w.day) : "at the last checkpoint") })]));
-    kids.push(el("div", { cls: "prh-pg-bar", role: "img", "aria-label": "About " + pctOf(w.share) + " of the whole harvest" }, [
-      el("i", { style: "width:" + (Math.round(w.share * 10000) / 100) + "%" })]));
-    var ul = el("ul", { "aria-label": "The five parts" });
-    w.parts.forEach(function (f) {
-      var nums = f.halves
-        ? f.halves.map(function (h) { return fmt(h.pair[0]) + " of " + fmt(h.pair[1]) + " " + h.words; }).join("; ")
-        : fmt(f.pair[0]) + " of " + fmt(f.pair[1]);
-      ul.appendChild(el("li", {}, [
-        el("span", {}, [el("b", { text: f.def.title + " " + pctOf(f.share) })]),
-        el("div", { cls: "prh-pg-bar", role: "img", "aria-label": f.def.title + ", " + pctOf(f.share) }, [
-          el("i", { style: "width:" + (Math.round(f.share * 10000) / 100) + "%" })]),
-        el("small", { text: nums + ". " + f.def.note + "." }),
-        f.def.open ? goControl(f.def.open[0], f.def.open[1], "prh-pg-hlgo") : null]));
-    });
-    kids.push(ul);
-    kids.push(el("p", { text: "The five parts count equally. The confirm step is left out: it becomes an optional college confirm once the reading procedures prove stable." }));
-    return el("section", { cls: "prh-pg-whole", "aria-label": "The whole harvest" }, kids);
-  }
+  function wholeFacts(x) { return CP.wholeFacts(WHOLE, x.Q && x.Q.harvest); }
 
-  /* Where Sam answers what waits on him on a part: the part's own answer(x), then each open
-     call the status file places on it (its sheet link, its view, or its card's records). */
-  function partAnswers(p, x, unread) {
-    var out = [];
-    var a = !unread && p.answer ? p.answer(x) : null;
-    if (a) out.push(goControl(a[0], a[1], "prh-pg-answer"));
-    var calls = x.Q && Array.isArray(x.Q.calls) ? x.Q.calls : [];
-    calls.forEach(function (c, i) {
-      if (c.part !== p.id || callAnswered(c)) return;
-      var words = "Answer: " + (c.title || "the call");
-      if (c.link && /^https:\/\//.test(c.link)) out.push(el("a", { cls: "prh-word prh-pg-answer", href: c.link, target: "_blank", rel: "noopener", text: words }));
-      else {
-        var b = el("button", { cls: "prh-word prh-pg-answer", type: "button", text: words });
-        b.addEventListener("click", function () { goToCall(i); });
-        out.push(b);
-      }
-    });
-    return out;
-  }
-
-  function viewProgress() {
-    var now = new Date();
-    var x = progressContext(now);
-    var Q = x.Q, G = state.progress || {};
-    var box = el("div", { cls: "prh-pg" });
-
-    /* header: what was read when, and the queue's run */
-    var meta = el("ul", { cls: "prh-pg-meta", "aria-label": "Run status" });
-    meta.appendChild(el("li", {}, ["Read ", el("b", { text: stampOf(G.readAt || now) })]));
-    if (Q) {
-      var who = (Q.session ? "S" + Q.session + " " : "") + (Q.moniker || "");
-      var ran = el("li", {}, ["Last run ",
-        Q.handoff ? link("https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/" + Q.handoff, who.trim())
-          : el("b", { text: who.trim() }),
-        (Q.run ? " (" + Q.run + ")" : "") + ", " + stampOf(Q.written_at)]);
-      meta.appendChild(ran);
-      var nr = nextRun(Q, now);
-      meta.appendChild(el("li", {}, ["Next " + ((Q.next_run && Q.next_run.name) || "queue") + " run ",
-        el("b", { text: nr ? stampOf(nr) : "not on record" })]));
-      var waiting = (Array.isArray(Q.calls) ? Q.calls : []).filter(function (c) { return !callAnswered(c); }).length;
-      meta.appendChild(el("li", { id: "prh-pg-waitcount", cls: waiting ? "prh-pg-waiting" : "prh-quiet",
-        text: waiting ? waiting + (waiting === 1 ? " call" : " calls") + " waiting on " + x.decider : "Nothing waiting on " + x.decider }));
-    } else {
-      meta.appendChild(el("li", { cls: "prh-caution", text: missingText(["Q"], x) }));
-    }
-    box.appendChild(el("header", { cls: "prh-pg-head" }, [
-      el("h3", { text: "Catalog ROEP harvest" }), el("span", { cls: "prh-pg-sub", text: "Progress" }), meta, headlineBand(x), wholeBand(x)]));
-    box.appendChild(el("p", { cls: "prh-lede prh-pg-lede", text: "Where the harvest stands. The milestones and parts are read live from the harvest's tables on each visit; the next step, the calls and what changed come from the last session's checkpoint." }));
-
-    /* the milestone line */
-    var steps = el("ol", { cls: "prh-pg-steps" });
-    x.steps.forEach(function (s, i) {
-      var m = s.m, into = x.steps[i + 1] ? " prh-pg-into-" + x.steps[i + 1].state : "";
-      var stateText = s.state === "done" ? "Done" + (m.when && m.when(x) ? " · " + m.when(x) : "")
-        : s.state === "here" ? "In progress" : s.state === "next" ? "Next milestone" : "Later";
-      steps.appendChild(el("li", { cls: "prh-pg-step prh-pg-" + s.state + into, "aria-current": s.state === "here" ? "step" : null }, [
-        s.state === "here" ? el("span", { cls: "prh-pg-youare", text: "You are here" }) : null,
-        el("span", { cls: "prh-pg-node", "aria-hidden": "true" }),
-        el("h4", { text: m.title }),
-        el("span", { cls: "prh-pg-state", text: stateText }),
-        el("span", { cls: "prh-pg-fact", text: s.missing.length ? "Could not be read" : m.fact(x) })]));
-    });
-    var here = x.steps.filter(function (s) { return s.state === "here"; })[0];
-    var roadKids = [steps];
-    if (here) {
-      roadKids.push(el("p", { cls: "prh-pg-left" }, [
-        el("span", { cls: "prh-pg-big", text: String(here.left.length) }),
-        el("span", { cls: "prh-pg-label", text: "left before the next milestone" })].concat(here.left.map(function (l) {
-          if (l[0] == null) return el("span", { cls: "prh-pg-chip", text: l[2].charAt(0).toUpperCase() + l[2].slice(1) + " (could not be read)" });
-          var words = fmt(l[0]) + " " + (l[0] === 1 ? l[1] : l[2]);
-          return l[3] ? goControl(words, l[3], "prh-pg-chipgo") : el("span", { cls: "prh-pg-chip", text: words });
-        }))));
-    } else {
-      roadKids.push(el("p", { cls: "prh-pg-left" }, [el("span", { cls: "prh-pg-label", text: "Every milestone is done" })]));
-    }
-    box.appendChild(section("progress:milestones", "Milestones", here ? "You are here: " + here.m.title : "Every milestone is done",
-      roadKids, { cls: "prh-pg-road", h: "h4" }));
-
-    /* the parts, beside what needs a person */
-    var views = PARTS.map(function (p) { return { p: p, v: partView(p, x) }; });
-    var doneN = views.filter(function (o) { return ["done", "pilot", "live"].indexOf(o.v.key) >= 0; }).length;
-    var grid = el("ul", { cls: "prh-pg-grid" });
-    views.forEach(function (o) {
-      var v = o.v, kids = [el("h4", { text: o.p.title }), el("span", { cls: "prh-pg-status", text: v.word }),
-        el("p", { cls: "prh-pg-what", text: v.what })];
-      if (v.meter && v.meter[1] > 0) {
-        var pct = Math.max(0, Math.min(100, v.meter[0] / v.meter[1] * 100));
-        kids.push(el("div", { cls: "prh-pg-meter", role: "img", "aria-label": v.meter[0] + " of " + v.meter[1] + " " + v.meter[2] }, [
-          el("i", { style: "width:" + (Math.round(pct * 10) / 10) + "%" })]));
-      }
-      kids.push(el("p", { cls: "prh-pg-foot", text: v.foot || "" }));
-      var opens = v.key !== "unread" && o.p.open ? o.p.open(x) : null;
-      var answers = partAnswers(o.p, x, v.key === "unread");
-      if (opens || answers.length) {
-        kids.push(el("p", { cls: "prh-pg-links prh-pg-go" }, [opens ? goControl(opens[0], opens[1], "prh-pg-open") : null].concat(answers)));
-      }
-      grid.appendChild(el("li", { cls: "prh-pg-part prh-pg-" + v.key + (opens ? " prh-pg-opens" : "") }, kids));
-    });
-    var parts = section("progress:parts", "Parts of the harvest", doneN + " of " + PARTS.length + " done", [grid],
-      { cls: "prh-pg-parts", h: "h4" });
-
-    var side = el("aside", { cls: "prh-pg-side", "aria-label": "What happens next" });
-    if (!Q) {
-      var unread = section("progress:next", "Next step", null, [
-        el("p", { text: missingText(["Q"], x) + " The next step, the calls and what changed come from it; the milestones and parts are read live." })],
-        { cls: "prh-pg-box", h: "h4" });
-      unread.setAttribute("role", "status");
-      side.appendChild(unread);
-    } else {
-      if (Q.next_step && Q.next_step.title) side.appendChild(section("progress:next", Q.next_step.title, null,
-        [Q.next_step.text ? el("p", { text: Q.next_step.text }) : null], { cls: "prh-pg-box", h: "h4", label: "Next step" }));
-      (Array.isArray(Q.calls) ? Q.calls : []).forEach(function (c, i) {
-        var done = callAnswered(c);
-        var card = section("progress:call:" + i, c.title || "", null, [
-          c.text ? el("p", { text: c.text }) : null,
-          c.if_no_reply && !done ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
-          callRecords(c),
-          callLinks(c)],
-          { cls: "prh-pg-box " + (done ? "prh-pg-answered" : "prh-pg-call"), h: "h4", mark: done,
-            label: done ? "Answered" : "Needs " + x.decider + "'s call" });
-        card.setAttribute("data-call", String(i));
-        side.appendChild(card);
-      });
-      var ch = Array.isArray(Q.changes) ? Q.changes : [];
-      if (ch.length) side.appendChild(section("progress:changes", "Changed recently", ch.length + (ch.length === 1 ? " change" : " changes"), [
-        el("ol", { cls: "prh-pg-log" }, ch.map(function (c) {
-          var d = toDate(c.at);
-          return el("li", {}, [el("span", { text: c.text || "" }),
-            d ? el("time", { datetime: d.toISOString(), text: timeOf(c.at, now) }) : el("span")]);
-        }))], { cls: "prh-pg-box", h: "h4" }));
-    }
-    box.appendChild(el("div", { cls: "prh-pg-main" }, [parts, side]));
-    return box;
-  }
+  /* The view, drawn by the shared module from this project's definitions and context; the host
+     lends its sections, its count controls and its call cards, so a count opens this tab's own
+     list and a call's records answer here. Its words are the harvest's. */
+  var PROGRESS = {
+    title: "Catalog ROEP harvest", sub: "Progress",
+    lede: "Where the harvest stands. The milestones and parts are read live from the harvest's tables on each visit; the next step, the calls and what changed come from the last session's checkpoint.",
+    milestones: MILESTONES, parts: PARTS, partsTitle: "Parts of the harvest", headline: HEADLINE, sources: SOURCE,
+    whole: { parts: WHOLE, key: "harvest", label: "The whole harvest", of: "of the whole harvest", partsLabel: "The five parts",
+      notCounted: "The whole harvest: not counted yet; the next checkpoint stamps the counts.",
+      foot: "The five parts count equally. The confirm step is left out: it becomes an optional college confirm once the reading procedures prove stable." }
+  };
+  var HOST = { section: section, goControl: goControl, callAnswered: callAnswered, callRecords: callRecords, callLinks: callLinks, goToCall: goToCall };
+  function viewProgress() { return CP.render(PROGRESS, progressContext(new Date()), state.progress || {}, HOST); }
 
   /* ── Sam's to-dos ──
    * Sam, 2026-10-09: "Put a button to my todo items on the front of Program Requirements so I

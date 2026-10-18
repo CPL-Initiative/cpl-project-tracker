@@ -33,7 +33,7 @@ together and places them in some order of priority and completion and known issu
    college, or Sam.
 4. **Milestones and parts**, each count opening its list (`MILESTONES`, `PARTS`, `WHOLE` in `program_requirements.js`).
 5. **A run log** written at every checkpoint: last run, next step, calls waiting on Sam, what changed
-   (`kb/queue_status.json`, `scripts/queue_status.py`, checkpoint step 12).
+   (`kb/status/program-requirements.json`, `scripts/queue_status.py`, checkpoint step 12).
 
 ## The common references
 
@@ -55,7 +55,7 @@ together and places them in some order of priority and completion and known issu
   Course complete is a curator's judgment a merge or a re-mint can undo; Subjects counts a few hundred disciplines
   against 20,282 programs. Each Commons row carries its definition's phrase and the test behind it (machine-checked,
   curator-confirmed, assigned) beside the pair, and a percentage stays inside its row, never a sortable column.
-- *A status file is only as live as its writer.* One routine writes `kb/queue_status.json`; the other references have
+- *A status file is only as live as its writer.* One routine writes `kb/status/program-requirements.json`; the other references have
   none. Keep the machine stamp (the nightly CER run, the auditor) apart from the session stamp (next step, calls), and
   show each as an age against a declared cadence, so a stale row reads stale.
 - *Calls have one source.* The decision sheet's store holds Sam's answers; a Commons cell counting calls from a

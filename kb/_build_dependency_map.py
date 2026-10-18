@@ -184,6 +184,14 @@ SEEDS = [
         "why": "the table is chosen per reader — gated bases for a phrase holder, "
                "`_pub` mirrors for the public — so no call site names one literally",
     },
+    {   # program_requirements.js: CP.readStatus(QUEUE_URL) — the Commons' shared Progress module
+        # (commons_progress.js, S419) fetches the project's status file for its host, so no fetch()
+        # in the host names the path; the host names it in QUEUE_URL.
+        "file": "program_requirements.js",
+        "anchor": r'CP\.readStatus\(QUEUE_URL\)',
+        "datasets": [("file:kb/status/program-requirements.json", "read")],
+        "why": "read by commons_progress.js's readStatus on the host's behalf (the Commons' step 1)",
+    },
     {   # map_team_queue.js loads map_users.js purely to read _FALLBACK_CONTACTS
         "file": "map_team_queue.js",
         "anchor": r'loadScript\("map_users\.js"',
