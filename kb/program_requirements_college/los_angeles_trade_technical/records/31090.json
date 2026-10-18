@@ -46,27 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 20,
    "listed": 21,
-   "share": 0.905,
+   "share": 0.952,
    "missing": [
-    "PLUMBNG28",
-    "REFAC105"
+    "PLUMBNG28"
    ],
    "unexplained": [
-    "PLUMBNG28",
-    "REFAC105"
+    "PLUMBNG28"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "BLDGCTQ8",
     "MATH115",
-    "PLUMBING28",
-    "REFA/C105"
+    "PLUMBING28"
    ],
    "flagged": [
     "BLDGCTQ8",
@@ -378,5 +375,6 @@
    "Semester blocks are recorded separately as printed; all are required courses."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": 39114580707,
+ "read_run": "39054673977"
 }

@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 25,
-   "share": 0.6,
+   "share": 0.64,
    "missing": [
     "BLDGCTQ12",
     "BLDGCTQ7",
@@ -58,25 +58,22 @@
     "PLUMBNG28",
     "REFA/C165",
     "REFAC100",
-    "REFAC105",
     "REFAC110"
    ],
    "unexplained": [
     "CRPNTRY111C",
-    "PLUMBNG28",
-    "REFAC105"
+    "PLUMBNG28"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "BLDGCTQ102",
     "BLDGTCQ14",
     "MATH115",
-    "PLUMBING28",
-    "REFA/C105"
+    "PLUMBING28"
    ],
    "flagged": [
     "BLDGCTQ102",
@@ -358,5 +355,6 @@
    "Career 'solar energy' taken from the shared program overview ('working in the new, emerging field of solar energy')."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": 39114580707,
+ "read_run": "39054673977"
 }

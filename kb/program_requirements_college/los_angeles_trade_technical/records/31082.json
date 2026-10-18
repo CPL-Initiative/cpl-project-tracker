@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 12,
    "listed": 12,
-   "share": 0.917,
-   "missing": [
-    "REFAC105"
-   ],
-   "unexplained": [
-    "REFAC105"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "MATH115",
-    "REFA/C105"
+    "MATH115"
    ],
    "flagged": [
     "MATH115"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -251,5 +246,6 @@
    "The certificate overview names employers (contractors, facilities management companies, public/private agencies) rather than job titles; only 'entry level laborer' was recorded as a career."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": 39114580707,
+ "read_run": "39054673977"
 }

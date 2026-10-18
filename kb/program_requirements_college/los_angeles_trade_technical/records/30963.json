@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "REFAC105"
-   ],
-   "unexplained": [
-    "REFAC105"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BLDGCTQ102",
-    "REFA/C105"
+    "BLDGCTQ102"
    ],
    "flagged": [
     "BLDGCTQ102"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -296,5 +291,6 @@
    "ELECL 601 is listed as 15 units (600 Hours); the award is counted in units."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": 39114580707,
+ "read_run": "39054673977"
 }

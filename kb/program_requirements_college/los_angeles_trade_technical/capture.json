@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 211,
  "with_closed_list": 188,
- "started": "2026-10-17T17:40:38Z",
+ "started": "2026-10-18T09:16:25Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.lattc.edu/academic-resources/catalog",
@@ -22,7 +22,7 @@
   "pages_total": 376,
   "error": null,
   "chars_total": 1615901,
-  "pypdf_accepted": 179,
+  "pypdf_accepted": 185,
   "sample": [
    "p113: 'Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG\\nGRADUATION REQUIREMENTS, P ATHW AYS \\nAND PROGRAMS OF STUDY\\n113\\nBusiness & Civic Engagement Pathway (BCE)\\nCOMPUTER APPLICATIONS & OFFICE \\nTECHNOLOGIES\\nAward Title Academic Plan '",
    "p226: 'Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG\\n226\\nNoncredit - Certificates\\nGRADUATION REQUIREMENTS, P ATHW AYS \\nAND PROGRAMS OF STUDY\\nCAREER FOUNDATIONS FOR ENGLISH \\nLANGUAGE LEARNERS I  \\n ▌ Certificate of Completion \\nAwar'"
@@ -36,6 +36,7 @@
      101
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -47,6 +48,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.75,
@@ -58,6 +60,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -71,6 +74,7 @@
      128
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.955,
@@ -85,6 +89,7 @@
      128
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -99,6 +104,7 @@
      116
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 0.737,
@@ -111,6 +117,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -122,10 +129,24 @@
      117
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 117] Requirements for the Associate in Science degree in Computer Information Systems may be met by completing 24 units of Required Courses and 21 units of Major Electives with a “C” or better along with General "
+   },
+   {
+    "control_number": "02904",
+    "pages": [
+     140,
+     141
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 140] T002904C A.S. 21* 42 6 48 Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration (formerly Refrigeration & Air Conditioning Mechanics) T021842D C 42 6 48 At least 60 degree appli"
    },
    {
     "control_number": "02905",
@@ -134,6 +155,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -145,6 +167,7 @@
      246
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.545,
@@ -156,6 +179,7 @@
      84
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.8,
@@ -170,6 +194,7 @@
      135
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.812,
@@ -178,16 +203,17 @@
    {
     "control_number": "02910",
     "pages": [
+     135,
+     136,
      137,
-     138,
-     139,
-     140
+     138
     ],
     "named": false,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+    "opens": "[page 135] T002910C A.S. 21* 42 6 48 Electrical Construction and Maintenance: Electrician —(day only) T021853D C 42 6 48 Electrical Construction and Maintenance: Construction Technician —(evening only) T008481C A.A."
    },
    {
     "control_number": "02911",
@@ -198,6 +224,7 @@
      147
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -209,6 +236,7 @@
      88
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -220,10 +248,24 @@
      83
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.826,
     "opens": "[page 83] Machine Shop CNC T002914C A.S. 21* 48 - 48 Machine Shop CNC T021860D C 48 - 48 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completi n"
+   },
+   {
+    "control_number": "02916",
+    "pages": [
+     156,
+     157
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 156 Construction Maintenance & Utilities Pathway (CMU) GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY WELDING, GAS AND ELECTRIC ▌ As"
    },
    {
     "control_number": "02917",
@@ -232,6 +274,7 @@
      155
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -244,6 +287,7 @@
      187
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -258,6 +302,7 @@
      199
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.842,
@@ -272,6 +317,7 @@
      182
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -283,6 +329,7 @@
      339
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -294,6 +341,7 @@
      206
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.75,
@@ -305,6 +353,7 @@
      168
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -316,6 +365,7 @@
      171
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -327,6 +377,7 @@
      164
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -338,6 +389,7 @@
      131
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.842,
@@ -352,6 +404,7 @@
      124
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.611,
@@ -366,6 +419,7 @@
      116
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -377,6 +431,7 @@
      82
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.846,
@@ -391,9 +446,10 @@
      145
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.5,
+    "coverage": 0.636,
     "opens": "[page 142] Engineering: Steam Plant T008474D C 12 24 36 This program is Financial Aid Eligible. PROGRAM OVERVIEW Most craft workers specialize in one kind of work, such as plumbing or carpentry. General maintenance and "
    },
    {
@@ -403,6 +459,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -414,6 +471,7 @@
      81
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -428,6 +486,7 @@
      135
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.967,
@@ -436,16 +495,17 @@
    {
     "control_number": "08481",
     "pages": [
+     135,
+     136,
      137,
-     138,
-     139,
-     140
+     138
     ],
     "named": false,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+    "opens": "[page 135] T008481C A.A. 21* 40 8 48 Electrical Construction and Maintenance: Construction Technician* —(evening only) T021852D C 40 8 48 At least 60 degree applicable units are required to earn an Associate degree. "
    },
    {
     "control_number": "08482",
@@ -453,6 +513,7 @@
      159
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -466,9 +527,10 @@
      146
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.941,
+    "coverage": 1.0,
     "opens": "[page 144] T008484C A.A. 21* 37 8 45 Plumbing: Construction Technician —(evening only) T021856D C 37 8 45 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulf"
    },
    {
@@ -477,6 +539,7 @@
      153
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -488,6 +551,7 @@
      152
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -500,6 +564,7 @@
      343
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.583,
@@ -511,6 +576,7 @@
      167
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -523,6 +589,7 @@
      183
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.87,
@@ -535,6 +602,7 @@
      112
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -549,6 +617,7 @@
      109
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.957,
@@ -562,6 +631,7 @@
      110
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -573,6 +643,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -587,6 +658,7 @@
      126
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.889,
@@ -599,6 +671,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -611,6 +684,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -623,6 +697,7 @@
      155
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -635,6 +710,7 @@
      155
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -649,6 +725,7 @@
      212
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.994,
@@ -662,6 +739,7 @@
      97
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -673,6 +751,7 @@
      97
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -684,6 +763,7 @@
      97
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -695,6 +775,7 @@
      131
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -709,6 +790,7 @@
      116
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -721,6 +803,7 @@
      120
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -732,6 +815,7 @@
      117
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -743,10 +827,24 @@
      82
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.846,
     "opens": "[page 82] Technology T021840D C 35 - 35 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pat- tern; please consult "
+   },
+   {
+    "control_number": "21842",
+    "pages": [
+     140,
+     141
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 140] T021842D C 42 6 48 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult with a coun"
    },
    {
     "control_number": "21844",
@@ -755,6 +853,7 @@
      80
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -767,6 +866,7 @@
      76
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -781,6 +881,7 @@
      135
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.793,
@@ -795,6 +896,7 @@
      135
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.967,
@@ -803,30 +905,32 @@
    {
     "control_number": "21852",
     "pages": [
+     135,
+     136,
      137,
-     138,
-     139,
-     140
+     138
     ],
     "named": false,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+    "opens": "[page 135] T021852D C 40 8 48 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pat- tern; please consult with a cou"
    },
    {
     "control_number": "21853",
     "pages": [
+     135,
+     136,
      137,
-     138,
-     139,
-     140
+     138
     ],
     "named": false,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+    "opens": "[page 135] T021853D C 42 6 48 Electrical Construction and Maintenance: Construction Technician —(evening only) T008481C A.A. 21* 40 8 48 Electrical Construction and Maintenance: Construction Technician* —(evening "
    },
    {
     "control_number": "21855",
@@ -837,6 +941,7 @@
      147
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -849,9 +954,10 @@
      146
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.941,
+    "coverage": 1.0,
     "opens": "[page 145] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 145 Construction Maintenance & Utilities Pathway (CMU) PLUMBING ▌ Certificate of Achi"
    },
    {
@@ -860,10 +966,24 @@
      88
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 88] Chemical Technology T021859D C 38 - 38 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education "
+   },
+   {
+    "control_number": "21861",
+    "pages": [
+     156,
+     157
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 156 Construction Maintenance & Utilities Pathway (CMU) GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY WELDING, GAS AND ELECTRIC ▌ As"
    },
    {
     "control_number": "21862",
@@ -872,6 +992,7 @@
      187
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -883,6 +1004,7 @@
      183
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -897,6 +1019,7 @@
      182
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -908,6 +1031,7 @@
      183
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.826,
@@ -919,6 +1043,7 @@
      153
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -930,6 +1055,7 @@
      164
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -941,6 +1067,7 @@
      233
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -952,6 +1079,7 @@
      235
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -964,6 +1092,7 @@
      353
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -976,6 +1105,7 @@
      349
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -987,6 +1117,7 @@
      350
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -998,6 +1129,7 @@
      239
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.875,
@@ -1010,6 +1142,7 @@
      139
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1024,6 +1157,7 @@
      149
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1038,6 +1172,7 @@
      149
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1052,6 +1187,7 @@
      141
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1066,9 +1202,10 @@
      149
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.812,
+    "coverage": 0.938,
     "opens": "[page 146] Powerline Worker T030963C A.S. 21* 34-36 6-7 40-43 Powerline Worker: Pole Climbing T030905D C 18-20 - 18-20 Utility Industry Fundamentals T030904D C 19-21 - 19-21 At least 60 degree applicable units are requ"
    },
    {
@@ -1080,6 +1217,7 @@
      109
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1093,6 +1231,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1106,6 +1245,7 @@
      110
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1119,6 +1259,7 @@
      110
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1130,6 +1271,7 @@
      110
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1142,6 +1284,7 @@
      110
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1156,6 +1299,7 @@
      151
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1168,9 +1312,10 @@
      151
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.75,
+    "coverage": 0.917,
     "opens": "[page 150] and Maintenance T031082D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please con"
    },
    {
@@ -1180,9 +1325,10 @@
      151
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.565,
+    "coverage": 0.696,
     "opens": "[page 150] and Maintenance T031089C A.S. 21* 38 4 42 Solar Thermal Installation and Maintenance T031082D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may"
    },
    {
@@ -1194,9 +1340,10 @@
      141
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.762,
+    "coverage": 0.905,
     "opens": "[page 138] Technician T031090C A.S. 21* 36-38 4 40-42 Energy Systems Technology Fundamentals T030906D C 16 - 16 Weatherization and Energy Auditor T030210D C 14 - 14 At least 60 degree applicable units are required to e"
    },
    {
@@ -1208,6 +1355,7 @@
      127
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.944,
@@ -1222,6 +1370,7 @@
      92
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1236,6 +1385,7 @@
      127
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.933,
@@ -1250,9 +1400,10 @@
      151
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.6,
+    "coverage": 0.72,
     "opens": "[page 148] T031280C A.S. 21* 36-38 4 40-42 Solar PV Installation and Maintenance Technician T031081D C 26-28 - 26-28 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements "
    },
    {
@@ -1261,6 +1412,7 @@
      165
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1273,6 +1425,7 @@
      164
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1284,6 +1437,7 @@
      206
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1295,6 +1449,7 @@
      102
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1303,16 +1458,15 @@
    {
     "control_number": "32948",
     "pages": [
-     62,
-     63,
-     64,
-     65
+     193,
+     194
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 62] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 62 Graduation Requirements, Pathways and Programs of Study GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY ECON C2002 Principles of"
+    "coverage": 0.824,
+    "opens": "[page 193] Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW Kinesiology is the study"
    },
    {
     "control_number": "33225",
@@ -1321,6 +1475,7 @@
      88
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1333,6 +1488,7 @@
      88
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1345,6 +1501,7 @@
      203
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1357,6 +1514,7 @@
      128
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1371,6 +1529,7 @@
      213
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.984,
@@ -1384,6 +1543,7 @@
      177
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1397,6 +1557,7 @@
      177
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1408,6 +1569,7 @@
      177
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1419,6 +1581,7 @@
      177
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1432,6 +1595,7 @@
      128
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1444,6 +1608,7 @@
      177
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1456,6 +1621,7 @@
      177
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1467,6 +1633,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1478,6 +1645,7 @@
      85
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1486,16 +1654,14 @@
    {
     "control_number": "36134",
     "pages": [
-     209,
-     210,
-     211,
-     212
+     56
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
-    "coverage": 0.812,
-    "opens": "[page 209] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 209 Liberal Arts (LA) and Transfer Prep Pathway INTERDISCIPLINARY STUDIES: ARTS AND S"
+    "coverage": 0.695,
+    "opens": "[page 56] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 56 Graduation Requirements, Pathways and Programs of Study GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY TYPES OF GENERAL EDUCATION "
    },
    {
     "control_number": "36231",
@@ -1506,6 +1672,7 @@
      215
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.622,
@@ -1517,6 +1684,7 @@
      230
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1528,6 +1696,7 @@
      234
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1540,6 +1709,7 @@
      233
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1551,6 +1721,7 @@
      235
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1562,6 +1733,7 @@
      233
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1573,6 +1745,7 @@
      351
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.5,
@@ -1584,6 +1757,7 @@
      234
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1596,6 +1770,7 @@
      201
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1609,6 +1784,7 @@
      202
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1623,6 +1799,7 @@
      108
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.941,
@@ -1634,6 +1811,7 @@
      203
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1646,6 +1824,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1657,6 +1836,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1671,6 +1851,7 @@
      93
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1684,6 +1865,7 @@
      95
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1695,6 +1877,7 @@
      94
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1709,6 +1892,7 @@
      220
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1721,6 +1905,7 @@
      105
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -1732,6 +1917,7 @@
      161
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1743,6 +1929,7 @@
      207
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -1754,6 +1941,7 @@
      174
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.923,
@@ -1768,6 +1956,7 @@
      219
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.818,
@@ -1779,6 +1968,7 @@
      161
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
@@ -1791,6 +1981,7 @@
      202
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.867,
@@ -1804,6 +1995,7 @@
      220
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1818,6 +2010,7 @@
      202
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1829,6 +2022,7 @@
      103
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1841,6 +2035,7 @@
      183
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.8,
@@ -1853,6 +2048,7 @@
      183
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1864,6 +2060,7 @@
      228
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1876,6 +2073,7 @@
      225
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1887,6 +2085,7 @@
      226
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1899,6 +2098,7 @@
      225
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.667,
@@ -1910,6 +2110,7 @@
      225
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.7,
@@ -1921,6 +2122,7 @@
      225
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1932,6 +2134,7 @@
      225
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.75,
@@ -1944,10 +2147,37 @@
      183
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.9,
     "opens": "[page 182] Fashion Media T041150D C - 19 - 19 Fashion Merchandising T008653C A.S. 21* 33 5 38 Fashion Merchandising T021867D C - 33 5 38 Retail Merchandising T040330D C - 21 - 21 Wholesale Merchandising T0"
+   },
+   {
+    "control_number": "41754",
+    "pages": [
+     156,
+     157
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 156] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 156 Construction Maintenance & Utilities Pathway (CMU) GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY WELDING, GAS AND ELECTRIC ▌ As"
+   },
+   {
+    "control_number": "41759",
+    "pages": [
+     156,
+     157
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 156 Construction Maintenance & Utilities Pathway (CMU) GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY WELDING, GAS AND ELECTRIC ▌ As"
    },
    {
     "control_number": "42144",
@@ -1957,6 +2187,7 @@
      134
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1968,6 +2199,7 @@
      192
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1980,6 +2212,7 @@
      105
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.8,
@@ -1992,6 +2225,7 @@
      351
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2003,6 +2237,7 @@
      231
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2014,6 +2249,7 @@
      351
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -2027,6 +2263,7 @@
      186
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2040,6 +2277,7 @@
      186
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2052,6 +2290,7 @@
      96
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -2063,6 +2302,7 @@
      354
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.5,
@@ -2074,6 +2314,7 @@
      65
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.535,
@@ -2086,6 +2327,7 @@
      187
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2099,6 +2341,7 @@
      171
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2110,6 +2353,7 @@
      357
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -2121,6 +2365,7 @@
      173
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2132,6 +2377,7 @@
      173
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2144,6 +2390,7 @@
      171
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2155,6 +2402,7 @@
      139
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2166,6 +2414,7 @@
      226
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2177,6 +2426,7 @@
      231
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2188,6 +2438,7 @@
      232
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2200,6 +2451,7 @@
      186
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2217,12 +2469,12 @@
   ]
  },
  "loads": 2,
- "seconds": 141.7,
- "found": 172,
+ "seconds": 117.2,
+ "found": 178,
  "by_method": {
   "no_closed_list": 23,
-  "not_found": 16,
-  "pdf_pages": 172
+  "not_found": 10,
+  "pdf_pages": 178
  },
  "shared_pages": {
   "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121": [
@@ -2246,6 +2498,10 @@
    "02900",
    "21839"
   ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140": [
+   "02904",
+   "21842"
+  ],
   "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79": [
    "02905",
    "08476",
@@ -2258,7 +2514,7 @@
    "21849",
    "42144"
   ],
-  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137": [
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135": [
    "02910",
    "08481",
    "21852",
@@ -2272,6 +2528,12 @@
   "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88": [
    "02913",
    "21859"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156": [
+   "02916",
+   "21861",
+   "41754",
+   "41759"
   ],
   "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154": [
    "02917",
@@ -2451,21 +2713,6 @@
    }
   },
   {
-   "control_number": "02904",
-   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
-    "coverage": 0.185
-   }
-  },
-  {
-   "control_number": "02916",
-   "title": "Welding, Gas and Electric",
-   "award": "A.S. Degree",
-   "near_miss": null
-  },
-  {
    "control_number": "12068",
    "title": "Electronics Engineering Technician",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -2473,21 +2720,6 @@
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=284",
     "coverage": 0.353
    }
-  },
-  {
-   "control_number": "21842",
-   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
-    "coverage": 0.185
-   }
-  },
-  {
-   "control_number": "21861",
-   "title": "Welding, Gas and Electric",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": null
   },
   {
    "control_number": "24169",
@@ -2520,12 +2752,9 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "pages": [
-     209,
-     210,
-     211,
-     212
+     56
     ],
-    "coverage": 0.812,
+    "coverage": 0.695,
     "why": "the page prints neither the control number nor the title and award"
    }
   },
@@ -2533,18 +2762,6 @@
    "control_number": "41013",
    "title": "Chassis Technician (ASE A4 & A5 Test Prep)",
    "award": "Noncredit program",
-   "near_miss": null
-  },
-  {
-   "control_number": "41754",
-   "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": null
-  },
-  {
-   "control_number": "41759",
-   "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": null
   },
   {
@@ -2600,1735 +2817,205 @@
  "page_claimed": [],
  "coverage_bands": {
   "0.5-0.8": 19,
-  "0.8-1.0": 32,
-  "1.0": 121
+  "0.8-1.0": 33,
+  "1.0": 126
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 172,
+  "against": "kb/program_requirements_college/los_angeles_trade_technical",
+  "kept": 159,
+  "programs": 19,
   "list": [
    {
-    "control_number": "02891",
-    "title": "Accounting",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02892",
-    "title": "Management/Supervision",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02894",
-    "title": "Marketing and Public Relations",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02895",
-    "title": "Retail Management",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126",
-    "coverage": 0.955,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02896",
-    "title": "Real Estate",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02897",
-    "title": "Computer App & Office Tech: Administrative Asst",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
-    "coverage": 0.737,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02898",
-    "title": "Labor Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02900",
-    "title": "Computer Information Systems",
+    "control_number": "02904",
+    "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
     "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
-    "coverage": 1.0,
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "coverage": 0.778,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02905",
-    "title": "Heavy Truck, Transit, and Equipment Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02907",
-    "title": "Automotive Collision Repair",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=246",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02908",
-    "title": "Motorcycle Repair Mechanics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=84",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02909",
-    "title": "Carpentry",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "02910",
     "title": "Electrical Construction and Maintenance:  Electrician",
     "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "02911",
-    "title": "Plumbing",
+    "control_number": "02916",
+    "title": "Welding, Gas and Electric",
     "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02913",
-    "title": "Chemical Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02914",
-    "title": "Machine Shop: CNC",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=83",
-    "coverage": 0.826,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02917",
-    "title": "Water Systems Technology: Supply Water Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02921",
-    "title": "Sign Graphics",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02922",
-    "title": "Nursing, Registered",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=196",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02925",
-    "title": "Fashion Design",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02926",
-    "title": "Tailoring",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=339",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02927",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02938",
-    "title": "Culinary Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=168",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02939",
-    "title": "Restaurant Management",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=171",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02940",
-    "title": "Cosmetology",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08467",
-    "title": "Architectural Technology and Environmental Design",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08469",
-    "title": "Small Business Entrepreneurship",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
-    "coverage": 0.611,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08471",
-    "title": "Comp App & Office Tech: Office Assistant-Clerical",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08473",
-    "title": "Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "08474",
     "title": "Operation & Maintenance Engineering: Steam Plant",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08476",
-    "title": "Truck and Transit Preventive Maintenance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08478",
-    "title": "Hybrid & Electric Vehicle Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08479",
-    "title": "Carpentry - Construction Technologies",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
-    "coverage": 0.967,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.636,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
+    "was_coverage": 0.5,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08481",
     "title": "Electrical Construction & Maintenance: Construction Technician",
     "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08482",
-    "title": "Electrical Lineman Apprenticeship",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=159",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08484",
     "title": "Plumbing: Construction Technician",
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08488",
-    "title": "Street Maintenance Technology",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "08489",
-    "title": "Solid Waste Management Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=152",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08493",
-    "title": "Visual Communications",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=342",
-    "coverage": 0.583,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08503",
-    "title": "Baking Professional",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=167",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08653",
-    "title": "Fashion Merchandising",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
-    "coverage": 0.87,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09266",
-    "title": "Community Planning & Economic Development",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10403",
-    "title": "Child Development",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10404",
-    "title": "Specializing in Preschool Teaching",
+    "control_number": "21842",
+    "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
-    "coverage": 1.0,
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "coverage": 0.778,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10405",
-    "title": "Specializing in Children with Special Needs",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10750",
-    "title": "Medical Administrative Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=123",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10751",
-    "title": "Auto & Related Technology: Transmission Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10752",
-    "title": "Auto & Related Technology: Tune-Up",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10754",
-    "title": "Supply Water Systems Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10755",
-    "title": "Water Systems Technology--Wastewater Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18856",
-    "title": "Interdisciplinary Studies: Arts and Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=209",
-    "coverage": 0.994,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18857",
-    "title": "Liberal Arts & Sciences:  Emphasis in Mathematics, Physical and Natural Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19108",
-    "title": "Process Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19109",
-    "title": "Process Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21825",
-    "title": "Architectural Technology and Environmental Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21834",
-    "title": "Comp App & Office Tech: Office Assistant-Clerical",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21836",
-    "title": "Labor Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21839",
-    "title": "Computer Information Systems",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21840",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21844",
-    "title": "Heavy Truck, Transit, and Equipment Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21845",
-    "title": "Automotive and Related Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21848",
-    "title": "Carpentry",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
-    "coverage": 0.793,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21849",
-    "title": "Carpentry - Construction Technologies",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
-    "coverage": 0.967,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "21852",
     "title": "Electrical Construction & Maintenance: Construction Technician",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21853",
     "title": "Electrical Construction and Maintenance:  Electrician",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=135",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21855",
-    "title": "Plumbing",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21856",
     "title": "Plumbing: Construction Technician",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21859",
-    "title": "Chemical Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "21862",
-    "title": "Sign Graphics",
+    "control_number": "21861",
+    "title": "Welding, Gas and Electric",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21863",
-    "title": "Visual Communications",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21865",
-    "title": "Fashion Design",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21867",
-    "title": "Fashion Merchandising",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
-    "coverage": 0.826,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21870",
-    "title": "Street Maintenance Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21873",
-    "title": "Cosmetology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24048",
-    "title": "Recreation and Community Services Assistant",
-    "award": null,
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24132",
-    "title": "Utilities and Construction Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24136",
-    "title": "Bank Teller",
-    "award": null,
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=352",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24459",
-    "title": "English as a Second Language (ESL): Beginning",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30210",
-    "title": "Weatherization and Energy Auditor",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30904",
-    "title": "Utility Industry Fundamentals",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30905",
-    "title": "Powerline Worker: Pole Climbing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30906",
-    "title": "Energy Systems Technology Fundamentals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "30963",
     "title": "Powerline Mechanic",
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31018",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31059",
-    "title": "Specializing in Children with Special Needs",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31060",
-    "title": "Specializing in Associate Preschool Teaching",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31061",
-    "title": "Specializing in Infant and Toddler Teaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31062",
-    "title": "Specializing in School Age Programs",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31063",
-    "title": "Specializing in Program Administration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31081",
-    "title": "Solar PV Installation and Maintenance Technician",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.938,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+    "was_coverage": 0.812,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31082",
     "title": "Solar Thermal Installation and Maintenance",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.917,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31089",
     "title": "Solar Thermal Installation & Maintenance",
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
-    "coverage": 0.565,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.696,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+    "was_coverage": 0.565,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31090",
     "title": "Energy Efficiency Technician",
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
-    "coverage": 0.762,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31182",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31207",
-    "title": "Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31262",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.905,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+    "was_coverage": 0.762,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31280",
     "title": "Photo Voltaic (PV) Solar Installation & Maintenance",
     "award": "A.S. Degree",
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31396",
-    "title": "Skin Therapy",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=165",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32703",
-    "title": "Barbering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32905",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32910",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.72,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+    "was_coverage": 0.6,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32948",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
+    "coverage": 0.824,
+    "was_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "33225",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33682",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33802",
-    "title": "Personal Care Aide",
+    "control_number": "41754",
+    "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=202",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "33813",
-    "title": "Small Business Entrepreneurship",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33815",
-    "title": "Liberal Arts: Behavioral and Social Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=210",
-    "coverage": 0.984,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35202",
-    "title": "Digital Media",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35215",
-    "title": "Digital Media",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35275",
-    "title": "Digital Media Mobile Application and Web Design",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35278",
-    "title": "Digital Media Mobile Application and Web Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35286",
-    "title": "Retail Management",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35292",
-    "title": "Digital Media: Digital Video and Audio",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35296",
-    "title": "Digital Media: Digital Video and Audio",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35618",
-    "title": "Rail Vehicle Maintenance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35649",
-    "title": "Rail Vehicle Maintenance",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36231",
-    "title": "IGETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
-    "coverage": 0.622,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36614",
-    "title": "Entry Level Laborer for the Energy & Construction Sectors",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=230",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36615",
-    "title": "Sewing Operator",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36617",
-    "title": "Lifeguard Training",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36686",
-    "title": "Water Safety Instructor",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36814",
-    "title": "Lube Technician",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36965",
-    "title": "Custodial Technician Training",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=351",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37088",
-    "title": "Sustainable Small Business Development",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37706",
-    "title": "Pre-Health Professions II",
+    "control_number": "41759",
+    "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=156",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38452",
-    "title": "Pre-Health Professions I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38461",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=105",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38533",
-    "title": "Senior Exercise Leader, Land & Aquatics Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=203",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38588",
-    "title": "Engineering - Electrical Track",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38589",
-    "title": "Engineering - Mechanical, Aerospace, Manufacturing Track",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38590",
-    "title": "Engineering - Civil Engineering Track",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38703",
-    "title": "Industrial Applied Science - Core Competencies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38737",
-    "title": "Industrial Safety, Regulatory and Biomanufacturing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38883",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=217",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38910",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38947",
-    "title": "Operating Engineer",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38966",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=207",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39133",
-    "title": "Costume Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=174",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39216",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=216",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39228",
-    "title": "Operating Engineer",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39531",
-    "title": "Public Health Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=201",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39546",
-    "title": "Social Justice Studies - Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=218",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40026",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=199",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40283",
-    "title": "Amazon Web Services",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40323",
-    "title": "Wholesale Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40330",
-    "title": "Retail Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40965",
-    "title": "Drive Train Technician (ASE A2 & A3 Test Prep)",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=228",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40966",
-    "title": "AC Technician (ASE A6 & A7 Test Prep)",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40967",
-    "title": "Basic Automotive Chassis Tech",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41010",
-    "title": "Advanced Engine Performance (ASE A6, A8 & L1 Test Prep)",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41011",
-    "title": "Advanced Master Auto Technician (ASE A1-8 & L1 Test Prep)",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41012",
-    "title": "Auto Technician (ASE A1 & A8 Test Prep)",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41014",
-    "title": "Master Auto Technician (ASE 1-8 Test Prep)",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41150",
-    "title": "Fashion Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42144",
-    "title": "Residential/Commercial Framing Helper",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42296",
-    "title": "Health Foundation Career Program",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=192",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42785",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44055",
-    "title": "English as a Second Language (ESL): Intermediate",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44170",
-    "title": "Fashion Retail First Time Manager",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44344",
-    "title": "Game Art & Design Foundation",
-    "award": "A.S. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44345",
-    "title": "Game Art & Design Foundation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45285",
-    "title": "Cal-GETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=65",
-    "coverage": 0.535,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45321",
-    "title": "Screen Printing Fundamentals",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45377",
-    "title": "Plant-Based Culinary & Nutrition",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=169",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45629",
-    "title": "Advanced Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45630",
-    "title": "Advanced Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45670",
-    "title": "Mobile Food Truck Operations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=170",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45676",
-    "title": "EV Charging Station Installation, Maintenance, and Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46397",
-    "title": "Career Foundations for English Language Learners I",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46398",
-    "title": "High School Equivalency Bilingual Preparation I",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46399",
-    "title": "High School Equivalency Bilingual Preparation II",
-    "award": "Noncredit program",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46498",
-    "title": "Graphic Design Fundamentals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=185",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ]
  },
- "run": "39054673977"
+ "run": "39114580707"
 }

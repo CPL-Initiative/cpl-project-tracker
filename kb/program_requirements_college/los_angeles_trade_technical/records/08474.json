@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 15,
    "listed": 22,
-   "share": 0.636,
+   "share": 0.682,
    "missing": [
     "OPMAAP703",
     "OPMAAP704",
@@ -56,17 +56,14 @@
     "OPMAAP724",
     "OPMAAP740",
     "OPMAAP744",
-    "REFAC101",
     "REFAC209"
    ],
-   "unexplained": [
-    "REFAC101"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 32,
+   "count": 31,
    "codes": [
     "CRPNTRY111A",
     "CRPNTRY241",
@@ -79,7 +76,6 @@
     "PLUMBNG145",
     "PLUMBNG28",
     "PLUMBNG31",
-    "REFA/C101",
     "REFA/C111",
     "REFA/C133",
     "REFA/C134",
@@ -134,7 +130,7 @@
     "REFA/C204",
     "REFA/C208"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -172,7 +168,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -596,5 +592,6 @@
    "Major electives block 'Select at least 24 units'; no separate block total printed, so stated is null."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": 39114580707,
+ "read_run": "39054673977"
 }
