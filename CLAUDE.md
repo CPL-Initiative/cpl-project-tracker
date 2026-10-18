@@ -752,7 +752,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 95](https://claude.ai/artifact/M5oRGgFTaXJNZNm2ugLW3K), answered 14:43Z, nothing open; Sheet 94 answered 13:43Z). Answering
+> (latest answered: [Open Asks Sheet 95](https://claude.ai/artifact/M5oRGgFTaXJNZNm2ugLW3K), 14:43Z; Sheet 96, one CER card, is a draft in CPLBrain#385 until the first saving run's receipt lands). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -782,7 +782,7 @@ stays here.
 | **Noncredit CIP categories** | Which of the CO's ten noncredit CIP categories a program belongs to — and what that means for CDCP eligibility and funding. | 🔨 in progress · open work — [lane state](docs/reference/lanes/noncredit-cip-categories.md) |
 | **Reviewer session lifetime & scope** | What "signed in" means, how long it lasts, and which browser tab has it. | ✅ live · open work — [lane state](docs/reference/lanes/reviewer-session-lifetime.md) |
 | **Org & phrase scope / auth model** | Which sites exist, which phrase opens which, and whether shared phrases survive at all. | 🔨 in progress · open work — [lane state](docs/reference/lanes/org-phrase-scope-auth.md) |
-| **CER procedures / the simpler CER tab** | Sam adds a rule in plain words; the nightly run applies the rules, then the classifier; Sam sees only the exceptions. | 🔨 in progress · open work (Sheet 94's rulings built, #2231 to merge) — [lane state](docs/reference/lanes/cer-procedures.md) |
+| **CER procedures / the simpler CER tab** | Sam adds a rule in plain words; the nightly run applies the rules, then the classifier; Sam sees only the exceptions. | 🔨 in progress · open work (Sheet 94's rulings live; the first saving run waits on #2232) — [lane state](docs/reference/lanes/cer-procedures.md) |
 | **EACR — Exhibit & CR Adoption** | One place to see every exhibit, its credit recommendations, and the colleges that could adopt it. | ✅ live · open work — [lane state](docs/reference/lanes/eacr-exhibit-cr-adoption.md) |
 | **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
 | **Public/private repo split** | Separate the public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI and the methodology. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
@@ -795,7 +795,7 @@ stays here.
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
 | **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · 114 colleges hold records; the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
-| **The Commons** | One tracking system for every common reference (Program Requirements, Exhibit, Course, CR), aligned dashes, and a Commons dash ordered by priority and completion. | 🔨 mock-up published, Fable's review pending (Sheet 95) — [lane state](docs/reference/lanes/commons.md) |
+| **The Commons** | One tracking system for every common reference (Program Requirements, Exhibit, Course, CR), aligned dashes, and a Commons dash ordered by priority and completion. | 🔨 mock-up revised on Fable's review; Sheet 96 to finish (CPLBrain#385) — [lane state](docs/reference/lanes/commons.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
