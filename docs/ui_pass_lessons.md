@@ -279,3 +279,23 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
   inert subtree; contrast and target sizes are read from every element.
 - **`cobi` and `cobi-dark` still fail on six other tabs** (Memory, MAP Export, CPL News, Credential Reference, Pipeline, Our
   Process). Those failures were there before #2124, and the ledger reaches each tab in turn. Next due: GR Priorities.
+
+## S413 SkyPinyon (2026-10-18): the Common Exhibit Reference's three views (#2221)
+
+- **A tab that opens on what needs doing has to decide before its first paint.** The CER now opens on Needs you › Held
+  when the night's procedures report holds titles for a person, else on Reference. The report (220 KB) is fetched beside
+  the curation overlay, so the choice lands with the first render and nothing flips under the reader. A report that
+  fails to load opens Reference, the grid the tab showed before. A quickstart hint (a search or filter handed in from
+  elsewhere) only means something in the grid, so it opens Reference too.
+- **A seed that opens a row finds what the first screen hides.** The S401 sweep measured the grid closed. The new
+  `cer-reference` seed opens a row and found two faults no one had measured: the row's section headings skipped h2 to
+  h5, and in dark the college badges' half-white fill under hunter ink read 1.15:1. Headings are h3 in the body face at
+  the old size (the global h3 rule paints the display serif, so the face is set back); badges paint no fill.
+- **A switch with no arrow keys is a group of pressed buttons, not a tablist.** The mock-up drew `role="tab"`; the tab
+  pattern promises arrow-key movement the switch does not have, so the views are `aria-pressed` buttons in a labelled
+  group, the convention the tab's lanes already used.
+- **When only the view in use paints its lanes, a test reaches a lane the way a person does.** Fourteen CER tests
+  clicked a lane button straight after load. `tests/_cer_views.js` opens the view that holds the lane, then finds it;
+  the grid tests passed unchanged because no fixture serves a report, so they open on Reference.
+- **The `cobi` sweeps still fail on three other tabs** (CPL News, Pipeline, Our Process); the CER is clean in both
+  themes on its new first screen and in its four new seeded targets.
