@@ -1,0 +1,460 @@
+{
+ "college": "De Anza College",
+ "control_number": "07090",
+ "shape": "degree",
+ "title": "Film/TV: Production",
+ "award": "A.A. Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13079,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13079,
+    "output_tokens": 2238,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2238,
+  "output_tokens_details": {
+   "thinking_tokens": 168
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09708,
+ "ms": 16696,
+ "seconds": 17.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 64,
+   "share": 0.0,
+   "missing": [
+    "ARTS1A",
+    "FTV1",
+    "FTV10",
+    "FTV10H",
+    "FTV17G",
+    "FTV17H",
+    "FTV1H",
+    "FTV20",
+    "FTV22",
+    "FTV23",
+    "FTV26",
+    "FTV27",
+    "FTV29",
+    "FTV2A",
+    "FTV2AH",
+    "FTV2AW",
+    "FTV2AWH",
+    "FTV2B",
+    "FTV2BH",
+    "FTV2BW",
+    "FTV2BWH",
+    "FTV2C",
+    "FTV2CH",
+    "FTV2CW",
+    "FTV2CWH",
+    "FTV30",
+    "FTV31",
+    "FTV39",
+    "FTV3A",
+    "FTV41",
+    "FTV42",
+    "FTV43",
+    "FTV44A",
+    "FTV44B",
+    "FTV48S",
+    "FTV48T",
+    "FTV48U",
+    "FTV48V",
+    "FTV56A",
+    "FTV57A",
+    "FTV57B",
+    "FTV59",
+    "FTV60B",
+    "FTV60C",
+    "FTV64A",
+    "FTV64B",
+    "FTV64C",
+    "FTV65",
+    "FTV6A",
+    "FTV7",
+    "FTV70A",
+    "FTV71J",
+    "FTV74",
+    "FTV75G",
+    "FTV78W",
+    "FTV78X",
+    "FTV92",
+    "FTV98G",
+    "FTV98H",
+    "FTV98J",
+    "PHTG1",
+    "THEA1",
+    "THEA80A",
+    "THEA80B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program section in the text (pages 215-216 hold only F/TV course descriptions)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARTS 001A",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 001H",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 002A",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 002B",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 002C",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 003A",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 006A",
+    "why": "named only as a prerequisite or advisory; no requirements section"
+   },
+   {
+    "code": "F TV 010H",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 017G",
+    "why": "named only as a prerequisite; no requirements section"
+   },
+   {
+    "code": "F TV 017H",
+    "why": "named only as a prerequisite; no requirements section"
+   },
+   {
+    "code": "F TV 02AH",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 02AW",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 02BH",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 02BW",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 02CH",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 02CW",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 044A",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 044B",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 048S",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 048T",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 048U",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 048V",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 056A",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 057A",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 057B",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 060B",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 060C",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 064A",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 064B",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 064C",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 070A",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 071J",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 075G",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 078W",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 078X",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 098G",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 098H",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 098J",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 1",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 10",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 20",
+    "why": "named only as a prerequisite; no requirements section"
+   },
+   {
+    "code": "F TV 22",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 23",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 26",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 27",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 29",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 2AWH",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 2BWH",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 2CWH",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 30",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 31",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 39",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 41",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 42",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 43",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 59",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 65",
+    "why": "course description only; no requirements section"
+   },
+   {
+    "code": "F TV 7",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "F TV 74",
+    "why": "course description only (cut off); no requirements section"
+   },
+   {
+    "code": "F TV 92",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "PHTG 1",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "THEA 080A",
+    "why": "named only as an advisory (THEA 80A); no requirements section"
+   },
+   {
+    "code": "THEA 080B",
+    "why": "not in the text; no requirements section provided"
+   },
+   {
+    "code": "THEA 1",
+    "why": "not in the text; no requirements section provided"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 215-216) contains only F/TV course descriptions, not the Film/TV: Production A.A. Degree requirements, so no blocks, totals, outcomes or careers could be recorded. The program's requirements page should be located elsewhere in the 2025-2026 catalog and reviewed.",
+   "Text ends mid-description at F/TV 74."
+  ]
+ },
+ "extracted_run": "39115772038"
+}

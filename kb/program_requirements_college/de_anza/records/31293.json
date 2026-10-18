@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Kinesiology",
  "award": "A.A- T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=115",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=114",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12152,
+  "input_tokens": 13465,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12152,
-    "output_tokens": 7574,
+    "input_tokens": 13465,
+    "output_tokens": 7850,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,54 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 7574,
+  "output_tokens": 7850,
   "output_tokens_details": {
-   "thinking_tokens": 1738
+   "thinking_tokens": 1574
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.20009,
- "ms": 55746,
- "seconds": 56.1,
+ "cost_usd": 0.21086,
+ "ms": 54720,
+ "seconds": 55.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 87,
+   "placed": 114,
    "listed": 114,
-   "share": 0.763,
-   "missing": [
-    "BIOL40A",
-    "BIOL40B",
-    "BIOL40C",
-    "DANC22K",
-    "DANC22L",
-    "DANC22M",
-    "DANC23A",
-    "DANC23B",
-    "DANC23C",
-    "DANC23L",
-    "DANC23M",
-    "DANC24A",
-    "DANC24B",
-    "DANC25A",
-    "KNES12D",
-    "KNES12DX",
-    "KNES12E",
-    "KNES12EX",
-    "KNES1A",
-    "KNES1B",
-    "KNES1C",
-    "KNES1CX",
-    "KNES1D",
-    "KNES1DX",
-    "KNES2A",
-    "KNES2AX",
-    "KNES45"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -106,8 +78,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    13.0,
-    13.0
+    31.0,
+    31.0
    ],
    "stated": [
     90.0,
@@ -116,7 +88,6 @@
    "against": "degree",
    "ge": null,
    "why": [
-    "'Area 3 (continued; heading not in excerpt)' chooses units but names no minimum",
     "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ]
   },
@@ -125,13 +96,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -146,7 +117,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Kinesiology A.A-T (heading not in the excerpt; text begins mid-section on page 115)",
+   "section_heading": "Kinesiology for Transfer",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -167,20 +138,250 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Display increasing confidence in the ability to use a range of speaking, listening and collaboration skills",
+    "Apply fitness concepts to individuals seeking training programs",
+    "Analyze, evaluate and respond to requests for individualized fitness programs by weighing research, examining evidence and critical reasoning",
+    "Display competence in a variety of sports and activities"
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Area 3 (continued; heading not in excerpt)",
-    "rule": "choose_units",
+    "name": "Required Core",
+    "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 20,
+     "max": 20
     },
     "courses": [
+     {
+      "code": "BIOL 40A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 40B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 40C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 45",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 1 - Aquatics",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": "List A areas",
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "KNES 1A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 1B",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 1C",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 1CX",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 1D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 1DX",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 2A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 2AX",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 2 - Combatives",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": "List A areas",
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "KNES 12D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 12DX",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 12E",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 12EX",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 3 - Dance",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": "List A areas",
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DANC 22K",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 22L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 22M",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 23M",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 24A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 24B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 25A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "DANC 25B",
       "units": 1,
@@ -215,7 +416,7 @@
     "name": "Area 4 - Fitness",
     "rule": "choose_units",
     "minimum": 1,
-    "option_group": null,
+    "option_group": "List A areas",
     "stated": {
      "min": 1,
      "max": 1
@@ -542,7 +743,7 @@
     "name": "Area 5 - Individual Sports",
     "rule": "choose_units",
     "minimum": 1,
-    "option_group": null,
+    "option_group": "List A areas",
     "stated": {
      "min": 1,
      "max": 1
@@ -694,7 +895,7 @@
     "name": "Area 6 - Team Sports",
     "rule": "choose_units",
     "minimum": 1,
-    "option_group": null,
+    "option_group": "List A areas",
     "stated": {
      "min": 1,
      "max": 1
@@ -851,8 +1052,8 @@
    },
    {
     "name": "List B",
-    "rule": "choose_units",
-    "minimum": 10,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 10,
@@ -883,124 +1084,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "KNES 45",
-    "why": "not in the excerpt; Required Core likely on preceding page"
-   },
-   {
-    "code": "BIOL 040A",
-    "why": "named only in the Manual Therapy certificate in the excerpt; A.A-T core likely on preceding page"
-   },
-   {
-    "code": "BIOL 040B",
-    "why": "not in the excerpt; likely on preceding page"
-   },
-   {
-    "code": "BIOL 040C",
-    "why": "not in the excerpt; likely on preceding page"
-   },
-   {
-    "code": "DANC 022K",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 022L",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 022M",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 023A",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 023B",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 023C",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 023L",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 023M",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 024A",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 024B",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "DANC 025A",
-    "why": "not in the excerpt; earlier part of Area 3 on preceding page"
-   },
-   {
-    "code": "KNES 001A",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 001B",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 001C",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 001D",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 01CX",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 01DX",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 002A",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 02AX",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 012D",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 012E",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 12DX",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   },
-   {
-    "code": "KNES 12EX",
-    "why": "not in the excerpt; likely in an area on preceding page"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section: the A.A-T heading, description, outcomes, Required Core and List A heading/Areas 1-3 are on page 114 and not in the text; section_heading is reconstructed, not printed.",
-   "The first block holds the tail of an area (dance courses) whose heading and unit requirement are on the preceding page; minimum and stated left null.",
-   "'Total Required: 90 Units' read as the whole-degree total (quarter units) because the page says Cal-GETC and CSU-transferable electives are added 'as needed to reach at least 90 units'; recorded in degree_total, total_units null. The electives line appears at the top of page 115, out of order from extraction.",
-   "Areas 4-6 each print '(1 Units)'; recorded as choose_units minimum 1. List B prints '(10 Units)' and its two entries total exactly 10, so effectively both are required.",
-   "Catalog codes (e.g. KNES 2B, CHEM 30A) matched to closed-list codes with leading zeros (KNES 002B, CHEM 030A).",
-   "No program learning outcomes or careers for the A.A-T appear in the excerpt; the outcomes and careers shown belong to the Manual Therapy certificate and the language certificates and were not recorded."
+   "List A reads 'Complete a minimum of one unit from three different areas: (3 Units)'. Each of the six areas is recorded as its own choose_units block (minimum 1, stated 1) sharing option_group 'List A areas'. The student completes three of the six areas, not one, so the option_group does not capture the full rule.",
+   "The catalog uses the quarter system. 'Total Required: 90 Units' is recorded as degree_total because the page says Cal-GETC and CSU-transferable electives are added 'as needed to reach at least 90 units'. No major total is printed, so total_units is null and electives_fill_degree is true.",
+   "Catalog codes such as 'KNES 1A' and 'BIOL 40A' match closed-list codes written with zero padding (KNES 001A, BIOL 040A). They are treated as the same courses.",
+   "A page break (page 115) inserts the Cal-GETC electives line in the middle of the Area 3 - Dance list. DANC 25B, 37A, 37B and 37C, printed after it, were kept in Area 3.",
+   "KNES 15EY, KNES 16AY, KNES 12H, KNES 12HX, KNES 12J and KNES 12JX are printed in the section but are not in the closed list. They are marked as catalog additions.",
+   "The page names no careers for the Kinesiology for Transfer award. The careers listed in the following Manual Therapy certificate section belong to that award and were not used."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "39115772038"
 }

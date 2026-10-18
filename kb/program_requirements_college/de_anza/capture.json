@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 248,
  "with_closed_list": 243,
- "started": "2026-10-18T09:15:59Z",
+ "started": "2026-10-18T09:34:18Z",
  "pdf": {
   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf",
   "access": "hand_filed",
@@ -3178,7 +3178,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 343.2,
+ "seconds": 341.9,
  "found": 233,
  "by_method": {
   "no_closed_list": 5,
@@ -3633,8 +3633,8 @@
     "award": "A.A. Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
     "coverage": 0.981,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=127",
-    "was_coverage": 0.654,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
+    "was_coverage": 0.981,
     "was_method": "pdf_pages"
    },
    {
@@ -3643,9 +3643,9 @@
     "award": "A.A. Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
     "coverage": 0.656,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "was_coverage": 0.656,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07103",
@@ -3653,7 +3653,7 @@
     "award": "A.A. Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
     "coverage": 1.0,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3663,9 +3663,9 @@
     "award": "A.A. Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=214",
     "coverage": 0.63,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=214",
+    "was_coverage": 0.63,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16510",
@@ -3673,8 +3673,8 @@
     "award": "A.A. Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
     "coverage": 0.94,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=100",
-    "was_coverage": 0.862,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+    "was_coverage": 0.94,
     "was_method": "pdf_pages"
    },
    {
@@ -3683,9 +3683,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
     "coverage": 0.656,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "was_coverage": 0.656,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "23097",
@@ -3693,7 +3693,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=98",
     "coverage": 1.0,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=98",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3703,8 +3703,8 @@
     "award": "A.A- T Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=114",
     "coverage": 1.0,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=115",
-    "was_coverage": 0.772,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=114",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3713,9 +3713,9 @@
     "award": "A.A. Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
     "coverage": 0.585,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "was_coverage": 0.585,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31504",
@@ -3723,9 +3723,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
     "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=215",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "39390",
@@ -3733,8 +3733,8 @@
     "award": "A.A- T Degree",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
     "coverage": 0.953,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
-    "was_coverage": 0.628,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
+    "was_coverage": 0.953,
     "was_method": "pdf_pages"
    },
    {
@@ -3743,9 +3743,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=216",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=216",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41859",
@@ -3753,7 +3753,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116",
     "coverage": 0.857,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116",
     "was_coverage": 0.857,
     "was_method": "pdf_pages"
    },
@@ -3763,7 +3763,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
     "coverage": 0.917,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
     "was_coverage": 0.917,
     "was_method": "pdf_pages"
    },
@@ -3773,7 +3773,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
     "coverage": 1.0,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3783,11 +3783,11 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123",
     "coverage": 0.987,
-    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
-    "was_coverage": 0.571,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123",
+    "was_coverage": 0.987,
     "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39114559952"
+ "run": "39115772038"
 }
