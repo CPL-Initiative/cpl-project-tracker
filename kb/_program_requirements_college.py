@@ -1453,6 +1453,146 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     return pages
 
 
+# ── Coursedog (S414): Merced ────────────────────────────────────────────────
+# A Coursedog catalog on a college's own domain (catalog.mccd.edu) draws its
+# program search from the vendor: the page POSTs app.coursedog.com/api/v1/cm/
+# <school>/programs/search/$filters?catalogId=...&skip=0&limit=20 and prints 20
+# of 191 programs. The reader hears that call while /programs loads and asks the
+# same address again with a larger limit, with the body the page sent. Each
+# program's page opens on an overview tab (/programs/05000.AA/program-overview-
+# aoYks); its Requisites tab prints the list with credits ("ACTG04A Financial
+# Accounting (Total Credits 4.0 - 4.0)"; page read 39090533458, S411). The tab's
+# suffix is the catalog's template, so the reader learns it from the first
+# program and goes straight to it after, back to the overview when it misses.
+CD_SEARCH = re.compile(r"/programs/search/", re.I)
+CD_LIMIT = 100
+CD_REQUISITES = re.compile(r"^\s*requisites\b", re.I)
+# The award a program's name ends in, "Accounting (AA)", in the words the award
+# matcher reads (P.AWARD_WORDS); a certificate's letters vary by college.
+CD_AWARD_WORDS = {"AA": "associate in arts", "AS": "associate in science",
+                  "AAT": "associate in arts for transfer", "AST": "associate in science for transfer",
+                  "CT": "certificate of achievement", "CA": "certificate of achievement",
+                  "CN": "certificate", "CM": "certificate", "CP": "certificate",
+                  "NC": "noncredit certificate of completion"}
+CD_AWARD = re.compile(r"\(([A-Z]{2,4})\)\s*$")
+
+
+def cd_award_words(name: str) -> str:
+    m = CD_AWARD.search(name or "")
+    return CD_AWARD_WORDS.get(m.group(1), "") if m else ""
+
+
+def cd_search_url(url: str, skip: int, limit: int) -> str:
+    """The program search's address with its page moved; the rest as the page asked."""
+    for key, val in (("skip", skip), ("limit", limit)):
+        if re.search(r"[?&]%s=" % key, url):
+            url = re.sub(r"([?&]%s=)[^&#]*" % key, lambda m: m.group(1) + str(val), url)
+        else:
+            url += ("&" if "?" in url else "?") + "%s=%d" % (key, val)
+    return url
+
+
+def cd_programs(data: dict) -> list[dict]:
+    """[{code, name}] from one page of the search's answer, active programs only."""
+    out = []
+    for row in (data or {}).get("data") or []:
+        code = (row.get("code") or row.get("programGroupId") or "").strip()
+        if code and (row.get("status") or "Active") == "Active":
+            out.append({"code": code, "name": (row.get("catalogDisplayName") or row.get("name") or "").strip()})
+    return out
+
+
+def cd_list(reader, start: str, report: dict) -> list[dict]:
+    """Every program the catalog's search names, by the call its own page makes."""
+    from _program_source_census import site_root
+    root = site_root(start).rstrip("/")
+    heard: list = []
+
+    def on_request(req):
+        if req.method == "POST" and CD_SEARCH.search(req.url) and not heard:
+            heard.append({"url": req.url, "body": req.post_data,
+                          "headers": {k: v for k, v in (req.headers or {}).items()
+                                      if k.lower() in ("content-type", "accept")}})
+    reader.page.on("request", on_request)
+    try:
+        reader.load(root + "/programs")
+        reader.page.wait_for_timeout(2500)
+    finally:
+        reader.page.remove_listener("request", on_request)
+    info = report.setdefault("coursedog", {"root": root})
+    if not heard:
+        info["error"] = "the program search made no search call"
+        return []
+    call, programs, total, errors = heard[0], [], None, []
+    info["search"] = cd_search_url(call["url"], 0, CD_LIMIT)
+    skip = 0
+    while total is None or skip < total:
+        time.sleep(reader.delay)
+        reader.loads += 1
+        try:
+            resp = reader.request.post(cd_search_url(call["url"], skip, CD_LIMIT), data=call["body"],
+                                       headers=call["headers"], timeout=120000)
+            if not resp.ok:
+                errors.append("skip %d: HTTP %s" % (skip, resp.status))
+                break
+            data = resp.json()
+        except Exception as exc:
+            errors.append("skip %d: %s" % (skip, str(exc).splitlines()[0][:160]))
+            break
+        total = int(data.get("listLength") or 0)
+        got = cd_programs(data)
+        programs += [p for p in got if p["code"] not in {q["code"] for q in programs}]
+        if not data.get("data"):
+            break
+        skip += CD_LIMIT
+    info.update(listed=total, programs=len(programs), errors=errors)
+    return programs
+
+
+def cd_page(got: dict, prog: dict) -> dict:
+    """One Requisites tab as a page capture() reads: the program's name and award
+    words as its heading, since the page's title names only the code."""
+    heading = " ".join(x for x in (prog["name"], cd_award_words(prog["name"])) if x)
+    return {"url": got.get("final_url") or got.get("url"), "title": got.get("title"), "h1": heading,
+            "body": got.get("body"), "content": got.get("content"), "got": got, "codes": page_net(got)}
+
+
+def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
+    from _program_source_census import site_root
+    root = site_root(start).rstrip("/")
+    programs = cd_list(reader, start, report)[:MAX_PAGES]
+    info = report.setdefault("coursedog", {})
+    suffix, pages, direct, missed = None, [], 0, []
+    for i, prog in enumerate(programs):
+        base = "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))
+        got = None
+        if suffix:
+            got = P.load(reader, base + "/" + suffix, cache, True)
+            if got.get("access") == "ok" and (got.get("final_url") or "").rstrip("/").endswith(suffix) \
+                    and "Total Credits" in (got.get("body") or ""):
+                direct += 1
+            else:
+                got = None
+        if got is None:
+            over = P.load(reader, base, cache, True)
+            link = next((l["href"] for l in over.get("links") or []
+                         if CD_REQUISITES.search(l.get("text") or "") and "/programs/" in (l.get("href") or "")), None)
+            if over.get("access") != "ok" or not link:
+                missed.append(prog["code"])
+                continue
+            suffix = suffix or link.rstrip("/").rsplit("/", 1)[-1]
+            got = P.load(reader, link, cache, True)
+            if got.get("access") != "ok":
+                missed.append(prog["code"])
+                continue
+        got["links"] = (got.get("links") or [])[:50]
+        pages.append(cd_page(got, prog))
+        if i % 25 == 24:
+            print("  read %d of %d program pages" % (i + 1, len(programs)), flush=True)
+    info.update(requisites_suffix=suffix, program_pages=len(pages), direct=direct, missed=missed[:60])
+    return pages
+
+
 # ── Acalog (S389): Palo Verde 2026-27, El Camino, San Joaquin Delta ─────────
 # An Acalog catalog (Modern Campus) serves every page from one host under a
 # catalog id (catoid): content.php?catoid=N&navoid=M for a navigation page,
@@ -2152,9 +2292,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
-    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog"):
-        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380), Acalog (S389) and SmartCatalog (S411,
-        # the generic road through child_base()); another platform names its own enumeration first.
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog", "coursedog"):
+        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380), Acalog (S389), SmartCatalog (S411,
+        # the generic road through child_base()) and Coursedog (S414); another platform names its own enumeration first.
         report["stopped"] = ("this pass enumerates CourseLeaf, curriQunet, eLumen, Acalog, SmartCatalog and own-HTML catalogs; "
                              "%s reads %s" % (college, platform))
         _write(os.path.join(out_dir, "capture.json"), report)
@@ -2178,6 +2318,10 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             print("%s: %d programs (%d with a course list), %d eLumen program pages (%s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages) or len(urls),
                      "publish/content" if pages else "rendered", delay / 1000), flush=True)
+        elif platform == "coursedog":
+            urls, pages = [], cd_pages(reader, start, report, cache)
+            print("%s: %d programs (%d with a course list), %d Coursedog Requisites pages, %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
         elif platform == "acalog":
             urls, pages = ac_urls(reader, start, cache, report)[:MAX_PAGES], []
             read_year = report["acalog"].get("catalog_year_read")
@@ -2250,7 +2394,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 # A curriQunet catalog has no links to search: its index is the whole list.
                 # An eLumen catalog's menu is the whole list too; its links would find it again,
                 # and so would an Acalog catalog's site map or program pages.
-                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen", "acalog"):
+                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen", "acalog", "coursedog"):
                     fallback += 1
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
