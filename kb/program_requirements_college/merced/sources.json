@@ -1,0 +1,5386 @@
+[
+ {
+  "control_number": "03465",
+  "title": "Crop Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMA1",
+   "AGMA2",
+   "AGPS10",
+   "AGPS11",
+   "AGPS12",
+   "AGPS13",
+   "AGPS14",
+   "AGPS2",
+   "AGPS3",
+   "AGPS5",
+   "AGPS6"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01150.AS/requisites-ojrrt",
+   "title": "01150.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1488
+ },
+ {
+  "control_number": "03466",
+  "title": "Environmental Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB8",
+   "AGEH1",
+   "AGEH2",
+   "AGEH3",
+   "AGEH4",
+   "AGEH5",
+   "AGEH50",
+   "AGEH6",
+   "AGEH7",
+   "AGEH8",
+   "AGMA1",
+   "AGMA6",
+   "AGPS13",
+   "AGPS3",
+   "AGPS6"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01351.AS/requisites-ojrrt",
+   "title": "01351.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2170
+ },
+ {
+  "control_number": "03468",
+  "title": "Animal Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB2",
+   "AGAB8",
+   "AGAS1",
+   "AGAS10",
+   "AGAS11",
+   "AGAS12",
+   "AGAS13",
+   "AGAS14",
+   "AGAS15",
+   "AGAS16",
+   "AGAS2",
+   "AGAS24",
+   "AGAS3",
+   "AGAS4",
+   "AGMA1",
+   "AGMA2"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01100.AS/requisites-ojrrt",
+   "title": "01100.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2000
+ },
+ {
+  "control_number": "03469",
+  "title": "Biological Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03470",
+  "title": "General Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACTG51",
+   "AOM50B",
+   "BUS10",
+   "BUS18A",
+   "BUS35",
+   "MKTG30"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05150.AA/requisites-ojrrt",
+   "title": "05150.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1571
+ },
+ {
+  "control_number": "03471",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03473",
+  "title": "Small Business Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 34,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03474",
+  "title": "Management/Supervisory Training",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "ACTG4A",
+   "ACTG51",
+   "BUS10",
+   "BUS18A",
+   "CPSC1",
+   "ECON1",
+   "MGMT31",
+   "MGMT32",
+   "MGMT33",
+   "MGMT50A",
+   "MGMT50B",
+   "MGMT50C",
+   "MGMT50D",
+   "MGMT50G",
+   "MGMT50H",
+   "MGMT50I",
+   "MGMT50J",
+   "MGMT50K",
+   "MGMT50L",
+   "MGMT50N",
+   "MGMT50P",
+   "MGMT50S",
+   "MGMT51C",
+   "MGMT51F",
+   "MGMT51G",
+   "MGMT52C",
+   "MGMT52D"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05450.AA/requisites-ojrrt",
+   "title": "05450.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3270
+ },
+ {
+  "control_number": "03476",
+  "title": "Administrative Office Professional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOM43",
+   "AOM50B",
+   "AOM50C",
+   "AOM56",
+   "AOM58A",
+   "VIRT51"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt",
+   "title": "05007.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1386
+ },
+ {
+  "control_number": "03478",
+  "title": "Administrative Medical Office Professional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOM43",
+   "AOM50B",
+   "AOM50C",
+   "AOM56",
+   "AOM58A",
+   "AOM59A",
+   "VIRT51"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt",
+   "title": "05007.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1386
+ },
+ {
+  "control_number": "03483",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM4A",
+   "ENGR15",
+   "ENGR18",
+   "ENGR45",
+   "MATH4C",
+   "MATH6",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09300.AS/requisites-ojrrt",
+   "title": "09300.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1429
+ },
+ {
+  "control_number": "03485",
+  "title": "Diesel Equipment Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03493",
+  "title": "Welding Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD1",
+   "WELD2",
+   "WELD46",
+   "WELD54",
+   "WELD55",
+   "WELD56",
+   "WELD58"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09800.AA/requisites-ojrrt",
+   "title": "09800.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1161
+ },
+ {
+  "control_number": "03494",
+  "title": "ART",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART17A",
+   "ART17B",
+   "ART20A",
+   "ART20B",
+   "ART23A",
+   "ART23B",
+   "ART24A",
+   "ART24B",
+   "ART26A",
+   "ART26B",
+   "ART29A",
+   "ART29B",
+   "ART3",
+   "ART6",
+   "ARTD40A",
+   "ARTD40B",
+   "ARTD41A",
+   "ARTD41B",
+   "ARTD42A",
+   "ARTD42B",
+   "ARTD45A",
+   "ARTD45B",
+   "ARTD47",
+   "ARTD7",
+   "ARTD8",
+   "PHOT10A",
+   "PHOT11A",
+   "PHOT33"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10110.AA/requisites-ojrrt",
+   "title": "10110.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 3098
+ },
+ {
+  "control_number": "03496",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ENGL14",
+   "ENGL8",
+   "HUM21",
+   "MUSA21A",
+   "THTR1",
+   "THTR10",
+   "THTR11",
+   "THTR14",
+   "THTR30",
+   "THTR31",
+   "THTR4"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10600.AA/requisites-ojrrt",
+   "title": "10600.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1538
+ },
+ {
+  "control_number": "03497",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN3"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/11200.AA/requisites-ojrrt",
+   "title": "11200.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 935
+ },
+ {
+  "control_number": "03498",
+  "title": "German",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERN1",
+   "GERN2",
+   "GERN3",
+   "GERN4",
+   "HIST4A",
+   "HIST4B",
+   "HUM1",
+   "HUM1H",
+   "HUM2",
+   "HUM2H"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/11400.AA/requisites-ojrrt",
+   "title": "11400.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1485
+ },
+ {
+  "control_number": "03501",
+  "title": "Nursing, Registered",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "BIOL20",
+   "PHIL13",
+   "PHIL13H"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12500.AS/requisites-ojrrt",
+   "title": "12500.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2598
+ },
+ {
+  "control_number": "03502",
+  "title": "Nursing, Vocational",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03505",
+  "title": "Diagnostic Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADT10",
+   "RADT11",
+   "RADT12A",
+   "RADT12B",
+   "RADT13",
+   "RADT14A",
+   "RADT14B",
+   "RADT15A",
+   "RADT15B",
+   "RADT15C",
+   "RADT15D"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12700.AS/requisites-ojrrt",
+   "title": "12700.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1681
+ },
+ {
+  "control_number": "03507",
+  "title": "Nutrition and Foods",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NUTR10",
+   "NUTR12",
+   "NUTR20",
+   "NUTR24",
+   "NUTR40",
+   "NUTR41",
+   "NUTR43",
+   "NUTR44",
+   "NUTR45",
+   "NUTR50"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13161.AS/requisites-ojrrt",
+   "title": "13161.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1805
+ },
+ {
+  "control_number": "03514",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ANTH2",
+   "CLDV9",
+   "PSYC15",
+   "PSYC1B",
+   "PSYC22",
+   "PSYC23",
+   "PSYC37",
+   "PSYC40",
+   "PSYC5",
+   "PSYC9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/20500.AA/requisites-ojrrt",
+   "title": "20500.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2159
+ },
+ {
+  "control_number": "03515",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03516",
+  "title": "Criminal Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03519",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03530",
+  "title": "Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.792,
+  "codes_found": [
+   "ANTH10",
+   "ANTH2",
+   "CLDV9",
+   "CRIM33",
+   "HIST22",
+   "HIST23",
+   "HLTH15",
+   "HMSV20",
+   "HMSV21",
+   "HMSV22",
+   "HMSV41",
+   "HMSV42",
+   "HMSV43",
+   "HMSV44",
+   "HUM15",
+   "PSYC22",
+   "PSYC23",
+   "PSYC40",
+   "PSYC9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/21500.AA/requisites-ojrrt",
+   "title": "21500.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 2623
+ },
+ {
+  "control_number": "07708",
+  "title": "Equine Science and Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07710",
+  "title": "Mechanized Agriculture Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07713",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACTG4A",
+   "ACTG51",
+   "AOM43",
+   "AOM50B",
+   "BUS10",
+   "BUS18A",
+   "BUS35",
+   "BUS37",
+   "COMM30",
+   "MKTG30",
+   "MKTG33",
+   "VIRT55"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05460.AS/requisites-ojrrt",
+   "title": "05460.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2153
+ },
+ {
+  "control_number": "07716",
+  "title": "Management Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07718",
+  "title": "Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CHEM4A",
+   "CPSC14",
+   "CPSC6",
+   "ENGR14",
+   "MATH4C",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09350.AS/requisites-ojrrt",
+   "title": "09350.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1918
+ },
+ {
+  "control_number": "07720",
+  "title": "Instrumentation and Process Control Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ELCT31",
+   "ELCT34",
+   "ELCT41",
+   "ELCT42A",
+   "ELCT42B",
+   "ELCT43A",
+   "ELCT47",
+   "ELCT55",
+   "ELCT58",
+   "INDT25"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09650.AS/requisites-ojrrt",
+   "title": "09650.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1719
+ },
+ {
+  "control_number": "07723",
+  "title": "Industrial Maintenance Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ELCT41",
+   "ELCT47",
+   "ELCT52",
+   "INDT25",
+   "INDT40",
+   "INDT41",
+   "INDT51",
+   "INDT52",
+   "WELD51",
+   "WELD6",
+   "WELD7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09550.AS/requisites-ojrrt",
+   "title": "09550.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1632
+ },
+ {
+  "control_number": "07724",
+  "title": "Industrial Electrical Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT41",
+   "ELCT42A",
+   "ELCT47",
+   "ELCT52",
+   "ELCT55",
+   "ELCT56",
+   "ELCT59",
+   "ELCT63",
+   "INDT25",
+   "INDT35",
+   "INDT41",
+   "INDT60"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09510.AS/requisites-ojrrt",
+   "title": "09510.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1649
+ },
+ {
+  "control_number": "07728",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ART6",
+   "PHOT10A",
+   "PHOT10B",
+   "PHOT11A",
+   "PHOT33",
+   "PHOT35",
+   "PHOT36",
+   "PHOT49"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10500.AA/requisites-ojrrt",
+   "title": "10500.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1830
+ },
+ {
+  "control_number": "07729",
+  "title": "Health Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10438",
+  "title": "Automotive Technology Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO32",
+   "AUTO33",
+   "AUTO36",
+   "AUTO54",
+   "AUTO57",
+   "AUTO58",
+   "AUTO61",
+   "AUTO64"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09002.CT/requisites-ojrrt",
+   "title": "09002.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1185
+ },
+ {
+  "control_number": "10439",
+  "title": "Automotive Technology Level 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO32",
+   "AUTO33",
+   "AUTO54",
+   "AUTO57"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09010.CN/requisites-ojrrt",
+   "title": "09010.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 931
+ },
+ {
+  "control_number": "12308",
+  "title": "Biotechnology-Industry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "BIOL32",
+   "BIOL32L",
+   "BIOL33",
+   "BIOL4B",
+   "BIOL6",
+   "BIOL9",
+   "CHEM2B",
+   "CPSC1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/04135.AS/requisites-ojrrt",
+   "title": "04135.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1803
+ },
+ {
+  "control_number": "16242",
+  "title": "Electronics Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CADM11",
+   "CPSC1",
+   "ELCT31",
+   "ELCT34",
+   "ELCT42A",
+   "ELCT44",
+   "ELCT56",
+   "ELCT58"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09250.AS/requisites-ojrrt",
+   "title": "09250.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1344
+ },
+ {
+  "control_number": "16243",
+  "title": "Networking Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "CPSC1",
+   "CPSC5A",
+   "CTIS11",
+   "CTIS12",
+   "CTIS15",
+   "CTIS16",
+   "CTIS18",
+   "CTIS2",
+   "CTIS20",
+   "CTIS23",
+   "CTIS3",
+   "CTIS33",
+   "CTIS4",
+   "CTIS7",
+   "CTIS9",
+   "ELCT34",
+   "ELCT36",
+   "MATH15",
+   "MATH3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07023.AS/requisites-ojrrt",
+   "title": "07023.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2402
+ },
+ {
+  "control_number": "16244",
+  "title": "HVAC Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT50",
+   "INDT51",
+   "INDT52",
+   "INDT53",
+   "INDT54"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09400.AS/requisites-ojrrt",
+   "title": "09400.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 977
+ },
+ {
+  "control_number": "16245",
+  "title": "Commercial Refrigeration Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ELCT41",
+   "ELCT47",
+   "ELCT52",
+   "INDT40",
+   "INDT50",
+   "INDT51",
+   "INDT52",
+   "WELD7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09401.AS/requisites-ojrrt",
+   "title": "09401.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1373
+ },
+ {
+  "control_number": "16653",
+  "title": "Compact Power Equipment",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16654",
+  "title": "Pest Control Advisor",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "AGAS1",
+   "AGAS12",
+   "AGAS13",
+   "AGAS14",
+   "AGAS3",
+   "AGEH1",
+   "AGEH2",
+   "AGEH3",
+   "AGEH5",
+   "AGEH50",
+   "AGEH8",
+   "AGPS10",
+   "AGPS11",
+   "AGPS12",
+   "AGPS13",
+   "AGPS14",
+   "AGPS2",
+   "AGPS5",
+   "AGPS6",
+   "BIOL32",
+   "BIOL4B",
+   "BIOL6",
+   "BIOL9",
+   "CHEM2A",
+   "CHEM2B",
+   "CHEM4A",
+   "CHEM4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01052.CT/requisites-ojrrt",
+   "title": "01052.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3074
+ },
+ {
+  "control_number": "17878",
+  "title": "CSU General Education (CSU-GE-Breadth)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17879",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17928",
+  "title": "Social and Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.657,
+  "codes_found": [
+   "AGRI10",
+   "ANTH10",
+   "ANTH2",
+   "CLDV1",
+   "CLDV2",
+   "CLDV9",
+   "COMM30",
+   "CRIM1",
+   "CRIM2",
+   "CRIM4",
+   "ECON1",
+   "ECON2",
+   "GEOG2",
+   "HIST29",
+   "HIST4A",
+   "HIST4B",
+   "HIST9A",
+   "HIST9B",
+   "HUM15",
+   "PSYC1B",
+   "PSYC22",
+   "PSYC23",
+   "PSYC9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt",
+   "title": "22600.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4036
+ },
+ {
+  "control_number": "17936",
+  "title": "Dietetic Services Supervisor/Dietary Manager",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NUTR20",
+   "NUTR40",
+   "NUTR44",
+   "NUTR45"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13181.CN/requisites-ojrrt",
+   "title": "13181.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1220
+ },
+ {
+  "control_number": "17943",
+  "title": "International Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19368",
+  "title": "Nutrition and Foods",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.786,
+  "codes_found": [
+   "NUTR10",
+   "NUTR20",
+   "NUTR24",
+   "NUTR37",
+   "NUTR40",
+   "NUTR41",
+   "NUTR42",
+   "NUTR43",
+   "NUTR44",
+   "NUTR45",
+   "NUTR50"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13161.CT/requisites-ojrrt",
+   "title": "13161.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3203
+ },
+ {
+  "control_number": "19370",
+  "title": "Human Services",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "ANTH10",
+   "ANTH2",
+   "CLDV9",
+   "CRIM33",
+   "HLTH15",
+   "HMSV20",
+   "HMSV21",
+   "HMSV22",
+   "HMSV41",
+   "HMSV42",
+   "HMSV43",
+   "HMSV44",
+   "HUM15",
+   "PSYC22",
+   "PSYC23",
+   "PSYC40"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt",
+   "title": "21500.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2505
+ },
+ {
+  "control_number": "19373",
+  "title": "Nursing, Vocational",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "VOCN40",
+   "VOCN42",
+   "VOCN44",
+   "VOCN46B",
+   "VOCN47A",
+   "VOCN47B",
+   "VOCN47C"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12550.CT/requisites-ojrrt",
+   "title": "12550.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1302
+ },
+ {
+  "control_number": "19491",
+  "title": "General Agriculture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB5",
+   "AGAS1",
+   "AGEH1",
+   "AGMA1",
+   "AGMA5",
+   "AGRI10"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01050.CN/requisites-ojrrt",
+   "title": "01050.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1093
+ },
+ {
+  "control_number": "19492",
+  "title": "Animal Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB8",
+   "AGAS1",
+   "AGAS10",
+   "AGAS2",
+   "AGAS3",
+   "AGAS4",
+   "AGMA1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01100.CN/requisites-ojrrt",
+   "title": "01100.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1068
+ },
+ {
+  "control_number": "19493",
+  "title": "Equine Science and Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19494",
+  "title": "Agriculture Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB1",
+   "AGAB2",
+   "AGAB3",
+   "AGAB5",
+   "AGAB7",
+   "AGAB8"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01000.CN/requisites-ojrrt",
+   "title": "01000.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1042
+ },
+ {
+  "control_number": "19495",
+  "title": "Diesel Equipment Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19496",
+  "title": "Mechanized Agriculture Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19497",
+  "title": "General Business",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG51",
+   "AOM50B",
+   "BUS10",
+   "BUS18A",
+   "BUS35",
+   "MKTG30"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05150.CT/requisites-ojrrt",
+   "title": "05150.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1484
+ },
+ {
+  "control_number": "19498",
+  "title": "Small Business Entrepreneurship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 24,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19499",
+  "title": "Administrative Office Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOM43",
+   "AOM50B",
+   "AOM50C",
+   "AOM56",
+   "AOM58A",
+   "VIRT51"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt",
+   "title": "05007.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1245
+ },
+ {
+  "control_number": "19501",
+  "title": "Administrative Medical Office Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOM43",
+   "AOM50B",
+   "AOM50C",
+   "AOM56",
+   "AOM58A",
+   "AOM59A",
+   "VIRT51"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt",
+   "title": "05007.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1245
+ },
+ {
+  "control_number": "19502",
+  "title": "Basic Electronics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT30",
+   "ELCT31",
+   "ELCT34",
+   "ELCT44"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09250.CM/requisites-ojrrt",
+   "title": "09250.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1011
+ },
+ {
+  "control_number": "19503",
+  "title": "Networking Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC5A",
+   "CTIS11",
+   "CTIS12",
+   "CTIS15",
+   "CTIS16",
+   "CTIS18",
+   "CTIS2",
+   "CTIS20",
+   "CTIS23",
+   "CTIS3",
+   "CTIS33",
+   "CTIS4",
+   "CTIS7",
+   "CTIS9",
+   "ELCT34",
+   "ELCT36"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07023.CT/requisites-ojrrt",
+   "title": "07023.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1951
+ },
+ {
+  "control_number": "19505",
+  "title": "HVAC Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19506",
+  "title": "Industrial Electrical Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT41",
+   "ELCT42A",
+   "ELCT47",
+   "ELCT52",
+   "ELCT55",
+   "ELCT56",
+   "ELCT59",
+   "ELCT63",
+   "INDT25",
+   "INDT35",
+   "INDT41",
+   "INDT60"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09510.CT/requisites-ojrrt",
+   "title": "09510.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1649
+ },
+ {
+  "control_number": "19507",
+  "title": "Diagnostic Radiologic Technology",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADT10",
+   "RADT11",
+   "RADT12A",
+   "RADT12B",
+   "RADT13",
+   "RADT14A",
+   "RADT14B",
+   "RADT15A",
+   "RADT15B",
+   "RADT15C",
+   "RADT15D",
+   "RADT16A",
+   "RADT16C",
+   "RADT17A",
+   "RADT17B",
+   "RADT18A",
+   "RADT18B",
+   "RADT18C"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12700.CF/requisites-ojrrt",
+   "title": "12700.CF Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2434
+ },
+ {
+  "control_number": "19508",
+  "title": "Diagnostic Medical Sonography",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SONO40",
+   "SONO40B",
+   "SONO40C",
+   "SONO41",
+   "SONO42A",
+   "SONO42B",
+   "SONO43A",
+   "SONO43B",
+   "SONO44A",
+   "SONO44B",
+   "SONO44C",
+   "SONO45A",
+   "SONO45B",
+   "SONO45C",
+   "SONO47A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12800.CT/requisites-ojrrt",
+   "title": "12800.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 1964
+ },
+ {
+  "control_number": "19654",
+  "title": "Biotechnology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL32",
+   "BIOL32L",
+   "BIOL33",
+   "BIOL9",
+   "CHEM2B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/04130.CN/requisites-ojrrt",
+   "title": "04130.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 964
+ },
+ {
+  "control_number": "19668",
+  "title": "MUSIC",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSA20",
+   "MUSA21A",
+   "MUSA21B",
+   "MUSA25A",
+   "MUSA25B",
+   "MUSA27A",
+   "MUSA27B",
+   "MUSE41",
+   "MUSE42",
+   "MUSE43",
+   "MUSE44",
+   "MUSE45",
+   "MUSG10",
+   "MUSG12",
+   "MUSG13",
+   "MUSG14",
+   "MUSG15",
+   "MUSG17",
+   "MUST1",
+   "MUST2",
+   "MUST3",
+   "MUST4",
+   "MUST5",
+   "MUST6"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10400.AA/requisites-ojrrt",
+   "title": "10400.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 2775
+ },
+ {
+  "control_number": "19758",
+  "title": "General Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "AGAB5",
+   "AGAS1",
+   "AGEH1",
+   "AGMA1",
+   "AGMA5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01040.AS/requisites-ojrrt",
+   "title": "01040.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1093
+ },
+ {
+  "control_number": "19759",
+  "title": "Agriculture Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB1",
+   "AGAB2",
+   "AGAB3",
+   "AGAB30A",
+   "AGAB30B",
+   "AGAB30C",
+   "AGAB31A",
+   "AGAB31B",
+   "AGAB31C",
+   "AGAB4",
+   "AGAB5",
+   "AGAB7",
+   "AGAB8",
+   "AGAS1",
+   "AGEH1",
+   "AGPS10",
+   "AGPS5",
+   "AGRI10"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01000.AS/requisites-ojrrt",
+   "title": "01000.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2101
+ },
+ {
+  "control_number": "20801",
+  "title": "Crop Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMA1",
+   "AGMA2",
+   "AGPS10",
+   "AGPS11",
+   "AGPS12",
+   "AGPS13",
+   "AGPS14",
+   "AGPS2",
+   "AGPS3",
+   "AGPS5",
+   "AGPS6"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01150.CN/requisites-ojrrt",
+   "title": "01150.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1499
+ },
+ {
+  "control_number": "20802",
+  "title": "Landscape Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20804",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG31",
+   "ACTG4A",
+   "ACTG4B",
+   "ACTG51",
+   "ACTG52",
+   "BUS10",
+   "BUS18A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05000.CT/requisites-ojrrt",
+   "title": "05000.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1305
+ },
+ {
+  "control_number": "20805",
+  "title": "Management/Supervisory Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG4A",
+   "ACTG51",
+   "BUS10",
+   "BUS18A",
+   "ECON1",
+   "MGMT31",
+   "MGMT32",
+   "MGMT33",
+   "MGMT50B",
+   "MGMT50C",
+   "MGMT50D",
+   "MGMT50F",
+   "MGMT50G",
+   "MGMT50H",
+   "MGMT50I",
+   "MGMT50J",
+   "MGMT50K",
+   "MGMT50L",
+   "MGMT50N",
+   "MGMT50P",
+   "MGMT50S",
+   "MGMT51C",
+   "MGMT51F",
+   "MGMT51G",
+   "MGMT52C",
+   "MGMT52D"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05450.CN/requisites-ojrrt",
+   "title": "05450.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3166
+ },
+ {
+  "control_number": "20806",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACTG4A",
+   "ACTG51",
+   "BUS10",
+   "BUS18A",
+   "COMM30",
+   "MKTG30",
+   "MKTG33",
+   "PSYC5",
+   "VIRT55"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05460.CN/requisites-ojrrt",
+   "title": "05460.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2090
+ },
+ {
+  "control_number": "20808",
+  "title": "Instrumentation and Process Control Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT31",
+   "ELCT34",
+   "ELCT41",
+   "ELCT42A",
+   "ELCT42B",
+   "ELCT43A",
+   "ELCT47",
+   "ELCT55",
+   "ELCT58",
+   "INDT25"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09650.CT/requisites-ojrrt",
+   "title": "09650.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1636
+ },
+ {
+  "control_number": "20809",
+  "title": "Industrial Maintenance Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ELCT41",
+   "ELCT47",
+   "ELCT52",
+   "INDT25",
+   "INDT40",
+   "INDT41",
+   "INDT51",
+   "INDT52",
+   "WELD51",
+   "WELD6",
+   "WELD7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09550.CT/requisites-ojrrt",
+   "title": "09550.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1632
+ },
+ {
+  "control_number": "20811",
+  "title": "Commercial Refrigeration Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ELCT41",
+   "ELCT47",
+   "ELCT52",
+   "INDT40",
+   "INDT50",
+   "INDT51",
+   "INDT52",
+   "WELD7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09401.CT/requisites-ojrrt",
+   "title": "09401.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1373
+ },
+ {
+  "control_number": "20812",
+  "title": "Automotive Master Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO32",
+   "AUTO33",
+   "AUTO36",
+   "AUTO44",
+   "AUTO54",
+   "AUTO55",
+   "AUTO57",
+   "AUTO58",
+   "AUTO59",
+   "AUTO61",
+   "AUTO64",
+   "AUTO76"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09008.CT/requisites-ojrrt",
+   "title": "09008.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1521
+ },
+ {
+  "control_number": "20813",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD1",
+   "WELD2",
+   "WELD46",
+   "WELD54",
+   "WELD55",
+   "WELD56",
+   "WELD58"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09810.CN/requisites-ojrrt",
+   "title": "09810.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1161
+ },
+ {
+  "control_number": "20814",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOM43",
+   "ART6",
+   "ARTD40A",
+   "ARTD40B",
+   "PHOT10A",
+   "PHOT10B",
+   "PHOT11A",
+   "PHOT33",
+   "PHOT35",
+   "PHOT36",
+   "PHOT49"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10500.CN/requisites-ojrrt",
+   "title": "10500.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1831
+ },
+ {
+  "control_number": "20815",
+  "title": "Criminal Justice",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIM1",
+   "CRIM10",
+   "CRIM2",
+   "CRIM3",
+   "CRIM30",
+   "CRIM33",
+   "CRIM35",
+   "CRIM37",
+   "CRIM4",
+   "CRIM5",
+   "CRIM6",
+   "CRIM8"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/21150.CT/requisites-ojrrt",
+   "title": "21150.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1630
+ },
+ {
+  "control_number": "20817",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE30",
+   "FIRE31",
+   "FIRE32",
+   "FIRE33",
+   "FIRE34"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/21400.CT/requisites-ojrrt",
+   "title": "21400.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2171
+ },
+ {
+  "control_number": "22926",
+  "title": "Infant/Toddler Care",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV30",
+   "CLDV30L",
+   "CLDV37",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13026.CT/requisites-ojrrt",
+   "title": "13026.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1400
+ },
+ {
+  "control_number": "22928",
+  "title": "School-Age Care Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV30D",
+   "CLDV37",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13031.CT/requisites-ojrrt",
+   "title": "13031.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1504
+ },
+ {
+  "control_number": "22930",
+  "title": "Families in Crisis Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV33",
+   "CLDV37",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV54",
+   "CLDV57",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L",
+   "CRIM33"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13021.CT/requisites-ojrrt",
+   "title": "13021.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1595
+ },
+ {
+  "control_number": "22932",
+  "title": "Early Intervention Assistant Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV11L",
+   "CLDV2",
+   "CLDV3",
+   "CLDV37",
+   "CLDV38",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13016.CT/requisites-ojrrt",
+   "title": "13016.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1486
+ },
+ {
+  "control_number": "24014",
+  "title": "Technical Office Occupations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN749",
+   "BUSN756"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07744.NC/requisites-ojrrt",
+   "title": "07744.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 799
+ },
+ {
+  "control_number": "24015",
+  "title": "Medical Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN756",
+   "EDU112C",
+   "MED717"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10100.NC/requisites-ojrrt",
+   "title": "10100.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 840
+ },
+ {
+  "control_number": "24382",
+  "title": "Court Interpreter",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN752",
+   "LAW765"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/21078.NC/requisites-ojrrt",
+   "title": "21078.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 786
+ },
+ {
+  "control_number": "24412",
+  "title": "Basic Skills for Adults with Disabilities",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDU110",
+   "EDU111",
+   "SOCL760",
+   "SOCL761"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49160.NC/requisites-ojrrt",
+   "title": "49160.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 928
+ },
+ {
+  "control_number": "30631",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.545,
+  "codes_found": [
+   "ANTH2",
+   "BIOL2",
+   "PSYC1B",
+   "PSYC22",
+   "PSYC23",
+   "PSYC9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/20500.AAT/requisites-ojrrt",
+   "title": "20500.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2129
+ },
+ {
+  "control_number": "30638",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31120",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "CRIM11",
+   "CRIM2",
+   "CRIM3",
+   "CRIM30",
+   "CRIM4",
+   "CRIM5",
+   "CRIM6",
+   "CRIM8"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/21075.AST/requisites-ojrrt",
+   "title": "21075.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1904
+ },
+ {
+  "control_number": "31181",
+  "title": "Computer-Aided Design and 3D Modeling",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31644",
+  "title": "ESL Beginning Skills Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG801",
+   "ENG802"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49196.NC/requisites-ojrrt",
+   "title": "49196.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 2,
+  "text_chars": 771
+ },
+ {
+  "control_number": "31645",
+  "title": "ESL Intermediate Skills Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG813",
+   "ENG815"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49198.NC/requisites-ojrrt",
+   "title": "49198.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 783
+ },
+ {
+  "control_number": "31816",
+  "title": "COMPUTER SCIENCE",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "CHEM4A",
+   "CPSC14",
+   "CPSC39",
+   "CPSC42",
+   "CPSC6",
+   "CPSC7",
+   "ENGR14",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07200.AST/requisites-ojrrt",
+   "title": "07200.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1459
+ },
+ {
+  "control_number": "31861",
+  "title": "GEOLOGY",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM4A",
+   "CHEM4B",
+   "GEOL1",
+   "GEOL2"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/19400.AST/requisites-ojrrt",
+   "title": "19400.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 917
+ },
+ {
+  "control_number": "31867",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13010.AST/requisites-ojrrt",
+   "title": "13010.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1214
+ },
+ {
+  "control_number": "32191",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "CHEM2A",
+   "CHEM2B",
+   "CHEM4A",
+   "KINE1",
+   "KINE12A",
+   "KINE12B",
+   "KINE13",
+   "KINE14",
+   "KINE15",
+   "KINE16",
+   "KINE17",
+   "KINE19",
+   "KINE2",
+   "KINE20",
+   "KINE24A",
+   "KINE24B",
+   "KINE24C",
+   "KINE30",
+   "KINE31",
+   "KINE32",
+   "KINE33",
+   "KINE34",
+   "KINE35",
+   "KINE36",
+   "KINE41",
+   "KINE42",
+   "PHYS2A",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12400.AAT/requisites-ojrrt",
+   "title": "12400.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 3306
+ },
+ {
+  "control_number": "32207",
+  "title": "SPANISH",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL4A",
+   "ENGL4B",
+   "FREN1",
+   "FREN2",
+   "FREN3",
+   "FREN4",
+   "SPAN1",
+   "SPAN10",
+   "SPAN11",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/11600.AAT/requisites-ojrrt",
+   "title": "11600.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2948
+ },
+ {
+  "control_number": "32211",
+  "title": "ENGLISH",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "COMM2",
+   "ENGL10",
+   "ENGL11",
+   "ENGL12",
+   "ENGL14",
+   "ENGL15",
+   "ENGL18",
+   "ENGL2",
+   "ENGL4A",
+   "ENGL4B",
+   "ENGL5",
+   "ENGL6A",
+   "ENGL6B",
+   "ENGL7",
+   "ENGL8",
+   "FREN3",
+   "FREN4",
+   "HUM1",
+   "PHIL13",
+   "PHIL13H",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/15200.AAT/requisites-ojrrt",
+   "title": "15200.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3076
+ },
+ {
+  "control_number": "32312",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "HUM1",
+   "HUM1H",
+   "HUM2",
+   "HUM2H",
+   "PHIL1",
+   "PHIL10",
+   "PHIL12",
+   "PHIL13",
+   "PHIL13H",
+   "PHIL15",
+   "PHIL1H",
+   "PHIL2",
+   "PHIL3",
+   "PHIL4",
+   "PHIL5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/15400.AAT/requisites-ojrrt",
+   "title": "15400.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2224
+ },
+ {
+  "control_number": "32614",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THTR1",
+   "THTR10",
+   "THTR11",
+   "THTR14",
+   "THTR20",
+   "THTR21",
+   "THTR30",
+   "THTR31",
+   "THTR4"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10600.AAT/requisites-ojrrt",
+   "title": "10600.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1406
+ },
+ {
+  "control_number": "32642",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ANTH10",
+   "ENGL18",
+   "HIST10",
+   "HIST19",
+   "HIST22",
+   "HIST23",
+   "HIST29",
+   "HIST3A",
+   "HIST3B",
+   "HIST4A",
+   "HIST4B",
+   "HIST5",
+   "HIST7",
+   "HIST9A",
+   "HIST9B",
+   "HUM1",
+   "HUM15",
+   "HUM1H",
+   "HUM2",
+   "HUM2H"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt",
+   "title": "22300.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3351
+ },
+ {
+  "control_number": "32886",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "MUSE41",
+   "MUSE42",
+   "MUSE43",
+   "MUSE44",
+   "MUSE45",
+   "MUST1",
+   "MUST2",
+   "MUST3",
+   "MUST4",
+   "MUST5",
+   "MUST6",
+   "MUST7",
+   "MUST8"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10400.AAT/requisites-ojrrt",
+   "title": "10400.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 1752
+ },
+ {
+  "control_number": "32944",
+  "title": "Reading and Writing College Preparatory Basic Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG121",
+   "ENG122"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49199.NC/requisites-ojrrt",
+   "title": "49199.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 941
+ },
+ {
+  "control_number": "32987",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART15",
+   "ART17A",
+   "ART17B",
+   "ART20A",
+   "ART20B",
+   "ART23A",
+   "ART24A",
+   "ART24B",
+   "ART26A",
+   "ART29A",
+   "ART3",
+   "ART6",
+   "ARTD40A",
+   "ARTD41A",
+   "PHOT10A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/10550.AAT/requisites-ojrrt",
+   "title": "10550.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2276
+ },
+ {
+  "control_number": "33174",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.784,
+  "codes_found": [
+   "ART6",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BIOL2",
+   "BIOLC1000",
+   "CLDV1",
+   "CLDV9",
+   "COMMC1000",
+   "COMMC1000H",
+   "EDUC1",
+   "EDUC2",
+   "EDUC3",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOL3",
+   "HIST4A",
+   "HISTC1001",
+   "HISTC1001H",
+   "MATH20A",
+   "MATH20B",
+   "MUSG10",
+   "MUSG12",
+   "MUSG14",
+   "MUSG15",
+   "PHSC2",
+   "PHSC2L",
+   "POLSC1000",
+   "PSYC9",
+   "THTR1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt",
+   "title": "49811.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 3430
+ },
+ {
+  "control_number": "33207",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH10",
+   "ANTH12",
+   "ANTH2",
+   "ANTHC1000",
+   "ARCH1",
+   "ARCH1L",
+   "ETHN15",
+   "ETHN5",
+   "GEOG12",
+   "GEOG2",
+   "GEOG20",
+   "GEOL1",
+   "GEOL3",
+   "HIST10",
+   "HIST7",
+   "HIST9A",
+   "HIST9B",
+   "HUM15",
+   "PHIL15",
+   "PSYC5",
+   "SOCI4",
+   "SOCI5",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22001.AAT/requisites-ojrrt",
+   "title": "22001.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 2706
+ },
+ {
+  "control_number": "33622",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CHEM13A",
+   "CHEM13AL",
+   "CHEM13B",
+   "CHEM13BL",
+   "CHEM4A",
+   "CHEM4B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/19100.AST/requisites-ojrrt",
+   "title": "19100.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1218
+ },
+ {
+  "control_number": "33625",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.565,
+  "codes_found": [
+   "ANTH10",
+   "ANTH2",
+   "CRIM1",
+   "HIST10",
+   "HIST19",
+   "HIST22",
+   "HIST23",
+   "HIST7",
+   "HIST9A",
+   "HIST9B",
+   "PSYC23",
+   "PSYC36",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt",
+   "title": "22650.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 2389
+ },
+ {
+  "control_number": "33880",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.786,
+  "codes_found": [
+   "ANTH2",
+   "CHEM2A",
+   "CHEM4A",
+   "CPSC1",
+   "GEOG1",
+   "GEOG12",
+   "GEOG15",
+   "GEOG1L",
+   "GEOG2",
+   "GEOL1",
+   "PHYS2A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22250.AAT/requisites-ojrrt",
+   "title": "22250.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 1645
+ },
+ {
+  "control_number": "33885",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AGAB1",
+   "AGAB2",
+   "AGAB5",
+   "AGAB7",
+   "AGAB8",
+   "AGPS5",
+   "CHEM2A",
+   "CHEM4A",
+   "ECON2"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01000.AST/requisites-ojrrt",
+   "title": "01000.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1554
+ },
+ {
+  "control_number": "35038",
+  "title": "Biotechnology Pre-Professional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "BIOL20",
+   "BIOL32",
+   "BIOL32L",
+   "BIOL33",
+   "BIOL4B",
+   "BIOL6",
+   "BIOL9",
+   "CHEM4B",
+   "CPSC1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/04137.AS/requisites-ojrrt",
+   "title": "04137.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2067
+ },
+ {
+  "control_number": "35530",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.529,
+  "codes_found": [
+   "ACTG4A",
+   "ACTG4B",
+   "ECON1",
+   "ECON2",
+   "MATH15",
+   "MATH3",
+   "MATH4C",
+   "MATH8",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22200.AAT/requisites-ojrrt",
+   "title": "22200.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 1770
+ },
+ {
+  "control_number": "35569",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "BIOL4A",
+   "BIOL4B",
+   "CHEM13A",
+   "CHEM13AL",
+   "CHEM13B",
+   "CHEM13BL",
+   "CHEM4A",
+   "CHEM4B",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/04100.AST/requisites-ojrrt",
+   "title": "04100.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2223
+ },
+ {
+  "control_number": "35572",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "BIOL20",
+   "CHEM4A",
+   "CHEM4B",
+   "NUTR10",
+   "NUTR20"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13160.AST/requisites-ojrrt",
+   "title": "13160.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1858
+ },
+ {
+  "control_number": "36258",
+  "title": "Automotive Master Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO32",
+   "AUTO33",
+   "AUTO36",
+   "AUTO44",
+   "AUTO54",
+   "AUTO55",
+   "AUTO57",
+   "AUTO58",
+   "AUTO59",
+   "AUTO61",
+   "AUTO64",
+   "AUTO76"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09003.AS/requisites-ojrrt",
+   "title": "09003.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1521
+ },
+ {
+  "control_number": "36388",
+  "title": "Mathematics College Preparatory Basic Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MAT101",
+   "MAT102"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49166.NC/requisites-ojrrt",
+   "title": "49166.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 866
+ },
+ {
+  "control_number": "37204",
+  "title": "Digital Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOM58A",
+   "ART15",
+   "ART24A",
+   "ART26A",
+   "ARTD40A",
+   "ARTD40B",
+   "ARTD41A",
+   "ARTD41B",
+   "ARTD42A",
+   "ARTD42B",
+   "ARTD45A",
+   "ARTD45B",
+   "ARTD47",
+   "ARTD7",
+   "BUS37",
+   "CPSC5A",
+   "MGMT50A",
+   "MGMT50H",
+   "MKTG33",
+   "PHOT11A",
+   "VIRT50",
+   "VIRT51"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/06100.AA/requisites-ojrrt",
+   "title": "06100.AA Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2792
+ },
+ {
+  "control_number": "37390",
+  "title": "Mathematics College Preparatory Basic Skills II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MAT103",
+   "MAT104"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49167.NC/requisites-ojrrt",
+   "title": "49167.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.833
+   }
+  },
+  "listed": 2,
+  "text_chars": 889
+ },
+ {
+  "control_number": "38831",
+  "title": "Drone Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38916",
+  "title": "Administration in Early Childhood Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV34A",
+   "CLDV34B",
+   "CLDV37",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13012.CT/requisites-ojrrt",
+   "title": "13012.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1533
+ },
+ {
+  "control_number": "39148",
+  "title": "Fitness Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL50",
+   "BUS10",
+   "KINE2",
+   "KINE3",
+   "KINE4",
+   "KINE5",
+   "KINE6",
+   "PSYC37"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12401.CN/requisites-ojrrt",
+   "title": "12401.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1370
+ },
+ {
+  "control_number": "40072",
+  "title": "Agriculture Animal Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AGAB5",
+   "AGAS1",
+   "AGAS11",
+   "AGAS12",
+   "AGAS13",
+   "AGAS14",
+   "AGAS15",
+   "AGAS2",
+   "AGAS4",
+   "AGPS11",
+   "CHEM2A",
+   "CHEM4A",
+   "ECON1",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01100.AST/requisites-ojrrt",
+   "title": "01100.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2249
+ },
+ {
+  "control_number": "40176",
+  "title": "Adult Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG123",
+   "ENG124",
+   "ENG125"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49190.NC/requisites-ojrrt",
+   "title": "49190.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 778
+ },
+ {
+  "control_number": "40213",
+  "title": "Professional Truck Driver Class A CDL Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TRK769",
+   "TRK770",
+   "TRK771"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09475.NC/requisites-ojrrt",
+   "title": "09475.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.833
+   }
+  },
+  "listed": 3,
+  "text_chars": 899
+ },
+ {
+  "control_number": "40215",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AGAB5",
+   "AGEH1",
+   "AGEH2",
+   "AGEH3",
+   "AGEH5",
+   "AGEH7",
+   "AGMA2",
+   "AGPS10",
+   "AGPS11",
+   "AGPS13",
+   "AGPS5",
+   "AGPS6",
+   "CHEM2A",
+   "CHEM4A",
+   "ECON1",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt",
+   "title": "01160.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2382
+ },
+ {
+  "control_number": "40228",
+  "title": "ESL Advanced Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ENG821",
+   "ENG822"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49195.NC/requisites-ojrrt",
+   "title": "49195.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 817
+ },
+ {
+  "control_number": "40266",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ECON1",
+   "ECON2",
+   "GEOG12",
+   "GEOG2",
+   "HIST23",
+   "PHIL2",
+   "POSC7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt",
+   "title": "22070.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 1962
+ },
+ {
+  "control_number": "40737",
+  "title": "Essential Skills for Employment and Job Retention",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "WRK710"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49301.NC/requisites-ojrrt",
+   "title": "49301.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 849
+ },
+ {
+  "control_number": "40738",
+  "title": "ESL Workforce Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG820",
+   "ENG820L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49310.NC/requisites-ojrrt",
+   "title": "49310.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 769
+ },
+ {
+  "control_number": "40854",
+  "title": "UCTP: Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "CHEM13A",
+   "CHEM13AL",
+   "CHEM13B",
+   "CHEM13BL",
+   "CHEM4A",
+   "CHEM4B",
+   "MATH4C",
+   "MATH6",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/19050.AST/requisites-ojrrt",
+   "title": "19050.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2001
+ },
+ {
+  "control_number": "40858",
+  "title": "UCTP: Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATH4C",
+   "MATH6",
+   "MATH8",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09010.CT/requisites-ojrrt",
+   "title": "09010.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1265
+ },
+ {
+  "control_number": "40896",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.643,
+  "codes_found": [
+   "ACTG4A",
+   "ACTG4B",
+   "BUS10",
+   "BUS18A",
+   "ECON1",
+   "ECON2",
+   "MATH15",
+   "MATH3",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/05101.AST/requisites-ojrrt",
+   "title": "05101.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 1573
+ },
+ {
+  "control_number": "40932",
+  "title": "Computer Technology Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ICT720",
+   "ICT721",
+   "ICT722"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07020.NC/requisites-ojrrt",
+   "title": "07020.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 891
+ },
+ {
+  "control_number": "41050",
+  "title": "Drone Media",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS10",
+   "CPSC1",
+   "DRON1",
+   "DRON2",
+   "DRON20",
+   "DRON21",
+   "PHOT10A",
+   "VIRT51"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt",
+   "title": "09171.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1466
+ },
+ {
+  "control_number": "41384",
+  "title": "Culinary Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULN39",
+   "CULN43",
+   "CULN47",
+   "CULN48",
+   "NUTR12",
+   "NUTR20",
+   "NUTR24",
+   "NUTR25",
+   "NUTR37",
+   "NUTR40",
+   "NUTR42",
+   "NUTR44",
+   "NUTR45"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13160.CT/requisites-ojrrt",
+   "title": "13160.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1681
+ },
+ {
+  "control_number": "41385",
+  "title": "IT Security Foundations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTIS15",
+   "CTIS19",
+   "CTIS20",
+   "CTIS21",
+   "CTIS22",
+   "CTIS23",
+   "CTIS6"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07024.CM/requisites-ojrrt",
+   "title": "07024.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1227
+ },
+ {
+  "control_number": "41411",
+  "title": "Applied Computer Al Systems Professional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTIS10",
+   "CTIS13",
+   "CTIS25",
+   "CTIS26",
+   "CTIS27",
+   "CTIS29",
+   "CTIS31",
+   "CTIS5",
+   "CTIS8",
+   "CTIS9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07074.CM/requisites-ojrrt",
+   "title": "07074.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 10,
+  "text_chars": 1584
+ },
+ {
+  "control_number": "41427",
+  "title": "System Administrator",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTIS10",
+   "CTIS11",
+   "CTIS12",
+   "CTIS15",
+   "CTIS17",
+   "CTIS27",
+   "CTIS8",
+   "CTIS9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07021.CM/requisites-ojrrt",
+   "title": "07021.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1497
+ },
+ {
+  "control_number": "41428",
+  "title": "IT Support Professional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CTIS15",
+   "CTIS16",
+   "CTIS17",
+   "CTIS18",
+   "CTIS19",
+   "CTIS20",
+   "CTIS3",
+   "CTIS9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07082.CM/requisites-ojrrt",
+   "title": "07082.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1349
+ },
+ {
+  "control_number": "41472",
+  "title": "Computer Technology and Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC1",
+   "CPSC5A",
+   "CTIS10",
+   "CTIS11",
+   "CTIS12",
+   "CTIS13",
+   "CTIS14",
+   "CTIS15",
+   "CTIS16",
+   "CTIS17",
+   "CTIS18",
+   "CTIS19",
+   "CTIS2",
+   "CTIS20",
+   "CTIS21",
+   "CTIS22",
+   "CTIS23",
+   "CTIS25",
+   "CTIS26",
+   "CTIS27",
+   "CTIS29",
+   "CTIS3",
+   "CTIS30",
+   "CTIS31",
+   "CTIS32",
+   "CTIS33",
+   "CTIS35",
+   "CTIS4",
+   "CTIS5",
+   "CTIS6",
+   "CTIS7",
+   "CTIS8",
+   "CTIS9",
+   "MATH15",
+   "MATH15S",
+   "MATH3",
+   "MATH3S",
+   "MATHC2210",
+   "MATHC2210E",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07201.AS/requisites-ojrrt",
+   "title": "07201.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 4141
+ },
+ {
+  "control_number": "41857",
+  "title": "Social Justice Studies, Ethnic Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.76,
+  "codes_found": [
+   "ANTH10",
+   "ANTH2",
+   "ART3",
+   "ENGL18",
+   "ETHN1",
+   "ETHN15",
+   "ETHN20",
+   "ETHN22",
+   "ETHN23",
+   "ETHN5",
+   "GEOG12",
+   "HIST19",
+   "HIST20",
+   "HIST22",
+   "HIST23",
+   "HUM15",
+   "MUSG13",
+   "PSYC1B",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt",
+   "title": "22010.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3086
+ },
+ {
+  "control_number": "42460",
+  "title": "Crop Science Advanced",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "AGAS1",
+   "AGAS3",
+   "AGEH2",
+   "AGEH3",
+   "AGEH5",
+   "AGEH8",
+   "AGMA1",
+   "AGMA2",
+   "AGPS10",
+   "AGPS11",
+   "AGPS12",
+   "AGPS13",
+   "AGPS14",
+   "AGPS2",
+   "AGPS3",
+   "AGPS5",
+   "AGPS6",
+   "CHEM2A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01151.AS/requisites-ojrrt",
+   "title": "01151.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2091
+ },
+ {
+  "control_number": "42503",
+  "title": "Paramedicine: Pre-Professional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMER10",
+   "EMER11",
+   "EMER20",
+   "EMER21",
+   "EMER30",
+   "EMER31"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12510.AS/requisites-ojrrt",
+   "title": "12510.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 989
+ },
+ {
+  "control_number": "42504",
+  "title": "Paramedicine: Pre-Professional",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMER10",
+   "EMER11",
+   "EMER20",
+   "EMER21",
+   "EMER30",
+   "EMER31"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12510.CT/requisites-ojrrt",
+   "title": "12510.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 989
+ },
+ {
+  "control_number": "42572",
+  "title": "Athletic Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINE2",
+   "KINE3",
+   "KINE7",
+   "NUTR46",
+   "PSYC37"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12402.CN/requisites-ojrrt",
+   "title": "12402.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1099
+ },
+ {
+  "control_number": "42573",
+  "title": "Pipe Welding Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD60",
+   "WELD61",
+   "WELD62",
+   "WELD63"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09785.CM/requisites-ojrrt",
+   "title": "09785.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1075
+ },
+ {
+  "control_number": "42642",
+  "title": "Registered Nursing LVN to RN Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL18",
+   "BIOL20",
+   "REGN1",
+   "REGN2",
+   "REGN34",
+   "REGN44"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12500.CT/requisites-ojrrt",
+   "title": "12500.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1477
+ },
+ {
+  "control_number": "42691",
+  "title": "Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC1",
+   "CPSC5A",
+   "CTIS11",
+   "CTIS15",
+   "CTIS19",
+   "CTIS2",
+   "CTIS20",
+   "CTIS21",
+   "CTIS22",
+   "CTIS23",
+   "CTIS27",
+   "CTIS3",
+   "CTIS30",
+   "CTIS32",
+   "CTIS35",
+   "CTIS4",
+   "CTIS6",
+   "CTIS7",
+   "CTIS9",
+   "MATH15",
+   "MATH15S",
+   "MATH3",
+   "MATH3S",
+   "MATHC2210",
+   "MATHC2210E",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07202.AS/requisites-ojrrt",
+   "title": "07202.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 2879
+ },
+ {
+  "control_number": "42692",
+  "title": "Applied Al and Cloud Computing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "CPSC1",
+   "CPSC5A",
+   "CTIS10",
+   "CTIS11",
+   "CTIS13",
+   "CTIS15",
+   "CTIS19",
+   "CTIS2",
+   "CTIS25",
+   "CTIS26",
+   "CTIS27",
+   "CTIS29",
+   "CTIS3",
+   "CTIS31",
+   "CTIS4",
+   "CTIS5",
+   "CTIS7",
+   "CTIS8",
+   "CTIS9",
+   "MATH15",
+   "MATH3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07022.AS/requisites-ojrrt",
+   "title": "07022.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 23,
+  "text_chars": 2553
+ },
+ {
+  "control_number": "42801",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC14",
+   "CPSC20",
+   "CPSC21",
+   "CPSC22",
+   "CPSC25",
+   "CPSC39",
+   "CPSC42",
+   "CPSC5A",
+   "CPSC6",
+   "CPSC7",
+   "CTIS2",
+   "CTIS4",
+   "DRON10",
+   "DRON11",
+   "ELCT34",
+   "ELCT35",
+   "ELCT42A",
+   "ELCT42B",
+   "ENGR14",
+   "ENGR20",
+   "ENGR21",
+   "MATH7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07204.CN/requisites-ojrrt",
+   "title": "07204.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2527
+ },
+ {
+  "control_number": "43044",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC5A",
+   "CTIS11",
+   "CTIS15",
+   "CTIS19",
+   "CTIS2",
+   "CTIS20",
+   "CTIS21",
+   "CTIS22",
+   "CTIS23",
+   "CTIS27",
+   "CTIS3",
+   "CTIS30",
+   "CTIS32",
+   "CTIS35",
+   "CTIS4",
+   "CTIS6",
+   "CTIS7",
+   "CTIS9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07202.CT/requisites-ojrrt",
+   "title": "07202.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2165
+ },
+ {
+  "control_number": "43058",
+  "title": "Applied Al and Cloud Computing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC5A",
+   "CTIS10",
+   "CTIS11",
+   "CTIS13",
+   "CTIS15",
+   "CTIS19",
+   "CTIS2",
+   "CTIS25",
+   "CTIS26",
+   "CTIS27",
+   "CTIS29",
+   "CTIS3",
+   "CTIS31",
+   "CTIS4",
+   "CTIS7",
+   "CTIS8",
+   "CTIS9"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/07022.CT/requisites-ojrrt",
+   "title": "07022.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 17,
+  "text_chars": 2188
+ },
+ {
+  "control_number": "43197",
+  "title": "Agriculture Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.974,
+  "codes_found": [
+   "AGAB1",
+   "AGAB2",
+   "AGAB3",
+   "AGAB30A",
+   "AGAB30B",
+   "AGAB30C",
+   "AGAB31A",
+   "AGAB31B",
+   "AGAB31C",
+   "AGAB5",
+   "AGAB7",
+   "AGAB8",
+   "AGAS1",
+   "AGAS10",
+   "AGAS11",
+   "AGAS12",
+   "AGAS13",
+   "AGAS14",
+   "AGAS15",
+   "AGAS16",
+   "AGAS2",
+   "AGAS3",
+   "AGAS4",
+   "AGEH1",
+   "AGEH5",
+   "AGMA1",
+   "AGMA2",
+   "AGMA5",
+   "AGMA6",
+   "AGMA7",
+   "AGPS10",
+   "AGPS11",
+   "AGPS5",
+   "AGRI1",
+   "AGRI10",
+   "CHEM2A",
+   "CHEM4A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01051.AS/requisites-ojrrt",
+   "title": "01051.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 3825
+ },
+ {
+  "control_number": "43347",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM14",
+   "COMM17",
+   "COMM18",
+   "COMM2",
+   "COMM30",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt",
+   "title": "15603.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1494
+ },
+ {
+  "control_number": "43465",
+  "title": "College Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GUI101",
+   "GUI102"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49161.NC/requisites-ojrrt",
+   "title": "49161.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 767
+ },
+ {
+  "control_number": "43466",
+  "title": "College Preparation Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDU112A",
+   "EDU112B",
+   "GED101",
+   "TUT106"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49162.NC/requisites-ojrrt",
+   "title": "49162.NC Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 975
+ },
+ {
+  "control_number": "44160",
+  "title": "Agriculture Systems – Agriculture Foundation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44165",
+  "title": "Agriculture Systems – Agriculture Foundation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGT701",
+   "AGT702",
+   "AGT703",
+   "AGT704",
+   "AGT705"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt",
+   "title": "NC.CBE.AGT.CP Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 5,
+  "text_chars": 952
+ },
+ {
+  "control_number": "44416",
+  "title": "Geospatial Technology and Applications: Environmental and Earth Sciences",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS5",
+   "BIOL6",
+   "DRON1",
+   "DRON2",
+   "GEOG1",
+   "GEOG1L",
+   "GEOG20",
+   "GEOG25",
+   "GEOL1",
+   "GEOL2",
+   "GEOL3"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22062.CN/requisites-ojrrt",
+   "title": "22062.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 11,
+  "text_chars": 1605
+ },
+ {
+  "control_number": "44429",
+  "title": "Geospatial Technology and Applications: Agriculture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS13",
+   "AGPS14",
+   "AGPS3",
+   "AGPS5",
+   "AGPS6",
+   "DRON1",
+   "DRON2",
+   "GEOG15",
+   "GEOG20",
+   "GEOG25"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22061.CN/requisites-ojrrt",
+   "title": "22061.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1647
+ },
+ {
+  "control_number": "44431",
+  "title": "GeoSpatial Applications: Social Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "AGRI10",
+   "CRIM1",
+   "DRON1",
+   "DRON2",
+   "GEOG12",
+   "GEOG20",
+   "GEOG25"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt",
+   "title": "22063.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 11,
+  "text_chars": 1924
+ },
+ {
+  "control_number": "44678",
+  "title": "Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44715",
+  "title": "Teaching Online Education",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDIT10",
+   "EDIT12",
+   "EDIT14",
+   "EDIT16",
+   "EDIT18"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/08600.CM/requisites-ojrrt",
+   "title": "08600.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 983
+ },
+ {
+  "control_number": "45001",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "BIOL16",
+   "BIOL18",
+   "BIOL2",
+   "BIOL20",
+   "CHEM2A",
+   "CHEM4A",
+   "HLTH1",
+   "HLTH10",
+   "HLTH13",
+   "HLTH15",
+   "HLTH9",
+   "PSYC5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12837.AST/requisites-ojrrt",
+   "title": "12837.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2111
+ },
+ {
+  "control_number": "45026",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45131",
+  "title": "Early Childhood Educator II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV37",
+   "CLDV4L",
+   "CLDV5",
+   "CLDV6",
+   "CLDV7",
+   "CLDV7L"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13014.CN/requisites-ojrrt",
+   "title": "13014.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1273
+ },
+ {
+  "control_number": "45388",
+  "title": "Early Childhood Educator I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV1",
+   "CLDV2",
+   "CLDV3",
+   "CLDV7"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13013.CM/requisites-ojrrt",
+   "title": "13013.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 960
+ },
+ {
+  "control_number": "45669",
+  "title": "Multi-Language Learner Specialization",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDV13",
+   "CLDV37",
+   "ETHN12"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/13051.CM/requisites-ojrrt",
+   "title": "13051.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 3,
+  "text_chars": 877
+ },
+ {
+  "control_number": "45766",
+  "title": "Agricultural Leadership",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "AGAB30A",
+   "AGAB30B",
+   "AGAB30C",
+   "AGAB31A",
+   "AGAB31B"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01120.CM/requisites-ojrrt",
+   "title": "01120.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1109
+ },
+ {
+  "control_number": "45852",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART6",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BIOL2",
+   "BIOLC1000",
+   "CLDV1",
+   "CLDV9",
+   "COMMC1000",
+   "COMMC1000H",
+   "EDUC1",
+   "EDUC2",
+   "EDUC3",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOL3",
+   "HIST4A",
+   "HISTC1001",
+   "HISTC1001H",
+   "MATH20A",
+   "MATH20B",
+   "MUSG10",
+   "MUSG12",
+   "MUSG14",
+   "MUSG15",
+   "PHSC2",
+   "PHSC2L",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC9",
+   "THTR1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt",
+   "title": "49811.AAT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 3430
+ },
+ {
+  "control_number": "45853",
+  "title": "Dental Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNTA51",
+   "DNTA52",
+   "DNTA53",
+   "DNTA54"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/12600.CT/requisites-ojrrt",
+   "title": "12600.CT Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 869
+ },
+ {
+  "control_number": "46060",
+  "title": "Automotive Electric & Hybrid Systems Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO54",
+   "AUTO57",
+   "AUTO58",
+   "AUTO59",
+   "AUTO69",
+   "AUTO70"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09480.CN/requisites-ojrrt",
+   "title": "09480.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1216
+ },
+ {
+  "control_number": "46489",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC14",
+   "CPSC6",
+   "MATH4C",
+   "MATH5",
+   "MATH6",
+   "MATH8",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/17401.AST/requisites-ojrrt",
+   "title": "17401.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1536
+ },
+ {
+  "control_number": "46490",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CPSC14",
+   "CPSC6",
+   "MATH4C",
+   "MATH5",
+   "MATH6",
+   "MATH8",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/19800.AST/requisites-ojrrt",
+   "title": "19800.AST Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1604
+ }
+]
