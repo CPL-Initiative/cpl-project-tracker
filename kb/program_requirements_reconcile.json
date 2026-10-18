@@ -152,7 +152,7 @@
       "min": 34,
       "max": 34
      },
-     "pattern": "Completion of (?:the California General Education Transfer Curriculum \\()?Cal-GETC\\)? is required",
+     "pattern": "Completion\\s+of\\s+(?:the\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\()?Cal-GETC\\)?\\s+is\\s+required",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
      "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
     }
