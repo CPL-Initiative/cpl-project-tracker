@@ -26,7 +26,7 @@ with u as (
                          'Cerro Coso Community College','Porterville College','Folsom Lake College','De Anza College','Cosumnes River College','Sacramento City College','City College of San Francisco','American River College',
                          'Los Angeles Trade Technical College','Los Angeles Mission College','College of the Desert',
                          'Grossmont College','Los Angeles Southwest College','Ohlone College','Pasadena City College','Glendale Community College',
-                         'Cuesta College')
+                         'Cuesta College','Cañada College','Hartnell College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u
