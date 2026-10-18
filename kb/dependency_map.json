@@ -4,12 +4,12 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 659,
+  "file_datasets": 661,
   "external_services": 181,
   "consumers": 447,
   "workflows": 54,
   "data_js_files": 69,
-  "tabs": 38
+  "tabs": 39
  },
  "datasets": {
   "edgefn:FN": {
@@ -1498,6 +1498,7 @@
      "how": "url",
      "line": 42,
      "tabs": [
+      "commons",
       "program-requirements"
      ]
     },
@@ -5186,6 +5187,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:commons.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 0
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:commons_progress.js": {
@@ -14356,6 +14370,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/status/commons.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/status/program-requirements.json": {
    "consumers": [
     {
@@ -23303,7 +23330,11 @@
   "college_identity_data.js": [
    "college-identity"
   ],
+  "commons.js": [
+   "commons"
+  ],
   "commons_progress.js": [
+   "commons",
    "program-requirements"
   ],
   "contracts.js": [
@@ -23786,7 +23817,8 @@
     "kb/_build_ccr_sky.py",
     "kb/_build_discipline_blanks_worklist.py",
     "kb/_build_orphan_parent_worklist.py",
-    "kb/_build_remint_blast_radius.py"
+    "kb/_build_remint_blast_radius.py",
+    "kb/_build_commons_status.py"
    ],
    "adds": [
     "index.html",
@@ -23848,6 +23880,7 @@
     "veteran_jst.json",
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
+    "kb/status/commons.json",
     "kb/project_lifecycle.json",
     "kb/budget_snapshot.json",
     "reports/CPL_Master_Report.docx",
@@ -23960,6 +23993,7 @@
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
     "tests/fold_unclassified_test.py",
+    "tests/commons_status_build_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",

@@ -1,0 +1,369 @@
+{
+ "schema": 1,
+ "written_at": "2026-10-18T20:25:07Z",
+ "rows": [
+  {
+   "key": "requirements",
+   "title": "Program Requirements",
+   "tab": "#program-requirements",
+   "links": [
+    {
+     "href": "#program-requirements",
+     "text": "Open the tab"
+    }
+   ],
+   "status_file": "kb/status/program-requirements.json",
+   "pair": [
+    {
+     "n": 11625,
+     "of": 20282,
+     "words": "complete at 113 colleges",
+     "open": "#program-requirements"
+    }
+   ],
+   "tests": [
+    "machine-checked"
+   ],
+   "issues": [
+    {
+     "n": 3918,
+     "words": "active programs whose record fails a check",
+     "owner": "the college's reading procedure",
+     "open": "#program-requirements"
+    },
+    {
+     "n": 4739,
+     "words": "active programs with no record yet",
+     "owner": "the harvest",
+     "open": "#program-requirements"
+    }
+   ],
+   "procedures": [
+    {
+     "n": 114,
+     "words": "reading procedures, one per college read, versioned",
+     "open": "#program-requirements"
+    },
+    {
+     "words": "A misread is fixed in the procedure, and the records it touched are reread together"
+    }
+   ],
+   "machine": {
+    "what": "the last college read",
+    "at": "2026-10-18T12:45:57Z",
+    "every_hours": null
+   },
+   "facts": {
+    "active": 20282,
+    "complete": 11625,
+    "failing": 3918,
+    "unread": 4739,
+    "records": 17090,
+    "colleges": 114,
+    "outside_active": 1547
+   },
+   "sources": [
+    "coci_programs_data.js",
+    "kb/program_requirements_college/*/records/*.json",
+    "kb/program_requirements_pilot/records/*.json",
+    "kb/program_requirements_college/*/capture.json"
+   ]
+  },
+  {
+   "key": "exhibit",
+   "title": "Common Exhibit Reference",
+   "tab": "#credential-reference",
+   "links": [
+    {
+     "href": "#credential-reference",
+     "text": "Open the tab"
+    }
+   ],
+   "status_file": null,
+   "pair": [
+    {
+     "n": 1729,
+     "of": 4915,
+     "words": "titles carry a review stamp (645 a person's, 1,084 a cohort's); 2,441 credentials, 1,825 of 2,644 records stamped",
+     "open": "#credential-reference"
+    }
+   ],
+   "tests": [
+    "curator-stamped",
+    "procedure-settled"
+   ],
+   "issues": [
+    {
+     "n": 396,
+     "words": "titles held for a person",
+     "owner": "a curator (the classifier is unsure 355, the classifier's title has a course code left in 23, the classifier's title has a dangling word 10, a merge would join two issuers 6, the classifier's title has a method word left in 2)",
+     "open": "#credential-reference",
+     "error": null
+    },
+    {
+     "n": 18,
+     "words": "saved assignments the fold holds",
+     "owner": "a curator (a human-reviewed classification stands)",
+     "open": "#credential-reference",
+     "error": null
+    },
+    {
+     "n": 605,
+     "words": "titles in the reference that have left MAP",
+     "owner": "a curator (retire or keep)",
+     "open": "#credential-reference",
+     "error": null
+    }
+   ],
+   "procedures": [
+    {
+     "n": 12,
+     "words": "in force: 7 rules applied by code, 5 read by the classifier",
+     "open": "#credential-reference",
+     "error": null
+    },
+    {
+     "words": "A procedure's saves undo together"
+    }
+   ],
+   "machine": {
+    "what": "the saving run and the fold",
+    "at": "2026-10-18T17:47:11Z",
+    "every_hours": 24
+   },
+   "facts": {
+    "titles": 4915,
+    "stamped": 1729,
+    "person": 645,
+    "cohort": 1084,
+    "credentials": 2441,
+    "records": 2644,
+    "records_stamped": 1825,
+    "saved_at": "2026-10-18T17:37:29Z",
+    "fold_at": "2026-10-18T17:47:11Z"
+   },
+   "sources": [
+    "kb/unified_titles.json",
+    "kb/credentials.json",
+    "kb/exhibit_audit/latest.json",
+    "kb/cer_procedures_out/latest.json",
+    "kb/cer_procedures.json",
+    "kb/cer_procedures_out/saved/",
+    "kb/unclassified_fold/*/report.json"
+   ]
+  },
+  {
+   "key": "course",
+   "title": "Common Course Reference",
+   "tab": "#unified-courses",
+   "links": [
+    {
+     "href": "#unified-courses",
+     "text": "Open the tab"
+    },
+    {
+     "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "text": "SkyView"
+    }
+   ],
+   "status_file": null,
+   "pair": [
+    {
+     "n": 3208,
+     "of": 27581,
+     "words": "cards the auditor scores 0.85 or better; 17,033 at needs review, 7,334 at needs repair, 6 not ready",
+     "open": "#unified-courses"
+    }
+   ],
+   "tests": [
+    "scored by the auditor"
+   ],
+   "issues": [
+    {
+     "n": 14511,
+     "words": "cards carry a discipline no seed has touched, capped at 0.79",
+     "owner": "the Common Subjects reference",
+     "open": "#unified-courses"
+    },
+    {
+     "n": 4179,
+     "words": "unit anomalies",
+     "owner": "a curator (an identity keeps its unit range)",
+     "open": "#unified-courses"
+    },
+    {
+     "n": 1159,
+     "words": "TOP and discipline disagreements",
+     "owner": "a curator (the subject map decides; TOP corroborates)",
+     "open": "#unified-courses"
+    },
+    {
+     "n": 5750,
+     "words": "blank descriptions",
+     "owner": "the colleges' COCI entries",
+     "open": "#unified-courses"
+    }
+   ],
+   "procedures": [
+    {
+     "n": 16478,
+     "words": "identities and 33,418 stand-alone courses on the canvas (the 2026-09-08 layout); 33,421 stand-alone in today's build",
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "error": null
+    },
+    {
+     "words": "TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain"
+    },
+    {
+     "words": "Re-mints follow the playbook, one cron window each"
+    }
+   ],
+   "machine": {
+    "what": "the auditor",
+    "at": "2026-10-18T17:48:47+00:00",
+    "every_hours": 24
+   },
+   "facts": {
+    "total": 27581,
+    "ready": 3208,
+    "needs_review": 17033,
+    "needs_repair": 7334,
+    "not_ready": 6,
+    "cap": 0.79
+   },
+   "sources": [
+    "kb/row_audit/latest.json",
+    "prototype/ccr_universe.json",
+    "unified_courses_standalone.js"
+   ]
+  },
+  {
+   "key": "cr",
+   "title": "Common CR Reference",
+   "tab": "#cr-reference",
+   "links": [
+    {
+     "href": "#cr-reference",
+     "text": "Open the tab"
+    }
+   ],
+   "status_file": null,
+   "pair": [
+    {
+     "n": 156,
+     "of": 2159,
+     "words": "groups collapsed by a rung-1 to 4 rule",
+     "open": "#cr-reference"
+    },
+    {
+     "n": 30,
+     "words": "groups a curator decided: 51 verdicts reaching 1,184 of 9,413 rows by its receipt",
+     "open": "#cr-reference"
+    }
+   ],
+   "tests": [
+    "assigned by rung",
+    "curator-decided"
+   ],
+   "issues": [
+    {
+     "n": 1936,
+     "words": "groups at rung 5, where similarity suggests a match for a curator to confirm",
+     "owner": "a curator",
+     "open": "#cr-reference"
+    }
+   ],
+   "procedures": [
+    {
+     "words": "Five rungs; groups form on a shared key, each pair on its own; the course count gates a cartesian line"
+    },
+    {
+     "words": "0 hours reads as noncredit; a range names the group"
+    }
+   ],
+   "machine": {
+    "what": "the worklist build, last changed",
+    "at": "2026-10-18T17:50:29+00:00",
+    "every_hours": null
+   },
+   "facts": {
+    "groups": 2159,
+    "by_rule": 156,
+    "rung_5": 1936,
+    "rows": 9413,
+    "decided": 30,
+    "verdicts": 51,
+    "reached": 1184,
+    "receipts": 1
+   },
+   "sources": [
+    "kb/cr_reference_worklist.json",
+    "kb/receipts/cr_reference_decisions_*.json"
+   ]
+  },
+  {
+   "key": "subjects",
+   "title": "Common Subjects Reference",
+   "tab": "#canonical-subj4",
+   "links": [
+    {
+     "href": "#canonical-subj4",
+     "text": "Open the tab"
+    }
+   ],
+   "status_file": null,
+   "pair": [
+    {
+     "n": 122,
+     "of": 147,
+     "words": "disciplines carry a curator-confirmed subject code (111 by a person, 11 by a session cohort)",
+     "open": "#canonical-subj4"
+    }
+   ],
+   "tests": [
+    "curator-confirmed"
+   ],
+   "issues": [
+    {
+     "n": 25,
+     "words": "disciplines on the data's modal code, unconfirmed",
+     "owner": "a curator",
+     "open": "#canonical-subj4"
+    },
+    {
+     "n": 2,
+     "words": "codes on two disciplines each (AUTB; FTVE by design)",
+     "owner": "a curator",
+     "open": "#canonical-subj4"
+    }
+   ],
+   "procedures": [
+    {
+     "words": "A code is four letters; the subject map decides a discipline and TOP corroborates it"
+    },
+    {
+     "words": "A re-key goes through the alias chain and lands in one cron window"
+    }
+   ],
+   "machine": {
+    "what": "the daily sync of the picks into the seed",
+    "at": "2026-10-18T17:47:09Z",
+    "every_hours": 24
+   },
+   "facts": {
+    "disciplines": 147,
+    "confirmed": 122,
+    "person": 111,
+    "cohort": 11,
+    "modal": 25,
+    "shared": [
+     "AUTB",
+     "FTVE"
+    ]
+   },
+   "sources": [
+    "kb/discipline_canonical_subj4.json"
+   ]
+  }
+ ]
+}

@@ -309,6 +309,10 @@ jobs:
       # clean ones beside it fold.
       - name: CER fold holds each conflict by itself
         run: python3 tests/fold_unclassified_test.py
+      # The Commons tab's figures (Sam, 2026-10-18): the builder reads every row from the
+      # committed files, a figure it cannot read is null with its error, never a zero.
+      - name: Commons status builder reads every row
+        run: python3 tests/commons_status_build_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a
