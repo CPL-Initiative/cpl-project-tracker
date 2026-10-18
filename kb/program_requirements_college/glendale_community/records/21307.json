@@ -46,24 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 7,
    "listed": 7,
-   "share": 0.857,
-   "missing": [
-    "CSIS139"
-   ],
-   "unexplained": [
-    "CSIS139"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "BUSAD110",
     "CS/IS130",
-    "CS/IS139",
     "ENTRE101",
     "ENTRE102"
    ],
@@ -73,7 +68,7 @@
     "ENTRE101",
     "ENTRE102"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -255,5 +250,6 @@
    "Course codes in the text are abbreviated after the subject (e.g., 'CS/IS 101, 112 or 135, 190'); the subject was expanded onto each code."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }

@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 29,
    "listed": 29,
-   "share": 0.966,
-   "missing": [
-    "CSIS211"
-   ],
-   "unexplained": [
-    "CSIS211"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CS/IS211",
     "PSYC200"
    ],
    "flagged": [
     "PSYC200"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -442,5 +437,6 @@
    "Honors twins and 'or' options within the select-one lists are recorded as single entries with alternatives (MATH 104E/104EH, MATH 107/107H, MATH 108/108H, MATH 105/105H, ECON 102/102H)."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 39114562289,
+ "read_run": "39063367252"
 }
