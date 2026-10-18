@@ -46,43 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 38,
    "listed": 38,
-   "share": 0.842,
-   "missing": [
-    "FTV23",
-    "FTV26",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
-   "unexplained": [
-    "FTV23",
-    "FTV26",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 1,
    "codes": [
-    "F/TV23",
-    "F/TV26",
-    "F/TV2A",
-    "F/TV2AH",
-    "F/TV2B",
-    "F/TV2BH",
     "PHTG1"
    ],
    "flagged": [
     "PHTG1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -544,5 +524,6 @@
    "GE pattern is a choice: De Anza General Education or Cal-GETC; no GE units printed."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

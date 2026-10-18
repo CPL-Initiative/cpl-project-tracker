@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Global Studies",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=100",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13148,
+  "input_tokens": 15530,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13148,
-    "output_tokens": 9384,
+    "input_tokens": 15530,
+    "output_tokens": 9355,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,75 +30,39 @@
     "model": null
    }
   ],
-  "output_tokens": 9384,
+  "output_tokens": 9355,
   "output_tokens_details": {
-   "thinking_tokens": 3139
+   "thinking_tokens": 2466
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.24027,
- "ms": 70869,
- "seconds": 71.3,
+ "cost_usd": 0.24922,
+ "ms": 68442,
+ "seconds": 69.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 91,
+   "placed": 114,
    "listed": 116,
-   "share": 0.784,
+   "share": 0.983,
    "missing": [
-    "ANTH2",
-    "ANTH2H",
-    "COMM7",
-    "COMM7H",
-    "ECON1",
-    "ECON1H",
     "ECONC2001",
-    "ECONC2001H",
-    "ES1",
-    "FREN1",
-    "FREN2",
-    "FREN3",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH",
-    "FTV42",
-    "GEO10",
-    "GERM1",
-    "GERM2",
-    "GERM3",
-    "GERM4",
-    "HNDI1",
-    "INTL5",
-    "LIB1"
+    "ECONC2001H"
    ],
-   "unexplained": [
-    "ECONC2001",
-    "ECONC2001H",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH",
-    "FTV42"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 15,
+   "count": 10,
    "codes": [
     "ECON2",
     "ECON2H",
     "ESCI30",
-    "F/TV2A",
-    "F/TV2AH",
-    "F/TV2B",
-    "F/TV2BH",
-    "F/TV42",
     "ICS37",
     "INTL16",
     "INTL21",
@@ -108,6 +72,8 @@
     "PERS3"
    ],
    "flagged": [
+    "ECON2",
+    "ECON2H",
     "ESCI30",
     "ICS37",
     "INTL16",
@@ -117,14 +83,14 @@
     "PERS2",
     "PERS3"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    34.0,
-    39.0
+    53.0,
+    68.0
    ],
    "stated": [
     90.0,
@@ -141,13 +107,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -162,7 +128,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Global Studies A.A. Degree (the section heading is on the preceding page and not in the supplied text; the text begins mid-section in List B)",
+   "section_heading": "Associate in Arts (A.A.) Degree Global Studies",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -183,20 +149,234 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Integrate information about the environment, cultures, histories, politics, arts and economics of people around the world and explain their interdependence and interconnectedness",
+    "Demonstrate cultural competence through the ability to interact effectively in international and multicultural settings based on an integrated understanding of global issues and perspectives",
+    "Demonstrate proficiency in a foreign language"
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Option 3 (heading cut off on preceding page)",
+    "name": "Required Core",
     "rule": "all",
     "minimum": null,
-    "option_group": "List B world language",
+    "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 25,
+     "max": 25
     },
     "courses": [
+     {
+      "code": "ANTH 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 7H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 1H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTL 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "HIST 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 3B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 3C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 0,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "FREN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Option 2",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "List B",
+    "stated": {
+     "min": 0,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "GERM 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Option 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 0,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "HNDI 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "HNDI 2",
       "units": 5,
@@ -214,10 +394,10 @@
     ]
    },
    {
-    "name": "Option 4",
+    "name": "List B - Option 4",
     "rule": "all",
     "minimum": null,
-    "option_group": "List B world language",
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -247,10 +427,10 @@
     ]
    },
    {
-    "name": "Option 5",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "List B world language",
+    "name": "List B - Option 5",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -301,10 +481,10 @@
     ]
    },
    {
-    "name": "Option 6",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "List B world language",
+    "name": "List B - Option 6",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -341,10 +521,10 @@
     ]
    },
    {
-    "name": "Option 7",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "List B world language",
+    "name": "List B - Option 7",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -395,10 +575,10 @@
     ]
    },
    {
-    "name": "Option 8",
+    "name": "List B - Option 8",
     "rule": "all",
     "minimum": null,
-    "option_group": "List B world language",
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -428,10 +608,10 @@
     ]
    },
    {
-    "name": "Option 9",
+    "name": "List B - Option 9",
     "rule": "all",
     "minimum": null,
-    "option_group": "List B world language",
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -461,10 +641,10 @@
     ]
    },
    {
-    "name": "Option 10",
+    "name": "List B - Option 10",
     "rule": "all",
     "minimum": null,
-    "option_group": "List B world language",
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -494,10 +674,10 @@
     ]
    },
    {
-    "name": "Option 11",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "List B world language",
+    "name": "List B - Option 11",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -548,10 +728,10 @@
     ]
    },
    {
-    "name": "Option 12",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "List B world language",
+    "name": "List B - Option 12",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": "List B",
     "stated": {
      "min": 0,
      "max": 15
@@ -686,12 +866,12 @@
       "catalog_addition": false
      },
      {
-      "code": "F/TV 2A",
+      "code": "F / TV 2A",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "F/TV 2AH",
+        "code": "F / TV 2AH",
         "units": 4,
         "catalog_addition": false
        }
@@ -699,12 +879,12 @@
       "catalog_addition": false
      },
      {
-      "code": "F/TV 2B",
+      "code": "F / TV 2B",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "F/TV 2BH",
+        "code": "F / TV 2BH",
         "units": 4,
         "catalog_addition": false
        }
@@ -712,7 +892,7 @@
       "catalog_addition": false
      },
      {
-      "code": "F/TV 42",
+      "code": "F / TV 42",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -891,10 +1071,10 @@
        {
         "code": "ECON 2H",
         "units": 4,
-        "catalog_addition": false
+        "catalog_addition": true
        }
       ],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ANTH 4",
@@ -1050,87 +1230,24 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ANTH 2",
-    "why": "named only in the A.A.-T section in the supplied text; A.A. List A is on the preceding page, not in the text"
+    "code": "ECON C2001",
+    "why": "catalog prints ECON 2 (Principles of Microeconomics) instead; likely same course under common course number, recorded as ECON 2 with catalog_addition true"
    },
    {
-    "code": "ANTH 002H",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "COMM 7",
-    "why": "not in the text (likely on the preceding page)"
-   },
-   {
-    "code": "COMM 007H",
-    "why": "not in the text (likely on the preceding page)"
-   },
-   {
-    "code": "E S 1",
-    "why": "not in the text (likely on the preceding page)"
-   },
-   {
-    "code": "ECON 1",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "ECON 001H",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "FREN 1",
-    "why": "not in the text; List B option likely on the preceding page"
-   },
-   {
-    "code": "FREN 2",
-    "why": "not in the text; List B option likely on the preceding page"
-   },
-   {
-    "code": "FREN 3",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "GEO 10",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "GERM 1",
-    "why": "not in the text; List B option likely on the preceding page"
-   },
-   {
-    "code": "GERM 2",
-    "why": "not in the text; List B option likely on the preceding page"
-   },
-   {
-    "code": "GERM 3",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "GERM 4",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "HNDI 1",
-    "why": "not in the text; start of the Hindi option is cut off on the preceding page"
-   },
-   {
-    "code": "INTL 5",
-    "why": "named only in the A.A.-T section in the supplied text"
-   },
-   {
-    "code": "LIB 1",
-    "why": "not in the text"
+    "code": "ECON C2001H",
+    "why": "catalog prints ECON 2H (honors) instead; likely same course under common course number, recorded as ECON 2H alternative"
    }
   ],
   "notes": [
-   "The supplied text starts mid-section on page 100: the A.A. heading, description, outcomes, List A, and List B options 1-3 (except HNDI 2 and HNDI 3) are on the preceding page and not included. Any A.A. total for the major, its outcomes, and its careers could not be read.",
-   "The line 'One year (three quarters) of college-level world language or three years of high school world language or the equivalent.' heads page 100 and appears to describe the List B world-language requirement. Each option is recorded as a block in option_group 'List B world language'. Options with exactly three courses are recorded as 'all'. Options listing more than three courses are recorded as choose_courses 3, based on the three-quarter rule and the printed '0 - 15 Units'. The printed range starts at 0 because high school language can satisfy the requirement.",
-   "List C (24 units) is printed with area subheadings: Arts and Humanities (0-24), Global Environment (0-18), Globalization Issues (0-21), International Business (0-24), World History (0-24) and World Languages (0-8). The areas carry no minimums, so they are recorded as one choose_units 24 block. BUS 21 and POLI 3 appear under both Globalization Issues and International Business and are listed once. List C also allows courses from List A or List B not already taken.",
-   "The World History area continues across the page break; the page-101 header line on GE and electives interrupts it.",
-   "Catalog codes such as ARTS 2A, F/TV 2A and HIST 3A are treated as the closed list's ARTS 002A, F TV 002A and HIST 003A. ECON 2/ECON 2H are treated as the closed list's ECON C2001/C2001H (same title, renumbered); a reviewer should confirm this.",
-   "'Total Required: 90 Units' (quarter units) is recorded as degree_total, since GE (De Anza GE or Cal-GETC) and 'electives as needed to reach at least 90 units' are included in it.",
-   "The Program Learning Outcomes printed in the text belong to the A.A.-T (Global Studies for Transfer) section and were not recorded for the A.A."
+   "Units are quarter units (De Anza is on the quarter system).",
+   "'Total Required: 90 Units' sits under a note requiring De Anza GE or Cal-GETC 'AND electives as needed to reach at least 90 units', so 90 is recorded as degree_total; the page prints no separate major total (core 25 + List A 4 + List B 0-15 + List C 24, not computed into total_units).",
+   "Top of page 99 (Options 4-12 ending 'Total Required: 36 Units') belongs to a preceding program and was ignored.",
+   "List B: 'Complete one option (0 - 15 Units)'; 0 units reflects the page-100 note that three years of high school world language or the equivalent satisfies it. Options listing more than three courses (German, Japanese, Korean, Mandarin, Spanish, Vietnamese) are recorded as choose_units 15, since each option is stated as 0-15 units; reviewer should confirm.",
+   "List C (24 units) is printed in sub-areas, each 0-N units: Arts and Humanities (0-24), Global Environment (0-18), Globalization Issues (0-21), International Business (0-24), World History (0-24), World Languages (0-8). Recorded as one choose_units 24 block; BUS 21 and POLI 3 appear in two sub-areas and are listed once. List C may also be completed with List A or List B courses not already taken.",
+   "PERS 1-3, INTL 16, INTL 21, INTL 22, ESCI 30 and ICS 37 are not in the closed list (catalog additions).",
+   "Program description says it 'prepares students for careers as citizens of the world'; not recorded as a career since it names no occupation or field — reviewer may check.",
+   "Honors twins printed with HONORS titles in closed list under 00X format (e.g., ANTH 002H) were matched to catalog codes (e.g., ANTH 2H)."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "39115772038"
 }

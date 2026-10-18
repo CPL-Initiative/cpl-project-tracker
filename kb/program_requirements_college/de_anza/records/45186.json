@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Ethnic Studies",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13336,
+  "input_tokens": 12950,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13336,
-    "output_tokens": 3717,
+    "input_tokens": 12950,
+    "output_tokens": 4412,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 3717,
+  "output_tokens": 4412,
   "output_tokens_details": {
-   "thinking_tokens": 1289
+   "thinking_tokens": 1216
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12768,
- "ms": 30183,
- "seconds": 30.6,
+ "cost_usd": 0.14004,
+ "ms": 33068,
+ "seconds": 33.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 36,
+   "placed": 40,
    "listed": 42,
-   "share": 0.857,
+   "share": 0.952,
    "missing": [
-    "AFAM10",
     "AFAM12A",
-    "AFAM12B",
-    "ASAM11",
-    "CETH10",
-    "CHLX10"
+    "AFAM12B"
    ],
    "unexplained": [],
    "none_placed": false,
@@ -74,48 +70,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    8.0,
-    8.0
+    20.0,
+    20.0
    ],
    "stated": [
     20.0,
     20.0
    ],
    "against": "program",
-   "why": [
-    "'List A' chooses courses but names no minimum"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Ethnic Studies Certificate of Achievement (heading not in the extracted text; section begins mid-list at top of page 109)",
+   "section_heading": "Certificate of Achievement (COA) Ethnic Studies",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -136,20 +130,73 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Critically examine and articulate concepts such as race and racism, racialization, ethnicity, equity, ethno-centrism, eurocentrism, white supremacy, antiblackness, self-determination, liberation, decolonization, sovereignty, imperialism, settler colonialism, exploitation colonialism, xenophobia, intersectionalityx and anti-racism as studied in any one or more of the core four disciplines (Native American Studies, African American Studies, Asian American Studies, and Chicanx or Latinx Studies) or similar fields",
+    "Apply theory and knowledge produced by one or more of the core four disciplines (i.e., Native American Studies, Chicanx or Latinx Studies, African American Studies, Asian American Studies) or similar fields that describe an understanding of epistemologies, critical events, histories, cultures, cultural identity, cultural philosophies, intellectual traditions, contributions, lived experiences, generational trauma and all manner of struggles of those groups with a particular emphasis on systemic oppression, identity formation, agency and group affirmation",
+    "Critically analyze the intersection of race, racism and white supremacy as they relate to class, gender, sexuality, sexual orientation, social status, religion, spirituality, national origin, immigration status, ability, tribal citizenship, sovereignty, language or age, in Native American, African American, Asian American, Chicanx or Latinx or similar communities in the United States",
+    "Critically examine, in historical and intersectional context, how struggle, resistance and the quest for justice (including racial, social, educational, political or economic justice), solidarity and liberation, as experienced and enacted by Native American Studies, Chicanx or Latinx Studies, African American Studies, Asian American Studies and similar fields, as people of color in the United States, are relevant to current and structural issues. Such issues may be communal, national, international and transnational politics, for example, in immigration, reparations, settler-colonialism, multiculturalism or language policies",
+    "Describe and actively engage with anti-racist, abolitionist, anti-colonial and anti-imperial thought, issues, practices and movements in Native American Studies, Chicanx or Latinx Studies, African American Studies, Asian American Studies and similar fields as people of color in the United States seeking to build a just and equitable society"
+   ],
+   "careers": [
+    "community organizing",
+    "nonprofit organizations",
+    "educational institutions",
+    "public policy",
+    "public service",
+    "business"
+   ]
   },
   "blocks": [
    {
-    "name": "List A",
-    "rule": "choose_courses",
+    "name": "Required Core",
+    "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 4,
+     "max": 4
     },
     "courses": [
+     {
+      "code": "CETH 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "AFAM 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "NAIS 12",
       "units": 4,
@@ -428,38 +475,22 @@
   "missing_explained": [
    {
     "code": "AFAM 012A",
-    "why": "not in the extracted text for this section (likely in truncated portion before page 109); List B prints HIST 18A instead"
+    "why": "not in this section; the Ethnic Studies list prints only HIST 18A (shown as cross-listed with AFAM 12A in the Intercultural Studies section)"
    },
    {
     "code": "AFAM 012B",
-    "why": "not in the extracted text for this section (likely in truncated portion before page 109); List B prints HIST 18B instead"
-   },
-   {
-    "code": "AFAM 10",
-    "why": "not in the extracted text for this section; likely in truncated core/List A before page 109"
-   },
-   {
-    "code": "ASAM 11",
-    "why": "not in the extracted text for this section; likely in truncated List A before page 109"
-   },
-   {
-    "code": "CETH 10",
-    "why": "not in the extracted text for this section; likely in truncated core before page 109"
-   },
-   {
-    "code": "CHLX 10",
-    "why": "not in the extracted text for this section; likely in truncated List A before page 109"
+    "why": "not in this section; the Ethnic Studies list prints only HIST 18B (shown as cross-listed with AFAM 12B in the Intercultural Studies section)"
    }
   ],
   "notes": [
-   "The extracted text begins mid-section at the top of page 109; the Ethnic Studies certificate's heading, description, outcomes, required core and most of List A precede it and are not in the text. Reviewer should check page 108.",
-   "NAIS 12 is the last line before List B and is assumed to be the end of List A (List B refers to 'List A'); List A's rule and unit requirement are not visible, so minimum is null.",
-   "Total Required: 20 Units (quarter units) is read as this certificate's total, consistent with the 12Q to fewer than 24Q award range.",
-   "ASAM 30 in the catalog is taken to match closed-list ASAM030 (Filipinx American History and Culture), so catalog_addition is false.",
-   "Cross-listed courses (e.g., AFAM 25 / WMST 25) are recorded as one entry with the cross-list as an alternative; students receive credit for only one version.",
-   "HIST 18A and HIST 18B appear standalone in List B (not paired with AFAM 12A/12B as in the Intercultural Studies sections) and are not in the closed list.",
-   "No program learning outcomes or careers for the Ethnic Studies certificate appear in the extracted text; the outcomes shown belong to Intercultural Studies and Social Justice Studies sections and were not recorded."
+   "Units are De Anza quarter units; total printed as 'Total Required: 20 Units'.",
+   "List B may also be completed with List A courses not already taken; those List A courses are not repeated in the List B block.",
+   "ASAM 30 matched to closed-list entry 'ASAM030' (same course, code formatted differently).",
+   "HIST 18A and HIST 18B are not in the closed list; elsewhere in the catalog they are cross-listed with AFAM 12A/12B, which are in the closed list but not printed in this section.",
+   "Closed-list title for NAIS 12 ('Native American History') differs from the catalog title ('Ethnic Studies and the Historical Experiences of Native Americans').",
+   "In the first outcome, 'ethno-centrism' was joined across a hyphenated line break; 'intersectionalityx' copied as printed.",
+   "Careers list taken from the description's fields of work ('community organizing, nonprofit organizations, educational institutions, public policy, public service or business'); reviewer may judge whether these count as career fields."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "39115772038"
 }

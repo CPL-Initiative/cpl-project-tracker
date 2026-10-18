@@ -46,31 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 17,
-   "share": 0.882,
-   "missing": [
-    "FTV20",
-    "FTV26"
-   ],
-   "unexplained": [
-    "FTV20",
-    "FTV26"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "F/TV20",
-    "F/TV26",
     "PHTG1"
    ],
    "flagged": [
     "PHTG1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -309,5 +301,6 @@
    "The Certificate of Achievement section (18 units) was not recorded; its outcomes differ from the A.A. outcomes."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

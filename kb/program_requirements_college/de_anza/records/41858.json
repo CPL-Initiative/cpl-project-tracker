@@ -46,34 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 15,
    "listed": 15,
-   "share": 0.733,
-   "missing": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
-   "unexplained": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "F/TV2A",
-    "F/TV2AH",
-    "F/TV2B",
-    "F/TV2BH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -282,5 +267,6 @@
    "Fields named in the description ('graduate work across multiple fields such as anthropology, art, history and linguistics') are fields of study, not careers, so careers left empty."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 39114559952,
+ "read_run": "39046890834"
 }

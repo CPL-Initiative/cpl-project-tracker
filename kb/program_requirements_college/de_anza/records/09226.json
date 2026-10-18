@@ -1,0 +1,370 @@
+{
+ "college": "De Anza College",
+ "control_number": "09226",
+ "shape": "degree",
+ "title": "Film/TV: Animation",
+ "award": "A.A. Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=214",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12488,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12488,
+    "output_tokens": 1825,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1825,
+  "output_tokens_details": {
+   "thinking_tokens": 122
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08645,
+ "ms": 13982,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 46,
+   "share": 0.0,
+   "missing": [
+    "ARTS10A",
+    "ARTS12",
+    "ARTS15A",
+    "ARTS16A",
+    "ARTS4A",
+    "ARTS4C",
+    "ARTS54",
+    "ARTS8",
+    "ARTS85",
+    "FTV1",
+    "FTV10",
+    "FTV10H",
+    "FTV17G",
+    "FTV17H",
+    "FTV1H",
+    "FTV20",
+    "FTV27",
+    "FTV29",
+    "FTV2A",
+    "FTV2AH",
+    "FTV2B",
+    "FTV2BH",
+    "FTV2C",
+    "FTV2CH",
+    "FTV30",
+    "FTV31",
+    "FTV3A",
+    "FTV56A",
+    "FTV66A",
+    "FTV67A",
+    "FTV68A",
+    "FTV6A",
+    "FTV7",
+    "FTV70A",
+    "FTV71J",
+    "FTV72G",
+    "FTV72H",
+    "FTV72J",
+    "FTV74",
+    "FTV75G",
+    "FTV75K",
+    "FTV88",
+    "PHTG4",
+    "PHTG57A",
+    "PHTG58A",
+    "THEA80A"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No Film/TV: Animation A.A. section in the text (pages 214-215 print only F/TV course descriptions)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARTS 004A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 004C",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 010A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 015A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 016A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 12",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 54",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 8",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "ARTS 85",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 001H",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 002A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 002B",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 002C",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 003A",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 006A",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 010H",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 017G",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 017H",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 02AH",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 02BH",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 02CH",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 056A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 066A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 067A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 068A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 070A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 071J",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 072G",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 072H",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 072J",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 075G",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 075K",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 1",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 10",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 20",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 27",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 29",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 30",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 31",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 7",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 74",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "F TV 88",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "PHTG 057A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "PHTG 058A",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "PHTG 4",
+    "why": "not in the text; no program requirements printed"
+   },
+   {
+    "code": "THEA 080A",
+    "why": "not in the text; no program requirements printed"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 214-215) contains only F/TV course descriptions, cut off mid-sentence at F/TV 48U; it does not include the Film/TV: Animation A.A. Degree requirements section. The source page reference likely points to the course-description section rather than the program page; a reviewer should locate the program's requirements elsewhere in the 2025-2026 catalog.",
+   "No totals, blocks, outcomes or careers could be recorded because the program section is absent."
+  ]
+ },
+ "extracted_run": "39115772038"
+}
