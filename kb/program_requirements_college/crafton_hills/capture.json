@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 118,
  "with_closed_list": 79,
- "started": "2026-10-18T07:36:45Z",
+ "started": "2026-10-18T09:16:02Z",
  "scope": null,
  "sitemap": {
   "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 226,
  "banner_h1": "2026-2027 Catalog",
  "loads": 231,
- "seconds": 1246.6,
+ "seconds": 1155.5,
  "found": 76,
  "by_method": {
   "no_closed_list": 39,
@@ -87,30 +87,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/crafton_hills",
-  "kept": 74,
-  "programs": 2,
-  "list": [
-   {
-    "control_number": "38418",
-    "title": "Foundations in English Language and Communication",
-    "award": "Noncredit program",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44342",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   }
-  ]
+  "kept": 76,
+  "programs": 0,
+  "list": []
  },
- "run": "39108198761"
+ "run": "39114565984"
 }
