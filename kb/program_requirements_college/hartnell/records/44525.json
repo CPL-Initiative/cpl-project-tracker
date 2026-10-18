@@ -1,0 +1,212 @@
+{
+ "college": "Hartnell College",
+ "control_number": "44525",
+ "shape": "certificate",
+ "title": "Spanish",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=384",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9796,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9796,
+    "output_tokens": 1502,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1502,
+  "output_tokens_details": {
+   "thinking_tokens": 596
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06922,
+ "ms": 13466,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Spanish",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "converse and write in Spanish at the intermediate level with effective use of grammar, vocabulary, comprehensible pronunciation, and syntax on a range of topics such as personal and family lives, school or work, and current events.",
+    "read and analyze authentic texts in Spanish such as letters, essays, newspaper articles, poems, and/ or short stories.",
+    "demonstrate knowledge of the linguistic, literary, and cultural contributions of the Spanish speaking world."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "SPA1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA1S",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA1X",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA2S",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA2X",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA3S",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA4S",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no separate program title heading; section_heading is taken from the description's 'Certificate of Achievement in Spanish'.",
+   "The fourth required bullet is printed blank with only 'OR SPA4S - Intermediate Spanish for Spanish Speakers'; the first option (likely SPA4) appears to be missing from the text. Recorded SPA4S alone; reviewer should check.",
+   "Unit values of 5 come from the 'Credits 5' printed in the course descriptions on pages 385-387; SPA4S has no course description in the text, so its units are null.",
+   "The 'Total Required Credits 20' is recorded as total_units and as the block's stated total (four 5-unit courses).",
+   "Outcomes lead-in reads 'Upon completion of this course' though they are listed under Program Outcomes for the certificate."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

@@ -1,0 +1,265 @@
+{
+ "college": "Hartnell College",
+ "control_number": "33051",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10415,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10415,
+    "output_tokens": 1967,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1967,
+  "output_tokens_details": {
+   "thinking_tokens": 695
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.081,
+ "ms": 15729,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish for Transfer (AA-T) - AAT.SPA",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Converse and write in Spanish at the intermediate level with effective use of grammar, vocabulary, comprehensible pronunciation and syntax on a range of topics such as personal and family lives, school or work, and current events.",
+    "Read and understand authentic texts in Spanish such as letters, essays, newspaper articles, poems and/or short stories.",
+    "Describe and provide examples of the linguistic, literary, and cultural contributions of the Spanish speaking world."
+   ],
+   "careers": [
+    "interpretation",
+    "customer service",
+    "preschool education",
+    "childcare",
+    "health care",
+    "nutrition services",
+    "public safety"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPA1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA1S",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA1X",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA2S",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA2X",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA3S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA4S",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives - List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIS6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS49B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirement lists print no units beside courses; units left null. Course pages on pp. 385-386 show 5 credits for SPA1, SPA1S, SPA1X, SPA2, SPA2S, SPA2X.",
+   "Required Core reads 'Complete four of the following / Complete at least 4 of the following courses' over exactly four entries (each with or-options), so it is effectively all required; recorded as choose_courses with minimum 4.",
+   "Major Electives - List A heading says 'Complete one of the following' while the sub-line says 'Complete ANY of the following Courses'; recorded as choose 1.",
+   "Additional comment: students placing out of Spanish 1, 1S, or 1X get no units for it and must take an additional 3-unit course from the Major Electives List.",
+   "'Total Required Credits 60' recorded as degree_total; no major total is printed. Electives (courses numbered 1-99) are required when degree plus GE units total fewer than 60, with no units printed.",
+   "Course titles in the catalog list differ from the closed list for ANT20 and ETH4 (and some SPA titles), but codes match.",
+   "The Certificate of Achievement (CT.SPA) section on page 384 was not used."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

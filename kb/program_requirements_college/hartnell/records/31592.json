@@ -1,0 +1,178 @@
+{
+ "college": "Hartnell College",
+ "control_number": "31592",
+ "shape": "certificate",
+ "title": "Computer Science and Information Systems-Network and Security",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6844,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6844,
+    "output_tokens": 1204,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1204,
+  "output_tokens_details": {
+   "thinking_tokens": 466
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05146,
+ "ms": 11222,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "CSS1",
+    "CSS169",
+    "CSS50",
+    "CSS51",
+    "CSS52",
+    "CSS53",
+    "CSS54",
+    "CSS55"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science Info Systems-Network & Security Option - AS.PCN",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CSS 1",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 169",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 50",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 51",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 52",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 53",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 54",
+    "why": "named only in the A.S. section; no certificate section in text"
+   },
+   {
+    "code": "CSS 55",
+    "why": "named only in the A.S. section; no certificate section in text"
+   }
+  ],
+  "notes": [
+   "The catalog text holds only the A.S. Local Degree section (AS.PCN) for this program. It has no Certificate of Achievement section, so no blocks, totals, outcomes or careers are recorded for the certificate. The heading recorded is the only section present, which belongs to the A.S.; the certificate section is probably on another page of the PDF.",
+   "For reference, the A.S. section requires all of these courses: CSS1, CSS50, CSS51, CSS52, CSS53, CSS54, CSS55, CSS56 and CSS169. CSS56 (Storage Management and Virtualization) is not in the closed list. The A.S. also requires Local GE, prints 'Total Required Credits 60', and says electives fill the degree to 60 units.",
+   "The A.S. section prints four program outcomes (under the lead-in 'Upon completion of this course') and names 'network and security specialists' as a career. These are not recorded because they belong to the degree section, not to the certificate."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

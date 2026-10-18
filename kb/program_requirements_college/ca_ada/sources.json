@@ -1,0 +1,3788 @@
+[
+ {
+  "control_number": "05698",
+  "title": "Interior Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05699",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05700",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS118"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165",
+   "title": "165",
+   "h1": "165",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 6527
+ },
+ {
+  "control_number": "05701",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05703",
+  "title": "Administrative Support Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05707",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05708",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05710",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05711",
+  "title": "Theater Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM3001"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=121",
+   "title": "121",
+   "h1": "121",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 1683
+ },
+ {
+  "control_number": "05715",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05716",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05717",
+  "title": "Custom Dressmaking/Small Business Oriented",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH195"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
+   "title": "187",
+   "h1": "187",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 2961
+ },
+ {
+  "control_number": "05718",
+  "title": "Paralegal",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05719",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05721",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05722",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST100",
+   "HIST101",
+   "PHIL100",
+   "PHIL103",
+   "PHIL160",
+   "PHIL175",
+   "PHIL190",
+   "PHIL200",
+   "PHIL240",
+   "PHIL300",
+   "PHIL312"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=223",
+   "title": "223",
+   "h1": "223",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    223,
+    224
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 7406
+ },
+ {
+  "control_number": "05725",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05726",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05729",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05730",
+  "title": "Early Childhood Education/Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05731",
+  "title": "International Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05733",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05734",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05735",
+  "title": "Geography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS118"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192",
+   "title": "192",
+   "h1": "192",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    192
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 3234
+ },
+ {
+  "control_number": "05736",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05737",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07252",
+  "title": "Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07253",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10247",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG121",
+   "ACTG131",
+   "BUS100",
+   "BUS101",
+   "BUS103",
+   "BUS113",
+   "BUS180",
+   "BUS201",
+   "BUS401",
+   "CBOT435",
+   "COMMC1000",
+   "COMMC1004",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC249",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+   "title": "149",
+   "h1": "149",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 16,
+  "text_chars": 12827
+ },
+ {
+  "control_number": "10253",
+  "title": "Kitchen and Bath",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14443",
+  "title": "Digital Art and Animation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MART314",
+   "MART325",
+   "MART362",
+   "MART366",
+   "MART371",
+   "MART372",
+   "MART376",
+   "MART378",
+   "MART379",
+   "MART385",
+   "MART389",
+   "MART390"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167",
+   "title": "167",
+   "h1": "167",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168,
+    169,
+    170
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 12,
+  "text_chars": 13421
+ },
+ {
+  "control_number": "15051",
+  "title": "Theater Costuming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15052",
+  "title": "Technical (Apparel Industry Oriented)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH195"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186",
+   "title": "186",
+   "h1": "186",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 6466
+ },
+ {
+  "control_number": "15400",
+  "title": "Medical Coding Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15479",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15480",
+  "title": "Medical Administrative Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15482",
+  "title": "Medical Billing Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15652",
+  "title": "General Office",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15654",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MART314",
+   "MART366",
+   "MART372",
+   "MART376",
+   "MART378",
+   "MART390"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169",
+   "title": "169",
+   "h1": "169",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169,
+    170
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 6300
+ },
+ {
+  "control_number": "15657",
+  "title": "Entry Level Bookkeeper",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16816",
+  "title": "3D Animation and Videogame Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART207",
+   "MART325",
+   "MART362",
+   "MART363",
+   "MART366",
+   "MART372",
+   "MART376",
+   "MART379",
+   "MART380",
+   "MART385",
+   "MART389",
+   "MART390",
+   "MART400",
+   "MART405",
+   "MART416",
+   "MART417",
+   "MART418",
+   "MART420",
+   "MART421",
+   "MART422",
+   "MART424",
+   "MART425",
+   "MART431",
+   "MART432"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166",
+   "title": "166",
+   "h1": "166",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167,
+    168,
+    169
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 24,
+  "text_chars": 14141
+ },
+ {
+  "control_number": "18648",
+  "title": "Interdisciplinary Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18650",
+  "title": "Interdisciplinary Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18652",
+  "title": "Interdisciplinary Studies: Natural Science and Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19142",
+  "title": "Latin American and Latino/a Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19143",
+  "title": "Latin American and Latino/a Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19263",
+  "title": "Fashion Design Merchandising",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19264",
+  "title": "Fashion Design Merchandising",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19708",
+  "title": "Preparation for Academic Scholarship and Success (PASS)",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20424",
+  "title": "Accounting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20425",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG121",
+   "BUS100",
+   "BUS101",
+   "BUS113",
+   "BUS125",
+   "BUS180",
+   "BUS201",
+   "BUS401",
+   "EDUC249"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
+   "title": "152",
+   "h1": "152",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 9,
+  "text_chars": 14108
+ },
+ {
+  "control_number": "20426",
+  "title": "Entrepreneurship and Small Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG100",
+   "ACTG121",
+   "ACTG200",
+   "BUS100",
+   "BUS113",
+   "BUS125",
+   "BUS150",
+   "BUS180",
+   "BUS201",
+   "CBOT435",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=155",
+   "title": "155",
+   "h1": "155",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156,
+    157,
+    158
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 14092
+ },
+ {
+  "control_number": "20427",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG121",
+   "BUS100",
+   "BUS101",
+   "BUS113",
+   "BUS401",
+   "ECONC2002",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+   "title": "149",
+   "h1": "149",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 7,
+  "text_chars": 12827
+ },
+ {
+  "control_number": "20428",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20429",
+  "title": "Administrative Support Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20430",
+  "title": "3D Animation and Videogame Art",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART207",
+   "MART314",
+   "MART325",
+   "MART362",
+   "MART363",
+   "MART366",
+   "MART372",
+   "MART376",
+   "MART379",
+   "MART380",
+   "MART385",
+   "MART389",
+   "MART390",
+   "MART400",
+   "MART405",
+   "MART416",
+   "MART417",
+   "MART418",
+   "MART420",
+   "MART421",
+   "MART424",
+   "MART425",
+   "MART431",
+   "MART432"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166",
+   "title": "166",
+   "h1": "166",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167,
+    168,
+    169
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 24,
+  "text_chars": 14141
+ },
+ {
+  "control_number": "20432",
+  "title": "Digital Art and Animation",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MART314",
+   "MART325",
+   "MART362",
+   "MART371",
+   "MART372",
+   "MART376",
+   "MART378",
+   "MART379",
+   "MART385",
+   "MART389",
+   "MART390"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167",
+   "title": "167",
+   "h1": "167",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168,
+    169,
+    170
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 13421
+ },
+ {
+  "control_number": "20434",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20435",
+  "title": "Medical Billing Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20437",
+  "title": "Interior Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20438",
+  "title": "Custom Dressmaking/Small Business Oriented",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH195"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
+   "title": "187",
+   "h1": "187",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 2961
+ },
+ {
+  "control_number": "20439",
+  "title": "Theater Costuming",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20440",
+  "title": "Technical (Apparel Industry Oriented)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH195"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186",
+   "title": "186",
+   "h1": "186",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 1,
+  "text_chars": 6466
+ },
+ {
+  "control_number": "20441",
+  "title": "Early Childhood Education/Child Development",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20442",
+  "title": "Paralegal",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30385",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART204",
+   "ART205",
+   "ART206",
+   "ART207",
+   "ART214",
+   "ART221",
+   "ART222",
+   "ART229",
+   "ART301",
+   "ARTH102",
+   "ARTH103",
+   "ARTH104",
+   "ARTH105",
+   "ARTH113",
+   "ARTH114",
+   "ARTH116",
+   "ARTH118",
+   "ARTH128",
+   "ARTH131",
+   "ARTH250",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=141",
+   "title": "141",
+   "h1": "141",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 21,
+  "text_chars": 8896
+ },
+ {
+  "control_number": "30427",
+  "title": "Earth Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM210",
+   "CHEM220",
+   "GEOG100",
+   "GEOG110",
+   "GEOL100",
+   "MATH241",
+   "MATHC2210",
+   "MATHC2220",
+   "OCEN100",
+   "OCEN101",
+   "PHYS210",
+   "PHYS220",
+   "PHYS250",
+   "PHYS260",
+   "PHYS270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170",
+   "title": "170",
+   "h1": "170",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    170,
+    171,
+    172,
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 16,
+  "text_chars": 12193
+ },
+ {
+  "control_number": "30527",
+  "title": "CSU General Education (CSU-GE)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30528",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC) - CSU",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30529",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC) - UC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30741",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH253",
+   "MATH270",
+   "MATH275",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=127",
+   "title": "127",
+   "h1": "127",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 5,
+  "text_chars": 1908
+ },
+ {
+  "control_number": "30825",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.947,
+  "codes_found": [
+   "ANTH110",
+   "COMM150",
+   "ETHN108",
+   "GEOG110",
+   "HIST101",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL200",
+   "PHIL240",
+   "POLSC1000",
+   "PSYC205",
+   "PSYC300",
+   "PSYCC1000",
+   "SOCI105",
+   "SOCI141",
+   "SOCI205",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=234",
+   "title": "234",
+   "h1": "234",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234,
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 19,
+  "text_chars": 6206
+ },
+ {
+  "control_number": "30834",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL130",
+   "BIOLC1000",
+   "PSYC106",
+   "PSYC200",
+   "PSYC205",
+   "PSYC300",
+   "PSYC340",
+   "PSYC410",
+   "PSYCC1000",
+   "SOCI205",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=231",
+   "title": "AA-T  Psychology",
+   "h1": "AA-T  Psychology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 12,
+  "text_chars": 3241
+ },
+ {
+  "control_number": "30853",
+  "title": "Home Staging",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH110",
+   "INTD115",
+   "INTD148",
+   "INTD175",
+   "INTD250",
+   "INTD260",
+   "INTD300",
+   "INTD450"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=202",
+   "title": "202",
+   "h1": "202",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    202,
+    203,
+    204
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 8,
+  "text_chars": 11359
+ },
+ {
+  "control_number": "30881",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH253",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS250",
+   "PHYS260",
+   "PHYS270"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=226",
+   "title": "AS-T  Physics 2.0",
+   "h1": "AS-T  Physics 2.0",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 1520
+ },
+ {
+  "control_number": "30910",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.961,
+  "codes_found": [
+   "AQUA1271",
+   "AQUA1272",
+   "AQUA1273",
+   "AQUA1274",
+   "AQUA1331",
+   "AQUA1351",
+   "BIOL250",
+   "BIOL260",
+   "CHEM210",
+   "CHEM410",
+   "DANC1151",
+   "DANC1152",
+   "DANC1153",
+   "DANC1154",
+   "DANC1171",
+   "DANC1172",
+   "DANC1173",
+   "DANC1174",
+   "DANC1211",
+   "DANC1212",
+   "DANC1213",
+   "DANC1214",
+   "DANC1251",
+   "DANC1252",
+   "DANC1253",
+   "DANC1254",
+   "DANC1301",
+   "DANC1302",
+   "DANC1303",
+   "DANC1304",
+   "DANC1401",
+   "DANC1402",
+   "DANC1403",
+   "DANC1404",
+   "DANC1501",
+   "DANC1502",
+   "DANC1503",
+   "DANC1504",
+   "DANC1511",
+   "DANC1512",
+   "DANC1513",
+   "DANC1514",
+   "DANC1571",
+   "DANC1572",
+   "DANC1573",
+   "DANC1574",
+   "DANC1612",
+   "DANC1613",
+   "DANC1614",
+   "FITN117",
+   "FITN118",
+   "FITN119",
+   "FITN122",
+   "FITN1281",
+   "FITN1282",
+   "FITN1283",
+   "FITN152",
+   "FITN153",
+   "FITN154",
+   "FITN210",
+   "FITN2271",
+   "FITN2272",
+   "FITN2273",
+   "FITN2274",
+   "FITN235",
+   "FITN3011",
+   "FITN3012",
+   "FITN3013",
+   "FITN3041",
+   "FITN3042",
+   "FITN3043",
+   "FITN3044",
+   "FITN3081",
+   "FITN3321",
+   "FITN3322",
+   "FITN3341",
+   "FITN3342",
+   "FITN3343",
+   "FITN3344",
+   "FITN3351",
+   "FITN3352",
+   "FITN3353",
+   "FITN3354",
+   "INDV1211",
+   "INDV1212",
+   "INDV1601",
+   "INDV1602",
+   "INDV1603",
+   "INDV1604",
+   "INDV2511",
+   "INDV2512",
+   "INDV2513",
+   "INDV2514",
+   "INDV2561",
+   "INDV2562",
+   "INDV2563",
+   "KINE101",
+   "KINE119",
+   "STATC1000",
+   "TEAM1111",
+   "TEAM1112",
+   "TEAM1113",
+   "TEAM1114",
+   "TEAM1321",
+   "TEAM1322",
+   "TEAM1323",
+   "TEAM1411",
+   "TEAM1412",
+   "TEAM1413",
+   "TEAM1414",
+   "TEAM1481",
+   "TEAM1482",
+   "TEAM1483",
+   "TEAM1484",
+   "TEAM1711",
+   "TEAM1712",
+   "TEAM1713",
+   "TEAM1714",
+   "TEAM184",
+   "TEAM185",
+   "TEAM186",
+   "TEAM187"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=209",
+   "title": "209",
+   "h1": "209",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211,
+    212
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 131,
+  "text_chars": 8584
+ },
+ {
+  "control_number": "31069",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "ECE210",
+   "ECE211",
+   "ECE212",
+   "ECE254",
+   "ECE313",
+   "ECE333",
+   "ECE366"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=174",
+   "title": "174",
+   "h1": "174",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    174,
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 8,
+  "text_chars": 15201
+ },
+ {
+  "control_number": "31401",
+  "title": "Math for Surveying and Computer-aided Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHEM210",
+   "ENGR210",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS250"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179",
+   "title": "179",
+   "h1": "179",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 7299
+ },
+ {
+  "control_number": "31755",
+  "title": "Bilingualism and Biliteracy in English/Spanish",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL200",
+   "ENGLC1000",
+   "LING200",
+   "SPAN162",
+   "SPAN220",
+   "SPAN230"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=237",
+   "title": "237",
+   "h1": "237",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237,
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 6520
+ },
+ {
+  "control_number": "31856",
+  "title": "DANCE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "BUS150",
+   "COMMC1004",
+   "DRAM200"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=206",
+   "title": "206",
+   "h1": "206",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    206
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 2848
+ },
+ {
+  "control_number": "31911",
+  "title": "Pathways to Student Success",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS113",
+   "BUS401",
+   "CBOT432",
+   "COMM127",
+   "COMM140",
+   "COMMC1000",
+   "COMMC1004",
+   "CRER110",
+   "CRER137",
+   "CRER401",
+   "CRER430",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "LIBR100",
+   "MATH145",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=190",
+   "title": "190",
+   "h1": "190",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    190,
+    191,
+    192
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 16,
+  "text_chars": 9451
+ },
+ {
+  "control_number": "32197",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.846,
+  "codes_found": [
+   "BIOL225",
+   "BIOL230",
+   "CHEM210",
+   "CIS242",
+   "CIS250",
+   "CIS252",
+   "CIS262",
+   "CIS284",
+   "CIS286",
+   "PHYS250",
+   "PHYS260"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=164",
+   "title": "AS-T  Computer Science",
+   "h1": "AS-T  Computer Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164,
+    165,
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 13,
+  "text_chars": 9454
+ },
+ {
+  "control_number": "32295",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH110",
+   "GEOG100",
+   "GEOG110",
+   "GEOG150",
+   "GEOL100",
+   "METE100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192",
+   "title": "192",
+   "h1": "192",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    192,
+    193
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 6855
+ },
+ {
+  "control_number": "32400",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "ANTH110",
+   "ANTH200",
+   "ANTH351",
+   "ANTHC1001",
+   "BIOL250",
+   "GEOG150",
+   "GEOL100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=140",
+   "title": "140",
+   "h1": "140",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 3131
+ },
+ {
+  "control_number": "32452",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART204",
+   "ART205",
+   "ART207",
+   "ART214",
+   "ART221",
+   "ART301",
+   "ART306",
+   "ARTH103",
+   "ARTH105",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=141",
+   "title": "141",
+   "h1": "141",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 10,
+  "text_chars": 5668
+ },
+ {
+  "control_number": "32514",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART204",
+   "ART205",
+   "ART207",
+   "ART214",
+   "ART221",
+   "ART301",
+   "ART306",
+   "ARTH102",
+   "ARTH103",
+   "ARTH104",
+   "ARTH105",
+   "ARTH113",
+   "ARTH114",
+   "ARTH116",
+   "ARTH118",
+   "ARTH128",
+   "ARTH131",
+   "ARTH250",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=142",
+   "title": "142",
+   "h1": "142",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 19,
+  "text_chars": 6204
+ },
+ {
+  "control_number": "32525",
+  "title": "Computer Science - Java",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS118",
+   "CIS242",
+   "CIS262",
+   "CIS284",
+   "CIS286"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165",
+   "title": "165",
+   "h1": "165",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 5,
+  "text_chars": 6527
+ },
+ {
+  "control_number": "32526",
+  "title": "Computer Science - Swift",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS118",
+   "CIS242",
+   "CIS262",
+   "CIS294",
+   "CIS321"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166",
+   "title": "166",
+   "h1": "166",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 5,
+  "text_chars": 3407
+ },
+ {
+  "control_number": "32527",
+  "title": "Computer Science - C++",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS118",
+   "CIS242",
+   "CIS250",
+   "CIS252",
+   "CIS262"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165",
+   "title": "165",
+   "h1": "165",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 5,
+  "text_chars": 6527
+ },
+ {
+  "control_number": "32576",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.926,
+  "codes_found": [
+   "ANTH110",
+   "COMM180",
+   "ECON230",
+   "ECONC2002",
+   "ETHN103",
+   "ETHN105",
+   "ETHN107",
+   "ETHN108",
+   "GEOG110",
+   "HIST100",
+   "HIST101",
+   "HIST104",
+   "HIST106",
+   "HIST245",
+   "HIST246",
+   "HIST247",
+   "HIST422",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL100",
+   "PHIL160",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCI105",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=194",
+   "title": "194",
+   "h1": "194",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    194,
+    195,
+    196,
+    197
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 27,
+  "text_chars": 12234
+ },
+ {
+  "control_number": "32716",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG121",
+   "ACTG131",
+   "BUS103",
+   "BUS401",
+   "ECON230",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH125",
+   "MATH241",
+   "MATH253",
+   "MATH270",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=172",
+   "title": "AA-T  Economics",
+   "h1": "AA-T  Economics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 14,
+  "text_chars": 6216
+ },
+ {
+  "control_number": "32730",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM140",
+   "ENGL161",
+   "ENGL162",
+   "ENGL200",
+   "ENGLC1001",
+   "ENGLC1002",
+   "LING200",
+   "LIT151",
+   "LIT200",
+   "LIT205",
+   "LIT231",
+   "LIT232",
+   "LIT252",
+   "LIT266",
+   "LIT371",
+   "LIT372",
+   "LIT373",
+   "LIT441",
+   "LIT442",
+   "SPAN162"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=181",
+   "title": "AA-T  English",
+   "h1": "AA-T  English",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    181
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 20,
+  "text_chars": 2355
+ },
+ {
+  "control_number": "32731",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM151",
+   "ETHN265",
+   "HIST100",
+   "HIST101",
+   "HIST104",
+   "HIST106",
+   "HIST245",
+   "HIST246",
+   "HIST247",
+   "LIT151",
+   "LIT200",
+   "LIT205",
+   "LIT231",
+   "LIT232",
+   "LIT252",
+   "LIT266",
+   "LIT371",
+   "LIT372",
+   "PHIL100",
+   "PHIL103",
+   "PHIL160",
+   "PHIL175",
+   "PHIL190",
+   "PHIL200",
+   "PHIL240",
+   "PHIL300",
+   "PHIL312"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=223",
+   "title": "223",
+   "h1": "223",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    223,
+    224
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 27,
+  "text_chars": 7406
+ },
+ {
+  "control_number": "32795",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM140",
+   "DRAM150",
+   "DRAM200",
+   "DRAM201",
+   "DRAM3001",
+   "DRAM305"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=239",
+   "title": "AA-T  Theatre Arts",
+   "h1": "AA-T  Theatre Arts",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 2575
+ },
+ {
+  "control_number": "32833",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.556,
+  "codes_found": [
+   "PLSC150",
+   "PLSC170",
+   "PLSC310",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=337",
+   "title": "337",
+   "h1": "337",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    337,
+    338
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 9,
+  "text_chars": 8542
+ },
+ {
+  "control_number": "32861",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33317",
+  "title": "Payroll Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG100",
+   "ACTG200",
+   "BUS101",
+   "BUS103",
+   "CBOT435",
+   "CBOT470"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=139",
+   "title": "139",
+   "h1": "139",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 4050
+ },
+ {
+  "control_number": "33608",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL225",
+   "BIOL230",
+   "CHEM210",
+   "CHEM220",
+   "MATHC2210",
+   "PHYS210",
+   "PHYS220",
+   "PHYS250",
+   "PHYS260"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=144",
+   "title": "144",
+   "h1": "144",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 9,
+  "text_chars": 10029
+ },
+ {
+  "control_number": "33610",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH110",
+   "BIOL240",
+   "BIOL250",
+   "BIOL260",
+   "BIOL310",
+   "CHEM210",
+   "CHEM220",
+   "CHEM231",
+   "COMM150",
+   "COMMC1000",
+   "COMMC1004",
+   "ECONC2001",
+   "ECONC2002",
+   "ENVS115",
+   "MATH241",
+   "MATHC2210",
+   "PHYS210",
+   "PHYS250",
+   "PSYC205",
+   "PSYCC1000",
+   "SOCI105",
+   "SOCI205",
+   "SOCIC1000",
+   "SPAN110",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=145",
+   "title": "145",
+   "h1": "145",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 25,
+  "text_chars": 10207
+ },
+ {
+  "control_number": "33828",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.972,
+  "codes_found": [
+   "ANTH110",
+   "COMM150",
+   "DANC1151",
+   "DANC1152",
+   "DANC1571",
+   "DANC1572",
+   "DANC1612",
+   "ENGL200",
+   "ETHN108",
+   "ETHN109",
+   "ETHN130",
+   "GEOG110",
+   "HIST104",
+   "HIST106",
+   "HIST246",
+   "HIST422",
+   "LING200",
+   "LIT371",
+   "LIT372",
+   "LIT373",
+   "MUS240",
+   "SOCI141",
+   "SOCIC1000",
+   "SPAN110",
+   "SPAN111",
+   "SPAN112",
+   "SPAN120",
+   "SPAN121",
+   "SPAN122",
+   "SPAN130",
+   "SPAN140",
+   "SPAN145",
+   "SPAN162",
+   "SPAN220",
+   "SPAN230"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=236",
+   "title": "236",
+   "h1": "236",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237,
+    238
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 36,
+  "text_chars": 9853
+ },
+ {
+  "control_number": "35834",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH110",
+   "BIOL100",
+   "BIOL130",
+   "BIOLC1000",
+   "CDEVC1000",
+   "ECE212",
+   "ECE254",
+   "EDUC200",
+   "PSYC200",
+   "PSYCC1000",
+   "SOCI141",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=173",
+   "title": "173",
+   "h1": "173",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173,
+    174,
+    175,
+    176
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 13,
+  "text_chars": 14799
+ },
+ {
+  "control_number": "35971",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL225",
+   "BIOL230",
+   "CHEM210",
+   "CHEM220",
+   "ECONC2001",
+   "ENVS115",
+   "GEOL100",
+   "GEOL101",
+   "MATHC2210",
+   "PHYS210",
+   "PHYS220",
+   "PHYS250",
+   "PHYS260",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=182",
+   "title": "The Environmental Science AS degree provides a strong",
+   "h1": "The Environmental Science AS degree provides a strong",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 14,
+  "text_chars": 5609
+ },
+ {
+  "control_number": "35986",
+  "title": "Engineering",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM210",
+   "ENGLC1000",
+   "ENGR100",
+   "ENGR210",
+   "ENGR215",
+   "ENGR230",
+   "ENGR240",
+   "ENGR260",
+   "ENGR261",
+   "ENGR270",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS250",
+   "PHYS260"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179",
+   "title": "179",
+   "h1": "179",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 14,
+  "text_chars": 7299
+ },
+ {
+  "control_number": "36025",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.885,
+  "codes_found": [
+   "BUS201",
+   "COMM127",
+   "COMM140",
+   "COMM150",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ETHN103",
+   "ETHN105",
+   "ETHN107",
+   "ETHN108",
+   "ETHN109",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL200",
+   "POLSC1000",
+   "PSYC106",
+   "SOCI105",
+   "SOCI141",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=228",
+   "title": "228",
+   "h1": "228",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229,
+    230,
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 26,
+  "text_chars": 12217
+ },
+ {
+  "control_number": "36056",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL230",
+   "CHEM210",
+   "CHEM220",
+   "ECONC2001",
+   "ENVS115",
+   "GEOL100",
+   "GEOL101",
+   "MATHC2210",
+   "PHYS210",
+   "PHYS220",
+   "PHYS250",
+   "PHYS260",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183",
+   "title": "AS-T  Environmental Science",
+   "h1": "AS-T  Environmental Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 13,
+  "text_chars": 2550
+ },
+ {
+  "control_number": "36721",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS101",
+   "BUS103",
+   "BUS401",
+   "CBOT415",
+   "CBOT435",
+   "CBOT448",
+   "CBOT475"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=153",
+   "title": "153",
+   "h1": "153",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153,
+    154,
+    155,
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 7,
+  "text_chars": 14692
+ },
+ {
+  "control_number": "36942",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "ANTH110",
+   "BUS100",
+   "BUS180",
+   "BUS230",
+   "BUS401",
+   "COMMC1000",
+   "MART378",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+   "title": "151",
+   "h1": "151",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151,
+    152,
+    153,
+    154
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 13952
+ },
+ {
+  "control_number": "37122",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH110",
+   "BIOL130",
+   "BIOL250",
+   "CDEVC1000",
+   "COMM150",
+   "ECE212",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "HMSV100",
+   "HMSV121",
+   "HMSV122",
+   "PSYC200",
+   "PSYC410",
+   "PSYCC1000",
+   "SOCI105",
+   "SOCI141",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=196",
+   "title": "196",
+   "h1": "196",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 21,
+  "text_chars": 12550
+ },
+ {
+  "control_number": "37156",
+  "title": "Business Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG100",
+   "ACTG121",
+   "BUS100",
+   "BUS103",
+   "BUS401",
+   "CBOT432",
+   "CBOT435"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148",
+   "title": "148",
+   "h1": "148",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 7,
+  "text_chars": 13030
+ },
+ {
+  "control_number": "37973",
+  "title": "Youth and School-Age",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE212",
+   "ECE213",
+   "EDUC200",
+   "EDUC300"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=177",
+   "title": "177",
+   "h1": "177",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 4,
+  "text_chars": 3815
+ },
+ {
+  "control_number": "37974",
+  "title": "Human Relations in the Workplace",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS100",
+   "BUS101",
+   "BUS180",
+   "BUS401",
+   "COMMC1000",
+   "COMMC1004"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+   "title": "149",
+   "h1": "149",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 12827
+ },
+ {
+  "control_number": "38442",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38514",
+  "title": "Video Game Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "MART314",
+   "MART366",
+   "MART376",
+   "MART420",
+   "MART442",
+   "MART443",
+   "MART445",
+   "MART446",
+   "MART447",
+   "MART450",
+   "MART451",
+   "MART452",
+   "MART455"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170",
+   "title": "170",
+   "h1": "170",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    170
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 14,
+  "text_chars": 2687
+ },
+ {
+  "control_number": "38824",
+  "title": "Litigation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LEGL250",
+   "LEGL251",
+   "LEGL252",
+   "LEGL254",
+   "LEGL260",
+   "LEGL263",
+   "LEGL264",
+   "LEGL267",
+   "LEGL269",
+   "LEGL276"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=221",
+   "title": "221",
+   "h1": "221",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    221,
+    222
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 10,
+  "text_chars": 7087
+ },
+ {
+  "control_number": "40391",
+  "title": "Inclusion Support",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE260",
+   "ECE263",
+   "EDUC265",
+   "EDUC300"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=175",
+   "title": "175",
+   "h1": "175",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 4,
+  "text_chars": 11103
+ },
+ {
+  "control_number": "40834",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETHN103",
+   "ETHN105",
+   "ETHN107",
+   "ETHN108",
+   "ETHN109",
+   "ETHN265",
+   "ETHN288"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=95",
+   "title": "GENERAL EDUCATION AND DEGREE REQUIREMENT WORKSHEETS",
+   "h1": "GENERAL EDUCATION AND DEGREE REQUIREMENT WORKSHEETS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 7,
+  "text_chars": 8319
+ },
+ {
+  "control_number": "41287",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG121",
+   "ACTG131",
+   "BUS100",
+   "BUS201",
+   "BUS401",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH125",
+   "MATH241",
+   "MATHC2210",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+   "title": "AS-T  Business Administration",
+   "h1": "AS-T  Business Administration",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151,
+    152,
+    153,
+    154
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 13533
+ },
+ {
+  "control_number": "41512",
+  "title": "Advanced Optics and Photonics Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PALT401",
+   "PALT402",
+   "PALT403",
+   "PALT404",
+   "PALT405",
+   "PALT406",
+   "PALT407",
+   "PALT408",
+   "PALT409"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225",
+   "title": "225",
+   "h1": "225",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 9,
+  "text_chars": 3627
+ },
+ {
+  "control_number": "41513",
+  "title": "Photonics and Laser Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PALT401",
+   "PALT402",
+   "PALT403",
+   "PALT404",
+   "PALT405",
+   "PALT406"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225",
+   "title": "225",
+   "h1": "225",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 6,
+  "text_chars": 3627
+ },
+ {
+  "control_number": "43478",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH110",
+   "COMM127",
+   "COMM140",
+   "COMM150",
+   "COMM180",
+   "COMMC1000",
+   "COMMC1004",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=159",
+   "title": "159",
+   "h1": "159",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159,
+    160
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 6676
+ },
+ {
+  "control_number": "43514",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG121",
+   "ACTG131",
+   "BUS100",
+   "BUS101",
+   "BUS103",
+   "BUS113",
+   "BUS125",
+   "BUS180",
+   "BUS201",
+   "BUS230",
+   "BUS401",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC249",
+   "MATH125",
+   "MATH241",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=147",
+   "title": "147",
+   "h1": "147",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147,
+    148,
+    149,
+    150
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 17,
+  "text_chars": 13438
+ },
+ {
+  "control_number": "43537",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "ANTH110",
+   "BUS100",
+   "BUS101",
+   "BUS103",
+   "BUS113",
+   "BUS125",
+   "BUS150",
+   "BUS180",
+   "BUS230",
+   "BUS401",
+   "COMMC1000",
+   "MART378",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+   "title": "151",
+   "h1": "151",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151,
+    152,
+    153,
+    154
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 16,
+  "text_chars": 13952
+ },
+ {
+  "control_number": "43660",
+  "title": "Entrepreneurship and Small Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ACTG100",
+   "ACTG121",
+   "BUS100",
+   "BUS101",
+   "BUS103",
+   "BUS113",
+   "BUS125",
+   "BUS150",
+   "BUS180",
+   "BUS201",
+   "BUS401",
+   "CBOT432",
+   "CBOT435",
+   "EDUC249",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
+   "title": "150",
+   "h1": "150",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151,
+    152,
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 16,
+  "text_chars": 13865
+ },
+ {
+  "control_number": "43790",
+  "title": "Multilingual Learner Teaching",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE254",
+   "ECE255",
+   "ECE271",
+   "ECE273",
+   "ECE280",
+   "ECE362",
+   "ECE364",
+   "EDUC300"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176",
+   "title": "176",
+   "h1": "176",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 8,
+  "text_chars": 7512
+ },
+ {
+  "control_number": "43965",
+  "title": "Business Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG100",
+   "ACTG121",
+   "ACTG200",
+   "BUS100",
+   "BUS101",
+   "BUS103",
+   "BUS401",
+   "CBOT415",
+   "CBOT417",
+   "CBOT432",
+   "CBOT435",
+   "CBOT448",
+   "CBOT470",
+   "CBOT472",
+   "CBOT474",
+   "CBOT475",
+   "CBOT476",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148",
+   "title": "148",
+   "h1": "148",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 18,
+  "text_chars": 13030
+ },
+ {
+  "control_number": "45177",
+  "title": "Digital Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS100",
+   "BUS101",
+   "BUS125",
+   "BUS150",
+   "BUS180",
+   "BUS193",
+   "BUS201",
+   "BUS230",
+   "BUS233",
+   "BUS401",
+   "MGMT100"
+  ],
+  "source": {
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
+   "title": "150",
+   "h1": "150",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151,
+    152,
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "95eb08f5fb3636b4890a9b8d1e22eddac665eaaf7d257e8169b52cb2d3207b7d"
+   }
+  },
+  "listed": 11,
+  "text_chars": 13865
+ },
+ {
+  "control_number": "45326",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ }
+]

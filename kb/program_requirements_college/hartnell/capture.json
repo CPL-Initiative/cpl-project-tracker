@@ -1,0 +1,2473 @@
+{
+ "college": "Hartnell College",
+ "catalog_url": "https://hartnell.catalog.prod.coursedog.com/",
+ "platform": "coursedog",
+ "catalog_year": "2026-2027",
+ "programs": 112,
+ "with_closed_list": 105,
+ "started": "2026-10-18T00:17:13Z",
+ "procedure_step": {
+  "start": "https://hartnell.catalog.prod.coursedog.com/",
+  "file": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf"
+ },
+ "pdf": {
+  "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 47558550,
+  "pages_total": 427,
+  "error": null,
+  "chars_total": 1078888,
+  "pypdf_accepted": 101,
+  "sample": [
+   "p129: 'Business Office Technology-Information Processing - \\nCT.BST \\nGeneral \\nProgram Type \\nCoA - CTE \\nMeta-Major \\nAgriculture, Business and \\nIndustries \\nDepartment Title \\nBusiness Education \\nCatalog Description \\nThe Business Office Technology prog'",
+   "p257: 'LIB6 - Information Competency in the Social Sciences \\nLIB7 - Information Competency in the Arts and \\nHumanities \\nMeta-Major \\nArts and Languages \\nSession Cycle \\nFall Only \\nCredits \\n1 \\nAllow Pass/No Pass \\nYes \\nLecture Hours \\n9 \\nLab Hours \\n27 '"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "03537",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] Biology - AS.BIO General Program Type A.S. Local Degree Meta-Major STEM Department Title Biological Science Additional Information Local Information Catalog Description The Biology program offers de"
+   },
+   {
+    "control_number": "03539",
+    "pages": [
+     128,
+     129
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 128] Business Office Technology - Bookkeeping - CT.BOTB General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description The Business"
+   },
+   {
+    "control_number": "03545",
+    "pages": [
+     124
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Business Office Technology-Information Processing - AS.BST General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description"
+   },
+   {
+    "control_number": "03547",
+    "pages": [
+     421,
+     422,
+     423,
+     424
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.553,
+    "opens": "[page 421] • HIS40 - History of Women in the U.S. • HIS47 - Religions of the World • HIS49A - Chicano History A • HIS49B - Chicano History B • MUS1A - Music Appreciation-Historical Perspective • MUS5 - Ethnic Musics"
+   },
+   {
+    "control_number": "03562",
+    "pages": [
+     408,
+     409,
+     410,
+     411
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 408] Welding Technology - AS.WLD General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Welding Technology Additional Information Local Information Catalog "
+   },
+   {
+    "control_number": "03570",
+    "pages": [
+     293,
+     294,
+     295,
+     296
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 293] Type Completion Requirement Prerequisites The following courses MUST be completed before acceptance into program. Complete ALL of the following Courses: • BIO5 - Human Anatomy • BIO6 - Introductory Phys"
+   },
+   {
+    "control_number": "03571",
+    "pages": [
+     303,
+     304,
+     305,
+     306
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 303] OR MAT10 - Math for Liberal Arts OR MAT12 - Number Systems OR MAT16 - Finite Mathematics OR MAT24 - Trigonometry OR MAT25 - Pre-Calculus OR MAT27 - Accelerated Pre-Calculus & Trigonometry For Stem • PSY"
+   },
+   {
+    "control_number": "03585",
+    "pages": [
+     61
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] The Associate in Science Degree in Administration of Justice for Transfer provides a clearly articulated curricular track for students who wish to transfer to baccalaureate Administration of Justice, Criminal"
+   },
+   {
+    "control_number": "03588",
+    "pages": [
+     184,
+     185,
+     186,
+     187
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 184] Early Childhood Education for Transfer (AS-T) - AST.ECE • ECE9 - Creative Expressions and Play in Early Childhood • ECE20 - Infant and Toddler Development • ECE21 - Infant/Toddler Care and Education • ECE"
+   },
+   {
+    "control_number": "08871",
+    "pages": [
+     154,
+     155,
+     156,
+     157
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] The Associate of Science in Computer Science and Information Systems - Network and Security Option prepares students for employment in the network and security field. It is designed for students interested i"
+   },
+   {
+    "control_number": "08872",
+    "pages": [
+     158,
+     159,
+     160,
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 158] Computer Science and Info Systems-Network & Security Option - CT.PCN General Program Type CoA - Local Meta-Major STEM Department Title Computer Sciences & Info Sys Catalog Description This certifica"
+   },
+   {
+    "control_number": "08886",
+    "pages": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 97] Photography - AA.PHO General Program Type A.A. Local Degree Meta-Major Arts and Languages Department Title Photography, Art Additional Information Local Information Catalog Description Photography is"
+   },
+   {
+    "control_number": "08904",
+    "pages": [
+     234,
+     235,
+     236,
+     237
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] Chicanx Studies - AA.CHCX General Program Type A.A. Local Degree Meta-Major Social Sciences Department Title Ethnic Studies Additional Information Local Information Catalog Description The Chicanx S"
+   },
+   {
+    "control_number": "08909",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] interactive digital media interface design. The AA degree in Digital Arts offers 3 tracks of specialization; graphic design for print, screen and time-based, digital photography and video, or digital animatio"
+   },
+   {
+    "control_number": "11803",
+    "pages": [
+     413,
+     414,
+     415,
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 413] WLD157 - Pipe Welding WLD158 - Hard Facing and Surfacing Course Sets Cal-GETC Area 4 Complete ANY: • ABT53 - Agribusiness Economics • ADJ1 - Introduction to Administration of Justice • ADJ3 - Concepts of"
+   },
+   {
+    "control_number": "12331",
+    "pages": [
+     415,
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "15426",
+    "pages": [
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] • ART73 - Introduction to Digital Illustration for Animation • ART74 - Digital 3-D Design and Modeling • ART76 - Introduction to 3D Digital Animation • ART77 - Introduction to Digital Video and Video Editin"
+   },
+   {
+    "control_number": "17910",
+    "pages": [
+     420,
+     421,
+     422,
+     423
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.979,
+    "opens": "[page 420] • WLD152 - Sheet Metal Fabrication • WLD153 - Welding Fabrication • WLD154 - Advanced Arc Welding • WLD155 - Ornamental Ironwork • WLD156 - Toolmaking • WLD157 - Pipe Welding • WLD158 - Hard Facing and S"
+   },
+   {
+    "control_number": "17911",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 57] ETH6 La Chicana , ETH8 Intr to Asian American Studies , ETH13 Intro to Nat America in the Sv , ETH21 Introduction to African Americ , GEG10 Geography & W orld Affairs, HED7 Women's Health, HES1 Intro to Public"
+   },
+   {
+    "control_number": "17912",
+    "pages": [
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 58] CalGETC Area Overview CalGETC includes the following general education areas: • Area 1: English Communication ◦ 1A: English Composition ◦ 1B: Critical Thinking & Composition ◦ 1C: Oral Communication • Are"
+   },
+   {
+    "control_number": "17914",
+    "pages": [
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.645,
+    "opens": "[page 58] CalGETC Area Overview CalGETC includes the following general education areas: • Area 1: English Communication ◦ 1A: English Composition ◦ 1B: Critical Thinking & Composition ◦ 1C: Oral Communication • Are"
+   },
+   {
+    "control_number": "17924",
+    "pages": [
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.795,
+    "opens": "[page 59] in Amer His B, NRN70 Growth & Devel Across Lifespan , NVN70 Growth & Devel Across Lifespan , POL2 Intro to Comparative Politics, POL3 Intro to International Rel., POL5 Chicano Politics & Amer Sys , POL6 Intr t"
+   },
+   {
+    "control_number": "17977",
+    "pages": [
+     415,
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "18353",
+    "pages": [
+     347,
+     348,
+     349
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 347] The Associate in Arts for Transfer in Psychology (AA-T in Psychology) provides a clearly articulated curriculum for students who wish to transfer to a California State University (CSU). This degree provides "
+   },
+   {
+    "control_number": "19107",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.97,
+    "opens": "[page 57] ETH6 La Chicana , ETH8 Intr to Asian American Studies , ETH13 Intro to Nat America in the Sv , ETH21 Introduction to African Americ , GEG10 Geography & W orld Affairs, HED7 Women's Health, HES1 Intro to Public"
+   },
+   {
+    "control_number": "19518",
+    "pages": [
+     383,
+     384,
+     385,
+     386
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 383] The Associate in Arts in Spanish for Transfer (AA-T in Spanish) includes four semesters of the study of Spanish, one of the world's most influential languages and the fastest growing language in California. "
+   },
+   {
+    "control_number": "19718",
+    "pages": [
+     422
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.846,
+    "opens": "[page 422] • SOC41 - Marriage and the Family • Complete ANY: ◦ SPA1 - Elementary Spanish 1 ◦ SPA1X - Elementary Spanish for Chicano Students ◦ SPA1S - Elementary Spanish 1 for Spanish Speakers • Complete ANY: ◦ SPA"
+   },
+   {
+    "control_number": "19719",
+    "pages": [
+     422
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.889,
+    "opens": "[page 422] • SOC41 - Marriage and the Family • Complete ANY: ◦ SPA1 - Elementary Spanish 1 ◦ SPA1X - Elementary Spanish for Chicano Students ◦ SPA1S - Elementary Spanish 1 for Spanish Speakers • Complete ANY: ◦ SPA"
+   },
+   {
+    "control_number": "21422",
+    "pages": [
+     124
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Business Office Technology-Information Processing - AS.BST General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description"
+   },
+   {
+    "control_number": "21423",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] The Digital Arts program offers a certificate and associate degree in Digital Arts. Classes include training in graphic design, digital graphics, 2D digital illustration, 2D digital photographic imaging, digi"
+   },
+   {
+    "control_number": "21424",
+    "pages": [
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] • ART73 - Introduction to Digital Illustration for Animation • ART74 - Digital 3-D Design and Modeling • ART76 - Introduction to 3D Digital Animation • ART77 - Introduction to Digital Video and Video Editin"
+   },
+   {
+    "control_number": "21439",
+    "pages": [
+     408,
+     409,
+     410,
+     411
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 408] Welding Technology - AS.WLD General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Welding Technology Additional Information Local Information Catalog "
+   },
+   {
+    "control_number": "21444",
+    "pages": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 97] Photography - AA.PHO General Program Type A.A. Local Degree Meta-Major Arts and Languages Department Title Photography, Art Additional Information Local Information Catalog Description Photography is"
+   },
+   {
+    "control_number": "21450",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Administration of Justice - AS.ADJ General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Administration of Justice Catalog Description The Associate in "
+   },
+   {
+    "control_number": "30621",
+    "pages": [
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] • ART73 - Introduction to Digital Illustration for Animation • ART74 - Digital 3-D Design and Modeling • ART76 - Introduction to 3D Digital Animation • ART77 - Introduction to Digital Video and Video Editin"
+   },
+   {
+    "control_number": "30822",
+    "pages": [
+     270,
+     271,
+     272,
+     273
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 270] Mathematics for Transfer Degree (AS-T) - AST.MAT General Program Type A.S. - T Degree Meta-Major STEM Department Title Mathematics Additional Information Students: to ensure you're on track for transf"
+   },
+   {
+    "control_number": "31146",
+    "pages": [
+     148,
+     149,
+     150
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] Communication Studies 2.0 for Transfer Degree (AA-T) - AAT.COM2 General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Communication Studies Additional Information Studen"
+   },
+   {
+    "control_number": "31268",
+    "pages": [
+     183
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] Early Childhood Education - AS.ECE General Program Type A.S. Local Degree Meta-Major Social Sciences Department Title Early Childhood Education Additional Information Local Information Catalog Descri"
+   },
+   {
+    "control_number": "31392",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 210] English for Transfer (AA-T) - AAT.ENG General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title English Additional Information Students: to ensure you're on track for transfe"
+   },
+   {
+    "control_number": "31406",
+    "pages": [
+     343,
+     344,
+     345
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 343] Political Science for Transfer (AA-T) - AAT.POL General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Political Science Additional Information Students: to ensure you're on "
+   },
+   {
+    "control_number": "31591",
+    "pages": [
+     415,
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.92,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "31592",
+    "pages": [
+     154
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] Computer Science Info Systems-Network & Security Option - AS.PCN General Program Type A.S. Local Degree Meta-Major STEM Department Title Computer Sciences & Info Sys Additional Information Local Inf"
+   },
+   {
+    "control_number": "31593",
+    "pages": [
+     416,
+     417
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] • ART73 - Introduction to Digital Illustration for Animation • ART74 - Digital 3-D Design and Modeling • ART76 - Introduction to 3D Digital Animation • ART77 - Introduction to Digital Video and Video Editin"
+   },
+   {
+    "control_number": "31778",
+    "pages": [
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] Astronomy - AS.AST General Program Type A.S. Local Degree Meta-Major STEM Department Title Astronomy Additional Information Local Information Catalog Description The Astronomy program introduces stu"
+   },
+   {
+    "control_number": "31804",
+    "pages": [
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.955,
+    "opens": "[page 58] CalGETC Area Overview CalGETC includes the following general education areas: • Area 1: English Communication ◦ 1A: English Composition ◦ 1B: Critical Thinking & Composition ◦ 1C: Oral Communication • Are"
+   },
+   {
+    "control_number": "31971",
+    "pages": [
+     63,
+     64,
+     65,
+     66
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] Administration of Justice - CT.ADJ Requirements Type Completion Requirement Required Core Complete the following Complete ALL of the following Courses: • ADJ1 - Introduction to Administration of Justice "
+   },
+   {
+    "control_number": "32036",
+    "pages": [
+     378,
+     379,
+     380,
+     381
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 378] Sociology for Transfer (AA-T) - AAT-SOC General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Sociology Additional Information Students: to ensure you're on track for transf"
+   },
+   {
+    "control_number": "32037",
+    "pages": [
+     347,
+     348,
+     349
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 347] Psychology for Transfer (AA-T) - AAT.PSY General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Psychology Additional Information Students: to ensure you're on track for tran"
+   },
+   {
+    "control_number": "32365",
+    "pages": [
+     109
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] astronomy and physics. Transfer level astronomy curricula stress very strong preparation in physics and mathematics. While most astronomy courses will be taken at the upper division or graduate level, exposu"
+   },
+   {
+    "control_number": "32375",
+    "pages": [
+     98,
+     99,
+     100,
+     101
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 98] Studio Arts for Transfer (AA-T) - AAT.SART General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Art Additional Information Students: to ensure you're on track for transfe"
+   },
+   {
+    "control_number": "32529",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 77] Advanced Diesel Technology - AS.ADT General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Advanced Diesel Technology Catalog Description The Advanced D"
+   },
+   {
+    "control_number": "32930",
+    "pages": [
+     252,
+     253,
+     254,
+     255
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 252] History for Transfer (AA-T) - AAT.HIS General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title History Additional Information Students: to ensure you're on track for transferri"
+   },
+   {
+    "control_number": "32981",
+    "pages": [
+     421,
+     422,
+     423,
+     424
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.742,
+    "opens": "[page 421] • HIS40 - History of Women in the U.S. • HIS47 - Religions of the World • HIS49A - Chicano History A • HIS49B - Chicano History B • MUS1A - Music Appreciation-Historical Perspective • MUS5 - Ethnic Musics"
+   },
+   {
+    "control_number": "33050",
+    "pages": [
+     390
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 390] major preparation coursework for transfer to a four-year Theatre Arts and/or Film, Television, and Electronic Media oriented Degree Program. The Hartnell College Theatre Arts program is unique in that a prof"
+   },
+   {
+    "control_number": "33051",
+    "pages": [
+     383,
+     384,
+     385,
+     386
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 383] Spanish for Transfer (AA-T) - AAT.SPA General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Spanish Additional Information Students: to ensure you're on track for transfe"
+   },
+   {
+    "control_number": "33176",
+    "pages": [
+     279,
+     280,
+     281,
+     282
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 279] offers courses that prepare music majors for transfer to four-year universities as well as many courses for the general student. The AA Degree in Music prepares students for transfer and careers in the follo"
+   },
+   {
+    "control_number": "33385",
+    "pages": [
+     194,
+     195
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 194] Economics for Transfer Degree (AA-T) - AAT.ECO General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Economics Additional Information Students: to ensure you're on track for"
+   },
+   {
+    "control_number": "33851",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 204] Engineering Associate in Science Degree and/or transfer. This certificate is intended to be completed at the beginning of a student's course of study, while they are at the freshman level. As such, it prepar"
+   },
+   {
+    "control_number": "35065",
+    "pages": [
+     390
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 390] Theater Arts & Cinema - AA.TAC General Program Type A.A. Local Degree Meta-Major Arts and Languages Department Title Theater Arts and Cinema Additional Information Local Information Catalog Descripti"
+   },
+   {
+    "control_number": "35105",
+    "pages": [
+     241,
+     242
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] Geology for Transfer Degree (AS-T) - AST.GEL General Program Type A.S. - T Degree Meta-Major STEM Department Title Geology Additional Information Students: to ensure you're on track for transferring i"
+   },
+   {
+    "control_number": "35107",
+    "pages": [
+     114,
+     115,
+     116,
+     117
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] Biology for Transfer Degree (AS-T) - AST.BIO General Program Type A.S. - T Degree Meta-Major STEM Department Title Biological Science Additional Information Students: to ensure you're on track for tra"
+   },
+   {
+    "control_number": "35108",
+    "pages": [
+     143,
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 143] Chemistry for Transfer Degree (AS-T) - AST.CHM General Program Type A.S. - T Degree Meta-Major STEM Department Title Chemistry Additional Information Students: to ensure you're on track for transferri"
+   },
+   {
+    "control_number": "35458",
+    "pages": [
+     247,
+     248,
+     249
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] The Associate in Science in Public Health for Transfer (AS-T in Public Health) is designed to prepare students for leadership roles in public health. Graduates from this program are prepared to engage in com"
+   },
+   {
+    "control_number": "35613",
+    "pages": [
+     82,
+     83,
+     84,
+     85
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Agriculture Business for Transfer Degree (AS-T) - AST.AGR General Program Type A.S. - T Degree Meta-Major Agriculture, Business and Industries Department Title Ag Business & Technology Additional Info"
+   },
+   {
+    "control_number": "36694",
+    "pages": [
+     173,
+     174,
+     175,
+     176
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] The Associate of Science Degree in Construction Management and Architecture provides a comprehensive introduction to the construction management profession and professional architectural studies. Students se"
+   },
+   {
+    "control_number": "36985",
+    "pages": [
+     260
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 260] Agricultural Mechatronics - AS.MECHA General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Manufacturing Technology Catalog Description The Associate's"
+   },
+   {
+    "control_number": "37130",
+    "pages": [
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] • ART73 - Introduction to Digital Illustration for Animation • ART74 - Digital 3-D Design and Modeling • ART76 - Introduction to 3D Digital Animation • ART77 - Introduction to Digital Video and Video Editin"
+   },
+   {
+    "control_number": "37916",
+    "pages": [
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] Computer Science for Transfer (AS-T) - AST.CS General Program Type A.S. - T Degree Meta-Major STEM Department Title Computer Sciences & Info Sys Additional Information Students: to ensure you're on t"
+   },
+   {
+    "control_number": "37950",
+    "pages": [
+     415,
+     416,
+     417,
+     418
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "38211",
+    "pages": [
+     374,
+     375
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 374] Social Justice for Transfer (AA-T) - AAT.SJ General Program Type A.A. - T Degree Meta-Major Social Sciences Department Title Social Justice Additional Information Students: to ensure you're on track f"
+   },
+   {
+    "control_number": "38224",
+    "pages": [
+     126,
+     127,
+     128,
+     129
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Business Information Worker Level -1 - CT.BIW1 General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description This certificate "
+   },
+   {
+    "control_number": "38232",
+    "pages": [
+     127,
+     128,
+     129,
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Business Information Worker Level -2 - CT.BIW2 General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description This certificate "
+   },
+   {
+    "control_number": "38501",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] A student completing the Engineering Fundamentals Certificate of Achievement will gain a solid grounding in the basic principles that underlie all engineering disciplines. This certificate provides both acad"
+   },
+   {
+    "control_number": "38517",
+    "pages": [
+     393
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] Theatre Performance - NCCT.TPER Outcome Analyze, interpret, and evaluate their own and others' work in theatre, film, television & electronic media as a patron and participant. Requirements Simple Requirem"
+   },
+   {
+    "control_number": "39248",
+    "pages": [
+     303,
+     304,
+     305,
+     306
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 303] OR MAT10 - Math for Liberal Arts OR MAT12 - Number Systems OR MAT16 - Finite Mathematics OR MAT24 - Trigonometry OR MAT25 - Pre-Calculus OR MAT27 - Accelerated Pre-Calculus & Trigonometry For Stem • PSY"
+   },
+   {
+    "control_number": "40051",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Advanced Automotive Technology - AS.AAT General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Advanced Automotive Technology Catalog Description The Ad"
+   },
+   {
+    "control_number": "40261",
+    "pages": [
+     131
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] The Certificate of Completion in Basic Computer Literacy is awarded upon the successful completion of BUS 600, 605 and 610. This noncredit program is intended for individuals with limited or no technology sk"
+   },
+   {
+    "control_number": "41819",
+    "pages": [
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] The Technical Support Certificate of Achievement combines information technology courses that provide students with the fundamental skills necessary for entry-level computer technical support careers while p"
+   },
+   {
+    "control_number": "41922",
+    "pages": [
+     156,
+     157,
+     158,
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] This Cisco Certified Network Associate (CCNA) Certificate of Achievement combines all of the required courses needed to prepare for the CCNA exam, an industry-recognized associate level certificate. This cer"
+   },
+   {
+    "control_number": "41985",
+    "pages": [
+     157,
+     158,
+     159
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] The Cybersecurity Certificate of Achievement combines security in a networking and system administration environment to provide students with well-rounded skills and knowledge necessary for careers in cybers"
+   },
+   {
+    "control_number": "42135",
+    "pages": [
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] Business Administration 2.0 for Transfer (AS-T) - AST.BUS2 General Program Type A.S. - T Degree Meta-Major Agriculture, Business and Industries Department Title Business Education Additional Informat"
+   },
+   {
+    "control_number": "42385",
+    "pages": [
+     415
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "43066",
+    "pages": [
+     199,
+     200
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 199] Emergency Medical Technician - CT.EMT General Program Type CoA - Local Meta-Major Health Sciences Department Title Emergency Medical Technician Catalog Description This certificate prepares students "
+   },
+   {
+    "control_number": "43119",
+    "pages": [
+     415,
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "43121",
+    "pages": [
+     415,
+     416
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 415] • SJS22 - Introduction to Women's Studies • SOC1 - Introduction to Sociology • SOC5 - Introduction to Social Problems • SOC8 - Sociology of Food, Culture, and Sociology • SOC15 - Sociology of Immigration a"
+   },
+   {
+    "control_number": "43559",
+    "pages": [
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] First Line Supervisor - CT.FS General Program Type CoA - CTE Meta-Major Agriculture, Business and Industries Department Title Business Education Catalog Description This certificate prepares students"
+   },
+   {
+    "control_number": "43607",
+    "pages": [
+     221
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 221] English for Multilingual Speakers-Beginning - NCCT.ENGM.BEG General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog Descript"
+   },
+   {
+    "control_number": "43608",
+    "pages": [
+     220
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Programs English for Multilingual Speakers-Advanced - NCCT.ENGM.ADV General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog"
+   },
+   {
+    "control_number": "43609",
+    "pages": [
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 222] English for Multilingual Speakers-High Intermediate - NCCT.ENGM.HIGH General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog"
+   },
+   {
+    "control_number": "43610",
+    "pages": [
+     224
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] English for Multilingual Speakers-Low Intermediate - NCCT.ENGM.LOW General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog D"
+   },
+   {
+    "control_number": "43620",
+    "pages": [
+     148,
+     149,
+     150
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] Communication Studies 2.0 for Transfer Degree (AA-T) - AAT.COM2 General Program Type A.A. - T Degree Meta-Major Arts and Languages Department Title Communication Studies Additional Information Studen"
+   },
+   {
+    "control_number": "43776",
+    "pages": [
+     223
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 223] English for Multilingual Speakers-Intermediate - NCCT.ENGM.INT General Program Type Non Credit - Competency Meta-Major Arts and Languages Department Title English for Multilingual Speak Catalog Descr"
+   },
+   {
+    "control_number": "43809",
+    "pages": [
+     260,
+     261,
+     262,
+     263
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.826,
+    "opens": "[page 260] Agricultural Mechatronics - AS.MECHA General Program Type A.S. CTE Degree Meta-Major Agriculture, Business and Industries Department Title Manufacturing Technology Catalog Description The Associate's"
+   },
+   {
+    "control_number": "43821",
+    "pages": [
+     418,
+     419
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 418] • MAT24 - Trigonometry • MAT25 - Pre-Calculus • MAT27 - Accelerated Pre-Calculus & Trigonometry For Stem • Untitled Course • MFGT70 - Introductions to Mechanized Agriculture • MFGT71 - Agricultural and In"
+   },
+   {
+    "control_number": "43887",
+    "pages": [
+     281,
+     282,
+     283,
+     284
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 281] This certificate prepares students to transfer to four year university music programs and to teach/perform music in non-credentialed, part-time employment situations. Musical skills needed for students to be"
+   },
+   {
+    "control_number": "44161",
+    "pages": [
+     396
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 396] Courses TAC1 - Introduction to Theatre TAC2 - Script Analysis TAC3 - History of the Theatre TAC10 - Acting I - Acting for Everyone • TAC325 - Introduction to Revival Play Production • TAC326 - Stage Scen"
+   },
+   {
+    "control_number": "44525",
+    "pages": [
+     384,
+     385,
+     386,
+     387
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 384] The Certificate of Achievement in Spanish includes four semesters of the study of Spanish, one of the world's most influential languages and the fastest growing language in California. Course offerings provi"
+   },
+   {
+    "control_number": "44537",
+    "pages": [
+     356
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 356] Success in the B.S. Respiratory Care Program is based on application of advanced theoretical knowledge related to the respiratory care profession. Students must achieve at least “C” grades in all courses. R"
+   },
+   {
+    "control_number": "44574",
+    "pages": [
+     131,
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] Basic Computer Literacy - NCCT.BCL Workforce and Academic Readiness - NCCT.WAR General Program Type Non Credit - Completion Meta-Major Agriculture, Business and Industries Department Title Business Edu"
+   },
+   {
+    "control_number": "44729",
+    "pages": [
+     247,
+     248,
+     249
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] Public Health for Transfer Degree (AS-T) - AST.PH2 General Program Type A.S. - T Degree Meta-Major Health Sciences Department Title Health Services Additional Information Students: to ensure you're on"
+   },
+   {
+    "control_number": "45096",
+    "pages": [
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] CalGETC Area Overview CalGETC includes the following general education areas: • Area 1: English Communication ◦ 1A: English Composition ◦ 1B: Critical Thinking & Composition ◦ 1C: Oral Communication • Are"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 75.6,
+ "found": 101,
+ "by_method": {
+  "no_closed_list": 7,
+  "not_found": 4,
+  "pdf_pages": 101
+ },
+ "shared_pages": {
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124": [
+   "03545",
+   "21422"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=421": [
+   "03547",
+   "32981"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408": [
+   "03562",
+   "21439"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303": [
+   "03571",
+   "39248"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61": [
+   "03585",
+   "21450"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154": [
+   "08871",
+   "31592"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97": [
+   "08886",
+   "21444"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96": [
+   "08909",
+   "21423"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415": [
+   "12331",
+   "17977",
+   "31591",
+   "37950",
+   "42385",
+   "43119",
+   "43121"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416": [
+   "15426",
+   "21424",
+   "30621",
+   "31593",
+   "37130"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=57": [
+   "17911",
+   "19107"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58": [
+   "17912",
+   "17914",
+   "31804",
+   "45096"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347": [
+   "18353",
+   "32037"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383": [
+   "19518",
+   "33051"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=422": [
+   "19718",
+   "19719"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148": [
+   "31146",
+   "43620"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109": [
+   "31778",
+   "32365"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390": [
+   "33050",
+   "35065"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204": [
+   "33851",
+   "38501"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=247": [
+   "35458",
+   "44729"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=260": [
+   "36985",
+   "43809"
+  ],
+  "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131": [
+   "40261",
+   "44574"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "17913",
+   "title": "General Studies: Ethnic Groups in the United States",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
+    "coverage": 0.306
+   }
+  },
+  {
+   "control_number": "19106",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=38",
+    "coverage": 0.018
+   }
+  },
+  {
+   "control_number": "39564",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=374",
+    "coverage": 0.048
+   }
+  },
+  {
+   "control_number": "40742",
+   "title": "High School Equivalency Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 22,
+  "1.0": 68
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 101,
+  "list": [
+   {
+    "control_number": "03537",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03539",
+    "title": "Business Office Technology: Bookkeeping",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=128",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03545",
+    "title": "Business Office Technology--Information Processing",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03547",
+    "title": "Kinesiology",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=421",
+    "coverage": 0.553,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03562",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03570",
+    "title": "Nursing-Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=293",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03571",
+    "title": "Nursing--Vocational Nursing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03585",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03588",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=184",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08871",
+    "title": "Computer Science and Information Systems-Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08872",
+    "title": "Computer Science and Information Systems-Network and Security",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=158",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08886",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08904",
+    "title": "Chicanx Studies",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08909",
+    "title": "Digital Arts",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11803",
+    "title": "Agriculture Business with an Area of Emphasis",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=413",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12331",
+    "title": "Agriculture Production",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15426",
+    "title": "Computer Science and Information Systems - Digital Web and Mobile Development Option",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17910",
+    "title": "General Studies: STEM",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=420",
+    "coverage": 0.979,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17911",
+    "title": "General Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=57",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17912",
+    "title": "General Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17914",
+    "title": "General Studies: Language and Rationality",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
+    "coverage": 0.645,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17924",
+    "title": "Liberal Arts: Pathway to Health Sciences",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=59",
+    "coverage": 0.795,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17977",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18353",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19107",
+    "title": "IGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=57",
+    "coverage": 0.97,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19518",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19718",
+    "title": "Addiction Studies",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=422",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19719",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=422",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21422",
+    "title": "Business Office Technology--Information Processing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=124",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21423",
+    "title": "Digital Arts",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=96",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21424",
+    "title": "Computer Science and Information Systems - Web Development Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21439",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=408",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21444",
+    "title": "Photography",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=97",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21450",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30621",
+    "title": "Construction - Sustainable Construction: Construction Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30822",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=270",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31146",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31268",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31392",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31406",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=343",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31591",
+    "title": "Agriculture Production",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31592",
+    "title": "Computer Science and Information Systems-Network and Security",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31593",
+    "title": "Computer Science and Information Systems: Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31778",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31804",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31971",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32036",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=378",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32037",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=347",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32365",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32375",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=98",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32529",
+    "title": "Automotive Technology - Advanced Diesel Technology",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32930",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32981",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=421",
+    "coverage": 0.742,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33050",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33051",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=383",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33176",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=279",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33385",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33851",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35065",
+    "title": "Theatre Arts & Cinema",
+    "award": "A.A. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=390",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35105",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35107",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=114",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35108",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35458",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35613",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36694",
+    "title": "Construction Management and Architecture",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36985",
+    "title": "Manufacturing Technology",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=260",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37130",
+    "title": "Computer Science and Information Systems - Mobile Development Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37916",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37950",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38211",
+    "title": "Social Justice",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=374",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38224",
+    "title": "Business Information Worker Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38232",
+    "title": "Business Information Worker Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38501",
+    "title": "Engineering Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38517",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=393",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39248",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=303",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40051",
+    "title": "Advanced Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40261",
+    "title": "Basic Computer Literacy",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41819",
+    "title": "Technical Support",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=159",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41922",
+    "title": "Cisco Certified Network Associate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=156",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41985",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42135",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42385",
+    "title": "Food Safety",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43066",
+    "title": "Emergency Medical Technician - Level 1",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=199",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43119",
+    "title": "Sustainable Crop Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43121",
+    "title": "Small Farm",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=415",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43559",
+    "title": "First Line Supervisor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43607",
+    "title": "English for Multilingual Speakers–Beginning",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43608",
+    "title": "English for Multilingual Speakers–Advanced",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=220",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43609",
+    "title": "English for Multilingual Speakers–High Intermediate",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43610",
+    "title": "English for Multilingual Speakers–Low Intermediate",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43620",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43776",
+    "title": "English for Multilingual Speakers-Intermediate",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=223",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43809",
+    "title": "Agricultural Mechatronics",
+    "award": "A.S. Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=260",
+    "coverage": 0.826,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43821",
+    "title": "Foundations of Agricultural Mechatronics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=418",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43887",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=281",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44161",
+    "title": "Theatre Performance",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=396",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44525",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=384",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44537",
+    "title": "Respiratory Care",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=356",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44574",
+    "title": "Workforce and Academic Readiness",
+    "award": "Noncredit program",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44729",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45096",
+    "title": "CalGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39082134780"
+}

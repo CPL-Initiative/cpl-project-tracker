@@ -1774,9 +1774,13 @@ def pdf_unproven(picks: list[dict]) -> set[str]:
 
 
 def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
-    """The catalog PDF's address and how long to wait for it: the link its
-    procedure record says to follow, or the registry's."""
+    """The catalog PDF's address and how long to wait for it: the file its
+    procedure record names, the link it says to follow, or the registry's."""
     step = P.procedure_catalog(reg.get("procedure"))
+    if step and step.get("file"):
+        # A step naming the file itself (a catalog whose scripts fetch it) loads no page.
+        report["procedure_step"] = {"start": step["start"], "file": step["file"]}
+        return step["file"], step["timeout_s"] * 1000
     if step and step["format"] == "pdf":
         got = P.load(reader, step["start"], cache, False)
         # A menu link can carry the same words as the file's ("2026 - 2027" at East LA): a PDF step follows a PDF.

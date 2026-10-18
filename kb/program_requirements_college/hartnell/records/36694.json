@@ -1,0 +1,402 @@
+{
+ "college": "Hartnell College",
+ "control_number": "36694",
+ "shape": "degree",
+ "title": "Construction Management and Architecture",
+ "award": "A.S. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=173",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10004,
+    "output_tokens": 3575,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3575,
+  "output_tokens_details": {
+   "thinking_tokens": 1274
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11152,
+ "ms": 29297,
+ "seconds": 29.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "EGN11"
+   ],
+   "flagged": [
+    "EGN11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    23.0,
+    35.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Management and Architecture (AS - Associate in Science)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Construction Management Emphasis: identify and select alternate construction education pathways and construction career opportunities.",
+    "Construction Management Emphasis: apply basic levels of knowledge and experience in construction craft skills and commercial business operations necessary to effectively manage small commercial and residential construction project activities.",
+    "Construction Management Emphasis: analyze and apply standard construction contract terms, conditions, plans, specifications, costing formats, and basic regulatory requirements applicable to a range of construction activities.",
+    "Construction Management Emphasis: apply basic construction management methods to monitor and control compliance with contract requirements for price, time schedule, specifications, and safety on small projects.",
+    "Architecture Emphasis: identify and select alternate architectural education pathways and architectural career opportunities.",
+    "Architecture Emphasis: apply basic principles of commercial and residential construction materials and methods to architectural design.",
+    "Architecture Emphasis: apply basic architectural design principles to generate an architectural design solution to a specific set of constraints.",
+    "Architecture Emphasis: describe and apply sustainable environmental design principles to architectural design solutions.",
+    "Architecture Emphasis: apply manual and digital techniques to produce drawings and three-dimensional models documenting architectural and engineering designs."
+   ],
+   "careers": [
+    "construction management profession"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMA51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA61",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA62",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA81",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Construction Management Emphasis - Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMA52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA54",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA91",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Construction Management Emphasis - Major Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMA63",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA65",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA84",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA90",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Architecture Emphasis - Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMA70",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA71",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA72",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA82",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA83",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Architecture Emphasis - Major Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMA53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA84",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA90",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMA91",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGN11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins with the program description; the program heading itself is not visible in the text, so section_heading is reconstructed from the program title and 'AS - Associate in Science'.",
+   "The requirement lists print no units beside courses. Units shown for CMA51-57, CMA61 and CMA62 come from the 'Credits' lines in the course descriptions on pages 175-176; the other courses' credits are not in the excerpt and are left null.",
+   "Students complete one emphasis (Construction Management or Architecture); each emphasis's required and elective blocks share option_group 'Emphasis'. Each emphasis's elective block says 'Complete at least 1 of the following courses'.",
+   "'Total Required Credits 60' recorded as degree_total; no major total is printed, so total_units is null. GE is 'Local GE' with no unit figure printed. Electives (courses numbered 1-199) are required when degree plus GE units total fewer than 60, so electives_fill_degree is true. Students can double-count required courses and GE courses.",
+   "The outcomes list is introduced with 'Upon completion of this course' but is the program outcomes list; each outcome is prefixed with its emphasis, copied as printed.",
+   "EGN11 - Surveying is not in the closed list (catalog addition)."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

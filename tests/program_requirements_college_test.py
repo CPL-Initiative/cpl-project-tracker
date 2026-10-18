@@ -1797,6 +1797,41 @@ finally:
 check(url and url.endswith("2026%202027.pdf"),
       "a PDF step follows the PDF, not the menu link with the same words: %r" % url)
 
+# Hartnell's Coursedog catalog page fetches its whole-catalog PDF by script and links none
+# (page read 39077713662, S409): the step names the file, and the read loads no page for it.
+HN_PDF = ("https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/"
+          "6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf")
+hn_step = {"start": "https://hartnell.catalog.prod.coursedog.com/", "file": HN_PDF, "format": "pdf",
+           "catalog_year": "2026-2027"}
+check((P.procedure_catalog({"catalog": hn_step}) or {}).get("file") == HN_PDF
+      and P.procedure_catalog({"catalog": dict(hn_step, format="html")}) is None
+      and P.procedure_catalog({"catalog": dict(hn_step, file="hartnell.pdf")}) is None
+      and C.reads_as_pdf({"procedure": {"catalog": hn_step}}),
+      "a PDF step may name its file in place of a link to follow, and only a PDF step")
+
+
+def _no_load(*a, **k):
+    raise AssertionError("a step naming its file loads no page")
+
+
+P.load = _no_load
+try:
+    hn_report = {}
+    url, wait = C.pdf_start(StepReader(), {"procedure": {"catalog": hn_step}}, {}, hn_report)
+finally:
+    P.load = _real_load
+check(url == HN_PDF and hn_report["procedure_step"]["file"] == HN_PDF and wait == 600 * 1000,
+      "the read takes the file the step names: %r" % url)
+
+# Coursedog prints its list lines with the code unspaced ("• ABT90 - Soil Science", Hartnell's
+# PDF, S409); MAP and COCI space them. Both the coarse net and the exact test read the PDF's form.
+HN_LIST = ("Complete at least 3 of the following courses:\n• ABT90 - Soil Science\n"
+           "• STATC1000 - Introduction to Statistics\n• ART12A - Drawing and Composition\n"
+           "Total Required Credits · 60")
+check(all(P.code_pattern(c) and P.code_pattern(c).search(HN_LIST) for c in ("ABT 90", "STAT C1000", "ART 12A"))
+      and {P.norm_code(c) for c in ("ABT 90", "STAT C1000", "ART 12A")} <= C.page_codes(HN_LIST),
+      "an unspaced code (ABT90, STATC1000, ART12A) reads as its spaced form: %r" % sorted(C.page_codes(HN_LIST)))
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

@@ -1,0 +1,271 @@
+{
+ "college": "Hartnell College",
+ "control_number": "08904",
+ "shape": "degree",
+ "title": "Chicanx Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=234",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10664,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10664,
+    "output_tokens": 1943,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1943,
+  "output_tokens_details": {
+   "thinking_tokens": 605
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08152,
+ "ms": 15830,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chicanx Studies - AA.CHCX",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate knowledge of Chicanx in the United States including an evaluation of the political experiences with respect to local and national leaders.",
+    "Apply critical thinking skills in reading, comprehending, and interpreting Chicanx studies scholarship including major contributors who have influenced the course of study, policy and or culture.",
+    "Demonstrate knowledge of Chicanx culture including an analysis in cultural expressions including but not limited to contemporary culture, literature or cinema.",
+    "Distinguish variations within the Chicanx community with respect to class, gender, ethnicity, race, and sexuality."
+   ],
+   "careers": [
+    "schools",
+    "community groups",
+    "governmental agencies",
+    "the private sector"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ETH1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA1X",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPA1S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ETH2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POL5",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS49A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS49B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements list prints no units beside any course; units left null. The following course pages print 'Credits 3' for the ETH courses, but no units appear for SPA, POL or HIS courses in the text.",
+   "The page prints no major total; 'Total Required Credits 60' is recorded as degree_total. Electives (courses numbered 1-199) fill the degree when degree plus GE units total fewer than 60; no elective units printed.",
+   "Outcomes lead-in reads 'Upon completion of this course, students will be able to:' though they are listed as Program Outcomes for this degree.",
+   "Catalog titles differ from the closed list: ETH4 is 'Chicanx Culture' (closed list: Chicana/o/x Theatre), ETH6 is 'Chicana/Latina Feminism in Contemporary Society' (closed list: La Chicana), ETH7 is 'Chicano Theatre' (closed list: Chicana/o/x Theatre). Codes match, so recorded as closed-list courses.",
+   "Codes printed without a space (e.g., ETH1) and matched to closed-list codes (ETH 1).",
+   "Students can double-count required courses and courses for General Education, per the catalog."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

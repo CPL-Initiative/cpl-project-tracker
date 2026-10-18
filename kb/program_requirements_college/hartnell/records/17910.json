@@ -1,0 +1,382 @@
+{
+ "college": "Hartnell College",
+ "control_number": "17910",
+ "shape": "degree",
+ "title": "General Studies: STEM",
+ "award": "A.A. Degree",
+ "source_url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf#page=420",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14480,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14480,
+    "output_tokens": 3092,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3092,
+  "output_tokens_details": {
+   "thinking_tokens": 971
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11976,
+ "ms": 25107,
+ "seconds": 25.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 48,
+   "share": 0.0,
+   "missing": [
+    "ABT90",
+    "ABT92",
+    "ANT1",
+    "AST1",
+    "AST1L",
+    "BIO1",
+    "BIO10",
+    "BIO11",
+    "BIO12",
+    "BIO18",
+    "BIO2",
+    "BIO20",
+    "BIO27",
+    "BIO3",
+    "BIO30",
+    "BIO42",
+    "BIO47",
+    "BIO48",
+    "BIO48L",
+    "BIO5",
+    "BIO6",
+    "BIO6L",
+    "CHM12A",
+    "CHM12B",
+    "CHM1A",
+    "CHM1B",
+    "CHM22",
+    "CHM23",
+    "GEL1",
+    "GEL2",
+    "GEL6",
+    "MAT2",
+    "MAT24",
+    "MAT25",
+    "MAT3A",
+    "MAT3B",
+    "MAT3C",
+    "MAT4",
+    "MAT5",
+    "OCN1",
+    "PHY10",
+    "PHY2A",
+    "PHY2B",
+    "PHY32",
+    "PHY4A",
+    "PHY4B",
+    "PHY4C",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (fragment shows only GE area lists starting 'Cal-GETC Area 5B' and 'Electives (1-99)')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ABT 90",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "ABT 92",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "ANT 1",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "AST 1",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "AST 1L",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 1",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 10",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 11",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 12",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 18",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 2",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 20",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 27",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 3",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 30",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 42",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 47",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 48",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 48L",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 5",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 6",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "BIO 6L",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "CHM 12A",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "CHM 12B",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "CHM 1A",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "CHM 1B",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "CHM 22",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "CHM 23",
+    "why": "only in GE area / elective lists, no STEM degree section"
+   },
+   {
+    "code": "GEL 1",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "GEL 2",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "GEL 6",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 2",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "MAT 25",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 3A",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 3B",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 3C",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 4",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "MAT 5",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "OCN 1",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY 2A",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY 2B",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY 32",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY 4A",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY 4B",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY 4C",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "PHY10",
+    "why": "only in GE area lists, no STEM degree section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in GE area lists, no STEM degree section"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 420-423 of 427) does not contain the General Studies: STEM A.A. section: no program heading, description, required units, outcomes or careers are printed. It begins mid-list with welding courses and shows only generic lists headed Cal-GETC Areas 5B, 2, 5A, 3A, 3B, Local GE Areas 5, 2, 3, 7, and 'Electives (1-99)' (which includes non-STEM subjects such as ADJ, AOD, ART, CMA), cut off mid-entry at 'CMA7'.",
+   "These look like a catalog-wide general education/electives appendix; GE courses are not recorded as blocks. A reviewer should locate the actual STEM degree page (likely elsewhere in the PDF) to record its area requirements and total.",
+   "No 'Units' values are printed beside any course in the fragment.",
+   "Catalog lists PSY10 in GE science areas, BIO18 as 'Introduction to Pathophysiology' (closed list title 'Physiology of Human Health'), and ANT1 as 'Introduction to Biological Anthropology'."
+  ]
+ },
+ "extracted_run": "39082134780"
+}

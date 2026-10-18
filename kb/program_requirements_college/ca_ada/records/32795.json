@@ -1,0 +1,229 @@
+{
+ "college": "Cañada College",
+ "control_number": "32795",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=239",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6747,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6747,
+    "output_tokens": 1581,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1581,
+  "output_tokens_details": {
+   "thinking_tokens": 625
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05861,
+ "ms": 12622,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 22,
+   "not_verbatim": [
+    "acting for stage, film, and television",
+    "directing for film, television, and the stage",
+    "writing for film, television, and the stage"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AA-T  Theatre Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply critical thinking in the creative process.",
+    "Use the language of the discipline; demonstrate to command of critical vocabulary.",
+    "Describe the roles of creative expression in human cultures.",
+    "Engage with the arts; integrate the arts into life.",
+    "Use critical thinking in evaluating works of art in intrinsic terms, expressive content, and social context."
+   ],
+   "careers": [
+    "acting for stage, film, and television",
+    "voiceover for radio, TV, and video games",
+    "disk jockey",
+    "teaching drama and public speaking to children and adults in schools, theatres, and professional environments",
+    "directing for film, television, and the stage",
+    "writing for film, television, and the stage",
+    "stage management",
+    "event management",
+    "talent agent",
+    "casting director",
+    "company manager",
+    "executive director",
+    "public relations",
+    "marketing",
+    "sound design",
+    "broadcast technician",
+    "light design",
+    "makeup artist",
+    "hair stylist",
+    "wardrobe manager",
+    "carpentry",
+    "electric engineering"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete Core Courses, 18 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "DRAM 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAM 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAM 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAM 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAM 300.1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAM 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major total printed as 'Total Required Major Units: 18'.",
+   "The page mentions the 'minimum 60 CSU transferable unit requirement' as a general ADT rule, not as a printed total for this award, so degree_total is left null; electives fill the remainder (electives_fill_degree true).",
+   "Cal-GETC completion is required but the page prints no GE unit figure.",
+   "Career entries: the PDF text uses the 'fi' ligature in 'film'; normalized to plain letters. Compound career phrases separated by commas within a semicolon group (e.g., 'acting for stage, film, and television') were kept as single entries; reviewer may wish to split differently."
+  ]
+ },
+ "extracted_run": "39080930669"
+}

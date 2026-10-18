@@ -1,0 +1,266 @@
+{
+ "college": "Cañada College",
+ "control_number": "32197",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=164",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9504,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9504,
+    "output_tokens": 2072,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2072,
+  "output_tokens_details": {
+   "thinking_tokens": 795
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07946,
+ "ms": 16326,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 13,
+   "share": 0.846,
+   "missing": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATH251",
+    "MATH252"
+   ],
+   "flagged": [
+    "MATH251",
+    "MATH252"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    31.0
+   ],
+   "stated": [
+    30.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AS-T  Computer Science",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply knowledge of math, science and computer science to identify, formulate, and solve computer science problems.",
+    "Communicate eﬀectively and work well in situations that require teamwork.",
+    "Design and perform tests or experiments, analyze and interpret data, and prepare a report summarizing the results of the tests of experiments.",
+    "Develop a design or system given a set of requirements and speciﬁcations",
+    "Use techniques, skills, and modern engineering and computer tools necessary for engineering or computer science practice."
+   ],
+   "careers": [
+    "programmer",
+    "content expert"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "CIS 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 284",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 286",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 251",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 252",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 230",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 225",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 210",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH 251 Analytical Geometry and Calculus I instead"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog prints MATH 252 Analytical Geometry and Calculus II instead"
+   }
+  ],
+  "notes": [
+   "The degree can be completed in C++ (CIS 250, CIS 252) or Java (CIS 284, CIS 286); the catalog prints these as 'OR' rows, recorded as alternatives. Reviewer may check whether the language choice should be paired as sequences.",
+   "PHYS 250 read as required; the OR chain 'PHYS 260 OR BIOL 230 OR BIOL 225 OR CHEM 210' read as one choice, consistent with the 30-31 unit total.",
+   "Catalog lists MATH 251/252 while the closed list names MATH C2210/C2220 (likely renumbered under common course numbering); MATH 251/252 recorded as catalog additions.",
+   "Elective courses: additional CSU or UC transferable courses as needed to meet the minimum 60 CSU transferable units; no units printed, so electives_fill_degree is true and no degree_total is recorded.",
+   "Career text is vague ('adds to many jobs - both as a programmer, working with programmers and as a content expert developing programs'); recorded 'programmer' and 'content expert'."
+  ]
+ },
+ "extracted_run": "39080930669"
+}

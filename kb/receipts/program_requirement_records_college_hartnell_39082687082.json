@@ -1,0 +1,222 @@
+{
+ "college": "Hartnell College",
+ "load_run": "39082687082",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-18T00:25:57Z",
+ "records": 101,
+ "posted": 68,
+ "batches": 3,
+ "inserted": 68,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "03547",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08871",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08872",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11803",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12331",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15426",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17910",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17911",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17912",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17914",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17924",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17977",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19718",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19719",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21422",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21424",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21450",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30621",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31591",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31592",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31593",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31804",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32365",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32981",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33851",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36985",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37950",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42385",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43119",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43121",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45096",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39082134780"
+ ],
+ "machine_pass": 8,
+ "inserted_keys": [
+  "03537",
+  "03539",
+  "03545",
+  "03562",
+  "03570",
+  "03571",
+  "03585",
+  "03588",
+  "08886",
+  "08904",
+  "08909",
+  "18353",
+  "19107",
+  "19518",
+  "21423",
+  "21439",
+  "21444",
+  "30822",
+  "31146",
+  "31268",
+  "31392",
+  "31406",
+  "31778",
+  "31971",
+  "32036",
+  "32037",
+  "32375",
+  "32529",
+  "32930",
+  "33050",
+  "33051",
+  "33176",
+  "33385",
+  "35065",
+  "35105",
+  "35107",
+  "35108",
+  "35458",
+  "35613",
+  "36694",
+  "37916",
+  "38211",
+  "38224",
+  "38232",
+  "38501",
+  "38517",
+  "39248",
+  "40051",
+  "40261",
+  "41819",
+  "41922",
+  "41985",
+  "42135",
+  "43066",
+  "43559",
+  "43607",
+  "43608",
+  "43609",
+  "43610",
+  "43620",
+  "43776",
+  "43809",
+  "43887",
+  "44161",
+  "44525",
+  "44537",
+  "44574",
+  "44729"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Hartnell College' and checked = false and control_number in ('03537', '03539', '03545', '03562', '03570', '03571', '03585', '03588', '08886', '08904', '08909', '18353', '19107', '19518', '21423', '21439', '21444', '30822', '31146', '31268', '31392', '31406', '31778', '31971', '32036', '32037', '32375', '32529', '32930', '33050', '33051', '33176', '33385', '35065', '35105', '35107', '35108', '35458', '35613', '36694', '37916', '38211', '38224', '38232', '38501', '38517', '39248', '40051', '40261', '41819', '41922', '41985', '42135', '43066', '43559', '43607', '43608', '43609', '43610', '43620', '43776', '43809', '43887', '44161', '44525', '44537', '44574', '44729');"
+}

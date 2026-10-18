@@ -1,0 +1,128 @@
+{
+ "college": "Cañada College",
+ "load_run": "39082147619",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-18T00:17:00Z",
+ "records": 73,
+ "posted": 62,
+ "batches": 3,
+ "inserted": 62,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "05700",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05711",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20427",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20440",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32833",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36942",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37156",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37974",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40834",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45177",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39080930669"
+ ],
+ "machine_pass": 47,
+ "inserted_keys": [
+  "05717",
+  "05722",
+  "05735",
+  "10247",
+  "14443",
+  "15052",
+  "15654",
+  "16816",
+  "20425",
+  "20426",
+  "20430",
+  "20432",
+  "20438",
+  "30385",
+  "30427",
+  "30825",
+  "30834",
+  "30853",
+  "30881",
+  "30910",
+  "31069",
+  "31401",
+  "31755",
+  "31856",
+  "31911",
+  "32197",
+  "32295",
+  "32400",
+  "32452",
+  "32514",
+  "32525",
+  "32526",
+  "32527",
+  "32576",
+  "32716",
+  "32730",
+  "32731",
+  "32795",
+  "33317",
+  "33608",
+  "33610",
+  "33828",
+  "35834",
+  "35971",
+  "35986",
+  "36025",
+  "36056",
+  "36721",
+  "37122",
+  "37973",
+  "38514",
+  "38824",
+  "40391",
+  "41287",
+  "41512",
+  "41513",
+  "43478",
+  "43514",
+  "43537",
+  "43660",
+  "43790",
+  "43965"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Cañada College' and checked = false and control_number in ('05717', '05722', '05735', '10247', '14443', '15052', '15654', '16816', '20425', '20426', '20430', '20432', '20438', '30385', '30427', '30825', '30834', '30853', '30881', '30910', '31069', '31401', '31755', '31856', '31911', '32197', '32295', '32400', '32452', '32514', '32525', '32526', '32527', '32576', '32716', '32730', '32731', '32795', '33317', '33608', '33610', '33828', '35834', '35971', '35986', '36025', '36056', '36721', '37122', '37973', '38514', '38824', '40391', '41287', '41512', '41513', '43478', '43514', '43537', '43660', '43790', '43965');"
+}
