@@ -65,8 +65,13 @@ check("our_process.js: explicit :root[data-theme=\"dark\"] rule exists",
   /:root\[data-theme="dark"\] \.opv\{/.test(opSrc));
 check("our_process.js: the media query carries the light guard",
   /@media \(prefers-color-scheme:dark\)\{ ?:root:not\(\[data-theme="light"\]\) \.opv\{/.test(opSrc));
+// The dark values live in ONE template, OP_DARK, that both rules interpolate. The UI
+// pass of 2026-10-18 (S417) swapped the tab's hex for First Light's tokens, so the
+// guard keys on the template and on a value only the dark block carries.
 check("our_process.js: one copy of the dark values (no drift between the two rules)",
-  (opSrc.match(/--op-bg:#0A1C27/g) || []).length === 1);
+  (opSrc.match(/var OP_DARK = `/g) || []).length === 1
+  && (opSrc.match(/\.opv\{\$\{OP_DARK\}\}/g) || []).length === 2
+  && (opSrc.match(/--op-contour:rgba\(236,233,226,0\.06\)/g) || []).length === 1);
 
 const memSrc = fs.readFileSync("cpl_memory.js", "utf8");
 check("cpl_memory.js: the competing theme button is gone",
