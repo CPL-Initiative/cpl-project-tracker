@@ -1,22 +1,22 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-19T11:18:04Z",
-  "session": 423,
-  "moniker": "SkyLaurel",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-19T14:13:53Z",
+  "session": 424,
+  "moniker": "SkyBuckthorn",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_424_handoff.md",
+  "handoff": "docs/session_425_handoff.md",
   "next_step": {
-    "title": "Land Merced's renumbered courses, then each verdicts file's extraction rows, then the second reader once its secrets exist",
-    "text": "Merge Merced's pull request once its tests pass and apply its display build on main. Then read the rows each verdicts file leaves to the extraction: Delta's eight, Taft's four wrong-page reads, Canada's five careers-only failures. The second reader with Grok runs once the Edge Function holds XAI_API_KEY and XAI_MODEL and the function is deployed."
+    "title": "Remove Taft's 38661 row under the receipt procedure, then Merced's last nine and the Commons' step 3",
+    "text": "Sam ruled remove on Open Asks Sheet 98 card 1. A session with the permission files the receipt holding the full row and the guarded delete through the migrate runner. The second reader is on ice until Sam's new xAI subscription. Then Merced's last nine programs, Orange Coast 10278's rescore, and the Commons' deep link behind each count."
   },
   "calls": [
     {
-      "title": "Set the second reader's two Edge Function secrets and deploy the extraction function",
-      "text": "Sam ruled Build with Grok on Open Asks Sheet 97 (03:11Z, 2026-10-19). The reader is built: the extraction function's version 11 reads with provider xai, kb/_second_reader.py scores both readings, second-reader.yml runs it. It starts once the function holds XAI_API_KEY and XAI_MODEL as Edge Function secrets (Sam's call 6 on sheet 23: no model key in GitHub) and cpl-chat-deploy.yml has deployed program-requirements-extract. The repository secret xai-smoke.yml reads was unset at 04:05Z and only proves the key.",
-      "no_reply": "The second reader stays unrun; the failing records are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
-      "link": "https://supabase.com/dashboard/project/hvuwhnbuahrtptokpqfh/functions/program-requirements-extract/secrets"
+      "title": "The second reader waits on Sam's new xAI subscription",
+      "text": "Sam ruled later on Open Asks Sheet 98 card 2 (13:41Z, 2026-10-19): a new subscription first, which will take a few days. When he says it is set: the Edge Function secrets XAI_API_KEY and XAI_MODEL on project hvuwhnbuahrtptokpqfh, cpl-chat-deploy.yml for program-requirements-extract, then second-reader.yml with college Canada College.",
+      "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
+      "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu"
     }
   ],
   "notes": {
@@ -46,6 +46,14 @@
     {
       "at": "2026-10-19T09:50:00Z",
       "text": "The UI pass measured the Knowledge Base portal for the first time and moved it to First Light's tokens and plain-word controls (#2254)."
+    },
+    {
+      "at": "2026-10-19T12:27:00Z",
+      "text": "The Jev sitting asks only about the five checks that hold a record back; Canada's five careers-only rows were never failing records. Two scorer rules for certificates with no degree total: general education units that make the printed total exact pass it, and a total the page says electives fill passes a short sum with the fill named (San Joaquin Delta 05630 and 11970)."
+    },
+    {
+      "at": "2026-10-19T14:11:00Z",
+      "text": "Taft renumbered BUSN 550 and 555 as 1050 and 1055; a cited map gives Administrative Services II its own page, read, loaded and in display build e0407fdcb54b (applying on main). CSU GE-Breadth, IGETC and the two Speech Language Pathology awards are not in Taft's 2026-2027 catalog; Sam ruled remove on the CSU GE-Breadth row, which a later session files."
     }
   ],
   "headline": [
@@ -125,11 +133,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-19T12:12:00Z"
+    "at": "2026-10-20T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-19",
-    "gaps": 3828,
+    "gaps": 3819,
     "parts": {
       "links": {
         "catalog": [
@@ -150,7 +158,7 @@
         20282
       ],
       "coci": [
-        14632,
+        14633,
         20282
       ],
       "outcomes": {
@@ -159,12 +167,12 @@
           89192
         ],
         "plo": [
-          14632,
+          14633,
           20282
         ]
       },
       "careers": [
-        13582,
+        13583,
         20282
       ]
     }

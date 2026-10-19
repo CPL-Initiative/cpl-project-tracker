@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 58 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 395 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1185** | |
+| Session handoffs | 396 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1186** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-19 (S424 SkyBuckthorn): the Jev sitting asks only about the gating checks and two certificate scorer rules (#2256); Taft's renumbered BUSN 550/555 and Administrative Services II on its own page, display build e0407fdcb54b (#2258); Open Asks Sheet 98 answered (remove Taft's 38661 row; the second reader on ice); lessons S424, S394-S398 archived.
 - 2026-10-19 (S423 SkyLaurel, the routine): Merced's renumbered courses, a cited per-college `course_renumbers` map, 154 to 163 of 172 found and 125 to 134 passing (#2253); the Knowledge Base portal's first UI pass (#2254); the Commons' four run logs; lessons S423, handoff 424.
 - 2026-10-19 (S422 SkyWillow, the routine): San Joaquin Delta's three scorer readings, 154 to 195 of 202 live rows passing (#2250); Taft's two local GE patterns, no step (#2249); the Sierra Training UI pass (#2251); lessons S422, handoff 423.
 - 2026-10-19 (S421 SkyTupelo): the second reader built (#2246); Cañada's Cal-GETC step and the six-row rollback (#2247); three Jev sittings read, verdicts in `kb/jev_harvest_verdicts/`; lessons S421; handoff 422.
