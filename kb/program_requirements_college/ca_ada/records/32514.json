@@ -94,10 +94,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,8 +117,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -339,5 +336,20 @@
    "No careers are named for this program."
   ]
  },
- "extracted_run": "39080930669"
+ "extracted_run": 39202270482,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Completion of Cal-GETC (California General Education\nTransfer Curriculum) (https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=79: California General Education Transfer Curriculum (Cal-GETC) - 34 units minimum)"
+  }
+ ],
+ "read_run": "39080930669"
 }
