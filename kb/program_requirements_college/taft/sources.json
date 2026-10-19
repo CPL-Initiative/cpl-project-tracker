@@ -710,17 +710,17 @@
    "BUSN555"
   ],
   "source": {
-   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/general-business/general-business-associate-in-science",
-   "title": "Taft College - General Business: Associate of Science",
-   "h1": "General Business: Associate of Science",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/administrative-services/administrative-services-ii-certificate-of-achievement",
+   "title": "Taft College - Administrative Services II: Certificate of Achievement",
+   "h1": "Administrative Services II: Certificate of Achievement",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 4682
+  "text_chars": 3887
  },
  {
   "control_number": "31290",

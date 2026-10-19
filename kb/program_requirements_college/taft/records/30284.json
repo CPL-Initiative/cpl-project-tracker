@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Administrative Services II",
  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
- "source_url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/general-business/general-business-associate-in-science",
+ "source_url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/administrative-services/administrative-services-ii-certificate-of-achievement",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7667,
+  "input_tokens": 7402,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7667,
-    "output_tokens": 619,
+    "input_tokens": 7402,
+    "output_tokens": 1388,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 619,
+  "output_tokens": 1388,
   "output_tokens_details": {
-   "thinking_tokens": 316
+   "thinking_tokens": 526
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04305,
- "ms": 6746,
- "seconds": 7.3,
+ "cost_usd": 0.05737,
+ "ms": 13796,
+ "seconds": 14.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 4,
-   "share": 0.0,
+   "share": 0.75,
    "missing": [
-    "BUSN1510",
-    "BUSN550",
-    "BUSN555",
     "CIS1532"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "ANYDEGREEAPPLICABLEMATH",
+    "COSC1603",
+    "COSC1703"
+   ],
+   "flagged": [
+    "ANYDEGREEAPPLICABLEMATH",
+    "COSC1603",
+    "COSC1703"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -72,10 +77,13 @@
     0.0,
     0.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "a required course in 'Required courses' has no units"
    ]
   },
   "repeated": {
@@ -88,8 +96,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -104,11 +112,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "General Business: Associate of Science",
+   "section_heading": "Administrative Services II: Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,27 +136,83 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSN 1050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "any degree applicable Math",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSN 1055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSN 1510",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSC 1603",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSC 1703",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "BUSN 1510",
-    "why": "not in a section for this award; appears only in the General Business A.S. electives list"
-   },
-   {
     "code": "BUSN 550",
-    "why": "not in a section for this award; appears only as BUSN0550 in the General Business A.S. electives list"
+    "why": "not in the text; catalog prints BUSN 1050 Business Mathematics, apparently a renumbering"
    },
    {
     "code": "BUSN 555",
-    "why": "not in a section for this award; appears only as BUSN0555 in the General Business A.S. electives list"
+    "why": "not in the text; catalog prints BUSN 1055 Office Procedures, apparently a renumbering"
    },
    {
     "code": "CIS 1532",
     "why": "not in the text"
    }
   ],
-  "notes": []
+  "notes": [
+   "COSC 1603 and COSC 1703 appear only in the line 'COSC 1603, COSC 1703: Note: Previous versions of required computer courses taken within four (4) years of certificate completion will be accepted.' No units are printed beside them; they are recorded as required computer courses because the printed courses (9-10 units) fall short of the stated 16 total. Reviewer should verify.",
+   "The alternative to BUSN 1050 is printed as 'any degree applicable Math' (4 units), not a specific course code; recorded as an alternative with catalog_addition true.",
+   "Catalog uses 'Credits(s)'/'Credit Hours' for semester units; measure recorded as units.",
+   "BUSN 1050 and BUSN 1055 share titles with closed-list BUSN 550 and BUSN 555; codes appear renumbered in the 2026-2027 catalog.",
+   "No program learning outcomes or careers printed in this section."
+  ]
  },
- "extracted_run": "39100858309"
+ "extracted_run": "39259699774"
 }
