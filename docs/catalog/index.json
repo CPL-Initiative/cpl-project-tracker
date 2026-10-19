@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 557,
+   "count": 558,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3280,6 +3280,27 @@
      "title": "A remembered toggle hides the default from its author",
      "type": "methodology",
      "updated": "2026-09-02"
+    },
+    {
+     "created": "2026-10-19",
+     "governs": [
+      "scripts/funding_video_figures.js",
+      "prototype/funding_video/figures.json",
+      "prototype/funding_video/build.py",
+      "cpl_funding.js",
+      "tests/funding_video_figures.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-rendered-artifact-reads-the-model-through-a-filed-stamp.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "implementation-funding",
+      "funding-video",
+      "refresh-everything"
+     ],
+     "title": "A rendered artifact reads the model through a filed stamp",
+     "type": "methodology",
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-08-17",
@@ -15213,7 +15234,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-10-15"
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-10-05",
@@ -15807,8 +15828,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 399,
+   "count": 400,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 429,
+     "path": "docs/session_429_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-memo",
+      "funding-video",
+      "side-session"
+     ],
+     "title": "Session 429 handoff: the funding side session's state (the memo as passages, the film reads the model) beside the queue's 428",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22693,5 +22731,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1192
+ "total": 1194
 }

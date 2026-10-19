@@ -226,9 +226,171 @@ CONFIG['n2'] = dict(
     narr=narration('narration_s2_layout.json'),
 )
 
+# ── THE INTRODUCTIONS READ THE MODEL (Sam, 2026-10-19: "revise the video and
+# other text based on live info rather than hard coded data"). figures.json,
+# written by scripts/funding_video_figures.js from a dump of the live config,
+# carries every figure the films show, per scenario, stamped with the config's
+# md5. The two introductions take their figures from it: s1 from Scenario 1,
+# s2 from the published scenario, whatever its name (the film names none).
+# The narrated cuts keep the figures their voice speaks: n1 and n2 were made
+# from the typed values above before this block runs, so they rebuild to the
+# frames the voice was laid out on until a new read. `--check` says what the
+# model moved; `--typed` builds from the typed values on purpose.
+FIGURES = HERE / 'figures.json'
+NUM_WORDS = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five'}
+# What each measure counts, in the film's words (the measure key is the
+# model's; the sentence is the film's, so a re-pointed priority reads right).
+COUNTS = {'pa_u': 'applied CPL units from every CPL request',
+          'ppa_u': 'applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload',
+          'ptc_u': 'transcribed CPL units with the counselor step checked',
+          'pac_u': 'accepted CPL units with the counselor step checked',
+          'p3_u': 'transcribed CPL units',
+          'ca_u': 'CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office'}
+BOXES = {'pa_u': ACCESS, 'ppa_u': ACCESS_VOICED, 'ptc_u': COMPLETION,
+         'pac_u': 'Accepted CPL units, with the MAP counselor step checked.', 'p3_u': 'Transcribed CPL units.',
+         'ca_u': 'CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.'}
+
+def money_words(v):
+    return '{:,}'.format(int(round(v)))
+
+def millions(v):
+    w = '%.1f' % (v / 1e6)
+    return w[:-2] if w.endswith('.0') else w
+
+def long_date(iso):
+    import datetime
+    try:
+        d = datetime.date.fromisoformat(str(iso)[:10])
+    except ValueError:
+        return str(iso)
+    return '%s %d, %d' % (d.strftime('%B'), d.day, d.year)
+
+def month_words(iso):
+    import datetime
+    try:
+        d = datetime.date.fromisoformat(str(iso)[:10])
+    except ValueError:
+        return str(iso)
+    return d.strftime('%b %Y')
+
+def load_figures():
+    if not FIGURES.exists():
+        return None
+    return json.loads(FIGURES.read_text(encoding='utf8'))
+
+def live_config(typed, fig, scenario):
+    """The introduction's config with the model's figures laid over the typed ones."""
+    f = fig['scenarios'].get(scenario)
+    if not f:
+        return None
+    c = dict(typed)
+    gross, inst, state, n = f['appropriation'], f['toInstitutions'], f['statewide'], f['institutions']
+    pct = round(inst / gross * 100, 1) if gross else 0
+    c['split'] = {
+        'text': ('The state set aside %s million dollars in one-time funding for 2026–27. %s million goes directly to %d '
+                 'institutions, and %s million funds statewide CPL projects and technology and two Chancellor’s Office '
+                 'positions that support colleges.') % (millions(gross), millions(inst), n, millions(state)),
+        'segs': [[0, pct, 'var(--stage-blue)'], [pct, round(100 - pct, 1), 'var(--stage-navy)']],
+        'labs': [[4.5, '$' + money_words(inst), 'directly to %d institutions' % n, 'var(--stage-blue)', 40],
+                 [52, '$' + money_words(state), 'statewide CPL projects and technology, and two Chancellor’s Office positions supporting colleges', 'var(--stage-navy)', 43.5]],
+    }
+    a = f['average']
+    c['ex'] = dict(AVERAGE, max=int(round(a['max'])), cr=int(round(a['cr'])), nc=int(round(a['nc'])), pos=round(a['pos'], 1),
+                   ticks=[[0, '$' + money_words(f['base']), 'base'], [100, '$' + money_words(f['cap']), 'cap']],
+                   maxText='The average maximum allocation is %s dollars.' % money_words(a['max']),
+                   splitText=' On average, %s dollars is credit and %s dollars noncredit.' % (money_words(a['cr']), money_words(a['nc'])))
+    funded = f['priorities']
+    rows, said = [], []
+    for p in funded:
+        key = p.get('measure') or ''
+        rows.append([int(round(p['share'] * 100)), p['title'], BOXES.get(key, (p.get('metric') or '').rstrip('.') + '.'), int(round(p['funding']))])
+        said.append('%s, %d percent, %s million dollars statewide, counts %s.' % (
+            p['title'], int(round(p['share'] * 100)), millions(p['funding']), COUNTS.get(key, (p.get('metric') or '').lower().rstrip('.'))))
+    # The reported cards are ONE box in the picture where the tab shows two
+    # (S312's proposal, kept): the Chancellor's Office reports them together,
+    # beside the statewide figure, in the film's own sentence.
+    if f.get('reported'):
+        names = [r['title'] for r in f['reported']]   # Sam's titles, verbatim
+        joined = ' and '.join(names)
+        follow = ' and '.join(p['title'] for p in funded)
+        rows.append([None, joined,
+                     'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow %s.' % follow,
+                     int(round(state))])
+        said.append('The Chancellor’s Office reports %s, in qualitative terms, beside %s million dollars statewide for CPL '
+                    'projects and technology and two Chancellor’s Office positions; the institutions’ allocations follow %s.' % (
+                        ' together with the '.join(names), millions(state), follow))
+    c['prios'] = rows
+    c['prioName'] = '%s priorities' % NUM_WORDS.get(len(funded), str(len(funded)))
+    c['prioHead'] = c['prioName'] + ' carry the funding'
+    c['prioText'] = c['prioHead'] + '. ' + ' '.join(said)
+    if typed.get('how') is not None and funded:
+        c['how'] = {'rows': [[p['title'], int(round(p['funding'])), round(p['division'], 1), round(p['target'], 1)] for p in funded],
+                    'rate': round(f['rate'], 2), 'factor': funded[0]['factor'], 'price': round(funded[0]['price'], 2), 'capped': f['capped']}
+    if funded:
+        tf, tu = funded[0]['avgTargetFtes'], funded[0]['avgTargetUsd']
+        c['target'] = {'ftes': round(tf, 2), 'usd': round(tu, 2), 'ftesWords': '%.1f' % tf, 'usdWords': money_words(tu),
+                       'halfFtesWords': '%.1f' % (tf / 2), 'halfUsdWords': money_words(tu / 2)}
+    c['deadline'] = long_date(f['deadline'])
+    c['timing'] = timing(month_words(f['deadline']))
+    c['figures'] = {'config_md5': fig['config_md5'], 'read_at': fig['read_at'], 'scenario': scenario, 'published': scenario == fig.get('published')}
+    return c
+
+def flat(o, pre=''):
+    out = {}
+    for k, v in (o.items() if isinstance(o, dict) else enumerate(o)):
+        key = '%s.%s' % (pre, k) if pre else str(k)
+        if isinstance(v, (dict, list)):
+            out.update(flat(v, key))
+        else:
+            out[key] = v
+    return out
+
+def figure_diffs(typed, live):
+    """Which figures the model moved, against the typed (voiced) values."""
+    keys = ['split.labs', 'ex.max', 'ex.cr', 'ex.nc', 'prios', 'how', 'target.ftesWords', 'target.usdWords', 'deadline', 'timing']
+    ft, fl = flat(typed), flat(live)
+    diffs = []
+    for k in sorted(set(ft) | set(fl)):
+        if any(k == root or k.startswith(root + '.') for root in keys) and str(ft.get(k)) != str(fl.get(k)):
+            diffs.append('%s: %s -> %s' % (k, ft.get(k), fl.get(k)))
+    return diffs
+
+FIG = load_figures()
+LIVE = {}
+if FIG:
+    LIVE['s1'] = live_config(CONFIG['s1'], FIG, 'Scenario 1')
+    LIVE['s2'] = live_config(CONFIG['s2'], FIG, FIG.get('published') or 'Scenario 2')
+
+if '--check' in sys.argv:
+    if not FIG:
+        print('NO figures.json: the films show the typed figures of 2026-10-01. Write it: node scripts/funding_video_figures.js --config live.json --write')
+        sys.exit(1)
+    moved = 0
+    print('figures.json: config %s, read %s, published %s' % (FIG['config_md5'], FIG['read_at'][:16].replace('T', ' '), FIG.get('published')))
+    for v, scn in (('s1', 'Scenario 1'), ('s2', FIG.get('published') or 'Scenario 2'), ('n1', 'Scenario 1'), ('n2', FIG.get('published') or 'Scenario 2')):
+        live = live_config(CONFIG[v], FIG, scn)
+        if not live:
+            print('%s: %s is not in figures.json' % (v, scn)); moved += 1; continue
+        d = figure_diffs(CONFIG[v], live)
+        voiced = v.startswith('n')
+        if d:
+            moved += 1
+            print('%s (%s): %d figure%s differ from the %s values%s' % (v, scn, len(d), '' if len(d) == 1 else 's',
+                  'voiced' if voiced else 'typed', ' -- the narration needs a new read' if voiced else ' -- rebuild and re-render'))
+            for line in d[:12]:
+                print('   ' + line)
+        else:
+            print('%s (%s): matches the model' % (v, scn))
+    sys.exit(1 if moved else 0)
+
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 variant = args[0] if args else 's1'
 cfg = CONFIG[variant]
+if variant in LIVE and LIVE[variant] and '--typed' not in sys.argv:
+    cfg = LIVE[variant]
+    print('%s: figures from figures.json (config %s, %s)' % (variant, FIG['config_md5'], cfg['figures']['scenario']))
+elif variant in ('s1', 's2'):
+    print('%s: typed figures (no figures.json%s)' % (variant, ', --typed' if '--typed' in sys.argv else ''))
 suffix = '' if variant == 's1' else '_' + variant
 src = (HERE / 'funding_in_motion.src.html').read_text(encoding='utf8')
 

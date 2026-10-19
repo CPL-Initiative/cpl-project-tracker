@@ -33,6 +33,23 @@ Scenario 1's narrated draft keeps the frames its voice was laid out on: `ACCESS_
 
 The seventh scene has said minimum conditions since 2026-09-29, Sam's term of 2026-09-28, and its heading is set at 3.9cqw, down from 5.2, so the longer phrase fits on one line.
 
+## The figures follow the model (2026-10-19)
+
+Sam, 2026-10-19: *"add to the refresh all procedure the ability to revise the video and other text based on live info rather than hard coded data."* The typed figures above were read from the engine under config `e21658f9` on 2026-10-01; the published scenario moved on 2026-10-15 (Scenario 3, noncredit at 15%), and nothing said so. Now the model says so, three ways.
+
+- **`figures.json`, beside the films.** `node scripts/funding_video_figures.js --config live.json --write` asks the model (`T._videoFigures()`, the functions the tab prints with, never a figure derived in the script) for every figure a film shows, per scenario: the appropriation and its two destinations, the institutions, the base and the cap, the average max award and its credit and noncredit split, each priority's share, statewide funding, FTES reimbursement rate, statewide target (the institutions' targets added up) and the average institution's target, the reported cards, the confirmation deadline and the Timeline. It is stamped with the config's md5 and the time it was read. `--check` exits 1 when the file differs from the config passed. `live.json` is a dump of the live config (Supabase MCP: `select config from cpl_funding_config where id='default'`; `tests/fixtures/` keeps dated copies).
+- **`build.py` reads it.** The two introductions take their figures from the file: `s1` from Scenario 1, `s2` from the published scenario, whatever its name (the film names none). The sentences the scenes say are composed from the figures in the film's own words (`COUNTS`, `BOXES`), the targets slide's rows and the Timeline's nodes with them, and the built page carries the stamp (`CFG.figures`). The narrated cuts keep the figures their voice speaks: `n1` and `n2` are made from the typed values before the file is read, so they rebuild to the frames their voice was laid out on until a new read. `python3 prototype/funding_video/build.py --check` says, per variant, whether the model moved a figure: for an introduction, rebuild and re-render; for a narrated cut, the narration needs a new read first. `--typed` builds an introduction from the typed values on purpose.
+- **Refresh everything checks the film.** The tab's splash (and the explainer's) reads `figures.json`, computes the same figures from the model it just re-read for the published scenario, and says whether the introduction matches the model or which figures differ, with the command to run. A film is not re-rendered by a button: rendering takes the toolchain below, and the splash hands over the command.
+
+Refreshing a film, in order:
+
+    node scripts/funding_video_figures.js --config live.json --write   # files the figures under the config's stamp
+    python3 prototype/funding_video/build.py --check                   # names what moved, per variant
+    python3 prototype/funding_video/build.py s2 --render               # the page and the frame page, from the filed figures
+    FFMPEG=... bash prototype/funding_video/render.sh s2               # the MP4, re-versioned in build.py's `mp4` first
+
+Still typed into the source, not the figures: the Maximum allocation scene's "a base of 150 thousand and a cap of 400 thousand" (its caption) and the minimum conditions scene's three conditions. A dial that moves either takes an edit to `funding_in_motion.src.html`.
+
 ## The page
 
 The player opens filling the window: the stage takes the largest 16:9 box that leaves one row of controls on screen, and the page header and scene list sit below it. The controls carry Play, Replay, a scrubber, Mute, **Full screen** (the player, stage and controls, takes the whole screen) and **Download MP4** (the scenario's MP4, `mp4` in `CONFIG`). The big Play button enters full screen and plays in one click, the one gesture a browser accepts for full screen; Esc leaves. Type and marks are sized to fill the frame: at 1920 wide a body line is 63 px and a headline 115 px (Sam, 2026-09-26: "sized to fill the screen for readability and dramatic effect").

@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 557 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 558 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 59 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 399 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1192** | |
+| Session handoffs | 400 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1194** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,10 +123,10 @@ Authoritative external sources we've cached:
 
 ## Update history
 - 2026-10-19 (S427 SkyMadrona): Sheet 99 rulings 1, 2, 3 and 5 applied (the nightly confirm's first run, AGAB, the Validate column), the AGRI sitting built, Open Asks Sheet 101; handoff 428; KB note methodology-a-ruling-names-a-record-the-store-may-count-another.
+- 2026-10-19 (the funding side session beside S427): the memo, letter, report and brief as saved passages leading with SB 135 (the opening follows the explainer's Overview passage); CPL Funding in Motion reads the model through a filed, stamped `figures.json` that Refresh everything checks; Step 2 in the Step 1 box; two reset controls retired; the Scenario block beside the Project block (#2265); KB note on the filed stamp; lane and lessons compacted under their caps.
 - 2026-10-19 (S426 SkyTorreya): the Annual Workplan Goals tab edits every year (a Current per year), shows its stored descriptions, Set targets fixed, the formatting pass; KB note on idempotent controls; handoff 427.
 - 2026-10-19 (S424 SkyBuckthorn): the Jev sitting asks only about the gating checks and two certificate scorer rules (#2256); Taft's renumbered BUSN 550/555 and Administrative Services II on its own page, display build e0407fdcb54b (#2258); Open Asks Sheet 98 answered (remove Taft's 38661 row; the second reader on ice); lessons S424, S394-S398 archived.
 - 2026-10-19 (S423 SkyLaurel, the routine): Merced's renumbered courses, a cited per-college `course_renumbers` map, 154 to 163 of 172 found and 125 to 134 passing (#2253); the Knowledge Base portal's first UI pass (#2254); the Commons' four run logs; lessons S423, handoff 424.
 - 2026-10-19 (S422 SkyWillow, the routine): San Joaquin Delta's three scorer readings, 154 to 195 of 202 live rows passing (#2250); Taft's two local GE patterns, no step (#2249); the Sierra Training UI pass (#2251); lessons S422, handoff 423.
 - 2026-10-19 (S421 SkyTupelo): the second reader built (#2246); Cañada's Cal-GETC step and the six-row rollback (#2247); three Jev sittings read, verdicts in `kb/jev_harvest_verdicts/`; lessons S421; handoff 422.
 - 2026-10-19 (S420 SkyTanoak, hand-opened): Cañada's re-read landed (#2244: 26 moved pages re-extracted, 8 loaded, 17 replaced, display build 3aa52b4afcb6); the CPL News UI pass (#2243); a Jev calibration sitting over a college's failing records (`kb/_jev_harvest.py`, #2245) and the xAI smoke for the second reader's key; Open Asks Sheet 97 asked and answered (Build with Grok, 03:11Z); KB note `methodology-a-harvests-tail-needs-a-different-instrument`.
-- 2026-10-18 (S419 SkyCottonwood, hand-opened): the Commons' step 1 landed (#2237: the Progress view drawn by the shared `commons_progress.js`, nothing changing on screen, the status file under `kb/status/`) and Sam approved the mock-up (19:08Z, to S417; version 4 collapses per row and all at once); Cañada's PDF picker reads the catalog's three heading shapes (#2241; the capture-only run moved 26 pages, eight of the eleven empty records onto their own headings); `docs/commons_lessons.md` and a KB note on the shared-view pattern added.

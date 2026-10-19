@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-19T20:31:49Z",
-  "session": 426,
-  "moniker": "SkyTorreya",
+  "written_at": "2026-10-19T23:04:31Z",
+  "session": 427,
+  "moniker": "the funding side session beside SkyMadrona",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_427_handoff.md",
+  "handoff": "docs/session_429_handoff.md",
   "next_step": {
-    "title": "Land cpl-project-tracker#2262, then the queue",
-    "text": "Merge the Annual Workplan Goals PR on a green test and dispatch the dashboard; then the Sheet 99 rulings, the two quarterly routines, the stray identity codes and the Commons views."
+    "title": "Land cpl-project-tracker#2265, then the queue (handoff 428)",
+    "text": "Squash-merge the Implementation Funding PR on a green test (the memo as saved passages, the film figures filed from the model, Step 2 in the Step 1 box); the harvest continues from the queue handoff 428, SkyMadrona."
   },
   "calls": [
     {
@@ -26,6 +26,10 @@
     {
       "text": "No change to the harvest this run; S426 worked the Annual Workplan Goals tab (a Current per year, the stored descriptions, the formatting pass).",
       "at": "2026-10-19T20:31:49Z"
+    },
+    {
+      "text": "No change to the harvest this run; the side session beside S427 worked the Implementation Funding tab (the memo as passages leading with SB 135, the film figures filed from the model, Step 2 in the Step 1 box, two reset controls retired, the Scenario block beside the Project block).",
+      "at": "2026-10-19T23:04:31Z"
     }
   ],
   "headline": [

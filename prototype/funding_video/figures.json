@@ -1,0 +1,309 @@
+{
+ "source": "tests/fixtures/cpl_funding_config_de95c290.json",
+ "config_md5": "de95c290",
+ "read_at": "2026-10-19T22:38:50.787Z",
+ "project": "cpl-implementation",
+ "published": "Scenario 3",
+ "scenarios": {
+  "Scenario 1": {
+   "scenario": "Scenario 1",
+   "published": false,
+   "appropriation": 35000000,
+   "toInstitutions": 25240308,
+   "statewide": 9759692,
+   "institutions": 118,
+   "base": 150000,
+   "cap": 400000,
+   "rate": 5649.63,
+   "average": {
+    "max": 213900.91525423725,
+    "cr": 198541.56484887577,
+    "nc": 15359.350405361476,
+    "pos": 25.560366101694896
+   },
+   "capped": 7,
+   "priorities": [
+    {
+     "label": "Priority 1",
+     "title": "Access",
+     "share": 0.33,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "pa_u",
+     "metric": "Applied CPL Units (FTES) originating from either CPL Portal, College CPL Landing Page, or batch upload",
+     "funding": 8329301.64,
+     "division": 2948.6184546598624,
+     "target": 2881.9964740514765,
+     "avgTargetFtes": 23.354325829523063,
+     "avgTargetUsd": 65518.71640012901
+    },
+    {
+     "label": "Priority 2",
+     "title": "Completion",
+     "share": 0.34,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "ptc_u",
+     "metric": "Transcribed CPL units (FTES) for students  with Counselor step checked",
+     "funding": 8581704.719999999,
+     "division": 3037.9705290434945,
+     "target": 2969.329700537885,
+     "avgTargetFtes": 24.062032672841926,
+     "avgTargetUsd": 67504.13204861777
+    },
+    {
+     "label": "Priority 3",
+     "title": "Career attainment",
+     "share": 0.33,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "ca_u",
+     "metric": "CPL units (FTES) for students who reach a career outcome in EDD wage records, measured by the Chancellor's Office",
+     "funding": 8329301.64,
+     "division": 2948.6184546598624,
+     "target": 2881.9964740514765,
+     "avgTargetFtes": 23.354325829523063,
+     "avgTargetUsd": 65518.71640012901
+    }
+   ],
+   "reported": [],
+   "deadline": "2026-12-01",
+   "timeline": [
+    {
+     "date": "Oct 2026",
+     "label": "CPL Funding Procedure Finalized"
+    },
+    {
+     "date": "Oct 2026",
+     "label": "Guidance Memo Release"
+    },
+    {
+     "date": "Dec 2026",
+     "label": "Confirmation Deadline"
+    },
+    {
+     "date": "Feb 2027",
+     "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jul 2027",
+     "label": "Second Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Aug 2027",
+     "label": "Undispersed Funds Rolled to Year 2 and Releveled"
+    },
+    {
+     "date": "Dec 2027",
+     "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jun 2028",
+     "label": "Second Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "",
+     "label": "Potential Year 3 Depending on Funding Availability"
+    }
+   ]
+  },
+  "Scenario 2": {
+   "scenario": "Scenario 2",
+   "published": false,
+   "appropriation": 35000000,
+   "toInstitutions": 25240308,
+   "statewide": 9759692,
+   "institutions": 118,
+   "base": 150000,
+   "cap": 400000,
+   "rate": 5649.63,
+   "average": {
+    "max": 213900.91525423745,
+    "cr": 181815.77796610186,
+    "nc": 32085.1372881356,
+    "pos": 25.56036610169498
+   },
+   "capped": 7,
+   "priorities": [
+    {
+     "label": "Priority 1",
+     "title": "Access",
+     "share": 0.5,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "pa_u",
+     "metric": "Applied CPL Units (FTES) originating from either CPL Portal, College CPL Landing Page, or batch upload",
+     "funding": 12620154.00000001,
+     "division": 4467.603719181613,
+     "target": 4268.611716150392,
+     "avgTargetFtes": 31.288473647817295,
+     "avgTargetUsd": 90907.88898305093
+    },
+    {
+     "label": "Priority 2",
+     "title": "Completion",
+     "share": 0.5,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "ptc_u",
+     "metric": "Transcribed CPL units (FTES) for students  with Counselor step checked",
+     "funding": 12620154.00000001,
+     "division": 4467.603719181613,
+     "target": 4268.611716150392,
+     "avgTargetFtes": 31.288473647817295,
+     "avgTargetUsd": 90907.88898305093
+    }
+   ],
+   "reported": [
+    {
+     "goal": "C",
+     "title": "Career Attainment",
+     "what": "How CPL awards moved students toward licensure, certification, employment or advancement, in each college’s words."
+    },
+    {
+     "goal": "D",
+     "title": "Innovation Projects",
+     "what": "Progress on each designated activity: what it set out to do, what it produced, and what it changed for students."
+    }
+   ],
+   "deadline": "2026-12-30",
+   "timeline": [
+    {
+     "date": "Oct 2026",
+     "label": "CPL Funding Procedure Finalized"
+    },
+    {
+     "date": "Oct 2026",
+     "label": "Guidance Memo Release"
+    },
+    {
+     "date": "Dec 30, 2026",
+     "label": "Confirmation Deadline"
+    },
+    {
+     "date": "Feb 2027",
+     "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jul 2027",
+     "label": "Second Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Aug 2027",
+     "label": "Undispersed Funds Rolled to Year 2 and Releveled"
+    },
+    {
+     "date": "Dec 2027",
+     "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jun 2028",
+     "label": "Second Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "",
+     "label": "Potential Year 3 Depending on Funding Availability"
+    }
+   ]
+  },
+  "Scenario 3": {
+   "scenario": "Scenario 3",
+   "published": true,
+   "appropriation": 35000000,
+   "toInstitutions": 25240308,
+   "statewide": 9759692,
+   "institutions": 118,
+   "base": 150000,
+   "cap": 400000,
+   "rate": 5649.63,
+   "average": {
+    "max": 213900.91525423745,
+    "cr": 181815.77796610186,
+    "nc": 32085.1372881356,
+    "pos": 25.56036610169498
+   },
+   "capped": 7,
+   "priorities": [
+    {
+     "label": "Priority 1",
+     "title": "Access",
+     "share": 0.5,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "pa_u",
+     "metric": "Applied (Articulated) CPL Units (FTES) available to students in MAP",
+     "funding": 12620154.00000001,
+     "division": 4467.603719181613,
+     "target": 4268.611716150392,
+     "avgTargetFtes": 31.288473647817295,
+     "avgTargetUsd": 90907.88898305093
+    },
+    {
+     "label": "Priority 2",
+     "title": "Completion",
+     "share": 0.5,
+     "factor": 0.5,
+     "price": 2824.815,
+     "measure": "p3_u",
+     "metric": "Transcribed CPL units (FTES) for students in MAP",
+     "funding": 12620154.00000001,
+     "division": 4467.603719181613,
+     "target": 4268.611716150392,
+     "avgTargetFtes": 31.288473647817295,
+     "avgTargetUsd": 90907.88898305093
+    }
+   ],
+   "reported": [
+    {
+     "goal": "C",
+     "title": "Career Attainment",
+     "what": "How CPL awards moved students toward licensure, certification, employment or advancement based on reported data and qualitative statements from the Chancellor's Office and colleges.."
+    },
+    {
+     "goal": "D",
+     "title": "Innovation Projects",
+     "what": "Chancellor's Office CPL Initiative reports on progress for each designated activity."
+    }
+   ],
+   "deadline": "2026-12-30",
+   "timeline": [
+    {
+     "date": "Oct 2026",
+     "label": "CPL Funding Procedure Finalized"
+    },
+    {
+     "date": "Oct 2026",
+     "label": "Guidance Memo Release"
+    },
+    {
+     "date": "Dec 30, 2026",
+     "label": "Confirmation Deadline"
+    },
+    {
+     "date": "Feb 2027",
+     "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jul 2027",
+     "label": "Second Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Aug 2027",
+     "label": "Undispersed Funds Rolled to Year 2 and Releveled"
+    },
+    {
+     "date": "Dec 2027",
+     "label": "First Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "Jun 2028",
+     "label": "Second Disbursement based on cumulative CPL"
+    },
+    {
+     "date": "",
+     "label": "Potential Year 3 Depending on Funding Availability"
+    }
+   ]
+  }
+ }
+}

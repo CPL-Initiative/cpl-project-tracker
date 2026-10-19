@@ -456,14 +456,22 @@
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
     // Step 1: the chooser, first (Sam, 2026-10-15). A light card, the select
     // large and outlined in the seal blue, the step named in words.
-    ".cplfund-step1 { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; column-gap: 20px; row-gap: 6px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
+    ".cplfund-step1 { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; column-gap: 20px; row-gap: 6px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
+    // Step 2, the view, in the same box to the right (Sam, 2026-10-19). Its
+    // kicker matches Step 1's; the buttons are the one view control.
+    ".cplfund-step1-view { grid-column: 3; grid-row: 1 / span 3; align-self: stretch; display: flex; align-items: center; gap: 20px; padding-left: 20px; border-left: 1px solid var(--border-strong); }",
+    ".cplfund-step1-k2 { grid-row: auto; border-right: 0; padding-right: 0; }",
+    ".cplfund-step1-vbody { display: flex; flex-direction: column; gap: 6px; }",
+    ".cplfund-step1-vl { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1rem, .9rem + .4vw, 1.2rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
+    ".cplfund-step1-vs { margin: 0; font-size: .8rem; color: var(--text-muted); }",
     ".cplfund-step1-k { grid-row: 1 / span 3; margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.05rem, .9rem + .6vw, 1.35rem); color: var(--seal-blue-text, var(--cobalt)); white-space: nowrap; padding-right: 20px; border-right: 1px solid var(--border-strong); align-self: stretch; display: flex; align-items: center; }",
     ".cplfund-step1-l { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
     ".cplfund-step1-sel { font: inherit; font-size: 1.05rem; color: var(--text-strong); background: var(--surface-opaque); border: 2px solid var(--seal-blue-text, var(--cobalt)); border-radius: 4px; min-height: 48px; padding: 8px 12px; width: min(100%, 30rem); }",
     ".cplfund-step1-sel:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; }",
     ".cplfund-step1-s { margin: 0; font-size: .92rem; color: var(--text-muted); max-width: var(--cpl-measure, none); }",
     ".cplfund-step1-clear { margin-left: 6px; }",
-    "@media (max-width: 560px) { .cplfund-step1 { grid-template-columns: 1fr; } .cplfund-step1-k { grid-row: auto; border-right: 0; padding-right: 0; } }",
+    "@media (max-width: 560px) { .cplfund-step1 { grid-template-columns: 1fr; } .cplfund-step1-k { grid-row: auto; border-right: 0; padding-right: 0; } " +
+      ".cplfund-step1-view { grid-column: auto; grid-row: auto; padding-left: 0; border-left: 0; padding-top: 10px; border-top: 1px solid var(--border-strong); } }",
     // The PDF prompt (Sam, 2026-10-15): a dialog, words for every control.
     ".cplfund-pdfask { border: 1px solid var(--border-strong); border-radius: 8px; padding: 0; max-width: min(92vw, 560px); background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-pdfask-in { padding: 20px 22px; display: grid; gap: 12px; }",
@@ -789,8 +797,15 @@
     ".cplfund-sanity { display: inline-block; background: none; border: 0; padding: 2px 0; font-size: .88rem; font-weight: 600; color: var(--accent-link); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }",
     "#cplFundTitleLink:empty { display: none; }",
     // ── top control strip: project + area + scenario (Sam, 2026-07-23) ──
-    ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; margin: 0 0 12px; padding: 0; background: none; border: 0; }",
-    ".cplfund-ctl { display: inline-flex; align-items: center; gap: 7px; }",
+    // ONE ROW (Sam, 2026-10-19: "Move the Scenario selector and text up to the
+    // right of the Project selector (save real estate)"). The strip never
+    // wraps a block under the other; each block wraps its own words inside
+    // itself instead, so the published line drops under its selector when the
+    // window is narrow. Below 640px the strip stacks (the phone rule below).
+    ".cplfund-strip { display: flex; flex-wrap: nowrap; gap: 8px 22px; align-items: flex-start; margin: 0 0 12px; padding: 0; background: none; border: 0; }",
+    ".cplfund-ctl { display: inline-flex; align-items: center; gap: 7px; flex-wrap: wrap; min-width: 0; }",
+    ".cplfund-ctl-proj { flex: 0 1 auto; }",
+    ".cplfund-ctl-scen { flex: 1 1 18rem; }",
     ".cplfund-ctl-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-ctl-hint { font-size: .78rem; }",
     ".cplfund-area { font-size: .72rem; font-weight: 600; color: var(--text-muted); background: none; border: 0; padding: 0; }",
@@ -816,7 +831,10 @@
     ".cplfund-memo .fields .fld { margin: 3px 0; }",
     ".cplfund-memo .fields .lab { font-weight: 700; color: var(--navy-primary); display: inline-block; min-width: 52px; vertical-align: top; }",
     ".cplfund-memo p { margin: 8px 0; }",
-    ".cplfund-memo ul { margin: 8px 0; padding-left: 22px; }",
+    ".cplfund-memo ul, .cplfund-memo ol { margin: 8px 0; padding-left: 22px; }",
+    ".cplfund-memo blockquote { margin: 8px 0 8px 14px; padding-left: 10px; border-left: 2px solid var(--border-strong); }",
+    ".cplfund-memo .memo-sub { text-align: center; color: var(--text-muted); }",
+    ".cplfund-memo a { color: var(--cobalt); }",
     ".cplfund-memo li { margin: 5px 0; }",
     ".cplfund-memo table { border-collapse: collapse; width: 100%; font-size: .8rem; margin: 8px 0; }",
     ".cplfund-memo th { background: var(--seal-blue); color: var(--white); padding: 4px 6px; text-align: right; }",
@@ -3925,7 +3943,8 @@
   }
   function isRich(key) { return !!(TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich); }
   function richDefaultPlain(key) {
-    var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key];
+    var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key] || MEMO_BY_KEY[key];
+    if (b && b.follows) return plainNormalize(memoLeadDefaultPlain());
     return plainNormalize(b ? b.plain : "");
   }
   // One line of rich text. `mode` "page" paints a figure as the span the
@@ -4270,8 +4289,6 @@
   }
 
   function sectionOrder() { return storedOrder(SECTION_HOUSE_ORDER, "secOrder"); }
-  function secOrderIsCustom() { return !orderIsHouse(SECTION_HOUSE_ORDER, sectionOrder()); }
-  function resetSectionOrder() { resetOrderKey(SECTION_HOUSE_ORDER, "secOrder"); }
   function moveSection(from, to) { moveIn(SECTION_HOUSE_ORDER, "secOrder", from, to); }
 
   function publicSectionOrder() { return storedOrder(publicHouseOrder(), "pubSecOrder"); }
@@ -4440,7 +4457,7 @@
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
     "cplFundScenSel", "cplFundScenNew", "cplFundScenDel", "cplFundScenPublish",
-    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio", "cplFundSecOrderReset"];
+    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio"];
   function stripCurateAffordances(root) {
     if (!root) return;
     CURATE_ATTRS.forEach(function (a) {
@@ -5927,7 +5944,7 @@
       var p = SUPA_CONFIG.projects[pid];
       return '<option value="' + esc(pid) + '"' + (pid === activeProject ? " selected" : "") + ">" + esc(p.label || pid) + "</option>";
     }).join("");
-    var projBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Project</span>' +
+    var projBlock = '<div class="cplfund-ctl cplfund-ctl-proj"><span class="cplfund-ctl-lbl">Project</span>' +
       '<select id="cplFundProjSel" class="cplfund-ed-sel" aria-label="Funding project">' + projOpts + "</select>" +
       '<span class="cplfund-area" title="COBI area: ' + esc(am.full) + '">' + esc(am.label) + "</span>" +
       (curator ? '<button type="button" class="rst" id="cplFundProjAdd" title="Add a new funding project (clones the current model as its starting point)">Add project</button>' : "") +
@@ -5949,7 +5966,7 @@
       (curator && !isPub
         ? '<button type="button" class="rst" id="cplFundScenPublish" title="Make this the scenario the public page and the college briefing read">Publish this scenario</button>'
         : "");
-    var scBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Scenario</span>' +
+    var scBlock = '<div class="cplfund-ctl cplfund-ctl-scen"><span class="cplfund-ctl-lbl">Scenario</span>' +
       '<select id="cplFundScenSel" class="cplfund-ed-sel" aria-label="Active scenario">' + scOpts + "</select>" +
       (curator
         ? '<button type="button" class="rst" id="cplFundScenNew" title="New scenario — copies the current scenario so you can tweak from it">New scenario</button>' +
@@ -5993,7 +6010,12 @@
           : '<button type="button" class="rst primary" id="cplFundPromote">' +
             "Publish this browser&#39;s changes</button>";
       }
-      if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset scenario to defaults</button>';
+      // No Reset for a signed-in curator (Sam, 2026-10-19: "We can delete the
+      // button links to restoring default order and funding defaults--I would
+      // just create a new scenario and make any changes needed"). A scenario is
+      // the unit of starting over: New scenario copies this one. The locked
+      // what-if below keeps its Reset exploration, which clears a private
+      // overlay nobody else sees, never the shared model.
       // No per-tab Lock any more: the credential is a whole-session sign-in,
       // so ending it belongs to the masthead identity menu, not to one tab.
     } else {
@@ -11948,12 +11970,14 @@
     cplFundDisb: "Disbursement timing",
     cplFundDocType: "Document type"
   };
+  // An item's `title` is its hover text (Sam, 2026-10-19: "Add hover over
+  // instructions for each button"), what the choice shows, in a sentence.
   function segHtml(id, items, current) {
     var lbl = SEG_LABELS[id] || "Options";
     return '<span class="cplfund-seg" id="' + id + '" role="group" aria-label="' + esc(lbl) + '">' + items.map(function (it) {
       var on = String(current) === String(it.val);
       return '<button type="button" data-val="' + esc(it.val) + '" aria-pressed="' + (on ? "true" : "false") + '"' +
-        (on ? ' class="on"' : "") + ">" + esc(it.label) + "</button>";
+        (on ? ' class="on"' : "") + (it.title ? ' title="' + esc(it.title) + '"' : "") + ">" + esc(it.label) + "</button>";
     }).join("") + "</span>";
   }
 
@@ -12019,7 +12043,7 @@
     instRows.forEach(function (r) { crSum += r.cr; ncSum += r.nc; });
     return {
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
-      totalAvailable: grossRevenue(),
+      totalAvailable: grossRevenue(), statewide: grossRevenue() - netCollege(),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
       collegePool: netCollege(), collegePoolMain: netCollege(),
       // Calbright is a college (Sam, 2026-09-22: 116), so the memo counts it with them.
@@ -12060,34 +12084,183 @@
   function numWord(n) {
     return ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] || String(n);
   }
-  function memoMasthead() {
-    return '<div class="masthead"><strong>California Community Colleges Chancellor&#39;s Office</strong><br>' +
-      "Academic Affairs Division<br>" +
-      "1102 Q Street, Sacramento, CA 95811 &middot; (916) 445-8752 &middot; www.cccco.edu</div>";
+  // ── THE MEMO'S TEXT IS SAVED PASSAGES (Sam, 2026-10-19) ─────────────────
+  // "Revise the memo and report generator to rely more on the Explainer text
+  // along with KB and other artifacts for the text. For example, rather than
+  // lead with AB 123 (last year's bill), lead with SB 135, which resulted in
+  // the new funding and Ed Code 78093. Make the generated reports and memo
+  // editable." Every sentence the four documents print is a passage, edited
+  // on the tab like the explainer's (The memo's text, under the document) and
+  // saved for everyone; a name in braces is a figure the model fills in, so an
+  // edit never freezes a number. The lead FOLLOWS the explainer's Overview
+  // passage (x_lede: SB 135, Statutes of 2026, Chapter 79; Ed. Code Article 9,
+  // sections 78093 through 78093.2; the four goals; section 78093.2(d)(2))
+  // until a curator saves the memo's own, so one statutory statement serves
+  // the page and the memo. AB 123 is last year's bill: it stays where it
+  // belongs, in the seed-grant history (the public KB's ESS 25-82 mirror).
+  // The resources and their addresses are the public CPL Knowledge Base's
+  // (verified 2026-08-04); a reference with no verified address stays words.
+  var MEMO_FIGS = [["to institutions", "the funding allocated to institutions"],
+    ["appropriation", "the one-time appropriation"], ["statewide projects", "the statewide projects, technology and posts"],
+    ["institutions", "how many institutions"], ["colleges", "how many colleges"],
+    ["noncredit-only", "how many noncredit-only institutions"],
+    ["credit total", "the credit shares of the awards"], ["noncredit total", "the noncredit shares of the awards"],
+    ["base award", "the base award per institution"], ["cap", "the cap per institution"],
+    ["average award", "the average max award"], ["median award", "the median max award"],
+    ["minimum award", "the smallest max award"], ["maximum award", "the largest max award"],
+    ["base award count", "how many institutions are brought up to the base award"],
+    ["cap count", "how many institutions are held at the cap"],
+    ["noncredit portion", "noncredit's percentage of the total to institutions"],
+    ["noncredit awards", "how many awards carry a noncredit share"],
+    ["2025-26 remaining", "the remaining 2025-26 balance, a separate distribution"],
+    ["state rate", "the state rate per FTES, to the cent"], ["state rate rounded", "the state rate per FTES, to the dollar"],
+    ["factors", "the sentence that states the funding factors"],
+    ["priority count", "how many priorities, as a word"], ["window", "the funding window"],
+    ["deadline", "the confirmation deadline, spelled out"], ["expend by", "the date the funds are expended by"],
+    ["seed grant", "the 2025-26 seed grant per institution"], ["area", "the initiative's full name"],
+    ["project", "the funding project's name"], ["scenario", "the scenario the document is drawn from"],
+    ["date", "today's date, spelled out"]];
+  var MEMO_BLOCKS = [
+    { key: "memo_masthead", where: "The masthead, every document", rows: 3,
+      plain: "**California Community Colleges Chancellor's Office**\nAcademic Affairs Division\n" +
+        "1102 Q Street, Sacramento, CA 95811 · (916) 445-8752 · www.cccco.edu" },
+    { key: "memo_dateline", where: "The memo's date line", rows: 1, plain: "{date} · ESS __-__ · Via Email" },
+    { key: "memo_to", where: "TO", rows: 2,
+      plain: "Chief Executive Officers; Chief Instructional Officers; Chief Student Services Officers; " +
+        "Chief Business Officers; Academic Senate Presidents" },
+    { key: "memo_from", where: "FROM", rows: 1, plain: "Office of the Vice Chancellor, Academic Affairs" },
+    { key: "memo_re", where: "RE", rows: 1, plain: "{area} Implementation Funding ({window})" },
+    { key: "memo_lead", where: "The opening: the statute (follows the explainer's Overview passage until saved here)",
+      rows: 16, follows: "x_lede", plain: "" },
+    { key: "memo_history", where: "The seed grant, last year", rows: 6,
+      plain: "This 2026-27 implementation funding builds on the **{seed grant}** CPL implementation seed grant " +
+        "the Chancellor's Office provided to each participating college and noncredit institution in 2025-26 " +
+        "under Assembly Bill 123 (memo **ESS 25-82, December 9, 2025**). That grant launched local CPL work " +
+        "toward three systemwide priority outcomes: (1) uploading Joint Services Transcripts for enrolled " +
+        "veterans; (2) adopting or adapting statewide credit recommendations; and (3) proactively identifying " +
+        "eligible students and documenting the CPL they earn in the Mapping Articulated Pathways (MAP) platform." },
+    { key: "memo_overview", where: "Funding Overview", rows: 7,
+      plain: "Each California Community College and each noncredit institution may receive implementation " +
+        "funding to support local {area} work under Education Code section 78093.2(d) and Vision 2030. The " +
+        "Chancellor's Office makes **{to institutions}** in one-time 2026-27 implementation funding available " +
+        "to the {institutions} institutions ({colleges} colleges and the noncredit-only campuses) across the " +
+        "**{window}** window. To receive these funds, each institution's chief instructional officer confirms " +
+        "the institution's participation by **{deadline}**, committing it to advance the {priority count} " +
+        "systemwide priority outcomes below. Institutions are expected to expend the funds fully by **{expend by}**." },
+    { key: "memo_priorities", where: "Priority Outcomes, the sentence before the list", rows: 3,
+      plain: "This funding prioritizes measurable progress on the systemwide outcomes of Education Code " +
+        "section 78093.2(d)(1), which support working learners and advance Vision 2030:" },
+    { key: "memo_strategies", where: "Recommended Strategies, the sentence before the lists", rows: 2,
+      plain: "Suggested approaches for advancing each priority outcome:" },
+    { key: "memo_allowable", where: "Allowable Use of Funds", rows: 6,
+      plain: "Funds must be used to advance the priority outcomes above and Vision 2030 systemwide objectives. " +
+        "Allowable uses include developing or enhancing processes to identify and notify students who may " +
+        "qualify during exploration, admissions, onboarding, and education planning; increased coordination, " +
+        "student engagement, and counseling; improving local procedures to award credit for industry " +
+        "certifications, military service, workplace training, foreign credentials, and other prior learning; " +
+        "and establishing or updating academic senate-driven policies that honor statewide credit recommendations." },
+    { key: "memo_tech", where: "Technical Assistance", rows: 12,
+      plain: "The MAP team and the Chancellor's Office provide ongoing support to help institutions implement " +
+        "CPL. Technical assistance comes through the CPL Implementation Guide, regional CPL training events, " +
+        "by-request support to regional consortia, MAP Office Hours, and IEPI Partnership Resource Team support.\n\n" +
+        "- **MAP Team Office Hours**: recurring live support sessions with the MAP team; see the " +
+        "[MAP website](https://map.rccd.edu/) (Get Involved) for the current schedule.\n" +
+        "- **CPL Implementation Guide**: [map.rccd.edu/cpl_implementation_guide](https://map.rccd.edu/cpl_implementation_guide/), " +
+        "a comprehensive guide to building, scaling, and institutionalizing CPL on the MAP platform.\n" +
+        "- **Counselor Resources Hub**: [map.rccd.edu/counselors](https://map.rccd.edu/counselors/), CPL policy, " +
+        "standard operating procedures, and transfer guides for counselors.\n" +
+        "- **MAP website**: [map.rccd.edu](https://map.rccd.edu/), the central hub for all CPL resources. For " +
+        "support, email map@rccd.edu.\n\n" +
+        "**Contacts:** Mari Estrada, Dean, California Community Colleges Chancellor's Office; Terence Nelson, " +
+        "Executive Director, Mapping Articulated Pathways (MAP)." },
+    { key: "memo_reporting", where: "Outcomes Reporting", rows: 4,
+      plain: "Outcome tracking occurs through the Mapping Articulated Pathways (MAP) platform, with colleges " +
+        "continuing to ensure accurate data through MIS reporting. The Chancellor's Office uses this data to " +
+        "monitor systemwide progress toward the priority outcomes and to assess the return on this investment " +
+        "in support of working learners." },
+    { key: "memo_conclusion", where: "Conclusion", rows: 5,
+      plain: "As districts use these funds, the Chancellor's Office and the MAP team will continue to make " +
+        "additional implementation guidance and optional technical assistance available. The distribution of " +
+        "these funds reflects the state's expectation that colleges strengthen structures, processes, and " +
+        "student supports to demonstrate clear progress and a strong return on investment." },
+    { key: "memo_questions", where: "The memo's closing line", rows: 2,
+      plain: "For questions regarding this memorandum, please contact the CPL Initiative team at map@rccd.edu." },
+    { key: "memo_cc", where: "cc", rows: 2,
+      plain: "Chancellor; Deputy Chancellor; Executive Vice Chancellor of Finance and Strategic Initiatives; Vice Chancellors" },
+    { key: "memo_letter_open", where: "The letter's greeting", rows: 1, plain: "Dear Colleague," },
+    { key: "memo_letter_close", where: "The letter's signature", rows: 3,
+      plain: "Sincerely,\n\n**Office of the Vice Chancellor, Academic Affairs**\nCalifornia Community Colleges Chancellor's Office" },
+    { key: "memo_brief_note", where: "The brief's subtitle", rows: 1, plain: "{window} · DRAFT for field review" }
+  ];
+  var MEMO_BY_KEY = {};
+  MEMO_BLOCKS.forEach(function (b) {
+    MEMO_BY_KEY[b.key] = b;
+    TEXT_BLOCKS[b.key] = { label: "the memo: " + b.where, rows: b.rows || 4, rich: true };
+  });
+  // The explainer's Overview passage, read for a memorandum: one source, one
+  // statutory statement, until the memo's own is saved.
+  function memoLeadDefaultPlain() {
+    return String(textPlain("x_lede") || "").replace(/\bThis page\b/g, "This memorandum")
+      .replace(/\bthis page\b/g, "this memorandum");
   }
-  function memoOverview(m) {
-    return "<h2>Funding Overview</h2><p>Each California Community College and each noncredit institution may receive " +
-      "implementation funding to support local " + esc(m.area.full) + " efforts in accordance with AB 123 and Vision 2030 " +
-      "goals. A total of <strong>" + fmtMoney(m.collegePool) + "</strong> in one-time 2026-27 implementation funding is " +
-      "available to the " + m.nInstitutions + " institutions (" + m.nColleges + " colleges and the noncredit-only campuses) across the <strong>" +
-      esc(m.window) + "</strong> window. To receive these funds, each institution&#39;s Chief Instructional Officer must " +
-      "submit the required participation request by <strong>" + esc(m.deadline) + "</strong>, confirming the institution&#39;s " +
-      "commitment to advancing the " + numWord(m.priorities.length) + " systemwide priority outcomes below. Funds are expected to be fully expended by <strong>" +
-      esc(m.expendBy) + "</strong>.</p>";
+  function memoLongDate(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v || ""));
+    if (!m) return String(v || "");
+    try { return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3])).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }); }
+    catch (e) { return String(v); }
   }
-  function memoPriorities(m) {
-    var lis = m.priorities.map(function (p) {
+  // The figures a memo passage can name, by the name a curator types.
+  function memoFigs(m) {
+    var am = allocModel();
+    var maxs = (m.instRows || []).map(function (r) { return r.total; }).sort(function (a, b) { return a - b; });
+    var median = maxs.length ? (maxs.length % 2 ? maxs[(maxs.length - 1) / 2] : (maxs[maxs.length / 2 - 1] + maxs[maxs.length / 2]) / 2) : 0;
+    var ncAwards = (m.instRows || []).filter(function (r) { return !r.nco && r.nc > 0.5; }).length;
+    var factors = [];
+    (m.priorities || []).forEach(function (p) { if (!p.reported && p.factor != null && factors.indexOf(String(p.factor)) < 0) factors.push(String(p.factor)); });
+    var F = {
+      "to institutions": fmtMoney(m.collegePool), "appropriation": fmtMoney(m.totalAvailable),
+      "statewide projects": fmtMoney(m.statewide), "institutions": String(m.nInstitutions),
+      "colleges": String(m.nColleges), "noncredit-only": String(m.nInstitutions - m.nColleges),
+      "credit total": fmtMoney(m.crSum), "noncredit total": fmtMoney(m.ncSum),
+      "base award": fmtMoney(m.floor), "cap": fmtMoney(m.cap),
+      "average award": fmtMoney(m.avg), "median award": fmtMoney(median),
+      "minimum award": fmtMoney(m.min), "maximum award": fmtMoney(m.max),
+      "base award count": String(am && am.floorCount != null ? am.floorCount : m.minCount),
+      "cap count": String(am && am.cappedCount != null ? am.cappedCount : 0),
+      "noncredit portion": m.collegePool > 0 ? (m.ncSum / m.collegePool * 100).toFixed(1) + "%" : "0%",
+      "noncredit awards": String(ncAwards),
+      "2025-26 remaining": fmtMoney(m.remaining),
+      "state rate": "$" + Number(ftesRate() || 0).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+      "state rate rounded": fmtMoney(ftesRate()),
+      "factors": factors.length === 1 ? "Every funding factor is currently set to " + factors[0] + "."
+        : "The factors currently set are " + factors.join(", ") + ".",
+      "priority count": numWord(m.priorities.length), "window": m.window,
+      "deadline": memoLongDate(m.deadline), "expend by": m.expendBy,
+      "seed grant": fmtMoney(GRANT_AMOUNT), "area": m.area.full, "project": m.projectLabel,
+      "scenario": activeScenario, "date": todayLong()
+    };
+    return F;
+  }
+  // A passage as blocks (paragraphs, lists, a quotation, links, bold and
+  // italic) with the memo's figures by name; a one-line passage inline.
+  function memoPassHtml(key, F) { return richPlainToHtml(textPlain(key), "mc", F).replace(/<p><\/p>/g, ""); }
+  function memoLineHtml(key, F) {
+    return plainNormalize(textPlain(key)).split(/\n+/).map(function (ln) { return richInline(ln, "mc", F); }).join("<br>");
+  }
+  // The priorities, every card in the tab's order (Sam, 2026-09-24: "Need P4
+  // on Reports"), each from the model: never a passage, so an edit cannot
+  // freeze a card the dials have moved.
+  function memoPriorityListHtml(m) {
+    return "<ul>" + m.priorities.map(function (p) {
       return "<li><strong>" + esc(p.label) + ".</strong> " + esc(p.description || "") +
         (p.metric ? " <em>Metric: " + esc(p.metric) + ".</em>" : "") + "</li>";
-    }).join("");
-    return "<h2>Priority Outcomes</h2><p>This funding prioritizes measurable progress on systemwide outcomes that " +
-      "support working learners and advance Vision 2030 goals:</p><ul>" + lis + "</ul>";
+    }).join("") + "</ul>";
   }
-  // Recommended strategies per priority (Sam, 2026-08-04) — pulls the editable
-  // per-priority strategy lists into the memo, one block per priority. Omitted
-  // entirely when no priority carries a strategy, so an empty model never prints
-  // a hollow header (same "no empty section" rule the rest of the memo follows).
-  function memoStrategies(m) {
+  // Recommended strategies per priority (Sam, 2026-08-04) — the editable
+  // per-priority strategy lists, one block per priority. Omitted entirely when
+  // no priority carries a strategy, so an empty model never prints a hollow
+  // header (same "no empty section" rule the rest of the memo follows).
+  function memoStrategies(m, F) {
     var blocks = (m.priorities || []).map(function (p) {
       var list = (p.strategies || []).filter(function (s) { return String(s || "").trim(); });
       if (!list.length) return "";
@@ -12095,16 +12268,7 @@
         list.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>";
     }).filter(Boolean);
     if (!blocks.length) return "";
-    return "<h2>Recommended Strategies</h2><p>Suggested approaches for advancing each priority outcome:</p>" +
-      blocks.join("");
-  }
-  function memoAllowable() {
-    return "<h2>Allowable Use of Funds</h2><p>Funds must be used to advance the priority outcomes above and Vision 2030 " +
-      "systemwide objectives. Allowable uses include developing or enhancing processes to identify and notify students who " +
-      "may qualify during exploration, admissions, onboarding, and education planning; increased coordination, student " +
-      "engagement, and counseling; improving local procedures to award credit for industry certifications, military " +
-      "service, workplace training, foreign credentials, and other prior learning; and establishing or updating academic " +
-      "senate-driven policies that honor statewide credit recommendations.</p>";
+    return "<h2>Recommended Strategies</h2>" + memoPassHtml("memo_strategies", F) + blocks.join("");
   }
   function memoAllocation(m, full) {
     // ONE POOL (2026-08-31): one combined award per institution — its credit
@@ -12156,89 +12320,67 @@
       fmtMoney(m.crSum) + "</strong></td><td><strong>" + fmtMoney(m.ncSum) +
       "</strong></td><td><strong>" + fmtMoney(m.collegePool) + "</strong></td></tr></tbody></table>";
   }
-  // Technical Assistance (Sam, 2026-08-04) — support channels + resources, sourced
-  // verbatim from the public CPL Knowledge Base (verified links only; Office Hours
-  // has no dedicated URL in the KB, so it points at the MAP website). Contacts are
-  // Sam-supplied (the KB excludes personnel by design), listed without emails.
-  function memoTechAssist(m) {
-    var site = MAP_LINKS.mapWebsite;
-    var lis =
-      "<li><strong>MAP Team Office Hours</strong> &mdash; recurring live support sessions with the MAP team; see the " +
-        memoLink(site, "MAP website") + " (Get Involved) for the current schedule.</li>" +
-      "<li><strong>CPL Implementation Guide</strong> &mdash; " + memoLink(MAP_LINKS.implementationGuide, MAP_LINKS.implementationGuide) +
-        " &mdash; a comprehensive guide to building, scaling, and institutionalizing CPL on the MAP platform.</li>" +
-      "<li><strong>Counselor Resources Hub</strong> &mdash; " + memoLink(MAP_LINKS.counselorHub, MAP_LINKS.counselorHub) +
-        " &mdash; CPL policy, standard operating procedures, and transfer guides for counselors.</li>" +
-      "<li><strong>MAP website</strong> &mdash; " + memoLink(site, site) +
-        " &mdash; the central hub for all CPL resources. For support, email " +
-        '<a href="mailto:' + esc(MAP_LINKS.supportEmail) + '">' + esc(MAP_LINKS.supportEmail) + "</a>.</li>";
-    return "<h2>Technical Assistance</h2>" +
-      "<p>The MAP team and the Chancellor&#39;s Office provide ongoing support to help institutions implement CPL. " +
-      "Technical assistance is delivered through the CPL Implementation Guide, regional CPL training events, by-request " +
-      "support to regional consortia, MAP Office Hours, and IEPI Partnership Resource Team support.</p>" +
-      "<ul>" + lis + "</ul>" +
-      "<p><strong>Contacts:</strong> Mari Estrada, Dean, California Community Colleges Chancellor&#39;s Office; " +
-      "Terence Nelson, Executive Director, Mapping Articulated Pathways (MAP).</p>";
-  }
-  function memoReporting(m) {
-    return "<h2>Outcomes Reporting</h2><p>Outcome tracking will occur primarily through the Mapping Articulated Pathways " +
-      "(MAP) platform, with colleges continuing to ensure accurate data via MIS reporting. This data will be used to " +
-      "monitor systemwide progress toward the priority outcomes and to assess the return on this investment in support of " +
-      "working learners.</p><h2>Conclusion</h2><p>As districts use these funds, additional implementation guidance and " +
-      "optional technical assistance will continue to be made available through the Chancellor&#39;s Office and the MAP " +
-      "team. The intentional distribution of these funds reflects the state&#39;s expectation that colleges strengthen " +
-      "structures, processes, and student supports to demonstrate clear progress and a strong return on investment.</p>";
-  }
-  function memoIntro(m) {
-    return "<p>Assembly Bill 123 appropriates funding to advance the statewide " + esc(m.area.full) + " effort. This " +
-      "investment supports shared technology, coordinated professional development and technical assistance, and " +
-      "student-centered policies and procedures &mdash; aligned with Vision 2030, the Chancellor&#39;s Office Workplan, " +
-      "and the California Master Plan for Career Education. To maximize impact, the distribution of funds is aligned with " +
-      "systemwide expectations for progress, transparency, and return on investment.</p>" +
-      "<p>This 2026-27 implementation funding builds on the <strong>$50,000</strong> CPL implementation seed grant the " +
-      "Chancellor&#39;s Office provided to each participating college and noncredit institution in 2025-26 (memo " +
-      essMemoRef() + "), which launched local CPL work toward three systemwide priority outcomes: " +
-      "(1) uploading Joint Services Transcripts for enrolled veterans; (2) adopting or adapting statewide credit " +
-      "recommendations; and (3) proactively identifying eligible students and documenting the CPL they earn in the " +
-      "Mapping Articulated Pathways (MAP) platform.</p>";
-  }
-  // Assemble the document for the chosen type. Body sections are shared; only the
-  // header/greeting/closing framing differs.
+  // Assemble the document for the chosen type from the passages. Body
+  // sections are shared; only the framing differs.
   function buildMemo(docType) {
     var m = memoModel();
-    var toList = ["Chief Executive Officers", "Chief Instructional Officers", "Chief Student Services Officers",
-      "Chief Business Officers", "Academic Senate Presidents"];
-    var re = esc(m.area.full) + " Implementation Funding (" + esc(m.window) + ")";
-    var body = memoIntro(m) + memoOverview(m) + memoPriorities(m) + memoStrategies(m) + memoAllowable(m);
+    var F = memoFigs(m);
+    var P = function (key) { return memoPassHtml(key, F); };
+    var I = function (key) { return memoLineHtml(key, F); };
+    var masthead = '<div class="masthead">' + I("memo_masthead") + "</div>";
+    var overview = "<h2>Funding Overview</h2>" + P("memo_overview");
+    var prios = "<h2>Priority Outcomes</h2>" + P("memo_priorities") + memoPriorityListHtml(m);
+    var body = P("memo_lead") + P("memo_history") + overview + prios + memoStrategies(m, F) +
+      "<h2>Allowable Use of Funds</h2>" + P("memo_allowable");
+    var tech = "<h2>Technical Assistance</h2>" + P("memo_tech");
+    var reporting = "<h2>Outcomes Reporting</h2>" + P("memo_reporting") + "<h2>Conclusion</h2>" + P("memo_conclusion");
     if (docType === "memo") {
-      return memoMasthead() +
+      return masthead +
         '<h1>MEMORANDUM</h1>' +
         '<div class="fields">' +
-        '<div class="fld">' + esc(todayLong()) + " &middot; ESS __-__ &middot; Via Email</div>" +
-        '<div class="fld"><span class="lab">TO:</span> ' + toList.map(esc).join("; ") + "</div>" +
-        '<div class="fld"><span class="lab">FROM:</span> Office of the Vice Chancellor, Academic Affairs</div>' +
-        '<div class="fld"><span class="lab">RE:</span> ' + re + "</div></div>" +
-        body + memoAllocation(m, true) + memoTechAssist(m) + memoReporting(m) +
-        '<p>For questions regarding this memorandum, please contact the CPL Initiative team.</p>' +
-        '<div class="cc"><span class="lab">cc:</span> Chancellor; Deputy Chancellor; Executive Vice Chancellor of Finance ' +
-        "and Strategic Initiatives; Vice Chancellors</div>";
+        '<div class="fld">' + I("memo_dateline") + "</div>" +
+        '<div class="fld"><span class="lab">TO:</span> ' + I("memo_to") + "</div>" +
+        '<div class="fld"><span class="lab">FROM:</span> ' + I("memo_from") + "</div>" +
+        '<div class="fld"><span class="lab">RE:</span> ' + I("memo_re") + "</div></div>" +
+        body + memoAllocation(m, true) + tech + reporting + P("memo_questions") +
+        '<div class="cc"><span class="lab">cc:</span> ' + I("memo_cc") + "</div>";
     }
     if (docType === "letter") {
-      return memoMasthead() + "<p>" + esc(todayLong()) + "</p><p>Dear Colleague,</p>" +
-        body + memoAllocation(m, false) + memoTechAssist(m) + memoReporting(m) +
-        '<div class="sig"><p>Sincerely,</p><p><strong>Office of the Vice Chancellor, Academic Affairs</strong><br>' +
-        "California Community Colleges Chancellor&#39;s Office</p></div>";
+      return masthead + "<p>" + esc(todayLong()) + "</p>" + P("memo_letter_open") +
+        body + memoAllocation(m, false) + tech + reporting +
+        '<div class="sig">' + P("memo_letter_close") + "</div>";
     }
     if (docType === "brief") {
       return '<h1>' + esc(m.area.full) + " Implementation Funding</h1>" +
-        '<p style="text-align:center;color:#5C5C55;">' + esc(m.window) + " &middot; DRAFT for field review</p>" +
-        memoOverview(m) + memoPriorities(m) + memoAllocation(m, false);
+        '<p class="memo-sub">' + I("memo_brief_note") + "</p>" +
+        overview + prios + memoAllocation(m, false);
     }
     // report
     return '<h1>' + esc(m.area.full) + " Implementation Funding</h1>" +
-      '<p style="text-align:center;color:#5C5C55;">' + esc(m.projectLabel) + " &middot; " + esc(m.window) +
+      '<p class="memo-sub">' + esc(m.projectLabel) + " &middot; " + esc(m.window) +
       " &middot; " + esc(todayLong()) + "</p>" +
-      body + memoAllocation(m, true) + memoTechAssist(m) + memoReporting(m);
+      body + memoAllocation(m, true) + tech + reporting;
+  }
+  // The curator's view of every memo passage, under the document: signed in,
+  // never on a public rendering (the Report sub-view is internal already).
+  function memoTextSectionHtml() {
+    if (!unlocked() || publicMode()) return "";
+    var body = '<p class="cplfund-xtext-lead">The sentences the memo, letter, report and brief print, saved for ' +
+      "everyone when you save one here; the document above redraws at once. A name in braces is a figure the " +
+      "model fills in, so an edit never freezes a number. The priorities, their strategies and the allocation " +
+      "table come from the model and have no passage.</p>";
+    MEMO_BLOCKS.forEach(function (b) {
+      body += '<p class="cplfund-xtext-k">' + esc(b.where) +
+        (b.follows && !textIsCustom(b.key) ? ", following it now" : "") + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
+    });
+    body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
+      MEMO_FIGS.map(function (t) { return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[1]) + "</li>"; }).join("") +
+      "</ul></details>";
+    return '<details class="cplfund-sec" data-sec="memo_text" data-curator-only="1"' + (sectionOpen("memo_text") ? " open" : "") + ">" +
+      '<summary class="cplfund-sec-sum"><h3>The memo&rsquo;s text</h3>' +
+      '<span class="cplfund-sec-flag">Curator only</span>' +
+      '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
+      '<div class="cplfund-sec-body">' + body + "</div></details>";
   }
 
   // ── report sub-view + doc-type toolbar ────────────────────────────────
@@ -12261,10 +12403,14 @@
       // page and the college briefing read the published one.
       (activeScenario === publishedScenario() ? ", the published scenario"
         : ". The public page reads " + esc(publishedScenario()) + ", so publish this scenario before the memo goes out") +
-      ". Edit any text directly below, then export. Inline edits are for the export only " +
-      "&mdash; they reset when you regenerate or switch document type.</div>" +
+      ". The wording is the memo&rsquo;s passages, " +
+      (unlocked() ? '<button type="button" class="cplfund-textbtn" id="cplFundMemoEdit">edited under the document</button>'
+        : "edited under the document by a signed-in curator") +
+      " and saved for everyone; the figures are the model&rsquo;s. Text typed directly into the document below " +
+      "is for this export only and resets when you regenerate or switch document type.</div>" +
       '<div class="cplfund-memo" id="cplFundMemo" contenteditable="true" spellcheck="true" aria-label="Editable ' +
-      esc(state.docType) + '">' + buildMemo(state.docType) + "</div>";
+      esc(state.docType) + '">' + buildMemo(state.docType) + "</div>" +
+      memoTextSectionHtml();
   }
   // The two tab names are Sam's, verbatim (2026-09-24, review sheet item 1):
   // "change tab title to "2026-28 Funding" and "2025-26 Funding"". The long
@@ -12624,6 +12770,135 @@
     _subs.forEach(function (fn) { try { fn(); } catch (e) { /* a subscriber must never break a load */ } });
   }
 
+  // ── THE FIGURES CPL FUNDING IN MOTION SHOWS (Sam, 2026-10-19) ────────────
+  // "Can you add to the refresh all procedure the ability to revise the video
+  // and other text based on live info rather than hard coded data?" The films
+  // typed their figures from the engine on 2026-10-01 and went stale when the
+  // published scenario moved. This answers, from the model, every figure a
+  // film shows for the ACTIVE scenario: scripts/funding_video_figures.js files
+  // it as prototype/funding_video/figures.json (build.py reads that), and the
+  // Refresh splash compares the filed stamp with this live answer. Never a
+  // figure derived here: each is the function the tab prints it from.
+  function videoFigures() {
+    _allocCache = null; _ncoRows = null; _earnCache = null;
+    var slot = state.viewSlot;
+    var roster = oneRoster(), n = roster.length;
+    var sumW = 0, sumNc = 0, maxs = [];
+    roster.forEach(function (c) { var sp = instSplit(c); sumW += sp.w; sumNc += sp.nc; maxs.push(sp.w); });
+    var avg = n ? sumW / n : 0, avgNc = n ? sumNc / n : 0;
+    var base = floorWindow(), cap = capWindow();
+    var am = allocModel();
+    var gross = grossRevenue(), net = netCollege();
+    var agg = earnAgg();
+    var prios = agg.ps.map(function (p, i) {
+      var pp = agg.perPrio[i] || {}, price = prioPrice(p);
+      // The average institution's target: each institution's own, averaged,
+      // which is not the average funding over the rate (the lessons, S313).
+      var tsum = 0, tn = 0;
+      roster.forEach(function (c) { var sp = instSplit(c); if (sp.cr > 0 && !c.nco) { tsum += prioTarget(c, p); tn++; } });
+      return { label: p.label, title: p.title || "", share: p.share, factor: prioFactor(p), price: price,
+        measure: p.metric_src || null, metric: p.metric || null,
+        funding: pp.cap || 0, division: price > 0 ? (pp.cap || 0) / price : 0, target: sysTarget(p, slot),
+        avgTargetFtes: tn ? tsum / tn : 0, avgTargetUsd: (avg - avgNc) * p.share };
+    });
+    var reported = [];
+    if (reportedAsReports()) {
+      reportedCards(slot).forEach(function (c) {
+        reported.push({ goal: c.goal, title: reportedTitle(c.goal), what: reportedText(c.goal, "what") });
+      });
+    }
+    return { scenario: activeScenario, published: activeScenario === publishedScenario(),
+      appropriation: gross, toInstitutions: net, statewide: gross - net, institutions: n,
+      base: base, cap: cap, rate: ftesRate(),
+      average: { max: avg, cr: avg - avgNc, nc: avgNc, pos: cap > base ? (avg - base) / (cap - base) * 100 : 0 },
+      capped: am && am.cappedCount != null ? am.cappedCount : 0,
+      priorities: prios, reported: reported,
+      deadline: participationDeadline(), timeline: timingItems() };
+  }
+  // The headline figures the splash compares, filed against live. A film shows
+  // these; a difference on any of them is a frame that no longer matches.
+  function videoHeadline(f) {
+    var out = { appropriation: f.appropriation, toInstitutions: f.toInstitutions, statewide: f.statewide,
+      institutions: f.institutions, base: f.base, cap: f.cap, deadline: f.deadline,
+      averageMax: Math.round(f.average.max), averageCr: Math.round(f.average.cr), averageNc: Math.round(f.average.nc) };
+    (f.priorities || []).forEach(function (p, i) {
+      out["p" + (i + 1) + " " + (p.title || p.label) + " share"] = Math.round(p.share * 100) + "%";
+      out["p" + (i + 1) + " " + (p.title || p.label) + " funding"] = Math.round(p.funding);
+      out["p" + (i + 1) + " " + (p.title || p.label) + " target"] = Math.round(p.target * 10) / 10;
+    });
+    out["average target"] = f.priorities && f.priorities[0] ? Math.round(f.priorities[0].avgTargetFtes * 10) / 10 : null;
+    return out;
+  }
+  var VIDEO_LABEL = { appropriation: "the appropriation", toInstitutions: "to institutions", statewide: "statewide projects",
+    institutions: "institutions", base: "base award", cap: "cap", deadline: "confirmation deadline",
+    averageMax: "average max award", averageCr: "average credit share", averageNc: "average noncredit share",
+    "average target": "the average Access target (FTES)" };
+  function videoDiff(filed, live) {
+    var a = videoHeadline(filed), b = videoHeadline(live), out = [];
+    Object.keys(b).forEach(function (k) {
+      if (String(a[k]) === String(b[k])) return;
+      var money = /appropriation|toInstitutions|statewide|base|cap|average(Max|Cr|Nc)|funding/.test(k) && typeof b[k] === "number";
+      out.push((VIDEO_LABEL[k] || k) + ": " + (money ? fmtMoney(a[k]) : a[k]) + " in the film, " + (money ? fmtMoney(b[k]) : b[k]) + " in the model");
+    });
+    return out;
+  }
+  // The filed figures, read once per splash from beside the films; the page
+  // is one directory down on the explainer. A missing file is said in words.
+  var FIGURES_PATH = "prototype/funding_video/figures.json";
+  function videoFiguresUrl() {
+    return (embedMode() || /\/funding-model\//.test(String(window.location && window.location.pathname)) ? "../" : "") + FIGURES_PATH;
+  }
+  function checkVideoFigures(done) {
+    if (typeof fetch !== "function") { done({ state: "nofetch" }); return; }
+    var p;
+    try { p = fetch(videoFiguresUrl(), { cache: "no-store" }); } catch (e) { done({ state: "failed" }); return; }
+    Promise.resolve(p).then(function (r) {
+      if (!r || !r.ok) throw new Error("http");
+      return r.json();
+    }).then(function (filed) {
+      var pub = realPublishedScenario();
+      var mine = filed && filed.scenarios && filed.scenarios[pub];
+      var live = videoFiguresFor(pub);
+      done({ state: "ok", filed: filed, scenario: pub, diffs: mine ? videoDiff(mine, live) : null,
+        filedFor: filed && filed.published, stamp: filed && filed.config_md5, readAt: filed && filed.read_at });
+    }).catch(function () { done({ state: "failed" }); });
+  }
+  // The figures for ONE scenario, without leaving the curator on it.
+  function videoFiguresFor(name) {
+    if (name === activeScenario) return videoFigures();
+    var was = activeScenario, wasStored = selectionStored;
+    // syncActive() returns to the published scenario unless a selection is
+    // stored, so the switch stores one for its own duration.
+    activeScenario = name; selectionStored = true; syncActive();
+    var out;
+    try { out = videoFigures(); } finally { activeScenario = was; selectionStored = wasStored; syncActive(); }
+    return out;
+  }
+  function videoSplashHtml() {
+    var v = splash.video;
+    var cmd = "node scripts/funding_video_figures.js --config live.json --write && python3 prototype/funding_video/build.py s2 && bash prototype/funding_video/render.sh s2";
+    if (!v) return '<p class="dk">Checking the introduction film&rsquo;s figures against the model&hellip;</p>';
+    if (v.state === "nofetch" || v.state === "failed") {
+      return splashListHtml([{ surface: "CPL Funding in Motion", detail: "its filed figures (" + FIGURES_PATH + ") could not be read here; " +
+        "run python3 prototype/funding_video/build.py --check from the repo" }]);
+    }
+    if (!v.filed || !v.filed.scenarios) {
+      return splashListHtml([{ surface: "CPL Funding in Motion", detail: "no figures are filed yet; the films show the typed figures of 2026-10-01. File them: " + cmd }]);
+    }
+    var at = v.readAt ? String(v.readAt).replace("T", " ").slice(0, 16) + " UTC" : "";
+    if (v.diffs === null) {
+      return splashListHtml([{ surface: "CPL Funding in Motion", detail: "the filed figures (config " + v.stamp + ", " + at + ") hold no " +
+        v.scenario + ", the published scenario; file them again: " + cmd }]);
+    }
+    if (!v.diffs.length) {
+      return splashListHtml([{ surface: "CPL Funding in Motion", detail: "the introduction&rsquo;s figures match the model for " + v.scenario +
+        " (filed under config " + v.stamp + ", " + at + "). A narrated cut keeps the figures its voice speaks; build.py --check names them." }]);
+    }
+    return splashListHtml([{ surface: "CPL Funding in Motion", detail: "the introduction differs from the model for " + v.scenario + ": " +
+      v.diffs.slice(0, 4).join("; ") + (v.diffs.length > 4 ? "; and " + (v.diffs.length - 4) + " more" : "") +
+      ". Rebuild and re-render: " + cmd }]);
+  }
+
   // ── MY CPL FUNDING, BESIDE THE TABLE (Sam, 2026-09-30) ──────────────────
   // "I really like the simplicity of this view and think it would be nice to
   // add this view as another option on the funding Explainer and Public View."
@@ -12634,11 +12909,28 @@
   // the two pages cannot describe one institution two ways. It reads this
   // module, so every redraw of the model redraws it too.
   function oneCollegeView() { return publicMode() && state.collegeView === "one"; }
-  function collegeViewSwitchHtml() {
-    if (!publicMode()) return "";
-    return '<div class="cplfund-toolbar cplfund-viewswitch">' +
-      segHtml("cplFundCollegeView", [{ val: "all", label: "All institutions" },
-        { val: "one", label: "My CPL Funding" }], oneCollegeView() ? "one" : "all") + "</div>";
+  // THE VIEW IS CHOSEN IN THE STEP 1 BOX, AS STEP 2 (Sam, 2026-10-19: "Move the
+  // Funding by Institution and its buttons up in the Step 1 box to the right so
+  // the user is prompted to select a view after a college. Add hover over
+  // instructions for each button"). The two buttons sat under the section's
+  // introduction; they now sit to the right of the chooser (stepOneViewHtml),
+  // each saying on hover what it shows. One control, one id (cplFundCollegeView),
+  // so every reader of the old switch still finds it.
+  var VIEW_ITEMS = [
+    { val: "all", label: "All institutions",
+      title: "Every institution in one table: its max award with the credit and noncredit shares, " +
+        "the minimum conditions it meets, and the funding qualifying so far. Open a row for its priorities." },
+    { val: "one", label: "My CPL Funding",
+      title: "A one-page summary for the college or district chosen in Step 1: its funding, minimum " +
+        "conditions, targets and suggested next steps." }];
+  function stepOneViewInner() {
+    return '<p class="cplfund-step1-k cplfund-step1-k2">Step 2</p>' +
+      '<div class="cplfund-step1-vbody"><p class="cplfund-step1-vl">Choose a view</p>' +
+      segHtml("cplFundCollegeView", VIEW_ITEMS, oneCollegeView() ? "one" : "all") +
+      '<p class="cplfund-step1-vs">Hover over a view for what it shows.</p></div>';
+  }
+  function stepOneViewHtml() {
+    return '<div class="cplfund-step1-view">' + stepOneViewInner() + "</div>";
   }
   // The chooser offers every institution and, for a district of two or more,
   // the district (Sam, 2026-09-30: "allowing users to select their college or
@@ -12705,7 +12997,8 @@
       '<p class="cplfund-step1-k">Step 1</p>' +
       '<label class="cplfund-step1-l" for="cplFundOnePick">Choose your college or district</label>' +
       '<select id="cplFundOnePick" class="cplfund-step1-sel">' + oneOptionsHtml(chosen) + "</select>" +
-      '<p class="cplfund-step1-s">' + stepOneLineHtml(chosen) + "</p></div>";
+      '<p class="cplfund-step1-s">' + stepOneLineHtml(chosen) + "</p>" +
+      stepOneViewHtml() + "</div>";
   }
   // ⚠ THE LIST STAYS PUT ACROSS REDRAWS (Sam, 2026-10-15, call 7: the black
   // box). Every render() rebuilt #cplFundOnePick, five times while the page
@@ -12722,6 +13015,12 @@
     var line = box && box.querySelector(".cplfund-step1-s");
     var html = stepOneLineHtml(chosen);
     if (line && line._cplHtml !== html) { line.innerHTML = html; line._cplHtml = html; }
+    // The view buttons are redrawn on every patch: wire() adds a listener to
+    // each button it finds, so a button that survived a redraw would hear
+    // every click twice.
+    var view = box && box.querySelector(".cplfund-step1-view");
+    if (view) view.innerHTML = stepOneViewInner();
+    else if (box) { box.insertAdjacentHTML("beforeend", stepOneViewHtml()); }
   }
   function paintStepOneMount(host) {
     var sel = host.querySelector("#cplFundOnePick");
@@ -13127,14 +13426,18 @@
     }
   }
   // ── the splash ──
-  var splash = { id: null, open: false, busy: false, result: null, replies: [], waited: false, timer: null };
+  var splash = { id: null, open: false, busy: false, result: null, replies: [], waited: false, timer: null, video: null };
   function refreshAll() {
     if (splash.busy) return;
     splash.busy = true;
     splash.id = WINDOW_ID + "-" + Date.now();
-    splash.open = true; splash.result = null; splash.replies = []; splash.waited = false;
+    splash.open = true; splash.result = null; splash.replies = []; splash.waited = false; splash.video = null;
     clearTimeout(splash.timer);
     paintSplash();
+    // The films' figures are filed beside them (2026-10-19); the splash reads
+    // the file and compares it with the model it just re-read.
+    var myId = splash.id;
+    checkVideoFigures(function (v) { if (splash.open && splash.id === myId) { splash.video = v; paintSplash(); } });
     var asked = postChannel({ type: "refresh", id: splash.id, from: WINDOW_ID });
     refreshWindow().then(function (res) {
       splash.busy = false;
@@ -13187,8 +13490,8 @@
     h += "<h4>Built from the model when opened</h4>" + splashListHtml([
       { surface: "Draft memo and report", detail: "built when the Draft memo opens" },
       { surface: "Download as Excel and Save as PDF", detail: "built when pressed" }]);
+    h += "<h4>The introduction film, checked against the model</h4>" + videoSplashHtml();
     h += "<h4>Not live: figures typed in</h4>" + splashListHtml([
-      { surface: "CPL Funding in Motion videos", detail: "re-render when a figure they show moves (prototype/funding_video/README.md)" },
       { surface: "The frozen explainer snapshot", detail: "prototype/funding_model_explainer.html, where one was handed out" }]);
     h += '<p class="dk">Anyone else reads the saved model the next time a funding page opens in their browser.</p>';
     var warn = [];
@@ -13257,15 +13560,9 @@
       // window, then lists what it reached.
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn" id="cplFundRefresh" title="Re-read the saved model and redraw every page that shows it: this tab, My College, and any other open window, the explainer included. Lists what it reached.">Refresh everything</button>') +
-      // ONE reset for the section arrangement, and only once it differs from
-      // the house order — a curator who has never moved a section has nothing
-      // to restore, and a button that does nothing teaches that buttons here
-      // do nothing. It shows on the public preview too: that is where Sam
-      // rearranges, so that is where he needs the way back.
-      (unlocked() && secOrderIsCustom()
-        ? '<button type="button" class="cplfund-optbtn" id="cplFundSecOrderReset" ' +
-          'title="Put the sections back in the order this page ships with">Restore the default section order</button>'
-        : "") +
+      // No Restore the default section order (Sam, 2026-10-19, with the Reset
+      // above): the position picker on each section moves it, and a new
+      // scenario starts from a copy of this one.
       view + "</div>";
   }
 
@@ -13487,7 +13784,6 @@
         mcTextHtml("mc_intro", {}) + "</p></div>" :
         // The public page's own copy of the table's introduction (call 2).
         proseBlockHtml(publicSurface() ? "x_table_intro" : "college_intro", "dk cplfund-college-intro")) +
-      collegeViewSwitchHtml() +
       (oneView ? oneCollegeHtml() :
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundGroup", [{ val: "none", label: "Flat list" },
@@ -14185,6 +14481,13 @@
     });
     var memoCopy = document.getElementById("cplFundMemoCopy");
     if (memoCopy) memoCopy.addEventListener("click", copyMemo);
+    var memoEdit = document.getElementById("cplFundMemoEdit");
+    if (memoEdit) memoEdit.addEventListener("click", function () {
+      SEC_STATE.memo_text = true;
+      render();
+      var first = document.querySelector('#cplFundingMount [data-sec="memo_text"] [data-textedit]');
+      if (first && typeof first.focus === "function") first.focus();
+    });
     var memoPdf = document.getElementById("cplFundMemoPdf");
     if (memoPdf) memoPdf.addEventListener("click", exportMemoPdf);
     var memoDocx = document.getElementById("cplFundMemoDocx");
@@ -14438,11 +14741,6 @@
         savingState = "";
         setProjectGoal(b.getAttribute("data-projrelease"), b.getAttribute("data-projgoal"), false);
       });
-    });
-    var secOrderReset = document.getElementById("cplFundSecOrderReset");
-    if (secOrderReset) secOrderReset.addEventListener("click", function () {
-      savingState = "";
-      resetSectionOrder();
     });
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
@@ -15016,6 +15314,7 @@
     _normalizeConfig: normalizeConfig,
     _addProject: addProject,
     _newScenario: newScenario,
+    _switchScenario: switchScenario,
     _getScenario: function () { return SCENARIO; },
     _getShared: function () { return SHARED; },
     // ONE resolver for section curation, read by any surface that paints its
@@ -15190,6 +15489,8 @@
     // (pure), the Refresh press, and the splash state it paints from.
     _srcAggregate: srcAggregate,
     _refreshAll: refreshAll,
+    _videoFigures: videoFigures,
+    _videoDiff: videoDiff,
     _splash: function () { return splash; },
     _alloc: function (name) { var c = rosterRow(name); return c ? collegeAlloc(c) : null; },
 

@@ -47,93 +47,6 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
 
-## 2026-09-12 — Session 258 (SkyList): four asks, an unreachable resolver, and a class that was an API
-
-Sam's four asks — movable sections, the outcomes section carrying measurable
-*and* non-measurable priorities, a box for goal (C) with designated projects,
-and the changes reaching the public view — all shipped in PR #1563.
-[Lane state](reference/lanes/implementation-funding.md).
-
-**Six of the explainer's seven sections could never be curated, and the test
-proved the wrong half.** Rename and Hide ride `sectionShell()`; the explainer
-hand-writes its markup and asks `T.sectionCuration()` by `data-fsec` id. Only
-`timing` appears in both id sets, and by coincidence of naming — so for six of
-seven, a section the CO held back stayed visible on the page colleges read.
-`funding_model_page.test.js` had a whole block on this, and every assertion in
-it wrote `{ titles: { qualify } }` into the shared map and then read it back.
-That proves the resolver resolves. It cannot notice that **no control anywhere
-emits `qualify`**, because the test supplied the id itself. The fix declares the
-page's sections (`PUBLIC_SECTIONS`) and asserts the declaration equals the
-markup, in membership and order — an assertion whose input comes from the
-system, not from the test.
-
-Deliberately **not** aliased onto the tab's sections: `lede` and `choices` have
-no tab twin and `allocation` spans two, so an alias would make one hide mean two
-different things on two pages and be wrong in a way neither page could show.
-
-**A styling class is an API.** `reportedPrioHtml()` rendered its box as
-`<div class="p cplfund-rprio">` to inherit the priority-card look.
-`.cplfund-prio .p` is counted or indexed by eleven assertions across five
-suites, so the box became a priority card to every selector in the codebase —
-the exact thing the paragraph directly above that line says it must never be.
-CI went red on seven files from one class attribute. The paragraph was right
-about the design and blind to the attribute implementing it.
-
-**And the guard was watching the wrong half.** The new suite asserted the box
-carries no `data-priocard` attribute — true the whole time, and not what other
-code selects on. It now pins the `.cplfund-prio .p` count against the
-`data-priocard` count. Two failures of the same shape in one run: an assertion
-can be about the right subject and still test nothing that would move.
-
-**When a suite fails in a full run and passes alone, re-run it alone at the
-current tree before reaching for an environmental explanation.** I read these
-seven failures as memory pressure — `lead_with_the_table` had passed standalone
-and the harness documents heap aborts in exactly these suites. It had passed
-because I ran it *before* the edits that broke it. Two later confusions were
-also self-inflicted: `render` looked hung under three of my own overlapping
-background runs, and one clean re-run died at exit 144 because
-`pkill -f cpl_funding_render` matched the wrapper shell that had just launched
-it.
-
-**The register is inline, not a script tag.** `registerProjects()` reads
-`window.CPL_DATA`, and `CPL_Data.js` (228 KB) is generated and deployed but
-loaded by *no* HTML — both dashboards carry the object inline, `projects` array
-included. Worth knowing before adding a consumer: the picker works on the tab
-for that reason, and the public explainer has no register at all, which is why a
-designated project's NAME travels in the config and its weekly-changing STATUS
-deliberately does not.
-
-`registerProjects()` copies named fields, so reading one it does not copy
-(`activity`, `pct`, `update`) silently groups every project under "Other" —
-the shape of [`a-feature-test-on-a-missing-method-fails-silent`](kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md).
-
-## 2026-09-13 — SkyGuard (S259): every sentence opens with the positive, and the word earn is retired
-
-**Sam's ask, verbatim:** *"Do a sweep and revise all text that starts with a
-negative statement and just start with the positive"*, naming *"the nos and
-nothings and informal terminology like baked, scored, earned, falling back, pin
-it."* His two examples became the pattern: the (C) box reads *Funded through
-the statewide project allocation and reported based on the aligned
-activities.* and the metric-wiring paragraph opens *Data used to measure
-real-time outcomes.*
-
-**What moved.** Eighteen sentence-initial negatives and every mid-sentence
-"nothing" a reader meets; `inheriting baked default` became *hand-maintained
-default*; *no data yet* became **awaiting measurement** (the 2026-09-01
-plain-absence ruling kept, facing forward); a bad `metric_src` reads *awaiting
-a known measure*; *none on record* became *credit only*; *Nothing is withheld
-yet* became *All of the max award remains available*. Guard: `cpl_funding_calm`
-§5 now bans the stems and checks sentence starts (*Not Applicable*, a MAP
-status, exempt). The suites that pinned the old words were re-pinned.
-
-⚠️ **"Earn" is retired too** — *"Earned still smacks of banking... measured...
-or... qualified for"* — reversing 2026-09-09's *earns*. It is 93 rendered sites
-and 31 suites, so it is the next session's, with the proposed map (counts
-toward · qualifies for · demonstrated · remaining) awaiting his word.
-Identifiers keep the old stem; prose never.
-
----
-
 ## 2026-09-13 — S260 (SkyKey): the sweep, the a11y pass, and a number that had never been near the engine
 
 **Shipped.** PR #1570 retired "earn" across the tab, the CSV export and the public
@@ -1235,3 +1148,17 @@ renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` re
   editor puts nothing inside `#cplFundingMount`: the table introduction's Edit sits just above the table.
 - **`.btn{display:inline-flex}` beats `[hidden]`**: a hidden masthead word needs its own `display:none`.
 - **A seed read beats a seed write.** `x_about` follows `about` until saved; no shared-config write was needed.
+
+## 2026-10-19 — the side session beside S427: Sam's five interface asks, and the film reads the model
+
+**Sam's words, verbatim** (21:48Z, *"Implementation Funding side job while 427 is grinding on PR harvest"*): *"1. Revise the memo and report generator to rely more on the Explainer text along with KB and other artifacts for the text. For example, rather than lead with AB 123 (last year's bill), lead with SB 135, which resulted in the new funding and Ed Code 78093. 1.1 Make the generated reports and memo editable. 2. Can you add to the refresh all procedure the ability to revise the video and other text based on live info rather than hard coded data? 3. Move the Funding by Institution and its buttons up in the Step 1 box to the right so the user is prompted to select a view after a college. Add hover over instructions for each button. 4. We can delete the button links to restoring default order and funding defaults--I would just create a new scenario and make any changes needed to do that. 5. Move the Scenario selector and text up to the right of the Project selector (save real estate)."*
+
+- **The memo follows the explainer rather than copying it.** The memo's opening (`memo_lead`) reads `x_lede`, the explainer's Overview passage, with "this page" read as "this memorandum", until a curator saves the memo's own. Sam had already edited `x_lede` on Scenario 3 (*"Senate Bill 135 (Chapter 79)…"*), and the memo showed his words on the first render, which is the point: one statutory statement, written once. The alternative, a second house text quoting the statute, drifts the day one of them is edited.
+- **Every memo sentence is a passage; the figures are never text.** Nineteen `memo_*` passages under `TEXT_BLOCKS` (`rich`), rendered through the My CPL Funding passages' mode (`richPlainToHtml(…, "mc", figs)`), so `{to institutions}`, `{deadline}` and `{seed grant}` fill from `memoModel()`. The priorities, their strategies and the allocation table stay generated: a passage there would freeze a card the dials have moved. The editor sits under the document on the Report sub-view, where the curator is looking, and the document redraws on save.
+- ⚠️ **A guard that pins a sentence pins its line.** `cpl_funding_earn_retired` exempts one student-sense sentence by its text (*"documenting the CPL they earn in the"*) and skips the LINE that carries it; the rewrite kept that phrase on one source line inside `memo_history`. A sweep that re-wraps the house text breaks the guard without changing a word a reader sees.
+- ⚠️ **A test that reads `document.body.textContent` reads the scripts it appended.** The first guard for ask 4 searched the body for "Restore the default section order" and found the source's own comment. Read the mount.
+- **The film's figures were stale, and nothing said so.** The introductions were typed from config `e21658f9` (2026-10-01); the published scenario moved to Scenario 3 on 2026-10-15 (noncredit 15%) and Completion moved from `ptc_u` to `p3_u`. `scripts/funding_video_figures.js` files the model's answer per scenario (`figures.json`, stamped with the md5 a SQL read gives: jsonb prints keys sorted by length then bytes with `", "` and `": "`, reproduced in the script so the stamp matches the fixture's name); `build.py --check` reported, first run: the average splits $181,816 / $32,085, targets 4,268.6 FTES, the average Access target 31.3 FTES behind $90,908, and Completion counts transcribed units without the counselor step. **Refresh everything** now reads the file and compares; the splash hands over the command rather than claiming a render.
+- **The narrated cuts keep what their voice speaks.** `n1`/`n2` are made from the typed values before `figures.json` is read, so a rebuild reproduces the frames the voice was laid out on; `--check` says a narration needs a new read, which is a different act from re-rendering.
+- **The view switch moved into the Step 1 box as Step 2.** The box's `<select>` survives every redraw (call 7, 2026-10-15), so the buttons beside it are redrawn on every patch; a button that survived would hear each click twice because `wire()` adds a listener per render.
+- **The strip never wraps a block under the other.** `flex-wrap: nowrap` on the strip, `flex-wrap: wrap` on each block, the scenario block `1 1 18rem`: the published sentence drops under its selector when the window is narrow, and the phone rule (≤640px) still stacks. Measured in Chromium at 1440 and 390.
+- **Two controls retired, one kept.** Reset scenario to defaults and Restore the default section order are gone (a new scenario is the way to start over); the locked what-if's Reset exploration stays, because it clears a private overlay, never the shared model.

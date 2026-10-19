@@ -162,9 +162,12 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
       dlg.getAttribute("aria-modal") === "true" && doc.getElementById("cplFundSplashH").textContent === "Refreshed");
     check("1c: it lists the tab and every subscriber that names itself",
       /Implementation Funding, Internal view/.test(t) && /Test surface — redrawn for a test/.test(t));
-    check("1d: it names what is built when opened and what is not live",
+    // The introduction film is CHECKED against the model since 2026-10-19
+    // (its figures are filed beside it); only the frozen snapshot stays typed.
+    check("1d: it names what is built when opened, checks the film, and names what is not live",
       /Draft memo and report/.test(t) && /Download as Excel and Save as PDF/.test(t) &&
-      /Not live: figures typed in/.test(t) && /CPL Funding in Motion videos/.test(t) && /frozen explainer snapshot/.test(t));
+      /The introduction film, checked against the model/.test(t) && /CPL Funding in Motion/.test(t) &&
+      /Not live: figures typed in/.test(t) && /frozen explainer snapshot/.test(t));
     check("1e: an offline window says so rather than claiming a re-read", /offline/.test(t) && !/Read the saved model/.test(t));
     check("1f: no channel in this browser is said plainly", /cannot reach its other windows/.test(t));
     check("1g: the Close button holds the focus", doc.activeElement && doc.activeElement.id === "cplFundSplashClose");
