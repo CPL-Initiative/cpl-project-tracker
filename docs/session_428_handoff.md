@@ -35,8 +35,9 @@ and the three other run logs (untouched), `kb/README.md`, `README.md`. If the ro
   Body Technology: one discipline field, no re-key. The record and the overlay say so (receipt
   `kb/receipts/csr_m1071_autobody_2026-10-19_s427.json`); his own 2026-07-13 row and the AGAB pick's cohort note change
   live through `kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql` (guarded UPDATEs pinned to the before-values, under
-  his email with `reviewed_at` set to the ruling; `kb/migrations/.apply` names it, so `supabase-migrate.yml` ran on the
-  push: **confirm its receipt commit is on main and read the two rows back**). The re-seed, the authority seed, the row
+  his email with `reviewed_at` set to the ruling; `supabase-migrate.yml` run 39339086222 applied it, status 201, receipt
+  commit `f3a5b6da`; read back live at 23:14Z: his row reads Auto Body Technology at 22:38:25Z under `map@rccd.edu`, and
+  the note names Sheet 101). The re-seed, the authority seed, the row
   audit (`subject_collision_signal` 114 to 113) and the scan (61 findings, no collision) re-ran; the M1071 point moved to
   the Auto Body island in SkyView's hand-built layout and the sky placement was rebuilt (the `lints` failure on
   `f9661a3f` was that stale placement). The lane, the run log, CLAUDE.md's pointer, the vault builder and registry and
@@ -46,8 +47,8 @@ and the three other run logs (untouched), `kb/README.md`, `README.md`. If the ro
 
 1. **#2264's live steps.** S427 intended to squash-merge it on a green `test` and then dispatch `supabase-rekey.yml` with
    `alias_map_path=kb/agab_remint_out/2026-10-19/alias_map.json` and `daily-dashboard.yml`. Check the PR first: if it is
-   merged, confirm the rekey run and read back live that no `kb_curation` row is keyed `AUTB M1006`, that `AGAB M1006`
-   carries Sam's discipline row, and that `AUTB M1071`'s row reads Auto Body Technology at 22:38:25Z; if it is still
+   merged, confirm the rekey run and read back live that no `kb_curation` row is keyed `AUTB M1006` and that
+   `AGAB M1006` carries Sam's discipline row (at 23:14Z the row was still keyed `AUTB M1006`, awaiting the dispatch); if it is still
    open, do the merge and the dispatches yourself (the migrate receipt commit runs no CI; a commit of your own on top
    gets `test` to run).
 2. **Ruling 4, the sitting:** dispatch `typesafe-smoke.yml` with `agri_families=true` (all 404; `agri_limit` for a

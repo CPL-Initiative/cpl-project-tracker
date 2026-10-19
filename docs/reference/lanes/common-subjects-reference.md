@@ -156,8 +156,10 @@ four known issues with owners, the procedures in force, and deep links into the 
    superseded by a session's inference (Rule 8), so it was his card. One discipline field, no re-key: the record and the
    overlay say Auto Body Technology (receipt `kb/receipts/csr_m1071_autobody_2026-10-19_s427.json`), his row updated
    under his own email with `reviewed_at` set to the ruling, and the AGAB pick's cohort note saying how he ruled, through
-   `kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql` (guarded UPDATEs, before-values in the header,
-   `supabase-migrate.yml` on the push). Agricultural Business carries AGAB M1006 alone; the row audit's
+   `kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql` (guarded UPDATEs, before-values in the header;
+   `supabase-migrate.yml` run 39339086222 applied it, status 201, receipt commit `f3a5b6da`; read back live 23:14Z:
+   his row reads Auto Body Technology at 22:38:25Z under his email, the note names Sheet 101). Agricultural Business
+   carries AGAB M1006 alone; the row audit's
    `subject_collision_signal` reads 113 (114 before), the scan 0 collisions and no row off its code.
 4. **sitting**: a Jev sitting proposes a C-ID family for each AGRI identity, Sam confirms, the rest stay residual.
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
