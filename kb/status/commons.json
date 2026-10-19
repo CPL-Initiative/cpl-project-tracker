@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-19T21:33:11Z",
+ "written_at": "2026-10-19T22:06:56Z",
  "rows": [
   {
    "key": "requirements",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-19T21:29:04Z",
+    "at": "2026-10-19T22:02:51Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2646,
     "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-19T21:29:04Z"
+    "fold_at": "2026-10-19T22:02:51Z"
    },
    "sources": [
     "kb/unified_titles.json",
@@ -216,7 +216,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-19T21:31:02+00:00",
+    "at": "2026-10-19T22:04:52+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -312,12 +312,12 @@
     {
      "n": 121,
      "of": 147,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed by a person, on the authority rule, in no collision (122 by a person)",
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (122 by a person)",
      "open": "#canonical-subj4/progress"
     }
    ],
    "tests": [
-    "person-confirmed",
+    "confirmed",
     "authority rule",
     "collision-free"
    ],
@@ -349,7 +349,7 @@
    ],
    "procedures": [
     {
-     "n": 5,
+     "n": 6,
      "words": "procedures in force, of 8 written",
      "open": "#canonical-subj4/progress"
     },
@@ -358,11 +358,14 @@
     },
     {
      "words": "Umbrellas, fan-ins and cross-listed courses"
+    },
+    {
+     "words": "A person confirms each pick; a procedure may confirm the authority's own"
     }
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-19T21:29:03Z",
+    "at": "2026-10-19T22:02:49Z",
     "every_hours": 24
    },
    "facts": {
@@ -377,7 +380,7 @@
     ],
     "missed_alignment": 0,
     "scanned_at": "2026-10-19",
-    "procedures_on": 5
+    "procedures_on": 6
    },
    "sources": [
     "kb/discipline_canonical_subj4.json",
