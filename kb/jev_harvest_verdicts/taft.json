@@ -4,32 +4,253 @@
  "slug": "taft",
  "run": "39204968617",
  "verdicts_by": "session S421 (SkyTupelo), from the records' scores and notes; not Sam",
- "counts": {"agree": 12, "owner_differs": 3, "cause_differs": 6, "unverified": 3},
+ "counts": {
+  "agree": 12,
+  "owner_differs": 3,
+  "cause_differs": 6,
+  "unverified": 3
+ },
  "rows": [
-  {"control_number": "02107", "title": "Art", "jev": {"cause": "stated_total_counts_more", "owner": "extraction"}, "verdict": "cause_differs", "evidence": "12 against a printed 18: the section is headed 'Select 18 units from the following' over three sub-lists of at least 3, 3 and 6, and the umbrella rule was not recorded as a block. The blocks were misread (choose_block_misread); the owner is the extraction, as Jev says."},
-  {"control_number": "16725", "title": "Occupational Safety and Health", "jev": {"cause": "stated_total_counts_more", "owner": "extraction"}, "verdict": "owner_differs", "evidence": "18 plus no general education against a printed degree total of 60, and no GE pattern on the page. The cause holds. The fix is a local-degree GE step in Taft's procedure (the catalog's Local General Education Pattern is 27 units, per the first reader's note on 38662), after a page read of its wording, as Taft's Cal-GETC step was built. S422 SkyWillow read the catalog (college-page-read 39215793482, 39216772779, 39217374801; kb/college_reads/taft_local_ge_units.json): the catalog states two local patterns. Its Associate Degree and General Education Philosophy page prints 'Local General Education Pattern' / 'General Education Requirements (27 units – one course from each category)', and its Other Associate Degrees page says the Career Technical Education degrees, Energy Technology and Occupational Safety and Health among them, 'follow the local general education pattern of only 18 units'. Neither A.S. page states a GE figure (Occupational Safety and Health names no general education at all), and no page words the 60 as a minimum. With 18 the sums are 36 and 53 against 60, so no catalog-cited step passes them: only Title 5's 'at least 60' with 24 and 7 units of electives the pages never name would, which is the under-sum a dropped block also produces (Fable's advice, S422). No step was built. The two pages' 27 and 18 are a catalog-figures disagreement for the college, and the two records stay failing on the evidence."},
-  {"control_number": "30014", "title": "Liberal Arts Math and Science", "jev": {"cause": "choose_block_misread", "owner": "extraction"}, "verdict": "agree", "evidence": "6-10 against 18: 'Select any 18 units from the following requirements: a minimum of one course per section', recorded as one course per section with no umbrella of 18."},
-  {"control_number": "30015", "title": "Liberal Arts Natural Science Life Science", "jev": {"cause": "record_right_check_misfires", "owner": "scorer"}, "verdict": "cause_differs", "evidence": "The record names no total, yet the page prints 'Select any 18 units from the following requirements', the same wording 30014 read as a total of 18. The extraction left total_units null; the check reads it incomplete as designed."},
-  {"control_number": "30284", "title": "Administrative Services II", "jev": {"cause": "wrong_program_text", "owner": "reader_procedure"}, "verdict": "agree", "evidence": "Coverage 0.0, no blocks, no notes: the text handed the model named none of BUSN 1510, 550 or 555."},
-  {"control_number": "31290", "title": "Art History (AA-T)", "jev": {"cause": "record_right_check_misfires", "owner": "extraction"}, "verdict": "cause_differs", "evidence": "The first reader's notes: the text holds no requirements table, the blocks were read from the program description's prose, and the text is cut off inside the learning outcomes. An excerpt cut (excerpt_cut), owned by the reading procedure."},
-  {"control_number": "32259", "title": "English (AA-T)", "jev": {"cause": "choose_block_misread", "owner": "extraction"}, "verdict": "agree", "evidence": "'LIST B: Select two' holds one course with units: the list also allows any List A course not already used, which the record did not carry into the block."},
-  {"control_number": "36178", "title": "Court Reporting", "jev": {"cause": "catalog_figures_disagree", "owner": "college_catalog"}, "verdict": "agree", "evidence": "The first reader's note: 'Total Credit Hours: 46' equals the Required Core alone and excludes the 35 additional units of speed building the page also requires; the page's own figures disagree."},
-  {"control_number": "36763", "title": "Spanish (AA-T)", "jev": {"cause": "choose_block_misread", "owner": "scorer"}, "verdict": "agree", "evidence": "The Substitution Courses block chooses units with no minimum: it applies only when a student places out of a core course, a conditional rule the record shape cannot hold (the same shape as Cañada's Spanish 33828). Whether the extraction or the scorer owns a conditional block is open."},
-  {"control_number": "36928", "title": "Energy Technology", "jev": {"cause": "stated_total_counts_more", "owner": "extraction"}, "verdict": "owner_differs", "evidence": "The degree total of 60 and the General Education Graduation Requirements pattern with no units for it. The cause holds; the fix is the same local-degree GE step as 16725, in the procedure. S422 SkyWillow read the catalog (college-page-read 39215793482, 39216772779, 39217374801; kb/college_reads/taft_local_ge_units.json): the catalog states two local patterns. Its Associate Degree and General Education Philosophy page prints 'Local General Education Pattern' / 'General Education Requirements (27 units – one course from each category)', and its Other Associate Degrees page says the Career Technical Education degrees, Energy Technology and Occupational Safety and Health among them, 'follow the local general education pattern of only 18 units'. Neither A.S. page states a GE figure (Occupational Safety and Health names no general education at all), and no page words the 60 as a minimum. With 18 the sums are 36 and 53 against 60, so no catalog-cited step passes them: only Title 5's 'at least 60' with 24 and 7 units of electives the pages never name would, which is the under-sum a dropped block also produces (Fable's advice, S422). No step was built. The two pages' 27 and 18 are a catalog-figures disagreement for the college, and the two records stay failing on the evidence."},
-  {"control_number": "37366", "title": "Economics (AA-T)", "jev": {"cause": "choose_block_misread", "owner": "extraction"}, "verdict": "agree", "evidence": "22-24 against a printed 21-24: List A also allows 'any course articulated as lower-division preparation in the Economics major at a CSU (3-4)', which the record left out."},
-  {"control_number": "38661", "title": "CSU GE-Breadth (certificate)", "jev": {"cause": "excerpt_cut", "owner": "reader_procedure"}, "verdict": "cause_differs", "evidence": "The first reader's note: the page text is the Cal-GETC certificate's section, not CSU GE-Breadth's. The text belongs to another program (wrong_program_text); the owner is the reading procedure, as Jev says."},
-  {"control_number": "38662", "title": "Intersegmental GE Transfer Curriculum (certificate)", "jev": {"cause": "excerpt_cut", "owner": "reader_procedure"}, "verdict": "cause_differs", "evidence": "The first reader's note: the text has no section for the IGETC/Cal-GETC certificate and its only course lists are the Local General Education Pattern's. Wrong program text, owned by the reading procedure."},
-  {"control_number": "41771", "title": "Business Administration 2.0 (AS-T)", "jev": {"cause": "choose_block_misread", "owner": "extraction"}, "verdict": "unverified", "evidence": "The core's three OR pairs carry different units (26-29), and with Cal-GETC's 34 the range's top reads 63 past the printed 60. Whether the check should read a range whose floor meets 60 as passing, or the pairs were misread, needs the page."},
-  {"control_number": "43511", "title": "Engineering", "jev": {"cause": "catalog_figures_disagree", "owner": "scorer"}, "verdict": "agree", "evidence": "41-42 against a printed 41-45: the first reader's note reads the printed maximum as room for overshooting the 7-unit elective minimum; the page's range is a ceiling, not a sum."},
-  {"control_number": "43601", "title": "Dental Hygiene Administration (B.S.)", "jev": {"cause": "stated_total_counts_more", "owner": "scorer"}, "verdict": "agree", "evidence": "40 core units against a printed 120 for the baccalaureate: the degree total counts the lower division and general education the record never lists; the check has no baccalaureate rule."},
-  {"control_number": "44006", "title": "Kinesiology: Sport Management (A.A.)", "jev": {"cause": "excerpt_cut", "owner": "scorer"}, "verdict": "owner_differs", "evidence": "The first reader's note: the text is cut off mid-entry at PHED 1629, and no total, GE pattern, outcomes or careers appear. The cause holds; the owner is the reading procedure, not the scorer."},
-  {"control_number": "44343", "title": "Kinesiology (A.A.)", "jev": {"cause": "choose_block_misread", "owner": "extraction"}, "verdict": "agree", "evidence": "17.5-20 against a printed 18-24: PHED 1646 and 2146 print joined by AND as one pairing, and the three 'select at least one course' areas were read at one course each where the printed range allows more."},
-  {"control_number": "44621", "title": "Clinical Medical Assisting", "jev": {"cause": "catalog_figures_disagree", "owner": "scorer"}, "verdict": "agree", "evidence": "21 against 21-25: the description says 'this 21 to 25 units program' and the list prints 'Total Credit Hours: 21'; the page's two figures disagree, the suggested electives making up the difference."},
-  {"control_number": "45145", "title": "Kinesiology (AA-T)", "jev": {"cause": "choose_block_misread", "owner": "extraction"}, "verdict": "agree", "evidence": "23-26 against a printed 22-27: the anatomy pair as one option group and the movement-based rule ('select one course maximum from any three of the areas') read at a 3-unit minimum."},
-  {"control_number": "45358", "title": "Cal-GETC (certificate)", "jev": {"cause": "excerpt_cut", "owner": "extraction"}, "verdict": "cause_differs", "evidence": "The first reader's note: the catalog prints no units beside any course and no total for the certificate; the award is itself a general education pattern. The page has no figures to add (catalog_figures_disagree in the sense the check cannot apply), not a cut excerpt."},
-  {"control_number": "45469", "title": "Political Science (AA-T)", "jev": {"cause": "record_right_check_misfires", "owner": "scorer"}, "verdict": "unverified", "evidence": "The record names no major total while its blocks print their own units (9, 6-8, 3); whether the page prints a 'Total Credit Hours' line the reading missed needs the page."},
-  {"control_number": "45903", "title": "Psychology (AA-T)", "jev": {"cause": "catalog_figures_disagree", "owner": "college_catalog"}, "verdict": "unverified", "evidence": "18-21 against a printed 25: Lists B and C also allow any List A course not already used, and the gap of 4-7 units is more than those options explain; whether the page's 25 is its own figure needs the page."},
-  {"control_number": "46186", "title": "Speech Language Pathology Aide", "jev": {"cause": "wrong_program_text", "owner": "reader_procedure"}, "verdict": "agree", "evidence": "The first reader's note: the source URL and text are the Master Teacher certificate's (Total Credit Hours: 33), not this certificate's; coverage 0.0."}
+  {
+   "control_number": "02107",
+   "title": "Art",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "12 against a printed 18: the section is headed 'Select 18 units from the following' over three sub-lists of at least 3, 3 and 6, and the umbrella rule was not recorded as a block. The blocks were misread (choose_block_misread); the owner is the extraction, as Jev says."
+  },
+  {
+   "control_number": "16725",
+   "title": "Occupational Safety and Health",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "owner_differs",
+   "evidence": "18 plus no general education against a printed degree total of 60, and no GE pattern on the page. The cause holds. The fix is a local-degree GE step in Taft's procedure (the catalog's Local General Education Pattern is 27 units, per the first reader's note on 38662), after a page read of its wording, as Taft's Cal-GETC step was built. S422 SkyWillow read the catalog (college-page-read 39215793482, 39216772779, 39217374801; kb/college_reads/taft_local_ge_units.json): the catalog states two local patterns. Its Associate Degree and General Education Philosophy page prints 'Local General Education Pattern' / 'General Education Requirements (27 units – one course from each category)', and its Other Associate Degrees page says the Career Technical Education degrees, Energy Technology and Occupational Safety and Health among them, 'follow the local general education pattern of only 18 units'. Neither A.S. page states a GE figure (Occupational Safety and Health names no general education at all), and no page words the 60 as a minimum. With 18 the sums are 36 and 53 against 60, so no catalog-cited step passes them: only Title 5's 'at least 60' with 24 and 7 units of electives the pages never name would, which is the under-sum a dropped block also produces (Fable's advice, S422). No step was built. The two pages' 27 and 18 are a catalog-figures disagreement for the college, and the two records stay failing on the evidence."
+  },
+  {
+   "control_number": "30014",
+   "title": "Liberal Arts Math and Science",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "6-10 against 18: 'Select any 18 units from the following requirements: a minimum of one course per section', recorded as one course per section with no umbrella of 18."
+  },
+  {
+   "control_number": "30015",
+   "title": "Liberal Arts Natural Science Life Science",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "The record names no total, yet the page prints 'Select any 18 units from the following requirements', the same wording 30014 read as a total of 18. The extraction left total_units null; the check reads it incomplete as designed."
+  },
+  {
+   "control_number": "30284",
+   "title": "Administrative Services II",
+   "jev": {
+    "cause": "wrong_program_text",
+    "owner": "reader_procedure"
+   },
+   "verdict": "agree",
+   "evidence": "Coverage 0.0, no blocks, no notes: the text handed the model named none of BUSN 1510, 550 or 555."
+  },
+  {
+   "control_number": "31290",
+   "title": "Art History (AA-T)",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "The first reader's notes: the text holds no requirements table, the blocks were read from the program description's prose, and the text is cut off inside the learning outcomes. An excerpt cut (excerpt_cut), owned by the reading procedure."
+  },
+  {
+   "control_number": "32259",
+   "title": "English (AA-T)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "'LIST B: Select two' holds one course with units: the list also allows any List A course not already used, which the record did not carry into the block."
+  },
+  {
+   "control_number": "36178",
+   "title": "Court Reporting",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "college_catalog"
+   },
+   "verdict": "agree",
+   "evidence": "The first reader's note: 'Total Credit Hours: 46' equals the Required Core alone and excludes the 35 additional units of speed building the page also requires; the page's own figures disagree."
+  },
+  {
+   "control_number": "36763",
+   "title": "Spanish (AA-T)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "The Substitution Courses block chooses units with no minimum: it applies only when a student places out of a core course, a conditional rule the record shape cannot hold (the same shape as Cañada's Spanish 33828). Whether the extraction or the scorer owns a conditional block is open."
+  },
+  {
+   "control_number": "36928",
+   "title": "Energy Technology",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "owner_differs",
+   "evidence": "The degree total of 60 and the General Education Graduation Requirements pattern with no units for it. The cause holds; the fix is the same local-degree GE step as 16725, in the procedure. S422 SkyWillow read the catalog (college-page-read 39215793482, 39216772779, 39217374801; kb/college_reads/taft_local_ge_units.json): the catalog states two local patterns. Its Associate Degree and General Education Philosophy page prints 'Local General Education Pattern' / 'General Education Requirements (27 units – one course from each category)', and its Other Associate Degrees page says the Career Technical Education degrees, Energy Technology and Occupational Safety and Health among them, 'follow the local general education pattern of only 18 units'. Neither A.S. page states a GE figure (Occupational Safety and Health names no general education at all), and no page words the 60 as a minimum. With 18 the sums are 36 and 53 against 60, so no catalog-cited step passes them: only Title 5's 'at least 60' with 24 and 7 units of electives the pages never name would, which is the under-sum a dropped block also produces (Fable's advice, S422). No step was built. The two pages' 27 and 18 are a catalog-figures disagreement for the college, and the two records stay failing on the evidence."
+  },
+  {
+   "control_number": "37366",
+   "title": "Economics (AA-T)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "22-24 against a printed 21-24: List A also allows 'any course articulated as lower-division preparation in the Economics major at a CSU (3-4)', which the record left out."
+  },
+  {
+   "control_number": "38661",
+   "title": "CSU GE-Breadth (certificate)",
+   "jev": {
+    "cause": "excerpt_cut",
+    "owner": "reader_procedure"
+   },
+   "verdict": "cause_differs",
+   "evidence": "The first reader's note: the page text is the Cal-GETC certificate's section, not CSU GE-Breadth's. The text belongs to another program (wrong_program_text); the owner is the reading procedure, as Jev says."
+  },
+  {
+   "control_number": "38662",
+   "title": "Intersegmental GE Transfer Curriculum (certificate)",
+   "jev": {
+    "cause": "excerpt_cut",
+    "owner": "reader_procedure"
+   },
+   "verdict": "cause_differs",
+   "evidence": "The first reader's note: the text has no section for the IGETC/Cal-GETC certificate and its only course lists are the Local General Education Pattern's. Wrong program text, owned by the reading procedure."
+  },
+  {
+   "control_number": "41771",
+   "title": "Business Administration 2.0 (AS-T)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "unverified",
+   "evidence": "The core's three OR pairs carry different units (26-29), and with Cal-GETC's 34 the range's top reads 63 past the printed 60. Whether the check should read a range whose floor meets 60 as passing, or the pairs were misread, needs the page."
+  },
+  {
+   "control_number": "43511",
+   "title": "Engineering",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "41-42 against a printed 41-45: the first reader's note reads the printed maximum as room for overshooting the 7-unit elective minimum; the page's range is a ceiling, not a sum."
+  },
+  {
+   "control_number": "43601",
+   "title": "Dental Hygiene Administration (B.S.)",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "40 core units against a printed 120 for the baccalaureate: the degree total counts the lower division and general education the record never lists; the check has no baccalaureate rule."
+  },
+  {
+   "control_number": "44006",
+   "title": "Kinesiology: Sport Management (A.A.)",
+   "jev": {
+    "cause": "excerpt_cut",
+    "owner": "scorer"
+   },
+   "verdict": "owner_differs",
+   "evidence": "The first reader's note: the text is cut off mid-entry at PHED 1629, and no total, GE pattern, outcomes or careers appear. The cause holds; the owner is the reading procedure, not the scorer."
+  },
+  {
+   "control_number": "44343",
+   "title": "Kinesiology (A.A.)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "17.5-20 against a printed 18-24: PHED 1646 and 2146 print joined by AND as one pairing, and the three 'select at least one course' areas were read at one course each where the printed range allows more."
+  },
+  {
+   "control_number": "44621",
+   "title": "Clinical Medical Assisting",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "21 against 21-25: the description says 'this 21 to 25 units program' and the list prints 'Total Credit Hours: 21'; the page's two figures disagree, the suggested electives making up the difference."
+  },
+  {
+   "control_number": "45145",
+   "title": "Kinesiology (AA-T)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "23-26 against a printed 22-27: the anatomy pair as one option group and the movement-based rule ('select one course maximum from any three of the areas') read at a 3-unit minimum."
+  },
+  {
+   "control_number": "45358",
+   "title": "Cal-GETC (certificate)",
+   "jev": {
+    "cause": "excerpt_cut",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "The first reader's note: the catalog prints no units beside any course and no total for the certificate; the award is itself a general education pattern. The page has no figures to add (catalog_figures_disagree in the sense the check cannot apply), not a cut excerpt."
+  },
+  {
+   "control_number": "45469",
+   "title": "Political Science (AA-T)",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "unverified",
+   "evidence": "The record names no major total while its blocks print their own units (9, 6-8, 3); whether the page prints a 'Total Credit Hours' line the reading missed needs the page."
+  },
+  {
+   "control_number": "45903",
+   "title": "Psychology (AA-T)",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "college_catalog"
+   },
+   "verdict": "unverified",
+   "evidence": "18-21 against a printed 25: Lists B and C also allow any List A course not already used, and the gap of 4-7 units is more than those options explain; whether the page's 25 is its own figure needs the page."
+  },
+  {
+   "control_number": "46186",
+   "title": "Speech Language Pathology Aide",
+   "jev": {
+    "cause": "wrong_program_text",
+    "owner": "reader_procedure"
+   },
+   "verdict": "agree",
+   "evidence": "The first reader's note: the source URL and text are the Master Teacher certificate's (Total Credit Hours: 33), not this certificate's; coverage 0.0."
+  }
  ],
- "reading": "Jev's cause held on 15 of the 21 rows the evidence settles (12 agree, 3 owner_differs) and missed on 6: it names excerpt_cut where the text belongs to another program (38661, 38662), and record_right_check_misfires where the extraction dropped a total the page prints (30015) or the excerpt was cut (31290). Owner leans wrong the same way as at Cañada: the scorer or the extraction for a figure a procedure step supplies (16725, 36928) or a page the reader cut (44006). One fix for two rows: Taft's local-degree general education pattern (27 units per the catalog, by the first reader's note on 38662), read from the page first, then a reconcile step beside the Cal-GETC one. S422: the local-degree GE step was not built; the catalog prints 27 on its GE page and 18 for CTE degrees, and no page words the 60 as a floor (16725's evidence)."
+ "reading": "Jev's cause held on 15 of the 21 rows the evidence settles (12 agree, 3 owner_differs) and missed on 6: it names excerpt_cut where the text belongs to another program (38661, 38662), and record_right_check_misfires where the extraction dropped a total the page prints (30015) or the excerpt was cut (31290). Owner leans wrong the same way as at Cañada: the scorer or the extraction for a figure a procedure step supplies (16725, 36928) or a page the reader cut (44006). One fix for two rows: Taft's local-degree general education pattern (27 units per the catalog, by the first reader's note on 38662), read from the page first, then a reconcile step beside the Cal-GETC one. S422: the local-degree GE step was not built; the catalog prints 27 on its GE page and 18 for CTE degrees, and no page words the 60 as a floor (16725's evidence). S424 SkyBuckthorn, 2026-10-19 (college page reads 39250246074, 39252547290; capture-only read 39252972758): the four wrong-page rows settle three ways. 30284 Administrative Services II has its own page, which prints BUSN 1050 and 1055 where the file lists BUSN 550 and 555 (same titles and units), so the General Business page won on the old codes in its note; Taft's course_renumbers now maps the pair. 38661 CSU GE-Breadth and 38662 IGETC are not in the 2026-2027 catalog, which lists Cal-GETC alone (45358 holds its own record); 38661's loaded row duplicates the Cal-GETC text under the wrong number and is to be removed under the S411 receipt procedure. 46186 Speech Language Pathology Aide and 46198 Assistant: no page names them. The three are the college's to settle in COCI."
 }
