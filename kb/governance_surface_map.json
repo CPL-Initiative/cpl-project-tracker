@@ -6,6 +6,7 @@
   "workflow:map-users-sync.yml": "CA-02",
   "workflow:cer-decision-apply.yml": "DR-07",
   "workflow:cer-procedures.yml": "DR-07",
+  "workflow:csr-confirm.yml": "DR-04",
   "table:map_college_nudges": "CA-03",
   "table:sierra_feedback": "CA-06",
   "table:kb_curation": "DR-04",

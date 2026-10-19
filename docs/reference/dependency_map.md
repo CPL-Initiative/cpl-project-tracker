@@ -102,7 +102,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `gr_revisions` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `item_raci` | tabs: `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` | tabs: `raci` |
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` · pages: `CPL_Dashboard.html` |
-| `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cer_decision_apply.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
+| `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cer_decision_apply.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_csr_confirm_authority.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
 | `map_ace_exhibit_titles` | tabs: `college-briefing`, `implementation-funding` | — |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
@@ -466,6 +466,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_cred_rename_apply.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_apply_supabase.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_dryrun.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
+| `kb/_csr_confirm_authority.py` | workflows: `csr-confirm.yml` | — |
 | `kb/_csr_trail.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_esl_sheet_apply.py` | workflows: `esl-sheet-apply.yml` | — |
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
@@ -549,6 +550,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/crnc_mirrors.json` | scripts: `excel_to_dashboard.py`, `kb/_detect_crnc_mirrors.py`, `kb/_rekey_crnc_mirrors.py` | — |
 | `kb/crossdisc_out/alias_map.json` | scripts: `kb/alias_chain.py` | — |
+| `kb/csr_out/confirm` | none found | committed by: `csr-confirm.yml` |
 | `kb/csr_out/latest.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | committed by: `daily-dashboard.yml` |
 | `kb/csr_procedures.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/dashboard_config.json` | scripts: `excel_to_dashboard.py` | — |
@@ -556,7 +558,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/dependency_map.json` | tabs: `admin` · scripts: `scripts/ui_pass.py` | — |
 | `kb/discipline_aliases.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_alias_canon.py`, `kb/_apply_drama_theater_convergence.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py`, `kb/_zband_retire_dryrun.py` | — |
 | `kb/discipline_blanks_worklist.json` | scripts: `kb/_build_discipline_blanks_worklist.py` | scripts: `kb/_build_discipline_blanks_worklist.py` · committed by: `daily-dashboard.yml` |
-| `kb/discipline_canonical_subj4.json` | tabs: `canonical-subj4`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_authority_recode_dryrun.py`, `kb/_build_commons_status.py`, `kb/_csr_trail.py`, `kb/_jev_next_steps.py`, `kb/_kin_pe_pass2.py`, `kb/_overmerge_dryrun.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py`, `kb/_seed_coci_minted_mids.py`, `kb/_subj4_apply.py`, `kb/_subj4_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py` · committed by: `daily-dashboard.yml`, `phase-1e-apply.yml`, `phase-1e-sync.yml` |
+| `kb/discipline_canonical_subj4.json` | tabs: `canonical-subj4`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_authority_recode_dryrun.py`, `kb/_build_commons_status.py`, `kb/_csr_confirm_authority.py`, `kb/_csr_trail.py`, `kb/_jev_next_steps.py`, `kb/_kin_pe_pass2.py`, `kb/_overmerge_dryrun.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py`, `kb/_seed_coci_minted_mids.py`, `kb/_subj4_apply.py`, `kb/_subj4_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py` · committed by: `daily-dashboard.yml`, `phase-1e-apply.yml`, `phase-1e-sync.yml` |
 | `kb/discipline_cpl_rollup.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_build_cpl_by_discipline.py` | committed by: `daily-dashboard.yml` |
 | `kb/discipline_inference.json` | scripts: `kb/_audit_subject_map.py`, `kb/_infer_disciplines.py`, `kb/_overmerge_dryrun.py`, `kb/_row_audit.py` | — |
 | `kb/doctrine_questions.json` | tabs: `unified-courses` | — |
@@ -848,6 +850,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/course_outline_registry_fill_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_cleanup_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
+| `tests/csr_confirm_authority_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_procedures_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_trail_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
@@ -1155,5 +1158,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 685 file
-datasets · 182 external services · 452 consumers · 56 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 688 file
+datasets · 182 external services · 454 consumers · 57 workflows · 39 tabs.

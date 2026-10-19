@@ -348,7 +348,7 @@ def row_subjects(root):
     settled = [k for k in confirmed if k not in collided]
     scan = load_json(root, "kb/csr_out/latest.json") if exists(root, "kb/csr_out/latest.json") else None
     procs = load_json(root, "kb/csr_procedures.json") if exists(root, "kb/csr_procedures.json") else None
-    who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by a session cohort" % fmt(cohort) if cohort else "")
+    who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by the nightly procedure or a session cohort" % fmt(cohort) if cohort else "")
     issues = [
         {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/pre_seeded"},
         {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
@@ -389,9 +389,9 @@ def row_subjects(root):
         "links": [{"href": tab, "text": "Open the tab"}],
         "status_file": "kb/status/subjects.json" if exists(root, "kb/status/subjects.json") else None,
         "pair": [{"n": len(settled), "of": len(D),
-                  "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed by a person, on the authority rule, in no collision (%s)" % who,
+                  "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (%s)" % who,
                   "open": tab + "/progress"}],
-        "tests": ["person-confirmed", "authority rule", "collision-free"],
+        "tests": ["confirmed", "authority rule", "collision-free"],
         "issues": issues,
         "procedures": procedures,
         "machine": machine,

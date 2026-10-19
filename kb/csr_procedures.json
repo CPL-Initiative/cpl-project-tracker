@@ -1,7 +1,7 @@
 {
   "_about": "The Common Subjects Reference's procedures: one per card of the tab's Progress view, each a rule in plain words with who set it and when, what it reads, who owns it and how often it runs. canonical_subj4.js draws them under the Progress view's parts, kb/_build_commons_status.py reads their names for the Commons row, and a session reads this file before working the reference. To add one, write its words and source; to turn one off, set on to false. Lane state: docs/reference/lanes/common-subjects-reference.md.",
   "_updated_at": "2026-10-19",
-  "_updated_by": "S425 SkyMadrone, from Sam's eight steps of 2026-10-19 and the rulings each step rests on",
+  "_updated_by": "S427 SkyMadrona: the confirmation procedure on (Sam's Sheet 99 card 2, 16:37Z); S425 SkyMadrone wrote the eight from Sam's steps of 2026-10-19 and the rulings each step rests on",
   "procedures": [
     {
       "id": "mq_list",
@@ -18,8 +18,16 @@
         "A change opens a card on the standing sheet with the diff; a session applies what Sam rules through the fan-in alias file or a seed edit, never a blind overwrite.",
         "Correct the eight names that carry a Title 5 section number from the PDF extraction and the one truncated name once Sam confirms the handbook's spelling."
       ],
-      "reads": ["kb/reference/mq_disciplines.json", "kb/reference/mq_sections.json", "kb/discipline_aliases.json"],
-      "source": {"who": "Sam", "date": "2026-10-19", "words": "Keep current MQ Discipline list (quarterly scrape routine needed) ... Ensure every MQD has at least 1 Subject assigned to it"}
+      "reads": [
+        "kb/reference/mq_disciplines.json",
+        "kb/reference/mq_sections.json",
+        "kb/discipline_aliases.json"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-10-19",
+        "words": "Keep current MQ Discipline list (quarterly scrape routine needed) ... Ensure every MQD has at least 1 Subject assigned to it"
+      }
     },
     {
       "id": "authority_tables",
@@ -36,8 +44,16 @@
         "List the codes the refresh added or retired; a new four-letter authority code for a discipline on a CSR code is a re-key candidate under the authority rule and goes to a card.",
         "Where a CCN code and a C-ID code differ for one subject, the CCN code is the Common SUBJ and the C-ID code rides the chip."
       ],
-      "reads": ["kb/reference/cid_descriptors.json", "kb/reference/ccn_courses.json", "kb/reference/authority_subject_codes.json"],
-      "source": {"who": "Sam", "date": "2026-10-19", "words": "Keep current unique table of C-ID Subjects and CCN Subjects (quarterly scrape routine needed) ... Procedure to reconcile any discrepancy between CID and CCN Subjects; and 2026-09-03, item 15: Yes, CCN wins"}
+      "reads": [
+        "kb/reference/cid_descriptors.json",
+        "kb/reference/ccn_courses.json",
+        "kb/reference/authority_subject_codes.json"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-10-19",
+        "words": "Keep current unique table of C-ID Subjects and CCN Subjects (quarterly scrape routine needed) ... Procedure to reconcile any discrepancy between CID and CCN Subjects; and 2026-09-03, item 15: Yes, CCN wins"
+      }
     },
     {
       "id": "authority_rule",
@@ -53,8 +69,16 @@
         "After a fold or a recode, kb/_post_apply_chain.py re-seeds the reference and rebuilds the chip fields, so canonical_source flips by itself when a code changes.",
         "A discipline whose Common SUBJ differs from a four-letter authority code for the same subject is a missed alignment; the scan reports it unless a recorded note explains the divergence."
       ],
-      "reads": ["kb/discipline_canonical_subj4.json", "kb/csr_authority_codes_rulings_2026-09-03.json", "kb/reference/authority_subject_codes.json"],
-      "source": {"who": "Sam", "date": "2026-09-03", "words": "My gut says use CCN if available; if not, stay with 4-characters and add a CID chip with the verbatim CID code showing; eliminate hyphens"}
+      "reads": [
+        "kb/discipline_canonical_subj4.json",
+        "kb/csr_authority_codes_rulings_2026-09-03.json",
+        "kb/reference/authority_subject_codes.json"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-09-03",
+        "words": "My gut says use CCN if available; if not, stay with 4-characters and add a CID chip with the verbatim CID code showing; eliminate hyphens"
+      }
     },
     {
       "id": "mid_subjects",
@@ -70,8 +94,17 @@
         "A stray whose identities carry a discipline is a re-key to that discipline's code; a stray with no discipline waits on the discipline-blank worklist first.",
         "Stage the re-key as evidence (kb/_subj4_dryrun.py), register the alias map, and land it in one cron window under docs/coursecontrolnumber_remint.md."
       ],
-      "reads": ["kb/coci_minted_courses.json", "kb/coci_minted_singletons.json", "kb/discipline_canonical_subj4.json", "kb/alias_chain.py"],
-      "source": {"who": "Sam", "date": "2026-10-19", "words": "Check unique table of M-ID Subjects against C-ID and CCN Subjects to eliminate unnecessary M-ID minted Subjects and reassign to appropriate CID or CCN Subject"}
+      "reads": [
+        "kb/coci_minted_courses.json",
+        "kb/coci_minted_singletons.json",
+        "kb/discipline_canonical_subj4.json",
+        "kb/alias_chain.py"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-10-19",
+        "words": "Check unique table of M-ID Subjects against C-ID and CCN Subjects to eliminate unnecessary M-ID minted Subjects and reassign to appropriate CID or CCN Subject"
+      }
     },
     {
       "id": "every_code_homed",
@@ -87,8 +120,15 @@
         "The tab's check lists the collisions, the rows off their canonical and the disciplines with no code, with a word that jumps to each row.",
         "A collision is settled by giving one discipline another code or by moving the mis-filed identities; the change is a re-key under the playbook."
       ],
-      "reads": ["kb/discipline_canonical_subj4.json", "kb/csr_out/latest.json"],
-      "source": {"who": "the 2026-06-23 methodology note, and Sam's step 5 of 2026-10-19", "date": "2026-10-19", "words": "Ensure that all Subjects are assigned an MQD; each Common SUBJ belongs to exactly one discipline, collision-free"}
+      "reads": [
+        "kb/discipline_canonical_subj4.json",
+        "kb/csr_out/latest.json"
+      ],
+      "source": {
+        "who": "the 2026-06-23 methodology note, and Sam's step 5 of 2026-10-19",
+        "date": "2026-10-19",
+        "words": "Ensure that all Subjects are assigned an MQD; each Common SUBJ belongs to exactly one discipline, collision-free"
+      }
     },
     {
       "id": "cross_listings",
@@ -104,25 +144,44 @@
         "Declare an umbrella's codes on its entry and a fan-in on both entries, so the scan and the mint path read the exception from the file.",
         "A course whose member colleges disagree about its discipline goes through the cross-list lane's four kinds; a defect from a short code is gated, a genuine dual home is cross-listed."
       ],
-      "reads": ["kb/foreign_language_subj4.json", "kb/discipline_aliases.json", "kb/reference/subject_discipline_map.json", "docs/reference/lanes/discipline-crosslist.md"],
-      "source": {"who": "Sam", "date": "2026-09-22", "words": "we somehow need to use this process to get everything properly nested OR just cross list the heck out of the misfits and live to tell another day; and 2026-10-19: Ensure any cross listed Subjects are correctly listed"}
+      "reads": [
+        "kb/foreign_language_subj4.json",
+        "kb/discipline_aliases.json",
+        "kb/reference/subject_discipline_map.json",
+        "docs/reference/lanes/discipline-crosslist.md"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-09-22",
+        "words": "we somehow need to use this process to get everything properly nested OR just cross list the heck out of the misfits and live to tell another day; and 2026-10-19: Ensure any cross listed Subjects are correctly listed"
+      }
     },
     {
       "id": "confirmation",
       "name": "A person confirms each pick; a procedure may confirm the authority's own",
       "kind": "rule",
-      "on": false,
-      "status": "a person's confirm is in force; the procedure's confirm is proposed and waits on Sam",
-      "cadence": "at every save; nightly once ruled",
-      "owner": "a curator on the tab; the procedure under a cohort reviewer once ruled",
-      "rule": "A pick is confirmed when a person sets or accepts it on the tab. Proposed, not yet on: a procedure confirms a pick that equals the authority's own code, CCN or C-ID, and carries no open finding, under a cohort reviewer, insert-only with a committed receipt, so a person's time goes to the picks no authority settles.",
+      "on": true,
+      "status": "in force since 2026-10-19 (Sam, Open Asks Sheet 99 card 2): the nightly run confirms the authority's own; a person confirms the rest",
+      "cadence": "at every save; nightly at 08:17 UTC",
+      "owner": "a curator on the tab; the nightly run under csr-confirm-authority@bot",
+      "rule": "A pick is confirmed when a person sets or accepts it on the tab. The nightly procedure confirms a pick whose code equals the authority's own, CCN or C-ID, and that no finding holds back, under the cohort csr-confirm-authority@bot, insert-only with a committed receipt, so a person's time goes to the picks no authority settles. A pick on a code this reference minted waits for a person.",
       "steps": [
         "A curator sets the Common SUBJ cell on the tab; the save writes the pick to kb_curation and the daily sync carries it into the seed.",
-        "Once ruled: the nightly run lists the unconfirmed picks whose code is the authority's own and no finding names; it writes each as the tab's own save would, under the cohort csr-confirm-authority@bot, insert-only, with the receipt written before the insert.",
-        "A pick on a code this reference minted waits for a person, as before."
+        "csr-confirm.yml runs kb/_csr_confirm_authority.py nightly at 08:17 UTC, after the daily run has re-synced the seed and re-run the scan: it lists the unconfirmed picks whose code is the CCN subject code or one of the C-ID subject codes and that no finding names, except the two that corroborate (the unconfirmed state itself, and the alignment the pick rests on).",
+        "A fresh read of the live picks first: a live code row for the discipline, whoever wrote it, holds the save. The receipt under kb/csr_out/confirm/ is written before the insert, the insert ignores duplicates, and the receipt then names what landed and what was held.",
+        "python3 kb/_csr_confirm_authority.py --undo takes the cohort's rows back in one delete and clears the seed's stamps. A pick on a code this reference minted waits for a person, as before."
       ],
-      "reads": ["kb/discipline_canonical_subj4.json", "kb/csr_out/latest.json"],
-      "source": {"who": "Sam", "date": "2026-10-19", "words": "keeping our eye on the prize, which is to have a nearly fully automated, self-curating and monitoring procedure to maintain the CSR"}
+      "reads": [
+        "kb/discipline_canonical_subj4.json",
+        "kb/csr_out/latest.json",
+        "kb/_csr_confirm_authority.py",
+        ".github/workflows/csr-confirm.yml"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-10-19",
+        "words": "keeping our eye on the prize, which is to have a nearly fully automated, self-curating and monitoring procedure to maintain the CSR; and Open Asks Sheet 99 card 2, 16:37Z: on"
+      }
     },
     {
       "id": "checks",
@@ -138,8 +197,16 @@
         "A session runs the scan without the flag for a dated receipt under kb/csr_out/<date>/ before a sitting or a re-key.",
         "Jev's sitting (kb/_jev_adjudicate.py through typesafe-smoke.yml) reads the askable findings; what it cannot settle goes to the standing sheet."
       ],
-      "reads": ["kb/_csr_trail.py", "kb/csr_out/latest.json", "kb/_jev_adjudicate.py"],
-      "source": {"who": "Sam", "date": "2026-07-10", "words": "they are used to mint MIDs; the CSR, CCR, CER constitute the heart of our ability to scale CPL statewide then nationwide; and 2026-10-19: Anything else you can think of? ... self-curating and monitoring"}
+      "reads": [
+        "kb/_csr_trail.py",
+        "kb/csr_out/latest.json",
+        "kb/_jev_adjudicate.py"
+      ],
+      "source": {
+        "who": "Sam",
+        "date": "2026-07-10",
+        "words": "they are used to mint MIDs; the CSR, CCR, CER constitute the heart of our ability to scale CPL statewide then nationwide; and 2026-10-19: Anything else you can think of? ... self-curating and monitoring"
+      }
     }
   ]
 }

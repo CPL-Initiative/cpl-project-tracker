@@ -1,0 +1,225 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-19T22-09-21Z",
+ "run_id": "39332576973",
+ "ruling": "Open Asks Sheet 99 card 2 (Sam, 2026-10-19 16:37Z, 'on'): the nightly procedure confirms the picks whose code is the authority's own, CCN or C-ID, under a cohort reviewer, insert-only with a receipt; a pick on a code this reference minted waits for a person",
+ "cohort": "csr-confirm-authority@bot",
+ "procedure": "confirmation (kb/csr_procedures.json)",
+ "undo": "python3 kb/_csr_confirm_authority.py --undo (one DELETE by the cohort; the seed's stamps clear with it)",
+ "held": [],
+ "rows": [
+  {
+   "course_id": "_CANON_SUBJ4::Anthropology",
+   "field": "canonical_subj4",
+   "value": "ANTH",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Anthropology",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Astronomy",
+   "field": "canonical_subj4",
+   "value": "ASTR",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Astronomy",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Chemistry",
+   "field": "canonical_subj4",
+   "value": "CHEM",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Chemistry",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Communication Studies",
+   "field": "canonical_subj4",
+   "value": "COMM",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Communication Studies",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Earth Science",
+   "field": "canonical_subj4",
+   "value": "GEOL",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Earth Science",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Economics",
+   "field": "canonical_subj4",
+   "value": "ECON",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Economics",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Engineering",
+   "field": "canonical_subj4",
+   "value": "ENGR",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Engineering",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::English",
+   "field": "canonical_subj4",
+   "value": "ENGL",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "English",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Geography",
+   "field": "canonical_subj4",
+   "value": "GEOG",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Geography",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::History",
+   "field": "canonical_subj4",
+   "value": "HIST",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "History",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Mathematics",
+   "field": "canonical_subj4",
+   "value": "MATH",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Mathematics",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Philosophy",
+   "field": "canonical_subj4",
+   "value": "PHIL",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Philosophy",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Physics/Astronomy",
+   "field": "canonical_subj4",
+   "value": "PHYS",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Physics/Astronomy",
+   "system": "C-ID"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_CANON_SUBJ4::Anthropology",
+   "field": "canonical_subj4",
+   "value": "ANTH",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Anthropology",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Astronomy",
+   "field": "canonical_subj4",
+   "value": "ASTR",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Astronomy",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Chemistry",
+   "field": "canonical_subj4",
+   "value": "CHEM",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Chemistry",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Communication Studies",
+   "field": "canonical_subj4",
+   "value": "COMM",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Communication Studies",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Earth Science",
+   "field": "canonical_subj4",
+   "value": "GEOL",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Earth Science",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Economics",
+   "field": "canonical_subj4",
+   "value": "ECON",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Economics",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Engineering",
+   "field": "canonical_subj4",
+   "value": "ENGR",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Engineering",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::English",
+   "field": "canonical_subj4",
+   "value": "ENGL",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "English",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Geography",
+   "field": "canonical_subj4",
+   "value": "GEOG",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Geography",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::History",
+   "field": "canonical_subj4",
+   "value": "HIST",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "History",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Mathematics",
+   "field": "canonical_subj4",
+   "value": "MATH",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Mathematics",
+   "system": "CCN"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Philosophy",
+   "field": "canonical_subj4",
+   "value": "PHIL",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Philosophy",
+   "system": "C-ID"
+  },
+  {
+   "course_id": "_CANON_SUBJ4::Physics/Astronomy",
+   "field": "canonical_subj4",
+   "value": "PHYS",
+   "reviewer_email": "csr-confirm-authority@bot",
+   "discipline": "Physics/Astronomy",
+   "system": "C-ID"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
