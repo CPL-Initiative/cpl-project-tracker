@@ -114,18 +114,19 @@ four known issues with owners, the procedures in force, and deep links into the 
   never scheduled and asked two settled questions at every run; the tab's C-ID index skipped 17 of the 65
   subjects; the Jev next step for the CSR (fix AUTB, the 2026-09-29 sheet's card 11) is still open.
 
-## NEEDS SAM ([Open Asks Sheet 99](https://claude.ai/artifact/51ysTzEcJmusKb2Mb21xg8), current, 2026-10-19)
+## RULED on Open Asks Sheet 99 (Sam, 16:37Z 2026-10-19, all six his own call; `cpl_memory` `sam-sheet-99-rulings-2026-10-19`)
 
-1. The definition of complete for the headline pair (proposed: confirmed, on the authority rule, in no collision).
-2. The cohort confirm: may a nightly procedure confirm the 13 unconfirmed picks whose code is the authority's
-   own, under a cohort reviewer, insert-only with a receipt?
-3. The AUTB collision: give Agricultural Business and Related Services the family code AGAB and re-key its one
-   identity under the playbook.
-4. The agriculture residual: a Jev sitting proposes a C-ID family for each of the 216 AGRI identities, Sam
-   confirms, the rest stay residual; or AGRI stays as ruled.
-5. The validate stage: keep it for the faculty-published moment, or take the column and the word off the tab
-   until then.
-6. The eight Title 5-numbered names and the one cut short: the handbook's spellings to apply.
+1. **settled**: complete means confirmed by a person, on the authority rule, in no collision (the pair as built).
+2. **on**: the nightly procedure confirms the authority-coded picks under a cohort reviewer, insert-only with a receipt
+   (to build: `kb/csr_procedures.json` `confirmation` on, the run and its receipt).
+3. **agab**: Agricultural Business and Related Services takes AGAB; its one identity is re-keyed under the playbook.
+4. **sitting**: a Jev sitting proposes a C-ID family for each AGRI identity, Sam confirms, the rest stay residual.
+5. **hide**: the Validate column and word leave the tab until the faculty-published moment; the data stays.
+6. **rename**: the eight Title 5-numbered names and the cut-short one take the handbook's spellings, through the alias
+   file and one re-key window.
+
+None is applied yet (S425 recorded them at context EMERGENCY); Session 426 executes them in this order and removes the
+six cards from the vault builder.
 
 ## NEXT
 

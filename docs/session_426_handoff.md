@@ -53,8 +53,9 @@ UI pass, the Pipeline tab and a KB note (named below); the docs index was rebuil
 
 ## Priority after that
 
-1. Sam's rulings on Sheet 99, each recorded in the lane in the same change (the AUTB re-key and the cohort confirm
-   are the two with code behind them).
+1. **Sam answered Sheet 99 at 16:37Z (all six his own call: settled, on, agab, sitting, hide, rename;** the lane's
+   RULED block and `cpl_memory` `sam-sheet-99-rulings-2026-10-19`). Execute them in that order and remove the six cards
+   from `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py` (the sheet is answered; never republish onto it).
 2. The two quarterly routines on a runner, probe mode first: the handbook check (cccco.edu answers; the tab's handbook
    link is dead) and the C-ID and CCN refresh (c-id.net is unreachable from the sandbox).
 3. The 110 stray identity codes: the discipline-blank worklist first, then one re-key window under the playbook.
