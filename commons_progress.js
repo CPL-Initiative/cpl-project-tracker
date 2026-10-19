@@ -22,7 +22,8 @@
 //   grid, and the side column (next step, the calls waiting on the decider, what changed).
 //
 // The definitions stay the project's. Nothing here knows what a catalog, an exhibit or a
-// discipline is; a milestone is {id, title, fact(x), when(x), left(x) -> [[count, one, many,
+// discipline is; a part may add more(x) -> [words, target], a second word beside its open
+// one (S425); a milestone is {id, title, fact(x), when(x), left(x) -> [[count, one, many,
 // target]]}, a part is {id, title, status(x), what(x), foot(x), meter(x), open(x), answer(x),
 // needs}, and WHOLE is a list of {id, title, note, halves?, open}. A read a definition needs is
 // named in `needs`; when the context holds null for it the view says the read failed instead of
@@ -352,9 +353,13 @@
       }
       kids.push(el("p", { cls: "prh-pg-foot", text: v.foot || "" }));
       var opens = v.key !== "unread" && o.p.open ? o.p.open(x) : null;
+      /* A second word beside the open one (S425, the Subjects view): where the card's
+         procedure or a second list lives. It rides above the card-wide tap target. */
+      var more = v.key !== "unread" && o.p.more ? o.p.more(x) : null;
       var answers = partAnswers(o.p, x, v.key === "unread", h);
-      if (opens || answers.length) {
-        kids.push(el("p", { cls: "prh-pg-links prh-pg-go" }, [opens ? h.goControl(opens[0], opens[1], "prh-pg-open") : null].concat(answers)));
+      if (opens || more || answers.length) {
+        kids.push(el("p", { cls: "prh-pg-links prh-pg-go" }, [opens ? h.goControl(opens[0], opens[1], "prh-pg-open") : null,
+          more ? h.goControl(more[0], more[1], "prh-pg-more") : null].concat(answers)));
       }
       grid.appendChild(el("li", { cls: "prh-pg-part prh-pg-" + v.key + (opens ? " prh-pg-opens" : "") }, kids));
     });
@@ -465,6 +470,7 @@
       ".prh-pg-part.prh-pg-opens:hover { border-color:var(--cobalt); }",
       ".prh-pg-opens .prh-pg-open:focus-visible::after { outline:2px solid var(--cobalt); outline-offset:-2px; }",
       ".prh-pg-answer { position:relative; z-index:1; }",
+      ".prh-pg-more { position:relative; z-index:1; }",
       ".prh-pg-hlgo { justify-self:start; }",
       ".prh-pg-part h4 { margin:0; font-size:1rem; color:var(--text-strong); }",
       ".prh-pg-status { font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",

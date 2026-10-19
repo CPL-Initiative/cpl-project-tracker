@@ -13,6 +13,14 @@ is auditable against the data snapshot it was made against. Only the curator-
 owned fields are updated: `canonical_subj4`, `_notes`, `reviewed_at`,
 `reviewed_by`, `source`, `needs_review`.
 
+WHO CONFIRMED THE PICK (2026-10-19). The pick's reviewer is the reviewer of the
+`canonical_subj4` row. Until S425 the latest row across fields won, so a note a
+session cohort wrote in July (csr-doctrine-s111@bot) or September overwrote the
+person who picked the code in May on eleven entries, and the Commons row read
+"111 by a person, 11 by a session cohort" of 122 picks a person made. The note's
+own provenance is kept beside it (`_notes_by`, `_notes_at`); `reviewed_by` and
+`reviewed_at` fall back to the latest row only when no code row exists.
+
 Auth: service-role key (bypasses RLS). Same pattern as kb/_apply_curation.py.
 
 Env:
@@ -80,6 +88,13 @@ def main():
         field = (r.get("field") or "").strip()
         rec = by_disc.setdefault(d, {})
         rec[field] = r.get("value")
+        # The pick's reviewer is the code row's; a note's author is the note's.
+        if field == FIELD_CANON:
+            rec["_pick_by"] = r.get("reviewer_email")
+            rec["_pick_at"] = r.get("reviewed_at")
+        elif field == FIELD_NOTES:
+            rec["_notes_by"] = r.get("reviewer_email")
+            rec["_notes_at"] = r.get("reviewed_at")
         if (r.get("reviewed_at") or "") >= rec.get("reviewed_at", ""):
             rec["reviewed_by"] = r.get("reviewer_email")
             rec["reviewed_at"] = r.get("reviewed_at")
@@ -114,7 +129,14 @@ def main():
             entry["needs_review"] = not bool(canon_norm)
         if notes is not None:
             entry["_notes"] = notes or None
-        if rec.get("reviewed_at"):
+            entry["_notes_by"] = rec.get("_notes_by")
+            entry["_notes_at"] = rec.get("_notes_at")
+        if rec.get("_pick_at"):
+            entry["reviewed_at"] = rec["_pick_at"]
+            entry["reviewed_by"] = rec.get("_pick_by")
+            if entry.get("canonical_subj4"):
+                entry["needs_review"] = False
+        elif rec.get("reviewed_at"):
             entry["reviewed_at"] = rec["reviewed_at"]
             entry["reviewed_by"] = rec.get("reviewed_by")
             # If the curator cleared canonical_subj4 (set to "") we don't claim

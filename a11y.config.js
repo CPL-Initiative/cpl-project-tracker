@@ -219,6 +219,19 @@ async function seedCollegeSelect(page) {
 // 2026-10-18 (S415; first seeded S343). The sweep aborts every request off the
 // origin, so the tab's Supabase reads fail; the status file (kb/status/program-requirements.json)
 // is served and read for real.
+// The Common Subjects Reference's Progress view (S425, the Commons' dash for the
+// reference): opened by its route, the shared module lazy-loaded, the seed read for real
+// (the live picks fail off the origin and the view says so), then the theme.
+async function seedCsrProgress(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "canonical-subj4/progress") location.hash = "canonical-subj4/progress"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const M = window.CPL_CANONICAL_SUBJ4;
+    return M && M._state.seed && document.querySelector("#cs-progress .prh-pg");
+  }, null, { timeout: 60000 });
+  await page.waitForTimeout(300);
+}
+
 /* The docked Sierra, full screen with a conversation (S349). Seeded through
    the real path: the reader's role is confirmed on the chip, only the chat
    function's stream is stubbed, and six questions are asked, so the first one
@@ -2458,6 +2471,24 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "progress-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Common Subjects Reference: the Progress view (S425) and the table ──
+     The cobi sweep opens the tab on its default view, Progress, in light; these two add the
+     dark Progress view and the Reference view (the table) by its route. */
+  "canonical-subj4-progress-dark": {
+    file: "index.html",
+    title: "Common Subjects Reference: Progress, dark",
+    routes: [{ hash: "canonical-subj4/progress", name: "progress-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedCsrProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-reference": {
+    file: "index.html",
+    title: "Common Subjects Reference: the table",
+    routes: [{ hash: "canonical-subj4/reference", name: "reference" }],
+    widths: [390, 768, 1024, 1440],
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the Records view, signed in (S347) ──────────

@@ -319,38 +319,87 @@ def row_cr(root):
 
 
 # ── Common Subjects Reference ─────────────────────────────────────────────────────────────
+# Sam's words are "MQ discipline" (2026-10-19: the handbook's discipline beside our Common
+# SUBJ, "to remember the difference between SUBJECT and DISCIPLINE"). The row's figures come
+# from the seed, the daily scan's latest.json (kb/_csr_trail.py --latest, the step before this
+# one) and the procedures store; a count's link opens the tab's own list (the Commons' step 3).
 def row_subjects(root):
     tab = "#canonical-subj4"
     seed = load_json(root, "kb/discipline_canonical_subj4.json")
     D = seed["disciplines"]
-    confirmed = {k: v for k, v in D.items() if v.get("source") == "curator_override"}
+    four = re.compile(r"^[A-Z]{4}$")
+    confirmed = {k: v for k, v in D.items() if v.get("source") == "curator_override" and four.match(v.get("canonical_subj4") or "")}
     cohort = sum(1 for v in confirmed.values() if is_cohort(v.get("reviewed_by")))
     modal = [k for k, v in D.items() if v.get("source") == "data_modal"]
     by_code = {}
     for k, v in D.items():
         by_code.setdefault(v.get("canonical_subj4"), []).append(k)
-    shared = {c: ks for c, ks in by_code.items() if c and len(ks) > 1}
-    shared_words = "; ".join("%s%s" % (c, " by design" if any(D[k].get("fan_in_with") for k in ks) else "") for c, ks in sorted(shared.items()))
+    # A code on two disciplines is a collision unless both entries declare the fan-in (CS2).
+    shared = {}
+    for c, ks in by_code.items():
+        if not c or len(ks) < 2:
+            continue
+        mutual = all(set(ks) - {k} <= set(D[k].get("fan_in_with") or []) for k in ks)
+        if not mutual:
+            shared[c] = ks
+    collided = {k for ks in shared.values() for k in ks}
+    # Complete: confirmed by a person, on the authority rule (the recode of 2026-09-03 put every
+    # discipline on it; the scan's missed-alignment rule guards it), and in no collision.
+    settled = [k for k in confirmed if k not in collided]
+    scan = load_json(root, "kb/csr_out/latest.json") if exists(root, "kb/csr_out/latest.json") else None
+    procs = load_json(root, "kb/csr_procedures.json") if exists(root, "kb/csr_procedures.json") else None
+    who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by a session cohort" % fmt(cohort) if cohort else "")
+    issues = [
+        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/pre_seeded"},
+        {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
+         "owner": "a curator", "open": tab + "/check"},
+    ]
+    missed = None
+    if scan:
+        rules = {}
+        for f in scan.get("findings") or []:
+            rules[f.get("rule")] = rules.get(f.get("rule"), 0) + 1
+        missed = rules.get("cs4_missed_alignment", 0)
+        judgments = rules.get("cs6_weak_mnemonic", 0) + rules.get("cs5_modal_diverge", 0)
+        issues.append({"n": judgments, "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note)",
+                       "owner": "a curator, after Jev's sitting", "open": tab + "/progress"})
+        mc = scan.get("_mid_codes") or {}
+        issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
+                       "owner": "a re-mint under the playbook", "open": tab + "/progress"})
+        if missed:
+            issues.append({"n": missed, "words": "missed alignments with an authority code", "owner": "a curator", "open": tab + "/chip"})
+    procedures = []
+    if procs:
+        ps = procs.get("procedures") or []
+        on = [p for p in ps if p.get("on")]
+        procedures.append({"n": len(on), "words": "procedures in force, of %d written" % len(ps), "open": tab + "/progress"})
+        for p in ps:
+            if p.get("kind") == "rule" and p.get("on"):
+                procedures.append({"words": p.get("name")})
+    else:
+        procedures = [
+            {"words": "A code is four letters; the subject map decides a discipline and TOP corroborates it"},
+            {"words": "A re-key goes through the alias chain and lands in one cron window"},
+        ]
+    machine = {"what": "the daily sync of the picks into the seed", "at": seed.get("_synced_at"), "every_hours": 24}
+    if scan and scan.get("_scanned_at"):
+        machine = {"what": "the daily sync of the picks and the daily scan", "at": max(seed.get("_synced_at") or "", scan["_scanned_at"]), "every_hours": 24}
     return {
         "key": "subjects", "title": "Common Subjects Reference", "tab": tab,
         "links": [{"href": tab, "text": "Open the tab"}],
         "status_file": "kb/status/subjects.json" if exists(root, "kb/status/subjects.json") else None,
-        "pair": [{"n": len(confirmed), "of": len(D),
-                  "words": "disciplines carry a curator-confirmed subject code (%s by a person, %s by a session cohort)"
-                           % (fmt(len(confirmed) - cohort), fmt(cohort)), "open": tab}],
-        "tests": ["curator-confirmed"],
-        "issues": [
-            {"n": len(modal), "words": "disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab},
-            {"n": len(shared), "words": "codes on two disciplines each" + (" (" + shared_words + ")" if shared_words else ""), "owner": "a curator", "open": tab},
-        ],
-        "procedures": [
-            {"words": "A code is four letters; the subject map decides a discipline and TOP corroborates it"},
-            {"words": "A re-key goes through the alias chain and lands in one cron window"},
-        ],
-        "machine": {"what": "the daily sync of the picks into the seed", "at": seed.get("_synced_at"), "every_hours": 24},
+        "pair": [{"n": len(settled), "of": len(D),
+                  "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed by a person, on the authority rule, in no collision (%s)" % who,
+                  "open": tab + "/progress"}],
+        "tests": ["person-confirmed", "authority rule", "collision-free"],
+        "issues": issues,
+        "procedures": procedures,
+        "machine": machine,
         "facts": {"disciplines": len(D), "confirmed": len(confirmed), "person": len(confirmed) - cohort, "cohort": cohort,
-                  "modal": len(modal), "shared": sorted(shared)},
-        "sources": ["kb/discipline_canonical_subj4.json"],
+                  "settled": len(settled), "modal": len(modal), "shared": sorted(shared), "missed_alignment": missed,
+                  "scanned_at": scan.get("_scanned_at") if scan else None,
+                  "procedures_on": sum(1 for p in (procs or {}).get("procedures", []) if p.get("on")) if procs else None},
+        "sources": ["kb/discipline_canonical_subj4.json", "kb/csr_out/latest.json", "kb/csr_procedures.json"],
     }
 
 

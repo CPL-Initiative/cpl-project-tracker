@@ -51,7 +51,8 @@ for r in rows:
     check(key + ": the complete pair is two whole numbers with the count inside the universe",
           pair and isinstance(pair[0].get("n"), int) and isinstance(pair[0].get("of"), int) and 0 <= pair[0]["n"] <= pair[0]["of"],
           pair[:1])
-    check(key + ": the pair opens the tab", pair and pair[0].get("open") == r.get("tab"))
+    # The Commons' step 3 (S425): a count may open a list under its tab (#canonical-subj4/progress).
+    check(key + ": the pair opens the tab", pair and str(pair[0].get("open") or "").startswith(r.get("tab") or "~"))
     check(key + ": at least one test behind the count", isinstance(r.get("tests"), list) and len(r["tests"]) >= 1)
     check(key + ": every known issue carries a count, words and an owner",
           all(isinstance(i.get("n"), int) and i.get("words") and i.get("owner") for i in r.get("issues", [])),
@@ -79,7 +80,27 @@ check("Course: SkyView alone is the row's home, and every count opens it (Sam, 2
 cr = rows[3]
 check("CR: the curator's decisions are a second pair line with no universe", len(cr["pair"]) == 2 and "of" not in cr["pair"][1] and isinstance(cr["pair"][1].get("n"), int))
 sub = rows[4].get("facts") or {}
-check("Subjects: a person's and a cohort's confirmations sum to the confirmed count", sub.get("person") + sub.get("cohort") == sub.get("confirmed") == rows[4]["pair"][0]["n"])
+check("Subjects: a person's and a cohort's confirmations sum to the confirmed count", sub.get("person") + sub.get("cohort") == sub.get("confirmed"))
+# S425: the pair is the settled count (confirmed, on the authority rule, in no collision), never above the confirmed count,
+# and its words say MQ discipline (Sam, 2026-10-19).
+check("Subjects: settled is the confirmed count less the collisions, and the pair carries it",
+      sub.get("settled") == rows[4]["pair"][0]["n"] and sub.get("settled") <= sub.get("confirmed") and rows[4]["pair"][0]["of"] == sub.get("disciplines"))
+check("Subjects: the pair's words say MQ disciplines and name the three tests", "MQ disciplines" in rows[4]["pair"][0]["words"]
+      and rows[4]["tests"] == ["person-confirmed", "authority rule", "collision-free"])
+check("Subjects: every count opens the tab's own list (the Commons' step 3)",
+      rows[4]["pair"][0]["open"] == "#canonical-subj4/progress" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
+check("Subjects: the unconfirmed issue opens the pre-seeded filter and the collision issue the SUBJ check",
+      rows[4]["issues"][0]["open"] == "#canonical-subj4/pre_seeded" and rows[4]["issues"][1]["open"] == "#canonical-subj4/check")
+if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
+    check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",
+          len(rows[4]["issues"]) >= 4 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at"))
+if os.path.exists(os.path.join(ROOT, "kb", "csr_procedures.json")):
+    with open(os.path.join(ROOT, "kb", "csr_procedures.json"), encoding="utf-8") as f:
+        store = json.load(f)
+    on = [p for p in store["procedures"] if p.get("on")]
+    check("Subjects: the procedures cell counts the store's procedures in force and names the rules",
+          rows[4]["procedures"][0]["n"] == len(on) and sub.get("procedures_on") == len(on)
+          and all(any(p["name"] == w["words"] for p in on) for w in rows[4]["procedures"][1:]))
 
 # ── the S343 rule: a source that cannot be read is null with its error, never a zero ──
 with tempfile.TemporaryDirectory() as empty:

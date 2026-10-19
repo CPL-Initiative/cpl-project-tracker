@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 679,
+  "file_datasets": 683,
   "external_services": 182,
   "consumers": 451,
   "workflows": 56,
@@ -680,7 +680,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 426
+     "line": 439
     }
    ],
    "main_committers": []
@@ -734,6 +734,16 @@
      "line": 1388,
      "tabs": [
       "admin"
+     ]
+    },
+    {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 2102,
+     "tabs": [
+      "canonical-subj4"
      ]
     },
     {
@@ -1303,7 +1313,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1453
+     "line": 1466
     }
    ],
    "main_committers": []
@@ -1315,7 +1325,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 255
+     "line": 268
     }
    ],
    "main_committers": []
@@ -1522,8 +1532,9 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 42,
+     "line": 43,
      "tabs": [
+      "canonical-subj4",
       "commons",
       "program-requirements"
      ]
@@ -1815,7 +1826,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 636
+     "line": 649
     }
    ],
    "main_committers": []
@@ -3632,7 +3643,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1127
+     "line": 1140
     }
    ],
    "main_committers": []
@@ -4659,7 +4670,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1018
+     "line": 1031
     },
     {
      "id": "module:admin.js",
@@ -4785,7 +4796,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 114
+     "line": 133
     }
    ],
    "producers": [
@@ -5238,6 +5249,16 @@
   "file:commons_progress.js": {
    "consumers": [
     {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2500,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    },
+    {
      "id": "page:CPL_Dashboard.html",
      "kind": "page",
      "direction": "read",
@@ -5404,7 +5425,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1392
+     "line": 1405
     },
     {
      "id": "module:college_briefing.js",
@@ -7861,6 +7882,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_csr_trail.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_esl_sheet_apply.py": {
    "consumers": [
     {
@@ -9464,6 +9498,13 @@
      "line": 99
     },
     {
+     "id": "script:kb/_csr_trail.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 217
+    },
+    {
      "id": "script:kb/_desc_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -10202,6 +10243,13 @@
      "line": 100
     },
     {
+     "id": "script:kb/_csr_trail.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 219
+    },
+    {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -10725,7 +10773,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 140
     },
     {
      "id": "script:kb/_curation_01.py",
@@ -11325,6 +11373,60 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/csr_out/latest.json": {
+   "consumers": [
+    {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 349
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/csr_procedures.json": {
+   "consumers": [
+    {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/dashboard_config.json": {
    "consumers": [
     {
@@ -11381,7 +11483,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 212,
+     "line": 220,
      "tabs": [
       "canonical-subj4"
      ]
@@ -11474,7 +11576,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 144,
+     "line": 152,
      "tabs": [
       "canonical-subj4"
      ]
@@ -11501,14 +11603,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 45
     },
     {
      "id": "script:kb/_apply_canonical_subj4.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 37
+     "line": 45
     },
     {
      "id": "script:kb/_apply_fl_subj4_remint.py",
@@ -11536,14 +11638,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 324
+     "line": 328
     },
     {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 188
+     "line": 262
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -11672,7 +11774,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 153,
+     "line": 161,
      "tabs": [
       "canonical-subj4"
      ]
@@ -12103,7 +12205,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 174,
+     "line": 182,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13411,7 +13513,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 254,
+     "line": 262,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13551,7 +13653,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 251,
+     "line": 259,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14209,7 +14311,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 163,
+     "line": 171,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14676,11 +14778,21 @@
   "file:kb/status/subjects.json": {
    "consumers": [
     {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    },
+    {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 337
+     "line": 390
     }
    ],
    "served": true,
@@ -17932,6 +18044,19 @@
    "main_committers": []
   },
   "file:tests/course_title_mojibake_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/csr_procedures_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -21919,7 +22044,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 106,
+     "line": 114,
      "tabs": [
       "canonical-subj4"
      ]
@@ -22013,7 +22138,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 63
     },
     {
      "id": "script:kb/_apply_credential_review.py",
@@ -23707,6 +23832,7 @@
    "commons"
   ],
   "commons_progress.js": [
+   "canonical-subj4",
    "commons",
    "program-requirements"
   ],
@@ -24191,6 +24317,7 @@
     "kb/_build_discipline_blanks_worklist.py",
     "kb/_build_orphan_parent_worklist.py",
     "kb/_build_remint_blast_radius.py",
+    "kb/_csr_trail.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -24254,6 +24381,7 @@
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
+    "kb/csr_out/latest.json",
     "kb/project_lifecycle.json",
     "kb/budget_snapshot.json",
     "reports/CPL_Master_Report.docx",
@@ -24365,6 +24493,7 @@
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
     "tests/csr_trail_rules_test.py",
+    "tests/csr_procedures_test.py",
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
