@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-19T11:18:14Z",
+ "written_at": "2026-10-19T13:29:18Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 11680,
+     "n": 11689,
      "of": 20282,
      "words": "complete at 113 colleges",
      "open": "#program-requirements"
@@ -32,7 +32,7 @@
      "open": "#program-requirements"
     },
     {
-     "n": 4739,
+     "n": 4730,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "open": "#program-requirements"
@@ -50,15 +50,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-19T08:06:18Z",
+    "at": "2026-10-19T10:44:44Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 11680,
+    "complete": 11689,
     "failing": 3863,
-    "unread": 4739,
-    "records": 17090,
+    "unread": 4730,
+    "records": 17099,
     "colleges": 114,
     "outside_active": 1547
    },
@@ -84,7 +84,7 @@
     {
      "n": 1729,
      "of": 4915,
-     "words": "titles carry a review stamp (645 a person's, 1,084 a cohort's); 2,441 credentials, 1,825 of 2,644 records stamped",
+     "words": "titles carry a review stamp (645 a person's, 1,084 a cohort's); 2,441 credentials, 1,827 of 2,646 records stamped",
      "open": "#credential-reference"
     }
    ],
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-18T17:47:11Z",
+    "at": "2026-10-19T13:25:34Z",
     "every_hours": 24
    },
    "facts": {
@@ -137,10 +137,10 @@
     "person": 645,
     "cohort": 1084,
     "credentials": 2441,
-    "records": 2644,
-    "records_stamped": 1825,
+    "records": 2646,
+    "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-18T17:47:11Z"
+    "fold_at": "2026-10-19T13:25:34Z"
    },
    "sources": [
     "kb/unified_titles.json",
@@ -216,7 +216,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-18T17:48:47+00:00",
+    "at": "2026-10-19T13:27:35+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -279,7 +279,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-18T17:50:29+00:00",
+    "at": "2026-10-18T17:50:29Z",
     "every_hours": null
    },
    "facts": {
@@ -343,7 +343,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks into the seed",
-    "at": "2026-10-18T17:47:09Z",
+    "at": "2026-10-19T13:25:33Z",
     "every_hours": 24
    },
    "facts": {
