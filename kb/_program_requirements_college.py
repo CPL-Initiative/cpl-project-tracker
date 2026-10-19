@@ -142,7 +142,7 @@ def with_renumbers(programs: list[dict], renumbers: dict) -> list[dict]:
 def net_hits(courses: list[dict], codes: set) -> int:
     """How many listed courses the page's code tokens name, a renumbered one by either code."""
     return sum(1 for c in courses if P.norm_code(c.get("code") or "") in codes
-               or (c.get("printed") and c["printed"] in codes))
+               or (c.get("printed") and P.norm_code(c["printed"]) in codes))
 
 
 def group_programs(progs: list[dict], rows: list[dict]) -> list[dict]:

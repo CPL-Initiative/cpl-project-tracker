@@ -82,11 +82,14 @@ def prefix_aliases(college: str, steps: dict | None = None) -> dict | None:
 
 
 def course_renumbers(college: str, steps: dict | None = None) -> dict:
-    """{the file's code, normalized: the catalog's code, normalized}: what the capture
-    looks for on the page in place of a renumbered listed course."""
+    """{the file's code, normalized: the catalog's code, its subject spaced from its number}:
+    what the capture looks for on the page in place of a renumbered listed course. The space
+    is load-bearing: code_pattern() reads "CPSC17" as letters C-P-S then "C17", which never
+    matches the page's "CPSC-17" (Merced's Drone Technology and Equine pages, S423)."""
     from _program_requirements_pilot import norm_code
     conf = (steps if steps is not None else load_steps()).get(college) or {}
-    return {norm_code(v): norm_code(k) for k, v in (conf.get("course_renumbers") or {}).items()}
+    return {norm_code(v): re.sub(r"^([A-Z&]+)(?=\d)", r"\1 ", norm_code(k))
+            for k, v in (conf.get("course_renumbers") or {}).items()}
 
 
 def awards_match(kind: str | None, award: str | None) -> bool:

@@ -1687,7 +1687,7 @@ check(both["coverage"]["missing"] == ["ANTHR2L"],
 check(RC.prefix_aliases("Cerritos College") is None, "a college with no aliases gets none")
 # Merced (S423): the catalog prints MECH22A Diesel Engines 4 where the state's file lists AGMA 11 Diesel Engines 4.
 MER_ALIASES = RC.prefix_aliases("Merced College")
-check(MER_ALIASES.get("MECH22A") == "AGMA 11" and RC.course_renumbers("Merced College").get("AGMA11") == "MECH22A",
+check(MER_ALIASES.get("MECH22A") == "AGMA 11" and RC.course_renumbers("Merced College").get("AGMA11") == "MECH 22A",
       "Merced's renumbered courses reach the scorer's aliases and the capture's map")
 mech = {"program": {"total_units": {"min": 6, "max": 6}, "measure": "units"},
         "blocks": [{"name": "Core", "rule": "all", "courses": [{"code": "MECH22A", "units": 4},
@@ -1710,6 +1710,9 @@ for c in MECH_CLOSED:
 found = P.find_codes(MECH_TEXT, MECH_CLOSED)
 check(sorted(found) == ["AGMA11", "AGMA20"],
       "the capture finds a renumbered course by its printed code, and AGMA 2 never in AGMA-20: %s" % sorted(found))
+DRONE = [{"code": "DRON 10", "printed": RC.course_renumbers("Merced College").get("DRON10")}]
+check(P.coverage(P.find_codes("CPSC-17 Drone Technology I (Total Credits 3.0 - 3.0)", DRONE), DRONE) == 1.0,
+      "a printed code the page hyphens (CPSC-17 for DRON 10) is found: %s" % DRONE)
 # San Joaquin Delta (S422): a noncredit page prints "Total Contact Hours: 288" and "Units: 0" beside each course.
 SJD_NC = ("Core Requirements \u00b7 ESL 9088 Health Careers Reading Units: 0 \u00b7 ESL 9059 Writing Units: 0 \u00b7 "
           "Restrictive Electives \u00b7 Complete 1 course from: \u00b7 ESL 9086 Advanced Reading Units: 0 \u00b7 Total Contact Hours: 288")
