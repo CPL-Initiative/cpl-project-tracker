@@ -43,6 +43,10 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 STEPS = os.path.join(HERE, "program_requirements_reconcile.json")
 ASSOCIATE = re.compile(r"\bA\.?\s?[AS]\b\.?|\bassociate\b", re.I)
+# A transfer degree (AA-T, AS-T; COCI's "A.A- T Degree" and "A.S. T Degree"): Cal-GETC is
+# its pattern, never a local degree's, and a local degree's captured page can span the
+# sibling transfer section on the same page (Cañada, S421: six local degrees took the 34).
+TRANSFER = re.compile(r"\bA\.?\s?[AS]\.?\s?-?\s?T\b|\bfor\s+transfer\b", re.I)
 
 
 def load_steps(path: str = STEPS) -> dict:
@@ -71,6 +75,8 @@ def awards_match(kind: str | None, award: str | None) -> bool:
         return True
     if kind == "associate":
         return bool(ASSOCIATE.search(award or "")) and not re.search(r"baccalaureate|certificate", award or "", re.I)
+    if kind == "transfer":
+        return awards_match("associate", award) and bool(TRANSFER.search(award or ""))
     return False
 
 
