@@ -181,18 +181,22 @@ def find_codes(text: str, courses: list[dict]) -> dict[str, list[int]]:
     out: dict[str, list[int]] = {}
     runs: dict[str, list[tuple[str, int]]] = {}
     for c in courses:
-        pat = code_pattern(c.get("code") or "")
-        if pat is None:
-            continue
-        pos = [m.start() for m in pat.finditer(text or "")]
-        parts = code_parts(c.get("code") or "")
-        if parts and text:
-            if parts[0] not in runs:
-                runs[parts[0]] = run_numbers(text, parts[0])
-            num = re.compile(parts[1], re.I)
-            pos = sorted(set(pos) | {at for tok, at in runs[parts[0]] if num.fullmatch(tok)})
+        pos: set[int] = set()
+        # A renumbered course is looked for as the catalog prints it too ("printed", from
+        # the college's course_renumbers; Merced's MECH22A for the file's AGMA 11, S423).
+        for code in [c.get("code") or ""] + ([c["printed"]] if c.get("printed") else []):
+            pat = code_pattern(code)
+            if pat is None:
+                continue
+            pos |= {m.start() for m in pat.finditer(text or "")}
+            parts = code_parts(code)
+            if parts and text:
+                if parts[0] not in runs:
+                    runs[parts[0]] = run_numbers(text, parts[0])
+                num = re.compile(parts[1], re.I)
+                pos |= {at for tok, at in runs[parts[0]] if num.fullmatch(tok)}
         if pos:
-            out[norm_code(c["code"])] = pos
+            out[norm_code(c["code"])] = sorted(pos)
     return out
 
 

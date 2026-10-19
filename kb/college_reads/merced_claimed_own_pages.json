@@ -1,0 +1,70 @@
+{
+ "_readme": "S423 SkyLaurel, 2026-10-19. Ten Merced programs lost every page to a sibling award (page_claimed, capture 39230479383), yet the catalog's own list (now in the account) names a page for most of them: Small Business Entrepreneurship 05700.AS and .CT (state 03473, 19498), Child Development 13010.AA (03515), Equine Science and Management 01225.AS and .CN (07708, 19493), HVAC Technician 09400.CN (19505), Environmental Horticulture 01350.CN (Landscape Horticulture 20802), Drone Technology 09170.CM (38831), Engineering 09010.CT (44678). The capture never offered these pages as candidates, so each printed under half its listed courses. This read prints each whole, to compare with the state's lists before naming a cause. No model call.",
+ "college": "Merced College",
+ "outside_hosts": {
+  "coursedog.com": "Merced's catalog vendor: the catalog's own scripts on catalog.mccd.edu call app.coursedog.com for each program's requisites."
+ },
+ "questions": {
+  "codes": "Which course codes each program's own Requisites page prints, against the state's listed codes."
+ },
+ "keywords": [
+  "[A-Z]{2,5}[- ]?\\d{1,3}[A-Z]?",
+  "Total Credits"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/05700.AS/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/05700.CT/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/13010.AA/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/09400.CN/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/01350.CN/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/09170.CM/requisites-ojrrt"
+  },
+  {
+   "answers": [
+    "codes"
+   ],
+   "url": "https://catalog.mccd.edu/programs/09010.CT/requisites-ojrrt"
+  }
+ ]
+}

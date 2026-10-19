@@ -1,0 +1,213 @@
+{
+ "college": "Merced College",
+ "control_number": "16653",
+ "shape": "certificate",
+ "title": "Compact Power Equipment",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6401,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6401,
+    "output_tokens": 1300,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1300,
+  "output_tokens_details": {
+   "thinking_tokens": 333
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0516,
+ "ms": 10761,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Compact Power Equipment (CN) (Total Credits 16.0 - 16.0)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "MECH35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MECH30",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MECH26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MECH21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MECH41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGMA-20",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGMA 7",
+    "why": "not in the text under this code; catalog lists MECH35 Compact Power Equipment (same title, 3 units), likely a renumbering"
+   },
+   {
+    "code": "AGMA 12",
+    "why": "not in the text under this code; catalog lists MECH30 Equipment Mechanics Skills (same title, 2 units), likely a renumbering"
+   },
+   {
+    "code": "AGMA 14",
+    "why": "not in the text under this code; catalog lists MECH26 Power Equipment Electrical Systems (same title, 3 units), likely a renumbering"
+   },
+   {
+    "code": "AGMA 15",
+    "why": "not in the text under this code; catalog lists MECH21 Hydraulics (same title, 3 units), likely a renumbering"
+   },
+   {
+    "code": "AGMA 19",
+    "why": "not in the text under this code; catalog lists MECH41 Advanced Diagnosis and Repair (same title, 3 units), likely a renumbering"
+   }
+  ],
+  "notes": [
+   "The catalog prints five courses under MECH codes whose titles and units match closed-list AGMA courses (MECH35=AGMA 7, MECH30=AGMA 12, MECH26=AGMA 14, MECH21=AGMA 15, MECH41=AGMA 19); these appear to be renumbered courses. Recorded as printed with catalog_addition true; reviewer should confirm the crosswalk.",
+   "AGMA-20 is printed with a hyphen; treated as closed-list AGMA 20.",
+   "Only the Requisites tab was provided; no program learning outcomes or careers appear in the text."
+  ]
+ },
+ "extracted_run": "39230479383"
+}
