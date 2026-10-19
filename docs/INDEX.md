@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-18
+updated: 2026-10-19
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 554 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 555 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 58 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 391 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1180** | |
+| Session handoffs | 392 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1182** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-19 (S420 SkyTanoak, hand-opened): Cañada's re-read landed (#2244: 26 moved pages re-extracted, 8 loaded, 17 replaced, display build 3aa52b4afcb6); the CPL News UI pass (#2243); a Jev calibration sitting over a college's failing records (`kb/_jev_harvest.py`, #2245) and the xAI smoke for the second reader's key; Open Asks Sheet 97 asked and answered (Build with Grok, 03:11Z); KB note `methodology-a-harvests-tail-needs-a-different-instrument`.
 - 2026-10-18 (S419 SkyCottonwood, hand-opened): the Commons' step 1 landed (#2237: the Progress view drawn by the shared `commons_progress.js`, nothing changing on screen, the status file under `kb/status/`) and Sam approved the mock-up (19:08Z, to S417; version 4 collapses per row and all at once); Cañada's PDF picker reads the catalog's three heading shapes (#2241; the capture-only run moved 26 pages, eight of the eleven empty records onto their own headings); `docs/commons_lessons.md` and a KB note on the shared-view pattern added.
 - 2026-10-18 (S418 SkyMadrone, hand-opened): the first CER saving run (926 titles as 1,852 `kb_curation` rows under 7 cohorts) and the fold's first apply since July (1,102 assignments, 12 supersedes, 455 credential records, 18 held; 4,915 titles); Sheet 96 answered *keep* at 17:23Z; #2230 deployed after the third A/B (7s traced to variance: a place question never reaches the changed block); the Our Process UI pass (#2233) and S417's checkpoint (#2234) merged; the Commons mock-up at version 3 with its Exhibit pair re-measured; the stale S338 checkpoint PR closed.
 - 2026-10-18 (S417 SkyManzanita): #2231 merged and the CER lane's first saving run staged (preview 926 under 7; #2232 quotes the workflow's save options); the Commons mock-up revised on Fable's review with every figure re-measured; #2230's live-program gate fixed after the A/B lost 7l; the Our Process UI pass (#2233); Open Asks Sheet 96 drafted (CPLBrain#385); handoff 418 (SkyMadrone).

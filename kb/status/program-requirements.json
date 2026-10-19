@@ -1,104 +1,47 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-18T20:05:29Z",
-  "session": 419,
-  "moniker": "SkyCottonwood",
+  "written_at": "2026-10-19T03:33:05Z",
+  "session": 420,
+  "moniker": "SkyTanoak",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_420_handoff.md",
+  "handoff": "docs/session_421_handoff.md",
   "next_step": {
-    "title": "Extract Cañada's 26 moved pages, then the harvest's other colleges and the Commons step 2",
-    "text": "The reader now reads Cañada's three heading shapes and the capture-only run moved 26 programs' pages, eight of the eleven empty records onto their own headings: dispatch the extraction (step read, extract 1, about two dollars under Sam's standing go), then reread, load and the display build on main. Then Merced's 18 unfound, Taft's 21 and San Joaquin Delta's 50 records failing a machine check, and the Commons step 2, each common reference's Progress view drawn from the shared module with its definition of complete on a card for Sam. The nightly cer-procedures run of 07:47Z is the first saving night with no one watching; read its receipt and the morning fold."
+    "title": "Dispatch the first Jev sitting over Canada's failing records, then the harvest's tail and the second reader once its key exists",
+    "text": "Run typesafe-smoke.yml with harvest=Canada College (about 20 calls): Jev names a cause and an owner for each of the 20 records failing a machine check, and a person's verdicts beside its rows start the calibration. Then Taft (24 failing) and San Joaquin Delta (49), Merced's 18 unfound, and the second reader with Grok once the XAI_API_KEY secret exists."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "Create the XAI_API_KEY repository secret for the second reader",
+      "text": "Sam ruled Build with Grok on Open Asks Sheet 97 (03:11Z, 2026-10-19). The second reader starts once the xAI key exists as a repository Actions secret named XAI_API_KEY; xai-smoke.yml proves it on a runner. Until then the second reader waits and the Jev sitting runs alone.",
+      "no_reply": "The second reader stays unbuilt; the harvest's failing records are read by one model and Jev's sitting.",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/settings/secrets/actions"
+    }
+  ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
     {
-      "at": "2026-10-18T11:05:00Z",
-      "text": "The display build of 15,946 programs at 114 colleges was applied."
+      "at": "2026-10-19T02:31:00Z",
+      "text": "Canada College re-read on the catalog's three heading shapes: 47 records kept, 26 re-extracted for about 1.85 dollars, 21 of them passing (run 39190086831)."
     },
     {
-      "at": "2026-10-18T13:05:00Z",
-      "text": "Taft College's transfer degrees now count Cal-GETC as 34 units: 17 records replaced, 34 of 58 passing the machine checks."
+      "at": "2026-10-19T02:48:00Z",
+      "text": "Canada's reread replaced 17 rows and its load inserted 8; the filed set holds 73 of 75 listed programs, 56 passing the machine checks."
     },
     {
-      "at": "2026-10-18T13:15:00Z",
-      "text": "San Joaquin Delta College's degree pages read their 60 units as a minimum: 71 records replaced, 154 of 203 passing the machine checks."
+      "at": "2026-10-19T03:11:00Z",
+      "text": "Sam answered Open Asks Sheet 97 card 1, his own call: build a second reader with xAI's Grok over the records failing a machine check."
     },
     {
-      "at": "2026-10-18T13:43:00Z",
-      "text": "Sam answered Open Asks Sheet 94: apply the 176 clean CER assignments, let sure classifier results save under their procedure, retire the Initiated sign-off and Curate panel, and keep Taft's Cal-GETC step."
+      "at": "2026-10-19T03:21:00Z",
+      "text": "The Canada branch merged with display build 3aa52b4afcb6; step=display dispatched on main at 03:26Z (run 39194711397)."
     },
     {
-      "at": "2026-10-18T14:15:00Z",
-      "text": "The display build of 15,946 programs at 114 colleges (48cb66f19cff) was applied."
-    },
-    {
-      "at": "2026-10-18T15:00:00Z",
-      "text": "The Progress view counts a program complete when its record passes the machine checks, live from every record; the 32 a person confirmed stay on the pilot milestone."
-    },
-    {
-      "at": "2026-10-18T16:05:00Z",
-      "text": "Sheet 94's three CER rulings built in #2231: the fold holds each conflict by itself, a sure result saves under its procedure, the Initiated sign-off and Curate panel retire."
-    },
-    {
-      "at": "2026-10-18T15:52:00Z",
-      "text": "Sierra reads every complete record, an active program whose record passes the three machine checks (#2230, draft; its A/B is running)."
-    },
-    {
-      "at": "2026-10-18T15:58:00Z",
-      "text": "The Commons row mock-up is published for Fable's review, then Sam's."
-    },
-    {
-      "at": "2026-10-18T16:50:00Z",
-      "text": "Sheet 94's three CER rulings reached main (#2231): the fold holds each conflict by itself, a sure result saves under its procedure, the Initiated sign-off and the Curate panel left the tab."
-    },
-    {
-      "at": "2026-10-18T16:53:00Z",
-      "text": "The CER procedures preview listed 926 titles to save under 7 procedures, none held by a live row; the saving dispatch waits on the workflow's quoted options (#2232)."
-    },
-    {
-      "at": "2026-10-18T17:03:00Z",
-      "text": "The Commons mock-up was revised on Fable's review with every figure re-measured; the Program Requirements row reads 11,621 complete, 2,994 failing a check and 5,667 unread of 20,282 active."
-    },
-    {
-      "at": "2026-10-18T17:23:00Z",
-      "text": "Sam answered Open Asks Sheet 96: a rule procedure's settlement saves at the rule's word, the course-identity rule's 0.8 included (keep)."
-    },
-    {
-      "at": "2026-10-18T17:37:00Z",
-      "text": "The first CER saving run wrote 926 exhibit titles as 1,852 kb_curation rows under 7 procedure cohorts, none held by a live row."
-    },
-    {
-      "at": "2026-10-18T17:50:00Z",
-      "text": "The fold's first apply since July carried 1,102 saved assignments, 12 supersedes and 455 credential records into the reference and held the 18 conflicts; the reference holds 4,915 titles."
-    },
-    {
-      "at": "2026-10-18T17:53:00Z",
-      "text": "Sierra reads every complete record on production (#2230 deployed); the production smoke passed every mode at 18:07Z."
-    },
-    {
-      "at": "2026-10-18T18:00:00Z",
-      "text": "The Our Process page reads First Light's tokens in both themes (#2233)."
-    },
-    {
-      "at": "2026-10-18T18:10:00Z",
-      "text": "The Commons mock-up at version 3: Sheet 96 answered in the CER row, the two runs recorded, the Exhibit pair re-measured at 1,729 of 4,915 titles stamped."
-    },
-    {
-      "at": "2026-10-18T19:08:00Z",
-      "text": "Sam approved the Commons mock-up and asked for per-row collapse and a collapse-all control; Session 417 built both (version 4)."
-    },
-    {
-      "at": "2026-10-18T19:28:00Z",
-      "text": "The Progress view is drawn by commons_progress.js, the Commons' shared module, with nothing changing on screen; the status file moved to kb/status/program-requirements.json."
-    },
-    {
-      "at": "2026-10-18T19:55:00Z",
-      "text": "Cañada: the PDF picker reads the award's letters before a title, a title wrapped onto the next line, and a heading page whose list opens the next page; the capture-only run moved 26 programs' pages, eight of the eleven empty records onto their own headings. The extraction waits."
+      "at": "2026-10-19T03:20:00Z",
+      "text": "A Jev sitting over a college's failing records is live on typesafe-smoke.yml (input harvest), uncalibrated and suggesting only; xai-smoke.yml verifies the second reader's key."
     }
   ],
   "headline": [
@@ -167,6 +110,12 @@
       "active": 20282,
       "complete": 11621,
       "colleges": 113
+    },
+    {
+      "day": "2026-10-19",
+      "active": 20282,
+      "complete": 11630,
+      "colleges": 113
     }
   ],
   "next_run": {
@@ -175,7 +124,7 @@
     "at": "2026-10-19T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-18",
+    "day": "2026-10-19",
     "gaps": 3828,
     "parts": {
       "links": {
@@ -197,7 +146,7 @@
         20282
       ],
       "coci": [
-        14615,
+        14623,
         20282
       ],
       "outcomes": {
@@ -206,12 +155,12 @@
           89192
         ],
         "plo": [
-          14615,
+          14623,
           20282
         ]
       },
       "careers": [
-        13565,
+        13573,
         20282
       ]
     }

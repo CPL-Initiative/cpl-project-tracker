@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 414 (SkyChamise)
 tags: [handoff, program-requirements, catalog-sweep, coursedog, reconcile]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 415

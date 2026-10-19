@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 417 (SkyManzanita)
 tags: [handoff, cer-procedures, sierra-retrieval-corpus, commons, decision-sheets, ui-pass]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 418

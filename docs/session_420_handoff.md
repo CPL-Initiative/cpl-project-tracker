@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 419 (SkyCottonwood)
 tags: [handoff, commons, program-requirements-harvest, cer-procedures, ui-pass]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 420

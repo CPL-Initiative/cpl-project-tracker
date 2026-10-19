@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 554,
+   "count": 555,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2095,6 +2095,28 @@
      "title": "A harness must verify its own healthy fixture, or growth repaints the scoreboard",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-19",
+     "governs": [
+      "kb/_jev_harvest.py",
+      "kb/_program_requirements_college.py",
+      "kb/_program_requirements_score.py",
+      ".github/workflows/typesafe-smoke.yml"
+     ],
+     "path": "docs/kb-notes/methodology-a-harvests-tail-needs-a-different-instrument.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "harvest",
+      "jev",
+      "second-reader",
+      "catalog-sweep"
+     ],
+     "title": "A harvest's tail needs a different instrument than its body",
+     "type": "methodology",
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-07-23",
@@ -15735,8 +15757,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 391,
+   "count": 392,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 421,
+     "path": "docs/session_421_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "jev",
+      "second-reader",
+      "decision-sheets",
+      "ui-pass",
+      "commons"
+     ],
+     "title": "Session 421 handoff: Ca\u00f1ada's re-read landed, a Jev sitting over the harvest's failing records, Sam ruled Build with Grok (Sheet 97), the CPL News UI pass; the first sitting and the second reader's key are next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-18",
      "governs": [],
@@ -22477,5 +22518,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1180
+ "total": 1182
 }
