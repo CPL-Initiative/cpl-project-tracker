@@ -125,8 +125,8 @@ four known issues with owners, the procedures in force, and deep links into the 
 6. **rename**: the eight Title 5-numbered names and the cut-short one take the handbook's spellings, through the alias
    file and one re-key window.
 
-None is applied yet (S425 recorded them at context EMERGENCY); Session 426 executes them in this order and removes the
-six cards from the vault builder.
+None is applied yet (S425 recorded them at context EMERGENCY); Session 426 executes them in this order. The six cards
+left the vault builder in CPLBrain#395.
 
 ## NEXT
 
