@@ -114,7 +114,7 @@ four known issues with owners, the procedures in force, and deep links into the 
   never scheduled and asked two settled questions at every run; the tab's C-ID index skipped 17 of the 65
   subjects; the Jev next step for the CSR (fix AUTB, the 2026-09-29 sheet's card 11) is still open.
 
-## NEEDS SAM (Open Asks Sheet 99)
+## NEEDS SAM ([Open Asks Sheet 99](https://claude.ai/artifact/51ysTzEcJmusKb2Mb21xg8), current, 2026-10-19)
 
 1. The definition of complete for the headline pair (proposed: confirmed, on the authority rule, in no collision).
 2. The cohort confirm: may a nightly procedure confirm the 13 unconfirmed picks whose code is the authority's

@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 98](https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu), 2026-10-19, two cards open: Taft's 38661 row, the second reader's secrets). Answering
+> (latest: [Open Asks Sheet 99](https://claude.ai/artifact/51ysTzEcJmusKb2Mb21xg8), 2026-10-19, six cards open from the Common Subjects Reference lane: the definition of complete, the cohort confirm, AUTB, the agriculture residual, the validate stage, the Title 5-numbered names; Sheet 98 is answered). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
