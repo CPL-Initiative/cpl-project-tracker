@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 674,
+  "file_datasets": 675,
   "external_services": 182,
   "consumers": 451,
   "workflows": 56,
@@ -18497,6 +18497,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_reconcile_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_source_addenda_read_test.py": {
    "consumers": [
     {
@@ -24286,6 +24299,7 @@
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
     "tests/program_requirements_display_apply_test.py",

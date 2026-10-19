@@ -210,6 +210,10 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
+      # step leaves a local degree alone though its captured page spans the sibling section.
+      - name: Program requirements reconcile (award filters, the Cal-GETC step)
+        run: python3 tests/program_requirements_reconcile_test.py
       # Phase 2 (S353): every program at one college. The catalog's program
       # pages listed once from its sitemap, each program given the page naming
       # its listed courses (the award breaks a tie), the state's file read past

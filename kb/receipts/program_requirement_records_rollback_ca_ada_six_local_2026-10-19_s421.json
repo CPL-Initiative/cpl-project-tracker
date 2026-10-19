@@ -1,0 +1,19 @@
+{
+ "_doc": "Rollback receipt beside program_requirement_records_college_reread_ca_ada_39201778849.json (data_write_rollback, step 5). What was undone: the six local A.A./A.S. rows (10247, 30385, 30427, 43537, 43660, 43965) the reread of run 39201778849 replaced with Cal-GETC's 34 (reconcile run 39200870107, whose step read every associate degree; a local degree's captured page spans the sibling transfer section). Restored to the receipt's before-images, guarded on checked = false and extracted_run = 39200870107. Held out: none (a fresh live read found all six exactly as the write left them). Skipped: none. The twenty transfer-degree rows the same reread replaced are right and stay. Applied by supabase-migrate.yml from kb/migrations/.apply; its receipt sits beside this one.",
+ "college": "Cañada College",
+ "undone": [
+  "10247",
+  "30385",
+  "30427",
+  "43537",
+  "43660",
+  "43965"
+ ],
+ "kept": 20,
+ "held_out": [],
+ "skipped": [],
+ "original_receipt": "kb/receipts/program_requirement_records_college_reread_ca_ada_39201778849.json",
+ "sql": "kb/receipts/program_requirement_records_rollback_ca_ada_six_local_2026-10-19_s421.sql",
+ "session": "S421 SkyTupelo",
+ "date": "2026-10-19"
+}

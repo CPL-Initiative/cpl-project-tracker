@@ -4,7 +4,7 @@
   "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count)",
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
-  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words)",
+  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed)"
  },
  "colleges": {
@@ -172,6 +172,24 @@
      "field": "degree_total_minimum",
      "value": true,
      "pattern": "Minimum Degree Units Required: \\d+(?:\\.\\d+)?"
+    }
+   ]
+  },
+  "Cañada College": {
+   "why": "Five of Cañada's transfer-degree records (Mathematics 30741, Geography 32295, Child and Adolescent Development 35834, Social Work and Human Services 37122, Communication Studies 2.0 43478) name the degree total of 60 and the Cal-GETC pattern and print no units for it, so the degree check reads them incomplete; the Jev sitting of run 39197675380 named stated_total_counts_more for all five (kb/jev_harvest_verdicts/ca_ada.json). Every Cal-GETC transfer page in the catalog closes its requirements block with 'Completion of Cal-GETC (California General Education Transfer Curriculum)' and then 'Elective courses: Additional CSU or UC transferable courses needed to meet the minimum 60 CSU transferable unit requirement' (college page reads 39198670828, 39199041273, 39199607253; eight sections printed, Business Administration 2.0, Communication Studies 2.0, Computer Science, Economics, Child and Adolescent Development, Early Childhood Education, Geography and one more), and the catalog's own general education page states 'California General Education Transfer Curriculum (Cal-GETC) - 34 units minimum' and 'Canada local general education pattern - 25 units minimum' (page 79 of the hand-filed 2026-27 PDF). So the figure is Cañada's own, where Taft's step cites Monterey Peninsula's page. Environmental Science AS-T prints CSU-GE Breadth for STEM 33 or IGETC for STEM 31 instead and never matches. S421 SkyTupelo, 2026-10-19, under Sam's go of 2026-10-17 (harvest calls proceed on their procedures without a card). The first reconcile run (39200870107) filled six local A.A./A.S. records too, their captured pages spanning the sibling transfer section, and Earth Science A.S. 30427 failed on it (64 past 60): the step reads transfer degrees only.",
+   "awards": "transfer",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "pattern": "Completion\\s+of\\s+Cal-GETC\\s+\\(California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\)",
+     "source": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=79",
+     "source_words": "California General Education Transfer Curriculum (Cal-GETC) - 34 units minimum",
+     "awards": "transfer"
     }
    ]
   }
