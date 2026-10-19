@@ -106,12 +106,20 @@ check("no-ladder 4.7 has no editable year cell",
       'data-editable="1" data-aid="4.7"' in html, False)
 check("no-ladder 1.1.1 has no editable year cell",
       'data-editable="1" data-aid="1.1.1"' in html, False)
-check("no-ladder 4.7 has no manual-current editor",
-      'data-current-edit="1" data-aid="4.7"' in html, False)
+check("no-ladder 4.7 has no Current editor either",
+      'data-aid="4.7" data-kind="project" data-rt="CURRENT"' in html, False)
+check("laddered 4.1 has an editable Current cell per year (S426)",
+      html.count('data-editable="1" data-aid="4.1" data-kind="project" data-rt="CURRENT"'), 5)
 check("laddered 4.1 keeps its editable year cell",
       'data-editable="1" data-aid="4.1"' in html, True)
 check("no-ladder 4.7 title stays editable",
       'data-title-edit="1" data-pid="4.7"' in html, True)
+# S426: the loader's contract names the stored description `desc`; the table read
+# `description` alone and offered "Add description" on 32 rows that had one.
+_desc_projects = [dict(p, desc=f"{p['id']} contract brief", description=None) for p in projects]
+_, _, _ag_desc = gen.build_workplan_goals_from_supabase(supabase_rows, associations, _desc_projects)
+check("a description stored under the contract's `desc` key reaches the table",
+      {r["id"]: r["description"] for r in _ag_desc}["1.1"], "1.1 contract brief")
 check("no-ladder 4.7 description stays editable",
       'data-desc-edit="1" data-pid="4.7"' in html, True)
 # 7. A zeroed ladder is NOT mis-flagged as a percentage.
@@ -121,4 +129,4 @@ check("no-ladder 4.7 is_percentage is False", ag_by_id["4.7"]["is_percentage"], 
 if failures:
     print(f"\n{len(failures)} FAILURE(S): {failures}")
     sys.exit(1)
-print(f"\nAll {20} checks passed.")
+print(f"\nAll {23} checks passed.")

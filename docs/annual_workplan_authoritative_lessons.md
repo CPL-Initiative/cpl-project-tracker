@@ -126,3 +126,10 @@ anon key alone can't write either table. Updated the comment.
   (matches the existing GOAL/STRETCH pct behavior); the JS editor handles `%`
   via `data-pct`. Unifying the Python-side pct display is a pre-existing,
   out-of-scope inconsistency.
+
+---
+
+**S426 (2026-10-19) addendum.** The manual Current described above (`data-current-edit`, the `✎` hint, `saveCurrent`,
+`workplan_goals.current`) is retired: the Current row is a five-year ladder (`cur_2025_26` .. `cur_2029_30` on the
+GOAL row, `data-rt="CURRENT"`) edited by the same path as Goal and Stretch, and the live rows print under the
+fiscal year the run is in. Current truth: `docs/reference/lanes/workplan-annual-goals.md`.

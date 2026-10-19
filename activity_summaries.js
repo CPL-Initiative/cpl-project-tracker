@@ -16,7 +16,7 @@
  *     nor posts) gets "Refresh summaries" above the first Activity. It drafts
  *     each Activity's summary through the report proxy from that Activity's
  *     sub-activities (their newest item_updates, the creation-era latest
- *     update, status, percent complete, 2025-26 goal and current), opens each
+ *     update, status, percent complete, this fiscal year's goal and current), opens each
  *     draft in an editable field with its sources named, and posts one only on
  *     that draft's own Post, as item_updates `activity:N`. Skip drops a draft;
  *     Redraft asks again. Nothing posts by itself.
@@ -54,6 +54,36 @@
   }
 
   function time(iso) { var t = new Date(iso).getTime(); return isNaN(t) ? 0 : t; }
+
+  // The fiscal year the workplan is in (July 1 to June 30), as the ladder's column
+  // suffix: 2026-10 -> "2026_27". Clamped to the ladder's 2025-26 .. 2029-30.
+  var LADDER_YEARS = ["2025_26", "2026_27", "2027_28", "2028_29", "2029_30"];
+  function fiscalYearSuffix(now) {
+    var d = now || new Date();
+    var start = d.getMonth() >= 6 ? d.getFullYear() : d.getFullYear() - 1;
+    start = Math.max(2025, Math.min(2029, start));
+    return String(start) + "_" + String(start + 1).slice(2);
+  }
+  function fiscalYearLabel(suffix) { return suffix.slice(0, 4) + "-" + suffix.slice(5); }
+
+  // The goal and current the draft names for one sub-activity: this fiscal year's
+  // goal, and its Current for the year, else the latest year a Current was set
+  // (cur_<year> on the GOAL row, S426; `current` is the one-column store before it).
+  function goalFacts(goal, suffix) {
+    if (!goal) return null;
+    var target = goal["yr_" + suffix];
+    var current = goal["cur_" + suffix];
+    if (current == null || current === "") {
+      for (var i = LADDER_YEARS.indexOf(suffix); i >= 0 && (current == null || current === ""); i--) {
+        current = goal["cur_" + LADDER_YEARS[i]];
+      }
+    }
+    if (current == null || current === "") current = goal.current;
+    var hasTarget = target != null && target !== "" && Number(target) !== 0;
+    var hasCurrent = current != null && current !== "" && Number(current) !== 0;
+    if (!hasTarget && !hasCurrent) return null;
+    return { year: fiscalYearLabel(suffix), goal: Number(target) || 0, current: Number(current) || 0 };
+  }
 
   function fmtDate(iso) {
     var d = new Date(iso);
@@ -113,7 +143,8 @@
   }
 
   // The prompt for one Activity, and the rows it drew on (for raw).
-  function buildPrompt(g) {
+  function buildPrompt(g, fySuffix) {
+    var suffix = fySuffix || fiscalYearSuffix();
     var used = { item_updates: [], projects: [] };
     var lines = [];
     g.subs.forEach(function (p) {
@@ -121,9 +152,9 @@
       var facts = [];
       if (p.status) facts.push("status " + p.status);
       if (p.percent_complete != null && p.percent_complete !== "") facts.push(p.percent_complete + "% complete");
-      var goal = g.goals[p.id];
-      if (goal && (goal.yr_2025_26 || goal.current)) {
-        facts.push("2025-26 goal " + (goal.yr_2025_26 || 0) + ", current " + (goal.current || 0)
+      var gf = goalFacts(g.goals[p.id], suffix);
+      if (gf) {
+        facts.push(gf.year + " goal " + gf.goal + ", current " + gf.current
           + (p.kpi_unit ? " (" + p.kpi_unit + ")" : ""));
       }
       lines.push("- " + p.id + " " + (p.name || "") + (facts.length ? ": " + facts.join("; ") : ""));
@@ -198,7 +229,9 @@
     return Promise.all([
       sbGet("item_updates?select=id,item_type,item_id,body,author,created_at&order=created_at.desc&limit=2000"),
       sbGet("projects?select=id,name,workplan_activity,status,percent_complete,latest_update,update_date,kpi_unit"),
-      sbGet("workplan_goals?select=activity_id,kind,row_type,name,yr_2025_26,current"),
+      sbGet("workplan_goals?select=activity_id,kind,row_type,name,current,"
+        + "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,"
+        + "cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30"),
       sbGet("project_lifecycle?select=project_id,state")
     ]).then(function (r) {
       return { updates: r[0] || [], projects: r[1] || [], goals: r[2] || [], lifecycle: r[3] || [] };
@@ -455,6 +488,7 @@
 
   var api = {
     activityOf: activityOf, gather: gather, freshnessText: freshnessText, buildPrompt: buildPrompt,
+    goalFacts: goalFacts, fiscalYearSuffix: fiscalYearSuffix,
     postPayload: postPayload, reviewerSession: reviewerSession, paint: paint,
     CLAUDE_MODEL: CLAUDE_MODEL, _state: state
   };

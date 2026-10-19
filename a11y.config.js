@@ -768,7 +768,8 @@ async function workplanGoalsKeyboardChecks(page) {
       detail: "no .wpg-annual-table: the page predates the S375 renderer (the next cron run rebuilds it)" };
     const r = t.querySelector(".wpg-r");
     const sc = t.closest(".wpg-annual-scroll");
-    const grid = r && getComputedStyle(r).display === "grid";
+    // S426: the row is a wrapping flex line (a cell takes the width its number needs).
+    const grid = r && /^(grid|flex)$/.test(getComputedStyle(r).display);
     const fits = sc && sc.scrollWidth <= sc.clientWidth + 1;
     return { name: "below 560px each sub-activity is a card", ok: !!(grid && fits),
       detail: "row display " + (r ? getComputedStyle(r).display : "?") + ", scroller " + (sc ? sc.scrollWidth + "/" + sc.clientWidth : "?") };
@@ -2254,7 +2255,7 @@ module.exports = {
   },
   "workplan-goals-add": {
     file: "index.html",
-    title: "Annual Workplan Goals, the Add new row dialog",
+    title: "Annual Workplan Goals, the Add sub-activity dialog",
     routes: [{ hash: "workplan-goals", name: "add" }],
     widths: [390, 1440],
     seed: (page) => seedWorkplanGoalsEditor(page, "light", true),
@@ -2262,7 +2263,7 @@ module.exports = {
   },
   "workplan-goals-add-dark": {
     file: "index.html",
-    title: "Annual Workplan Goals, the Add new row dialog, dark",
+    title: "Annual Workplan Goals, the Add sub-activity dialog, dark",
     routes: [{ hash: "workplan-goals", name: "add" }],
     widths: [390, 1440],
     seed: (page) => seedWorkplanGoalsEditor(page, "dark", true),

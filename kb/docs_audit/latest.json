@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1201,
-    "bytes": 12358586,
-    "over_budget": 8,
+    "bytes": 12368730,
+    "over_budget": 9,
     "handoff_max": 426,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60508,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 122,
-        "bytes": 3825552,
+        "bytes": 3825578,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 83,
-        "bytes": 2276287,
+        "bytes": 2279501,
         "over": 1
       },
       "kb_note": {
@@ -46,25 +46,25 @@
       },
       "roadmap_lane": {
         "files": 40,
-        "bytes": 390125,
-        "over": 3
+        "bytes": 397009,
+        "over": 4
       },
       "handoff": {
         "files": 397,
-        "bytes": 3045765,
+        "bytes": 3045785,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 9,
       "house_voice": 23,
       "kb_note_dialect": 1,
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22780,
-      "bytes": 3193108607,
-      "heavy_bytes": 2111782659,
+      "files": 22788,
+      "bytes": 3194506655,
+      "heavy_bytes": 2113108151,
       "heavy_share": 0.661,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -441,6 +441,19 @@
       "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 21291,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 1291,
+        "ratio": 1.06
+      },
+      "message": "21,291 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/workplan-annual-goals.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -530,10 +543,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1142013155,
+        "bytes": 1143338362,
         "kind": "dir"
       },
-      "message": "directory totals 1,142,013,155 B inside the vault"
+      "message": "directory totals 1,143,338,362 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -580,10 +593,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 31074094,
+        "bytes": 31073608,
         "kind": "dir"
       },
-      "message": "directory totals 31,074,094 B inside the vault"
+      "message": "directory totals 31,073,608 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -760,10 +773,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11812190,
+        "bytes": 11812960,
         "kind": "file"
       },
-      "message": "11,812,190 B single file inside the vault"
+      "message": "11,812,960 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -910,10 +923,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715708,
+        "bytes": 6715709,
         "kind": "file"
       },
-      "message": "6,715,708 B single file inside the vault"
+      "message": "6,715,709 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

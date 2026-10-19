@@ -11,9 +11,12 @@
  *   - Add-activity flow (GOAL+STRETCH pair + associations)
  *   - Session 85: the Annual Workplan tab is the AUTHORITATIVE source —
  *       · manual "Current" editing for sub-activities NOT mapped to a live
- *         headline KPI (PATCH workplan_goals.current on the GOAL row); the
- *         KPI-mapped ones render the live value read-only (no edit affordance),
- *         so the table matches the headline card by construction.
+ *         headline KPI; the KPI-mapped ones render the live value read-only
+ *         (no edit affordance), so the table matches the headline card by
+ *         construction. S426 (2026-10-19): Current is a five-year ladder like
+ *         Goal and Stretch — one cell per year, stored as cur_<year> on the GOAL
+ *         row (kb/supabase_workplan_goals_current_by_year.sql) and saved by the
+ *         same editor the other two rows use.
  *       · sub-activity TITLE editing → PATCH projects.name (the single title
  *         store the Dashboard card editor also writes).
  *
@@ -44,6 +47,18 @@
     });
     return n;
   }
+
+  // The ladder's five years: the column label, the Goal/Stretch column, the Current
+  // column (S426), and the short label the phone card prints.
+  var YEARS = [
+    { lbl: "2025-26", key: "yr_2025_26", cur: "cur_2025_26", short: "25-26" },
+    { lbl: "2026-27", key: "yr_2026_27", cur: "cur_2026_27", short: "26-27" },
+    { lbl: "2027-28", key: "yr_2027_28", cur: "cur_2027_28", short: "27-28" },
+    { lbl: "2028-29", key: "yr_2028_29", cur: "cur_2028_29", short: "28-29" },
+    { lbl: "2029-30", key: "yr_2029_30", cur: "cur_2029_30", short: "29-30" }
+  ];
+  var YEAR_BY_SHORT = {};
+  YEARS.forEach(function (y) { YEAR_BY_SHORT[y.short] = y; });
 
   // ─── Auth ────────────────────────────────────────────────────────────────
   function isValidJwt(t) {
@@ -210,27 +225,13 @@
     if (kind) qs += "&kind=eq." + encodeURIComponent(kind);
     var body = {};
     body[year_key] = value;
-    body.total = new_total;
+    // A Current cell (cur_<year>, S426) leaves `total` alone: that column is the
+    // Goal total of the row the Current values ride on.
+    if (new_total !== null && new_total !== undefined) body.total = new_total;
     return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
       method: "PATCH",
       headers: authHeaders(sess, "return=representation"),
       body: JSON.stringify(body)
-    });
-  }
-
-  /**
-   * Session 85 — manual "Current" editor. Writes the single Current value to
-   * workplan_goals.current on the GOAL row (canonical; the generator reads it
-   * there). Only fires on UNMAPPED sub-activities — KPI-mapped ones render the
-   * live value read-only (no data-current-edit attr), so they never reach here.
-   */
-  function saveCurrent(activity_id, value, sess) {
-    var qs = "activity_id=eq." + encodeURIComponent(activity_id)
-           + "&row_type=eq.GOAL";
-    return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
-      method: "PATCH",
-      headers: authHeaders(sess, "return=representation"),
-      body: JSON.stringify({ current: value })
     });
   }
 
@@ -303,73 +304,61 @@
     if (window.CPL_ASSOC_EDITOR) window.CPL_ASSOC_EDITOR.refresh();
   }
 
-  // ─── Auth widget (banner at top of tab) ──────────────────────────────────
+  // ─── Auth widget (the card's head row) ──────────────────────────────────
+  // Mounted in the title row of the Annual card (.wpg-auth-slot, display:contents,
+  // printed by render_annual_goals_table_html): the controls sit to the right of
+  // the title and the hint or status line takes the next line. Before S426 it was
+  // a gray band above the card. Returns { widget, hint }.
   function buildAuthWidget(state, onChange) {
-    var widget = el("div", {
-      "class": "wpg-auth-widget",
-      "style": "margin:1rem 0 0.5rem 0;padding:0.75rem 1rem;background:var(--surface-subtle);border-radius:8px;font-size:0.85rem;color:var(--text-strong);display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;"
-    }, []);
+    var widget = el("div", { "class": "wpg-auth-widget" }, []);
+    var hint = el("p", { "class": "wpg-auth-hint", "role": "status", "aria-live": "polite" }, []);
 
     if (state.sess) {
-      widget.appendChild(el("span", { "style": "font-weight:600;" },
+      widget.appendChild(el("span", { "class": "wpg-auth-who" },
         state.sess.teamPass
           ? ["Editing unlocked (team phrase)"]
           : ["Signed in as ", state.sess.email || "(no email)"]));
-      var sub = el("span", { "style": "color:var(--text-muted);" }, ["Click or Tab to any underlined value and press Enter to edit it. Enter saves, Esc cancels."]);
-      widget.appendChild(sub);
-      var btnAdd = el("button", {
-        "class": "wpg-btn wpg-btn-add"
-      }, ["Add new row"]);
+      var btnAdd = el("button", { "class": "wpg-btn wpg-btn-add", "type": "button" }, ["Add sub-activity"]);
       btnAdd.addEventListener("click", function () { openAddModal(state); });
       widget.appendChild(btnAdd);
-      var btnOut = el("button", {
-        "class": "wpg-btn"
-      }, [state.sess.teamPass ? "Lock" : "Sign out"]);
+      var btnOut = el("button", { "class": "wpg-btn", "type": "button" }, [state.sess.teamPass ? "Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () {
         signOut();
         onChange();
       });
       widget.appendChild(btnOut);
+      hint.textContent = "Tab to an underlined value and press Enter to edit it. Enter saves, Esc cancels.";
     } else {
-      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
-        ["Sign in (CCCCO MAP only) to edit goal + stretch values."]));
+      widget.classList.add("wpg-auth-out");   // its own line under the title: the row is wide
+      widget.appendChild(el("span", { "class": "wpg-auth-who" }, ["Sign in to edit (CCCCO MAP team)"]));
       var emailInput = el("input", {
         "type": "email",
         "placeholder": "you@example.edu",
         "aria-label": "Email address",
-        "style": "padding:0.35rem 0.5rem;border:1px solid var(--border-strong);border-radius:5px;font-size:0.8rem;min-width:180px;"
+        "class": "wpg-auth-email"
       }, []);
-      var btnIn = el("button", {
-        "class": "wpg-btn"
-      }, ["Sign in"]);
-      var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
+      var btnIn = el("button", { "class": "wpg-btn", "type": "button" }, ["Sign in"]);
+      function say(cls, text) { hint.className = "wpg-auth-hint" + (cls ? " " + cls : ""); hint.textContent = text; }
 
       btnIn.addEventListener("click", function () {
         var email = (emailInput.value || "").trim();
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          status.textContent = "Enter a valid email address.";
-          status.style.color = "var(--red-alert)";
+          say("err", "Enter a valid email address.");
           return;
         }
-        status.style.color = "var(--text-strong)";
-        status.textContent = "Sending magic link...";
+        say("", "Sending magic link...");
         signIn(email).then(function (r) {
           if (r.ok) {
-            status.style.color = "var(--green-progress)";
-            status.innerHTML = '✉ Magic link sent to <strong>' + email + '</strong>. Click the link in your inbox to finish signing in.';
+            say("ok", "Magic link sent to " + email + ". Click the link in your inbox to finish signing in.");
           } else if (r.status === 429) {
-            status.style.color = "var(--red-alert)";
-            status.textContent = "Too many sign-in emails. Wait a few minutes, then try again.";
+            say("err", "Too many sign-in emails. Wait a few minutes, then try again.");
           } else if (r.status === 400 || r.status === 422) {
-            status.style.color = "var(--red-alert)";
-            status.textContent = "Server rejected the sign-in — confirm your email is on the allowed-reviewers list.";
+            say("err", "Server rejected the sign-in; confirm your email is on the allowed-reviewers list.");
           } else {
-            status.style.color = "var(--red-alert)";
-            status.textContent = "Sign-in failed (HTTP " + r.status + ").";
+            say("err", "Sign-in failed (HTTP " + r.status + ").");
           }
         }).catch(function (e) {
-          status.style.color = "var(--red-alert)";
-          status.textContent = "Network error sending magic link: " + e.message;
+          say("err", "Network error sending magic link: " + e.message);
         });
       });
 
@@ -378,7 +367,6 @@
       // Team-phrase alternative (Phase 1 widening, 2026-07-03) — validated
       // server-side before store; one unlock covers every phrase-enabled tab.
       if (window.CPL_TEAM_PHRASE) {
-        widget.appendChild(el("span", { "style": "color:var(--text-muted);" }, ["·"]));
         var unlock = window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or the team phrase:",
           onUnlocked: function () { onChange(); }
@@ -390,25 +378,34 @@
         if (ub) { ub.removeAttribute("style"); ub.className = "wpg-btn"; }
         widget.appendChild(unlock);
       }
-      widget.appendChild(status);
     }
 
-    return widget;
+    return { widget: widget, hint: hint };
   }
 
   function mountAuthWidget(state) {
     var tab = document.getElementById("tab-workplan-goals");
     if (!tab) return;
-    var existing = tab.querySelector(".wpg-auth-widget");
-    var widget = buildAuthWidget(state, function () {
+    var built = buildAuthWidget(state, function () {
       state.sess = fullSession();
       mountAuthWidget(state);
       paintEditability(state);
       // Shared editor re-lights its affordance + closes the popover on sign-out.
       paintAssocEditability();
     });
-    if (existing) existing.replaceWith(widget);
-    else tab.insertBefore(widget, tab.firstChild);
+    // The slot in the card's head row; a page without one (an older build) keeps
+    // the widget at the top of the tab.
+    var slot = tab.querySelector(".wpg-auth-slot");
+    if (!slot) {
+      slot = tab.querySelector(".wpg-auth-wrap");
+      if (!slot) {
+        slot = el("div", { "class": "wpg-auth-wrap" }, []);
+        tab.insertBefore(slot, tab.firstChild);
+      }
+    }
+    while (slot.firstChild) slot.removeChild(slot.firstChild);
+    slot.appendChild(built.widget);
+    slot.appendChild(built.hint);
   }
 
   // ─── Editability painting ───────────────────────────────────────────────
@@ -417,11 +414,11 @@
    * pointer-cursor + hover affordance based on whether we have a session.
    */
   function paintEditability(state) {
-    // Session 85: light up the year-ladder cells AND the new manual-Current
-    // cells + editable titles. Live-synced Current cells carry no edit attr, so
-    // they're never selected here (read-only by construction).
+    // Session 85: light up the year-ladder cells (Goal, Current and Stretch alike
+    // since S426) and the editable words. Live-synced Current cells carry no edit
+    // attr, so they're never selected here (read-only by construction).
     var cells = document.querySelectorAll(
-      '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"], '
+      '[data-editable="1"], [data-title-edit="1"], '
       + '[data-desc-edit="1"], [data-activity-title-edit="1"], [data-activity-desc-edit="1"], '
       + '[data-unit-edit="1"], [data-note-edit="1"]');
     // Every editable value takes Tab focus for an editor and opens on Enter or
@@ -659,6 +656,10 @@
     var year_key = cell.getAttribute("data-yr-key");
     var year_label = cell.getAttribute("data-yr");
     var isPct = cell.getAttribute("data-pct") === "1";
+    // The Current row (S426) is a ladder like Goal and Stretch, stored as cur_<year>
+    // on the GOAL row: its PATCH targets GOAL and sends no total.
+    var isCurrent = row_type === "CURRENT";
+    var db_row_type = isCurrent ? "GOAL" : row_type;
     // PR-B: optional kind discriminator. When absent (pre-PR-B cells), the
     // save path falls through to the unscoped PATCH, which is still safe
     // because Activity ids ("1"-"4") and project ids ("1.1", "1.2", …) are
@@ -673,7 +674,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "aria-label": (row_type === "STRETCH" ? "Stretch " : "Goal ") + year_label + " for " + activity_id,
+      "aria-label": (isCurrent ? "Current " : row_type === "STRETCH" ? "Stretch " : "Goal ") + year_label + " for " + activity_id,
       "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
 
@@ -746,7 +747,7 @@
       });
       cell.classList.remove("wpg-editing");
 
-      saveCell(activity_id, row_type, year_key, newNum, newTotal, state.sess, kind)
+      saveCell(activity_id, db_row_type, year_key, newNum, isCurrent ? null : newTotal, state.sess, kind)
         .then(writeResult)
         .then(function (r) {
           var ok = r.ok;
@@ -783,90 +784,6 @@
         });
     }
 
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); commit(); refocus(cell); }
-      else if (e.key === "Escape") { e.preventDefault(); cancel(); refocus(cell); }
-    });
-    input.addEventListener("blur", commit);
-  }
-
-  // ─── Session 85: manual "Current" cell editor ───────────────────────────
-  function startCurrentEdit(cell, state) {
-    if (!state.sess) return;
-    if (cell.classList.contains("wpg-editing")) return;
-    var activity_id = cell.getAttribute("data-aid");
-    var isPct = cell.getAttribute("data-pct") === "1";
-    if (!activity_id) return;
-
-    var oldNum = Number(cell.getAttribute("data-val") || "0");
-    var input = el("input", {
-      "type": "text",
-      "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
-      "class": "wpg-cell-input",
-      "aria-label": "Current value for " + activity_id,
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;text-align:right;background:var(--surface-opaque);"
-    }, []);
-    cell.classList.add("wpg-editing");
-    var prevHtml = cell.innerHTML;
-    cell.innerHTML = "";
-    cell.appendChild(input);
-    input.focus();
-    input.select();
-
-    function paintCell(c, num, saving) {
-      c.setAttribute("data-val", String(num));
-      c.innerHTML = fmtVal(num, isPct)
-        + ' <span class="wpg-manual-hint" aria-hidden="true">✎</span>';
-      if (saving) c.classList.add("wpg-saving");
-    }
-    // One close per open (S375): removing the field fires its blur in Chrome, and
-    // blur commits, so without this the restore ran twice and threw mid-keydown.
-    var done = false;
-    function cancel() {
-      if (done) return;
-      done = true;
-      cell.innerHTML = prevHtml;
-      cell.classList.remove("wpg-editing");
-    }
-    function commit() {
-      if (done) return;
-      var newNum = parseInput(input.value, isPct);
-      if (newNum === null) { input.style.borderColor = "var(--red-alert)"; return; }
-      if (newNum === oldNum) { cancel(); return; }
-      done = true;
-      // The TOTAL cell mirrors the single Current value (no ✎ hint there).
-      var totalCell = document.querySelector(
-        '[data-current-total="1"][data-aid="' + activity_id + '"]');
-      cell.classList.remove("wpg-editing");
-      paintCell(cell, newNum, true);
-      if (totalCell) {
-        totalCell.classList.add("wpg-saving");
-        totalCell.innerHTML = fmtVal(newNum, isPct);
-      }
-      saveCurrent(activity_id, newNum, state.sess).then(writeResult).then(function (r) {
-        var ok = r.ok;
-        var paint = ok ? "wpg-saved" : "wpg-error";
-        [cell, totalCell].forEach(function (c) {
-          if (!c) return;
-          c.classList.remove("wpg-saving");
-          c.classList.add(paint);
-          setTimeout(function () { c.classList.remove(paint); }, 1500);
-        });
-        if (!ok) {
-          paintCell(cell, oldNum, false);
-          if (totalCell) totalCell.innerHTML = fmtVal(oldNum, isPct);
-          console.error("[workplan_goals] current save failed:", r.status);
-            maybeDropStalePhrase(state.sess, r.status);
-        }
-      }).catch(function (e) {
-        cell.classList.remove("wpg-saving");
-        cell.classList.add("wpg-error");
-        paintCell(cell, oldNum, false);
-        if (totalCell) { totalCell.classList.remove("wpg-saving"); totalCell.innerHTML = fmtVal(oldNum, isPct); }
-        setTimeout(function () { cell.classList.remove("wpg-error"); }, 2000);
-        console.error("[workplan_goals] current save error:", e);
-      });
-    }
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") { e.preventDefault(); commit(); refocus(cell); }
       else if (e.key === "Escape") { e.preventDefault(); cancel(); refocus(cell); }
@@ -1078,7 +995,6 @@
   // and the keyboard paths. Returns true when it opened one.
   var EDITORS = [
     ["data-editable", function (t, s) { startEdit(t, s); }],
-    ["data-current-edit", function (t, s) { startCurrentEdit(t, s); }],
     ["data-title-edit", function (t, s) { startTitleEdit(t, s); }],
     ["data-desc-edit", function (t, s) { startDescEdit(t, s); }],
     ["data-activity-title-edit", function (t, s) { startActivityTitleEdit(t, s); }],
@@ -1115,43 +1031,58 @@
     });
   }
 
-  // ─── The Annual Workplan Goals table (S375 UI pass) ─────────────────────
+  // ─── The Annual Workplan Goals table (S375 UI pass; S426 formatting pass) ──
   // The generator (render_annual_goals_table_html) prints classes and these rules
   // paint them, so every color is a theme token and the phone card can reach each
   // cell (the old inline styles carried 715 raw hexes and beat any media query).
+  // S426: hairline rows in place of a full grid, numbers right-aligned in tabular
+  // figures, Activity headers on the subtle surface rather than a navy band, the
+  // Stretch row in its text grade without italics, and the sign-in controls in the
+  // card's head row rather than a band above it.
   // Goal and Stretch sit on the plain surface: the gray fill read as disabled.
   // Current is plain ink: green is for a state the user must act on.
   // An editor sees an at-rest cue on every editable value (a cobalt rule under the
   // cell, a dotted underline under editable words), and every one is reachable by Tab.
   var ANNUAL_TABLE_CSS = ''
     + '.wpg-annual { margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(28,28,26,0.06); }'
-    + '.wpg-annual-title { color:var(--text-strong);margin:0 0 1rem 0; }'
+    + '.wpg-annual-head { display:flex;flex-wrap:wrap;align-items:center;gap:0.35rem 1.25rem;margin-bottom:0.6rem; }'
+    + '.wpg-annual-title { color:var(--text-strong);margin:0; }'
+    + '.wpg-auth-slot { display:contents; }'
+    + '.wpg-auth-widget { display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem 1rem;margin-left:auto;font-size:0.85rem;color:var(--text-strong); }'
+    + '.wpg-auth-widget.wpg-auth-out { flex-basis:100%;margin-left:0; }'
+    + '.wpg-auth-who { font-weight:600; }'
+    + '.wpg-auth-hint { flex-basis:100%;margin:0;font-size:0.8rem;color:var(--text-muted);min-height:1.2em; }'
+    + '.wpg-auth-hint.ok { color:var(--green-progress); }'
+    + '.wpg-auth-hint.err { color:var(--red-alert); }'
+    + '.wpg-auth-widget input[type="email"], .wpg-auth-widget input[type="password"], .wpg-auth-widget input[type="text"] { padding:0.3rem 0.5rem;border:1px solid var(--border-strong);border-radius:5px;font:inherit;font-size:0.8rem;min-width:11rem;min-height:24px;box-sizing:border-box;background:var(--surface-opaque);color:var(--text-strong); }'
+    + '.wpg-annual-note { margin:0 0 0.75rem 0;font-size:0.8rem;color:var(--text-muted); }'
     + '.wpg-annual-scroll { overflow-x:auto; }'
-    + '.wpg-annual-table { width:100%;border-collapse:collapse;font-size:0.82rem;table-layout:fixed; }'
+    + '.wpg-annual-table { width:100%;border-collapse:collapse;font-size:0.82rem;table-layout:fixed;font-variant-numeric:tabular-nums; }'
     + '.wpg-annual-table .wpg-c-name { width:34%; }'
     + '.wpg-annual-table .wpg-c-type { width:4.75rem; }'
-    + '.wpg-annual-table .wpg-c-total { width:5.25rem; }'
+    + '.wpg-annual-table .wpg-c-total { width:5.5rem; }'
     // --white, not --on-accent: --seal-blue stays the navy in dark, where --on-accent
     // turns near-black (1.43:1 measured on the S375 preview).
-    + '.wpg-annual-table thead th { background:var(--seal-blue);color:var(--white);padding:0.5rem 0.4rem;text-align:center;font-size:0.78rem;border:1px solid var(--seal-blue); }'
-    + '.wpg-annual-table thead th.wpg-h-name { text-align:left;padding-left:0.6rem; }'
-    + '.wpg-annual-table .wpg-act-head { background:var(--navy-secondary);color:var(--on-accent);text-align:left;font-weight:700;padding:0.5rem 0.6rem;border:1px solid var(--navy-secondary); }'
-    + '.wpg-annual-table .wpg-act-desc-cell { font-weight:400;font-size:0.78rem;margin-top:0.2rem; }'
-    + '.wpg-annual-table td, .wpg-annual-table .wpg-type, .wpg-annual-table .wpg-name { border:1px solid var(--border);background:var(--surface-opaque); }'
+    + '.wpg-annual-table thead th { background:var(--seal-blue);color:var(--white);padding:0.5rem 0.5rem;text-align:right;font-size:0.78rem;border:0; }'
+    + '.wpg-annual-table thead th.wpg-h-name, .wpg-annual-table thead th.wpg-h-type { text-align:left; }'
+    + '.wpg-annual-table thead th.wpg-h-name { padding-left:0.6rem; }'
+    + '.wpg-annual-table .wpg-act-head { background:var(--surface-subtle);color:var(--text-strong);text-align:left;font-weight:700;padding:0.55rem 0.6rem;border:0;border-top:2px solid var(--border-strong); }'
+    + '.wpg-annual-table .wpg-act-desc-cell { font-weight:400;font-size:0.78rem;margin-top:0.15rem;color:var(--text-muted); }'
+    + '.wpg-annual-table td, .wpg-annual-table .wpg-type, .wpg-annual-table .wpg-name { border:0;border-bottom:1px solid var(--border);background:var(--surface-opaque);vertical-align:middle; }'
     + '.wpg-annual-table .wpg-r-goal > * { border-top:2px solid var(--border-strong); }'
-    + '.wpg-annual-table .wpg-name { text-align:left;vertical-align:top;font-weight:600;font-style:normal;color:var(--text-strong);padding:0.4rem 0.6rem 0.4rem calc(0.6rem + var(--wpg-indent, 0rem)); }'
+    + '.wpg-annual-table .wpg-name { text-align:left;vertical-align:top;font-weight:600;font-style:normal;color:var(--text-strong);padding:0.45rem 0.6rem 0.45rem calc(0.6rem + var(--wpg-indent, 0rem));border-right:1px solid var(--border); }'
     + '.wpg-annual-table .wpg-name.wpg-nest { border-left:3px solid var(--seal-blue-text); }'
     + '.wpg-annual-table .wpg-sub-marker { color:var(--seal-blue-text); }'
     + '.wpg-annual-table .wpg-pid { color:var(--text-muted);font-size:0.75rem; }'
-    + '.wpg-annual-table .wpg-desc-cell, .wpg-annual-table .wpg-count-line { font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem; }'
-    + '.wpg-annual-table .wpg-assoc-cell { font-weight:400;font-size:0.65rem;color:var(--text-muted);margin-top:0.15rem; }'
+    + '.wpg-annual-table .wpg-desc-cell, .wpg-annual-table .wpg-count-line { font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.15rem; }'
+    + '.wpg-annual-table .wpg-assoc-cell { font-weight:400;font-size:0.65rem;color:var(--text-muted);margin-top:0.25rem; }'
     + '.wpg-annual-table .wpg-act-chip { margin-right:0.2rem;font-size:0.65rem; }'
-    + '.wpg-annual-table .wpg-type { text-align:center;font-weight:inherit;font-size:0.75rem;padding:0.3rem 0.4rem; }'
-    + '.wpg-annual-table .wpg-val { text-align:center;padding:0.3rem 0.4rem; }'
-    + '.wpg-annual-table .wpg-total { font-weight:700; }'
-    + '.wpg-annual-table .wpg-r-goal { color:var(--text-strong);font-weight:600; }'
+    + '.wpg-annual-table .wpg-type { text-align:left;font-weight:600;font-size:0.72rem;color:var(--text-muted);padding:0.3rem 0.4rem; }'
+    + '.wpg-annual-table .wpg-val { text-align:right;padding:0.3rem 0.5rem; }'
+    + '.wpg-annual-table .wpg-total { font-weight:700;border-left:1px solid var(--border); }'
+    + '.wpg-annual-table .wpg-r-goal { color:var(--text-strong); }'
     + '.wpg-annual-table .wpg-r-current { color:var(--text-strong);font-weight:700; }'
-    + '.wpg-annual-table .wpg-r-stretch { color:var(--mustard-text);font-style:italic; }'
+    + '.wpg-annual-table .wpg-r-stretch { color:var(--mustard-text); }'
     + '.wpg-annual-table td.wpg-editable { box-shadow:inset 0 -1px 0 var(--cobalt); }'
     + '.wpg-title-cell.wpg-editable, .wpg-desc-cell.wpg-editable, .wpg-act-desc-cell.wpg-editable, .wpg-unit-cell.wpg-editable, .wpg-note-cell.wpg-editable { text-decoration:underline dotted 1px;text-underline-offset:3px; }'
     // An editable word is a target once it takes focus, so it meets the 24x24
@@ -1159,27 +1090,30 @@
     + '.wpg-title-cell.wpg-editable, .wpg-unit-cell.wpg-editable, .wpg-note-cell.wpg-editable { display:inline-block;min-height:24px;min-width:24px;box-sizing:border-box;padding:3px 0; }'
     + '.wpg-desc-cell.wpg-editable, .wpg-act-desc-cell.wpg-editable, .wpg-assoc-cell.wpg-assoc-on { min-height:24px;box-sizing:border-box;padding-top:3px;padding-bottom:3px; }'
     + '.wpg-editable:focus-visible { outline:2px solid var(--focus-ring);outline-offset:-2px; }'
-    + '.wpg-act-head .wpg-editable:focus-visible { outline-color:var(--on-accent);outline-offset:2px; }'
     + '.wpg-assoc-cell.wpg-assoc-on .wpg-assoc-label { text-decoration:underline dotted 1px;text-underline-offset:3px; }'
     + '.wpg-assoc-cell.wpg-assoc-on:focus-visible .wpg-assoc-edit-hint { opacity:1;color:var(--cobalt); }'
     + '.wpg-assoc-cell.wpg-assoc-on:focus-visible { outline:2px solid var(--focus-ring);outline-offset:2px; }'
-    // Phone: each sub-activity becomes a card. Its name runs full width, then a
-    // Type column and six value columns, the Goal row printing each year above
-    // its value. The column headers stay in the page for a screen reader.
+    // Phone: each sub-activity becomes a card. Its name runs full width; each of
+    // its three rows is the row's word, then its six values, each printing its
+    // year above it. A cell takes the width its number needs and the row wraps
+    // when the six will not fit (a 1,500,000 used to break mid-digit in a sixth
+    // of 300px). The column headers stay in the page for a screen reader.
     + '@media (max-width: 560px) {'
     +   '.wpg-annual { margin:1rem 0;padding:1rem 0.75rem; }'
+    +   '.wpg-auth-widget { margin-left:0; }'
     +   '.wpg-annual-scroll { overflow:visible; }'
     +   '.wpg-annual-table, .wpg-annual-table tbody, .wpg-annual-table .wpg-act-row, .wpg-annual-table .wpg-act-head { display:block;width:100%;box-sizing:border-box; }'
     +   '.wpg-annual-table colgroup { display:none; }'
     +   '.wpg-annual-table thead { position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0; }'
-    +   '.wpg-annual-table .wpg-r { display:grid;grid-template-columns:3.75rem repeat(6, minmax(0, 1fr));align-items:end; }'
-    +   '.wpg-annual-table .wpg-name { grid-column:1 / -1;border:0;border-top:2px solid var(--border-strong);padding-left:calc(0.5rem + var(--wpg-indent, 0rem) / 2); }'
+    +   '.wpg-annual-table .wpg-r { display:flex;flex-wrap:wrap;align-items:stretch;justify-content:flex-end;column-gap:0.15rem; }'
+    +   '.wpg-annual-table .wpg-name { flex:0 0 100%;box-sizing:border-box;border:0;border-top:2px solid var(--border-strong);padding-left:calc(0.5rem + var(--wpg-indent, 0rem) / 2); }'
     +   '.wpg-annual-table .wpg-name.wpg-nest { border-left:3px solid var(--seal-blue-text); }'
     +   '.wpg-annual-table td, .wpg-annual-table .wpg-type { border:0;border-bottom:1px solid var(--border); }'
     +   '.wpg-annual-table .wpg-r-goal > td, .wpg-annual-table .wpg-r-goal > .wpg-type { border-top:0; }'
-    +   '.wpg-annual-table .wpg-type { text-align:left;padding:0.3rem 0.25rem 0.3rem 0.5rem; }'
-    +   '.wpg-annual-table .wpg-val { padding:0.3rem 0.1rem;font-size:0.75rem;overflow-wrap:anywhere; }'
-    +   '.wpg-annual-table .wpg-r-goal .wpg-val::before { content:attr(data-label);display:block;font-size:0.62rem;font-weight:600;color:var(--text-muted);margin-bottom:0.1rem; }'
+    +   '.wpg-annual-table .wpg-type { flex:0 0 2.9rem;box-sizing:border-box;text-align:left;padding:0.3rem 0 0.3rem 0.2rem;margin-right:auto; }'
+    +   '.wpg-annual-table .wpg-val { flex:1 1 auto;min-width:2.4rem;padding:0.3rem 0.05rem;font-size:0.75rem;white-space:nowrap; }'
+    +   '.wpg-annual-table .wpg-total { border-left:0; }'
+    +   '.wpg-annual-table .wpg-val::before { content:attr(data-label);display:block;font-size:0.62rem;font-weight:600;color:var(--text-muted);margin-bottom:0.1rem; }'
     + '}';
 
   // ─── Style injection (light; matches existing dashboard palette) ────────
@@ -1226,8 +1160,8 @@
       // Where a live Current comes from, in muted words under the value (S375 UI pass:
       // the filled blue badge read as a state to act on, which it is not).
       + '.wpg-live-badge { display:block;font-size:0.65rem;font-weight:400;font-style:normal;color:var(--text-muted);white-space:normal;line-height:1.25; }'
-      + '.wpg-manual-hint { color:var(--text-muted);font-size:0.72rem; }'
-      + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:var(--cobalt); }'
+      // A closed year on a live row carries its June 30 reading, the same muted words.
+      + '.wpg-val-note { display:block;font-size:0.65rem;font-weight:400;font-style:normal;color:var(--text-muted);white-space:normal;line-height:1.25; }'
       + '.wpg-title-cell { border-radius:3px; }'
       + '.wpg-count-label { font-weight:600; }'
       + '.wpg-empty { font-style:italic; }'
@@ -1670,13 +1604,6 @@
     }
 
     // ── Ladder fields (GOAL + STRETCH × 5 years) ─────────────────
-    var YEARS = [
-      { lbl: "2025-26", key: "yr_2025_26" },
-      { lbl: "2026-27", key: "yr_2026_27" },
-      { lbl: "2027-28", key: "yr_2027_28" },
-      { lbl: "2028-29", key: "yr_2028_29" },
-      { lbl: "2029-30", key: "yr_2029_30" }
-    ];
     var goalInputs = {};
     var stretchInputs = {};
     function buildLadder(title, store) {
@@ -1889,6 +1816,51 @@
     };
   }
 
+  // After Set targets saves, the row's ladder edits at once: its blank cells take
+  // the attributes the generator prints for a laddered row (Goal and Stretch from
+  // the dialog, Current empty), and Set targets leaves the row.
+  function activateLadder(state, pid, ladder) {
+    var name = document.querySelector('[data-no-ladder="1"][data-pid="' + pid + '"]');
+    if (!name) return;
+    var goalRow = name.parentNode;
+    var rows = { GOAL: goalRow, CURRENT: goalRow && goalRow.nextElementSibling,
+                 STRETCH: goalRow && goalRow.nextElementSibling && goalRow.nextElementSibling.nextElementSibling };
+    Object.keys(rows).forEach(function (rt) {
+      var r = rows[rt];
+      if (!r) return;
+      var vals = (ladder && ladder[rt]) || {};
+      var total = 0;
+      r.querySelectorAll("td.wpg-val").forEach(function (td) {
+        var y = YEAR_BY_SHORT[td.getAttribute("data-label")];
+        if (!y) return;
+        var key = rt === "CURRENT" ? y.cur : y.key;
+        var v = Number(vals[key] || 0);
+        total += v;
+        td.setAttribute("data-editable", "1");
+        td.setAttribute("data-aid", pid);
+        td.setAttribute("data-kind", "project");
+        td.setAttribute("data-rt", rt);
+        td.setAttribute("data-yr", y.lbl);
+        td.setAttribute("data-yr-key", key);
+        td.setAttribute("data-val", String(v));
+        td.textContent = v ? fmtVal(v, false) : "";
+      });
+      var tot = r.querySelector('td.wpg-val[data-label="Total"]');
+      if (tot) {
+        tot.setAttribute("data-aid", pid);
+        tot.setAttribute("data-kind", "project");
+        tot.setAttribute("data-rt", rt);
+        tot.setAttribute("data-total", "1");
+        tot.setAttribute("data-val", String(total));
+        tot.textContent = total ? fmtVal(total, false) : "";
+      }
+    });
+    name.removeAttribute("data-no-ladder");
+    var ctl = name.querySelector(".wpg-set-targets-row");
+    if (ctl) ctl.remove();
+    paintEditability(state);
+  }
+
   function submitAdd(ctx) {
     var v = validateAdd(ctx);
     ctx.status.className = "wpg-status";
@@ -1928,9 +1900,37 @@
           body: JSON.stringify(v.payload.projectRow) }).then(checked("projects"));
       }).then(function () { projectAdded = true; });
     }
-    chain = chain.then(function () {
+    function postRows(rows) {
       return fetch(SUPABASE_URL + "/rest/v1/workplan_goals", { method: "POST", headers: headers,
-        body: JSON.stringify(v.payload.wpgRows) }).then(checked("workplan_goals"));
+        body: JSON.stringify(rows) }).then(checked("workplan_goals"));
+    }
+    var ladderId = v.payload.wpgRows[0].activity_id;
+    chain = chain.then(function () {
+      if (!v.payload.targets) return postRows(v.payload.wpgRows);
+      // Set targets patches a ladder row that already exists and inserts only the
+      // missing ones. A second press used to insert a second pair (1.1.1 carried four
+      // GOAL and four STRETCH rows after 2026-10-14), because the row kept its Set
+      // targets control until the nightly rebuild; activateLadder below removes it.
+      return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?select=id,row_type&activity_id=eq."
+          + encodeURIComponent(ladderId) + "&kind=eq.project", { headers: { "apikey": SUPABASE_ANON } })
+        .then(function (r) { return r.ok ? r.json() : []; }).then(null, function () { return []; })
+        .then(function (have) {
+          var present = {};
+          (Array.isArray(have) ? have : []).forEach(function (x) { if (x && x.row_type) present[x.row_type] = true; });
+          var seq = Promise.resolve();
+          v.payload.wpgRows.filter(function (row) { return present[row.row_type]; }).forEach(function (row) {
+            seq = seq.then(function () {
+              var body = {};
+              Object.keys(row).forEach(function (k) { if (/^yr_/.test(k) || k === "total") body[k] = row[k]; });
+              return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?activity_id=eq." + encodeURIComponent(row.activity_id)
+                  + "&row_type=eq." + row.row_type + "&kind=eq.project",
+                { method: "PATCH", headers: headers, body: JSON.stringify(body) }).then(checked("workplan_goals"));
+            });
+          });
+          var missing = v.payload.wpgRows.filter(function (row) { return !present[row.row_type]; });
+          if (missing.length) seq = seq.then(function () { return postRows(missing); });
+          return seq;
+        });
     });
     if (v.payload.kind === "project" && v.payload.assocRows.length) {
       chain = chain.then(function () {
@@ -1939,12 +1939,15 @@
       });
     }
     chain.then(function () {
+      if (v.payload.targets) {
+        activateLadder(ctx.state, ladderId, { GOAL: v.payload.wpgRows[0], STRETCH: v.payload.wpgRows[1] });
+      }
       paintNewRows(ctx.state);
       return queueRebuild(sess);
     }).then(function (q) {
       ctx.status.className = "wpg-status ok";
       ctx.status.textContent = v.payload.targets
-        ? "Saved. The targets appear in the table " + whenShown(q) + "."
+        ? "Saved. The row edits now; the Activities tab follows " + whenShown(q) + "."
         : "Added. It appears on Annual Workplan Goals and the Activities tab " + whenShown(q) + ".";
       ctx.btnSubmit.textContent = "Done";
       ctx.btnSubmit.disabled = false;

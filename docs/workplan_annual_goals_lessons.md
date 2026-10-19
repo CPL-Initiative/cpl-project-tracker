@@ -131,3 +131,31 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
   committed file with the policies as read live before the change.
 - **A bot's receipt commit runs no CI.** The runner pushes with the workflow token, so no `test` runs on that head; a
   commit of your own on top (here the lane's read-back line) puts `test` on the head the merge needs.
+
+## S426 SkyTorreya (2026-10-19): a Current for every year, and the duplicates Set targets left
+
+- **One column cannot hold a ladder.** `workplan_goals.current` carried the 2025-26 value and the table printed it under
+  2025-26 by a hard-coded label; the year turned on July 1 and the editor had no cell for 2026-27. Five `cur_<year>`
+  columns on the GOAL row, and the Current row rides the same editor as Goal and Stretch: the special-case editor,
+  its PATCH and its pencil hint all left. The fix that removes code is usually the right shape.
+- **A live value belongs under the year it was read in.** The live rows had printed the cumulative value under
+  2025-26 for four months of 2026-27. `current_workplan_year()` places it, and the closed year reads the June 30
+  entry of `kpi_history.json` (which the trend card already kept, one row a day). The date is said once above the
+  table: seven cells each saying "live, as of <date>" wrapped over four lines on a phone.
+- **A control that stays after it worked gets pressed again.** Set targets inserted its GOAL and STRETCH pair and left
+  the row looking unchanged until the nightly rebuild; 1.1.1 took four pairs in 35 seconds on 2026-10-14. Now the
+  save reads the live rows first and patches what exists, and the row takes its ladder attributes at once. The
+  twelve extra rows go to Sam as a paste with a unique index behind them.
+- **A phone card cannot hold six columns of nine digits.** A sixth of 300px is 40px; "1,500,000" broke mid-digit as
+  "1,500,00" and "0". Cells sized by their content on a wrapping flex line keep every number whole; the row wraps
+  only where it must, and the labels on every cell keep the wrapped line readable.
+- **A python test nobody runs stays red.** `kb/_test_workplan_current_hybrid.py` is not in `npm test`; its 3.1.2a
+  fixture had failed since the July reorg renamed the row 3.1.3. Run the python tests by hand when you touch the
+  generator; the lane names them.
+- **An empty box is not always an empty store.** Every row offered "Add description" while 32 of 34 sub-activities
+  held one in `projects.description`: the generator asked the project record for `description` and the loader's
+  contract had named it `desc` since the Supabase repoint. The S375 empty-state prompt made the gap look like missing
+  data rather than a missing key. When a whole column reads empty, read the store before drafting anything.
+- **A drafting procedure is a brief, a record and a guard.** `kb/_draft_workplan_descriptions.py` prints the facts the
+  repo holds for each empty row, keeps each draft with its sources and a best-guess flag, refuses a stale or careless
+  one, and writes a guarded UPDATE that yields to anything typed on the tab since. The writing stays the session's.

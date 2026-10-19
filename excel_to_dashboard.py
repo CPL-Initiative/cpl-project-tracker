@@ -1400,10 +1400,12 @@ def render_vision_2030_html(kpis, config_overrides=None):
     return out + '\n        <!-- End Vision 2030 Section -->\n        '
 
 
-def render_annual_goals_table_html(annual_goals, activities=None):
+def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
     """
     Render the Annual Workplan Goals as a static HTML table
-    at the bottom of the dashboard. Shows GOAL, CURRENT, STRETCH for each row.
+    at the bottom of the dashboard. Shows GOAL, CURRENT, STRETCH for each row,
+    each a five-year ladder (S426: one Current per year). `fy` is the fiscal
+    year the live rows print under (defaults to the year the run is in).
 
     `activities` (optional) — the Supabase Activity rows, used to build the
     association-editor option list (`data-activities`) on each chip cell so the
@@ -1429,18 +1431,33 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             for k in sorted(seen.keys(), key=_natural_activity_sort_key)
         ]
     activity_options_json = json.dumps(activity_options, ensure_ascii=False)
-    year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
+    year_cols = list(WORKPLAN_YEARS)
+    fy = fy or current_workplan_year()
     # The phone card prints each year above its value (the Goal row only), so the
     # short form keeps six columns inside a 390px screen.
     year_short = {yr: yr[2:] for yr in year_cols}
+    # One as-of line for every live value, instead of a date under each cell
+    # (seven cells said "live, as of <date>"; on a phone the date wrapped over
+    # four lines).
+    live_as_of = next((r.get("current_as_of") for r in annual_goals
+                       if r.get("current_source") == "live" and r.get("current_as_of")), "")
 
     # Presentation lives in workplan_goals.js (injectStyles, the .wpg-annual*
     # rules): classes here, no inline colors, so the theme tokens and the phone
     # card layout (below 560px) can reach every cell. S375 UI pass: the inline
     # styles carried 715 raw hexes and no media query could override them.
+    # The head row holds the title and, for an editor, the sign-in controls
+    # workplan_goals.js mounts in .wpg-auth-slot (S426: one card, no band above).
     html = '''        <div class="wpg-annual">
+            <div class="wpg-annual-head">
             <h2 class="wpg-annual-title">Annual Workplan Goals</h2>
-            <div class="wpg-annual-scroll" tabindex="0" role="region" aria-label="Annual Workplan Goals table">
+            <div class="wpg-auth-slot"></div>
+            </div>
+'''
+    if live_as_of:
+        html += (f'            <p class="wpg-annual-note">Live values are as of {html_escape(live_as_of)}; '
+                 f'an earlier year on a live row is its reading at June 30.</p>\n')
+    html += '''            <div class="wpg-annual-scroll" tabindex="0" role="region" aria-label="Annual Workplan Goals table">
             <table class="wpg-annual-table">
                 <colgroup><col class="wpg-c-name"><col class="wpg-c-type">'''
     html += '<col class="wpg-c-yr">' * len(year_cols)
@@ -1448,7 +1465,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 <thead>
                     <tr>
                         <th scope="col" class="wpg-h-name">Sub-Activity</th>
-                        <th scope="col">Type</th>
+                        <th scope="col" class="wpg-h-type">Type</th>
 '''
     for yr in year_cols:
         html += f'                        <th scope="col">{yr}</th>\n'
@@ -1604,8 +1621,9 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             html += f'                        <th scope="row" class="wpg-type">{rtype}</th>\n'
             # GOAL/STRETCH rows are editable year-ladders (Supabase). The CURRENT
             # row is HYBRID (Session 85): a KPI-mapped sub-activity shows the LIVE
-            # headline value read-only (current_source=='live'); an unmapped one
-            # shows a manual value editable in this tab (PATCH workplan_goals.current).
+            # headline value read-only (current_source=='live') under the fiscal
+            # year, its closed years the June 30 reading; an unmapped one is an
+            # editable ladder like the other two (S426: PATCH workplan_goals.cur_<year>).
             rt_attr = rtype.upper() if rtype in ("Goal", "Stretch") else ""
             # Path A: only rows backed by a real workplan_goals row are ladder-
             # editable. A blank-ladder project (reflected from `projects` with no
@@ -1616,11 +1634,9 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             editable = bool(rt_attr) and has_ladder
             is_current = rtype == "Current"
             cur_live = is_current and row.get("current_source") == "live"
-            year_keys_map = {
-                "2025-26": "yr_2025_26", "2026-27": "yr_2026_27",
-                "2027-28": "yr_2027_28", "2028-29": "yr_2028_29",
-                "2029-30": "yr_2029_30",
-            }
+            year_keys_map = WORKPLAN_YEAR_COL
+            cur_keys_map = WORKPLAN_CURRENT_COL
+            history = row.get("current_history") or {}
             for yr in year_cols:
                 v = vals.get(yr, 0)
                 # Format: integers as commas, decimals with 1 place
@@ -1628,35 +1644,35 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     v = int(v)
                 disp = fmt_number(v) if v else ""
                 label = f' data-label="{year_short[yr]}"'
-                # ── Current row, 2025-26 cell: live note or manual editor ──
-                if is_current and yr == "2025-26":
+                if is_current:
                     if cur_live:
-                        live_disp = html_escape(str(row.get("current_live_display", "")))
-                        as_of = html_escape(str(row.get("current_as_of", "")))
-                        # Muted words under the value, never a filled badge (S375):
-                        # it says where the number comes from, not a state to act on.
-                        badge = (
-                            '<span class="wpg-live-badge" '
-                            'title="Synced live from the MAP CPL Dashboard — matches the headline KPI card">'
-                            'live' + (f', as of {as_of}' if as_of else '') + '</span>'
-                        )
-                        html += (f'                        <td class="wpg-val wpg-live"{label}>'
-                                 f'{live_disp}{badge}</td>\n')
+                        # The live value under this fiscal year, with a muted word
+                        # under it (never a filled badge, S375); a closed year reads
+                        # its June 30 value; a later year stays blank.
+                        if yr == fy:
+                            live_disp = html_escape(str(row.get("current_live_display", "")))
+                            html += (f'                        <td class="wpg-val wpg-live"{label}>'
+                                     f'{live_disp}<span class="wpg-live-badge">live</span></td>\n')
+                        elif yr < fy and history.get(yr):
+                            html += (f'                        <td class="wpg-val wpg-live"{label}>'
+                                     f'{fmt_number(history[yr])}<span class="wpg-val-note">year end</span></td>\n')
+                        else:
+                            html += f'                        <td class="wpg-val"{label}></td>\n'
                         continue
                     if not has_ladder:
                         # No backing workplan_goals row → Current is read-only here
                         # (a manual edit would PATCH 0 rows). Render a plain cell.
                         html += f'                        <td class="wpg-val"{label}>{disp}</td>\n'
                         continue
-                    # Manual current — click-to-edit in the Annual Workplan tab.
+                    # Manual Current: one editable cell per year, the same editor as
+                    # Goal and Stretch; the save PATCHes cur_<year> on the GOAL row.
                     pct_attr = ' data-pct="1"' if row.get("is_percentage") else ''
                     cur_attrs = (
-                        f' data-current-edit="1" data-aid="{html_escape(row["id"], quote=True)}" '
+                        f' data-editable="1" data-aid="{html_escape(row["id"], quote=True)}" data-kind="project" '
+                        f'data-rt="CURRENT" data-yr="{yr}" data-yr-key="{cur_keys_map[yr]}" '
                         f'data-val="{v if v else 0}"{pct_attr}'
                     )
-                    hint = ' <span class="wpg-manual-hint" aria-hidden="true">✎</span>'
-                    html += (f'                        <td class="wpg-val"{label}{cur_attrs}>'
-                             f'{disp}{hint}</td>\n')
+                    html += f'                        <td class="wpg-val"{label}{cur_attrs}>{disp}</td>\n'
                     continue
                 data_attrs = ""
                 if editable:
@@ -1684,10 +1700,13 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                          f'{live_disp}</td>\n')
                 html += '                    </tr>\n'
                 continue
-            elif is_current:
-                # Manual: TOTAL mirrors the single Current value; data-current-total
-                # lets the editor repaint it optimistically on save.
-                total_attrs = f' data-current-total="1" data-aid="{html_escape(row["id"], quote=True)}"'
+            elif is_current and has_ladder:
+                # Manual: TOTAL sums the years, as Goal and Stretch do; the editor
+                # repaints it optimistically on a save (data-total, like theirs).
+                total_attrs = (
+                    f' data-aid="{html_escape(row["id"], quote=True)}" data-kind="project" data-rt="CURRENT" '
+                    f'data-total="1" data-val="{total if total else 0}"'
+                )
             html += (f'                        <td class="wpg-val wpg-total"{total_label}{total_attrs}>'
                      f'{fmt_number(total) if total else ""}</td>\n')
             html += '                    </tr>\n'
@@ -2194,14 +2213,17 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         else:
             bar_color, label_color = "#888", "var(--text-muted)"  # gray bar, readable label (#888 ink is 3.54:1)
 
-        # Build 2025-26 annual goals summary for this activity
+        # This fiscal year's goals for this activity: the latest Current against
+        # the year's goal (S426: one Current per year; a live row carries the live
+        # value under the fiscal year).
         ag_items = ag_by_activity.get(act_num, [])
         annual_summary = ""
         if ag_items:
+            _fy = current_workplan_year()
             parts = []
             for ag in ag_items:
-                g_val = ag["goal"].get("2025-26", 0)
-                c_val = ag["current"].get("2025-26", 0)
+                g_val = ag["goal"].get(_fy, 0)
+                c_val = _summary_current(ag, _fy)
                 if g_val:
                     g_int = int(g_val) if float(g_val) == int(g_val) else g_val
                     c_int = int(c_val) if float(c_val) == int(c_val) else c_val
@@ -2213,6 +2235,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
             if parts:
                 annual_summary = (
                     '<div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.3rem 1rem;">'
+                    + f'<span style="font-size:0.7rem;color:var(--text-muted);font-weight:600;">{_fy} goals:</span>'
                     + ''.join(f'<span style="font-size:0.7rem;color:var(--text-muted);">{p}</span>' for p in parts)
                     + '</div>'
                 )
@@ -11130,37 +11153,126 @@ def render_assoc_chip_line(pid, assoc_records, activity_options_json,
     )
 
 
-def _row_current(goal_row, stretch_row):
-    """Manual 'Current' value from the workplan_goals.current column (Session 85).
-    Canonical on the GOAL row; falls back to the STRETCH row. Returns a float, or
-    None when neither row carries a non-null `current` — the caller then falls
-    back to the legacy Excel kpi_metric (back-compat + pre-column snapshots)."""
-    for r in (goal_row, stretch_row):
-        if not r:
-            continue
-        v = r.get("current")
-        if v is None or v == "":
-            continue
-        try:
-            return float(str(v).replace(",", ""))
-        except (TypeError, ValueError):
-            continue
-    return None
+# ── Per-year Current (S426, 2026-10-19) ──────────────────────────────────────
+# Sam: "make sure all of the annual columns can be edited. Currently, only the
+# 2025-2026 year is editable." The one `current` column (Session 85) held the
+# 2025-26 value and nothing else. cur_2025_26 .. cur_2029_30 on the GOAL row
+# (kb/supabase_workplan_goals_current_by_year.sql) carry one Current per year.
+WORKPLAN_YEARS = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
+WORKPLAN_YEAR_COL = {"2025-26": "yr_2025_26", "2026-27": "yr_2026_27", "2027-28": "yr_2027_28",
+                     "2028-29": "yr_2028_29", "2029-30": "yr_2029_30"}
+WORKPLAN_CURRENT_COL = {"2025-26": "cur_2025_26", "2026-27": "cur_2026_27", "2027-28": "cur_2027_28",
+                        "2028-29": "cur_2028_29", "2029-30": "cur_2029_30"}
 
 
-def apply_live_workplan_current(annual_goals, kpis, live_data=None):
+def current_workplan_year():
+    """The fiscal year the workplan is in now, as a ladder column label ('2026-27'
+    from 2026-07-01), clamped to the ladder's five years."""
+    return _fy_label(_current_fy_suffix())
+
+
+def _num_or_none(v):
+    if v is None or v == "":
+        return None
+    try:
+        return float(str(v).replace(",", ""))
+    except (TypeError, ValueError):
+        return None
+
+
+def _row_current_years(goal_row, stretch_row):
+    """Manual Current per year from the cur_* columns (GOAL row canonical, STRETCH
+    row fallback). 2025-26 also reads the one-column `current` the cur_* columns
+    replaced (a row the migration has not reached, an older snapshot). Returns
+    {label: float} for the years that carry a value; {} when none does, and the
+    caller falls back to the legacy Excel kpi_metric for 2025-26."""
+    out = {}
+    for label in WORKPLAN_YEARS:
+        col = WORKPLAN_CURRENT_COL[label]
+        for r in (goal_row, stretch_row):
+            if not r:
+                continue
+            v = _num_or_none(r.get(col))
+            if v is None and label == "2025-26":
+                v = _num_or_none(r.get("current"))
+            if v is not None:
+                out[label] = v
+                break
+    return out
+
+
+# kpi_history.json field for each live-synced KPI: a closed year's Current on a
+# live row is the year-end reading (the last entry on or before June 30).
+_HISTORY_FIELD = {
+    "cumulative_students": "students",
+    "transcripted_units": "transcribed_units",
+    "credit_recommendations": "credit_recs",
+    "active_colleges": "active_colleges",
+}
+_HISTORY_BREAKDOWN_FIELD = {
+    ("cumulative_students", "military"): "students_military",
+    ("cumulative_students", "workforce"): "students_workforce",
+    ("cumulative_students", "apprentice"): "students_apprentice",
+}
+
+
+def _history_year_end(history, field, label):
+    """The value of `field` in the last kpi_history entry on or before the year's
+    June 30 (and no earlier than May 16 of that year), or None."""
+    if not history or not field:
+        return None
+    end = f"20{label[5:7]}-06-30"
+    floor = f"20{label[5:7]}-05-16"
+    best = None
+    for e in history or []:
+        d = str(e.get("date", ""))
+        if floor <= d <= end and e.get(field) not in (None, ""):
+            if best is None or d >= best[0]:
+                best = (d, e[field])
+    return best[1] if best else None
+
+
+def _read_kpi_history():
+    """kpi_history.json as a list, or [] (the trend card reads it the same way)."""
+    if not os.path.exists(HISTORY_FILE):
+        return []
+    try:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+            h = json.load(f)
+        return h if isinstance(h, list) else []
+    except (json.JSONDecodeError, IOError):
+        return []
+
+
+def _summary_current(ag, fy):
+    """The Current the Activities tab names beside a year's goal: the live value
+    for a live row (carried under the fiscal year), else the latest year a Current
+    was set (a cumulative count reads against this year's target that way)."""
+    if ag.get("current_source") == "live":
+        return (ag.get("current") or {}).get(fy, 0) or 0
+    latest = ag.get("current_latest") or {}
+    return latest.get("value", 0) or 0
+
+
+def apply_live_workplan_current(annual_goals, kpis, live_data=None, history=None, fy=None):
     """Drive the Annual Workplan 'Current' for KPI-mapped sub-activities from the
     MERGED live headline KPI value, so the table matches the headline card by
     construction (Session 85). Must run AFTER merge_live_metrics +
     merge_exhibit_metrics (kpis fully populated). Mutates annual_goals rows in
     place: stamps current_source='live', current_live_display (the verbatim KPI
     display string, e.g. '48,142' / '100k'), and current_as_of (scrape date).
-    A mapped row whose KPI has no live value keeps its manual Current."""
+    A mapped row whose KPI has no live value keeps its manual Current.
+
+    S426: the live value is THIS fiscal year's Current (current_fy, the column it
+    prints under, and current[fy] as a number); each closed year before it reads
+    the year-end entry of kpi_history.json (`history`) into current_history
+    {label: value} and current[label]."""
     if not annual_goals:
         return
     as_of = ""
     if live_data and live_data.get("scraped_at"):
         as_of = str(live_data["scraped_at"])[:10]
+    fy = fy or current_workplan_year()
     n_live = 0
     for row in annual_goals:
         key = row.get("current_kpi_key")
@@ -11180,6 +11292,25 @@ def apply_live_workplan_current(annual_goals, kpis, live_data=None):
         row["current_source"] = "live"
         row["current_live_display"] = str(val)
         row["current_as_of"] = as_of
+        row["current_fy"] = fy
+        cur = row.setdefault("current", {})
+        for label in WORKPLAN_YEARS:
+            cur[label] = 0
+        num = _parse_metric_num(val)
+        if num is not None:
+            cur[fy] = num
+            cur["total"] = num
+        field = (_HISTORY_FIELD.get(key) if key
+                 else _HISTORY_BREAKDOWN_FIELD.get((bd[0], str(bd[1]).lower())))
+        hist = {}
+        for label in WORKPLAN_YEARS:
+            if label >= fy:
+                break
+            hv = _num_or_none(_history_year_end(history, field, label))
+            if hv:
+                hist[label] = hv
+                cur[label] = hv
+        row["current_history"] = hist
         n_live += 1
     print(f"  Annual Workplan: {n_live} sub-activities synced to live KPI values")
 
@@ -11238,7 +11369,10 @@ def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=Non
                     continue
             row = ag_by_id.get(aid)
             if row and not key and row.get("current_manual_explicit") and not row.get("is_percentage"):
-                num = _parse_metric_num((row.get("current") or {}).get("total"))
+                # The latest year a Current was set (S426: one Current per year).
+                num = (row.get("current_latest") or {}).get("value")
+                if num is None:
+                    num = _parse_metric_num((row.get("current") or {}).get("total"))
                 if num is not None:
                     kpi["metric"] = fmt_number(num)
                     kpi["metric_source"] = "workplan"
@@ -11408,39 +11542,37 @@ def build_workplan_goals_from_supabase(
         stretch_values = entry["stretch"]
         goal_dict = {label: v for (label, _k), v in zip(year_keys, goal_values)}
         stretch_dict = {label: v for (label, _k), v in zip(year_keys, stretch_values)}
-        current_dict = {label: 0 for label, _k in year_keys}
 
-        # "Current" column — HYBRID (Session 85):
+        # "Current" row — HYBRID (Session 85), one value per year (S426):
         #  • Mapped sub-activities (PID_TO_KPI_KEY) get their Current from the
         #    LIVE headline KPI in apply_live_workplan_current() AFTER all KPI
-        #    merges, so Annual Workplan Current == headline card by construction.
-        #    Here we just stamp the kpi_key + a manual baseline (the fallback if
-        #    that KPI has no live value).
-        #  • Unmapped sub-activities use a hand-entered manual Current stored in
-        #    workplan_goals.current (GOAL row; falls back to STRETCH, then to the
+        #    merges, under the fiscal year the workplan is in, so Annual Workplan
+        #    Current == headline card by construction. Here we just stamp the
+        #    kpi_key + a manual baseline (the fallback if that KPI has no live value).
+        #  • Unmapped sub-activities use the hand-entered Current of each year,
+        #    stored in workplan_goals.cur_<year> (GOAL row; falls back to STRETCH;
+        #    2025-26 also reads the one-column `current` these replaced, then the
         #    legacy Excel kpi_metric for back-compat / pre-column snapshots).
         current_kpi_key = PID_TO_KPI_KEY.get(aid)
         # Population sub-activities map to a breakdown of a headline KPI rather
         # than a top-level KPI; apply_live_workplan_current resolves it.
         current_kpi_breakdown = PID_TO_KPI_BREAKDOWN.get(aid)
-        current_manual = _row_current(data.get("GOAL"), data.get("STRETCH"))
-        # Did this Current come from an EXPLICIT workplan_goals.current (vs the
+        current_years = _row_current_years(data.get("GOAL"), data.get("STRETCH"))
+        # Did this Current come from an EXPLICIT workplan_goals column (vs the
         # Excel kpi_metric fallback)? The activity-card live-sync (Session 86)
         # only mirrors an explicit manual Current onto the card, so an un-set
         # sub-activity keeps its existing kpi_metric (no surprise overrides).
-        current_manual_explicit = current_manual is not None
-        if current_manual is None:
+        current_manual_explicit = bool(current_years)
+        if not current_years:
             excel_project = proj_map.get(aid, {})
-            current_metric_raw = excel_project.get("kpi_metric", 0)
-            try:
-                current_manual = (
-                    float(str(current_metric_raw).replace(",", ""))
-                    if current_metric_raw not in (None, "") else 0.0
-                )
-            except (TypeError, ValueError):
-                current_manual = 0.0
-        current_dict["2025-26"] = current_manual
-        current_dict["total"] = current_manual
+            _km = _num_or_none(excel_project.get("kpi_metric"))
+            if _km:
+                current_years = {"2025-26": _km}
+        current_dict = {label: current_years.get(label, 0) for label, _k in year_keys}
+        current_dict["total"] = sum(current_years.values())
+        _latest = max(current_years) if current_years else None
+        current_latest = ({"year": _latest, "value": current_years[_latest]}
+                          if _latest else None)
 
         # Single-store title (Session 85): the Annual Workplan tab is the
         # authoritative title surface. Render projects.name (card-editable, the
@@ -11475,8 +11607,13 @@ def build_workplan_goals_from_supabase(
             "name": title,
             # Sub-activity brief description — the SINGLE store is
             # projects.description (the field the retired card editor wrote).
-            # Editable on the Annual Workplan Goals tab now.
-            "description": (proj_map.get(aid, {}) or {}).get("description") or "",
+            # Editable on the Annual Workplan Goals tab now. The loader's contract
+            # names the column `desc` (build_projects_from_supabase); this read
+            # named `description` alone, so every stored description printed as
+            # empty and the tab offered "Add description" on 32 rows that had one
+            # (Sam, 2026-10-19). Both spellings read.
+            "description": ((proj_map.get(aid, {}) or {}).get("desc")
+                            or (proj_map.get(aid, {}) or {}).get("description") or ""),
             # What the numbers count (projects.kpi_unit, the short label the
             # Activities cards print beside the number) and how they are counted
             # (projects.count_note, Sam 2026-10-12). Both editable on this tab.
@@ -11498,10 +11635,14 @@ def build_workplan_goals_from_supabase(
             "goal": goal_dict,
             "current": current_dict,
             "stretch": stretch_dict,
+            # The years a Current was set, and the latest of them: the Activities
+            # card's number and the header summary read the latest (S426).
+            "current_years": current_years,
+            "current_latest": current_latest,
             # Session 85 — Current hybrid. current_source defaults to 'manual';
             # apply_live_workplan_current() flips mapped rows to 'live' after the
             # KPI merges. current_kpi_key drives that post-pass + gates the
-            # renderer (live = read-only badge, manual = editable + ✎).
+            # renderer (live = read-only note, manual = an editable ladder).
             "current_source": "manual",
             "current_manual_explicit": current_manual_explicit,
             "current_kpi_key": current_kpi_key,
@@ -12562,7 +12703,7 @@ def main():
     # KPI-mapped sub-activities (PID_TO_KPI_KEY) from the live headline value so
     # the Annual Workplan table == the headline card by construction. Unmapped
     # sub-activities keep their manual Current. Must run after both merges.
-    apply_live_workplan_current(annual_goals, kpis, live_data)
+    apply_live_workplan_current(annual_goals, kpis, live_data, history=_read_kpi_history())
 
     # Session 86 — wire the Activity Metrics sub-activity cards' big number to the
     # same authoritative Current (live headline KPI for the PID_TO_KPI_KEY-mapped
