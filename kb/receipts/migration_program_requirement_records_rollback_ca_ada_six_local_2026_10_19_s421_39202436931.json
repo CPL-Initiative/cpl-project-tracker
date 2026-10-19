@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/program_requirement_records_rollback_ca_ada_six_local_2026-10-19_s421.sql",
+ "name": "program_requirement_records_rollback_ca_ada_six_local_2026_10_19_s421",
+ "version": "20261019050349",
+ "sha256": "6c55f9c516a0f7c5cf1c05a24ebc39ab7437beb13ff227b7a0bd02467f551464",
+ "run": "39202436931",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
