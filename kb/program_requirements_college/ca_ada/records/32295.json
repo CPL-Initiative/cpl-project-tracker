@@ -61,39 +61,34 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     52.0,
-     52.0
+     18.0,
+     18.0
     ],
     "stated": [
-     60.0,
-     60.0
+     18.0,
+     18.0
     ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "fill": [
-     8.0,
-     8.0
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -118,7 +113,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -139,8 +134,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -268,20 +263,5 @@
    "Career list taken from the AA-T Career Opportunities paragraph ('careers related to spatial analysis, including career in ...'); graduate study in law, urban planning, or architecture not recorded as careers."
   ]
  },
- "extracted_run": 39200870107,
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Completion of Cal-GETC (California General Education\nTransfer Curriculum) (https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=79: California General Education Transfer Curriculum (Cal-GETC) - 34 units minimum)"
-  }
- ],
- "read_run": "39080930669"
+ "extracted_run": "39080930669"
 }

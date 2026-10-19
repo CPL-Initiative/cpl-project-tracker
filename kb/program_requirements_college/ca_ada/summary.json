@@ -5,11 +5,11 @@
  "found": 73,
  "extracted": 73,
  "errors": 0,
- "passed_machine_checks": 60,
+ "passed_machine_checks": 56,
  "failed": {
   "coverage": 3,
   "invented": 0,
-  "arithmetic": 13,
+  "arithmetic": 17,
   "repeated": 0,
   "outcomes": 0
  },
@@ -35,5 +35,5 @@
    }
   }
  ],
- "run": "39200870107"
+ "run": "39190086831"
 }
