@@ -278,10 +278,22 @@ def load_procedure(college: str) -> dict | None:
 
 
 def pdf_pages_to_print(pages: list[str], pattern: re.Pattern,
-                       cap: int = PDF_PAGE_CAP) -> list[int]:
-    """Page indexes with a keyword hit, in order; the first page when none hit."""
-    hit = [i for i, p in enumerate(pages) if pattern.search(p or "")]
-    return (hit or ([0] if pages else []))[:cap]
+                       cap: int = PDF_PAGE_CAP, span: list | None = None, after: int = 0) -> list[int]:
+    """Page indexes with a keyword hit, in order; the first page when none hit.
+    span ([first, last], 1-based, inclusive) keeps the search to a part of the
+    catalog, so a word the front matter repeats (Cal-GETC) does not spend the cap
+    before the program pages; after prints that many pages following each hit,
+    for a catalog whose requirement block sits on the page after its heading
+    (Cañada, S421). Both come from the plan (pdf_span, pdf_after)."""
+    lo, hi = (span or [1, len(pages)])[:2]
+    lo, hi = max(1, int(lo or 1)), min(len(pages), int(hi or len(pages)))
+    hit = [i for i, p in enumerate(pages) if lo - 1 <= i <= hi - 1 and pattern.search(p or "")]
+    out: list[int] = []
+    for i in hit:
+        for j in range(i, min(i + 1 + max(0, int(after or 0)), len(pages))):
+            if j not in out:
+                out.append(j)
+    return (out or ([0] if pages else []))[:cap]
 
 
 # The page's main region when it marks one (a college site wraps every page in a
@@ -460,7 +472,7 @@ def finish(out: dict, pattern: re.Pattern) -> dict:
     return out
 
 
-def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
+def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None) -> None:
     how = "submitted from" if rec.get("submitted") else "followed from"
     print("\n##### PAGE %d · answers: %s%s" % (n, ", ".join(rec.get("answers") or []),
           (" · %s page %d" % (how, rec["from"])) if rec.get("from") else ""))
@@ -507,8 +519,10 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
             print("- %s -> %s" % (f["text"], f["href"]))
     text = rec.get("text") or ""
     if rec.get("kind") == "pdf" and rec.get("pages"):
-        idx = pdf_pages_to_print(rec["pages"], pattern)
-        print("--- %d of %d PDF pages (those naming a keyword) ---" % (len(idx), len(rec["pages"])))
+        plan = plan or {}
+        idx = pdf_pages_to_print(rec["pages"], pattern, span=plan.get("pdf_span"), after=plan.get("pdf_after") or 0)
+        print("--- %d of %d PDF pages (those naming a keyword%s) ---" % (
+            len(idx), len(rec["pages"]), ", and the page after each" if plan.get("pdf_after") else ""))
         for i in idx:
             print("[pdf page %d]" % (i + 1))
             print(fold(rec["pages"][i]))
@@ -574,7 +588,7 @@ def main(argv: list[str] | None = None) -> int:
                                        rec.get("final_url") or url, seen)
                     rec["followed"] = fol
                     queue.extend((f["href"], n) for f in fol)
-                print_page(n, rec, pattern)
+                print_page(n, rec, pattern, plan)
                 if parent or rec.get("access") != "ok" or rec.get("kind") != "html":
                     continue
                 # Submit while the browser is still on the form's page; a second
@@ -585,7 +599,7 @@ def main(argv: list[str] | None = None) -> int:
                     sub = finish(submit_form(reader, spec), pattern)
                     sub["answers"], sub["from"] = rec["answers"], n
                     records.append(sub)
-                    print_page(len(records), sub, pattern)
+                    print_page(len(records), sub, pattern, plan)
     finally:
         browser.close()
         pw.stop()
