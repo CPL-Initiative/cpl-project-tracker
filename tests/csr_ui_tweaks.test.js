@@ -85,7 +85,7 @@ const doc = window.document;
 
 // Column order (COLS in canonical_subj4.js):
 // 0 Discipline · 1 MIDs · 2 Variants · 3 Most-used locally · 4 Common SUBJ
-// · 5 TOP · 6 CIP · 7 CTE · 8 CPL · 9 Status · 10 Notes · 11 Reviewed · 12 Validate
+// · 5 TOP · 6 CIP · 7 CTE · 8 CPL · 9 Status · 10 Notes · 11 Reviewed (the Validate column left on Sheet 99 card 5, 2026-10-19)
 const IDX = { modal: 3, canon: 4, cte: 7, status: 9 };
 function rowCells(disc) {
   const cell = [...doc.querySelectorAll("td.cs-disc")].find(

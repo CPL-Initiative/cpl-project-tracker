@@ -44,24 +44,25 @@ A count opens the table with its filter; `#canonical-subj4/<filter>`, `/progress
 route from the address (the Commons' step 3). Guard `tests/csr_progress.test.js`; a11y
 `canonical-subj4-progress-dark`, `canonical-subj4-reference`.
 
-**The definition of complete (proposed, a card for Sam):** an MQ discipline with courses whose Common SUBJ a
-person confirmed, that follows the authority rule, and that is in no collision with another MQ discipline.
-Measured 2026-10-19: **121 of 147** (122 confirmed, Auto Body Technology in the AUTB collision). Confirmed
-alone would read 122; adding "no finding needing a judgment" would read 106.
+**The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
+SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
+the authority rule, and that is in no collision with another MQ discipline. Measured 2026-10-19: **121 of 147**
+(122 confirmed, Auto Body Technology in the AUTB collision). Confirmed alone would read 122; adding "no finding
+needing a judgment" would read 106.
 
 **The measured state, 2026-10-19:**
 
 | what | measure |
 |---|---|
 | MQ disciplines in the handbook's index | 248 (19th edition, read 2026-05-20, re-validated 2026-07-10); 147 carry courses on the map, 101 carry none |
-| picks confirmed by a person | 122 of 147 (the live table holds 121 code rows, all Sam's; Physical Education Disabled Students is a seed-only override); 25 on the data's modal code, 13 of them on the authority's own code; 0 through the validate stage |
+| picks confirmed by a person | 122 of 147 (the live table holds 121 code rows, all Sam's; Physical Education Disabled Students is a seed-only override); 25 on the data's modal code, 13 of them on the authority's own code, which the nightly confirm takes from its first run; 0 through the validate stage, whose column left the tab (ruling 5) |
 | on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
 | C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
 | identity codes | 282 codes on 75,581 minted identities: 145 canonical, 27 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline) |
 | collisions | 1 (AUTB: Auto Body Technology and Agricultural Business and Related Services, whose one identity is AUTB M1006 Supervision and Management in Agriculture) |
 | by design | 4 umbrellas carrying 27 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry |
 | the daily scan | 63 findings: 25 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 collision, 1 anchor key in the dead format, 2 divergences a note records |
-| procedures | 8 written, 5 in force; 2 quarterly routines to build; the cohort confirm proposed |
+| procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
 and before the Commons build, read-only, and writes `kb/csr_out/latest.json` (the nine canon rules, every
@@ -98,8 +99,10 @@ four known issues with owners, the procedures in force, and deep links into the 
   code (0 missed alignments); the five hyphenated agriculture codes became the umbrella codes AGAB, AGAS, AGEH,
   AGMA, AGPS, and Sam ruled AGRI and AGPR the residuals (cards 4 to 6). The chips on the Agriculture row say the
   authority splits the discipline finer than the MQ list does; they are sub-subjects, not a competing code. What
-  step 3 can still do is empty the residual: 216 Agriculture identities sit under AGRI, and a Jev sitting can
-  propose a family for each from the descriptors, Sam confirming, the rest staying residual (a card). The
+  step 3 can still do is empty the residual: 404 identities sit under AGRI (measured 2026-10-19 by key prefix in
+  `kb/coci_minted_courses.json` and `kb/coci_minted_singletons.json`: 86 clustered, 318 stand-alone; 403 under
+  Agriculture), and a Jev sitting can propose a family for each from the descriptors, Sam confirming, the rest
+  staying residual (a card). The
   strays are the unnecessary codes: 110 on 396 identities, most on identities with no discipline yet.
 - **Steps 4 and 5.** Every MQ discipline with courses carries a code; the 101 without courses take one when
   their first course appears. One code sits on two MQ disciplines (AUTB); the identity layer's disagreements
@@ -116,21 +119,36 @@ four known issues with owners, the procedures in force, and deep links into the 
 
 ## RULED on Open Asks Sheet 99 (Sam, 16:37Z 2026-10-19, all six his own call; `cpl_memory` `sam-sheet-99-rulings-2026-10-19`)
 
-1. **settled**: complete means confirmed by a person, on the authority rule, in no collision (the pair as built).
-2. **on**: the nightly procedure confirms the authority-coded picks under a cohort reviewer, insert-only with a receipt
-   (to build: `kb/csr_procedures.json` `confirmation` on, the run and its receipt).
+1. ✅ **settled** (S427): complete means confirmed, on the authority rule, in no collision (the pair as built). The
+   pair as built counts a cohort's confirmation beside a person's (`isConfirmed` reads the stamp, not who made it), so
+   with ruling 2 on, the words on the headline and the Commons row say *confirmed (by a person, or by the nightly
+   procedure where the code is the authority's own)*; a code this reference minted still waits for a person.
+2. ✅ **on** (S427): `kb/_csr_confirm_authority.py`, run nightly at 08:17 UTC by `csr-confirm.yml` (governance DR-04).
+   It confirms a pick whose code is the CCN subject code or one of the C-ID subject codes, that no person has confirmed,
+   and that no finding names except the two that corroborate (`cs7_unreviewed`, the state it clears; `cs4_aligned`,
+   the alignment it rests on), under `csr-confirm-authority@bot`, as the tab's own save would write it: a fresh read
+   first (a live code row, whoever wrote it, holds the save), the receipt under `kb/csr_out/confirm/` before the insert,
+   duplicates ignored; `--undo` is one delete by the cohort and clears the seed's stamps. The offline plan on
+   2026-10-19 names the thirteen: Anthropology, Astronomy, Communication Studies, Economics, English, History and
+   Mathematics on CCN; Chemistry, Earth Science, Engineering, Geography, Philosophy and Physics/Astronomy on C-ID.
+   The first run is the dispatch after the merge (`save=preview`, then `on`); the cron carries it from there.
+   `tests/csr_confirm_authority_test.py` (26) guards the selection, the receipt-before-write and the undo.
 3. **agab**: Agricultural Business and Related Services takes AGAB; its one identity is re-keyed under the playbook.
 4. **sitting**: a Jev sitting proposes a C-ID family for each AGRI identity, Sam confirms, the rest stay residual.
-5. **hide**: the Validate column and word leave the tab until the faculty-published moment; the data stays.
+5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
+   (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
+   faculty-published moment. The Progress card's foot now names the nightly procedure instead of the unused stage.
 6. **rename**: the eight Title 5-numbered names and the cut-short one take the handbook's spellings, through the alias
    file and one re-key window.
 
-None is applied yet (S425 recorded them at context EMERGENCY); Session 426 executes them in this order. The six cards
-left the vault builder in CPLBrain#395.
+S425 recorded them at context EMERGENCY; S427 executes them in this order (1, 2 and 5 landed together as one code
+change; 3, 4 and 6 are data windows and follow). The six cards left the vault builder in CPLBrain#395.
 
 ## NEXT
 
-The two quarterly routines on a runner (the handbook check; the C-ID and CCN refresh), probe mode first; the
-cohort confirm once ruled; the strays through the discipline-blank worklist and one re-key window; the dead
+Ruling 3 (AGAB, one identity re-keyed under the playbook), then ruling 4 (the Jev sitting over the AGRI residual,
+404 identities), then ruling 6 (the nine names through the alias file and one re-key window). Confirm the nightly
+confirm's first run landed its receipt. The two quarterly routines on a runner (the handbook check; the C-ID and
+CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the dead
 handbook link replaced by the live page; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

@@ -122,27 +122,9 @@
     });
   }
 
-  // Two-stage curation: PATCH the canonical_subj4 row for this discipline to
-  // stamp validated_at = now() and validated_by = signed-in user. The
-  // validate stage is meaningful at the DISCIPLINE level, not per-field, but
-  // we attach it to the canonical_subj4 row as the "primary" curation row.
-  // kb/_apply_canonical_subj4.py reads validated_at across all rows and takes
-  // the MAX, so any row carrying validated_at is enough to mark the
-  // discipline validated.
-  function saveValidate(discipline, sess) {
-    var qs = "course_id=eq." + encodeURIComponent(KEY_PREFIX + discipline)
-           + "&field=eq." + encodeURIComponent(FIELD_CANON);
-    var nowIso = new Date().toISOString();
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?" + qs, {
-      method: "PATCH",
-      headers: {
-        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify({ validated_at: nowIso, validated_by: sess.email })
-    });
-  }
+  // The validate stage (validated_at / validated_by) stays in the data and the sync; its column
+  // and control left the tab on Sam's Sheet 99 card 5 (2026-10-19) until the faculty-published
+  // moment, when they return.
 
   // ─── data ──────────────────────────────────────────────────────────────────
   // Fetch the seed file at runtime. Lives under kb/ in the repo and is served
@@ -1149,8 +1131,7 @@
       ["all", "All MQ disciplines"],
       ["needs_review", "Needs curator review"],
       ["pre_seeded", "Pre-seeded (data-modal already 4-letter)"],
-      ["reviewed", "Initiated (awaiting validation)"],
-      ["validated", "Validated (faculty-confirmed)"],
+      ["reviewed", "Initiated (the pick is confirmed)"],
       ["invalid", "Invalid (saved value not 4 letters)"],
       ["ccn", "Common SUBJ is the CCN code"],
       ["cid", "Common SUBJ is the C-ID code"],
@@ -1369,7 +1350,6 @@
     if (state.filter === "needs_review" && s.label !== "needs review") return false;
     if (state.filter === "pre_seeded" && s.label !== "pre-seeded") return false;
     if (state.filter === "reviewed" && s.label !== "initiated") return false;
-    if (state.filter === "validated" && s.label !== "validated") return false;
     if (state.filter === "invalid" && s.label !== "invalid") return false;
     if (state.filter === "ccn" && entry.canonical_source !== "ccn") return false;
     if (state.filter === "cid" && entry.canonical_source !== "c-id") return false;
@@ -1499,7 +1479,6 @@
       { key: "status",           label: "Status" },
       { key: null,               label: "Notes" },
       { key: "reviewed_by",      label: "Reviewed" },
-      { key: null,               label: "Validate", title: "Faculty validators confirm a reviewed row by clicking the button. Same allowed reviewers can validate; validation marks the row faculty-approved." },
     ];
     var headerRow = el("tr");
     COLS.forEach(function (col) {
@@ -1871,35 +1850,6 @@
     }
     tr.appendChild(rev);
 
-    // Validate cell — button enabled only when row is reviewed (not yet
-    // validated) AND the curator is signed in. Same allowed_reviewers can
-    // validate (per the schema migration's RLS policy).
-    var tdValidate = el("td");
-    var st2 = status(entry);
-    if (st2.label === "validated") {
-      tdValidate.appendChild(el("span", { class: "cs-badge ok", title: "Validated " + (entry.validated_at || "").slice(0, 10) + " by " + (entry.validated_by || "") }, ["✓ validated"]));
-    } else if (st2.label === "initiated" && state.sess) {
-      var vb = el("button", { type: "button", class: "cs-validate-btn", title: "Mark this row faculty-validated" }, ["Validate"]);
-      vb.onclick = function () {
-        if (!confirm("Validate " + entry.discipline + "?\n\nThis marks the row faculty-confirmed. Same allowed-reviewers can validate.")) return;
-        vb.disabled = true;
-        vb.textContent = "Validating…";
-        saveValidate(entry.discipline, state.sess)
-          .then(function (r) {
-            if (!r.ok) { vb.disabled = false; vb.textContent = "Validate"; toast("Validate failed (" + r.status + ")", true); return; }
-            var rec = state.overlay[entry.discipline] = state.overlay[entry.discipline] || {};
-            rec.validated_at = new Date().toISOString();
-            rec.validated_by = state.sess.email;
-            toast("Validated · " + entry.discipline);
-            render();
-          })
-          .catch(function () { vb.disabled = false; vb.textContent = "Validate"; toast("Validate failed (network)", true); });
-      };
-      tdValidate.appendChild(vb);
-    } else {
-      tdValidate.appendChild(el("span", { class: "cs-muted-dash", title: st2.label === "validated" ? "" : "Validation is only available for reviewed rows." }, ["—"]));
-    }
-    tr.appendChild(tdValidate);
 
     return tr;
   }
@@ -2040,7 +1990,7 @@
   var VIEW_KEY = "cplCsr.view.v1";
   var SECS_KEY = "cplCsr.secs.v1";
   var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }];
-  var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, validated: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
+  var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
   var RULE_WORDS = {
     cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
     cs4_aligned: "aligned with the official prefix", cs4_missed_alignment: "a missed alignment", cs4_divergence_noted: "a divergence the note records",
@@ -2230,8 +2180,10 @@
       },
       meter: function (x) { return [x.confirmed, x.total, "confirmed"]; },
       foot: function (x) {
-        return (x.validated ? fmtN(x.validated) + " picks have gone through the validate stage. " : "No pick has gone through the validate stage; it waits for the faculty-published moment. ") +
-          "The cohort confirm of authority-coded picks is proposed, a card for " + x.decider + ".";
+        return x.procOn("confirmation")
+          ? "The nightly procedure confirms a pick on the authority's own code under csr-confirm-authority@bot (Sam, Sheet 99, 2026-10-19); " +
+            fmtN(x.cohort) + " picks carry a procedure's or a session cohort's stamp."
+          : "The cohort confirm of authority-coded picks is proposed, a card for " + x.decider + ".";
       },
       open: function (x) { return ["Open the " + fmtN(x.unconfirmed) + " waiting", TO.preSeeded]; },
       more: function () { return ["Procedure", procTarget("confirmation")]; } },
@@ -2259,7 +2211,7 @@
       small: function (x) { return x.mqTotal != null ? "The handbook's Disciplines Index names " + fmtN(x.mqTotal) + "; " + fmtN(x.mqNoCourses) + " carry no courses" : "The handbook's Disciplines Index could not be read"; } },
     mine: { n: function (x) { return x.settled; },
       words: "carry a settled Common SUBJ",
-      small: "Confirmed by a person, on the authority rule, in no collision with another MQ discipline",
+      small: "Confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision with another MQ discipline",
       open: function (x) { return x.settled > 0 ? ["Open the " + fmtN(x.confirmed) + " confirmed", TO.reviewed] : null; } },
     barLabel: function (x) { return fmtN(x.settled) + " of " + fmtN(x.total) + " MQ disciplines settled"; },
     within: function (x) {
@@ -2633,7 +2585,7 @@
   // from a routing hint stashed by quickstart.js. Unknown keys are silently
   // dropped; valid hints set state + sync the matching toolbar input.
   var QS_TAB = "canonical-subj4";
-  var QS_STATUS = { needs_review: 1, pre_seeded: 1, reviewed: 1, validated: 1, invalid: 1 };
+  var QS_STATUS = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1 };
   function applyQsHint(hint) {
     if (!hint || typeof hint !== "object") return false;
     var any = false;

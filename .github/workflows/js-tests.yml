@@ -298,6 +298,10 @@ jobs:
       # procedure with no card, or a glyph in its words, would surface on both dashes.
       - name: CSR procedures store (one per Progress card, plain words)
         run: python3 tests/csr_procedures_test.py
+      # The nightly confirm of authority-coded picks (S427, Sam's Sheet 99 card 2): the fresh
+      # read holds, the receipt before the write, the undo by cohort. Pure-stdlib python.
+      - name: CSR confirm (authority-coded picks, receipt before the write)
+        run: python3 tests/csr_confirm_authority_test.py
 
       # The Fact Sheet's statewide recommendations, which Sierra's statewide
       # lines are built from. Units never split an identity (Sam, 2026-09-27):

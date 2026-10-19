@@ -4,10 +4,10 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 684,
+  "file_datasets": 687,
   "external_services": 182,
-  "consumers": 452,
-  "workflows": 56,
+  "consumers": 454,
+  "workflows": 57,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -741,7 +741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2104,
+     "line": 2054,
      "tabs": [
       "canonical-subj4"
      ]
@@ -5253,7 +5253,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2502,
+     "line": 2454,
      "tabs": [
       "canonical-subj4"
      ]
@@ -7873,6 +7873,19 @@
     },
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_csr_confirm_authority.py": {
+   "consumers": [
+    {
+     "id": "workflow:csr-confirm.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -11373,6 +11386,17 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/csr_out/confirm": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:csr-confirm.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/csr_out/latest.json": {
    "consumers": [
     {
@@ -11483,7 +11507,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 220,
+     "line": 202,
      "tabs": [
       "canonical-subj4"
      ]
@@ -11576,7 +11600,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 152,
+     "line": 134,
      "tabs": [
       "canonical-subj4"
      ]
@@ -11639,6 +11663,13 @@
      "direction": "read",
      "how": "literal",
      "line": 328
+    },
+    {
+     "id": "script:kb/_csr_confirm_authority.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11774,7 +11805,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 161,
+     "line": 143,
      "tabs": [
       "canonical-subj4"
      ]
@@ -12205,7 +12236,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 182,
+     "line": 164,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13520,7 +13551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 262,
+     "line": 244,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13660,7 +13691,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 259,
+     "line": 241,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14318,7 +14349,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 171,
+     "line": 153,
      "tabs": [
       "canonical-subj4"
      ]
@@ -18071,6 +18102,19 @@
    "main_committers": []
   },
   "file:tests/course_title_mojibake_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/csr_confirm_authority_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22217,6 +22261,13 @@
      "line": 147
     },
     {
+     "id": "script:kb/_csr_confirm_authority.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 139
+    },
+    {
      "id": "script:kb/_eacr_flag_migrate.py",
      "kind": "script",
      "direction": "read",
@@ -24311,6 +24362,22 @@
    "chain": [],
    "urls": []
   },
+  "csr-confirm.yml": {
+   "name": "CSR confirm",
+   "crons": [
+    "17 8 * * *"
+   ],
+   "scripts": [
+    "kb/_csr_confirm_authority.py"
+   ],
+   "adds": [
+    "kb/csr_out/confirm"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "daily-dashboard.yml": {
    "name": "Daily CPL Dashboard",
    "crons": [
@@ -24531,6 +24598,7 @@
     "tests/orphan_parent_worklist_test.py",
     "tests/csr_trail_rules_test.py",
     "tests/csr_procedures_test.py",
+    "tests/csr_confirm_authority_test.py",
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
