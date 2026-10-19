@@ -1,0 +1,26 @@
+{
+  "_about": "Descriptions drafted for Annual Workplan Goals sub-activities that had none (kb/_draft_workplan_descriptions.py). Sam, 2026-10-19: take your best guess and I'll edit it. He edits on the tab; this file keeps the record of what was drafted and from what.",
+  "4.7": {
+    "draft": "A partnership with Public Works Alliance's EMS Corps, the five-month emergency medical technician program for young adults facing barriers to employment, now delivered with California community colleges under instructional service agreements. The work develops the CPL procedures that articulate the training and reach its graduates, beginning with the more than 500 alumni the Chancellor has committed to reach for credit toward paramedicine, fire technology and emergency management degrees.",
+    "sources": [
+      "docs/noncredit_cpl_thinking.md section 3a (EMS Corps, the reference implementation; the Chancellor's commitment to the alumni outreach)",
+      "CPLBrain/04-projects/cpl-initiative/resources/draft-cpl-update-spring-2026.md (EMT licensing CPL for youth, 85% success rate, expanding sites)",
+      "projects 4.3 workplan notes (Public Works Alliance EMS Corps among the partners)",
+      "projects 4.7 kpi_unit and count_note (CPL procedures developed to support outreach and articulation; self-reported descriptive data)"
+    ],
+    "best_guess": true,
+    "drafted_by": "S426 SkyTorreya",
+    "drafted_at": "2026-10-19"
+  },
+  "4.8": {
+    "draft": "A partnership with Futuro Health to award credit for its behavioral healthcare training, beginning with the Human Touch Healthcare program, which holds an ACE credit recommendation of three lower-division units. The project builds the crosswalk from Futuro's programs to aligned courses at five priority colleges (Merritt, City College of San Francisco, North Orange Continuing Education, Sacramento City and Contra Costa) and the faculty articulations that let its scholars receive CPL toward health and behavioral health degrees.",
+    "sources": [
+      "item_updates 4.8, 2026-10-19 (Phase 1 complete September 2026; governance, the tiered crosswalk, the five priority colleges, the ACE credit recommendation for Human Touch Healthcare)",
+      "docs/futuro_hth_crosswalk_lessons.md (the HTH to CCC crosswalk, the adjacent receiving courses)",
+      "projects 4.3 workplan notes (Futuro Health among the partners)"
+    ],
+    "best_guess": true,
+    "drafted_by": "S426 SkyTorreya",
+    "drafted_at": "2026-10-19"
+  }
+}

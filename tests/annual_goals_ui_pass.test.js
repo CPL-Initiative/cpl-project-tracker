@@ -53,7 +53,7 @@ _, _, ag = gen.build_workplan_goals_from_supabase(rows, assoc, projects)
 for r in ag:
     if r["id"] == "4.1":
         r["current_source"] = "live"; r["current_live_display"] = "60"; r["current_as_of"] = "2026-10-12"
-print(gen.render_annual_goals_table_html(ag, [{"id": k, "name": v} for k, v in ACTS.items()]))
+print(gen.render_annual_goals_table_html(ag, [{"id": k, "name": v} for k, v in ACTS.items()], fy="2026-27"))
 `;
 const run = spawnSync("python3", ["-c", PY], { encoding: "utf8" });
 const HTML = run.stdout || "";
@@ -101,7 +101,19 @@ check("(e) a filled description renders as written",
 
 // ── (f) the live note ──
 const live = t0.querySelector(".wpg-live-badge");
-check("(f) the live Current says where it comes from in words", live && live.textContent === "live, as of 2026-10-12");
+check("(f) the live Current says where it comes from in words", live && live.textContent === "live");
+check("(f) ...under this fiscal year's column, and the date once, above the table",
+  live && live.parentNode.getAttribute("data-label") === "26-27"
+    && /Live values are as of 2026-10-12/.test(t0.querySelector(".wpg-annual-note").textContent));
+// ── (g) one Current per year (S426) ──
+const curCells = t0.querySelectorAll('td[data-editable="1"][data-aid="1.1"][data-rt="CURRENT"]');
+check("(g) a manual Current is an editable ladder: five year cells, keyed cur_<year>",
+  curCells.length === 5 && Array.prototype.map.call(curCells, (td) => td.getAttribute("data-yr-key")).join(",") ===
+    "cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30");
+check("(g) its Total mirrors the row for the editor", !!t0.querySelector('td[data-aid="1.1"][data-rt="CURRENT"][data-total="1"]'));
+check("(g) a live row's Current cells are not editable", !t0.querySelector('td[data-editable="1"][data-aid="4.1"][data-rt="CURRENT"]'));
+check("(g) the head row holds the title and the sign-in slot",
+  !!t0.querySelector(".wpg-annual-head > h2.wpg-annual-title") && !!t0.querySelector(".wpg-annual-head > .wpg-auth-slot"));
 
 // ── the editor on that markup ──
 const SRC = fs.readFileSync("workplan_goals.js", "utf8");
@@ -161,8 +173,10 @@ function key(w, node, k) { node.dispatchEvent(new w.KeyboardEvent("keydown", { k
   const title = doc.querySelector('[data-title-edit="1"][data-pid="1.1"]');
   check("(a) a name is a button an editor reaches by Tab",
     title.getAttribute("tabindex") === "0" && title.getAttribute("role") === "button");
-  const cur = doc.querySelector('[data-current-edit="1"][data-aid="1.1"]');
+  const cur = doc.querySelector('td[data-editable="1"][data-aid="1.1"][data-rt="CURRENT"][data-yr="2026-27"]');
   check("(a) a manual Current is reachable too", cur && cur.getAttribute("tabindex") === "0");
+  check("(g) the sign-in controls mount in the card's head row, not above the card",
+    !!doc.querySelector(".wpg-annual-head .wpg-auth-slot .wpg-auth-widget") && !doc.querySelector("#tab-workplan-goals > .wpg-auth-widget"));
   check("(a) a live Current is not an edit target", !doc.querySelector(".wpg-live").hasAttribute("tabindex"));
 
   g.focus();
@@ -174,6 +188,14 @@ function key(w, node, k) { node.dispatchEvent(new w.KeyboardEvent("keydown", { k
   key(w, input, "Escape");
   await new Promise((r) => setTimeout(r, 5));  // the return of focus is deferred one tick
   check("(a) Escape closes the field and focus returns to the value", !g.querySelector("input") && doc.activeElement === g);
+  cur.focus();
+  key(w, cur, "Enter");
+  const curInput = cur.querySelector("input");
+  check("(g) Enter on a Current value opens a field that names the year", curInput && curInput.getAttribute("aria-label") === "Current 2026-27 for 1.1");
+  if (curInput) { curInput.value = "7"; curInput.dispatchEvent(new w.Event("blur")); }
+  await new Promise((r) => setTimeout(r, 5));
+  const curTotal = doc.querySelector('td[data-aid="1.1"][data-rt="CURRENT"][data-total="1"]');
+  check("(g) a Current save repaints the row's Total", cur.textContent === "7" && curTotal.textContent === "7");
   // Chrome fires the removed field's blur, and blur commits: a second close must be a
   // no-op, not a second restore (which threw "node to be removed is no longer a child").
   g.focus(); key(w, g, "Enter");
@@ -217,12 +239,21 @@ function key(w, node, k) { node.dispatchEvent(new w.KeyboardEvent("keydown", { k
   const rule = (sel) => { const m = css.match(new RegExp(sel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " \\{([^}]*)\\}")); return m ? m[1] : ""; };
   check("(d) Current is plain ink, not green", /color:var\(--text-strong\)/.test(rule(".wpg-annual-table .wpg-r-current")) &&
     !/green|hunter/.test(rule(".wpg-annual-table .wpg-r-current")));
+  check("(d) Stretch keeps its text grade and loses the italic", /color:var\(--mustard-text\)/.test(rule(".wpg-annual-table .wpg-r-stretch")) &&
+    !/italic/.test(rule(".wpg-annual-table .wpg-r-stretch")));
+  check("(d) rows are hairlines, no vertical grid: a value cell has only a bottom border",
+    /border:0;border-bottom:1px solid var\(--border\)/.test(rule(".wpg-annual-table td, .wpg-annual-table .wpg-type, .wpg-annual-table .wpg-name")));
+  check("(d) numbers sit right-aligned in tabular figures", /text-align:right/.test(rule(".wpg-annual-table .wpg-val")) &&
+    /tabular-nums/.test(rule(".wpg-annual-table")));
+  check("(d) an Activity header is a subtle band in strong ink, not a navy block",
+    /background:var\(--surface-subtle\)/.test(rule(".wpg-annual-table .wpg-act-head")) && /color:var\(--text-strong\)/.test(rule(".wpg-annual-table .wpg-act-head")));
+  check("(d) no pencil hint rides a value", !/wpg-manual-hint/.test(css) && !/✎/.test(HTML.replace(/wpg-assoc-edit-hint[^<]*<\/span>/g, "")));
   check("(d) no row sits on the gray fill", !/bg-off-white|paper/.test(css));
   check("(d) an editable value has an at-rest cue", /box-shadow:inset 0 -1px 0 var\(--cobalt\)/.test(rule(".wpg-annual-table td.wpg-editable")));
   check("(d) a focused value shows a focus ring", /outline:2px solid var\(--focus-ring\)/.test(rule(".wpg-editable:focus-visible")));
-  check("(c) below 560px each sub-activity is a card (a grid row, the year above each Goal value)",
-    /@media \(max-width: 560px\)/.test(css) && /\.wpg-annual-table \.wpg-r \{ ?display:grid/.test(css) &&
-    /\.wpg-r-goal \.wpg-val::before \{ ?content:attr\(data-label\)/.test(css));
+  check("(c) below 560px each sub-activity is a card (a wrapping row, the year above each value)",
+    /@media \(max-width: 560px\)/.test(css) && /\.wpg-annual-table \.wpg-r \{ ?display:flex;flex-wrap:wrap/.test(css) &&
+    /\.wpg-annual-table \.wpg-val::before \{ ?content:attr\(data-label\)/.test(css) && /white-space:nowrap/.test(css.slice(css.indexOf("@media (max-width: 560px)"))));
   check("(c) on the phone the column headers stay in the page, visually hidden",
     /\.wpg-annual-table thead \{[^}]*clip-path:inset\(50%\)/.test(css) && !/thead \{[^}]*display:none/.test(css));
   check("(f) the live note is muted words, never a filled badge",

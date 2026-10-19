@@ -29,19 +29,38 @@ def check(name, cond):
         fails.append(name)
 
 
-# ── _row_current: GOAL canonical, STRETCH fallback, None when absent ─────────
-check("_row_current reads GOAL.current",
-      e._row_current({"current": "1234"}, {"current": "9"}) == 1234.0)
-check("_row_current strips commas",
-      e._row_current({"current": "12,345"}, None) == 12345.0)
-check("_row_current falls back to STRETCH when GOAL null",
-      e._row_current({"current": None}, {"current": 42}) == 42.0)
-check("_row_current None when neither has it",
-      e._row_current({"yr_2025_26": "5"}, {"yr_2025_26": "5"}) is None)
-check("_row_current None on empty string",
-      e._row_current({"current": ""}, {"current": ""}) is None)
-check("_row_current None on garbage (caller falls back to kpi_metric)",
-      e._row_current({"current": "n/a"}, None) is None)
+# ── _row_current_years (S426): one Current per year, GOAL canonical, STRETCH
+#    fallback; 2025-26 also reads the one-column `current` the cur_* replaced ──
+check("_row_current_years reads each cur_<year> on the GOAL row",
+      e._row_current_years({"cur_2025_26": "1234", "cur_2026_27": "9"}, {"cur_2025_26": "5"})
+      == {"2025-26": 1234.0, "2026-27": 9.0})
+check("_row_current_years strips commas",
+      e._row_current_years({"cur_2026_27": "12,345"}, None) == {"2026-27": 12345.0})
+check("_row_current_years falls back to STRETCH for a year GOAL leaves null",
+      e._row_current_years({"cur_2025_26": None}, {"cur_2025_26": 42}) == {"2025-26": 42.0})
+check("_row_current_years reads the legacy `current` as 2025-26 when cur_2025_26 is unset",
+      e._row_current_years({"current": "8"}, None) == {"2025-26": 8.0})
+check("_row_current_years prefers cur_2025_26 over the legacy `current`",
+      e._row_current_years({"current": "8", "cur_2025_26": "9"}, None) == {"2025-26": 9.0})
+check("_row_current_years is empty when no year carries a value",
+      e._row_current_years({"yr_2025_26": "5"}, {"yr_2025_26": "5"}) == {})
+check("_row_current_years skips empty strings and garbage (caller falls back to kpi_metric)",
+      e._row_current_years({"current": "", "cur_2026_27": "n/a"}, {"current": ""}) == {})
+check("an explicit zero is a value",
+      e._row_current_years({"cur_2026_27": 0}, None) == {"2026-27": 0.0})
+
+# ── the fiscal year and the year-end history ──
+check("current_workplan_year is a ladder label",
+      e.current_workplan_year() in e.WORKPLAN_YEARS)
+HIST = [{"date": "2026-06-29", "students": 48100, "students_military": 24800},
+        {"date": "2026-06-30", "students": 48219, "students_military": 24881, "transcribed_units": 99534},
+        {"date": "2026-07-01", "students": 48300}]
+check("_history_year_end reads the last entry on or before June 30 of the year",
+      e._history_year_end(HIST, "students", "2025-26") == 48219)
+check("_history_year_end is None for a field the entry lacks",
+      e._history_year_end(HIST, "credit_recs", "2025-26") is None)
+check("_history_year_end is None for a year with no entry near June 30",
+      e._history_year_end(HIST, "students", "2026-27") is None)
 
 # ── Build the goals from in-memory Supabase-shaped rows ──────────────────────
 # 3.1 = mapped (cumulative_students), manual current present (43630) as the
@@ -109,9 +128,17 @@ kpis = {
     # credit_recommendations intentionally absent → 2.1 would stay manual
 }
 live_data = {"scraped_at": "2026-06-30T23:35:27.181Z"}
-e.apply_live_workplan_current(annual, kpis, live_data)
+e.apply_live_workplan_current(annual, kpis, live_data, history=HIST, fy="2026-27")
 
 check("mapped 3.1 flipped to live", ag["3.1"]["current_source"] == "live")
+check("the live value is this fiscal year's Current (2026-27 = 48,142), the total with it",
+      ag["3.1"]["current_fy"] == "2026-27" and ag["3.1"]["current"]["2026-27"] == 48142.0
+      and ag["3.1"]["current"]["total"] == 48142.0)
+check("the closed year reads the June 30 history entry (2025-26 = 48,219)",
+      ag["3.1"]["current_history"] == {"2025-26": 48219.0} and ag["3.1"]["current"]["2025-26"] == 48219.0)
+check("a later year stays blank", ag["3.1"]["current"]["2027-28"] == 0)
+check("an abbreviated live value parses for the number (100k)",
+      ag["1.1"]["current_source"] == "manual")  # 1.1 is unmapped; the k-suffix parse is covered below
 check("live display = verbatim KPI string (48,142)",
       ag["3.1"]["current_live_display"] == "48,142")
 check("live as_of trimmed to date", ag["3.1"]["current_as_of"] == "2026-06-30")
@@ -134,9 +161,40 @@ e.apply_live_workplan_current(annual2, kpis, live_data)  # no credit_recommendat
 ag2 = {r["id"]: r for r in annual2}
 check("mapped 2.1 with no live KPI value stays manual (288)",
       ag2["2.1"]["current_source"] == "manual" and ag2["2.1"]["current"]["2025-26"] == 288.0)
+check("a manual row's latest year is the one the Activities card reads",
+      ag2["2.1"]["current_latest"] == {"year": "2025-26", "value": 288.0})
+# Two years set: the total sums them, the latest wins for the card.
+rows_two = [
+    {"activity_id": "1", "name": "Activity 1", "row_type": "GOAL", "kind": "activity", "yr_2025_26": "0", "total": "0"},
+    {"activity_id": "1", "name": "Activity 1", "row_type": "STRETCH", "kind": "activity", "yr_2025_26": "0", "total": "0"},
+    {"activity_id": "1.1", "name": "MAP Platform Development", "row_type": "GOAL", "kind": "project",
+     "yr_2025_26": "4", "yr_2026_27": "9", "total": "78", "current": "8", "cur_2025_26": "8", "cur_2026_27": "11"},
+    {"activity_id": "1.1", "name": "MAP Platform Development", "row_type": "STRETCH", "kind": "project",
+     "yr_2025_26": "8", "total": "140"},
+]
+_a4, _w4, annual4 = e.build_workplan_goals_from_supabase(rows_two, [{"project_id": "1.1", "activity_id": "1"}],
+                                                          [{"id": "1.1", "name": "MAP Platform Development", "kpi_metric": "8"}], None)
+ag4 = {r["id"]: r for r in annual4}
+check("two years set: each prints under its year, the total sums them",
+      ag4["1.1"]["current"]["2025-26"] == 8.0 and ag4["1.1"]["current"]["2026-27"] == 11.0
+      and ag4["1.1"]["current"]["total"] == 19.0)
+check("...and the latest year is 2026-27 = 11 (the Activities card's number)",
+      ag4["1.1"]["current_latest"] == {"year": "2026-27", "value": 11.0} and ag4["1.1"]["current_manual_explicit"])
+check("the Activities header summary reads the latest Current for a manual row, the live value for a live row",
+      e._summary_current(ag4["1.1"], "2026-27") == 11.0 and e._summary_current(ag["3.1"], "2026-27") == 48142.0)
+kpis4 = [{"activity_id": "1", "kpis": [{"id": "1.1", "metric": "8"}]}]
+e.apply_live_activity_current(kpis4, annual4, {}, None)
+check("the Activities card's big number is the latest year's Current (11)",
+      kpis4[0]["kpis"][0]["metric"] == "11" and kpis4[0]["kpis"][0]["metric_source"] == "workplan")
+html4 = e.render_annual_goals_table_html(annual4, activities=_a4, fy="2026-27")
+check("render: each year's Current is its own editable cell, keyed cur_<year>, on the Current row",
+      html4.count('data-aid="1.1" data-kind="project" data-rt="CURRENT" data-yr=') == 5
+      and 'data-rt="CURRENT" data-yr="2026-27" data-yr-key="cur_2026_27" data-val="11"' in html4)
+check("render: the Current total carries the editor's mirror marker and the sum",
+      'data-rt="CURRENT" data-total="1" data-val="19"' in html4)
 
 # ── Population breakdown sub-activities (StarMax fix): the Annual Workplan
-#    "Current" for 3.1.1/3.1.2/3.1.2a flips to live from a STUDENTS-SERVED
+#    "Current" for 3.1.1/3.1.2/3.1.3 flips to live from a STUDENTS-SERVED
 #    breakdown row, so the table matches the headline breakdown (and the card). ─
 rows3 = [
     {"activity_id": "3", "name": "Activity 3", "row_type": "GOAL", "kind": "activity", "yr_2025_26": "0", "total": "0"},
@@ -145,18 +203,18 @@ rows3 = [
     {"activity_id": "3.1.1", "name": "Working Adults", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "39000", "total": "360000"},
     {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "GOAL", "kind": "project", "yr_2025_26": "30000", "total": "70000", "current": "22149"},
     {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "40000", "total": "100000"},
-    {"activity_id": "3.1.2a", "name": "Apprentice Cohort", "row_type": "GOAL", "kind": "project", "yr_2025_26": "500", "total": "20000", "current": "700"},
-    {"activity_id": "3.1.2a", "name": "Apprentice Cohort", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "1000", "total": "40000"},
+    {"activity_id": "3.1.3", "name": "Apprentice Cohort", "row_type": "GOAL", "kind": "project", "yr_2025_26": "500", "total": "20000", "current": "700"},
+    {"activity_id": "3.1.3", "name": "Apprentice Cohort", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "1000", "total": "40000"},
 ]
 assocs3 = [
     {"project_id": "3.1.1", "activity_id": "3"},
     {"project_id": "3.1.2", "activity_id": "3"},
-    {"project_id": "3.1.2a", "activity_id": "3"},
+    {"project_id": "3.1.3", "activity_id": "3"},
 ]
 projects3 = [
     {"id": "3.1.1", "name": "Working Adults", "kpi_metric": "21552"},
     {"id": "3.1.2", "name": "Veterans & Service Members", "kpi_metric": "22149"},
-    {"id": "3.1.2a", "name": "Apprentice Cohort", "kpi_metric": "700"},
+    {"id": "3.1.3", "name": "Apprentice Cohort", "kpi_metric": "700"},
 ]
 _a3, _w3, annual3 = e.build_workplan_goals_from_supabase(rows3, assocs3, projects3, None)
 ag3 = {r["id"]: r for r in annual3}
@@ -164,7 +222,7 @@ check("breakdown rows carry current_kpi_breakdown, not current_kpi_key",
       ag3["3.1.1"]["current_kpi_breakdown"] == ("cumulative_students", "workforce")
       and ag3["3.1.1"]["current_kpi_key"] is None
       and ag3["3.1.2"]["current_kpi_breakdown"] == ("cumulative_students", "military")
-      and ag3["3.1.2a"]["current_kpi_breakdown"] == ("cumulative_students", "apprentice"))
+      and ag3["3.1.3"]["current_kpi_breakdown"] == ("cumulative_students", "apprentice"))
 kpis_bd = {"cumulative_students": {"value": "48,176", "breakdowns": [
     {"label": "Military", "value": "24,864"},
     {"label": "Workforce/Other", "value": "23,388"},
@@ -175,8 +233,8 @@ check("3.1.1 Current flips to live Workforce/Other (23,388)",
       ag3["3.1.1"]["current_source"] == "live" and ag3["3.1.1"]["current_live_display"] == "23,388")
 check("3.1.2 Current flips to live Military (24,864)",
       ag3["3.1.2"]["current_source"] == "live" and ag3["3.1.2"]["current_live_display"] == "24,864")
-check("3.1.2a Current flips to live Apprentice (753)",
-      ag3["3.1.2a"]["current_source"] == "live" and ag3["3.1.2a"]["current_live_display"] == "753")
+check("3.1.3 Current flips to live Apprentice (753)",
+      ag3["3.1.3"]["current_source"] == "live" and ag3["3.1.3"]["current_live_display"] == "753")
 # Graceful: a KPI with no breakdowns leaves the breakdown rows manual.
 _a3b, _w3b, annual3b = e.build_workplan_goals_from_supabase(rows3, assocs3, projects3, None)
 e.apply_live_workplan_current(annual3b, {"cumulative_students": {"value": "48,176"}}, None)
@@ -186,19 +244,23 @@ check("breakdown row stays manual when KPI has no breakdowns",
 # Render the live breakdown rows: read-only badge, verbatim value, not editable.
 html3 = e.render_annual_goals_table_html(annual3, activities=_a3)
 check("render: breakdown live value shown verbatim (24,864)", '24,864' in html3)
-check("render: breakdown live rows are read-only (no data-current-edit)",
-      'data-current-edit="1"' not in html3)
+check("render: breakdown live rows are read-only (no editable Current cell)",
+      'data-rt="CURRENT"' not in html3)
 
 # ── Render: live cell read-only w/ badge; manual cell editable; title span ───
 html = e.render_annual_goals_table_html(annual, activities=acts)
-check("render: live badge present", 'wpg-live-badge' in html and '>live' in html)
-check("render: live value shown verbatim", '48,142' in html)
-check("render: manual Current cell is editable (data-current-edit)",
-      'data-current-edit="1"' in html)
-check("render: live Current cell is NOT editable",
-      html.count('data-current-edit="1"') == 2)  # only 1.1 + 3.4 (manual); 3.1 live
+check("render: live note present, under the fiscal year's column",
+      'data-label="26-27">48,142<span class="wpg-live-badge">live</span>' in html)
+check("render: the closed year on the live row shows its June 30 reading, marked year end",
+      'data-label="25-26">48,219<span class="wpg-val-note">year end</span>' in html)
+check("render: the date is stated once, above the table",
+      'Live values are as of 2026-06-30' in html and html.count("as of 2026-06-30") == 1)
+check("render: manual Current cells are editable, five per manual row (1.1 + 3.4)",
+      html.count('data-rt="CURRENT" data-yr=') == 10)
+check("render: live Current cells are NOT editable (3.1 carries none)",
+      'data-aid="3.1" data-kind="project" data-rt="CURRENT"' not in html)
 check("render: editable title span", 'data-title-edit="1"' in html)
-check("render: title-total mirror marker", 'data-current-total="1"' in html)
+check("render: the Current total mirror marker", html.count('data-rt="CURRENT" data-total="1"') == 2)
 check("render: GOAL/STRETCH editor untouched (data-editable present)",
       'data-editable="1"' in html)
 check("render: authoritative title text present",

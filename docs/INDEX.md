@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 555 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 556 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 59 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 397 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1188** | |
+| Session handoffs | 398 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1190** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-19 (S426 SkyTorreya): the Annual Workplan Goals tab edits every year (a Current per year), shows its stored descriptions, Set targets fixed, the formatting pass; KB note on idempotent controls; handoff 427.
 - 2026-10-19 (S424 SkyBuckthorn): the Jev sitting asks only about the gating checks and two certificate scorer rules (#2256); Taft's renumbered BUSN 550/555 and Administrative Services II on its own page, display build e0407fdcb54b (#2258); Open Asks Sheet 98 answered (remove Taft's 38661 row; the second reader on ice); lessons S424, S394-S398 archived.
 - 2026-10-19 (S423 SkyLaurel, the routine): Merced's renumbered courses, a cited per-college `course_renumbers` map, 154 to 163 of 172 found and 125 to 134 passing (#2253); the Knowledge Base portal's first UI pass (#2254); the Commons' four run logs; lessons S423, handoff 424.
 - 2026-10-19 (S422 SkyWillow, the routine): San Joaquin Delta's three scorer readings, 154 to 195 of 202 live rows passing (#2250); Taft's two local GE patterns, no step (#2249); the Sierra Training UI pass (#2251); lessons S422, handoff 423.

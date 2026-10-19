@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-19T14:13:53Z",
-  "session": 424,
-  "moniker": "SkyBuckthorn",
+  "written_at": "2026-10-19T20:31:49Z",
+  "session": 426,
+  "moniker": "SkyTorreya",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_425_handoff.md",
+  "handoff": "docs/session_427_handoff.md",
   "next_step": {
-    "title": "Remove Taft's 38661 row under the receipt procedure, then Merced's last nine and the Commons' step 3",
-    "text": "Sam ruled remove on Open Asks Sheet 98 card 1. A session with the permission files the receipt holding the full row and the guarded delete through the migrate runner. The second reader is on ice until Sam's new xAI subscription. Then Merced's last nine programs, Orange Coast 10278's rescore, and the Commons' deep link behind each count."
+    "title": "Land cpl-project-tracker#2262, then the queue",
+    "text": "Merge the Annual Workplan Goals PR on a green test and dispatch the dashboard; then the Sheet 99 rulings, the two quarterly routines, the stray identity codes and the Commons views."
   },
   "calls": [
     {
@@ -24,36 +24,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-19T08:00:00Z",
-      "text": "Taft's local-degree general education was read from the catalog (three free page reads): its GE page states a 27-unit local pattern and its Other Associate Degrees page an 18-unit one for career technical degrees, and no page calls the 60 a minimum, so no step was built and records 16725 and 36928 stay failing (#2249)."
-    },
-    {
-      "at": "2026-10-19T08:36:00Z",
-      "text": "San Joaquin Delta's three scorer readings (the program total as a floor, the catalog's subject prefixes read as the state file's, a noncredit page printing only its total hours): 195 of 202 live rows pass, up from 154, through two free reconcile runs and two rereads (#2250)."
-    },
-    {
-      "at": "2026-10-19T08:30:00Z",
-      "text": "The UI pass measured Sierra Training as a reviewer sees it for the first time and converted its controls to underlined words (#2251)."
-    },
-    {
-      "at": "2026-10-19T10:00:00Z",
-      "text": "Merced's catalog had renumbered courses the state's file still lists (MECH for AGMA, ANSC for AGAS, LAND for AGEH, CPSC-17 for DRON 10): a cited per-college map lets the reader find them and the checks read them as the listed courses."
-    },
-    {
-      "at": "2026-10-19T11:15:00Z",
-      "text": "Merced: 163 of 172 programs found, up from 154, and 134 passing the machine checks, up from 125, for 55 cents of extraction; nine records loaded."
-    },
-    {
-      "at": "2026-10-19T09:50:00Z",
-      "text": "The UI pass measured the Knowledge Base portal for the first time and moved it to First Light's tokens and plain-word controls (#2254)."
-    },
-    {
-      "at": "2026-10-19T12:27:00Z",
-      "text": "The Jev sitting asks only about the five checks that hold a record back; Canada's five careers-only rows were never failing records. Two scorer rules for certificates with no degree total: general education units that make the printed total exact pass it, and a total the page says electives fill passes a short sum with the fill named (San Joaquin Delta 05630 and 11970)."
-    },
-    {
-      "at": "2026-10-19T14:11:00Z",
-      "text": "Taft renumbered BUSN 550 and 555 as 1050 and 1055; a cited map gives Administrative Services II its own page, read, loaded and in display build e0407fdcb54b (applying on main). CSU GE-Breadth, IGETC and the two Speech Language Pathology awards are not in Taft's 2026-2027 catalog; Sam ruled remove on the CSU GE-Breadth row, which a later session files."
+      "text": "No change to the harvest this run; S426 worked the Annual Workplan Goals tab (a Current per year, the stored descriptions, the formatting pass).",
+      "at": "2026-10-19T20:31:49Z"
     }
   ],
   "headline": [
@@ -154,7 +126,7 @@
         ]
       },
       "roep": [
-        18451,
+        18452,
         20282
       ],
       "coci": [

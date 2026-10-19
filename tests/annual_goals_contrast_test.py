@@ -75,7 +75,8 @@ def css_rule(selector):
 
 # S375 UI pass: the table prints classes and workplan_goals.js paints them, so the
 # checks read the markup for the class and the injected CSS for the color.
-wrap = re.search(r'<h2[^>]*>Annual Workplan Goals</h2>\s*<div ([^>]*)>', html)
+# S426: the title sits in a head row with the sign-in slot; the wrapper follows the head.
+wrap = re.search(r'<div class="wpg-annual-head">.*?</div>\s*(?:<p class="wpg-annual-note">[^<]*</p>\s*)?<div ([^>]*)>', html, re.S)
 attrs = wrap.group(1) if wrap else ""
 check("the scrolling wrapper is keyboard reachable and named (tabindex 0, role region, aria-label)",
       'class="wpg-annual-scroll"' in attrs and "overflow-x:auto" in css_rule(".wpg-annual-scroll")
@@ -98,10 +99,15 @@ chip = re.search(r"\.wpg-act-chip-primary \{([^}]*)\}", gen.EXHIBIT_ANALYSIS_CSS
 check("the primary chip's ground themes (var(--gold-soft,#FBF3DA)), so --mustard-text reads in dark",
       bool(chip) and "background:var(--gold-soft,#FBF3DA)" in chip.group(1))
 
-hint = re.search(r"\.wpg-manual-hint \{ color:([^;]+);", js)
-sep = re.search(r'widget\.appendChild\(el\("span", \{ "style": "color:([^;]+);" \}, \["·"\]\)\)', js)
-check("the manual-value pencil and the '·' separator use --text-muted (were #bbb and #999)",
-      bool(hint) and hint.group(1) == "var(--text-muted)" and bool(sep) and sep.group(1) == "var(--text-muted)")
+# S426: the pencil hint and the "·" separator are gone (the Current row is a ladder
+# like Goal and Stretch; the sign-in controls sit in the card's head row). The muted
+# words that remain are the live and year-end notes, in --text-muted.
+check("no pencil hint and no '·' separator remain in the editor",
+      ".wpg-manual-hint" not in js and '["·"]' not in js)
+check("the live and year-end notes use --text-muted",
+      "color:var(--text-muted)" in css_rule(".wpg-live-badge") and "color:var(--text-muted)" in css_rule(".wpg-val-note"))
+check("the sign-in widget carries no inline color",
+      not re.search(r'wpg-auth-widget[^\n]*"style"', js))
 
 print()
 if failures:

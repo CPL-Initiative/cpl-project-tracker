@@ -67,24 +67,27 @@ def _fetch_supabase() -> tuple[list[dict], list[dict]]:
     PR-A added the `kind` column + the workplan_activity_associations table;
     both are fetched here so the snapshot carries the full picture.
     """
-    # `current` (the Annual Workplan manual-Current column, added Session 85)
-    # degrades gracefully: if the migration hasn't been applied yet the select
-    # 400s, so try the richer select first and fall back to the pre-`current`
-    # shape — same defensive pattern as is_primary below. Once the column lands,
-    # the snapshot carries it and unmapped sub-activities surface their manual
-    # Current on the next regen.
-    try:
-        rows = _fetch_table(
-            "workplan_goals"
-            "?select=activity_id,name,description,row_type,kind,current,"
-            "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
-        )
-    except Exception:
-        rows = _fetch_table(
-            "workplan_goals"
-            "?select=activity_id,name,row_type,kind,"
-            "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
-        )
+    # The select degrades gracefully, column generation by column generation: a
+    # select naming a column the migration has not landed yet 400s, so the richest
+    # shape is tried first (same defensive pattern as is_primary below).
+    #   cur_2025_26 .. cur_2029_30  the per-year Current (S426, 2026-10-19:
+    #                               kb/supabase_workplan_goals_current_by_year.sql)
+    #   current                     the one-column Current it replaces (Session 85)
+    # Once a column lands, the snapshot carries it on the next regen.
+    _base = "activity_id,name,description,row_type,kind,yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
+    _shapes = [
+        _base + ",current,cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30",
+        _base + ",current",
+        "activity_id,name,row_type,kind,yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total",
+    ]
+    rows = None
+    for i, sel in enumerate(_shapes):
+        try:
+            rows = _fetch_table("workplan_goals?select=" + sel)
+            break
+        except Exception:
+            if i == len(_shapes) - 1:
+                raise
     # is_primary is added by kb/supabase_activity_associations_add_primary.sql
     # (the Activity↔Project association editor's schema change). Until that
     # migration is applied, selecting the column 400s, so try the richer select

@@ -46,7 +46,7 @@ const DATA = {
   ],
   goals: [
     { activity_id: "3", kind: "activity", row_type: "GOAL", name: "Scale CPL Access, Awards, and Procedures" },
-    { activity_id: "3.1", kind: "project", row_type: "GOAL", yr_2025_26: 120, current: 48 }
+    { activity_id: "3.1", kind: "project", row_type: "GOAL", yr_2025_26: 100, yr_2026_27: 120, cur_2025_26: 30, cur_2026_27: 48, current: 30 }
   ],
   lifecycle: [{ project_id: "3.9", state: "tabled" }]
 };
@@ -68,9 +68,19 @@ check("(b) no summary reads as such, with what there is to draw on",
   api.freshnessText(g4) === "No summary posted yet · 1 sub-activity update to draw on");
 
 // (c)
-const built = api.buildPrompt(g3);
-check("(c) the prompt names each sub-activity with its status, percent, goal and current",
-  /- 3\.1 Exhibit mapping: status In Progress; 40% complete; 2025-26 goal 120, current 48 \(exhibits\)/.test(built.prompt));
+const built = api.buildPrompt(g3, "2026_27");
+check("(c) the prompt names each sub-activity with its status, percent, this year's goal and current",
+  /- 3\.1 Exhibit mapping: status In Progress; 40% complete; 2026-27 goal 120, current 48 \(exhibits\)/.test(built.prompt));
+// The fiscal year the facts read (S426: one Current per year, cur_<year> on the GOAL row).
+check("(c) the fiscal year turns on July 1 and clamps to the ladder",
+  api.fiscalYearSuffix(new Date(2026, 9, 19)) === "2026_27" && api.fiscalYearSuffix(new Date(2026, 5, 30)) === "2025_26"
+    && api.fiscalYearSuffix(new Date(2031, 0, 1)) === "2029_30" && api.fiscalYearSuffix(new Date(2024, 0, 1)) === "2025_26");
+const gf = api.goalFacts({ yr_2027_28: 200, cur_2026_27: 48, current: 30 }, "2027_28");
+check("(c) a year with no Current yet reads the latest year that has one", gf && gf.year === "2027-28" && gf.goal === 200 && gf.current === 48);
+check("(c) before any cur_ column, the one-column current still counts",
+  api.goalFacts({ yr_2026_27: 120, current: 30 }, "2026_27").current === 30);
+check("(c) a sub-activity with neither a goal nor a Current for the year states no fact",
+  api.goalFacts({ yr_2025_26: 5 }, "2026_27") === null);
 check("(c) three updates per sub-activity, newest first",
   built.prompt.indexOf("Fourth, newest.") > 0 && built.prompt.indexOf("Fourth, newest.") < built.prompt.indexOf("Third.")
     && built.prompt.indexOf("Mapped 40 exhibits.") < 0);

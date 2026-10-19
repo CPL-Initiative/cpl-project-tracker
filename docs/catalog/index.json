@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 555,
+   "count": 556,
    "docs": [
     {
      "created": "2026-08-14",
@@ -971,6 +971,22 @@
      "title": "A control that does nothing \u2014 read the request log first",
      "type": "methodology",
      "updated": "2026-09-23"
+    },
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-control-that-stays-after-it-worked-gets-pressed-again.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "supabase",
+      "idempotent",
+      "annual-goals"
+     ],
+     "title": "A control that stays after it worked gets pressed again",
+     "type": "methodology",
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-08-22",
@@ -14978,7 +14994,7 @@
      ],
      "title": "Annual Workplan Goals / adding, moving and counting sub-activities \u2014 lane state",
      "type": null,
-     "updated": "2026-10-13"
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-10-18",
@@ -15775,8 +15791,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 397,
+   "count": 398,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 427,
+     "path": "docs/session_427_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "annual-goals",
+      "workplan",
+      "descriptions",
+      "decision-sheet"
+     ],
+     "title": "Session 427 handoff: the Annual Workplan Goals tab edits every year, shows its descriptions, and the PR that carries it",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22626,5 +22659,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1188
+ "total": 1190
 }

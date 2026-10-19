@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/workplan_descriptions_drafted_2026-10-19_s426.sql",
+ "name": "workplan_descriptions_drafted_2026_10_19_s426",
+ "version": "20261019203514",
+ "sha256": "96c9ef44b649a352dc4fe218d61984ce0d517bc28ca6827b2e25bff1cb420ea8",
+ "run": "39320268507",
+ "status": 201,
+ "response": "[{\"id\":\"4.7\",\"description\":\"A partnership with Public Works Alliance's EMS Corps, the five-month emergency m\"},{\"id\":\"4.8\",\"description\":\"A partnership with Futuro Health to award credit for its behavioral healthcare t\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

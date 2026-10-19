@@ -153,7 +153,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `tmc_curator_notes` | tabs: `tmc-builder` | tabs: `tmc-builder` |
 | `tmc_submissions` | tabs: `tmc-builder` | tabs: `tmc-builder` |
 | `workplan_activity_associations` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` |
-| `workplan_goals` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
+| `workplan_goals` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
 
 ## Supabase RPCs
 
@@ -635,7 +635,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
 | `kb/projects_seed_plan.md` | none found | scripts: `kb/_seed_projects.py` · committed by: `projects-seed-apply.yml` |
-| `kb/projects_snapshot.json` | scripts: `kb/_load_projects.py`, `nudges/build_nudges.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
+| `kb/projects_snapshot.json` | scripts: `kb/_draft_workplan_descriptions.py`, `kb/_load_projects.py`, `nudges/build_nudges.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/receipts` | none found | committed by: `course-outcomes-load.yml`, `program-requirements-college.yml`, `supabase-migrate.yml` |
@@ -715,9 +715,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/unclassified_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_unclassified.py` | scripts: `kb/_preseed_unclassified.py` · committed by: `cer-procedures.yml` |
 | `kb/unclassified_suggestions.json` | tabs: `credential-reference` · scripts: `kb/_cer_procedures.py`, `kb/_fold_unclassified.py`, `kb/_suggest_unclassified.py` | scripts: `kb/_suggest_unclassified.py` · committed by: `daily-dashboard.yml` |
 | `kb/unified_titles.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_roep_display.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/classify_exhibits.py` | scripts: `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/workplan_description_drafts.json` | scripts: `kb/_draft_workplan_descriptions.py` | — |
 | `kb/workplan_goals_seed_out` | none found | committed by: `workplan-goals-seed-apply.yml` |
 | `kb/workplan_goals_seed_plan.md` | none found | scripts: `kb/_seed_workplan_goals.py` · committed by: `workplan-goals-seed-apply.yml` |
-| `kb/workplan_goals_snapshot.json` | scripts: `kb/_load_workplan_goals.py` | scripts: `kb/_load_workplan_goals.py` · committed by: `daily-dashboard.yml` |
+| `kb/workplan_goals_snapshot.json` | scripts: `kb/_draft_workplan_descriptions.py`, `kb/_load_workplan_goals.py` | scripts: `kb/_load_workplan_goals.py` · committed by: `daily-dashboard.yml` |
 | `kb/workplan_goals_validation.md` | none found | scripts: `kb/_validate_workplan_goals.py` · committed by: `workplan-goals-seed-apply.yml` |
 | `kb/zband_retire_out/2026-09-03/capacity.json` | scripts: `kb/_zband_retire_dryrun.py` | — |
 | `kb/zband_retire_out/2026-09-03/duplicates.json` | scripts: `kb/_zband_retire_dryrun.py` | — |
@@ -1152,5 +1153,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 683 file
-datasets · 182 external services · 451 consumers · 56 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 684 file
+datasets · 182 external services · 452 consumers · 56 workflows · 39 tabs.

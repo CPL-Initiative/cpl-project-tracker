@@ -1,7 +1,7 @@
 ---
 title: "Annual Workplan Goals / adding, moving and counting sub-activities — lane state"
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-10-19
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -19,16 +19,68 @@ related:
 
 ## Status
 
+✅ **S426 SkyTorreya (2026-10-19): a Current for every year, one editor for all three rows, the formatting pass.**
+Sam, 2026-10-19: *"make sure all of the annual columns can be edited. Currently, only the 2025-2026 year is
+editable."* Goal and Stretch already edited for all five years; the Current row had one column, `workplan_goals.current`
+on the GOAL row, so fiscal year 2026-27 (from July 1, 2026) had nowhere to go.
+- **Store:** `cur_2025_26` .. `cur_2029_30` on the GOAL row (`kb/supabase_workplan_goals_current_by_year.sql`, applied by
+  `supabase-migrate.yml` from `kb/migrations/.apply`); the migration copies `current` into `cur_2025_26` (the column it
+  was typed under: 1.2's value of 2, typed 2026-10-19). `current` stays unread; a later migration drops it.
+- **Editor:** the Current row is a ladder like Goal and Stretch (`data-rt="CURRENT"`, `data-yr-key="cur_<year>"`), saved
+  by the same `startEdit`/`saveCell` path (PATCH the GOAL row, no `total`); `startCurrentEdit`, `saveCurrent` and the
+  pencil hint are gone. The Total of the Current row sums the years, as the other two do.
+- **Live rows (3.1, 3.1.1-3, 3.2, 2.1, 3.3, 4.1):** the live value prints under the fiscal year the run is in
+  (`current_workplan_year()`, July 1 boundary, clamped to the ladder); each closed year reads the June 30 entry of
+  `kpi_history.json` (`_history_year_end`; 2025-26 = 48,219 students, 24,881 military, 99,534 units, 12,566 CRs, 100
+  colleges); later years stay blank; the date is stated once above the table. The Activities tab's header summary reads
+  this year's goal against the latest Current (`_summary_current`); the card's number is the latest year set
+  (`current_latest`); `activity_summaries.js` sends the fiscal year's goal and current (`goalFacts`).
+- **Set targets is idempotent and paints at once:** it reads the live rows first, PATCHes a row type that exists and
+  inserts only the missing ones, then `activateLadder` gives the row its ladder attributes and removes the control.
+  Before this a second press inserted a second pair, which is how the duplicates below landed.
+- **Formatting pass (verified with `npm run a11y`, light and dark, 390 and 1440):** hairline rows in place of the full
+  grid, numbers right-aligned in tabular figures, Activity headers on the subtle surface, Stretch in its text grade
+  without italics, the sign-in controls in the card's head row ("Add sub-activity", "Sign out"; signed out, the row
+  takes its own line), one as-of line for every live value. Phone: each row is a wrapping flex line whose cells take
+  the width their number needs (a 1,500,000 used to break mid-digit in a sixth of 300px).
+- Tests: `tests/workplan_goals_set_targets.test.js` (14, new), `tests/annual_goals_ui_pass.test.js` (57),
+  `tests/workplan_goals_authoritative.test.js` (26), `tests/activity_summaries.test.js` (42),
+  `kb/_test_workplan_current_hybrid.py` (rewritten; its 3.1.2a fixture had been failing since the July reorg renamed
+  it 3.1.3), `tests/annual_goals_reflect_all_projects_test.py`, `tests/annual_goals_contrast_test.py`.
+
+✅ **Descriptions show, and the two rows without one have drafts (S426, Sam's second ask of 2026-10-19:** *"add a
+procedure that drafts a description to insert in the Descriptions box on the annual goals ... If you don't have any
+information for a particular activity, take your best guess and I'll edit it"*). The tab offered "Add description" on
+every row while 32 of 34 sub-activities carried one in `projects.description`: the generator read the key
+`description` where the loader's contract names it `desc` (`build_projects_from_supabase`); both read now, so the
+stored text shows after the next build. Only 4.7 EMS Corps and 4.8 Futuro had none.
+- **The procedure:** `kb/_draft_workplan_descriptions.py` — `--brief` lists each empty row with its facts (its
+  Activity's description, what it counts and how, milestones, latest update, workplan notes, lead, team, the repo and
+  vault documents naming it); the session writes the draft into `kb/workplan_description_drafts.json` with its sources
+  and a `best_guess` flag; `--check` refuses a stale, short, unsourced or business-register draft; `--sql` prints the
+  guarded UPDATE (`where description is null`, rollback in the header) for `supabase-migrate.yml`. Sam edits on the
+  tab; the JSON keeps what was drafted and from what. Test: `tests/workplan_description_drafts_test.py`.
+- **Drafted:** 4.7 (from `docs/noncredit_cpl_thinking.md` §3a and the spring 2026 update draft) and 4.8 (from its
+  2026-10-19 update and `docs/futuro_hth_crosswalk_lessons.md`), both marked best guess;
+  `kb/receipts/workplan_descriptions_drafted_2026-10-19_s426.sql` applies once `.apply` points at it (NEXT 0e).
+
+⚠️ **Duplicate ladder rows (found 2026-10-19).** `workplan_goals` holds exact duplicate GOAL and STRETCH rows for
+1.1.1 (four pairs, ids 69-76), 1.1.3 (77-80), 4.2.1 (81-84) and 4.4.1 (85-88), all inserted 2026-10-14 12:26-12:37Z
+seconds apart by Set targets. Readers saw nothing wrong (the generator kept the last row, the editor patched all alike).
+The paste that deletes the 12 extra rows and adds the unique index is
+`kb/receipts/workplan_goals_dedupe_ladder_rows_2026-10-19_s426.sql` (rollback in its header).
+✅ **Pasted by Sam (Open Asks Sheet 100, 2026-10-19 21:06Z, "Success: no rows returned"; `cpl_memory` `sam-sheet-100-dedupe-pasted-2026-10-19`).** Read back 21:07Z: no sub-activity holds more than one row per type (68 rows, 12 fewer) and `workplan_goals_one_row_per_type` exists. The drafted descriptions for 4.7 and 4.8 landed through the runner the same hour.
+
 ✅ **PR A merged (#2051, 2026-10-13): one add flow, Set targets, counting notes.**
 - **The add bug (Sam, 2026-10-12, adding 3.9):** the dialog read `[data-kind="activity"]`, a marker the Annual table stopped printing when it won the AWG injection, so its Activity list was empty and every sub-activity was refused. And a sub-activity add wrote only `workplan_goals`, never `projects`, which the table iterates (Path A), so a valid add never appeared.
 - **The fix:** one dialog (parent picker suggests the next free id; writes projects → workplan_goals → links, home primary, each insert a literal URL so the surface maps see it; reads tabled ids live), opened from Annual Goals and from **Add sub-activity** on each Activities-tab activity header (`window.CPL_WORKPLAN_ADD`). **Set targets** on ladderless rows writes the ladder only. **Counting notes:** `projects.kpi_unit` (Counts) + `projects.count_note` (How it is counted; migration `add_projects_count_note`), edited in place, shown on the cards and sent to `report_generator.js`, `master_report.js`, `generate_reports.js`. `project_add.js` is retired (#2055): it had lost both mount points.
 - ⛔ **The tree is keyed by the id itself** (projects has no parent column): a move is a re-key of projects, item_raci, item_updates, workplan_activity_associations, workplan_goals, project_lifecycle, update_log (FK, not deferrable). Miss one and it silently mis-attaches (#872).
 
-✅ **PR B merged (#2054), published by run 582: the UI audit fixes.** Keyboard: every editable value takes Tab for an editor and opens on Enter or Space, the field is named, Escape or Enter returns focus (Chrome's blur-on-removal made the cell editors throw on every Escape and save; a `done` guard closes each field once); the chip line opens its popover from the keyboard with focus inside. Headers: `scope="col"`, each Activity a `<tbody>` with a rowgroup `<th>`, names and Goal/Current/Stretch as row headers. The renderer prints classes; `workplan_goals.js` paints them (no raw hex left in the published table). Goal and Stretch on the plain surface, Current in ink, a cobalt rule under each editable value, dotted underlines under editable words, each 24px tall. Below 560px each sub-activity is a card. An empty description is hidden for a reader and reads **Add description** for an editor. The live Current is muted words; Unlock editing is an underlined word. `npm run a11y workplan-goals-editor` passes on the published page with its functional keyboard and phone-card check. The **gray band** is the First Light background, fixed at the viewport; dismissed. The Add dialog's Activity checkboxes measured 19.9px tall on the published page: **#2057** makes them 24px.
+✅ **PR B merged (#2054): the UI audit fixes.** Every editable value takes Tab and opens on Enter or Space, the field is named, Escape or Enter returns focus (a `done` guard closes each field once: Chrome's blur-on-removal threw on every Escape); the chip line opens its popover from the keyboard. Headers carry `scope`, each Activity is a `<tbody>` with a rowgroup `<th>`, names and Goal/Current/Stretch are row headers. The renderer prints classes and `workplan_goals.js` paints them (no raw hex). An empty description hides for a reader and reads **Add description** for an editor. The Add dialog's checkboxes are 24px tall (#2057).
 
-✅ **PR C merged (#2056): the Move control, live.** `workplan_move_sub_activity(old, new, keep_old_link)` (`kb/supabase_workplan_move.sql`) re-keys the seven tables above in one transaction (the projects row is copied under the new id so update_log can follow its FK), makes the new home the primary link and keeps the old Activity's link unless dropped, then scans every public `project_id` / `item_id` / `activity_id` column and rolls back if any still holds the old id. Each move files its before-values in `workplan_id_moves`; the file's header carries the undo. Reviewer sign-in only; closed to anon. The dialog offers "Move" on each sub-activity to a reviewer, never offers the row or its children as a parent, suggests the next free number from the live list. Governance: `tab:workplan-goals` and the RPC map to DR-13, whose `maintained_in` names the function. Verified against Postgres 16 in PGlite (`scripts/verify_workplan_move.js`, 22/22) and in jsdom (`tests/workplan_move.test.js`, 39). **Live since Sam's paste** (Sheet 72 card 3, ~03:50Z on 2026-10-13; `apply_migration` was down): `workplan_id_moves` with RLS on, and `has_function_privilege` anon false, authenticated true, service_role true. Merged on `test` at `fa48b38` (the Move dialog leads with Move, as Add does). No move has been made with it yet.
+✅ **PR C merged (#2056): the Move control, live.** `workplan_move_sub_activity(old, new, keep_old_link)` (`kb/supabase_workplan_move.sql`) re-keys the seven tables above in one transaction, makes the new home the primary link, keeps the old Activity's link unless dropped, and rolls back if any public `project_id` / `item_id` / `activity_id` column still holds the old id. Each move files its before-values in `workplan_id_moves`; the file's header carries the undo. Reviewer sign-in only (anon false). The dialog offers "Move" on each sub-activity, never the row or its children as a parent, and suggests the next free number from the live list. DR-13 names the function. Verified in PGlite (`scripts/verify_workplan_move.js`, 22/22) and jsdom (`tests/workplan_move.test.js`, 39). Live since Sam's paste (Sheet 72 card 3, 2026-10-13). No move has been made with it yet.
 
-✅ **PR D merged (#2059), published by run 583: Refresh summaries.** `activity_summaries.js`: under every Activities-tab activity header a line says how current its summary is (*Summary posted Jun 29, 2026 · 7 sub-activity updates since*), for every reader. A signed-in reviewer (magic link; the team phrase neither drafts nor posts) gets **Refresh summaries** above the first Activity: it drafts each Activity through the report proxy (`claude-sonnet-4-5`, the report generator's model, with its naming rule) from the sub-activities whose home field names that Activity (tabled ones out): three newest `item_updates` each, else the creation-era `latest_update`, plus status, percent, 2025-26 goal and current. Each draft sits in an editable field with its sources named and posts only on its own **Post**: `item_updates` `activity:N`, author the reviewer's email, `raw` a JSON of drafter, approver, model, edited flag and source ids; `cpl-item-updated` repaints the cards. **Skip** and **Redraft**; a failed draft leaves the field open to write by hand. The header's **Update** link is gone (the RACI composer still takes activity updates), and the header's link row wraps (it ran 71px past a 390px screen once Add sub-activity joined it). DR-20 names the writer. Checked in Chromium at 1280 and 390; `tests/activity_summaries.test.js` (38). No summary has been posted with it yet.
+✅ **PR D merged (#2059): Refresh summaries.** `activity_summaries.js`: every Activities-tab header says how current its summary is; a signed-in reviewer gets **Refresh summaries**, which drafts each Activity through the report proxy (`claude-sonnet-4-5`, the report generator's naming rule) from its sub-activities' three newest `item_updates` (else the creation-era `latest_update`), status, percent, and this fiscal year's goal and current (S426). Each draft posts only on its own **Post** (`item_updates` `activity:N`, provenance in `raw`); **Skip** and **Redraft**. DR-20 names the writer. `tests/activity_summaries.test.js`. No summary has been posted with it yet.
 
 ✅ **Sheet 72 answered and applied.** Sam ruled 2026-10-13 ~01:18Z (chat): *"Can't find 71 so I'll go with your recommendations"* on [Open Asks Sheet 72](https://claude.ai/artifact/LFbjZXFbHmPTNF8JqW3qMV) (`cpl_memory` `sam-sheet-72-rulings-2026-10-13`), and ran cards 2 and 3 himself (~03:50Z; `sheet-72-pastes-applied-2026-10-13`). Read back 03:51Z: **3.9** Futuro Behavioral Healthcare Project added (Goal 0/2/4/4/4, Stretch 0/4/8/8/8, Activity 3 home); **1.1.2 is 4.2.1** (Activity 4 home, the Activity 1 link kept, its RACI row and update moved, no table holds 1.1.2). That move ran as the card's hand SQL, not through the function, so `workplan_id_moves` has no row for it; its undo is the rollback block in `kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql`. **Card 4: the team phrase too.** Sam clicked "phrase" in the sheet's store at 03:50:39Z, after his 01:18Z chat reply that S375 read as reviewer-only; the later click wins (`cpl_memory` `sam-sheet-72-card-4-team-phrase-too-2026-10-13`, found by S376 SkyLinden). The function and the control went live reviewer-only, so this is open work (NEXT 0b). Card 1 (the `course_outcomes` table) belongs to the program requirements queue and was not run.
 
@@ -41,9 +93,20 @@ related:
 - **Card 3 "reviewer":** an official sub-activity may leave the workplan, reversibly, by a signed-in reviewer. Annual Goals gives a reviewer **Table** beside Move, which opens the Activities tab's own Table / Archive dialog (`CPL_PROJECT_LIFECYCLE.openTable`, one writer to `project_lifecycle`), and a **Tabled and archived** list under the table with **Restore**. The card's premise was off: from Session 95's reorg until Sheet 77 card 2 every Activities-tab card was tableable by a reviewer **or the team phrase**, and the 2026-07-02 immunity gates nothing. `setGoalsRowsHidden` looked for a `td[rowspan]` name cell, a `th` since #2054; rows still hid through their ladder cells' `data-aid`, and the selector now takes both.
 - **Card 2 "both":** the page draws rows added or changed since the build, and a save queues the rebuild. Open work (NEXT 5).
 
-✅ **A reviewer's sign-in email stays readable by the public (Sam, [Open Asks Sheet 81](https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3) card 4, 2026-10-14 20:22Z, *Leave them public*, `sam-sheet-81-rulings-2026-10-14`).** Nothing to build: no column grant, and the ledger and browser reads keep `updated_by`. A Table or Archive writes the reviewer's sign-in email to `project_lifecycle.updated_by`. Anyone can read that table (`plc_select` is `true`, anon holds all five columns), the daily run commits it to `kb/project_lifecycle.json` on the public site, and `project_lifecycle.js` reads it in the browser; since #2117 the page prints the date only. Measured 2026-10-14: one row (Sam's). Ten reviewers can write one: Sam, eight at rccd.edu, one at a contractor's work address. One RCCD reviewer's sign-in is already public on 3,222 rows of four other tables (`kb_curation.reviewer_email` 3,202, `item_raci` 11, `factsheet_overrides` 8, `item_updates` 1). `pii_guard` scans only the two HTMLs and allows rccd.edu. Sam's rulings so far: college-staff emails are public data (2026-08-19, the repo-split lane); his own is fine (`sam-email-public-ok-2026-10-14`).
+✅ **A reviewer's sign-in email stays readable by the public (Sam, [Open Asks Sheet 81](https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3) card 4, 2026-10-14, *Leave them public*, `sam-sheet-81-rulings-2026-10-14`).** A Table or Archive writes the reviewer's email to `project_lifecycle.updated_by`, which anyone can read and the daily run commits to `kb/project_lifecycle.json`; since #2117 the page prints the date only. Nothing to build.
 
 **NEXT:**
+0a. **The migration run:** `supabase-migrate.yml` fires on the S426 push; read `supabase_migrations.schema_migrations`
+    for `workplan_goals_current_by_year_2026_10_19_s426` and the receipt the runner commits. Until it lands, the
+    loader's select falls back to the `current` shape and the page shows the old one-column value under 2025-26.
+0b. ✅ The dedupe paste ran and read back clean (21:07Z); the receipt says APPLIED.
+0c. **Drop `current`** once a build has published with `cur_*` (one migration: `alter table ... drop column current`;
+    `activity_summaries.js` and `_row_current_years` still read it as a fallback until then).
+0e. ✅ The two drafted descriptions landed through the runner (read back 21:07Z); the tab shows all 34 after the
+    next build. A row Sam empties later shows in `--brief` again; draft it the same way.
+0d. **The reports still print the 2025-26 pair** (`generate_reports.js` and `master_report.js` hard-code
+    `kpi_goal_2526` beside `kpi_metric`); the fiscal-year pair belongs there too, with `kpi_current_<year>` exported
+    from the GOAL row's `cur_*` columns.
 0. ✅ #2063 merged; dashboard run 586 (04:43Z) published green.
 0b. ✅ **Move stays reviewer-only (Sam, Open Asks Sheet 73 card 1, *Keep it reviewer-only*, 2026-10-13 11:45:21Z).** His later, direct answer stands over Sheet 72 card 4's *phrase* (03:50Z); read from the sheet store by S381 (`cpl_memory` `sam-sheet-73-card-1-keep-reviewer-only-2026-10-13`). Nothing to build; the function and the control stay as they went live.
 1. **The first Refresh Sam runs:** read the posted rows (`item_updates` where `item_type = 'activity'` and `raw` names `activity_summaries.js`) and his edits (`raw.edited`, `raw.draft`). What he changes in a draft is the prompt's next revision.

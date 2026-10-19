@@ -86,8 +86,8 @@
    "name": "Annual Workplan Goals",
    "page": "index.html#workplan-goals",
    "audience": "staff",
-   "last": "2026-10-13",
-   "outcome": "S375: keyboard reach for every editable value and the chip line (the cell editors also threw on every save and Escape in Chrome, fixed), header scopes and row headers, classes for 715 raw hexes, phone cards below 560px, Current in ink, Add description for editors, the Add dialog's checkboxes to 24px (#2054, #2057); the gray band is the fixed First Light background."
+   "last": "2026-10-19",
+   "outcome": "S426: a Current per year (cur_<year> on the GOAL row, one ladder editor for Goal, Current and Stretch), the stored descriptions shown (the desc key), Set targets idempotent and painted at once, hairline rows, right-aligned tabular numbers, the sign-in row in the card head, phone rows that wrap by content; npm run a11y clean in light and dark at 390 and 1440; wiring: the Activities header summary and activity_summaries.js read the fiscal year's pair."
   },
   {
    "id": "cobi:budget",

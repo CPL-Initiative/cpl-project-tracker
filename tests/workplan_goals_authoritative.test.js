@@ -2,9 +2,9 @@
 //
 // Session 85 (SkyLight) made the Annual Workplan tab authoritative:
 //   (a) Rule 4 + the script is wired into both HTMLs;
-//   (b) signed in, a MANUAL Current cell (data-current-edit) is click-editable
-//       → PATCH workplan_goals.current on the GOAL row, and its TOTAL mirror
-//       cell repaints optimistically;
+//   (b) signed in, a MANUAL Current cell is click-editable like a Goal cell
+//       (S426: data-rt="CURRENT", one cell per year) → PATCH workplan_goals.cur_<year>
+//       on the GOAL row with no total, and its TOTAL mirror cell repaints optimistically;
 //   (c) a sub-activity TITLE span (data-title-edit) is click-editable
 //       → PATCH projects.name (the single title store);
 //   (d) a LIVE Current cell (no edit attr, read-only) does NOT open an editor;
@@ -27,7 +27,8 @@ check("workplan_goals.js wired in CPL_Dashboard.html", /workplan_goals\.js/.test
 check("workplan_goals.js wired in index.html", /workplan_goals\.js/.test(idx));
 
 const SRC = fs.readFileSync("workplan_goals.js", "utf8");
-check("source defines saveCurrent (workplan_goals.current PATCH)", /function saveCurrent/.test(SRC));
+check("source has no separate Current editor: one ladder editor (saveCell) serves all three rows",
+  !/function saveCurrent/.test(SRC) && !/function startCurrentEdit/.test(SRC) && /function saveCell/.test(SRC));
 check("source defines saveTitle (projects.name PATCH)", /function saveTitle/.test(SRC));
 
 // A representative slice of the rendered Annual Workplan table: one manual
@@ -42,8 +43,8 @@ const TABLE =
       '<td data-editable="1" data-aid="1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="4">4</td>' +
       '<td data-aid="1.1" data-kind="project" data-rt="GOAL" data-total="1" data-val="78">78</td></tr>' +
     '<tr><td>Current</td>' +
-      '<td data-current-edit="1" data-aid="1.1" data-val="8">8 <span class="wpg-manual-hint">✎</span></td>' +
-      '<td data-current-total="1" data-aid="1.1">8</td></tr>' +
+      '<td data-editable="1" data-aid="1.1" data-kind="project" data-rt="CURRENT" data-yr="2026-27" data-yr-key="cur_2026_27" data-val="8">8</td>' +
+      '<td data-aid="1.1" data-kind="project" data-rt="CURRENT" data-total="1" data-val="8">8</td></tr>' +
     '<tr><td>Stretch</td><td>8</td><td>140</td></tr>' +
     // ── live sub-activity 3.1 (read-only Current) ──
     '<tr><td rowspan="3"><span>3.1</span> ' +
@@ -92,8 +93,8 @@ function blur(w, node) {
   // ── (b) manual Current edit ──
   let dom = makeDom(true);
   let w = dom.window, doc = w.document;
-  const curCell = doc.querySelector('[data-current-edit="1"][data-aid="1.1"]');
-  const curTotal = doc.querySelector('[data-current-total="1"][data-aid="1.1"]');
+  const curCell = doc.querySelector('[data-editable="1"][data-aid="1.1"][data-rt="CURRENT"]');
+  const curTotal = doc.querySelector('[data-aid="1.1"][data-rt="CURRENT"][data-total="1"]');
   check("signed in: manual Current cell lights up (wpg-editable)",
     curCell.classList.contains("wpg-editable"));
   click(w, curCell);
@@ -105,10 +106,11 @@ function blur(w, node) {
   }
   let curCall = dom._calls.find(function (c) { return /\/workplan_goals\?/.test(c.url) && (c.opts.method === "PATCH"); });
   check("manual Current save PATCHes workplan_goals", !!curCall);
-  check("...scoped to the GOAL row of 1.1",
-    curCall && /activity_id=eq\.1\.1/.test(curCall.url) && /row_type=eq\.GOAL/.test(curCall.url));
-  check("...with body { current: 12345 }",
-    curCall && JSON.parse(curCall.opts.body).current === 12345);
+  check("...scoped to the GOAL row of 1.1, kind project",
+    curCall && /activity_id=eq\.1\.1/.test(curCall.url) && /row_type=eq\.GOAL/.test(curCall.url) && /kind=eq\.project/.test(curCall.url));
+  check("...with body { cur_2026_27: 12345 } and no total (that column is the Goal total)",
+    curCall && JSON.parse(curCall.opts.body).cur_2026_27 === 12345 && !("total" in JSON.parse(curCall.opts.body))
+      && !("current" in JSON.parse(curCall.opts.body)));
   check("manual Current TOTAL mirror repainted to 12,345",
     /12,345/.test(curTotal.textContent));
 
@@ -133,7 +135,7 @@ function blur(w, node) {
   const liveCell = Array.prototype.find.call(
     doc.querySelectorAll("td"), function (td) { return /48,142/.test(td.textContent) && td.querySelector(".wpg-live-badge"); });
   check("live Current cell carries the badge", !!liveCell);
-  check("live Current cell has NO edit affordance", liveCell && !liveCell.getAttribute("data-current-edit"));
+  check("live Current cell has NO edit affordance", liveCell && !liveCell.getAttribute("data-editable"));
   click(w, liveCell);
   check("clicking the live Current cell opens NO input", liveCell && !liveCell.querySelector("input"));
   check("clicking the live Current cell fires NO write",
@@ -150,7 +152,7 @@ function blur(w, node) {
 
   // ── (f) signed out: nothing fires ──
   dom = makeDom(false); w = dom.window; doc = w.document;
-  const curCell2 = doc.querySelector('[data-current-edit="1"][data-aid="1.1"]');
+  const curCell2 = doc.querySelector('[data-editable="1"][data-aid="1.1"][data-rt="CURRENT"]');
   const titleSpan2 = doc.querySelector('[data-title-edit="1"][data-pid="1.1"]');
   check("signed out: manual Current cell NOT lit", !curCell2.classList.contains("wpg-editable"));
   check("signed out: title span NOT lit", !titleSpan2.classList.contains("wpg-editable"));
