@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 182,
  "with_closed_list": 172,
- "started": "2026-10-19T09:31:48Z",
+ "started": "2026-10-19T10:11:33Z",
  "coursedog": {
   "root": "https://catalog.mccd.edu",
   "search": "https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=250&sortBy=catalogDisplayName%2CtranscriptDescription%2ClongName%2Cname&effectiveDatesRange=2026-10-19%2C2026-10-19&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
@@ -775,13 +775,13 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 196,
- "seconds": 1705.8,
- "found": 159,
+ "seconds": 1710.0,
+ "found": 162,
  "by_method": {
   "no_closed_list": 10,
   "not_found": 3,
-  "page_claimed": 10,
-  "sitemap_page": 159
+  "page_claimed": 7,
+  "sitemap_page": 162
  },
  "shared_pages": {
   "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt": [
@@ -912,28 +912,6 @@
    ]
   },
   {
-   "control_number": "07708",
-   "title": "Equine Science and Management",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.mccd.edu/programs/01051.AS/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01100.AS/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01100.CN/requisites-ojrrt"
-   ]
-  },
-  {
-   "control_number": "19493",
-   "title": "Equine Science and Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.mccd.edu/programs/01100.CN/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01051.AS/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01100.AS/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01100.AST/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01151.AS/requisites-ojrrt"
-   ]
-  },
-  {
    "control_number": "19498",
    "title": "Small Business Entrepreneurship",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -951,17 +929,6 @@
     "https://catalog.mccd.edu/programs/09550.CT/requisites-ojrrt",
     "https://catalog.mccd.edu/programs/09401.AS/requisites-ojrrt",
     "https://catalog.mccd.edu/programs/09550.AS/requisites-ojrrt"
-   ]
-  },
-  {
-   "control_number": "20802",
-   "title": "Landscape Horticulture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.mccd.edu/programs/01052.CT/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01351.AS/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/01151.AS/requisites-ojrrt"
    ]
   },
   {
@@ -986,65 +953,45 @@
  ],
  "coverage_bands": {
   "0.5-0.8": 25,
-  "0.8-1.0": 34,
-  "1.0": 100
+  "0.8-1.0": 36,
+  "1.0": 101
  },
  "would_extract": {
   "against": "kb/program_requirements_college/merced",
-  "kept": 154,
-  "programs": 5,
+  "kept": 159,
+  "programs": 3,
   "list": [
    {
-    "control_number": "03485",
-    "title": "Diesel Equipment Technology",
+    "control_number": "07708",
+    "title": "Equine Science and Management",
     "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01200.AS/requisites-ojrrt",
-    "coverage": 1.0,
+    "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt",
+    "coverage": 0.917,
     "was_url": null,
     "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "07710",
-    "title": "Mechanized Agriculture Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01450.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "16653",
-    "title": "Compact Power Equipment",
+    "control_number": "19493",
+    "title": "Equine Science and Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt",
-    "coverage": 1.0,
+    "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
+    "coverage": 0.833,
     "was_url": null,
     "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "19495",
-    "title": "Diesel Equipment Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/01200.CT/requisites-ojrrt",
+    "control_number": "20802",
+    "title": "Landscape Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mccd.edu/programs/01350.CN/requisites-ojrrt",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "19496",
-    "title": "Mechanized Agriculture Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/01450.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_method": "page_claimed"
    }
   ]
  },
- "run": "39230479383"
+ "run": "39235509270"
 }

@@ -1,0 +1,217 @@
+{
+ "college": "Merced College",
+ "control_number": "19493",
+ "shape": "certificate",
+ "title": "Equine Science and Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6368,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6368,
+    "output_tokens": 1275,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1275,
+  "output_tokens_details": {
+   "thinking_tokens": 303
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05097,
+ "ms": 11240,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Equine Science and Management (CN)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "AGBS18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANSC10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANSC13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANSC-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANSC16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MECH31",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGAB 8",
+    "why": "not in the text under this code; catalog prints AGBS18 Agricultural Computer Applications (same title, apparently renumbered)"
+   },
+   {
+    "code": "AGAS 1",
+    "why": "not in the text under this code; catalog prints ANSC10 Elements of Animal Science (same title, apparently renumbered)"
+   },
+   {
+    "code": "AGAS 11",
+    "why": "not in the text under this code; catalog prints ANSC16 Horse Husbandry (same title, apparently renumbered)"
+   },
+   {
+    "code": "AGAS 3",
+    "why": "not in the text under this code; catalog prints ANSC13 Animal Diseases and Parasite Control (same title, apparently renumbered)"
+   },
+   {
+    "code": "AGAS 4",
+    "why": "not in the text under this code; catalog prints ANSC-14 Elements of Animal Nutrition (same title, apparently renumbered)"
+   },
+   {
+    "code": "AGMA 1",
+    "why": "not in the text under this code; catalog prints MECH31 Equipment Safety (same title, apparently renumbered)"
+   }
+  ],
+  "notes": [
+   "All six catalog codes differ from the closed list codes but carry identical titles and units; the college appears to have renumbered its subjects (AGAB->AGBS, AGAS->ANSC, AGMA->MECH). Recorded as printed with catalog_addition true; reviewer should confirm the mapping.",
+   "Catalog prints one code with a hyphen (ANSC-14) and the others without spaces (e.g., ANSC10); codes kept as printed.",
+   "The page shows only the Requisites tab; no program learning outcomes or careers appear in the text."
+  ]
+ },
+ "extracted_run": "39235509270"
+}

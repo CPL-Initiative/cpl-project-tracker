@@ -2,10 +2,10 @@
  "college": "Merced College",
  "programs": 182,
  "with_closed_list": 172,
- "found": 159,
- "extracted": 159,
+ "found": 162,
+ "extracted": 162,
  "errors": 0,
- "passed_machine_checks": 130,
+ "passed_machine_checks": 133,
  "failed": {
   "coverage": 6,
   "invented": 5,
@@ -13,7 +13,7 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.45,
+ "cost_usd": 9.63,
  "cost_per_program": 0.0594,
  "not_found": [
   {
@@ -95,5 +95,5 @@
    }
   }
  ],
- "run": "39230479383"
+ "run": "39235509270"
 }

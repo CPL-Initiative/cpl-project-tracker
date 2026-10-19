@@ -727,12 +727,33 @@
   "title": "Equine Science and Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "AGAB3",
+   "AGAB8",
+   "AGAS1",
+   "AGAS11",
+   "AGAS2",
+   "AGAS3",
+   "AGAS40",
+   "AGAS41",
+   "AGMA1",
+   "AGMA2",
+   "AGPS11"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt",
+   "title": "01225.AS Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 1574
  },
  {
   "control_number": "07710",
@@ -1547,12 +1568,27 @@
   "title": "Equine Science and Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "AGAB8",
+   "AGAS1",
+   "AGAS11",
+   "AGAS3",
+   "AGMA1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
+   "title": "01225.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1088
  },
  {
   "control_number": "19494",
@@ -2111,12 +2147,29 @@
   "title": "Landscape Horticulture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEH1",
+   "AGEH2",
+   "AGEH3",
+   "AGEH4",
+   "AGEH5",
+   "AGEH6",
+   "AGMA1"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/01350.CN/requisites-ojrrt",
+   "title": "01350.CN Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1403
  },
  {
   "control_number": "20804",
