@@ -142,3 +142,9 @@ Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress 
   absolute paths, and never two `cd`s in one turn.
 - **A merged claude/* branch is deleted, and the stale tracking ref makes `--force-with-lease` refuse.** Fetch the ref or
   drop it, then push plain.
+- **A ruling that changes a human's own row changes it under his email, with the ruling as its time.** Sam answered
+  Sheet 101 at 22:38Z (autobody): AUTB M1071's discipline row is his 2026-07-13 row, so the write is a guarded UPDATE
+  pinned to the before-values (value, email, `reviewed_at`), keeps `map@rccd.edu`, sets `reviewed_at` to the reply's
+  stamp so the daily sync takes it, and names the sheet's store as its source. The receipt's header carries the
+  before-images and the rollback; the session's own JSON receipt carries the identity file and overlay before/after.
+  A cohort note that said the identity waits on his card is updated in the same file, so no store keeps the old state.

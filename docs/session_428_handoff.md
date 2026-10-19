@@ -1,5 +1,5 @@
 ---
-title: "Session 428 handoff: Sheet 99's rulings 1, 2, 3 and 5 applied, the AGRI sitting built, Sheet 101 open; land #2264 and run the live steps"
+title: "Session 428 handoff: Sheet 99's rulings 1, 2, 3 and 5 applied, Sheet 101 answered (AUTB M1071 to Auto Body), the AGRI sitting built; #2264's live steps, then rulings 4 and 6"
 date: 2026-10-19
 session: 427 (SkyMadrona)
 tags: [handoff, commons, csr, common-subjects-reference, decision-sheet, re-mint]
@@ -9,12 +9,13 @@ status: current
 # You are Session 428
 
 Your moniker is **SkyPinyon**. Session 427 (**SkyMadrona**, `session_01R1xmiMjfmFtqtDQp6BTG72`, opened by Sam at
-21:13Z on 2026-10-19 with SkyTorreya's handoff) checkpointed at about 22:20Z on `claude/sleepy-goldberg-x6mq6b` at the
-context meter's WARN (86%). Refreshed: this handoff, the CSR lane, `docs/commons_lessons.md`, one KB note, the docs
-index, `kb/status/subjects.json`, the memory rows, the vault session note. **Not refreshed:** the Pipeline tab (one
-identity moved; the roadmap did not), the UI pass (no room for a fix PR; the ledger keeps its view due),
-`kb/status/program-requirements.json` and the three other run logs (untouched), `kb/README.md`, `README.md`.
-If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
+21:13Z on 2026-10-19 with SkyTorreya's handoff) checkpointed at 22:20Z on `claude/sleepy-goldberg-x6mq6b`, then came
+back at 22:38Z when Sam answered Open Asks Sheet 101 and applied his ruling on the same branch (about 23:05Z). Refreshed
+at the checkpoint: this handoff, the CSR lane, `docs/commons_lessons.md`, one KB note, the docs index,
+`kb/status/subjects.json`, the memory rows, the vault session note. **Not refreshed:** the Pipeline tab (one identity
+moved; the roadmap did not), the UI pass (no fix PR; the ledger keeps its view due), `kb/status/program-requirements.json`
+and the three other run logs (untouched), `kb/README.md`, `README.md`. If the routine started you, follow
+`docs/reference/scheduled_sessions.md` first.
 
 ## What shipped (S427)
 
@@ -24,23 +25,31 @@ If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
   the authority's own code under `csr-confirm-authority@bot`, receipt before the write, `--undo` by cohort; the Validate
   column, control and filter left the Reference view, the data staying. **The first `on` run (39332576973) inserted all
   thirteen at 22:09:21Z**, read back live; its receipt commit `2ef70839` is on main.
-- **#2264 open, ready, not merged** (head `f9661a3f` at the checkpoint): ruling 3, Agricultural Business and Related
-  Services takes AGAB and AUTB M1006 is AGAB M1006 under `kb/_agab_one_remint.py` (ten gates; receipt
-  `kb/agab_remint_out/2026-10-19/alias_map.json` in `ALIAS_MAPS`; the post-apply chain run; SkyView re-keyed and rebuilt;
-  the scan reads 0 collisions), the pick in the seed and through `kb/receipts/csr_agab_pick_2026-10-19_s427.sql`
-  (`kb/migrations/.apply` names it, so `supabase-migrate.yml` ran on the push: **confirm its receipt commit landed on the
-  branch and read the two rows back under `csr-s427@bot`**), the tab's shared-by-design rule taught the ruled shape, and
-  ruling 4's tool `kb/_jev_agri_families.py` with `typesafe-smoke.yml` inputs `agri_families` / `agri_limit`.
-- **Open Asks Sheet 101** (https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT, CPLBrain#397 merged): one card, AUTB M1071
-  Import Body Customizing, which carries Sam's 2026-07-13 Agricultural Business row while its evidence reads auto body.
-  Read its `replies` before acting; the lane's NEEDS SAM marker and the run log's call point at it.
+- **#2264** (this branch): ruling 3, Agricultural Business and Related Services takes AGAB and AUTB M1006 is AGAB M1006
+  under `kb/_agab_one_remint.py` (ten gates; receipt `kb/agab_remint_out/2026-10-19/alias_map.json` in `ALIAS_MAPS`; the
+  post-apply chain run; SkyView re-keyed; the scan reads 0 collisions), the pick in the seed and live through
+  `kb/receipts/csr_agab_pick_2026-10-19_s427.sql` (run 39333423480, receipt commit `9f965e7a`, both rows under
+  `csr-s427@bot`), the tab's shared-by-design rule taught the ruled shape, and ruling 4's tool `kb/_jev_agri_families.py`
+  with `typesafe-smoke.yml` inputs `agri_families` / `agri_limit`.
+- **Sheet 101 answered and applied (22:38Z, his own call: autobody).** AUTB M1071 Import Body Customizing returns to Auto
+  Body Technology: one discipline field, no re-key. The record and the overlay say so (receipt
+  `kb/receipts/csr_m1071_autobody_2026-10-19_s427.json`); his own 2026-07-13 row and the AGAB pick's cohort note change
+  live through `kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql` (guarded UPDATEs pinned to the before-values, under
+  his email with `reviewed_at` set to the ruling; `kb/migrations/.apply` names it, so `supabase-migrate.yml` ran on the
+  push: **confirm its receipt commit is on main and read the two rows back**). The re-seed, the authority seed, the row
+  audit (`subject_collision_signal` 114 to 113) and the scan (61 findings, no collision) re-ran; the M1071 point moved to
+  the Auto Body island in SkyView's hand-built layout and the sky placement was rebuilt (the `lints` failure on
+  `f9661a3f` was that stale placement). The lane, the run log, CLAUDE.md's pointer, the vault builder and registry and
+  `cpl_memory` `sam-sheet-101-ruling-2026-10-19` (verified by Sam) record it; no card is open.
 
 ## Priority
 
-1. **Land #2264.** The runner's migrate receipt commit runs no CI, so put a commit of your own on top (the checkpoint
-   commit may already be it), wait for `test` green on that head, squash-merge. Then dispatch `supabase-rekey.yml` with
-   `alias_map_path=kb/agab_remint_out/2026-10-19/alias_map.json` (the one live `AUTB M1006` discipline row follows the
-   id; read back: none on the old id), then `daily-dashboard.yml` on main.
+1. **#2264's live steps.** S427 intended to squash-merge it on a green `test` and then dispatch `supabase-rekey.yml` with
+   `alias_map_path=kb/agab_remint_out/2026-10-19/alias_map.json` and `daily-dashboard.yml`. Check the PR first: if it is
+   merged, confirm the rekey run and read back live that no `kb_curation` row is keyed `AUTB M1006`, that `AGAB M1006`
+   carries Sam's discipline row, and that `AUTB M1071`'s row reads Auto Body Technology at 22:38:25Z; if it is still
+   open, do the merge and the dispatches yourself (the migrate receipt commit runs no CI; a commit of your own on top
+   gets `test` to run).
 2. **Ruling 4, the sitting:** dispatch `typesafe-smoke.yml` with `agri_families=true` (all 404; `agri_limit` for a
    tranche), download the run's `jev-agri-families` artifact, commit it under `kb/jev_agri_families/2026-10-<dd>.json`,
    then a card for Sam: the tally per family, a proposed gate (the `plain` answers above a confidence), confirm all at or
@@ -53,8 +62,7 @@ If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
    (2), and the two `kb_curation` picks keyed `_CANON_SUBJ4::<old name>` (a guarded UPDATE with before-values in the
    receipt, through `supabase-migrate.yml`). "Disabled Student Programs and" is "Disabled Student Programs and Services
    (DSPS)" in the index; decide with Sam whether the parenthetical stays (no other MQ name keeps one).
-4. Sheet 101's answer when it comes (Auto Body: one discipline field, no re-key; agab: a second one-id window); then
-   the two quarterly routines, the 110 strays, the Commons' remaining Progress views.
+4. The two quarterly routines, the 110 strays, the Commons' remaining Progress views.
 
 ## Patterns that worked
 
@@ -62,29 +70,30 @@ If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
 - The confirm's first run as a dispatched preview, then on: the plan read the same thirteen both ways.
 - One scratch branch for a data window, then a reset of the designated branch onto main and a cherry-pick; conflicts in
   generated files were regenerated, never picked.
+- A ruling that changes a human's own row changes it under his email, pinned to the before-values, with the ruling's
+  stamp as `reviewed_at` so the daily sync takes it (`docs/commons_lessons.md`, S427).
 
 ## Lessons to honor
 
 - A human row seconds apart from the ruled one is a card, never a session's correction (Rule 8).
-- Parallel Bash calls share one shell: a `cd` in one moved the other. `git -C` and absolute paths, one `cd` per turn.
+- Parallel Bash calls share one shell: a `cd` in one moved the other. `git -C`, absolute paths, subshells.
 - A merged `claude/*` branch is deleted; drop the stale tracking ref before `--force-with-lease`.
+- SkyView's course layout (`prototype/ccr_universe.json`) is hand-built and not rebuilt nightly: a discipline change
+  moves its point between islands by hand (the receipt records the coordinates); the sky placement is rebuilt from it
+  and the `lints` job checks the committed placement is today's build.
+
+## Side session
+
+`session_014G3Fy4j1WRr1HoMP5fAoQV` (branch `claude/clever-carson-y7mr54`, Implementation Funding) holds the funding
+files alone: a draft PR on this repo and CPLBrain#399, squash-merged by that session on a green `test`. It took no
+handoff number (the side-session precedent; its message of 22:50Z): its state is in
+`docs/reference/lanes/implementation-funding.md`, `docs/cpl_funding_lessons.md` (the 2026-10-19 section) and three
+`cpl_memory` rows (`sam-funding-interface-five-asks-2026-10-19`, `funding-film-figures-stale-under-scenario-3-2026-10-19`,
+`funding-film-figures-pipeline-2026-10-19`). It also touched `docs/catalog`, `docs/reference/dependency_map.md` and
+`kb/docs_audit`: whichever of the two PRs merges second regenerates those, never picks a side. You are 428; keep away
+from `cpl_funding.js` and the funding lane.
 
 ## Let go
 
-S427 drops at sign-off: the #2264 subscription (re-subscribe when you take it), the Sheet 101 artifact watch (read its
-store instead), no check-ins. Dropped already: #2262, #2263, CPLBrain#396 and #397.
-
-## Emergency addendum (22:21Z, the meter at 94%)
-
-This checkpoint ended as an EMERGENCY one after the notification backlog spent the runway. Everything above stands;
-three things changed after it was written:
-
-- **#2264's `lints` check failed on head `f9661a3f`** (run 39333500920). CI is running again on the checkpoint head
-  `a13d5448`, which carries the rebuilt docs index; read that head's `lints` job first, fix what it names on this
-  branch, then merge on a green `test`. The migrate receipt commit `9f965e7a` is already on the branch.
-- **CPLBrain#398** (the S427 session note) is open and ready; merge it on its green coverage check.
-- **A side session** (`session_014G3Fy4j1WRr1HoMP5fAoQV`, branch `claude/clever-carson-y7mr54`, Implementation
-  Funding) holds the funding files alone and will number its handoff 429; keep away from `cpl_funding.js` and the
-  funding lane, and read `docs/session_429_handoff.md` if it exists before claiming 429.
-- Of Rule 9's artifacts, not refreshed this run: the Pipeline tab, the UI pass, `kb/status/program-requirements.json`
-  and the Exhibit, Course and CR run logs, `kb/README.md`, `README.md`.
+S427 drops at sign-off: no PR subscription (it polled #2264's checks itself), no artifact watch (Sheet 101's store is
+read, its thread answered and resolved), no check-ins. Dropped already: #2262, #2263, CPLBrain#396, #397 and #398.

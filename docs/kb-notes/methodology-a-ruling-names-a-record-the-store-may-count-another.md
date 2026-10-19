@@ -37,6 +37,13 @@ Both carry a discipline row Sam himself wrote on 2026-07-13, three seconds apart
    closed with a false one: a family code one discipline takes while the umbrellas declare it is
    shared by design; two disciplines canonical on one code is still the collision.
 
+## How it ended
+
+Sam answered Sheet 101 the same evening (22:38Z, his own call): Auto Body. The second record moved
+by one discipline field under his own email, with no re-key, and the reference reads no row off its
+code. The card cost one sheet and an hour; a session's correction would have cost his trust in the
+rows he wrote.
+
 ## Where it is built
 
 `kb/_agab_one_remint.py` (the pinned-evidence gates), `canonical_subj4.js` `sharedByDesign`,

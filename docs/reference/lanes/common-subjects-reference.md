@@ -59,9 +59,9 @@ needing a judgment" would read 106.
 | on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
 | C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
 | identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
-| collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing still carries Sam's 2026-07-13 Agricultural Business row, a card for him |
+| collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing returned to Auto Body Technology on Sam's Sheet 101 ruling (22:38Z), so no row sits off its code |
 | by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
-| the daily scan | 63 findings: 25 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 collision, 1 anchor key in the dead format, 2 divergences a note records |
+| the daily scan | 61 findings (2026-10-19, after the AGAB re-key and the M1071 ruling): 24 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; no collision |
 | procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
@@ -148,14 +148,17 @@ four known issues with owners, the procedures in force, and deep links into the 
    (`tests/csr_shared_family_code.test.js`). **Live steps after the merge:** dispatch `supabase-rekey.yml` with
    `alias_map_path=kb/agab_remint_out/2026-10-19/alias_map.json` (the one live row keyed to AUTB M1006, Sam's
    discipline row, follows the id), and read the pick back under `csr-s427@bot`.
-   ⚠️ **NEEDS SAM: AUTB M1071 Import Body Customizing** ([Open Asks Sheet 101](https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT) card 1). His 2026-07-13 curation row sets its discipline to
-   Agricultural Business and Related Services too, while its title, its TOP (0949.00 Automotive Collision
-   Repair) and its two members (Body Panel Customizing, Auto Body Technology at Cerritos; Import Body
-   Customizing, Automotive Technology at Victor Valley) read auto body. A human-sourced row is never superseded
-   by a session's inference (Rule 8), so the Reference view lists Agricultural Business with one row off its
-   code (AUTB) until he answers: return M1071 to Auto Body Technology (the evidence's reading), or keep it under
-   Agricultural Business and re-key it to AGAB too. The authority attribution stays as the seeder computes it
-   (AG-AB on the two umbrellas' chips; Agricultural Business reads as a CSR code with no chip).
+   ✅ **AUTB M1071 Import Body Customizing returned to Auto Body Technology** (Sam, [Open Asks Sheet 101](https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT)
+   card 1, 22:38Z 2026-10-19, his own call: autobody; `cpl_memory` `sam-sheet-101-ruling-2026-10-19`). His 2026-07-13
+   curation row had set its discipline to Agricultural Business and Related Services too, while its title, its TOP
+   (0949.00 Automotive Collision Repair) and its two members (Body Panel Customizing, Auto Body Technology at Cerritos;
+   Import Body Customizing, Automotive Technology at Victor Valley) read auto body; a human-sourced row is never
+   superseded by a session's inference (Rule 8), so it was his card. One discipline field, no re-key: the record and the
+   overlay say Auto Body Technology (receipt `kb/receipts/csr_m1071_autobody_2026-10-19_s427.json`), his row updated
+   under his own email with `reviewed_at` set to the ruling, and the AGAB pick's cohort note saying how he ruled, through
+   `kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql` (guarded UPDATEs, before-values in the header,
+   `supabase-migrate.yml` on the push). Agricultural Business carries AGAB M1006 alone; the row audit's
+   `subject_collision_signal` reads 113 (114 before), the scan 0 collisions and no row off its code.
 4. **sitting**: a Jev sitting proposes a C-ID family for each AGRI identity, Sam confirms, the rest stay residual.
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
@@ -168,9 +171,11 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 ## NEXT
 
-Ruling 3 (AGAB, one identity re-keyed under the playbook), then ruling 4 (the Jev sitting over the AGRI residual,
-404 identities), then ruling 6 (the nine names through the alias file and one re-key window). Confirm the nightly
-confirm's first run landed its receipt. The two quarterly routines on a runner (the handbook check; the C-ID and
+Land #2264 (ruling 3 and the M1071 ruling), then its live steps: `supabase-rekey.yml` with
+`alias_map_path=kb/agab_remint_out/2026-10-19/alias_map.json` and the read-back of the three rows (the pick under
+`csr-s427@bot`, Sam's M1071 row under his email, the note). Then ruling 4 (the Jev sitting over the AGRI residual,
+404 identities, dispatched on the runner), then ruling 6 (the nine names through the alias file and one re-key
+window). The two quarterly routines on a runner (the handbook check; the C-ID and
 CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the dead
 handbook link replaced by the live page; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

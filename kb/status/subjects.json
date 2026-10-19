@@ -5,25 +5,14 @@
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_427_handoff.md",
-  "calls": [
-    {
-      "title": "AUTB M1071 Import Body Customizing: Auto Body, or Agricultural Business?",
-      "text": "Sam's 2026-07-13 curation row sets the discipline of AUTB M1071 Import Body Customizing to Agricultural Business and Related Services; its title, its TOP (0949.00 Automotive Collision Repair) and its two members read auto body. Return it to Auto Body Technology, or keep it under Agricultural Business and re-key it to AGAB too. On no reply the row stands and the Reference view lists Agricultural Business with one row off its code.",
-      "view": {
-        "href": "#canonical-subj4",
-        "text": "Open the Common Subjects Reference; the SUBJ check lists the row off its code"
-      },
-      "link": "https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT",
-      "link_text": "Answer on Open Asks Sheet 101"
-    }
-  ],
+  "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T22:14:31Z",
+  "written_at": "2026-10-19T22:52:03Z",
   "project": "subjects",
   "next_step": {
-    "title": "The Jev sitting over the AGRI residual, then the nine MQ renames; the live re-key and the pick after the merge",
-    "text": "Sam's six Sheet 99 rulings run in his order. Settled, on, agab and hide are built: the nightly confirm's first run confirmed the thirteen picks on the authority's own code; Agricultural Business and Related Services is AGAB and AUTB M1006 is AGAB M1006, so the reference has no collision. After the merge: dispatch supabase-rekey.yml with the AGAB receipt and read the pick back. Then the Jev sitting that proposes a C-ID family for each of the 404 AGRI identities for Sam to confirm, then the eight Title 5-numbered names and the cut-short one through the alias file and one re-key window. One card waits on Sam: AUTB M1071 Import Body Customizing carries his 2026-07-13 Agricultural Business row while its evidence reads auto body."
+    "title": "Land #2264 and run its live steps; then the Jev sitting over the AGRI residual, then the nine MQ renames",
+    "text": "Sam's six Sheet 99 rulings run in his order. Settled, on, agab and hide are built: the nightly confirm's first run confirmed the thirteen picks on the authority's own code; Agricultural Business and Related Services is AGAB and AUTB M1006 is AGAB M1006, so the reference has no collision. Sam answered Sheet 101 at 22:38Z: AUTB M1071 Import Body Customizing returns to Auto Body Technology, one discipline field and no re-key, applied in the same PR. After the merge: dispatch supabase-rekey.yml with the AGAB receipt and read the pick, his M1071 row and the note back. Then the Jev sitting that proposes a C-ID family for each of the 404 AGRI identities for Sam to confirm, then the eight Title 5-numbered names and the cut-short one through the alias file and one re-key window."
   },
   "changes": [
     {
@@ -57,6 +46,10 @@
     {
       "at": "2026-10-19T22:09:21Z",
       "text": "The nightly confirm's first run (csr-confirm.yml run 39332576973, save on) confirmed the thirteen picks on the authority's own code under csr-confirm-authority@bot: Anthropology, Astronomy, Communication Studies, Economics, English, History and Mathematics on CCN; Chemistry, Earth Science, Engineering, Geography, Philosophy and Physics/Astronomy on C-ID. The receipt is under kb/csr_out/confirm/; the daily sync folds the rows into the seed."
+    },
+    {
+      "at": "2026-10-19T22:38:25Z",
+      "text": "Sam answered Open Asks Sheet 101 (his own call: autobody): AUTB M1071 Import Body Customizing returns to Auto Body Technology, one discipline field and no re-key. The record, the overlay and his 2026-07-13 row (under his own email, through kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql) say so; Agricultural Business carries AGAB M1006 alone, the row audit's subject_collision_signal reads 113 and the scan 61 findings with no collision."
     }
   ]
 }

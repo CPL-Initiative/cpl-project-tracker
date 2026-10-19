@@ -9,8 +9,8 @@
 //   - AGAB: one discipline canonical on it, two umbrellas declaring it: shared by design;
 //   - a code two disciplines are canonical on is still the collision;
 //   - two disciplines canonical on a code an umbrella also declares are still a collision;
-//   - the discipline's row off its code (AUTB M1071 under Agricultural Business, Sam's
-//     2026-07-13 row, his card) is still listed as drift, which is true.
+//   - a discipline's row off its code (the shape AUTB M1071 had under Agricultural Business until
+//     Sam's Sheet 101 ruling returned it to Auto Body) is still listed as drift, which is true.
 //
 // Run from repo root: `npm test` (or `node tests/csr_shared_family_code.test.js`).
 const fs = require("fs");

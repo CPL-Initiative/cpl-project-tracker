@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 101](https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT), 2026-10-19, **open**: one card from the Common Subjects Reference lane, where AUTB M1071 Import Body Customizing belongs; Sheet 100 is answered, 21:06Z, pasted, and never republished onto). Answering
+> (latest: [Open Asks Sheet 101](https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT), 2026-10-19, **answered** 22:38Z: AUTB M1071 Import Body Customizing returns to Auto Body Technology, applied; no card is open, so the builder writes no sheet until a lane marks a new ask; never republished onto). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

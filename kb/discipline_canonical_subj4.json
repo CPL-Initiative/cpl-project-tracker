@@ -5,7 +5,7 @@
   "_invariant": "every canonical_subj4 must match ^[A-Z]{4}$",
   "_counts": {
     "total_disciplines": 147,
-    "multi_subj4_disciplines": 41,
+    "multi_subj4_disciplines": 40,
     "needs_review": 0,
     "seeded_default": 147
   },
@@ -106,17 +106,16 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.5,
       "variants_observed": {
-        "AGAB": 1,
-        "AUTB": 1
+        "AGAB": 1
       },
-      "total_mids": 2,
+      "total_mids": 1,
       "local_subject_variants": {
         "AB": 1,
         "AGB": 1
       },
       "local_subject_variants_truncated": 0,
       "local_subject_total": 2,
-      "rows_total": 2,
+      "rows_total": 1,
       "corroborated_voters": 2,
       "top_only": false,
       "top_modal_6digit": "0112.00",
@@ -126,7 +125,7 @@
       "top_category_title": "Agriculture and Natural Resources",
       "cte_share": 1.0,
       "cte_flag": "all",
-      "cte_known_n": 2,
+      "cte_known_n": 1,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -134,13 +133,13 @@
       "reviewed_by": "csr-s427@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "AGAB: Sam, Open Asks Sheet 99 card 3 (2026-10-19, agab): Agricultural Business and Related Services takes AGAB, the C-ID family code AG-AB; its identity AUTB M1006 Supervision and Management in Agriculture re-keyed to AGAB M1006 (kb/agab_remint_out/2026-10-19/). AUTB M1071 Import Body Customizing keeps Sam's 2026-07-13 discipline row and waits on his card.",
+      "_notes": "AGAB: Sam, Open Asks Sheet 99 card 3 (2026-10-19, agab): Agricultural Business and Related Services takes AGAB, the C-ID family code AG-AB; its identity AUTB M1006 Supervision and Management in Agriculture re-keyed to AGAB M1006 (kb/agab_remint_out/2026-10-19/). AUTB M1071 Import Body Customizing returned to Auto Body Technology on his Open Asks Sheet 101 card 1 (2026-10-19 22:38Z, autobody): one discipline field, no re-key (kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql).",
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AUTB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
+      "authority_note": "Common SUBJ AGAB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Agricultural Production": {
       "canonical_subj4": "AGPR",
@@ -902,10 +901,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.277,
       "variants_observed": {
-        "AUTB": 219,
+        "AUTB": 220,
         "AGRI": 1
       },
-      "total_mids": 220,
+      "total_mids": 221,
       "local_subject_variants": {
         "AB": 76,
         "APPR": 69,
@@ -938,7 +937,7 @@
       },
       "local_subject_variants_truncated": 0,
       "local_subject_total": 274,
-      "rows_total": 220,
+      "rows_total": 221,
       "corroborated_voters": 274,
       "top_only": false,
       "top_modal_6digit": "0949.00",
@@ -948,7 +947,7 @@
       "top_category_title": "Engineering and Industrial Technologies",
       "cte_share": 0.89,
       "cte_flag": "most",
-      "cte_known_n": 218,
+      "cte_known_n": 219,
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
