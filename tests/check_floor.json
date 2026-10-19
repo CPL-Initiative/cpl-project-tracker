@@ -153,7 +153,7 @@
     "cpl_memory_briefing.test.js": 76,
     "cpl_memory_curate_actions.test.js": 57,
     "cpl_memory_report.test.js": 33,
-    "cpl_news.test.js": 21,
+    "cpl_news.test.js": 36,
     "cpl_pathway_ccr.test.js": 21,
     "cpl_pathways.test.js": 143,
     "cpl_pathways_ccr_render.test.js": 21,

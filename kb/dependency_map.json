@@ -3641,7 +3641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 337,
+     "line": 344,
      "tabs": [
       "cpl-news"
      ]
@@ -21303,7 +21303,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 345,
+     "line": 352,
      "tabs": [
       "cpl-news"
      ]

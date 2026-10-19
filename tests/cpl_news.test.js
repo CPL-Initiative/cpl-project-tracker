@@ -83,6 +83,42 @@ check("scopeRank CA < national < other",
   check("scoped CSS injected once", d2.window.document.querySelectorAll("#cpl-news-css").length === 1);
 }
 
+// (e) the UI pass of S420 (2026-10-19): heading order, focus rings, controls as underlined words,
+// tokens only, no glyph in a control. Each check guards a finding the sweep or the rule caught.
+{
+  const d3 = boot();
+  const T3 = d3.window.CPL_NEWS_TAB;
+  T3._setRows([
+    { id: 20, url: "https://x.test/c", title: "Featured row", scope: "ca", source_type: "news", summary: "s", topics: ["CPL"], published_at: "2026-06-10T00:00:00Z", featured: true },
+  ]);
+  T3._render(d3.window.document.getElementById("cplNewsMount"));
+  const doc = d3.window.document;
+  check("heading order: Suggest a story is an h3 under the tab's h2 (no h4)", !!doc.querySelector(".cplnews-suggest h3") && !doc.querySelector(".cplnews h4"));
+  const css = doc.getElementById("cpl-news-css").textContent;
+  check("no control loses its focus ring (outline:none absent)", !/outline\s*:\s*none/.test(css));
+  check("the search field draws a focus-visible ring", /input\.q:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--cobalt\)/.test(css));
+  const segs = doc.querySelectorAll(".cplnews-seg");
+  check("two toggle sets, each a named group", segs.length === 2 && Array.from(segs).every((g) => g.getAttribute("role") === "group" && !!g.getAttribute("aria-label")));
+  const segBtns = Array.from(doc.querySelectorAll(".cplnews-seg button"));
+  check("every toggle is a button carrying aria-pressed", segBtns.length === 5 && segBtns.every((b) => b.getAttribute("type") === "button" && /^(true|false)$/.test(b.getAttribute("aria-pressed"))));
+  check("one pressed toggle per set", Array.from(segs).every((g) => g.querySelectorAll("button[aria-pressed='true']").length === 1));
+  const newest = segBtns.find((b) => b.textContent === "Newest");
+  const caFirst = segBtns.find((b) => b.textContent === "CA first");
+  newest.click();
+  check("the press moves on click (Newest pressed, CA first released)", newest.getAttribute("aria-pressed") === "true" && caFirst.getAttribute("aria-pressed") === "false");
+  check("the pressed state is marked by weight, never color alone", /\[aria-pressed='true'\]\s*\{[^}]*font-weight:\s*700/.test(css));
+  check("word controls: no border, no fill, underlined at rest, 24px floor both ways", /\.cplnews-seg button[^{]*\{[^}]*border:\s*0;\s*background:\s*none;[^}]*min-height:\s*24px;\s*min-width:\s*24px;[^}]*text-decoration:\s*underline/.test(css));
+  check("no option label carries a glyph", Array.from(doc.querySelectorAll(".cplnews-select option")).every((o) => !/[←-⯿\uD800-\uDFFF]/.test(o.textContent)));
+  check("reviewer sign-in acts, so it is a button", !!doc.querySelector(".cplnews-signin button") && !doc.querySelector(".cplnews-signin a"));
+  const star = doc.querySelector(".cplnews-card .star");
+  check("the featured star names itself for a reader", !!star && star.getAttribute("aria-label") === "Featured");
+  const bare = css.replace(/var\([^)]*\)/g, "");
+  check("no raw hex outside a token fallback", !/#[0-9a-fA-F]{3,8}\b/.test(bare));
+  const fallbacks = Array.from(css.matchAll(/var\((--[a-z0-9-]+)\s*,/g)).map((m) => m[1]);
+  check("every fallback token is defined in the HTML", fallbacks.length > 0 && fallbacks.every((t) => idx.includes(t + ":")));
+  check("the intro's measure is the page's (--cpl-measure, none)", /\.cplnews-intro\s*\{[^}]*max-width:\s*var\(--cpl-measure,\s*none\)/.test(css));
+}
+
 let failed = 0;
 for (const [name, ok] of results) {
   console.log((ok ? "PASS" : "FAIL") + "  " + name);
