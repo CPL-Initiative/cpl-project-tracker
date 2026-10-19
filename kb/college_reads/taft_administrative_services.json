@@ -1,0 +1,20 @@
+{
+ "_readme": "S424 SkyBuckthorn, 2026-10-19. Read 39250246074 (taft_four_wrong_pages) showed the Administrative Services group page lists four awards under 'In this section' (the A.S., Administrative Services I (locally approved), Administrative Services: Certificate of Achievement, Administrative Services II: Certificate of Achievement), yet the catalog capture of 2026-10-18 (run 39126711681, 168 pages, 103 children) read none of them, and Administrative Services II (30284) took the General Business A.S. page at title 0.0. This read prints the group page's links as the page writes them and follows the two certificates, so the reader's child_pages() can be checked against the hrefs' shape and the certificate's page gives 30284 its record.",
+ "college": "Taft College",
+ "questions": {
+  "children": "How the group page writes its award links (absolute or relative, beneath its own path or not), so child_pages() can be read against them.",
+  "program_page": "What Administrative Services II's own page prints: its courses, units and total."
+ },
+ "keywords": [
+  "Administrative Services[^<\"]{0,120}",
+  "BUSN[^<\"]{0,80}",
+  "Total Credit Hours[^<\"]{0,40}",
+  "In this section"
+ ],
+ "pages": [
+  {"answers": ["children", "program_page"],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/administrative-services",
+   "links": "Administrative Services",
+   "follow": "^Administrative Services(?: II)?: Certificate of Achievement"}
+ ]
+}
