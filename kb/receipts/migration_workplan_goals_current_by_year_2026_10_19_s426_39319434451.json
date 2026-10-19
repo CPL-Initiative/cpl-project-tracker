@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_workplan_goals_current_by_year.sql",
+ "name": "workplan_goals_current_by_year_2026_10_19_s426",
+ "version": "20261019202932",
+ "sha256": "547e8c645ff9dee572e428eb179bd312d44b52be6de5a3ffcfe1f1390b53becb",
+ "run": "39319434451",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
