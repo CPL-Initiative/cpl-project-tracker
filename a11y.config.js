@@ -1166,6 +1166,74 @@ async function seedGrPriorities(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Sierra Training as a reviewer sees it (S422 UI pass): signed out, the cobi sweep measures the
+// First Light greeting over the sign-in note only. The seed holds a reviewer session (a JWT-shaped
+// placeholder, never a real token), stubs the tab's six reads with synthetic rows (never a live
+// row: the logs are gated), and opens the queue or the instructions editor.
+async function seedSierraTraining(page, theme, state) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "sierra-training") location.hash = "sierra-training"; });
+  await page.waitForFunction(() => !!window.CPL_SIERRA_TRAINING_TAB, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "seed." + "x".repeat(48) + ".seed", email: "reviewer@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const day = (n) => new Date(Date.UTC(2026, 9, 18 - n, 17)).toISOString();
+    const FEEDBACK = [
+      { turn_id: 101, created_at: day(0), updated_at: day(0), page: null, audience: "faculty", rating: "down",
+        note: "She named the wrong course for the paramedic license.", question: "Which courses does a paramedic license count toward at Riverside City College?",
+        response: "Riverside City College awards credit for EMS 50 through its CPL policy.", status: "new" },
+      { turn_id: 102, created_at: day(1), updated_at: day(1), page: null, audience: "student", rating: "up",
+        note: null, question: "Can I get credit for my military training?", response: "Yes. Most colleges award credit for ACE-reviewed training.", status: "addressed" },
+      { turn_id: 103, created_at: day(2), updated_at: day(2), page: null, audience: "counselor", rating: "down",
+        note: "Too long for a counselor at the front desk.", question: "How does a veteran request CPL?", response: "A veteran starts with the college's CPL contact.", status: "new" },
+    ];
+    const TURNS = [
+      { id: 201, session_id: "s-1", created_at: day(0), question: "Does welding certification count at Taft College?",
+        response: "I don't have information about that program.", top_similarity: 0.21, topic_match: false, audience: "student" },
+      { id: 202, session_id: "s-2", created_at: day(1), question: "What is CPL for nursing?", response: "Several colleges articulate the LVN license.",
+        top_similarity: 0.71, topic_match: true, audience: "faculty" },
+      { id: 203, session_id: "s-3", created_at: day(2), question: "Which colleges take the CompTIA A+ exam?",
+        response: "I'm not sure which colleges do.", top_similarity: 0.33, topic_match: false, audience: "counselor" },
+    ];
+    const GUIDANCE = [
+      { id: "g1", rule: "Call the program the CPL Initiative, never the MAP Initiative.", kind: "rule", surface: null, active: true,
+        note: "Sam, 2026-07-03", created_by: "reviewer@example.org", created_at: day(30), updated_by: null, updated_at: day(30) },
+      { id: "g2", rule: "When a college names a contact, give the contact before the policy.", kind: "rule", surface: "landing", active: false,
+        note: null, created_by: "reviewer@example.org", created_at: day(5), updated_by: null, updated_at: day(5) },
+    ];
+    const RULES = [
+      { key: "naming", body: "The platform is the MAP platform.", applies_when: null, sort_order: 1, active: true,
+        memory_slug: null, updated_by: "reviewer@example.org", updated_at: day(3) },
+    ];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/sierra_feedback\?/.test(u) ? (/page=eq\.smoke/.test(u) ? [] : FEEDBACK)
+        : /\/chat_interactions\?/.test(u) ? TURNS
+        : /\/sierra_guidance\?/.test(u) ? GUIDANCE
+        : /\/sierra_turn_review\?/.test(u) ? []
+        : /\/sierra_rules\?/.test(u) ? RULES
+        : /\/team_access\?/.test(u) ? [{ id: 1 }] : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200,
+        headers: { "Content-Type": "application/json", "Content-Range": "0-0/0" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_SIERRA_TRAINING_TAB.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#sierra-training-root .sit-stat"), null, { timeout: 20000 });
+  if (state === "guidance") {
+    await page.evaluate(() => {
+      const el = document.querySelector("#sierra-training-root textarea");
+      if (el) { el.scrollIntoView(); el.focus(); }
+    });
+  }
+  await page.waitForTimeout(300);
+}
+
 // Memory as a team-phrase holder sees it (S398 UI pass): signed out, the cobi sweep measures
 // the lock and the masthead only. The seed holds a team phrase, stubs the tab's read with
 // tests/cpl_memory.test.js's synthetic shapes (never a live row: the table is team-gated),
@@ -2004,6 +2072,39 @@ module.exports = {
     routes: [{ hash: "map-data-quality", name: "form" }],
     widths: [390, 1440],
     seed: (page) => seedMapDataQuality(page, "dark", "form"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Sierra Training, signed in as a reviewer (S422) ── */
+  "sierra-training-queue": {
+    file: "index.html",
+    title: "Sierra Training, a reviewer's view: the counts and the feedback queue (synthetic rows)",
+    routes: [{ hash: "sierra-training", name: "queue" }],
+    widths: [390, 1440],
+    seed: (page) => seedSierraTraining(page, "light", "queue"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-training-queue-dark": {
+    file: "index.html",
+    title: "Sierra Training, a reviewer's view: the counts and the feedback queue, dark (synthetic rows)",
+    routes: [{ hash: "sierra-training", name: "queue" }],
+    widths: [390, 1440],
+    seed: (page) => seedSierraTraining(page, "dark", "queue"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-training-guidance": {
+    file: "index.html",
+    title: "Sierra Training, a reviewer's view: the instructions editor (synthetic rows)",
+    routes: [{ hash: "sierra-training", name: "guidance" }],
+    widths: [390, 1440],
+    seed: (page) => seedSierraTraining(page, "light", "guidance"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-training-guidance-dark": {
+    file: "index.html",
+    title: "Sierra Training, a reviewer's view: the instructions editor, dark (synthetic rows)",
+    routes: [{ hash: "sierra-training", name: "guidance" }],
+    widths: [390, 1440],
+    seed: (page) => seedSierraTraining(page, "dark", "guidance"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Memory, unlocked with a team phrase (S398) ── */

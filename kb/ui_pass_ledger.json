@@ -342,8 +342,8 @@
    "name": "Sierra Training",
    "page": "index.html#sierra-training",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-19",
+   "outcome": "S422 (2026-10-19): the cobi sweep had only ever measured the First Light greeting over the signed-out note, so the pass added a reviewer seed (seedSierraTraining, synthetic rows for the tab's six reads) and four targets (the counts and queue, the instructions editor, each in both themes). Clean in both themes at 1440 and 390 before and after. The view converts to the Controls rule: every .sit-btn, the filled lead button and the segmented toggles are underlined cobalt words, 24px both ways, the pressed toggle by weight and aria-pressed; on a phone the action words wrap in a row instead of a stretched column. The sign-in copy named an 'ℹ About' menu the header no longer prints and now says About. Kept: the five count tiles (stat tiles that filter, not word controls), the category chips, and the ⚠ and arrow glyphs Sam ruled kept (2026-09-09). Headings run h2 then h3; every control carries the focus-visible ring."
   },
   {
    "id": "cobi:knowledge-base",
