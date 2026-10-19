@@ -1,0 +1,25 @@
+{
+ "_readme": "S422 SkyWillow, 2026-10-19. Two of Taft's local A.S. records name the degree total of 60 and no units for general education, so the degree check fails them (16725 Occupational Safety and Health reads 18 against 60; 36928 Energy Technology names the General Education Graduation Requirements pattern with no units; kb/jev_harvest_verdicts/taft.json). The first reader's note on 38662 names a Local General Education Pattern of 27 units. This read prints how a local A.S. page words its general education and electives, and follows the catalog's general education and graduation pages for where the pattern's units are stated, so a reconcile step can cite the catalog's own figure. Two loads plus the links it follows, no model call.",
+ "college": "Taft College",
+ "questions": {
+  "ge_units": "The units the catalog states for its Local General Education Pattern, and how a local A.S. page names it and any electives to reach 60."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[Ll]ocal [Gg]eneral[^<\"]{0,200}",
+  "[^<>\"]{0,120}\\b27\\b[^<\"]{0,120}",
+  "[Tt]otal [Cc]redit [Hh]ours[^<\"]{0,60}",
+  "[Ee]lective[^<\"]{0,160}",
+  "60 units[^<\"]{0,120}"
+ ],
+ "pages": [
+  {"answers": ["ge_units"],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/occupational-safety-and-health/occupational-safety-and-health-associate-in-science",
+   "links": "General Education|graduation|Graduation|associate-degree",
+   "follow": "General Education|Graduation Requirements"},
+  {"answers": ["ge_units"],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/energy-technology/energy-technology-associate-in-science",
+   "links": "General Education|graduation|Graduation",
+   "follow": ""}
+ ]
+}
