@@ -3,8 +3,8 @@
   "_generated_by": "kb/_build_orphan_parent_worklist.py",
   "_read_this_first": "`decidable` is the column that matters. A false there means the payload holds nothing to check a proposed discipline against — the members disagree, or every signal rests on a one or two character subject code, or the row carries an approved identifier. Filling those from the modal member would reproduce the `ES`-reads-Ethnic-Studies error in reverse. ⚠ And `members_say` is what the colleges typed, never a verdict on the parent: AUTD M1040 Medium and Heavy Truck Drivetrain Service is recorded Diesel Mechanics while its members read Automotive Technology, and Diesel Mechanics is arguably the better answer. A decidable row is one a curator can settle from what is here, whichever way they settle it.",
   "_counts": {
-    "orphan_parents": 115,
-    "decidable": 20,
+    "orphan_parents": 114,
+    "decidable": 19,
     "undecidable": 95,
     "members_disagree": 93,
     "short_codes_only": 2,
@@ -330,27 +330,6 @@
       "decidable": true,
       "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
       "members_say": "Kinesiology"
-    },
-    {
-      "id": "AUTB M1071",
-      "title": "Import Body Customizing",
-      "id_system": "M-ID",
-      "recorded_discipline": "Agricultural Business and Related Services",
-      "members": 3,
-      "subject_codes": [
-        "AB",
-        "AUTO"
-      ],
-      "member_disciplines": {
-        "Auto Body Technology": 1,
-        "Automotive Technology": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Automotive Technology": 1
-      },
-      "decidable": true,
-      "why": "every member that resolves on a code longer than 2 characters reads Automotive Technology (1 of them)",
-      "members_say": "Automotive Technology"
     },
     {
       "id": "PEDS M1018",

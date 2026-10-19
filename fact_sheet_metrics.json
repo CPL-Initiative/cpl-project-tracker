@@ -1,15 +1,15 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-19T22:02:38.690Z",
+ "_as_of": "2026-10-19T23:34:13.077Z",
  "credit_recommendations": {
-  "total": "14,509",
-  "ccc": "1,475",
-  "local": "13,034",
+  "total": "14,497",
+  "ccc": "1,467",
+  "local": "13,030",
   "by_type": [
    "Standardized Assessment: 7,559",
-   "Industry Certification: 4,025",
-   "Credit By Exam: 2,249",
-   "Portfolio Review: 431",
+   "Industry Certification: 4,015",
+   "Credit By Exam: 2,248",
+   "Portfolio Review: 430",
    "Military: 150"
   ]
  },
@@ -22,22 +22,22 @@
  "statewide_exhibits": {
   "total": "163",
   "program_areas": "12",
-  "distinct_credit_recs": "1,267",
-  "adoptions": "1,462",
+  "distinct_credit_recs": "1,259",
+  "adoptions": "1,454",
   "adopting_colleges": "65",
   "by_sector": [
    {
     "sector": "Construction Technology",
     "exhibits": 56,
-    "credit_recs": 161,
-    "adoptions": 161,
+    "credit_recs": 158,
+    "adoptions": 158,
     "could_adopt": 0
    },
    {
     "sector": "Welding",
     "exhibits": 25,
-    "credit_recs": 217,
-    "adoptions": 272,
+    "credit_recs": 213,
+    "adoptions": 268,
     "could_adopt": 27
    },
    {
@@ -50,8 +50,8 @@
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 121,
-    "adoptions": 125,
+    "credit_recs": 120,
+    "adoptions": 124,
     "could_adopt": 74
    },
    {

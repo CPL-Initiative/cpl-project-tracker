@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-19T22:02:39.162845+00:00",
+  "scraped_at": "2026-10-19T23:34:13.640928+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -355,14 +355,14 @@
       "jst": 82,
       "star": true
     },
-    "Foothill College": {
-      "vets": 915,
-      "jst": 75,
-      "star": false
-    },
     "Palo Verde College": {
       "vets": 24,
       "jst": 9,
+      "star": false
+    },
+    "Foothill College": {
+      "vets": 915,
+      "jst": 75,
       "star": false
     },
     "Pasadena City College": {

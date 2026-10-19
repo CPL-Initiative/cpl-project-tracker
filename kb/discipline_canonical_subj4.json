@@ -129,7 +129,7 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-10-19T21:51:34+00:00",
+      "reviewed_at": "2026-10-19T22:15:43.263004+00:00",
       "reviewed_by": "csr-s427@bot",
       "validated_at": null,
       "validated_by": null,
@@ -139,7 +139,9 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AGAB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
+      "authority_note": "Common SUBJ AGAB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "_notes_by": "csr-s427@bot",
+      "_notes_at": "2026-10-19T22:15:43.263004+00:00"
     },
     "Agricultural Production": {
       "canonical_subj4": "AGPR",
@@ -458,7 +460,7 @@
     },
     "Anthropology": {
       "canonical_subj4": "ANTH",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "ANTH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.635,
@@ -525,8 +527,8 @@
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -839,7 +841,7 @@
     },
     "Astronomy": {
       "canonical_subj4": "ASTR",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "ASTR",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.649,
@@ -882,8 +884,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -1586,7 +1588,7 @@
     },
     "Chemistry": {
       "canonical_subj4": "CHEM",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "CHEM",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.904,
@@ -1625,8 +1627,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -1795,7 +1797,9 @@
         }
       ],
       "authority_flag": null,
-      "authority_note": "Common SUBJ CDEV is the CCN subject code (rule 2: CCN first)."
+      "authority_note": "Common SUBJ CDEV is the CCN subject code (rule 2: CCN first).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Commercial Art": {
       "canonical_subj4": "ARTD",
@@ -1893,11 +1897,13 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MUSC is the CSR's four-letter code; the authority says C-ID CMUS (rule 3: four letters, verbatim code on the chip)."
+      "authority_note": "Common SUBJ MUSC is the CSR's four-letter code; the authority says C-ID CMUS (rule 3: four letters, verbatim code on the chip).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Communication Studies": {
       "canonical_subj4": "COMM",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "COMM",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.69,
@@ -1966,8 +1972,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -2063,7 +2069,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ ITIS is the C-ID subject code."
+      "authority_note": "Common SUBJ ITIS is the C-ID subject code.",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Computer Science": {
       "canonical_subj4": "COMP",
@@ -2149,7 +2157,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ COMP is the C-ID subject code."
+      "authority_note": "Common SUBJ COMP is the C-ID subject code.",
+      "_notes_by": "authority-recode-s224@bot",
+      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Construction Management": {
       "canonical_subj4": "CNSM",
@@ -3172,11 +3182,13 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ THTR is the C-ID subject code."
+      "authority_note": "Common SUBJ THTR is the C-ID subject code.",
+      "_notes_by": "map@rccd.edu",
+      "_notes_at": "2026-06-12T17:18:32.914671+00:00"
     },
     "Earth Science": {
       "canonical_subj4": "GEOL",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "GEOL",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.69,
@@ -3237,8 +3249,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -3253,7 +3265,7 @@
     },
     "Economics": {
       "canonical_subj4": "ECON",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "ECON",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.697,
@@ -3319,8 +3331,8 @@
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -3751,7 +3763,7 @@
     },
     "Engineering": {
       "canonical_subj4": "ENGR",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "ENGR",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.73,
@@ -3817,8 +3829,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -3893,7 +3905,7 @@
     },
     "English": {
       "canonical_subj4": "ENGL",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "ENGL",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.696,
@@ -3961,8 +3973,8 @@
       "cte_unknown_n": 40,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -4547,7 +4559,9 @@
       "fan_in_with": [
         "Media Production"
       ],
-      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away."
+      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
+      "_notes_by": "authority-recode-s224@bot",
+      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Fire Technology": {
       "canonical_subj4": "FIRE",
@@ -4867,7 +4881,7 @@
     },
     "Geography": {
       "canonical_subj4": "GEOG",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "GEOG",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.674,
@@ -4933,8 +4947,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -5326,7 +5340,9 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HEIT is the CSR's four-letter code; the authority says C-ID HIT (rule 3: four letters, verbatim code on the chip)."
+      "authority_note": "Common SUBJ HEIT is the CSR's four-letter code; the authority says C-ID HIT (rule 3: four letters, verbatim code on the chip).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Heavy Duty Equipment Mechanics": {
       "canonical_subj4": "HMDT",
@@ -5372,7 +5388,7 @@
     },
     "History": {
       "canonical_subj4": "HIST",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "HIST",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.798,
@@ -5438,8 +5454,8 @@
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -5727,7 +5743,9 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ EDTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
+      "authority_note": "Common SUBJ EDTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Interdisciplinary Studies": {
       "canonical_subj4": "IDST",
@@ -6706,7 +6724,7 @@
     },
     "Mathematics": {
       "canonical_subj4": "MATH",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "MATH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.831,
@@ -6772,8 +6790,8 @@
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -6841,7 +6859,9 @@
       "fan_in_with": [
         "Film and Media Studies"
       ],
-      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away."
+      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
+      "_notes_by": "authority-recode-s224@bot",
+      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Mortuary Science": {
       "canonical_subj4": "MORT",
@@ -7395,7 +7415,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ BSOT is the C-ID subject code."
+      "authority_note": "Common SUBJ BSOT is the C-ID subject code.",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Older Adults: Noncredit": {
       "canonical_subj4": "OLAD",
@@ -7659,7 +7681,7 @@
     },
     "Philosophy": {
       "canonical_subj4": "PHIL",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "PHIL",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.694,
@@ -7725,8 +7747,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -7985,7 +8007,7 @@
     },
     "Physics/Astronomy": {
       "canonical_subj4": "PHYS",
-      "source": "data_modal",
+      "source": "curator_override",
       "data_modal": "PHYS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.734,
@@ -8022,8 +8044,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "reviewed_at": "2026-10-19T22:09:21.677544+00:00",
+      "reviewed_by": "csr-confirm-authority@bot",
       "validated_at": null,
       "validated_by": null,
       "_notes": null,
@@ -8184,7 +8206,9 @@
       "canonical_source": "ccn",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ POLS is the CCN subject code (rule 2: CCN first)."
+      "authority_note": "Common SUBJ POLS is the CCN subject code (rule 2: CCN first).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T16:05:11.748313+00:00"
     },
     "Psychiatric Technician": {
       "canonical_subj4": "NURP",
@@ -9103,7 +9127,9 @@
       "canonical_source": "ccn",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ SOCI is the CCN subject code (rule 2: CCN first)."
+      "authority_note": "Common SUBJ SOCI is the CCN subject code (rule 2: CCN first).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Speech Language Pathology": {
       "canonical_subj4": "SLPA",
@@ -9651,6 +9677,6 @@
       "with_chips": 23
     }
   },
-  "_synced_at": "2026-10-19T22:02:49Z",
+  "_synced_at": "2026-10-19T23:34:28Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }

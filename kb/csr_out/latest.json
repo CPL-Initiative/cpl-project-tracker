@@ -1,6 +1,6 @@
 {
  "_scanned_at": "2026-10-19",
- "_registry_synced_at": null,
+ "_registry_synced_at": "2026-10-19T23:34:28Z",
  "_disciplines": 147,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -1137,7 +1137,7 @@
   {
    "id": "CSR0037",
    "rule": "cs7_unreviewed",
-   "item": "Anthropology",
+   "item": "Commercial Art",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1146,7 +1146,7 @@
   {
    "id": "CSR0038",
    "rule": "cs7_unreviewed",
-   "item": "Astronomy",
+   "item": "Cosmetology",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1155,7 +1155,7 @@
   {
    "id": "CSR0039",
    "rule": "cs7_unreviewed",
-   "item": "Chemistry",
+   "item": "Court Reporting",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1164,7 +1164,7 @@
   {
    "id": "CSR0040",
    "rule": "cs7_unreviewed",
-   "item": "Commercial Art",
+   "item": "Digital Fabrication Technician",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1173,7 +1173,7 @@
   {
    "id": "CSR0041",
    "rule": "cs7_unreviewed",
-   "item": "Communication Studies",
+   "item": "Disabled Student Programs and",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1182,7 +1182,7 @@
   {
    "id": "CSR0042",
    "rule": "cs7_unreviewed",
-   "item": "Cosmetology",
+   "item": "Electronic Technology",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1191,7 +1191,7 @@
   {
    "id": "CSR0043",
    "rule": "cs7_unreviewed",
-   "item": "Court Reporting",
+   "item": "Equine Science",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1200,7 +1200,7 @@
   {
    "id": "CSR0044",
    "rule": "cs7_unreviewed",
-   "item": "Digital Fabrication Technician",
+   "item": "Heavy Duty Equipment Mechanics",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1209,7 +1209,7 @@
   {
    "id": "CSR0045",
    "rule": "cs7_unreviewed",
-   "item": "Disabled Student Programs and",
+   "item": "Parent Education: Noncredit",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1218,7 +1218,7 @@
   {
    "id": "CSR0046",
    "rule": "cs7_unreviewed",
-   "item": "Earth Science",
+   "item": "Speech Language Pathology",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,
@@ -1227,123 +1227,6 @@
   {
    "id": "CSR0047",
    "rule": "cs7_unreviewed",
-   "item": "Economics",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0048",
-   "rule": "cs7_unreviewed",
-   "item": "Electronic Technology",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0049",
-   "rule": "cs7_unreviewed",
-   "item": "Engineering",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0050",
-   "rule": "cs7_unreviewed",
-   "item": "English",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0051",
-   "rule": "cs7_unreviewed",
-   "item": "Equine Science",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0052",
-   "rule": "cs7_unreviewed",
-   "item": "Geography",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0053",
-   "rule": "cs7_unreviewed",
-   "item": "Heavy Duty Equipment Mechanics",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0054",
-   "rule": "cs7_unreviewed",
-   "item": "History",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0055",
-   "rule": "cs7_unreviewed",
-   "item": "Mathematics",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0056",
-   "rule": "cs7_unreviewed",
-   "item": "Parent Education: Noncredit",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0057",
-   "rule": "cs7_unreviewed",
-   "item": "Philosophy",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0058",
-   "rule": "cs7_unreviewed",
-   "item": "Physics/Astronomy",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0059",
-   "rule": "cs7_unreviewed",
-   "item": "Speech Language Pathology",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0060",
-   "rule": "cs7_unreviewed",
    "item": "Upholstering",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
@@ -1351,7 +1234,7 @@
    "group": null
   },
   {
-   "id": "CSR0061",
+   "id": "CSR0048",
    "rule": "cs9_anchor_dead_format",
    "item": "common_courses.json",
    "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",
