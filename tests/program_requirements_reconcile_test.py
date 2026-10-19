@@ -20,11 +20,14 @@ def check(name, cond):
 
 print("awards_match")
 for award in ("A.A- T Degree", "A.S. T Degree", "Associate in Arts for Transfer", "AA-T"):
-    check("transfer: %s" % award, R.awards_match("transfer", award) and R.awards_match("associate", award))
+    check("transfer: %s" % award, R.awards_match("transfer", award) and R.awards_match("associate", award)
+          and not R.awards_match("local", award))
 for award in ("A.A. Degree", "A.S. Degree", "Associate in Science"):
-    check("local, not transfer: %s" % award, R.awards_match("associate", award) and not R.awards_match("transfer", award))
+    check("local, not transfer: %s" % award, R.awards_match("associate", award) and not R.awards_match("transfer", award)
+          and R.awards_match("local", award))
 for award in ("Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "Baccalaureate Degree"):
-    check("neither: %s" % award, not R.awards_match("associate", award) and not R.awards_match("transfer", award))
+    check("neither: %s" % award, not R.awards_match("associate", award) and not R.awards_match("transfer", award)
+          and not R.awards_match("local", award))
 check("no kind matches everything", R.awards_match(None, "anything"))
 
 print("Cañada's Cal-GETC step")

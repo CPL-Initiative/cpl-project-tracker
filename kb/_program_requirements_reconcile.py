@@ -77,6 +77,10 @@ def awards_match(kind: str | None, award: str | None) -> bool:
         return bool(ASSOCIATE.search(award or "")) and not re.search(r"baccalaureate|certificate", award or "", re.I)
     if kind == "transfer":
         return awards_match("associate", award) and bool(TRANSFER.search(award or ""))
+    if kind == "local":
+        # A local associate degree (Taft, S422): its general education is the college's own
+        # pattern, where a transfer degree's is Cal-GETC.
+        return awards_match("associate", award) and not TRANSFER.search(award or "")
     return False
 
 
