@@ -680,7 +680,11 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/sjcoe_occupation_scope_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
 | `kb/status/commons.json` | scripts: `kb/_build_commons_status.py` | committed by: `daily-dashboard.yml` |
+| `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
+| `kb/status/subjects.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
 | `kb/subj4_dryrun` | none found | committed by: `phase-1e-apply.yml`, `phase-1e-sync.yml` |
@@ -1144,5 +1148,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 675 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 679 file
 datasets · 182 external services · 451 consumers · 56 workflows · 39 tabs.

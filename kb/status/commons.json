@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-18T20:46:39Z",
+ "written_at": "2026-10-19T11:18:14Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 11625,
+     "n": 11680,
      "of": 20282,
      "words": "complete at 113 colleges",
      "open": "#program-requirements"
@@ -26,7 +26,7 @@
    ],
    "issues": [
     {
-     "n": 3918,
+     "n": 3863,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
@@ -50,13 +50,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-18T12:45:57Z",
+    "at": "2026-10-19T08:06:18Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 11625,
-    "failing": 3918,
+    "complete": 11680,
+    "failing": 3863,
     "unread": 4739,
     "records": 17090,
     "colleges": 114,
@@ -79,7 +79,7 @@
      "text": "Open the tab"
     }
    ],
-   "status_file": null,
+   "status_file": "kb/status/exhibit.json",
    "pair": [
     {
      "n": 1729,
@@ -162,7 +162,7 @@
      "text": "Open SkyView"
     }
    ],
-   "status_file": null,
+   "status_file": "kb/status/course.json",
    "pair": [
     {
      "n": 3208,
@@ -243,7 +243,7 @@
      "text": "Open the tab"
     }
    ],
-   "status_file": null,
+   "status_file": "kb/status/cr.json",
    "pair": [
     {
      "n": 156,
@@ -307,7 +307,7 @@
      "text": "Open the tab"
     }
    ],
-   "status_file": null,
+   "status_file": "kb/status/subjects.json",
    "pair": [
     {
      "n": 122,

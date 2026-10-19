@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 58 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 394 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1184** | |
+| Session handoffs | 395 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1185** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-19 (S423 SkyLaurel, the routine): Merced's renumbered courses, a cited per-college `course_renumbers` map, 154 to 163 of 172 found and 125 to 134 passing (#2253); the Knowledge Base portal's first UI pass (#2254); the Commons' four run logs; lessons S423, handoff 424.
 - 2026-10-19 (S422 SkyWillow, the routine): San Joaquin Delta's three scorer readings, 154 to 195 of 202 live rows passing (#2250); Taft's two local GE patterns, no step (#2249); the Sierra Training UI pass (#2251); lessons S422, handoff 423.
 - 2026-10-19 (S421 SkyTupelo): the second reader built (#2246); Cañada's Cal-GETC step and the six-row rollback (#2247); three Jev sittings read, verdicts in `kb/jev_harvest_verdicts/`; lessons S421; handoff 422.
 - 2026-10-19 (S420 SkyTanoak, hand-opened): Cañada's re-read landed (#2244: 26 moved pages re-extracted, 8 loaded, 17 replaced, display build 3aa52b4afcb6); the CPL News UI pass (#2243); a Jev calibration sitting over a college's failing records (`kb/_jev_harvest.py`, #2245) and the xAI smoke for the second reader's key; Open Asks Sheet 97 asked and answered (Build with Grok, 03:11Z); KB note `methodology-a-harvests-tail-needs-a-different-instrument`.

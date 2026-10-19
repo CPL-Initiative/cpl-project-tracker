@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-394 document(s).
+395 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 424 | [Session 424 handoff: Merced's renumbered courses (154 to 163 of 172 found, 125 to 134 passing), the Knowledge Base portal's UI pass, the Commons' four run logs](../session_424_handoff.md) | 2026-10-19 |
 | 423 | [Session 423 handoff: San Joaquin Delta's three scorer readings (154 to 195 of 202 passing), Taft's two GE patterns, Sierra Training's UI pass; Merced's unfound programs are next](../session_423_handoff.md) | 2026-10-19 |
 | 422 | [Session 422 handoff: the second reader built, three Jev sittings read, Cañada's Cal-GETC step and the six-row rollback; Taft's local GE step is next](../session_422_handoff.md) | 2026-10-19 |
 | 421 | [Session 421 handoff: Cañada's re-read landed, a Jev sitting over the harvest's failing records, Sam ruled Build with Grok (Sheet 97), the CPL News UI pass; the first sitting and the second reader's key are next](../session_421_handoff.md) | 2026-10-19 |

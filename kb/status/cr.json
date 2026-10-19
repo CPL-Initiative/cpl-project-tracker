@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "session": 423,
+  "moniker": "SkyLaurel",
+  "run": "the CPL Queue routine",
+  "decider": "Sam",
+  "handoff": "docs/session_424_handoff.md",
+  "calls": [],
+  "notes": {},
+  "headline": [],
+  "written_at": "2026-10-19T11:18:05Z",
+  "project": "cr",
+  "next_step": {
+    "title": "A title-rung sitting to calibrate that rung",
+    "text": "Run a sitting over the title rung, whose verdicts calibrate it; then rung 2 asks again only what rung 1 left unsettled. Rung 4 (the parent's own title and number) waits on settled membership."
+  },
+  "changes": [
+    {
+      "at": "2026-10-19T11:00:00Z",
+      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+    }
+  ]
+}

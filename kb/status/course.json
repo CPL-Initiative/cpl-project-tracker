@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "session": 423,
+  "moniker": "SkyLaurel",
+  "run": "the CPL Queue routine",
+  "decider": "Sam",
+  "handoff": "docs/session_424_handoff.md",
+  "calls": [],
+  "notes": {},
+  "headline": [],
+  "written_at": "2026-10-19T11:18:05Z",
+  "project": "course",
+  "next_step": {
+    "title": "Finish the Common Course Reference list's UI pass",
+    "text": "The CCR list's dialogs still paint about 90 inline hex colors in unified_courses.js and its 15 column headers clip. Measure with npm run a11y ccr-list ccr-list-dark, since the cobi sweep sees only the SkyView map. The exhibit universe for SkyView's CPL mode stays lane-sized work."
+  },
+  "changes": [
+    {
+      "at": "2026-10-19T11:00:00Z",
+      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+    }
+  ]
+}

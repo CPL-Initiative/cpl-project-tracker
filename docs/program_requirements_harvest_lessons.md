@@ -863,6 +863,37 @@ sharing pages 148-154 and two on the course availability table.
 
 **Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
+## S423 SkyLaurel (2026-10-19): Merced's renumbered courses, the Knowledge Base portal's UI pass
+
+- **Read the page before naming a cause.** Merced's eight near misses (coverage 0.08-0.18) and ten page-claimed
+  programs looked like a reader fault. Two free page reads (college-page-read 39229076688, 39234806863) showed the
+  catalog printing MECH12, MECH22A ... where the state's file lists AGMA 2, AGMA 11 ..., ANSC and AGBS for AGAS and
+  AGAB, LAND for AGEH, CPSC-17 and -18 for DRON 10 and 11: the same title and units for every course, the numbers not
+  derivable from each other. The college renumbered after the file was written.
+- **A cited map, never a title rule (Fable, asked once).** `course_renumbers` in `kb/program_requirements_reconcile.json`
+  maps the catalog's code to the file's for one college, each pair in `course_renumbers_cited` with its title and units.
+  A title match alone is weaker evidence than a prefix swap (colleges reuse titles across levels); a general rule would
+  relabel courses statewide with no receipt. The capture looks for the listed course by its printed code, the scorer
+  renames on its own copy, and a pair retires once the file lists the printed code. Held out: Agriculture Systems
+  44160 (AGT-701 to 705 at 0 credits against AGAT 51 to 55 at 2-3 units), since the units disagree.
+- **A printed code needs its subject spaced from its number.** `code_pattern("CPSC17")` reads the letters C-P-S then
+  `C17` and never matches the page's `CPSC-17`; Drone Technology stayed below the gate and Equine read ANSC-14 missing
+  (0.917) until `course_renumbers()` handed the capture `CPSC 17`.
+- **The account keeps the catalog's own list** (`coursedog.catalog`, 188 programs), so a program read from no page is
+  checked against what the catalog offers: Biological Science A.S. and International Studies A.A. are not in it.
+- **What stays unread at Merced, the college's to settle:** Small Business Entrepreneurship (two awards), HVAC
+  Technician and Engineering print revised, shorter lists than the file keeps; Child Development A.A.'s Requisites tab
+  prints no courses; Communication Studies AA-T prints the 2.0 pattern (6 of 15 listed).
+- **Counts:** reads 39230479383, 39235509270 and 39239492986, 154 to 163 of 172 found, 125 to 134 passing, $0.55 in
+  extraction; loads 39239250159 and 39243215660 inserted 9; display build 93edc84cde30.
+- **The UI pass reached a frame's contents (#2254).** The Knowledge Base tab passed the cobi sweep on its shell; the
+  portal inside the iframe (`kb-portal/`) had never been measured and said "MAP Initiative" in its header. Three
+  seeded targets now measure it. A sweep that passes a tab built around an iframe has measured only the shell.
+
+## Moved from the lane (S423 compaction)
+
+**Cañada (S419-S421, #2241, #2244, #2247):** the picker reads the catalog's three heading shapes; 73 of 75 listed programs filed; its reconcile step sets Cal-GETC's 34 on transfer degrees only, cited from the catalog's own GE page (lessons S421); 17 records fail a machine check; display build 3d92deb7a816 applied on `main`. **A reconcile step for a figure a local degree never carries reads transfer degrees only (`awards: transfer`, S421):** a local degree's captured page can span the sibling transfer section. **Verify a reader change on the catalog's own words before any dispatch** (`kb/college_reads/`; a PDF plan takes `pdf_span` and `pdf_after`, S421). **San Joaquin Delta (S422, #2250):** the program total is a floor (`total_units_minimum`), its catalog's subject prefixes alias the state file's (`prefix_aliases`), and a noncredit page printing only its total hours passes as `total_only`; 195 of 202 live rows pass (154 before); the 8 left are the extraction's. **Taft's local degrees (S422, #2249):** the catalog prints a 27-unit local GE pattern and an 18-unit one for CTE degrees, and no page words the 60 as a floor, so no step; 16725 and 36928 stay failing.
+
 ## Moved from the lane (S419 compaction)
 
 **Crafton Hills and Taft (S412-S413)** read by the SmartCatalog walk (index, then a subject or group page, then the program page): Crafton 76 of 79 found and loaded, 51 passing the machine checks, Japanese unfound; Taft 58 of 63, 24 passing (most arithmetic failures read the page's 60-unit degree total as the major's). **Merced (S414):** 154 of 172 found, 153 loaded, 125 passing ($9.14). **The slash rescoring (S414)** replaced Glendale's 14, De Anza's 12, Los Angeles Trade Technical's 5 and Crafton Hills' 2 by free reconcile runs. **A printed degree floor (S415):** Delta's steps read "Minimum Degree Units Required: 60" as `degree_total_minimum`, and the scorer lets a floor alone make up a short sum (152 to 154 passing, 71 reread); Taft's step sets a transfer degree's Cal-GETC to the statewide 34 (24 to 34 passing, 17 reread; Fable's option A; kept: Sam's Open Asks Sheet 94 card 4, 13:43Z).

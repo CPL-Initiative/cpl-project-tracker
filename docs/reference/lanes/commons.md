@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-19
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -116,6 +116,8 @@ Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons ta
 Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
 card for Sam.
 
-**NEXT:** a run log per reference (`kb/status/exhibit.json`, `course.json`, `cr.json`, `subjects.json`)
+**Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
+
+**NEXT:** the deep link behind a count; then each reference's Progress view from the shared module.
 written at checkpoint step 12, so the four rows read a session stamp, a next step and calls; the deep link
 behind a count; then the per-reference Progress views from the shared module.
