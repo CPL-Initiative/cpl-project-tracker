@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1199,
-    "bytes": 12335750,
-    "over_budget": 9,
+    "bytes": 12335512,
+    "over_budget": 8,
     "handoff_max": 425,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60036,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 39,
-        "bytes": 378355,
-        "over": 4
+        "bytes": 378117,
+        "over": 3
       },
       "handoff": {
         "files": 396,
@@ -56,14 +56,14 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 8,
       "house_voice": 23,
       "kb_note_dialect": 1,
       "vault_heavy_path": 63
     },
     "vault": {
       "files": 22770,
-      "bytes": 3193113973,
+      "bytes": 3193113735,
       "heavy_bytes": 2111698483,
       "heavy_share": 0.661,
       "ignore_filters": [
@@ -426,19 +426,6 @@
       },
       "message": "20,285 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/common-cr-reference.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20223,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 223,
-        "ratio": 1.01
-      },
-      "message": "20,223 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
       "rule": "oversized_doc",
