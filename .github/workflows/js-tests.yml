@@ -187,6 +187,10 @@ jobs:
       # proposes nothing (every row uncalibrated). Pure-stdlib python.
       - name: Jev harvest sitting (failing records only, uncalibrated, suggests)
         run: python3 tests/jev_harvest_test.py
+      # The agriculture residual's sitting (S427, Sam's Sheet 99 card 4): AGRI identities only,
+      # the families' descriptor titles as the vocabulary, every row uncalibrated, nothing re-keyed.
+      - name: Jev AGRI families sitting (residual identities only, uncalibrated, suggests)
+        run: python3 tests/jev_agri_families_test.py
       # The second reader (S421, Sam's Sheet 97 ruling: Build with Grok): failing
       # records only, from the page the first reading came from, the provider sent
       # to the function, the one fingerprint for the comparison, nothing written.

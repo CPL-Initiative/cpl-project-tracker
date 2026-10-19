@@ -1,0 +1,61 @@
+{
+ "what": "Open Asks Sheet 101 card 1 applied: AUTB M1071 Import Body Customizing returns to Auto Body Technology, one discipline field, no re-key",
+ "ruling": {
+  "sheet": "2026-10-19-open-asks-101",
+  "card": "1",
+  "reply": "autobody",
+  "by": "Sam",
+  "at": "2026-10-19T22:38:25.197+00:00",
+  "store": "https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT (collection replies, doc 1; done through 1)"
+ },
+ "session": "S427 SkyMadrona",
+ "live_write": "kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql through supabase-migrate.yml (kb/migrations/.apply); the guarded UPDATE's before-values are in its header",
+ "kb/coci_minted_courses.json": {
+  "id": "AUTB M1071",
+  "before": {
+   "discipline": "Agricultural Business and Related Services",
+   "_notes": "Materialized from the curation overlay's machine cluster AUTB Z1025. The members keep their own records and their merge_into pointers; this record carries the aggregate and has no membership entry of its own."
+  },
+  "after": {
+   "discipline": "Auto Body Technology",
+   "_notes": "Materialized from the curation overlay's machine cluster AUTB Z1025. The members keep their own records and their merge_into pointers; this record carries the aggregate and has no membership entry of its own. Discipline returned to Auto Body Technology: Sam, Open Asks Sheet 101 card 1 (2026-10-19 22:38Z, autobody), one discipline field and no re-key; his 2026-07-13 curation row updated under his own email through kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql."
+  }
+ },
+ "kb/coci_curation.json": {
+  "id": "AUTB M1071",
+  "before": {
+   "discipline": "Agricultural Business and Related Services",
+   "reviewed_by": "map@rccd.edu",
+   "reviewed_at": "2026-07-13T14:03:13.128905+00:00",
+   "unified_title": "Import Body Customizing"
+  },
+  "after": {
+   "discipline": "Auto Body Technology",
+   "reviewed_by": "map@rccd.edu",
+   "reviewed_at": "2026-10-19T22:38:25.197+00:00",
+   "unified_title": "Import Body Customizing"
+  }
+ },
+ "rollback": "git revert the commit for the two files; re-apply the rollback statements in the SQL receipt's header for the live rows",
+ "prototype/ccr_universe.json": {
+  "id": "AUTB M1071",
+  "what": "the point moved between islands of the hand-built layout (not rebuilt nightly); island n adjusted; no other point moved",
+  "before": {
+   "island": "Agricultural Business and Related Services",
+   "x": -866.5,
+   "y": 727.2,
+   "src_n": 2,
+   "dst_n": 62,
+   "dst_points": 135
+  },
+  "after": {
+   "island": "Auto Body Technology",
+   "x": 281.7,
+   "y": 2346.7,
+   "src_n": 1,
+   "dst_n": 63,
+   "clearance_to_nearest_point": 16.9
+  }
+ },
+ "prototype/ccr_sky.json": "rebuilt by kb/_build_ccr_sky.py after the move (the daily run rebuilds it too)"
+}

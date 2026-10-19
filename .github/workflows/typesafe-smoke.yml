@@ -63,6 +63,14 @@ on:
         description: 'Cap the harvest sitting to the first N failing records (blank = all)'
         type: string
         default: ''
+      agri_families:
+        description: 'Common Subjects Reference: a Jev sitting over the Agriculture umbrella''s residual code AGRI, a C-ID family proposed for each identity for Sam to confirm (kb/_jev_agri_families.py; Sheet 99 card 4). Suggests, writes nothing.'
+        type: boolean
+        default: false
+      agri_limit:
+        description: 'Cap the AGRI sitting to the first N identities (blank = all 404)'
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -170,4 +178,25 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: jev-harvest
+          path: kb/jev_out/
+
+      # The agriculture residual's sitting (kb/_jev_agri_families.py; Sam, Sheet 99 card 4,
+      # 2026-10-19: "sitting"). One call per AGRI identity asks Jev which C-ID family is its
+      # home, with the families' descriptor titles as the vocabulary, and whether the family is
+      # plain from the title alone. NO GATE is measured for this question, so every answer is
+      # uncalibrated and nothing is re-keyed off it: Sam confirms, the rest stay residual, and
+      # the re-key runs under the playbook. Nothing is written or committed; a session commits
+      # the uploaded file under kb/jev_agri_families/.
+      - name: Jev over the AGRI residual (uncalibrated; suggests, writes nothing)
+        if: inputs.agri_families
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_jev_agri_families.py \
+            ${{ inputs.agri_limit && format('--limit {0}', inputs.agri_limit) || '' }}
+      - name: Upload the AGRI sitting
+        if: inputs.agri_families
+        uses: actions/upload-artifact@v7
+        with:
+          name: jev-agri-families
           path: kb/jev_out/

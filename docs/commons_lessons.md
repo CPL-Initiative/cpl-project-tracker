@@ -121,3 +121,30 @@ Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress 
 - **The deep link behind a count is the hash's second segment.** `#canonical-subj4/pre_seeded` opens the tab (tabs.js
   routes the first segment) and the tab applies the second as a filter, a view or the check; the Commons builder
   writes the same addresses into its `open` fields, so both dashes point at one list.
+
+## S427 SkyMadrona (2026-10-19): Sheet 99's rulings 1, 2, 3 and 5 applied; the sitting for 4 built
+
+- **A ruling names a record; the store may count another.** Sheet 99 card 3 named AUTB M1006 (Supervision and
+  Management in Agriculture) as Agricultural Business's one identity, and the seed's count of one came from AUTB M1071
+  (Import Body Customizing), whose record carries that discipline while M1006's record said Auto Body. Both carry Sam's
+  own 2026-07-13 discipline row, three seconds apart. The ruling moved the record it named; the other is a card, never a
+  silent correction (Rule 8), and the Reference view says one row sits off its code, which is true.
+- **The tab's shared-by-design rule had to learn the ruled shape before the re-key.** AGAB is declared by two umbrellas
+  and is now Agricultural Business's own; the old rule (every owner an umbrella, none canonical) would have replaced the
+  one collision it closed with a false one. Two disciplines canonical on one code stays the collision.
+- **A known issue with nothing in it is not an issue.** The Commons row's collisions issue at zero failed the no-bare-zero
+  rule; the builder drops it and `facts.shared` keeps the measure. The test finds the issue by its words, never by position.
+- **"No finding names" needs its two corroborators spelled out.** The scan names every unconfirmed pick (cs7) and the
+  aligned ones (cs4_aligned); read literally, the confirm procedure would have confirmed four of thirteen. The procedure
+  says which rules corroborate and which hold.
+- **Parallel Bash calls share one shell and one working directory.** A `cd` in one call moved the other mid-command: a
+  tracker `checkout -B` ran in the vault and reset its branch to main (recovered from the pushed remote). Use `git -C` and
+  absolute paths, and never two `cd`s in one turn.
+- **A merged claude/* branch is deleted, and the stale tracking ref makes `--force-with-lease` refuse.** Fetch the ref or
+  drop it, then push plain.
+- **A ruling that changes a human's own row changes it under his email, with the ruling as its time.** Sam answered
+  Sheet 101 at 22:38Z (autobody): AUTB M1071's discipline row is his 2026-07-13 row, so the write is a guarded UPDATE
+  pinned to the before-values (value, email, `reviewed_at`), keeps `map@rccd.edu`, sets `reviewed_at` to the reply's
+  stamp so the daily sync takes it, and names the sheet's store as its source. The receipt's header carries the
+  before-images and the rollback; the session's own JSON receipt carries the identity file and overlay before/after.
+  A cohort note that said the identity waits on his card is updated in the same file, so no store keeps the old state.

@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 688,
+  "file_datasets": 691,
   "external_services": 182,
-  "consumers": 454,
+  "consumers": 455,
   "workflows": 57,
   "data_js_files": 70,
   "tabs": 39
@@ -741,7 +741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2054,
+     "line": 2062,
      "tabs": [
       "canonical-subj4"
      ]
@@ -5253,7 +5253,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2454,
+     "line": 2462,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6189,13 +6189,6 @@
   },
   "file:docs/INDEX.md": {
    "consumers": [
-    {
-     "id": "script:kb/_build_docs_index.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 50
-    },
     {
      "id": "script:kb/_docs_audit.py",
      "kind": "script",
@@ -7986,6 +7979,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_jev_agri_families.py": {
+   "consumers": [
+    {
+     "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_jev_battery.py": {
    "consumers": [
     {
@@ -8435,6 +8441,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/agab_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/athl_remint_out/<date>/alias_map.json": {
@@ -9595,6 +9614,13 @@
      "line": 667
     },
     {
+     "id": "script:kb/_jev_agri_families.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 136
+    },
+    {
      "id": "script:kb/_join_credit_status.py",
      "kind": "script",
      "direction": "read",
@@ -10331,6 +10357,13 @@
      "direction": "read",
      "how": "literal",
      "line": 102
+    },
+    {
+     "id": "script:kb/_jev_agri_families.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 137
     },
     {
      "id": "script:kb/_join_cid_articulations.py",
@@ -13725,6 +13758,13 @@
      "line": 82
     },
     {
+     "id": "script:kb/_jev_agri_families.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 138
+    },
+    {
      "id": "script:kb/_overmerge_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -14830,7 +14870,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 390
+     "line": 393
     }
    ],
    "served": true,
@@ -18453,6 +18493,19 @@
    "main_committers": []
   },
   "file:tests/jev_adjudicate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/jev_agri_families_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24592,6 +24645,7 @@
     "tests/program_record_verdicts_sql_test.py",
     "tests/program_source_addenda_read_test.py",
     "tests/jev_harvest_test.py",
+    "tests/jev_agri_families_test.py",
     "tests/second_reader_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
@@ -25057,7 +25111,8 @@
     "kb/_jev_battery.py",
     "kb/_typesafe_cr_trial.py",
     "kb/_program_requirements_college.py",
-    "kb/_jev_harvest.py"
+    "kb/_jev_harvest.py",
+    "kb/_jev_agri_families.py"
    ],
    "adds": [],
    "push": null,

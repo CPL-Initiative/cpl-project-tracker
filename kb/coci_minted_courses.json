@@ -49676,8 +49676,8 @@
       "_subj4_remint_from": "AB M1012",
       "cte": true
     },
-    "AUTB M1006": {
-      "course_id": "AUTB M1006",
+    "AGAB M1006": {
+      "course_id": "AGAB M1006",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -49686,8 +49686,8 @@
       "description": "This course introduces students to the knowledge and skills relevant to the supervisor in agricultural business. Topics include the regulatory requirements relevant to labor management in agriculture and effective communication with native and non-native English speakers. The course will include case studies on labor management, human relations, public relations, production control techniques and job analysis.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AB",
-      "subject_4letter": "AUTB",
-      "discipline": "Auto Body Technology",
+      "subject_4letter": "AGAB",
+      "discipline": "Agricultural Business and Related Services",
       "discipline_provisional": "AB",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -49712,7 +49712,8 @@
       "discipline_inferred_at": null,
       "_remint_from": "M-ID AB 128",
       "_subj4_remint_from": "AB M1013",
-      "cte": true
+      "cte": true,
+      "_agab_remint_from": "AUTB M1006"
     },
     "AUTB M1003": {
       "course_id": "AUTB M1003",
@@ -654173,7 +654174,7 @@
       "description_source": null,
       "subject": "AB",
       "subject_4letter": "AUTB",
-      "discipline": "Agricultural Business and Related Services",
+      "discipline": "Auto Body Technology",
       "discipline_provisional": null,
       "typical_units": 4.5,
       "confidence": null,
@@ -654184,7 +654185,7 @@
       "classified_by": "kb/_zband_retire_apply.py — machine cluster materialized as an M-ID record (item 20 of the 2026-09-03 rulings; readings card 12, Sam, 2026-09-03)",
       "reviewed_at": null,
       "reviewed_by": null,
-      "_notes": "Materialized from the curation overlay's machine cluster AUTB Z1025. The members keep their own records and their merge_into pointers; this record carries the aggregate and has no membership entry of its own.",
+      "_notes": "Materialized from the curation overlay's machine cluster AUTB Z1025. The members keep their own records and their merge_into pointers; this record carries the aggregate and has no membership entry of its own. Discipline returned to Auto Body Technology: Sam, Open Asks Sheet 101 card 1 (2026-10-19 22:38Z, autobody), one discipline field and no re-key; his 2026-07-13 curation row updated under his own email through kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql.",
       "credit_status": "Credit",
       "credit_status_mixed": false,
       "top_code": "0949.00",

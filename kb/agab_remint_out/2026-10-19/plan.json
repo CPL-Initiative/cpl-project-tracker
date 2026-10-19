@@ -1,0 +1,41 @@
+{
+  "scopes": [
+    "sheet99-card3"
+  ],
+  "moves": {
+    "AUTB M1006": {
+      "old_id": "AUTB M1006",
+      "source": "minted",
+      "title": "Supervision and Management in Agriculture",
+      "route": "AGAB",
+      "discipline": "Agricultural Business and Related Services",
+      "discipline_before": "Auto Body Technology",
+      "top_code": "0112.00",
+      "new_id": "AGAB M1006",
+      "how": "kept number"
+    }
+  },
+  "alias": {
+    "AUTB M1006": "AGAB M1006"
+  },
+  "validation": {
+    "V0_pinned_one": {
+      "pass": true,
+      "problems": [],
+      "found": 1
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    }
+  },
+  "gapfilled": [],
+  "reused_retired_ids": []
+}

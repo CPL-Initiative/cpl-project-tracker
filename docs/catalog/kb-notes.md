@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-557 document(s).
+558 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -193,6 +193,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A rule that is right for reading can be wrong for writing](../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-09-04 |
+| [A ruling names a record; the store may count another](../kb-notes/methodology-a-ruling-names-a-record-the-store-may-count-another.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |

@@ -89,11 +89,17 @@ check("Subjects: the pair's words say MQ disciplines and name the three tests", 
       and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free"])
 check("Subjects: every count opens the tab's own list (the Commons' step 3)",
       rows[4]["pair"][0]["open"] == "#canonical-subj4/progress" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
-check("Subjects: the unconfirmed issue opens the pre-seeded filter and the collision issue the SUBJ check",
-      rows[4]["issues"][0]["open"] == "#canonical-subj4/pre_seeded" and rows[4]["issues"][1]["open"] == "#canonical-subj4/check")
+# A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
+# a known issue with nothing in it is not an issue, and facts.shared keeps the measure.
+collision_issues = [i for i in rows[4]["issues"] if "two MQ disciplines" in i.get("words", "")]
+check("Subjects: the unconfirmed issue opens the pre-seeded filter and a collision issue, when one is listed, the SUBJ check",
+      rows[4]["issues"][0]["open"] == "#canonical-subj4/pre_seeded" and all(i["open"] == "#canonical-subj4/check" for i in collision_issues)
+      and bool(sub.get("shared")) == bool(collision_issues))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
     check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",
-          len(rows[4]["issues"]) >= 4 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at"))
+          len(rows[4]["issues"]) >= 3 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
+          and any("scan findings" in i.get("words", "") for i in rows[4]["issues"])
+          and any("identity codes" in i.get("words", "") for i in rows[4]["issues"]))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_procedures.json")):
     with open(os.path.join(ROOT, "kb", "csr_procedures.json"), encoding="utf-8") as f:
         store = json.load(f)
