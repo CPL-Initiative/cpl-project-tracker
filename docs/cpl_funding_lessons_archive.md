@@ -5799,3 +5799,102 @@ stem and *unspent* alongside pool / money / apportion / the advance concept.
 Open: the explainer's footer (whether *sources* splits from the "not adopted policy"
 disclaimer so the first becomes hideable), and sweeping the rest of the memo builder
 against the expended/allocated rule.
+
+<!-- Moved verbatim from docs/cpl_funding_lessons.md on 2026-10-19 (the lessons doc passed its size cap). -->
+
+## 2026-09-12 — Session 258 (SkyList): four asks, an unreachable resolver, and a class that was an API
+
+Sam's four asks — movable sections, the outcomes section carrying measurable
+*and* non-measurable priorities, a box for goal (C) with designated projects,
+and the changes reaching the public view — all shipped in PR #1563.
+[Lane state](reference/lanes/implementation-funding.md).
+
+**Six of the explainer's seven sections could never be curated, and the test
+proved the wrong half.** Rename and Hide ride `sectionShell()`; the explainer
+hand-writes its markup and asks `T.sectionCuration()` by `data-fsec` id. Only
+`timing` appears in both id sets, and by coincidence of naming — so for six of
+seven, a section the CO held back stayed visible on the page colleges read.
+`funding_model_page.test.js` had a whole block on this, and every assertion in
+it wrote `{ titles: { qualify } }` into the shared map and then read it back.
+That proves the resolver resolves. It cannot notice that **no control anywhere
+emits `qualify`**, because the test supplied the id itself. The fix declares the
+page's sections (`PUBLIC_SECTIONS`) and asserts the declaration equals the
+markup, in membership and order — an assertion whose input comes from the
+system, not from the test.
+
+Deliberately **not** aliased onto the tab's sections: `lede` and `choices` have
+no tab twin and `allocation` spans two, so an alias would make one hide mean two
+different things on two pages and be wrong in a way neither page could show.
+
+**A styling class is an API.** `reportedPrioHtml()` rendered its box as
+`<div class="p cplfund-rprio">` to inherit the priority-card look.
+`.cplfund-prio .p` is counted or indexed by eleven assertions across five
+suites, so the box became a priority card to every selector in the codebase —
+the exact thing the paragraph directly above that line says it must never be.
+CI went red on seven files from one class attribute. The paragraph was right
+about the design and blind to the attribute implementing it.
+
+**And the guard was watching the wrong half.** The new suite asserted the box
+carries no `data-priocard` attribute — true the whole time, and not what other
+code selects on. It now pins the `.cplfund-prio .p` count against the
+`data-priocard` count. Two failures of the same shape in one run: an assertion
+can be about the right subject and still test nothing that would move.
+
+**When a suite fails in a full run and passes alone, re-run it alone at the
+current tree before reaching for an environmental explanation.** I read these
+seven failures as memory pressure — `lead_with_the_table` had passed standalone
+and the harness documents heap aborts in exactly these suites. It had passed
+because I ran it *before* the edits that broke it. Two later confusions were
+also self-inflicted: `render` looked hung under three of my own overlapping
+background runs, and one clean re-run died at exit 144 because
+`pkill -f cpl_funding_render` matched the wrapper shell that had just launched
+it.
+
+**The register is inline, not a script tag.** `registerProjects()` reads
+`window.CPL_DATA`, and `CPL_Data.js` (228 KB) is generated and deployed but
+loaded by *no* HTML — both dashboards carry the object inline, `projects` array
+included. Worth knowing before adding a consumer: the picker works on the tab
+for that reason, and the public explainer has no register at all, which is why a
+designated project's NAME travels in the config and its weekly-changing STATUS
+deliberately does not.
+
+`registerProjects()` copies named fields, so reading one it does not copy
+(`activity`, `pct`, `update`) silently groups every project under "Other" —
+the shape of [`a-feature-test-on-a-missing-method-fails-silent`](kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md).
+
+## 2026-09-13 — SkyGuard (S259): every sentence opens with the positive, and the word earn is retired
+
+**Sam's ask, verbatim:** *"Do a sweep and revise all text that starts with a
+negative statement and just start with the positive"*, naming *"the nos and
+nothings and informal terminology like baked, scored, earned, falling back, pin
+it."* His two examples became the pattern: the (C) box reads *Funded through
+the statewide project allocation and reported based on the aligned
+activities.* and the metric-wiring paragraph opens *Data used to measure
+real-time outcomes.*
+
+**What moved.** Eighteen sentence-initial negatives and every mid-sentence
+"nothing" a reader meets; `inheriting baked default` became *hand-maintained
+default*; *no data yet* became **awaiting measurement** (the 2026-09-01
+plain-absence ruling kept, facing forward); a bad `metric_src` reads *awaiting
+a known measure*; *none on record* became *credit only*; *Nothing is withheld
+yet* became *All of the max award remains available*. Guard: `cpl_funding_calm`
+§5 now bans the stems and checks sentence starts (*Not Applicable*, a MAP
+status, exempt). The suites that pinned the old words were re-pinned.
+
+⚠️ **"Earn" is retired too** — *"Earned still smacks of banking... measured...
+or... qualified for"* — reversing 2026-09-09's *earns*. It is 93 rendered sites
+and 31 suites, so it is the next session's, with the proposed map (counts
+toward · qualifies for · demonstrated · remaining) awaiting his word.
+Identifiers keep the old stem; prose never.
+
+---
+
+### Moved from the funding lane on 2026-10-19 (verbatim; the lane passed its size cap)
+
+✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 ARE LIVE** (S302–S303; guards `tests/cpl_funding_round8.test.js`, `tests/cpl_funding_round9.test.js`; detail in the [lessons](../../cpl_funding_lessons.md), S306). ✅ **Card 1 built (S303):** `map_coordinator_summary()` answers `has_coordinator`, `has_primary_contact` and `has_landing_page` as booleans, never a name (guard `tests/cpl_funding_first_condition.test.js`). ✅ **THE REPORTING BOX, BOTH HALVES (Sam, sheet 6: one report a year, all eight NOVA categories; sheet 7 card 1: MAP's two contacts).** `cpl_funding_reports` (DR-09; SQL of record `funding/supabase_cpl_funding_reports.sql`) is INSERT-only, reviewer RLS, `recorded_by` stamped by trigger; the newest report for a year counts, a **Withdraw** row makes the year unreported (one rule, `markReports`, both views). **Reviewer half** (S307, #1782): the box in the drill-in. **College half** (S308, #1790): `cpl_funding_my_reports()` (SECURITY DEFINER) matches the verified session's address against both contact fields of `map_college_contacts`, split into addresses, and resolves both names through `map_colleges` to a `college_id`; My College's *Reported expenditures* section reads it: sign-in (the shared email link) · not listed · none yet · the table. All 115 roster names resolve (#1802). Guards `cpl_funding_reporting_box`, `cpl_funding_reports_college_half`; a11y `my-college-reports(-signin)`.
+
+### Also moved from the funding lane on 2026-10-19 (verbatim)
+
+⚠️ **`--seal-blue`, `--on-accent`, `--surface` are scoped to the bar, masthead and drawer, never `:root`**: the tab reads them, and on `:root` its header went navy behind body text (1.13:1).
+
+a section shipped as `priorities` once inherited the tab's `titles.priorities` override and hide state.

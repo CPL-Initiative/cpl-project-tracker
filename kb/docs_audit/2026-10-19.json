@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 1203,
-    "bytes": 12374660,
-    "over_budget": 8,
+    "bytes": 12382429,
+    "over_budget": 10,
     "handoff_max": 427,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60469,
+    "always_loaded_bytes": 60508,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60469,
+        "bytes": 60508,
         "over": 1
       },
       "other": {
@@ -36,8 +36,8 @@
       },
       "lessons": {
         "files": 83,
-        "bytes": 2279501,
-        "over": 1
+        "bytes": 2284249,
+        "over": 2
       },
       "kb_note": {
         "files": 558,
@@ -46,25 +46,25 @@
       },
       "roadmap_lane": {
         "files": 40,
-        "bytes": 394481,
-        "over": 3
+        "bytes": 397244,
+        "over": 4
       },
       "handoff": {
         "files": 398,
-        "bytes": 3051071,
+        "bytes": 3051290,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 10,
       "house_voice": 23,
       "kb_note_dialect": 1,
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22790,
-      "bytes": 3194511657,
-      "heavy_bytes": 2113108151,
+      "files": 22797,
+      "bytes": 3194677897,
+      "heavy_bytes": 2113116448,
       "heavy_share": 0.661,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60469,
+        "bytes": 60508,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 469,
+        "over_by": 508,
         "ratio": 1.01
       },
-      "message": "60,469 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,508 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -244,6 +244,19 @@
       },
       "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/cpl_assistant_lessons_archive.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 124739,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 4739,
+        "ratio": 1.04
+      },
+      "message": "124,739 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/cpl_funding_lessons.md"
     },
     {
       "rule": "oversized_doc",
@@ -431,6 +444,19 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
+        "bytes": 22908,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 2908,
+        "ratio": 1.15
+      },
+      "message": "22,908 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
         "bytes": 21537,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -530,10 +556,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1143338362,
+        "bytes": 1143339643,
         "kind": "dir"
       },
-      "message": "directory totals 1,143,338,362 B inside the vault"
+      "message": "directory totals 1,143,339,643 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -760,10 +786,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11812960,
+        "bytes": 11819535,
         "kind": "file"
       },
-      "message": "11,812,960 B single file inside the vault"
+      "message": "11,819,535 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1140,10 +1166,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2045826,
+        "bytes": 2046267,
         "kind": "file"
       },
-      "message": "2,045,826 B single file inside the vault"
+      "message": "2,046,267 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

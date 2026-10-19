@@ -72,9 +72,13 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
   pub(T);
   const step = doc.querySelector(".cplfund-step1");
   const sec = step && step.closest('[data-sec="college"]');
-  check("1b: a public rendering carries Step 1 inside the College Dashboard, before the view switch",
-    !!step && !!sec && !!sec.querySelector(".cplfund-viewswitch") &&
-    !!(step.compareDocumentPosition(sec.querySelector(".cplfund-viewswitch")) & 4));
+  // The view switch moved INTO the box, to the right, as Step 2 (Sam,
+  // 2026-10-19); nothing of it is left under the section's introduction.
+  const seg = step && step.querySelector(".cplfund-step1-view #cplFundCollegeView");
+  check("1b: a public rendering carries Step 1 inside the College Dashboard, with the view switch in its box as Step 2",
+    !!step && !!sec && !!seg && !doc.querySelector(".cplfund-viewswitch") &&
+    /^Step 2$/.test(step.querySelector(".cplfund-step1-k2").textContent) &&
+    Array.from(seg.querySelectorAll("button")).every((b) => (b.getAttribute("title") || "").length > 40));
   const pick = doc.getElementById("cplFundOnePick");
   check("1c: Step 1 names itself in words and labels its chooser",
     /^Step 1$/.test(step.querySelector(".cplfund-step1-k").textContent) &&

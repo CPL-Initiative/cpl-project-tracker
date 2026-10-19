@@ -179,8 +179,10 @@ function mountWords(doc) {
   T.render();
   const reset = doc.getElementById("cplFundReset");
   const promote = doc.getElementById("cplFundPromote");
-  check("Reset is a quiet outlined word (no .warn / red), and Publish is the one filled control on the line",
-    !!reset && !/\bwarn\b/.test(reset.className) && !!promote && /\bprimary\b/.test(promote.className));
+  // No Reset on the signed-in line since 2026-10-19 (Sam: a new scenario is
+  // the way to start over); Publish stays the one filled control.
+  check("the signed-in line carries no Reset, and Publish is the one filled control on the line",
+    !reset && !!promote && /\bprimary\b/.test(promote.className));
   const css = doc.getElementById("cpl-funding-css").textContent;
   check("the sign-in line, the project strip and the eligibility box carry no colored stripe or fill",
     !/\.cplfund-authbar \{[^}]*border-left: 4px/.test(css) &&

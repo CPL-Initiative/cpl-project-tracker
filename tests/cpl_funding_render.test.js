@@ -830,10 +830,11 @@ function reviewerSession(win, email) {
   check("unlocked edit writes to the SHARED store",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "TEAM edit");
   check("unlocked edit did NOT write a local scenario", !scenSlot(window));
-  // Reset clears the shared config, not a scenario.
-  click(window, doc.getElementById("cplFundReset"));
-  check("reset (unlocked) clears the shared config",
-    Object.keys(window.CPL_FUNDING_TAB._getShared()).length === 0);
+  // No Reset for a signed-in curator (Sam, 2026-10-19: "I would just create a
+  // new scenario and make any changes needed"): the shared edit stands.
+  check("no Reset in the unlocked bar; the shared edit stands",
+    !doc.getElementById("cplFundReset") &&
+    window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "TEAM edit");
   // ⚠️ No Lock button any more — the credential is a whole-session sign-in ended
   // from the masthead, so losing it is what returns the tab to scenario mode.
   sess.signOut();

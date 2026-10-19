@@ -149,13 +149,15 @@ function registerStub() {
     survived.slice(2).join(",") ===
       HOUSE.filter(function (id) { return id !== "timing" && id !== "about"; }).join(","));
 
-  const reset = doc.querySelector("#cplFundSecOrderReset");
-  check("1k: a custom order offers the way back", !!reset);
-  if (reset) click(window, reset);
-  check("1l: reset restores the house order",
+  // No Restore the default section order (Sam, 2026-10-19: "delete the button
+  // links to restoring default order and funding defaults"): the position
+  // picker on each section is the way back, one move at a time.
+  check("1k: a custom order offers no Restore control", !doc.querySelector("#cplFundSecOrderReset"));
+  HOUSE.forEach(function (id, i) {
+    if (domOrder(doc)[i] !== id) commit(window, doc.querySelector('[data-secpos="' + id + '"]'), String(i));
+  });
+  check("1l: the position pickers return every section to its house place",
     domOrder(doc).join(",") === HOUSE.join(","));
-  check("1m: ...and with the house order there is nothing to restore",
-    !doc.querySelector("#cplFundSecOrderReset"));
 }
 
 // ── 2. the Public page view (Sam, 2026-10-15, call 1) ───────────────────
