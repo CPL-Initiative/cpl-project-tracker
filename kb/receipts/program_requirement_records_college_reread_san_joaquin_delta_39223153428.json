@@ -1,0 +1,692 @@
+{
+ "college": "San Joaquin Delta College",
+ "reread_run": "39223153428",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39220195737",
+ "at": "2026-10-19T08:30:46Z",
+ "posted": 7,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "19752",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 7,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "44708",
+  "44710",
+  "44711",
+  "44712",
+  "46020",
+  "46025",
+  "46410"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 7,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'San Joaquin Delta College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39220195737;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9088",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9059",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "H S 9036",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restrictive Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9086",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9087",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Health Careers"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Write and edit clear, well-developed essays on academic topics and effectively use English as applied in Health Science classes as well as workplace environments in one of the Health Careers. Summarize, paraphrase, and quote readings using proper citation and formatting strategies, as a way to integrate outside sources into writing for Health Science classes.",
+      "Apply techniques of written communication, sentence structure, word usage, punctuation, spelling, medical terminology, and Health Sciences document formatting.",
+      "Analyze written health-related communication and compose and organize paragraphs into effective documents.",
+      "Participate in in-depth health-related discussions effectively, take clear notes, and give oral presentations.",
+      "Demonstrate the understanding and spelling of prefixes, root words, and suffixes to accurately decode common medical terms.",
+      "Understand how to properly use common medical terms in health care practice."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 288,
+      "min": 288
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers Certificate of Completion",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 288,
+   "total_min": 288,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3397&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers",
+   "control_number": "44708"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9080",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9081",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9082",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Write a paragraph utilizing low-intermediate structures of English and demonstrating comprehension while responding to the prompt with organization, development, and support.",
+      "Read a text and locate information in response to comprehension questions about main ideas and details.",
+      "Write a paragraph utilizing low-intermediate structures of English grammar and demonstrating mastery of simple sentence structure and verb tenses.",
+      "Read a paragraph with grammar errors (e.g. subject-verb agreement, verb tense, etc.) to identify and correct them.",
+      "Answer comprehension questions after listening to a brief, simple recording.",
+      "Demonstrate clear pronunciation and adequate speed of speech appropriate to the low-intermediate level of English fluency by giving short presentations and answering questions orally."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 198,
+      "min": 198
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Low-Intermediate ESL Certificate of Competency",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 198,
+   "total_min": 198,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3401&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "Low-Intermediate ESL",
+   "control_number": "44710"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9083",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9084",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9085",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Write a short essay utilizing high-intermediate structures of English and demonstrating comprehension while responding to the prompt with organization, development, and support.",
+      "Read a short article or essay and identify the author’s main opinion and supporting reasons and evidence. Answer comprehension questions about specific details, main ideas, and vocabulary in context.",
+      "Write a paragraph or short composition utilizing high-intermediate structures of English grammar and demonstrating mastery of intermediate sentence structure, verb tenses, and mechanics of writing.",
+      "Read a paragraph or short text with grammar errors (eg. subject-verb agreement, complex verb tenses, fragments, etc.) to identify and correct them.",
+      "Answer comprehension questions and restate the main ideas after listening to a recording.",
+      "Demonstrate clear pronunciation and adequate speed of speech appropriate to the high-intermediate level of English fluency through speeches and presentations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 198,
+      "min": 198
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "High-Intermediate ESL Certificate of Competency",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 198,
+   "total_min": 198,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3400&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "High-Intermediate ESL",
+   "control_number": "44711"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9086",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9087",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9088",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Write an essay utilizing advanced structures of English and demonstrating critical thinking while responding to the prompt with organization, development, and support.",
+      "Read an article or essay and identify the author’s main opinion and supporting reasons and evidence.",
+      "Write a short composition utilizing advanced structures of English grammar and demonstrating mastery of advanced sentence structure and variety, complex verb tenses, and mechanics of writing.",
+      "Read a text with grammar errors (eg. sentence structure, punctuation, run-on sentences, etc.) to identify and correct them.",
+      "Demonstrate clear pronunciation and adequate speed of speech appropriate to the advanced level of English fluency.",
+      "Answer comprehension questions and paraphrase the main ideas and supporting details after listening to a recording."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 198,
+      "min": 198
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Advanced ESL Certificate of Competency",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 198,
+   "total_min": 198,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3399&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "Advanced ESL",
+   "control_number": "44712"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DMEDIA 9021",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9088",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9059",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9087",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9086",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate and apply an understanding of the three basic phases of production, and demonstrate the ability to shoot and export a short video project by utilizing a digital video camera with audio accessories and appropriate audio/video cabling.",
+      "Participate in in-depth discussions effectively, take clear notes, and give oral presentations in a digital media environment.",
+      "Analyze written and spoken information and compose and organize paragraphs into effective digital media communications.",
+      "Apply techniques of written and spoken communication, with a focus on strong sentence structure, word usage, punctuation, spelling, and Digital Media document formatting.",
+      "Construct clear, well-developed arguments on academic and real-world topics and effectively use English as applied in Digital Media classes as well as workplace environments in fields pertaining to Digital Media. Cite relevant sources in spoken and written arguments, using proper citation and formatting strategies, as a way to integrate outside sources into writing for Digital Media classes."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 320,
+      "min": 320
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media Certificate of Completion",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 320,
+   "total_min": 320,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3419&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media",
+   "control_number": "46020"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "H S 9039",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9082",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9085",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 9080",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 9081",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Health Careers"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify the educational requirements necessary to complete a healthcare career, and give a presentation about a selected healthcare career, including educational requirements, licensure or certification, salary, and career mobility.",
+      "Participate in introductory health-related discussions effectively, take clear notes, and give short oral presentations.",
+      "Evaluate brief written health-related communication and compose and organize sentences into effective paragraphs and short documents.",
+      "Apply techniques of written communication, sentence structure, word usage, punctuation, and spelling.",
+      "Write and edit paragraphs and short essays on academic topics and effectively use English as applied in Health Science classes as well as workplace environments in one of the Health Careers. Illustrate comprehension of introductory readings in the field of Health Science by quoting outside sources and incorporating them into intermediate-level writing."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 240,
+      "min": 240
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers Certificate of Completion",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 240,
+   "total_min": 240,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3418&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
+   "control_number": "46025"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SPAN 9011",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 9012",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "H S 9036",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 162,
+      "min": 162
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Spanish for Medical Professions Certificate of Completion",
+     "open_elective_units": null,
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 162,
+   "total_min": 162,
+   "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3425&print",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38631691511,
+   "program_title": "Spanish for Medical Professions",
+   "control_number": "46410"
+  }
+ ]
+}
