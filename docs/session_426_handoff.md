@@ -10,7 +10,8 @@ status: current
 
 Your moniker is **SkyTorreya**. Session 425 (**SkyMadrone**, `session_01YHcWFyg3gRxzTw1rjr6zgA`, opened by Sam at
 15:15Z on 2026-10-19 with SkyBuckthorn's handoff) checkpointed at about 16:40Z on `claude/blissful-pasteur-o8hp1q`,
-at the context meter's WARN (86%). If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
+at the context meter's WARN (86%) and signed off at EMERGENCY (94%): every Rule 9 artifact was refreshed except the
+UI pass, the Pipeline tab and a KB note (named below); the docs index was rebuilt. If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
 
 ## Sam's words this run (vault braindump `braindump-2026-10-19-1515-finish-the-csr-first-and-the-commons-as-moonshot`)
 
@@ -43,14 +44,12 @@ at the context meter's WARN (86%). If the routine started you, follow `docs/refe
 1. **#2260:** merge on a green `test` (squash). Then **dispatch `daily-dashboard.yml`** so `kb/csr_out/latest.json`,
    `kb/status/commons.json` and the seed's reviewer fields (the sync fix) rebuild on `main`; the Commons row then
    reads 122 by a person, no cohort.
-2. **Open Asks Sheet 99:** six cards from the new lane's NEEDS SAM block (the definition of complete; the cohort
-   confirm; the AUTB fix; the agriculture residual; the validate stage; the Title 5-numbered names). If the sheet is
-   not published, the vault builder refuses until the cards exist (`CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`);
-   build it, publish with `capabilities: {db: {}, comments: {}}`, put the link in §11's standing-sheet pointer and in
-   `kb/status/subjects.json`'s `calls`.
-3. **CPLBrain:** the session note `07-session-notes/2026-10-19-s425-skymadrone-csr-progress-view.md` if S425 ran out
-   of room; the braindump is committed.
-4. S425 held one PR subscription (#2260) at checkpoint and drops it at sign-off.
+2. **Open Asks Sheet 99 is published** (https://claude.ai/artifact/51ysTzEcJmusKb2Mb21xg8, a fresh store, empty at
+   publish; six cards). Read its `replies` store first; each ruling leaves with the lane's marker in the same change.
+   §11's pointer and `kb/status/subjects.json`'s call name it.
+3. **CPLBrain#395 (draft):** the session note, the braindump, Sheet 99's source and the builder. Merge on green.
+4. S425 dropped its #2260 subscription at sign-off; the Sheet 99 artifact's wake subscription was arming when the
+   session ended and was not dropped (no tool for it here): a comment on the sheet may wake a dead session.
 
 ## Priority after that
 
