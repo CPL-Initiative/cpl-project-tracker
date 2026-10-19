@@ -5,23 +5,14 @@
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_425_handoff.md",
-  "calls": [
-    {
-      "title": "Six calls on Open Asks Sheet 99: the definition of complete, the cohort confirm, AUTB, the agriculture residual, the validate stage, the Title 5-numbered names",
-      "text": "The Progress view's headline pair rests on the first; the nightly confirm of the 13 authority-coded picks and the AUTB re-key wait on the second and third; the agriculture sitting, the validate column and the rename follow the others. Each ruling is recorded in the lane in the same change.",
-      "if_no_reply": "The pair reads settled as proposed (121 of 147), the 25 picks wait for a person on the Reference view, AUTB stays the one collision, and the names stay as the PDF read them.",
-      "link": "https://claude.ai/artifact/51ysTzEcJmusKb2Mb21xg8",
-      "link_text": "Answer on Open Asks Sheet 99",
-      "part": "confirmation"
-    }
-  ],
+  "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T16:24:51Z",
+  "written_at": "2026-10-19T16:44:01Z",
   "project": "subjects",
   "next_step": {
     "title": "Confirm the 26 picks a person has not confirmed, 13 of them on the authority's own code",
-    "text": "Twenty-five MQ disciplines carry the code the data votes for most and one carries a code it shares; no person has confirmed them. Thirteen of them sit on the authority's own code (CCN or C-ID), which the proposed cohort confirm would settle once Sam rules; the rest are a curator's picks on the Reference view. Then the one collision (AUTB), the thirteen weak mnemonics and the two modal choices without a note, each a finding on the Progress view."
+    "text": "Twenty-five MQ disciplines carry the code the data votes for most and one carries a code it shares; no person has confirmed them. Thirteen of them sit on the authority's own code (CCN or C-ID), which the nightly cohort confirm settles once built (Sam ruled it on, Sheet 99, 16:37Z); the rest are a curator's picks on the Reference view. Then the one collision (AUTB), the thirteen weak mnemonics and the two modal choices without a note, each a finding on the Progress view."
   },
   "changes": [
     {
@@ -39,6 +30,10 @@
     {
       "at": "2026-10-19T16:30:00Z",
       "text": "The handbook's discipline is the MQ discipline on the tab and the Commons row (Sam's word); the pick's reviewer is read from the code row, so eleven picks a person made no longer read as a cohort's."
+    },
+    {
+      "at": "2026-10-19T16:37:00Z",
+      "text": "Sam answered Open Asks Sheet 99's six cards, all his own call: settled, on, agab, sitting, hide, rename. The lane records them; Session 426 executes them, the nightly cohort confirm first."
     }
   ]
 }
