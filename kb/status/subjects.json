@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "session": 423,
+  "moniker": "SkyLaurel",
+  "run": "the CPL Queue routine",
+  "decider": "Sam",
+  "handoff": "docs/session_424_handoff.md",
+  "calls": [],
+  "notes": {},
+  "headline": [],
+  "written_at": "2026-10-19T11:18:05Z",
+  "project": "subjects",
+  "next_step": {
+    "title": "Confirm the 25 disciplines still on the data's modal code",
+    "text": "Twenty-five disciplines carry the subject code the data votes for most, unconfirmed by a person, and two codes sit on two disciplines each (AUTB, and FTVE by design). A curator confirms or corrects each on the Canonical SUBJ4 tab."
+  },
+  "changes": [
+    {
+      "at": "2026-10-19T11:00:00Z",
+      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+    }
+  ]
+}

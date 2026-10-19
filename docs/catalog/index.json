@@ -15448,7 +15448,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-10-18"
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-08-28",
@@ -15757,8 +15757,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 394,
+   "count": 395,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 424,
+     "path": "docs/session_424_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "merced",
+      "renumbered-courses",
+      "ui-pass",
+      "commons"
+     ],
+     "title": "Session 424 handoff: Merced's renumbered courses (154 to 163 of 172 found, 125 to 134 passing), the Knowledge Base portal's UI pass, the Commons' four run logs",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22554,5 +22572,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1184
+ "total": 1185
 }

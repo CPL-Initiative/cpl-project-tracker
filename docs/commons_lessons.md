@@ -87,3 +87,12 @@ Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress 
 - **A screenshot of the served monolith waits for the load event.** The container's proxy fails every outbound
   request, so `domcontentloaded` plus a selector wait timed out while `load` plus a function wait rendered the tab in
   two seconds; the a11y sweep's own server does the same.
+
+## S423 SkyLaurel (2026-10-19): the four run logs
+
+- **The tab was already wired for them.** `kb/_build_commons_status.py` sets each row's `status_file` when the file
+  exists and `commons.js` reads it, so step 2 was content and a checkpoint line, no code. Each log's next step is its
+  lane's NEXT, written in plain words because the validator refuses markdown and glyphs.
+- **Stamp only what moved.** A run log that a checkpoint restamps without work behind it reads fresh and says nothing;
+  step 12 refreshes the logs this run touched and leaves the others to age into *stale*, which is the true state.
+

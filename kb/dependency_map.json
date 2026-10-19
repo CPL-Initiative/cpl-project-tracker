@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 675,
+  "file_datasets": 679,
   "external_services": 182,
   "consumers": 451,
   "workflows": 56,
@@ -14604,6 +14604,45 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/status/course.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 251
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/cr.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 301
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/exhibit.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 200
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/status/program-requirements.json": {
    "consumers": [
     {
@@ -14629,6 +14668,19 @@
      "direction": "read",
      "how": "literal",
      "line": 66
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/subjects.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 337
     }
    ],
    "served": true,

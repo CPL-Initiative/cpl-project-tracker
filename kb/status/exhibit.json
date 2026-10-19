@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "session": 423,
+  "moniker": "SkyLaurel",
+  "run": "the CPL Queue routine",
+  "decider": "Sam",
+  "handoff": "docs/session_424_handoff.md",
+  "calls": [],
+  "notes": {},
+  "headline": [],
+  "written_at": "2026-10-19T11:18:05Z",
+  "project": "exhibit",
+  "next_step": {
+    "title": "Confirm the first unattended saving night, then the Unclassified lane's cohorts",
+    "text": "After the daily build, confirm on the Common Exhibit Reference tab that the Unclassified lane names each saved title's cohort as the saver and that Needs you holds the titles waiting on a person, the fold's 18 among them. Then read the nightly 07:47Z procedures run's receipt, the first saving night that ran unattended."
+  },
+  "changes": [
+    {
+      "at": "2026-10-19T11:00:00Z",
+      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+    }
+  ]
+}
