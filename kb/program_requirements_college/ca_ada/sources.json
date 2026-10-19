@@ -179,16 +179,19 @@
    "FASH195"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
-   "title": "187",
-   "h1": "187",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=184",
+   "title": "AS  Custom Dressmaking/Small",
+   "h1": "AS  Custom Dressmaking/Small",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    184,
+    185,
+    186,
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -196,7 +199,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 2961
+  "text_chars": 10473
  },
  {
   "control_number": "05718",
@@ -255,17 +258,18 @@
    "PHIL312"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=223",
-   "title": "223",
-   "h1": "223",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=222",
+   "title": "AA  Philosophy",
+   "h1": "AA  Philosophy",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    222,
     223,
     224
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -273,7 +277,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 7406
+  "text_chars": 7974
  },
  {
   "control_number": "05725",
@@ -371,15 +375,15 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192",
-   "title": "192",
-   "h1": "192",
+   "title": "AA  Geography",
+   "h1": "AA  Geography",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     192
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -387,7 +391,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 3234
+  "text_chars": 2761
  },
  {
   "control_number": "05736",
@@ -475,7 +479,7 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -520,8 +524,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167",
-   "title": "167",
-   "h1": "167",
+   "title": "AA  Digital Art and Animation",
+   "h1": "AA  Digital Art and Animation",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -531,7 +535,7 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -539,7 +543,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 13421
+  "text_chars": 12914
  },
  {
   "control_number": "15051",
@@ -565,8 +569,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186",
-   "title": "186",
-   "h1": "186",
+   "title": "AS  Technical (Apparel Industry",
+   "h1": "AS  Technical (Apparel Industry",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -574,7 +578,7 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -582,7 +586,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 6466
+  "text_chars": 6178
  },
  {
   "control_number": "15400",
@@ -661,8 +665,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169",
-   "title": "169",
-   "h1": "169",
+   "title": "CA  Graphic Design",
+   "h1": "CA  Graphic Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -670,7 +674,7 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -678,7 +682,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 6300
+  "text_chars": 5839
  },
  {
   "control_number": "15657",
@@ -875,19 +879,19 @@
    "EDUC249"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
-   "title": "152",
-   "h1": "152",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
+   "title": "151",
+   "h1": "151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    151,
     152,
     153,
-    154,
-    155
+    154
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -895,7 +899,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 14108
+  "text_chars": 13952
  },
  {
   "control_number": "20426",
@@ -918,19 +922,19 @@
    "MGMT100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=155",
-   "title": "155",
-   "h1": "155",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154",
+   "title": "154",
+   "h1": "154",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    154,
     155,
     156,
-    157,
-    158
+    157
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -938,7 +942,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 14092
+  "text_chars": 14638
  },
  {
   "control_number": "20427",
@@ -957,19 +961,19 @@
    "MGMT100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
-   "title": "149",
-   "h1": "149",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154",
+   "title": "154",
+   "h1": "154",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    149,
-    150,
-    151,
-    152
+    154,
+    155,
+    156,
+    157
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -977,7 +981,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 12827
+  "text_chars": 14638
  },
  {
   "control_number": "20428",
@@ -1080,19 +1084,18 @@
    "MART390"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167",
-   "title": "167",
-   "h1": "167",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=168",
+   "title": "168",
+   "h1": "168",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    167,
     168,
     169,
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1100,7 +1103,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 13421
+  "text_chars": 9793
  },
  {
   "control_number": "20434",
@@ -1150,15 +1153,15 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
-   "title": "187",
-   "h1": "187",
+   "title": "CA  Custom Dressmaking/Small",
+   "h1": "CA  Custom Dressmaking/Small",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1166,7 +1169,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 2961
+  "text_chars": 1712
  },
  {
   "control_number": "20439",
@@ -1191,17 +1194,17 @@
    "FASH195"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186",
-   "title": "186",
-   "h1": "186",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=188",
+   "title": "CA  Technical (Apparel Industry",
+   "h1": "CA  Technical (Apparel Industry",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    186,
-    187
+    188,
+    189
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1209,7 +1212,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 6466
+  "text_chars": 4197
  },
  {
   "control_number": "20441",
@@ -1314,8 +1317,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170",
-   "title": "170",
-   "h1": "170",
+   "title": "AS  Earth Science",
+   "h1": "AS  Earth Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1325,7 +1328,7 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1333,7 +1336,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 12193
+  "text_chars": 11370
  },
  {
   "control_number": "30527",
@@ -1386,16 +1389,17 @@
    "MATHC2220"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=127",
-   "title": "127",
-   "h1": "127",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=215",
+   "title": "AS-T  Mathematics 2.0",
+   "h1": "AS-T  Mathematics 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    127
+    215,
+    216
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1403,7 +1407,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 1908
+  "text_chars": 4271
  },
  {
   "control_number": "30825",
@@ -1513,8 +1517,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=202",
-   "title": "202",
-   "h1": "202",
+   "title": "CA  Home Staging",
+   "h1": "CA  Home Staging",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1523,7 +1527,7 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1531,7 +1535,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 11359
+  "text_chars": 11355
  },
  {
   "control_number": "30881",
@@ -1787,7 +1791,7 @@
     180
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1823,7 +1827,7 @@
     238
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1892,8 +1896,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=190",
-   "title": "190",
-   "h1": "190",
+   "title": "CA  Pathways to Student Success",
+   "h1": "CA  Pathways to Student Success",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1902,7 +1906,7 @@
     192
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1910,7 +1914,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 9451
+  "text_chars": 9182
  },
  {
   "control_number": "32197",
@@ -2008,16 +2012,17 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=140",
-   "title": "140",
-   "h1": "140",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=139",
+   "title": "AA-T  Anthropology",
+   "h1": "AA-T  Anthropology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    139,
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2025,7 +2030,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3131
+  "text_chars": 5851
  },
  {
   "control_number": "32452",
@@ -2047,17 +2052,18 @@
    "ARTHC1100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=141",
-   "title": "141",
-   "h1": "141",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=140",
+   "title": "AA-T  Studio Arts",
+   "h1": "AA-T  Studio Arts",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    140,
     141,
     142
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2065,7 +2071,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 5668
+  "text_chars": 7195
  },
  {
   "control_number": "32514",
@@ -2132,8 +2138,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165",
-   "title": "165",
-   "h1": "165",
+   "title": "CA  Computer Science - Java",
+   "h1": "CA  Computer Science - Java",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2141,7 +2147,7 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2149,7 +2155,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 6527
+  "text_chars": 5640
  },
  {
   "control_number": "32526",
@@ -2166,16 +2172,17 @@
    "CIS321"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166",
-   "title": "166",
-   "h1": "166",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165",
+   "title": "165",
+   "h1": "165",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    165,
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2183,7 +2190,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3407
+  "text_chars": 6527
  },
  {
   "control_number": "32527",
@@ -2210,7 +2217,7 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2468,8 +2475,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.556,
+  "coverage": 0.778,
   "codes_found": [
+   "PLSC103",
+   "PLSC130",
    "PLSC150",
    "PLSC170",
    "PLSC310",
@@ -2477,17 +2486,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=337",
-   "title": "337",
-   "h1": "337",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=336",
+   "title": "Transfer Credit:  CSU",
+   "h1": "Transfer Credit:  CSU",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    336,
     337,
     338
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2495,7 +2505,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 8542
+  "text_chars": 10382
  },
  {
   "control_number": "32861",
@@ -2525,16 +2535,17 @@
    "CBOT470"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=139",
-   "title": "139",
-   "h1": "139",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=138",
+   "title": "138",
+   "h1": "138",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    138,
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2542,7 +2553,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 4050
+  "text_chars": 7476
  },
  {
   "control_number": "33608",
@@ -2730,8 +2741,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=173",
-   "title": "173",
-   "h1": "173",
+   "title": "AA-T  Child and Adolescent",
+   "h1": "AA-T  Child and Adolescent",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2741,7 +2752,7 @@
     176
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2749,7 +2760,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 14799
+  "text_chars": 13938
  },
  {
   "control_number": "35971",
@@ -2776,8 +2787,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=182",
-   "title": "The Environmental Science AS degree provides a strong",
-   "h1": "The Environmental Science AS degree provides a strong",
+   "title": "AS  Environmental Science",
+   "h1": "AS  Environmental Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2793,7 +2804,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 5609
+  "text_chars": 5635
  },
  {
   "control_number": "35986",
@@ -2819,17 +2830,18 @@
    "PHYS260"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179",
-   "title": "179",
-   "h1": "179",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=178",
+   "title": "178",
+   "h1": "178",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    178,
     179,
     180
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2837,7 +2849,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 7299
+  "text_chars": 11033
  },
  {
   "control_number": "36025",
@@ -2873,8 +2885,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=228",
-   "title": "228",
-   "h1": "228",
+   "title": "AA-T  Law, Public Policy, and",
+   "h1": "AA-T  Law, Public Policy, and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2884,7 +2896,7 @@
     231
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2892,7 +2904,7 @@
    }
   },
   "listed": 26,
-  "text_chars": 12217
+  "text_chars": 12213
  },
  {
   "control_number": "36056",
@@ -2953,19 +2965,19 @@
    "CBOT475"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=153",
-   "title": "153",
-   "h1": "153",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
+   "title": "152",
+   "h1": "152",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    152,
     153,
     154,
-    155,
-    156
+    155
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2973,7 +2985,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 14692
+  "text_chars": 14108
  },
  {
   "control_number": "36942",
@@ -2993,19 +3005,19 @@
    "MGMT100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
-   "title": "151",
-   "h1": "151",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=156",
+   "title": "CA  Marketing",
+   "h1": "CA  Marketing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    151,
-    152,
-    153,
-    154
+    156,
+    157,
+    158,
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3013,7 +3025,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 13952
+  "text_chars": 14313
  },
  {
   "control_number": "37122",
@@ -3046,19 +3058,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=196",
-   "title": "196",
-   "h1": "196",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=195",
+   "title": "195",
+   "h1": "195",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    195,
     196,
     197,
-    198,
-    199
+    198
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3066,7 +3078,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 12550
+  "text_chars": 12594
  },
  {
   "control_number": "37156",
@@ -3085,19 +3097,19 @@
    "CBOT435"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148",
-   "title": "148",
-   "h1": "148",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
+   "title": "CA  Business Assistant",
+   "h1": "CA  Business Assistant",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    148,
-    149,
-    150,
-    151
+    152,
+    153,
+    154,
+    155
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3105,7 +3117,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 13030
+  "text_chars": 12909
  },
  {
   "control_number": "37973",
@@ -3121,16 +3133,17 @@
    "EDUC300"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=177",
-   "title": "177",
-   "h1": "177",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176",
+   "title": "176",
+   "h1": "176",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    176,
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3138,7 +3151,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3815
+  "text_chars": 7512
  },
  {
   "control_number": "37974",
@@ -3156,19 +3169,19 @@
    "COMMC1004"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
-   "title": "149",
-   "h1": "149",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=155",
+   "title": "CA  Human Relations in the",
+   "h1": "CA  Human Relations in the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    149,
-    150,
-    151,
-    152
+    155,
+    156,
+    157,
+    158
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3176,7 +3189,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 12827
+  "text_chars": 12611
  },
  {
   "control_number": "38442",
@@ -3196,12 +3209,13 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "MART314",
    "MART366",
    "MART376",
    "MART420",
+   "MART441",
    "MART442",
    "MART443",
    "MART445",
@@ -3213,16 +3227,17 @@
    "MART455"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170",
-   "title": "170",
-   "h1": "170",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169",
+   "title": "169",
+   "h1": "169",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    169,
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3230,7 +3245,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 2687
+  "text_chars": 6300
  },
  {
   "control_number": "38824",
@@ -3253,8 +3268,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=221",
-   "title": "221",
-   "h1": "221",
+   "title": "CA  Litigation",
+   "h1": "CA  Litigation",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3262,7 +3277,7 @@
     222
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3270,7 +3285,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 7087
+  "text_chars": 6155
  },
  {
   "control_number": "40391",
@@ -3297,7 +3312,7 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3324,17 +3339,17 @@
    "ETHN288"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=95",
-   "title": "GENERAL EDUCATION AND DEGREE REQUIREMENT WORKSHEETS",
-   "h1": "GENERAL EDUCATION AND DEGREE REQUIREMENT WORKSHEETS",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183",
+   "title": "AA  Ethnic Studies",
+   "h1": "AA  Ethnic Studies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    95,
-    96
+    183,
+    184
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3342,7 +3357,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 8319
+  "text_chars": 4497
  },
  {
   "control_number": "41287",
@@ -3407,15 +3422,15 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225",
-   "title": "225",
-   "h1": "225",
+   "title": "CA  Advanced Optics and",
+   "h1": "CA  Advanced Optics and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3423,7 +3438,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3627
+  "text_chars": 3075
  },
  {
   "control_number": "41513",
@@ -3441,16 +3456,17 @@
    "PALT406"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225",
-   "title": "225",
-   "h1": "225",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=224",
+   "title": "CA  Photonics and Laser",
+   "h1": "CA  Photonics and Laser",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    224,
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3458,7 +3474,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3627
+  "text_chars": 6102
  },
  {
   "control_number": "43478",
@@ -3529,8 +3545,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=147",
-   "title": "147",
-   "h1": "147",
+   "title": "AS  Business Administration",
+   "h1": "AS  Business Administration",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3540,7 +3556,7 @@
     150
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3548,7 +3564,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 13438
+  "text_chars": 11879
  },
  {
   "control_number": "43537",
@@ -3573,19 +3589,19 @@
    "MGMT100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151",
-   "title": "151",
-   "h1": "151",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
+   "title": "150",
+   "h1": "150",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    150,
     151,
     152,
-    153,
-    154
+    153
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3593,7 +3609,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 13952
+  "text_chars": 13865
  },
  {
   "control_number": "43660",
@@ -3601,10 +3617,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
    "ACTG100",
    "ACTG121",
+   "ACTG200",
    "BUS100",
    "BUS101",
    "BUS103",
@@ -3620,19 +3637,19 @@
    "MGMT100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
-   "title": "150",
-   "h1": "150",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149",
+   "title": "149",
+   "h1": "149",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    149,
     150,
     151,
-    152,
-    153
+    152
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3640,7 +3657,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 13865
+  "text_chars": 12827
  },
  {
   "control_number": "43790",
@@ -3661,8 +3678,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176",
-   "title": "176",
-   "h1": "176",
+   "title": "CA  Multilingual Learner",
+   "h1": "CA  Multilingual Learner",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3670,7 +3687,7 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3678,7 +3695,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 7512
+  "text_chars": 6346
  },
  {
   "control_number": "43965",
@@ -3709,8 +3726,8 @@
   ],
   "source": {
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148",
-   "title": "148",
-   "h1": "148",
+   "title": "AS  Business Assistant",
+   "h1": "AS  Business Assistant",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3720,7 +3737,7 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3728,7 +3745,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 13030
+  "text_chars": 12757
  },
  {
   "control_number": "45177",
@@ -3751,19 +3768,19 @@
    "MGMT100"
   ],
   "source": {
-   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150",
-   "title": "150",
-   "h1": "150",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154",
+   "title": "CA  Digital Marketing",
+   "h1": "CA  Digital Marketing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    150,
-    151,
-    152,
-    153
+    154,
+    155,
+    156,
+    157
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3771,7 +3788,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 13865
+  "text_chars": 14322
  },
  {
   "control_number": "45326",

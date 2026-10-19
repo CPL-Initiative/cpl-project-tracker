@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Custom Dressmaking/Small Business Oriented",
  "award": "A.S. Degree",
- "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=184",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6940,
+  "input_tokens": 9854,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6940,
-    "output_tokens": 2104,
+    "input_tokens": 9854,
+    "output_tokens": 2138,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2104,
+  "output_tokens": 2138,
   "output_tokens_details": {
-   "thinking_tokens": 973
+   "thinking_tokens": 496
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06984,
- "ms": 19439,
- "seconds": 19.9,
+ "cost_usd": 0.08218,
+ "ms": 17138,
+ "seconds": 20.1,
  "parts": null,
  "error": null,
  "score": {
@@ -55,45 +55,76 @@
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 25,
    "codes": [
     "BUS150",
     "FASH100",
     "FASH111",
     "FASH113",
+    "FASH114",
     "FASH115",
     "FASH116",
     "FASH118",
+    "FASH122",
     "FASH123",
+    "FASH132",
+    "FASH133",
+    "FASH140",
+    "FASH146",
+    "FASH150",
     "FASH162",
-    "FASH168"
+    "FASH164",
+    "FASH167",
+    "FASH168",
+    "FASH169",
+    "FASH170",
+    "FASH171",
+    "FASH172",
+    "FASH228",
+    "FASH672"
    ],
    "flagged": [
     "BUS150",
     "FASH100",
     "FASH111",
     "FASH113",
+    "FASH114",
     "FASH115",
     "FASH116",
     "FASH118",
+    "FASH122",
     "FASH123",
+    "FASH132",
+    "FASH133",
+    "FASH140",
+    "FASH146",
+    "FASH150",
     "FASH162",
-    "FASH168"
+    "FASH164",
+    "FASH167",
+    "FASH168",
+    "FASH169",
+    "FASH170",
+    "FASH171",
+    "FASH172",
+    "FASH228",
+    "FASH672"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    31.0,
-    31.0
+    34.0,
+    34.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -110,7 +141,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -120,15 +151,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "CA  Custom Dressmaking/Small Business Oriented",
+   "section_heading": "AS Custom Dressmaking/Small Business Oriented",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -144,17 +175,19 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
-    "Communicate design concepts clearly and concisely (i.e. visual, oral, and written).",
+    "Communicate design concepts clearly and concisely (i.e. visual, oral, and written)",
     "Develop competitive industry standard skills in the respective fields.",
     "Understand the elements and principles of design through discipline-specific implementation."
    ],
-   "careers": []
+   "careers": [
+    "freelance designers"
+   ]
   },
   "blocks": [
    {
-    "name": "Complete Core Courses, 31 units",
+    "name": "Complete Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -241,17 +274,133 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Selective Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FASH 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 132",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 133",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 140",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 167",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 169",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 170",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 171",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 172",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 672",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 228",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The only section for this program in the text is headed 'CA  Custom Dressmaking/Small Business Oriented' (a Certificate of Achievement label), though its description says 'An AS degree and certificate program are offered' and its requirements are titled 'Major: Core and Selective Requirements'. It is unclear whether these requirements are for the A.S. degree, the certificate, or both; a reviewer should check the full catalog page.",
-   "The text is cut off at the page break after FASH 195: the core list (stated 31 units, but only 31 units are listed so far) may continue, and any selective courses, the total major units, the GE pattern and the degree total are not in the text. Total units are therefore left null.",
-   "The requirements printed at the top of page 187 (FASH 196, 197, 199, total 28 units) belong to the preceding program (apparently a costume program), not to this award, and were not recorded.",
-   "The 'Career Opportunities' heading is followed by text that reads as a course description (fashion show course), not careers; no career titles were recorded. The description mentions employment in an apparel design firm or starting one's own business, which were not taken as career titles.",
-   "The Program Learning Outcomes are printed once for the program and appear to be shared by the degree and certificate; recorded here."
+   "Read only the AS Custom Dressmaking/Small Business Oriented section (pages 184-185); the CA section of the same name and other fashion AS degrees on pages 185-187 were ignored.",
+   "Total Required Major Units: 34 recorded as total_units. The page says General Education and electives as needed to meet the minimum 60 units required for the Associate degree; this generic sentence was not recorded as degree_total, and no GE pattern or GE units are named.",
+   "Outcomes in this section are identical to those printed for the other fashion programs; the first outcome lacks a final period here as printed. Ligature characters (fi) in the PDF text were normalized to plain letters.",
+   "Career Opportunities text names only 'freelance designers'; the description mentions employment in an apparel design firm, which is not a job title."
   ]
  },
- "extracted_run": "39080930669"
+ "extracted_run": "39190086831"
 }

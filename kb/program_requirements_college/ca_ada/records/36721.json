@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Business Information Worker",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=153",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11174,
+  "input_tokens": 10999,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11174,
-    "output_tokens": 1402,
+    "input_tokens": 10999,
+    "output_tokens": 1565,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1402,
+  "output_tokens": 1565,
   "output_tokens_details": {
-   "thinking_tokens": 419
+   "thinking_tokens": 593
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07274,
- "ms": 12577,
- "seconds": 12.9,
+ "cost_usd": 0.0753,
+ "ms": 13814,
+ "seconds": 14.2,
  "parts": null,
  "error": null,
  "score": {
@@ -106,7 +106,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "CA Business Information Worker",
+   "section_heading": "CA  Business Information Worker",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -207,21 +207,22 @@
     "minimum": 1.5,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 1.5,
+     "max": 1.5
     },
     "courses": [
      {
       "code": "CBOT 472",
       "units": 1.5,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "CBOT 474",
-        "units": 1.5,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CBOT 474",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": true
      }
     ]
@@ -230,11 +231,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading for the Certificate of Achievement is on the preceding page, which is not in the text; 'CA Business Information Worker' is inferred from the catalog's heading style (e.g., 'CA Business Management', 'CS Business Information Worker').",
-   "The description paragraph beginning 'Upon successful completion of the BIW Certificate of Achievement, students should be able to:' lists skills in prose; only the numbered Program Learning Outcomes list was recorded as outcomes.",
-   "A separate Certificate of Specialization (CS Business Information Worker) appears later on page 156 and was not used.",
-   "CBOT 472 and CBOT 474 are printed as an OR pair under the 1.5-unit selective; both are absent from the closed list."
+   "The selective block prints CBOT 472 OR CBOT 474; recorded as a choose-1.5-units block with both courses. Neither is in the closed list.",
+   "The section text spans pages 152-153; the Business Information Worker heading begins at the bottom of page 152.",
+   "A paragraph under Career Opportunities states what students 'should be able to' do upon completion (produce basic business correspondence, etc.); it is not under the Program Learning Outcomes heading and was not recorded as outcomes.",
+   "Career titles and outcomes are copied with the PDF's ligature characters (ﬃ, ﬁ) as printed."
   ]
  },
- "extracted_run": "39080930669"
+ "extracted_run": "39190086831"
 }

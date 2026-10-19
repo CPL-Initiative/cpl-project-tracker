@@ -5,16 +5,16 @@
  "found": 73,
  "extracted": 73,
  "errors": 0,
- "passed_machine_checks": 47,
+ "passed_machine_checks": 56,
  "failed": {
-  "coverage": 11,
+  "coverage": 3,
   "invented": 0,
-  "arithmetic": 26,
+  "arithmetic": 17,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.34,
- "cost_per_program": 0.0732,
+ "cost_usd": 5.5,
+ "cost_per_program": 0.0753,
  "not_found": [
   {
    "control_number": "32861",
@@ -35,5 +35,5 @@
    }
   }
  ],
- "run": "39080930669"
+ "run": "39190086831"
 }
