@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-19T17:06:58.640761+00:00",
+  "scraped_at": "2026-10-19T18:48:12.775625+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29159,
+    "jst": 29160,
     "star_colleges": 62
   },
   "computed_star_colleges": 62,
@@ -432,7 +432,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 182,
+      "jst": 183,
       "star": true
     },
     "Columbia College": {

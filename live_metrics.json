@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-19T17:06:58.307Z",
+  "scraped_at": "2026-10-19T18:48:12.507Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -229,8 +229,8 @@
         {
           "college": "Bakersfield College",
           "students": 642,
-          "units": 9037,
-          "avgUnits": 14.076323987538942,
+          "units": 9034,
+          "avgUnits": 14.071651090342678,
           "transcriptionRate": 13.3,
           "avgTranscribed": 1.8746105919003115,
           "criteriaMetCount": 3,
@@ -548,13 +548,13 @@
         },
         {
           "college": "Cuesta College",
-          "students": 286,
+          "students": 287,
           "units": 69,
-          "avgUnits": 0.24125874125874125,
+          "avgUnits": 0.24041811846689895,
           "transcriptionRate": 84.8,
-          "avgTranscribed": 0.20454545454545456,
+          "avgTranscribed": 0.2038327526132404,
           "criteriaMetCount": 1,
-          "militaryStudents": 182,
+          "militaryStudents": 183,
           "nonMilitaryStudents": 105,
           "apprenticeStudents": 1,
           "savings": 89922.5,
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,428",
+      "value": "57,429",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,159"
+          "value": "29,160"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57428,
-    "Units": 276233.15,
+    "Students": 57429,
+    "Units": 276230.15,
     "TranscribedUnits": 83842.34999999999,
     "Savings": 390900237.75,
     "YearImpact": 1588820033.3999999,
-    "MilitaryStudents": 29159,
+    "MilitaryStudents": 29160,
     "NonMilitaryStudents": 28364,
     "AprenticeStudents": 951,
-    "AverageUnits": 4.810077836595389,
-    "TranscribedAverage": 1.459955944835272
+    "AverageUnits": 4.8099418412300405,
+    "TranscribedAverage": 1.4599305229065453
   }
 }
