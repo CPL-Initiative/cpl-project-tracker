@@ -1,11 +1,11 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-18T17:37:27Z",
+ "_generated_at": "2026-10-19T15:02:22Z",
  "procedures_hash": "575c290d755b",
- "queue": 1498,
- "saved_not_folded": 176,
- "waiting": 1322,
- "proposed": 1287,
+ "queue": 396,
+ "saved_not_folded": 0,
+ "waiting": 396,
+ "proposed": 361,
  "needs_you_count": 414,
  "not_yet_asked": 0,
  "fold_held": 18,
@@ -21,30 +21,9 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 579,
+   "settled": 0,
    "held": 85,
-   "sample": [
-    [
-     "AP 3-D Art and Design",
-     "AP 3-D Art and Design"
-    ],
-    [
-     "AP Calculus  BC/AB Subscore",
-     "AP Calculus BC — AB Subscore"
-    ],
-    [
-     "AP Chinese Language & Culture",
-     "AP Chinese Language and Culture"
-    ],
-    [
-     "AP Comparative Government & Politics",
-     "AP Comparative Government and Politics"
-    ],
-    [
-     "AP Drawing",
-     "AP Drawing"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "statewide-catalog",
@@ -57,22 +36,9 @@
     "words": "use the MAP statewide CRs to match some of the exhibits",
     "skill": "Rule 5e"
    },
-   "settled": 4,
+   "settled": 0,
    "held": 1,
-   "sample": [
-    [
-     "Cisco Certified Network Associate",
-     "Cisco Certified Network Associate (CCNA)"
-    ],
-    [
-     "Flux-Cored Arc Welding (FCAW) Certification",
-     "Flux Cored Arc Welding (FCAW)"
-    ],
-    [
-     "Shielded Metal Arc Welding (SMAW) Certification",
-     "Shielded Metal Arc Welding (SMAW)"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "nccer-verbatim",
@@ -85,30 +51,9 @@
     "words": "his NCCER Welding Level 1 family (house precedent)",
     "skill": "Rule 5e"
    },
-   "settled": 5,
+   "settled": 0,
    "held": 0,
-   "sample": [
-    [
-     "NCCER HVACR Level 1",
-     "NCCER HVACR Level 1"
-    ],
-    [
-     "NCCER HVACR Level 2",
-     "NCCER HVACR Level 2"
-    ],
-    [
-     "NCCER HVACR Level 3",
-     "NCCER HVACR Level 3"
-    ],
-    [
-     "NCCER HVACR Level 4",
-     "NCCER HVACR Level 4"
-    ],
-    [
-     "NCCER Welding Level 2 Certification",
-     "NCCER Welding Level 2 Certification"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "cslb-classification",
@@ -121,18 +66,9 @@
     "words": "kept verbatim per Rule 8b, the issuer-assigned code",
     "skill": "Rules 5e, 8b"
    },
-   "settled": 3,
+   "settled": 0,
    "held": 0,
-   "sample": [
-    [
-     "C-20 Warm-Air Heating, Ventilating and Air-Conditioning Contractor",
-     "C-20 Warm-Air Heating, Ventilating and Air-Conditioning Contractor"
-    ],
-    [
-     "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
-     "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "apprenticeship-trades",
@@ -145,14 +81,9 @@
     "words": "the Journeyman Certificate- Apprenticeship Carpentry family and the DIR DAS carpenter page (occupation 2180)",
     "skill": "Rule 5e"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 1,
-   "sample": [
-    [
-     "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, CA",
-     "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "judgment-singles",
@@ -180,30 +111,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 315,
+   "settled": 0,
    "held": 154,
-   "sample": [
-    [
-     "ACTG-51 APPLIED ACCOUNTING",
-     "Applied Accounting"
-    ],
-    [
-     "AGBUS 010: Introduction to Agriculture Business",
-     "Introduction to Agriculture Business"
-    ],
-    [
-     "AGBUS 024: Agricultural Accounting",
-     "Agricultural Accounting"
-    ],
-    [
-     "AGBUS 040: Introductory Agricultural Economics",
-     "Agriculture Economics"
-    ],
-    [
-     "AGEH-01 Elements of Landscape Horticulture",
-     "Elements of Landscape Horticulture"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "issuer-issues-the-card",
@@ -217,7 +127,7 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 24,
+   "settled": 0,
    "held": 41,
    "sample": []
   },
@@ -232,7 +142,7 @@
     "words": "strip the school, make it the agency",
     "skill": "Rule 5f"
    },
-   "settled": 2,
+   "settled": 0,
    "held": 120,
    "sample": []
   },
@@ -247,7 +157,7 @@
     "words": "level words move to the end of the title",
     "skill": "Rule 5g"
    },
-   "settled": 17,
+   "settled": 0,
    "held": 37,
    "sample": []
   },
@@ -262,7 +172,7 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 58,
+   "settled": 0,
    "held": 53,
    "sample": []
   },
@@ -277,7 +187,7 @@
     "words": "it is better to over merge and give faculty the chance to pull them out rather than the other way around. It's easier to respond to a decision than to make one.",
     "skill": null
    },
-   "settled": 27,
+   "settled": 0,
    "held": 82,
    "sample": []
   },
@@ -291,30 +201,9 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 737,
+   "settled": 0,
    "held": 396,
-   "sample": [
-    [
-     "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
-     "AP 2-D Art and Design"
-    ],
-    [
-     "AP 3-D Art and Design (Score of 3 or higher)",
-     "AP 3-D Art and Design"
-    ],
-    [
-     "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
-     "AP 3-D Art and Design"
-    ],
-    [
-     "AP AP Computer Science Principles (Score of 4 or 5)",
-     "AP Computer Science Principles"
-    ],
-    [
-     "AP AP Studio Art- 2D Design",
-     "AP 2-D Art and Design"
-    ]
-   ]
+   "sample": []
   }
  ],
  "classifier_run": null,
@@ -5479,7 +5368,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5494,7 +5383,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5509,7 +5398,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5524,7 +5413,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5539,7 +5428,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5554,7 +5443,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5569,7 +5458,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5584,7 +5473,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5599,7 +5488,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5614,7 +5503,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5629,7 +5518,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5644,7 +5533,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5655,9 +5544,11 @@
     "issuer": "",
     "procedure": "the assignment map saved"
    },
-   "standing": [],
+   "standing": [
+    "McDonald's Business Leadership Practices"
+   ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5668,9 +5559,11 @@
     "issuer": "",
     "procedure": "the assignment map saved"
    },
-   "standing": [],
+   "standing": [
+    "McDonald's Mid-Management Foundations Curriculum"
+   ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5685,7 +5578,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5700,7 +5593,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5715,7 +5608,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   },
   {
@@ -5730,7 +5623,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-18",
+   "fold_report": "2026-10-19",
    "colleges": []
   }
  ]
