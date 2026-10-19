@@ -481,7 +481,7 @@
       ".sit-linkbtn { display:inline-flex; align-items:center; min-height:28px; min-width:24px; padding:0 4px; margin:0 -4px;"
         + " font:inherit; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px;"
         + " background:none; border:0; border-radius:4px; cursor:pointer; }",
-      ".sit-linkbtn:hover { background: var(--sit-hover); }",
+      ".sit-linkbtn:hover { text-decoration-thickness:2px; }",
 
       // ── Item rows ──
       ".sit-list { display:grid; grid-template-columns: minmax(0, 1fr); gap:8px; }",
@@ -545,26 +545,21 @@
       ".sit-act-status .lbl { margin:0; }",
       ".sit-try { gap:6px; }",
       ".sit-try-l { margin-right:2px; font-size:.88rem; color: var(--text-muted); }",
-      ".sit-btn { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:5px 13px; font:inherit;"
-        + " font-size:.88rem; font-weight:600; line-height:1.2; text-align:center; color: var(--cobalt); background: var(--surface-opaque);"
-        + " border:1px solid var(--sit-edge); border-radius:8px; cursor:pointer; }",
-      ".sit-btn:hover { background: var(--sit-hover); border-color: var(--cobalt); }",
-      // The action that actually changes Sierra should not look like the ones
-      // that only record where the team got to.
-      ".sit-btn-primary { color: var(--on-accent); background: var(--cobalt); border-color: var(--cobalt); }",
-      ".sit-btn-primary:hover { color: var(--on-accent); background: var(--btn-primary-hover); border-color: var(--btn-primary-hover); }",
-      ".sit-btn[disabled] { opacity:1; color: var(--text-muted); background: var(--surface-subtle); border-color: var(--sit-edge);"
-        + " border-style:dashed; cursor:not-allowed; }",
+      // Controls are underlined words (Sam, 2026-10-09; reference-ui-design-system, S422 UI pass):
+      // no border and no fill, cobalt, underlined at rest, 24px both ways. The lead action leads by
+      // its place in the row, never by a fill.
+      ".sit-btn { display:inline-flex; align-items:center; min-height:24px; min-width:24px; padding:2px 0; font:inherit;"
+        + " font-size:.88rem; font-weight:600; line-height:1.2; text-align:left; color: var(--cobalt); background:none;"
+        + " border:0; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".sit-btn:hover { text-decoration-thickness:2px; }",
+      ".sit-btn[disabled] { color: var(--text-muted); text-decoration:none; cursor:not-allowed; }",
       // The gap pane's already-set state (disabled while set) reads as chosen, not as unavailable.
-      ".sit-btn.on[disabled] { color: var(--seal-blue-text); font-weight:700; background: var(--sit-pick); border-color: var(--cobalt);"
-        + " border-style:solid; cursor:default; }",
-      ".sit-seg { display:inline-flex; gap:2px; padding:2px; background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:10px; }",
-      ".sit-seg .sit-btn { min-height:32px; padding:4px 12px; color: var(--text-body); background:transparent; border:0; border-radius:8px; }",
-      ".sit-seg .sit-btn:hover { background: var(--sit-hover); }",
+      ".sit-btn.on[disabled] { color: var(--seal-blue-text); font-weight:700; text-decoration:none; cursor:default; }",
+      // A toggle set is a named group of words; the pressed one carries weight and aria-pressed.
+      ".sit-seg { display:inline-flex; flex-wrap:wrap; align-items:center; gap:4px 18px; }",
+      ".sit-seg .sit-btn { color: var(--cobalt); font-weight:500; }",
       ".sit-seg .sit-btn[disabled] { cursor:progress; }",
-      // The old selected state measured 2.99:1 (white on navy at half opacity).
-      ".sit-seg .sit-btn[aria-pressed=\"true\"] { color: var(--seal-blue-text); font-weight:700; background: var(--sit-pick);"
-        + " box-shadow: inset 0 0 0 1.5px var(--cobalt); }",
+      ".sit-seg .sit-btn[aria-pressed=\"true\"] { color: var(--seal-blue-text); font-weight:700; text-decoration:none; }",
 
       // ── Recurring words in the questions she struggled with ──
       ".sit-themes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }",
@@ -644,10 +639,9 @@
         + " .sit-row-head[data-open] { display:flex; flex-wrap:wrap; row-gap:6px; }"
         + " .sit-row-head[data-open] > .sit-q { flex:1 1 100%; order:3; }"
         + " .sit-row-head[data-open] > .sit-meta { flex:1 1 100%; order:4; }"
-        + " .sit-actions, .sit-act-status, .sit-act-do { flex-direction:column; align-items:stretch; }"
-        + " .sit-seg { display:flex; }"
-        + " .sit-seg .sit-btn { flex:1 1 0; min-width:0; padding:4px 6px; white-space:normal; }"
-        + " .sit-try { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }"
+        + " .sit-actions, .sit-act-status, .sit-act-do { flex-direction:column; align-items:flex-start; }"
+        + " .sit-seg .sit-btn { white-space:normal; }"
+        + " .sit-try { display:flex; flex-wrap:wrap; gap:4px 18px; }"
         + " .sit-try-l { grid-column: 1 / -1; }"
         + " #sit-guid-list .sit-q { flex:1 1 100%; }"
         + " #sit-guid-list .sit-applies { margin-left:0; }"
@@ -1988,7 +1982,7 @@
       return h + '<div class="sit-empty"><b>These need a personal sign-in.</b><br>'
         + "The team phrase opens the instructions above, but not this pane — these are the rules that "
         + "<i>govern</i> the instructions, so they are deliberately held to a narrower gate. Sign in with "
-        + "a magic link from <b>ℹ About</b> in the header using an address on the reviewer list, then "
+        + "a magic link from <b>About</b> in the header using an address on the reviewer list, then "
         + "re-open this tab. This is a closed door, not an empty list — Sierra’s rules are all present "
         + "and working.</div>";
     }
@@ -1998,7 +1992,7 @@
         + "Sierra keeps running them. Re-open the tab to try again.</div>";
     }
     if (state.rulesState !== "ok") {
-      return h + '<div class="sit-empty">Sign in from ℹ About in the header to see Sierra’s '
+      return h + '<div class="sit-empty">Sign in from About in the header to see Sierra’s '
         + "built-in rules.</div>";
     }
 
@@ -2081,7 +2075,7 @@
 
     if (!signedIn()) {
       html += '<div class="sit-empty">This surface reads the gated Sierra logs. '
-        + 'Sign in from <b>ℹ About</b> in the header (magic-link reviewer or the shared team phrase), '
+        + 'Sign in from <b>About</b> in the header (magic-link reviewer or the shared team phrase), '
         + "then come back — the queue loads automatically.</div></div>";
       root.innerHTML = html;
       return;
@@ -2089,13 +2083,13 @@
     if (state.error) {
       html += '<div class="sit-empty">Could not load the Sierra logs (' + esc(state.error)
         + "). If you just signed in, re-open this tab; otherwise your session may have expired — "
-        + 'renew it from <b>ℹ About</b> in the header.</div></div>';
+        + 'renew it from <b>About</b> in the header.</div></div>';
       root.innerHTML = html;
       return;
     }
     if (state.gated) {
       html += '<div class="sit-empty">The server returned no rows — your sign-in doesn’t appear to '
-        + "unlock the gated logs. Renew your sign-in from <b>ℹ About</b> in the header and try again.</div></div>";
+        + "unlock the gated logs. Renew your sign-in from <b>About</b> in the header and try again.</div></div>";
       root.innerHTML = html;
       return;
     }
@@ -2278,7 +2272,7 @@
     var guidShow = { html: "", said: "" };
     if (state.guidance === null) {
       html += '<div class="sit-empty">Could not load the guidance rules — renew your sign-in from '
-        + "<b>ℹ About</b> in the header and re-open this tab.</div>";
+        + "<b>About</b> in the header and re-open this tab.</div>";
       // Still a list, so the "Instructions in use" card controls something that exists.
       html += '<div class="sit-list" id="sit-guid-list"></div>';
     } else {

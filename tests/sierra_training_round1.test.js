@@ -505,9 +505,10 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
       gapTest.length === 2 && gapTest[0].getAttribute("data-host") === "sierra", gapTest.length + " buttons");
     const css = (w.document.getElementById("sierra-training-css") || {}).textContent || "";
     const phone = css.slice(Math.max(0, css.indexOf("@media (max-width: 560px)")));
-    check("(5d) on a phone the two buttons share the row (a two-column grid), and the one-button rule is gone",
+    // Since the S422 UI pass the two are underlined words in one wrapping row (Controls rule, 2026-10-09).
+    check("(5d) on a phone the two words share the row, and the one-button rule is gone",
       css.indexOf("@media (max-width: 560px)") >= 0
-      && phone.indexOf(".sit-try { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }") >= 0
+      && phone.indexOf(".sit-try { display:flex; flex-wrap:wrap; gap:4px 18px; }") >= 0
       && phone.indexOf(".sit-try-one") === -1);
 
     // Sierra: she opens over this tab and asks, through the real chat module.
