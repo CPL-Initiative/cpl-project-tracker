@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 669,
+  "file_datasets": 671,
   "external_services": 181,
   "consumers": 448,
   "workflows": 54,
@@ -7933,6 +7933,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_jev_harvest.py": {
+   "consumers": [
+    {
+     "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_match_cos_authority.py": {
    "consumers": [
     {
@@ -7989,6 +8002,13 @@
    "consumers": [
     {
      "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:typesafe-smoke.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -18145,6 +18165,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/jev_harvest_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/js_suite_gate_test.py": {
    "consumers": [
     {
@@ -24176,6 +24209,7 @@
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/program_source_addenda_read_test.py",
+    "tests/jev_harvest_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
@@ -24622,7 +24656,9 @@
     "kb/_typesafe_smoke.py",
     "kb/_jev_adjudicate.py",
     "kb/_jev_battery.py",
-    "kb/_typesafe_cr_trial.py"
+    "kb/_typesafe_cr_trial.py",
+    "kb/_program_requirements_college.py",
+    "kb/_jev_harvest.py"
    ],
    "adds": [],
    "push": null,

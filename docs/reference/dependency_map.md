@@ -472,11 +472,12 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_identity_daily_check.py` | workflows: `map-users-sync.yml` | — |
 | `kb/_jev_adjudicate.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_jev_battery.py` | workflows: `typesafe-smoke.yml` | — |
+| `kb/_jev_harvest.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_match_cos_authority.py` | workflows: `cos-authority-sync.yml` | — |
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
-| `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml` | — |
+| `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml`, `typesafe-smoke.yml` | — |
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
@@ -860,6 +861,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/install_prompt_guards_test.py` | workflows: `js-tests.yml` | — |
 | `tests/jev_adjudicate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/jev_battery_test.py` | workflows: `js-tests.yml` | — |
+| `tests/jev_harvest_test.py` | workflows: `js-tests.yml` | — |
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
@@ -1137,5 +1139,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 669 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 671 file
 datasets · 181 external services · 448 consumers · 54 workflows · 39 tabs.

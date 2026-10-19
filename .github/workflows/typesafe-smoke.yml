@@ -55,6 +55,14 @@ on:
         description: 'Variable battery over the below-gate band (26 calls; scores itself against Sam 51 verdicts)'
         type: boolean
         default: false
+      harvest:
+        description: 'Program Requirements harvest — a Jev calibration sitting over one college''s records failing a machine check (kb/_jev_harvest.py; the college as program_source_registry names it). Captures the college first, free; suggests, writes nothing.'
+        type: string
+        default: ''
+      harvest_limit:
+        description: 'Cap the harvest sitting to the first N failing records (blank = all)'
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -130,3 +138,36 @@ jobs:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: |
           python3 kb/_typesafe_cr_trial.py ${{ inputs.cr_limit && format('--limit {0}', inputs.cr_limit) || '' }}
+
+      # The harvest's sitting (kb/_jev_harvest.py; Sam, 2026-10-19: "ensuring we use Jev
+      # is helpful"). The college is captured first (no model call) so Jev sees the page
+      # text the reader handed the model; then one call per record failing a machine
+      # check asks the cause, the owner and three page facts. NO GATE is measured for the
+      # harvest, so every answer is uncalibrated and nothing is proposed: the artifact is
+      # what a person's verdicts calibrate against. Nothing is written or committed.
+      - name: Install Playwright + Chromium, pypdf, pdfminer (the capture's readers)
+        if: inputs.harvest != ''
+        run: |
+          pip install --quiet playwright pypdf pdfminer.six
+          python -m playwright install --with-deps chromium
+      - name: Pin a hand-filed copy's hash (a no-op without a record)
+        if: inputs.harvest != ''
+        run: python3 kb/_program_requirements_college.py pin --college "${{ inputs.harvest }}"
+      - name: Capture the college (free; the page text Jev reads)
+        if: inputs.harvest != ''
+        env:
+          CENSUS_DELAY_MS: '4000'
+        run: python3 kb/_program_requirements_college.py capture --college "${{ inputs.harvest }}" --out out --limit 0
+      - name: Jev over the failing records (uncalibrated; suggests, writes nothing)
+        if: inputs.harvest != ''
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_jev_harvest.py --college "${{ inputs.harvest }}" --capture out \
+            ${{ inputs.harvest_limit && format('--limit {0}', inputs.harvest_limit) || '' }}
+      - name: Upload the harvest sitting
+        if: inputs.harvest != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: jev-harvest
+          path: kb/jev_out/
