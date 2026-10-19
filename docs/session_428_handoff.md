@@ -73,3 +73,18 @@ If the routine started you, follow `docs/reference/scheduled_sessions.md` first.
 
 S427 drops at sign-off: the #2264 subscription (re-subscribe when you take it), the Sheet 101 artifact watch (read its
 store instead), no check-ins. Dropped already: #2262, #2263, CPLBrain#396 and #397.
+
+## Emergency addendum (22:21Z, the meter at 94%)
+
+This checkpoint ended as an EMERGENCY one after the notification backlog spent the runway. Everything above stands;
+three things changed after it was written:
+
+- **#2264's `lints` check failed on head `f9661a3f`** (run 39333500920). CI is running again on the checkpoint head
+  `a13d5448`, which carries the rebuilt docs index; read that head's `lints` job first, fix what it names on this
+  branch, then merge on a green `test`. The migrate receipt commit `9f965e7a` is already on the branch.
+- **CPLBrain#398** (the S427 session note) is open and ready; merge it on its green coverage check.
+- **A side session** (`session_014G3Fy4j1WRr1HoMP5fAoQV`, branch `claude/clever-carson-y7mr54`, Implementation
+  Funding) holds the funding files alone and will number its handoff 429; keep away from `cpl_funding.js` and the
+  funding lane, and read `docs/session_429_handoff.md` if it exists before claiming 429.
+- Of Rule 9's artifacts, not refreshed this run: the Pipeline tab, the UI pass, `kb/status/program-requirements.json`
+  and the Exhibit, Course and CR run logs, `kb/README.md`, `README.md`.
