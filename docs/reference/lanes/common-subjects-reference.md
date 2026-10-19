@@ -131,11 +131,14 @@ four known issues with owners, the procedures in force, and deep links into the 
    duplicates ignored; `--undo` is one delete by the cohort and clears the seed's stamps. The offline plan on
    2026-10-19 names the thirteen: Anthropology, Astronomy, Communication Studies, Economics, English, History and
    Mathematics on CCN; Chemistry, Earth Science, Engineering, Geography, Philosophy and Physics/Astronomy on C-ID.
-   The first run is the dispatch after the merge (`save=preview`, then `on`); the cron carries it from there.
+   ✅ **The first run landed** (2026-10-19: preview run 39331625751 listed the thirteen, none held; the `on` run
+   39332576973 inserted all thirteen at 22:09:21Z, receipt commit `2ef70839` under `kb/csr_out/confirm/`; read back
+   live: 13 rows under `csr-confirm-authority@bot`). The cron carries it from here; the daily sync folds the rows
+   into the seed, so the Commons row reads 122 by a person and 13 by the procedure after the next daily run.
    `tests/csr_confirm_authority_test.py` (26) guards the selection, the receipt-before-write and the undo.
 3. ✅ **agab** (S427, the re-key window of 2026-10-19): Agricultural Business and Related Services takes AGAB (the
    pick under `csr-s427@bot` with the ruling in its note, `kb/receipts/csr_agab_pick_2026-10-19_s427.sql` through
-   `supabase-migrate.yml`, the seed edited to match); AUTB M1006 Supervision and Management in Agriculture is
+   `supabase-migrate.yml`, run 39333423480, both rows live 22:15:43Z under `csr-s427@bot`; the seed edited to match); AUTB M1006 Supervision and Management in Agriculture is
    AGAB M1006 (kept number) with the discipline Sam's own 2026-07-13 curation row names, under
    `kb/_agab_one_remint.py` (ten gates), receipt `kb/agab_remint_out/2026-10-19/alias_map.json` registered in
    `kb/alias_chain.py`, the post-apply chain run (promotions, crnc mirrors, the re-seed, the authority seed, the

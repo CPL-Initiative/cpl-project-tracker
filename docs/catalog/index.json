@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 556,
+   "count": 557,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3441,6 +3441,22 @@
      "title": "A rule you wrote down is not a rule you applied",
      "type": "methodology",
      "updated": "2026-09-04"
+    },
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-ruling-names-a-record-the-store-may-count-another.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "csr",
+      "re-mint",
+      "rule-8",
+      "decision-sheets"
+     ],
+     "title": "A ruling names a record; the store may count another",
+     "type": "methodology",
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-08-11",
@@ -15791,8 +15807,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 398,
+   "count": 399,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 428,
+     "path": "docs/session_428_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "csr",
+      "common-subjects-reference",
+      "decision-sheet",
+      "re-mint"
+     ],
+     "title": "Session 428 handoff: Sheet 99's rulings 1, 2, 3 and 5 applied, the AGRI sitting built, Sheet 101 open; land #2264 and run the live steps",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22659,5 +22693,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1190
+ "total": 1192
 }

@@ -19,11 +19,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T22:02:21Z",
+  "written_at": "2026-10-19T22:14:31Z",
   "project": "subjects",
   "next_step": {
     "title": "The Jev sitting over the AGRI residual, then the nine MQ renames; the live re-key and the pick after the merge",
-    "text": "Sam's six Sheet 99 rulings run in his order. Settled, on, agab and hide are built: the nightly confirm takes the thirteen picks on the authority's own code from its first run; Agricultural Business and Related Services is AGAB and AUTB M1006 is AGAB M1006, so the reference has no collision. After the merge: dispatch supabase-rekey.yml with the AGAB receipt and read the pick back. Then the Jev sitting that proposes a C-ID family for each of the 404 AGRI identities for Sam to confirm, then the eight Title 5-numbered names and the cut-short one through the alias file and one re-key window. One card waits on Sam: AUTB M1071 Import Body Customizing carries his 2026-07-13 Agricultural Business row while its evidence reads auto body."
+    "text": "Sam's six Sheet 99 rulings run in his order. Settled, on, agab and hide are built: the nightly confirm's first run confirmed the thirteen picks on the authority's own code; Agricultural Business and Related Services is AGAB and AUTB M1006 is AGAB M1006, so the reference has no collision. After the merge: dispatch supabase-rekey.yml with the AGAB receipt and read the pick back. Then the Jev sitting that proposes a C-ID family for each of the 404 AGRI identities for Sam to confirm, then the eight Title 5-numbered names and the cut-short one through the alias file and one re-key window. One card waits on Sam: AUTB M1071 Import Body Customizing carries his 2026-07-13 Agricultural Business row while its evidence reads auto body."
   },
   "changes": [
     {
@@ -53,6 +53,10 @@
     {
       "at": "2026-10-19T21:55:00Z",
       "text": "Sheet 99 ruling 3 applied (S427): Agricultural Business and Related Services takes AGAB; AUTB M1006 Supervision and Management in Agriculture is AGAB M1006 under kb/_agab_one_remint.py (receipt kb/agab_remint_out/2026-10-19/), the post-apply chain run, SkyView re-keyed; the scan reads no collision. The tab's SUBJ check reads a family code one discipline took while the umbrellas declare it as shared by design."
+    },
+    {
+      "at": "2026-10-19T22:09:21Z",
+      "text": "The nightly confirm's first run (csr-confirm.yml run 39332576973, save on) confirmed the thirteen picks on the authority's own code under csr-confirm-authority@bot: Anthropology, Astronomy, Communication Studies, Economics, English, History and Mathematics on CCN; Chemistry, Earth Science, Engineering, Geography, Philosophy and Physics/Astronomy on C-ID. The receipt is under kb/csr_out/confirm/; the daily sync folds the rows into the seed."
     }
   ]
 }
