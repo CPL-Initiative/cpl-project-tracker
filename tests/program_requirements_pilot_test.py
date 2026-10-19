@@ -1685,6 +1685,31 @@ both = S.score(anth, ANTH_LIST + [{"code": "ANTH 2L", "units": 1}], "x", "Certif
 check(both["coverage"]["missing"] == ["ANTHR2L"],
       "a code the file lists as printed is never renamed: %s" % json.dumps(both["coverage"]))
 check(RC.prefix_aliases("Cerritos College") is None, "a college with no aliases gets none")
+# Merced (S423): the catalog prints MECH22A Diesel Engines 4 where the state's file lists AGMA 11 Diesel Engines 4.
+MER_ALIASES = RC.prefix_aliases("Merced College")
+check(MER_ALIASES.get("MECH22A") == "AGMA 11" and RC.course_renumbers("Merced College").get("AGMA11") == "MECH22A",
+      "Merced's renumbered courses reach the scorer's aliases and the capture's map")
+mech = {"program": {"total_units": {"min": 6, "max": 6}, "measure": "units"},
+        "blocks": [{"name": "Core", "rule": "all", "courses": [{"code": "MECH22A", "units": 4},
+                                                               {"code": "AGMA-20", "units": 2}]}]}
+MECH_LIST = [{"code": "AGMA 11", "units": 4}, {"code": "AGMA 20", "units": 2}]
+MECH_TEXT = "MECH22A Diesel Engines (Total Credits 4.0 - 4.0) AGMA-20 Introduction (Total Credits 2.0 - 2.0) Core (Total Credits 6.0 - 6.0)"
+plain = S.score(mech, MECH_LIST, MECH_TEXT, "Certificate of Achievement")
+check(plain["coverage"]["missing"] == ["AGMA11"] and plain["invented"]["codes"] == ["MECH22A"],
+      "without the map, MECH22A reads as one course missing and another invented: %s" % json.dumps(plain["coverage"]))
+mapped = S.score(mech, MECH_LIST, MECH_TEXT, "Certificate of Achievement", MER_ALIASES)
+check(not mapped["coverage"]["missing"] and not mapped["invented"]["codes"],
+      "Merced's map reads MECH22A as the listed AGMA 11: %s" % json.dumps(mapped["coverage"]))
+caught_up = S.score(mech, MECH_LIST + [{"code": "MECH22A", "units": 4}], MECH_TEXT, "Certificate of Achievement", MER_ALIASES)
+check(caught_up["coverage"]["missing"] == ["AGMA11"],
+      "once the file lists MECH22A, the pair retires: %s" % json.dumps(caught_up["coverage"]))
+MECH_CLOSED = [{"code": "AGMA 11"}, {"code": "AGMA 2"}, {"code": "AGMA 20"}]
+check(P.coverage(P.find_codes(MECH_TEXT, MECH_CLOSED), MECH_CLOSED) < 0.5, "unmapped, the page names one of three")
+for c in MECH_CLOSED:
+    c["printed"] = RC.course_renumbers("Merced College").get(P.norm_code(c["code"]))
+found = P.find_codes(MECH_TEXT, MECH_CLOSED)
+check(sorted(found) == ["AGMA11", "AGMA20"],
+      "the capture finds a renumbered course by its printed code, and AGMA 2 never in AGMA-20: %s" % sorted(found))
 # San Joaquin Delta (S422): a noncredit page prints "Total Contact Hours: 288" and "Units: 0" beside each course.
 SJD_NC = ("Core Requirements \u00b7 ESL 9088 Health Careers Reading Units: 0 \u00b7 ESL 9059 Writing Units: 0 \u00b7 "
           "Restrictive Electives \u00b7 Complete 1 course from: \u00b7 ESL 9086 Advanced Reading Units: 0 \u00b7 Total Contact Hours: 288")

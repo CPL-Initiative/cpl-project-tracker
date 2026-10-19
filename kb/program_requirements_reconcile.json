@@ -6,7 +6,8 @@
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed)",
-  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)"
+  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
+  "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up"
  },
  "colleges": {
   "Cabrillo College": {
@@ -204,6 +205,98 @@
      "source": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=79",
      "source_words": "California General Education Transfer Curriculum (Cal-GETC) - 34 units minimum",
      "awards": "transfer"
+    }
+   ]
+  },
+  "Merced College": {
+   "why": "S423 SkyLaurel, 2026-10-19. Merced's capture (run 39115547722) left five agriculture-mechanics programs unread at coverage 0.08-0.18: Diesel Equipment Technology A.S. 03485 and certificate 19495, Mechanized Agriculture Technology A.S. 07710 and certificate 19496, Compact Power Equipment 16653. Their Requisites pages (college-page-read 39229076688, catalog.mccd.edu 2026-27) print MECH12, MECH22A ... MECH51 and AGMA-20 where the state's file (coci_program_courses, read 2026-10-19) lists AGMA 2, AGMA 11 ... AGMA 21 and AGMA 20: the same title and units for each course, the numbers not derivable from each other. Fable, asked once, advised an explicit cited map over a general title rule (a title match is weaker evidence than a prefix swap) and holding out the noncredit Agriculture Systems certificate 44160, whose page prints AGT-701 to AGT-705 at 0 credits where the file lists AGAT 51 to AGAT 55 at 2-3 units: the units disagree, so it stays unread and the disagreement is the college's to settle in COCI.",
+   "steps": [],
+   "course_renumbers": {
+    "MECH12": "AGMA 2",
+    "MECH22A": "AGMA 11",
+    "MECH30": "AGMA 12",
+    "MECH33": "AGMA 13",
+    "MECH26": "AGMA 14",
+    "MECH21": "AGMA 15",
+    "MECH24": "AGMA 16",
+    "MECH32": "AGMA 17",
+    "MECH27": "AGMA 18",
+    "MECH41": "AGMA 19",
+    "MECH51": "AGMA 21",
+    "MECH35": "AGMA 7"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "MECH12",
+     "file": "AGMA 2",
+     "title": "Agriculture Equipment",
+     "units": 3
+    },
+    {
+     "printed": "MECH22A",
+     "file": "AGMA 11",
+     "title": "Diesel Engines",
+     "units": 4
+    },
+    {
+     "printed": "MECH30",
+     "file": "AGMA 12",
+     "title": "Equipment Mechanics Skills",
+     "units": 2
+    },
+    {
+     "printed": "MECH33",
+     "file": "AGMA 13",
+     "title": "Power Equipment Air Conditioning",
+     "units": 2
+    },
+    {
+     "printed": "MECH26",
+     "file": "AGMA 14",
+     "title": "Power Equipment Electrical Systems",
+     "units": 3
+    },
+    {
+     "printed": "MECH21",
+     "file": "AGMA 15",
+     "title": "Hydraulics",
+     "units": 3
+    },
+    {
+     "printed": "MECH24",
+     "file": "AGMA 16",
+     "title": "Power Trains",
+     "units": 4
+    },
+    {
+     "printed": "MECH32",
+     "file": "AGMA 17",
+     "title": "Applied Electrical & Hydraulic (the file: Applied Electrical and Hydraulic Service)",
+     "units": 3
+    },
+    {
+     "printed": "MECH27",
+     "file": "AGMA 18",
+     "title": "Applied Diesel Technical Skills",
+     "units": 2
+    },
+    {
+     "printed": "MECH41",
+     "file": "AGMA 19",
+     "title": "Advanced Diagnosis and Repair",
+     "units": 3
+    },
+    {
+     "printed": "MECH51",
+     "file": "AGMA 21",
+     "title": "Truck Brake and Chassis",
+     "units": 4
+    },
+    {
+     "printed": "MECH35",
+     "file": "AGMA 7",
+     "title": "Compact Power Equipment",
+     "units": 3
     }
    ]
   }

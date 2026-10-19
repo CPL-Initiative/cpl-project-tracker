@@ -72,8 +72,21 @@ def _span_of(v):
 
 def prefix_aliases(college: str, steps: dict | None = None) -> dict | None:
     """The college's subject prefixes as its catalog prints them, mapped to the state file's
-    (the scorer's aliases; kb/_program_requirements_score.py with_prefix_aliases)."""
-    return ((steps if steps is not None else load_steps()).get(college) or {}).get("prefix_aliases") or None
+    (the scorer's aliases; kb/_program_requirements_score.py with_prefix_aliases), and its
+    renumbered courses, a whole printed code mapped to the file's (Merced's MECH22A for
+    AGMA 11, S423). A key with a digit is a course; one without, a prefix."""
+    conf = (steps if steps is not None else load_steps()).get(college) or {}
+    out = dict(conf.get("prefix_aliases") or {})
+    out.update(conf.get("course_renumbers") or {})
+    return out or None
+
+
+def course_renumbers(college: str, steps: dict | None = None) -> dict:
+    """{the file's code, normalized: the catalog's code, normalized}: what the capture
+    looks for on the page in place of a renumbered listed course."""
+    from _program_requirements_pilot import norm_code
+    conf = (steps if steps is not None else load_steps()).get(college) or {}
+    return {norm_code(v): norm_code(k) for k, v in (conf.get("course_renumbers") or {}).items()}
 
 
 def awards_match(kind: str | None, award: str | None) -> bool:

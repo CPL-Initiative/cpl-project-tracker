@@ -123,7 +123,26 @@ def college_programs(college: str) -> list[dict]:
     rows = fetch_all("coci_program_courses?select=program_control_number,course_control_number,"
                      "course_code,course_title,units,cid,course_college,load_id"
                      "&college=eq.%s&order=program_control_number,course_code" % P.q(college))
-    return group_programs(progs, rows)
+    import _program_requirements_reconcile as R
+    return with_renumbers(group_programs(progs, rows), R.course_renumbers(college))
+
+
+def with_renumbers(programs: list[dict], renumbers: dict) -> list[dict]:
+    """Each listed course the college renumbered carries the code its catalog prints
+    ("printed"), so the capture counts it on the page (kb/program_requirements_reconcile.json,
+    course_renumbers; Merced, S423)."""
+    for p in programs if renumbers else []:
+        for c in p["closed_list"]:
+            k = P.norm_code(c.get("code"))
+            if k in renumbers:
+                c["printed"] = renumbers[k]
+    return programs
+
+
+def net_hits(courses: list[dict], codes: set) -> int:
+    """How many listed courses the page's code tokens name, a renumbered one by either code."""
+    return sum(1 for c in courses if P.norm_code(c.get("code") or "") in codes
+               or (c.get("printed") and c["printed"] in codes))
 
 
 def group_programs(progs: list[dict], rows: list[dict]) -> list[dict]:
@@ -451,7 +470,7 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
     want = {P.norm_code(c.get("code") or "") for c in courses}
     out = []
     for pg in pages:
-        if len(want & pg["codes"]) < P.ACCEPT_SHARE * len(want) * 0.8:   # the coarse net, with slack
+        if net_hits(courses, pg["codes"]) < P.ACCEPT_SHARE * len(want) * 0.8:   # the coarse net, with slack
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -494,7 +513,7 @@ def near_miss(program: dict, pages: list[dict]) -> dict | None:
     fb = P.find_codes(pg.get("body") or "", courses)
     fc = P.find_codes(pg.get("content") or "", courses)
     _, found, field = P.best_text(pg["got"], fb, fc, courses)
-    cov, net = P.coverage(found, courses), len(want & pg["codes"])
+    cov, net = P.coverage(found, courses), net_hits(courses, pg["codes"])
     if net < P.ACCEPT_SHARE * len(want) * 0.8:
         why = "coarse net: the page's code tokens name %d of %d listed courses" % (net, len(want))
     elif cov < P.ACCEPT_SHARE:
