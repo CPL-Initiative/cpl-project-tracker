@@ -1,23 +1,30 @@
 {
- "_readme": "S422 SkyWillow, 2026-10-19. Two of Taft's local A.S. records name the degree total of 60 and no units for general education, so the degree check fails them (16725 Occupational Safety and Health reads 18 against 60; 36928 Energy Technology names the General Education Graduation Requirements pattern with no units; kb/jev_harvest_verdicts/taft.json). The first reader's note on 38662 names a Local General Education Pattern of 27 units. This read prints how a local A.S. page words its general education and electives, and follows the catalog's general education and graduation pages for where the pattern's units are stated, so a reconcile step can cite the catalog's own figure. Two loads plus the links it follows, no model call. Read 39215793482: neither A.S. page states the pattern's units; Occupational Safety and Health's page names no general education at all, and Energy Technology's says '(2) General Education Graduation Requirements'. Both print 'Total Credit Hours: 60'. The first reader took record 38662 from the catalog's 'Associate Degree and General Education Philosophy' page, whose text held the Local General Education Pattern; this read prints that page.",
+ "_readme": "S422 SkyWillow, 2026-10-19. Two of Taft's local A.S. records name the degree total of 60 and no units for general education, so the degree check fails them (16725 Occupational Safety and Health reads 18 against 60; 36928 Energy Technology names the General Education Graduation Requirements pattern with no units; kb/jev_harvest_verdicts/taft.json). The first reader's note on 38662 names a Local General Education Pattern of 27 units. This read prints how a local A.S. page words its general education and electives, and follows the catalog's general education and graduation pages for where the pattern's units are stated, so a reconcile step can cite the catalog's own figure. Two loads plus the links it follows, no model call. Read 39215793482: neither A.S. page states the pattern's units; Occupational Safety and Health's page names no general education at all, and Energy Technology's says '(2) General Education Graduation Requirements'. Both print 'Total Credit Hours: 60'. The first reader took record 38662 from the catalog's 'Associate Degree and General Education Philosophy' page, whose text held the Local General Education Pattern; this read prints that page. Read 39216772779: the page states 'Local General Education Pattern' / 'General Education Requirements (27 units – one course from each category)', nine categories of 3 units; Option Two is Cal-GETC for an associate degree for transfer. It says nothing of 60 units. This read prints the catalog's Graduation page, for how the 60 is worded (a minimum or an exact total).",
  "college": "Taft College",
  "questions": {
   "ge_units": "The units the catalog states for its Local General Education Pattern, and how a local A.S. page names it and any electives to reach 60."
  },
  "keywords": [
-  "[Ll]ocal [Gg]eneral [Ee]ducation[^<\"]{0,240}",
-  "[^<>\"]{0,160}\\b27\\b[^<\"]{0,160}",
-  "[Oo]ption (?:One|Two|1|2)[^<\"]{0,200}",
-  "60 (?:semester )?units[^<\"]{0,160}",
-  "[Gg]raduation [Rr]equirements[^<\"]{0,200}"
+  "60 (?:semester )?units[^<\"]{0,200}",
+  "[^<>\"]{0,160}\\bminimum\\b[^<\"]{0,160}",
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[Ee]lective[^<\"]{0,160}"
  ],
  "pages": [
   {
    "answers": [
     "ge_units"
    ],
-   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/requirements-for-degrees-and-certificates/associate-degree-and-general-education-philosophy",
-   "links": "requirements-for-degrees|[Gg]eneral [Ee]ducation|[Gg]raduation",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/requirements-for-degrees-and-certificates/graduation",
+   "links": "requirements-for-degrees",
+   "follow": ""
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/requirements-for-degrees-and-certificates/other-associate-degrees",
+   "links": "requirements-for-degrees",
    "follow": ""
   }
  ]
