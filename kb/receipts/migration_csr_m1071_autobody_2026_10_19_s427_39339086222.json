@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql",
+ "name": "csr_m1071_autobody_2026_10_19_s427",
+ "version": "20261019230502",
+ "sha256": "e680403f4b67feb23c37c0a784beb52f51126dc5da24ff45d23900b3cf120b0a",
+ "run": "39339086222",
+ "status": 201,
+ "response": "[{\"course_id\":\"_CANON_SUBJ4::Agricultural Business and Related Services\",\"field\":\"canonical_subj4_notes\",\"value\":\"AGAB: Sam, Open Asks Sheet 99 card 3 (2026-10-19, agab): Agricultural Bu\",\"reviewer_email\":\"csr-s427@bot\",\"reviewed_at\":\"2026-10-19 22:15:43.263004+00\"},{\"course_id\":\"AUTB M1071\",\"field\":\"discipline\",\"value\":\"Auto Body Technology\",\"reviewer_email\":\"map@rccd.edu\",\"reviewed_at\":\"2026-10-19 22:38:25.197+00\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
