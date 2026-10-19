@@ -11,6 +11,8 @@
 -- rebuild, so a second press inserted a second pair (cpl-project-tracker S426 fixes the
 -- control to patch rows that exist and to paint the row at once).
 --
+-- APPLIED by Sam in the SQL editor, 2026-10-19 21:06Z (Open Asks Sheet 100 card 1, "Success: no rows returned");
+-- read back 21:07Z: no duplicate groups, 68 rows, the index present.
 -- NOT RUN BY A SESSION: a delete on a shared human-write table is Sam's to run (Rule 10;
 -- the MCP guard refuses deletes). Paste the whole file into the Supabase SQL editor.
 --

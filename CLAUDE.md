@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 100](https://claude.ai/artifact/KdWmpC329pAtSzS9ziNguS), 2026-10-19, **open**: one card from the Annual Workplan Goals lane, the paste that removes the twelve duplicate ladder rows and adds the unique index; Sheet 99 is answered in full and recorded in its lane). Answering
+> (latest: [Open Asks Sheet 100](https://claude.ai/artifact/KdWmpC329pAtSzS9ziNguS), 2026-10-19, **answered** 21:06Z: its one card pasted, the twelve duplicate ladder rows gone and the unique index in place, recorded in the Annual Workplan Goals lane; no card is open, so the builder writes no sheet until a lane marks a new ask). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

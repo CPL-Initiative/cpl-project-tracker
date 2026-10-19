@@ -69,8 +69,7 @@ stored text shows after the next build. Only 4.7 EMS Corps and 4.8 Futuro had no
 seconds apart by Set targets. Readers saw nothing wrong (the generator kept the last row, the editor patched all alike).
 The paste that deletes the 12 extra rows and adds the unique index is
 `kb/receipts/workplan_goals_dedupe_ladder_rows_2026-10-19_s426.sql` (rollback in its header).
-**NEEDS SAM (S426, 2026-10-19):** run that paste in the SQL editor (a delete on a shared human-write table is his to
-run; the MCP guard refuses deletes). Open Asks Sheet 100 carries it.
+✅ **Pasted by Sam (Open Asks Sheet 100, 2026-10-19 21:06Z, "Success: no rows returned"; `cpl_memory` `sam-sheet-100-dedupe-pasted-2026-10-19`).** Read back 21:07Z: no sub-activity holds more than one row per type (68 rows, 12 fewer) and `workplan_goals_one_row_per_type` exists. The drafted descriptions for 4.7 and 4.8 landed through the runner the same hour.
 
 ✅ **PR A merged (#2051, 2026-10-13): one add flow, Set targets, counting notes.**
 - **The add bug (Sam, 2026-10-12, adding 3.9):** the dialog read `[data-kind="activity"]`, a marker the Annual table stopped printing when it won the AWG injection, so its Activity list was empty and every sub-activity was refused. And a sub-activity add wrote only `workplan_goals`, never `projects`, which the table iterates (Path A), so a valid add never appeared.
@@ -100,14 +99,11 @@ run; the MCP guard refuses deletes). Open Asks Sheet 100 carries it.
 0a. **The migration run:** `supabase-migrate.yml` fires on the S426 push; read `supabase_migrations.schema_migrations`
     for `workplan_goals_current_by_year_2026_10_19_s426` and the receipt the runner commits. Until it lands, the
     loader's select falls back to the `current` shape and the page shows the old one-column value under 2025-26.
-0b. **After the dedupe paste runs:** read back `select activity_id, row_type, count(*) ... having count(*) > 1`
-    (expect none) and that the unique index exists; then the receipt's APPLIED note.
+0b. ✅ The dedupe paste ran and read back clean (21:07Z); the receipt says APPLIED.
 0c. **Drop `current`** once a build has published with `cur_*` (one migration: `alter table ... drop column current`;
     `activity_summaries.js` and `_row_current_years` still read it as a fallback until then).
-0e. **Apply the two drafted descriptions:** after the columns migration lands, point `kb/migrations/.apply` at
-    `kb/receipts/workplan_descriptions_drafted_2026-10-19_s426.sql` (name `workplan_descriptions_drafted_2026_10_19_s426`)
-    and push; read back 4.7 and 4.8; then dispatch the dashboard so the tab shows all 34 descriptions. A row Sam
-    empties later shows in `--brief` again; draft it the same way.
+0e. ✅ The two drafted descriptions landed through the runner (read back 21:07Z); the tab shows all 34 after the
+    next build. A row Sam empties later shows in `--brief` again; draft it the same way.
 0d. **The reports still print the 2025-26 pair** (`generate_reports.js` and `master_report.js` hard-code
     `kpi_goal_2526` beside `kpi_metric`); the fiscal-year pair belongs there too, with `kpi_current_<year>` exported
     from the GOAL row's `cur_*` columns.

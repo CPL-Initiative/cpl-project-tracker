@@ -50,8 +50,10 @@ structural change). If the routine started you, follow `docs/reference/scheduled
    4.8), wait for `test` green on the head the runner's receipt commit left (a commit of your own on top puts `test`
    on it: a bot commit runs no CI), squash-merge, then dispatch `daily-dashboard.yml` on `main` so the tab shows every
    year, every description and the live values under 2026-27. Merge CPLBrain#396 the same way.
-2. **Read Sheet 100's reply** (collection `replies`). On "pasted", read back no duplicate rows and the index; note
-   APPLIED in the receipt; drop the NEEDS SAM marker in the lane and the card in the builder in one change.
+2. ✅ Sheet 100 is answered (21:06Z, pasted; read back clean, the lane and receipt say so, the card left the
+   builder). The drafted descriptions for 4.7 and 4.8 also landed (read back 21:07Z). This last commit was an
+   EMERGENCY checkpoint (meter at 94%): only the lane, the receipt, this handoff, CLAUDE.md's sheet pointer and a
+   `cpl_memory` row were refreshed; the docs index, lessons and the vault session note were not re-touched.
 3. Then the queue SkyMadrone left: the Sheet 99 rulings in order (settled, on, agab, sitting, hide, rename), the two
    quarterly routines, the 110 stray identity codes, the Commons' remaining Progress views.
 
