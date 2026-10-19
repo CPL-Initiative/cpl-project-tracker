@@ -209,7 +209,7 @@
    ]
   },
   "Merced College": {
-   "why": "S423 SkyLaurel, 2026-10-19. Merced's capture (run 39115547722) left five agriculture-mechanics programs unread at coverage 0.08-0.18: Diesel Equipment Technology A.S. 03485 and certificate 19495, Mechanized Agriculture Technology A.S. 07710 and certificate 19496, Compact Power Equipment 16653. Their Requisites pages (college-page-read 39229076688, catalog.mccd.edu 2026-27) print MECH12, MECH22A ... MECH51 and AGMA-20 where the state's file (coci_program_courses, read 2026-10-19) lists AGMA 2, AGMA 11 ... AGMA 21 and AGMA 20: the same title and units for each course, the numbers not derivable from each other. Fable, asked once, advised an explicit cited map over a general title rule (a title match is weaker evidence than a prefix swap) and holding out the noncredit Agriculture Systems certificate 44160, whose page prints AGT-701 to AGT-705 at 0 credits where the file lists AGAT 51 to AGAT 55 at 2-3 units: the units disagree, so it stays unread and the disagreement is the college's to settle in COCI.",
+   "why": "S423 SkyLaurel, 2026-10-19. Merced's capture (run 39115547722) left five agriculture-mechanics programs unread at coverage 0.08-0.18: Diesel Equipment Technology A.S. 03485 and certificate 19495, Mechanized Agriculture Technology A.S. 07710 and certificate 19496, Compact Power Equipment 16653. Their Requisites pages (college-page-read 39229076688, catalog.mccd.edu 2026-27) print MECH12, MECH22A ... MECH51 and AGMA-20 where the state's file (coci_program_courses, read 2026-10-19) lists AGMA 2, AGMA 11 ... AGMA 21 and AGMA 20: the same title and units for each course, the numbers not derivable from each other. Fable, asked once, advised an explicit cited map over a general title rule (a title match is weaker evidence than a prefix swap) and holding out the noncredit Agriculture Systems certificate 44160, whose page prints AGT-701 to AGT-705 at 0 credits where the file lists AGAT 51 to AGAT 55 at 2-3 units: the units disagree, so it stays unread and the disagreement is the college's to settle in COCI. Second read (college-page-read 39234806863), the own pages of the ten programs that lost every page to a sibling: Equine Science and Management (07708, 19493) prints ANSC, AGBS and MECH31 for the file's AGAS, AGAB and AGMA 1; Landscape Horticulture 20802, which the catalog now calls Environmental Horticulture (01350.CN), prints LAND for AGEH; Drone Technology 38831 prints CPSC-17 and CPSC-18 for DRON 10 and DRON 11; each pair the same title and units. Not renumbered: Small Business Entrepreneurship (03473, 19498), HVAC Technician 19505 and Engineering 44678 print revised, shorter lists than the file keeps; Child Development A.A. 03515's Requisites tab prints no courses; Biological Science A.S. 03469 and International Studies A.A. 17943 are not in the catalog's list. Those stay unread, the disagreement the college's.",
    "steps": [],
    "course_renumbers": {
     "MECH12": "AGMA 2",
@@ -223,7 +223,25 @@
     "MECH27": "AGMA 18",
     "MECH41": "AGMA 19",
     "MECH51": "AGMA 21",
-    "MECH35": "AGMA 7"
+    "MECH35": "AGMA 7",
+    "AGBS18": "AGAB 8",
+    "AGBS13": "AGAB 3",
+    "ANSC10": "AGAS 1",
+    "ANSC12": "AGAS 2",
+    "ANSC13": "AGAS 3",
+    "ANSC14": "AGAS 4",
+    "ANSC16": "AGAS 11",
+    "ANSC40": "AGAS 40",
+    "ANSC41": "AGAS 41",
+    "MECH31": "AGMA 1",
+    "LAND11": "AGEH 1",
+    "LAND10A": "AGEH 2",
+    "LAND10B": "AGEH 3",
+    "LAND17": "AGEH 4",
+    "LAND16": "AGEH 5",
+    "LAND12": "AGEH 6",
+    "CPSC17": "DRON 10",
+    "CPSC18": "DRON 11"
    },
    "course_renumbers_cited": [
     {
@@ -296,6 +314,114 @@
      "printed": "MECH35",
      "file": "AGMA 7",
      "title": "Compact Power Equipment",
+     "units": 3
+    },
+    {
+     "printed": "AGBS18",
+     "file": "AGAB 8",
+     "title": "Agricultural Computer Applications",
+     "units": 3
+    },
+    {
+     "printed": "AGBS13",
+     "file": "AGAB 3",
+     "title": "Agricultural Marketing",
+     "units": 3
+    },
+    {
+     "printed": "ANSC10",
+     "file": "AGAS 1",
+     "title": "Elements of Animal Science",
+     "units": 3
+    },
+    {
+     "printed": "ANSC12",
+     "file": "AGAS 2",
+     "title": "Livestock Breeding and Selection",
+     "units": 3
+    },
+    {
+     "printed": "ANSC13",
+     "file": "AGAS 3",
+     "title": "Animal Diseases and Parasite Control",
+     "units": 3
+    },
+    {
+     "printed": "ANSC14",
+     "file": "AGAS 4",
+     "title": "Elements of Animal Nutrition",
+     "units": 3
+    },
+    {
+     "printed": "ANSC16",
+     "file": "AGAS 11",
+     "title": "Horse Husbandry",
+     "units": 3
+    },
+    {
+     "printed": "ANSC40",
+     "file": "AGAS 40",
+     "title": "Beginning Horsemanship (Western)",
+     "units": 2
+    },
+    {
+     "printed": "ANSC41",
+     "file": "AGAS 41",
+     "title": "Intermediate Horsemanship (Western)",
+     "units": 2
+    },
+    {
+     "printed": "MECH31",
+     "file": "AGMA 1",
+     "title": "Equipment Safety",
+     "units": 1
+    },
+    {
+     "printed": "LAND11",
+     "file": "AGEH 1",
+     "title": "Elements of Landscape Horticulture",
+     "units": 3
+    },
+    {
+     "printed": "LAND10A",
+     "file": "AGEH 2",
+     "title": "Plant Identification and Usage: Fall",
+     "units": 3
+    },
+    {
+     "printed": "LAND10B",
+     "file": "AGEH 3",
+     "title": "Plant Identification and Usage: Spring (the file: Plant Identification & Useage: Spring)",
+     "units": 3
+    },
+    {
+     "printed": "LAND17",
+     "file": "AGEH 4",
+     "title": "Nursery and Garden Center Practice",
+     "units": 3
+    },
+    {
+     "printed": "LAND16",
+     "file": "AGEH 5",
+     "title": "Plant Propagation",
+     "units": 3
+    },
+    {
+     "printed": "LAND12",
+     "file": "AGEH 6",
+     "title": "Landscape Design",
+     "units": 3
+    },
+    {
+     "printed": "CPSC17",
+     "file": "DRON 10",
+     "title": "Drone Technology I",
+     "units": 3
+    },
+    {
+     "printed": "CPSC18",
+     "file": "DRON 11",
+     "title": "Drone Technology II",
      "units": 3
     }
    ]
