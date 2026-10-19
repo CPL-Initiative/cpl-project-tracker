@@ -82,7 +82,7 @@ on:
         required: false
         default: "read"
       force:
-        description: "read only: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'"
+        description: "read: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'. reread: an extraction run id to post instead of the newest"
         required: false
         default: ""
   push:
@@ -185,6 +185,8 @@ jobs:
       # and an [extract] push would have paid for Cerritos. A run must name its college.
       COLLEGE: ${{ github.event.inputs.college }}
       STEP: ${{ github.event.inputs.step == 'reread' && 'reread' || 'load' }}
+      # reread only: an earlier extraction run to post instead of the newest (S422).
+      EXTRACTED_RUN: ${{ github.event.inputs.step == 'reread' && github.event.inputs.force || '' }}
     steps:
       - name: The run names its college
         run: |
@@ -199,7 +201,7 @@ jobs:
       - name: Load the committed records, unchecked (or replace unchecked rows from the newest run)
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py "$STEP" --college "$COLLEGE"
+        run: python3 kb/_program_requirements_college.py "$STEP" --college "$COLLEGE" --extracted-run "$EXTRACTED_RUN"
       - name: Commit the receipt to the branch that ran it
         if: always()
         run: |

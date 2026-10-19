@@ -2918,9 +2918,13 @@ def reread_receipt(college: str, run_id: str, newest: str | None, rows: list[dic
     }
 
 
-def reread(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None) -> int:
+def reread(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None,
+           extracted_run: str | None = None) -> int:
     """Post the records the newest extraction run filed to the re-read function.
-    A record kept from an earlier run is not posted: its row already holds it."""
+    A record kept from an earlier run is not posted: its row already holds it.
+    extracted_run names an earlier run to post instead (San Joaquin Delta, S422: two
+    reconcile runs in a row, and the second left the first's 34 records stamped with
+    the first run); the function's guards still decide each row."""
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key and post is None:
         print("SUPABASE_SERVICE_KEY is not set; the re-read function takes only the service role.")
@@ -2930,8 +2934,11 @@ def reread(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None)
         return 2
     post = post or (lambda body: _rpc(REREAD_RPC, body, key))
     rows, skipped = load_rows(college)
-    newest = max((r["extracted_run"] for r in rows), key=int, default=None)
-    rows = [r for r in rows if r["extracted_run"] == newest]
+    if extracted_run and not str(extracted_run).isdigit():
+        print("extracted_run must be a numeric run id")
+        return 2
+    newest = str(extracted_run) if extracted_run else max((r["extracted_run"] for r in rows), key=int, default=None)
+    rows = [r for r in rows if str(r["extracted_run"]) == str(newest)]
     results, error = [], None
     for i in range(0, len(rows), max(1, batch)):
         try:
@@ -3004,6 +3011,7 @@ def main(argv: list[str] | None = None) -> int:
                                                 "unchanged, comma-separated; 'incomplete' names every filed "
                                                 "record whose arithmetic is incomplete")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
+    ap.add_argument("--extracted-run", default="", help="reread only: post this extraction run's records, not the newest's")
     args = ap.parse_args(argv)
     if args.step == "pin":
         return pin(args.college, args.run)
@@ -3012,7 +3020,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.step == "load":
         return load(args.college, args.run)
     if args.step == "reread":
-        return reread(args.college, args.run)
+        return reread(args.college, args.run, extracted_run=args.extracted_run or None)
     if args.step == "reconcile":
         return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
