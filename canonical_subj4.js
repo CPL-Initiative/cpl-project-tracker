@@ -86,8 +86,16 @@
           if (!d) return;
           var rec = m[d] = m[d] || {};
           rec[row.field] = row.value;
-          // Keep latest reviewer/timestamp across fields.
-          if (!rec.reviewed_at || (row.reviewed_at || "") >= rec.reviewed_at) {
+          // The pick's reviewer is the code row's; a note's author is the note's (S425: a
+          // cohort's note had been read as the pick's reviewer on eleven disciplines). The
+          // latest row across fields stands in only where no code row exists.
+          if (row.field === FIELD_CANON) {
+            rec._pick_by = row.reviewer_email; rec._pick_at = row.reviewed_at;
+          } else if (row.field === FIELD_NOTES) {
+            rec._notes_by = row.reviewer_email; rec._notes_at = row.reviewed_at;
+          }
+          if (rec._pick_at) { rec.reviewed_by = rec._pick_by; rec.reviewed_at = rec._pick_at; }
+          else if (!rec.reviewed_at || (row.reviewed_at || "") >= rec.reviewed_at) {
             rec.reviewed_by = row.reviewer_email;
             rec.reviewed_at = row.reviewed_at;
           }
@@ -259,7 +267,9 @@
       var ccnBySubj = {};
       (parts[0].descriptors || []).forEach(function (d) {
         var desc = (d.descriptor || "").trim();
-        var m = desc.match(/^([A-Z]+(?:-[A-Z]+)?)\s+(\d+[A-Z]*)$/);
+        // A descriptor may end in " X" (ADS 110 X, WELD 100 X: 172 of the 495, in 17 subjects). The
+        // pattern without it indexed 48 of the 65 C-ID subjects and the chips never saw the other 17 (S425).
+        var m = desc.match(/^([A-Z]+(?:-[A-Z]+)?)\s+(\d+[A-Z]*(?:\s+X)?)$/);
         if (!m) return;
         var subj = m[1];
         (cidBySubj[subj] = cidBySubj[subj] || []).push({ id: desc, title: d.title || "" });
@@ -269,7 +279,9 @@
         if (!subj) return;
         (ccnBySubj[subj] = ccnBySubj[subj] || []).push({ id: c.ccn || (subj + " " + c.number), title: c.title || "" });
       });
-      return { cidBySubj: cidBySubj, ccnBySubj: ccnBySubj };
+      return { cidBySubj: cidBySubj, ccnBySubj: ccnBySubj,
+        cidMeta: { count: (parts[0].descriptors || []).length, source: parts[0]._source || "" },
+        ccnMeta: { count: (parts[1].courses || []).length, source: parts[1]._source || "" } };
     });
   }
 
@@ -466,9 +478,30 @@
   //                own/total so a minority/new canonical reads on the line.
   //   invalid    — saved canonical isn't 4 letters
   //   missing    — no canonical yet + ≥2 observed codes (ranked by impact)
+  /* A code two disciplines share BY DESIGN (S425): one alias family (the THEA lesson); a
+     fan-in pair both entries declare in fan_in_with (FTVE, Sam's 2026-09-03 ruling, item 13);
+     or an umbrella code every owner declares in umbrella_codes (the five agriculture family
+     codes both agriculture umbrellas carry, Sam's cards 4 to 6 the same day). Until S425 the
+     check listed the six as collisions beside the one real one (AUTB). */
+  function sharedByDesign(names, byName, code) {
+    var families = {};
+    names.forEach(function (d) { families[aliasFamilyOf(d)] = true; });
+    if (Object.keys(families).length < 2) return true;
+    var mutual = names.every(function (d) {
+      var mine = (byName[d] && byName[d].fan_in_with) || [];
+      return names.every(function (o) { return o === d || mine.indexOf(o) >= 0; });
+    });
+    if (mutual) return true;
+    return names.every(function (d) {
+      var e = byName[d];
+      return !!(e && (e.umbrella_codes || []).indexOf(code) >= 0 && e.canonical_subj4 !== code);
+    });
+  }
   function runSubjCheck() {
     var rows = mergedEntries();
     var idx = subjIndex();
+    var byName = {};
+    rows.forEach(function (e) { byName[e.discipline] = e; });
     var out = { collisions: [], aliasShared: [], drift: [], invalid: [], missing: [], nRowsOff: 0 };
 
     Object.keys(idx.owners).sort().forEach(function (code) {
@@ -476,17 +509,15 @@
       idx.owners[code].forEach(function (o) { if (!ds[o.d]) ds[o.d] = o.why; });
       var names = Object.keys(ds);
       if (names.length < 2) return;
-      var families = {};
-      names.forEach(function (d) { families[aliasFamilyOf(d)] = true; });
       var rec = {
         code: code,
         owners: names.map(function (d) {
           return { d: d, why: ds[d], n: (idx.observed[code] || {})[d] || 0 };
         }),
       };
-      // One alias family sharing a code = the fan-in convergence working as
-      // designed — report it as informational, never as a collision.
-      if (Object.keys(families).length < 2) out.aliasShared.push(rec);
+      // Shared by design (an alias family, a ruled fan-in, an umbrella code both declare) is
+      // informational, never a collision.
+      if (sharedByDesign(names, byName, code)) out.aliasShared.push(rec);
       else out.collisions.push(rec);
     });
 
@@ -798,10 +829,10 @@
 
     if (res.aliasShared.length) {
       body.appendChild(el("h5", { class: "cs-check-section" },
-        ["ℹ Alias families sharing one code (" + res.aliasShared.length + " — expected)"]));
+        ["ℹ Codes shared by design (" + res.aliasShared.length + " — expected)"]));
       body.appendChild(el("p", { class: "cs-check-note" }, [
-        "A converged discipline and its recorded alternate name share one Common SUBJ by design (fan-in " +
-        "convergence) — not an error, nothing to fix."]));
+        "A converged discipline and its recorded alternate name, a fan-in pair both entries declare (FTVE), or an " +
+        "umbrella code both agriculture umbrellas carry (Sam, 2026-09-03) share one Common SUBJ by design: not an error, nothing to fix."]));
       var ulAS = el("ul", { class: "cs-check-list" });
       res.aliasShared.forEach(function (c) {
         var li = el("li");
@@ -1036,6 +1067,9 @@
     overlay: {},
     cidBySubj: {},
     ccnBySubj: {},
+    cidMeta: null, ccnMeta: null, mqDoc: null,
+    view: "progress",            // "progress" (the Commons' dash) or "reference" (the table); remembered
+    scan: null, status: null, procs: null, secs: null, readAt: null,
     filter: "all",
     topFilter: "all",            // TOP 2-digit category filter; "all" = no filter
     grouped: true,               // Group rows under TOP 2-digit category headers
@@ -1112,7 +1146,7 @@
     // Filter dropdown
     var sel = el("select", { class: "cs-filter", id: "cs-filter" });
     [
-      ["all", "All disciplines"],
+      ["all", "All MQ disciplines"],
       ["needs_review", "Needs curator review"],
       ["pre_seeded", "Pre-seeded (data-modal already 4-letter)"],
       ["reviewed", "Initiated (awaiting validation)"],
@@ -1358,7 +1392,7 @@
       if (e.canonical_source && src.hasOwnProperty(e.canonical_source)) src[e.canonical_source]++;
       if (authorityChips(e).length) src.chips++;
     });
-    sum.innerHTML = "<strong>" + rows.length + "</strong> disciplines · "
+    sum.innerHTML = "<strong>" + rows.length + "</strong> MQ disciplines · "
       + counts.initiated + " initiated · "
       + counts["pre-seeded"] + " pre-seeded · "
       + counts["needs review"] + " need review"
@@ -1451,7 +1485,9 @@
     // per the curator's preference — they read as a paired "taxonomy"
     // block, with CTE following as the derived designation.
     var COLS = [
-      { key: "discipline",       label: "Discipline" },
+      // "MQ Discipline" (Sam, 2026-10-19): the handbook's discipline beside our Common SUBJ,
+      // "to remember the difference between SUBJECT and DISCIPLINE".
+      { key: "discipline",       label: "MQ Discipline", title: "The discipline as the Minimum Qualifications handbook names it. One MQ discipline carries one Common SUBJ; an umbrella discipline carries several." },
       { key: "total_mids",       label: "MIDs",      title: "MIDs = Minted ID, the synthetic identifier for a single common course taught across one or more colleges. This number is how many distinct common courses fall under this discipline." },
       { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click 'Show all' to see every code + any matching CIDs/CCNs." },
       { key: "data_modal",       label: "Most-used locally", title: "The most-used local college subject code across colleges. If shorter than 4 letters, pick a 4-letter expansion in the Common SUBJ column." },
@@ -1527,6 +1563,8 @@
     }
     table.appendChild(tbody);
     wrap.appendChild(table);
+    // A save re-renders the table; the Progress view, when showing, reads the same merge.
+    if (state.view === "progress" && document.getElementById("cs-progress") && !document.getElementById("cs-progress").hidden) renderProgress();
   }
 
   function rowFor(entry) {
@@ -1974,6 +2012,623 @@
     bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
   }
 
+  // ══════════════════════════════════════════════════════════════════════════════════════
+  // The Progress view (S425, 2026-10-19): the Commons' dash for this reference.
+  //
+  // Sam, 2026-10-19: "Can you develop a dash for CSR similar to the one you created for PR?
+  // Seems like each of our Commons consolidation projects should follow the same process",
+  // and "We should have a CSR dash card for each key step that needs monitoring and stores
+  // the procedures needed by agents". The shape is the shared module's (commons_progress.js,
+  // the Commons' step 1): the run status, the headline pair, the milestone line with You are
+  // here, a card per step and the side column from the run log (kb/status/subjects.json).
+  // Each card's procedure lives in kb/csr_procedures.json and is drawn under the cards; a
+  // count opens the Reference view with the filter that lists exactly what it counted (the
+  // Commons' step 3, the deep link behind a count: #canonical-subj4/<filter>).
+  //
+  // The definitions are this reference's; the renderer is the module's. The context x is
+  // built from the reads this tab already makes (the seed, the live picks, the C-ID and CCN
+  // tables, the MQ index) plus three more: the daily scan (kb/csr_out/latest.json, written by
+  // kb/_csr_trail.py --latest), the run log and the procedures store. A read that failed is
+  // null in x and named in x.errors; the module then says so on the card instead of drawing
+  // a zero (the S343 rule). Sam's word for the handbook's discipline is "MQ discipline"
+  // (2026-10-19: "This will help me remember the difference between SUBJECT and DISCIPLINE").
+  // ══════════════════════════════════════════════════════════════════════════════════════
+  var SCAN_URL = "kb/csr_out/latest.json";
+  var STATUS_URL = "kb/status/subjects.json";
+  var PROCS_URL = "kb/csr_procedures.json";
+  var SKYVIEW_URL = "prototype/skyview.html";
+  var VIEW_KEY = "cplCsr.view.v1";
+  var SECS_KEY = "cplCsr.secs.v1";
+  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }];
+  var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, validated: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
+  var RULE_WORDS = {
+    cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
+    cs4_aligned: "aligned with the official prefix", cs4_missed_alignment: "a missed alignment", cs4_divergence_noted: "a divergence the note records",
+    cs5_modal_diverge: "a modal choice without a note", cs6_weak_mnemonic: "a weak mnemonic", cs7_unreviewed: "unconfirmed",
+    cs7_needs_review: "needs review", cs8_seeder_bypass: "the mint path skips the reference", cs9_anchor_dead_format: "an anchor key in the dead format",
+    cs9_anchor_subj_diverge: "an anchor off its code"
+  };
+
+  function readJsonStrict(url) {
+    return fetch(url, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(url + " answered " + r.status);
+      return r.json();
+    });
+  }
+  function readSoft(url, test) {
+    return readJsonStrict(url).then(function (j) {
+      if (test && !test(j)) throw new Error(url + " has no " + test.name);
+      return { data: j, error: null };
+    }).catch(function (e) { return { data: null, error: String(e && e.message || e) }; });
+  }
+  function written_at(j) { return !!(j && j.written_at); }
+  function findings(j) { return !!(j && Array.isArray(j.findings)); }
+  function procedures(j) { return !!(j && Array.isArray(j.procedures)); }
+  function fetchScan() { return readSoft(SCAN_URL, findings); }
+  function fetchStatus() { return readSoft(STATUS_URL, written_at); }
+  function fetchProcedures() { return readSoft(PROCS_URL, procedures); }
+
+  function fmtN(n) { return n == null || n === "" ? "" : Number(n).toLocaleString("en-US"); }
+  function plural(n, one, many) { return fmtN(n) + " " + (Number(n) === 1 ? one : many); }
+  function isCohort(who) { return /@bot$/.test(String(who || "")); }
+  function hasCode(e) { return !!(e.canonical_subj4 && SUBJ4_RE.test(e.canonical_subj4)); }
+  function isConfirmed(e) { return hasCode(e) && !!(e.reviewed_at || e.source === "curator_override"); }
+  function onAuthorityCode(e) { return e.canonical_source === "ccn" || e.canonical_source === "c-id"; }
+  function dayWords(v) {
+    var CP = window.CPL_COMMONS_PROGRESS;
+    if (!v) return "";
+    return CP ? CP.dayOf(v) : String(v).slice(0, 10);
+  }
+  function retrievedDay(source) {
+    var m = /retrieved (\d{4}-\d{2}-\d{2})/.exec(String(source || ""));
+    return m ? m[1] : null;
+  }
+
+  /* ── where a count leads (the Commons' step 3) ──
+     A target names the Reference view with one filter set, the tab's own SUBJ check, a
+     section of this view, a procedure's card, or another page. */
+  var TO = {
+    all: { view: "reference", filter: "all" },
+    needsReview: { view: "reference", filter: "needs_review" },
+    preSeeded: { view: "reference", filter: "pre_seeded" },
+    reviewed: { view: "reference", filter: "reviewed" },
+    ccn: { view: "reference", filter: "ccn" },
+    cid: { view: "reference", filter: "cid" },
+    chip: { view: "reference", filter: "chip" },
+    proposed: { view: "reference", filter: "proposed" },
+    check: { check: true },
+    findings: { sec: "progress:findings" },
+    procedures: { sec: "progress:procedures" },
+    skyviewSubjects: { href: SKYVIEW_URL + "#subjects" },
+    skyviewDisciplines: { href: SKYVIEW_URL + "#disciplines" },
+    crosslistSheet: { href: "https://claude.ai/artifact/BizNPAbrucq6hWARVzTQBp" }
+  };
+  function procTarget(id) { return { sec: "progress:procedures", proc: id }; }
+
+  /* ── the milestones: where the reference stands, in order ──
+     Every milestone before the first with anything left is done; that one is You are here. A
+     left item whose count could not be read keeps its milestone open. */
+  var MILESTONES = [
+    { id: "coded", title: "A code for every MQ discipline",
+      fact: function (x) { return fmtN(x.total - x.missingCode) + " of " + fmtN(x.total) + " carry one"; },
+      when: function () { return "the fold, Jun 12"; },
+      left: function (x) { return [[x.missingCode, "MQ discipline without a code", "MQ disciplines without a code", TO.needsReview]]; } },
+    { id: "authority", title: "The authority's codes adopted", needs: ["scan"],
+      fact: function (x) { return fmtN(x.onAuthority) + " on an authority code, " + fmtN(x.chips) + " show a chip"; },
+      when: function () { return "the recode, Sep 3"; },
+      left: function (x) { return [[x.missed, "missed alignment", "missed alignments", TO.chip]]; } },
+    { id: "confirmed", title: "Every pick confirmed",
+      fact: function (x) { return fmtN(x.confirmed) + " of " + fmtN(x.total) + " by a person"; },
+      left: function (x) { return [[x.unconfirmed, "pick to confirm", "picks to confirm", TO.preSeeded]]; } },
+    { id: "checks", title: "The checks pass", needs: ["scan"],
+      fact: function (x) { return plural(x.askable, "finding needs", "findings need") + " a judgment"; },
+      left: function (x) {
+        return [[x.collisions, "collision", "collisions", TO.check],
+          [x.judgments, "finding to confirm or note", "findings to confirm or note", TO.findings]];
+      } },
+    { id: "selfrun", title: "Self-maintaining", needs: ["procs"],
+      fact: function (x) { return fmtN(x.procsOn) + " of " + fmtN(x.procsAll) + " procedures in force"; },
+      left: function (x) {
+        return [[x.routinesToBuild, "source without a refresh routine", "sources without a refresh routine", TO.procedures],
+          [x.proposed, "procedure waiting on " + x.decider, "procedures waiting on " + x.decider, TO.procedures]];
+      } }
+  ];
+
+  /* ── the parts: Sam's eight steps of 2026-10-19, consolidated to one card each ──
+     Steps 1 and 4 are the MQ list (every MQ discipline with courses carries a code); steps 2
+     and 8 are the authority tables and their reconciliation; steps 3 and 7 are the authority
+     rule and the identity codes it governs; 5 is one code, one MQ discipline; 6 is the
+     cross-listings; then the confirmations and the checks. status(x) answers a STATUS key of
+     the shared module; meter(x) answers [have, of, verb]; open(x) the list the card counts;
+     more(x) the card's procedure. */
+  var PARTS = [
+    { id: "mq_list", title: "The MQ discipline list", needs: ["mq"],
+      status: function (x) { return x.procOn("mq_list") ? "done" : "going"; },
+      what: function (x) {
+        return fmtN(x.mqTotal) + " MQ disciplines in the handbook's index" + (x.mqReadAt ? " (read " + dayWords(x.mqReadAt) + ")" : "") + "; " +
+          fmtN(x.total) + " carry courses on the map and " + (x.missingCode ? fmtN(x.total - x.missingCode) + " of them carry" : "every one carries") +
+          " a Common SUBJ; " + fmtN(x.mqNoCourses) + " carry none.";
+      },
+      meter: function (x) { return [x.total - x.missingCode, x.total, "coded"]; },
+      foot: function (x) {
+        return "A discipline with no courses takes a code when its first course appears. The quarterly check of the handbook is the procedure to build" +
+          (x.procOn("mq_list") ? "." : "; until it runs, the index is as read in May.");
+      },
+      open: function (x) { return ["Open the " + fmtN(x.total) + " MQ disciplines", TO.all]; },
+      more: function () { return ["Procedure", procTarget("mq_list")]; } },
+    { id: "authority_tables", title: "The C-ID and CCN subject tables",
+      status: function (x) { return x.procOn("authority_tables") ? "done" : "going"; },
+      what: function (x) {
+        return fmtN(x.cidSubjects) + " C-ID subject codes (" + fmtN(x.cidDescriptors) + " descriptors) and " + fmtN(x.ccnSubjects) + " CCN codes (" +
+          fmtN(x.ccnCourses) + " courses)" + (x.cidReadAt ? ", both read " + dayWords(x.cidReadAt) : "") + "; " + plural(x.bothSubjects, "code is in both", "codes are in both") +
+          (x.ccnOnly.length ? ", CCN adds " + x.ccnOnly.join(", ") : "") + ".";
+      },
+      foot: function (x) {
+        return (x.differ.length ? "Where they differ, CCN wins: " + x.differ.join("; ") + ". " : "The two agree on every shared subject. ") +
+          "The quarterly refresh is the procedure to build.";
+      },
+      open: function (x) { return ["Open the " + fmtN(x.ccn) + " on a CCN code", TO.ccn]; },
+      more: function () { return ["Procedure", procTarget("authority_tables")]; } },
+    { id: "authority_rule", title: "The authority's code sets the Common SUBJ", needs: ["scan"],
+      status: function (x) { return x.missed ? "going" : "done"; },
+      what: function (x) {
+        return fmtN(x.ccn) + " MQ disciplines sit on the CCN code, " + fmtN(x.cid) + " on a C-ID code and " + fmtN(x.csr) +
+          " on a code this reference minted; " + fmtN(x.chips) + " of those show the authority's code on a chip.";
+      },
+      meter: function (x) { return [x.onAuthority, x.total, "on an authority code"]; },
+      foot: function (x) {
+        return x.missed ? plural(x.missed, "missed alignment: the twin discipline's code differs from the official prefix.", "missed alignments: a twin discipline's code differs from the official prefix.")
+          : "No missed alignment: every chip is a sub-subject the authority splits finer than the MQ discipline, or a code of two or three letters under the four-letter rule.";
+      },
+      open: function (x) { return ["Open the " + fmtN(x.chips) + " with a chip", TO.chip]; },
+      more: function () { return ["Procedure", procTarget("authority_rule")]; } },
+    { id: "mid_subjects", title: "Every M-ID carries its discipline's code", needs: ["scan"],
+      status: function (x) { return x.strayCodes ? "going" : "done"; },
+      what: function (x) {
+        return fmtN(x.codes) + " codes on " + fmtN(x.codeIds) + " minted identities: " + fmtN(x.canonicalCodes) + " are a discipline's Common SUBJ, " +
+          fmtN(x.umbrellaOnlyCodes) + " are umbrella codes, " + fmtN(x.strayCodes) + " are strays on " + fmtN(x.strayIds) + " identities.";
+      },
+      meter: function (x) { return [x.codeIds - x.strayIds, x.codeIds, "on their discipline's code"]; },
+      foot: function (x) {
+        var top = (x.strays || []).slice(0, 3).map(function (s) { return s.code + " " + fmtN(s.ids); });
+        var noDisc = (x.strays || []).filter(function (s) { return s.disciplines && s.disciplines["(no discipline)"]; }).length;
+        return (top.length ? "The largest: " + top.join(", ") + ". " : "") +
+          (noDisc ? fmtN(noDisc) + " of the stray codes sit on identities with no discipline yet. " : "") +
+          "A stray is re-key evidence under the playbook, never a hand edit.";
+      },
+      open: function () { return ["Open SkyView by subject", TO.skyviewSubjects]; },
+      more: function () { return ["Procedure", procTarget("mid_subjects")]; } },
+    { id: "every_code_homed", title: "One code, one MQ discipline",
+      status: function (x) { return x.collisions || x.invalid ? "going" : "done"; },
+      what: function (x) {
+        return plural(x.collisions, "code on two MQ disciplines", "codes on two MQ disciplines") + (x.collisionCodes.length ? " (" + x.collisionCodes.join(", ") + ")" : "") +
+          "; " + plural(x.aliasShared, "code is shared by design", "codes are shared by design") + "; " +
+          plural(x.drift, "discipline carries", "disciplines carry") + " rows off their code.";
+      },
+      foot: function (x) {
+        return x.collisions ? "A collision is a curator's call: another code for one discipline, or the mis-filed identities moved. The umbrellas and the ruled fan-in are not collisions."
+          : "The umbrellas and the ruled fan-in are the only shared codes, by design.";
+      },
+      open: function () { return ["Run the SUBJ check", TO.check]; },
+      more: function () { return ["Procedure", procTarget("every_code_homed")]; } },
+    { id: "cross_listings", title: "Umbrellas, fan-ins and cross-listed courses",
+      status: function () { return "going"; },
+      what: function (x) {
+        return plural(x.umbrellas, "umbrella discipline carries", "umbrella disciplines carry") + " " + fmtN(x.umbrellaCodes) + " codes beside their own; " +
+          plural(x.aliasFamilies, "fan-in family folds", "fan-in families fold") + " " + fmtN(x.aliasNames) + " alternate names, and " +
+          plural(x.fanInPairs, "pair shares", "pairs share") + " one code by ruling.";
+      },
+      foot: function () { return "A course whose colleges disagree about its discipline goes through the cross-list lane; its sheet is " + "Sam's."; },
+      open: function () { return ["Open SkyView's disciplines", TO.skyviewDisciplines]; },
+      answer: function () { return ["Answer on the cross-list sheet", TO.crosslistSheet]; },
+      more: function () { return ["Procedure", procTarget("cross_listings")]; } },
+    { id: "confirmation", title: "Confirmation",
+      status: function (x) { return x.unconfirmed ? "going" : "done"; },
+      what: function (x) {
+        return fmtN(x.confirmed) + " of " + fmtN(x.total) + " picks confirmed by a person" + (x.cohort ? " or a session cohort (" + fmtN(x.cohort) + ")" : "") +
+          "; " + fmtN(x.unconfirmed) + " wait, " + fmtN(x.unconfirmedAuthority) + " of them on the authority's own code.";
+      },
+      meter: function (x) { return [x.confirmed, x.total, "confirmed"]; },
+      foot: function (x) {
+        return (x.validated ? fmtN(x.validated) + " picks have gone through the validate stage. " : "No pick has gone through the validate stage; it waits for the faculty-published moment. ") +
+          "The cohort confirm of authority-coded picks is proposed, a card for " + x.decider + ".";
+      },
+      open: function (x) { return ["Open the " + fmtN(x.unconfirmed) + " waiting", TO.preSeeded]; },
+      more: function () { return ["Procedure", procTarget("confirmation")]; } },
+    { id: "checks", title: "The daily scan and Jev's sitting", needs: ["scan"],
+      status: function (x) { return x.askable ? "going" : "done"; },
+      what: function (x) {
+        return "The scan of " + dayWords(x.scanDay) + ": " + plural(x.findings, "finding", "findings") + "; " + fmtN(x.askable) + " need a judgment (" +
+          x.askableWords + "), " + fmtN(x.byRule.cs7_unreviewed || 0) + " are the unconfirmed picks, " + fmtN(x.byRule.cs4_aligned || 0) + " confirm an alignment.";
+      },
+      foot: function () { return "Daily, read-only, from the daily run; Jev sits on dispatch. A recorded note settles a divergence and the scan stops asking."; },
+      open: function () { return ["Open the findings", TO.findings]; },
+      more: function () { return ["Procedure", procTarget("checks")]; } }
+  ];
+  var SOURCE = {
+    scan: "The daily scan's file (" + SCAN_URL + ")", Q: "The reference's run log (" + STATUS_URL + ")",
+    procs: "The procedures store (" + PROCS_URL + ")", mq: "The MQ handbook's index (kb/reference/mq_sections.json)"
+  };
+  /* The headline pair: every MQ discipline with courses on the map beside the ones whose Common
+     SUBJ is settled: confirmed by a person, on the authority rule, in no collision. */
+  var HEADLINE = {
+    label: "Every MQ discipline with courses on the map, and how many carry a settled Common SUBJ",
+    needs: [],
+    all: { n: function (x) { return x.total; },
+      words: "MQ disciplines with courses on the map",
+      small: function (x) { return x.mqTotal != null ? "The handbook's Disciplines Index names " + fmtN(x.mqTotal) + "; " + fmtN(x.mqNoCourses) + " carry no courses" : "The handbook's Disciplines Index could not be read"; } },
+    mine: { n: function (x) { return x.settled; },
+      words: "carry a settled Common SUBJ",
+      small: "Confirmed by a person, on the authority rule, in no collision with another MQ discipline",
+      open: function (x) { return x.settled > 0 ? ["Open the " + fmtN(x.confirmed) + " confirmed", TO.reviewed] : null; } },
+    barLabel: function (x) { return fmtN(x.settled) + " of " + fmtN(x.total) + " MQ disciplines settled"; },
+    within: function (x) {
+      return [{ n: x.unconfirmed, words: " picks wait for a person" },
+        x.collisions > 0 ? { go: [plural(x.collisions, "collision", "collisions"), TO.check] } : null,
+        { n: x.onAuthority, words: " on the authority's own code" }];
+    }
+  };
+  var PROGRESS = {
+    title: "Common Subjects Reference", sub: "Progress",
+    lede: "Where the reference stands. The milestones and cards are read live from the seed, the picks and the daily scan on each visit; the next step, the calls and what changed come from the last session's checkpoint. Each card's procedure is under the cards.",
+    milestones: MILESTONES, parts: PARTS, partsTitle: "The steps", headline: HEADLINE, sources: SOURCE
+  };
+
+  /* ── the context x ── */
+  function progressContext(now) {
+    var rows = mergedEntries();
+    var CP = window.CPL_COMMONS_PROGRESS;
+    var scan = state.scan && state.scan.data, Q = state.status && state.status.data, procsDoc = state.procs && state.procs.data;
+    var errors = {};
+    if (state.scan && state.scan.error) errors.scan = state.scan.error;
+    if (state.status && state.status.error) errors.Q = state.status.error;
+    if (state.procs && state.procs.error) errors.procs = state.procs.error;
+    var mqTotal = state.mq && Object.keys(state.mq).length ? Object.keys(state.mq).length : null;
+    if (mqTotal == null) errors.mq = "the index was empty or did not load";
+    var confirmed = rows.filter(isConfirmed);
+    var person = confirmed.filter(function (e) { return !isCohort(e.reviewed_by); }).length;
+    var unconfirmed = rows.filter(function (e) { return !isConfirmed(e); });
+    var check = runSubjCheck();
+    var collided = {};
+    check.collisions.forEach(function (c) { c.owners.forEach(function (o) { collided[o.d] = true; }); });
+    var settled = confirmed.filter(function (e) { return !collided[e.discipline]; });
+    var chips = rows.filter(function (e) { return authorityChips(e).length; });
+    var bySource = { ccn: 0, "c-id": 0, csr: 0 };
+    rows.forEach(function (e) { if (Object.prototype.hasOwnProperty.call(bySource, e.canonical_source)) bySource[e.canonical_source]++; });
+    var umbrellas = rows.filter(function (e) { return (e.umbrella_codes || []).length; });
+    var umbrellaCodes = {};
+    umbrellas.forEach(function (e) { e.umbrella_codes.forEach(function (c) { if (c !== e.canonical_subj4) umbrellaCodes[c] = 1; }); });
+    var fanIns = rows.filter(function (e) { return (e.fan_in_with || []).length; });
+    var aliasFamilies = Object.keys(state.aliases || {});
+    var aliasNames = aliasFamilies.reduce(function (n, k) { return n + ((state.aliases[k] || []).length); }, 0);
+    var cidSubj = Object.keys(state.cidBySubj || {}), ccnSubj = Object.keys(state.ccnBySubj || {});
+    var both = ccnSubj.filter(function (s) { return state.cidBySubj[s]; });
+    var ccnOnly = ccnSubj.filter(function (s) { return !state.cidBySubj[s]; }).sort();
+    var differ = rows.filter(function (e) {
+      return e.ccn_subject_code && (e.cid_subject_codes || []).length && e.cid_subject_codes.indexOf(e.ccn_subject_code) < 0;
+    }).map(function (e) { return e.discipline + " is " + e.ccn_subject_code + ", C-ID says " + e.cid_subject_codes.join(", "); });
+    var byRule = {}, askable = null, judgments = null, askableWords = "";
+    if (scan) {
+      scan.findings.forEach(function (f) { byRule[f.rule] = (byRule[f.rule] || 0) + 1; });
+      var ask = scan.findings.filter(function (f) { return f.needs_judgment && f.rule !== "cs7_unreviewed" && f.rule !== "cs4_aligned"; });
+      askable = ask.length;
+      judgments = (byRule.cs6_weak_mnemonic || 0) + (byRule.cs5_modal_diverge || 0);
+      var ar = {};
+      ask.forEach(function (f) { ar[f.rule] = (ar[f.rule] || 0) + 1; });
+      askableWords = Object.keys(ar).sort(function (a, b) { return ar[b] - ar[a]; }).map(function (r) { return fmtN(ar[r]) + " " + (RULE_WORDS[r] || r); }).join(", ") || "none";
+    }
+    var mc = scan && scan._mid_codes || null;
+    var plist = procsDoc && procsDoc.procedures || null;
+    var procOn = function (id) { return !!(plist || []).filter(function (p) { return p.id === id && p.on; }).length; };
+    var x = {
+      rows: rows, Q: Q, scan: scan || null, procs: plist, mq: mqTotal == null ? null : state.mq, errors: errors, now: now,
+      decider: (Q && Q.decider) || "Sam", procOn: procOn,
+      total: rows.length, confirmed: confirmed.length, person: person, cohort: confirmed.length - person,
+      validated: rows.filter(function (e) { return e.validated_at; }).length,
+      unconfirmed: unconfirmed.length, unconfirmedAuthority: unconfirmed.filter(onAuthorityCode).length,
+      settled: settled.length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length,
+      collisions: check.collisions.length, collisionCodes: check.collisions.map(function (c) { return c.code; }),
+      aliasShared: check.aliasShared.length, drift: check.drift.length, driftRows: check.nRowsOff, invalid: check.invalid.length,
+      chips: chips.length, ccn: bySource.ccn, cid: bySource["c-id"], csr: bySource.csr, onAuthority: bySource.ccn + bySource["c-id"],
+      umbrellas: umbrellas.length, umbrellaCodes: Object.keys(umbrellaCodes).length, fanInPairs: Math.round(fanIns.length / 2),
+      aliasFamilies: aliasFamilies.length, aliasNames: aliasNames,
+      mqTotal: mqTotal, mqNoCourses: mqTotal == null ? null : mqTotal - rows.length, mqReadAt: state.mqDoc && (state.mqDoc._extracted_at || null),
+      cidSubjects: cidSubj.length, cidDescriptors: state.cidMeta && state.cidMeta.count, cidReadAt: state.cidMeta && retrievedDay(state.cidMeta.source),
+      ccnSubjects: ccnSubj.length, ccnCourses: state.ccnMeta && state.ccnMeta.count, bothSubjects: both.length, ccnOnly: ccnOnly, differ: differ,
+      scanDay: scan && scan._scanned_at, missed: scan ? (byRule.cs4_missed_alignment || 0) : null, judgments: judgments, askable: askable,
+      askableWords: askableWords, byRule: byRule, findings: scan ? scan.findings.length : null,
+      codes: mc ? mc.codes : null, codeIds: mc ? mc.ids : null, canonicalCodes: mc ? mc.canonical : null, umbrellaOnlyCodes: mc ? mc.umbrella : null,
+      strayCodes: mc ? mc.stray_codes : null, strayIds: mc ? mc.stray_ids : null, strays: mc ? mc.strays : [],
+      procsOn: plist ? plist.filter(function (p) { return p.on; }).length : null, procsAll: plist ? plist.length : null,
+      routinesToBuild: plist ? plist.filter(function (p) { return p.kind === "routine" && !p.on; }).length : null,
+      proposed: plist ? plist.filter(function (p) { return p.kind !== "routine" && !p.on; }).length : null,
+      syncedAt: state.seed && state.seed._synced_at
+    };
+    if (CP) {
+      var st = CP.steps(MILESTONES, x);
+      x.steps = st.steps; x.here = st.here; x.next = st.next;
+    }
+    return x;
+  }
+
+  /* ── the host the shared module borrows: sections, count controls, call cards ── */
+  function secs() {
+    if (!state.secs) {
+      try { state.secs = JSON.parse(localStorage.getItem(SECS_KEY) || "{}") || {}; } catch (e) { state.secs = {}; }
+    }
+    return state.secs;
+  }
+  function secOpen(key) { var m = secs(); return m[key] != null ? !!m[key] : true; }
+  function secSet(key, open) {
+    secs()[key] = !!open;
+    try { localStorage.setItem(SECS_KEY, JSON.stringify(state.secs)); } catch (e) { /* private window */ }
+  }
+  function section(key, title, meta, kids, opts) {
+    opts = opts || {};
+    var lazy = typeof kids === "function";
+    var b = el("div", { class: "cs-sec-b" }, lazy ? [] : (kids || []).filter(function (k) { return k != null; }));
+    var sum = el("summary", { class: "cs-sec-sum" }, [
+      opts.label ? el("span", { class: "cs-sec-label" }, [opts.label]) : null,
+      el(opts.h || "h3", { class: "cs-sec-t" }, [title]),
+      meta ? el("span", { class: "cs-sec-meta" }, [meta]) : null
+    ].filter(Boolean));
+    var d = el("details", { class: "cs-sec" + (opts.cls ? " " + opts.cls : ""), "data-sec": key }, [sum, b]);
+    if (!opts.shut && (opts.open || secOpen(key))) d.setAttribute("open", "");
+    if (lazy) {
+      var built = false;
+      var fill = function () {
+        if (built || !d.hasAttribute("open")) return;
+        built = true;
+        kids().forEach(function (k) { if (k != null) b.appendChild(k); });
+      };
+      fill();
+      d.addEventListener("toggle", fill);
+    }
+    d.addEventListener("toggle", function () { secSet(key, d.open); });
+    return d;
+  }
+  function bringUp(node) {
+    if (!node) return;
+    if (node.scrollIntoView) node.scrollIntoView({ block: "start" });
+    try { node.focus({ preventScroll: true }); } catch (e) { /* older browsers */ }
+  }
+  /* A count's target, applied: the Reference view with one filter set and its toolbar in step;
+     the SUBJ check; a section of this view (and a procedure's card inside it). */
+  function goTo(to) {
+    if (!to) return;
+    if (to.view === "reference") {
+      state.filter = to.filter || "all"; state.search = to.search || ""; state.subj = ""; state.subjSel = ""; state.topFilter = "all";
+      applyView("reference");
+      renderToolbar();
+      render();
+      bringUp(document.getElementById("cs-table-wrap"));
+      return;
+    }
+    if (to.check) { applyView("reference"); openCheckModal(); return; }
+    if (to.sec) {
+      secSet(to.sec, true);
+      applyView("progress");
+      var sec = document.querySelector('#cs-progress details[data-sec="' + to.sec + '"]');
+      if (sec) sec.setAttribute("open", "");
+      var card = to.proc ? document.getElementById("cs-proc-" + to.proc) : null;
+      if (card) card.setAttribute("open", "");
+      bringUp(card || sec);
+    }
+  }
+  function goControl(words, to, cls) {
+    if (to && to.href) {
+      var a = el("a", { class: "cs-word " + (cls || ""), href: to.href }, [words]);
+      if (/^https:\/\//.test(to.href)) { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
+      return a;
+    }
+    var b = el("button", { class: "cs-word " + (cls || ""), type: "button" }, [words]);
+    b.addEventListener("click", function () { goTo(to); });
+    return b;
+  }
+  /* A call is answered on its sheet; the checkpoint that records the answer removes it from
+     the run log, so an open call here is open. */
+  function callAnswered() { return false; }
+  function callRecords() { return null; }
+  function callLinks(c) {
+    var out = [];
+    if (c.link && /^https:\/\//.test(c.link)) out.push(el("a", { class: "cs-word", href: c.link, target: "_blank", rel: "noopener" }, [c.link_text || "Open the decision sheet"]));
+    var v = c.view;
+    if (v && v.href && v.text) {
+      if (/^#[A-Za-z0-9_.~\/-]+$/.test(v.href)) out.push(el("a", { class: "cs-word", href: v.href }, [v.text]));
+      else if (/^https:\/\//.test(v.href)) out.push(el("a", { class: "cs-word", href: v.href, target: "_blank", rel: "noopener" }, [v.text]));
+    }
+    return out.length ? el("p", { class: "cs-links" }, out) : null;
+  }
+  function goToCall(i) {
+    secSet("progress:call:" + i, true);
+    var card = document.querySelector('#cs-progress details[data-sec="progress:call:' + i + '"]');
+    if (card) { card.setAttribute("open", ""); bringUp(card); }
+  }
+  var HOST = {
+    classes: { sec: "cs-sec", secBody: "cs-sec-b", secTitle: "cs-sec-t", secLabel: "cs-sec-label", quiet: "cs-quiet", caution: "cs-caution", lede: "cs-lede" },
+    section: section, goControl: goControl, callAnswered: callAnswered, callRecords: callRecords, callLinks: callLinks, goToCall: goToCall
+  };
+
+  /* ── the procedures, under the cards (Sam: "stores the procedures needed by agents") ── */
+  function procedureCard(p) {
+    var head = el("summary", { class: "cs-sec-sum" }, [
+      el("span", { class: "cs-sec-label" }, [(p.kind || "procedure") + (p.on ? ", in force" : ", not yet on") + (p.cadence ? ", " + p.cadence : "")]),
+      el("h4", { class: "cs-sec-t" }, [p.name || p.id]),
+      p.status ? el("span", { class: "cs-sec-meta" }, [p.status]) : null
+    ].filter(Boolean));
+    var body = [el("p", { class: "cs-proc-rule" }, [p.rule || ""])];
+    if (Array.isArray(p.steps) && p.steps.length) body.push(el("ol", { class: "cs-proc-steps" }, p.steps.map(function (s) { return el("li", null, [s]); })));
+    var meta = [];
+    if (p.owner) meta.push("Owner: " + p.owner);
+    if (Array.isArray(p.reads) && p.reads.length) meta.push("Reads: " + p.reads.join(", "));
+    if (p.source && (p.source.who || p.source.words)) meta.push("Source: " + [p.source.who, p.source.date].filter(Boolean).join(", ") + (p.source.words ? ": " + p.source.words : ""));
+    if (meta.length) body.push(el("p", { class: "cs-proc-meta" }, [meta.join(". ") + "."]));
+    return el("details", { class: "cs-sec cs-proc", id: "cs-proc-" + p.id, "data-proc": p.id }, [head, el("div", { class: "cs-sec-b" }, body)]);
+  }
+  function proceduresSection(x) {
+    var kids;
+    if (!x.procs) kids = [el("p", { class: "cs-caution", role: "status" }, [SOURCE.procs + " could not be read (" + (x.errors.procs || "not read yet") + ")."])];
+    else kids = [el("p", { class: "cs-quiet" }, ["One procedure per card: a rule in plain words, who set it and when, what it reads, who owns it and how often it runs. A session reads the same file before working the reference; a routine not yet on is the next build."])]
+      .concat(x.procs.map(procedureCard));
+    var meta = x.procs ? fmtN(x.procsOn) + " of " + fmtN(x.procsAll) + " in force" : "Could not be read";
+    return section("progress:procedures", "Procedures", meta, kids, { cls: "cs-procs", h: "h4" });
+  }
+  /* ── the findings needing a judgment, from the daily scan ── */
+  function findingsSection(x) {
+    var kids;
+    if (!x.scan) kids = [el("p", { class: "cs-caution", role: "status" }, [SOURCE.scan + " could not be read (" + (x.errors.scan || "not read yet") + ")."])];
+    else {
+      var ask = x.scan.findings.filter(function (f) { return f.needs_judgment && f.rule !== "cs7_unreviewed" && f.rule !== "cs4_aligned"; });
+      kids = [el("p", { class: "cs-quiet" }, ["The scan of " + dayWords(x.scanDay) + ". Each line is one finding that needs a judgment; the unconfirmed picks are counted on the Confirmation card instead. A word opens the row on the Reference view."])];
+      if (!ask.length) kids.push(el("p", null, ["No finding needs a judgment."]));
+      else kids.push(el("ul", { class: "cs-findings" }, ask.map(function (f) {
+        var disc = state.seed && state.seed.disciplines && state.seed.disciplines[f.item] ? f.item : null;
+        var li = el("li", null, [el("b", null, [RULE_WORDS[f.rule] || f.rule]), ": " + f.item + ". " + (f.evidence || "") + (f.suggestion ? " " + f.suggestion.charAt(0).toUpperCase() + f.suggestion.slice(1) + "." : "")]);
+        if (disc) {
+          li.appendChild(document.createTextNode(" "));
+          li.appendChild(goControl("Open the row", { view: "reference", filter: "all", search: disc.toLowerCase() }));
+        }
+        return li;
+      })));
+    }
+    var meta = x.scan ? plural(x.askable, "finding", "findings") : "Could not be read";
+    return section("progress:findings", "Findings waiting on a judgment", meta, kids, { cls: "cs-findings-sec", h: "h4" });
+  }
+
+  /* ── the view, drawn by the shared module from this reference's definitions and context ── */
+  function withProgressModule(cb) {
+    if (window.CPL_COMMONS_PROGRESS) { cb(); return; }
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", cb);
+      return;
+    }
+    cb();
+  }
+  function renderProgress() {
+    var mount = document.getElementById("cs-progress");
+    if (!mount || !state.seed) return;
+    withProgressModule(function () {
+      var CP = window.CPL_COMMONS_PROGRESS;
+      mount.innerHTML = "";
+      if (!CP) {
+        mount.appendChild(el("p", { class: "cs-caution", role: "alert" },
+          ["The Progress view's shared module (commons_progress.js) could not be loaded. The Reference view reads as usual; reload the tab to try again."]));
+        return;
+      }
+      ensureProgressCss();
+      var x = progressContext(new Date());
+      mount.appendChild(CP.render(PROGRESS, x, { readAt: state.readAt || new Date(), errors: x.errors }, HOST));
+      mount.appendChild(proceduresSection(x));
+      mount.appendChild(findingsSection(x));
+    });
+  }
+
+  /* ── the two views and the route in the address ──
+     #canonical-subj4/progress and #canonical-subj4/reference name a view; #canonical-subj4/<filter>
+     opens the Reference view with that filter (the Commons row's counts link here);
+     #canonical-subj4/check opens the SUBJ check. The last view chosen is remembered. */
+  function readView() {
+    try { var v = localStorage.getItem(VIEW_KEY); return v === "reference" || v === "progress" ? v : null; } catch (e) { return null; }
+  }
+  function keepView(v) { try { localStorage.setItem(VIEW_KEY, v); } catch (e) { /* private window */ } }
+  function applyView(v) {
+    state.view = v === "reference" ? "reference" : "progress";
+    keepView(state.view);
+    var onRef = state.view === "reference";
+    ["cs-toolbar", "cs-summary", "cs-table-wrap"].forEach(function (id) {
+      var n = document.getElementById(id);
+      if (n) n.hidden = !onRef;
+    });
+    var pg = document.getElementById("cs-progress");
+    if (pg) pg.hidden = onRef;
+    var sw = document.getElementById("cs-views");
+    if (sw) Array.prototype.forEach.call(sw.querySelectorAll("button[role=tab]"), function (b) {
+      var sel = b.getAttribute("data-view") === state.view;
+      b.setAttribute("aria-selected", sel ? "true" : "false");
+      b.setAttribute("tabindex", sel ? "0" : "-1");
+    });
+    if (!onRef) renderProgress();
+  }
+  function ensureViewMounts() {
+    var tb = document.getElementById("cs-toolbar");
+    if (!tb || document.getElementById("cs-views")) return;
+    ensureProgressCss();
+    var sw = el("div", { class: "cs-views", id: "cs-views", role: "tablist", "aria-label": "Common Subjects Reference views" });
+    VIEWS.forEach(function (v, i) {
+      var b = el("button", { role: "tab", id: "cs-tab-" + v.id, "data-view": v.id, "aria-controls": v.id === "progress" ? "cs-progress" : "cs-table-wrap",
+        "aria-selected": "false", tabindex: "-1", type: "button" }, [v.label]);
+      b.addEventListener("click", function () { applyView(v.id); b.focus(); });
+      b.addEventListener("keydown", function (e) {
+        var j = e.key === "ArrowRight" ? (i + 1) % VIEWS.length : e.key === "ArrowLeft" ? (i - 1 + VIEWS.length) % VIEWS.length
+          : e.key === "Home" ? 0 : e.key === "End" ? VIEWS.length - 1 : null;
+        if (j == null) return;
+        e.preventDefault();
+        applyView(VIEWS[j].id);
+        var nb = document.getElementById("cs-tab-" + VIEWS[j].id);
+        if (nb) nb.focus();
+      });
+      sw.appendChild(b);
+    });
+    tb.parentNode.insertBefore(sw, tb);
+    var pg = el("section", { class: "cs-progress", id: "cs-progress", "aria-label": "Common Subjects Reference, Progress", hidden: "" });
+    tb.parentNode.insertBefore(pg, tb);
+  }
+  function routeFromHash() {
+    var h = (location.hash || "").replace(/^#/, "");
+    var parts = h.split("/");
+    if (parts[0] !== QS_TAB) return false;
+    var r = parts[1] || "";
+    if (r === "progress" || r === "reference") { applyView(r); return true; }
+    if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
+    if (r === "check") { goTo(TO.check); return true; }
+    return false;
+  }
+  function onHashChange() { routeFromHash(); }
+
+  /* ── CSS (tokens only; the section pattern the shared module borrows, the word controls,
+     the procedures and the findings). Injected once, so both HTMLs carry it. ── */
+  function ensureProgressCss() {
+    if (document.getElementById("cs-progress-css")) return;
+    document.head.appendChild(el("style", { id: "cs-progress-css" }, [[
+      "#tab-canonical-subj4 .cs-views { display:flex; flex-wrap:wrap; gap:6px 18px; padding-block:6px 14px; }",
+      "#tab-canonical-subj4 .cs-views button { font:inherit; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      "#tab-canonical-subj4 .cs-views button:hover { text-decoration-thickness:2px; }",
+      "#tab-canonical-subj4 .cs-views button[aria-selected=\"true\"] { color:var(--text-strong); font-weight:700; text-decoration-thickness:2px; }",
+      "#tab-canonical-subj4 .cs-views button:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
+      "#tab-canonical-subj4 .cs-progress { display:block; margin-bottom:18px; min-width:0; }",
+      "#tab-canonical-subj4 .cs-progress[hidden] { display:none; }",
+      "#tab-canonical-subj4 .cs-toolbar[hidden], #tab-canonical-subj4 .cs-summary[hidden], #tab-canonical-subj4 .cs-table-wrap[hidden] { display:none; }",
+      "#tab-canonical-subj4 .cs-word { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; display:inline-block; }",
+      "#tab-canonical-subj4 .cs-word:hover { text-decoration-thickness:2px; }",
+      "#tab-canonical-subj4 .cs-word:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
+      "#tab-canonical-subj4 .cs-quiet { color:var(--text-muted); }",
+      "#tab-canonical-subj4 .cs-caution { color:var(--mustard-text); }",
+      "#tab-canonical-subj4 .cs-lede { color:var(--text-body); }",
+      "#tab-canonical-subj4 .cs-sec { border:1px solid var(--border); border-radius:10px; background:var(--surface-opaque); margin-bottom:12px; min-width:0; }",
+      "#tab-canonical-subj4 .cs-sec-sum { list-style:none; cursor:pointer; position:relative; display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 12px; padding:11px 14px 11px 36px; min-height:44px; box-sizing:border-box; border-radius:10px; }",
+      "#tab-canonical-subj4 .cs-sec-sum::-webkit-details-marker { display:none; }",
+      "#tab-canonical-subj4 .cs-sec-sum::before { content:\"\"; position:absolute; left:15px; top:19px; width:7px; height:7px; border-right:2px solid var(--text-muted); border-bottom:2px solid var(--text-muted); transform:rotate(-45deg); }",
+      "#tab-canonical-subj4 .cs-sec[open] > .cs-sec-sum::before { transform:rotate(45deg); top:16px; }",
+      "#tab-canonical-subj4 .cs-sec-sum:hover .cs-sec-t { color:var(--cobalt); }",
+      "#tab-canonical-subj4 .cs-sec-sum:focus-visible { outline:2px solid var(--cobalt); outline-offset:-2px; }",
+      "#tab-canonical-subj4 .cs-sec-t { margin:0; font-size:1.05rem; color:var(--text-strong); font-family:inherit; }",
+      "#tab-canonical-subj4 .cs-sec-meta { font-size:.875rem; color:var(--text-muted); font-variant-numeric:tabular-nums; }",
+      "#tab-canonical-subj4 .cs-sec-label { flex:1 0 100%; font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }",
+      "#tab-canonical-subj4 .cs-sec-b { padding:2px 14px 14px; min-width:0; }",
+      "#tab-canonical-subj4 .cs-sec-b p { margin:0 0 8px; font-size:.9rem; color:var(--text-body); }",
+      "#tab-canonical-subj4 .cs-links { display:flex; flex-wrap:wrap; gap:.4rem 1rem; margin:.5rem 0 0; }",
+      "#tab-canonical-subj4 .cs-proc { background:var(--surface-subtle); }",
+      "#tab-canonical-subj4 .cs-proc .cs-sec-t { font-size:1rem; }",
+      "#tab-canonical-subj4 .cs-proc-rule { font-size:.9375rem; color:var(--text-strong); }",
+      "#tab-canonical-subj4 .cs-proc-steps { margin:0 0 8px; padding-left:22px; font-size:.875rem; color:var(--text-body); display:grid; gap:4px; }",
+      "#tab-canonical-subj4 .cs-proc-meta { font-size:.8125rem; color:var(--text-muted); }",
+      "#tab-canonical-subj4 .cs-findings { list-style:none; margin:0; padding:0; display:grid; gap:8px; font-size:.875rem; color:var(--text-body); }",
+      "#tab-canonical-subj4 .cs-findings b { color:var(--text-strong); }",
+      "#tab-canonical-subj4 .cs-progress .prh-pg-steps { grid-template-columns:repeat(5, minmax(0, 1fr)); }",
+      "@media (max-width: 760px) { #tab-canonical-subj4 .cs-progress .prh-pg-steps { grid-template-columns:minmax(0, 1fr); } }"
+    ].join("\n")]));
+  }
+
   // Quickstart-C hint consumer. Pre-pops the status / TOP / search filters
   // from a routing hint stashed by quickstart.js. Unknown keys are silently
   // dropped; valid hints set state + sync the matching toolbar input.
@@ -2000,33 +2655,44 @@
     state.sess = getSession();
     wireGuidelinesModal();
     wireVariantsModal();
-    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit(), fetchAliases(), fetchMqSections()]).then(function (parts) {
+    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit(), fetchAliases(), fetchMqSections(),
+                 fetchScan(), fetchStatus(), fetchProcedures()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
       state.ccnBySubj = parts[2].ccnBySubj || {};
+      state.cidMeta = parts[2].cidMeta || null;
+      state.ccnMeta = parts[2].ccnMeta || null;
       state.cpl = (parts[3] || {}).byDiscipline || {};
       state.split = buildSplit(parts[4]);
       state.aliases = (parts[5] || {}).aliases || {};
+      state.mqDoc = parts[6] || null;
       state.mq = (parts[6] || {}).disciplines || {};
+      state.scan = parts[7]; state.status = parts[8]; state.procs = parts[9];
+      state.readAt = new Date();
       // Stamp the discipline name onto every seed entry (the entries are keyed
       // by name but don't carry it) so splitFor()/status() can resolve it from
       // the raw entry too, not just from built rows.
       var dd = state.seed.disciplines || {};
       Object.keys(dd).forEach(function (n) { if (dd[n] && !dd[n].discipline) dd[n].discipline = n; });
       // Apply any pending quickstart hint stashed before init (refresh case).
-      if (window.CPL_QS) applyQsHint(window.CPL_QS.consume(QS_TAB));
+      if (window.CPL_QS && applyQsHint(window.CPL_QS.consume(QS_TAB))) window.CPL_QS_HINTED_CSR = true;
       // Toolbar is built once at init. Subsequent state changes only
       // re-render the table (render()); the search input keeps focus.
       renderToolbar();
       render();
+      // The two views (S425): the Progress dash opens unless the address names a view or a
+      // filter, or the reader last chose the Reference view; a quickstart hint opens the table.
+      ensureViewMounts();
+      if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "reference" : (readView() || "progress"));
+      window.addEventListener("hashchange", onHashChange);
     });
     // Subscribe to runtime hints (quickstart fires after the tab is already
     // mounted — most common path). Rebuild the toolbar so the hinted filter
     // is visible in the dropdown chrome too.
     window.addEventListener("cpl-qs-hint", function (e) {
       if (!e || !e.detail || e.detail.tab !== QS_TAB) return;
-      if (applyQsHint(e.detail.hint)) { renderToolbar(); render(); }
+      if (applyQsHint(e.detail.hint)) { renderToolbar(); render(); if (document.getElementById("cs-views")) applyView("reference"); }
     });
   }
 
@@ -2035,4 +2701,7 @@
   } else {
     init();
   }
+  /* Exposed for the tests and the a11y sweep's seed: the definitions, the context and the view. */
+  window.CPL_CANONICAL_SUBJ4 = { MILESTONES: MILESTONES, PARTS: PARTS, HEADLINE: HEADLINE, TO: TO, progressContext: progressContext,
+    applyView: applyView, routeFromHash: routeFromHash, renderProgress: renderProgress, _state: state };
 })();

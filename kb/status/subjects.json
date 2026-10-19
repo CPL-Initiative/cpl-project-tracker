@@ -1,23 +1,39 @@
 {
   "schema": 1,
-  "session": 423,
-  "moniker": "SkyLaurel",
-  "run": "the CPL Queue routine",
+  "session": 425,
+  "moniker": "SkyMadrone",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_424_handoff.md",
+  "handoff": "docs/session_425_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T11:18:05Z",
+  "written_at": "2026-10-19T16:44:01Z",
   "project": "subjects",
   "next_step": {
-    "title": "Confirm the 25 disciplines still on the data's modal code",
-    "text": "Twenty-five disciplines carry the subject code the data votes for most, unconfirmed by a person, and two codes sit on two disciplines each (AUTB, and FTVE by design). A curator confirms or corrects each on the Canonical SUBJ4 tab."
+    "title": "Confirm the 26 picks a person has not confirmed, 13 of them on the authority's own code",
+    "text": "Twenty-five MQ disciplines carry the code the data votes for most and one carries a code it shares; no person has confirmed them. Thirteen of them sit on the authority's own code (CCN or C-ID), which the nightly cohort confirm settles once built (Sam ruled it on, Sheet 99, 16:37Z); the rest are a curator's picks on the Reference view. Then the one collision (AUTB), the thirteen weak mnemonics and the two modal choices without a note, each a finding on the Progress view."
   },
   "changes": [
     {
       "at": "2026-10-19T11:00:00Z",
       "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+    },
+    {
+      "at": "2026-10-19T16:30:00Z",
+      "text": "The Progress view: the Commons' dash for this reference, with a card for each of Sam's eight steps, the procedures under the cards and a count that opens the filtered table (the Commons' step 3, the deep link behind a count)."
+    },
+    {
+      "at": "2026-10-19T16:30:00Z",
+      "text": "The daily scan runs from the daily workflow and writes kb/csr_out/latest.json with every minted identity's code: 282 codes on 75,581 identities, 110 strays on 396; its missed-alignment rule honors a recorded note, so CMUS and HIT stop asking."
+    },
+    {
+      "at": "2026-10-19T16:30:00Z",
+      "text": "The handbook's discipline is the MQ discipline on the tab and the Commons row (Sam's word); the pick's reviewer is read from the code row, so eleven picks a person made no longer read as a cohort's."
+    },
+    {
+      "at": "2026-10-19T16:37:00Z",
+      "text": "Sam answered Open Asks Sheet 99's six cards, all his own call: settled, on, agab, sitting, hide, rename. The lane records them; Session 426 executes them, the nightly cohort confirm first."
     }
   ]
 }

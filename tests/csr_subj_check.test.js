@@ -190,10 +190,11 @@ setTimeout(() => {
       return "";
     }
     check("alias pair THEA is NOT a collision", sectionUl("Shared Common SUBJ").indexOf("THEA") < 0);
-    check("alias pair THEA lands in the alias-families info section",
-      sectionUl("Alias families").indexOf("THEA") >= 0 &&
-      sectionUl("Alias families").indexOf("Drama/Theater Arts") >= 0 &&
-      sectionUl("Alias families").indexOf("Theater Arts") >= 0);
+    // S425: the section is "Codes shared by design" (an alias family, a ruled fan-in, an umbrella code both declare).
+    check("alias pair THEA lands in the shared-by-design info section",
+      sectionUl("Codes shared by design").indexOf("THEA") >= 0 &&
+      sectionUl("Codes shared by design").indexOf("Drama/Theater Arts") >= 0 &&
+      sectionUl("Codes shared by design").indexOf("Theater Arts") >= 0);
     const peDrift = [...doc.querySelectorAll("#cs-check-body .cs-check-list li")]
       .map((li) => li.textContent).find((t) => t.indexOf("Physical Education") === 0);
     check("PE drift lists KINE ×5 WITHOUT cross-claiming its own family's owner",

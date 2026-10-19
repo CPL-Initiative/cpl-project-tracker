@@ -106,6 +106,36 @@ check(("Alpha", "Beta", "ALPH") in dups, "a one-sided declaration does not silen
 real_dups = m.cs2_dups(real_reg)
 check(not any(c == "FTVE" for _, _, c in real_dups), "the real FTVE fan-in stays quiet")
 
+# 9. CS4 (S425): a recorded note settles a divergence, so the scan stops asking.
+check(m.note_records_prefix({"_notes": "CS4 divergence recorded: anchor-official prefix CMUS has zero COCI adoption; MUSC stays."}, "CMUS"),
+      "a note naming the official prefix records the divergence")
+check(not m.note_records_prefix({"_notes": "picked for the mnemonic"}, "CMUS"), "a note that does not name the prefix records nothing")
+check(not m.note_records_prefix({}, "CMUS"), "no note, nothing recorded")
+check(not m.note_records_prefix({"_notes": "CMUSIC is not it"}, "CMUS"), "the prefix is matched as a word, not a fragment")
+
+# 10. CS10 (S425): every minted identity's code against the registry, from the minted files.
+COURSES = {"courses": {
+    "BUSI M1001": {"discipline": "Business"}, "BUSI M1002": {"discipline": "Business"},
+    "SPAN M1001": {"discipline": "Foreign Languages"},
+    "MCOM M1001": {"discipline": None}, "MCOM M1002": {}, "TOUR M1001": {"discipline": "Travel Services"},
+    "ACCT 110": {"discipline": "Business"}}}
+SINGLES = {"singletons": {"BUSI MNAA": {"discipline": "Business"}, "MCOM MNAB": {"discipline": None}}}
+REG10 = {"Business": {"canonical_subj4": "BUSI"},
+         "Foreign Languages": {"canonical_subj4": "FLNG", "umbrella_codes": ["FLNG", "SPAN", "FREN"]}}
+mc = m.mid_subject_codes(REG10, COURSES, SINGLES)
+check(mc["ids"] == 8 and mc["codes"] == 4, "every M-shaped id counts, a C-ID key does not: %r" % ({k: v for k, v in mc.items() if k != "strays"},))
+check(mc["canonical"] == 1 and mc["umbrella"] == 1, "a canonical code and a declared umbrella code are not strays")
+check(mc["stray_codes"] == 2 and mc["stray_ids"] == 4, "the strays are the codes neither canonical nor umbrella, with their ids")
+check(mc["strays"][0]["code"] == "MCOM" and mc["strays"][0]["ids"] == 3 and mc["strays"][0]["disciplines"] == {"(no discipline)": 3},
+      "a stray lists its ids and the disciplines they carry, no discipline named as such")
+check(mc["strays"][1] == {"code": "TOUR", "ids": 1, "disciplines": {"Travel Services": 1}}, "a stray with a discipline names it")
+
+# 11. On the committed files the measure reproduces the registry's own codes.
+real_mc = m.mid_subject_codes(real_reg)
+real_canon = {e.get("canonical_subj4") for e in real_reg.values()}
+check(real_mc["canonical"] == len(real_canon), "every canonical code carries at least one identity")
+check(real_mc["stray_ids"] < real_mc["ids"] * 0.02, "strays are under two percent of the identities (%d of %d)" % (real_mc["stray_ids"], real_mc["ids"]))
+
 if fails:
     print("\n%d check(s) failed" % len(fails))
     sys.exit(1)

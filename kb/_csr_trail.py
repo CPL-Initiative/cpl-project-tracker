@@ -45,9 +45,26 @@ CSR CANON (encoded rules)
                       promote-time re-key. The `subject` field is the modal
                       LOCAL code and never the comparison.
 
-Usage:  python3 kb/_csr_trail.py            # writes kb/csr_out/<date>/findings.{json,csv}
+  CS10 identity codes — every minted M-ID carries its discipline's canonical or a
+                      declared umbrella code; the scan lists every other code with
+                      the identities under it (`_mid_codes`), re-key EVIDENCE for the
+                      playbook (Sam, 2026-10-19: "eliminate unnecessary M-ID minted
+                      Subjects").
+
+A RECORDED NOTE SETTLES A DIVERGENCE (2026-10-19). CS4's missed-alignment rule
+reported CMUS and HIT at every run although Sam ruled both on 2026-09-03 and the
+seed carries the reason in `_notes`; a check that keeps asking a settled question
+is noise on the Progress view. A twin whose `_notes` name the official prefix is
+reported as `cs4_divergence_noted` (no judgment needed), as CS5 already honors a
+note.
+
+Usage:  python3 kb/_csr_trail.py            # writes kb/csr_out/<date>/findings.{json,csv} + kb/csr_out/latest.json
+        python3 kb/_csr_trail.py --latest   # the daily run: writes kb/csr_out/latest.json alone
+                                            #   (daily-dashboard.yml, before the Commons status build;
+                                            #   canonical_subj4.js and kb/_build_commons_status.py read it)
 """
 
+import argparse
 import csv
 import json
 import os
@@ -59,6 +76,8 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT_DIR = os.path.join(HERE, "csr_out", str(date.today()))
+LATEST = os.path.join(HERE, "csr_out", "latest.json")
+MID_SHAPE = re.compile(r"^([A-Z]{4}) M[A-Z0-9]+$")
 
 UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology", "Agriculture", "Agricultural Production"}  # kb/_row_audit.py
 
@@ -184,7 +203,62 @@ def cs9_anchor(anchor, disciplines):
     return dead, diverged
 
 
-def main():
+def mid_subject_codes(disciplines, courses=None, singletons=None):
+    """CS10: every minted M-ID's code, grouped against the registry.
+
+    canonical: a discipline's canonical_subj4; umbrella: a code an umbrella entry
+    declares in `umbrella_codes`; stray: any other code, listed with the identities
+    under it and the disciplines those identities carry (a stray whose identities
+    carry a discipline is a re-key to that discipline's code; one with none waits
+    on the discipline-blank worklist). The seed's `variants_observed` sees only the
+    identities whose discipline the seed knows (173 codes on 2026-10-19), so this
+    reads the minted files themselves (282 codes the same day)."""
+    if courses is None:
+        courses = json.load(open(os.path.join(HERE, "coci_minted_courses.json")))
+    if singletons is None:
+        singletons = json.load(open(os.path.join(HERE, "coci_minted_singletons.json")))
+    canon = {e.get("canonical_subj4") for e in disciplines.values() if e.get("canonical_subj4")}
+    umbrella = {c for e in disciplines.values() for c in (e.get("umbrella_codes") or [])}
+    codes, strays, ids = Counter(), {}, 0
+    for doc in (courses, singletons):
+        recs = doc.get("courses") or doc.get("singletons") or {}
+        items = recs.items() if isinstance(recs, dict) else ((r.get("course_id") or r.get("id"), r) for r in recs)
+        for key, rec in items:
+            m = MID_SHAPE.match(key or "")
+            if not m:
+                continue
+            code = m.group(1)
+            codes[code] += 1
+            ids += 1
+            if code in canon or code in umbrella:
+                continue
+            s = strays.setdefault(code, {"code": code, "ids": 0, "disciplines": Counter()})
+            s["ids"] += 1
+            d = rec.get("discipline") if isinstance(rec, dict) else None
+            s["disciplines"][d or "(no discipline)"] += 1
+    out = sorted(strays.values(), key=lambda x: (-x["ids"], x["code"]))
+    for s in out:
+        s["disciplines"] = dict(s["disciplines"].most_common())
+    return {
+        "ids": ids, "codes": len(codes),
+        "canonical": sum(1 for c in codes if c in canon),
+        "umbrella": sum(1 for c in codes if c in umbrella and c not in canon),
+        "stray_codes": len(out), "stray_ids": sum(s["ids"] for s in out),
+        "strays": out,
+    }
+
+
+def note_records_prefix(entry, prefix):
+    """A twin whose curator note names the official prefix has a recorded divergence."""
+    notes = entry.get("_notes") or ""
+    return bool(prefix) and re.search(r"\b" + re.escape(prefix) + r"\b", notes) is not None
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description="the Common Subjects Reference's scan (read-only)")
+    ap.add_argument("--latest", action="store_true",
+                    help="write kb/csr_out/latest.json alone (the daily run); without it, the dated receipt too")
+    args = ap.parse_args(argv)
     reg = json.load(open(os.path.join(HERE, "discipline_canonical_subj4.json")))
     disciplines = reg["disciplines"]
     official = load_official_ccn_prefixes()
@@ -241,7 +315,11 @@ def main():
         else:
             # official prefix unused by CSR — is there a twin discipline using a different code?
             twin = next((d for d in disciplines if twin_sub and twin_sub in d.lower()), None)
-            if twin:
+            if twin and note_records_prefix(disciplines[twin], prefix):
+                add("cs4_divergence_noted", twin,
+                    "official prefix %s unused; twin discipline keeps %s and its note records why" % (prefix, disciplines[twin]["canonical_subj4"]),
+                    False, suggestion="settled; revisit if the authority publishes a four-letter form", group="ccn")
+            elif twin:
                 add("cs4_missed_alignment", twin,
                     "official CCN prefix %s (%d rows) unused; twin discipline uses %s" % (prefix, n, disciplines[twin]["canonical_subj4"]),
                     True, suggestion="curator call: converge %s → %s (Rule-7 re-mint) or record divergence reason" % (disciplines[twin]["canonical_subj4"], prefix),
@@ -293,23 +371,31 @@ def main():
             "anchor id prefix %s vs CSR canonical %s" % (prefix, canon), True,
             suggestion="fold to %s at promote-time" % canon, group="anchor")
 
-    os.makedirs(OUT_DIR, exist_ok=True)
-    with open(os.path.join(OUT_DIR, "findings.json"), "w") as f:
-        json.dump({"_scanned_at": str(date.today()),
-                   "_registry_synced_at": reg.get("_synced_at"),
-                   "_disciplines": len(disciplines),
-                   "_official_ccn_prefixes": dict(official),
-                   "findings": findings}, f, indent=1, ensure_ascii=False)
-    with open(os.path.join(OUT_DIR, "findings.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["id", "rule", "item", "evidence", "suggestion", "needs_judgment", "group"])
-        w.writeheader()
-        w.writerows(findings)
+    mid_codes = mid_subject_codes(disciplines)
+    payload = {"_scanned_at": str(date.today()),
+               "_registry_synced_at": reg.get("_synced_at"),
+               "_disciplines": len(disciplines),
+               "_official_ccn_prefixes": dict(official),
+               "_mid_codes": mid_codes,
+               "findings": findings}
+    with open(LATEST, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+    if not args.latest:
+        os.makedirs(OUT_DIR, exist_ok=True)
+        with open(os.path.join(OUT_DIR, "findings.json"), "w") as f:
+            json.dump(payload, f, indent=1, ensure_ascii=False)
+        with open(os.path.join(OUT_DIR, "findings.csv"), "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=["id", "rule", "item", "evidence", "suggestion", "needs_judgment", "group"])
+            w.writeheader()
+            w.writerows(findings)
 
     by_rule = Counter(f["rule"] for f in findings)
     print("CSR trail scan: %d findings across %d disciplines" % (len(findings), len(disciplines)))
     for r, n in by_rule.most_common():
         print("  %-24s %d" % (r, n))
-    print("→ %s" % OUT_DIR)
+    print("  identity codes: %d on %d ids; %d strays on %d ids" % (mid_codes["codes"], mid_codes["ids"], mid_codes["stray_codes"], mid_codes["stray_ids"]))
+    print("→ %s" % (LATEST if args.latest else OUT_DIR))
     return 0
 
 

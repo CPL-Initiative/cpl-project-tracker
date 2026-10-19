@@ -421,6 +421,12 @@ jobs:
             || echo "::warning title=Re-mint blast radius not rebuilt::kb/_build_remint_blast_radius.py failed — SkyView's re-mint footprint reads the previous curation until the next run, and js-tests' lints job reports it stale. Check the step log."
 
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
+      # The Common Subjects Reference's daily scan (Sam, 2026-10-19: a self-monitoring CSR):
+      # the canon rules and every minted identity's code, read-only, stdlib, local files only.
+      # kb/csr_out/latest.json feeds the tab's Progress view and the Commons row's known issues.
+      - name: Scan the Common Subjects Reference
+        run: python3 kb/_csr_trail.py --latest || echo "::warning title=CSR scan not rebuilt::kb/_csr_trail.py failed; the Common Subjects Reference's Progress view and the Commons row read the previous kb/csr_out/latest.json until the next run. Check the step log."
+
       # The Commons tab's figures (Sam, 2026-10-18: "Build it as a tab now"): every common
       # reference's complete pair, known issues, settled procedures and machine stamp, read
       # from the committed files the steps above rebuilt. kb/status/commons.json; commons.js.
@@ -526,6 +532,8 @@ jobs:
           git add kb/projects_snapshot.json 2>/dev/null || true
           # The Commons tab's figures (the step before the copy): rebuilt every run.
           git add kb/status/commons.json 2>/dev/null || true
+          # The Common Subjects Reference's daily scan (the step before the Commons build).
+          git add kb/csr_out/latest.json 2>/dev/null || true
           # Project lifecycle (Session 84): committed ledger of Tabled/Archived
           # projects (offline fallback + the "noted in the KB" record)
           git add kb/project_lifecycle.json 2>/dev/null || true

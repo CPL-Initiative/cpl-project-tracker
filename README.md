@@ -53,7 +53,7 @@ The whole ecosystem, end-to-end:
    work items), Annual Goals (+ a Projects section listing the work items), Budget, Vision 2030, a
    per-college **Common Course Reference** curation tab (expand a course → an
    **inverse view** of the EACR: the aligned exhibits/credentials that articulate
-   to it), a **Common Subjects Reference** tab (faculty-facing per-discipline
+   to it), a **Common Subjects Reference** tab (opening on its Progress dash since S425, a card per step with its procedure, the table as the Reference view; faculty-facing per-discipline
    curation with validate workflow + TOP/CTE/CIP columns + collapsible category
    groupings; a **"CPL opportunities"** column rolls up how many credentials
    articulate to each discipline; Variants column shows the raw local college

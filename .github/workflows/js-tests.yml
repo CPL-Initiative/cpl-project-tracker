@@ -293,6 +293,11 @@ jobs:
       # non-required check.
       - name: CSR scanner rules (compare the id, honor a ruled fan-in)
         run: python3 tests/csr_trail_rules_test.py
+      # The Common Subjects Reference's procedures store (S425): the tab's Progress view
+      # draws each card's procedure from it and the Commons row reads their names, so a
+      # procedure with no card, or a glyph in its words, would surface on both dashes.
+      - name: CSR procedures store (one per Progress card, plain words)
+        run: python3 tests/csr_procedures_test.py
 
       # The Fact Sheet's statewide recommendations, which Sierra's statewide
       # lines are built from. Units never split an identity (Sam, 2026-09-27):

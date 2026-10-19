@@ -2,7 +2,7 @@
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
 updated: 2026-10-19
-tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference]
+tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
 related:
@@ -43,7 +43,7 @@ together and places them in some order of priority and completion and known issu
 | Common Exhibit Reference | `#credential-reference` | [cer-procedures](cer-procedures.md) | procedures run nightly; the first saving run and the first fold since July landed 2026-10-18 |
 | Common Course Reference, SkyView | `#unified-courses`, SkyView | [skyview-ccr-interface](skyview-ccr-interface.md) | built and stable; the auditor's receipt on the Pipeline tab |
 | Common CR Reference, with its military half | `#cr-reference` | [common-cr-reference](common-cr-reference.md), [military-ace-cr-reference](military-ace-cr-reference.md) | worklist live; the military half scoped |
-| Common Subjects Reference (Sam's addition, Sheet 95) | `#canonical-subj4` | [mid_lifecycle](../mid_lifecycle.md), Phase 1e | the canonical SUBJ4 code per discipline |
+| Common Subjects Reference (Sam's addition, Sheet 95) | `#canonical-subj4` | [common-subjects-reference](common-subjects-reference.md) | carries all five parts since S425: the Progress view, a procedure per card, the daily scan, the run log |
 
 ## Status
 
@@ -118,6 +118,14 @@ card for Sam.
 
 **Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
 
-**NEXT:** the deep link behind a count; then each reference's Progress view from the shared module.
-written at checkpoint step 12, so the four rows read a session stamp, a next step and calls; the deep link
-behind a count; then the per-reference Progress views from the shared module.
+**Step 3's first Progress view, Subjects (S425, cpl-project-tracker#2260).** Sam, 2026-10-19: *"Can you develop a
+dash for CSR similar to the one you created for PR? Seems like each of our Commons consolidation projects should
+follow the same process"*; his ask moved Subjects ahead of Exhibit, Course and CR in the ruled order. The tab opens on
+Progress, drawn by the shared module from its own definitions (a card per step, the procedures under the cards, the
+findings), and a count opens the table with its filter through `#canonical-subj4/<filter>`, the deep link behind a
+count; the Commons row's counts link the same way. The second host proved the contract: a 60-line host object, its
+own section classes, no change to the module but an optional second word per part. Lane:
+[common-subjects-reference](common-subjects-reference.md).
+
+**NEXT:** the Exhibit, Course and CR Progress views from the shared module, each with its definition of complete on a
+card for Sam, and the deep link behind each of their counts.

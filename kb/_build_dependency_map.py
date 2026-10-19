@@ -129,6 +129,15 @@ WORKER_SOURCES = {"cloudflare-worker-proxy.js", "worker-to-paste.js"}
 # longer matches, the seed's edges are dropped and a warning lands in the
 # output — a seed can go stale loudly, never silently.
 SEEDS = [
+    {   # canonical_subj4.js (S425): the Progress view's three reads go through constants
+        # (fetch(SCAN_URL) etc.), which the literal fetch scan does not resolve.
+        "file": "canonical_subj4.js",
+        "anchor": r'var SCAN_URL = "kb/csr_out/latest\.json"',
+        "datasets": [("file:kb/csr_out/latest.json", "read"), ("file:kb/status/subjects.json", "read"),
+                     ("file:kb/csr_procedures.json", "read")],
+        "why": "the Common Subjects Reference's Progress view reads the daily scan, its run log and "
+               "its procedures store through named constants",
+    },
     {   # coci_lookup.js line ~206: loadScript("coci_lookup_desc_" + key + ".js")
         "file": "coci_lookup.js",
         "anchor": r'loadScript\("coci_lookup_desc_"\s*\+',

@@ -564,3 +564,13 @@ is a static asset (one file, both HTMLs `<script>`-load it — no Rule-4 mirror)
 Watch the cron land the CCR discipline column for the 6,590 newly-disciplined courses,
 then (if Sam wants) tighten the coarsest divisions to finer 4-digit TOP→discipline
 mappings where a clean MQ target exists.
+
+## 2026-10-19 (S425 SkyMadrone): the Progress view, MQ discipline, and the daily scan
+
+The tab became the Commons' second host: it opens on a Progress view drawn by `commons_progress.js` (a card for
+each of Sam's eight steps, the procedures from `kb/csr_procedures.json`, the findings from the daily scan's
+`kb/csr_out/latest.json`), with the table as the Reference view and `#canonical-subj4/<filter>` routes behind every
+count. "Discipline" reads "MQ Discipline" (Sam: to keep the two grains apart). Three misreadings fixed on the way: the
+SUBJ check's six ruled sharings reported as collisions, the pick's reviewer taken from a later note, and the C-ID index
+skipping descriptors ending in " X". Lessons and the measured state: `docs/commons_lessons.md` (S425) and
+`docs/reference/lanes/common-subjects-reference.md`.

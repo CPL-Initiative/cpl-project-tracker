@@ -323,7 +323,8 @@ window.COBI_ADMIN_SURFACE = {
     },
     "canonical-subj4": {
       "modules": [
-        "canonical_subj4.js"
+        "canonical_subj4.js",
+        "commons_progress.js"
       ],
       "reads": [],
       "writes": [

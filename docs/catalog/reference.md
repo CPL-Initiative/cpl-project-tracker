@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-58 document(s).
+59 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -27,6 +27,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-08-28 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-09-29 |
+| [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-10-19 |
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
 | [Discipline cross-listing — nest, alias or carry two homes — lane state](../reference/lanes/discipline-crosslist.md) | lanes | `discipline-crosslist.md` | 2026-09-22 | 2026-09-29 |
 | [Disposition grain / student detail — lane state](../reference/lanes/disposition-grain-student-detail.md) | lanes | `disposition-grain-student-detail.md` | 2026-08-28 | 2026-09-30 |
