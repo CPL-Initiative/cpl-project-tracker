@@ -4,10 +4,10 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 672,
+  "file_datasets": 674,
   "external_services": 182,
-  "consumers": 450,
-  "workflows": 55,
+  "consumers": 451,
+  "workflows": 56,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -514,6 +514,13 @@
   },
   "external:api.x.ai": {
    "consumers": [
+    {
+     "id": "edgefn:program-requirements-extract",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 125
+    },
     {
      "id": "script:kb/_xai_smoke.py",
      "kind": "script",
@@ -8020,6 +8027,13 @@
      "line": 0
     },
     {
+     "id": "workflow:second-reader.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:typesafe-smoke.yml",
      "kind": "workflow",
      "direction": "run",
@@ -8139,6 +8153,19 @@
     },
     {
      "id": "workflow:phase-1e-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_second_reader.py": {
+   "consumers": [
+    {
+     "id": "workflow:second-reader.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -18574,6 +18601,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/second_reader_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/skyview_built_from_source_test.py": {
    "consumers": [
     {
@@ -20614,7 +20654,14 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 339
+    },
+    {
+     "id": "edgefn:program-requirements-extract",
+     "kind": "edgefn",
+     "direction": "write",
+     "how": "literal",
+     "line": 423
     }
    ],
    "main_committers": []
@@ -24235,6 +24282,7 @@
     "tests/program_record_verdicts_sql_test.py",
     "tests/program_source_addenda_read_test.py",
     "tests/jev_harvest_test.py",
+    "tests/second_reader_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
@@ -24582,6 +24630,19 @@
     "kb/projects_seed_out/"
    ],
    "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "second-reader.yml": {
+   "name": "Second reader (program requirements)",
+   "crons": [],
+   "scripts": [
+    "kb/_program_requirements_college.py",
+    "kb/_second_reader.py"
+   ],
+   "adds": [],
+   "push": null,
    "deploys": [],
    "chain": [],
    "urls": []

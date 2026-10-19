@@ -55,7 +55,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `allowed_reviewers` | `edgefn:cer-classify`, `edgefn:cpl-news-harvest`, `edgefn:program-requirements-extract` | — |
+| `allowed_reviewers` | `edgefn:cer-classify`, `edgefn:cpl-news-harvest`, `edgefn:program-requirements-extract` | `edgefn:program-requirements-extract` |
 | `budget_funding` | tabs: `budget`, `college-briefing`, `implementation-funding` · scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | tabs: `budget` |
 | `chat_interactions` | tabs: `sierra-training` | `edgefn:cpl-chat` |
 | `chatbox_college_courses` | scripts: `kb/_course_title_cleanup_apply.py` · `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
@@ -477,7 +477,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
-| `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml`, `typesafe-smoke.yml` | — |
+| `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
@@ -486,6 +486,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
+| `kb/_second_reader.py` | workflows: `second-reader.yml` | — |
 | `kb/_seed_projects_apply.py` | workflows: `projects-seed-apply.yml` | — |
 | `kb/_seed_workplan_goals_apply.py` | workflows: `workplan-goals-seed-apply.yml` | — |
 | `kb/_subj4_apply.py` | workflows: `phase-1e-apply.yml` | — |
@@ -891,6 +892,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
 | `tests/roep_display_test.py` | workflows: `js-tests.yml` | — |
 | `tests/run.js` | workflows: `js-tests.yml` | — |
+| `tests/second_reader_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_recs_test.py` | workflows: `js-tests.yml` | — |
 | `tests/stop_hook_git_check_test.py` | workflows: `js-tests.yml` | — |
@@ -947,7 +949,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:workplan-rebuild` |
 | `api.github.com/repos/cpl-initiative` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.typesafe.ai` | scripts: `kb/_typesafe_smoke.py` |
-| `api.x.ai` | scripts: `kb/_xai_smoke.py` |
+| `api.x.ai` | scripts: `kb/_xai_smoke.py` · `edgefn:program-requirements-extract` |
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `bakersfield.elumenapp.com` | scripts: `kb/_program_requirements_college.py` |
 | `bsky.app` | `edgefn:cpl-news-harvest` |
@@ -1141,5 +1143,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 672 file
-datasets · 182 external services · 450 consumers · 55 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 674 file
+datasets · 182 external services · 451 consumers · 56 workflows · 39 tabs.

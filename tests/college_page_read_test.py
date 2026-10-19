@@ -86,6 +86,12 @@ check(cpr.pdf_pages_to_print(["cover", "welding only", "Ironworker A.S."], pat) 
       "only the pages naming a keyword")
 check(cpr.pdf_pages_to_print(["cover", "nothing"], pat) == [0], "the first page when none hits")
 check(cpr.pdf_pages_to_print([], pat) == [], "an empty PDF prints nothing")
+check(cpr.pdf_pages_to_print(["Ironworker", "x", "Ironworker", "y", "z"], pat, span=[3, 5]) == [2],
+      "pdf_span keeps the search to the pages named")
+check(cpr.pdf_pages_to_print(["Ironworker", "x", "Ironworker", "y", "z"], pat, after=1) == [0, 1, 2, 3],
+      "pdf_after prints the page after each hit, once")
+check(cpr.pdf_pages_to_print(["x", "y", "Ironworker"], pat, after=2) == [2],
+      "pdf_after stops at the catalog's end")
 check(cpr.is_pdf("https://x.edu/a/Roadmap_ua.PDF") and cpr.is_pdf("https://x.edu/view", "application/pdf; q=1")
       and not cpr.is_pdf("https://x.edu/page.htm", "text/html"), "a PDF by address or by type")
 

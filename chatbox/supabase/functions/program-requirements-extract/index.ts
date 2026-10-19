@@ -95,11 +95,25 @@
 // and also put its units in open_elective_units, because the block's list ends "or any
 // transferable or degree applicable course": 18 + 18 + 18 + 24 read 78 against the
 // printed 60. Units a block holds never go in open_elective_units too.
+// Version 11 (S421, 2026-10-19): the same record from a second reader. Sam's Open
+// Asks Sheet 97 card 1 (2026-10-19 03:11Z, his own call: "Build with Grok"): a
+// second model reads each record that fails a machine check, the scorer scores
+// both readings, agreement is evidence and disagreement a known issue carrying
+// both. An optional body.provider ("anthropic", the default, or "xai") picks the
+// reader; both get the same system prompt, the same user message and the same
+// record schema, so a difference between the readings is a difference between
+// the models and nothing else. The xAI call goes to its OpenAI-compatible chat
+// endpoint with the schema as response_format; the model is XAI_MODEL (a
+// function secret) or the body's model, never a guess (kb/_xai_smoke.py: a
+// guessed id fails with a 404 that reads like a bad key). Sam's call 6 on sheet
+// 23 still holds: the xAI key lives here as a function secret, never in GitHub;
+// the runner (kb/_second_reader.py) presents the service key as it always has.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //
 // Secrets used (already set project-wide): ANTHROPIC_API_KEY, SUPABASE_URL.
+// For provider "xai" (Sam sets them, Edge Function secrets): XAI_API_KEY, XAI_MODEL.
 
 import Anthropic from "npm:@anthropic-ai/sdk";
 
@@ -107,6 +121,8 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpq
 const MODEL = "claude-opus-5-5";
 const EFFORT = "high";          // reading a rule and its minimum is the hard part
 const MAX_TEXT = 60000;         // characters of catalog text accepted per call
+const PROVIDERS = ["anthropic", "xai"];
+const XAI_BASE = (Deno.env.get("XAI_BASE_URL") || "https://api.x.ai").replace(/\/+$/, "");
 
 const JSON_HEADERS = { "content-type": "application/json" };
 
@@ -391,11 +407,67 @@ function userMessage(p: Record<string, unknown>, closed: Course[], text: string,
   ].concat(part ? ["", partRequest(part)] : []).join("\n");
 }
 
+// The second reader (version 11): the same prompt, message and schema to xAI's
+// OpenAI-compatible chat endpoint. The reply carries the same fields the Anthropic
+// branch returns (model, stop_reason, usage, ms, part, record, error) plus the
+// provider, so the runner reads both the same way. The key is scrubbed from any
+// error text before it is returned.
+async function readWithXai(model: string, user: string, part: Part | null): Promise<Record<string, unknown>> {
+  const key = Deno.env.get("XAI_API_KEY") || "";
+  const t0 = Date.now();
+  const out: Record<string, unknown> = {
+    provider: "xai", model, stop_reason: null as string | null, usage: null as unknown, ms: 0,
+    part: part ? { index: part.index, of: part.of } : null, record: null as unknown, error: null as string | null,
+  };
+  try {
+    const r = await fetch(`${XAI_BASE}/v1/chat/completions`, {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${key}`, "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        model,
+        temperature: 0,
+        max_tokens: 16000,
+        messages: [{ role: "system", content: SYSTEM }, { role: "user", content: user }],
+        response_format: { type: "json_schema", json_schema: { name: "program_record", strict: true, schema: RECORD_SCHEMA } },
+      }),
+    });
+    out.ms = Date.now() - t0;
+    const raw = await r.text();
+    if (!r.ok) {
+      out.error = `xAI HTTP ${r.status}: ${raw.replaceAll(key, "<redacted>").slice(0, 400)}`;
+      return out;
+    }
+    const data = JSON.parse(raw);
+    out.model = data.model || model;
+    out.usage = data.usage ?? null;
+    const choice = Array.isArray(data.choices) ? data.choices[0] : null;
+    out.stop_reason = choice?.finish_reason ?? null;
+    if (out.stop_reason === "length") {
+      out.error = "the record ran past max_tokens";
+      return out;
+    }
+    const content = choice?.message?.content;
+    if (typeof content !== "string" || !content.trim()) {
+      out.error = "no text in the response";
+      return out;
+    }
+    try {
+      out.record = unnullSpans(JSON.parse(content));
+    } catch (_e) {
+      out.error = "the response was not JSON";
+    }
+    return out;
+  } catch (err) {
+    out.ms = Date.now() - t0;
+    out.error = String(err).replaceAll(key, "<redacted>").slice(0, 400);
+    return out;
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method !== "POST") return reply(405, { error: "POST only" });
   const bearer = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "").trim();
   if (!bearer || !(await isServiceCred(bearer))) return reply(401, { error: "unauthorized" });
-  if (!Deno.env.get("ANTHROPIC_API_KEY")) return reply(500, { error: "ANTHROPIC_API_KEY not set" });
 
   let body: Record<string, unknown>;
   try {
@@ -403,6 +475,12 @@ Deno.serve(async (req) => {
   } catch (_e) {
     return reply(400, { error: "body must be JSON" });
   }
+  const provider = typeof body.provider === "string" && body.provider.trim() ? body.provider.trim() : "anthropic";
+  if (!PROVIDERS.includes(provider)) {
+    return reply(400, { error: `provider must be one of ${PROVIDERS.join(", ")}` });
+  }
+  if (provider === "anthropic" && !Deno.env.get("ANTHROPIC_API_KEY")) return reply(500, { error: "ANTHROPIC_API_KEY not set" });
+  if (provider === "xai" && !Deno.env.get("XAI_API_KEY")) return reply(500, { error: "XAI_API_KEY not set" });
   const closed = Array.isArray(body.closed_list) ? (body.closed_list as Course[]) : [];
   const text = typeof body.text === "string" ? body.text : "";
   if (!text.trim() || !closed.length) {
@@ -414,6 +492,12 @@ Deno.serve(async (req) => {
   const part = readPart(body.part, closed.length);
   if (part === "bad") {
     return reply(400, { error: "part must be {index, of, codes}: 1 <= index <= of, 2 <= of <= 6, codes from the closed list" });
+  }
+
+  if (provider === "xai") {
+    const model = (typeof body.model === "string" && body.model.trim()) || (Deno.env.get("XAI_MODEL") || "").trim();
+    if (!model) return reply(500, { error: "XAI_MODEL not set and the body names no model; the model is never guessed" });
+    return reply(200, await readWithXai(model, userMessage(body, closed, text, part), part));
   }
 
   const client = new Anthropic();
