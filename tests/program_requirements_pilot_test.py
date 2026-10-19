@@ -1666,6 +1666,37 @@ check(not prog_lo_hi(floor_rec(26, 28, True))["pass"], "a low end past the floor
 check(not prog_lo_hi(floor_rec(22, 25, True))["pass"], "a low end short of the floor fails")
 e = prog_lo_hi(floor_rec(24, 24, True))
 check(e["pass"] and not e.get("minimum"), "an exact sum passes as equal, without the floor note")
+# San Joaquin Delta (S424): a certificate whose printed total includes the general education units it
+# names (05630: a 35-unit major, 16 GE units, "Minimum Units Required: 51"), and one whose page says
+# electives make up its total (11970: 41.5 units read, "Complete elective units to meet the minimum
+# 60 unit requirement for this certificate").
+CERT_LIST = [{"code": "ECE 26", "units": 3}, {"code": "ECE 29", "units": 3}]
+def cert_rec(total, **prog):
+    return {"program": dict({"total_units": {"min": total, "max": total}, "measure": "units"}, **prog),
+            "blocks": [{"name": "Required Courses", "rule": "all", "courses": [
+                {"code": "ECE 26", "units": 3}, {"code": "ECE 29", "units": 3}]}]}
+g = S.score(cert_rec(22, ge_units={"min": 16, "max": 16}, ge_pattern="Associate Degree General Education Pattern"),
+            CERT_LIST, None, "Certificate of Achievement")["arithmetic"]
+check(g["pass"] and g.get("ge_included") == [16.0, 16.0] and g["computed"] == [22.0, 22.0],
+      "a certificate total that includes its general education units passes with them named: %s" % json.dumps(g))
+check(not S.score(cert_rec(22), CERT_LIST, None, "Certificate of Achievement")["arithmetic"]["pass"],
+      "without general education units on the record, 6 against 22 still fails")
+check(not S.score(cert_rec(21, ge_units={"min": 16, "max": 16}), CERT_LIST, None,
+                  "Certificate of Achievement")["arithmetic"]["pass"],
+      "general education units that do not make the total exact do not pass it")
+f = S.score(cert_rec(60, electives_fill_degree=True), CERT_LIST, None, "Certificate of Achievement")["arithmetic"]
+check(f["pass"] and f.get("fill") == [54.0, 54.0], "electives fill a certificate's total: %s" % json.dumps(f))
+check(not S.score(cert_rec(60, electives_fill_degree=True), CERT_LIST, "ECE 26 ECE 29 Minimum Units Required: 60",
+                  "Certificate of Achievement")["arithmetic"]["pass"],
+      "a text naming no electives keeps the record failing, as the degree check does")
+check(S.score(cert_rec(60, electives_fill_degree=True), CERT_LIST,
+              "ECE 26 ECE 29 Complete elective units to meet the minimum 60 unit requirement",
+              "Certificate of Achievement")["arithmetic"]["pass"], "a text naming electives lets them fill")
+check(not S.score(cert_rec(5, electives_fill_degree=True), CERT_LIST, None,
+                  "Certificate of Achievement")["arithmetic"]["pass"], "a sum past the total is never a fill")
+d = S.score(cert_rec(60, electives_fill_degree=True, degree_total={"min": 60, "max": 60}), CERT_LIST, None,
+            "A.A. Degree")["arithmetic"]
+check(not d["pass"] and "fill" not in d, "a record with a degree total keeps the degree check's reading of the fill")
 # San Joaquin Delta (S422): the catalog prints ANTH 2L where the state's file keeps ANTHR 2L (same number and title).
 SJD_ALIASES = RC.prefix_aliases("San Joaquin Delta College")
 anth = {"program": {"total_units": {"min": 7, "max": 7}, "measure": "units"},

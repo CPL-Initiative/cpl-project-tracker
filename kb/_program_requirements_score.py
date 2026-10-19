@@ -660,12 +660,34 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         floor = (not ok and bool(prog.get("total_units_minimum"))
                  and abs(lo - stated[0]) <= TOL and hi >= stated[1] - TOL)
         ok = ok or floor
+        # A certificate whose printed total includes the general education units it names
+        # (San Joaquin Delta 05630, S424: "Minimum Units Required: 51" over a 35-unit major and
+        # "16 units of courses from the ... General Education Pattern areas", recorded in
+        # ge_units): the record carries no degree total, so the degree check never adds them.
+        ge = _span(prog.get("ge_units")) if degree is None else None
+        ge_included = (not ok and ge is not None
+                       and abs(lo + ge[0] - stated[0]) <= TOL and abs(hi + ge[1] - stated[1]) <= TOL)
+        # A certificate whose page says electives make up its total (San Joaquin Delta 11970,
+        # S424: "Complete elective units to meet the minimum 60 unit requirement for this
+        # certificate", electives_fill_degree on a record with no degree total): a sum short of
+        # the total passes with the fill named, as degree_verdict reads a degree's. The same
+        # guard: a text naming no electives keeps the record failing.
+        fill = None
+        if (not ok and not ge_included and degree is None and prog.get("electives_fill_degree")
+                and hi <= stated[0] + TOL and (text is None or ELECTIVE.search(text))):
+            fill = [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
+        ok = ok or ge_included or fill is not None
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
         if floor:
             arith["minimum"] = True
+        if ge_included:
+            arith["ge_included"] = list(ge)
+            arith["computed"] = [round(lo + ge[0], 2), round(hi + ge[1], 2)]
+        if fill is not None:
+            arith["fill"] = fill
         if degree is not None:
             # Record shape 6: a page printing the major's total and the degree's checks both,
             # and the record names the one it misses (the major first).

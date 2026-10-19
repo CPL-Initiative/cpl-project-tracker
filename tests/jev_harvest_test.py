@@ -38,6 +38,10 @@ failing = {"college": "Test College", "control_number": "00002", "title": "Busin
 # 1. only failing records are asked about
 check("a passing record fails no check", J.failing(passing) == [])
 check("a failing record names the check it fails", J.failing(failing) == ["arithmetic"])
+careers_only = dict(passing, control_number="00003",
+                    score=dict(passing["score"], careers={"pass": False, "not_verbatim": ["film work"]}))
+check("the careers check holds no record back, so failing it alone is no failure (S424)",
+      J.failing(careers_only) == [])
 with tempfile.TemporaryDirectory() as tmp:
     rec_dir = os.path.join(tmp, "test", "records")
     os.makedirs(rec_dir)

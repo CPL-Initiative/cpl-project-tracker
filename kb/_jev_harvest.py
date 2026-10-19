@@ -70,10 +70,18 @@ def slug_of(college):
     return s(college)
 
 
+# The checks that hold a record back, as the scorer's own `pass` reads them. The careers
+# check is reported beside them and holds no record back (kb/_program_requirements_score.py,
+# careers_check), so a record failing it alone is not a failing record: S421's Cañada sitting
+# asked Jev about five such rows (kb/jev_harvest_verdicts/ca_ada.json), and the verdicts could
+# only read "unverified" (S424).
+HOLDS_BACK = ("coverage", "invented", "arithmetic", "repeated", "outcomes")
+
+
 def failing(record):
-    """The checks this record fails, by name; [] when it passes them all."""
+    """The checks this record fails that hold it back, by name; [] when it passes them all."""
     score = record.get("score") or {}
-    return [k for k, v in score.items() if isinstance(v, dict) and v.get("pass") is False]
+    return [k for k in HOLDS_BACK if isinstance(score.get(k), dict) and score[k].get("pass") is False]
 
 
 def failing_records(slug):

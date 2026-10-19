@@ -1,0 +1,24 @@
+{
+ "_readme": "S424 SkyBuckthorn, 2026-10-19. Four of Taft's records read another program's page (the Jev sitting of run 39204968617, kb/jev_harvest_verdicts/taft.json: 30284 Administrative Services II read the General Business A.S. page; 46186 Speech Language Pathology Aide read the Master Teacher certificate's; 38661 CSU GE-Breadth read the Cal-GETC certificate's section; 38662 Intersegmental GE Transfer Curriculum read the associate degree philosophy page). The question is which of the four awards the 2026-2027 catalog lists at all, and under which group page, so assign() can be given the right page or the record filed as the college's to settle in COCI. This read prints the program index's links naming them and follows the group pages they would sit under. Free, no model call.",
+ "college": "Taft College",
+ "questions": {
+  "listed": "Whether the catalog's program index lists Administrative Services II, Speech Language Pathology Aide, CSU GE-Breadth and IGETC (or Cal-GETC alone), and the URL of each award's page.",
+  "group_page": "What each group page lists under 'In this section': the awards and their links."
+ },
+ "keywords": [
+  "Administrative Services[^<\"]{0,120}",
+  "Speech[- ]Language[^<\"]{0,120}",
+  "CSU GE[^<\"]{0,120}",
+  "IGETC[^<\"]{0,120}",
+  "Intersegmental[^<\"]{0,120}",
+  "Cal-GETC[^<\"]{0,120}",
+  "Certificate of Achievement",
+  "In this section"
+ ],
+ "pages": [
+  {"answers": ["listed", "group_page"],
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates",
+   "links": "General Business|Business|Early Care|Early Childhood|Transfer Studies|Cal-GETC|Speech|Administrative|GE-Breadth|IGETC|Intersegmental",
+   "follow": "^General Business|^Early Care|^Transfer Studies|^Speech|^Administrative Services"}
+ ]
+}
