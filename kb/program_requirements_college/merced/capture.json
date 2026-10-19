@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 182,
  "with_closed_list": 172,
- "started": "2026-10-19T10:11:33Z",
+ "started": "2026-10-19T10:44:44Z",
  "coursedog": {
   "root": "https://catalog.mccd.edu",
   "search": "https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=250&sortBy=catalogDisplayName%2CtranscriptDescription%2ClongName%2Cname&effectiveDatesRange=2026-10-19%2C2026-10-19&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
@@ -775,13 +775,13 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 196,
- "seconds": 1710.0,
- "found": 162,
+ "seconds": 1700.6,
+ "found": 163,
  "by_method": {
   "no_closed_list": 10,
   "not_found": 3,
-  "page_claimed": 7,
-  "sitemap_page": 162
+  "page_claimed": 6,
+  "sitemap_page": 163
  },
  "shared_pages": {
   "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt": [
@@ -932,16 +932,6 @@
    ]
   },
   {
-   "control_number": "38831",
-   "title": "Drone Technology",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.mccd.edu/programs/07204.CN/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/09350.AS/requisites-ojrrt",
-    "https://catalog.mccd.edu/programs/07200.AST/requisites-ojrrt"
-   ]
-  },
-  {
    "control_number": "44678",
    "title": "Engineering",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -952,46 +942,56 @@
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 25,
-  "0.8-1.0": 36,
-  "1.0": 101
+  "0.5-0.8": 26,
+  "0.8-1.0": 33,
+  "1.0": 104
  },
  "would_extract": {
   "against": "kb/program_requirements_college/merced",
   "kept": 159,
-  "programs": 3,
+  "programs": 4,
   "list": [
    {
     "control_number": "07708",
     "title": "Equine Science and Management",
     "award": "A.S. Degree",
     "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "coverage": 1.0,
+    "was_url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19493",
     "title": "Equine Science and Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
-    "coverage": 0.833,
+    "coverage": 1.0,
+    "was_url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38831",
+    "title": "Drone Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mccd.edu/programs/09170.CM/requisites-ojrrt",
+    "coverage": 0.625,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "20802",
-    "title": "Landscape Horticulture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01350.CN/requisites-ojrrt",
+    "control_number": "41050",
+    "title": "Drone Media",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
    }
   ]
  },
- "run": "39235509270"
+ "run": "39239492986"
 }

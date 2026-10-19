@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6609,
-    "output_tokens": 1945,
+    "output_tokens": 2043,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 1945,
+  "output_tokens": 2043,
   "output_tokens_details": {
-   "thinking_tokens": 866
+   "thinking_tokens": 885
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06534,
- "ms": 16667,
- "seconds": 17.1,
+ "cost_usd": 0.0673,
+ "ms": 16513,
+ "seconds": 17.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "DRON10"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CPSC17"
-   ],
-   "flagged": [
-    "CPSC17"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -106,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Drone Media Certificate",
+   "section_heading": "Drone Media Certificate (Total Credits 12.0 - 13.0)",
    "measure": "units",
    "total_units": {
     "min": 12,
@@ -184,13 +178,13 @@
     ]
    },
    {
-    "name": "Drone FAA Rules and Regs (CPSC-17)",
+    "name": "Drone FAA Rules and Regs",
     "rule": "all",
     "minimum": null,
     "option_group": "Drone FAA Rules and Regs",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -247,15 +241,16 @@
   "missing_explained": [
    {
     "code": "DRON 10",
-    "why": "Not in the text; the catalog lists 'Drone Technology I' under code CPSC-17 instead."
+    "why": "not in the text; catalog prints 'Drone Technology I' under the code CPSC-17 instead"
    }
   ],
   "notes": [
-   "The 'Drone Media' block is printed as 'The following number of Credits' totaling 6.0; its two 3-unit courses (DRON20, DRON21) together equal 6, so it is recorded as all required.",
-   "'Drone FAA Rules and Regs' (3 credits) is read as a choice between the Rule Group (DRON-01 and DRON-02, 3 units) and CPSC-17 Drone Technology I (3 units); recorded as two blocks in one option_group. The catalog's 3-unit total for the whole group is printed on the parent heading.",
-   "CPSC-17 'Drone Technology I' does not appear in the closed list; the closed list has DRON 10 Drone Technology I (3 units). Possibly a course renumbering; reviewer should check.",
-   "No program outcomes or careers are printed on this requisites page."
+   "The 'Drone FAA Rules and Regs' group (3 units) is read as a choice between the 'Rule Group' (DRON-01 and DRON-02, 3 units together) and CPSC-17 Drone Technology I (3 units); recorded as two blocks sharing an option_group. The catalog's 'The following number of Credits' wording makes this an inference.",
+   "CPSC-17 'Drone Technology I' shares its title with closed-list DRON 10 Drone Technology I; possibly a renumbering or catalog error. Recorded as printed with catalog_addition true.",
+   "'Intro to Bus CTE' read as choose 3 units (printed total 3.0-4.0) from BUS-10, CPSC-01, PHOT10A, VIRT51.",
+   "Codes recorded as printed (e.g., DRON20, DRON-01, CPSC-01); these match closed-list DRON 20, DRON 1, CPSC 1, etc.",
+   "No program learning outcomes or careers appear in the requisites text."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": "39239492986"
 }

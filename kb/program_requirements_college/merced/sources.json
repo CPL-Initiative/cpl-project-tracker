@@ -728,7 +728,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "AGAB3",
    "AGAB8",
@@ -736,6 +736,7 @@
    "AGAS11",
    "AGAS2",
    "AGAS3",
+   "AGAS4",
    "AGAS40",
    "AGAS41",
    "AGMA1",
@@ -1569,12 +1570,13 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "AGAB8",
    "AGAS1",
    "AGAS11",
    "AGAS3",
+   "AGAS4",
    "AGMA1"
   ],
   "source": {
@@ -3805,12 +3807,27 @@
   "title": "Drone Technology",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "CPSC14",
+   "CPSC6",
+   "DRON10",
+   "DRON11",
+   "ENGR14"
+  ],
+  "source": {
+   "url": "https://catalog.mccd.edu/programs/09170.CM/requisites-ojrrt",
+   "title": "09170.CM Program | Merced College Catalog",
+   "h1": "Merced College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1210
  },
  {
   "control_number": "38916",
@@ -4221,11 +4238,12 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "BUS10",
    "CPSC1",
    "DRON1",
+   "DRON10",
    "DRON2",
    "DRON20",
    "DRON21",
