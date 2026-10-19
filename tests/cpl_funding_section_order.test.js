@@ -158,6 +158,9 @@ function registerStub() {
   });
   check("1l: the position pickers return every section to its house place",
     domOrder(doc).join(",") === HOUSE.join(","));
+  const storedBack = T._getShared().secOrder;
+  check("1m: ...and the stored order, if one is kept, is the house order written as ids",
+    storedBack == null || (Array.isArray(storedBack) && storedBack.join(",") === HOUSE.join(",")));
 }
 
 // ── 2. the Public page view (Sam, 2026-10-15, call 1) ───────────────────
