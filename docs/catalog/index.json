@@ -15757,8 +15757,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 395,
+   "count": 396,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 425,
+     "path": "docs/session_425_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "taft",
+      "jev",
+      "scorer",
+      "decision-sheet"
+     ],
+     "title": "Session 425 handoff: the verdict rows worked, Taft's four wrong pages settled, Sheet 98 answered (remove; the second reader on ice)",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22572,5 +22590,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1185
+ "total": 1186
 }

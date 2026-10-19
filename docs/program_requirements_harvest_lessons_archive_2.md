@@ -920,3 +920,153 @@ recommended a page fingerprint in the census instead, so only changed colleges a
 **Patterns that worked.** Measure the class before building for one record (Major only per college, then the page). Read the
 page, then its catalog's site map, then the page the site map names: three runner reads, no model call. Test SQL on a local
 Postgres before the migrate job.
+
+<!-- S394-S398, moved verbatim from docs/program_requirements_harvest_lessons.md at the S424 compaction (2026-10-19) -->
+
+## S394 SkyMadrone (2026-10-15): extraction v10, the catalog sweep's first two waves, and two reader fixes
+
+**Sam's words this run.** None new: Sheet 83's store held no reply, so its cards 2 and 3 stand as S393 proceeded.
+
+- **Extraction v10 (#2141, deployed run 38670811265).** Under v9 Cabrillo's Theatre Arts 06350 and Physics 06378 read
+  their Recommended Major Electives block and also put its units in `open_elective_units`, because the block's list ends
+  "or any transferable or degree applicable course" (18 + 18 + 18 + 24 = 78 against 60). Units a block holds never go in
+  `open_elective_units` too. Re-extract 38670925488 ($0.17): both read 60 of 60; re-read 38674737585 replaced both.
+- **The catalog sweep (#2143, #2144), Sam's standing go of up to $40 a college.** Eight colleges loaded unchecked:
+  Santa Barbara City 242, Orange Coast 206, Foothill 97, Sierra 25, Fullerton 311, Citrus 144, Victor Valley 169,
+  Monterey Peninsula 197 (extraction $103.83 in all; Fullerton the most, $23.09 over two reads; Cabrillo's two records $0.17). Display builds
+  `ad2f574f892c` (4,367 rows) and `99dcfd1eed24` (5,188), each applied from `main` after merge, one after the other.
+- **One branch per college, one PR per batch.** Each college reads on its own `claude/s394-<college>` branch, so the
+  runs go in parallel (the workflow's concurrency group is per ref); never two on one catalog host at once. A wave branch
+  merges the loaded colleges, adds the dated reads, and carries one display build. A display build rewrites every row,
+  so the second waits for the first's apply.
+- **NOCCCD's campus letter (#2144).** Fullerton found 13 of 326 programs. Its pages and the state's file both write
+  `HORT 001 F`, the campus letter its own word (college-page-read 38674811444); the net read `HORT 001` and
+  `code_pattern()` fell to the letters `HORTF`. Both now read the letter as the code's suffix, spaced or joined. Only
+  Fullerton (4,993) and Cypress (4,099) write codes this way. The re-read found 313. The leading-letter shape at De Anza
+  and others is a two-letter subject (`C S 1A`), not a campus prefix: left alone.
+- **curriQunet walk cap 400 to 1200 (#2144).** Santa Ana nests programs under department pages; its walk stopped at the
+  cap with 27 of 359 reached. Re-capture 38674963853 runs at the new cap; not loaded this run.
+- **Diablo Valley is parked.** Four reads (38670917323, 38672223676, 38672391389): its eLumen catalog names no program
+  anywhere; it points to www.dvc.edu/programs. It needs a program list from eLumen's data or the college's site.
+- **Read before extracting where the reader is new.** A free capture-only read showed DVC's 0 and Santa Ana's 27 before
+  any spend. On a CourseLeaf host the readers already handle, read and extract together: a miss costs only the pages
+  found (Fullerton's first $0.88).
+- **The dated reads, verified.** Each college's MAP read is checked by the two md5s (counts in C order, titles in the
+  read's order) computed in SQL against the filed rows; Fullerton 057fed7f/11d31a76, Monterey Peninsula eb85fce8/1794bde6.
+- **The UI pass, GR Priorities (#2142).** The gated tab had only ever been measured as its lock. A seeded target
+  (`gr-priorities-gr`, `-dark`, synthetic rows) found the accent as `--seal-blue` (a fill that stays dark: 1.2-1.3:1 in
+  dark), boxed controls, sub-24px links and centered prose.
+
+**What went wrong.** `check_generated.sh | tail -4 && git commit` pushed a stale dependency map once more (#2141); the
+fix-up commit followed. A push that changes `kb/_program_requirements_pilot.py` also starts the pilot's capture
+(read-only, free, no commit), so it costs runner time only.
+
+**Patterns that worked.** Read the page the reader missed, on a runner, before touching the reader. Measure a code shape
+across the state's file before changing the shared normalizer. Batch colleges per PR, display builds in sequence.
+
+## S395 SkyHawthorn (2026-10-15): the catalog sweep's wave 3, wave 2's procedure records, Santa Ana's titles, and staff email off the public page
+
+**Sam's words this run.** None: Open Asks Sheet 83's store held no reply, so its cards stand.
+
+- **Wave 3 (#2149):** eleven CourseLeaf colleges read and extracted in parallel, one branch and one host each ($92.92); ten
+  loaded unchecked, 1,132 records (Cypress 251, San Bernardino Valley 200, Cuyamaca 179, Sequoias 118, Mt. San Jacinto 94,
+  Napa Valley 94, Evergreen Valley 74, Moorpark 54, Golden West 50, MiraCosta 18). San Jose City found 8 of 90 and none
+  passed: read, not loaded. Display build `515c9d71e086` (6,320 rows), applied from `main` (run 38761398479).
+- **Dated reads, filed by hand and checked:** MAP's course codes for six colleges, each college's rows matched to SQL by an md5
+  of the counts and an md5 of the titles (Cypress f23dc34b/09bded16, San Bernardino Valley f18f1313/4e38c8e4, Napa Valley
+  46024a39/1cb28039). The md5 check caught nothing this time; it is what makes a hand transcription of 158 rows safe.
+- **The procedure-record generator (#2146).** S394's eight records came from code never committed. `kb/_program_source_procedure_v1.py`
+  builds a record from each read's `capture.json` and `summary.json` at the run's own filing commit, so a college read twice
+  (Fullerton: 13 found, then 313 after the campus-letter fix) shows both reads. Run on the same files it reproduced S394's
+  Orange Coast and Sierra records exactly. A row that already holds a record (Cypress, Moorpark, Napa Valley: S346's program-map
+  records) gets a v2 merged in SQL (`procedure || jsonb_build_object(...)`), so nothing of v1 is retyped.
+- **Santa Ana (#2148).** At the 1,200-call cap the walk finished (837 calls) and still found 27 entries. Page read 38749570529:
+  Instructional Programs > department > entry, entries titled "Accounting: A.S. Degree". `cq_is_program` wanted " - " before
+  the award, so those were walked as departments. It now also reads an award after the last colon.
+- **Staff email on the public dashboard (#2147).** The 2026-10-15 daily run shipped two progress notes Sam wrote from
+  his cccco.edu account, address and all, into `CPL_Data.js`; `pii_guard.test.js` then failed on `main` and every PR. Nothing read the public map's
+  `author` (the reports and RACI read Supabase), so `load_item_updates()` no longer selects or ships it. Ported into each open
+  PR rather than waiting on the fix to merge.
+- **Reconcile, what the pages say.** Monterey Peninsula: degree pages print "Additional Requirements 39-42" (GE and electives
+  together) and no GE units; the GE page's Cal-GETC tab says "satisfies the 34 units", its MPC GE tab lists areas (9, 3, 6, 6,
+  7 ...) with no total. Orange Coast: the REQUIREMENTS tab prints "Total Major Units 35", "OCC AS General Education Up to 21"
+  and "Total Minimum Degree Units - OCC AS GE 60"; 27 of its 35 "no total" records hold no blocks and stayed out of the load.
+  Victor Valley: AUTO 82.0 prints with no title and no units, and each page's Total Units agrees without it (a catalog gap;
+  correcting it needs a step that touches course units, not yet a reconcile kind). Reads 38749721270, 38752570705,
+  38756364740, 38759288106.
+
+**What went wrong.** An unfiltered `list_workflow_runs` returned eleven runs' full commit messages (about 10,000 tokens):
+filter by branch and `perPage` 1. Three reads in a row to reach MPC's GE units: open tabs (`"expand": true`) on the first read
+of a CourseLeaf page.
+
+**Patterns that worked.** One branch per college let eleven reads run at once with no host read twice. Port a CI fix into every
+open PR the moment it exists. Merge in SQL rather than retype a record the database already holds.
+
+## S396 SkyJacaranda (2026-10-16): wave 4 read and partly loaded, Orange Coast and Monterey Peninsula's reconcile steps, Santa Ana's reader merged
+
+**Sam's words this run.** One, near the end: the CPL Queue routine fires around 10 PM Pacific, "so hoping it can start after you finish up". The session checkpointed then and handed the runs still in flight to the next.
+
+- **#2151 and #2148 merged.** #2148's head was the bot's filing commit, which runs no `test`; a merge of `main` on top gave it one (green), and the three dashboard artifacts took `main`'s copies, since the branch's only change to them was #2147's author removal.
+- **Wave 4, nine colleges at once, one branch and one host each** (about $175 under the $40 go). Loaded unchecked: Ventura 101 of 131 (30 placed none of their courses), Oxnard 64 of 94, Reedley 36, Palomar 220 of 224, Chabot (233 read, 201 passing; load dispatched). curriQunet did well where its index was whole: Palomar 224 of 331 found and 196 passing, Chabot 233 of 244 and 201. Reedley's index held 40 entries in 2 sections, so it found 36 of 200: parked for a page read.
+- **The dated reads went in ahead of the loads, all nine at once.** Registry columns matched by one md5 over ten columns (8cad0f35); MAP's course codes by three md5s a college (counts, titles, exhibits by source): Santa Ana 83, Reedley 24, Ventura 4, Allan Hancock 3, Oxnard 2; Rio Hondo, Palomar, Saddleback and Chabot name none. Writing the rows in the read's own pipe form and parsing them made the 83-row check exact on the first pass.
+- **Orange Coast's steps.** The Requirements tab's textContent prints "Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60" (read 38752570705; the filed text carries tabs between label and figure). Five steps; GE is `{min: null, max: 21}`, which the scorer reads as 21. Reconcile 38843379313 changed 11 of the 41 records that lacked GE units (six now pass), and reread 38847265701 replaced them. The other thirty keep the gap: their captured text is the page's visible text, which lacks the hidden tab.
+- **Monterey Peninsula's steps.** Read 5 (38843693844) opened a transfer degree page: "Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern". A local degree's GE is 24 to 34 (the GE page's eight areas, each "Select three units", and Cal-GETC's 34); a transfer degree's 34. The 24 is a sum the catalog does not print, so it is a card. Its reconcile run was still capturing at sign-off.
+- **Victor Valley's AUTO 82.0** prints with no units on two certificates whose totals agree without it; a card, since the fix is a new step kind for two records.
+
+**What went wrong.** Job logs cost the run about a third of its context: the college page reads print whole pages, and a log tail of 75 to 120 lines ran 15,000 to 40,000 tokens. Read a page read's answer from its excerpts by asking a narrower plan, and poll runs with `git ls-remote` (a filing or receipt commit is the signal), never `list_workflow_runs`, whose rows carry each commit's whole message. A worker restart mid-run cost nothing: the state was all on branches.
+
+**Patterns that worked.** Dispatching every independent read in one turn, then working the reconcile steps while they ran. A reread waits behind a reconcile on the same branch (the workflow queues per branch); the filing step rebases when the branch moved, so pushing during a run is safe.
+
+## S397 SkyCatalpa (2026-10-16): Allan Hancock loaded, Monterey Peninsula reread, wave 4's display build, Sheet 84
+
+**Sam's words this run.** None: the CPL Queue routine started the session at 05:12Z, and Open Asks Sheet 83's store held no reply.
+
+- **Allan Hancock's read** (38843474519): 156 of 226 programs found, 136 passing, $12.41. Loaded unchecked, 153 of 156 (run 38854805185).
+- **Monterey Peninsula's reconcile** (38844053281) filed after S396 signed off: 52 records changed, arithmetic failures 117 to 89. Reread 38854802315 replaced the unchecked rows.
+- **Wave 4's display build `66b50c86891e`** on PR #2157, which carries all of #2156 (closed as superseded) plus Chabot, Allan Hancock and both rereads. The builder needs `openpyxl` (`chatbox/build_program_courses.py`); install it with `python3 -m pip`, since a bare `pip` may install for another interpreter.
+- **Open Asks Sheet 84** built from S396's cards and published (https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz).
+
+**What went wrong.** One unfiltered `list_workflow_runs` returned a page of whole commit messages again, the cost S395 and S396 both recorded: filter by branch with `perPage` 1, or poll `git ls-remote`. A branch made from a wave branch lacks `main`'s latest checkpoint; merge `main` before writing the next.
+
+**Patterns that worked.** Taking the wave branch onto the session's own branch and opening one PR let the display build ship while three reads ran on; the stragglers get their own build.
+
+## Moved from the lane (S394 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
+
+**The sequence pass (S325, PR #1847):** `kb/_program_sequence_ppm.py` on its own
+workflow (`program-sequence-ppm.yml`, so a change never reruns the capture's 20
+reads) enters a college's Program Mapper from the college's own pages, follows
+the link into the mapper, and accepts a page naming half the program's listed
+courses and at least two terms. **Run 1 (37197332656):** Miramar's own mapper page links `san-diego-miramar.programmapper.com`, which answered all seven requests **403 Forbidden**. None of the 20 captured catalog pages prints a
+term sequence.
+
+**Catalog addenda (Sam, 2026-10-04: *"We need to track this in our schema and have our agents aware."*).** The census records each addendum, supplement or errata link for the current or prior catalog year in `census_evidence -> 'addenda'` and writes `program_source_addenda` after the registry on apply (one row per college and url; status listed, read, applied, gone, not an addendum; `programs_changed` for the reading agent; public read, writes through a security-invoker function). Only a complete read marks an addendum gone. **79 listed at 52 colleges** (apply of 2026-10-11). ✅ **The eight amending loaded colleges read (S387, #2102):** an online catalog's addendum is a changelog of edits its pages already carry (Norco's PDS-809 and Cerritos's EDT 110 already read as changed), so it explains a catalog-and-COCI mismatch rather than correcting the record; Miramar's "addendum" is the whole 2025-26 catalog. ✅ **The reading agent files them (S388, #2107):** `program_source_addenda_read()` (service_role only, never a corrected row, history under the run id) moved the eight to `read` with `programs_changed` (42 program and 20 course changes, each with scope, kind and date) from `kb/addenda_reads/`. **NEXT:** the other 71 as the reader reaches their colleges. Detail: lessons S325-S327, S388.
+
+## Moved from the lane (S393 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
+
+✅ **San Joaquin Delta's catalog year (S391):** read from its catalog menu where the registry names none; run 38619208635 filed 2026-2027. Extracted, loaded and displayed (Sam, Sheet 81 card 5; S392).
+
+## Moved from the lane (S398 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, Phase 2, when the lane passed its 20,000-byte budget.
+
+- Build `0a22233cf694` holds all 3,797 rows (display run 38639117185, S392; its applied record is the rollback): 1,487 associate degrees holding the major only carry the **Major only** gap (#2129), 14 degree-total misses the units chip with the degree's figures (#2128).
+
+- ⚠️ **Palo Verde's records are a year behind (S387):** its catalog page lists the 2026-27 catalog at `catalog.paloverde.edu` (Acalog); the census took the 2025-26 eLumen one. #2104 fixed the pick (applies 2026-10-18); the Acalog reader (#2112) then reads all 52.
+
+- ✅ **Open Asks Sheet 81 (Sam, 2026-10-14 20:22Z, all five his own call; `sam-sheet-81-rulings-2026-10-14`):** card 1 *count*: a degree total inside the span the blocks, general education and open electives allow adds up (`within`); card 2 *adt*: a transfer degree printing its total and no electives is filled by transferable electives (`transfer`, `fill`; Ed. Code 66746(a)). `degree_verdict()` in the scorer holds both; `kb/_program_requirements_rescore.py` applied them to the filed records (35: Cabrillo 29 within and 1 transfer, 35651; Palo Verde 2 within and 3 transfer) and the live rows' `checks.arithmetic` moved through `supabase-migrate.yml` (receipt `kb/receipts/program_requirement_records_rescore_2026-10-14_s392.json`, its rollback inside). ✅ Card 3 El Camino and card 5 San Joaquin Delta: extracted ($8.08, $13.42), loaded unchecked (117, 202) and displayed (S392).
+- ✅ **Sheet 82 (Sam, 22:14Z; `sam-sheet-82-rulings-2026-10-14`):** a confirm carries over a rerun that changes only degree figures (*carry*); a transfer degree whose major and general education overlap past its total adds up (*overlap*). ✅ Both built (S393, #2136; lessons S393). 🔨 **Cerritos's steps (S393, #2139):** a minimum of 60 (`degree_total_minimum`), CGEC 24-28 by a `set` step, electives as needed; Major only 148 to 56, re-read live; Merged and applied (build `45fdd29240cb`). ✅ Extraction v10 (#2141, S394): units a block holds never count twice; Cabrillo 06350 and 06378 read 60 of 60.
+- **Reconcile, read:** Orange Coast's REQUIREMENTS tab prints "Total Major Units", "OCC AS General Education Up to 21" and "Total Minimum Degree Units - OCC AS GE 60"; Monterey Peninsula's GE page states Cal-GETC as 34, MPC GE by area with no total; Victor Valley's AUTO 82.0 prints no units; its totals agree without it.
+- Course outcomes loaded by college (S388): RCCD (#2049: Riverside City 1,174, Norco 817, Moreno Valley 674), SDCCD (#2066: San Diego City 588, Mesa 1,026, Miramar 615), and from catalog course pages addressed by code: Cabrillo 1,124 and Modesto Junior 910 on eLumen (#2103), Coastline 522 from the Coast district's outlines of record (#2105; 28 common course numbers answer 404 there).
+- **Chaffey** (#2073): neither public report prints course outcomes. Cerritos, Long Beach City and Mt. San Antonio print none on their CourseLeaf pages (#2101). **Palo Verde held** for its 2026-27 Acalog catalog (reader merged, #2112).
+
+## S398 (SkyLinden, 2026-10-16): wave 4 finished, and two limits the display build was about to meet
+
+- **A display apply that times out files no rollback.** S397 dispatched build `66b50c86891e`'s apply at 05:45Z (run 38857449086). At one GET and one PATCH a program it was canceled at the job's 30-minute limit after 6,875 of 7,125 programs, and `kb/_program_requirements_display_apply.py` writes its applied record only when the loop ends, so none was filed. Nothing said so: the handoff named the dispatch, and the next session found it only because the re-run (38909267523) read 6,875 rows as already holding the build. The rows it wrote go back by re-applying `515c9d71e086`'s receipt to its keys and setting the rest to null. #2159 raised the limit to 120 minutes (about 30,000 programs at the measured 0.22 s a program; 6,320 had taken 14 minutes the day before, so the pace varies by a factor of 1.6). Build `fa8ee2a84935` (8,070) then applied in about 36 minutes (run 38915019105).
+- **A receipt is a file, and GitHub refuses one over 100 MB.** Each program's display is about 9 KB of SQL; `fa8ee2a84935`'s receipt was 72.7 MB. #2159 writes new receipts gzipped (mtime 0, so one build gzips to the same bytes; 8.1 MB for the same build) and the display job reads either form. `zcat` reads one by hand; an earlier build's plain `.sql` stays its rollback.
+- **Procedure records:** `kb/_program_source_procedure_v1.py --merge` writes the v2 that merges onto a row's own record, the shape S395 wrapped by hand. A curriQunet page is counted "from the catalog's own index" (the host serves no sitemap). Wave 4's nine are applied (#2161).
+- **What the wave-4 reads left open:** Palomar lost 103 of 331 programs' pages to a sibling award (the Foothill pattern); Ventura and Oxnard each keep 30 records out of the load (no listed course placed); Saddleback 19 and Santa Ana 8 pages claimed by a sibling; Reedley's index held 40 entries for 200 programs.
+
