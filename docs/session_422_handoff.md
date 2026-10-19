@@ -45,7 +45,7 @@ write the Supabase guard holds goes through `supabase-migrate.yml`).
 
 ## In flight at sign-off (check each first)
 
-1. **The designated branch's PR** (this checkpoint, the Taft and Delta verdicts): merge once `test` passes.
+1. **cpl-project-tracker#2248** (this checkpoint, the Taft and Delta verdicts, the S421 memory receipt): merge once `test` passes. **CPLBrain#389** (the vault's session note): merge it. S421 dropped both watches and every check-in at sign-off (Sam, 2026-10-05).
 2. **No run is pending.** The display apply on main (39204942046) completed; its applied record is on main.
 3. **The second reader waits on Sam:** `XAI_API_KEY` and `XAI_MODEL` as Edge Function secrets on
    `program-requirements-extract`, then one `cpl-chat-deploy.yml` dispatch (function `program-requirements-extract`,
