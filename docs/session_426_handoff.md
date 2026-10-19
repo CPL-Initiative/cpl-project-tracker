@@ -26,7 +26,7 @@ UI pass, the Pipeline tab and a KB note (named below); the docs index was rebuil
 
 ## What shipped (S425)
 
-- **cpl-project-tracker#2260 (draft, `test` pending at checkpoint):** the Common Subjects Reference tab opens on a
+- **cpl-project-tracker#2260 (merged 17:03Z, squash `b90f53bb`):** the Common Subjects Reference tab opens on a
   Progress view drawn by `commons_progress.js` (the Commons' first per-reference view; Sam moved Subjects ahead of
   Exhibit, Course and CR): the headline pair 147 MQ disciplines / 121 settled (confirmed by a person, on the
   authority rule, in no collision), five milestones (You are here: the confirmations, 25 picks left), a card per
@@ -39,23 +39,24 @@ UI pass, the Pipeline tab and a KB note (named below); the docs index was rebuil
   check, six NEEDS SAM items); §11 gained its row; the Commons lane's table points at it.
 - **Vault:** the braindump above. The session note and Open Asks Sheet 99 are in flight (below).
 
-## In flight at sign-off (check each first)
+## Landed after the sign-off (S425, by 17:05Z)
 
-1. **#2260:** merge on a green `test` (squash). Then **dispatch `daily-dashboard.yml`** so `kb/csr_out/latest.json`,
-   `kb/status/commons.json` and the seed's reviewer fields (the sync fix) rebuild on `main`; the Commons row then
-   reads 122 by a person, no cohort.
-2. **Open Asks Sheet 99 is published** (https://claude.ai/artifact/51ysTzEcJmusKb2Mb21xg8, a fresh store, empty at
-   publish; six cards). Read its `replies` store first; each ruling leaves with the lane's marker in the same change.
-   §11's pointer and `kb/status/subjects.json`'s call name it.
-3. **CPLBrain#395 (draft):** the session note, the braindump, Sheet 99's source and the builder. Merge on green.
-4. S425 dropped its #2260 subscription at sign-off; the Sheet 99 artifact's wake subscription was arming when the
-   session ended and was not dropped (no tool for it here): a comment on the sheet may wake a dead session.
+1. **#2260 merged** (squash `b90f53bb`; `test` green on `867ce06b`), and `daily-dashboard.yml` dispatched on `main`
+   at 17:04Z so `kb/csr_out/latest.json`, `kb/status/commons.json` and the seed's reviewer fields (the sync fix)
+   rebuild; the Commons row then reads 122 by a person, no cohort. Check that the run landed (Rule 1's cron runs it too).
+2. **Open Asks Sheet 99 is answered** (16:37Z, all six his own call; the lane's RULED block, `cpl_memory`
+   `sam-sheet-99-rulings-2026-10-19`). §11's pointer, `kb/status/subjects.json` and the vault registry say so; never
+   republish onto it.
+3. **CPLBrain#395 merged** (squash `4064ee8`): the session note, the braindump, Sheet 99's source, and the builder
+   with the six cards removed (its coverage check reads nothing outstanding).
+4. Every watch is dropped: the #2260 and #395 subscriptions, both safety-net check-ins (one fired, one deleted) and
+   the Sheet 99 artifact watch. Nothing wakes S425 again.
 
 ## Priority after that
 
 1. **Sam answered Sheet 99 at 16:37Z (all six his own call: settled, on, agab, sitting, hide, rename;** the lane's
-   RULED block and `cpl_memory` `sam-sheet-99-rulings-2026-10-19`). Execute them in that order and remove the six cards
-   from `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py` (the sheet is answered; never republish onto it).
+   RULED block and `cpl_memory` `sam-sheet-99-rulings-2026-10-19`). Execute them in that order; the six cards left the
+   builder in CPLBrain#395 (the sheet is answered; never republish onto it).
 2. The two quarterly routines on a runner, probe mode first: the handbook check (cccco.edu answers; the tab's handbook
    link is dead) and the C-ID and CCN refresh (c-id.net is unreachable from the sandbox).
 3. The 110 stray identity codes: the discipline-blank worklist first, then one re-key window under the playbook.
