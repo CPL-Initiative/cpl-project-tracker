@@ -334,8 +334,8 @@
    "name": "CPL News",
    "page": "index.html#cpl-news",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-19",
+   "outcome": "S420 (2026-10-19): the h2 to h4 skip closed (Suggest a story is an h3), the search field's missing focus ring restored as a focus-visible ring on every control, the scope and sort toggles, Feature and Hide, Submit and Reviewer sign-in converted to underlined words (aria-pressed on the toggles; the pressed state had never moved on click), five option glyphs and two button glyphs removed, the featured star names itself, the badge ink and the sign-in color read tokens, the intro reads the page's measure. Clean in both themes at 1440 and 390; 36 jsdom checks guard it."
   },
   {
    "id": "cobi:sierra-training",

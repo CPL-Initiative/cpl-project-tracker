@@ -34,15 +34,17 @@
   var CSS = [
     ".cplnews { max-width: 1000px; margin: 0 auto; color: var(--text-body); }",
     ".cplnews h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
-    ".cplnews-intro { color: var(--text-muted); max-width: 820px; margin: 0 0 14px; font-size: .92rem; }",
+    ".cplnews-intro { color: var(--text-muted); max-width: var(--cpl-measure, none); margin: 0 0 14px; font-size: .92rem; }",
     ".cplnews-intro .draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
     ".cplnews-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 12px; }",
     ".cplnews-toolbar input.q { flex:1 1 220px; min-width:180px; padding:8px 12px; border:1px solid var(--border-strong); border-radius:6px; font-size:.9rem; }",
-    ".cplnews-toolbar input.q:focus { outline:none; border-color: var(--navy-secondary); }",
-    ".cplnews-seg { display:inline-flex; border:1px solid var(--border-strong); border-radius:6px; overflow:hidden; }",
-    ".cplnews-seg button { background: var(--surface-opaque); color: var(--text-body); border:none; padding:7px 11px; font-size:.82rem; cursor:pointer; }",
-    ".cplnews-seg button + button { border-left:1px solid var(--border-strong); }",
-    ".cplnews-seg button.on { background: var(--seal-blue); color:#fff; font-weight:600; }",
+    ".cplnews-toolbar input.q:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; border-color: var(--navy-secondary); }",
+    ".cplnews button:focus-visible, .cplnews select:focus-visible, .cplnews-suggest input:focus-visible, .cplnews a:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; border-radius:2px; }",
+    ".cplnews-seg { display:inline-flex; flex-wrap:wrap; align-items:center; gap:0 18px; }",
+    ".cplnews-word, .cplnews-seg button, .cplnews-rev button, .cplnews-suggest button, .cplnews-signin button { border:0; background:none; color:var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; min-width:24px; font-size:.88rem; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplnews-word:hover, .cplnews-seg button:hover, .cplnews-rev button:hover, .cplnews-suggest button:hover, .cplnews-signin button:hover { text-decoration-thickness:2px; }",
+    ".cplnews-seg button { font-weight:400; }",
+    ".cplnews-seg button[aria-pressed='true'] { color: var(--text-strong); font-weight:700; text-decoration-thickness:2px; }",
     ".cplnews-select { padding:7px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplnews-count { font-size:.82rem; color: var(--text-muted); margin-left:auto; }",
     ".cplnews-list { display:flex; flex-direction:column; gap:10px; }",
@@ -52,7 +54,7 @@
     ".cplnews-card.hidden { opacity:.5; }",
     ".cplnews-card .top { display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-size:.74rem; color: var(--text-faint); margin-bottom:4px; }",
     ".cplnews-card .top .badge { font-weight:700; letter-spacing:.04em; padding:1px 7px; border-radius:10px; text-transform:uppercase; font-size:.64rem; }",
-    ".cplnews-card .top .badge.ca { background: var(--gold-accent, #C9A227); color:#1c1c1a; }",
+    ".cplnews-card .top .badge.ca { background: var(--gold-accent, #C9A227); color: var(--on-mustard); }",
     ".cplnews-card .top .badge.national { background: var(--surface-muted); color: var(--text-muted); }",
     ".cplnews-card .top .sys { color: var(--navy-secondary); font-weight:600; }",
     ".cplnews-card h3 { margin:2px 0 4px; font-size:1.02rem; line-height:1.35; }",
@@ -62,22 +64,20 @@
     ".cplnews-card .chips { display:flex; flex-wrap:wrap; gap:5px; }",
     ".cplnews-card .chip { font-size:.7rem; background: var(--surface-muted); color: var(--text-muted); border-radius:10px; padding:1px 8px; }",
     ".cplnews-card .star { color: var(--gold-accent, #C9A227); }",
-    ".cplnews-rev { display:flex; gap:8px; margin-top:8px; padding-top:7px; border-top:1px dashed var(--border); font-size:.78rem; }",
-    ".cplnews-rev button { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:3px 9px; cursor:pointer; color: var(--text-body); }",
-    ".cplnews-rev button:hover { background: var(--surface-muted); }",
+    ".cplnews-rev { display:flex; flex-wrap:wrap; gap:4px 18px; margin-top:8px; padding-top:7px; border-top:1px dashed var(--border); font-size:.78rem; }",
     ".cplnews-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
     ".cplnews-suggest { margin:18px 0 6px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:12px 14px; }",
-    ".cplnews-suggest h4 { margin:0 0 4px; color: var(--navy-primary); font-size:.95rem; }",
+    ".cplnews-suggest h3 { margin:0 0 4px; color: var(--navy-primary); font-size:.95rem; }",
     ".cplnews-suggest p { margin:0 0 8px; font-size:.82rem; color: var(--text-muted); }",
-    ".cplnews-suggest .row { display:flex; flex-wrap:wrap; gap:8px; }",
+    ".cplnews-suggest .row { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; }",
     ".cplnews-suggest input { flex:1 1 200px; padding:8px 11px; border:1px solid var(--border-strong); border-radius:6px; font-size:.85rem; }",
-    ".cplnews-suggest button { background: var(--seal-blue); color:#fff; border:none; border-radius:6px; padding:8px 16px; font-weight:600; cursor:pointer; }",
+    ".cplnews-suggest button[disabled] { color: var(--text-muted); text-decoration:none; cursor:default; }",
     ".cplnews-suggest .msg { font-size:.8rem; margin-top:6px; min-height:16px; }",
     ".cplnews-suggest .msg.ok { color: var(--green-progress, #2e7d32); }",
     ".cplnews-suggest .msg.err { color: var(--red-alert, #b3261e); }",
     ".cplnews-foot { font-size:.76rem; color: var(--text-faint); margin:14px 2px 0; }",
     ".cplnews-signin { font-size:.78rem; color: var(--text-muted); }",
-    ".cplnews-signin a { color: var(--accent-link, #1565a0); cursor:pointer; }",
+    ".cplnews-signin button { font-size:.78rem; }",
   ].join("\n");
 
   function ensureCss() {
@@ -243,7 +243,7 @@
       row.related_system && row.related_system !== "CPL" ? el("span", { className: "sys" }, "· " + row.related_system) : null,
       row.publisher ? el("span", null, "· " + row.publisher) : null,
       row.published_at ? el("span", null, "· " + fmtDate(row.published_at)) : null,
-      row.featured ? el("span", { className: "star" }, "★") : null,
+      row.featured ? el("span", { className: "star", role: "img", "aria-label": "Featured" }, "★") : null,
     ]);
 
     var h = el("h3", null, [
@@ -264,9 +264,9 @@
 
     if (isReviewer()) {
       var rev = el("div", { className: "cplnews-rev" }, [
-        el("button", { onclick: function () { curate(row, { featured: !row.featured }, function (ok) { if (ok) { row.featured = !row.featured; rerender(); } }); } },
-          row.featured ? "★ Unfeature" : "☆ Feature"),
-        el("button", { onclick: function () { curate(row, { hidden: !row.hidden }, function (ok) { if (ok) { row.hidden = !row.hidden; rerender(); } }); } },
+        el("button", { type: "button", onclick: function () { curate(row, { featured: !row.featured }, function (ok) { if (ok) { row.featured = !row.featured; rerender(); } }); } },
+          row.featured ? "Unfeature" : "Feature"),
+        el("button", { type: "button", onclick: function () { curate(row, { hidden: !row.hidden }, function (ok) { if (ok) { row.hidden = !row.hidden; rerender(); } }); } },
           row.hidden ? "Unhide" : "Hide"),
       ]);
       c.appendChild(rev);
@@ -285,27 +285,34 @@
       "California Credit for Prior Learning news first, national second — plus adjacent systems (Career Passport, the CA Master Plan for Education, workforce/upskilling) and CA budget items that touch CPL. Auto-harvested daily and triaged by Claude; click a headline to read the source."));
 
     // Toolbar
-    function seg(label, key, val) {
-      var b = el("button", { className: STATE[key] === val ? "on" : "", onclick: function () { STATE[key] = val; refresh(); } }, label);
-      return b;
+    // A toggle set is a row of words; the selected one carries aria-pressed and weight
+    // (the Controls rule, reference-ui-design-system), and the press moves on click.
+    function segGroup(label, key, items) {
+      var g = el("div", { className: "cplnews-seg", role: "group", "aria-label": label });
+      items.forEach(function (it) {
+        var b = el("button", { type: "button", "aria-pressed": STATE[key] === it[1] ? "true" : "false" }, it[0]);
+        b.addEventListener("click", function () {
+          STATE[key] = it[1];
+          Array.prototype.forEach.call(g.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", "false"); });
+          b.setAttribute("aria-pressed", "true");
+          refresh();
+        });
+        g.appendChild(b);
+      });
+      return g;
     }
-    var scopeSeg = el("div", { className: "cplnews-seg" }, [
-      seg("All", "scope", "all"), seg("California", "scope", "ca"), seg("National", "scope", "national"),
-    ]);
-    var typeSel = el("select", { className: "cplnews-select", onchange: function (e) { STATE.stype = e.target.value; refresh(); } }, [
+    var scopeSeg = segGroup("Scope", "scope", [["All", "all"], ["California", "ca"], ["National", "national"]]);
+    var typeSel = el("select", { className: "cplnews-select", "aria-label": "Source type", onchange: function (e) { STATE.stype = e.target.value; refresh(); } }, [
       el("option", { value: "all" }, "All sources"),
-      el("option", { value: "news" }, "📰 News"),
-      el("option", { value: "official" }, "🏛️ Official"),
-      el("option", { value: "social" }, "💬 Social"),
-      el("option", { value: "budget" }, "💰 Budget"),
-      el("option", { value: "manual" }, "🔗 Submitted"),
+      el("option", { value: "news" }, "News"),
+      el("option", { value: "official" }, "Official"),
+      el("option", { value: "social" }, "Social"),
+      el("option", { value: "budget" }, "Budget"),
+      el("option", { value: "manual" }, "Submitted"),
     ]);
     typeSel.value = STATE.stype;
-    var sortSeg = el("div", { className: "cplnews-seg" }, [
-      el("button", { className: STATE.sort === "ca" ? "on" : "", onclick: function () { STATE.sort = "ca"; refresh(); } }, "CA first"),
-      el("button", { className: STATE.sort === "new" ? "on" : "", onclick: function () { STATE.sort = "new"; refresh(); } }, "Newest"),
-    ]);
-    var qIn = el("input", { className: "q", type: "search", placeholder: "Search headlines, topics, outlets…", value: STATE.q });
+    var sortSeg = segGroup("Sort", "sort", [["CA first", "ca"], ["Newest", "new"]]);
+    var qIn = el("input", { className: "q", type: "search", "aria-label": "Search headlines, topics and outlets", placeholder: "Search headlines, topics, outlets…", value: STATE.q });
     qIn.addEventListener("input", function () { STATE.q = qIn.value; refresh(); });
     var count = el("span", { className: "cplnews-count" });
 
@@ -332,12 +339,12 @@
 
     // Suggest a story (the path closed socials enter)
     var suggest = el("div", { className: "cplnews-suggest" });
-    suggest.appendChild(el("h4", null, "Suggest a story"));
+    suggest.appendChild(el("h3", null, "Suggest a story"));
     suggest.appendChild(el("p", null, "Paste a link — a news article, a CCC/college post, or a LinkedIn / X / Facebook / Instagram post. The next harvest reads it and files it like any other item."));
-    var urlIn = el("input", { type: "url", placeholder: "https://…" });
-    var noteIn = el("input", { type: "text", placeholder: "Optional note / why it matters" });
+    var urlIn = el("input", { type: "url", "aria-label": "Link to the story", placeholder: "https://…" });
+    var noteIn = el("input", { type: "text", "aria-label": "Optional note", placeholder: "Optional note / why it matters" });
     var msg = el("div", { className: "msg" });
-    var sendBtn = el("button", null, "Submit");
+    var sendBtn = el("button", { type: "button" }, "Submit");
     sendBtn.addEventListener("click", function () {
       var u = (urlIn.value || "").trim();
       if (!/^https?:\/\//i.test(u)) { msg.className = "msg err"; msg.textContent = "Enter a valid http(s) URL."; return; }
@@ -360,9 +367,9 @@
     var foot = el("div", { className: "cplnews-foot" });
     var signin = el("span", { className: "cplnews-signin" });
     if (isReviewer()) {
-      signin.appendChild(document.createTextNode("✓ reviewer — feature/hide controls enabled"));
+      signin.appendChild(document.createTextNode("Signed in as a reviewer: Feature and Hide are enabled."));
     } else {
-      var a = el("a", { onclick: signIn }, "Reviewer sign-in");
+      var a = el("button", { type: "button", className: "cplnews-word", onclick: signIn }, "Reviewer sign-in");
       signin.appendChild(document.createTextNode("Curate this feed: "));
       signin.appendChild(a);
     }
