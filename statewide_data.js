@@ -42030,6 +42030,210 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 14.0
     },
     {
+      "exhibit_id": "MAPPRA-A2R--1-001|MAPPRS-CATJ-1-001",
+      "exhibit_ids": [
+        "MAPPRA-A2R--1-001",
+        "MAPPRS-CATJ-1-001"
+      ],
+      "title": "Community and the Justice System",
+      "unified_title": "Community and the Justice System",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJU 205\tCommunity Relations - Portfolio",
+        "Community and the Justice System (AJ 160 C)"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128",
+        "6"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 4,
+      "adopter_names": [
+        "Copper Mountain College",
+        "Cypress College",
+        "Modesto Junior College",
+        "Solano Community College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 103,
+      "credit_recs": [
+        {
+          "course": "CJ 005A",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 011",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJU 205",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ACC 63",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 160 C",
+          "credit": "3 hours in Community and the Justice System"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-A2R--1-001",
+          "title": "ADJU 205\tCommunity Relations - Portfolio",
+          "units": 12.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPPRS-CATJ-1-001",
+          "title": "Community and the Justice System (AJ 160 C)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0,
+        "Cypress College": 3.0,
+        "Modesto Junior College": 3.0,
+        "Solano Community College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1,
+        "Cypress College": 1,
+        "Modesto Junior College": 1,
+        "Solano Community College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
+          0
+        ],
+        "Cypress College": [
+          4
+        ],
+        "Modesto Junior College": [
+          2
+        ],
+        "Solano Community College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 15.0
+    },
+    {
       "exhibit_id": "MAPPRS-A12-1-001",
       "exhibit_ids": [
         "MAPPRS-A12-1-001"
@@ -59214,203 +59418,6 @@ window.CPL_STATEWIDE = {
           3
         ],
         "Modesto Junior College": [
-          1
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 12.0
-    },
-    {
-      "exhibit_id": "MAPPRA-A2R--1-001|MAPPRS-CATJ-1-001",
-      "exhibit_ids": [
-        "MAPPRA-A2R--1-001",
-        "MAPPRS-CATJ-1-001"
-      ],
-      "title": "Community and the Justice System",
-      "unified_title": "Community and the Justice System",
-      "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ADJU 205\tCommunity Relations - Portfolio",
-        "Community and the Justice System (AJ 160 C)"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 4,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Cypress College",
-        "Modesto Junior College",
-        "Solano Community College"
-      ],
-      "potential": 97,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "CJ 005A",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 011",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJU 205",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 160 C",
-          "credit": "3 hours in Community and the Justice System"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPPRA-A2R--1-001",
-          "title": "ADJU 205\tCommunity Relations - Portfolio",
-          "units": 9.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPPRS-CATJ-1-001",
-          "title": "Community and the Justice System (AJ 160 C)",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0,
-        "Cypress College": 3.0,
-        "Modesto Junior College": 3.0,
-        "Solano Community College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1,
-        "Cypress College": 1,
-        "Modesto Junior College": 1,
-        "Solano Community College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ],
-        "Cypress College": [
-          3
-        ],
-        "Modesto Junior College": [
-          2
-        ],
-        "Solano Community College": [
           1
         ]
       },
@@ -115283,6 +115290,1440 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 2.0
     },
     {
+      "exhibit_id": "MAPICI-A1-C-1-001|MAPICI-CP2-1-001|MAPICI-CPAS-1-001|MAPICI-CPBP-1-001|MAPICI-P-BL-1-001|MAPICI-P-PO-1-001|MAPICI-P-PO1-1-001|MAPICI-P-PO2-1-001|MAPICI-PAEF-1-001|MAPICI-PAPF-1-001|MAPICI-PCCP-1-001|MAPICI-POBT-1-001|MAPICI-POSA-1-001|MAPICI-POSA1-1-001|MAPICI-POST-1-002|MAPICI-POST1-1-001|MAPICI-POST2-1-001",
+      "exhibit_ids": [
+        "MAPICI-A1-C-1-001",
+        "MAPICI-CP2-1-001",
+        "MAPICI-CPAS-1-001",
+        "MAPICI-CPBP-1-001",
+        "MAPICI-P-BL-1-001",
+        "MAPICI-P-PO-1-001",
+        "MAPICI-P-PO1-1-001",
+        "MAPICI-P-PO2-1-001",
+        "MAPICI-PAEF-1-001",
+        "MAPICI-PAPF-1-001",
+        "MAPICI-PCCP-1-001",
+        "MAPICI-POBT-1-001",
+        "MAPICI-POSA-1-001",
+        "MAPICI-POSA1-1-001",
+        "MAPICI-POST-1-002",
+        "MAPICI-POST1-1-001",
+        "MAPICI-POST2-1-001"
+      ],
+      "title": "POST Basic Academy",
+      "unified_title": "POST Basic Academy",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "varies by academy",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJUS 101 - CA POST Training Record",
+        "CA POST",
+        "CA POST Academy SMCCD",
+        "CA POST BASIC POLICE ACADEMY CERTIFICATE",
+        "POST - Peace Officer Standards and Training",
+        "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+        "POST Academy  effective FALL 2025",
+        "POST Academy prior Fall 2025",
+        "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
+        "Peace Officer Basic Training (POST)",
+        "Peace Officer Standardized Training Academy",
+        "Peace Officer Standards Training (POST) Basic Academy",
+        "Peace Officer Standards and Training (POST) Basic Academy Certificate",
+        "Peace Officer Standards and Training (POST) Basic Certificate",
+        "Peace Officer Standards and Training Basic Academy Certificate (POST)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "0",
+        "128",
+        "203",
+        "254",
+        "359",
+        "5"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 35,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Desert",
+        "Copper Mountain College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Moreno Valley College",
+        "Napa Valley College",
+        "Norco College",
+        "Reedley College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Shasta College",
+        "Skyline College",
+        "Solano Community College",
+        "Woodland Community College"
+      ],
+      "potential": 80,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Cañada College",
+        "Cerritos College",
+        "Citrus College",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Gavilan College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 115,
+      "credit_recs": [
+        {
+          "course": "ADJ 1",
+          "credit": "3.0 hours in Introduction to the Administration of Justice"
+        },
+        {
+          "course": "ADJ 13",
+          "credit": "3.0 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADJ 2",
+          "credit": "3.0 hours in Principles and Procedures of the Justice System"
+        },
+        {
+          "course": "ADJ 3",
+          "credit": "3.0 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADJ 4",
+          "credit": "3.0 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "ADJ 5",
+          "credit": "3.0 hours in Community Relations"
+        },
+        {
+          "course": "ADJ 8",
+          "credit": "3.0 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADJ 19",
+          "credit": "3.0 hours in Introduction to Policing"
+        },
+        {
+          "course": "AJ 2",
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
+        },
+        {
+          "course": "ADJU 260",
+          "credit": "9 hours in POST Certified Regional Academy"
+        },
+        {
+          "course": "AJ 223 F",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CJ 006",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 100",
+          "credit": "3 hours in Introduction to Criminal Justice"
+        },
+        {
+          "course": "ADMJ 102",
+          "credit": "3 hours in Criminal Court Process"
+        },
+        {
+          "course": "ADMJ 104",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADMJ 106",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "ADMJ 108",
+          "credit": "3 hours in Community and the Justice System"
+        },
+        {
+          "course": "ADMJ 120",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 022",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CJ 051",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 121",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADMJ 124",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 125",
+          "credit": "3 hours in Juvenile Procedures"
+        },
+        {
+          "course": "ADMJ 123",
+          "credit": "3 hours in Concepts of Enforcement"
+        },
+        {
+          "course": "CJ 1",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "CJ 2",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CJ 3",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "CJ 4",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 5",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 51",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 6",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 7",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AJ 100 F",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AJ 110AF",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 140 F",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "AJ 220 F",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AJ 222 F",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AJ 252 F",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "AJ 278 F",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRIM B21",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 001",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "CJ 002",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CJ 003",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 005A",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 010",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 030",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 011",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJU 1",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJU 14",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADJU 2",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "ADJU 3",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADJU 4",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADJU 5",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "ADJU 7",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADJU 8",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "ADMJ 52",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ 62",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 001",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AOJ 010",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AOJ 016",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AOJ 020",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AOJ 022",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AOJ 024",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 032",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 053",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 19",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 3",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 4",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "CJ 6",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CJ 9",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 5",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ACAD C200X",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "ACAD C200X",
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
+        },
+        {
+          "course": "ACAD C201X",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "ADMJ C101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADMJ C105",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ C121",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRJ 101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "CRJ 102",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CRJ 103",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CRJ 108",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CRJ 110",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CRJ 112",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 121",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 31",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 10",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AJ 11",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 13",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AJ 14",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AJ 15",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AJ 16",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "AJ 19",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 20",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "AJ 40",
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
+        },
+        {
+          "course": "ADMJ C115",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "ADMJ C125",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ C131",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADMJ C151",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 058",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "ADJ 202",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADM JUS 075",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "AOJ 003",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 056",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "AJ 2",
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
+        },
+        {
+          "course": "AOJ 110",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AOJ 125",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "AOJ 200",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AOJ 202",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AOJ 204",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AOJ 206",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 208",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "AOJ 240",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJUS 110",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADJUS 120",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADJUS 122",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "ADJUS 124",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "ADJUS 140",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADJUS 200",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "ADJUS 220",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADMJ 101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADMJ 103",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ 116",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 118",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADMJ 120",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "ADMJ 160",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 5",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CRIM 1",
+          "credit": "3 hours in Introduction to Criminology"
+        },
+        {
+          "course": "CRIM 11",
+          "credit": "3 hours in Juvenile Delinquency"
+        },
+        {
+          "course": "CRIM 20",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CRIM 3",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CRIM 4",
+          "credit": "3 hours in Principles & Procedures of the Justice System"
+        },
+        {
+          "course": "CRIM 5",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRIM 6",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CRIM 8",
+          "credit": "3 hours in Criminal Investigations"
+        },
+        {
+          "course": "ADJUS 160",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 25",
+          "credit": "3 hours in Criminal Investigations"
+        },
+        {
+          "course": "CRIM B1",
+          "credit": "3 hours in Introduction to Criminal Justice"
+        },
+        {
+          "course": "CRIM B2",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CRIM B21",
+          "credit": "3 hours in Introduction to Correctional Administration"
+        },
+        {
+          "course": "CRIM B3",
+          "credit": "3 hours in Introduction to Evidence"
+        },
+        {
+          "course": "CRIM B4",
+          "credit": "3 hours in Constitutional Criminal Procedure"
+        },
+        {
+          "course": "CRIM B5",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRIM B8",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CRIM B9",
+          "credit": "3 hours in The Juvenile Justice System"
+        },
+        {
+          "course": "AOJ 022",
+          "credit": "3 hours in Legal Aspects Of Evidence"
+        },
+        {
+          "course": "ADM JUS 001",
+          "credit": "3 hours in Introduction To Administration Of Justice"
+        },
+        {
+          "course": "ADM JUS 002",
+          "credit": "3 hours in Concepts Of Criminal Law"
+        },
+        {
+          "course": "ADM JUS 003",
+          "credit": "3 hours in Legal Aspects Of Evidence"
+        },
+        {
+          "course": "ADM JUS 006",
+          "credit": "3 hours in Patrol Procedures"
+        },
+        {
+          "course": "ADM JUS 014",
+          "credit": "3 hours in Report Writing For Peace Officers"
+        },
+        {
+          "course": "ADM JUS 160",
+          "credit": "3 hours in Police Organization and Administration"
+        },
+        {
+          "course": "ADM JUS 250",
+          "credit": "4 hours in Forensic Photography"
+        },
+        {
+          "course": "ADJUS 110",
+          "credit": "3 hours in Introduction To Administration Of Justice"
+        },
+        {
+          "course": "ADJUS 101",
+          "credit": "3 hours in Introduction to Administration of Justice"
+        },
+        {
+          "course": "ADMJ 50",
+          "credit": "3 hours in Introduction to the Administration of Justice"
+        },
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        },
+        {
+          "course": "ADMJ 60",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ 61",
+          "credit": "3 hours in Evidence"
+        },
+        {
+          "course": "ADMJ 63",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 70",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADMJ 80",
+          "credit": "3 hours in Criminal Court Process"
+        },
+        {
+          "course": "AJ 135 F",
+          "credit": "1 hour in Weaponless Defense"
+        },
+        {
+          "course": "ADJU 10",
+          "credit": "3 hours in Introduction to Administration of Justice"
+        },
+        {
+          "course": "ADJU 15",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADJU 17",
+          "credit": "3 hours in Principles and Procedures of the Justice System"
+        },
+        {
+          "course": "ADJU 18",
+          "credit": "3 hours in Community Relations & Multicultural Issues for Law Enforcement"
+        },
+        {
+          "course": "ADJU 20",
+          "credit": "3 hours in Principles of Investigation"
+        },
+        {
+          "course": "ADJU 21",
+          "credit": "3 hours in Police Field Operations"
+        },
+        {
+          "course": "ADJU 22",
+          "credit": "3 hours in Juvenile Procedures"
+        },
+        {
+          "course": "ADJU 26",
+          "credit": "3 hours in Courtroom Testimony and Report Writing"
+        },
+        {
+          "course": "CSU GE E",
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
+        },
+        {
+          "course": "CJ 002",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "CJ 003",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CJ 004",
+          "credit": "3 hours in Criminal Court Process"
+        },
+        {
+          "course": "CJ 005",
+          "credit": "3 hours in Racial Issues and the Police"
+        },
+        {
+          "course": "CJ 010",
+          "credit": "3 hours in Juvenile Procedures"
+        },
+        {
+          "course": "CJ 001",
+          "credit": "3 hours in Introduction to Criminal Justice"
+        },
+        {
+          "course": "AJ 55",
+          "credit": "3 units in AJ 55 Introduction to Correctional Science"
+        },
+        {
+          "course": "AJ 60",
+          "credit": "3 units in AJ 60 Criminal Law"
+        },
+        {
+          "course": "AJ 61",
+          "credit": "3 units AJ 61 in Evidence"
+        },
+        {
+          "course": "AJ 63",
+          "credit": "3 units in AJ 63 Criminal Investigation"
+        },
+        {
+          "course": "AJ 68",
+          "credit": "3 units in AJ 68 Police Ethics and Leadership"
+        },
+        {
+          "course": "AJ 70",
+          "credit": "3 units in AJ 70 Community Relations"
+        },
+        {
+          "course": "AJ 66",
+          "credit": "3 units in AJ 66 Juvenile Procedures"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Intro to Administration of Justice",
+          "cid": "AJ 110"
+        },
+        {
+          "credit": "3 hours in Criminal Law",
+          "cid": "AJ 120"
+        },
+        {
+          "credit": "3 hours in Criminal Procedures",
+          "cid": "AJ 122"
+        },
+        {
+          "credit": "3 hours in Community Relations",
+          "cid": "AJ 160"
+        },
+        {
+          "credit": "3 hours in Criminal Evidence",
+          "cid": "AJ 124"
+        },
+        {
+          "credit": "3 hours in Introduction to Corrections",
+          "cid": "AJ 200"
+        },
+        {
+          "credit": "3 hours in Juvenile Law and Procedures",
+          "cid": "AJ 220"
+        },
+        {
+          "credit": "3 hours in Criminal Investigation",
+          "cid": "AJ 140"
+        },
+        {
+          "credit": "3 hours in Introduction to Policing (Elective Course)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)",
+          "cid": "AJ 110"
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A1-C-1-001",
+          "title": "ADJUS 101 - CA POST Training Record",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CP2-1-001",
+          "title": "CA POST",
+          "units": 27.0,
+          "lines": 9
+        },
+        {
+          "id": "MAPICI-CPAS-1-001",
+          "title": "CA POST Academy SMCCD",
+          "units": 42.0,
+          "lines": 14
+        },
+        {
+          "id": "MAPICI-CPBP-1-001",
+          "title": "CA POST BASIC POLICE ACADEMY CERTIFICATE",
+          "units": 1.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-P-BL-1-001",
+          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+          "units": 318.0,
+          "lines": 106
+        },
+        {
+          "id": "MAPICI-P-PO-1-001",
+          "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+          "units": 69.0,
+          "lines": 23
+        },
+        {
+          "id": "MAPICI-P-PO1-1-001",
+          "title": "POST - Peace Officer Standards and Training",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-P-PO2-1-001",
+          "title": "POST - Peace Officer Standards and Training",
+          "units": 30.0,
+          "lines": 10
+        },
+        {
+          "id": "MAPICI-PAEF-1-001",
+          "title": "POST Academy  effective FALL 2025",
+          "units": 36.0,
+          "lines": 12
+        },
+        {
+          "id": "MAPICI-PAPF-1-001",
+          "title": "POST Academy prior Fall 2025",
+          "units": 45.0,
+          "lines": 15
+        },
+        {
+          "id": "MAPICI-PCCP-1-001",
+          "title": "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
+          "units": 9.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-POBT-1-001",
+          "title": "Peace Officer Basic Training (POST)",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-POSA-1-001",
+          "title": "Peace Officer Standards and Training (POST) Basic Academy Certificate",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-POSA1-1-001",
+          "title": "Peace Officer Standards and Training (POST) Basic Certificate",
+          "units": 21.0,
+          "lines": 7
+        },
+        {
+          "id": "MAPICI-POST-1-002",
+          "title": "Peace Officer Standards Training (POST) Basic Academy",
+          "units": 27.0,
+          "lines": 9
+        },
+        {
+          "id": "MAPICI-POST1-1-001",
+          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+          "units": 40.0,
+          "lines": 13
+        },
+        {
+          "id": "MAPICI-POST2-1-001",
+          "title": "Peace Officer Standardized Training Academy",
+          "units": 30.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 27.0,
+        "Barstow Community College": 24.0,
+        "Butte College": 6.0,
+        "Cabrillo College": 24.0,
+        "Cerro Coso Community College": 30.0,
+        "Chabot College": 18.0,
+        "Chaffey College": 27.0,
+        "City College of San Francisco": 6.0,
+        "College of San Mateo": 21.0,
+        "College of the Desert": 24.0,
+        "Copper Mountain College": 21.0,
+        "Fullerton College": 25.0,
+        "Glendale Community College": 18.0,
+        "Grossmont College": 24.0,
+        "Lake Tahoe Community College": 18.0,
+        "Las Positas College": 21.0,
+        "Lemoore College": 30.0,
+        "Los Angeles Harbor College": 3.0,
+        "Los Angeles Mission College": 25.0,
+        "Los Angeles Pierce College": 3.0,
+        "Los Angeles Southwest College": 3.0,
+        "Los Medanos College": 27.0,
+        "Mendocino College": 3.0,
+        "Moreno Valley College": 24.0,
+        "Napa Valley College": 9.0,
+        "Norco College": 24.0,
+        "Reedley College": 24.0,
+        "Riverside City College": 24.0,
+        "San Bernardino Valley College": 3.0,
+        "San Diego Miramar College": 9.0,
+        "San Joaquin Delta College": 6.0,
+        "Shasta College": 27.0,
+        "Skyline College": 24.0,
+        "Solano Community College": 21.0,
+        "Woodland Community College": 27.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 9,
+        "Barstow Community College": 8,
+        "Butte College": 2,
+        "Cabrillo College": 8,
+        "Cerro Coso Community College": 10,
+        "Chabot College": 6,
+        "Chaffey College": 9,
+        "City College of San Francisco": 2,
+        "College of San Mateo": 7,
+        "College of the Desert": 8,
+        "Copper Mountain College": 7,
+        "Fullerton College": 9,
+        "Glendale Community College": 6,
+        "Grossmont College": 8,
+        "Lake Tahoe Community College": 6,
+        "Las Positas College": 7,
+        "Lemoore College": 10,
+        "Los Angeles Harbor College": 1,
+        "Los Angeles Mission College": 8,
+        "Los Angeles Pierce College": 1,
+        "Los Angeles Southwest College": 1,
+        "Los Medanos College": 9,
+        "Mendocino College": 1,
+        "Moreno Valley College": 8,
+        "Napa Valley College": 3,
+        "Norco College": 8,
+        "Reedley College": 8,
+        "Riverside City College": 8,
+        "San Bernardino Valley College": 1,
+        "San Diego Miramar College": 1,
+        "San Joaquin Delta College": 2,
+        "Shasta College": 9,
+        "Skyline College": 8,
+        "Solano Community College": 7,
+        "Woodland Community College": 9
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          39,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144
+        ],
+        "Barstow Community College": [
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ],
+        "Butte College": [
+          8,
+          104
+        ],
+        "Cabrillo College": [
+          24,
+          25,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70
+        ],
+        "Cerro Coso Community College": [
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          94,
+          95,
+          96,
+          97
+        ],
+        "Chabot College": [
+          155,
+          157,
+          158,
+          159,
+          160,
+          161
+        ],
+        "Chaffey College": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          126
+        ],
+        "City College of San Francisco": [
+          55,
+          56
+        ],
+        "College of San Mateo": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          22
+        ],
+        "College of the Desert": [
+          11,
+          45,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177
+        ],
+        "Copper Mountain College": [
+          11,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        "Fullerton College": [
+          10,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          162
+        ],
+        "Glendale Community College": [
+          120,
+          121,
+          122,
+          123,
+          124,
+          125
+        ],
+        "Grossmont College": [
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "Lake Tahoe Community College": [
+          77,
+          78,
+          79,
+          80,
+          81,
+          82
+        ],
+        "Las Positas College": [
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184
+        ],
+        "Lemoore College": [
+          18,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          101,
+          145
+        ],
+        "Los Angeles Harbor College": [
+          100
+        ],
+        "Los Angeles Mission College": [
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          156
+        ],
+        "Los Angeles Pierce College": [
+          156
+        ],
+        "Los Angeles Southwest College": [
+          156
+        ],
+        "Los Medanos College": [
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          135,
+          153
+        ],
+        "Mendocino College": [
+          99
+        ],
+        "Moreno Valley College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Napa Valley College": [
+          20,
+          21,
+          83
+        ],
+        "Norco College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Reedley College": [
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134
+        ],
+        "Riverside City College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "San Bernardino Valley College": [
+          154
+        ],
+        "San Diego Miramar College": [
+          9
+        ],
+        "San Joaquin Delta College": [
+          84,
+          136
+        ],
+        "Shasta College": [
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171
+        ],
+        "Skyline College": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          22,
+          23
+        ],
+        "Solano Community College": [
+          19,
+          40,
+          41,
+          46,
+          64,
+          98,
+          102
+        ],
+        "Woodland Community College": [
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93
+        ]
+      },
+      "peer_units_median": 24.0,
+      "peer_units_max": 30.0,
+      "rec_units_total": 560.0
+    },
+    {
       "exhibit_id": "CPLPRI-HET+-1-001",
       "exhibit_ids": [
         "CPLPRI-HET+-1-001"
@@ -164329,1421 +165770,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 6.0,
       "rec_units_total": 99.0
-    },
-    {
-      "exhibit_id": "MAPICI-A1-C-1-001|MAPICI-CP2-1-001|MAPICI-CPAS-1-001|MAPICI-CPBP-1-001|MAPICI-P-BL-1-001|MAPICI-P-PO-1-001|MAPICI-P-PO1-1-001|MAPICI-P-PO2-1-001|MAPICI-PAEF-1-001|MAPICI-PAPF-1-001|MAPICI-PCCP-1-001|MAPICI-POBT-1-001|MAPICI-POSA-1-001|MAPICI-POSA1-1-001|MAPICI-POST-1-002|MAPICI-POST1-1-001|MAPICI-POST2-1-001",
-      "exhibit_ids": [
-        "MAPICI-A1-C-1-001",
-        "MAPICI-CP2-1-001",
-        "MAPICI-CPAS-1-001",
-        "MAPICI-CPBP-1-001",
-        "MAPICI-P-BL-1-001",
-        "MAPICI-P-PO-1-001",
-        "MAPICI-P-PO1-1-001",
-        "MAPICI-P-PO2-1-001",
-        "MAPICI-PAEF-1-001",
-        "MAPICI-PAPF-1-001",
-        "MAPICI-PCCP-1-001",
-        "MAPICI-POBT-1-001",
-        "MAPICI-POSA-1-001",
-        "MAPICI-POSA1-1-001",
-        "MAPICI-POST-1-002",
-        "MAPICI-POST1-1-001",
-        "MAPICI-POST2-1-001"
-      ],
-      "title": "POST Basic Academy",
-      "unified_title": "POST Basic Academy",
-      "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
-      "training_agency": "varies by academy",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ADJUS 101 - CA POST Training Record",
-        "CA POST",
-        "CA POST Academy SMCCD",
-        "CA POST BASIC POLICE ACADEMY CERTIFICATE",
-        "POST - Peace Officer Standards and Training",
-        "POST - Peace Officer Standards and Training - Basic Academy Certificate",
-        "POST Academy  effective FALL 2025",
-        "POST Academy prior Fall 2025",
-        "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
-        "Peace Officer Basic Training (POST)",
-        "Peace Officer Standardized Training Academy",
-        "Peace Officer Standards Training (POST) Basic Academy",
-        "Peace Officer Standards and Training (POST) Basic Academy Certificate",
-        "Peace Officer Standards and Training (POST) Basic Certificate",
-        "Peace Officer Standards and Training Basic Academy Certificate (POST)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "0",
-        "128",
-        "203",
-        "254",
-        "359"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 35,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Desert",
-        "Copper Mountain College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Moreno Valley College",
-        "Napa Valley College",
-        "Norco College",
-        "Reedley College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Shasta College",
-        "Skyline College",
-        "Solano Community College",
-        "Woodland Community College"
-      ],
-      "potential": 66,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Cerritos College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADJ 1",
-          "credit": "3.0 hours in Introduction to the Administration of Justice"
-        },
-        {
-          "course": "ADJ 13",
-          "credit": "3.0 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADJ 2",
-          "credit": "3.0 hours in Principles and Procedures of the Justice System"
-        },
-        {
-          "course": "ADJ 3",
-          "credit": "3.0 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADJ 4",
-          "credit": "3.0 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "ADJ 5",
-          "credit": "3.0 hours in Community Relations"
-        },
-        {
-          "course": "ADJ 8",
-          "credit": "3.0 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADJ 19",
-          "credit": "3.0 hours in Introduction to Policing"
-        },
-        {
-          "course": "AJ 2",
-          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
-        },
-        {
-          "course": "ADJU 260",
-          "credit": "9 hours in POST Certified Regional Academy"
-        },
-        {
-          "course": "AJ 223 F",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "CJ 006",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 100",
-          "credit": "3 hours in Introduction to Criminal Justice"
-        },
-        {
-          "course": "ADMJ 102",
-          "credit": "3 hours in Criminal Court Process"
-        },
-        {
-          "course": "ADMJ 104",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADMJ 106",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "ADMJ 108",
-          "credit": "3 hours in Community and the Justice System"
-        },
-        {
-          "course": "ADMJ 120",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 022",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CJ 051",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 121",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADMJ 124",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 125",
-          "credit": "3 hours in Juvenile Procedures"
-        },
-        {
-          "course": "ADMJ 123",
-          "credit": "3 hours in Concepts of Enforcement"
-        },
-        {
-          "course": "CJ 1",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "CJ 2",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CJ 3",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "CJ 4",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 5",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 51",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 6",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 7",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AJ 100 F",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AJ 110AF",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 140 F",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AJ 220 F",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AJ 222 F",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AJ 252 F",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "AJ 278 F",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRIM B21",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 001",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "CJ 002",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CJ 003",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 005A",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 010",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 030",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 011",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJU 1",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJU 14",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADJU 2",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "ADJU 3",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADJU 4",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADJU 5",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "ADJU 7",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADJU 8",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "ADMJ 52",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ 62",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 001",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AOJ 010",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AOJ 016",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AOJ 020",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AOJ 022",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AOJ 024",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 032",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 053",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 19",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 3",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 4",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "CJ 6",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "CJ 9",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 5",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ACAD C200X",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "ACAD C200X",
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
-        },
-        {
-          "course": "ACAD C201X",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "ADMJ C101",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADMJ C105",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ C121",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRJ 101",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "CRJ 102",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CRJ 103",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CRJ 108",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CRJ 110",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CRJ 112",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 121",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 31",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 10",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AJ 11",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 13",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AJ 14",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AJ 15",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AJ 16",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "AJ 19",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 20",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AJ 40",
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
-        },
-        {
-          "course": "ADMJ C115",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "ADMJ C125",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ C131",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADMJ C151",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 058",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "ADJ 202",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADM JUS 075",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "AOJ 003",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 056",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AJ 2",
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
-        },
-        {
-          "course": "AOJ 110",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AOJ 125",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "AOJ 200",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AOJ 202",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AOJ 204",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AOJ 206",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 208",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AOJ 240",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJUS 110",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADJUS 120",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADJUS 122",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "ADJUS 124",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "ADJUS 140",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADJUS 200",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "ADJUS 220",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADMJ 101",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADMJ 103",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ 116",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 118",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADMJ 120",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "ADMJ 160",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 5",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CRIM 1",
-          "credit": "3 hours in Introduction to Criminology"
-        },
-        {
-          "course": "CRIM 11",
-          "credit": "3 hours in Juvenile Delinquency"
-        },
-        {
-          "course": "CRIM 20",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CRIM 3",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CRIM 4",
-          "credit": "3 hours in Principles & Procedures of the Justice System"
-        },
-        {
-          "course": "CRIM 5",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRIM 6",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CRIM 8",
-          "credit": "3 hours in Criminal Investigations"
-        },
-        {
-          "course": "ADJUS 160",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 25",
-          "credit": "3 hours in Criminal Investigations"
-        },
-        {
-          "course": "CRIM B1",
-          "credit": "3 hours in Introduction to Criminal Justice"
-        },
-        {
-          "course": "CRIM B2",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CRIM B21",
-          "credit": "3 hours in Introduction to Correctional Administration"
-        },
-        {
-          "course": "CRIM B3",
-          "credit": "3 hours in Introduction to Evidence"
-        },
-        {
-          "course": "CRIM B4",
-          "credit": "3 hours in Constitutional Criminal Procedure"
-        },
-        {
-          "course": "CRIM B5",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRIM B8",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "CRIM B9",
-          "credit": "3 hours in The Juvenile Justice System"
-        },
-        {
-          "course": "AOJ 022",
-          "credit": "3 hours in Legal Aspects Of Evidence"
-        },
-        {
-          "course": "ADM JUS 001",
-          "credit": "3 hours in Introduction To Administration Of Justice"
-        },
-        {
-          "course": "ADM JUS 002",
-          "credit": "3 hours in Concepts Of Criminal Law"
-        },
-        {
-          "course": "ADM JUS 003",
-          "credit": "3 hours in Legal Aspects Of Evidence"
-        },
-        {
-          "course": "ADM JUS 006",
-          "credit": "3 hours in Patrol Procedures"
-        },
-        {
-          "course": "ADM JUS 014",
-          "credit": "3 hours in Report Writing For Peace Officers"
-        },
-        {
-          "course": "ADM JUS 160",
-          "credit": "3 hours in Police Organization and Administration"
-        },
-        {
-          "course": "ADM JUS 250",
-          "credit": "4 hours in Forensic Photography"
-        },
-        {
-          "course": "ADJUS 110",
-          "credit": "3 hours in Introduction To Administration Of Justice"
-        },
-        {
-          "course": "ADJUS 101",
-          "credit": "3 hours in Introduction to Administration of Justice"
-        },
-        {
-          "course": "ADMJ 50",
-          "credit": "3 hours in Introduction to the Administration of Justice"
-        },
-        {
-          "course": "LACCD GE 7",
-          "credit": "3 hours in Lifelong Learning and Self Development"
-        },
-        {
-          "course": "ADMJ 60",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ 61",
-          "credit": "3 hours in Evidence"
-        },
-        {
-          "course": "ADMJ 63",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 70",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADMJ 80",
-          "credit": "3 hours in Criminal Court Process"
-        },
-        {
-          "course": "AJ 135 F",
-          "credit": "1 hour in Weaponless Defense"
-        },
-        {
-          "course": "ADJU 10",
-          "credit": "3 hours in Introduction to Administration of Justice"
-        },
-        {
-          "course": "ADJU 15",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADJU 17",
-          "credit": "3 hours in Principles and Procedures of the Justice System"
-        },
-        {
-          "course": "ADJU 18",
-          "credit": "3 hours in Community Relations & Multicultural Issues for Law Enforcement"
-        },
-        {
-          "course": "ADJU 20",
-          "credit": "3 hours in Principles of Investigation"
-        },
-        {
-          "course": "ADJU 21",
-          "credit": "3 hours in Police Field Operations"
-        },
-        {
-          "course": "ADJU 22",
-          "credit": "3 hours in Juvenile Procedures"
-        },
-        {
-          "course": "ADJU 26",
-          "credit": "3 hours in Courtroom Testimony and Report Writing"
-        },
-        {
-          "course": "CSU GE E",
-          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
-        },
-        {
-          "course": "CJ 002",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "CJ 003",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CJ 004",
-          "credit": "3 hours in Criminal Court Process"
-        },
-        {
-          "course": "CJ 005",
-          "credit": "3 hours in Racial Issues and the Police"
-        },
-        {
-          "course": "CJ 010",
-          "credit": "3 hours in Juvenile Procedures"
-        },
-        {
-          "course": "CJ 001",
-          "credit": "3 hours in Introduction to Criminal Justice"
-        },
-        {
-          "course": "AJ 55",
-          "credit": "3 units in AJ 55 Introduction to Correctional Science"
-        },
-        {
-          "course": "AJ 60",
-          "credit": "3 units in AJ 60 Criminal Law"
-        },
-        {
-          "course": "AJ 61",
-          "credit": "3 units AJ 61 in Evidence"
-        },
-        {
-          "course": "AJ 63",
-          "credit": "3 units in AJ 63 Criminal Investigation"
-        },
-        {
-          "course": "AJ 68",
-          "credit": "3 units in AJ 68 Police Ethics and Leadership"
-        },
-        {
-          "course": "AJ 70",
-          "credit": "3 units in AJ 70 Community Relations"
-        },
-        {
-          "course": "AJ 66",
-          "credit": "3 units in AJ 66 Juvenile Procedures"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Intro to Administration of Justice",
-          "cid": "AJ 110"
-        },
-        {
-          "credit": "3 hours in Criminal Law",
-          "cid": "AJ 120"
-        },
-        {
-          "credit": "3 hours in Criminal Procedures",
-          "cid": "AJ 122"
-        },
-        {
-          "credit": "3 hours in Community Relations",
-          "cid": "AJ 160"
-        },
-        {
-          "credit": "3 hours in Criminal Evidence",
-          "cid": "AJ 124"
-        },
-        {
-          "credit": "3 hours in Introduction to Corrections",
-          "cid": "AJ 200"
-        },
-        {
-          "credit": "3 hours in Juvenile Law and Procedures",
-          "cid": "AJ 220"
-        },
-        {
-          "credit": "3 hours in Criminal Investigation",
-          "cid": "AJ 140"
-        },
-        {
-          "credit": "3 hours in Introduction to Policing (Elective Course)",
-          "cid": ""
-        },
-        {
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)",
-          "cid": "AJ 110"
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A1-C-1-001",
-          "title": "ADJUS 101 - CA POST Training Record",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CP2-1-001",
-          "title": "CA POST",
-          "units": 27.0,
-          "lines": 9
-        },
-        {
-          "id": "MAPICI-CPAS-1-001",
-          "title": "CA POST Academy SMCCD",
-          "units": 42.0,
-          "lines": 14
-        },
-        {
-          "id": "MAPICI-CPBP-1-001",
-          "title": "CA POST BASIC POLICE ACADEMY CERTIFICATE",
-          "units": 1.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-P-BL-1-001",
-          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-          "units": 315.0,
-          "lines": 105
-        },
-        {
-          "id": "MAPICI-P-PO-1-001",
-          "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
-          "units": 69.0,
-          "lines": 23
-        },
-        {
-          "id": "MAPICI-P-PO1-1-001",
-          "title": "POST - Peace Officer Standards and Training",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-P-PO2-1-001",
-          "title": "POST - Peace Officer Standards and Training",
-          "units": 30.0,
-          "lines": 10
-        },
-        {
-          "id": "MAPICI-PAEF-1-001",
-          "title": "POST Academy  effective FALL 2025",
-          "units": 36.0,
-          "lines": 12
-        },
-        {
-          "id": "MAPICI-PAPF-1-001",
-          "title": "POST Academy prior Fall 2025",
-          "units": 45.0,
-          "lines": 15
-        },
-        {
-          "id": "MAPICI-PCCP-1-001",
-          "title": "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
-          "units": 9.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-POBT-1-001",
-          "title": "Peace Officer Basic Training (POST)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-POSA-1-001",
-          "title": "Peace Officer Standards and Training (POST) Basic Academy Certificate",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-POSA1-1-001",
-          "title": "Peace Officer Standards and Training (POST) Basic Certificate",
-          "units": 21.0,
-          "lines": 7
-        },
-        {
-          "id": "MAPICI-POST-1-002",
-          "title": "Peace Officer Standards Training (POST) Basic Academy",
-          "units": 27.0,
-          "lines": 9
-        },
-        {
-          "id": "MAPICI-POST1-1-001",
-          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-          "units": 40.0,
-          "lines": 13
-        },
-        {
-          "id": "MAPICI-POST2-1-001",
-          "title": "Peace Officer Standardized Training Academy",
-          "units": 30.0,
-          "lines": 10
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 27.0,
-        "Barstow Community College": 24.0,
-        "Butte College": 6.0,
-        "Cabrillo College": 24.0,
-        "Cerro Coso Community College": 30.0,
-        "Chabot College": 18.0,
-        "Chaffey College": 27.0,
-        "City College of San Francisco": 6.0,
-        "College of San Mateo": 21.0,
-        "College of the Desert": 24.0,
-        "Copper Mountain College": 21.0,
-        "Fullerton College": 25.0,
-        "Glendale Community College": 18.0,
-        "Grossmont College": 24.0,
-        "Lake Tahoe Community College": 18.0,
-        "Las Positas College": 21.0,
-        "Lemoore College": 30.0,
-        "Los Angeles Harbor College": 3.0,
-        "Los Angeles Mission College": 25.0,
-        "Los Angeles Pierce College": 3.0,
-        "Los Angeles Southwest College": 3.0,
-        "Los Medanos College": 27.0,
-        "Mendocino College": 3.0,
-        "Moreno Valley College": 24.0,
-        "Napa Valley College": 9.0,
-        "Norco College": 24.0,
-        "Reedley College": 24.0,
-        "Riverside City College": 24.0,
-        "San Bernardino Valley College": 3.0,
-        "San Diego Miramar College": 9.0,
-        "San Joaquin Delta College": 6.0,
-        "Shasta College": 27.0,
-        "Skyline College": 24.0,
-        "Solano Community College": 21.0,
-        "Woodland Community College": 27.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 9,
-        "Barstow Community College": 8,
-        "Butte College": 2,
-        "Cabrillo College": 8,
-        "Cerro Coso Community College": 10,
-        "Chabot College": 6,
-        "Chaffey College": 9,
-        "City College of San Francisco": 2,
-        "College of San Mateo": 7,
-        "College of the Desert": 8,
-        "Copper Mountain College": 7,
-        "Fullerton College": 9,
-        "Glendale Community College": 6,
-        "Grossmont College": 8,
-        "Lake Tahoe Community College": 6,
-        "Las Positas College": 7,
-        "Lemoore College": 10,
-        "Los Angeles Harbor College": 1,
-        "Los Angeles Mission College": 8,
-        "Los Angeles Pierce College": 1,
-        "Los Angeles Southwest College": 1,
-        "Los Medanos College": 9,
-        "Mendocino College": 1,
-        "Moreno Valley College": 8,
-        "Napa Valley College": 3,
-        "Norco College": 8,
-        "Reedley College": 8,
-        "Riverside City College": 8,
-        "San Bernardino Valley College": 1,
-        "San Diego Miramar College": 1,
-        "San Joaquin Delta College": 2,
-        "Shasta College": 9,
-        "Skyline College": 8,
-        "Solano Community College": 7,
-        "Woodland Community College": 9
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          39,
-          136,
-          137,
-          138,
-          139,
-          140,
-          141,
-          142,
-          143
-        ],
-        "Barstow Community College": [
-          47,
-          48,
-          49,
-          50,
-          51,
-          52,
-          53,
-          54
-        ],
-        "Butte College": [
-          8,
-          103
-        ],
-        "Cabrillo College": [
-          24,
-          25,
-          65,
-          66,
-          67,
-          68,
-          69,
-          70
-        ],
-        "Cerro Coso Community College": [
-          71,
-          72,
-          73,
-          74,
-          75,
-          76,
-          94,
-          95,
-          96,
-          97
-        ],
-        "Chabot College": [
-          154,
-          156,
-          157,
-          158,
-          159,
-          160
-        ],
-        "Chaffey College": [
-          24,
-          25,
-          26,
-          27,
-          28,
-          29,
-          30,
-          31,
-          125
-        ],
-        "City College of San Francisco": [
-          55,
-          56
-        ],
-        "College of San Mateo": [
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          22
-        ],
-        "College of the Desert": [
-          11,
-          45,
-          171,
-          172,
-          173,
-          174,
-          175,
-          176
-        ],
-        "Copper Mountain College": [
-          11,
-          40,
-          41,
-          42,
-          43,
-          44,
-          45
-        ],
-        "Fullerton College": [
-          10,
-          32,
-          33,
-          34,
-          35,
-          36,
-          37,
-          38,
-          161
-        ],
-        "Glendale Community College": [
-          119,
-          120,
-          121,
-          122,
-          123,
-          124
-        ],
-        "Grossmont College": [
-          104,
-          105,
-          106,
-          107,
-          108,
-          109,
-          110,
-          111
-        ],
-        "Lake Tahoe Community College": [
-          77,
-          78,
-          79,
-          80,
-          81,
-          82
-        ],
-        "Las Positas College": [
-          177,
-          178,
-          179,
-          180,
-          181,
-          182,
-          183
-        ],
-        "Lemoore College": [
-          18,
-          57,
-          58,
-          59,
-          60,
-          61,
-          62,
-          63,
-          101,
-          144
-        ],
-        "Los Angeles Harbor College": [
-          100
-        ],
-        "Los Angeles Mission College": [
-          145,
-          146,
-          147,
-          148,
-          149,
-          150,
-          151,
-          155
-        ],
-        "Los Angeles Pierce College": [
-          155
-        ],
-        "Los Angeles Southwest College": [
-          155
-        ],
-        "Los Medanos College": [
-          112,
-          113,
-          114,
-          115,
-          116,
-          117,
-          118,
-          134,
-          152
-        ],
-        "Mendocino College": [
-          99
-        ],
-        "Moreno Valley College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "Napa Valley College": [
-          20,
-          21,
-          83
-        ],
-        "Norco College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "Reedley College": [
-          126,
-          127,
-          128,
-          129,
-          130,
-          131,
-          132,
-          133
-        ],
-        "Riverside City College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "San Bernardino Valley College": [
-          153
-        ],
-        "San Diego Miramar College": [
-          9
-        ],
-        "San Joaquin Delta College": [
-          84,
-          135
-        ],
-        "Shasta College": [
-          162,
-          163,
-          164,
-          165,
-          166,
-          167,
-          168,
-          169,
-          170
-        ],
-        "Skyline College": [
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          22,
-          23
-        ],
-        "Solano Community College": [
-          19,
-          40,
-          41,
-          46,
-          64,
-          98,
-          102
-        ],
-        "Woodland Community College": [
-          85,
-          86,
-          87,
-          88,
-          89,
-          90,
-          91,
-          92,
-          93
-        ]
-      },
-      "peer_units_median": 24.0,
-      "peer_units_max": 30.0,
-      "rec_units_total": 557.0
     },
     {
       "exhibit_id": "MAPCBEN-ABS-1-001|MAPCXS-A6BS-1-001|MAPCxS-ABSA-1-001",
@@ -409645,11 +409671,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 43,
-        "exhibits": 36,
+        "credit_recs": 45,
+        "exhibits": 38,
         "disciplines": 3,
-        "ccc_collaborative": 16,
-        "industry_certs": 28,
+        "ccc_collaborative": 17,
+        "industry_certs": 29,
         "pct": 0.3
       },
       {
@@ -409755,9 +409781,9 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6173,
-        "exhibits": 2339,
-        "courses": 350,
+        "credit_recs": 6174,
+        "exhibits": 2340,
+        "courses": 351,
         "colleges": 88,
         "ccc_collaborative": 35,
         "pct": 42.6
@@ -409791,11 +409817,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 512,
-        "exhibits": 316,
+        "credit_recs": 513,
+        "exhibits": 317,
         "courses": 248,
         "colleges": 46,
-        "ccc_collaborative": 54,
+        "ccc_collaborative": 55,
         "pct": 3.5
       },
       {
@@ -409971,7 +409997,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4023,
+        "credit_recs": 4024,
         "exhibits": 1270,
         "colleges": 81,
         "pct": 27.7
@@ -409985,10 +410011,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 427,
+        "credit_recs": 428,
         "exhibits": 343,
         "colleges": 32,
-        "pct": 2.9
+        "pct": 3.0
       },
       {
         "cpl_type": "Military",
@@ -410015,14 +410041,14 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3043,
+        "credit_recs": 3044,
         "exhibits": 1211,
         "colleges": 78,
         "pct": 21.0
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1454,
+        "credit_recs": 1455,
         "exhibits": 407,
         "colleges": 43,
         "pct": 10.0
@@ -410080,7 +410106,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12778,
+        "credit_recs": 12779,
         "exhibits": 6095,
         "colleges": 98,
         "disciplines": 23,
@@ -410088,7 +410114,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1474,
+        "credit_recs": 1475,
         "exhibits": 194,
         "colleges": 66,
         "disciplines": 11,
@@ -410162,9 +410188,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-        "credit_recs": 121,
-        "courses": 107,
-        "colleges": 21,
+        "credit_recs": 122,
+        "courses": 108,
+        "colleges": 22,
         "cpl_type": "Industry Certification",
         "discipline": "Public and Protective Services"
       },
@@ -410506,8 +410532,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-19T13:24:39",
-  "total_credit_recs": 14503,
+  "generated_at": "2026-10-19T16:30:08",
+  "total_credit_recs": 14505,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

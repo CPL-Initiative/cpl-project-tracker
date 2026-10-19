@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49252,
-  "pa": 45125,
+  "pe": 49257,
+  "pa": 45130,
   "ppa": 119,
   "p2": 3582,
   "p3": 16749,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 129,
   "pac": 5274,
   "ptc": 4603,
-  "pe_u": 1505357.95,
-  "pa_u": 275490.65,
+  "pe_u": 1505540.95,
+  "pa_u": 275511.65,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 37707.2,
@@ -87,10 +87,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Antelope Valley": {
-   "pe": 280,
-   "pe_u": 9555.0,
-   "pa": 280,
-   "pa_u": 1135.0,
+   "pe": 281,
+   "pe_u": 9619.0,
+   "pa": 281,
+   "pa_u": 1139.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -1375,10 +1375,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 1154.5
   },
   "Norco College": {
-   "pe": 873,
-   "pe_u": 28382.0,
-   "pa": 872,
-   "pa_u": 7908.5,
+   "pe": 875,
+   "pe_u": 28461.0,
+   "pa": 874,
+   "pa_u": 7918.5,
    "ppa": 12,
    "ppa_u": 69.0,
    "p2": 153,
@@ -1433,10 +1433,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Oxnard": {
-   "pe": 159,
-   "pe_u": 8625.0,
-   "pa": 158,
-   "pa_u": 632.0,
+   "pe": 160,
+   "pe_u": 8641.0,
+   "pa": 159,
+   "pa_u": 636.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -1534,10 +1534,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Reedley College": {
-   "pe": 134,
-   "pe_u": 5021.5,
-   "pa": 114,
-   "pa_u": 552.5,
+   "pe": 135,
+   "pe_u": 5045.5,
+   "pa": 115,
+   "pa_u": 555.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2250,8 +2250,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Antelope Valley": {
    "Military": {
-    "pe": 280,
-    "pa": 280,
+    "pe": 281,
+    "pa": 281,
     "p3": 0
    }
   },
@@ -3284,8 +3284,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 548,
-    "pa": 548,
+    "pe": 550,
+    "pa": 550,
     "p3": 248
    },
    "Portfolio Review": {
@@ -3303,8 +3303,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Oxnard": {
    "Military": {
-    "pe": 158,
-    "pa": 158,
+    "pe": 159,
+    "pa": 159,
     "p3": 0
    }
   },
@@ -3361,8 +3361,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 129,
-    "pa": 110,
+    "pe": 130,
+    "pa": 111,
     "p3": 0
    },
    "Portfolio Review": {
@@ -4008,8 +4008,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28564,
-   "pa": 26218,
+   "pe": 28569,
+   "pa": 26223,
    "p3": 2582
   },
   "Military | Other": {
@@ -4065,13 +4065,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1505357.95,
-   "pa_u": 275490.65,
+   "pe_u": 1505540.95,
+   "pa_u": 275511.65,
    "p3_u": 83778.85
   },
   "map": {
-   "pe_u": 1512183.45,
-   "pa_u": 276212.15,
+   "pe_u": 1512366.45,
+   "pa_u": 276233.15,
    "p3_u": 83842.35
   },
   "ratio": {
@@ -4248,8 +4248,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Norco College": {
    "vets": 831,
-   "jst": 570,
-   "pct": 0.6859
+   "jst": 572,
+   "pct": 0.6883
   },
   "Cabrillo": {
    "vets": 102,
@@ -4383,8 +4383,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Antelope Valley": {
    "vets": 281,
-   "jst": 282,
-   "pct": 1.0036
+   "jst": 283,
+   "pct": 1.0071
   },
   "Shasta": {
    "vets": 343,
@@ -4463,8 +4463,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Oxnard": {
    "vets": 118,
-   "jst": 160,
-   "pct": 1.3559
+   "jst": 161,
+   "pct": 1.3644
   },
   "Golden West": {
    "vets": 219,
@@ -4493,8 +4493,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Reedley College": {
    "vets": 82,
-   "jst": 131,
-   "pct": 1.5976
+   "jst": 132,
+   "pct": 1.6098
   },
   "Laney": {
    "vets": 96,

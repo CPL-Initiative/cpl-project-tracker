@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-10-19T13:25:34Z",
+  "_generated_at": "2026-10-19T16:31:05Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
@@ -13866,22 +13866,7 @@
   ],
   "credential_adds": [],
   "credential_issuer_fills": [],
-  "credential_issuer_adds": [
-    {
-      "title": "Elementary Spanish I",
-      "issuer": "Defense Language Institute (DLI)",
-      "raw": "SPAN 1: Beginning Spanish",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-12T19:53:32.095888+00:00"
-    },
-    {
-      "title": "Elementary Spanish II",
-      "issuer": "Defense Language Institute (DLI)",
-      "raw": "SPAN 2: High-Beginning Spanish",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-12T19:59:33.132809+00:00"
-    }
-  ],
+  "credential_issuer_adds": [],
   "credential_prunes": [],
   "articulation_ripples": [],
   "articulation_ripples_resolved": [],

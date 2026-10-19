@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-19T13:29:18Z",
+ "written_at": "2026-10-19T16:34:55Z",
  "rows": [
   {
    "key": "requirements",
@@ -50,7 +50,7 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-19T10:44:44Z",
+    "at": "2026-10-19T13:24:33Z",
     "every_hours": null
    },
    "facts": {
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-19T13:25:34Z",
+    "at": "2026-10-19T16:31:05Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2646,
     "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-19T13:25:34Z"
+    "fold_at": "2026-10-19T16:31:05Z"
    },
    "sources": [
     "kb/unified_titles.json",
@@ -216,7 +216,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-19T13:27:35+00:00",
+    "at": "2026-10-19T16:33:06+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -343,7 +343,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks into the seed",
-    "at": "2026-10-19T13:25:33Z",
+    "at": "2026-10-19T16:31:04Z",
     "every_hours": 24
    },
    "facts": {

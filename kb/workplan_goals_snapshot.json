@@ -36,20 +36,6 @@
       "activity_id": "1.2",
       "name": "System Integration & Interoperability",
       "description": null,
-      "row_type": "GOAL",
-      "kind": "project",
-      "current": null,
-      "yr_2025_26": 1.0,
-      "yr_2026_27": 2.0,
-      "yr_2027_28": 3.0,
-      "yr_2028_29": 4.0,
-      "yr_2029_30": 5.0,
-      "total": 15.0
-    },
-    {
-      "activity_id": "1.2",
-      "name": "System Integration & Interoperability",
-      "description": null,
       "row_type": "STRETCH",
       "kind": "project",
       "current": null,
@@ -423,6 +409,20 @@
       "yr_2028_29": 20.0,
       "yr_2029_30": 24.0,
       "total": 74.0
+    },
+    {
+      "activity_id": "1.2",
+      "name": "System Integration & Interoperability",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": 2,
+      "yr_2025_26": 1.0,
+      "yr_2026_27": 2.0,
+      "yr_2027_28": 3.0,
+      "yr_2028_29": 4.0,
+      "yr_2029_30": 5.0,
+      "total": 15.0
     },
     {
       "activity_id": "4.1",

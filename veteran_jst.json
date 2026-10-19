@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-19T13:25:27.132952+00:00",
+  "scraped_at": "2026-10-19T16:30:54.937983+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29154,
+    "jst": 29159,
     "star_colleges": 62
   },
   "computed_star_colleges": 62,
@@ -57,7 +57,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 570,
+      "jst": 572,
       "star": false
     },
     "Cabrillo College": {
@@ -192,7 +192,7 @@
     },
     "Antelope Valley College": {
       "vets": 281,
-      "jst": 282,
+      "jst": 283,
       "star": true
     },
     "Shasta College": {
@@ -272,7 +272,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 160,
+      "jst": 161,
       "star": true
     },
     "Golden West College": {
@@ -302,7 +302,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 131,
+      "jst": 132,
       "star": true
     },
     "Laney College": {
