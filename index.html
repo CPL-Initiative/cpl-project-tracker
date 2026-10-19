@@ -4020,6 +4020,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 /* Tokens only (S364, finishing S363's Budget pass): the widget and the hover take the
@@ -4510,7 +4513,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: October 19, 2026 at 9:31 AM PT</div>
+        <div class="last-updated">Last Updated: October 19, 2026 at 10:07 AM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='Error: '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='Error: '+e.message;b.disabled=false})">Manually Refresh COBI</button>
       </div>
     </div>
@@ -4608,7 +4611,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Oct 19, 2026 · 9:30 AM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Oct 19, 2026 · 10:06 AM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -5028,7 +5031,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-19T16:30:08</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-10-19T17:06:17</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -7983,6 +7986,12 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
                     </div>
                 </div>
                 <div class="cpl-live-update" data-update-key="project:4.8" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
+                <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
+                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-10-19</strong></span>
+                    </div>
+                    <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The Futuro Health CPL project completed Phase 1 (Project Launch and CPL Design) in September 2026 and is transitioning into Phase 2, having established governance, developed a tiered crosswalk identifying five priority colleges (Merritt, City College of San Francisco, North Orange Continuing Education, Sacramento City, and Contra Costa) with aligned courses, and secured an ACE credit recommendation for three lower-division units for the Human Touch Healthcare program. Key next steps for Q3 include initiating faculty outreach at the five priority colleges, advancing articulation work for HTH and Medi-Cal Peer Support Specialist, finalizing the data-sharing MOU, and preparing student-facing CPL communications once HTH approval is obtained.</div>
+                </div>
                 <a href="reports/projects/4.8_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:var(--surface-subtle);" onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'">Report</a><a href="#" class="attach-btn" data-folder="4.8 Futuro Behavioral Healthcare Project" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:var(--surface-subtle);" onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files">Attach</a><a href="#raci" class="raci-link" data-raci-key="project:4.8" onclick="try{sessionStorage.setItem('cpl_raci_focus','project:4.8')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:var(--surface-subtle);" onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'" title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">RACI</a><a href="#raci" class="update-link" onclick="try{sessionStorage.setItem('cpl_update_focus','project:4.8')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:var(--surface-subtle);" onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'" title="Braindump a quick status update — CC writes it up and saves it to this card">Update</a><a href="#raci" class="nudge-link" onclick="try{sessionStorage.setItem('cpl_nudge_focus','project:4.8')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:var(--surface-subtle);" onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'" title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">Nudge</a>
             </div>
             </div>
@@ -10521,8 +10530,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "October 19, 2026 at 9:31 AM PT",
-  "data_as_of": "October 19, 2026 at 9:31 AM PT",
+  "last_updated": "October 19, 2026 at 10:07 AM PT",
+  "data_as_of": "October 19, 2026 at 10:07 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "57,428",
@@ -10720,7 +10729,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       ],
       "live": true
     },
-    "_live_updated": "2026-10-19T16:30:54.631Z",
+    "_live_updated": "2026-10-19T17:06:58.307Z",
     "map_exhibits": {
       "value": "2,563",
       "label": "Common Exhibit Titles",
@@ -10813,7 +10822,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-10-19T16:30:08",
+    "_exhibit_updated": "2026-10-19T17:06:17",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -11665,8 +11674,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
           "goal_2930": "4",
           "stretch_2930": "8",
           "workplan_notes": "",
-          "update": "",
-          "update_date": "",
+          "update": "The Futuro Health CPL project completed Phase 1 (Project Launch and CPL Design) in September 2026 and is transitioning into Phase 2, having established governance, developed a tiered crosswalk identifying five priority colleges (Merritt, City College of San Francisco, North Orange Continuing Education, Sacramento City, and Contra Costa) with aligned courses, and secured an ACE credit recommendation for three lower-division units for the Human Touch Healthcare program. Key next steps for Q3 include initiating faculty outreach at the five priority colleges, advancing articulation work for HTH and Medi-Cal Peer Support Specialist, finalizing the data-sharing MOU, and preparing student-facing CPL communications once HTH approval is obtained.",
+          "update_date": "2026-10-19",
           "status": "Not Started",
           "pct": 0,
           "sprint_tag": "",
@@ -12354,6 +12363,11 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     ]
   },
   "live_updates": {
+    "project:4.8": {
+      "body": "The Futuro Health CPL project completed Phase 1 (Project Launch and CPL Design) in September 2026 and is transitioning into Phase 2, having established governance, developed a tiered crosswalk identifying five priority colleges (Merritt, City College of San Francisco, North Orange Continuing Education, Sacramento City, and Contra Costa) with aligned courses, and secured an ACE credit recommendation for three lower-division units for the Human Touch Healthcare program. Key next steps for Q3 include initiating faculty outreach at the five priority colleges, advancing articulation work for HTH and Medi-Cal Peer Support Specialist, finalizing the data-sharing MOU, and preparing student-facing CPL communications once HTH approval is obtained.",
+      "created_at": "2026-10-19T16:58:43.03634+00:00",
+      "date": "2026-10-19"
+    },
     "project:3.2": {
       "body": "Statewide training webinars have been scheduled to support Banner, Colleague, and PeopleSoft systems, featuring examples from colleges currently transcribing CPL units. These sessions are designed to assist institutions that need additional guidance with the transcription process.",
       "created_at": "2026-10-19T15:41:43.667608+00:00",
@@ -14791,8 +14805,8 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
       "start": "",
       "end": "",
       "milestones": "",
-      "update": "",
-      "update_date": "",
+      "update": "The Futuro Health CPL project completed Phase 1 (Project Launch and CPL Design) in September 2026 and is transitioning into Phase 2, having established governance, developed a tiered crosswalk identifying five priority colleges (Merritt, City College of San Francisco, North Orange Continuing Education, Sacramento City, and Contra Costa) with aligned courses, and secured an ACE credit recommendation for three lower-division units for the Human Touch Healthcare program. Key next steps for Q3 include initiating faculty outreach at the five priority colleges, advancing articulation work for HTH and Medi-Cal Peer Support Specialist, finalizing the data-sharing MOU, and preparing student-facing CPL communications once HTH approval is obtained.",
+      "update_date": "2026-10-19",
       "kpi_metric": "",
       "kpi_unit": "",
       "count_note": "",

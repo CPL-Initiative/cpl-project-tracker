@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-19T16:34:55Z",
+ "written_at": "2026-10-19T17:10:33Z",
  "rows": [
   {
    "key": "requirements",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-19T16:31:05Z",
+    "at": "2026-10-19T17:07:13Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2646,
     "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-19T16:31:05Z"
+    "fold_at": "2026-10-19T17:07:13Z"
    },
    "sources": [
     "kb/unified_titles.json",
@@ -216,7 +216,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-19T16:33:06+00:00",
+    "at": "2026-10-19T17:08:49+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -310,55 +310,79 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 122,
+     "n": 121,
      "of": 147,
-     "words": "disciplines carry a curator-confirmed subject code (111 by a person, 11 by a session cohort)",
-     "open": "#canonical-subj4"
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed by a person, on the authority rule, in no collision (122 by a person)",
+     "open": "#canonical-subj4/progress"
     }
    ],
    "tests": [
-    "curator-confirmed"
+    "person-confirmed",
+    "authority rule",
+    "collision-free"
    ],
    "issues": [
     {
      "n": 25,
-     "words": "disciplines on the data's modal code, unconfirmed",
+     "words": "MQ disciplines on the data's modal code, unconfirmed",
      "owner": "a curator",
-     "open": "#canonical-subj4"
+     "open": "#canonical-subj4/pre_seeded"
     },
     {
-     "n": 2,
-     "words": "codes on two disciplines each (AUTB; FTVE by design)",
+     "n": 1,
+     "words": "codes on two MQ disciplines (AUTB)",
      "owner": "a curator",
-     "open": "#canonical-subj4"
+     "open": "#canonical-subj4/check"
+    },
+    {
+     "n": 15,
+     "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note)",
+     "owner": "a curator, after Jev's sitting",
+     "open": "#canonical-subj4/progress"
+    },
+    {
+     "n": 110,
+     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 396 identities",
+     "owner": "a re-mint under the playbook",
+     "open": "#canonical-subj4/progress"
     }
    ],
    "procedures": [
     {
-     "words": "A code is four letters; the subject map decides a discipline and TOP corroborates it"
+     "n": 5,
+     "words": "procedures in force, of 8 written",
+     "open": "#canonical-subj4/progress"
     },
     {
-     "words": "A re-key goes through the alias chain and lands in one cron window"
+     "words": "The authority's code sets the Common SUBJ"
+    },
+    {
+     "words": "Umbrellas, fan-ins and cross-listed courses"
     }
    ],
    "machine": {
-    "what": "the daily sync of the picks into the seed",
-    "at": "2026-10-19T16:31:04Z",
+    "what": "the daily sync of the picks and the daily scan",
+    "at": "2026-10-19T17:07:11Z",
     "every_hours": 24
    },
    "facts": {
     "disciplines": 147,
     "confirmed": 122,
-    "person": 111,
-    "cohort": 11,
+    "person": 122,
+    "cohort": 0,
+    "settled": 121,
     "modal": 25,
     "shared": [
-     "AUTB",
-     "FTVE"
-    ]
+     "AUTB"
+    ],
+    "missed_alignment": 0,
+    "scanned_at": "2026-10-19",
+    "procedures_on": 5
    },
    "sources": [
-    "kb/discipline_canonical_subj4.json"
+    "kb/discipline_canonical_subj4.json",
+    "kb/csr_out/latest.json",
+    "kb/csr_procedures.json"
    ]
   }
  ]

@@ -1777,8 +1777,8 @@
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:28:50.721584+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
@@ -1795,7 +1795,9 @@
         }
       ],
       "authority_flag": null,
-      "authority_note": "Common SUBJ CDEV is the CCN subject code (rule 2: CCN first)."
+      "authority_note": "Common SUBJ CDEV is the CCN subject code (rule 2: CCN first).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Commercial Art": {
       "canonical_subj4": "ARTD",
@@ -1876,8 +1878,8 @@
       "cte_unknown_n": 4,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:42:21.195087+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix CMUS has zero COCI adoption; MUSC is the established canonical. Revisit if CCN CMUS lands. Ref: CSR0013 sibling.",
@@ -1893,7 +1895,9 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MUSC is the CSR's four-letter code; the authority says C-ID CMUS (rule 3: four letters, verbatim code on the chip)."
+      "authority_note": "Common SUBJ MUSC is the CSR's four-letter code; the authority says C-ID CMUS (rule 3: four letters, verbatim code on the chip).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Communication Studies": {
       "canonical_subj4": "COMM",
@@ -2051,8 +2055,8 @@
       "cte_unknown_n": 49,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:25:14.419498+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
@@ -2063,7 +2067,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ ITIS is the C-ID subject code."
+      "authority_note": "Common SUBJ ITIS is the C-ID subject code.",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Computer Science": {
       "canonical_subj4": "COMP",
@@ -2137,8 +2143,8 @@
       "cte_unknown_n": 118,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-09-03T20:34:21.060362+00:00",
-      "reviewed_by": "authority-recode-s224@bot",
+      "reviewed_at": "2026-05-23T17:31:34.900799+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
@@ -2149,7 +2155,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ COMP is the C-ID subject code."
+      "authority_note": "Common SUBJ COMP is the C-ID subject code.",
+      "_notes_by": "authority-recode-s224@bot",
+      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Construction Management": {
       "canonical_subj4": "CNSM",
@@ -3160,7 +3168,7 @@
       "cte_unknown_n": 6,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-06-12T17:18:32.914671+00:00",
+      "reviewed_at": "2026-06-12T14:29:15.876275+00:00",
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
@@ -3172,7 +3180,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ THTR is the C-ID subject code."
+      "authority_note": "Common SUBJ THTR is the C-ID subject code.",
+      "_notes_by": "map@rccd.edu",
+      "_notes_at": "2026-06-12T17:18:32.914671+00:00"
     },
     "Earth Science": {
       "canonical_subj4": "GEOL",
@@ -4531,8 +4541,8 @@
       "cte_unknown_n": 59,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-09-03T20:34:21.060362+00:00",
-      "reviewed_by": "authority-recode-s224@bot",
+      "reviewed_at": "2026-05-23T17:34:59.258685+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
@@ -4547,7 +4557,9 @@
       "fan_in_with": [
         "Media Production"
       ],
-      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away."
+      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
+      "_notes_by": "authority-recode-s224@bot",
+      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Fire Technology": {
       "canonical_subj4": "FIRE",
@@ -5309,8 +5321,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:43:48.932113+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "CS4 divergence recorded (Sam, 2026-07-10): official prefix HIT is 3 letters — CS1-invalid as a canonical; HEIT is the CS1-valid canonical. Permanent divergence unless CCN publishes a 4-letter form. Ref: CSR0013 sibling.",
@@ -5326,7 +5338,9 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HEIT is the CSR's four-letter code; the authority says C-ID HIT (rule 3: four letters, verbatim code on the chip)."
+      "authority_note": "Common SUBJ HEIT is the CSR's four-letter code; the authority says C-ID HIT (rule 3: four letters, verbatim code on the chip).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Heavy Duty Equipment Mechanics": {
       "canonical_subj4": "HMDT",
@@ -5717,8 +5731,8 @@
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:47:08.814394+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "CS5 note (2026-07-10): modal LINC (0.55) diverges deliberately — EDTC is the forward-looking code for the discipline. Ref: CSR0018 bless.",
@@ -5727,7 +5741,9 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ EDTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
+      "authority_note": "Common SUBJ EDTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Interdisciplinary Studies": {
       "canonical_subj4": "IDST",
@@ -6825,8 +6841,8 @@
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-09-03T20:34:21.060362+00:00",
-      "reviewed_by": "authority-recode-s224@bot",
+      "reviewed_at": "2026-05-23T17:39:58.022414+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
@@ -6841,7 +6857,9 @@
       "fan_in_with": [
         "Film and Media Studies"
       ],
-      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away."
+      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
+      "_notes_by": "authority-recode-s224@bot",
+      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Mortuary Science": {
       "canonical_subj4": "MORT",
@@ -7383,8 +7401,8 @@
       "cte_unknown_n": 32,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:27:17.864983+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
@@ -7395,7 +7413,9 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ BSOT is the C-ID subject code."
+      "authority_note": "Common SUBJ BSOT is the C-ID subject code.",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Older Adults: Noncredit": {
       "canonical_subj4": "OLAD",
@@ -8173,7 +8193,7 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-07-10T16:05:11.748313+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "CS4 convergence applied (Sam, 2026-07-10): POSC -> POLS. Official CCN prefix POLS (144 official rows) + field modal; no rationale was on record for POSC. Re-mint receipt: kb/pols_remint_out/2026-07-10/ (293 ids: 86 M + 197 singletons + 10 Z; 3 stale pre-fold identity ghosts healed). Ref: kb/csr_out/2026-07-10 CSR0006.",
@@ -8184,7 +8204,9 @@
       "canonical_source": "ccn",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ POLS is the CCN subject code (rule 2: CCN first)."
+      "authority_note": "Common SUBJ POLS is the CCN subject code (rule 2: CCN first).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T16:05:11.748313+00:00"
     },
     "Psychiatric Technician": {
       "canonical_subj4": "NURP",
@@ -9091,8 +9113,8 @@
       "cte_unknown_n": 214,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-07-10T15:58:36.55856+00:00",
-      "reviewed_by": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-05-23T17:43:03.388823+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "CS5 note (2026-07-10): data modal SOC fails CS1 (3 letters); SOCI is the official CCN prefix and the deliberate pick. Ref: CSR0012.",
@@ -9103,7 +9125,9 @@
       "canonical_source": "ccn",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ SOCI is the CCN subject code (rule 2: CCN first)."
+      "authority_note": "Common SUBJ SOCI is the CCN subject code (rule 2: CCN first).",
+      "_notes_by": "csr-doctrine-s111@bot",
+      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
     },
     "Speech Language Pathology": {
       "canonical_subj4": "SLPA",
@@ -9651,6 +9675,6 @@
       "with_chips": 23
     }
   },
-  "_synced_at": "2026-10-19T16:31:04Z",
+  "_synced_at": "2026-10-19T17:07:11Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
