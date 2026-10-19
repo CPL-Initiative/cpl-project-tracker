@@ -1595,6 +1595,34 @@ async function veteranMapChecks(page) {
 }
 
 
+/* The Knowledge Base portal (kb-portal/, the Knowledge Base tab's frame; S423). The page's
+   module imports its sign-in client from esm.sh, which the sweep aborts, so it never leaves
+   "Loading". The seed shows the view to measure the way render() would, and the reader's
+   seed fills the nav and an article with the shapes a document draws (headings, a table,
+   code, a quote) as synthetic text. */
+async function seedKbPortal(page, view) {
+  await page.evaluate((view) => {
+    const $ = (id) => document.getElementById(id);
+    for (const id of ["boot", "login", "portal"]) $(id).style.display = id === (view === "login" ? "login" : "portal") ? "" : "none";
+    if (view === "login") return;
+    $("session-box").style.display = "";
+    $("session-email").textContent = "reviewer@example.org";
+    $("nav").innerHTML = '<div class="nav-group"><div class="nav-group-label">Methodology</div>' +
+      '<a class="nav-link active" href="#doc=methodology/one.md">How the harvest reads a catalog</a>' +
+      '<a class="nav-link" href="#doc=methodology/two.md">The glossary</a></div>';
+    $("doc-meta").innerHTML = '<a class="src-link" href="https://example.org/src">View source on GitHub</a>';
+    $("doc").innerHTML = '<h1>How the harvest reads a catalog</h1><p>A synthetic paragraph with <a href="#x">a link</a> and <code>inline code</code>.</p>' +
+      '<h2>Section</h2><blockquote>A quoted line.</blockquote><pre><code>python3 kb/example.py</code></pre>' +
+      '<table><thead><tr><th scope="col">Term</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>CPL</td><td>Credit for prior learning</td></tr></tbody></table>';
+    if (view === "composer") {
+      $("composer-overlay").style.display = "";
+      $("composer-status").style.display = "";
+      $("composer-status").textContent = "Formatted from your draft. Review it, then choose Open in GitHub to commit.";
+      $("composer-status").className = "status-banner success";
+    }
+  }, view);
+}
+
 module.exports = {
   /* Served over http from the repo root — same-origin is load-bearing, not
      tidiness; the engine header says why. */
@@ -1806,6 +1834,25 @@ module.exports = {
     title: "CPL Fact Sheet (public), dark",
     mayHideBelow: [".sw-head"],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+  },
+
+  /* The Knowledge Base portal, as a team member sees it (S423): the sign-in view, the reader
+     with a synthetic document, and the composer. Light only: the portal carries First Light's
+     light tokens and no dark palette yet. */
+  "kb-portal": {
+    file: "kb-portal/index.html",
+    title: "Knowledge Base portal: sign-in",
+    seed: (page) => seedKbPortal(page, "login"),
+  },
+  "kb-portal-reader": {
+    file: "kb-portal/index.html",
+    title: "Knowledge Base portal: reading a document (synthetic)",
+    seed: (page) => seedKbPortal(page, "reader"),
+  },
+  "kb-portal-composer": {
+    file: "kb-portal/index.html",
+    title: "Knowledge Base portal: the new-document composer (synthetic)",
+    seed: (page) => seedKbPortal(page, "composer"),
   },
 
   /* The privacy page Google's consent screen links for the Library filer
