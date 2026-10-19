@@ -159,19 +159,26 @@
    ]
   },
   "San Joaquin Delta College": {
-   "why": "San Joaquin Delta's reconcile (run 39116289105) read 28 associate degrees that pass their major total as failing the degree total under record shape 6: an 18-unit major and general education 27-34 against 60, or a 59.5-unit major past the 77.5 printed. Every degree page prints \"Minimum Major Units Required: N\", the general education patterns (\"San Joaquin Delta College Associate Degree General Education Pattern Units: 27\", \"Cal-GETC ... Units: 34\"), \"Students are advised to double-count courses in the major to also satisfy general education when possible ... the units will only be counted once in computing the total number of units for the degree\" and \"Minimum Degree Units Required: 60\" (college-page-read 39122473643: Engineering Computer-Aided Drafting A.S., Modern Policing A.S., Nursing R.N. A.S., Electron Microscopy A.S.). The degree total is a floor: units short of it come from courses the student chooses, and a sum past it double-counts. The major total is right as read, so no step clears it. A step setting electives_fill_degree from the same words (S415, reconcile 39122702830) turned 15 records whose pages name no electives to failing under the scorer's electives check; the scorer now reads a floor alone as letting units the student chooses make up a short sum, so the step was dropped.",
-   "awards": "associate",
+   "why": "San Joaquin Delta's reconcile (run 39116289105) read 28 associate degrees that pass their major total as failing the degree total under record shape 6: an 18-unit major and general education 27-34 against 60, or a 59.5-unit major past the 77.5 printed. Every degree page prints \"Minimum Major Units Required: N\", the general education patterns (\"San Joaquin Delta College Associate Degree General Education Pattern Units: 27\", \"Cal-GETC ... Units: 34\"), \"Students are advised to double-count courses in the major to also satisfy general education when possible ... the units will only be counted once in computing the total number of units for the degree\" and \"Minimum Degree Units Required: 60\" (college-page-read 39122473643: Engineering Computer-Aided Drafting A.S., Modern Policing A.S., Nursing R.N. A.S., Electron Microscopy A.S.). The degree total is a floor: units short of it come from courses the student chooses, and a sum past it double-counts. The major total is right as read, so no step clears it. A step setting electives_fill_degree from the same words (S415, reconcile 39122702830) turned 15 records whose pages name no electives to failing under the scorer's electives check; the scorer now reads a floor alone as letting units the student chooses make up a short sum, so the step was dropped. S422 SkyWillow, 2026-10-19: the Jev sitting of run 39206690775's verdicts (kb/jev_harvest_verdicts/san_joaquin_delta.json) read 29 of 35 unequal records as one shape: every program page prints its total as a floor (\"Minimum Units Required: N\" on a certificate, \"Minimum Major Units Required: N\" on a degree) and the record's sum is a range whose low end equals it (a one-unit alternative such as ENGL C1000E 4 beside ENGL C1000 3, a block printed as a range, a variable-unit course). The third step marks the program total a floor on every award, and the scorer passes a sum whose low end meets it. The college-wide awards filter moved onto the two degree-total steps.",
    "steps": [
     {
      "kind": "fill",
      "field": "degree_total",
-     "pattern": "Minimum Degree Units Required: (?P<min>\\d+(?:\\.\\d+)?)"
+     "pattern": "Minimum Degree Units Required: (?P<min>\\d+(?:\\.\\d+)?)",
+     "awards": "associate"
     },
     {
      "kind": "set",
      "field": "degree_total_minimum",
      "value": true,
-     "pattern": "Minimum Degree Units Required: \\d+(?:\\.\\d+)?"
+     "pattern": "Minimum Degree Units Required: \\d+(?:\\.\\d+)?",
+     "awards": "associate"
+    },
+    {
+     "kind": "set",
+     "field": "total_units_minimum",
+     "value": true,
+     "pattern": "Minimum (?:Major )?Units Required: \\d+(?:\\.\\d+)?"
     }
    ]
   },

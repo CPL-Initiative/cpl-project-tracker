@@ -587,10 +587,19 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
                  "stated": list(stated), "against": "program", "why": reasons}
     else:
         ok = abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL
+        # The page prints the program total as a floor (San Joaquin Delta, S422: "Minimum Units
+        # Required: 24", "Minimum Major Units Required: 18"): a one-unit alternative, a block printed
+        # as a range or a variable-unit course carries the sum's high end past it, and the low end
+        # meets it. Only the low end meeting the floor passes; a low end past it is still a misread.
+        floor = (not ok and bool(prog.get("total_units_minimum"))
+                 and abs(lo - stated[0]) <= TOL and hi >= stated[1] - TOL)
+        ok = ok or floor
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
+        if floor:
+            arith["minimum"] = True
         if degree is not None:
             # Record shape 6: a page printing the major's total and the degree's checks both,
             # and the record names the one it misses (the major first).

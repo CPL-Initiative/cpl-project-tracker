@@ -68,7 +68,7 @@ as $$
     'program', coalesce(rec->'program', '{}'::jsonb) - 'outcomes' - 'careers'
                - 'total_units' - 'degree_total' - 'ge_units' - 'ge_pattern'
                - 'open_elective_units' - 'degree_elective_units' - 'electives_fill_degree'
-               - 'degree_total_minimum',
+               - 'degree_total_minimum' - 'total_units_minimum',
     'blocks',  coalesce(rec->'blocks', '[]'::jsonb));
 $$;
 revoke all on function public.program_record_carry_basis(jsonb) from public, anon, authenticated;
