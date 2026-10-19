@@ -70,6 +70,12 @@ def _span_of(v):
     return (v, v)
 
 
+def prefix_aliases(college: str, steps: dict | None = None) -> dict | None:
+    """The college's subject prefixes as its catalog prints them, mapped to the state file's
+    (the scorer's aliases; kb/_program_requirements_score.py with_prefix_aliases)."""
+    return ((steps if steps is not None else load_steps()).get(college) or {}).get("prefix_aliases") or None
+
+
 def awards_match(kind: str | None, award: str | None) -> bool:
     if not kind:
         return True

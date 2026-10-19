@@ -1666,6 +1666,25 @@ check(not prog_lo_hi(floor_rec(26, 28, True))["pass"], "a low end past the floor
 check(not prog_lo_hi(floor_rec(22, 25, True))["pass"], "a low end short of the floor fails")
 e = prog_lo_hi(floor_rec(24, 24, True))
 check(e["pass"] and not e.get("minimum"), "an exact sum passes as equal, without the floor note")
+# San Joaquin Delta (S422): the catalog prints ANTH 2L where the state's file keeps ANTHR 2L (same number and title).
+SJD_ALIASES = RC.prefix_aliases("San Joaquin Delta College")
+anth = {"program": {"total_units": {"min": 7, "max": 7}, "measure": "units"},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "ANTH 2L", "units": 1},
+                                                                    {"code": "ENGL C1000", "units": 3},
+                                                                    {"code": "ENG 35", "units": 3}]}]}
+ANTH_LIST = [{"code": "ANTHR 2L", "units": 1}, {"code": "ENGL C1000", "units": 3}, {"code": "ENG 35", "units": 3}]
+plain = S.score(anth, ANTH_LIST, "ANTH 2L ENGL C1000 ENG 35 Minimum Units Required: 7", "Certificate of Achievement")
+check(not plain["pass"] and plain["coverage"]["missing"] == ["ANTHR2L"] and plain["invented"]["codes"] == ["ANTH2L"],
+      "without the alias, ANTH 2L reads as one course missing and another invented: %s" % json.dumps(plain["coverage"]))
+aliased = S.score(anth, ANTH_LIST, "ANTH 2L ENGL C1000 ENG 35 Minimum Units Required: 7", "Certificate of Achievement",
+                  SJD_ALIASES)
+check(aliased["pass"] and not aliased["coverage"]["missing"] and not aliased["invented"]["codes"],
+      "Delta's prefix alias reads ANTH 2L as the listed ANTHR 2L: %s" % json.dumps(aliased["coverage"]))
+check(anth["blocks"][0]["courses"][0]["code"] == "ANTH 2L", "the alias renames on the scorer's copy, never the record")
+both = S.score(anth, ANTH_LIST + [{"code": "ANTH 2L", "units": 1}], "x", "Certificate of Achievement", SJD_ALIASES)
+check(both["coverage"]["missing"] == ["ANTHR2L"],
+      "a code the file lists as printed is never renamed: %s" % json.dumps(both["coverage"]))
+check(RC.prefix_aliases("Cerritos College") is None, "a college with no aliases gets none")
 
 # Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
 # Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.

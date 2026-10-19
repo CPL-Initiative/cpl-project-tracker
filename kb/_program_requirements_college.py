@@ -2632,7 +2632,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         if notes:
             got = dict(got, record=rec)
         try:
-            sc = X.score(rec, src["closed_list"], src["text"], src.get("award")) if isinstance(rec, dict) else None
+            sc = X.score(rec, src["closed_list"], src["text"], src.get("award"),
+                         R.prefix_aliases(src["college"])) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],
@@ -2691,7 +2692,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             if notes:
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
-                             score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award")))
+                             score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
+                                           R.prefix_aliases(college)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -2701,7 +2703,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # the fresh page rescores the record, and its requirements stay as read. A new
                 # score carries the run too, or step=reread keeps the loaded row's old checks
                 # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
-                fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"))
+                fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
+                                R.prefix_aliases(college))
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
