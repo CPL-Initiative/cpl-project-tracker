@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 89 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 58 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 393 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1183** | |
+| Session handoffs | 394 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1184** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-19 (S422 SkyWillow, the routine): San Joaquin Delta's three scorer readings, 154 to 195 of 202 live rows passing (#2250); Taft's two local GE patterns, no step (#2249); the Sierra Training UI pass (#2251); lessons S422, handoff 423.
 - 2026-10-19 (S421 SkyTupelo): the second reader built (#2246); Cañada's Cal-GETC step and the six-row rollback (#2247); three Jev sittings read, verdicts in `kb/jev_harvest_verdicts/`; lessons S421; handoff 422.
 - 2026-10-19 (S420 SkyTanoak, hand-opened): Cañada's re-read landed (#2244: 26 moved pages re-extracted, 8 loaded, 17 replaced, display build 3aa52b4afcb6); the CPL News UI pass (#2243); a Jev calibration sitting over a college's failing records (`kb/_jev_harvest.py`, #2245) and the xAI smoke for the second reader's key; Open Asks Sheet 97 asked and answered (Build with Grok, 03:11Z); KB note `methodology-a-harvests-tail-needs-a-different-instrument`.
 - 2026-10-18 (S419 SkyCottonwood, hand-opened): the Commons' step 1 landed (#2237: the Progress view drawn by the shared `commons_progress.js`, nothing changing on screen, the status file under `kb/status/`) and Sam approved the mock-up (19:08Z, to S417; version 4 collapses per row and all at once); Cañada's PDF picker reads the catalog's three heading shapes (#2241; the capture-only run moved 26 pages, eight of the eleven empty records onto their own headings); `docs/commons_lessons.md` and a KB note on the shared-view pattern added.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-18 (S417 SkyManzanita): #2231 merged and the CER lane's first saving run staged (preview 926 under 7; #2232 quotes the workflow's save options); the Commons mock-up revised on Fable's review with every figure re-measured; #2230's live-program gate fixed after the A/B lost 7l; the Our Process UI pass (#2233); Open Asks Sheet 96 drafted (CPLBrain#385); handoff 418 (SkyMadrone).
 - 2026-10-18 (S416 SkyCeanothus): Sheet 94's three CER rulings built (#2231: the per-item fold hold, the procedure save with its receipt and undo, the sign-off and Curate panel retired); Sierra reads complete records (#2230); the Commons row mock-up; lessons S416 in `cer_v2_redesign_lessons.md`.
 - 2026-10-18 (S415 SkyRedbud, the routine): San Joaquin Delta's held rescore settled by a printed degree floor (152 to 154 passing, 71 reread) and Taft's transfer degrees counting Cal-GETC as the statewide 34 (24 to 34, 17 reread), #2226; display build `48cb66f19cff` (15,946 programs at 114 colleges); Open Asks Sheet 94; handoff 416 (SkyCeanothus).
-- 2026-10-18 (S414 SkyChamise, the routine): the Coursedog reader (Merced: 154 of 172 found, 153 loaded, 125 passing, $9.14); the slash rescoring by free reconcile runs (Glendale 14, De Anza 12, LA Trade Technical 5, Crafton Hills 2 replaced) and the `THART/S` reading; display build `7e4a2a9c5ba7`, 15,946 programs at 114 colleges (#2224); San Joaquin Delta's rescore held.
