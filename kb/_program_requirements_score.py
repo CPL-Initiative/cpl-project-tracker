@@ -570,6 +570,29 @@ def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
     return out
 
 
+# "Total Contact Hours: 288", "Hours: 54": an hours figure printed after its label.
+HOURS_LABEL = re.compile(r"\b(Total\s+(?:Contact\s+)?)?Hours?\s*:\s*(\d+(?:\.\d+)?)", re.I)
+
+
+def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str | None) -> bool:
+    """A noncredit program whose page prints its total hours and no hours for any course
+    (San Joaquin Delta, S422: "Total Contact Hours: 288" and "Units: 0" beside each course):
+    there is nothing to add, as 'unstated' passes a page with no figure. The record must carry
+    no course or block figure, and every hours figure on the page must be a total equal to the
+    one the record states, so a reading that dropped printed course hours still fails."""
+    if measure(record) != "hours" or stated is None or not text or FIGURE.search(text):
+        return False
+    for b in record.get("blocks") or []:
+        if _span(b.get("stated")):
+            return False
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                if _num(entry.get("units")) or _num(entry.get("units_max")):
+                    return False
+    labels = list(HOURS_LABEL.finditer(text))
+    return bool(labels) and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels)
+
+
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
           aliases: dict | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
@@ -615,6 +638,9 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     elif stated is None:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi], "stated": None,
                  "against": None, "why": reasons + ["the record names no total"]}
+    elif reasons and hours_total_only(record, stated, text):
+        arith = {"pass": True, "status": "equal", "total_only": True, "computed": None, "stated": list(stated),
+                 "against": "program", "why": []}
     elif reasons:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
                  "stated": list(stated), "against": "program", "why": reasons}

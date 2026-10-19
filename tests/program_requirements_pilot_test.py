@@ -1685,6 +1685,27 @@ both = S.score(anth, ANTH_LIST + [{"code": "ANTH 2L", "units": 1}], "x", "Certif
 check(both["coverage"]["missing"] == ["ANTHR2L"],
       "a code the file lists as printed is never renamed: %s" % json.dumps(both["coverage"]))
 check(RC.prefix_aliases("Cerritos College") is None, "a college with no aliases gets none")
+# San Joaquin Delta (S422): a noncredit page prints "Total Contact Hours: 288" and "Units: 0" beside each course.
+SJD_NC = ("Core Requirements \u00b7 ESL 9088 Health Careers Reading Units: 0 \u00b7 ESL 9059 Writing Units: 0 \u00b7 "
+          "Restrictive Electives \u00b7 Complete 1 course from: \u00b7 ESL 9086 Advanced Reading Units: 0 \u00b7 Total Contact Hours: 288")
+nc = {"program": {"measure": "hours", "total_units": {"min": 288, "max": 288}},
+      "blocks": [{"name": "Core Requirements", "rule": "all", "courses": [{"code": "ESL 9088", "units": None},
+                                                                         {"code": "ESL 9059", "units": None}]},
+                 {"name": "Restrictive Electives", "rule": "choose_courses", "minimum": 1,
+                  "courses": [{"code": "ESL 9086", "units": None}]}]}
+NC_LIST = [{"code": "ESL 9088", "units": 0}, {"code": "ESL 9059", "units": 0}, {"code": "ESL 9086", "units": 0}]
+a = S.score(nc, NC_LIST, SJD_NC, "Noncredit program")["arithmetic"]
+check(a["pass"] and a["status"] == "equal" and a.get("total_only"),
+      "a noncredit page printing only its total hours passes as equal, total only: %s"
+      % json.dumps(a))
+check(not S.score(nc, NC_LIST, SJD_NC.replace("Units: 0 \u00b7 ESL 9059", "Hours: 54 \u00b7 ESL 9059"),
+                  "Noncredit program")["arithmetic"]["pass"],
+      "a page printing a course's hours that the record dropped still fails")
+check(not S.score(nc, NC_LIST, SJD_NC.replace("Advanced Reading Units: 0", "Advanced Reading 54 hours"),
+                  "Noncredit program")["arithmetic"]["pass"], "a course figure printed before its label fails too")
+check(not S.score(nc, NC_LIST, SJD_NC.replace("Hours: 288", "Hours: 300"), "Noncredit program")["arithmetic"]["pass"],
+      "a printed total other than the record's fails")
+check(not S.score(nc, NC_LIST, None, "Noncredit program")["arithmetic"]["pass"], "without the page, nothing passes")
 
 # Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
 # Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.
