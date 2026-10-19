@@ -794,7 +794,8 @@ stays here.
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
 | **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
-| **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; each reference's Progress view and run log next) — [lane state](docs/reference/lanes/commons.md) |
+| **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; the Subjects Progress view, 2026-10-19; Exhibit, Course and CR next) — [lane state](docs/reference/lanes/commons.md) |
+| **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

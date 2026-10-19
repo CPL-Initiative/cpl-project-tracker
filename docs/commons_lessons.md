@@ -96,3 +96,28 @@ Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress 
 - **Stamp only what moved.** A run log that a checkpoint restamps without work behind it reads fresh and says nothing;
   step 12 refreshes the logs this run touched and leaves the others to age into *stale*, which is the true state.
 
+
+## S425 SkyMadrone (2026-10-19): the first per-reference Progress view, Subjects (#2260)
+
+- **The host contract held for a second host in sixty lines.** `canonical_subj4.js` lends a `section()` on a
+  `<details>` with its own classes (`cs-sec`, remembered in `localStorage`), a `goControl()` whose targets are the
+  table's filters, the SUBJ check or a section of the view, and call helpers that answer nothing (a call is answered
+  on its sheet). The module needed one addition, an optional `more(x)` word per part for the card's procedure; the
+  first host's 417 checks stayed as they were, and a shared CSS rule split into two so the first host's regex still
+  matched its own line.
+- **A check must know every sharing by design or it over-reports.** The tab's SUBJ check listed six ruled sharings
+  as collisions (the five agriculture family codes both umbrellas declare, the FTVE fan-in) beside the one real one,
+  and the dash would have said seven. The scanner's CS2 knew the fan-in; the tab's check knew only the alias file.
+  Both exceptions now come from the entries themselves (`umbrella_codes`, `fan_in_with`), as
+  `methodology-subj4-consumer-semantics` says every consumer must.
+- **The pick's reviewer is the code row's.** The sync and the overlay took the latest row across fields, so a note
+  a cohort wrote in July overwrote the person who picked the code in May on eleven entries, and the Commons row read
+  "111 by a person, 11 by a session cohort" of 122 picks a person made. A field's provenance stays with the field.
+- **A pattern written for the common case silently dropped a third of the file.** The C-ID descriptor regex had no
+  room for the " X" suffix (172 of 495 descriptors, 17 of 65 subjects), so the chips never saw ADS, the three
+  agriculture families, WELD or FIRE. Count the file's rows against the index's rows before trusting either.
+- **`hidden` loses to `display:flex`.** The toolbar stayed on screen under Progress until a `[hidden] { display:none }`
+  rule outranked the toolbar's own display; the served page showed it, jsdom could not.
+- **The deep link behind a count is the hash's second segment.** `#canonical-subj4/pre_seeded` opens the tab (tabs.js
+  routes the first segment) and the tab applies the second as a filter, a view or the check; the Commons builder
+  writes the same addresses into its `open` fields, so both dashes point at one list.

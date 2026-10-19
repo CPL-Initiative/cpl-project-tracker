@@ -14939,7 +14939,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 58,
+   "count": 59,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15048,6 +15048,23 @@
      "title": "Common CR Reference \u2014 lane state",
      "type": null,
      "updated": "2026-09-29"
+    },
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "path": "docs/reference/lanes/common-subjects-reference.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "csr",
+      "commons",
+      "subjects",
+      "mq-disciplines"
+     ],
+     "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-19"
     },
     {
      "created": "2026-08-28",
@@ -15444,7 +15461,8 @@
       "program-requirements",
       "cer",
       "ccr",
-      "cr-reference"
+      "cr-reference",
+      "csr"
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
@@ -15757,8 +15775,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 396,
+   "count": 397,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 426,
+     "path": "docs/session_426_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "csr",
+      "common-subjects-reference",
+      "progress-view",
+      "decision-sheet"
+     ],
+     "title": "Session 426 handoff: the Common Subjects Reference's Progress view, the procedures store, the daily scan; Sam's eight steps checked against the record",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22590,5 +22626,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1186
+ "total": 1188
 }
