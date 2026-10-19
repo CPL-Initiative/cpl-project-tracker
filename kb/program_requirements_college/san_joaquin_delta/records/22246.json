@@ -166,7 +166,8 @@
     "Administrative Executive",
     "Office Manager"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -364,14 +365,14 @@
    "Area A and Area B each state 'Complete 3 units selected from'; recorded as stated 3."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 66"
+   "words": "Minimum Major Units Required: 42"
   }
  ]
 }

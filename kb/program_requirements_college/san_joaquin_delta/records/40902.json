@@ -45,11 +45,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 15,
-   "share": 0.8,
+   "share": 0.867,
    "missing": [
-    "COMST8",
     "CULART30B",
     "CULART8"
    ],
@@ -58,22 +57,20 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "BUS94F",
-    "COMM8",
     "CULART90"
    ],
    "flagged": [
     "BUS94F",
-    "COMM8",
     "CULART90"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     25.0,
     28.0
@@ -83,9 +80,8 @@
     25.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 25.0-28.0; the catalog states 25.0-25.0"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -109,7 +105,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,7 +139,8 @@
     "Winery Outside Sales",
     "Sales Positions with Distributors",
     "Direct to Consumer Sales positions"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -301,6 +298,14 @@
    "Catalog is labeled Summer 2026 - Summer 2027."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 25"
+  }
+ ]
 }

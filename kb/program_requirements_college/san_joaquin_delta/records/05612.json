@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     28.5,
     30.5
@@ -71,9 +71,8 @@
     28.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 28.5-30.5; the catalog states 28.5-28.5"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -122,7 +121,8 @@
     "Understand, diagnose and repair industrial systems such as refrigeration and air conditioning, hydraulics, and electrical systems.",
     "Demonstrate significant understanding of the operation of equipment used to fabricate, maintain, and repair mechanical components and assemblies in an industrial environment. Skills in welding, machining, and metal layout principles shall be evident."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -234,6 +234,14 @@
    "All courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 28.5"
+  }
+ ]
 }

@@ -45,31 +45,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 12,
    "listed": 12,
-   "share": 0.917,
-   "missing": [
-    "COMST8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "COMM8",
     "CULART93"
    ],
    "flagged": [
-    "COMM8",
     "CULART93"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     26.0,
     29.0
@@ -79,9 +75,8 @@
     26.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 26.0-29.0; the catalog states 26.0-26.0"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -105,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,7 +129,8 @@
    "careers": [
     "Winery Event Coordinators",
     "Winery Events Industry"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -258,6 +254,14 @@
    "Catalog requires all courses with a grade of C or better."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 26"
+  }
+ ]
 }

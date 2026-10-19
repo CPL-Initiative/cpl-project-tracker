@@ -133,7 +133,8 @@
    ],
    "careers": [
     "computer-aided drafter"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -205,6 +206,14 @@
    "The description's phrase 'in the filed of architecture' contains a typo in the source; the career entry is taken as 'computer-aided drafter'. The description also mentions 'other related trades where plan reading and preparation is required', not recorded as a specific career."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 23"
+  }
+ ]
 }

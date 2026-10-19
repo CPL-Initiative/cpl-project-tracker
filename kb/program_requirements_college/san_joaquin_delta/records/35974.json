@@ -136,7 +136,8 @@
     "boat canvas and interiors",
     "awning manufacturing",
     "upholstering"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -202,6 +203,14 @@
    "Careers are taken from the description's list of industries where graduates may find employment (\"a variety of industries such as ...\")."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 18"
+  }
+ ]
 }

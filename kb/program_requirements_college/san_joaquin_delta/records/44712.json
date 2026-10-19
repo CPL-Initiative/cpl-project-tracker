@@ -126,7 +126,8 @@
     "Demonstrate clear pronunciation and adequate speed of speech appropriate to the advanced level of English fluency.",
     "Answer comprehension questions and paraphrase the main ideas and supporting details after listening to a recording."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -172,6 +173,14 @@
    "The description mentions vocational training, academic programs and professional environments but names no specific careers; careers left empty."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 0"
+  }
+ ]
 }

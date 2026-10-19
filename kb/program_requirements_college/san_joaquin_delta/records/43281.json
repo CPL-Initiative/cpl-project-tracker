@@ -77,8 +77,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     27.0,
     28.5
@@ -88,9 +88,8 @@
     27.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.0-28.5; the catalog states 27.0-27.0"
-   ],
+   "why": [],
+   "minimum": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -133,7 +132,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -168,7 +167,8 @@
     "Students will analyze an application problem and choose an appropriate mathematical model (from those covered in this course) to solve the problem."
    ],
    "careers": [],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -287,14 +287,14 @@
    "Text mentions 'career opportunities' generically but names no specific careers."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 27"
   }
  ]
 }

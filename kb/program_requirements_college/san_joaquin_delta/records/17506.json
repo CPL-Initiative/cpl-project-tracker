@@ -45,31 +45,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 10,
    "listed": 10,
-   "share": 0.9,
-   "missing": [
-    "COMST7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "COMM7",
     "ENGLC1000E"
    ],
    "flagged": [
-    "COMM7",
     "ENGLC1000E"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
     25.0
@@ -79,9 +75,8 @@
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 24.0-25.0; the catalog states 24.0-24.0"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -105,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -130,7 +125,8 @@
     "Demonstrate clear and precise expressive and receptive skills in American Sign Language with appropriate grammatical accuracy.",
     "Demonstrate appropriate cultural awareness."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -250,6 +246,14 @@
    "The heading reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 24"
+  }
+ ]
 }

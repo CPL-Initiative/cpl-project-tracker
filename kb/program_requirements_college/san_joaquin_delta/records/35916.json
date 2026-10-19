@@ -164,7 +164,8 @@
     "Studio and Wedding Photography",
     "Theater Production Photographer",
     "Wedding and Event Photographer"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -294,6 +295,14 @@
    "Catalog is labeled Summer 2026 - Summer 2027."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 20"
+  }
+ ]
 }

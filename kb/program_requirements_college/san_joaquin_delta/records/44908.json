@@ -127,7 +127,8 @@
     "scenic artist",
     "charge artist",
     "props artisan"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -283,6 +284,14 @@
    "Careers limited to the named job titles; the description also refers to 'early career employment in the field of scenic art and stage props'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 30"
+  }
+ ]
 }

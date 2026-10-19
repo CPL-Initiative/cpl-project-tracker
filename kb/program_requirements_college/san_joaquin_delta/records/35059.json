@@ -159,7 +159,8 @@
     "entry-level Electrician",
     "Electrical Technician"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -256,14 +257,14 @@
    "Career entries drawn from the program description and the program learning outcomes text."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 67.5"
+   "words": "Minimum Major Units Required: 40.5"
   }
  ]
 }

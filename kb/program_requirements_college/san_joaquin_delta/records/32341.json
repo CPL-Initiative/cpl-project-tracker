@@ -45,38 +45,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 14,
    "listed": 15,
-   "share": 0.6,
+   "share": 0.933,
    "missing": [
-    "ENG35",
-    "ENG49A",
-    "ENG49B",
-    "ENG49C",
-    "ENG49D",
     "ENGL1B"
    ],
-   "unexplained": [
-    "ENG35",
-    "ENG49A",
-    "ENG49B",
-    "ENG49C",
-    "ENG49D"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 16,
+   "count": 11,
    "codes": [
     "ENGL30",
-    "ENGL35",
     "ENGL43C",
     "ENGL43D",
-    "ENGL49A",
-    "ENGL49B",
-    "ENGL49C",
-    "ENGL49D",
     "ENGL50SS",
     "ENGL57",
     "ENGL61",
@@ -99,7 +83,7 @@
     "ENGL62E",
     "ENGLC1002"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -160,7 +144,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -200,7 +184,8 @@
     "government",
     "law"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -526,14 +511,14 @@
    "All courses must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 18"
   }
  ]
 }
