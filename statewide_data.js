@@ -109556,6 +109556,10 @@ window.CPL_STATEWIDE = {
           "credit": "4 hours in Information and Communication Technology Essentials"
         },
         {
+          "course": "CIS 71",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        },
+        {
           "course": "CIS 069A",
           "credit": "4.5 hours in Technical Support Fundamentals"
         },
@@ -109658,8 +109662,8 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICI-CAC2-1-001",
           "title": "COMPTIA A+ Certification",
-          "units": 4.0,
-          "lines": 1
+          "units": 8.0,
+          "lines": 2
         },
         {
           "id": "MAPICI-CAC4-1-001",
@@ -109693,7 +109697,7 @@ window.CPL_STATEWIDE = {
         }
       ],
       "adopter_units": {
-        "Cabrillo College": 3.0,
+        "Cabrillo College": 7.0,
         "Chaffey College": 6.0,
         "Clovis Community College": 3.0,
         "College of the Desert": 4.0,
@@ -109718,7 +109722,7 @@ window.CPL_STATEWIDE = {
         "West Los Angeles College": 6.0
       },
       "adopter_lines": {
-        "Cabrillo College": 1,
+        "Cabrillo College": 2,
         "Chaffey College": 2,
         "Clovis Community College": 1,
         "College of the Desert": 1,
@@ -109744,7 +109748,8 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Cabrillo College": [
-          12
+          12,
+          20
         ],
         "Chaffey College": [
           4,
@@ -109754,12 +109759,12 @@ window.CPL_STATEWIDE = {
           13
         ],
         "College of the Desert": [
-          28
+          29
         ],
         "Columbia College": [
           10,
-          29,
-          30
+          30,
+          31
         ],
         "Compton College": [
           16
@@ -109768,8 +109773,8 @@ window.CPL_STATEWIDE = {
           18
         ],
         "De Anza College": [
-          20,
-          21
+          21,
+          22
         ],
         "Lake Tahoe Community College": [
           14
@@ -109781,19 +109786,19 @@ window.CPL_STATEWIDE = {
           8
         ],
         "Los Angeles Trade Technical College": [
-          24,
           25,
-          26
+          26,
+          27
         ],
         "Modesto Junior College": [
-          22,
-          23
+          23,
+          24
         ],
         "Moreno Valley College": [
           0
         ],
         "Reedley College": [
-          27
+          28
         ],
         "Riverside City College": [
           0
@@ -109824,7 +109829,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 4.0,
       "peer_units_max": 11.0,
-      "rec_units_total": 101.0
+      "rec_units_total": 105.0
     },
     {
       "exhibit_id": "MAPSAH-ACSA1-1-001|MAPSAS-AC\"T1-1-001|MAPSAS-AC\"T2-1-001|MAPSAS-ACSA13-1-001|MAPSAS-ACSA17-1-001|MAPSAS-ACSA2-1-001|MAPSAS-ACSA4-1-001|MAPSAS-ACSA6-1-001|MAPSAS-ACSA9-1-001|MAPSAS-AECS3-1-001",
@@ -227515,6 +227520,127 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPPRA-COSC-1-001",
+      "exhibit_ids": [
+        "MAPPRA-COSC-1-001"
+      ],
+      "title": "City of Santa Cruz System Administrator",
+      "unified_title": "City of Santa Cruz System Administrator",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "City of Santa Cruz System Administrator"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "35"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 54,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 55,
+      "credit_recs": [
+        {
+          "course": "CIS 194",
+          "credit": "3 hours in Microsoft Windows Client Administration"
+        },
+        {
+          "course": "CIS 95",
+          "credit": "4 hours in Server Administration"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-COSC-1-001",
+          "title": "City of Santa Cruz System Administrator",
+          "units": 7.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 7.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 2
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 7.0,
+      "peer_units_max": 7.0,
+      "rec_units_total": 7.0
+    },
+    {
       "exhibit_id": "MAPICI-CSFM2-1-001|MAPICI-FI1C-1-001|MAPICI-FPEA-1-001",
       "exhibit_ids": [
         "MAPICI-CSFM2-1-001",
@@ -257226,6 +257352,110 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPOA-COSC-1-001",
+      "exhibit_ids": [
+        "MAPOA-COSC-1-001"
+      ],
+      "title": "City of Santa Cruz IT Specialist I, II, or III",
+      "unified_title": "City of Santa Cruz IT Specialist I, II, or III",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "City of Santa Cruz IT Specialist I, II, or III"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "37"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 42,
+      "potential_names": [
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Calbright College Non-Credit",
+        "Chaffey College",
+        "Citrus College",
+        "Clovis Community College",
+        "Coalinga College",
+        "College of Alameda",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Madera College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Ventura College"
+      ],
+      "total_addressable": 43,
+      "credit_recs": [
+        {
+          "course": "CIS 71",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPOA-COSC-1-001",
+          "title": "City of Santa Cruz IT Specialist I, II, or III",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 4.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPCxS-WPIC-1-001",
@@ -408905,21 +409135,21 @@ window.CPL_STATEWIDE = {
         "pct": 3.4
       },
       {
+        "college": "Cabrillo College",
+        "credit_recs": 476,
+        "exhibits": 366,
+        "disciplines": 15,
+        "ccc_collaborative": 133,
+        "industry_certs": 214,
+        "pct": 3.3
+      },
+      {
         "college": "Santa Ana College",
         "credit_recs": 473,
         "exhibits": 332,
         "disciplines": 20,
         "ccc_collaborative": 150,
         "industry_certs": 212,
-        "pct": 3.3
-      },
-      {
-        "college": "Cabrillo College",
-        "credit_recs": 472,
-        "exhibits": 363,
-        "disciplines": 15,
-        "ccc_collaborative": 133,
-        "industry_certs": 213,
         "pct": 3.3
       },
       {
@@ -409826,9 +410056,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 477,
-        "exhibits": 274,
-        "courses": 312,
+        "credit_recs": 481,
+        "exhibits": 276,
+        "courses": 313,
         "colleges": 53,
         "ccc_collaborative": 127,
         "pct": 3.3
@@ -409997,7 +410227,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4024,
+        "credit_recs": 4025,
         "exhibits": 1270,
         "colleges": 81,
         "pct": 27.7
@@ -410011,8 +410241,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 428,
-        "exhibits": 343,
+        "credit_recs": 431,
+        "exhibits": 345,
         "colleges": 32,
         "pct": 3.0
       },
@@ -410041,15 +410271,15 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3044,
+        "credit_recs": 3045,
         "exhibits": 1211,
         "colleges": 78,
         "pct": 21.0
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1455,
-        "exhibits": 407,
+        "credit_recs": 1458,
+        "exhibits": 409,
         "colleges": 43,
         "pct": 10.0
       },
@@ -410106,8 +410336,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12779,
-        "exhibits": 6095,
+        "credit_recs": 12783,
+        "exhibits": 6097,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.1
@@ -410532,8 +410762,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-19T18:47:23",
-  "total_credit_recs": 14505,
+  "generated_at": "2026-10-19T21:28:06",
+  "total_credit_recs": 14509,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
