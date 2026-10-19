@@ -244,7 +244,7 @@ async function loadDoc(path) {
     rewriteLinks(docEl, path);
     metaEl.innerHTML =
       `<a class="src-link" href="https://github.com/CPL-Initiative/cpl-knowledge-base/blob/main/${path}" ` +
-      `target="_blank" rel="noopener">View source on GitHub ↗</a>`;
+      `target="_blank" rel="noopener">View source on GitHub</a>`;
     docEl.scrollTo?.(0, 0);
     window.scrollTo(0, 0);
   } catch (err) {
@@ -373,13 +373,12 @@ function renderAttachments() {
   const list = $("composer-attach-list");
   if (!list) return;
   list.innerHTML = "";
-  const ICON = { image: "🖼", pdf: "📄", docx: "📝", xlsx: "📊", text: "📃", unknown: "❔" };
   for (const a of attachments) {
     const chip = document.createElement("span");
     chip.className = "composer-chip composer-chip-" + a.status;
+    // The file's name carries its kind; a word says it is still being read (no icon, S423).
     chip.appendChild(document.createTextNode(
-      (ICON[a.kind] || "📎") + " " + a.name +
-      (a.status === "extracting" ? " …" : a.note ? " (" + a.note + ")" : "")
+      a.name + (a.status === "extracting" ? " (reading)" : a.note ? " (" + a.note + ")" : "")
     ));
     const x = document.createElement("button");
     x.type = "button"; x.className = "composer-chip-x"; x.textContent = "✕";
@@ -474,7 +473,7 @@ async function polishWithClaude() {
   if (!PROXY_URL) { composerStatus("Polish proxy not configured.", "error"); return; }
   const btn = $("composer-polish");
   btn.disabled = true;
-  composerStatus("✨ Asking Claude to format your draft" + (ready.length ? " + " + ready.length + " attachment(s)" : "") + "…", "info");
+  composerStatus("Asking Claude to format your draft" + (ready.length ? " + " + ready.length + " attachment(s)" : "") + "…", "info");
   try {
     const prompt = KBC.polishPrompt({
       title, body,
@@ -514,7 +513,7 @@ async function polishWithClaude() {
       const m = $("composer-body").value.match(/^title:\s*(.+)$/m);
       if (m) { $("composer-doc-title").value = m[1].trim(); syncFilename(); }
     }
-    composerStatus("✓ Formatted from your draft" + (ready.length ? " + attachment(s)" : "") + ". Review it, then “Open in GitHub →” to commit.", "success");
+    composerStatus("Formatted from your draft" + (ready.length ? " and its attachments" : "") + ". Review it, then choose Open in GitHub to commit.", "success");
   } catch (err) {
     composerStatus("Couldn't reach the formatter (" + (err.message || err) + "). You can still commit your draft as-is.", "error");
   } finally {
