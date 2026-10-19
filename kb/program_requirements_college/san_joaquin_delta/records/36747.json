@@ -45,12 +45,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 36,
+   "placed": 37,
    "listed": 43,
-   "share": 0.837,
+   "share": 0.86,
    "missing": [
     "COMMDIS7",
-    "COMST8",
     "ECON3",
     "ECON5",
     "HIST17A",
@@ -62,10 +61,9 @@
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 7,
    "codes": [
     "COMM7",
-    "COMM8",
     "COMMC1000",
     "ECONC2001",
     "ECONC2002",
@@ -75,7 +73,6 @@
    ],
    "flagged": [
     "COMM7",
-    "COMM8",
     "COMMC1000",
     "ECONC2001",
     "ECONC2002",
@@ -86,8 +83,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     30.0,
     31.0
@@ -97,9 +94,8 @@
     30.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 30.0-31.0; the catalog states 30.0-30.0"
-   ],
+   "why": [],
+   "minimum": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -142,7 +138,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,7 +165,8 @@
     "Demonstrate the ability to effectively write and speak to persuade a diversity of audiences. The development of communication skills will also include demonstration of the ability to analyze, criticize, and advocate for ideas, to communicate for a variety of purposes, to read and comprehend a diversity of texts, and to think critically. Additionally, students will demonstrate the ability to develop awareness of society and its historical roots, as well as to appreciate diversity and to be sensitive to the impact of race, sex, and class on the American experience. Through this program, students will demonstrate the ability to organize information, to engage in argumentation to support a position, to evaluate and cite sources, to explain the historical development of American institutions in law and society, to demonstrate facility with numbers, and to conduct research."
    ],
    "careers": [],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -630,14 +627,14 @@
    "The description mentions preparation for law school and introduces the 'legal field'; no explicit careers or job titles named, so careers left empty."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 30"
   }
  ]
 }

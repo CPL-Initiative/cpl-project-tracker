@@ -83,8 +83,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     39.0,
     40.0
@@ -94,9 +94,8 @@
     39.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 39.0-40.0; the catalog states 39.0-39.0"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -120,7 +119,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,7 +154,8 @@
     "Administrative Office Manager",
     "Administrative Service Manager",
     "Business Office Manager"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -403,6 +403,14 @@
    "The 'Restricted Electives' heading groups Areas A, B and C, each 'Complete 3 units selected from'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 39"
+  }
+ ]
 }

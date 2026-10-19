@@ -131,7 +131,8 @@
     "equipment repair",
     "equipment maintenance",
     "equipment assembly"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -237,6 +238,14 @@
    "Catalog also notes the certificate prepares students for the Outdoor Power Equipment Certification Exams and requires a grade of C or better in all courses."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 16.5"
+  }
+ ]
 }

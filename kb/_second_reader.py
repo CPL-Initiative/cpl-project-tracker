@@ -140,6 +140,7 @@ def row_for(record, src, got, second_score):
 
 def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=None, workers=4):
     import _program_requirements_extract as X
+    import _program_requirements_reconcile as R
     slug = slug_of(college)
     every = failing_records(slug)
     records = every[:limit] if limit else every
@@ -164,7 +165,8 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
         sc = None
         if second:
             try:
-                sc = X.score(second, src["closed_list"], src["text"], rec.get("award") or src.get("award"))
+                sc = X.score(second, src["closed_list"], src["text"], rec.get("award") or src.get("award"),
+                             R.prefix_aliases(college))
             except Exception as exc:   # a reading the scorer cannot read is still filed, with its reason
                 got = dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = row_for(rec, src, got, sc)

@@ -151,7 +151,8 @@
     "Soil Fumigator",
     "Surveyor",
     "Tissue Culture Technician"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -421,6 +422,14 @@
    "The description also mentions preparing students for transfer to a university; no career field named there."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 28"
+  }
+ ]
 }

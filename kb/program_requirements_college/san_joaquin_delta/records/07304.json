@@ -149,7 +149,8 @@
     "web site development",
     "computer network maintenance"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -406,14 +407,14 @@
    "Unit values in the catalog differ from the state file for CSP 25 and CSP 31B (catalog prints 4; state file stores 3) and for CS 50SS (catalog prints 1-4; state file stores 1)."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 21"
   }
  ]
 }

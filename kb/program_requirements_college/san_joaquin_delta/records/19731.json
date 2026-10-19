@@ -119,7 +119,8 @@
    "outcomes": [
     "Take the state and national examination for registration in Medical Radiologic Technology. The course of study includes theory related to radiography, x-ray, radium physics, radiographic techniques, and application of theory in the clinical laboratory in a radiology department."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -292,6 +293,14 @@
    "Catalog is labeled Summer 2026 - Summer 2027, consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 83.5"
+  }
+ ]
 }

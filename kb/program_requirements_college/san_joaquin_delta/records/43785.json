@@ -133,7 +133,8 @@
     "Participate in in-depth discussions effectively, take clear notes, and give oral presentations relevant to the electrical technology environment.",
     "Write summaries and short essays to demonstrate an understanding of Direct Current (DC) and Alternating Current (AC) circuits as well as a basic understanding of electrical circuit safety."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -249,6 +250,14 @@
    "No career titles are named in the text."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 18"
+  }
+ ]
 }

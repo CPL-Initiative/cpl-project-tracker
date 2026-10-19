@@ -123,7 +123,8 @@
    "careers": [
     "teacher in a private child care program",
     "associate teacher in a publicly funded child care program"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -181,6 +182,14 @@
    "Catalog heading is 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 13"
+  }
+ ]
 }

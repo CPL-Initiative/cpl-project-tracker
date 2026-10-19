@@ -45,30 +45,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 47,
+   "placed": 50,
    "listed": 52,
-   "share": 0.904,
+   "share": 0.962,
    "missing": [
     "ANTH1",
-    "ANTHR10",
-    "ANTHR2",
-    "ANTHR2L",
     "CHEM3B"
    ],
-   "unexplained": [
-    "ANTHR10",
-    "ANTHR2",
-    "ANTHR2L"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 35,
+   "count": 32,
    "codes": [
-    "ANTH10",
-    "ANTH2",
-    "ANTH2L",
     "ASTRO11",
     "ASTRO12",
     "ASTRO1L",
@@ -136,7 +126,7 @@
     "PSYC5",
     "STATC1000E"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -197,7 +187,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -860,8 +850,8 @@
    "Description mentions students interested in the 'health sciences field' or STEM disciplines; not recorded as careers since no career or occupation is named."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
    "field": "degree_total_minimum",

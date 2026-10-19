@@ -163,7 +163,8 @@
     "Use culinary math for scaling, recipe adjustments, costing, yield, and inventory purposes."
    ],
    "careers": [],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -259,14 +260,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 year."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 26"
   }
  ]
 }

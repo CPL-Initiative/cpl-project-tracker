@@ -128,7 +128,8 @@
     "technician for heavy equipment repair facilities",
     "technician for agricultural dealerships/repair shops",
     "technician for industrial engine dealers"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -201,6 +202,14 @@
    "Printed course units sum to the stated 24 units."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 24"
+  }
+ ]
 }

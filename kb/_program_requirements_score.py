@@ -197,6 +197,36 @@ def listed_key(code: str | None, listed: dict) -> str:
     return k
 
 
+def with_prefix_aliases(record: dict, listed: dict, aliases: dict | None) -> dict:
+    """The record with each code the state's file lists only under another subject prefix
+    named by it (San Joaquin Delta, S422: the catalog prints ANTH 2L, ENGL 35, ARTH 2 and
+    COMM 7 where the file keeps ANTHR 2L, ENG 35, ART 2 and COM ST 7, same number and title).
+    aliases maps the page's prefix to the file's, one college's at a time
+    (kb/program_requirements_reconcile.json, prefix_aliases); a code the file lists as
+    printed is never renamed."""
+    if not aliases:
+        return record
+    table = {norm_code(k): norm_code(v) for k, v in aliases.items()}
+
+    def rename(entry: dict) -> None:
+        k = norm_code(entry.get("code"))
+        if not k or k in listed:
+            return
+        m = re.match(r"([A-Z&]+)(\d.*)$", k)
+        if m and m.group(1) in table and table[m.group(1)] + m.group(2) in listed:
+            entry["code"] = table[m.group(1)] + m.group(2)
+            entry["printed_code"] = k
+
+    out = json.loads(json.dumps(record))
+    for b in out.get("blocks") or []:
+        for c in b.get("courses") or []:
+            rename(c)
+            for a in c.get("alternatives") or []:
+                if isinstance(a, dict):
+                    rename(a)
+    return out
+
+
 def placed_codes(record: dict) -> list[tuple[str, dict, dict]]:
     """(normalized code, the entry naming it, block) for every code the record
     places, alternatives included. The entry carries that code's own
@@ -540,15 +570,41 @@ def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
     return out
 
 
-def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None) -> dict:
+# "Total Contact Hours: 288", "Hours: 54": an hours figure printed after its label.
+HOURS_LABEL = re.compile(r"\b(Total\s+(?:Contact\s+)?)?Hours?\s*:\s*(\d+(?:\.\d+)?)", re.I)
+
+
+def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str | None) -> bool:
+    """A noncredit program whose page prints its total hours and no hours for any course
+    (San Joaquin Delta, S422: "Total Contact Hours: 288" and "Units: 0" beside each course):
+    there is nothing to add, as 'unstated' passes a page with no figure. The record must carry
+    no course or block figure, and every hours figure on the page must be a total equal to the
+    one the record states, so a reading that dropped printed course hours still fails."""
+    if measure(record) != "hours" or stated is None or not text or FIGURE.search(text):
+        return False
+    for b in record.get("blocks") or []:
+        if _span(b.get("stated")):
+            return False
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                if _num(entry.get("units")) or _num(entry.get("units_max")):
+                    return False
+    labels = list(HOURS_LABEL.finditer(text))
+    return bool(labels) and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels)
+
+
+def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
+          aliases: dict | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass. award is the
-    state file's award, which names an associate degree for transfer."""
+    state file's award, which names an associate degree for transfer. aliases is the
+    college's prefix_aliases (with_prefix_aliases)."""
     listed = {}
     for c in closed:
         k = norm_code(c.get("code"))
         if k:
             listed[k] = _num(c.get("units"))
+    record = with_prefix_aliases(record, listed, aliases)
     placed = [(listed_key(e.get("code"), listed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}
 
@@ -582,15 +638,27 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     elif stated is None:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi], "stated": None,
                  "against": None, "why": reasons + ["the record names no total"]}
+    elif reasons and hours_total_only(record, stated, text):
+        arith = {"pass": True, "status": "equal", "total_only": True, "computed": None, "stated": list(stated),
+                 "against": "program", "why": []}
     elif reasons:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
                  "stated": list(stated), "against": "program", "why": reasons}
     else:
         ok = abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL
+        # The page prints the program total as a floor (San Joaquin Delta, S422: "Minimum Units
+        # Required: 24", "Minimum Major Units Required: 18"): a one-unit alternative, a block printed
+        # as a range or a variable-unit course carries the sum's high end past it, and the low end
+        # meets it. Only the low end meeting the floor passes; a low end past it is still a misread.
+        floor = (not ok and bool(prog.get("total_units_minimum"))
+                 and abs(lo - stated[0]) <= TOL and hi >= stated[1] - TOL)
+        ok = ok or floor
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
+        if floor:
+            arith["minimum"] = True
         if degree is not None:
             # Record shape 6: a page printing the major's total and the degree's checks both,
             # and the record names the one it misses (the major first).

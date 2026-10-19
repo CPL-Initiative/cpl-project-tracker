@@ -155,7 +155,8 @@
     "Demonstrate skills that promote personal and social development. Students will engage with professional communities that require adherence to requirements and encourage leadership within these business organizations."
    ],
    "careers": [],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -319,14 +320,14 @@
    "Catalog header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 69"
+   "words": "Minimum Major Units Required: 42"
   }
  ]
 }

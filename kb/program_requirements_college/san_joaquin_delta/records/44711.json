@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     198.0,
     198.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Core Requirements' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -126,7 +122,8 @@
     "Answer comprehension questions and restate the main ideas after listening to a recording.",
     "Demonstrate clear pronunciation and adequate speed of speech appropriate to the high-intermediate level of English fluency through speeches and presentations."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -174,6 +171,14 @@
    "The description mentions vocational training, academic programs, or employment opportunities generally but names no specific careers."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39220195737,
+ "read_run": 39217405432,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 0"
+  }
+ ]
 }

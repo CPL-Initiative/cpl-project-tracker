@@ -138,7 +138,8 @@
    "careers": [
     "small business owner",
     "assistant in a small business enterprise"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -343,6 +344,14 @@
    "Catalog header reads Summer 2026 - Summer 2027, consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 21"
+  }
+ ]
 }

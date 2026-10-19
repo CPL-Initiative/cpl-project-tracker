@@ -60,21 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     320.0,
     320.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Core Requirements' has no units",
-    "'Restricted Electives' chooses 1 courses but 0 carry units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -126,7 +121,8 @@
     "Apply techniques of written and spoken communication, with a focus on strong sentence structure, word usage, punctuation, spelling, and Digital Media document formatting.",
     "Construct clear, well-developed arguments on academic and real-world topics and effectively use English as applied in Digital Media classes as well as workplace environments in fields pertaining to Digital Media. Cite relevant sources in spoken and written arguments, using proper citation and formatting strategies, as a way to integrate outside sources into writing for Digital Media classes."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -200,6 +196,14 @@
    "No careers or job titles named; the description refers only to Digital Media certificate/degree programs."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39220195737,
+ "read_run": 39217405432,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 0"
+  }
+ ]
 }

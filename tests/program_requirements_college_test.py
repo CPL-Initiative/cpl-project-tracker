@@ -22,6 +22,7 @@ that names its listed courses. The ways that goes wrong are known in advance:
 Each is pinned below against the module's OWN functions, with no browser and no
 network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
+import glob
 import json
 import os
 import re
@@ -948,6 +949,22 @@ try:
           and "checked = false" in rr["rollback"] and "r.extracted_run = 37966828676" in rr["rollback"],
           "the re-read's receipt holds each replaced row's before-values and a rollback guarded by "
           "the re-read's run and checked = false")
+    # S422: two reconcile runs in a row leave the first's records stamped with the first run, so
+    # the re-read can name a run to post instead of the newest.
+    older = sorted({json.load(open(f))["extracted_run"] for f in glob.glob(os.path.join(parent, "cerritos", "records", "*.json"))
+                    if json.load(open(f)).get("extracted_run")}, key=int)
+    reposted.clear()
+    C.COLLEGE_DIR, C.RECEIPTS = parent, os.path.join(parent, "receipts")
+    try:
+        code_old = C.reread("Cerritos College", "38000000003", post=repost, extracted_run=str(older[0]))
+        rr_old = json.load(open(C.reread_receipt_path("Cerritos College", "38000000003")))
+        bad = C.reread("Cerritos College", "38000000004", post=repost, extracted_run="latest")
+    finally:
+        C.COLLEGE_DIR, C.RECEIPTS = real
+    check(len(older) > 1 and code_old == 0 and rr_old["extracted_run"] == str(older[0])
+          and reposted and all(r["control_number"] != "00002" for b in reposted for r in b["p_rows"]),
+          "a re-read naming an earlier run posts that run's records, not the newest's: %r" % older)
+    check(bad == 2, "a re-read naming a run that is not a number refuses")
     # Sheet 82 card 1: a confirm the re-read carried over checked its row, so the rollback restores
     # that row too, sets it unchecked, and deletes the carried verdict rows this run wrote.
     cr = C.reread_receipt("Cabrillo College", "38700000000", "38639316727", [], [],
@@ -1001,8 +1018,9 @@ check("v.verdict = 'confirm'" in carry and "v.requirements_fp = public.program_r
 BASIS = RR.split("function public.program_record_carry_basis", 1)[1].split("$$;", 1)[0]
 check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", "degree_total", "ge_units",
                                           "ge_pattern", "open_elective_units", "degree_elective_units",
-                                          "electives_fill_degree", "degree_total_minimum"))
-      and BASIS.count("- '") == 10 and "'blocks',  coalesce(rec->'blocks'" in BASIS and "md5" not in BASIS
+                                          "electives_fill_degree", "degree_total_minimum",
+                                          "total_units_minimum"))
+      and BASIS.count("- '") == 11 and "'blocks',  coalesce(rec->'blocks'" in BASIS and "md5" not in BASIS
       and "program_record_carry_basis(jsonb) from public, anon, authenticated" in RR,
       "the carry basis leaves out exactly the totals, the degree's figures, outcomes and careers, keeps every "
       "block, compares as jsonb (3 and 3.0 alike), and is closed to the API roles")

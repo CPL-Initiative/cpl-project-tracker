@@ -45,17 +45,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 144,
+   "placed": 151,
    "listed": 161,
-   "share": 0.894,
+   "share": 0.938,
    "missing": [
-    "ANTHR10",
-    "ANTHR2",
-    "ANTHR2L",
-    "ANTHR4",
-    "ART1C",
-    "ART2",
-    "ART3",
     "CIVIL3",
     "COMMDIS7",
     "DRAMA16B",
@@ -67,28 +60,13 @@
     "HIST17B",
     "HUM4"
    ],
-   "unexplained": [
-    "ANTHR10",
-    "ANTHR2",
-    "ANTHR2L",
-    "ANTHR4",
-    "ART1C",
-    "ART2",
-    "ART3"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 17,
+   "count": 10,
    "codes": [
-    "ANTH10",
-    "ANTH2",
-    "ANTH2L",
-    "ANTH4",
-    "ARTH1C",
-    "ARTH2",
-    "ARTH3",
     "COMM7",
     "ECONC2001",
     "ECONC2002",
@@ -112,7 +90,7 @@
     "PSYC2",
     "PSYC5"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -176,7 +154,8 @@
    "outcomes": [
     "The student will have successfully completed all the required Cal-GETC lower division general education pattern coursework."
    ],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -1512,6 +1491,14 @@
    "Text is cut off at the end in the Languages Other than English section, after the requirements."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 34"
+  }
+ ]
 }

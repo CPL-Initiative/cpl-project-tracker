@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     162.0,
     162.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Core Requirements' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -119,7 +115,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -166,6 +163,14 @@
    "No program learning outcomes are printed. The description mentions 'healthcare professionals' as the audience the certificate equips; it is not recorded as a career, but a reviewer may wish to check."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39220195737,
+ "read_run": 39217405432,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 0"
+  }
+ ]
 }

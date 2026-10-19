@@ -66,8 +66,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     41.0,
     41.5
@@ -77,9 +77,8 @@
     41.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 41.0-41.5; the catalog states 41.0-41.0"
-   ],
+   "why": [],
+   "minimum": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -123,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -170,7 +169,8 @@
     "Sales Representative",
     "Wholesale Produce Agent"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -463,14 +463,14 @@
    "The description's lead-in text 'Agriculture Business A' appears truncated (likely 'A.S.')."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 41"
   }
  ]
 }

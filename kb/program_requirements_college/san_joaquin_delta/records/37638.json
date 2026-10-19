@@ -45,32 +45,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 44,
+   "placed": 47,
    "listed": 49,
-   "share": 0.898,
+   "share": 0.959,
    "missing": [
-    "ART2",
     "CHIN3",
-    "CHIN4",
-    "COMST7",
-    "ENG35"
+    "CHIN4"
    ],
-   "unexplained": [
-    "ART2",
-    "COMST7",
-    "ENG35"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 9,
    "codes": [
-    "ARTH2",
     "BUS8",
     "COMM11",
-    "COMM7",
-    "ENGL35",
     "ENGL43D",
     "JAPAN2",
     "PSYC2",
@@ -90,11 +80,11 @@
     "SPAN3A",
     "SPAN4"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     21.0
@@ -104,9 +94,8 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
+   "minimum": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -153,7 +142,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -209,7 +198,8 @@
     "social science",
     "social work"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -663,14 +653,14 @@
    "Program Learning Outcomes are printed for the program; the A.A-T degree is the award of this section."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 18"
   }
  ]
 }

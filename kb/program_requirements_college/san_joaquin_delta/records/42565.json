@@ -161,7 +161,8 @@
     "loan officer",
     "mortgage banker",
     "property manager"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -431,6 +432,14 @@
   ],
   "notes": []
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 12"
+  }
+ ]
 }

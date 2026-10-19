@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
     26.0
@@ -71,9 +71,8 @@
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 24.0-26.0; the catalog states 24.0-24.0"
-   ]
+   "why": [],
+   "minimum": true
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -127,7 +126,8 @@
     "tree care",
     "ground operations",
     "climbing"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -281,6 +281,14 @@
    "Careers taken from the description: 'entry-level employment or career advancement in tree care, ground operations, or climbing'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 24"
+  }
+ ]
 }

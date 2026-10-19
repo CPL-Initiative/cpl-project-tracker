@@ -68,8 +68,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     32.0,
     32.5
@@ -79,9 +79,8 @@
     32.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 32.0-32.5; the catalog states 32.0-32.0"
-   ],
+   "why": [],
+   "minimum": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -124,7 +123,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -154,7 +153,8 @@
     "Develop proficiency of understanding of the scientific process to understand the larger agriculture industry."
    ],
    "careers": [],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -347,14 +347,14 @@
    "STAT C1000E alternative printed as 'Units 4.5' (no colon)."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 32"
   }
  ]
 }

@@ -1627,7 +1627,7 @@ check(not S.degree_check(sjd["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT
       "San Joaquin Delta Drafting as read: 18 and GE 27-34 against an exact 60 fails")
 new, notes = RC.reconcile(sjd, SJD_DRAFT, "San Joaquin Delta College", "A.S. Degree")
 deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 18.0, [], SJD_DRAFT, "A.S. Degree")
-check([n["field"] for n in notes] == ["degree_total_minimum"]
+check([n["field"] for n in notes] == ["degree_total_minimum", "total_units_minimum"]
       and deg["pass"] and deg.get("minimum") and deg["fill"] == [8.0, 15.0],
       "San Joaquin Delta Drafting reconciled: the 60 is a minimum, courses the student chooses make up 8 to 15: %s"
       % json.dumps(deg))
@@ -1639,6 +1639,73 @@ nurse = {"program": {"total_units": {"min": 59.5, "max": 59.5}, "degree_total": 
 new, _ = RC.reconcile(nurse, SJD_DRAFT.replace("Required: 60", "Required: 77.5"), "San Joaquin Delta College", "A.S. Degree")
 check(S.degree_check(new["program"], (77.5, 77.5), 59.5, 59.5, [], SJD_DRAFT, "A.S. Degree")["pass"],
       "San Joaquin Delta Nursing: a 59.5-unit major and GE double-counted past the minimum of 77.5 meet it")
+# San Joaquin Delta (S422): every program page prints its total as a floor ("Minimum Units Required: 24" on a
+# certificate), and a one-unit alternative in an all-required block (ENGL C1000E 4 beside ENGL C1000 3) carries
+# the sum's high end past it (kb/jev_harvest_verdicts/san_joaquin_delta.json: 29 of 35 unequal rows).
+SJD_CERT = ("Required Courses \u00b7 ENGL C1000 Academic Reading and Writing Units: 3 \u00b7 or ENGL C1000E Academic "
+            "Reading and Writing Units: 4 \u00b7 Minimum Units Required: 24 \u00b7 For more information:")
+cert = {"program": {"total_units": {"min": 24, "max": 24}, "measure": "units"},
+        "blocks": [{"name": "Required Courses", "rule": "all", "courses": [{"code": "ENGL C1000", "units": 3}]}]}
+new, notes = RC.reconcile(cert, SJD_CERT, "San Joaquin Delta College", "Certificate of Achievement")
+check([n["field"] for n in notes] == ["total_units_minimum"] and new["program"]["total_units_minimum"] is True,
+      "San Joaquin Delta certificate: the program total is marked a floor on a certificate too: %s" % json.dumps(notes))
+check(RC.reconcile(cert, SJD_CERT, "San Joaquin Delta College", "Certificate of Achievement")[0]["program"]
+      .get("degree_total") is None, "the degree-total steps still read associate degrees only")
+prog_lo_hi = lambda rec: S.score(rec, [], SJD_CERT, "Certificate of Achievement")["arithmetic"]
+def floor_rec(lo, hi, m):
+    # One all-required block: a course of lo - 3 units and ENGL C1000 3, its alternative carrying the sum to hi.
+    alt = [{"code": "ENGL C1000E", "units": 3 + hi - lo}] if hi > lo else []
+    return {"program": {"total_units": {"min": 24, "max": 24}, "total_units_minimum": m, "measure": "units"},
+            "blocks": [{"name": "Required Courses", "rule": "all", "courses": [
+                {"code": "ECE 21", "units": lo - 3}, {"code": "ENGL C1000", "units": 3, "alternatives": alt}]}]}
+a = prog_lo_hi(floor_rec(24, 25, True))
+check(a["pass"] and a.get("minimum") and a["computed"] == [24.0, 25.0],
+      "a 24-25 sum meets a floor of 24: %s" % json.dumps(a))
+check(not prog_lo_hi(floor_rec(24, 25, None))["pass"], "without the floor, a 24-25 sum against a printed 24 still fails")
+check(not prog_lo_hi(floor_rec(26, 28, True))["pass"], "a low end past the floor is still a misread")
+check(not prog_lo_hi(floor_rec(22, 25, True))["pass"], "a low end short of the floor fails")
+e = prog_lo_hi(floor_rec(24, 24, True))
+check(e["pass"] and not e.get("minimum"), "an exact sum passes as equal, without the floor note")
+# San Joaquin Delta (S422): the catalog prints ANTH 2L where the state's file keeps ANTHR 2L (same number and title).
+SJD_ALIASES = RC.prefix_aliases("San Joaquin Delta College")
+anth = {"program": {"total_units": {"min": 7, "max": 7}, "measure": "units"},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "ANTH 2L", "units": 1},
+                                                                    {"code": "ENGL C1000", "units": 3},
+                                                                    {"code": "ENG 35", "units": 3}]}]}
+ANTH_LIST = [{"code": "ANTHR 2L", "units": 1}, {"code": "ENGL C1000", "units": 3}, {"code": "ENG 35", "units": 3}]
+plain = S.score(anth, ANTH_LIST, "ANTH 2L ENGL C1000 ENG 35 Minimum Units Required: 7", "Certificate of Achievement")
+check(not plain["pass"] and plain["coverage"]["missing"] == ["ANTHR2L"] and plain["invented"]["codes"] == ["ANTH2L"],
+      "without the alias, ANTH 2L reads as one course missing and another invented: %s" % json.dumps(plain["coverage"]))
+aliased = S.score(anth, ANTH_LIST, "ANTH 2L ENGL C1000 ENG 35 Minimum Units Required: 7", "Certificate of Achievement",
+                  SJD_ALIASES)
+check(aliased["pass"] and not aliased["coverage"]["missing"] and not aliased["invented"]["codes"],
+      "Delta's prefix alias reads ANTH 2L as the listed ANTHR 2L: %s" % json.dumps(aliased["coverage"]))
+check(anth["blocks"][0]["courses"][0]["code"] == "ANTH 2L", "the alias renames on the scorer's copy, never the record")
+both = S.score(anth, ANTH_LIST + [{"code": "ANTH 2L", "units": 1}], "x", "Certificate of Achievement", SJD_ALIASES)
+check(both["coverage"]["missing"] == ["ANTHR2L"],
+      "a code the file lists as printed is never renamed: %s" % json.dumps(both["coverage"]))
+check(RC.prefix_aliases("Cerritos College") is None, "a college with no aliases gets none")
+# San Joaquin Delta (S422): a noncredit page prints "Total Contact Hours: 288" and "Units: 0" beside each course.
+SJD_NC = ("Core Requirements \u00b7 ESL 9088 Health Careers Reading Units: 0 \u00b7 ESL 9059 Writing Units: 0 \u00b7 "
+          "Restrictive Electives \u00b7 Complete 1 course from: \u00b7 ESL 9086 Advanced Reading Units: 0 \u00b7 Total Contact Hours: 288")
+nc = {"program": {"measure": "hours", "total_units": {"min": 288, "max": 288}},
+      "blocks": [{"name": "Core Requirements", "rule": "all", "courses": [{"code": "ESL 9088", "units": None},
+                                                                         {"code": "ESL 9059", "units": None}]},
+                 {"name": "Restrictive Electives", "rule": "choose_courses", "minimum": 1,
+                  "courses": [{"code": "ESL 9086", "units": None}]}]}
+NC_LIST = [{"code": "ESL 9088", "units": 0}, {"code": "ESL 9059", "units": 0}, {"code": "ESL 9086", "units": 0}]
+a = S.score(nc, NC_LIST, SJD_NC, "Noncredit program")["arithmetic"]
+check(a["pass"] and a["status"] == "equal" and a.get("total_only"),
+      "a noncredit page printing only its total hours passes as equal, total only: %s"
+      % json.dumps(a))
+check(not S.score(nc, NC_LIST, SJD_NC.replace("Units: 0 \u00b7 ESL 9059", "Hours: 54 \u00b7 ESL 9059"),
+                  "Noncredit program")["arithmetic"]["pass"],
+      "a page printing a course's hours that the record dropped still fails")
+check(not S.score(nc, NC_LIST, SJD_NC.replace("Advanced Reading Units: 0", "Advanced Reading 54 hours"),
+                  "Noncredit program")["arithmetic"]["pass"], "a course figure printed before its label fails too")
+check(not S.score(nc, NC_LIST, SJD_NC.replace("Hours: 288", "Hours: 300"), "Noncredit program")["arithmetic"]["pass"],
+      "a printed total other than the record's fails")
+check(not S.score(nc, NC_LIST, None, "Noncredit program")["arithmetic"]["pass"], "without the page, nothing passes")
 
 # Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
 # Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.

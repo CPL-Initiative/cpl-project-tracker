@@ -134,7 +134,8 @@
     "costume stitcher",
     "dresser",
     "stagecraft"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -288,6 +289,14 @@
    "'stagecraft' recorded as a career field from 'entry-level employment in the field of stagecraft'."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39217405432,
+ "read_run": 39116289105,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 19"
+  }
+ ]
 }

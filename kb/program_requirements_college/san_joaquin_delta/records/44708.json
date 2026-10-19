@@ -60,21 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     288.0,
     288.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Core Requirements' has no units",
-    "'Restrictive Electives' chooses 1 courses but 0 carry units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -129,7 +124,8 @@
    ],
    "careers": [
     "Health Careers"
-   ]
+   ],
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -203,6 +199,14 @@
    "'Health Careers' recorded as a career field named in the program description; reviewer may confirm."
   ]
  },
- "extracted_run": 39116289105,
- "read_run": "38631691511"
+ "extracted_run": 39220195737,
+ "read_run": 39217405432,
+ "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 0"
+  }
+ ]
 }

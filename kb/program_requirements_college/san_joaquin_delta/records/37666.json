@@ -66,8 +66,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     22.0,
     22.5
@@ -77,9 +77,8 @@
     22.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 22.0-22.5; the catalog states 22.0-22.0"
-   ],
+   "why": [],
+   "minimum": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -126,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -162,7 +161,8 @@
     "county and governmental compliance inspector",
     "sales and marketing of seed and other crop protecting agents"
    ],
-   "degree_total_minimum": true
+   "degree_total_minimum": true,
+   "total_units_minimum": true
   },
   "blocks": [
    {
@@ -319,14 +319,14 @@
    "The page names transfer majors (Plant Science, Crop Science, Environmental Horticulture); these were not recorded as careers."
   ]
  },
- "extracted_run": 39128562020,
- "read_run": 39116289105,
+ "extracted_run": 39217405432,
+ "read_run": 39128562020,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "total_units_minimum",
    "was": null,
    "now": true,
-   "words": "Minimum Degree Units Required: 60"
+   "words": "Minimum Major Units Required: 22"
   }
  ]
 }
