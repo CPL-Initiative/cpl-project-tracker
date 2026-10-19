@@ -1613,7 +1613,11 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
         pages.append(cd_page(got, prog))
         if i % 25 == 24:
             print("  read %d of %d program pages" % (i + 1, len(programs)), flush=True)
-    info.update(requisites_suffix=suffix, program_pages=len(pages), direct=direct, missed=missed[:60])
+    # The catalog's own list, kept in the account (S423): a state program read
+    # from no page (page_claimed, not_found) is checked against the names the
+    # catalog lists, so a program the catalog no longer offers reads as that.
+    info.update(requisites_suffix=suffix, program_pages=len(pages), direct=direct, missed=missed[:60],
+                catalog=[{"code": p["code"], "name": p["name"]} for p in programs])
     return pages
 
 
