@@ -771,6 +771,54 @@ never names (Business Administration A.S., Theater Arts A.A., Technical (Apparel
 comparison finding. Its capture-only read (S413, run 39103943654) had found the same pages, the business certificates
 sharing pages 148-154 and two on the course availability table.
 
+
+## S421 SkyTupelo (2026-10-19): the second reader built, three Jev sittings read, Cañada's Cal-GETC step and the six-row rollback
+
+- **The second reader is one dispatch away (#2246).** `program-requirements-extract` version 11 takes `provider`
+  (`anthropic` or `xai`): the same system prompt, user message and record schema go to xAI's chat endpoint with the
+  schema as `response_format`, the model is `XAI_MODEL` or the body's, never a guess, and the key is scrubbed from any
+  error. `kb/_second_reader.py` reads a college's failing records only from the capture's page when it is the page the
+  first reading came from (the S403 guard), scores the second reading with the one scorer and compares on
+  `requirements_md5`; `second-reader.yml` captures, reads and uploads the comparison. The key is a function secret, per
+  Sam's call 6 on sheet 23: the repo secret `xai-smoke.yml` reads only proves the key, and at 04:05Z it was unset.
+- **Jev's cause is reliable; its owner is not.** Three sittings (Cañada 22, Taft 24, Delta 49 rows; no errors; seconds
+  each after the free capture) and a session's verdicts beside every row in `kb/jev_harvest_verdicts/`. Where the
+  record's own notes settle it, Jev's cause held on 16 of 16 at Cañada and 15 of 21 at Taft (Delta: cause held on 17 of 49 (12 agree, 5 owner differs), and 29 of the 32 misses are one shape: Delta prints every total as a floor and the record's sum is a range whose low end meets it, so a scorer floor rule for the program total clears them).
+  Its misses have a shape: `excerpt_cut` where the text belongs to another program, `record_right_check_misfires` where
+  the extraction dropped a total the page prints. The owner leans wrong the same way everywhere: the scorer or the
+  extraction for a figure a college's procedure step supplies, or a page the reader cut. Read the owner as a hint.
+- **A verdicts file turns a sitting into a worklist.** Grouping the rows by cause found one fix for five Cañada rows
+  (Cal-GETC's units) and one for two Taft rows (the local GE pattern). The record's notes quote the page, so a session
+  settles most rows without the page; the rest say what the page would need to show.
+- **A reconcile step for a transfer-only figure must say so.** The first Cañada run set Cal-GETC's 34 on 26 records:
+  twenty transfer degrees and six local A.A./A.S. whose captured page spans the sibling transfer section (Earth Science
+  A.S. 30427 then failed at 64 past 60). `awards_match` gained `transfer`; `tests/program_requirements_reconcile_test.py`
+  pins it. Cañada's step cites Cañada's own GE page ("California General Education Transfer Curriculum (Cal-GETC) - 34
+  units minimum", page 79 of the hand-filed PDF) where Taft's cites Monterey Peninsula's.
+- **A cancel does not beat a reread already posting.** The reread dispatched on the wrong fills was canceled at
+  checkout by the clock, yet its receipt landed: 26 rows replaced. The receipt's before-images were the rollback:
+  a fresh live read (all six exactly as the write left them), the receipt's own SQL cut to the six, through
+  `supabase-migrate.yml` because the Supabase guard holds an UPDATE from `execute_sql`, a rollback receipt beside the
+  original (`kb/receipts/program_requirement_records_rollback_ca_ada_six_local_2026-10-19_s421.*`), verified live.
+  Dispatch a reread only after the filed records are what they should be.
+- **A PDF page read needs a span and the page after.** Keying on Cal-GETC spent the 14-page cap on the front matter;
+  keying on headings printed the heading pages, and every requirement block sits on the page after its heading.
+  `pdf_span` and `pdf_after` in the plan (three checks in `tests/college_page_read_test.py`). The catalog's own
+  wording came on the third read: "Completion of Cal-GETC (California General Education Transfer Curriculum)" closes
+  every Cal-GETC transfer block; Environmental Science AS-T prints CSU-GE for STEM 33 or IGETC for STEM 31 instead.
+- **Runs this session:** Cañada reconcile 39200870107 (reverted), reread 39201778849 (its receipt the rollback's source),
+  migrate 39202436931, reconcile 39202270482 (20 transfer records), reread 39203273818 (20 posted, 20 replaced), display
+  build 3d92deb7a816 (#2247; `step=display` on main run 39204942046), sittings 39197675380, 39204968617, 39206690775.
+  Cañada's failing records: 22 before, 17 after. Headline 11,630 to 11,635 complete.
+
+### Moved from the lane (S421 compaction)
+
+**A PDF catalog step may name its file** (`file` in place of `follow`, #2213), for a catalog page whose scripts fetch the PDF (Coursedog). **A Coursedog PDF is read by its "Title - CODE" headings** (`Biology - AS.BIO`; `pdf_code_assign()`, #2216): a program no heading names reads from no page. **A kept record must come from its source's page** (`filed_from()`, #2216): a reconcile run files fresh sources beside records it did not move, so test a reader change with a capture-only read (`extract=0`), never a reconcile. **A page read may keep a named vendor host's data calls** (`network_hosts`, #2216).
+
+**The readers:** CourseLeaf's sitemap road, which also reads an own-HTML catalog (`custom_html`) kept to its registry address's year segment (`year_scope()`); the curriQunet, eLumen and Acalog readers; the Coursedog reader (S414: the page's own program search call, its limit rewritten by a route, then each program's Requisites tab); and the whole-catalog PDF reader, which a procedure catalog step points at the PDF a catalog page links, carrying the file's year (#2202), and which prefers a clean heading or the control number (#2203).
+
+**Parked for the reader:** Diablo Valley, Santiago Canyon, Sierra, Foothill, San Jose City, MiraCosta, Orange Coast's 27 empty records, Reedley, Palomar, Ventura and Oxnard, and CCSF's 53 skipped records (lessons S407).
+
 ## Moved from the lane (S419 compaction)
 
 **Crafton Hills and Taft (S412-S413)** read by the SmartCatalog walk (index, then a subject or group page, then the program page): Crafton 76 of 79 found and loaded, 51 passing the machine checks, Japanese unfound; Taft 58 of 63, 24 passing (most arithmetic failures read the page's 60-unit degree total as the major's). **Merced (S414):** 154 of 172 found, 153 loaded, 125 passing ($9.14). **The slash rescoring (S414)** replaced Glendale's 14, De Anza's 12, Los Angeles Trade Technical's 5 and Crafton Hills' 2 by free reconcile runs. **A printed degree floor (S415):** Delta's steps read "Minimum Degree Units Required: 60" as `degree_total_minimum`, and the scorer lets a floor alone make up a short sum (152 to 154 passing, 71 reread); Taft's step sets a transfer degree's Cal-GETC to the statewide 34 (24 to 34 passing, 17 reread; Fable's option A; kept: Sam's Open Asks Sheet 94 card 4, 13:43Z).
