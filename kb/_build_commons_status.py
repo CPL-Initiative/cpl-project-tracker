@@ -354,6 +354,9 @@ def row_subjects(root):
         {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
          "owner": "a curator", "open": tab + "/check"},
     ]
+    # A known issue with nothing in it is not an issue: the collisions row leaves the list at zero
+    # (the AGAB re-key of 2026-10-19 closed the one), and facts.shared keeps the measure.
+    issues = [i for i in issues if i.get("n") != 0]
     missed = None
     if scan:
         rules = {}

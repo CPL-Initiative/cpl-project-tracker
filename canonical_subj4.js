@@ -474,9 +474,17 @@
       return names.every(function (o) { return o === d || mine.indexOf(o) >= 0; });
     });
     if (mutual) return true;
+    // An umbrella code every owner declares is shared by design; so is a family code one MQ
+    // discipline took as its own while the umbrellas keep declaring it (Sam, Sheet 99 card 3,
+    // 2026-10-19: Agricultural Business and Related Services takes AGAB beside the two
+    // agriculture umbrellas). Two disciplines canonical on one code is the collision.
+    var canonicalOn = names.filter(function (d) { return !!(byName[d] && byName[d].canonical_subj4 === code); });
+    if (canonicalOn.length > 1) return false;
     return names.every(function (d) {
       var e = byName[d];
-      return !!(e && (e.umbrella_codes || []).indexOf(code) >= 0 && e.canonical_subj4 !== code);
+      if (!e) return false;
+      if (e.canonical_subj4 === code) return true;
+      return (e.umbrella_codes || []).indexOf(code) >= 0;
     });
   }
   function runSubjCheck() {

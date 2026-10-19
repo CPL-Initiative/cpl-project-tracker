@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/csr_agab_pick_2026-10-19_s427.sql",
+ "name": "csr_agab_pick_2026_10_19_s427",
+ "version": "20261019221543",
+ "sha256": "691932b420960909d70410f75d5c4bba461571e8d3d2a23cc77d8f9ae9af2d05",
+ "run": "39333423480",
+ "status": 201,
+ "response": "[{\"course_id\":\"_CANON_SUBJ4::Agricultural Business and Related Services\",\"field\":\"canonical_subj4\",\"value\":\"AGAB\",\"reviewer_email\":\"csr-s427@bot\",\"reviewed_at\":\"2026-10-19 22:15:43.263004+00\"},{\"course_id\":\"_CANON_SUBJ4::Agricultural Business and Related Services\",\"field\":\"canonical_subj4_notes\",\"value\":\"AGAB: Sam, Open Asks Sheet 99 card 3 (2026-10-19, agab): Agr\",\"reviewer_email\":\"csr-s427@bot\",\"reviewed_at\":\"2026-10-19 22:15:43.263004+00\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

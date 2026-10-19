@@ -1,0 +1,22 @@
+{
+  "_status": "Sheet 99 card 3 re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-10-19",
+  "_scope": [
+    "sheet99-card3"
+  ],
+  "_count": 1,
+  "_ruling": "Sam, 2026-10-19 (Open Asks Sheet 99 card 3, \"agab\"): Agricultural Business and Related Services takes AGAB; its identity AUTB M1006 is re-keyed under the playbook",
+  "aliases": {
+    "AUTB M1006": {
+      "new_id": "AGAB M1006",
+      "route": "AGAB",
+      "discipline": "Agricultural Business and Related Services"
+    }
+  },
+  "_applied_at": "2026-10-19",
+  "_applied_ruling": "Sam, 2026-10-19 (Open Asks Sheet 99 card 3, \"agab\"): Agricultural Business and Related Services takes AGAB; its identity AUTB M1006 is re-keyed under the playbook",
+  "_counts": {
+    "courses": 1,
+    "curation_keys": 1
+  }
+}
