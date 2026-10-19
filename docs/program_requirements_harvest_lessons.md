@@ -863,6 +863,35 @@ sharing pages 148-154 and two on the course availability table.
 
 **Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
+## S424 SkyBuckthorn (2026-10-19): the verdict rows worked, Taft's four wrong pages settled, the Jev sitting's selection
+
+- **A check that holds no record back is not a failure to ask about.** S421's Cañada sitting asked Jev about 22
+  records; five failed only the careers check, which the scorer reports beside the checks and leaves out of its `pass`
+  (as `program_record_machine_pass` does), and the verdicts could only read "unverified". `failing()` in
+  `kb/_jev_harvest.py` now reads the five checks the scorer's gate reads (#2256). The next Cañada sitting asks about 17.
+- **Two certificate rules in the scorer (#2256), each from an owner_differs row at San Joaquin Delta.** A certificate
+  with no degree total whose `ge_units` make the printed total exact passes with them named (`ge_included`; 05630,
+  "Minimum Units Required: 51" over a 35-unit major and 16 GE units). One whose page says electives make up its total
+  passes a short sum with the fill named (`electives_fill_degree`; 11970, "Complete elective units to meet the minimum
+  60 unit requirement for this certificate"), under the degree check's guard that a text naming no electives keeps it
+  failing. Both records rescore equal locally; the rules take effect on their next rescore.
+- **A second capture that reads the same 168 pages rules out a missed page.** Taft's Administrative Services II (30284)
+  took the General Business A.S. page at title 0.0 in both captures (runs 39126711681, 39252972758), while the group
+  page's children (college-page-read 39252547290) are absolute links beneath its path that `child_pages()` returns
+  locally. The cause was in the codes, not the pages: the state's file lists BUSN 550 Business Mathematics and BUSN 555
+  Office Procedures, the catalog prints BUSN 1050 and 1055 (same titles, 3.00 units), and the General Business page won
+  on the old codes in its "previous versions of required computer courses" note. Taft's `course_renumbers` maps the two
+  pairs, cited (Merced's pattern, S423); the capture-only read then named 30284 moving to its own page (run 39256247313).
+- **An award the catalog no longer lists is the college's to settle, and a loaded row that reads a sibling's text is
+  removed, not re-read.** Taft's 2026-2027 index (college-page-read 39250246074) lists Cal-GETC alone: no CSU GE-Breadth
+  (38661), no IGETC (38662), and no Speech Language Pathology Aide (46186) or Assistant (46198). 38661's loaded row is
+  the Cal-GETC certificate's section under the wrong number (45358 holds the Cal-GETC record from its own page); its
+  removal follows the S411 Hartnell receipt, and waits on Sam: the session's auto-mode classifier refused to write the
+  delete migration file, twice, so the row stands until a session with the permission (or Sam) files it.
+- **Left as read, with the reason in the verdicts file:** Delta's 07304, 16764 and 45621 are the model's reading of a
+  choice, a waivable block and an area minimum (the second reader's to re-read), 22244 a non-course requirement line,
+  44197 a repeat count the record shape has no field for, 19752 Delta's page assignment (the GE page handed the model).
+
 ## S423 SkyLaurel (2026-10-19): Merced's renumbered courses, the Knowledge Base portal's UI pass
 
 - **Read the page before naming a cause.** Merced's eight near misses (coverage 0.08-0.18) and ten page-claimed

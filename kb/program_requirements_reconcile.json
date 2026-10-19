@@ -144,8 +144,26 @@
    ]
   },
   "Taft College": {
-   "why": "Eleven of Taft's transfer-degree records add up their major and fail the degree check as incomplete: the page prints \"Total Credit Hours: 24\", \"Option 1: CSU/UC - Completion of the California General Education Transfer Curriculum (Cal-GETC) is required\", \"Additional transferable elective units may be used to reach the required 60 units\" and \"Total Credit Hours: 60\", and no units for Cal-GETC (college-page-read 39122581817, Early Childhood Education AS-T). Taft's own Cal-GETC page prints none either (same read). Cal-GETC is one statewide pattern of 34 semester units; the figure is cited from Monterey Peninsula's GE page (read 38759288106), as Monterey's step reads it, and San Joaquin Delta's degree pages print the same 34 (read 39122473643). S415 SkyRedbud proceeded on it on Fable's advice (option A of three: the narrowest fix, in the college's procedure, reversible by deleting this step) and put it to Sam as a card.",
+   "why": "Eleven of Taft's transfer-degree records add up their major and fail the degree check as incomplete: the page prints \"Total Credit Hours: 24\", \"Option 1: CSU/UC - Completion of the California General Education Transfer Curriculum (Cal-GETC) is required\", \"Additional transferable elective units may be used to reach the required 60 units\" and \"Total Credit Hours: 60\", and no units for Cal-GETC (college-page-read 39122581817, Early Childhood Education AS-T). Taft's own Cal-GETC page prints none either (same read). Cal-GETC is one statewide pattern of 34 semester units; the figure is cited from Monterey Peninsula's GE page (read 38759288106), as Monterey's step reads it, and San Joaquin Delta's degree pages print the same 34 (read 39122473643). S415 SkyRedbud proceeded on it on Fable's advice (option A of three: the narrowest fix, in the college's procedure, reversible by deleting this step) and put it to Sam as a card. S424 SkyBuckthorn, 2026-10-19: Administrative Services II (30284) read the General Business A.S. page at title 0.0 in two captures (runs 39126711681, 39252972758). Its own page (college-page-read 39252547290, degrees-and-certificates/administrative-services/administrative-services-ii-certificate-of-achievement) prints BUSN 1050 Business Mathematics 3.00, BUSN 1055 Office Procedures 3.00 and BUSN 1510 Business Communication 3.00, Total Credit Hours 16, where the state's file (coci_program_courses, read 2026-10-19) lists BUSN 550 Business Mathematics 3.0 and BUSN 555 Office Procedures 3.0: the same title and units for each pair, so course_renumbers maps them as Merced's does (S423). The General Business page had won on the old codes it prints in a note ('previous versions of required computer courses'). The file's CIS 1532 is on neither page. Not renumbered, the college's to settle in COCI: CSU GE-Breadth 38661 and IGETC 38662 (the catalog lists Cal-GETC alone, read 39250246074), Speech Language Pathology Aide 46186 and Assistant 46198 (no page names them).",
    "awards": "associate",
+   "course_renumbers": {
+    "BUSN1050": "BUSN 550",
+    "BUSN1055": "BUSN 555"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BUSN1050",
+     "file": "BUSN 550",
+     "title": "Business Mathematics",
+     "units": 3
+    },
+    {
+     "printed": "BUSN1055",
+     "file": "BUSN 555",
+     "title": "Office Procedures",
+     "units": 3
+    }
+   ],
    "steps": [
     {
      "kind": "set",
