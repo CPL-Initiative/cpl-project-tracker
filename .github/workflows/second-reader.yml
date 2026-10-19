@@ -1,0 +1,71 @@
+name: Second reader (program requirements)
+# A second model reads each of one college's harvest records that fails a machine
+# check, through the program-requirements-extract Edge Function with provider
+# "xai" (version 11), and the scorer scores both readings. Nothing is written to a
+# table and nothing is committed: kb/_second_reader.py files the comparison, and
+# this run uploads it as the second-reader artifact for a person to read.
+#
+# WHY: Sam's Open Asks Sheet 97 ruling (2026-10-19 03:11Z, card 1, his own call):
+# Build with Grok. Agreement between two readings of one page is evidence;
+# disagreement is a known issue carrying both readings.
+#
+# THE KEY IS THE FUNCTION'S: the xAI key is an Edge Function secret (XAI_API_KEY,
+# with XAI_MODEL), per Sam's call 6 on sheet 23 (no model key in GitHub). This
+# runner presents the service key the extract step always has; until the function
+# secret exists, every call answers "XAI_API_KEY not set" and the file says so.
+#
+# WHY DISPATCH-ONLY: every run spends real model calls, and the capture reads a
+# college's catalog pages (CENSUS_DELAY_MS between pages, as the harvest does).
+on:
+  workflow_dispatch:
+    inputs:
+      college:
+        description: 'The college, as program_source_registry names it (e.g. Cañada College)'
+        type: string
+        required: true
+      limit:
+        description: 'Cap the sitting to the first N failing records (blank = all)'
+        type: string
+        default: ''
+      model:
+        description: 'The second reader model id (blank = the function''s XAI_MODEL)'
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: second-reader
+  cancel-in-progress: false
+
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install Playwright + Chromium, pypdf, pdfminer (the capture's readers)
+        run: |
+          pip install --quiet playwright pypdf pdfminer.six
+          python -m playwright install --with-deps chromium
+      - name: Pin a hand-filed copy's hash (a no-op without a record)
+        run: python3 kb/_program_requirements_college.py pin --college "${{ inputs.college }}"
+      - name: Capture the college (free; the page text and closed list the first reader saw)
+        env:
+          CENSUS_DELAY_MS: '4000'
+        run: python3 kb/_program_requirements_college.py capture --college "${{ inputs.college }}" --out out --limit 0
+      - name: The second reader over the failing records (suggests, writes nothing)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python3 kb/_second_reader.py --college "${{ inputs.college }}" --capture out \
+            ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
+            ${{ inputs.model && format('--model {0}', inputs.model) || '' }}
+      - name: Upload the comparison
+        uses: actions/upload-artifact@v7
+        with:
+          name: second-reader
+          path: kb/second_reader_out/

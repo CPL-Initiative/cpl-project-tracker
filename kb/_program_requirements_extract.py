@@ -101,13 +101,20 @@ def cost(model: str | None, usage: dict | None) -> float | None:
                   + (u.get("cache_creation_input_tokens") or 0) * p["cache_write"]) / 1e6, 5)
 
 
-def call(src: dict, key: str) -> dict:
+def call(src: dict, key: str, provider: str | None = None, model: str | None = None) -> dict:
     """The record for one program: one call, or, for a program too long for one
     reply, a call per part (call_in_parts). A single call that runs past
-    max_tokens or the gateway's idle limit is read again in parts."""
+    max_tokens or the gateway's idle limit is read again in parts.
+    provider names the function's reader (version 11: "anthropic", the default,
+    or "xai", the second reader of Sam's Sheet 97 ruling); model, when given,
+    names the second reader's model in place of the function's XAI_MODEL."""
     body = {"college": src["college"], "title": src["title"], "award": src["award"],
             "catalog_year": src.get("catalog_year"), "source_url": (src.get("source") or {}).get("url"),
             "text": src["text"], "closed_list": src["closed_list"]}
+    if provider:
+        body["provider"] = provider
+    if model:
+        body["model"] = model
     if len(src["closed_list"]) > SPLIT_AT:
         return call_in_parts(src, key, body)
     got = _post(body, key)

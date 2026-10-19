@@ -187,6 +187,11 @@ jobs:
       # proposes nothing (every row uncalibrated). Pure-stdlib python.
       - name: Jev harvest sitting (failing records only, uncalibrated, suggests)
         run: python3 tests/jev_harvest_test.py
+      # The second reader (S421, Sam's Sheet 97 ruling: Build with Grok): failing
+      # records only, from the page the first reading came from, the provider sent
+      # to the function, the one fingerprint for the comparison, nothing written.
+      - name: Second reader (failing records only, two readings scored, suggests)
+        run: python3 tests/second_reader_test.py
       # The Library filer (scripts/library_file.py): version names, resumable
       # upload, the two-folder fence, receipts guarded on the Drive file id, and
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.
