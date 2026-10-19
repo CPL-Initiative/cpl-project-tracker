@@ -207,10 +207,17 @@ def with_prefix_aliases(record: dict, listed: dict, aliases: dict | None) -> dic
     if not aliases:
         return record
     table = {norm_code(k): norm_code(v) for k, v in aliases.items()}
+    # A key naming a whole course (it has a digit) is a renumbered course: Merced prints
+    # MECH22A Diesel Engines 4 where the file lists AGMA 11 Diesel Engines 4 (S423).
+    courses = {k: v for k, v in table.items() if re.search(r"\d", k)}
 
     def rename(entry: dict) -> None:
         k = norm_code(entry.get("code"))
         if not k or k in listed:
+            return
+        if k in courses and courses[k] in listed:
+            entry["code"] = courses[k]
+            entry["printed_code"] = k
             return
         m = re.match(r"([A-Z&]+)(\d.*)$", k)
         if m and m.group(1) in table and table[m.group(1)] + m.group(2) in listed:

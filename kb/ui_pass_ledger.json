@@ -350,8 +350,8 @@
    "name": "Knowledge Base",
    "page": "index.html#knowledge-base",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-19",
+   "outcome": "S423 SkyLaurel: the tab is a frame around kb-portal/, which no sweep had measured; three targets (sign-in, a reader, the composer; synthetic) now do. The portal said MAP Initiative in its header (now CPL Initiative), carried emoji controls and its own blues; it now reads First Light's light tokens, its controls are underlined words, a skip link leads, and the team-phrase field gets the field style it lacked. Clean at nine widths, light; the portal has no dark palette yet."
   },
   {
    "id": "cobi:library",
@@ -368,6 +368,14 @@
    "audience": "staff",
    "last": "2026-10-18",
    "outcome": "Built on First Light's tokens with word controls (Collapse, Collapse all, Move up, Move down); npm run a11y -- cobi:commons passes at both widths; single column below 560px; no glyph."
+  },
+  {
+   "id": "kb-portal",
+   "name": "kb-portal/index.html",
+   "page": "kb-portal/index.html",
+   "audience": "staff",
+   "last": "2026-10-19",
+   "outcome": "S423 SkyLaurel, with cobi:knowledge-base: measured for the first time (sign-in, a reader and the composer, synthetic), First Light's light tokens, underlined-word controls, no emoji, CPL Initiative in the header. Clean at nine widths, light; no dark palette yet."
   }
  ]
 }

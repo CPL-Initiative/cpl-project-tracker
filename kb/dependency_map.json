@@ -328,7 +328,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1235
+     "line": 1254
     }
    ],
    "main_committers": []
@@ -363,7 +363,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1191
+     "line": 1210
     }
    ],
    "main_committers": []
@@ -554,7 +554,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1130
+     "line": 1149
     }
    ],
    "main_committers": []
@@ -2002,7 +2002,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1050
+     "line": 1054
     }
    ],
    "main_committers": []
@@ -2117,7 +2117,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1052
+     "line": 1056
     }
    ],
    "main_committers": []
@@ -2129,7 +2129,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1053
+     "line": 1057
     }
    ],
    "main_committers": []
@@ -2203,7 +2203,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 768
+     "line": 787
     }
    ],
    "main_committers": []
@@ -2283,7 +2283,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1051
+     "line": 1055
     }
    ],
    "main_committers": []
@@ -7284,7 +7284,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 175
+     "line": 177
     }
    ],
    "served": true,
@@ -7297,7 +7297,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 174
+     "line": 176
     }
    ],
    "served": true,
@@ -20370,7 +20370,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2786
+     "line": 2809
     }
    ],
    "main_committers": []
@@ -20382,7 +20382,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2873
+     "line": 2896
     }
    ],
    "main_committers": []
@@ -21021,7 +21021,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 431
+     "line": 435
     }
    ],
    "main_committers": []
@@ -21033,7 +21033,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 437
+     "line": 441
     }
    ],
    "main_committers": []
@@ -23063,7 +23063,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 454
+     "line": 458
     },
     {
      "id": "script:kb/_program_source_census.py",
