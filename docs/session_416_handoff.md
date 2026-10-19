@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 415 (SkyRedbud)
 tags: [handoff, program-requirements, catalog-sweep, reconcile]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 416

@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 410 (SkyYucca)
 tags: [handoff, program-requirements, catalog-sweep, display-build, coursedog, hand-filed, ui-pass]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 411

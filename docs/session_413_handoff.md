@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 412 (SkyJoshua)
 tags: [handoff, cer, cer-procedures, classifier, exhibit-canonicalization, program-requirements, smartcatalog]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 413

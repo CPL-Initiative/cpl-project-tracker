@@ -736,6 +736,41 @@ From the Records view paragraph, verbatim:
 - **The capture-only run is the verification** (`program-requirements-college.yml`, `extract=0`, on the branch; run
   39160718966): its `would_extract` names the programs whose page moved, before a model call is spent.
 
+## S420 SkyTanoak (2026-10-19): Cañada's re-read landed, a Jev sitting over the failing records, the second reader ruled
+
+- **The reader change paid as predicted.** `step=read` with `extract=1` on `claude/s420-canada` (run 39190086831) kept
+  47 records filed from the same page and re-extracted the 26 whose page moved, for about $1.85 (21 of the 26 passing);
+  `reread` replaced 17 rows and `load` inserted 8. Cañada's filed set holds 73 of its 75 listed programs: 56 pass, 17
+  fail arithmetic, 3 fail coverage (COCI lists one course the printed section never names), 2 are unfound (Elementary
+  Teacher Education A.A.-T, Cloud Computing). The headline moved from 11,621 to 11,630 complete.
+- **A data PR carries its display build or lints fail.** `tests/roep_display_test.py` reads the committed display
+  receipt against the branch's record folders: the Cañada PR failed it (run 39191885428) until `kb/_build_roep_display.py`
+  ran on the branch and its two outputs were committed (build 3aa52b4afcb6). One display build per wave, on the branch;
+  `step=display` on main applies it after the merge (run 39194711397).
+- **The tail needs a different instrument** (Sam's question of ~02:33Z: is this the most effective way to the
+  systemwide dataset?). The body of the corpus read at a college an hour; S419 spent a session on eleven records. Two
+  judgment layers now sit over the failing records, both ranking and suggesting, neither writing: `kb/_jev_harvest.py`
+  (a typed cause and owner per record, uncalibrated until a person's verdicts set a gate; `typesafe-smoke.yml` input
+  `harvest=<college>`, the runner capturing the college first so Jev sees the page text), and the second reader Sam ruled
+  on Sheet 97 at 03:11Z (Build with Grok; waits on the `XAI_API_KEY` secret; `xai-smoke.yml` proves it). KB note:
+  `docs/kb-notes/methodology-a-harvests-tail-needs-a-different-instrument.md`.
+- **Dispatch the runner's steps one at a time**: a second pending dispatch in the same concurrency group cancels the
+  first (`actions-newer-pending-cancels-older-pending-2026-10-18`). Read, reread, load each waited for the one before.
+
+### Moved from the lane (S420 compaction)
+
+**The code finder reads a run of numbers after one subject** ("BUSAD 101, 106, 120") and a kerned three-digit number
+(#2206); **the code net and the scorer read a slashed subject** (`CNA/N 621`, and the slash-free `CNAN626` the state's
+file sometimes stores, #2222; the scorer also reads `THART/S 124X2` as the state's `THART124X2`, S414). **The scorer has
+six readings of catalog text** (flat, the line-end hyphen two ways, the spaced hyphen, stand-in ligature glyphs, a list
+marker at a line's end, #2207). **Cañada's eleven (S419):** the 11 records the load left out placed no listed course;
+the catalog heads each section with the award's letters ("CA  Business Assistant"), wraps a long title onto a short next
+line, and opens a list on the page after its heading, and `pdf_heading()`/`_pdf_pick()` read all three
+(`PDF_AWARD_PREFIX`, `PDF_WRAP_CHARS`; 276 checks). Three stayed out because COCI lists one course the printed section
+never names (Business Administration A.S., Theater Arts A.A., Technical (Apparel Industry Orientation)): a COCI
+comparison finding. Its capture-only read (S413, run 39103943654) had found the same pages, the business certificates
+sharing pages 148-154 and two on the course availability table.
+
 ## Moved from the lane (S419 compaction)
 
 **Crafton Hills and Taft (S412-S413)** read by the SmartCatalog walk (index, then a subject or group page, then the program page): Crafton 76 of 79 found and loaded, 51 passing the machine checks, Japanese unfound; Taft 58 of 63, 24 passing (most arithmetic failures read the page's 60-unit degree total as the major's). **Merced (S414):** 154 of 172 found, 153 loaded, 125 passing ($9.14). **The slash rescoring (S414)** replaced Glendale's 14, De Anza's 12, Los Angeles Trade Technical's 5 and Crafton Hills' 2 by free reconcile runs. **A printed degree floor (S415):** Delta's steps read "Minimum Degree Units Required: 60" as `degree_total_minimum`, and the scorer lets a floor alone make up a short sum (152 to 154 passing, 71 reread); Taft's step sets a transfer degree's Cal-GETC to the statewide 34 (24 to 34 passing, 17 reread; Fable's option A; kept: Sam's Open Asks Sheet 94 card 4, 13:43Z).

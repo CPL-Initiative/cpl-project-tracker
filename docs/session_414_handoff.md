@@ -4,6 +4,8 @@ date: 2026-10-18
 session: 413 (SkyPinyon)
 tags: [handoff, cer, cer-procedures, ui-pass, program-requirements, catalog-sweep, smartcatalog]
 status: current
+superseded: true
+superseded_by: session_421_handoff.md
 ---
 
 # You are Session 414

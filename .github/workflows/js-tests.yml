@@ -182,6 +182,11 @@ jobs:
       # correction never touched, and each filing's changes say scope and kind.
       - name: Program source addenda read (the reading agent's write)
         run: python3 tests/program_source_addenda_read_test.py
+      # The Jev sitting over the harvest's failing records (S420): asks only about
+      # failing records, says when no page text is in hand, bounds the text, and
+      # proposes nothing (every row uncalibrated). Pure-stdlib python.
+      - name: Jev harvest sitting (failing records only, uncalibrated, suggests)
+        run: python3 tests/jev_harvest_test.py
       # The Library filer (scripts/library_file.py): version names, resumable
       # upload, the two-folder fence, receipts guarded on the Drive file id, and
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.

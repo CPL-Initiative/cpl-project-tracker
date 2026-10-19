@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-554 document(s).
+555 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -122,6 +122,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A guardrail that only forbids disables the feature — restrain salesmanship, not facts](../kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A harness must verify its own healthy fixture, or growth repaints the scoreboard](../kb-notes/methodology-a-harness-must-verify-its-own-fixture.md) | methodology | published | 2026-08-30 |  |
+| [A harvest's tail needs a different instrument than its body](../kb-notes/methodology-a-harvests-tail-needs-a-different-instrument.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A hide affordance must suppress the item in the report too — reuse the class the export already strips](../kb-notes/methodology-hide-must-suppress-the-export.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [A human-gated practice becomes a machine-checked one](../kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md) | methodology | published | 2026-08-30 |  |
 | [A JavaScript catalog is data; read what its own scripts fetch](../kb-notes/methodology-a-javascript-catalog-is-data-read-what-it-fetches.md) | methodology | published | 2026-10-10 | 2026-10-10 |
