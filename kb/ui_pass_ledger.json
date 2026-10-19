@@ -358,8 +358,8 @@
    "name": "Library",
    "page": "index.html#library",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-19",
+   "outcome": "First audit: npm run a11y passes at both widths (AA contrast, target size, no escape); wiring reads two datasets, the cpl_library table that no other view reads and the SharePoint folder link; First Light tokens only. Nothing to fix."
   },
   {
    "id": "cobi:commons",
