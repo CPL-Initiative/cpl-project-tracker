@@ -1,0 +1,506 @@
+{
+ "_doc": "Verdicts beside the Jev harvest sitting over San Joaquin Delta College (typesafe-smoke.yml run 39206690775, 2026-10-19; artifact jev-harvest, harvest_san_joaquin_delta.json; 49 records failing a machine check, 49 asked). Each verdict is a SESSION's reading (S421 SkyTupelo) of the committed record's own score, figures, blocks and the first reader's notes, which quote the page; the session did not read the catalog page itself, and Sam has not read these. 'agree': the record's evidence supports Jev's cause and owner; 'owner_differs': the cause holds, the fix belongs elsewhere; 'cause_differs': the evidence names another cause; 'unverified': the record alone cannot settle it. No gate is set: kb/_jev_adjudicate.py GATES takes a measured precision on a person's verdicts, and these are a session's.",
+ "college": "San Joaquin Delta College",
+ "slug": "san_joaquin_delta",
+ "run": "39206690775",
+ "verdicts_by": "session S421 (SkyTupelo), from the records' scores and notes; not Sam",
+ "counts": {
+  "agree": 12,
+  "owner_differs": 5,
+  "cause_differs": 32,
+  "unverified": 0
+ },
+ "rows": [
+  {
+   "control_number": "05579",
+   "title": "Agriculture Business",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "41.0-41.5 against a printed 41: the core is an all-required block whose STAT C1000 carries the 4.5-unit alternative STAT C1000E, and the page's 'Complete 31 units' and 'Minimum Units Required: 41' count the 4-unit base course. The record matches the page; the check fails a sum whose low end equals the total (record_right_check_misfires), and the rule is the scorer's."
+  },
+  {
+   "control_number": "05594",
+   "title": "Computer Programming",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "47.5-48.5 against 47.5: ENGL C1000 (3) with the alternative ENGL C1000E (4) in the all-required core; every choose block carries its stated figure. The low end equals the printed total; the check's both-ends rule misfires (record_right_check_misfires, scorer)."
+  },
+  {
+   "control_number": "05597",
+   "title": "Engineering Fundamentals",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "55-56 against 55, and the first reader's own note: 'Printed course units sum to 55 with ENGL C1000 (3 units), matching Complete 55 units; choosing ENGL C1000E (4 units) would give 56.' One all-required block, no choose block to misread. Record right, check misfires; the scorer's rule."
+  },
+  {
+   "control_number": "05612",
+   "title": "Industrial Technology - Level I",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "28.5-30.5 against 28.5: Area A and Area B carry stated ranges 3-4 and 4-5 because each offers INDUS 94 (3) 'or Associate Degree Math Requirement Units: 4'. The low end equals the page's 'Minimum Units Required: 28.5', a floor the record reads as printed; the cause is record_right_check_misfires, and the scorer owns it, as Jev says."
+  },
+  {
+   "control_number": "05630",
+   "title": "Early Childhood Education Teacher",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "owner_differs",
+   "evidence": "35 against 51, and the note: 'Minimum Units Required: 51 includes Area C, 16 units of courses from the Associate Degree General Education Pattern areas; these GE units are recorded in ge_units and not as a block.' The cause holds and the record already carries the 16; the check reads ge_units only when no major total is printed ('against': 'program'), so the fix is a scorer rule for a certificate whose total includes its GE units."
+  },
+  {
+   "control_number": "07304",
+   "title": "Computer Science",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete: 'Electives within the Major' chooses units with minimum null. The reader's note says each Area's 12 units already include an elective line of 3 or 6 units drawn from that list, and it recorded the list once more as its own block 'because the required units depend on the chosen Area'. The three Area blocks carry stated 12 each in one option group, so the extra block is a double count; the extraction should drop it or fold it into the Areas."
+  },
+  {
+   "control_number": "07407",
+   "title": "Administrative Office Executive",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "39-40 against 39: ENGL C1000 with the 4-unit ENGL C1000E alternative in the all-required core (stated 30); the three Area blocks contribute their minimum of 3 each. Low end equals the printed total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "07423",
+   "title": "Automotive Master Technician",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "52-54 against 52: the reader's note, 'Restricted Electives say Complete 4 - 6 units selected from, recorded as choose_units minimum 4', with stated 4-6. 'Minimum Units Required: 52' is the floor the low end meets. The block was read as printed; record_right_check_misfires, owned by the scorer (a single printed minimum against a ranged sum)."
+  },
+  {
+   "control_number": "10258",
+   "title": "Computer Support",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "41.5-45.5 against 41.5: ENGL C1000E (4) beside ENGL C1000 (3) in the core and Area D's stated 3-6. Both are page figures; the low end equals the printed total. record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "11970",
+   "title": "Early Childhood Education Site Supervisor",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "owner_differs",
+   "evidence": "41.5 against 60: the note says Areas B, C and D each require 3 units from a GE area with no courses listed and were not recorded, and 'Complete elective units to meet the minimum 60 unit requirement' set electives_fill_degree true. The cause holds. Three stated-3 blocks without courses are the extraction's (50.5), and the rest is the scorer's: it ignores electives_fill_degree when a program total is printed, so a certificate that electives fill can never pass."
+  },
+  {
+   "control_number": "13497",
+   "title": "Municipal Clerk",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "38-39 against 38: ENGL C1000 / ENGL C1000E (3 / 4) in the all-required core, stated 32. Low end equals the printed total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "13994",
+   "title": "Horticulture - Nursery Management",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "college_catalog"
+   },
+   "verdict": "cause_differs",
+   "evidence": "17-19 against 17: the note, 'Area C reads Complete 1 - 3 units selected from; recorded minimum 1 with stated 1-3'. The page's figures agree at the floor (10 + 3 + 3 + 1 = 17); nothing on the catalog is wrong. record_right_check_misfires, owned by the scorer."
+  },
+  {
+   "control_number": "14763",
+   "title": "Graphic Arts",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "30-31 against 30, and the note: 'Core Requirements states Complete 24 units, but the ENGL C1000 alternative ENGL C1000E is 4 units, so the core could total 25.' The page counts the base course, the same convention as every Delta page with this pair; the figures agree at the low end. record_right_check_misfires; the scorer owns it, as Jev says."
+  },
+  {
+   "control_number": "14777",
+   "title": "Fitness Specialist",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "17-20 against 17: the note, 'Core Requirements reads Complete 6 units over three courses (3 + 2 + 1-4 units); recorded as all required since the minimum sum of all three equals' 6; PETHEORY 69V is printed 1-4. A variable-unit course in an all-required block ranges the sum; the low end equals the total. record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "16764",
+   "title": "Music",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "26-32 against 24, and the low end is past the total: core 'Complete 20 units' (MUSIC 40A-D printed 0.5-2 each) plus Area A 4 plus Area B 4. The page's 24 is core 20 and Area A 4; Area B 'may be satisfied by passing a Piano Proficiency Examination instead of completing MUSIC 38A-38D; recorded as an all block'. Recording a waivable requirement as required units is the misread."
+  },
+  {
+   "control_number": "17506",
+   "title": "American Sign Language",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "24-25 against 24: the note, 'ENGL C1000E (4 units) is offered as an alternative to ENGL C1000', in the all-required core (stated 22); the elective block contributes its stated 2. Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "18815",
+   "title": "Interdisciplinary Studies - Mathematics and Science",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "extraction"
+   },
+   "verdict": "owner_differs",
+   "evidence": "Arithmetic equal (18 = 18); the failures are coverage 0.904 with ANTHR 2, ANTHR 2L and ANTHR 10 unexplained and 35 invented codes, 32 flagged, 3 not: the note, 'Catalog prints ANTH 2, ANTH 2L and ANTH 10; the closed list has ANTHR 2, ANTHR 2L and ANTHR 10 with matching titles and units.' The cause holds. The reader could explain each by hand, but five Delta records fail on the same subject-prefix renames, so the fix is a scorer alias step (same number and title, different prefix), not another note."
+  },
+  {
+   "control_number": "19752",
+   "title": "Spanish Language",
+   "jev": {
+    "cause": "wrong_program_text",
+    "owner": "reader_procedure"
+   },
+   "verdict": "agree",
+   "evidence": "Coverage 0.0, no blocks, no total; the record's section_heading reads '(no program heading in the text; excerpt shows only the San Joaquin Delta College General Education Requirements areas)' and every missing course is explained as 'appears only in the GE area list; major section not in text'. The reader handed the model the GE page."
+  },
+  {
+   "control_number": "22244",
+   "title": "Architectural Drafting",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "agree",
+   "evidence": "19 against 23, and the note: the block also prints 'Associate Degree Math Requirement: Units 4', which is not a course and was not recorded; '19 + 4 = 23, matching Complete 23 units'. A choose_units block with stated 4 and no courses (as 05612's reader did for the same line) would carry it."
+  },
+  {
+   "control_number": "22247",
+   "title": "Computer Science (certificate)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "54.5-55.5 against 54.5: ENGL C1000 / ENGL C1000E in the core (stated 33.5); Areas A-D contribute their minimums 5, 4, 8, 4. Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "22248",
+   "title": "Computer Networking Software",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "34.5-35.5 against 34.5: ENGL C1000E (4) beside ENGL C1000 (3) in the core (stated 26.5). Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "31692",
+   "title": "Studio Arts",
+   "jev": {
+    "cause": "stated_total_counts_more",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "Arithmetic is equal (24 = 24), so no total counts more. The failures are coverage 0.9 (ART 2 unexplained) and one unflagged invented code ARTH 2: the note, 'Catalog prints ARTH 2 Art History of the Non-Western World; closed list stores it as ART 2 with the same title.' record_right_check_misfires on a subject-prefix rename; the scorer alias step clears it."
+  },
+  {
+   "control_number": "32341",
+   "title": "English",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "extraction"
+   },
+   "verdict": "owner_differs",
+   "evidence": "Arithmetic equal (18 = 18); coverage 0.6 with ENG 35 and ENG 49A-D unexplained and ENGL 35, ENGL 49A-D invented and unflagged: the note, 'The closed list stores ENG 35, ENG 49A... with the prefix ENG; the catalog prints them as ENGL.' The cause holds; the fix is the same prefix alias in the scorer that 18815, 31692, 32913 and 40824 need."
+  },
+  {
+   "control_number": "32913",
+   "title": "Anthropology",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "state_list"
+   },
+   "verdict": "owner_differs",
+   "evidence": "Arithmetic equal (19 = 19); coverage 0.818 with ANTHR 2L unexplained and ANTH 2L invented and unflagged: the note, 'The catalog prints ANTH 2L while the closed list names ANTHR 2L (same title)'. The cause holds. The state list does carry the old prefix, but we do not edit it; the scorer's prefix alias is the fix we can make, and it clears the other four prefix rows too."
+  },
+  {
+   "control_number": "32942",
+   "title": "Elementary Teacher Education",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "52-53 against 52: ENGL C1000 / ENGL C1000E (3 / 4) in the core (stated 46); Areas A and B contribute 3 each. Low end equals 'Minimum Major Units Required: 52'; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "35634",
+   "title": "Agriculture Business (AS-T)",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "32-32.5 against 32: STAT C1000 (4) with the alternative STAT C1000E (4.5) in the core (stated 10); Areas A, B, C contribute 4, 9, 9 as stated. Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "36535",
+   "title": "Pre-Law Studies",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "21-22 against 21: ENGL C1000E (4) beside ENGL C1000 (3) in the core (stated 9); the four Area blocks carry stated 3 each and the recommended block counts nothing. Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "36747",
+   "title": "Law, Public Policy, and Society",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "30-31 against 30: ENGL C1000 / ENGL C1000E in the core (stated 9) over seven 3-unit choose blocks. Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "37638",
+   "title": "Social Justice Studies",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "18-21 against 18: a choose_courses 3 block over 53 courses of 3 and 4 units ranges 9-12, and the core adds 9; the low end equals 'Minimum Major Units Required: 18'. Coverage 0.898 and three unflagged invented codes are the prefix renames (ART 2 / ARTH 2, COM ST 7 / COMM 7, ENG 35 / ENGL 35). record_right_check_misfires; both fixes are the scorer's (floor rule, prefix alias)."
+  },
+  {
+   "control_number": "37666",
+   "title": "Agriculture Plant Science",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "22-22.5 against 22: STAT C1000E (4.5) beside STAT C1000 (4) in the core (stated 12); Areas A, B, C carry 4, 3, 3 as stated. Low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "37670",
+   "title": "Industrial Technology - Level II - Mechanical",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "46-48 against 46: Area B stated 4-5 and Area C 3-4, from INDUS 94 (3) 'or Associate Degree Math Requirement Units: 4'; the note, 'core listed courses sum to 36, matching Complete 36 units'. Low end equals 'Minimum Units Required: 46'; record_right_check_misfires, and the scorer owns it, as Jev says."
+  },
+  {
+   "control_number": "37675",
+   "title": "Agriculture Animal Science",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "20-21.5 against 20: STAT C1000E (4.5) beside STAT C1000 (4) in the core 'Complete 14 units'; the reader also notes CHEM 3A (4) could bring the core to 13. The blocks are read as printed and the low end equals the total; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "40070",
+   "title": "Paraprofessional Preparation",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "24-25 against 24, one all-required block and no choose block: the note, 'ENGL C1000E (4 units) is printed as an or option to ENGL C1000... Choosing it would make' 25. record_right_check_misfires; the scorer owns it, as Jev says."
+  },
+  {
+   "control_number": "40824",
+   "title": "World Languages and Global Studies",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Arithmetic equal (19 = 19); coverage 0.842 with ANTHR 4, ART 2, COM ST 7, ENG 35 unexplained and ANTH 4, ARTH 2, COMM 7, ENGL 35 invented and unflagged: the note, 'Several catalog codes differ from closed-list codes only in subject abbreviation with the same number and title; treated as the same course.' A scorer alias on prefix renames clears it."
+  },
+  {
+   "control_number": "40902",
+   "title": "Winery Sales and Marketing",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "25-28 against 25: CUL ART 93V printed 1-4 units in the all-required core (stated 22) plus a 3-unit elective block. A variable-unit course ranges the sum; the low end equals the total. record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "40903",
+   "title": "Winery Event Coordinator",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "26-29 against 26: one all-required block, stated 26, with CUL ART 93V printed 1-4. The page's figures agree at the course's floor; nothing disagrees. record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "40904",
+   "title": "Winery Tasting Room Associate",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "20.5-23.5 against 20.5: one all-required block, stated 20.5, with CUL ART 93V printed 1-4; no choose block. record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "40905",
+   "title": "Horticulture, Landscape Arborist",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "24-26 against 24: the note, 'Area C reads Complete 1 - 3 units selected from; minimum recorded as 1 and stated as 1-3'. Low end equals 'Minimum Units Required: 24'; record_right_check_misfires, and the scorer owns it, as Jev says."
+  },
+  {
+   "control_number": "43281",
+   "title": "Business Administration 2.0",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "scorer"
+   },
+   "verdict": "cause_differs",
+   "evidence": "27-28.5 against 27, one all-required core and no choose block: MATH 20 (3) with the alternative MATH 13 (4) and STAT C1000 (4) with STAT C1000E (4.5). Low end equals 'Minimum Major Units Required: 27'; record_right_check_misfires, scorer, as Jev's owner says."
+  },
+  {
+   "control_number": "44197",
+   "title": "Caterpillar Dealer Service Technician Apprenticeship",
+   "jev": {
+    "cause": "catalog_figures_disagree",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "40-43 against 55, and the note: 'CAT 69V is printed as 1-4 units, but the catalog states students must enroll four times in CAT 69V for a total of 16 units; the 55-unit total only sums correctly when CAT 69V counts as 16.' The page's figures add up; the record shape holds no repeat count. record_right_check_misfires, owned by the scorer (a repeat field, or units 16 as the page's own total for the course)."
+  },
+  {
+   "control_number": "44708",
+   "title": "Noncredit ESL Milestone for Multilingual Learners (288 hours)",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 288 from 'Total Contact Hours: 288'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  },
+  {
+   "control_number": "44710",
+   "title": "Low-Intermediate ESL",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 198 from 'Total Contact Hours: 198'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  },
+  {
+   "control_number": "44711",
+   "title": "High-Intermediate ESL",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 198 from 'Total Contact Hours: 198'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  },
+  {
+   "control_number": "44712",
+   "title": "Advanced ESL",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 198 from 'Total Contact Hours: 198'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  },
+  {
+   "control_number": "45621",
+   "title": "California General Education Transfer Curriculum (certificate)",
+   "jev": {
+    "cause": "excerpt_cut",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "29-40 against 34: the reader's notes record 'Area 1 requires a minimum of 9 units', 'Area 3 requires a minimum of 6 units' and 'Area 5 requires a minimum of 7 units' but the blocks carry one-course rules (1A, 1B, 3A, 3B, 5A, 5B) and 1-unit labs sit in 5A and 5B, so the low end runs under 34. The text 'is cut off at the end in the Languages Other than English section, after the requirements', so the cut lost nothing counted. choose_block_misread (area minimums not carried), owned by the extraction, as Jev says."
+  },
+  {
+   "control_number": "46020",
+   "title": "Noncredit ESL Milestone for Multilingual Learners (320 hours)",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 320 from 'Total Contact Hours: 320'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  },
+  {
+   "control_number": "46025",
+   "title": "Noncredit ESL Milestone for Multilingual Learners (240 hours)",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 240 from 'Total Contact Hours: 240'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  },
+  {
+   "control_number": "46048",
+   "title": "Intercollegiate Athletics",
+   "jev": {
+    "cause": "choose_block_misread",
+    "owner": "extraction"
+   },
+   "verdict": "cause_differs",
+   "evidence": "10.5-12 against 10.5: the core 'Complete 2 units' holds ATH 1 printed 1-2.5, recorded as all with stated 2; Area C chooses 0.5 units from courses printed 0.5-1.5. Low end equals 'Minimum Units Required: 10.5'; record_right_check_misfires, scorer."
+  },
+  {
+   "control_number": "46410",
+   "title": "Spanish for Medical Professions",
+   "jev": {
+    "cause": "record_right_check_misfires",
+    "owner": "scorer"
+   },
+   "verdict": "agree",
+   "evidence": "Incomplete, measure hours, total 162 from 'Total Contact Hours: 162'; every course is printed 'Units: 0' with no per-course hours, so course units are null and the all-required block cannot be summed. The record is what the page prints; the check needs a rule for an hours program whose page prints only the total (pass as unaddable, the way 'unstated' passes a page with no figure). One scorer rule clears all seven."
+  }
+ ],
+ "reading": "Jev's cause held on 17 rows (12 agree, 5 owner_differs) and leaned wrong on 32, almost all one way: it read a sum that runs past the printed total as a misread block, when the records show the blocks read as printed and the check comparing both ends of a range against a single figure. Delta prints every total as a floor ('Minimum Units Required: N', 'Minimum Major Units Required: N') and the sum's low end equals it on 29 of the 35 unequal rows; the range comes from three page shapes the record carries faithfully: a one-unit alternative in an all-required block (ENGL C1000E 4 beside ENGL C1000 3, STAT C1000E 4.5 beside STAT C1000 4, on 18 rows), a block printed as a range ('Complete 4 - 6 units', '1 - 3 units', 'INDUS 94 or Associate Degree Math Requirement 4', on 5), and a variable-unit course printed 1-4 inside a required block (CUL ART 93V, PETHEORY 69V, ATH 1, on 5, plus 37638's choose_courses over 3- and 4-unit courses). One scorer rule clears them: read the program total as a floor the way degree_total_minimum already reads the degree total, passing when the sum's low end meets it (or, equivalently, prefer an all-required block's printed stated figure when the sum's low end equals it). Where Jev named the scorer it was right; where it named the extraction for these rows the record had nothing to change. The second fix is a subject-prefix alias in the scorer (same number and title, different prefix: ANTH/ANTHR, ENGL/ENG, ARTH/ART, COMM/COM ST), which clears the five arithmetic-equal rows failing coverage and invented (18815, 31692, 32341, 32913, 40824) and 37638's coverage. The seven noncredit hours rows are one more scorer rule (a page printing only 'Total Contact Hours' and 'Units: 0' per course is unaddable, pass it as 'unstated' passes a page with no figure). What remains for the extraction is small and real: 07304's double-counted elective block, 16764's waivable piano block recorded as required units, 22244's unrecorded 4-unit math requirement, 45621's area minimums, and 11970's three course-less GE areas; 19752 is the reader's (the GE page, not the Spanish major); 05630 and 44197 want a scorer field (a certificate total that includes its GE units; a course taken four times)."
+}

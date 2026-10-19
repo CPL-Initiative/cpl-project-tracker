@@ -1,168 +1,164 @@
 {
-  "schema": 1,
-  "project": "program-requirements",
-  "written_at": "2026-10-19T03:33:05Z",
-  "session": 420,
-  "moniker": "SkyTanoak",
-  "run": "Sam's session",
-  "decider": "Sam",
-  "handoff": "docs/session_421_handoff.md",
-  "next_step": {
-    "title": "Dispatch the first Jev sitting over Canada's failing records, then the harvest's tail and the second reader once its key exists",
-    "text": "Run typesafe-smoke.yml with harvest=Canada College (about 20 calls): Jev names a cause and an owner for each of the 20 records failing a machine check, and a person's verdicts beside its rows start the calibration. Then Taft (24 failing) and San Joaquin Delta (49), Merced's 18 unfound, and the second reader with Grok once the XAI_API_KEY secret exists."
-  },
-  "calls": [
-    {
-      "title": "Create the XAI_API_KEY repository secret for the second reader",
-      "text": "Sam ruled Build with Grok on Open Asks Sheet 97 (03:11Z, 2026-10-19). The second reader starts once the xAI key exists as a repository Actions secret named XAI_API_KEY; xai-smoke.yml proves it on a runner. Until then the second reader waits and the Jev sitting runs alone.",
-      "no_reply": "The second reader stays unbuilt; the harvest's failing records are read by one model and Jev's sitting.",
-      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/settings/secrets/actions"
-    }
-  ],
-  "notes": {
-    "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
-  },
-  "changes": [
-    {
-      "at": "2026-10-19T02:31:00Z",
-      "text": "Canada College re-read on the catalog's three heading shapes: 47 records kept, 26 re-extracted for about 1.85 dollars, 21 of them passing (run 39190086831)."
-    },
-    {
-      "at": "2026-10-19T02:48:00Z",
-      "text": "Canada's reread replaced 17 rows and its load inserted 8; the filed set holds 73 of 75 listed programs, 56 passing the machine checks."
-    },
-    {
-      "at": "2026-10-19T03:11:00Z",
-      "text": "Sam answered Open Asks Sheet 97 card 1, his own call: build a second reader with xAI's Grok over the records failing a machine check."
-    },
-    {
-      "at": "2026-10-19T03:21:00Z",
-      "text": "The Canada branch merged with display build 3aa52b4afcb6; step=display dispatched on main at 03:26Z (run 39194711397)."
-    },
-    {
-      "at": "2026-10-19T03:20:00Z",
-      "text": "A Jev sitting over a college's failing records is live on typesafe-smoke.yml (input harvest), uncalibrated and suggesting only; xai-smoke.yml verifies the second reader's key."
-    }
-  ],
-  "headline": [
-    {
-      "day": "2026-10-08",
-      "active": 20282,
-      "checked": 20,
-      "colleges": 5
-    },
-    {
-      "day": "2026-10-09",
-      "active": 20282,
-      "checked": 20,
-      "colleges": 5
-    },
-    {
-      "day": "2026-10-10",
-      "active": 20282,
-      "checked": 27,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-11",
-      "active": 20282,
-      "checked": 29,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-12",
-      "active": 20282,
-      "checked": 31,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-13",
-      "active": 20282,
-      "checked": 31,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-14",
-      "active": 20282,
-      "checked": 31,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-15",
-      "active": 20282,
-      "checked": 32,
-      "colleges": 7
-    },
-    {
-      "day": "2026-10-16",
-      "active": 20282,
-      "checked": 32,
-      "colleges": 7
-    },
-    {
-      "day": "2026-10-17",
-      "active": 20282,
-      "checked": 32,
-      "colleges": 7
-    },
-    {
-      "day": "2026-10-18",
-      "active": 20282,
-      "complete": 11621,
-      "colleges": 113
-    },
-    {
-      "day": "2026-10-19",
-      "active": 20282,
-      "complete": 11630,
-      "colleges": 113
-    }
-  ],
-  "next_run": {
-    "name": "CPL Queue",
-    "every_hours": 24,
-    "at": "2026-10-19T05:12:00Z"
-  },
-  "harvest": {
-    "day": "2026-10-19",
-    "gaps": 3828,
-    "parts": {
-      "links": {
-        "catalog": [
-          118,
-          118
-        ],
-        "cms": [
-          118,
-          118
-        ],
-        "ppm": [
-          112,
-          118
-        ]
-      },
-      "roep": [
-        18443,
-        20282
-      ],
-      "coci": [
-        14623,
-        20282
-      ],
-      "outcomes": {
-        "slo": [
-          6458,
-          89192
-        ],
-        "plo": [
-          14623,
-          20282
-        ]
-      },
-      "careers": [
-        13573,
-        20282
-      ]
-    }
+ "schema": 1,
+ "project": "program-requirements",
+ "written_at": "2026-10-19T06:29:01Z",
+ "session": 421,
+ "moniker": "SkyTupelo",
+ "run": "Sam's session",
+ "decider": "Sam",
+ "handoff": "docs/session_422_handoff.md",
+ "next_step": {
+  "title": "Taft's local general education step, then each college's one fix from its verdicts file, then the second reader once its function secrets exist",
+  "text": "Read Taft's Local General Education Pattern wording with a page read (27 units per the first reader's note), add a set step beside its Cal-GETC one for local degrees, reconcile, reread and build the display: it clears two records. Then the fixes the verdicts files name for Delta and the rest of Taft, Merced's 18 unfound programs, and the second reader with Grok once the Edge Function holds XAI_API_KEY and XAI_MODEL and the function is deployed."
+ },
+ "calls": [
+  {
+   "title": "Set the second reader's two Edge Function secrets and deploy the extraction function",
+   "text": "Sam ruled Build with Grok on Open Asks Sheet 97 (03:11Z, 2026-10-19). The reader is built: the extraction function's version 11 reads with provider xai, kb/_second_reader.py scores both readings, second-reader.yml runs it. It starts once the function holds XAI_API_KEY and XAI_MODEL as Edge Function secrets (Sam's call 6 on sheet 23: no model key in GitHub) and cpl-chat-deploy.yml has deployed program-requirements-extract. The repository secret xai-smoke.yml reads was unset at 04:05Z and only proves the key.",
+   "no_reply": "The second reader stays unrun; the failing records are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
+   "link": "https://supabase.com/dashboard/project/hvuwhnbuahrtptokpqfh/functions/program-requirements-extract/secrets"
   }
+ ],
+ "notes": {
+  "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
+ },
+ "changes": [
+  {
+   "at": "2026-10-19T04:07:00Z",
+   "text": "The first Jev sitting ran over Canada's 22 records failing a machine check (run 39197675380, no errors); a session's verdicts sit beside every row."
+  },
+  {
+   "at": "2026-10-19T04:30:00Z",
+   "text": "The second reader is built and merged (#2246): the extraction function reads with provider xai, kb/_second_reader.py scores both readings, second-reader.yml runs it. It waits on two Edge Function secrets and a deploy."
+  },
+  {
+   "at": "2026-10-19T05:30:00Z",
+   "text": "Canada's Cal-GETC reconcile step (transfer degrees only) merged (#2247): 20 transfer records carry the catalog's own 34, the five that failed for want of it pass, 20 rows reread, display build 3d92deb7a816 applied on main. Six local rows a reread had filled were rolled back from the receipt's before-images."
+  },
+  {
+   "at": "2026-10-19T06:16:00Z",
+   "text": "Jev sittings ran over Taft's 24 and San Joaquin Delta's 49 failing records (runs 39204968617, 39206690775); verdicts beside every row name each college's next fix."
+  }
+ ],
+ "headline": [
+  {
+   "day": "2026-10-08",
+   "active": 20282,
+   "checked": 20,
+   "colleges": 5
+  },
+  {
+   "day": "2026-10-09",
+   "active": 20282,
+   "checked": 20,
+   "colleges": 5
+  },
+  {
+   "day": "2026-10-10",
+   "active": 20282,
+   "checked": 27,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-11",
+   "active": 20282,
+   "checked": 29,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-12",
+   "active": 20282,
+   "checked": 31,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-13",
+   "active": 20282,
+   "checked": 31,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-14",
+   "active": 20282,
+   "checked": 31,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-15",
+   "active": 20282,
+   "checked": 32,
+   "colleges": 7
+  },
+  {
+   "day": "2026-10-16",
+   "active": 20282,
+   "checked": 32,
+   "colleges": 7
+  },
+  {
+   "day": "2026-10-17",
+   "active": 20282,
+   "checked": 32,
+   "colleges": 7
+  },
+  {
+   "day": "2026-10-18",
+   "active": 20282,
+   "complete": 11621,
+   "colleges": 113
+  },
+  {
+   "day": "2026-10-19",
+   "active": 20282,
+   "complete": 11635,
+   "colleges": 113
+  }
+ ],
+ "next_run": {
+  "name": "CPL Queue",
+  "every_hours": 24,
+  "at": "2026-10-19T07:12:00Z"
+ },
+ "harvest": {
+  "day": "2026-10-19",
+  "gaps": 3828,
+  "parts": {
+   "links": {
+    "catalog": [
+     118,
+     118
+    ],
+    "cms": [
+     118,
+     118
+    ],
+    "ppm": [
+     112,
+     118
+    ]
+   },
+   "roep": [
+    18451,
+    20282
+   ],
+   "coci": [
+    14623,
+    20282
+   ],
+   "outcomes": {
+    "slo": [
+     6458,
+     89192
+    ],
+    "plo": [
+     14623,
+     20282
+    ]
+   },
+   "careers": [
+    13573,
+    20282
+   ]
+  }
+ }
 }

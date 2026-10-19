@@ -15757,8 +15757,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 392,
+   "count": 393,
    "docs": [
+    {
+     "created": "2026-10-19",
+     "governs": [],
+     "n": 422,
+     "path": "docs/session_422_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "jev",
+      "second-reader",
+      "reconcile",
+      "rollback"
+     ],
+     "title": "Session 422 handoff: the second reader built, three Jev sittings read, Ca\u00f1ada's Cal-GETC step and the six-row rollback; Taft's local GE step is next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22518,5 +22536,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1182
+ "total": 1183
 }
