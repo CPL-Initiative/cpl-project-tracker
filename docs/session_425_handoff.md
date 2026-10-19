@@ -38,8 +38,10 @@ Your moniker is **SkyMadrone**. Session 424 (**SkyBuckthorn**, `session_017a15Jr
 
 ## In flight at sign-off (check each first)
 
-1. **Taft's display apply** (`step=display` on `main`, dispatched 14:11Z after #2258 merged, build e0407fdcb54b; about
-   70 minutes): read its applied record under `kb/receipts/`; a failure is a re-dispatch, never a by-hand apply.
+1. **Taft's display apply** (build e0407fdcb54b on `main`): the first run (39266689359, 14:11Z) wrote 982 of 15,964
+   statements and stopped on a read timeout at Berkeley City College 19267 (its applied record is on `main`); S424
+   re-dispatched `step=display` at 14:29Z. Read the new run's applied record under `kb/receipts/` (about 70 minutes);
+   a failure is a re-dispatch, never a by-hand apply.
 2. **This checkpoint's PR** (`claude/s424-checkpoint`): merge once `test` passes. CPLBrain's session note PR: merge on green.
 3. S424 held no PR subscription, check-in or artifact watch at sign-off.
 
