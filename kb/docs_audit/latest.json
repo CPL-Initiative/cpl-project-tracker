@@ -10,28 +10,28 @@
     "other": 150000
   },
   "summary": {
-    "files": 1201,
-    "bytes": 12368730,
-    "over_budget": 9,
-    "handoff_max": 426,
+    "files": 1203,
+    "bytes": 12374660,
+    "over_budget": 8,
+    "handoff_max": 427,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60508,
+    "always_loaded_bytes": 60469,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60508,
+        "bytes": 60469,
         "over": 1
       },
       "other": {
         "files": 122,
-        "bytes": 3825578,
+        "bytes": 3826120,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10675,
+        "bytes": 10892,
         "over": 0
       },
       "lessons": {
@@ -40,30 +40,30 @@
         "over": 1
       },
       "kb_note": {
-        "files": 557,
-        "bytes": 2749674,
+        "files": 558,
+        "bytes": 2752126,
         "over": 0
       },
       "roadmap_lane": {
         "files": 40,
-        "bytes": 397009,
-        "over": 4
+        "bytes": 394481,
+        "over": 3
       },
       "handoff": {
-        "files": 397,
-        "bytes": 3045785,
+        "files": 398,
+        "bytes": 3051071,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 8,
       "house_voice": 23,
       "kb_note_dialect": 1,
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22788,
-      "bytes": 3194506655,
+      "files": 22790,
+      "bytes": 3194511657,
       "heavy_bytes": 2113108151,
       "heavy_share": 0.661,
       "ignore_filters": [
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60508,
+        "bytes": 60469,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 508,
+        "over_by": 469,
         "ratio": 1.01
       },
-      "message": "60,508 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,469 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -439,19 +439,6 @@
       },
       "message": "21,537 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 21291,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 1291,
-        "ratio": 1.06
-      },
-      "message": "21,291 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/workplan-annual-goals.md"
     },
     {
       "rule": "house_voice",

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-397 document(s).
+398 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 427 | [Session 427 handoff: the Annual Workplan Goals tab edits every year, shows its descriptions, and the PR that carries it](../session_427_handoff.md) | 2026-10-19 |
 | 426 | [Session 426 handoff: the Common Subjects Reference's Progress view, the procedures store, the daily scan; Sam's eight steps checked against the record](../session_426_handoff.md) | 2026-10-19 |
 | 425 | [Session 425 handoff: the verdict rows worked, Taft's four wrong pages settled, Sheet 98 answered (remove; the second reader on ice)](../session_425_handoff.md) | 2026-10-19 |
 | 424 | [Session 424 handoff: Merced's renumbered courses (154 to 163 of 172 found, 125 to 134 passing), the Knowledge Base portal's UI pass, the Commons' four run logs](../session_424_handoff.md) | 2026-10-19 |
