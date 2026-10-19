@@ -1,0 +1,18 @@
+{
+ "_readme": "S421 SkyTupelo, 2026-10-19. Five of Cañada's transfer-degree records (Mathematics 30741, Geography 32295, Child and Adolescent Development 35834, Social Work and Human Services 37122, Communication Studies 2.0 43478) name the degree total of 60 and the Cal-GETC pattern and print no units for it, so the degree check reads them incomplete; the Jev sitting of run 39197675380 named stated_total_counts_more for all five (kb/jev_harvest_verdicts/ca_ada.json). Taft's reconcile step (kb/program_requirements_reconcile.json) sets Cal-GETC to the statewide 34 where the page words it 'Completion of ... Cal-GETC is required', and a step for Cañada needs Cañada's own words. This read prints the pages of the hand-filed catalog that name Cal-GETC, the sentence each transfer-degree page uses for it and for reaching 60, and where the catalog states Cal-GETC's units, if it does. One load of the hand-filed copy (kb/hand_filed_catalogs/ca_ada.json; robots.txt refuses the college's /current/), no model call.",
+ "college": "Cañada College",
+ "questions": {
+  "ge_units": "How a Cañada transfer-degree page words Cal-GETC and the 60 units, and whether the catalog states Cal-GETC's units anywhere."
+ },
+ "keywords": [
+  "Cal-GETC[^\\n]{0,200}",
+  "[^\\n]{0,120}\\b34\\s+(?:semester\\s+)?units[^\\n]{0,80}",
+  "[^\\n]{0,120}minimum\\s+60\\s+CSU\\s+transferable[^\\n]{0,120}",
+  "AS-T Degree Requirements:[^\\n]{0,40}",
+  "AA-T Degree Requirements:[^\\n]{0,40}"
+ ],
+ "pages": [
+  {"answers": ["ge_units"],
+   "url": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf"}
+ ]
+}
