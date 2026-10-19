@@ -374,7 +374,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
-| `docs/INDEX.md` | scripts: `kb/_docs_audit.py`, `kb/doctrine.py` | — |
+| `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
