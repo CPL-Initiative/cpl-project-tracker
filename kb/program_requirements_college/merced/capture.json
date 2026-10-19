@@ -5,29 +5,783 @@
  "catalog_year": "2026-2027",
  "programs": 182,
  "with_closed_list": 172,
- "started": "2026-10-18T10:00:59Z",
+ "started": "2026-10-19T09:31:48Z",
  "coursedog": {
   "root": "https://catalog.mccd.edu",
-  "search": "https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=250&sortBy=catalogDisplayName%2CtranscriptDescription%2ClongName%2Cname&effectiveDatesRange=2026-10-18%2C2026-10-18&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
+  "search": "https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=250&sortBy=catalogDisplayName%2CtranscriptDescription%2ClongName%2Cname&effectiveDatesRange=2026-10-19%2C2026-10-19&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
   "listed": 191,
   "programs": 188,
   "errors": [],
   "requisites_suffix": "requisites-ojrrt",
   "program_pages": 188,
   "direct": 181,
-  "missed": []
+  "missed": [],
+  "catalog": [
+   {
+    "code": "05000.AA",
+    "name": "Accounting (AA)"
+   },
+   {
+    "code": "05000.CT",
+    "name": "Accounting (CT)"
+   },
+   {
+    "code": "13012.CT",
+    "name": "Administration in Early Childhood Education (CT)"
+   },
+   {
+    "code": "21075.AST",
+    "name": "Administration of Justice (AST)"
+   },
+   {
+    "code": "05007.AA",
+    "name": "Administrative Medical Office Professional (AA)"
+   },
+   {
+    "code": "05007.CN",
+    "name": "Administrative Medical Office Professional (CN)"
+   },
+   {
+    "code": "05008.AA",
+    "name": "Administrative Office Professional (AA)"
+   },
+   {
+    "code": "05008.CN",
+    "name": "Administrative Office Professional (CN)"
+   },
+   {
+    "code": "49190.NC",
+    "name": "Adult Literacy (NC)"
+   },
+   {
+    "code": "01120.CM",
+    "name": "Agricultural Leadership (CM)"
+   },
+   {
+    "code": "01100.AST",
+    "name": "Agriculture Animal Science (AST)"
+   },
+   {
+    "code": "01000.AS",
+    "name": "Agriculture Business (AS)"
+   },
+   {
+    "code": "01000.AST",
+    "name": "Agriculture Business (AST)"
+   },
+   {
+    "code": "01000.CN",
+    "name": "Agriculture Business (CN)"
+   },
+   {
+    "code": "01051.AS",
+    "name": "Agriculture Education (AS)"
+   },
+   {
+    "code": "01160.AST",
+    "name": "Agriculture Plant Science (AST)"
+   },
+   {
+    "code": "NC.CBE.AGT.CP",
+    "name": "Agriculture Systems (NC)"
+   },
+   {
+    "code": "01100.AS",
+    "name": "Animal Science (AS)"
+   },
+   {
+    "code": "01100.CN",
+    "name": "Animal Science (CN)"
+   },
+   {
+    "code": "22001.AAT",
+    "name": "Anthropology (AAT)"
+   },
+   {
+    "code": "07022.AS",
+    "name": "Applied AI and Cloud Computing (AS)"
+   },
+   {
+    "code": "07022.CT",
+    "name": "Applied AI and Cloud Computing (CT)"
+   },
+   {
+    "code": "07074.CM",
+    "name": "Applied Computer AI Systems Professional (CM)"
+   },
+   {
+    "code": "10110.AA",
+    "name": "Art (AA)"
+   },
+   {
+    "code": "12402.CN",
+    "name": "Athletic Training (CN)"
+   },
+   {
+    "code": "09480.CN",
+    "name": "Automotive Electric & Hybrid Systems Technician (CN)"
+   },
+   {
+    "code": "09003.AS",
+    "name": "Automotive Master Technician (AS)"
+   },
+   {
+    "code": "09008.CT",
+    "name": "Automotive Master Technician (CT)"
+   },
+   {
+    "code": "09010.CN",
+    "name": "Automotive Technology Level 1 (CN)"
+   },
+   {
+    "code": "09002.CT",
+    "name": "Automotive Technology Level 2 (CT)"
+   },
+   {
+    "code": "09250.CM",
+    "name": "Basic Electronics (CM)"
+   },
+   {
+    "code": "49160.NC",
+    "name": "Basic Skills for Adults With Disabilities (NC)"
+   },
+   {
+    "code": "04100.AST",
+    "name": "Biology (AST)"
+   },
+   {
+    "code": "04130.CN",
+    "name": "Biotechnology (CN)"
+   },
+   {
+    "code": "04137.AS",
+    "name": "Biotechnology Pre-Professional (AS)"
+   },
+   {
+    "code": "04135.AS",
+    "name": "Biotechnology-Industry (AS)"
+   },
+   {
+    "code": "05101.AST",
+    "name": "Business Administration 2.0 (AST)"
+   },
+   {
+    "code": "49011.CT",
+    "name": "Cal-GETC (CT)"
+   },
+   {
+    "code": "CVC.OEI",
+    "name": "California Virtual College (CVC)"
+   },
+   {
+    "code": "19100.AST",
+    "name": "Chemistry (AST)"
+   },
+   {
+    "code": "13010.AA",
+    "name": "Child Development (AA)"
+   },
+   {
+    "code": "49162.NC",
+    "name": "College Preparation Skills (NC)"
+   },
+   {
+    "code": "49161.NC",
+    "name": "College Success (NC)"
+   },
+   {
+    "code": "09401.AS",
+    "name": "Commercial Refrigeration Technician (AS)"
+   },
+   {
+    "code": "09401.CT",
+    "name": "Commercial Refrigeration Technician (CT)"
+   },
+   {
+    "code": "15603.AAT",
+    "name": "Communication Studies 2.0 (AAT)"
+   },
+   {
+    "code": "01453.CN",
+    "name": "Compact Power Equipment (CN)"
+   },
+   {
+    "code": "07204.CN",
+    "name": "Computer Programming (CM)"
+   },
+   {
+    "code": "07200.AST",
+    "name": "Computer Science (AST)"
+   },
+   {
+    "code": "07201.AS",
+    "name": "Computer Technology and Information Systems (AS)"
+   },
+   {
+    "code": "07020.NC",
+    "name": "Computer Technology Essentials (NC)"
+   },
+   {
+    "code": "09104.CM",
+    "name": "Computer-Aided Design & 3D Modeling (CM)"
+   },
+   {
+    "code": "21078.NC",
+    "name": "Court Interpreter (NC)"
+   },
+   {
+    "code": "21150.AA",
+    "name": "Criminal Justice (AA)"
+   },
+   {
+    "code": "21150.CT",
+    "name": "Criminal Justice (CT)"
+   },
+   {
+    "code": "01150.AS",
+    "name": "Crop Science (AS)"
+   },
+   {
+    "code": "01150.CN",
+    "name": "Crop Science (CN)"
+   },
+   {
+    "code": "01151.AS",
+    "name": "Crop Science Advanced (AS)"
+   },
+   {
+    "code": "13160.CT",
+    "name": "Culinary Management (CT)"
+   },
+   {
+    "code": "05200.CO",
+    "name": "Customer Service Academy (CO)"
+   },
+   {
+    "code": "07202.AS",
+    "name": "Cybersecurity (AS)"
+   },
+   {
+    "code": "07202.CT",
+    "name": "Cybersecurity (CT)"
+   },
+   {
+    "code": "12600.CT",
+    "name": "Dental Assisting (CT)"
+   },
+   {
+    "code": "12800.CT",
+    "name": "Diagnostic Medical Sonography (CT)"
+   },
+   {
+    "code": "12700.AS",
+    "name": "Diagnostic Radiologic Technology (AS)"
+   },
+   {
+    "code": "12700.CF",
+    "name": "Diagnostic Radiologic Technology (CF)"
+   },
+   {
+    "code": "01200.AS",
+    "name": "Diesel Equipment Technology (AS)"
+   },
+   {
+    "code": "01200.CT",
+    "name": "Diesel Equipment Technology (CT)"
+   },
+   {
+    "code": "13181.CN",
+    "name": "Dietetic Services Supervisor/Dietary Manager (CN)"
+   },
+   {
+    "code": "06100.AA",
+    "name": "Digital Arts (AA)"
+   },
+   {
+    "code": "09171.CM",
+    "name": "Drone Media (CM)"
+   },
+   {
+    "code": "09170.CM",
+    "name": "Drone Technology (CM)"
+   },
+   {
+    "code": "13010.AST",
+    "name": "Early Childhood Education (AST)"
+   },
+   {
+    "code": "13013.CM",
+    "name": "Early Childhood Educator I"
+   },
+   {
+    "code": "13014.CN",
+    "name": "Early Childhood Educator II"
+   },
+   {
+    "code": "13016.CT",
+    "name": "Early Intervention Assistant Specialization (CT)"
+   },
+   {
+    "code": "22200.AAT",
+    "name": "Economics (AAT)"
+   },
+   {
+    "code": "09250.AS",
+    "name": "Electronics Technician (AS)"
+   },
+   {
+    "code": "49811.AAT",
+    "name": "Elementary Teacher Education: Integrated Programs (AAT)"
+   },
+   {
+    "code": "12100.CE",
+    "name": "Emergency Medical Technician (CE)"
+   },
+   {
+    "code": "05250.CO",
+    "name": "Emerging Leaders Institute (CO)"
+   },
+   {
+    "code": "09300.AS",
+    "name": "Engineering (AS)"
+   },
+   {
+    "code": "09010.CT",
+    "name": "Engineering (CT)"
+   },
+   {
+    "code": "09350.AS",
+    "name": "Engineering Technology (AS)"
+   },
+   {
+    "code": "15200.AAT",
+    "name": "English (AAT)"
+   },
+   {
+    "code": "01351.AS",
+    "name": "Environmental Horticulture (AS)"
+   },
+   {
+    "code": "01350.CN",
+    "name": "Environmental Horticulture (CN)"
+   },
+   {
+    "code": "01225.AS",
+    "name": "Equine Science and Management (AS)"
+   },
+   {
+    "code": "01225.CN",
+    "name": "Equine Science and Management (CN)"
+   },
+   {
+    "code": "49195.NC",
+    "name": "ESL Advanced Skills (NC)"
+   },
+   {
+    "code": "49196.NC",
+    "name": "ESL Begining Skills Program (NC)"
+   },
+   {
+    "code": "49198.NC",
+    "name": "ESL Intermediate Skills Program (NC)"
+   },
+   {
+    "code": "49310.NC",
+    "name": "ESL Workforce Training (NC)"
+   },
+   {
+    "code": "49301.NC",
+    "name": "Essential Skills for Employment and Job Retention (NC)"
+   },
+   {
+    "code": "13021.CT",
+    "name": "Families in Crisis Specialization (CT)"
+   },
+   {
+    "code": "21400.AS",
+    "name": "Fire Technology (AS)"
+   },
+   {
+    "code": "21400.CT",
+    "name": "Fire Technology (CT)"
+   },
+   {
+    "code": "12401.CN",
+    "name": "Fitness Specialist (CN)"
+   },
+   {
+    "code": "11200.AA",
+    "name": "French (AA)"
+   },
+   {
+    "code": "09402.CE",
+    "name": "Fundamentals of Commercial and Residential Electrical (CE)"
+   },
+   {
+    "code": "01040.AS",
+    "name": "General Agriculture (AS)"
+   },
+   {
+    "code": "01050.CN",
+    "name": "General Agriculture (CN)"
+   },
+   {
+    "code": "05150.AA",
+    "name": "General Business (AA)"
+   },
+   {
+    "code": "05150.CT",
+    "name": "General Business (CT)"
+   },
+   {
+    "code": "22250.AAT",
+    "name": "Geography (AAT)"
+   },
+   {
+    "code": "19400.AST",
+    "name": "Geology (AST)"
+   },
+   {
+    "code": "22061.CN",
+    "name": "Geospatial Technology & Applications: Agriculture (CN)"
+   },
+   {
+    "code": "22062.CN",
+    "name": "Geospatial Technology & Applications: Env & Earth Sci (CN)"
+   },
+   {
+    "code": "22063.CN",
+    "name": "Geospatial Technology & Applications: Social Sci (CN)"
+   },
+   {
+    "code": "11400.AA",
+    "name": "German (AA)"
+   },
+   {
+    "code": "12300.AA",
+    "name": "Health Sciences (AA)"
+   },
+   {
+    "code": "22300.AAT",
+    "name": "History (AAT)"
+   },
+   {
+    "code": "21500.AA",
+    "name": "Human Services (AA)"
+   },
+   {
+    "code": "21500.CT",
+    "name": "Human Services (CT)"
+   },
+   {
+    "code": "09400.AS",
+    "name": "HVAC Technician (AS)"
+   },
+   {
+    "code": "09400.CN",
+    "name": "HVAC Technician (CN)"
+   },
+   {
+    "code": "09510.AS",
+    "name": "Industrial Electrical Technician (AS)"
+   },
+   {
+    "code": "09510.CT",
+    "name": "Industrial Electrical Technician (CT)"
+   },
+   {
+    "code": "09550.AS",
+    "name": "Industrial Maintenance Technology (AS)"
+   },
+   {
+    "code": "09550.CT",
+    "name": "Industrial Maintenance Technology (CT)"
+   },
+   {
+    "code": "13026.CT",
+    "name": "Infant/Toddler Care (CT)"
+   },
+   {
+    "code": "09650.AS",
+    "name": "Instrumentation and Process Control Technology (AS)"
+   },
+   {
+    "code": "09650.CT",
+    "name": "Instrumentation and Process Control Technology (CT)"
+   },
+   {
+    "code": "09786.CE",
+    "name": "Introductory Pipe Welding Technology (CE)"
+   },
+   {
+    "code": "07024.CM",
+    "name": "IT Security Foundations Certificate (CM)"
+   },
+   {
+    "code": "07082.CM",
+    "name": "IT Support Professional (CM)"
+   },
+   {
+    "code": "12400.AAT",
+    "name": "Kinesiology (AAT)"
+   },
+   {
+    "code": "07300.AS",
+    "name": "Management Information Systems (AS)"
+   },
+   {
+    "code": "05450.AA",
+    "name": "Management/Supervisory Training (AA)"
+   },
+   {
+    "code": "05450.CN",
+    "name": "Management/Supervisory Training (CN)"
+   },
+   {
+    "code": "05460.AS",
+    "name": "Marketing (AS)"
+   },
+   {
+    "code": "05460.CN",
+    "name": "Marketing (CN)"
+   },
+   {
+    "code": "17401.AST",
+    "name": "Mathematics 2.0 (AST)"
+   },
+   {
+    "code": "49166.NC",
+    "name": "Mathematics College Preparatory Basic Skills (NC)"
+   },
+   {
+    "code": "49167.NC",
+    "name": "Mathematics College Preparatory Skills II (NC)"
+   },
+   {
+    "code": "01450.AS",
+    "name": "Mechanized Agriculture Technology (AS)"
+   },
+   {
+    "code": "01450.CT",
+    "name": "Mechanized Agriculture Technology (CT)"
+   },
+   {
+    "code": "10100.NC",
+    "name": "Medical Assistant (NC)"
+   },
+   {
+    "code": "13051.CM",
+    "name": "Multi-Language Learner Specilization (CM)"
+   },
+   {
+    "code": "10400.AA",
+    "name": "Music (AA)"
+   },
+   {
+    "code": "10400.AAT",
+    "name": "Music (AAT)"
+   },
+   {
+    "code": "07023.AS",
+    "name": "Networking Technology (AS)"
+   },
+   {
+    "code": "07023.CT",
+    "name": "Networking Technology (CT)"
+   },
+   {
+    "code": "00000.9",
+    "name": "Non-Credit"
+   },
+   {
+    "code": "99999.NC",
+    "name": "Non-Credit - Undecided"
+   },
+   {
+    "code": "12150.CO",
+    "name": "Nursing Assistant (CO)"
+   },
+   {
+    "code": "12500.AS",
+    "name": "Nursing, Registered (AS)"
+   },
+   {
+    "code": "12550.AA",
+    "name": "Nursing, Vocational (AA)"
+   },
+   {
+    "code": "12550.CT",
+    "name": "Nursing, Vocational (CT)"
+   },
+   {
+    "code": "13160.AST",
+    "name": "Nutrition and Dietetics (AST)"
+   },
+   {
+    "code": "13161.AS",
+    "name": "Nutrition and Foods (AS)"
+   },
+   {
+    "code": "13161.CT",
+    "name": "Nutrition and Foods (CT)"
+   },
+   {
+    "code": "12510.AS",
+    "name": "Paramedicine: Pre-Professional (AS)"
+   },
+   {
+    "code": "12510.CT",
+    "name": "Paramedicine: Pre-Professional (CT)"
+   },
+   {
+    "code": "01052.CT",
+    "name": "Pest Control Advisor (CT)"
+   },
+   {
+    "code": "15400.AAT",
+    "name": "Philosophy (AAT)"
+   },
+   {
+    "code": "10500.AA",
+    "name": "Photography (AA)"
+   },
+   {
+    "code": "10500.CN",
+    "name": "Photography (CN)"
+   },
+   {
+    "code": "19800.AST",
+    "name": "Physics 2.0 (AST)"
+   },
+   {
+    "code": "09785.CM",
+    "name": "Pipe Welding Technology (CM)"
+   },
+   {
+    "code": "22070.AAT",
+    "name": "Political Science (AAT)"
+   },
+   {
+    "code": "09475.NC",
+    "name": "Professional Truck Driving Class A CDL Training (NC)"
+   },
+   {
+    "code": "20500.AA",
+    "name": "Psychology (AA)"
+   },
+   {
+    "code": "20500.AAT",
+    "name": "Psychology (AAT)"
+   },
+   {
+    "code": "12837.AST",
+    "name": "Public Health (AST)"
+   },
+   {
+    "code": "49199.NC",
+    "name": "Reading and Writing College Preparatory Basic Skills (NC)"
+   },
+   {
+    "code": "05600.CE",
+    "name": "Real Estate Salesperson License (CE)"
+   },
+   {
+    "code": "12500.CT",
+    "name": "Registered Nursing Lvn to Rn Option (CT)"
+   },
+   {
+    "code": "13031.CT",
+    "name": "School-Age Care Specialization (CT)"
+   },
+   {
+    "code": "09520.CE",
+    "name": "Skilled Trades Career Pathways: Pre-Apprentic Training (CE)"
+   },
+   {
+    "code": "05700.AS",
+    "name": "Small Business Entrepreneurship (AS)"
+   },
+   {
+    "code": "05700.CT",
+    "name": "Small Business Entrepreneurship (CT)"
+   },
+   {
+    "code": "22600.AA",
+    "name": "Social and Behavioral Science (AA)"
+   },
+   {
+    "code": "22010.AAT",
+    "name": "Social Justice Studies, Ethnic Studies (AAT)"
+   },
+   {
+    "code": "05725.CE",
+    "name": "Social Media (CE)"
+   },
+   {
+    "code": "22650.AAT",
+    "name": "Sociology (AAT)"
+   },
+   {
+    "code": "11600.AAT",
+    "name": "Spanish (AAT)"
+   },
+   {
+    "code": "10550.AAT",
+    "name": "Studio Arts (AAT)"
+   },
+   {
+    "code": "07021.CM",
+    "name": "System Administrator Certificate (CM)"
+   },
+   {
+    "code": "08600.CM",
+    "name": "Teaching Online Education (CM)"
+   },
+   {
+    "code": "07744.NC",
+    "name": "Technical Office Occupations (NC)"
+   },
+   {
+    "code": "10600.AA",
+    "name": "Theatre Arts (AA)"
+   },
+   {
+    "code": "10600.AAT",
+    "name": "Theatre Arts (AAT)"
+   },
+   {
+    "code": "19050.AST",
+    "name": "UCTP: Chemistry (AS-T)"
+   },
+   {
+    "code": "99999.0",
+    "name": "Undecided"
+   },
+   {
+    "code": "05800.CE",
+    "name": "Virtual Office Professional (CE)"
+   },
+   {
+    "code": "09800.AA",
+    "name": "Welding Technology (AA)"
+   },
+   {
+    "code": "09810.CN",
+    "name": "Welding Technology (CN)"
+   }
+  ]
  },
  "pages_read": 188,
  "child_pages": 0,
  "banner_h1": null,
  "loads": 196,
- "seconds": 1690.3,
- "found": 154,
+ "seconds": 1705.8,
+ "found": 159,
  "by_method": {
   "no_closed_list": 10,
-  "not_found": 8,
+  "not_found": 3,
   "page_claimed": 10,
-  "sitemap_page": 154
+  "sitemap_page": 159
  },
  "shared_pages": {
   "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt": [
@@ -44,84 +798,6 @@
   ]
  },
  "not_found": [
-  {
-   "control_number": "03485",
-   "title": "Diesel Equipment Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.mccd.edu/programs/01200.AS/requisites-ojrrt",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "textContent",
-    "coverage": 0.182,
-    "body": 0.091,
-    "content": 0.182,
-    "net": 2,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 2 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1427,
-     "content": 479202,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "07710",
-   "title": "Mechanized Agriculture Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.mccd.edu/programs/01450.AS/requisites-ojrrt",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.083,
-    "body": 0.083,
-    "content": 0.083,
-    "net": 1,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1490,
-     "content": 479383,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "16653",
-   "title": "Compact Power Equipment",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.167,
-    "body": 0.167,
-    "content": 0.167,
-    "net": 1,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1102,
-     "content": 476222,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
   {
    "control_number": "17943",
    "title": "International Studies",
@@ -142,59 +818,7 @@
     "error": null,
     "chars": {
      "body": 1494,
-     "content": 480248,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "19495",
-   "title": "Diesel Equipment Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.mccd.edu/programs/01200.CT/requisites-ojrrt",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.091,
-    "body": 0.091,
-    "content": 0.091,
-    "net": 1,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 1 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1455,
-     "content": 477075,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "19496",
-   "title": "Mechanized Agriculture Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.mccd.edu/programs/01450.CT/requisites-ojrrt",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.083,
-    "body": 0.083,
-    "content": 0.083,
-    "net": 1,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1434,
-     "content": 479081,
+     "content": 480234,
      "tabs": 0
     },
     "tab_panels": []
@@ -220,7 +844,7 @@
     "error": null,
     "chars": {
      "body": 1494,
-     "content": 480248,
+     "content": 480234,
      "tabs": 0
     },
     "tab_panels": []
@@ -246,7 +870,7 @@
     "error": null,
     "chars": {
      "body": 952,
-     "content": 494959,
+     "content": 494945,
      "tabs": 0
     },
     "tab_panels": []
@@ -363,1554 +987,64 @@
  "coverage_bands": {
   "0.5-0.8": 25,
   "0.8-1.0": 34,
-  "1.0": 95
+  "1.0": 100
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 154,
+  "against": "kb/program_requirements_college/merced",
+  "kept": 154,
+  "programs": 5,
   "list": [
    {
-    "control_number": "03465",
-    "title": "Crop Science",
+    "control_number": "03485",
+    "title": "Diesel Equipment Technology",
     "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01150.AS/requisites-ojrrt",
+    "url": "https://catalog.mccd.edu/programs/01200.AS/requisites-ojrrt",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "03466",
-    "title": "Environmental Horticulture",
+    "control_number": "07710",
+    "title": "Mechanized Agriculture Technology",
     "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01351.AS/requisites-ojrrt",
+    "url": "https://catalog.mccd.edu/programs/01450.AS/requisites-ojrrt",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "03468",
-    "title": "Animal Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01100.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03470",
-    "title": "General Business",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/05150.AA/requisites-ojrrt",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03474",
-    "title": "Management/Supervisory Training",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/05450.AA/requisites-ojrrt",
-    "coverage": 0.964,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03476",
-    "title": "Administrative Office Professional",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03478",
-    "title": "Administrative Medical Office Professional",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03483",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09300.AS/requisites-ojrrt",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03493",
-    "title": "Welding Technology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/09800.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03494",
-    "title": "ART",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/10110.AA/requisites-ojrrt",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03496",
-    "title": "Theatre Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/10600.AA/requisites-ojrrt",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03497",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/11200.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03498",
-    "title": "German",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/11400.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03501",
-    "title": "Nursing, Registered",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/12500.AS/requisites-ojrrt",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03505",
-    "title": "Diagnostic Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/12700.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03507",
-    "title": "Nutrition and Foods",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/13161.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03514",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/20500.AA/requisites-ojrrt",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03530",
-    "title": "Human Services",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/21500.AA/requisites-ojrrt",
-    "coverage": 0.792,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07713",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/05460.AS/requisites-ojrrt",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07718",
-    "title": "Engineering Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09350.AS/requisites-ojrrt",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07720",
-    "title": "Instrumentation and Process Control Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09650.AS/requisites-ojrrt",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07723",
-    "title": "Industrial Maintenance Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09550.AS/requisites-ojrrt",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07724",
-    "title": "Industrial Electrical Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09510.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07728",
-    "title": "Photography",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/10500.AA/requisites-ojrrt",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10438",
-    "title": "Automotive Technology Level 2",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/09002.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10439",
-    "title": "Automotive Technology Level 1",
+    "control_number": "16653",
+    "title": "Compact Power Equipment",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/09010.CN/requisites-ojrrt",
+    "url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "12308",
-    "title": "Biotechnology-Industry",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/04135.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16242",
-    "title": "Electronics Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09250.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16243",
-    "title": "Networking Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/07023.AS/requisites-ojrrt",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16244",
-    "title": "HVAC Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09400.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16245",
-    "title": "Commercial Refrigeration Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09401.AS/requisites-ojrrt",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16654",
-    "title": "Pest Control Advisor",
+    "control_number": "19495",
+    "title": "Diesel Equipment Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/01052.CT/requisites-ojrrt",
-    "coverage": 0.964,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17928",
-    "title": "Social and Behavioral Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt",
-    "coverage": 0.657,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17936",
-    "title": "Dietetic Services Supervisor/Dietary Manager",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/13181.CN/requisites-ojrrt",
+    "url": "https://catalog.mccd.edu/programs/01200.CT/requisites-ojrrt",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "19368",
-    "title": "Nutrition and Foods",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/13161.CT/requisites-ojrrt",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19370",
-    "title": "Human Services",
+    "control_number": "19496",
+    "title": "Mechanized Agriculture Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19373",
-    "title": "Nursing, Vocational",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/12550.CT/requisites-ojrrt",
-    "coverage": 0.583,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19491",
-    "title": "General Agriculture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01050.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19492",
-    "title": "Animal Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01100.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19494",
-    "title": "Agriculture Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01000.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19497",
-    "title": "General Business",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/05150.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19499",
-    "title": "Administrative Office Professional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19501",
-    "title": "Administrative Medical Office Professional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19502",
-    "title": "Basic Electronics",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/09250.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19503",
-    "title": "Networking Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/07023.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19506",
-    "title": "Industrial Electrical Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/09510.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19507",
-    "title": "Diagnostic Radiologic Technology",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://catalog.mccd.edu/programs/12700.CF/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19508",
-    "title": "Diagnostic Medical Sonography",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/12800.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19654",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/04130.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19668",
-    "title": "MUSIC",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/10400.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19758",
-    "title": "General Agriculture",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01040.AS/requisites-ojrrt",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19759",
-    "title": "Agriculture Business",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01000.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20801",
-    "title": "Crop Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01150.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20804",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/05000.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20805",
-    "title": "Management/Supervisory Training",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/05450.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20806",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/05460.CN/requisites-ojrrt",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20808",
-    "title": "Instrumentation and Process Control Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/09650.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20809",
-    "title": "Industrial Maintenance Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/09550.CT/requisites-ojrrt",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20811",
-    "title": "Commercial Refrigeration Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/09401.CT/requisites-ojrrt",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20812",
-    "title": "Automotive Master Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/09008.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20813",
-    "title": "Welding Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/09810.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20814",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/10500.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20815",
-    "title": "Criminal Justice",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/21150.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20817",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/21400.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22926",
-    "title": "Infant/Toddler Care",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/13026.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22928",
-    "title": "School-Age Care Specialization",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/13031.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22930",
-    "title": "Families in Crisis Specialization",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/13021.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22932",
-    "title": "Early Intervention Assistant Specialization",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/13016.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24014",
-    "title": "Technical Office Occupations",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/07744.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24015",
-    "title": "Medical Assistant",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/10100.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24382",
-    "title": "Court Interpreter",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/21078.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24412",
-    "title": "Basic Skills for Adults with Disabilities",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49160.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30631",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/20500.AAT/requisites-ojrrt",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31120",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/21075.AST/requisites-ojrrt",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31644",
-    "title": "ESL Beginning Skills Program",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49196.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31645",
-    "title": "ESL Intermediate Skills Program",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49198.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31816",
-    "title": "COMPUTER SCIENCE",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/07200.AST/requisites-ojrrt",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31861",
-    "title": "GEOLOGY",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/19400.AST/requisites-ojrrt",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31867",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/13010.AST/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32191",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/12400.AAT/requisites-ojrrt",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32207",
-    "title": "SPANISH",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/11600.AAT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32211",
-    "title": "ENGLISH",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/15200.AAT/requisites-ojrrt",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32312",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/15400.AAT/requisites-ojrrt",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32614",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/10600.AAT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32642",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32886",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/10400.AAT/requisites-ojrrt",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32944",
-    "title": "Reading and Writing College Preparatory Basic Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49199.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32987",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/10550.AAT/requisites-ojrrt",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33174",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt",
-    "coverage": 0.784,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33207",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22001.AAT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33622",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/19100.AST/requisites-ojrrt",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33625",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt",
-    "coverage": 0.565,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33880",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22250.AAT/requisites-ojrrt",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33885",
-    "title": "Agriculture Business",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/01000.AST/requisites-ojrrt",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35038",
-    "title": "Biotechnology Pre-Professional",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/04137.AS/requisites-ojrrt",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35530",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22200.AAT/requisites-ojrrt",
-    "coverage": 0.529,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35569",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/04100.AST/requisites-ojrrt",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35572",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/13160.AST/requisites-ojrrt",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36258",
-    "title": "Automotive Master Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/09003.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36388",
-    "title": "Mathematics College Preparatory Basic Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49166.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37204",
-    "title": "Digital Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.mccd.edu/programs/06100.AA/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37390",
-    "title": "Mathematics College Preparatory Basic Skills II",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49167.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38916",
-    "title": "Administration in Early Childhood Education",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/13012.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39148",
-    "title": "Fitness Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/12401.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40072",
-    "title": "Agriculture Animal Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/01100.AST/requisites-ojrrt",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40176",
-    "title": "Adult Literacy",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49190.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40213",
-    "title": "Professional Truck Driver Class A CDL Training",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/09475.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40215",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40228",
-    "title": "ESL Advanced Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49195.NC/requisites-ojrrt",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40266",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40737",
-    "title": "Essential Skills for Employment and Job Retention",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49301.NC/requisites-ojrrt",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40738",
-    "title": "ESL Workforce Training",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49310.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40854",
-    "title": "UCTP: Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/19050.AST/requisites-ojrrt",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40858",
-    "title": "UCTP: Physics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/09010.CT/requisites-ojrrt",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40896",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/05101.AST/requisites-ojrrt",
-    "coverage": 0.643,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40932",
-    "title": "Computer Technology Essentials",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/07020.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41050",
-    "title": "Drone Media",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41384",
-    "title": "Culinary Management",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/13160.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41385",
-    "title": "IT Security Foundations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/07024.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41411",
-    "title": "Applied Computer Al Systems Professional",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/07074.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41427",
-    "title": "System Administrator",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/07021.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41428",
-    "title": "IT Support Professional",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/07082.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41472",
-    "title": "Computer Technology and Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/07201.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41857",
-    "title": "Social Justice Studies, Ethnic Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt",
-    "coverage": 0.76,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42460",
-    "title": "Crop Science Advanced",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01151.AS/requisites-ojrrt",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42503",
-    "title": "Paramedicine: Pre-Professional",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/12510.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42504",
-    "title": "Paramedicine: Pre-Professional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/12510.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42572",
-    "title": "Athletic Training",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/12402.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42573",
-    "title": "Pipe Welding Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/09785.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42642",
-    "title": "Registered Nursing LVN to RN Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/12500.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42691",
-    "title": "Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/07202.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42692",
-    "title": "Applied Al and Cloud Computing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/07022.AS/requisites-ojrrt",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42801",
-    "title": "Computer Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/07204.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43044",
-    "title": "Cybersecurity",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/07202.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43058",
-    "title": "Applied Al and Cloud Computing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/07022.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43197",
-    "title": "Agriculture Education",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01051.AS/requisites-ojrrt",
-    "coverage": 0.974,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43347",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43465",
-    "title": "College Success",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49161.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43466",
-    "title": "College Preparation Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/49162.NC/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44165",
-    "title": "Agriculture Systems – Agriculture Foundation",
-    "award": "Noncredit program",
-    "url": "https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44416",
-    "title": "Geospatial Technology and Applications: Environmental and Earth Sciences",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/22062.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44429",
-    "title": "Geospatial Technology and Applications: Agriculture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/22061.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44431",
-    "title": "GeoSpatial Applications: Social Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt",
-    "coverage": 0.636,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44715",
-    "title": "Teaching Online Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/08600.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45001",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/12837.AST/requisites-ojrrt",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45131",
-    "title": "Early Childhood Educator II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/13014.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45388",
-    "title": "Early Childhood Educator I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/13013.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45669",
-    "title": "Multi-Language Learner Specialization",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/13051.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45766",
-    "title": "Agricultural Leadership",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/01120.CM/requisites-ojrrt",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45852",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45853",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.mccd.edu/programs/12600.CT/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46060",
-    "title": "Automotive Electric & Hybrid Systems Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/09480.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46489",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/17401.AST/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46490",
-    "title": "Physics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.mccd.edu/programs/19800.AST/requisites-ojrrt",
+    "url": "https://catalog.mccd.edu/programs/01450.CT/requisites-ojrrt",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ]
  },
- "run": "39117489616"
+ "run": "39230479383"
 }
