@@ -77,9 +77,12 @@ for p in procs:
     check(isinstance(srcd, dict) and srcd.get("who") and srcd.get("date") and srcd.get("words"), w + ".source names who, when and the words")
     check(re.match(r"^\d{4}-\d{2}-\d{2}$", str(srcd.get("date") or "")) is not None, w + ".source.date is a date")
 
-# The confirmation procedure is proposed, not on, until Sam rules (a write to a shared table).
+# The confirmation procedure went on with Sam's ruling (Open Asks Sheet 99 card 2, 2026-10-19): a
+# write to a shared table, so the procedure's words name the cohort and the receipt.
 conf = [p for p in procs if p.get("id") == "confirmation"]
-check(bool(conf) and conf[0].get("on") is False, "the cohort confirm is off until Sam rules it")
+check(bool(conf) and conf[0].get("on") is True, "the cohort confirm is on since Sam ruled it (Sheet 99 card 2)")
+check(bool(conf) and "csr-confirm-authority@bot" in conf[0].get("rule", "") and "receipt" in conf[0].get("rule", ""),
+      "the confirmation procedure names its cohort and its receipt")
 # The daily scan is on: the step the daily workflow runs.
 wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
 check("python3 kb/_csr_trail.py --latest" in wf, "the daily workflow runs the scan with --latest")

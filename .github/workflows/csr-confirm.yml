@@ -1,0 +1,92 @@
+name: CSR confirm
+
+# The Common Subjects Reference's nightly confirm of the picks on the authority's own code
+# (kb/_csr_confirm_authority.py). Sam, Open Asks Sheet 99 card 2 (16:37Z, 2026-10-19, his own
+# call): on. The procedure `confirmation` in kb/csr_procedures.json says it in plain words: a
+# pick whose Common SUBJ equals the authority's own code, CCN or C-ID, that no person has
+# confirmed and no finding holds back, is confirmed under the cohort csr-confirm-authority@bot
+# as the tab's own save would write it, insert-only, with a receipt in kb/csr_out/confirm/
+# written before the write. A pick on a code this reference minted waits for a person.
+# Lane: docs/reference/lanes/common-subjects-reference.md. Governance: DR-04.
+#
+# Rule 10: a fresh read of the live picks first (a live row, whoever wrote it, holds the save),
+# duplicates ignored at the insert, the receipt before the write; `--undo` takes the cohort's
+# rows back in one delete and clears the seed's stamps. save=preview lists what would be
+# confirmed and writes no row; save=off plans from the committed files alone.
+#
+# Scheduled after the daily dashboard's primary cron (06:17), which re-syncs the seed from the
+# live picks and re-runs the daily scan this reads, and after the CER procedures run (07:47).
+# Its own concurrency group: the daily run never writes kb/csr_out/confirm/, so a push rebases
+# cleanly, and a pending daily run is never displaced by this one.
+
+on:
+  schedule:
+    - cron: '17 8 * * *'
+  workflow_dispatch:
+    inputs:
+      save:
+        description: "on confirms every qualifying pick under csr-confirm-authority@bot; preview lists them against a fresh read and writes no row; off plans from the committed files alone"
+        required: true
+        default: "on"
+        type: choice
+        # Quoted: YAML reads a bare on and off as booleans (cer-procedures.yml, S417).
+        options: ["on", "preview", "off"]
+
+concurrency:
+  group: csr-confirm-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Confirm the picks on the authority's own code
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SAVE: ${{ inputs.save || 'on' }}
+        run: |
+          set -euo pipefail
+          case "$SAVE" in on|preview) SAVE_FLAG="--save $SAVE";; off) SAVE_FLAG="";; *) echo "save must be on, preview or off"; exit 1;; esac
+          # shellcheck disable=SC2086
+          python3 kb/_csr_confirm_authority.py $SAVE_FLAG | tee csr_confirm.log
+          {
+            echo "### CSR confirm — $(date -u +%Y-%m-%d)"
+            echo '```'
+            cat csr_confirm.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # always(): a save refused at the INSERT still wrote its receipt, and a receipt that never
+      # reaches main cannot undo anything.
+      - name: Commit the receipt
+        if: ${{ always() }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/csr_out/confirm 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "CSR confirm run (run ${{ github.run_id }})"
+          for i in 1 2 3 4 5; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5))
+            git checkout -- . && git pull --rebase origin "${{ github.ref_name }}"
+          done
+          echo "Push failed after 5 attempts."
+          exit 1

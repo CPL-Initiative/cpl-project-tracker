@@ -86,7 +86,7 @@ check("Subjects: a person's and a cohort's confirmations sum to the confirmed co
 check("Subjects: settled is the confirmed count less the collisions, and the pair carries it",
       sub.get("settled") == rows[4]["pair"][0]["n"] and sub.get("settled") <= sub.get("confirmed") and rows[4]["pair"][0]["of"] == sub.get("disciplines"))
 check("Subjects: the pair's words say MQ disciplines and name the three tests", "MQ disciplines" in rows[4]["pair"][0]["words"]
-      and rows[4]["tests"] == ["person-confirmed", "authority rule", "collision-free"])
+      and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free"])
 check("Subjects: every count opens the tab's own list (the Commons' step 3)",
       rows[4]["pair"][0]["open"] == "#canonical-subj4/progress" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
 check("Subjects: the unconfirmed issue opens the pre-seeded filter and the collision issue the SUBJ check",
