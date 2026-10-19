@@ -58,9 +58,9 @@ needing a judgment" would read 106.
 | picks confirmed by a person | 122 of 147 (the live table holds 121 code rows, all Sam's; Physical Education Disabled Students is a seed-only override); 25 on the data's modal code, 13 of them on the authority's own code, which the nightly confirm takes from its first run; 0 through the validate stage, whose column left the tab (ruling 5) |
 | on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
 | C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
-| identity codes | 282 codes on 75,581 minted identities: 145 canonical, 27 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline) |
-| collisions | 1 (AUTB: Auto Body Technology and Agricultural Business and Related Services, whose one identity is AUTB M1006 Supervision and Management in Agriculture) |
-| by design | 4 umbrellas carrying 27 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry |
+| identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
+| collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing still carries Sam's 2026-07-13 Agricultural Business row, a card for him |
+| by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
 | the daily scan | 63 findings: 25 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 collision, 1 anchor key in the dead format, 2 divergences a note records |
 | procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
 
@@ -133,7 +133,26 @@ four known issues with owners, the procedures in force, and deep links into the 
    Mathematics on CCN; Chemistry, Earth Science, Engineering, Geography, Philosophy and Physics/Astronomy on C-ID.
    The first run is the dispatch after the merge (`save=preview`, then `on`); the cron carries it from there.
    `tests/csr_confirm_authority_test.py` (26) guards the selection, the receipt-before-write and the undo.
-3. **agab**: Agricultural Business and Related Services takes AGAB; its one identity is re-keyed under the playbook.
+3. ✅ **agab** (S427, the re-key window of 2026-10-19): Agricultural Business and Related Services takes AGAB (the
+   pick under `csr-s427@bot` with the ruling in its note, `kb/receipts/csr_agab_pick_2026-10-19_s427.sql` through
+   `supabase-migrate.yml`, the seed edited to match); AUTB M1006 Supervision and Management in Agriculture is
+   AGAB M1006 (kept number) with the discipline Sam's own 2026-07-13 curation row names, under
+   `kb/_agab_one_remint.py` (ten gates), receipt `kb/agab_remint_out/2026-10-19/alias_map.json` registered in
+   `kb/alias_chain.py`, the post-apply chain run (promotions, crnc mirrors, the re-seed, the authority seed, the
+   row audit: `subject_collision_signal` 113 to 114), SkyView's layout re-keyed and its payloads rebuilt. The
+   scan reads 0 collisions, 146 canonical codes and 26 umbrella codes. The tab's SUBJ check learned the ruled
+   shape: a family code one MQ discipline is canonical on while the umbrellas declare it is shared by design
+   (`tests/csr_shared_family_code.test.js`). **Live steps after the merge:** dispatch `supabase-rekey.yml` with
+   `alias_map_path=kb/agab_remint_out/2026-10-19/alias_map.json` (the one live row keyed to AUTB M1006, Sam's
+   discipline row, follows the id), and read the pick back under `csr-s427@bot`.
+   ⚠️ **NEEDS SAM: AUTB M1071 Import Body Customizing** ([Open Asks Sheet 101](https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT) card 1). His 2026-07-13 curation row sets its discipline to
+   Agricultural Business and Related Services too, while its title, its TOP (0949.00 Automotive Collision
+   Repair) and its two members (Body Panel Customizing, Auto Body Technology at Cerritos; Import Body
+   Customizing, Automotive Technology at Victor Valley) read auto body. A human-sourced row is never superseded
+   by a session's inference (Rule 8), so the Reference view lists Agricultural Business with one row off its
+   code (AUTB) until he answers: return M1071 to Auto Body Technology (the evidence's reading), or keep it under
+   Agricultural Business and re-key it to AGAB too. The authority attribution stays as the seeder computes it
+   (AG-AB on the two umbrellas' chips; Agricultural Business reads as a CSR code with no chip).
 4. **sitting**: a Jev sitting proposes a C-ID family for each AGRI identity, Sam confirms, the rest stay residual.
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the

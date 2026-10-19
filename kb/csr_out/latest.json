@@ -32,8 +32,8 @@
  "_mid_codes": {
   "ids": 75581,
   "codes": 282,
-  "canonical": 145,
-  "umbrella": 27,
+  "canonical": 146,
+  "umbrella": 26,
   "stray_codes": 110,
   "stray_ids": 396,
   "strays": [
@@ -812,15 +812,6 @@
  "findings": [
   {
    "id": "CSR0001",
-   "rule": "cs2_dup",
-   "item": "Agricultural Business and Related Services ↔ Auto Body Technology",
-   "evidence": "both map to AUTB",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": "dup:AUTB"
-  },
-  {
-   "id": "CSR0002",
    "rule": "cs4_aligned",
    "item": "English",
    "evidence": "canonical ENGL == official CCN prefix (451 official rows) — semantic twin, ALIGNED",
@@ -829,7 +820,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0003",
+   "id": "CSR0002",
    "rule": "cs4_aligned",
    "item": "Economics",
    "evidence": "canonical ECON == official CCN prefix (206 official rows) — semantic twin, ALIGNED",
@@ -838,7 +829,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0004",
+   "id": "CSR0003",
    "rule": "cs4_aligned",
    "item": "Communication Studies",
    "evidence": "canonical COMM == official CCN prefix (192 official rows) — semantic twin, ALIGNED",
@@ -847,7 +838,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0005",
+   "id": "CSR0004",
    "rule": "cs4_aligned",
    "item": "History",
    "evidence": "canonical HIST == official CCN prefix (189 official rows) — semantic twin, ALIGNED",
@@ -856,7 +847,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0006",
+   "id": "CSR0005",
    "rule": "cs4_aligned",
    "item": "Psychology",
    "evidence": "canonical PSYC == official CCN prefix (150 official rows) — semantic twin, ALIGNED",
@@ -865,7 +856,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0007",
+   "id": "CSR0006",
    "rule": "cs4_aligned",
    "item": "Political Science",
    "evidence": "canonical POLS == official CCN prefix (144 official rows) — semantic twin, ALIGNED",
@@ -874,7 +865,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0008",
+   "id": "CSR0007",
    "rule": "cs4_aligned",
    "item": "Mathematics",
    "evidence": "canonical MATH == official CCN prefix (97 official rows) — semantic twin, ALIGNED",
@@ -883,7 +874,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0009",
+   "id": "CSR0008",
    "rule": "cs4_aligned",
    "item": "Anthropology",
    "evidence": "canonical ANTH == official CCN prefix (50 official rows) — semantic twin, ALIGNED",
@@ -892,7 +883,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0010",
+   "id": "CSR0009",
    "rule": "cs4_aligned",
    "item": "Art History",
    "evidence": "canonical ARTH == official CCN prefix (48 official rows) — semantic twin, ALIGNED",
@@ -901,7 +892,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0011",
+   "id": "CSR0010",
    "rule": "cs4_aligned",
    "item": "Biological Sciences",
    "evidence": "canonical BIOL == official CCN prefix (37 official rows) — semantic twin, ALIGNED",
@@ -910,7 +901,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0012",
+   "id": "CSR0011",
    "rule": "cs4_aligned",
    "item": "Astronomy",
    "evidence": "canonical ASTR == official CCN prefix (33 official rows) — semantic twin, ALIGNED",
@@ -919,7 +910,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0013",
+   "id": "CSR0012",
    "rule": "cs4_aligned",
    "item": "Sociology",
    "evidence": "canonical SOCI == official CCN prefix (7 official rows) — semantic twin, ALIGNED",
@@ -928,7 +919,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0014",
+   "id": "CSR0013",
    "rule": "cs4_aligned",
    "item": "Child Development/Early Childhood Education",
    "evidence": "canonical CDEV == official CCN prefix (2 official rows) — semantic twin, ALIGNED",
@@ -937,7 +928,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0015",
+   "id": "CSR0014",
    "rule": "cs4_aligned",
    "item": "Office Technologies",
    "evidence": "canonical BSOT == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -946,7 +937,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0016",
+   "id": "CSR0015",
    "rule": "cs4_divergence_noted",
    "item": "Commercial Music",
    "evidence": "official prefix CMUS unused; twin discipline keeps MUSC and its note records why",
@@ -955,7 +946,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0017",
+   "id": "CSR0016",
    "rule": "cs4_aligned",
    "item": "Education",
    "evidence": "canonical EDUC == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -964,7 +955,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0018",
+   "id": "CSR0017",
    "rule": "cs4_aligned",
    "item": "Engineering",
    "evidence": "canonical ENGR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -973,7 +964,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0019",
+   "id": "CSR0018",
    "rule": "cs4_aligned",
    "item": "Geography",
    "evidence": "canonical GEOG == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -982,7 +973,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0020",
+   "id": "CSR0019",
    "rule": "cs4_divergence_noted",
    "item": "Health Information Technology",
    "evidence": "official prefix HIT unused; twin discipline keeps HEIT and its note records why",
@@ -991,7 +982,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0021",
+   "id": "CSR0020",
    "rule": "cs4_aligned",
    "item": "Computer Information Systems",
    "evidence": "canonical ITIS == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -1000,7 +991,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0022",
+   "id": "CSR0021",
    "rule": "cs4_aligned",
    "item": "Journalism",
    "evidence": "canonical JOUR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
@@ -1009,7 +1000,7 @@
    "group": "ccn"
   },
   {
-   "id": "CSR0023",
+   "id": "CSR0022",
    "rule": "cs5_modal_diverge",
    "item": "Cabinet Making",
    "evidence": "modal WOOD (share 0.67) but canonical CNSC, no _notes",
@@ -1018,7 +1009,7 @@
    "group": null
   },
   {
-   "id": "CSR0024",
+   "id": "CSR0023",
    "rule": "cs5_modal_diverge",
    "item": "Legal Assisting",
    "evidence": "modal PARA (share 0.71) but canonical PLGL, no _notes",
@@ -1027,7 +1018,7 @@
    "group": null
   },
   {
-   "id": "CSR0025",
+   "id": "CSR0024",
    "rule": "cs6_weak_mnemonic",
    "item": "Artificial Intelligence",
    "evidence": "canonical CSAI not derivable from name and absent from 29 observed variants",
@@ -1036,7 +1027,7 @@
    "group": null
   },
   {
-   "id": "CSR0026",
+   "id": "CSR0025",
    "rule": "cs6_weak_mnemonic",
    "item": "Building Codes and Regulations",
    "evidence": "canonical CNSR not derivable from name and absent from 9 observed variants",
@@ -1045,7 +1036,7 @@
    "group": null
   },
   {
-   "id": "CSR0027",
+   "id": "CSR0026",
    "rule": "cs6_weak_mnemonic",
    "item": "Cabinet Making",
    "evidence": "canonical CNSC not derivable from name and absent from 2 observed variants",
@@ -1054,7 +1045,7 @@
    "group": null
   },
   {
-   "id": "CSR0028",
+   "id": "CSR0027",
    "rule": "cs6_weak_mnemonic",
    "item": "Diesel Mechanics",
    "evidence": "canonical AUTD not derivable from name and absent from 31 observed variants",
@@ -1063,7 +1054,7 @@
    "group": null
   },
   {
-   "id": "CSR0029",
+   "id": "CSR0028",
    "rule": "cs6_weak_mnemonic",
    "item": "Electromechanical Technology",
    "evidence": "canonical ELMT not derivable from name and absent from 1 observed variants",
@@ -1072,7 +1063,7 @@
    "group": null
   },
   {
-   "id": "CSR0030",
+   "id": "CSR0029",
    "rule": "cs6_weak_mnemonic",
    "item": "Environmental Technologies",
    "evidence": "canonical ESCI not derivable from name and absent from 40 observed variants",
@@ -1081,7 +1072,7 @@
    "group": null
   },
   {
-   "id": "CSR0031",
+   "id": "CSR0030",
    "rule": "cs6_weak_mnemonic",
    "item": "Furniture Making",
    "evidence": "canonical CSTF not derivable from name and absent from 3 observed variants",
@@ -1090,7 +1081,7 @@
    "group": null
   },
   {
-   "id": "CSR0032",
+   "id": "CSR0031",
    "rule": "cs6_weak_mnemonic",
    "item": "Graphic Arts",
    "evidence": "canonical GRAF not derivable from name and absent from 19 observed variants",
@@ -1099,7 +1090,7 @@
    "group": null
   },
   {
-   "id": "CSR0033",
+   "id": "CSR0032",
    "rule": "cs6_weak_mnemonic",
    "item": "Interdisciplinary Studies",
    "evidence": "canonical IDST not derivable from name and absent from 16 observed variants",
@@ -1108,7 +1099,7 @@
    "group": null
   },
   {
-   "id": "CSR0034",
+   "id": "CSR0033",
    "rule": "cs6_weak_mnemonic",
    "item": "Licensed Vocational Nursing",
    "evidence": "canonical NRSV not derivable from name and absent from 8 observed variants",
@@ -1117,7 +1108,7 @@
    "group": null
   },
   {
-   "id": "CSR0035",
+   "id": "CSR0034",
    "rule": "cs6_weak_mnemonic",
    "item": "Masonry",
    "evidence": "canonical CNMA not derivable from name and absent from 6 observed variants",
@@ -1126,7 +1117,7 @@
    "group": null
   },
   {
-   "id": "CSR0036",
+   "id": "CSR0035",
    "rule": "cs6_weak_mnemonic",
    "item": "Media Production",
    "evidence": "canonical FTVE not derivable from name and absent from 6 observed variants",
@@ -1135,7 +1126,7 @@
    "group": null
   },
   {
-   "id": "CSR0037",
+   "id": "CSR0036",
    "rule": "cs6_weak_mnemonic",
    "item": "Native American/American Indian Studies",
    "evidence": "canonical ETHA not derivable from name and absent from 8 observed variants",
@@ -1144,16 +1135,7 @@
    "group": null
   },
   {
-   "id": "CSR0038",
-   "rule": "cs7_unreviewed",
-   "item": "Agricultural Business and Related Services",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0039",
+   "id": "CSR0037",
    "rule": "cs7_unreviewed",
    "item": "Anthropology",
    "evidence": "no reviewed_by stamp",
@@ -1162,7 +1144,7 @@
    "group": null
   },
   {
-   "id": "CSR0040",
+   "id": "CSR0038",
    "rule": "cs7_unreviewed",
    "item": "Astronomy",
    "evidence": "no reviewed_by stamp",
@@ -1171,7 +1153,7 @@
    "group": null
   },
   {
-   "id": "CSR0041",
+   "id": "CSR0039",
    "rule": "cs7_unreviewed",
    "item": "Chemistry",
    "evidence": "no reviewed_by stamp",
@@ -1180,7 +1162,7 @@
    "group": null
   },
   {
-   "id": "CSR0042",
+   "id": "CSR0040",
    "rule": "cs7_unreviewed",
    "item": "Commercial Art",
    "evidence": "no reviewed_by stamp",
@@ -1189,7 +1171,7 @@
    "group": null
   },
   {
-   "id": "CSR0043",
+   "id": "CSR0041",
    "rule": "cs7_unreviewed",
    "item": "Communication Studies",
    "evidence": "no reviewed_by stamp",
@@ -1198,7 +1180,7 @@
    "group": null
   },
   {
-   "id": "CSR0044",
+   "id": "CSR0042",
    "rule": "cs7_unreviewed",
    "item": "Cosmetology",
    "evidence": "no reviewed_by stamp",
@@ -1207,7 +1189,7 @@
    "group": null
   },
   {
-   "id": "CSR0045",
+   "id": "CSR0043",
    "rule": "cs7_unreviewed",
    "item": "Court Reporting",
    "evidence": "no reviewed_by stamp",
@@ -1216,7 +1198,7 @@
    "group": null
   },
   {
-   "id": "CSR0046",
+   "id": "CSR0044",
    "rule": "cs7_unreviewed",
    "item": "Digital Fabrication Technician",
    "evidence": "no reviewed_by stamp",
@@ -1225,7 +1207,7 @@
    "group": null
   },
   {
-   "id": "CSR0047",
+   "id": "CSR0045",
    "rule": "cs7_unreviewed",
    "item": "Disabled Student Programs and",
    "evidence": "no reviewed_by stamp",
@@ -1234,7 +1216,7 @@
    "group": null
   },
   {
-   "id": "CSR0048",
+   "id": "CSR0046",
    "rule": "cs7_unreviewed",
    "item": "Earth Science",
    "evidence": "no reviewed_by stamp",
@@ -1243,7 +1225,7 @@
    "group": null
   },
   {
-   "id": "CSR0049",
+   "id": "CSR0047",
    "rule": "cs7_unreviewed",
    "item": "Economics",
    "evidence": "no reviewed_by stamp",
@@ -1252,7 +1234,7 @@
    "group": null
   },
   {
-   "id": "CSR0050",
+   "id": "CSR0048",
    "rule": "cs7_unreviewed",
    "item": "Electronic Technology",
    "evidence": "no reviewed_by stamp",
@@ -1261,7 +1243,7 @@
    "group": null
   },
   {
-   "id": "CSR0051",
+   "id": "CSR0049",
    "rule": "cs7_unreviewed",
    "item": "Engineering",
    "evidence": "no reviewed_by stamp",
@@ -1270,7 +1252,7 @@
    "group": null
   },
   {
-   "id": "CSR0052",
+   "id": "CSR0050",
    "rule": "cs7_unreviewed",
    "item": "English",
    "evidence": "no reviewed_by stamp",
@@ -1279,7 +1261,7 @@
    "group": null
   },
   {
-   "id": "CSR0053",
+   "id": "CSR0051",
    "rule": "cs7_unreviewed",
    "item": "Equine Science",
    "evidence": "no reviewed_by stamp",
@@ -1288,7 +1270,7 @@
    "group": null
   },
   {
-   "id": "CSR0054",
+   "id": "CSR0052",
    "rule": "cs7_unreviewed",
    "item": "Geography",
    "evidence": "no reviewed_by stamp",
@@ -1297,7 +1279,7 @@
    "group": null
   },
   {
-   "id": "CSR0055",
+   "id": "CSR0053",
    "rule": "cs7_unreviewed",
    "item": "Heavy Duty Equipment Mechanics",
    "evidence": "no reviewed_by stamp",
@@ -1306,7 +1288,7 @@
    "group": null
   },
   {
-   "id": "CSR0056",
+   "id": "CSR0054",
    "rule": "cs7_unreviewed",
    "item": "History",
    "evidence": "no reviewed_by stamp",
@@ -1315,7 +1297,7 @@
    "group": null
   },
   {
-   "id": "CSR0057",
+   "id": "CSR0055",
    "rule": "cs7_unreviewed",
    "item": "Mathematics",
    "evidence": "no reviewed_by stamp",
@@ -1324,7 +1306,7 @@
    "group": null
   },
   {
-   "id": "CSR0058",
+   "id": "CSR0056",
    "rule": "cs7_unreviewed",
    "item": "Parent Education: Noncredit",
    "evidence": "no reviewed_by stamp",
@@ -1333,7 +1315,7 @@
    "group": null
   },
   {
-   "id": "CSR0059",
+   "id": "CSR0057",
    "rule": "cs7_unreviewed",
    "item": "Philosophy",
    "evidence": "no reviewed_by stamp",
@@ -1342,7 +1324,7 @@
    "group": null
   },
   {
-   "id": "CSR0060",
+   "id": "CSR0058",
    "rule": "cs7_unreviewed",
    "item": "Physics/Astronomy",
    "evidence": "no reviewed_by stamp",
@@ -1351,7 +1333,7 @@
    "group": null
   },
   {
-   "id": "CSR0061",
+   "id": "CSR0059",
    "rule": "cs7_unreviewed",
    "item": "Speech Language Pathology",
    "evidence": "no reviewed_by stamp",
@@ -1360,7 +1342,7 @@
    "group": null
   },
   {
-   "id": "CSR0062",
+   "id": "CSR0060",
    "rule": "cs7_unreviewed",
    "item": "Upholstering",
    "evidence": "no reviewed_by stamp",
@@ -1369,7 +1351,7 @@
    "group": null
   },
   {
-   "id": "CSR0063",
+   "id": "CSR0061",
    "rule": "cs9_anchor_dead_format",
    "item": "common_courses.json",
    "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",

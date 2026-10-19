@@ -505,6 +505,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_typesafe_cr_trial.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_xai_smoke.py` | workflows: `xai-smoke.yml` | — |
+| `kb/agab_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/athl_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
@@ -1156,5 +1157,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 687 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 688 file
 datasets · 182 external services · 454 consumers · 57 workflows · 39 tabs.

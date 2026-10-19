@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 687,
+  "file_datasets": 688,
   "external_services": 182,
   "consumers": 454,
   "workflows": 57,
@@ -741,7 +741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2054,
+     "line": 2062,
      "tabs": [
       "canonical-subj4"
      ]
@@ -5253,7 +5253,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2454,
+     "line": 2462,
      "tabs": [
       "canonical-subj4"
      ]
@@ -8435,6 +8435,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/agab_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/athl_remint_out/<date>/alias_map.json": {
@@ -14830,7 +14843,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 390
+     "line": 393
     }
    ],
    "served": true,
