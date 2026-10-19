@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Photonics and Laser Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=224",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7165,
+  "input_tokens": 8003,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7165,
-    "output_tokens": 1194,
+    "input_tokens": 8003,
+    "output_tokens": 1289,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1194,
+  "output_tokens": 1289,
   "output_tokens_details": {
-   "thinking_tokens": 386
+   "thinking_tokens": 456
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05254,
- "ms": 12166,
+ "cost_usd": 0.05779,
+ "ms": 11805,
  "seconds": 12.5,
  "parts": null,
  "error": null,
@@ -79,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 4,
    "courses": 0,
-   "count": 1,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Photonics and Laser Technology",
+   "section_heading": "CA Photonics and Laser Technology",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -122,13 +122,22 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
+    "Apply knowledge of math, science, and engineering to identify, formulate, and solve optics and photonics problems.",
+    "Communicate eﬀectively and work well in situations that require teamwork.",
+    "Design and perform tests or experiments, analyze and interpret data, and prepare a report summarizing the results of the tests or experiments.",
     "Use techniques, skills, and modern engineering and computer tools necessary for optics and photonics engineering practice."
    ],
-   "careers": []
+   "careers": [
+    "Mechanical Technicians",
+    "Technical Associate",
+    "Manufacturing",
+    "Thin Film Technician",
+    "Calibration Technology Specialist"
+   ]
   },
   "blocks": [
    {
-    "name": "Major: Core Requirements - Complete Core Courses",
+    "name": "Major: Core Requirements — Complete Core Courses, 18 units",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -185,11 +194,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 225; this award's heading, description, career information and program learning outcomes 1-3 appear on the preceding page (224), which is not in the text. The section heading is taken from the program title, not printed text.",
-   "Only outcome 4 of this award's list is visible in the excerpt; outcomes 1-3 were not recorded because they are not in this section's visible text (the following Advanced Optics section prints a similar list, but it belongs to another award).",
-   "Identified this award's section as the 18-unit core (PALT 401-406), which matches the closed list exactly; the following 'CA Advanced Optics and Photonics Technology' section (27 units, adds PALT 407, 408, 409) is a different award and was not recorded.",
-   "Careers named on this page (e.g., Laser and/or Photonics Technicians) belong to the Advanced Optics and Photonics Technology section and were not taken; this award's own careers text, if any, is on the missing previous page."
+   "The award is labeled CA; its section spans pages 224-225 (outcome 4 continues on page 225). The following section, CA Advanced Optics and Photonics Technology (27 units, adding PALT 407-409), is a separate award and was not read.",
+   "Careers list: 'Technical Associate, Manufacturing' may be a single job title; recorded as two entries as printed with the comma. The text also names fields that use photonics (aerospace technology, manufacturing, construction, transportation, environmental technology); these were not recorded as careers because the text presents them as application fields."
   ]
  },
- "extracted_run": "39080930669"
+ "extracted_run": "39190086831"
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Political Science",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=337",
+ "source_url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=336",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9217,
+  "input_tokens": 9955,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9217,
-    "output_tokens": 914,
+    "input_tokens": 9955,
+    "output_tokens": 980,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 914,
+  "output_tokens": 980,
   "output_tokens_details": {
-   "thinking_tokens": 116
+   "thinking_tokens": 176
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05515,
- "ms": 8291,
- "seconds": 8.7,
+ "cost_usd": 0.05942,
+ "ms": 8852,
+ "seconds": 9.6,
  "parts": null,
  "error": null,
  "score": {
@@ -112,7 +112,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "COURSE DESCRIPTIONS",
+   "section_heading": "Political Science",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -141,46 +141,46 @@
   "missing_explained": [
    {
     "code": "ETHN 108",
-    "why": "not in the text; the excerpt holds only course descriptions, not the A.A-T program requirements"
+    "why": "not in the text; the text holds no requirements section for the A.A-T in Political Science"
    },
    {
     "code": "PLSC 103",
-    "why": "not in the text; no program requirements section in the excerpt"
+    "why": "only its course description (now POLS 103, formerly PLSC 103) is in the text; no requirements section"
    },
    {
     "code": "PLSC 130",
-    "why": "not in the text; no program requirements section in the excerpt"
+    "why": "only its course description (now POLS 130, formerly PLSC 130) is in the text; no requirements section"
    },
    {
     "code": "PLSC 150",
-    "why": "appears only as 'Formerly PLSC 150' in the POLS 150 course description; no program requirements section in the excerpt"
+    "why": "only its course description (now POLS 150, formerly PLSC 150) is in the text; no requirements section"
    },
    {
     "code": "PLSC 170",
-    "why": "appears only as 'Formerly PLSC 170' in the POLS 170 course description; no program requirements section in the excerpt"
+    "why": "only its course description (now POLS 170, formerly PLSC 170) is in the text; no requirements section"
    },
    {
     "code": "PLSC 310",
-    "why": "appears only as 'Formerly PLSC 310' in the POLS 310 course description; no program requirements section in the excerpt"
+    "why": "only its course description (now POLS 310, formerly PLSC 310) is in the text; no requirements section"
    },
    {
     "code": "POLS C1000",
-    "why": "appears only as a course description; no program requirements section in the excerpt"
+    "why": "only its course description is in the text; no requirements section"
    },
    {
     "code": "SOCI 141",
-    "why": "not in the text; no program requirements section in the excerpt"
+    "why": "not in the text; the text holds no requirements section"
    },
    {
     "code": "STAT C1000",
-    "why": "named only as a prerequisite in the PSYC 205 course description; no program requirements section in the excerpt"
+    "why": "named only as a prerequisite of PSYC 205 in a course description; no requirements section"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 337-338) contains only course descriptions for POLS and PSYC courses, not the Political Science A.A-T program section; no blocks, totals, outcomes or careers could be recorded. The program requirements page should be located and re-read.",
-   "The catalog has renumbered PLSC courses as POLS (e.g., POLS 150 'Formerly PLSC 150', POLS 170 'Formerly PLSC 170', POLS 310 'Formerly PLSC 310', POLS C1000 'Formerly PLSC 210'); closed-list PLSC codes likely correspond to these POLS codes.",
-   "The careers phrase in the PSYC 200 course description belongs to a course, not this program, and was not recorded."
+   "The catalog text supplied (pages 336-338) is the Course Descriptions section for Political Science and Psychology courses, not the program requirements page for the Political Science A.A-T. No blocks, totals, outcomes or careers for the award could be read; the requirements page should be located elsewhere in the catalog.",
+   "The course descriptions show the political science courses renumbered from PLSC to POLS (e.g., POLS 103 'Formerly PLSC 103', POLS 130 'Formerly PLSC 130', POLS 150, POLS 170, POLS 310; POLS C1000 'Formerly PLSC 210'). The closed list still uses the PLSC codes.",
+   "The POLS 103 description title differs from the closed list ('Critical Thinking and Political Analysis' vs. 'Critical Thinking About World Politics')."
   ]
  },
- "extracted_run": "39080930669"
+ "extracted_run": "39190086831"
 }
