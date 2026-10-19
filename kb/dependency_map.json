@@ -4,10 +4,10 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 671,
-  "external_services": 181,
-  "consumers": 448,
-  "workflows": 54,
+  "file_datasets": 672,
+  "external_services": 182,
+  "consumers": 450,
+  "workflows": 55,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -508,6 +508,18 @@
      "direction": "read",
      "how": "url",
      "line": 20
+    }
+   ],
+   "main_committers": []
+  },
+  "external:api.x.ai": {
+   "consumers": [
+    {
+     "id": "script:kb/_xai_smoke.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 37
     }
    ],
    "main_committers": []
@@ -8329,6 +8341,19 @@
    "consumers": [
     {
      "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_xai_smoke.py": {
+   "consumers": [
+    {
+     "id": "workflow:xai-smoke.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -24694,6 +24719,18 @@
     "kb/workplan_goals_seed_out/"
    ],
    "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "xai-smoke.yml": {
+   "name": "xAI (Grok) smoke test",
+   "crons": [],
+   "scripts": [
+    "kb/_xai_smoke.py"
+   ],
+   "adds": [],
+   "push": null,
    "deploys": [],
    "chain": [],
    "urls": []

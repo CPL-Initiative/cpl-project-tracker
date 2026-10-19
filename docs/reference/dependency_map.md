@@ -501,6 +501,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_sync_peer_articulations.py` | workflows: `credential-catalog-sync.yml` | — |
 | `kb/_typesafe_cr_trial.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
+| `kb/_xai_smoke.py` | workflows: `xai-smoke.yml` | — |
 | `kb/athl_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
@@ -946,6 +947,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:workplan-rebuild` |
 | `api.github.com/repos/cpl-initiative` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.typesafe.ai` | scripts: `kb/_typesafe_smoke.py` |
+| `api.x.ai` | scripts: `kb/_xai_smoke.py` |
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `bakersfield.elumenapp.com` | scripts: `kb/_program_requirements_college.py` |
 | `bsky.app` | `edgefn:cpl-news-harvest` |
@@ -1139,5 +1141,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 671 file
-datasets · 181 external services · 448 consumers · 54 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 672 file
+datasets · 182 external services · 450 consumers · 55 workflows · 39 tabs.

@@ -1,0 +1,49 @@
+name: xAI (Grok) smoke test
+# Verifies that the XAI_API_KEY repository secret is present and that xAI's API
+# accepts it. Nothing is written, nothing is committed.
+#
+# WHY: Sam's Open Asks Sheet 97 ruling (2026-10-19 03:11Z, card 1, his own call):
+# a second reader, xAI's Grok, over the harvest records that fail a machine check.
+# The reader waits on the key, which only Sam can create (Settings > Secrets and
+# variables > Actions); this run is how a runner proves the key before anything is
+# built on it. Same runner-as-proxy pattern as typesafe-smoke.yml: api.x.ai is not
+# reachable from the agent sandbox.
+#
+# WHY DISPATCH-ONLY: a `pull_request` trigger would hand the secret to any fork
+# that opens a PR, and every run spends a real API call.
+#
+# THE KEY NEVER REACHES THE LOG: kb/_xai_smoke.py prints presence and length only,
+# and redacts the key out of any error body before raising.
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Also spend one chat completion (end-to-end, not just auth)'
+        type: boolean
+        default: false
+      model:
+        description: 'The model id for the one call (blank = the first the API lists)'
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: xai-smoke
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Smoke-test the xAI key (no writes, no commit)
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          XAI_MODEL: ${{ inputs.model }}
+        run: |
+          python3 kb/_xai_smoke.py ${{ inputs.full && '--full' || '' }}
