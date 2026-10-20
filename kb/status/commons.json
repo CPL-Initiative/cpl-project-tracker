@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-20T12:52:13Z",
+ "written_at": "2026-10-20T16:08:04Z",
  "rows": [
   {
    "key": "requirements",
@@ -94,9 +94,9 @@
    ],
    "issues": [
     {
-     "n": 396,
+     "n": 405,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 355, the classifier's title has a course code left in 23, the classifier's title has a dangling word 10, a merge would join two issuers 6, the classifier's title has a method word left in 2)",
+     "owner": "a curator (the classifier is unsure 364, the classifier's title has a course code left in 23, the classifier's title has a dangling word 10, a merge would join two issuers 6, the classifier's title has a method word left in 2)",
      "open": "#credential-reference/held",
      "error": null
     },
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-20T11:45:21Z",
+    "at": "2026-10-20T16:03:47Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2646,
     "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-20T11:45:21Z",
+    "fold_at": "2026-10-20T16:03:47Z",
     "map_titles": 4715,
     "unclassified": 405,
     "left_map": 605,
@@ -170,9 +170,9 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 3204,
+     "n": 3205,
      "of": 27581,
-     "words": "cards the auditor scores 0.85 or better; 17,037 at needs review, 7,334 at needs repair, 6 not ready",
+     "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     }
    ],
@@ -181,7 +181,7 @@
    ],
    "issues": [
     {
-     "n": 14516,
+     "n": 14523,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
@@ -221,15 +221,15 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-20T11:47:23+00:00",
+    "at": "2026-10-20T16:05:54+00:00",
     "every_hours": 24
    },
    "facts": {
     "total": 27581,
-    "ready": 3204,
-    "needs_review": 17037,
-    "needs_repair": 7334,
-    "not_ready": 6,
+    "ready": 3205,
+    "needs_review": 17036,
+    "needs_repair": 7335,
+    "not_ready": 5,
     "cap": 0.79
    },
    "sources": [
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-20T03:17:58+00:00",
+    "at": "2026-10-20T03:17:58Z",
     "every_hours": null
    },
    "facts": {
@@ -372,14 +372,14 @@
      "open": "#canonical-subj4/pre_seeded"
     },
     {
-     "n": 15,
+     "n": 16,
      "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note)",
      "owner": "a curator, after Jev's sitting",
      "open": "#canonical-subj4/progress"
     },
     {
-     "n": 110,
-     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 396 identities",
+     "n": 93,
+     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
      "owner": "a re-mint under the playbook",
      "open": "#canonical-subj4/progress"
     }
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-20T11:45:20Z",
+    "at": "2026-10-20T16:03:45Z",
     "every_hours": 24
    },
    "facts": {

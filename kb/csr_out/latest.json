@@ -1,6 +1,6 @@
 {
  "_scanned_at": "2026-10-20",
- "_registry_synced_at": "2026-10-20T11:45:20Z",
+ "_registry_synced_at": "2026-10-20T16:03:45Z",
  "_disciplines": 147,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -31,11 +31,11 @@
  },
  "_mid_codes": {
   "ids": 75581,
-  "codes": 282,
+  "codes": 270,
   "canonical": 146,
-  "umbrella": 26,
-  "stray_codes": 110,
-  "stray_ids": 396,
+  "umbrella": 31,
+  "stray_codes": 93,
+  "stray_ids": 305,
   "strays": [
    {
     "code": "MCOM",
@@ -49,27 +49,6 @@
     "ids": 18,
     "disciplines": {
      "(no discipline)": 18
-    }
-   },
-   {
-    "code": "ARCE",
-    "ids": 17,
-    "disciplines": {
-     "(no discipline)": 17
-    }
-   },
-   {
-    "code": "ARTF",
-    "ids": 16,
-    "disciplines": {
-     "(no discipline)": 16
-    }
-   },
-   {
-    "code": "CSMT",
-    "ids": 16,
-    "disciplines": {
-     "(no discipline)": 16
     }
    },
    {
@@ -94,13 +73,6 @@
     }
    },
    {
-    "code": "NCAR",
-    "ids": 10,
-    "disciplines": {
-     "(no discipline)": 10
-    }
-   },
-   {
     "code": "SGNG",
     "ids": 10,
     "disciplines": {
@@ -112,13 +84,6 @@
     "ids": 9,
     "disciplines": {
      "(no discipline)": 9
-    }
-   },
-   {
-    "code": "BRDC",
-    "ids": 8,
-    "disciplines": {
-     "(no discipline)": 8
     }
    },
    {
@@ -171,13 +136,6 @@
     }
    },
    {
-    "code": "FLGH",
-    "ids": 6,
-    "disciplines": {
-     "(no discipline)": 6
-    }
-   },
-   {
     "code": "FLTE",
     "ids": 6,
     "disciplines": {
@@ -196,13 +154,6 @@
     "ids": 6,
     "disciplines": {
      "(no discipline)": 6
-    }
-   },
-   {
-    "code": "ARTP",
-    "ids": 5,
-    "disciplines": {
-     "(no discipline)": 5
     }
    },
    {
@@ -259,13 +210,6 @@
     "ids": 4,
     "disciplines": {
      "(no discipline)": 4
-    }
-   },
-   {
-    "code": "ARAM",
-    "ids": 3,
-    "disciplines": {
-     "Foreign Languages": 3
     }
    },
    {
@@ -385,13 +329,6 @@
     "ids": 2,
     "disciplines": {
      "(no discipline)": 2
-    }
-   },
-   {
-    "code": "HUPA",
-    "ids": 2,
-    "disciplines": {
-     "Foreign Languages": 2
     }
    },
    {
@@ -633,31 +570,10 @@
     }
    },
    {
-    "code": "FILI",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
-    }
-   },
-   {
     "code": "GLOB",
     "ids": 1,
     "disciplines": {
      "(no discipline)": 1
-    }
-   },
-   {
-    "code": "GREE",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
-    }
-   },
-   {
-    "code": "HIER",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
     }
    },
    {
@@ -675,31 +591,10 @@
     }
    },
    {
-    "code": "JAPA",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
-    }
-   },
-   {
-    "code": "KHME",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
-    }
-   },
-   {
     "code": "LBRY",
     "ids": 1,
     "disciplines": {
      "(no discipline)": 1
-    }
-   },
-   {
-    "code": "LING",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
     }
    },
    {
@@ -773,13 +668,6 @@
     }
    },
    {
-    "code": "TURK",
-    "ids": 1,
-    "disciplines": {
-     "Foreign Languages": 1
-    }
-   },
-   {
     "code": "VBUS",
     "ids": 1,
     "disciplines": {
@@ -795,13 +683,6 @@
    },
    {
     "code": "VFPA",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
-    "code": "WELL",
     "ids": 1,
     "disciplines": {
      "(no discipline)": 1
@@ -1002,6 +883,15 @@
   {
    "id": "CSR0022",
    "rule": "cs5_modal_diverge",
+   "item": "Broadcasting Technology",
+   "evidence": "modal BRDC (share 0.73) but canonical BCST, no _notes",
+   "suggestion": "confirm choice + record a note",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0023",
+   "rule": "cs5_modal_diverge",
    "item": "Cabinet Making",
    "evidence": "modal WOOD (share 0.67) but canonical CNSC, no _notes",
    "suggestion": "confirm choice + record a note",
@@ -1009,7 +899,7 @@
    "group": null
   },
   {
-   "id": "CSR0023",
+   "id": "CSR0024",
    "rule": "cs5_modal_diverge",
    "item": "Legal Assisting",
    "evidence": "modal PARA (share 0.71) but canonical PLGL, no _notes",
@@ -1018,7 +908,7 @@
    "group": null
   },
   {
-   "id": "CSR0024",
+   "id": "CSR0025",
    "rule": "cs6_weak_mnemonic",
    "item": "Artificial Intelligence",
    "evidence": "canonical CSAI not derivable from name and absent from 29 observed variants",
@@ -1027,7 +917,7 @@
    "group": null
   },
   {
-   "id": "CSR0025",
+   "id": "CSR0026",
    "rule": "cs6_weak_mnemonic",
    "item": "Building Codes and Regulations",
    "evidence": "canonical CNSR not derivable from name and absent from 9 observed variants",
@@ -1036,7 +926,7 @@
    "group": null
   },
   {
-   "id": "CSR0026",
+   "id": "CSR0027",
    "rule": "cs6_weak_mnemonic",
    "item": "Cabinet Making",
    "evidence": "canonical CNSC not derivable from name and absent from 2 observed variants",
@@ -1045,7 +935,7 @@
    "group": null
   },
   {
-   "id": "CSR0027",
+   "id": "CSR0028",
    "rule": "cs6_weak_mnemonic",
    "item": "Diesel Mechanics",
    "evidence": "canonical AUTD not derivable from name and absent from 31 observed variants",
@@ -1054,7 +944,7 @@
    "group": null
   },
   {
-   "id": "CSR0028",
+   "id": "CSR0029",
    "rule": "cs6_weak_mnemonic",
    "item": "Electromechanical Technology",
    "evidence": "canonical ELMT not derivable from name and absent from 1 observed variants",
@@ -1063,7 +953,7 @@
    "group": null
   },
   {
-   "id": "CSR0029",
+   "id": "CSR0030",
    "rule": "cs6_weak_mnemonic",
    "item": "Environmental Technologies",
    "evidence": "canonical ESCI not derivable from name and absent from 40 observed variants",
@@ -1072,7 +962,7 @@
    "group": null
   },
   {
-   "id": "CSR0030",
+   "id": "CSR0031",
    "rule": "cs6_weak_mnemonic",
    "item": "Furniture Making",
    "evidence": "canonical CSTF not derivable from name and absent from 3 observed variants",
@@ -1081,7 +971,7 @@
    "group": null
   },
   {
-   "id": "CSR0031",
+   "id": "CSR0032",
    "rule": "cs6_weak_mnemonic",
    "item": "Graphic Arts",
    "evidence": "canonical GRAF not derivable from name and absent from 19 observed variants",
@@ -1090,7 +980,7 @@
    "group": null
   },
   {
-   "id": "CSR0032",
+   "id": "CSR0033",
    "rule": "cs6_weak_mnemonic",
    "item": "Interdisciplinary Studies",
    "evidence": "canonical IDST not derivable from name and absent from 16 observed variants",
@@ -1099,7 +989,7 @@
    "group": null
   },
   {
-   "id": "CSR0033",
+   "id": "CSR0034",
    "rule": "cs6_weak_mnemonic",
    "item": "Licensed Vocational Nursing",
    "evidence": "canonical NRSV not derivable from name and absent from 8 observed variants",
@@ -1108,7 +998,7 @@
    "group": null
   },
   {
-   "id": "CSR0034",
+   "id": "CSR0035",
    "rule": "cs6_weak_mnemonic",
    "item": "Masonry",
    "evidence": "canonical CNMA not derivable from name and absent from 6 observed variants",
@@ -1117,7 +1007,7 @@
    "group": null
   },
   {
-   "id": "CSR0035",
+   "id": "CSR0036",
    "rule": "cs6_weak_mnemonic",
    "item": "Media Production",
    "evidence": "canonical FTVE not derivable from name and absent from 6 observed variants",
@@ -1126,7 +1016,7 @@
    "group": null
   },
   {
-   "id": "CSR0036",
+   "id": "CSR0037",
    "rule": "cs6_weak_mnemonic",
    "item": "Native American/American Indian Studies",
    "evidence": "canonical ETHA not derivable from name and absent from 8 observed variants",
@@ -1135,7 +1025,7 @@
    "group": null
   },
   {
-   "id": "CSR0037",
+   "id": "CSR0038",
    "rule": "cs7_unreviewed",
    "item": "Commercial Art",
    "evidence": "no reviewed_by stamp",
@@ -1144,7 +1034,7 @@
    "group": null
   },
   {
-   "id": "CSR0038",
+   "id": "CSR0039",
    "rule": "cs7_unreviewed",
    "item": "Cosmetology",
    "evidence": "no reviewed_by stamp",
@@ -1153,7 +1043,7 @@
    "group": null
   },
   {
-   "id": "CSR0039",
+   "id": "CSR0040",
    "rule": "cs7_unreviewed",
    "item": "Court Reporting",
    "evidence": "no reviewed_by stamp",
@@ -1162,7 +1052,7 @@
    "group": null
   },
   {
-   "id": "CSR0040",
+   "id": "CSR0041",
    "rule": "cs7_unreviewed",
    "item": "Digital Fabrication Technician",
    "evidence": "no reviewed_by stamp",
@@ -1171,7 +1061,7 @@
    "group": null
   },
   {
-   "id": "CSR0041",
+   "id": "CSR0042",
    "rule": "cs7_unreviewed",
    "item": "Disabled Student Programs and Services (DSPS)",
    "evidence": "no reviewed_by stamp",
@@ -1180,7 +1070,7 @@
    "group": null
   },
   {
-   "id": "CSR0042",
+   "id": "CSR0043",
    "rule": "cs7_unreviewed",
    "item": "Electronic Technology",
    "evidence": "no reviewed_by stamp",
@@ -1189,7 +1079,7 @@
    "group": null
   },
   {
-   "id": "CSR0043",
+   "id": "CSR0044",
    "rule": "cs7_unreviewed",
    "item": "Equine Science",
    "evidence": "no reviewed_by stamp",
@@ -1198,7 +1088,7 @@
    "group": null
   },
   {
-   "id": "CSR0044",
+   "id": "CSR0045",
    "rule": "cs7_unreviewed",
    "item": "Heavy Duty Equipment Mechanics",
    "evidence": "no reviewed_by stamp",
@@ -1207,7 +1097,7 @@
    "group": null
   },
   {
-   "id": "CSR0045",
+   "id": "CSR0046",
    "rule": "cs7_unreviewed",
    "item": "Parent Education: Noncredit",
    "evidence": "no reviewed_by stamp",
@@ -1216,7 +1106,7 @@
    "group": null
   },
   {
-   "id": "CSR0046",
+   "id": "CSR0047",
    "rule": "cs7_unreviewed",
    "item": "Speech Language Pathology",
    "evidence": "no reviewed_by stamp",
@@ -1225,7 +1115,7 @@
    "group": null
   },
   {
-   "id": "CSR0047",
+   "id": "CSR0048",
    "rule": "cs7_unreviewed",
    "item": "Upholstering",
    "evidence": "no reviewed_by stamp",
@@ -1234,7 +1124,7 @@
    "group": null
   },
   {
-   "id": "CSR0048",
+   "id": "CSR0049",
    "rule": "cs9_anchor_dead_format",
    "item": "common_courses.json",
    "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",

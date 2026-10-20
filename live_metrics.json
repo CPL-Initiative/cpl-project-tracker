@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-20T11:45:10.485Z",
+  "scraped_at": "2026-10-20T16:03:31.388Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -33,17 +33,17 @@
         },
         {
           "college": "Norco College",
-          "students": 911,
-          "units": 7987.5,
-          "avgUnits": 8.767837541163557,
-          "transcriptionRate": 50,
-          "avgTranscribed": 4.381997804610318,
+          "students": 912,
+          "units": 7992.5,
+          "avgUnits": 8.763706140350877,
+          "transcriptionRate": 49.9,
+          "avgTranscribed": 4.37719298245614,
           "criteriaMetCount": 5,
-          "militaryStudents": 572,
+          "militaryStudents": 573,
           "nonMilitaryStudents": 347,
           "apprenticeStudents": 186,
-          "savings": 12836060,
-          "yearImpact": 54768947,
+          "savings": 12844710,
+          "yearImpact": 54799282,
           "transcribedUnits": 3992
         },
         {
@@ -141,15 +141,15 @@
           "students": 3720,
           "units": 19899.5,
           "avgUnits": 5.349327956989248,
-          "transcriptionRate": 1.9,
-          "avgTranscribed": 0.09946236559139784,
+          "transcriptionRate": 2,
+          "avgTranscribed": 0.10618279569892473,
           "criteriaMetCount": 3,
           "militaryStudents": 386,
           "nonMilitaryStudents": 3336,
           "apprenticeStudents": 12,
           "savings": 21299425,
           "yearImpact": 98264698,
-          "transcribedUnits": 370
+          "transcribedUnits": 395
         },
         {
           "college": "San Diego Miramar College",
@@ -228,17 +228,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 642,
-          "units": 9037,
-          "avgUnits": 14.076323987538942,
+          "students": 643,
+          "units": 9045,
+          "avgUnits": 14.066874027993778,
           "transcriptionRate": 13.3,
-          "avgTranscribed": 1.8746105919003115,
+          "avgTranscribed": 1.8716951788491447,
           "criteriaMetCount": 3,
-          "militaryStudents": 589,
+          "militaryStudents": 590,
           "nonMilitaryStudents": 68,
           "apprenticeStudents": 0,
-          "savings": 16098737.5,
-          "yearImpact": 57902216.5,
+          "savings": 16112577.5,
+          "yearImpact": 57950752.5,
           "transcribedUnits": 1203.5
         },
         {
@@ -474,16 +474,16 @@
         {
           "college": "Fullerton College",
           "students": 565,
-          "units": 1090,
-          "avgUnits": 1.9292035398230087,
+          "units": 1097,
+          "avgUnits": 1.9415929203539823,
           "transcriptionRate": 0.6,
           "avgTranscribed": 0.012389380530973451,
           "criteriaMetCount": 1,
           "militaryStudents": 562,
           "nonMilitaryStudents": 3,
           "apprenticeStudents": 0,
-          "savings": 1878780,
-          "yearImpact": 6588762,
+          "savings": 1883970,
+          "yearImpact": 6606963,
           "transcribedUnits": 7
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,440",
+      "value": "57,442",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,166"
+          "value": "29,168"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57440,
-    "Units": 276293.9,
-    "TranscribedUnits": 83862.84999999999,
-    "Savings": 390997245.25,
-    "YearImpact": 1589237846.3999999,
-    "MilitaryStudents": 29166,
+    "Students": 57442,
+    "Units": 276313.9,
+    "TranscribedUnits": 83887.84999999999,
+    "Savings": 391024925.25,
+    "YearImpact": 1589334918.3999999,
+    "MilitaryStudents": 29168,
     "NonMilitaryStudents": 28369,
     "AprenticeStudents": 952,
-    "AverageUnits": 4.8101305710306415,
-    "TranscribedAverage": 1.4600078342618383
+    "AverageUnits": 4.810311270498938,
+    "TranscribedAverage": 1.4603922217192993
   }
 }

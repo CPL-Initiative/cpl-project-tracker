@@ -3,9 +3,9 @@
   "_generated_by": "kb/_build_discipline_blanks_worklist.py",
   "_read_this_first": "`corroboration` is the column that matters. Where it says none, or a single row, there is nothing in the payload to check a proposed discipline against — that is why these are here.",
   "_counts": {
-    "blank_after_fill": 86,
-    "subject_codes": 45,
-    "codes_with_no_corroboration": 35,
+    "blank_after_fill": 84,
+    "subject_codes": 43,
+    "codes_with_no_corroboration": 33,
     "codes_corroborated_by_one_row": 5,
     "filled_from_the_subject_map": 0,
     "filled_from_the_identifier_reference": 0
@@ -388,20 +388,6 @@
       "corroboration": "none — no other identity carries this prefix"
     },
     {
-      "subj4": "BRDC",
-      "identities_blank": 1,
-      "ids": [
-        "BRDC M1003"
-      ],
-      "titles": [
-        "Radio Broadcast Lab"
-      ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
-    },
-    {
       "subj4": "CMRT",
       "identities_blank": 1,
       "ids": [
@@ -521,20 +507,6 @@
       ],
       "titles": [
         "Pre-Columbian Art"
-      ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
-    },
-    {
-      "subj4": "FLGH",
-      "identities_blank": 1,
-      "ids": [
-        "FLGH M1002"
-      ],
-      "titles": [
-        "Human Factors and Crew Resource Management"
       ],
       "same_prefix_identities": 0,
       "they_are_filed_under": null,

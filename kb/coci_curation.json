@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-10-20T11:45:19Z",
+  "_synced_at": "2026-10-20T16:03:45Z",
   "count": 30709,
   "curations": {
     "AERO M1001": {
@@ -2185,11 +2185,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ENVR M10SY": {
-      "merge_into": "ENVR M1069",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M10TE": {
       "merge_into": "AGPS M1022",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -2259,11 +2254,6 @@
       "unified_title": "Food Safety in Management",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "ENVR M1104": {
-      "merge_into": "ENVR M1069",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "AGRI M1123": {
       "merge_into": "AGRI M1127",
@@ -3587,46 +3577,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M1663": {
-      "unified_title": "Ceramic-Intermediate Handbuilding",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12GU": {
-      "merge_into": "ARTS M1568",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12GW": {
-      "merge_into": "ARTS M1229",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12GX": {
-      "merge_into": "ARTS M1231",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12GY": {
-      "merge_into": "ARTS M1551",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12GZ": {
-      "merge_into": "ARTS M1597",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12HA": {
-      "merge_into": "ARTS M1662",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12HB": {
-      "merge_into": "ARTS M1459",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ARCH M1001": {
       "unified_title": "Fundamentals of Architectural Design 1",
       "reviewed_by": "automerge-v1@bot",
@@ -4916,26 +4866,6 @@
       "unified_title": "Mold Making Sculptor",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M1665": {
-      "unified_title": "Open Studio: Three-Dimensional Media Lab/Jewelry and Metalwork 3",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M1666": {
-      "unified_title": "Introduction to African Art",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
-    },
-    "ARTS M12HL": {
-      "merge_into": "ARTS M1576",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M12HQ": {
-      "merge_into": "ARTS M1633",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTG M10AA": {
       "merge_into": "ARTS M1577",
@@ -8844,6 +8774,51 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:44:13.007346+00:00"
     },
+    "ARTS M12GU": {
+      "merge_into": "ARTS M1568",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12GW": {
+      "merge_into": "ARTS M1229",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12GX": {
+      "merge_into": "ARTS M1231",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12GY": {
+      "merge_into": "ARTS M1551",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12GZ": {
+      "merge_into": "ARTS M1597",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12HA": {
+      "merge_into": "ARTS M1662",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12HB": {
+      "merge_into": "ARTS M1459",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12HL": {
+      "merge_into": "ARTS M1576",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M12HQ": {
+      "merge_into": "ARTS M1633",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "ARTS M1301": {
       "unified_title": "Graphic Design 2",
       "reviewed_by": "map@rccd.edu",
@@ -9936,6 +9911,21 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1663": {
+      "unified_title": "Ceramic-Intermediate Handbuilding",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1665": {
+      "unified_title": "Open Studio: Three-Dimensional Media Lab/Jewelry and Metalwork 3",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1666": {
+      "unified_title": "Introduction to African Art",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
+    },
     "ARTS M9006": {
       "discipline": "Art",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
@@ -10208,6 +10198,21 @@
     },
     "ARTS M90EY": {
       "merge_into": "ARTS M9037",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M90FG": {
+      "merge_into": "BIOL M9004",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M90FJ": {
+      "merge_into": "FCSH M9055",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARTS M90FK": {
+      "merge_into": "OLAD M9054",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -19679,6 +19684,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AVIA M1094": {
+      "unified_title": "Human Factors and Crew Resource Management",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "AVIA M10AA": {
       "merge_into": "AVIA M1052",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -20624,6 +20634,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AVIA M10QF": {
+      "merge_into": "AVIA M1061",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AVIA M10QI": {
+      "merge_into": "AVIA M1094",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "AVIA M9002": {
       "unified_title": "Aircraft Powerplant - Written Test Review",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -21416,6 +21436,16 @@
     },
     "BCST M10KD": {
       "merge_into": "BCST M1056",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BCST M10KG": {
+      "merge_into": "JOUR M1016",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BCST M10KH": {
+      "merge_into": "FTVE M1144",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -23479,16 +23509,6 @@
     },
     "BIOT M10DT": {
       "merge_into": "BIOT M1027",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "BCST M10KG": {
-      "merge_into": "JOUR M1016",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "BCST M10KH": {
-      "merge_into": "FTVE M1144",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -38275,6 +38295,56 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COSM M10MB": {
+      "merge_into": "COSM M1085",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MC": {
+      "merge_into": "COSM M1088",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MD": {
+      "merge_into": "COSM M1103",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MF": {
+      "merge_into": "COSM M1101",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MG": {
+      "merge_into": "COSM M1102",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MJ": {
+      "merge_into": "COSM M1069",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MM": {
+      "merge_into": "COSM M1031",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MN": {
+      "merge_into": "COSM M1076",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MO": {
+      "merge_into": "COSM M1084",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COSM M10MP": {
+      "merge_into": "COSM M1078",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "COSM M1100": {
       "unified_title": "Fundamentals of Cosmetology Clinic A",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -43980,56 +44050,6 @@
       "merge_into": "CSAI M1004",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "COSM M10MB": {
-      "merge_into": "COSM M1085",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MC": {
-      "merge_into": "COSM M1088",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MD": {
-      "merge_into": "COSM M1103",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MF": {
-      "merge_into": "COSM M1101",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MG": {
-      "merge_into": "COSM M1102",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MJ": {
-      "merge_into": "COSM M1069",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MM": {
-      "merge_into": "COSM M1031",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MN": {
-      "merge_into": "COSM M1076",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MO": {
-      "merge_into": "COSM M1084",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "COSM M10MP": {
-      "merge_into": "COSM M1078",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "CSTF M1001": {
       "unified_title": "Cabinet and Furniture Technology Topics",
@@ -61099,10 +61119,20 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ENVR M10SY": {
+      "merge_into": "ENVR M1069",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "ENVR M1103": {
       "unified_title": "Forest Health and Protection",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ENVR M1104": {
+      "merge_into": "ENVR M1069",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "EPHO M9001": {
       "unified_title": "Fundamentals of Digital Show Presentations (Ei)",
@@ -78814,11 +78844,6 @@
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
     },
-    "FLTA M1006": {
-      "unified_title": "Elementary Filipino (Tagalog)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
     "FIRE M1001": {
       "merge_into": "FIRE M1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -82934,20 +82959,10 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AVIA M1094": {
-      "unified_title": "Human Factors and Crew Resource Management",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "AVIA M10QF": {
-      "merge_into": "AVIA M1061",
+    "FLGR M1001": {
+      "unified_title": "Elementary Modern Standard Greek",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AVIA M10QI": {
-      "merge_into": "AVIA M1094",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FLGR M10AA": {
       "merge_into": "FLGR M1001",
@@ -83187,6 +83202,11 @@
     },
     "FLTA M1004": {
       "unified_title": "Elementary Filipino 2",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FLTA M1006": {
+      "unified_title": "Elementary Filipino (Tagalog)",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
@@ -87348,11 +87368,6 @@
     },
     "GRAF M90AQ": {
       "merge_into": "GRAF M9007",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "FLGR M1001": {
-      "unified_title": "Elementary Modern Standard Greek",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -107431,11 +107446,6 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "JAPN M1041": {
-      "unified_title": "Continuation of Beginning Kanji for Reading and Writing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "JAPN M1001": {
       "merge_into": "JAPN M1021",
       "reviewed_by": "automerge-v1@bot",
@@ -107505,6 +107515,11 @@
       "unified_title": "Elementary Japanese (Second Semester)",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "JAPN M1041": {
+      "unified_title": "Continuation of Beginning Kanji for Reading and Writing",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "JAPN M10AB": {
       "merge_into": "JAPN M1034",
@@ -129167,21 +129182,6 @@
     },
     "MUSI M90FX": {
       "merge_into": "MUSI M9024",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M90FG": {
-      "merge_into": "BIOL M9004",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTS M90FJ": {
-      "merge_into": "FCSH M9055",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "ARTS M90FK": {
-      "merge_into": "OLAD M9054",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
