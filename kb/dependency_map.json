@@ -4,10 +4,10 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 696,
-  "external_services": 182,
-  "consumers": 458,
-  "workflows": 57,
+  "file_datasets": 698,
+  "external_services": 184,
+  "consumers": 460,
+  "workflows": 58,
   "data_js_files": 70,
   "tabs": 39
  },
@@ -573,6 +573,13 @@
   },
   "external:c-id.net": {
    "consumers": [
+    {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 40
+    },
     {
      "id": "script:kb/_ingest_cid_articulations.py",
      "kind": "script",
@@ -1582,6 +1589,18 @@
      "direction": "read",
      "how": "url",
      "line": 32
+    }
+   ],
+   "main_committers": []
+  },
+  "external:github.com/CPL-Initiative/cpl-project-tracker)": {
+   "consumers": [
+    {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 47
     }
    ],
    "main_committers": []
@@ -2608,6 +2627,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 33
     }
    ],
    "main_committers": []
@@ -2768,6 +2794,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:www.data-c-idsystem.org": {
+   "consumers": [
+    {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 42
     }
    ],
    "main_committers": []
@@ -7899,6 +7937,19 @@
    "consumers": [
     {
      "id": "workflow:csr-confirm.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_csr_quarterly_probe.py": {
+   "consumers": [
+    {
+     "id": "workflow:csr-quarterly.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -14491,6 +14542,13 @@
      "line": 95
     },
     {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 31
+    },
+    {
      "id": "script:kb/_mq_title5_rename.py",
      "kind": "script",
      "direction": "read",
@@ -18297,6 +18355,19 @@
    "main_committers": []
   },
   "file:tests/csr_procedures_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/csr_quarterly_probe_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24586,6 +24657,18 @@
    "chain": [],
    "urls": []
   },
+  "csr-quarterly.yml": {
+   "name": "CSR quarterly (probe)",
+   "crons": [],
+   "scripts": [
+    "kb/_csr_quarterly_probe.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "daily-dashboard.yml": {
    "name": "Daily CPL Dashboard",
    "crons": [
@@ -24796,6 +24879,7 @@
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
     "tests/mq_title5_rename_test.py",
+    "tests/csr_quarterly_probe_test.py",
     "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/college_page_read_test.py",
