@@ -45,10 +45,15 @@ MQ_PAGE = ("https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educatio
 TARGETS = [
     {"key": "mq_page", "routine": "mq_list", "url": MQ_PAGE,
      "links": r"minimum.?qualifications.*\.pdf", "follow": True},
-    {"key": "cid_home", "routine": "authority_tables", "url": "https://c-id.net/",
-     "links": r"descriptor|export|download|\.csv"},
-    {"key": "cid_data", "routine": "authority_tables", "url": "https://www.data-c-idsystem.org/",
-     "links": r"descriptor|export|download|\.csv"},
+    # The C-ID site moved from c-id.net to c-idsystem.org (ASCCC); its search pages live on data-c-idsystem.org,
+    # with no www (S437, 2026-10-20: c-idsystem.org/descriptors/ links /descriptors/final there, /courses/ links
+    # /approved-courses). The sandbox proxy refuses the data host, so a runner reads it.
+    {"key": "cid_home", "routine": "authority_tables", "url": "https://c-idsystem.org/",
+     "links": r"descriptor|course|export|download|\.csv|data-c-idsystem"},
+    {"key": "cid_data", "routine": "authority_tables", "url": "https://data-c-idsystem.org/descriptors/final",
+     "links": r"descriptor|export|download|\.csv|\.xlsx|page="},
+    {"key": "cid_courses", "routine": "authority_tables", "url": "https://data-c-idsystem.org/approved-courses",
+     "links": r"export|download|\.csv|\.xlsx|discipline|page="},
 ]
 
 EDITION = re.compile(r"(\d{1,2})(?:st|nd|rd|th)\s*edition", re.I)

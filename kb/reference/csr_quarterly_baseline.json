@@ -13,14 +13,21 @@
     "routine": "authority_tables",
     "edition": null,
     "document_sha256": null,
-    "note": "c-id.net answers a runner 403 (2026-10-20, twice); no baseline until a source a runner can read is found",
+    "note": "c-id.net answered a runner 403 (2026-10-20, twice); the site moved to c-idsystem.org (S437), probed from here on",
     "read_at": "2026-10-20"
   },
   "cid_data": {
     "routine": "authority_tables",
     "edition": null,
     "document_sha256": null,
-    "note": "www.data-c-idsystem.org does not resolve (2026-10-20, twice)",
+    "note": "www.data-c-idsystem.org did not resolve (2026-10-20, twice); the data host is data-c-idsystem.org with no www, its final descriptors at /descriptors/final (S437)",
+    "read_at": "2026-10-20"
+  },
+  "cid_courses": {
+    "routine": "authority_tables",
+    "edition": null,
+    "document_sha256": null,
+    "note": "data-c-idsystem.org/approved-courses, the approved-course search c-idsystem.org/courses/ links (S437); no baseline until a runner reads it",
     "read_at": "2026-10-20"
   }
 }
