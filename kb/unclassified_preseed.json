@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-19T15:02:22Z",
- "_queue_count": 396,
+ "_generated_at": "2026-10-20T13:04:21Z",
+ "_queue_count": 405,
  "_counts": {
-  "staged": 361,
-  "needs_you": 414,
+  "staged": 370,
+  "needs_you": 423,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -994,6 +994,20 @@
     "Rule 6"
    ]
   },
+  "CEM151 Construction Fundamentals: Principles and Practices": {
+   "title": "Construction Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Cabrillo CEM151 credit-by-exam. The course code was stripped and the title joined to the existing house family 'Construction Fundamentals' rather than the hs hint's longer subtitle form. The subtitle 'Principles and Practices' likely names the same course content; faculty may split it later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
+  },
   "CHPS Field Botanist Certification": {
    "title": "Field Botanist Certification",
    "issuer": "California Native Plant Society (CNPS)",
@@ -1446,6 +1460,32 @@
     "brand-family",
     "Rule 1",
     "Rule 3"
+   ]
+  },
+  "City of Santa Cruz IT Specialist I, II, or III": {
+   "title": "City of Santa Cruz IT Specialist I, II, or III",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.65,
+   "note": "Portfolio review of an employer job classification. The cx hint was kept because the employer name and job series are the identity of the experience. Following Rule 5c, the issuer is California Community Colleges, not the employer (issuer-issues-the-card).",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 5c",
+    "issuer-issues-the-card",
+    "Rule 9"
+   ]
+  },
+  "City of Santa Cruz System Administrator": {
+   "title": "City of Santa Cruz System Administrator",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.65,
+   "note": "Portfolio review of an employer job role. The cx hint was kept, and the employer was not made issuer; California Community Colleges is the issuer per Rule 5c.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 5c",
+    "issuer-issues-the-card",
+    "Rule 9"
    ]
   },
   "Clinical Psychology Ph.D.": {
@@ -2966,6 +3006,32 @@
     "join-when-likely-one"
    ]
   },
+  "Industry for EMS 10": {
+   "title": "Paramedic Theory 1",
+   "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "The industry-certification exhibit is really a course (Las Positas EMS 10), so it takes the catalog course title. The underlying industry credential is unnamed, so the paramedic issuer (NREMT) is a guess. California EMSA licensure is the alternative.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Industry for EMS 11": {
+   "title": "Paramedic Theory 2",
+   "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "The industry-certification exhibit names Las Positas EMS 11 and takes the catalog course title. The issuer is a guess (NREMT vs California EMSA) because the industry credential is not named.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "issuer-issues-the-card"
+   ]
+  },
   "Industry for EMS 12": {
    "title": "Paramedic Laboratory 1",
    "issuer": "California Community Colleges",
@@ -3012,6 +3078,32 @@
    "rests_on": [
     "course-identity",
     "Rule 5c"
+   ]
+  },
+  "Industry for EMS 20": {
+   "title": "Emergency Medical Technician",
+   "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "Las Positas EMS 20 maps to the house family 'Emergency Medical Technician'. The college was not made issuer because, for an industry-certification row, the issuer is the cert body. NREMT is chosen over California EMSA with low confidence.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Industry for EMS 30": {
+   "title": "Emergency Medical Responder",
+   "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "Las Positas EMS 30 maps to the house family 'Emergency Medical Responder'. The issuer is taken as the cert body (NREMT) rather than the college, at low confidence.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "issuer-issues-the-card"
    ]
   },
   "Industry for EMS 70": {
@@ -3974,6 +4066,32 @@
    "rests_on": [
     "course-identity",
     "Rule 5c"
+   ]
+  },
+  "Noncredit for FREN 1B": {
+   "title": "Elementary French 2",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Credit-by-exam from the college's own noncredit course to FREN 1B; the cx hint ('Noncredit for FREN 1B') was set aside as a mechanism/code leftover. The catalog title 'Elementary French' was given the second-semester marker to match house shape (Elementary Spanish 2/German 2) and to separate it from FREN 1A.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Noncredit for MATH 100C": {
+   "title": "Concurrent Support for SLAM Mathematics",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "Credit-by-exam from the college's own noncredit course to Las Positas MATH 100C; the catalog course title was used and the cx hint, which kept the mechanism/code phrasing, was set aside. No named external noncredit provider exists, so California Community Colleges is the issuer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
    ]
   },
   "Noncredit for MATH 101C": {

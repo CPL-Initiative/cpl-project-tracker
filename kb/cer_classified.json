@@ -7120,6 +7120,25 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "CEM151 Construction Fundamentals: Principles and Practices": {
+   "raw_title": "CEM151 Construction Fundamentals: Principles and Practices",
+   "unified_title": "Construction Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "Cabrillo CEM151 credit-by-exam. The course code was stripped and the title joined to the existing house family 'Construction Fundamentals' rather than the hs hint's longer subtitle form. The subtitle 'Principles and Practices' likely names the same course content; faculty may split it later.",
+   "rules": "575c290d755b",
+   "hints": "a883145116",
+   "asked": "2026-10-20"
+  },
   "CHPS Field Botanist Certification": {
    "raw_title": "CHPS Field Botanist Certification",
    "unified_title": "Field Botanist Certification",
@@ -9124,6 +9143,42 @@
    "_notes": "COS hint mended: Security concentration kept as a distinct CCNP track (Rule 4); issuer uses house spelling 'Cisco'.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "City of Santa Cruz IT Specialist I, II, or III": {
+   "raw_title": "City of Santa Cruz IT Specialist I, II, or III",
+   "unified_title": "City of Santa Cruz IT Specialist I, II, or III",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 5c",
+    "issuer-issues-the-card",
+    "Rule 9"
+   ],
+   "_notes": "Portfolio review of an employer job classification. The cx hint was kept because the employer name and job series are the identity of the experience. Following Rule 5c, the issuer is California Community Colleges, not the employer (issuer-issues-the-card).",
+   "rules": "575c290d755b",
+   "hints": "27b6a7bfdd",
+   "asked": "2026-10-20"
+  },
+  "City of Santa Cruz System Administrator": {
+   "raw_title": "City of Santa Cruz System Administrator",
+   "unified_title": "City of Santa Cruz System Administrator",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 5c",
+    "issuer-issues-the-card",
+    "Rule 9"
+   ],
+   "_notes": "Portfolio review of an employer job role. The cx hint was kept, and the employer was not made issuer; California Community Colleges is the issuer per Rule 5c.",
+   "rules": "575c290d755b",
+   "hints": "e4a2fc3400",
+   "asked": "2026-10-20"
   },
   "Class C-38 Refrigeration Contractor": {
    "raw_title": "Class C-38 Refrigeration Contractor",
@@ -14585,6 +14640,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Industry for EMS 10": {
+   "raw_title": "Industry for EMS 10",
+   "unified_title": "Paramedic Theory 1",
+   "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.45,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "The industry-certification exhibit is really a course (Las Positas EMS 10), so it takes the catalog course title. The underlying industry credential is unnamed, so the paramedic issuer (NREMT) is a guess. California EMSA licensure is the alternative.",
+   "rules": "575c290d755b",
+   "hints": "6c7529600b",
+   "asked": "2026-10-20"
+  },
+  "Industry for EMS 11": {
+   "raw_title": "Industry for EMS 11",
+   "unified_title": "Paramedic Theory 2",
+   "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.45,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "The industry-certification exhibit names Las Positas EMS 11 and takes the catalog course title. The issuer is a guess (NREMT vs California EMSA) because the industry credential is not named.",
+   "rules": "575c290d755b",
+   "hints": "123188f579",
+   "asked": "2026-10-20"
+  },
   "Industry for EMS 12": {
    "raw_title": "Industry for EMS 12",
    "unified_title": "Paramedic Laboratory 1",
@@ -14652,6 +14743,42 @@
    "rules": "575c290d755b",
    "hints": "170a3273a9",
    "asked": "2026-10-18"
+  },
+  "Industry for EMS 20": {
+   "raw_title": "Industry for EMS 20",
+   "unified_title": "Emergency Medical Technician",
+   "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Las Positas EMS 20 maps to the house family 'Emergency Medical Technician'. The college was not made issuer because, for an industry-certification row, the issuer is the cert body. NREMT is chosen over California EMSA with low confidence.",
+   "rules": "575c290d755b",
+   "hints": "1a71c27715",
+   "asked": "2026-10-20"
+  },
+  "Industry for EMS 30": {
+   "raw_title": "Industry for EMS 30",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Las Positas EMS 30 maps to the house family 'Emergency Medical Responder'. The issuer is taken as the cert body (NREMT) rather than the college, at low confidence.",
+   "rules": "575c290d755b",
+   "hints": "d143879aec",
+   "asked": "2026-10-20"
   },
   "Industry for EMS 70": {
    "raw_title": "Industry for EMS 70",
@@ -17323,6 +17450,42 @@
    "_notes": "Mended the cx hint, which kept 'Noncredit for' and the code. Could not resolve the Las Positas COCI title for ESL 231B, so the discipline(code) fallback is used.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Noncredit for FREN 1B": {
+   "raw_title": "Noncredit for FREN 1B",
+   "unified_title": "Elementary French 2",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Credit-by-exam from the college's own noncredit course to FREN 1B; the cx hint ('Noncredit for FREN 1B') was set aside as a mechanism/code leftover. The catalog title 'Elementary French' was given the second-semester marker to match house shape (Elementary Spanish 2/German 2) and to separate it from FREN 1A.",
+   "rules": "575c290d755b",
+   "hints": "24d43dd330",
+   "asked": "2026-10-20"
+  },
+  "Noncredit for MATH 100C": {
+   "raw_title": "Noncredit for MATH 100C",
+   "unified_title": "Concurrent Support for SLAM Mathematics",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Credit-by-exam from the college's own noncredit course to Las Positas MATH 100C; the catalog course title was used and the cx hint, which kept the mechanism/code phrasing, was set aside. No named external noncredit provider exists, so California Community Colleges is the issuer.",
+   "rules": "575c290d755b",
+   "hints": "baa68b0e14",
+   "asked": "2026-10-20"
   },
   "Noncredit for MATH 101C": {
    "raw_title": "Noncredit for MATH 101C",

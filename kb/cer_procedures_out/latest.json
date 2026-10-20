@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-19T15:02:22Z",
+ "_generated_at": "2026-10-20T13:04:21Z",
  "procedures_hash": "575c290d755b",
- "queue": 396,
+ "queue": 405,
  "saved_not_folded": 0,
- "waiting": 396,
- "proposed": 361,
- "needs_you_count": 414,
+ "waiting": 405,
+ "proposed": 370,
+ "needs_you_count": 423,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -22,7 +22,7 @@
     "skill": "Rule 5d"
    },
    "settled": 0,
-   "held": 85,
+   "held": 88,
    "sample": []
   },
   {
@@ -112,7 +112,7 @@
     "skill": "Rule 5c"
    },
    "settled": 0,
-   "held": 154,
+   "held": 161,
    "sample": []
   },
   {
@@ -128,7 +128,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 41,
+   "held": 47,
    "sample": []
   },
   {
@@ -188,7 +188,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 82,
+   "held": 83,
    "sample": []
   },
   {
@@ -202,11 +202,16 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 396,
+   "held": 405,
    "sample": []
   }
  ],
- "classifier_run": null,
+ "classifier_run": {
+  "calls": 1,
+  "answered": 1,
+  "errors": [],
+  "cost_usd": 0.51
+ },
  "needs_you": [
   {
    "raw_title": "1st Receiver Ops & Decon",
@@ -1314,6 +1319,19 @@
    ]
   },
   {
+   "raw_title": "CEM151 Construction Fundamentals: Principles and Practices",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Construction Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Cabrillo CEM151 credit-by-exam. The course code was stripped and the title joined to the existing house family 'Construction Fundamentals' rather than the hs hint's longer subtitle form. The subtitle 'Principles and Practices' likely names the same course content; faculty may split it later."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
    "raw_title": "CHPS Field Botanist Certification",
    "why": "the classifier is unsure (0.50)",
    "proposal": {
@@ -1766,6 +1784,32 @@
    },
    "colleges": [
     "City College of San Francisco"
+   ]
+  },
+  {
+   "raw_title": "City of Santa Cruz IT Specialist I, II, or III",
+   "why": "the classifier is unsure (0.65)",
+   "proposal": {
+    "title": "City of Santa Cruz IT Specialist I, II, or III",
+    "issuer": "California Community Colleges",
+    "confidence": 0.65,
+    "note": "Portfolio review of an employer job classification. The cx hint was kept because the employer name and job series are the identity of the experience. Following Rule 5c, the issuer is California Community Colleges, not the employer (issuer-issues-the-card)."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
+   "raw_title": "City of Santa Cruz System Administrator",
+   "why": "the classifier is unsure (0.65)",
+   "proposal": {
+    "title": "City of Santa Cruz System Administrator",
+    "issuer": "California Community Colleges",
+    "confidence": 0.65,
+    "note": "Portfolio review of an employer job role. The cx hint was kept, and the employer was not made issuer; California Community Colleges is the issuer per Rule 5c."
+   },
+   "colleges": [
+    "Cabrillo College"
    ]
   },
   {
@@ -3381,6 +3425,32 @@
    ]
   },
   {
+   "raw_title": "Industry for EMS 10",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Paramedic Theory 1",
+    "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+    "confidence": 0.45,
+    "note": "The industry-certification exhibit is really a course (Las Positas EMS 10), so it takes the catalog course title. The underlying industry credential is unnamed, so the paramedic issuer (NREMT) is a guess. California EMSA licensure is the alternative."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for EMS 11",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Paramedic Theory 2",
+    "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+    "confidence": 0.45,
+    "note": "The industry-certification exhibit names Las Positas EMS 11 and takes the catalog course title. The issuer is a guess (NREMT vs California EMSA) because the industry credential is not named."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Industry for EMS 12",
    "why": "the classifier is unsure (0.60)",
    "proposal": {
@@ -3427,6 +3497,32 @@
     "issuer": "California Community Colleges",
     "confidence": 0.6,
     "note": "Course-as-exhibit: the title comes from the catalog course for EMS 17. The industry credential is unnamed, so the issuer is provisional."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for EMS 20",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Emergency Medical Technician",
+    "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+    "confidence": 0.55,
+    "note": "Las Positas EMS 20 maps to the house family 'Emergency Medical Technician'. The college was not made issuer because, for an industry-certification row, the issuer is the cert body. NREMT is chosen over California EMSA with low confidence."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for EMS 30",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Emergency Medical Responder",
+    "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+    "confidence": 0.55,
+    "note": "Las Positas EMS 30 maps to the house family 'Emergency Medical Responder'. The issuer is taken as the cert body (NREMT) rather than the college, at low confidence."
    },
    "colleges": [
     "Las Positas College"
@@ -4486,6 +4582,32 @@
    ]
   },
   {
+   "raw_title": "Noncredit for FREN 1B",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Elementary French 2",
+    "issuer": "California Community Colleges",
+    "confidence": 0.7,
+    "note": "Credit-by-exam from the college's own noncredit course to FREN 1B; the cx hint ('Noncredit for FREN 1B') was set aside as a mechanism/code leftover. The catalog title 'Elementary French' was given the second-semester marker to match house shape (Elementary Spanish 2/German 2) and to separate it from FREN 1A."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for MATH 100C",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "Concurrent Support for SLAM Mathematics",
+    "issuer": "California Community Colleges",
+    "confidence": 0.72,
+    "note": "Credit-by-exam from the college's own noncredit course to Las Positas MATH 100C; the catalog course title was used and the cx hint, which kept the mechanism/code phrasing, was set aside. No named external noncredit provider exists, so California Community Colleges is the issuer."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Noncredit for MATH 101C",
    "why": "the classifier is unsure (0.78)",
    "proposal": {
@@ -5368,7 +5490,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5383,7 +5505,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5398,7 +5520,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5413,7 +5535,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5428,7 +5550,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5443,7 +5565,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5458,7 +5580,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5473,7 +5595,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5488,7 +5610,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5503,7 +5625,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5518,7 +5640,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5533,7 +5655,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5548,7 +5670,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5563,7 +5685,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5578,7 +5700,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5593,7 +5715,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5608,7 +5730,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   },
   {
@@ -5623,7 +5745,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-19",
+   "fold_report": "2026-10-20",
    "colleges": []
   }
  ]
