@@ -5277,7 +5277,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1535
+     "line": 1537
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -5533,7 +5533,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1540
+     "line": 1542
     }
    ],
    "served": true,
@@ -5584,7 +5584,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1526
+     "line": 1528
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -5931,7 +5931,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1539
+     "line": 1541
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -7007,7 +7007,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1554
+     "line": 1556
     }
    ],
    "served": true,
@@ -7280,7 +7280,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1527
+     "line": 1529
     }
    ],
    "served": true,
