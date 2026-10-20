@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49270,
-  "pa": 45142,
+  "pe": 49275,
+  "pa": 45147,
   "ppa": 120,
-  "p2": 3585,
-  "p3": 16752,
+  "p2": 3587,
+  "p3": 16754,
   "pp": 6,
   "ppe": 130,
-  "pac": 5276,
-  "ptc": 4605,
-  "pe_u": 1505911.45,
-  "pa_u": 275585.4,
+  "pac": 5278,
+  "ptc": 4607,
+  "pe_u": 1506021.45,
+  "pa_u": 275610.4,
   "ppa_u": 728.5,
   "ppe_u": 6995.5,
-  "pac_u": 37724.7,
-  "ptc_u": 31363.65,
-  "p3_u": 83824.35,
+  "pac_u": 37745.7,
+  "ptc_u": 31384.65,
+  "p3_u": 83845.35,
   "pp_u": 63.5
  },
  "colleges": {
@@ -1089,17 +1089,21 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 105.0,
    "ppa": 0,
    "ppa_u": 0.0,
-   "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
+   "p2": null,
+   "p2_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true,
+   "p3_u": 9.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 0,
-   "pac_u": 0.0,
-   "ptc": 0,
-   "ptc_u": 0.0
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 9.0,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 9.0
   },
   "Madera": {
    "pe": 49,
@@ -1454,23 +1458,23 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Palo Verde": {
-   "pe": 25,
-   "pe_u": 809.75,
-   "pa": 25,
-   "pa_u": 386.75,
+   "pe": 26,
+   "pe_u": 821.75,
+   "pa": 26,
+   "pa_u": 398.75,
    "ppa": 0,
    "ppa_u": 0.0,
-   "p2": 15,
-   "p3": 16,
-   "p3_u": 359.75,
+   "p2": 16,
+   "p3": 17,
+   "p3_u": 371.75,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 16,
-   "pac_u": 359.75,
-   "ptc": 16,
-   "ptc_u": 359.75
+   "pac": 17,
+   "pac_u": 371.75,
+   "ptc": 17,
+   "ptc_u": 371.75
   },
   "Pasadena": {
    "pe": 139,
@@ -1719,10 +1723,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "San Francisco": {
-   "pe": 1840,
-   "pe_u": 82943.5,
-   "pa": 1839,
-   "pa_u": 13698.5,
+   "pe": 1841,
+   "pe_u": 82944.5,
+   "pa": 1840,
+   "pa_u": 13699.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 11.0,
@@ -1802,10 +1806,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Santa Ana": {
-   "pe": 474,
-   "pe_u": 16845.5,
-   "pa": 469,
-   "pa_u": 2115.7,
+   "pe": 477,
+   "pe_u": 16942.5,
+   "pa": 472,
+   "pa_u": 2127.7,
    "ppa": 12,
    "ppa_u": 38.0,
    "p2": null,
@@ -2847,7 +2851,8 @@ window.CPL_FUNDING_PERF = {
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Military": {
     "pe": null,
@@ -3312,7 +3317,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": null,
     "pa": null,
-    "p3": 16,
+    "p3": 17,
     "pe_suppressed": true,
     "pa_suppressed": true
    },
@@ -3583,8 +3588,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 12,
-    "pa": 12,
+    "pe": 13,
+    "pa": 13,
     "p3": null,
     "p3_suppressed": true
    },
@@ -3664,8 +3669,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 382,
-    "pa": 382,
+    "pe": 385,
+    "pa": 385,
     "p3": 0
    },
    "Portfolio Review": {
@@ -3961,9 +3966,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 42
   },
   "Industry Certification": {
-   "pe": 1430,
-   "pa": 1407,
-   "p3": 1188
+   "pe": 1432,
+   "pa": 1409,
+   "p3": 1190
   },
   "Industry Certification | Military": {
    "pe": 56,
@@ -4008,8 +4013,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28577,
-   "pa": 26230,
+   "pe": 28580,
+   "pa": 26233,
    "p3": 2583
   },
   "Military | Other": {
@@ -4065,14 +4070,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1505911.45,
-   "pa_u": 275585.4,
-   "p3_u": 83824.35
+   "pe_u": 1506021.45,
+   "pa_u": 275610.4,
+   "p3_u": 83845.35
   },
   "map": {
-   "pe_u": 1512906.95,
-   "pa_u": 276313.9,
-   "p3_u": 83887.85
+   "pe_u": 1513016.95,
+   "pa_u": 276338.9,
+   "p3_u": 83908.85
   },
   "ratio": {
    "pe_u": 1.0046,
@@ -4105,8 +4110,8 @@ window.CPL_FUNDING_PERF = {
   "San Bernardino": true,
   "Desert": true,
   "Modesto": true,
-  "Cypress": true,
   "Santa Ana": true,
+  "Cypress": true,
   "Barstow": true,
   "LA Valley": true,
   "Santa Rosa": true,
@@ -4149,8 +4154,8 @@ window.CPL_FUNDING_PERF = {
   "West Valley": true,
   "Skyline": false,
   "Berkeley City": true,
-  "Copper Mountain": true,
   "Palo Verde": false,
+  "Copper Mountain": true,
   "Foothill": false,
   "Pasadena": false,
   "West Hills Coalinga": false,
@@ -4321,15 +4326,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 151,
    "pct": 1.8875
   },
+  "Santa Ana": {
+   "vets": 334,
+   "jst": 387,
+   "pct": 1.1587
+  },
   "Cypress": {
    "vets": 259,
    "jst": 387,
    "pct": 1.4942
-  },
-  "Santa Ana": {
-   "vets": 334,
-   "jst": 384,
-   "pct": 1.1497
   },
   "Barstow": {
    "vets": 106,
@@ -4541,15 +4546,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 52,
    "pct": 1.2381
   },
-  "Copper Mountain": {
-   "vets": 72,
-   "jst": 82,
-   "pct": 1.1389
-  },
   "Palo Verde": {
    "vets": 24,
    "jst": null,
    "jst_suppressed": true
+  },
+  "Copper Mountain": {
+   "vets": 72,
+   "jst": 82,
+   "pct": 1.1389
   },
   "Foothill": {
    "vets": 915,

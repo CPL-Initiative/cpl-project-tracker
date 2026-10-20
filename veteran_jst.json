@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-20T16:03:31.771429+00:00",
+  "scraped_at": "2026-10-20T17:20:16.739871+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29168,
+    "jst": 29171,
     "star_colleges": 63
   },
   "computed_star_colleges": 63,
@@ -130,14 +130,14 @@
       "jst": 151,
       "star": true
     },
-    "Cypress College": {
-      "vets": 259,
+    "Santa Ana College": {
+      "vets": 334,
       "jst": 387,
       "star": true
     },
-    "Santa Ana College": {
-      "vets": 334,
-      "jst": 384,
+    "Cypress College": {
+      "vets": 259,
+      "jst": 387,
       "star": true
     },
     "Barstow Community College": {
@@ -350,15 +350,15 @@
       "jst": 52,
       "star": true
     },
-    "Copper Mountain College": {
-      "vets": 72,
-      "jst": 82,
-      "star": true
-    },
     "Palo Verde College": {
       "vets": 24,
       "jst": 9,
       "star": false
+    },
+    "Copper Mountain College": {
+      "vets": 72,
+      "jst": 82,
+      "star": true
     },
     "Foothill College": {
       "vets": 915,
