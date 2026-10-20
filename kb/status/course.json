@@ -5,23 +5,10 @@
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_430_handoff.md",
-  "calls": [
-    {
-      "title": "Sheet 102 card 4: the CCR in the Credential Registry",
-      "text": "Hold the M-IDs out of the Registry until the layer is declared faculty-published, or publish settled clusters now. A CTID names one version for good, and the CCR's class, TransferIntermediary, is still marked unstable in CTDL.",
-      "no_reply": "Nothing is published; the crosswalk would carry M-IDs privately in the exchange.",
-      "link": "https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4"
-    },
-    {
-      "title": "Sheet 102 card 5: WestEd and the CCR",
-      "text": "WestEd's reviewers proposing on COBI's surfaces, their entries confirmed by a COBI curator, or a WestEd-hosted copy synced back. 17,033 cards sit at needs review.",
-      "no_reply": "WestEd's part in the CCR stays undefined, and the review backlog stays with COBI's curators.",
-      "link": "https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4"
-    }
-  ],
+  "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-20T00:32:15Z",
+  "written_at": "2026-10-20T00:38:24Z",
   "project": "course",
   "next_step": {
     "title": "Finish the Common Course Reference list's UI pass",
@@ -31,6 +18,10 @@
     {
       "at": "2026-10-20T00:31:27Z",
       "text": "No change to the CCR this run; two calls from the CTDL partner exchange lane wait on Sam (Sheet 102 cards 4 and 5)."
+    },
+    {
+      "text": "Sam answered Open Asks Sheet 102 (00:31Z, all six as recommended); its calls left the run log.",
+      "at": "2026-10-20T00:37:45Z"
     }
   ]
 }

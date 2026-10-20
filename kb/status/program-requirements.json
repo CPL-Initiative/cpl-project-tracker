@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T00:32:15Z",
+  "written_at": "2026-10-20T00:38:24Z",
   "session": 428,
   "moniker": "SkyPinyon",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_430_handoff.md",
   "next_step": {
-    "title": "Sam's calls on Open Asks Sheet 102, then the AGRI sitting",
-    "text": "Read Sheet 102's replies first: the exchange with Credential Engine and WestEd, the pilot over CE's ten Ready to Publish colleges, and the Commons' Linked step wait on them. The queue continues with the Jev sitting over the AGRI residual (Sheet 99 card 4) and the nine renames (card 6)."
+    "title": "Apply Sheet 102's rulings: the exchange's files for Malone, then the AGRI sitting",
+    "text": "Draft the exchange repository's README, CLAUDE.md and contract v0 for Malone, add the three decision rights, then the queue: the Jev sitting over the AGRI residual (Sheet 99 card 4) and the nine renames (card 6)."
   },
   "calls": [
     {
@@ -17,12 +17,6 @@
       "text": "Sam ruled later on Open Asks Sheet 98 card 2 (13:41Z, 2026-10-19): a new subscription first, which will take a few days. When he says it is set: the Edge Function secrets XAI_API_KEY and XAI_MODEL on project hvuwhnbuahrtptokpqfh, cpl-chat-deploy.yml for program-requirements-extract, then second-reader.yml with college Canada College.",
       "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
       "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu"
-    },
-    {
-      "title": "Sheet 102 card 2: the pilot with Credential Engine",
-      "text": "CE's ten Ready to Publish colleges at once, keyed on COCI control numbers, or two of them first. The harvest holds 1,822 records at the ten; COBI returns the crosswalk to COCI, three sample Pathways in CTDL and its findings before CE publishes.",
-      "no_reply": "Nothing moves with CE: no exchange repository, no crosswalk, and CE's ten extracts stay unread against the harvest.",
-      "link": "https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4"
     }
   ],
   "notes": {
@@ -32,6 +26,10 @@
     {
       "text": "No change to the harvest's records this run. S428 read Credential Engine's xTRA code and its ten Ready to Publish colleges' extracts, mapped the harvest's 36,090 blocks to CTDL, and opened the CTDL partner exchange lane and Open Asks Sheet 102.",
       "at": "2026-10-20T00:31:27Z"
+    },
+    {
+      "text": "Sam answered Open Asks Sheet 102 (00:31Z, all six as recommended); its calls left the run log.",
+      "at": "2026-10-20T00:37:45Z"
     }
   ],
   "headline": [

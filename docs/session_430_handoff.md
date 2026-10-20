@@ -21,6 +21,8 @@ read it only if Sam opens you for the funding tab. If the routine started you, f
   the harvest with WestEd and Credential Engine; code instructional data with CTDL for portability and national scale;
   *"Let's keep COBI authoritative in all this and plug in where it makes sense"*; Malone is integral as tech lead; does
   the Commons need a step; how to keep the cooks apart.
+- **00:29-00:31Z, Open Asks Sheet 102**, all six as recommended: exchange, all-ten (*"Provided you think it's as good as
+  our pull."*), linked-step, hold, reviewers, as-proposed.
 - **~23:55Z:** CE's Antelope Valley courses and programs sheets, *"to see what they are capturing and how they are coding
   with CTDL."*
 
@@ -34,19 +36,20 @@ read it only if Sam opens you for the funding tab. If the routine started you, f
   readers of one catalog, first steps), a work-lanes drawing, the cooks, the exchange repository for Malone, the
   Commons' Linked step, sources.
 - **[Open Asks Sheet 102](https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4)** (`SHEET_ID` `2026-10-20-open-asks-102`,
-  db and comments, store empty at publish): six cards, all from the new lane.
+  db and comments, store empty at publish): six cards, all from the new lane, **answered** at 00:31Z (all six as recommended).
 - **The lane** `docs/reference/lanes/ctdl-partner-exchange.md` and its §11 row; the KB note
   `docs/kb-notes/reference-ctdl-classes-for-cobi-records.md`; the lessons `docs/ctdl_partner_exchange_lessons.md`.
-- **`cpl_memory`:** six rows under `S428 SkyPinyon` (Sam's, verified; five proposed), each logged in `cpl_memory_log`.
+- **`cpl_memory`:** seven rows under `S428 SkyPinyon` (two of Sam's, verified; five proposed), each logged in `cpl_memory_log`.
 
 ## Priority
 
-1. **Sheet 102's replies first** (`ArtifactData` `list`, collection `replies`, on its URL). Apply each ruling in the
-   lane and drop the card from `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py` in one PR per repo, the
-   tracker's first. On card 1 *exchange*: a session cannot create a repository in the CPL-Initiative organization; draft
-   the exchange's `README.md`, `CLAUDE.md` and contract v0 (the field lists, the identifier rules, the CTDL mapping, JSON
-   Schemas) as files and hand Malone the paste. On card 2: the crosswalk ingest of CE's extracts waits for the exchange;
-   partner data never lands in the public tracker.
+1. **Apply Sheet 102's rulings** (answered 00:29-00:31Z, all six his own call, as recommended; the lane's RULED block
+   and `cpl_memory` `sam-sheet-102-rulings-2026-10-20`). Card 1: a session cannot create a repository in the
+   CPL-Initiative organization, so draft the exchange's `README.md`, `CLAUDE.md` and contract v0 (the field lists, the
+   identifier rules, the CTDL mapping, JSON Schemas) as files and hand Malone the paste. Card 6: the three decision rights
+   in `kb/governance_register.json` and the crosswalk on `kb/governance_surface_map.json`. Card 2 waits for CE's extracts
+   in the exchange; Sam's condition (*"Provided you think it's as good as our pull"*) is answered in the lane: the pilot's
+   agreement rate per college is the measure, and CE's rows replace nothing of ours. Card 3, the Linked step, after.
 2. **The queue (handoff 428's 2 to 4):** ruling 4, the Jev sitting over the AGRI residual (`typesafe-smoke.yml`
    `agri_families=true`, the run's `jev-agri-families` artifact, a card for Sam); ruling 6, the nine renames under one
    window; then the quarterly routines, the 110 strays and the Commons' remaining Progress views.

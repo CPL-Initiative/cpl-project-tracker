@@ -32,7 +32,7 @@ block-by-block mapping of a harvest record to a Pathway, and what xTRA's keys ar
 
 ## Status
 
-🔨 **Scoped (S428, 2026-10-20); nothing built.** The plan in one line: one owner per fact, one writer per store,
+🔨 **Ruled (Sheet 102, 2026-10-20); nothing built.** The plan in one line: one owner per fact, one writer per store,
 partners file into a private exchange repository Malone administers, and COBI's contribution is the crosswalk from
 every COBI record to the state's numbers and, once published, its CTID.
 
@@ -62,24 +62,29 @@ the unit minimum, which needs `Constraint`/`hasConstraint` (unstable, CE's condi
 `course_outcomes` holds 7,450 courses at nine colleges, three of them among CE's ten (Coastline 522, Moreno
 Valley 674, Norco 817), so CE's course competencies there have a second reading on our side.
 
-## NEEDS SAM ([Open Asks Sheet 102](https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4), `SHEET_ID` `2026-10-20-open-asks-102`, published 2026-10-20, store empty at publish)
+## RULED (Sam, [Open Asks Sheet 102](https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4), 00:29-00:31Z 2026-10-20, all six his own call; `cpl_memory` `sam-sheet-102-rulings-2026-10-20`)
 
-1. Where partners work: a private exchange repository under CPL-Initiative that Malone administers, or folders in the
-   tracker.
-2. The pilot: CE's ten Ready to Publish colleges at once, keyed on COCI control numbers, or two of them first.
-3. The Commons: a Linked step at the end of each reference, or a sixth Commons row.
-4. The CCR in the Registry: hold the M-IDs out until the layer is declared faculty-published, or publish settled
-   clusters now.
-5. WestEd and the CCR: reviewers proposing on COBI's surfaces with COBI curators confirming, or a WestEd-hosted copy
-   synced back.
-6. The three decision rights the crosswalk creates (partner intake, match confirmation, Registry publishing) and their
-   owners.
+1. *exchange*: a private exchange repository under CPL-Initiative that Malone administers.
+2. *all-ten*: CE's ten Ready to Publish colleges at once, keyed on COCI control numbers, with his condition
+   *"Provided you think it's as good as our pull."* S428's answer: for program requirements it is not, since xTRA reads
+   none; for courses, credentials and outcomes the pilot measures it, college by college, against COCI and our records.
+   CE's rows enter as a second reading and a source of CTIDs and outcomes, and replace nothing of ours.
+3. *linked-step*: a Linked step at the end of each Commons reference, after Complete.
+4. *hold*: the CCR stays out of the Registry until the M-ID layer is declared faculty-published.
+5. *reviewers*: WestEd's reviewers propose on COBI's surfaces; a COBI curator confirms; M-ID minting stays with the CPL
+   Initiative.
+6. *as-proposed*: three new decision rights, partner intake (Malone), match confirmation (Sam, until he delegates it to
+   a curator) and Registry publishing (Sam).
 
 ## NEXT
 
-- On Sheet 102's answers: the exchange repository's `README`, `CLAUDE.md` and contract v0 (Malone's lane; a session
-  drafts them as files for him), then the pilot's crosswalk and three sample Pathways in CTDL JSON-LD.
-- The crosswalk table goes on `kb/governance_surface_map.json` before it is built (Rule 10 a3), with the three decision
-  rights in `kb/governance_register.json`.
-- Ask CE (Sam or Malone, not a session): whether a re-upload matches on External Identifier, and how they plan to
-  publish requirement structures (their `doc/future-direction.md` names it as their next step).
+- Card 1: draft the exchange repository's `README.md`, `CLAUDE.md` and contract v0 (the field lists, the identifier
+  rules, the CTDL mapping, JSON Schemas) as files and hand Malone the paste; a session cannot create a repository in the
+  CPL-Initiative organization.
+- Card 6: the three decision rights in `kb/governance_register.json`, and the crosswalk table on
+  `kb/governance_surface_map.json`, before the table is built (Rule 10 a3).
+- Card 2: once the exchange holds CE's ten extracts, the crosswalk to COCI and our records, the agreement rate per
+  college (the answer to Sam's condition), three sample Pathways in CTDL JSON-LD, and the findings back to CE.
+- Card 3: the Linked step in `commons_progress.js`, Program Requirements first, with its procedure card and check.
+- Ask CE (Sam or Malone, not a session): whether a re-upload matches on External Identifier, and how CE plans to link
+  programs to courses.
