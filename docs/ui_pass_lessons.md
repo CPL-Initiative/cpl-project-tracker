@@ -312,3 +312,16 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
 - **A CSS-reading guard has to strip comments first.** The first draft of `tests/sierra_feedback_words.test.js`
   anchored rules on a preceding `}` and missed every rule that followed a comment; it read 7/18 on the new CSS too.
   Stripped, it reads 18/18 on the new CSS and 7/18 on the old.
+
+## S435 SkyToyon (2026-10-20): the veteran map, the controls as words
+
+- **The same gap, the same reason.** All three veteran-map targets (light, dark, embedded) swept clean at nine widths
+  before the change. The pass found one thing: Zoom in, Zoom out, Reset and the region buttons were still pills, and
+  the region pick was a seal-blue fill. The Controls rule (2026-10-09) is newer than the map's last pass, the same day.
+  They are now underlined cobalt words, 24px tall, 18px apart. The pick is weight 700, ink, a 2px underline and
+  `aria-pressed`. The sweep reads clean after the change too.
+- **A tab strip is not a control set.** The panel tabs (Details, Colleges, Installations) keep their underline bar.
+  A tab goes somewhere; the rule covers a control that acts.
+- **Edit the builder, never the page.** The map is built by `veteran-sprint-map/build_selfcontained.py`, and CI's
+  `--check` fails a hand edit. The guard `tests/veteran_map_controls_words.test.js` reads the built page's CSS: 10/10
+  on the new rules, 2/10 on the old.

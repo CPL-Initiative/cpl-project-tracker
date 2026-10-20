@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T09:37:01Z",
-  "session": 434,
-  "moniker": "SkyElderberry",
+  "written_at": "2026-10-20T10:32:23Z",
+  "session": 435,
+  "moniker": "SkyToyon",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_435_handoff.md",
+  "handoff": "docs/session_436_handoff.md",
   "next_step": {
-    "title": "Move the two forestry stragglers on Sam's word, or work the strays",
-    "text": "Open Asks Sheet 105 still waits: on move-both the next session applies the committed dry run for Forest Surveying and Introduction to Forest Operations in one window. Otherwise it takes the 110 stray codes through the discipline-blank worklist, which a curator answers, toward one re-key window."
+    "title": "Apply Sheet 106's answers in one re-key window, or build the Commons' next Progress view",
+    "text": "Open Asks Sheet 106 asks three things: move the two forestry stragglers, re-key the twelve Foreign Languages courses on stray codes to their language's code, and file the 79 courses on eight stray codes whose two signals agree. On Sam's answers the next session applies them in one window. Until then it builds the Commons' Exhibit Progress view."
   },
   "calls": [
     {
@@ -24,8 +24,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-20T09:36:00Z",
-      "text": "Sierra's public page shows Copy, Helpful and Not helpful as underlined words instead of pills, after its third interface check (#2281)."
+      "at": "2026-10-20T10:40:00Z",
+      "text": "The veteran map's Zoom in, Zoom out, Reset and region buttons are underlined words instead of pills, after its interface check."
+    },
+    {
+      "at": "2026-10-20T10:25:00Z",
+      "text": "The 110 identity codes that are neither a common subject code nor an umbrella code are sorted by whether their answer can be checked; three questions went to Sam on Open Asks Sheet 106."
     }
   ],
   "headline": [

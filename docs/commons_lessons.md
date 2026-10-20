@@ -324,3 +324,17 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
   stamp so the daily sync takes it, and names the sheet's store as its source. The receipt's header carries the
   before-images and the rollback; the session's own JSON receipt carries the identity file and overlay before/after.
   A cohort note that said the identity waits on his card is updated in the same file, so no store keeps the old state.
+
+## S435 SkyToyon (2026-10-20): the 110 strays, sorted by whether the answer can be checked
+
+- **A stray splits two ways.** 9 of the 110 codes (12 identities) already carry a discipline, Foreign Languages. Their
+  answer is a code, which the umbrella's 2026-06-09 model gives: one code per language, FL plus two letters where no
+  authority code exists. The other 101 carry none and are the curator's (Sam, 2026-09-08).
+- **A stray has no prefix-mates, so the blank worklist's signal is empty for it.** `kb/_csr_stray_triage.py` reads the
+  colleges' own signal instead: for each member course, the discipline that college's other identities on the same
+  local subject carry. 15 codes pass 85% of at least 10 votes. The titles agree on 8 (79 identities) and disagree on
+  3 (SGNG's sign-making reads Work Experience, CMPE's drone course Computer Information Systems, RTVF's radio course
+  Film); 4 are a single course each. A vote that passes the gate still needs the second signal.
+- **The re-key went on a card.** S432's apply of the same shape was held by the session's permission check, and one
+  window can carry the forestry stragglers, the twelve FL re-keys and the eight blanks together. Open Asks Sheet 106,
+  cards 1 to 3; the FL dry run (`kb/_fl_stray_remint.py`) passes every gate.

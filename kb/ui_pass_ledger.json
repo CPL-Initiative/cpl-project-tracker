@@ -14,8 +14,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": "2026-10-09",
-   "outcome": "Ported to First Light on Sam's Sheet 55 ruling (S350): tokens in :root only, dark on the cpl_theme contract and followed live inside COBI, the two faces embedded; AA, the 24px floor (pins exempt through the two directories) and the keyboard pass at nine widths, light, dark and embedded. Fixed on the way: COBI's Military Partnerships frame overflowed by 170 to 280px and shrank the stars to 4px; ?embed=1 fills the frame and a marker size floor holds the approved size."
+   "last": "2026-10-20",
+   "outcome": "S435: sweeps clean light, dark and embed (9 widths each) before and after. The one gap was the Controls rule (2026-10-09, newer than the 10-09 pass): Zoom in, Zoom out, Reset and the region buttons were pills, the region pick a seal-blue fill. All are now underlined cobalt words, 24px tall, 18px apart, the pick marked by weight 700, ink and a 2px underline with aria-pressed. Guard tests/veteran_map_controls_words.test.js reads 10/10 on the new CSS, 2/10 on the old. Remainder: the panel tabs (Details, Colleges, Installations) keep their underline-bar tab strip; a tab is navigation, not an action."
   },
   {
    "id": "skyview",
