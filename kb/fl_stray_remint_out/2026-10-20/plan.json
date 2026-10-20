@@ -1,0 +1,229 @@
+{
+  "scopes": [
+    "fl-strays-s435"
+  ],
+  "moves": {
+    "ARAM M10AA": {
+      "old_id": "ARAM M10AA",
+      "source": "singleton",
+      "title": "Aramaic 1",
+      "route": "FLAM",
+      "why": "Aramaic (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1101.00",
+      "merged_into": null,
+      "new_id": "FLAM M10AA",
+      "how": "kept number"
+    },
+    "ARAM M10AB": {
+      "old_id": "ARAM M10AB",
+      "source": "singleton",
+      "title": "Aramaic 2",
+      "route": "FLAM",
+      "why": "Aramaic (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1101.00",
+      "merged_into": null,
+      "new_id": "FLAM M10AB",
+      "how": "kept number"
+    },
+    "ARAM M10AC": {
+      "old_id": "ARAM M10AC",
+      "source": "singleton",
+      "title": "Aramaic 3",
+      "route": "FLAM",
+      "why": "Aramaic (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1101.00",
+      "merged_into": null,
+      "new_id": "FLAM M10AC",
+      "how": "kept number"
+    },
+    "FILI M1001": {
+      "old_id": "FILI M1001",
+      "source": "minted",
+      "title": "Elementary Filipino (Tagalog)",
+      "route": "FLTA",
+      "why": "Filipino (Tagalog)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": null,
+      "top_code": "1117.10",
+      "merged_into": null,
+      "new_id": "FLTA M1006",
+      "how": "gap-filled"
+    },
+    "GREE M1001": {
+      "old_id": "GREE M1001",
+      "source": "minted",
+      "title": "Elementary Modern Standard Greek",
+      "route": "FLGR",
+      "why": "Greek",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": null,
+      "top_code": "1110.00",
+      "merged_into": null,
+      "new_id": "FLGR M1001",
+      "how": "kept number"
+    },
+    "HIER M10AA": {
+      "old_id": "HIER M10AA",
+      "source": "singleton",
+      "title": "Egypt Hieroglyphs 1",
+      "route": "FLEG",
+      "why": "Egyptian hieroglyphs (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1199.00",
+      "merged_into": null,
+      "new_id": "FLEG M10AA",
+      "how": "kept number"
+    },
+    "HUPA M10AA": {
+      "old_id": "HUPA M10AA",
+      "source": "singleton",
+      "title": "Elementary Hupa 1A",
+      "route": "FLHU",
+      "why": "Hupa (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1199.00",
+      "merged_into": null,
+      "new_id": "FLHU M10AA",
+      "how": "kept number"
+    },
+    "HUPA M10AB": {
+      "old_id": "HUPA M10AB",
+      "source": "singleton",
+      "title": "Elementary Hupa 1B",
+      "route": "FLHU",
+      "why": "Hupa (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1199.00",
+      "merged_into": null,
+      "new_id": "FLHU M10AB",
+      "how": "kept number"
+    },
+    "JAPA M1001": {
+      "old_id": "JAPA M1001",
+      "source": "minted",
+      "title": "Continuation of Beginning Kanji for Reading and Writing",
+      "route": "JAPN",
+      "why": "Japanese",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": null,
+      "top_code": "1108.00",
+      "merged_into": null,
+      "new_id": "JAPN M1041",
+      "how": "gap-filled"
+    },
+    "KHME M1001": {
+      "old_id": "KHME M1001",
+      "source": "minted",
+      "title": "Khmer for Heritage Speakers",
+      "route": "FLKH",
+      "why": "Khmer (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1117.00",
+      "merged_into": null,
+      "new_id": "FLKH M1001",
+      "how": "kept number"
+    },
+    "LING M10AF": {
+      "old_id": "LING M10AF",
+      "source": "singleton",
+      "title": "Honors Linguistics 1",
+      "route": "FLNG",
+      "why": "no one language: the residual",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1199.00",
+      "merged_into": null,
+      "new_id": "FLNG M10AF",
+      "how": "kept number"
+    },
+    "TURK M10AA": {
+      "old_id": "TURK M10AA",
+      "source": "singleton",
+      "title": "Elementary Turkish 1",
+      "route": "FLTU",
+      "why": "Turkish (new)",
+      "discipline": "Foreign Languages",
+      "discipline_before": "Foreign Languages",
+      "discipline_source_before": "top_division",
+      "top_code": "1199.00",
+      "merged_into": null,
+      "new_id": "FLTU M10AA",
+      "how": "kept number"
+    }
+  },
+  "alias": {
+    "ARAM M10AA": "FLAM M10AA",
+    "ARAM M10AB": "FLAM M10AB",
+    "ARAM M10AC": "FLAM M10AC",
+    "FILI M1001": "FLTA M1006",
+    "GREE M1001": "FLGR M1001",
+    "HIER M10AA": "FLEG M10AA",
+    "HUPA M10AA": "FLHU M10AA",
+    "HUPA M10AB": "FLHU M10AB",
+    "JAPA M1001": "JAPN M1041",
+    "KHME M1001": "FLKH M1001",
+    "LING M10AF": "FLNG M10AF",
+    "TURK M10AA": "FLTU M10AA"
+  },
+  "validation": {
+    "V0_pinned_set": {
+      "pass": true,
+      "problems": [],
+      "found": 12,
+      "pinned": 12
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    },
+    "V6_new_codes_unused": {
+      "pass": true,
+      "in_use": []
+    }
+  },
+  "gapfilled": [
+    {
+      "old_id": "FILI M1001",
+      "wanted": "FLTA M1001",
+      "new_id": "FLTA M1006",
+      "why": "FILI M1001 -> FLTA (fl-strays-s435)"
+    },
+    {
+      "old_id": "JAPA M1001",
+      "wanted": "JAPN M1001",
+      "new_id": "JAPN M1041",
+      "why": "JAPA M1001 -> JAPN (fl-strays-s435)"
+    }
+  ],
+  "reused_retired_ids": [
+    "FLNG M10AF"
+  ]
+}

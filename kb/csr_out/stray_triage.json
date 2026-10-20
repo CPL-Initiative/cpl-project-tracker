@@ -1,0 +1,3063 @@
+{
+ "_generated_by": "kb/_csr_stray_triage.py",
+ "_scanned_at": null,
+ "_gate": {
+  "share": 0.85,
+  "voters": 10
+ },
+ "_counts": {
+  "stray_codes": 110,
+  "with_discipline": 9,
+  "no_discipline": 101,
+  "checkable": 15,
+  "checkable_identities": 97
+ },
+ "with_discipline": [
+  {
+   "code": "ARAM",
+   "ids": 3,
+   "disciplines": {
+    "Foreign Languages": 3
+   }
+  },
+  {
+   "code": "HUPA",
+   "ids": 2,
+   "disciplines": {
+    "Foreign Languages": 2
+   }
+  },
+  {
+   "code": "FILI",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  },
+  {
+   "code": "GREE",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  },
+  {
+   "code": "HIER",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  },
+  {
+   "code": "JAPA",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  },
+  {
+   "code": "KHME",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  },
+  {
+   "code": "LING",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  },
+  {
+   "code": "TURK",
+   "ids": 1,
+   "disciplines": {
+    "Foreign Languages": 1
+   }
+  }
+ ],
+ "no_discipline": [
+  {
+   "code": "ARCE",
+   "identities": 17,
+   "voters": 77,
+   "lead": "Art",
+   "share": 0.97,
+   "runners_up": [
+    [
+     "Multimedia",
+     1
+    ],
+    [
+     "Work Experience Instructors",
+     1
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "Monterey Peninsula College",
+    "Rio Hondo College"
+   ],
+   "titles": [
+    "Ceramic Handbuilding 2",
+    "Alternative Firing Techniques",
+    "Alternative Throwing Techniques",
+    "Ceramic Handbuilding 1",
+    "Ceramic Handbuilding 3",
+    "Ceramic Handbuilding 4",
+    "Ceramic Surface Design and Techniques",
+    "Ceramic Wheel Throwing 1",
+    "Ceramic Wheel Throwing 2",
+    "Ceramic Wheel Throwing 3",
+    "Ceramic Wheel Throwing 4",
+    "Clay and Glass",
+    "Introduction to Glaze Experimentation",
+    "Kiln-Formed Glass 1",
+    "Kiln-Formed Glass 2",
+    "Kiln-Formed Glass 3",
+    "Kiln-Formed Glass 4"
+   ],
+   "ids": [
+    "ARCE M1001",
+    "ARCE M10AA",
+    "ARCE M10AB",
+    "ARCE M10AC",
+    "ARCE M10AD",
+    "ARCE M10AE",
+    "ARCE M10AF",
+    "ARCE M10AG",
+    "ARCE M10AH",
+    "ARCE M10AI",
+    "ARCE M10AJ",
+    "ARCE M10AK",
+    "ARCE M10AL",
+    "ARCE M10AM",
+    "ARCE M10AN",
+    "ARCE M10AO",
+    "ARCE M10AP"
+   ]
+  },
+  {
+   "code": "ARTF",
+   "identities": 16,
+   "voters": 804,
+   "lead": "Art",
+   "share": 0.88,
+   "runners_up": [
+    [
+     "Photography",
+     48
+    ],
+    [
+     "Architecture",
+     40
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "San Diego City College",
+    "San Diego Mesa College"
+   ],
+   "titles": [
+    "2-Dimensional Art Studio Lab",
+    "3-Dimensional Art Studio Lab",
+    "African Art",
+    "Ceramics Studio Lab",
+    "Art Entrepreneurship",
+    "Art of the United States: Colonial to Modern Period",
+    "Ceramic Production 1",
+    "Ceramic Production 2",
+    "Industrial and Architectural Ceramic Design 1",
+    "Industrial and Architectural Ceramic Design 2",
+    "Introduction to Digital Drawing and Painting",
+    "Museum Studies Lab",
+    "Native American Art",
+    "Public Art 1",
+    "Public Art 2",
+    "Sustainable Art and Design"
+   ],
+   "ids": [
+    "ARTF M1001",
+    "ARTF M1002",
+    "ARTF M1003",
+    "ARTF M1008",
+    "ARTF M10AA",
+    "ARTF M10AB",
+    "ARTF M10AD",
+    "ARTF M10AE",
+    "ARTF M10AI",
+    "ARTF M10AJ",
+    "ARTF M10AK",
+    "ARTF M10AR",
+    "ARTF M10AS",
+    "ARTF M10AU",
+    "ARTF M10AV",
+    "ARTF M10AW"
+   ]
+  },
+  {
+   "code": "CSMT",
+   "identities": 16,
+   "voters": 32,
+   "lead": "Cosmetology",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": true,
+   "colleges": [
+    "Los Angeles Trade Technical College"
+   ],
+   "titles": [
+    "Advanced Hair Coloring and Styling",
+    "Advanced Makeup Techniques",
+    "Contemporary Styling Techniques",
+    "Hair Sculpting Techniques for Women",
+    "Intermediate Hair Coloring and Styling",
+    "Introduction to Hair Coloring",
+    "Junior Salon 2",
+    "Long Hair and Period Hair Design and Hair Piece Construction",
+    "Multi-Texture Design (Level 1-2)",
+    "Senior Salon 1",
+    "Senior Salon 2",
+    "Skin Therapy 1",
+    "Skin Therapy 2",
+    "Skin Therapy 3",
+    "Skin Therapy 4",
+    "Tinting 1"
+   ],
+   "ids": [
+    "CSMT M10AC",
+    "CSMT M10AD",
+    "CSMT M10AE",
+    "CSMT M10AK",
+    "CSMT M10AN",
+    "CSMT M10AV",
+    "CSMT M10AW",
+    "CSMT M10AX",
+    "CSMT M10AY",
+    "CSMT M10AZ",
+    "CSMT M10BA",
+    "CSMT M10BB",
+    "CSMT M10BC",
+    "CSMT M10BD",
+    "CSMT M10BE",
+    "CSMT M10BF"
+   ]
+  },
+  {
+   "code": "NCAR",
+   "identities": 10,
+   "voters": 10,
+   "lead": "Art",
+   "share": 0.9,
+   "runners_up": [
+    [
+     "Biological Sciences",
+     1
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "College of the Canyons",
+    "MiraCosta College"
+   ],
+   "titles": [
+    "Advanced Techniques in Painting",
+    "Basic Drawing and Sketching",
+    "Fundamentals of Drawing for Commercial Artists",
+    "Intermediate Techniques in Painting",
+    "Multimedia Sculpture",
+    "Painting and Drawing",
+    "Portrait and Figure Drawing and Painting",
+    "Watercolor Painting, Beginning",
+    "Watercolor Painting, Intermediate",
+    "Watercolor Painting on Location"
+   ],
+   "ids": [
+    "NCAR M90AA",
+    "NCAR M90AC",
+    "NCAR M90AD",
+    "NCAR M90AE",
+    "NCAR M90AF",
+    "NCAR M90AG",
+    "NCAR M90AJ",
+    "NCAR M90AK",
+    "NCAR M90AL",
+    "NCAR M90AM"
+   ]
+  },
+  {
+   "code": "SGNG",
+   "identities": 10,
+   "voters": 10,
+   "lead": "Work Experience Instructors",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": true,
+   "colleges": [
+    "Los Angeles Trade Technical College"
+   ],
+   "titles": [
+    "Advance Computer & Design",
+    "Computer Techniques for Screen Printing",
+    "Exterior Display Signs",
+    "Fundamentals of Mural Painting",
+    "Individual Lettering",
+    "Sign Design and Layout",
+    "Sign Installation and Fabrication",
+    "Silk Screen 2",
+    "Silk Screen Processing 1",
+    "Window Signs"
+   ],
+   "ids": [
+    "SGNG M10AA",
+    "SGNG M10AB",
+    "SGNG M10AC",
+    "SGNG M10AD",
+    "SGNG M10AE",
+    "SGNG M10AF",
+    "SGNG M10AG",
+    "SGNG M10AH",
+    "SGNG M10AI",
+    "SGNG M10AJ"
+   ]
+  },
+  {
+   "code": "BRDC",
+   "identities": 8,
+   "voters": 71,
+   "lead": "Broadcasting Technology",
+   "share": 0.86,
+   "runners_up": [
+    [
+     "Music",
+     5
+    ],
+    [
+     "Film and Media Studies",
+     5
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "East Los Angeles College",
+    "Los Angeles Pierce College",
+    "Ohlone College"
+   ],
+   "titles": [
+    "Radio Broadcast Lab",
+    "Digital Radio Studio Systems",
+    "Introduction to Writing for Broadcast",
+    "Radio Documentary Production",
+    "Radio Operations 1",
+    "Radio Operations 2",
+    "Radio Programming and Marketing",
+    "Sound Design for Digital Film/Video/Radio"
+   ],
+   "ids": [
+    "BRDC M1003",
+    "BRDC M10AL",
+    "BRDC M10AV",
+    "BRDC M10BF",
+    "BRDC M10BG",
+    "BRDC M10BH",
+    "BRDC M10BI",
+    "BRDC M10BK"
+   ]
+  },
+  {
+   "code": "FLGH",
+   "identities": 6,
+   "voters": 95,
+   "lead": "Aviation",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": true,
+   "colleges": [
+    "Reedley College"
+   ],
+   "titles": [
+    "Human Factors and Crew Resource Management",
+    "Advanced Navigation",
+    "Commercial Pilot 1 Flight Lab",
+    "Commercial Pilot 2 Flight Lab",
+    "Human Factors & Crew Resource Management",
+    "Introduction to Flight Science"
+   ],
+   "ids": [
+    "FLGH M1002",
+    "FLGH M10AB",
+    "FLGH M10AE",
+    "FLGH M10AF",
+    "FLGH M10AH",
+    "FLGH M90AA"
+   ]
+  },
+  {
+   "code": "ARTP",
+   "identities": 5,
+   "voters": 54,
+   "lead": "Photography",
+   "share": 0.87,
+   "runners_up": [
+    [
+     "Art",
+     5
+    ],
+    [
+     "Art History",
+     2
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "American River College",
+    "Monterey Peninsula College"
+   ],
+   "titles": [
+    "Advanced Photogaphy",
+    "Alternative Process Photo",
+    "Portfolio / Laboratory Practices",
+    "Trends in Software and Social Media for Photographers",
+    "Introduction to Camera Basics"
+   ],
+   "ids": [
+    "ARTP M10AA",
+    "ARTP M10AB",
+    "ARTP M10AN",
+    "ARTP M10AO",
+    "ARTP M90AA"
+   ]
+  },
+  {
+   "code": "EPHO",
+   "identities": 3,
+   "voters": 10,
+   "lead": "Photography",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": true,
+   "colleges": [
+    "Saddleback College"
+   ],
+   "titles": [
+    "Fundamentals of Digital Show Presentations (Ei)",
+    "Fundamentals of Digital Show Presentations (Ei)",
+    "Intermediate Digital Show Presentations (Ei)"
+   ],
+   "ids": [
+    "EPHO M9001",
+    "EPHO M90AD",
+    "EPHO M90AF"
+   ]
+  },
+  {
+   "code": "BUST",
+   "identities": 1,
+   "voters": 15,
+   "lead": "Office Technologies",
+   "share": 0.87,
+   "runners_up": [
+    [
+     "Business",
+     2
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "Chaffey College"
+   ],
+   "titles": [
+    "MS Publisher Comprehensive"
+   ],
+   "ids": [
+    "BUST M10AZ"
+   ]
+  },
+  {
+   "code": "CMPE",
+   "identities": 1,
+   "voters": 14,
+   "lead": "Computer Information Systems",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": true,
+   "colleges": [
+    "Modesto Junior College"
+   ],
+   "titles": [
+    "Remote Pilot (Drone) FAA Certification Prep"
+   ],
+   "ids": [
+    "CMPE M10AO"
+   ]
+  },
+  {
+   "code": "GLOB",
+   "identities": 1,
+   "voters": 20,
+   "lead": "Media Production",
+   "share": 0.85,
+   "runners_up": [
+    [
+     "Journalism",
+     2
+    ],
+    [
+     "Social Science",
+     1
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "Santa Monica College"
+   ],
+   "titles": [
+    "Global Media"
+   ],
+   "ids": [
+    "GLOB M1001"
+   ]
+  },
+  {
+   "code": "RTVF",
+   "identities": 1,
+   "voters": 24,
+   "lead": "Film and Media Studies",
+   "share": 0.92,
+   "runners_up": [
+    [
+     "Business",
+     1
+    ],
+    [
+     "Music",
+     1
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "Cosumnes River College",
+    "San Jose City College"
+   ],
+   "titles": [
+    "Beginning Radio Production"
+   ],
+   "ids": [
+    "RTVF M1001"
+   ]
+  },
+  {
+   "code": "VFPA",
+   "identities": 1,
+   "voters": 20,
+   "lead": "Dance",
+   "share": 0.85,
+   "runners_up": [
+    [
+     "Drama/Theater Arts",
+     3
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "Santa Ana College"
+   ],
+   "titles": [
+    "Tour Ensemble"
+   ],
+   "ids": [
+    "VFPA M90AA"
+   ]
+  },
+  {
+   "code": "WELL",
+   "identities": 1,
+   "voters": 25,
+   "lead": "Health",
+   "share": 0.96,
+   "runners_up": [
+    [
+     "Nutritional Science/Dietetics",
+     1
+    ]
+   ],
+   "checkable": true,
+   "colleges": [
+    "Skyline College"
+   ],
+   "titles": [
+    "Introduction to Wholistic Health"
+   ],
+   "ids": [
+    "WELL M10AU"
+   ]
+  },
+  {
+   "code": "MCOM",
+   "identities": 28,
+   "voters": 167,
+   "lead": "Journalism",
+   "share": 0.54,
+   "runners_up": [
+    [
+     "Broadcasting Technology",
+     43
+    ],
+    [
+     "Media Production",
+     17
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Chabot College",
+    "Coastline Community College",
+    "Grossmont College",
+    "San Joaquin Delta College",
+    "Santa Monica College",
+    "Yuba College"
+   ],
+   "titles": [
+    "Introduction to Broadcasting",
+    "Advanced KCTH TV Experience",
+    "Introduction to KCRH Radio Experience",
+    "Advanced KCRH Radio Experience",
+    "Advanced KCTH TV Experience",
+    "Advertsng Sales & Media Mngmnt",
+    "Colloquium-Mass Communications",
+    "Intermediate KCRH Radio Experience",
+    "Introduction to KCRH Radio Experience",
+    "Introduction to Radio, TV, Film",
+    "Introduction to Representation in the Media",
+    "KCRH Radio Leadership Experience",
+    "KCTH Television Experience",
+    "Newspaper Production 1",
+    "Newspaper Production 2",
+    "Radio and Podcasting Operations 1",
+    "Radio and Podcasting Operations 2",
+    "Radio and Podcasting Operations 3",
+    "Radio Studio Techniques",
+    "Radio & Television Announcing",
+    "Social Media and Society",
+    "Social Media Campaigns",
+    "Success in Online Learning",
+    "Television Studio Techniques 1",
+    "Television Studio Techniques 2",
+    "Writing for Broadcasting",
+    "Social Media Content",
+    "Social Media Strategy"
+   ],
+   "ids": [
+    "MCOM M1001",
+    "MCOM M1002",
+    "MCOM M1003",
+    "MCOM M10AA",
+    "MCOM M10AB",
+    "MCOM M10AE",
+    "MCOM M10AI",
+    "MCOM M10AJ",
+    "MCOM M10AL",
+    "MCOM M10AN",
+    "MCOM M10AO",
+    "MCOM M10AP",
+    "MCOM M10AQ",
+    "MCOM M10AT",
+    "MCOM M10AU",
+    "MCOM M10AW",
+    "MCOM M10AX",
+    "MCOM M10AY",
+    "MCOM M10AZ",
+    "MCOM M10BA",
+    "MCOM M10BC",
+    "MCOM M10BD",
+    "MCOM M10BF",
+    "MCOM M10BH",
+    "MCOM M10BI",
+    "MCOM M10BK",
+    "MCOM M9001",
+    "MCOM M90AB"
+   ]
+  },
+  {
+   "code": "PHTO",
+   "identities": 18,
+   "voters": 214,
+   "lead": "Photography",
+   "share": 0.77,
+   "runners_up": [
+    [
+     "Art",
+     30
+    ],
+    [
+     "Journalism",
+     14
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Allan Hancock College",
+    "Citrus College",
+    "Las Positas College",
+    "Rio Hondo College"
+   ],
+   "titles": [
+    "Art of Video for Photographers",
+    "Black and White Photo Lab 1",
+    "Black and White Photo Lab 2",
+    "Color Photo Lab 1",
+    "Color Photo Lab 2",
+    "Digital Photo Lab 1",
+    "Digital Photo Lab 2",
+    "Individual Projects A",
+    "Individual Projects B",
+    "Intermediate Video for Photographers",
+    "Introduction to Drone Piloting and Imaging",
+    "Introduction to Lighting",
+    "Introduction to View Camera",
+    "Materials and Processes Lab",
+    "Portraiture on Location",
+    "Digital Photo Editing and Post-Processing",
+    "Digital Photos and the Computer",
+    "Phonetography"
+   ],
+   "ids": [
+    "PHTO M10AB",
+    "PHTO M10AD",
+    "PHTO M10AE",
+    "PHTO M10AG",
+    "PHTO M10AH",
+    "PHTO M10AI",
+    "PHTO M10AJ",
+    "PHTO M10AK",
+    "PHTO M10AL",
+    "PHTO M10AM",
+    "PHTO M10AQ",
+    "PHTO M10AR",
+    "PHTO M10AT",
+    "PHTO M10AU",
+    "PHTO M10AX",
+    "PHTO M90AA",
+    "PHTO M90AB",
+    "PHTO M90AD"
+   ]
+  },
+  {
+   "code": "LIBS",
+   "identities": 12,
+   "voters": 22,
+   "lead": "Library Technology",
+   "share": 0.68,
+   "runners_up": [
+    [
+     "Library Science",
+     2
+    ],
+    [
+     "Health Information Technology",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Chabot College",
+    "Contra Costa College",
+    "Diablo Valley College",
+    "Fresno City College",
+    "Los Angeles Pierce College",
+    "Los Angeles Southwest College",
+    "Los Angeles Trade Technical College",
+    "Los Angeles Valley College",
+    "Madera College",
+    "Reedley College",
+    "San Diego City College",
+    "San Diego Mesa College",
+    "San Diego Miramar College",
+    "Santa Monica College",
+    "Sierra College",
+    "West Los Angeles College",
+    "Yuba College"
+   ],
+   "titles": [
+    "Information and Computer Literacy",
+    "Information Literacy and Research Skills",
+    "Library Research Methods",
+    "AI Literacy: In Education and Employment",
+    "Basic Research Skills",
+    "Critical Approaches to Research in College and Beyond",
+    "Finding Information on Line and in Print",
+    "Information Literacy:Search Strategies, Tools, and Resources",
+    "Internet Research Methods",
+    "Library and Information Research Skills",
+    "Library Research and Information Literacy Skills via Popular Culture",
+    "Media and Information Literacy: Research Strategies and Beyond"
+   ],
+   "ids": [
+    "LIBS M1002",
+    "LIBS M1004",
+    "LIBS M1006",
+    "LIBS M10AA",
+    "LIBS M10AB",
+    "LIBS M10AC",
+    "LIBS M10AD",
+    "LIBS M10AE",
+    "LIBS M10AF",
+    "LIBS M10AG",
+    "LIBS M10AH",
+    "LIBS M10AI"
+   ]
+  },
+  {
+   "code": "OLDR",
+   "identities": 12,
+   "voters": 180,
+   "lead": "Art",
+   "share": 0.67,
+   "runners_up": [
+    [
+     "Music",
+     48
+    ],
+    [
+     "Humanities",
+     12
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Allan Hancock College"
+   ],
+   "titles": [
+    "Painting in Oils and Acrylics",
+    "Art: Botanical Illustration",
+    "Art/Journaling",
+    "Botanical Illustration",
+    "Digital Camera Basics Level 2",
+    "Expressions in Colored Pencil",
+    "Int. Watercolor Painting",
+    "Painting with Pastels",
+    "Silk Painting",
+    "Sketching for Painters",
+    "The Joy of Drawing",
+    "Urban Sketching"
+   ],
+   "ids": [
+    "OLDR M9002",
+    "OLDR M90AA",
+    "OLDR M90AB",
+    "OLDR M90AD",
+    "OLDR M90AF",
+    "OLDR M90AG",
+    "OLDR M90AJ",
+    "OLDR M90AO",
+    "OLDR M90AQ",
+    "OLDR M90AR",
+    "OLDR M90AS",
+    "OLDR M90AU"
+   ]
+  },
+  {
+   "code": "TOUR",
+   "identities": 12,
+   "voters": 8,
+   "lead": "Work Experience Instructors",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Saddleback College"
+   ],
+   "titles": [
+    "Advanced Airline Computer Training",
+    "Travel Destinations: Europe, Africa, and the Middle East",
+    "Destinations- Americas and Europe",
+    "World Destinations and Resorts--Western Hemisphere",
+    "Advanced Airline Computer Training",
+    "Airline Computer Training",
+    "Introduction to the Exciting World of Travel & Tourism",
+    "Selling Dreams - the Travel Industry",
+    "Tours and Cruises",
+    "World Destinations and Resorts--Western Hemisphere",
+    "World Destinations-Europe",
+    "World Destinations-Pacific, Asia, Africa, Middle East"
+   ],
+   "ids": [
+    "TOUR M1001",
+    "TOUR M1002",
+    "TOUR M1003",
+    "TOUR M1004",
+    "TOUR M10AA",
+    "TOUR M10AB",
+    "TOUR M10AC",
+    "TOUR M10AD",
+    "TOUR M10AE",
+    "TOUR M10AF",
+    "TOUR M10AG",
+    "TOUR M10AH"
+   ]
+  },
+  {
+   "code": "AERO",
+   "identities": 9,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Fresno City College"
+   ],
+   "titles": [
+    "AS200 Leadership Laboratory C",
+    "As100 Heritage and Values",
+    "AS100 Heritage and Values A",
+    "AS100 Leadership Laboratory A",
+    "AS100 Leadership Laboratory B",
+    "AS200 Leadership Laboratory C",
+    "AS200 Leadership Laboratory D",
+    "As200 Team and Leadership Fundamentals",
+    "AS200 Team and Leadership Fundamentals A"
+   ],
+   "ids": [
+    "AERO M1001",
+    "AERO M10AW",
+    "AERO M10AX",
+    "AERO M10AY",
+    "AERO M10AZ",
+    "AERO M10BA",
+    "AERO M10BB",
+    "AERO M10BC",
+    "AERO M10BD"
+   ]
+  },
+  {
+   "code": "JAMS",
+   "identities": 8,
+   "voters": 36,
+   "lead": "Journalism",
+   "share": 0.61,
+   "runners_up": [
+    [
+     "English",
+     8
+    ],
+    [
+     "Communication Studies",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Las Positas College",
+    "Santa Ana College"
+   ],
+   "titles": [
+    "Advanced Intermediate Multimedia News Production",
+    "Advanced Multimedia News Production",
+    "Intermediate Multimedia News Production",
+    "Introduction to Media",
+    "Journal of Arts, Literature, and Academic Writing B",
+    "Media, Race and Gender",
+    "Visual Reporting",
+    "Writing Across Media"
+   ],
+   "ids": [
+    "JAMS M10AA",
+    "JAMS M10AB",
+    "JAMS M10AF",
+    "JAMS M10AG",
+    "JAMS M10AH",
+    "JAMS M10AI",
+    "JAMS M10AL",
+    "JAMS M10AM"
+   ]
+  },
+  {
+   "code": "MILS",
+   "identities": 8,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Fresno City College"
+   ],
+   "titles": [
+    "Army Doctrine and Team Development",
+    "Foundations of Agile and Adaptive Leadership",
+    "Freshman Leadership Lab 2",
+    "Freshman Leadership Laboratory 1",
+    "Introduction to the U.S. Army and Critical Thinking",
+    "Leadership and Decision-Making",
+    "Sophomore Leadership Lab 1",
+    "Sophomore Leadership Lab 2"
+   ],
+   "ids": [
+    "MILS M10AA",
+    "MILS M10AB",
+    "MILS M10AC",
+    "MILS M10AD",
+    "MILS M10AE",
+    "MILS M10AF",
+    "MILS M10AG",
+    "MILS M10AH"
+   ]
+  },
+  {
+   "code": "ESTI",
+   "identities": 7,
+   "voters": 16,
+   "lead": "Cosmetology",
+   "share": 0.69,
+   "runners_up": [
+    [
+     "Barbering",
+     5
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "College of San Mateo",
+    "Skyline College"
+   ],
+   "titles": [
+    "Esthetics Intermediate Concepts Ll",
+    "Esthetics Fundamentals",
+    "Esthetics Fundamentals 1",
+    "Esthetics Fundamentals Ll",
+    "Esthetics Intermediate Concepts L",
+    "Esthetics Intermediate Concepts Ll",
+    "Esthetics Spa Workshop"
+   ],
+   "ids": [
+    "ESTI M1001",
+    "ESTI M10AD",
+    "ESTI M10AE",
+    "ESTI M10AF",
+    "ESTI M10AG",
+    "ESTI M10AH",
+    "ESTI M10AI"
+   ]
+  },
+  {
+   "code": "FJMP",
+   "identities": 7,
+   "voters": 133,
+   "lead": "Journalism",
+   "share": 0.47,
+   "runners_up": [
+    [
+     "Media Production",
+     49
+    ],
+    [
+     "Film and Media Studies",
+     21
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "San Diego City College"
+   ],
+   "titles": [
+    "Audio Storytelling for Radio and Podcast",
+    "Broadcast News Workshop 1",
+    "Broadcast News Workshop 2",
+    "Broadcast News Workshop 3",
+    "Radio and Podcast Workshop 1",
+    "Radio and Podcast Workshop 2",
+    "Radio and Podcast Workshop 3"
+   ],
+   "ids": [
+    "FJMP M10AB",
+    "FJMP M10AC",
+    "FJMP M10AD",
+    "FJMP M10AE",
+    "FJMP M10AR",
+    "FJMP M10AS",
+    "FJMP M10AT"
+   ]
+  },
+  {
+   "code": "FTVM",
+   "identities": 7,
+   "voters": 128,
+   "lead": "Broadcasting Technology",
+   "share": 0.51,
+   "runners_up": [
+    [
+     "Film and Media Studies",
+     54
+    ],
+    [
+     "English",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Glendale Community College",
+    "San Bernardino Valley College"
+   ],
+   "titles": [
+    "American Independent Film",
+    "Beyond Hollywood: Gender, Race and Sex in Movies",
+    "Documentary Film Aesthetics",
+    "Honors Beyond Hollywood: Gender, Race and Sex in Movies",
+    "Honors Documentary Film Aesthetics",
+    "Honors Film Genres",
+    "Introduction to Film and Media Aesthetics"
+   ],
+   "ids": [
+    "FTVM M10AD",
+    "FTVM M10AF",
+    "FTVM M10AJ",
+    "FTVM M10AS",
+    "FTVM M10AT",
+    "FTVM M10AU",
+    "FTVM M10AW"
+   ]
+  },
+  {
+   "code": "ARTG",
+   "identities": 6,
+   "voters": 10,
+   "lead": "Work Experience Instructors",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Graphic Arts",
+     4
+    ],
+    [
+     "Photography",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Monterey Peninsula College",
+    "Mt. San Antonio College"
+   ],
+   "titles": [
+    "Art and Culture - Galleries, Museums, and Their Communities",
+    "Art Galleries and Museums - Professional Practices",
+    "Intermediate Exhibition Production",
+    "Page Layout and Typography",
+    "Shop Practices for Art Careers and Exhibitions",
+    "Writing for Arts Careers"
+   ],
+   "ids": [
+    "ARTG M10AA",
+    "ARTG M10AB",
+    "ARTG M10AH",
+    "ARTG M10AL",
+    "ARTG M10AQ",
+    "ARTG M10AT"
+   ]
+  },
+  {
+   "code": "ARTI",
+   "identities": 6,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Palomar College"
+   ],
+   "titles": [
+    "Concept Sketching",
+    "Digital 3D Design and Animation",
+    "Digital 3D Design and Modeling",
+    "Digital 3D Design and Sculpture",
+    "Illustration 1 - Rendering Techniques",
+    "Illustration 2, Digital Techniques"
+   ],
+   "ids": [
+    "ARTI M10AA",
+    "ARTI M10AB",
+    "ARTI M10AC",
+    "ARTI M10AD",
+    "ARTI M10AE",
+    "ARTI M10AF"
+   ]
+  },
+  {
+   "code": "FLTE",
+   "identities": 6,
+   "voters": 164,
+   "lead": "Aviation",
+   "share": 0.84,
+   "runners_up": [
+    [
+     "Photography",
+     12
+    ],
+    [
+     "Industrial Technology",
+     9
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Sacramento City College"
+   ],
+   "titles": [
+    "Photogrammetry",
+    "Commercial Pilot-Helicopter Flight Techniques",
+    "Drone Inspections",
+    "Experimental Offering in Flight Technology",
+    "First Person View (FPV)",
+    "Topics in Aeronautics, Flight Technology"
+   ],
+   "ids": [
+    "FLTE M1002",
+    "FLTE M10AE",
+    "FLTE M10AF",
+    "FLTE M10AG",
+    "FLTE M10AH",
+    "FLTE M10AX"
+   ]
+  },
+  {
+   "code": "HUMN",
+   "identities": 6,
+   "voters": 147,
+   "lead": "Social Science",
+   "share": 0.48,
+   "runners_up": [
+    [
+     "Multimedia",
+     44
+    ],
+    [
+     "Humanities",
+     30
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Foothill College",
+    "Las Positas College"
+   ],
+   "titles": [
+    "Honors Introduction to Popular Culture",
+    "Honors Popular Culture & United States History",
+    "Popular Culture & United States History",
+    "Video Games & Popular Culture",
+    "Global Cinemas",
+    "Trauma & the Arts"
+   ],
+   "ids": [
+    "HUMN M1002",
+    "HUMN M1003",
+    "HUMN M1004",
+    "HUMN M1005",
+    "HUMN M10AK",
+    "HUMN M10BG"
+   ]
+  },
+  {
+   "code": "INFO",
+   "identities": 6,
+   "voters": 32,
+   "lead": "Computer Information Systems",
+   "share": 0.62,
+   "runners_up": [
+    [
+     "Office Technologies",
+     5
+    ],
+    [
+     "Computer Science",
+     5
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Golden West College",
+    "Mendocino College",
+    "Santa Ana College",
+    "Santiago Canyon College"
+   ],
+   "titles": [
+    "AI Literacy",
+    "Library Research Fundamentals",
+    "Researching in the Digital Age",
+    "Academic Research and Information Literacy",
+    "Honors Library Research Fundamentals",
+    "Honors Researching in the Digital Age"
+   ],
+   "ids": [
+    "INFO M1001",
+    "INFO M1002",
+    "INFO M1003",
+    "INFO M10AA",
+    "INFO M10AB",
+    "INFO M10AC"
+   ]
+  },
+  {
+   "code": "ECOL",
+   "identities": 5,
+   "voters": 97,
+   "lead": "Music",
+   "share": 0.74,
+   "runners_up": [
+    [
+     "Humanities",
+     15
+    ],
+    [
+     "Art",
+     10
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Cuesta College",
+    "Irvine Valley College"
+   ],
+   "titles": [
+    "Choral Ensemble",
+    "Art: Drawing",
+    "Art: Painting",
+    "Art: Watercolor",
+    "Explorations in Art"
+   ],
+   "ids": [
+    "ECOL M9001",
+    "ECOL M90AC",
+    "ECOL M90AD",
+    "ECOL M90AE",
+    "ECOL M90AK"
+   ]
+  },
+  {
+   "code": "SPED",
+   "identities": 5,
+   "voters": 175,
+   "lead": "Interdisciplinary Studies",
+   "share": 0.71,
+   "runners_up": [
+    [
+     "Physical Education Disabled Students",
+     30
+    ],
+    [
+     "Agriculture",
+     20
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Coastline Community College"
+   ],
+   "titles": [
+    "Exhibition",
+    "Guest Services Basics",
+    "Maintenance Basics",
+    "Three-Dimensional Media",
+    "Two-Dimensional Media"
+   ],
+   "ids": [
+    "SPED M90AR",
+    "SPED M90AW",
+    "SPED M90BF",
+    "SPED M90BS",
+    "SPED M90BT"
+   ]
+  },
+  {
+   "code": "TAFI",
+   "identities": 5,
+   "voters": 91,
+   "lead": "Media Production",
+   "share": 0.48,
+   "runners_up": [
+    [
+     "Film and Media Studies",
+     38
+    ],
+    [
+     "Social Science",
+     7
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "American River College",
+    "Folsom Lake College",
+    "Sacramento City College"
+   ],
+   "titles": [
+    "Diversity in American Film",
+    "History of Film: 1880's Through 1950's",
+    "History of Film: 1950's to Present",
+    "From Stage to Screen: Production Design and Art Direction",
+    "Honors Introduction to Film"
+   ],
+   "ids": [
+    "TAFI M1002",
+    "TAFI M1006",
+    "TAFI M1007",
+    "TAFI M10AH",
+    "TAFI M10AI"
+   ]
+  },
+  {
+   "code": "ARTA",
+   "identities": 4,
+   "voters": 84,
+   "lead": "Art",
+   "share": 0.81,
+   "runners_up": [
+    [
+     "Multimedia",
+     12
+    ],
+    [
+     "Art History",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "San Jose City College"
+   ],
+   "titles": [
+    "Beginning Sculpture 1",
+    "Ceramic Scuplture 1",
+    "Representational Drawing and Perspective",
+    "Watercolor 2"
+   ],
+   "ids": [
+    "ARTA M10AA",
+    "ARTA M10AB",
+    "ARTA M10AF",
+    "ARTA M10AI"
+   ]
+  },
+  {
+   "code": "ARTC",
+   "identities": 4,
+   "voters": 32,
+   "lead": "Graphic Arts",
+   "share": 0.47,
+   "runners_up": [
+    [
+     "Art",
+     11
+    ],
+    [
+     "Multimedia",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Cerro Coso Community College",
+    "Mt. San Antonio College"
+   ],
+   "titles": [
+    "Contemporary Illustration",
+    "Digital Drawing for Commercial Art",
+    "Dynamic Sketching",
+    "Survey of Western Art from Renaissance to Contemporary Honors"
+   ],
+   "ids": [
+    "ARTC M10AA",
+    "ARTC M10AD",
+    "ARTC M10AE",
+    "ARTC M10AH"
+   ]
+  },
+  {
+   "code": "ARTX",
+   "identities": 4,
+   "voters": 2,
+   "lead": "Older Adults: Noncredit",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "San Diego College of Continuing Education",
+    "San Diego College of Continuing Education Credit"
+   ],
+   "titles": [
+    "Drawing and Painting 1-2 - Oa",
+    "Introductory Ceramics-Oa",
+    "Introductory Ceramics–Older Adults",
+    "Landscape Painting - OA"
+   ],
+   "ids": [
+    "ARTX M9001",
+    "ARTX M90AA",
+    "ARTX M90AB",
+    "ARTX M90AC"
+   ]
+  },
+  {
+   "code": "GCIP",
+   "identities": 4,
+   "voters": 36,
+   "lead": "Multimedia",
+   "share": 0.44,
+   "runners_up": [
+    [
+     "Industrial Technology",
+     12
+    ],
+    [
+     "Art",
+     8
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Palomar College"
+   ],
+   "titles": [
+    "Digital Publishing/Illustrator 1",
+    "Digital Publishing/Illustrator 2",
+    "Page Layout and Design 1",
+    "Textile Screen Printing"
+   ],
+   "ids": [
+    "GCIP M10AD",
+    "GCIP M10AE",
+    "GCIP M10AF",
+    "GCIP M10AJ"
+   ]
+  },
+  {
+   "code": "PHTC",
+   "identities": 4,
+   "voters": 28,
+   "lead": "Photography",
+   "share": 0.79,
+   "runners_up": [
+    [
+     "Art",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Antelope Valley College",
+    "Moorpark College"
+   ],
+   "titles": [
+    "Documentary and Photojournalism",
+    "Foundations of Cameras & Composition",
+    "Studio Lighting 1",
+    "Studio Lighting 2"
+   ],
+   "ids": [
+    "PHTC M10AB",
+    "PHTC M10AC",
+    "PHTC M10AO",
+    "PHTC M10AP"
+   ]
+  },
+  {
+   "code": "DGME",
+   "identities": 3,
+   "voters": 52,
+   "lead": "Multimedia",
+   "share": 0.73,
+   "runners_up": [
+    [
+     "Art",
+     10
+    ],
+    [
+     "Computer Information Systems",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "College of San Mateo"
+   ],
+   "titles": [
+    "Radio and Podcast Production Lab 2",
+    "Radio and Podcast Production Lab",
+    "Radio and Podcast Production Lab 2"
+   ],
+   "ids": [
+    "DGME M1001",
+    "DGME M10AH",
+    "DGME M10AI"
+   ]
+  },
+  {
+   "code": "NCCO",
+   "identities": 3,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "College of the Canyons"
+   ],
+   "titles": [
+    "Public Speaking for Interviews",
+    "Public Speaking for Social Media",
+    "Strategies and Tactics of Public Relations"
+   ],
+   "ids": [
+    "NCCO M90AG",
+    "NCCO M90AH",
+    "NCCO M90AI"
+   ]
+  },
+  {
+   "code": "OLDA",
+   "identities": 3,
+   "voters": 18,
+   "lead": "Kinesiology",
+   "share": 0.33,
+   "runners_up": [
+    [
+     "Music",
+     6
+    ],
+    [
+     "Gerontology",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Los Angeles Pierce College"
+   ],
+   "titles": [
+    "Life Drawing for Seniors",
+    "Seeing and Understanding Art",
+    "Watercolor Painting for Seniors"
+   ],
+   "ids": [
+    "OLDA M90AF",
+    "OLDA M90AI",
+    "OLDA M90AJ"
+   ]
+  },
+  {
+   "code": "PHTG",
+   "identities": 3,
+   "voters": 30,
+   "lead": "Photography",
+   "share": 0.8,
+   "runners_up": [
+    [
+     "Art",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "De Anza College"
+   ],
+   "titles": [
+    "Commercial Lighting 1",
+    "Commercial Lighting 2",
+    "Exploring Visual Expression"
+   ],
+   "ids": [
+    "PHTG M1002",
+    "PHTG M1003",
+    "PHTG M10AA"
+   ]
+  },
+  {
+   "code": "TECC",
+   "identities": 3,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "American River College"
+   ],
+   "titles": [
+    "Introduction to Technical/Professional Communication",
+    "Writing Digital Content",
+    "Writing Technical Manuals"
+   ],
+   "ids": [
+    "TECC M10AA",
+    "TECC M10AB",
+    "TECC M10AC"
+   ]
+  },
+  {
+   "code": "ARLN",
+   "identities": 2,
+   "voters": 4,
+   "lead": "Aviation",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Orange Coast College"
+   ],
+   "titles": [
+    "Airline Service Excellence",
+    "Operations, Terminology & Safety"
+   ],
+   "ids": [
+    "ARLN M10AA",
+    "ARLN M10AC"
+   ]
+  },
+  {
+   "code": "ARTB",
+   "identities": 2,
+   "voters": 2,
+   "lead": "Art History",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Art",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Monterey Peninsula College",
+    "Mt. San Antonio College"
+   ],
+   "titles": [
+    "Basic Studio Arts",
+    "Color Fundamentals"
+   ],
+   "ids": [
+    "ARTB M10AA",
+    "ARTB M10AB"
+   ]
+  },
+  {
+   "code": "ARTN",
+   "identities": 2,
+   "voters": 64,
+   "lead": "Multimedia",
+   "share": 0.67,
+   "runners_up": [
+    [
+     "Art",
+     15
+    ],
+    [
+     "Computer Information Systems",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "American River College",
+    "Golden West College"
+   ],
+   "titles": [
+    "Digital Prepress",
+    "Comic Book Development and Structure"
+   ],
+   "ids": [
+    "ARTN M1004",
+    "ARTN M10AG"
+   ]
+  },
+  {
+   "code": "ATXX",
+   "identities": 2,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [],
+   "titles": [
+    "Introduction Flight Attendant Training",
+    "Introduction to Travel Careers"
+   ],
+   "ids": [
+    "ATXX M1001",
+    "ATXX M1002"
+   ]
+  },
+  {
+   "code": "CINA",
+   "identities": 2,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "College of the Sequoias"
+   ],
+   "titles": [
+    "Film Appreciation-American",
+    "Film Appreciation-International"
+   ],
+   "ids": [
+    "CINA M10AA",
+    "CINA M10AB"
+   ]
+  },
+  {
+   "code": "COSY",
+   "identities": 2,
+   "voters": 2,
+   "lead": "Cosmetology",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "North Orange Continuing Education Credit"
+   ],
+   "titles": [
+    "Manicurist/Pedicurist",
+    "New Concepts in Hair Design"
+   ],
+   "ids": [
+    "COSY M90AA",
+    "COSY M90AB"
+   ]
+  },
+  {
+   "code": "CRAE",
+   "identities": 2,
+   "voters": 73,
+   "lead": "Family and Consumer Studies/ Home Economics",
+   "share": 0.7,
+   "runners_up": [
+    [
+     "Older Adults: Noncredit",
+     13
+    ],
+    [
+     "Art",
+     9
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "North Orange Continuing Education",
+    "North Orange Continuing Education Credit"
+   ],
+   "titles": [
+    "China Painting for Older Adult",
+    "Needlecraft, Knit, Crochet OA"
+   ],
+   "ids": [
+    "CRAE M9007",
+    "CRAE M90AA"
+   ]
+  },
+  {
+   "code": "CTVR",
+   "identities": 2,
+   "voters": 58,
+   "lead": "Broadcasting Technology",
+   "share": 0.55,
+   "runners_up": [
+    [
+     "Film and Media Studies",
+     20
+    ],
+    [
+     "Media Production",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Saddleback College"
+   ],
+   "titles": [
+    "Cinematic Storytelling",
+    "History and Appreciation of Television Broadcasting"
+   ],
+   "ids": [
+    "CTVR M10AE",
+    "CTVR M10AL"
+   ]
+  },
+  {
+   "code": "ESTH",
+   "identities": 2,
+   "voters": 6,
+   "lead": "Cosmetology",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Citrus College"
+   ],
+   "titles": [
+    "Salon Success - Full-Time",
+    "Salon Success Part 1 - Part-Time"
+   ],
+   "ids": [
+    "ESTH M10AB",
+    "ESTH M10AC"
+   ]
+  },
+  {
+   "code": "FTMA",
+   "identities": 2,
+   "voters": 52,
+   "lead": "Broadcasting Technology",
+   "share": 0.62,
+   "runners_up": [
+    [
+     "Film and Media Studies",
+     18
+    ],
+    [
+     "English",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Moorpark College"
+   ],
+   "titles": [
+    "Directors and Genres",
+    "Introduction to Documentary Studies"
+   ],
+   "ids": [
+    "FTMA M10AD",
+    "FTMA M10AO"
+   ]
+  },
+  {
+   "code": "GCMW",
+   "identities": 2,
+   "voters": 20,
+   "lead": "Multimedia",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Computer Information Systems",
+     8
+    ],
+    [
+     "Graphic Arts",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Palomar College"
+   ],
+   "titles": [
+    "Multimedia for Social Networking",
+    "Search Engine Optimization (Seo) for Web Design"
+   ],
+   "ids": [
+    "GCMW M10AF",
+    "GCMW M10AI"
+   ]
+  },
+  {
+   "code": "IDNM",
+   "identities": 2,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Southwestern College"
+   ],
+   "titles": [
+    "New Media Form and Content",
+    "Trends and Careers in New Media"
+   ],
+   "ids": [
+    "IDNM M10AA",
+    "IDNM M10AB"
+   ]
+  },
+  {
+   "code": "IDSG",
+   "identities": 2,
+   "voters": 10,
+   "lead": "Machine Tool Technology",
+   "share": 0.4,
+   "runners_up": [
+    [
+     "Manufacturing Technology",
+     4
+    ],
+    [
+     "Automotive Technology",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Diablo Valley College"
+   ],
+   "titles": [
+    "Color Visualization for Product Design",
+    "Introduction to Industrial and Product Design"
+   ],
+   "ids": [
+    "IDSG M10AB",
+    "IDSG M10AE"
+   ]
+  },
+  {
+   "code": "NAVI",
+   "identities": 2,
+   "voters": 8,
+   "lead": "Photography",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Computer Science",
+     2
+    ],
+    [
+     "Multimedia",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Las Positas College"
+   ],
+   "titles": [
+    "FAA Remote Pilot Certificate Exam Preparation",
+    "Orientation to Drones and Unoccupied Aerial Systems"
+   ],
+   "ids": [
+    "NAVI M90AC",
+    "NAVI M90AD"
+   ]
+  },
+  {
+   "code": "NCID",
+   "identities": 2,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "West Valley College"
+   ],
+   "titles": [
+    "Intro to Design for Advanced Manufacturing 1",
+    "Introduction to Design for Advanced Manufacturing 2"
+   ],
+   "ids": [
+    "NCID M90AA",
+    "NCID M90AB"
+   ]
+  },
+  {
+   "code": "NCPH",
+   "identities": 2,
+   "voters": 6,
+   "lead": "Photography",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "College of the Canyons"
+   ],
+   "titles": [
+    "Fundamentals of Digital Camera Equipment",
+    "Lab Practices for the Digital Darkroom"
+   ],
+   "ids": [
+    "NCPH M90AA",
+    "NCPH M90AD"
+   ]
+  },
+  {
+   "code": "NCTH",
+   "identities": 2,
+   "voters": 40,
+   "lead": "Drama/Theater Arts",
+   "share": 0.78,
+   "runners_up": [
+    [
+     "Drafting/CADD",
+     8
+    ],
+    [
+     "Music",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "College of the Canyons",
+    "Las Positas College"
+   ],
+   "titles": [
+    "Business of Acting",
+    "Auditioning Skills for Actors"
+   ],
+   "ids": [
+    "NCTH M9001",
+    "NCTH M90AA"
+   ]
+  },
+  {
+   "code": "NCVO",
+   "identities": 2,
+   "voters": 16,
+   "lead": "Industrial Technology",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Family and Consumer Studies/ Home Economics",
+     4
+    ],
+    [
+     "Education",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "College of the Canyons"
+   ],
+   "titles": [
+    "Advanced Tools in Photoshop",
+    "Building on Photoshop Basics"
+   ],
+   "ids": [
+    "NCVO M90AA",
+    "NCVO M90AD"
+   ]
+  },
+  {
+   "code": "TELE",
+   "identities": 2,
+   "voters": 2,
+   "lead": "Broadcasting Technology",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Grossmont College"
+   ],
+   "titles": [
+    "Film Adaptations of Literature",
+    "The Film as Communication Art"
+   ],
+   "ids": [
+    "TELE M10AA",
+    "TELE M10AB"
+   ]
+  },
+  {
+   "code": "TICU",
+   "identities": 2,
+   "voters": 2,
+   "lead": "Business",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "City College of San Francisco"
+   ],
+   "titles": [
+    "Custodial Training",
+    "Custodial Training for Healthcare Workers"
+   ],
+   "ids": [
+    "TICU M9001",
+    "TICU M90AB"
+   ]
+  },
+  {
+   "code": "VISC",
+   "identities": 2,
+   "voters": 42,
+   "lead": "Graphic Arts",
+   "share": 0.62,
+   "runners_up": [
+    [
+     "Art",
+     12
+    ],
+    [
+     "Fashion and Related Technologies",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Los Angeles Trade Technical College"
+   ],
+   "titles": [
+    "Digital Prepress 2",
+    "Flash Motion Graphics (Beginning Level)"
+   ],
+   "ids": [
+    "VISC M10AI",
+    "VISC M10AL"
+   ]
+  },
+  {
+   "code": "WORK",
+   "identities": 2,
+   "voters": 22,
+   "lead": "Interdisciplinary Studies",
+   "share": 0.55,
+   "runners_up": [
+    [
+     "Management",
+     6
+    ],
+    [
+     "Business",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "College of the Redwoods"
+   ],
+   "titles": [
+    "Custodian: Basic Maintenance",
+    "Custodian Training"
+   ],
+   "ids": [
+    "WORK M90AN",
+    "WORK M90AO"
+   ]
+  },
+  {
+   "code": "AFXX",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [],
+   "titles": [
+    "Evolution of the U.S. Air Force Air and Space Power"
+   ],
+   "ids": [
+    "AFXX M1001"
+   ]
+  },
+  {
+   "code": "AIRT",
+   "identities": 1,
+   "voters": 6,
+   "lead": "Aviation",
+   "share": 0.83,
+   "runners_up": [
+    [
+     "Work Experience Instructors",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Mt. San Antonio College"
+   ],
+   "titles": [
+    "Enroute Radar Laboratory"
+   ],
+   "ids": [
+    "AIRT M10AE"
+   ]
+  },
+  {
+   "code": "ARHI",
+   "identities": 1,
+   "voters": 3,
+   "lead": "Art",
+   "share": 0.67,
+   "runners_up": [
+    [
+     "Photography",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Sierra College"
+   ],
+   "titles": [
+    "History of Latinx and Chicanx Art"
+   ],
+   "ids": [
+    "ARHI M10AA"
+   ]
+  },
+  {
+   "code": "ARHS",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Las Positas College"
+   ],
+   "titles": [
+    "Museum & Gallery Techniques"
+   ],
+   "ids": [
+    "ARHS M10AA"
+   ]
+  },
+  {
+   "code": "ARTV",
+   "identities": 1,
+   "voters": 1,
+   "lead": "Broadcasting Technology",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Monterey Peninsula College"
+   ],
+   "titles": [
+    "Introduction to Film/Video"
+   ],
+   "ids": [
+    "ARTV M10AA"
+   ]
+  },
+  {
+   "code": "ARTZ",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Mt. San Antonio College"
+   ],
+   "titles": [
+    "Specialized Studio-Art Studies"
+   ],
+   "ids": [
+    "ARTZ M10AA"
+   ]
+  },
+  {
+   "code": "BROA",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "San Jose City College"
+   ],
+   "titles": [
+    "Intermediate Radio Production"
+   ],
+   "ids": [
+    "BROA M10AA"
+   ]
+  },
+  {
+   "code": "BSAD",
+   "identities": 1,
+   "voters": 31,
+   "lead": "Business",
+   "share": 0.65,
+   "runners_up": [
+    [
+     "Office Technologies",
+     10
+    ],
+    [
+     "Management",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Bakersfield College"
+   ],
+   "titles": [
+    "Principles of Organizational Communication"
+   ],
+   "ids": [
+    "BSAD M10AS"
+   ]
+  },
+  {
+   "code": "CGRA",
+   "identities": 1,
+   "voters": 7,
+   "lead": "Multimedia",
+   "share": 0.71,
+   "runners_up": [
+    [
+     "Computer Information Systems",
+     1
+    ],
+    [
+     "Music",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Porterville College"
+   ],
+   "titles": [
+    "Film Theory"
+   ],
+   "ids": [
+    "CGRA M10AE"
+   ]
+  },
+  {
+   "code": "CMRT",
+   "identities": 1,
+   "voters": 2,
+   "lead": "Art",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Porterville College"
+   ],
+   "titles": [
+    "Commercial Layout and Design"
+   ],
+   "ids": [
+    "CMRT M1001"
+   ]
+  },
+  {
+   "code": "CMSD",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Santa Ana College"
+   ],
+   "titles": [
+    "Intermediate Designing for Print and Digital Media"
+   ],
+   "ids": [
+    "CMSD M10AA"
+   ]
+  },
+  {
+   "code": "DANS",
+   "identities": 1,
+   "voters": 25,
+   "lead": "Dance",
+   "share": 0.8,
+   "runners_up": [
+    [
+     "Music",
+     3
+    ],
+    [
+     "Kinesiology",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Napa Valley College"
+   ],
+   "titles": [
+    "Barre Fitness"
+   ],
+   "ids": [
+    "DANS M10AC"
+   ]
+  },
+  {
+   "code": "DART",
+   "identities": 1,
+   "voters": 60,
+   "lead": "Multimedia",
+   "share": 0.77,
+   "runners_up": [
+    [
+     "Photography",
+     9
+    ],
+    [
+     "Art",
+     5
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Fullerton College",
+    "Monterey Peninsula College"
+   ],
+   "titles": [
+    "Digital Image Editing 2"
+   ],
+   "ids": [
+    "DART M1003"
+   ]
+  },
+  {
+   "code": "DBAX",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [],
+   "titles": [
+    "Beginning Radio Station Operations"
+   ],
+   "ids": [
+    "DBAX M1001"
+   ]
+  },
+  {
+   "code": "DESG",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Evergreen Valley College"
+   ],
+   "titles": [
+    "Design Modelmaking"
+   ],
+   "ids": [
+    "DESG M10AE"
+   ]
+  },
+  {
+   "code": "DESI",
+   "identities": 1,
+   "voters": 22,
+   "lead": "Graphic Arts",
+   "share": 0.73,
+   "runners_up": [
+    [
+     "Art",
+     4
+    ],
+    [
+     "Multimedia",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Santa Monica College"
+   ],
+   "titles": [
+    "Art Studio Prog"
+   ],
+   "ids": [
+    "DESI M10AA"
+   ]
+  },
+  {
+   "code": "DESN",
+   "identities": 1,
+   "voters": 15,
+   "lead": "Architecture",
+   "share": 0.4,
+   "runners_up": [
+    [
+     "Drafting/CADD",
+     6
+    ],
+    [
+     "Industrial Technology",
+     3
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "MiraCosta College"
+   ],
+   "titles": [
+    "Fundamentals of Design"
+   ],
+   "ids": [
+    "DESN M10AC"
+   ]
+  },
+  {
+   "code": "DMED",
+   "identities": 1,
+   "voters": 9,
+   "lead": "Broadcasting Technology",
+   "share": 0.78,
+   "runners_up": [
+    [
+     "Film and Media Studies",
+     1
+    ],
+    [
+     "Work Experience Instructors",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "San Joaquin Delta College"
+   ],
+   "titles": [
+    "Fundamentals of Audio Production"
+   ],
+   "ids": [
+    "DMED M10AD"
+   ]
+  },
+  {
+   "code": "DSGN",
+   "identities": 1,
+   "voters": 19,
+   "lead": "Graphic Arts",
+   "share": 0.53,
+   "runners_up": [
+    [
+     "Art",
+     6
+    ],
+    [
+     "Architecture",
+     3
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "San Diego City College"
+   ],
+   "titles": [
+    "Digital Media 1"
+   ],
+   "ids": [
+    "DSGN M10AF"
+   ]
+  },
+  {
+   "code": "EMER",
+   "identities": 1,
+   "voters": 42,
+   "lead": "Older Adults: Noncredit",
+   "share": 0.76,
+   "runners_up": [
+    [
+     "Multimedia",
+     6
+    ],
+    [
+     "Art",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "North Orange Continuing Education",
+    "North Orange Continuing Education Credit"
+   ],
+   "titles": [
+    "Mobile Information Literacy"
+   ],
+   "ids": [
+    "EMER M9015"
+   ]
+  },
+  {
+   "code": "ENGW",
+   "identities": 1,
+   "voters": 9,
+   "lead": "English",
+   "share": 0.89,
+   "runners_up": [
+    [
+     "Journalism",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Cosumnes River College"
+   ],
+   "titles": [
+    "Introduction to Technical and Professional Writing"
+   ],
+   "ids": [
+    "ENGW M10AQ"
+   ]
+  },
+  {
+   "code": "HOSM",
+   "identities": 1,
+   "voters": 42,
+   "lead": "Aviation",
+   "share": 0.76,
+   "runners_up": [
+    [
+     "Family and Consumer Studies/ Home Economics",
+     6
+    ],
+    [
+     "Culinary Arts/Food Technology",
+     4
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Cypress College",
+    "North Orange Continuing Education",
+    "North Orange Continuing Education Credit"
+   ],
+   "titles": [
+    "Customer Care: Airline/Travel"
+   ],
+   "ids": [
+    "HOSM M9003"
+   ]
+  },
+  {
+   "code": "HUSV",
+   "identities": 1,
+   "voters": 46,
+   "lead": "Counseling",
+   "share": 0.7,
+   "runners_up": [
+    [
+     "Communication Studies",
+     13
+    ],
+    [
+     "Anthropology",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Allan Hancock College",
+    "San Jose City College",
+    "Santiago Canyon College"
+   ],
+   "titles": [
+    "Group Dynamics"
+   ],
+   "ids": [
+    "HUSV M1006"
+   ]
+  },
+  {
+   "code": "LBRY",
+   "identities": 1,
+   "voters": 2,
+   "lead": "Library Science",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Psychology",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Allan Hancock College"
+   ],
+   "titles": [
+    "Advanced Research"
+   ],
+   "ids": [
+    "LBRY M10AA"
+   ]
+  },
+  {
+   "code": "LRNR",
+   "identities": 1,
+   "voters": 0,
+   "lead": null,
+   "share": 0.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Merced College"
+   ],
+   "titles": [
+    "Information Concepts and Research Skills"
+   ],
+   "ids": [
+    "LRNR M10AF"
+   ]
+  },
+  {
+   "code": "MART",
+   "identities": 1,
+   "voters": 60,
+   "lead": "Multimedia",
+   "share": 0.57,
+   "runners_up": [
+    [
+     "Art",
+     13
+    ],
+    [
+     "Graphic Arts",
+     13
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "CaÃ±ada College",
+    "Los Angeles Trade Technical College"
+   ],
+   "titles": [
+    "Digital Page Layout"
+   ],
+   "ids": [
+    "MART M1004"
+   ]
+  },
+  {
+   "code": "MCTV",
+   "identities": 1,
+   "voters": 4,
+   "lead": "Media Production",
+   "share": 0.5,
+   "runners_up": [
+    [
+     "Art",
+     1
+    ],
+    [
+     "Film and Media Studies",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Gavilan College"
+   ],
+   "titles": [
+    "Television and Video Workshop"
+   ],
+   "ids": [
+    "MCTV M10AA"
+   ]
+  },
+  {
+   "code": "MEDI",
+   "identities": 1,
+   "voters": 15,
+   "lead": "Media Production",
+   "share": 0.73,
+   "runners_up": [
+    [
+     "Film and Media Studies",
+     2
+    ],
+    [
+     "Multimedia",
+     2
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Los Angeles Valley College"
+   ],
+   "titles": [
+    "Mythology, Spirituality, and the Art of Story"
+   ],
+   "ids": [
+    "MEDI M10CS"
+   ]
+  },
+  {
+   "code": "MMDI",
+   "identities": 1,
+   "voters": 27,
+   "lead": "Multimedia",
+   "share": 0.81,
+   "runners_up": [
+    [
+     "Photography",
+     4
+    ],
+    [
+     "Commercial Art",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Berkeley City College"
+   ],
+   "titles": [
+    "Design Studio Practice"
+   ],
+   "ids": [
+    "MMDI M90AA"
+   ]
+  },
+  {
+   "code": "MSCM",
+   "identities": 1,
+   "voters": 1,
+   "lead": "Film and Media Studies",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Rio Hondo College"
+   ],
+   "titles": [
+    "Survey of Motion Picture, Radio, and Television"
+   ],
+   "ids": [
+    "MSCM M10AA"
+   ]
+  },
+  {
+   "code": "OFFT",
+   "identities": 1,
+   "voters": 35,
+   "lead": "Office Technologies",
+   "share": 0.4,
+   "runners_up": [
+    [
+     "Business",
+     12
+    ],
+    [
+     "Small Business Development",
+     9
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Bakersfield College",
+    "Santa Monica College"
+   ],
+   "titles": [
+    "Product Design"
+   ],
+   "ids": [
+    "OFFT M9004"
+   ]
+  },
+  {
+   "code": "PUBR",
+   "identities": 1,
+   "voters": 9,
+   "lead": "Journalism",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "East Los Angeles College",
+    "Los Angeles City College",
+    "Los Angeles Harbor College",
+    "Los Angeles Trade Technical College",
+    "San Diego Mesa College"
+   ],
+   "titles": [
+    "Principles of Public Relations"
+   ],
+   "ids": [
+    "PUBR M1001"
+   ]
+  },
+  {
+   "code": "RDIO",
+   "identities": 1,
+   "voters": 4,
+   "lead": "Broadcasting Technology",
+   "share": 0.75,
+   "runners_up": [
+    [
+     "Work Experience Instructors",
+     1
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Rio Hondo College"
+   ],
+   "titles": [
+    "Introduction to Radio News Writing"
+   ],
+   "ids": [
+    "RDIO M10AB"
+   ]
+  },
+  {
+   "code": "VBUS",
+   "identities": 1,
+   "voters": 24,
+   "lead": "Office Technologies",
+   "share": 0.46,
+   "runners_up": [
+    [
+     "Business",
+     7
+    ],
+    [
+     "Multimedia",
+     6
+    ]
+   ],
+   "checkable": false,
+   "colleges": [
+    "Santiago Canyon College"
+   ],
+   "titles": [
+    "Introduction to Mobile and Social Media Tools"
+   ],
+   "ids": [
+    "VBUS M90BF"
+   ]
+  },
+  {
+   "code": "VCST",
+   "identities": 1,
+   "voters": 1,
+   "lead": "Environmental Technologies",
+   "share": 1.0,
+   "runners_up": [],
+   "checkable": false,
+   "colleges": [
+    "Santiago Canyon College"
+   ],
+   "titles": [
+    "Custodial Technician"
+   ],
+   "ids": [
+    "VCST M90AB"
+   ]
+  }
+ ]
+}
