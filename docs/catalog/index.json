@@ -15887,8 +15887,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 410,
+   "count": 411,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 440,
+     "path": "docs/session_440_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-video",
+      "claude-md-pass",
+      "commons"
+     ],
+     "title": "Session 440 handoff: the funding page's JST counts and help, the two-priority film, then the CLAUDE.md pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22971,5 +22988,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1207
+ "total": 1208
 }

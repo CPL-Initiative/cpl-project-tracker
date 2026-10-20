@@ -4393,6 +4393,7 @@ now states current truth only (P3 + P5 remaining).
 
 
 ### docs/INDEX.md update history — entries retired 2026-08-13
+- 2026-10-20 (S431 SkyChaparral): #2269 and #2270 landed and the 44 re-keyed live (run 39362668144, read back); the Sierra hashchange test waits for its state (#2271); Open Asks Sheet 104 asked and ruled, move-ten and agpr (#2272, CPLBrain#404); the handbook link to the live page (#2273); the CSR quarterly probe (#2274); handoff 432.
 
 - **2026-08-10** — SkyDeck: CAC apprenticeship-pathway slides rebuilt from flattened PNGs (3 → 6 slides, 3-click builds, speaker notes on all 15 + a printable run sheet); ⭐ the re-key caught two source unit totals that do not reconcile because the originals clipped their own tables; pre-apprenticeship CPL mechanisms recorded from Sam.
 
