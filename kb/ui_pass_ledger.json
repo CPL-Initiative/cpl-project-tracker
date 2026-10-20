@@ -376,6 +376,14 @@
    "audience": "staff",
    "last": "2026-10-19",
    "outcome": "S423 SkyLaurel, with cobi:knowledge-base: measured for the first time (sign-in, a reader and the composer, synthetic), First Light's light tokens, underlined-word controls, no emoji, CPL Initiative in the header. Clean at nine widths, light; no dark palette yet."
+  },
+  {
+   "id": "cpl-opportunity",
+   "name": "cpl-opportunity/index.html",
+   "page": "cpl-opportunity/index.html",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
   }
  ]
 }

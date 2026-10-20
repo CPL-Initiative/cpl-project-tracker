@@ -1929,6 +1929,17 @@ module.exports = {
     mayHideBelow: [],
   },
 
+  /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
+     cpl-opportunity/index.html, one college per ?college=, linked from My
+     College and the CPL Pathways college picker ("View CPL Visual"). Measured
+     here with no college chosen: the picker, the status line and the empty
+     state, which is what the page paints before its ~45 MB of data arrive. */
+  "cpl-opportunity": {
+    file: "cpl-opportunity/index.html",
+    title: "CPL opportunity visual (shareable)",
+    mayHideBelow: [],
+  },
+
   /* ── The funding tab's Public page view (S307, 2026-09-30; reshaped 2026-10-15) ──
      Sam asked for the Public view and the explainer to be audited for
      consistent margins, AA and phone widths. Since 2026-10-15 (his call 1 on

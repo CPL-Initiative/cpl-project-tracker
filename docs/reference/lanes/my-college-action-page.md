@@ -1,7 +1,7 @@
 ---
 title: "My College (college action page) / MAP-team queue — lane state"
 created: 2026-08-28
-updated: 2026-10-14
+updated: 2026-10-20
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -28,5 +28,7 @@ related:
 ✅ **UI pass on a college's page (S370, #2030).** The public contact measure reads the coordinator, else the counselor, from `map_college_contacts_pub` (it read the absent `primary_contact_email`, so every college told the public "No contact listed in MAP" beside its listed coordinator); signed in, MAP's primary contact. Seeded targets `my-college-page` and `-dark`; controls are underlined words; clean light and dark at 320, 390, 1440. Guard `tests/my_college_public_contact.test.js`.
 
 ✅ **The queue lists each college's program record items (S385, #2093; Sam, Open Asks Sheet 77 card 3):** *Program record items for the colleges to correct* counts them a college from `program_record_college_items` and opens each college to its list, read on demand; My College's *Your program records, for review* reads the same view (S386). Detail: the [harvest lane](program-requirements-harvest.md).
+
+✅ **The CPL opportunity analysis, for any college (Ashley and Sam, 2026-10-20; #2295).** *View CPL Visual* opens the shareable page `cpl-opportunity/?college=<name>`; *Download CPL Extract* builds Ashley's five-tab workbook (plus About & Sources) in the browser. Both appear on My College once one college is chosen, and beside the CPL Pathways college picker. One read-only builder, `college_cpl_workbook.js`: COCI courses, CURRENT identity from `unified_courses_members.js` (never `coci_lookup_data.js`'s identity column, which predates re-mints: 741 of American River's 2,461 differ), peer CPL from the Commons' `unified_courses_aligned.js`, programs-to-courses from the catalog harvest. AP and IB are excluded; CLEP stays. *Could Adopt - View in MAP* opens MAP's CPL Opportunities page and names the ID to search, because MAP has no URL for one card; a link is given only for IDs MAP's API lists (`kb/_verify_map_exhibit_links.py`; `--recheck` for new IDs; 493 of 493 on 2026-10-20). First college: American River (vault `04-projects/cpl-initiative/american-river-cpl-analysis/`). Guard `tests/college_cpl_workbook.test.js`. **NEXT:** run the link check on a schedule so it does not age; Ashley's eleven colleges.
 
 **NEXT:** ⓪ ✅ **Two figures, two names (Sam, sheet 6 card 5, 2026-09-30):** *Start here* reads *units not yet acted on* (`dormant_credits`, the MEASURES headline); *units waiting* stays with the articulated units in *Where you stand* (`articulated_waiting`). Guard: `tests/my_college_units_labels.test.js`. ① the redesign in a browser; ② the region lists when he finds them; ③ Sam's eyes on the public page signed out — the check the sweep cannot make. Story: [`docs/college_action_page_lessons.md`](docs/college_action_page_lessons.md); durable [`a-second-copy-of-a-fact-is-a-stale-copy-waiting`](docs/kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md).
