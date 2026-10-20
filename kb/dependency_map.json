@@ -574,13 +574,6 @@
   "external:c-id.net": {
    "consumers": [
     {
-     "id": "script:kb/_csr_quarterly_probe.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 48
-    },
-    {
      "id": "script:kb/_ingest_cid_articulations.py",
      "kind": "script",
      "direction": "read",
@@ -592,6 +585,13 @@
   },
   "external:c-idsystem.org": {
    "consumers": [
+    {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 51
+    },
     {
      "id": "script:tmc/_parse_tmc_pdfs.py",
      "kind": "script",
@@ -1244,6 +1244,18 @@
    ],
    "main_committers": []
   },
+  "external:data-c-idsystem.org": {
+   "consumers": [
+    {
+     "id": "script:kb/_csr_quarterly_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 55
+    }
+   ],
+   "main_committers": []
+  },
   "external:datamart.cccco.edu": {
    "consumers": [
     {
@@ -1601,7 +1613,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 55
+     "line": 62
     }
    ],
    "main_committers": []
@@ -2795,18 +2807,6 @@
       "map-queue",
       "map-users"
      ]
-    }
-   ],
-   "main_committers": []
-  },
-  "external:www.data-c-idsystem.org": {
-   "consumers": [
-    {
-     "id": "script:kb/_csr_quarterly_probe.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 50
     }
    ],
    "main_committers": []

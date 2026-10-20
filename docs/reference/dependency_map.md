@@ -982,8 +982,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `bakersfield.elumenapp.com` | scripts: `kb/_program_requirements_college.py` |
 | `bsky.app` | `edgefn:cpl-news-harvest` |
-| `c-id.net` | scripts: `kb/_csr_quarterly_probe.py`, `kb/_ingest_cid_articulations.py` |
-| `c-idsystem.org` | scripts: `tmc/_parse_tmc_pdfs.py` |
+| `c-id.net` | scripts: `kb/_ingest_cid_articulations.py` |
+| `c-idsystem.org` | scripts: `kb/_csr_quarterly_probe.py`, `tmc/_parse_tmc_pdfs.py` |
 | `california.public.law` | tabs: `college-briefing`, `implementation-funding` |
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
 | `calnevjatc.org` | scripts: `kb/fire_electrical_external_credentials.py` |
@@ -1004,6 +1004,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `creditforbeingyou.org` | `edgefn:cpl-chat` |
 | `cuesta.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
 | `customreportingmodule.azurewebsites.net` | scripts: `kb/_probe_new_custom_reports.py` |
+| `data-c-idsystem.org` | scripts: `kb/_csr_quarterly_probe.py` |
 | `datamart.cccco.edu` | scripts: `kb/_fetch_program_course_files.py` |
 | `datastudio.google.com` | tabs: `cip-crosswalk` |
 | `docs.google.com` | tabs: `nc-learning-partners` |
@@ -1090,7 +1091,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.craftonhills.edu` | tabs: `map-queue`, `map-users` |
 | `www.cuyamaca.edu` | tabs: `map-queue`, `map-users` |
 | `www.cypresscollege.edu` | tabs: `map-queue`, `map-users` |
-| `www.data-c-idsystem.org` | scripts: `kb/_csr_quarterly_probe.py` |
 | `www.dir.ca.gov` | scripts: `kb/_preseed_null_issuers.py`, `kb/fire_electrical_external_credentials.py` |
 | `www.dvc.edu` | tabs: `map-queue`, `map-users` |
 | `www.electricaltrainingalliance.org` | scripts: `kb/fire_electrical_external_credentials.py` |
