@@ -40,7 +40,18 @@ const dom = new JSDOM(html);
 const tails = Array.from(dom.window.document.querySelectorAll("#toc-list li.toc-tail a")).map((a) => a.getAttribute("href"));
 check("(d) video, office hours, landing page, then the training video",
   /funding_in_motion/.test(tails[0]) && tails[1] === "https://map.rccd.edu/get-involved/" &&
-  tails[2] === "https://map.rccd.edu/cpllandingpages/" && tails[3] === "https://www.youtube.com/watch?v=xW0I6iFgRuk");
+  tails[2] === "https://map.rccd.edu/cpllandingpages/" && tails[3] === "../prototype/landing_page_video/");
+// The training video plays from this site, so no ads and no suggested videos
+// (Sam, 2026-10-20); the page's video file is in the repo.
+const lp = fs.readFileSync(path.join(ROOT, "prototype/landing_page_video/index.html"), "utf8");
+const vsrc = (/<source src="([^"]+)"/.exec(lp) || [])[1];
+check("(d3) the training video page plays the committed file, with no YouTube address",
+  !!vsrc && fs.existsSync(path.join(ROOT, "prototype/landing_page_video", vsrc)) && !/youtube(-nocookie)?\.com|youtu\.be/i.test(lp));
+const vtt = (/<track kind="captions" src="([^"]+)"/.exec(lp) || [])[1];
+check("(d5) the training video carries English captions from a committed WebVTT file",
+  !!vtt && /^WEBVTT/.test(fs.readFileSync(path.join(ROOT, "prototype/landing_page_video", vtt), "utf8")));
+check("(d4) the player page leads back to the funding page at its top and its foot",
+  (lp.match(/href="\.\.\/\.\.\/funding-model\/"/g) || []).length === 2);
 check("(d2) the landing page link's hover recommends office hours",
   /office hours/.test(dom.window.document.getElementById("landing-link").getAttribute("title")));
 

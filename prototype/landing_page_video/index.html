@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managing College Landing Pages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap">
+<!-- The landing-page training video, served here so it plays with no ads and no
+     suggested videos (Sam, 2026-10-20: "We don't have the YouTube account
+     configured to earn money from ads"). Linked from the funding page's
+     Contents. First Light tokens, light by default, dark on request. -->
+<style>
+:root{
+  --paper:#F4F2ED;--ink:#1C1C1A;--ink-muted:#5C5C55;--surface:#FFFFFF;--cobalt:#0047AB;--cobalt-on-dark:#7DA1D4;
+  --page:var(--paper);--text:var(--ink);--text-muted:var(--ink-muted);--card:var(--surface);
+  --line:rgba(28,28,26,.14);--link:var(--cobalt);--focus:var(--cobalt);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--page:#16171B;--text:#EDEBE5;--text-muted:#A9A69D;--card:#202227;--line:rgba(237,235,229,.14);--link:var(--cobalt-on-dark);--focus:var(--cobalt-on-dark)}}
+:root[data-theme="dark"]{color-scheme:dark;--page:#16171B;--text:#EDEBE5;--text-muted:#A9A69D;--card:#202227;--line:rgba(237,235,229,.14);--link:var(--cobalt-on-dark);--focus:var(--cobalt-on-dark)}
+body{margin:0;background:var(--page);color:var(--text);font:400 16px/1.55 "Source Sans 3",Arial,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:clamp(16px,3vw,32px) 16px 40px}
+h1{font:700 clamp(1.5rem,1.1rem + 1.6vw,2.3rem)/1.2 "Playfair Display",Georgia,serif;margin:0 0 6px}
+.dek{margin:0 0 16px;color:var(--text-muted);max-width:var(--cpl-measure,none)}
+video{display:block;width:100%;height:auto;background:var(--ink);border:1px solid var(--line);border-radius:6px}
+.back{margin:0 0 10px}
+.links{display:flex;flex-wrap:wrap;gap:4px 20px;margin-top:14px}
+a{color:var(--link);text-decoration:underline;text-underline-offset:3px;display:inline-block;min-height:24px;padding:2px 0}
+a:focus-visible,video:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="../../funding-model/">Back to How CPL Funding Works</a></p>
+  <h1>Managing College Landing Pages</h1>
+  <p class="dek">A six-minute training on configuring your college's CPL landing page in MAP. For help with your own page, join the MAP team's office hours. Captions are on; turn them off in the player.</p>
+  <video controls preload="metadata" aria-label="Managing College Landing Pages, a six-minute training video">
+    <source src="20261020_Managing_College_Landing_Pages_Intermediate.mp4" type="video/mp4">
+    <track kind="captions" src="20261020_Managing_College_Landing_Pages_Intermediate.en.vtt" srclang="en" label="English" default>
+    Your browser cannot play this video. <a href="20261020_Managing_College_Landing_Pages_Intermediate.mp4">Download it</a>.
+  </video>
+  <p class="links">
+    <a href="https://map.rccd.edu/get-involved/" target="_blank" rel="noopener">MAP team office hours</a>
+    <a href="../../funding-model/">Back to How CPL Funding Works</a>
+  </p>
+</main>
+</body>
+</html>
