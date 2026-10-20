@@ -1,0 +1,58 @@
+{
+  "scopes": [
+    "sheet104-forestry-stragglers"
+  ],
+  "moves": {
+    "AGRI M10SY": {
+      "old_id": "AGRI M10SY",
+      "source": "singleton",
+      "title": "Forest Surveying",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0114.00",
+      "merged_into": "ENVR M1069",
+      "new_id": "ENVR M10SY",
+      "how": "kept number"
+    },
+    "AGRI M1104": {
+      "old_id": "AGRI M1104",
+      "source": "minted",
+      "title": "Introduction to Forest Operations",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": null,
+      "top_code": "0114.00",
+      "merged_into": "ENVR M1069",
+      "new_id": "ENVR M1104",
+      "how": "kept number"
+    }
+  },
+  "alias": {
+    "AGRI M10SY": "ENVR M10SY",
+    "AGRI M1104": "ENVR M1104"
+  },
+  "validation": {
+    "V0_pinned_set": {
+      "pass": true,
+      "problems": [],
+      "found": 2,
+      "pinned": 2
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    }
+  },
+  "gapfilled": [],
+  "reused_retired_ids": []
+}

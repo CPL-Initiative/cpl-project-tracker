@@ -1,0 +1,21 @@
+{
+  "_status": "Sheet 104 re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_at": "2026-10-20",
+  "_scope": [
+    "sheet104-forestry-stragglers"
+  ],
+  "_count": 2,
+  "_ruling": "S432 on Sam's Sheet 104 \"move-ten\" (2026-10-20), proceeded on the recommendation: the two forestry identities merged into ENVR M1069 that the sitting never named follow their parent to ENVR",
+  "aliases": {
+    "AGRI M10SY": {
+      "new_id": "ENVR M10SY",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M1104": {
+      "new_id": "ENVR M1104",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    }
+  }
+}

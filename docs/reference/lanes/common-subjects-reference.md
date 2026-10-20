@@ -180,7 +180,17 @@ four known issues with owners, the procedures in force, and deep links into the 
    the sitting set aside re-key from AGRI to ENVR under Forestry/Natural Resources, Shasta's three AGNR-filed and
    Sierra's AGRI-filed ones included; five of the ten held an Agriculture discipline from the TOP division alone)
    **and "agpr"** (the four wine courses on AGRI, Wines of France, Wines of Italy, Wine Service and Hospitality and
-   Beginning Wine Sensory Analysis, re-key to AGPR under Agricultural Production). Not yet applied: NEXT.
+   Beginning Wine Sensory Analysis, re-key to AGPR under Agricultural Production). **Applied (S432, #2276)**:
+   `kb/_forestry_wine_remint.py`, receipt `kb/forestry_wine_remint_out/2026-10-20/alias_map.json` in ALIAS_MAPS, stamps
+   `_forestry_wine_remint_from`: ENVR 10, AGPR 4 (13 kept their number; AGRI M10AX gap-filled to ENVR M10EO). Each
+   record's discipline follows its code, and its TOP-derived `discipline_source` is cleared to the manual state
+   (`_kin_pe_pass2.py`'s `flip_disc`), so the TOP gate never holds the ruling out. 9 curation keys and 15
+   `merge_into` pointers re-keyed; kb_curation re-keyed live by `supabase-rekey.yml` after merge.
+   Two findings it surfaced: ENVR M10CM and M10DI already merge into the moved parents (ENVR M1069, M1103), so the
+   merge candidates left are ENVR M1009 *Dendrology* with ENVR M1064 *Wildland Trees and Shrubs (Dendrology)*, and
+   ENVR M1025 *Silviculture* with ENVR M10OP *Silviculture and Fire Ecology*. And two forestry identities the
+   sitting never named stay on AGRI while merged into ENVR M1069: AGRI M10SY *Forest Surveying* (Agriculture from
+   `top_division` alone) and AGRI M1104 *Introduction to Forest Operations* (4 members).
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
    faculty-published moment. The Progress card's foot now names the nightly procedure instead of the unused stage.
@@ -198,9 +208,8 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 ## NEXT
 
-Sheet 104's rulings, one re-key window under the playbook: AGRI M1064, M1069, M10AX, M10IL, M10IZ, M10KI, M10OP,
-M10OQ, M10SX and M1103 to ENVR, AGRI M1106, M1119, M1113 and M10FP to AGPR, each record's discipline following its
-code (modeled on `kb/_agri_family_remint.py`) (one dry run, one alias map, the fresh live read, `supabase-rekey.yml` after merge); the four
-ENVR courses on the same subjects (ENVR M1009, M10CM, M10DI, M1025) then go to the merge worklist. The quarterly routines' probe (#2274, `kb/_csr_quarterly_probe.py`): land it, dispatch
-`csr-quarterly.yml` once and record its three `PROBE` lines, then the comparison mode and its schedule; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
+The two forestry stragglers on AGRI merged into ENVR M1069 (AGRI M10SY, M1104) follow the ten to ENVR in a
+small window; the two ENVR merge candidates (M1009 with M1064, M1025 with M10OP) go to the merge worklist. The quarterly probe (#2274) has run twice (03:54Z and 05:24Z, run 39374671352), the same both times: the MQ page
+200 with the 19th edition (`edition_matches` true); c-id.net 403 to a runner; www.data-c-idsystem.org does not
+resolve. Next, its comparison mode and quarterly cron, with the C-ID read moved to a source a runner can reach; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.
