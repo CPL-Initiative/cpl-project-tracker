@@ -1,0 +1,26 @@
+{
+  "_what": "What each CSR quarterly source served when last read and accepted. kb/_csr_quarterly_probe.py --compare reads a source today against this file; a session updates it only after a change has been ruled on.",
+  "_source": "csr-quarterly.yml run 39374671352 (job 118470014692), 2026-10-20 05:24Z, read by S433 from the job log",
+  "mq_page": {
+    "routine": "mq_list",
+    "edition": 19,
+    "document_sha256": "d578d90459420aad82d55428e1d1ee89ba5b2bba0cfeaca21e1c0b3ffd4061c0",
+    "document_bytes": 5057943,
+    "document_final_url": "https://www.cccco.edu/wp-content/uploads/2025/05/19th-edition-minimum-qualifications-2-a11y1.pdf",
+    "read_at": "2026-10-20"
+  },
+  "cid_home": {
+    "routine": "authority_tables",
+    "edition": null,
+    "document_sha256": null,
+    "note": "c-id.net answers a runner 403 (2026-10-20, twice); no baseline until a source a runner can read is found",
+    "read_at": "2026-10-20"
+  },
+  "cid_data": {
+    "routine": "authority_tables",
+    "edition": null,
+    "document_sha256": null,
+    "note": "www.data-c-idsystem.org does not resolve (2026-10-20, twice)",
+    "read_at": "2026-10-20"
+  }
+}

@@ -93,8 +93,46 @@ check("the probe writes no file", sorted(os.listdir(ROOT)) == before)
 with open(os.path.join(ROOT, ".github", "workflows", "csr-quarterly.yml"), encoding="utf-8") as f:
     wf = f.read()
 check("the workflow only reads the repository", "contents: read" in wf and "contents: write" not in wf)
-check("the workflow is dispatch-only until the comparison mode lands", "schedule:" not in wf and "workflow_dispatch" in wf)
-check("the workflow runs the probe", "kb/_csr_quarterly_probe.py" in wf)
+check("the workflow runs quarterly and on dispatch", "schedule:" in wf and "1,4,7,10" in wf and "workflow_dispatch" in wf)
+check("the workflow runs the comparison", "kb/_csr_quarterly_probe.py --compare" in wf)
+
+# ── comparison mode ──────────────────────────────────────────────────────────
+base = probe.load_baseline()
+check("the baseline names every target", {t["key"] for t in probe.TARGETS} <= set(base), str(sorted(base)))
+check("the handbook baseline is the 19th edition with a PDF hash",
+      base["mq_page"]["edition"] == 19 and len(base["mq_page"]["document_sha256"]) == 64)
+pdf_sha = __import__("hashlib").sha256(PDF).hexdigest()
+fixture_base = {"edition": 19, "document_sha256": pdf_sha, "read_at": "2026-10-20"}
+check("the same PDF and edition read as same", probe.compare(r, fixture_base)["verdict"] == "same")
+moved = probe.compare(r, dict(fixture_base, document_sha256="0" * 64))
+check("a moved PDF reads as changed and names what moved",
+      moved["verdict"] == "changed" and moved["moved"] == ["document_sha256"])
+check("a new edition reads as changed", "edition" in probe.compare(r, dict(fixture_base, edition=18))["moved"])
+check("a dead page reads as unread, never changed", probe.compare(d, fixture_base)["verdict"] == "unread")
+check("a source with no accepted read reads no_baseline",
+      probe.compare(u, base["cid_home"])["verdict"] == "no_baseline")
+md = probe.summary_md([moved, probe.compare(u, base["cid_home"])])
+check("the step summary carries a row per source and the next step on a change",
+      md.count("\n| ") == 3 and "opens a card" in md)
+
+saved = probe.TARGETS, probe.fetch
+def run_main(get):
+    probe.TARGETS = [dict(MQ)]
+    orig = probe.probe
+    probe.probe = lambda t, committed=None: orig(t, get=get, committed=committed)
+    try:
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            rc = probe.main(["--compare"])
+    finally:
+        probe.probe = orig
+        probe.TARGETS = saved[0]
+    return rc, out.getvalue()
+os.environ.pop("GITHUB_STEP_SUMMARY", None)
+rc, out = run_main(get)
+check("--compare prints a COMPARE line and exits 1 when the PDF differs from the baseline",
+      rc == 1 and "COMPARE " in out and '"changed"' in out, out[-300:])
+rc, out = run_main(dead)
+check("--compare exits 0 when the source does not answer", rc == 0 and '"unread"' in out)
 
 print("\n%d/%d checks passed" % (passed, passed + failed))
 sys.exit(1 if failed else 0)
