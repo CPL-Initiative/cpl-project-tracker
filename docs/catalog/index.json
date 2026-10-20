@@ -15071,7 +15071,7 @@
      ],
      "title": "Annual Workplan Goals / adding, moving and counting sub-activities \u2014 lane state",
      "type": null,
-     "updated": "2026-10-19"
+     "updated": "2026-10-20"
     },
     {
      "created": "2026-10-18",
@@ -15887,8 +15887,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 409,
+   "count": 410,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 439,
+     "path": "docs/session_439_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan-goals",
+      "annual-goals",
+      "second-reader",
+      "commons"
+     ],
+     "title": "Session 439 handoff: the Annual Goals table reworked and live, Grok parked on the district card, the Course Progress view next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22954,5 +22971,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1206
+ "total": 1207
 }

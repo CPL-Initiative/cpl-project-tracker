@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-409 document(s).
+410 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 439 | [Session 439 handoff: the Annual Goals table reworked and live, Grok parked on the district card, the Course Progress view next](../session_439_handoff.md) | 2026-10-20 |
 | 438 | [Session 438 handoff: the CR Progress view live, the C-ID site found, Sheet 108 answered, the auto-mark rule waiting on Sam's word](../session_438_handoff.md) | 2026-10-20 |
 | 437 | [Session 437 handoff: the Exhibit Progress view, the Fact Sheet's controls as words, Sheet 107 open](../session_437_handoff.md) | 2026-10-20 |
 | 436 | [Session 436 handoff: the 110 strays triaged onto Sheet 106, the veteran map's controls as words](../session_436_handoff.md) | 2026-10-20 |
