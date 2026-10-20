@@ -67,8 +67,10 @@ const explainer = fs.readFileSync("funding-model/index.html", "utf8");
 
 check("a1 the explainer's link says introduction, not guide, and the film's true length",
   /id="video-link"[^>]*>Watch the 100-second introduction</.test(explainer));
-check("a2 the Scenario 2 label says introduction and names no scenario (it is the published one)",
-  explainer.includes('label: "Watch the 100-second introduction"') && !/label: "Watch[^"]*Scenario/.test(explainer));
+// Since 2026-10-20 (S439) the link is the published film alone, so no
+// per-scenario label rewrites it.
+check("a2 the link opens the published film and no per-scenario label renames it",
+  /id="video-link" href="\.\.\/prototype\/funding_video\/funding_in_motion_s2\.html"/.test(explainer) && !/label: "Watch/.test(explainer));
 // Sam, 2026-10-09 (a marked-up screenshot of the explainer): the Contents keeps
 // the introduction alone; the MP4 download and the narrated cut left it. The
 // files stay where the narrated checks below read them.
