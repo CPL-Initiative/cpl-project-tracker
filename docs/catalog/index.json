@@ -15887,8 +15887,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 407,
+   "count": 408,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 437,
+     "path": "docs/session_437_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "credential-reference",
+      "ui-pass",
+      "fact-sheet",
+      "decision-sheet"
+     ],
+     "title": "Session 437 handoff: the Exhibit Progress view, the Fact Sheet's controls as words, Sheet 107 open",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22918,5 +22936,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1204
+ "total": 1205
 }

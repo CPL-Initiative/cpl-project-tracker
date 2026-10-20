@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 60 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 407 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1204** | |
+| Session handoffs | 408 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1205** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-20 (S436 SkyTanbark): the Exhibit Progress view (#2285), the Fact Sheet's UI pass, Open Asks Sheet 107; handoff 437 (SkySagebrush).
 - 2026-10-20 (S434 SkyElderberry, the routine): Sierra's third UI pass, Copy, Helpful, Not helpful and the note's Send as underlined words (#2281); Sheet 105 still open; the strays wait on a curator's discipline calls; handoff 435; no KB note.
 - 2026-10-20 (S433 SkyCoffeeberry, the routine): the two ENVR forestry pairs queued for a faculty reviewer as `surfaced` pairs (#2278); the CSR quarterly routine compares the handbook with the accepted 19th edition on a quarterly cron (#2279); the CSR lane compacted under its budget; Sheet 105 still open; handoff 434; no KB note.
 - 2026-10-20 (S432 SkyYerbaSanta, the routine): Sheet 104 applied, ten forestry identities to ENVR and four wine to AGPR, each discipline following its code (#2276), re-keyed live and read back; the quarterly probe read a second time; Open Asks Sheet 105 asks about the two forestry stragglers (the permission check held their apply); handoff 433; no KB note.

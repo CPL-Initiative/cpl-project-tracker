@@ -1,20 +1,32 @@
 {
   "schema": 1,
-  "session": 423,
-  "moniker": "SkyLaurel",
+  "session": 436,
+  "moniker": "SkyTanbark",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_424_handoff.md",
-  "calls": [],
+  "handoff": "docs/session_437_handoff.md",
+  "calls": [
+    {
+      "title": "Keep the Progress view as built?",
+      "text": "Complete means a title with a review stamp, a person's or a procedure's cohort's, and the tab still opens on Needs you. Built on the recommendation; reply to reverse.",
+      "if_no_reply": "It stays as built.",
+      "link": "https://claude.ai/artifact/DxwPak4waxKhMByt8oL6BU",
+      "link_text": "Open Sheet 107, card 4"
+    }
+  ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T11:18:05Z",
+  "written_at": "2026-10-20T11:59:35Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Confirm the first unattended saving night, then the Unclassified lane's cohorts",
-    "text": "After the daily build, confirm on the Common Exhibit Reference tab that the Unclassified lane names each saved title's cohort as the saver and that Needs you holds the titles waiting on a person, the fold's 18 among them. Then read the nightly 07:47Z procedures run's receipt, the first saving night that ran unattended."
+    "title": "Read Sheet 107 card 4, then work Held",
+    "text": "If Sam answers card 4 with open-progress or person-only, make that one change to the Progress view; otherwise work the titles the procedures held, first on the Progress view's milestone line."
   },
   "changes": [
+    {
+      "at": "2026-10-20T11:50:00Z",
+      "text": "The Progress view: the Commons' shape on this reference, first among the tab's views, with every count opening its lane."
+    },
     {
       "at": "2026-10-19T11:00:00Z",
       "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."

@@ -338,3 +338,19 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
 - **The re-key went on a card.** S432's apply of the same shape was held by the session's permission check, and one
   window can carry the forestry stragglers, the twelve FL re-keys and the eight blanks together. Open Asks Sheet 106,
   cards 1 to 3; the FL dry run (`kb/_fl_stray_remint.py`) passes every gate.
+
+## S436 SkyTanbark (2026-10-20): the Exhibit Progress view, the third host
+
+- **One definition, two readers.** The view reads its headline pair from the Exhibit row of `kb/status/commons.json`
+  instead of recomputing it in the browser, so the Commons row and the view cannot disagree. The builder carries the
+  auditor's tallies the cards need (`map_titles`, `unclassified`, `left_map`, `below_80`, `below_60`); the 2 MB audit
+  and the 1.9 MB title map stay out of the browser.
+- **A host with its own state lends it through an api.** The Exhibit tab is a closed IIFE of 5,700 lines; the
+  definitions live in `exhibit_progress.js`, and the tab hands over its procedures report, its three worklists and its
+  lane switch. The worklists load late, so a card that needs them reads *Could not be read (still loading)* until the
+  tab re-renders, never a zero.
+- **The third host needed no change to the module.** The contract held: a spec, a context, a host lending
+  `section()` and `goControl()`.
+- **A draft PR runs no CI here.** `get_check_runs` read zero runs on #2285 until it was marked ready; never park in draft.
+- **`npm test` does not finish inside a 10-minute sandbox call**, even in four background shards. CI's sharded `test`
+  check is the gate; locally, run the changed tests and the ones that pin the view.

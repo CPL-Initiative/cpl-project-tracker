@@ -325,3 +325,12 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
 - **Edit the builder, never the page.** The map is built by `veteran-sprint-map/build_selfcontained.py`, and CI's
   `--check` fails a hand edit. The guard `tests/veteran_map_controls_words.test.js` reads the built page's CSS: 10/10
   on the new rules, 2/10 on the old.
+
+## S436 SkyTanbark (2026-10-20): the Fact Sheet
+
+- Swept clean before and after at nine widths, light and dark. Its action bar had taken the Controls rule on
+  2026-10-09; two holdouts remained in injected CSS, the statewide recs toggle (underlined only on hover, a caret
+  glyph) and the curator editor's four boxed buttons. Both are words now; `tests/factsheet_a11y.test.js` reads 2/2 on
+  the new CSS and 0/2 on the old.
+- **Grep the injected CSS, not only the stylesheet.** The third view in a row to owe the Controls rule; each time the
+  stragglers lived in a `.js` file's CSS string, which a sweep of the `.css` file misses.

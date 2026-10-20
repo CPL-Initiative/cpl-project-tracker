@@ -73,11 +73,11 @@
     if (document.getElementById('sw-rec-css')) return;
     var css = ''
       + '.sw-rec{display:block;margin:3px 0 2px;}'
-      + '.sw-rec-tg{font:inherit;font-size:.78rem;color:var(--cobalt);background:none;border:0;'
-        + 'padding:1px 0;min-height:24px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;}'
-      + '.sw-rec-tg:hover{text-decoration:underline;}'
-      + '.sw-rec-tg .sw-rec-ar{font-size:.7rem;transition:transform .12s;}'
-      + '.sw-rec-tg[aria-expanded="true"] .sw-rec-ar{transform:rotate(90deg);}'
+      // Controls are underlined words (Sam, 2026-10-09): underlined at rest, no caret (S436 UI pass).
+      + '.sw-rec-tg{font:inherit;font-size:.78rem;font-weight:600;color:var(--cobalt);background:none;border:0;'
+        + 'padding:1px 0;min-height:24px;cursor:pointer;display:inline-flex;align-items:center;'
+        + 'text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}'
+      + '.sw-rec-tg:hover{text-decoration-thickness:2px;}'
       + '.sw-rec-list{list-style:none;margin:4px 0 6px;padding:6px 0 4px 14px;'
         + 'border-left:2px solid var(--border-strong);}'
       + '.sw-rec-list li{margin:2px 0;font-size:.8rem;line-height:1.4;color:var(--muted);}'
@@ -112,7 +112,6 @@
       wrap.className = 'sw-rec';
       wrap.innerHTML =
         '<button type="button" class="sw-rec-tg" aria-expanded="false">'
-          + '<span class="sw-rec-ar">▸</span>'
           + n + ' statewide credit rec' + (n === 1 ? '' : 's')
         + '</button>'
         + recListHtml(recs);
