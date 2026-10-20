@@ -24409,7 +24409,8 @@
   "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
   "kb/athl_remint_out/2026-09-30/alias_map.json",
   "kb/agab_remint_out/2026-10-19/alias_map.json",
-  "kb/agri_family_remint_out/2026-10-20/alias_map.json"
+  "kb/agri_family_remint_out/2026-10-20/alias_map.json",
+  "kb/forestry_wine_remint_out/2026-10-20/alias_map.json"
  ],
  "_rekeyed_at": "2026-10-20",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"

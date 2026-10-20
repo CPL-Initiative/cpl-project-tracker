@@ -41114,24 +41114,22 @@
       "cte": true,
       "_subj4_fold_from": "ENVM M10AY"
     },
-    "AGRI M10AX": {
-      "course_id": "AGRI M10AX",
+    "ENVR M10EO": {
+      "course_id": "ENVR M10EO",
       "common_title": "Advanced Forest Ecology and Management",
       "subject": "ENVR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "420",
       "college": "Feather River College",
       "control_number": "CCC000641612",
       "credit_status": "Credit",
       "typical_units": 3.5,
       "top_code": "0114.00",
-      "discipline": "Agriculture",
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID ENVR 118",
       "cte": true,
-      "_subj4_fold_from": "ENVR M10AB"
+      "_subj4_fold_from": "ENVR M10AB",
+      "_forestry_wine_remint_from": "AGRI M10AX"
     },
     "AGAS M10HC": {
       "course_id": "AGAS M10HC",
@@ -46540,24 +46538,22 @@
       "cte": true,
       "_subj4_fold_from": "FMT M10AD"
     },
-    "AGRI M10IL": {
-      "course_id": "AGRI M10IL",
+    "ENVR M10IL": {
+      "course_id": "ENVR M10IL",
       "common_title": "Applied Forest Inventory and Management",
       "subject": "FNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "62",
       "college": "Columbia College",
       "control_number": "CCC000608899",
       "credit_status": "Credit",
       "typical_units": 3.0,
       "top_code": "0114.00",
-      "discipline": "Agriculture",
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID FNR 104",
       "cte": true,
-      "_subj4_fold_from": "FNR M10AA"
+      "_subj4_fold_from": "FNR M10AA",
+      "_forestry_wine_remint_from": "AGRI M10IL"
     },
     "AGRI M10NR": {
       "course_id": "AGRI M10NR",
@@ -46635,24 +46631,22 @@
       "cte": true,
       "_subj4_fold_from": "FNR M10AJ"
     },
-    "AGRI M10OQ": {
-      "course_id": "AGRI M10OQ",
+    "ENVR M10OQ": {
+      "course_id": "ENVR M10OQ",
       "common_title": "Forest Ecology and Management",
       "subject": "FNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "5",
       "college": "College of the Redwoods",
       "control_number": "CCC000369652",
       "credit_status": "Credit",
       "typical_units": 3.0,
       "top_code": "0114.00",
-      "discipline": "Agriculture",
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID FNR 126",
       "cte": true,
-      "_subj4_fold_from": "FNR M10AL"
+      "_subj4_fold_from": "FNR M10AL",
+      "_forestry_wine_remint_from": "AGRI M10OQ"
     },
     "AGRI M10SY": {
       "course_id": "AGRI M10SY",
@@ -84050,24 +84044,22 @@
       "cte": true,
       "_subj4_fold_from": "NRM M10AD"
     },
-    "AGRI M10IZ": {
-      "course_id": "AGRI M10IZ",
+    "ENVR M10IZ": {
+      "course_id": "ENVR M10IZ",
       "common_title": "Forest Management and Assessment",
       "subject": "NRM",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "70",
       "college": "Santa Rosa Junior College",
       "control_number": "CCC000298023",
       "credit_status": "Credit",
       "typical_units": 4.0,
       "top_code": "0114.00",
-      "discipline": "Agriculture",
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID NRM 108",
       "cte": true,
-      "_subj4_fold_from": "NRM M10AE"
+      "_subj4_fold_from": "NRM M10AE",
+      "_forestry_wine_remint_from": "AGRI M10IZ"
     },
     "AGRI M10MJ": {
       "course_id": "AGRI M10MJ",
@@ -109780,24 +109772,22 @@
       "cte": false,
       "_subj4_fold_from": "WGST M10AC"
     },
-    "AGRI M10FP": {
-      "course_id": "AGRI M10FP",
+    "AGPR M10FP": {
+      "course_id": "AGPR M10FP",
       "common_title": "Beginning Wine Sensory Analysis",
       "subject": "WINE",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPR",
       "course_number": "70",
       "college": "Santa Rosa Junior College",
       "control_number": "CCC000577212",
       "credit_status": "Credit",
       "typical_units": 1.5,
       "top_code": "0112.00",
-      "discipline": "Agriculture",
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
+      "discipline": "Agricultural Production",
       "_remint_from": "M-ID WINE 112",
       "cte": true,
-      "_subj4_fold_from": "WINE M10AC"
+      "_subj4_fold_from": "WINE M10AC",
+      "_forestry_wine_remint_from": "AGRI M10FP"
     },
     "IDST M10RL": {
       "course_id": "IDST M10RL",
@@ -147090,25 +147080,23 @@
       "_subj4_fold_from": "AGRI M10GK",
       "_authority_recode_from": "AGRI M10JM"
     },
-    "AGRI M10KI": {
-      "course_id": "AGRI M10KI",
+    "ENVR M10KI": {
+      "course_id": "ENVR M10KI",
       "common_title": "Beginning Forestry",
       "subject": "AGNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "101",
       "college": "Shasta College",
       "control_number": "CCC000631479",
       "credit_status": "Credit",
       "typical_units": 3.0,
       "top_code": "0114.00",
-      "discipline": "Agriculture",
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID AGNR 130",
       "_subj4_remint_from": "AGNR M10AF",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10GZ"
+      "_subj4_fold_from": "AGRI M10GZ",
+      "_forestry_wine_remint_from": "AGRI M10KI"
     },
     "AGRI M10KQ": {
       "course_id": "AGRI M10KQ",
@@ -147230,25 +147218,23 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M10KN"
     },
-    "AGRI M10SX": {
-      "course_id": "AGRI M10SX",
+    "ENVR M10SX": {
+      "course_id": "ENVR M10SX",
       "common_title": "Forest Protection and Health",
       "subject": "AGNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "53",
       "college": "Shasta College",
       "control_number": "CCC000525796",
       "credit_status": "Credit",
       "typical_units": 3.0,
       "top_code": "0115.00",
-      "discipline": "Agriculture",
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID AGNR 146",
       "_subj4_remint_from": "AGNR M10AM",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10MF"
+      "_subj4_fold_from": "AGRI M10MF",
+      "_forestry_wine_remint_from": "AGRI M10SX"
     },
     "AGAS M10HF": {
       "course_id": "AGAS M10HF",
@@ -147679,25 +147665,23 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M10ID"
     },
-    "AGRI M10OP": {
-      "course_id": "AGRI M10OP",
+    "ENVR M10OP": {
+      "course_id": "ENVR M10OP",
       "common_title": "Silviculture and Fire Ecology",
       "subject": "AGNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "ENVR",
       "course_number": "51",
       "college": "Shasta College",
       "control_number": "CCC000647626",
       "credit_status": "Credit",
       "typical_units": 2.0,
       "top_code": "0115.00",
-      "discipline": "Agriculture",
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
+      "discipline": "Forestry/Natural Resources",
       "_remint_from": "M-ID AGNR 196",
       "_subj4_remint_from": "AGNR M10BI",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10JI"
+      "_subj4_fold_from": "AGRI M10JI",
+      "_forestry_wine_remint_from": "AGRI M10OP"
     },
     "AGRI M10FD": {
       "course_id": "AGRI M10FD",

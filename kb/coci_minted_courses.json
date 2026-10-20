@@ -48470,8 +48470,8 @@
       "cte": false,
       "_subj4_fold_from": "WFPR M9024"
     },
-    "AGRI M1113": {
-      "course_id": "AGRI M1113",
+    "AGPR M1113": {
+      "course_id": "AGPR M1113",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -48480,8 +48480,8 @@
       "description": "A comprehensive exploration of wine service covering the pragmatic concerns of selecting,serving, decanting, storing, transporting, handling and displaying wine in restaurant, tastingroom, and private venues. Appropriate for hospitality professionals and wine aficionados.",
       "description_source": "local catalog (representative/modal)",
       "subject": "WINEST",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "AGPR",
+      "discipline": "Agricultural Production",
       "discipline_provisional": "WINE",
       "typical_units": 1.5,
       "confidence": 0.68,
@@ -48504,15 +48504,13 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID WINE 102",
       "cte": true,
-      "_subj4_fold_from": "WINE M1003"
+      "_subj4_fold_from": "WINE M1003",
+      "_forestry_wine_remint_from": "AGRI M1113"
     },
-    "AGRI M1106": {
-      "course_id": "AGRI M1106",
+    "AGPR M1106": {
+      "course_id": "AGPR M1106",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -48521,8 +48519,8 @@
       "description": "An introductory examination of the wines of France. Each week, this course will examine adifferent region and related grape or group of grapes and the resulting wine(s).",
       "description_source": "local catalog (representative/modal)",
       "subject": "WINEST",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "AGPR",
+      "discipline": "Agricultural Production",
       "discipline_provisional": "WINE",
       "typical_units": 1.5,
       "confidence": 0.68,
@@ -48545,15 +48543,13 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID WINE 104",
       "cte": true,
-      "_subj4_fold_from": "WINE M1004"
+      "_subj4_fold_from": "WINE M1004",
+      "_forestry_wine_remint_from": "AGRI M1106"
     },
-    "AGRI M1119": {
-      "course_id": "AGRI M1119",
+    "AGPR M1119": {
+      "course_id": "AGPR M1119",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -48562,8 +48558,8 @@
       "description": "An introductory examination of the major wine regions of Italy, grape varietals grown there, andthe wines produced. This course will also explore the importance of wine in Italian cuisine andculture and the stature Italian wines have achieved worldwide.",
       "description_source": "local catalog (representative/modal)",
       "subject": "WINEST",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "AGPR",
+      "discipline": "Agricultural Production",
       "discipline_provisional": "WINE",
       "typical_units": 1.5,
       "confidence": 0.68,
@@ -48586,12 +48582,10 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID WINE 106",
       "cte": true,
-      "_subj4_fold_from": "WINE M1005"
+      "_subj4_fold_from": "WINE M1005",
+      "_forestry_wine_remint_from": "AGRI M1119"
     },
     "IDST M9302": {
       "course_id": "IDST M9302",
@@ -73731,8 +73725,8 @@
       "_subj4_fold_from": "AGRI M1110",
       "_agri_family_remint_from": "AGRI M1130"
     },
-    "AGRI M1064": {
-      "course_id": "AGRI M1064",
+    "ENVR M1064": {
+      "course_id": "ENVR M1064",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -73741,8 +73735,8 @@
       "description": "Study of the botanical characteristics, taxonomy, and physiology of major trees and shrubs of the Western United States, with emphasis on California. Covers plant community relationships, geographic ranges, and human impact on forest ecosystems. Includes identification of specimens in the field and use of herbarium samples.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "ENVR",
+      "discipline": "Forestry/Natural Resources",
       "discipline_provisional": "AGRI",
       "typical_units": 4.0,
       "confidence": 0.68,
@@ -73766,13 +73760,11 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": "subject_map",
-      "discipline_confidence": 0.8,
-      "discipline_inferred_at": "2026-06-11",
       "_remint_from": "M-ID AGRI 114",
       "_subj4_remint_from": "AGRI M1007",
       "cte": false,
-      "_subj4_fold_from": "AGRI M1057"
+      "_subj4_fold_from": "AGRI M1057",
+      "_forestry_wine_remint_from": "AGRI M1064"
     },
     "AGRI M9006": {
       "course_id": "AGRI M9006",
@@ -378826,8 +378818,8 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M1061"
     },
-    "AGRI M1103": {
-      "course_id": "AGRI M1103",
+    "ENVR M1103": {
+      "course_id": "ENVR M1103",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -378836,8 +378828,8 @@
       "description": "Biotic and abiotic disturbance agents. Identification and ecology of important forest insects and diseases of North America. Predisposing factors that increase susceptibility of forests. Management strategies to reduce impacts.",
       "description_source": "local catalog (representative/modal)",
       "subject": "FNR",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "ENVR",
+      "discipline": "Forestry/Natural Resources",
       "discipline_provisional": "AGRI",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -378863,10 +378855,8 @@
       "_remint_from": "M-ID AGRI 104",
       "_subj4_remint_from": "FNR M1002",
       "cte": true,
-      "discipline_source": "top_division",
-      "discipline_confidence": 0.4,
-      "discipline_inferred_at": "2026-06-11",
-      "_subj4_fold_from": "AGRI M1091"
+      "_subj4_fold_from": "AGRI M1091",
+      "_forestry_wine_remint_from": "AGRI M1103"
     },
     "AGRI M1104": {
       "course_id": "AGRI M1104",
@@ -379356,8 +379346,8 @@
       "_subj4_fold_from": "OTEC M1148",
       "_authority_recode_from": "OTEC M1150"
     },
-    "AGRI M1069": {
-      "course_id": "AGRI M1069",
+    "ENVR M1069": {
+      "course_id": "ENVR M1069",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -379366,8 +379356,8 @@
       "description": "In this course, the forest community is used as a model to discuss ecological principles as they apply to forest management. Students will gain a better understanding of biological organization and community classification, biotic and abiotic environmental factors, population and community ecology, and the role of disturbance in forested ecosystems. In addition, biogeochemical cycling, forest succession, and the role of natural selection will be discussed. Students will be expected to apply scientific principles and critical thinking skills to all lab activities and research papers. The lecture portion of this course may be offered in a distance education format.",
       "description_source": "local catalog (representative/modal)",
       "subject": "FOR",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "ENVR",
+      "discipline": "Forestry/Natural Resources",
       "discipline_provisional": "AGNR",
       "typical_units": 3.0,
       "confidence": 0.85,
@@ -379390,13 +379380,11 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID AGNR 110",
       "_subj4_remint_from": "FOR M1008",
       "cte": true,
-      "_subj4_fold_from": "AGRI M1062"
+      "_subj4_fold_from": "AGRI M1062",
+      "_forestry_wine_remint_from": "AGRI M1069"
     },
     "ENVR M1018": {
       "course_id": "ENVR M1018",

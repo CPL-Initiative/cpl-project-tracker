@@ -1,0 +1,90 @@
+{
+  "_status": "Sheet 104 re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-10-20",
+  "_scope": [
+    "sheet104-move-ten-agpr"
+  ],
+  "_count": 14,
+  "_ruling": "Sam, 2026-10-20 (Open Asks Sheet 104, 03:31-03:32Z, \"move-ten\" and \"agpr\"): the ten forestry courses the Sheet 103 sitting set aside re-key from AGRI to ENVR (Forestry/Natural Resources) and the four wine courses to AGPR (Agricultural Production), each record's discipline following its code",
+  "aliases": {
+    "AGRI M1064": {
+      "new_id": "ENVR M1064",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M1069": {
+      "new_id": "ENVR M1069",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10AX": {
+      "new_id": "ENVR M10EO",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10FP": {
+      "new_id": "AGPR M10FP",
+      "route": "AGPR",
+      "discipline": "Agricultural Production"
+    },
+    "AGRI M10IL": {
+      "new_id": "ENVR M10IL",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10IZ": {
+      "new_id": "ENVR M10IZ",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10KI": {
+      "new_id": "ENVR M10KI",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10OP": {
+      "new_id": "ENVR M10OP",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10OQ": {
+      "new_id": "ENVR M10OQ",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M10SX": {
+      "new_id": "ENVR M10SX",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M1103": {
+      "new_id": "ENVR M1103",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources"
+    },
+    "AGRI M1106": {
+      "new_id": "AGPR M1106",
+      "route": "AGPR",
+      "discipline": "Agricultural Production"
+    },
+    "AGRI M1113": {
+      "new_id": "AGPR M1113",
+      "route": "AGPR",
+      "discipline": "Agricultural Production"
+    },
+    "AGRI M1119": {
+      "new_id": "AGPR M1119",
+      "route": "AGPR",
+      "discipline": "Agricultural Production"
+    }
+  },
+  "_applied_at": "2026-10-20",
+  "_applied_ruling": "Sam, 2026-10-20 (Open Asks Sheet 104, 03:31-03:32Z, \"move-ten\" and \"agpr\"): the ten forestry courses the Sheet 103 sitting set aside re-key from AGRI to ENVR (Forestry/Natural Resources) and the four wine courses to AGPR (Agricultural Production), each record's discipline following its code",
+  "_counts": {
+    "courses": 6,
+    "singletons": 8,
+    "pointers": 15,
+    "curation_keys": 9,
+    "discipline_sources_cleared": 14
+  }
+}

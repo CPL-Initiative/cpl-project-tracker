@@ -1,0 +1,102 @@
+[
+ {
+  "course_id": "AGPR M10ET",
+  "field": "merge_into",
+  "value": "AGRI M1106"
+ },
+ {
+  "course_id": "AGPR M10FR",
+  "field": "merge_into",
+  "value": "AGRI M1119"
+ },
+ {
+  "course_id": "AGRI M1064",
+  "field": "unified_title",
+  "value": "Wildland Trees and Shrubs (Dendrology)"
+ },
+ {
+  "course_id": "AGRI M1069",
+  "field": "unified_title",
+  "value": "Ecology and Use of Fire in Forest Ecosystems"
+ },
+ {
+  "course_id": "AGRI M10AX",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "AGRI M10IZ",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "AGRI M10OQ",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "AGRI M10SX",
+  "field": "merge_into",
+  "value": "AGRI M1103"
+ },
+ {
+  "course_id": "AGRI M10SY",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "AGRI M1103",
+  "field": "unified_title",
+  "value": "Forest Health and Protection"
+ },
+ {
+  "course_id": "AGRI M1104",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "AGRI M1106",
+  "field": "unified_title",
+  "value": "The Wines of France"
+ },
+ {
+  "course_id": "AGRI M1119",
+  "field": "unified_title",
+  "value": "The Wines of Italy"
+ },
+ {
+  "course_id": "BIOL M10SG",
+  "field": "merge_into",
+  "value": "AGRI M1064"
+ },
+ {
+  "course_id": "ENVR M1012",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "ENVR M10CK",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "ENVR M10CM",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "ENVR M10DF",
+  "field": "merge_into",
+  "value": "AGRI M1069"
+ },
+ {
+  "course_id": "ENVR M10DI",
+  "field": "merge_into",
+  "value": "AGRI M1103"
+ },
+ {
+  "course_id": "FIRE M11PH",
+  "field": "merge_into",
+  "value": "AGRI M1064"
+ }
+]
