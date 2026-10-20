@@ -1,0 +1,80 @@
+{
+  "_status": "QUEUE 2026-10-20 — candidates for a faculty reviewer. NOTHING APPLIED.",
+  "_generated_by": "kb/_merge_candidate_queue.py",
+  "_rule": "Sam's ruling 6, 2026-09-05: queue the candidates; the merge waits for a faculty reviewer, because sufficiency is a curriculum judgment.",
+  "_writes": "none — this tool never touches kb_curation or any live table",
+  "discipline": "Forestry/Natural Resources",
+  "count": 2,
+  "groups": [
+    {
+      "lane": "surfaced",
+      "members": [
+        {
+          "id": "ENVR M1009",
+          "title": "Dendrology",
+          "kind": "Course",
+          "discipline": "Forestry/Natural Resources",
+          "colleges": 4,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        },
+        {
+          "id": "ENVR M1064",
+          "title": "Wildland Trees and Shrubs (Dendrology)",
+          "kind": "Course",
+          "discipline": "Forestry/Natural Resources",
+          "colleges": 3,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        }
+      ],
+      "survivor": "ENVR M1009",
+      "survivor_basis": "taught at more colleges",
+      "why": "Dendrology beside Wildland Trees and Shrubs (Dendrology), one subject after the forestry re-key",
+      "source": "Open Asks Sheet 104 forestry card (S431); pair recorded by S432, 2026-10-20",
+      "flags": [],
+      "proposable": true,
+      "colleges_total": 7,
+      "articulations_total": 0
+    },
+    {
+      "lane": "surfaced",
+      "members": [
+        {
+          "id": "ENVR M1025",
+          "title": "Silviculture",
+          "kind": "Course",
+          "discipline": "Forestry/Natural Resources",
+          "colleges": 2,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        },
+        {
+          "id": "ENVR M10OP",
+          "title": "Silviculture and Fire Ecology",
+          "kind": "Stand-Alone",
+          "discipline": "Forestry/Natural Resources",
+          "colleges": 1,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        }
+      ],
+      "survivor": "ENVR M1025",
+      "survivor_basis": "taught at more colleges",
+      "why": "Silviculture beside Silviculture and Fire Ecology, one subject after the forestry re-key",
+      "source": "Open Asks Sheet 104 forestry card (S431); pair recorded by S432, 2026-10-20",
+      "flags": [],
+      "proposable": true,
+      "colleges_total": 3,
+      "articulations_total": 0
+    }
+  ]
+}

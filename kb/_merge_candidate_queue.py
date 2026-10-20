@@ -18,6 +18,9 @@ Two lanes, and the second is the general form of the first:
   seeded    — a group a human named (Sam's intro-welding trio). Recorded WITH
               its attribution, because a curator's judgment is a first-class
               input and must not be laundered into an anonymous value.
+  surfaced  — a pair a session's read put side by side (a decision card, a
+              re-key's receipt); recorded with where it came from, the
+              survivor left to the rule.
   same_title — identities in one discipline whose normalized titles are
               identical. Mechanical, reproducible, and the lane the SMAW pair
               falls out of.
@@ -59,6 +62,21 @@ SEEDED = [{
     "survivor": "WELD M1109",
     "why": "the three intro-welding identities say the same thing three ways",
     "source": "Sam, 2026-09-05, decision sheet 2026-09-05-ten-open-rulings item 6",
+}, {
+    # Surfaced, not ruled: Open Asks Sheet 104's forestry card set each moved course
+    # beside the ENVR course on its subject, and Sam's "move-ten" ruled the codes only.
+    # No survivor is named, so the rule proposes one.
+    "lane": "surfaced",
+    "discipline": "Forestry/Natural Resources",
+    "members": ["ENVR M1009", "ENVR M1064"],
+    "why": "Dendrology beside Wildland Trees and Shrubs (Dendrology), one subject after the forestry re-key",
+    "source": "Open Asks Sheet 104 forestry card (S431); pair recorded by S432, 2026-10-20",
+}, {
+    "lane": "surfaced",
+    "discipline": "Forestry/Natural Resources",
+    "members": ["ENVR M1025", "ENVR M10OP"],
+    "why": "Silviculture beside Silviculture and Fire Ecology, one subject after the forestry re-key",
+    "source": "Open Asks Sheet 104 forestry card (S431); pair recorded by S432, 2026-10-20",
 }]
 
 BAND_RE = re.compile(r"^[A-Z]{2,4} M(\d)")
@@ -145,8 +163,8 @@ def build(discipline, rows, arts):
     for g in SEEDED:
         if discipline and g["discipline"] != discipline:
             continue
-        out.append(group_of(g["members"], rows, arts, "seeded", g["why"],
-                            g["source"], g["survivor"]))
+        out.append(group_of(g["members"], rows, arts, g.get("lane", "seeded"), g["why"],
+                            g["source"], g.get("survivor")))
         seen.update(g["members"])
     by_title = defaultdict(list)
     for i, r in rows.items():
@@ -158,8 +176,8 @@ def build(discipline, rows, arts):
             continue
         out.append(group_of(sorted(ids), rows, arts, "same_title",
                             "identical titles once normalized"))
-    # Seeded first (a human asked for those), then by how much is at stake.
-    out.sort(key=lambda g: (0 if g["lane"] == "seeded" else 1,
+    # Seeded first (a human asked for those), then surfaced, then by how much is at stake.
+    out.sort(key=lambda g: ({"seeded": 0, "surfaced": 1}.get(g["lane"], 2),
                             -g["colleges_total"], -g["articulations_total"]))
     return out
 
