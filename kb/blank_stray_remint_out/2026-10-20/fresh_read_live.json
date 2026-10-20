@@ -1,0 +1,197 @@
+[
+ {
+  "course_id": "APT M10AL",
+  "field": "merge_into",
+  "value": "FLGH M1002"
+ },
+ {
+  "course_id": "ARCE M1001",
+  "field": "unified_title",
+  "value": "Ceramic-Intermediate Handbuilding"
+ },
+ {
+  "course_id": "ARCE M10AA",
+  "field": "merge_into",
+  "value": "ARTS M1568"
+ },
+ {
+  "course_id": "ARCE M10AC",
+  "field": "merge_into",
+  "value": "ARTS M1229"
+ },
+ {
+  "course_id": "ARCE M10AD",
+  "field": "merge_into",
+  "value": "ARTS M1231"
+ },
+ {
+  "course_id": "ARCE M10AE",
+  "field": "merge_into",
+  "value": "ARTS M1551"
+ },
+ {
+  "course_id": "ARCE M10AF",
+  "field": "merge_into",
+  "value": "ARTS M1597"
+ },
+ {
+  "course_id": "ARCE M10AG",
+  "field": "merge_into",
+  "value": "ARTS M1662"
+ },
+ {
+  "course_id": "ARCE M10AH",
+  "field": "merge_into",
+  "value": "ARTS M1459"
+ },
+ {
+  "course_id": "ARTF M1002",
+  "field": "unified_title",
+  "value": "Open Studio: Three-Dimensional Media Lab/Jewelry and Metalwork 3"
+ },
+ {
+  "course_id": "ARTF M1003",
+  "field": "unified_title",
+  "value": "Introduction to African Art"
+ },
+ {
+  "course_id": "ARTF M10AB",
+  "field": "merge_into",
+  "value": "ARTS M1576"
+ },
+ {
+  "course_id": "ARTF M10AK",
+  "field": "merge_into",
+  "value": "ARTS M1633"
+ },
+ {
+  "course_id": "ARTH M1003",
+  "field": "merge_into",
+  "value": "ARTF M1003"
+ },
+ {
+  "course_id": "ARTH M10AU",
+  "field": "merge_into",
+  "value": "ARTF M1003"
+ },
+ {
+  "course_id": "ARTS M1070",
+  "field": "merge_into",
+  "value": "ARTF M1003"
+ },
+ {
+  "course_id": "ARTS M1071",
+  "field": "merge_into",
+  "value": "ARTF M1003"
+ },
+ {
+  "course_id": "ARTS M11FI",
+  "field": "merge_into",
+  "value": "ARCE M1001"
+ },
+ {
+  "course_id": "ARTS M11RG",
+  "field": "merge_into",
+  "value": "ARTF M1002"
+ },
+ {
+  "course_id": "ARTS M11RJ",
+  "field": "merge_into",
+  "value": "ARTF M1002"
+ },
+ {
+  "course_id": "ARTS M1230",
+  "field": "merge_into",
+  "value": "ARCE M1001"
+ },
+ {
+  "course_id": "BRDC M10AV",
+  "field": "merge_into",
+  "value": "JOUR M1016"
+ },
+ {
+  "course_id": "BRDC M10BF",
+  "field": "merge_into",
+  "value": "FTVE M1144"
+ },
+ {
+  "course_id": "CSMT M10AC",
+  "field": "merge_into",
+  "value": "COSM M1085"
+ },
+ {
+  "course_id": "CSMT M10AD",
+  "field": "merge_into",
+  "value": "COSM M1088"
+ },
+ {
+  "course_id": "CSMT M10AE",
+  "field": "merge_into",
+  "value": "COSM M1103"
+ },
+ {
+  "course_id": "CSMT M10AN",
+  "field": "merge_into",
+  "value": "COSM M1101"
+ },
+ {
+  "course_id": "CSMT M10AV",
+  "field": "merge_into",
+  "value": "COSM M1102"
+ },
+ {
+  "course_id": "CSMT M10AY",
+  "field": "merge_into",
+  "value": "COSM M1069"
+ },
+ {
+  "course_id": "CSMT M10BB",
+  "field": "merge_into",
+  "value": "COSM M1031"
+ },
+ {
+  "course_id": "CSMT M10BC",
+  "field": "merge_into",
+  "value": "COSM M1076"
+ },
+ {
+  "course_id": "CSMT M10BD",
+  "field": "merge_into",
+  "value": "COSM M1084"
+ },
+ {
+  "course_id": "CSMT M10BE",
+  "field": "merge_into",
+  "value": "COSM M1078"
+ },
+ {
+  "course_id": "FLGH M1002",
+  "field": "unified_title",
+  "value": "Human Factors and Crew Resource Management"
+ },
+ {
+  "course_id": "FLGH M10AB",
+  "field": "merge_into",
+  "value": "AVIA M1061"
+ },
+ {
+  "course_id": "FLGH M10AH",
+  "field": "merge_into",
+  "value": "FLGH M1002"
+ },
+ {
+  "course_id": "NCAR M90AD",
+  "field": "merge_into",
+  "value": "BIOL M9004"
+ },
+ {
+  "course_id": "NCAR M90AG",
+  "field": "merge_into",
+  "value": "FCSH M9055"
+ },
+ {
+  "course_id": "NCAR M90AJ",
+  "field": "merge_into",
+  "value": "OLAD M9054"
+ }
+]

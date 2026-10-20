@@ -86,6 +86,9 @@ ALIAS_MAPS = [
     "kb/agab_remint_out/2026-10-19/alias_map.json",       # 2026-10-19 (Sheet 99 card 3, Session 427 — stamps: _agab_remint_from; Agricultural Business and Related Services takes AGAB, AUTB M1006 -> AGAB M1006, Sam's "agab")
     "kb/agri_family_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 103, Session 430 — stamps: _agri_family_remint_from; 44 AGRI identities to their C-ID family codes, Sam's "Confirm the 44")
     "kb/forestry_wine_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 104, Session 432 — stamps: _forestry_wine_remint_from; ten forestry identities AGRI -> ENVR, four wine AGRI -> AGPR, each discipline following its code, Sam's "move-ten" and "agpr")
+    "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",  # 2026-10-20 (Sheet 107 card 1, Session 436 — stamps: _forestry_wine_remint_from; the two forestry identities merged into ENVR M1069, AGRI M10SY and M1104, to ENVR, Sam's "move-both")
+    "kb/fl_stray_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 107 card 2, Session 436 — stamps: _fl_stray_remint_from; the twelve Foreign Languages identities on stray codes to their language's code under the umbrella, five new codes FLAM FLHU FLEG FLKH FLTU, Sam's "rekey-twelve")
+    "kb/blank_stray_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 107 card 3, Session 436 — stamps: _blank_stray_remint_from; the 79 identities on eight blank stray codes filed under the discipline both signals name, ARCE ARTF NCAR -> ARTS, CSMT -> COSM, BRDC -> BCST, FLGH -> AVIA, ARTP -> PHOT, WELL -> HLTH, Sam's "file-eight")
 ]
 
 

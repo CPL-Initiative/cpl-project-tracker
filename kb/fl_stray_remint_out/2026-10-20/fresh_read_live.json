@@ -1,0 +1,47 @@
+[
+ {
+  "course_id": "FILI M1001",
+  "field": "unified_title",
+  "value": "Elementary Filipino (Tagalog)"
+ },
+ {
+  "course_id": "FLGR M10AA",
+  "field": "merge_into",
+  "value": "GREE M1001"
+ },
+ {
+  "course_id": "FLGR M10AB",
+  "field": "merge_into",
+  "value": "GREE M1001"
+ },
+ {
+  "course_id": "FLTA M10AI",
+  "field": "merge_into",
+  "value": "FILI M1001"
+ },
+ {
+  "course_id": "FLTA M10AR",
+  "field": "merge_into",
+  "value": "FILI M1001"
+ },
+ {
+  "course_id": "GREE M1001",
+  "field": "unified_title",
+  "value": "Elementary Modern Standard Greek"
+ },
+ {
+  "course_id": "JAPA M1001",
+  "field": "unified_title",
+  "value": "Continuation of Beginning Kanji for Reading and Writing"
+ },
+ {
+  "course_id": "JAPN M10EF",
+  "field": "merge_into",
+  "value": "JAPA M1001"
+ },
+ {
+  "course_id": "JAPN M10EG",
+  "field": "merge_into",
+  "value": "JAPA M1001"
+ }
+]

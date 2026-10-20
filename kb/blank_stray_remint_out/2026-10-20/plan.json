@@ -1,0 +1,1637 @@
+{
+  "scopes": [
+    "csr-blank-strays-file-eight"
+  ],
+  "moves": {
+    "ARCE M1001": {
+      "old_id": "ARCE M1001",
+      "source": "minted",
+      "title": "Ceramic Handbuilding 2",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M1001",
+      "how": "kept number"
+    },
+    "ARCE M10AA": {
+      "old_id": "ARCE M10AA",
+      "source": "singleton",
+      "title": "Alternative Firing Techniques",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1568",
+      "new_id": "ARTS M12GS",
+      "how": "gap-filled"
+    },
+    "ARCE M10AB": {
+      "old_id": "ARCE M10AB",
+      "source": "singleton",
+      "title": "Alternative Throwing Techniques",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12GT",
+      "how": "gap-filled"
+    },
+    "ARCE M10AC": {
+      "old_id": "ARCE M10AC",
+      "source": "singleton",
+      "title": "Ceramic Handbuilding 1",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1229",
+      "new_id": "ARTS M12GU",
+      "how": "gap-filled"
+    },
+    "ARCE M10AD": {
+      "old_id": "ARCE M10AD",
+      "source": "singleton",
+      "title": "Ceramic Handbuilding 3",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1231",
+      "new_id": "ARTS M12GV",
+      "how": "gap-filled"
+    },
+    "ARCE M10AE": {
+      "old_id": "ARCE M10AE",
+      "source": "singleton",
+      "title": "Ceramic Handbuilding 4",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1551",
+      "new_id": "ARTS M12GW",
+      "how": "gap-filled"
+    },
+    "ARCE M10AF": {
+      "old_id": "ARCE M10AF",
+      "source": "singleton",
+      "title": "Ceramic Surface Design and Techniques",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1597",
+      "new_id": "ARTS M12GX",
+      "how": "gap-filled"
+    },
+    "ARCE M10AG": {
+      "old_id": "ARCE M10AG",
+      "source": "singleton",
+      "title": "Ceramic Wheel Throwing 1",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1662",
+      "new_id": "ARTS M12GY",
+      "how": "gap-filled"
+    },
+    "ARCE M10AH": {
+      "old_id": "ARCE M10AH",
+      "source": "singleton",
+      "title": "Ceramic Wheel Throwing 2",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": "ARTS M1459",
+      "new_id": "ARTS M12GZ",
+      "how": "gap-filled"
+    },
+    "ARCE M10AI": {
+      "old_id": "ARCE M10AI",
+      "source": "singleton",
+      "title": "Ceramic Wheel Throwing 3",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HA",
+      "how": "gap-filled"
+    },
+    "ARCE M10AJ": {
+      "old_id": "ARCE M10AJ",
+      "source": "singleton",
+      "title": "Ceramic Wheel Throwing 4",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HB",
+      "how": "gap-filled"
+    },
+    "ARCE M10AK": {
+      "old_id": "ARCE M10AK",
+      "source": "singleton",
+      "title": "Clay and Glass",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HC",
+      "how": "gap-filled"
+    },
+    "ARCE M10AL": {
+      "old_id": "ARCE M10AL",
+      "source": "singleton",
+      "title": "Introduction to Glaze Experimentation",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HD",
+      "how": "gap-filled"
+    },
+    "ARCE M10AM": {
+      "old_id": "ARCE M10AM",
+      "source": "singleton",
+      "title": "Kiln-Formed Glass 1",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HE",
+      "how": "gap-filled"
+    },
+    "ARCE M10AN": {
+      "old_id": "ARCE M10AN",
+      "source": "singleton",
+      "title": "Kiln-Formed Glass 2",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HF",
+      "how": "gap-filled"
+    },
+    "ARCE M10AO": {
+      "old_id": "ARCE M10AO",
+      "source": "singleton",
+      "title": "Kiln-Formed Glass 3",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HG",
+      "how": "gap-filled"
+    },
+    "ARCE M10AP": {
+      "old_id": "ARCE M10AP",
+      "source": "singleton",
+      "title": "Kiln-Formed Glass 4",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M12HH",
+      "how": "gap-filled"
+    },
+    "ARTF M1001": {
+      "old_id": "ARTF M1001",
+      "source": "minted",
+      "title": "2-Dimensional Art Studio Lab",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M1065",
+      "how": "gap-filled"
+    },
+    "ARTF M1002": {
+      "old_id": "ARTF M1002",
+      "source": "minted",
+      "title": "3-Dimensional Art Studio Lab",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.20",
+      "merged_into": null,
+      "new_id": "ARTS M1073",
+      "how": "gap-filled"
+    },
+    "ARTF M1003": {
+      "old_id": "ARTF M1003",
+      "source": "minted",
+      "title": "African Art",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1001.00",
+      "merged_into": null,
+      "new_id": "ARTS M1102",
+      "how": "gap-filled"
+    },
+    "ARTF M1008": {
+      "old_id": "ARTF M1008",
+      "source": "minted",
+      "title": "Ceramics Studio Lab",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.30",
+      "merged_into": null,
+      "new_id": "ARTS M1103",
+      "how": "gap-filled"
+    },
+    "ARTF M10AA": {
+      "old_id": "ARTF M10AA",
+      "source": "singleton",
+      "title": "Art Entrepreneurship",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1099.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HI",
+      "how": "gap-filled"
+    },
+    "ARTF M10AB": {
+      "old_id": "ARTF M10AB",
+      "source": "singleton",
+      "title": "Art of the United States: Colonial to Modern Period",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1001.00",
+      "merged_into": "ARTS M1576",
+      "new_id": "ARTS M12HJ",
+      "how": "gap-filled"
+    },
+    "ARTF M10AD": {
+      "old_id": "ARTF M10AD",
+      "source": "singleton",
+      "title": "Ceramic Production 1",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1009.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HK",
+      "how": "gap-filled"
+    },
+    "ARTF M10AE": {
+      "old_id": "ARTF M10AE",
+      "source": "singleton",
+      "title": "Ceramic Production 2",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1009.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HL",
+      "how": "gap-filled"
+    },
+    "ARTF M10AI": {
+      "old_id": "ARTF M10AI",
+      "source": "singleton",
+      "title": "Industrial and Architectural Ceramic Design 1",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1099.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HM",
+      "how": "gap-filled"
+    },
+    "ARTF M10AJ": {
+      "old_id": "ARTF M10AJ",
+      "source": "singleton",
+      "title": "Industrial and Architectural Ceramic Design 2",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1099.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HN",
+      "how": "gap-filled"
+    },
+    "ARTF M10AK": {
+      "old_id": "ARTF M10AK",
+      "source": "singleton",
+      "title": "Introduction to Digital Drawing and Painting",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1001.00",
+      "merged_into": "ARTS M1633",
+      "new_id": "ARTS M12HO",
+      "how": "gap-filled"
+    },
+    "ARTF M10AR": {
+      "old_id": "ARTF M10AR",
+      "source": "singleton",
+      "title": "Museum Studies Lab",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1001.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HP",
+      "how": "gap-filled"
+    },
+    "ARTF M10AS": {
+      "old_id": "ARTF M10AS",
+      "source": "singleton",
+      "title": "Native American Art",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1001.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HQ",
+      "how": "gap-filled"
+    },
+    "ARTF M10AU": {
+      "old_id": "ARTF M10AU",
+      "source": "singleton",
+      "title": "Public Art 1",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1099.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HR",
+      "how": "gap-filled"
+    },
+    "ARTF M10AV": {
+      "old_id": "ARTF M10AV",
+      "source": "singleton",
+      "title": "Public Art 2",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1099.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HS",
+      "how": "gap-filled"
+    },
+    "ARTF M10AW": {
+      "old_id": "ARTF M10AW",
+      "source": "singleton",
+      "title": "Sustainable Art and Design",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1099.00",
+      "merged_into": null,
+      "new_id": "ARTS M12HT",
+      "how": "gap-filled"
+    },
+    "ARTP M10AA": {
+      "old_id": "ARTP M10AA",
+      "source": "singleton",
+      "title": "Advanced Photogaphy",
+      "route": "PHOT",
+      "discipline": "Photography",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1011.00",
+      "merged_into": null,
+      "new_id": "PHOT M10RG",
+      "how": "gap-filled"
+    },
+    "ARTP M10AB": {
+      "old_id": "ARTP M10AB",
+      "source": "singleton",
+      "title": "Alternative Process Photo",
+      "route": "PHOT",
+      "discipline": "Photography",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1012.00",
+      "merged_into": null,
+      "new_id": "PHOT M10RH",
+      "how": "gap-filled"
+    },
+    "ARTP M10AN": {
+      "old_id": "ARTP M10AN",
+      "source": "singleton",
+      "title": "Portfolio / Laboratory Practices",
+      "route": "PHOT",
+      "discipline": "Photography",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1011.00",
+      "merged_into": null,
+      "new_id": "PHOT M10RI",
+      "how": "gap-filled"
+    },
+    "ARTP M10AO": {
+      "old_id": "ARTP M10AO",
+      "source": "singleton",
+      "title": "Trends in Software and Social Media for Photographers",
+      "route": "PHOT",
+      "discipline": "Photography",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1012.00",
+      "merged_into": null,
+      "new_id": "PHOT M10RJ",
+      "how": "gap-filled"
+    },
+    "ARTP M90AA": {
+      "old_id": "ARTP M90AA",
+      "source": "singleton",
+      "title": "Introduction to Camera Basics",
+      "route": "PHOT",
+      "discipline": "Photography",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1011.00",
+      "merged_into": null,
+      "new_id": "PHOT M90BO",
+      "how": "gap-filled"
+    },
+    "BRDC M1003": {
+      "old_id": "BRDC M1003",
+      "source": "minted",
+      "title": "Radio Broadcast Lab",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.10",
+      "merged_into": null,
+      "new_id": "BCST M1058",
+      "how": "gap-filled"
+    },
+    "BRDC M10AL": {
+      "old_id": "BRDC M10AL",
+      "source": "singleton",
+      "title": "Digital Radio Studio Systems",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.10",
+      "merged_into": null,
+      "new_id": "BCST M10KF",
+      "how": "gap-filled"
+    },
+    "BRDC M10AV": {
+      "old_id": "BRDC M10AV",
+      "source": "singleton",
+      "title": "Introduction to Writing for Broadcast",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.30",
+      "merged_into": "JOUR M1016",
+      "new_id": "BCST M10KG",
+      "how": "gap-filled"
+    },
+    "BRDC M10BF": {
+      "old_id": "BRDC M10BF",
+      "source": "singleton",
+      "title": "Radio Documentary Production",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.10",
+      "merged_into": "FTVE M1144",
+      "new_id": "BCST M10KH",
+      "how": "gap-filled"
+    },
+    "BRDC M10BG": {
+      "old_id": "BRDC M10BG",
+      "source": "singleton",
+      "title": "Radio Operations 1",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.10",
+      "merged_into": null,
+      "new_id": "BCST M10KI",
+      "how": "gap-filled"
+    },
+    "BRDC M10BH": {
+      "old_id": "BRDC M10BH",
+      "source": "singleton",
+      "title": "Radio Operations 2",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.10",
+      "merged_into": null,
+      "new_id": "BCST M10KJ",
+      "how": "gap-filled"
+    },
+    "BRDC M10BI": {
+      "old_id": "BRDC M10BI",
+      "source": "singleton",
+      "title": "Radio Programming and Marketing",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0604.10",
+      "merged_into": null,
+      "new_id": "BCST M10KK",
+      "how": "gap-filled"
+    },
+    "BRDC M10BK": {
+      "old_id": "BRDC M10BK",
+      "source": "singleton",
+      "title": "Sound Design for Digital Film/Video/Radio",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "0699.00",
+      "merged_into": null,
+      "new_id": "BCST M10KL",
+      "how": "gap-filled"
+    },
+    "CSMT M10AC": {
+      "old_id": "CSMT M10AC",
+      "source": "singleton",
+      "title": "Advanced Hair Coloring and Styling",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1085",
+      "new_id": "COSM M10LM",
+      "how": "gap-filled"
+    },
+    "CSMT M10AD": {
+      "old_id": "CSMT M10AD",
+      "source": "singleton",
+      "title": "Advanced Makeup Techniques",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1088",
+      "new_id": "COSM M10LN",
+      "how": "gap-filled"
+    },
+    "CSMT M10AE": {
+      "old_id": "CSMT M10AE",
+      "source": "singleton",
+      "title": "Contemporary Styling Techniques",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1103",
+      "new_id": "COSM M10LO",
+      "how": "gap-filled"
+    },
+    "CSMT M10AK": {
+      "old_id": "CSMT M10AK",
+      "source": "singleton",
+      "title": "Hair Sculpting Techniques for Women",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "COSM M10LP",
+      "how": "gap-filled"
+    },
+    "CSMT M10AN": {
+      "old_id": "CSMT M10AN",
+      "source": "singleton",
+      "title": "Intermediate Hair Coloring and Styling",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1101",
+      "new_id": "COSM M10LQ",
+      "how": "gap-filled"
+    },
+    "CSMT M10AV": {
+      "old_id": "CSMT M10AV",
+      "source": "singleton",
+      "title": "Introduction to Hair Coloring",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1102",
+      "new_id": "COSM M10LR",
+      "how": "gap-filled"
+    },
+    "CSMT M10AW": {
+      "old_id": "CSMT M10AW",
+      "source": "singleton",
+      "title": "Junior Salon 2",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "COSM M10LS",
+      "how": "gap-filled"
+    },
+    "CSMT M10AX": {
+      "old_id": "CSMT M10AX",
+      "source": "singleton",
+      "title": "Long Hair and Period Hair Design and Hair Piece Construction",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "COSM M10LT",
+      "how": "gap-filled"
+    },
+    "CSMT M10AY": {
+      "old_id": "CSMT M10AY",
+      "source": "singleton",
+      "title": "Multi-Texture Design (Level 1-2)",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1069",
+      "new_id": "COSM M10LU",
+      "how": "gap-filled"
+    },
+    "CSMT M10AZ": {
+      "old_id": "CSMT M10AZ",
+      "source": "singleton",
+      "title": "Senior Salon 1",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "COSM M10LV",
+      "how": "gap-filled"
+    },
+    "CSMT M10BA": {
+      "old_id": "CSMT M10BA",
+      "source": "singleton",
+      "title": "Senior Salon 2",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "COSM M10LW",
+      "how": "gap-filled"
+    },
+    "CSMT M10BB": {
+      "old_id": "CSMT M10BB",
+      "source": "singleton",
+      "title": "Skin Therapy 1",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1031",
+      "new_id": "COSM M10LX",
+      "how": "gap-filled"
+    },
+    "CSMT M10BC": {
+      "old_id": "CSMT M10BC",
+      "source": "singleton",
+      "title": "Skin Therapy 2",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1076",
+      "new_id": "COSM M10LY",
+      "how": "gap-filled"
+    },
+    "CSMT M10BD": {
+      "old_id": "CSMT M10BD",
+      "source": "singleton",
+      "title": "Skin Therapy 3",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1084",
+      "new_id": "COSM M10LZ",
+      "how": "gap-filled"
+    },
+    "CSMT M10BE": {
+      "old_id": "CSMT M10BE",
+      "source": "singleton",
+      "title": "Skin Therapy 4",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": "COSM M1078",
+      "new_id": "COSM M10MA",
+      "how": "gap-filled"
+    },
+    "CSMT M10BF": {
+      "old_id": "CSMT M10BF",
+      "source": "singleton",
+      "title": "Tinting 1",
+      "route": "COSM",
+      "discipline": "Cosmetology",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "COSM M10MB",
+      "how": "gap-filled"
+    },
+    "FLGH M1002": {
+      "old_id": "FLGH M1002",
+      "source": "minted",
+      "title": "Human Factors and Crew Resource Management",
+      "route": "AVIA",
+      "discipline": "Aviation",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3020.20",
+      "merged_into": null,
+      "new_id": "AVIA M1022",
+      "how": "gap-filled"
+    },
+    "FLGH M10AB": {
+      "old_id": "FLGH M10AB",
+      "source": "singleton",
+      "title": "Advanced Navigation",
+      "route": "AVIA",
+      "discipline": "Aviation",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3020.20",
+      "merged_into": "AVIA M1061",
+      "new_id": "AVIA M10PV",
+      "how": "gap-filled"
+    },
+    "FLGH M10AE": {
+      "old_id": "FLGH M10AE",
+      "source": "singleton",
+      "title": "Commercial Pilot 1 Flight Lab",
+      "route": "AVIA",
+      "discipline": "Aviation",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3020.20",
+      "merged_into": null,
+      "new_id": "AVIA M10PW",
+      "how": "gap-filled"
+    },
+    "FLGH M10AF": {
+      "old_id": "FLGH M10AF",
+      "source": "singleton",
+      "title": "Commercial Pilot 2 Flight Lab",
+      "route": "AVIA",
+      "discipline": "Aviation",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3020.20",
+      "merged_into": null,
+      "new_id": "AVIA M10PX",
+      "how": "gap-filled"
+    },
+    "FLGH M10AH": {
+      "old_id": "FLGH M10AH",
+      "source": "singleton",
+      "title": "Human Factors & Crew Resource Management",
+      "route": "AVIA",
+      "discipline": "Aviation",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3020.20",
+      "merged_into": "FLGH M1002",
+      "new_id": "AVIA M10PY",
+      "how": "gap-filled"
+    },
+    "FLGH M90AA": {
+      "old_id": "FLGH M90AA",
+      "source": "singleton",
+      "title": "Introduction to Flight Science",
+      "route": "AVIA",
+      "discipline": "Aviation",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3020.20",
+      "merged_into": null,
+      "new_id": "AVIA M90AP",
+      "how": "gap-filled"
+    },
+    "NCAR M90AA": {
+      "old_id": "NCAR M90AA",
+      "source": "singleton",
+      "title": "Advanced Techniques in Painting",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M90FE",
+      "how": "gap-filled"
+    },
+    "NCAR M90AC": {
+      "old_id": "NCAR M90AC",
+      "source": "singleton",
+      "title": "Basic Drawing and Sketching",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M90FF",
+      "how": "gap-filled"
+    },
+    "NCAR M90AD": {
+      "old_id": "NCAR M90AD",
+      "source": "singleton",
+      "title": "Fundamentals of Drawing for Commercial Artists",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1013.00",
+      "merged_into": "BIOL M9004",
+      "new_id": "ARTS M90FG",
+      "how": "gap-filled"
+    },
+    "NCAR M90AE": {
+      "old_id": "NCAR M90AE",
+      "source": "singleton",
+      "title": "Intermediate Techniques in Painting",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M90FH",
+      "how": "gap-filled"
+    },
+    "NCAR M90AF": {
+      "old_id": "NCAR M90AF",
+      "source": "singleton",
+      "title": "Multimedia Sculpture",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.20",
+      "merged_into": null,
+      "new_id": "ARTS M90FI",
+      "how": "gap-filled"
+    },
+    "NCAR M90AG": {
+      "old_id": "NCAR M90AG",
+      "source": "singleton",
+      "title": "Painting and Drawing",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": "FCSH M9055",
+      "new_id": "ARTS M90FJ",
+      "how": "gap-filled"
+    },
+    "NCAR M90AJ": {
+      "old_id": "NCAR M90AJ",
+      "source": "singleton",
+      "title": "Portrait and Figure Drawing and Painting",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": "OLAD M9054",
+      "new_id": "ARTS M90FK",
+      "how": "gap-filled"
+    },
+    "NCAR M90AK": {
+      "old_id": "NCAR M90AK",
+      "source": "singleton",
+      "title": "Watercolor Painting, Beginning",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M90FL",
+      "how": "gap-filled"
+    },
+    "NCAR M90AL": {
+      "old_id": "NCAR M90AL",
+      "source": "singleton",
+      "title": "Watercolor Painting, Intermediate",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M90FM",
+      "how": "gap-filled"
+    },
+    "NCAR M90AM": {
+      "old_id": "NCAR M90AM",
+      "source": "singleton",
+      "title": "Watercolor Painting on Location",
+      "route": "ARTS",
+      "discipline": "Art",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "1002.10",
+      "merged_into": null,
+      "new_id": "ARTS M90FN",
+      "how": "gap-filled"
+    },
+    "WELL M10AU": {
+      "old_id": "WELL M10AU",
+      "source": "singleton",
+      "title": "Introduction to Wholistic Health",
+      "route": "HLTH",
+      "discipline": "Health",
+      "discipline_before": null,
+      "discipline_source_before": null,
+      "top_code": "3007.00",
+      "merged_into": null,
+      "new_id": "HLTH M11FY",
+      "how": "gap-filled"
+    }
+  },
+  "alias": {
+    "ARCE M1001": "ARTS M1001",
+    "ARCE M10AA": "ARTS M12GS",
+    "ARCE M10AB": "ARTS M12GT",
+    "ARCE M10AC": "ARTS M12GU",
+    "ARCE M10AD": "ARTS M12GV",
+    "ARCE M10AE": "ARTS M12GW",
+    "ARCE M10AF": "ARTS M12GX",
+    "ARCE M10AG": "ARTS M12GY",
+    "ARCE M10AH": "ARTS M12GZ",
+    "ARCE M10AI": "ARTS M12HA",
+    "ARCE M10AJ": "ARTS M12HB",
+    "ARCE M10AK": "ARTS M12HC",
+    "ARCE M10AL": "ARTS M12HD",
+    "ARCE M10AM": "ARTS M12HE",
+    "ARCE M10AN": "ARTS M12HF",
+    "ARCE M10AO": "ARTS M12HG",
+    "ARCE M10AP": "ARTS M12HH",
+    "ARTF M1001": "ARTS M1065",
+    "ARTF M1002": "ARTS M1073",
+    "ARTF M1003": "ARTS M1102",
+    "ARTF M1008": "ARTS M1103",
+    "ARTF M10AA": "ARTS M12HI",
+    "ARTF M10AB": "ARTS M12HJ",
+    "ARTF M10AD": "ARTS M12HK",
+    "ARTF M10AE": "ARTS M12HL",
+    "ARTF M10AI": "ARTS M12HM",
+    "ARTF M10AJ": "ARTS M12HN",
+    "ARTF M10AK": "ARTS M12HO",
+    "ARTF M10AR": "ARTS M12HP",
+    "ARTF M10AS": "ARTS M12HQ",
+    "ARTF M10AU": "ARTS M12HR",
+    "ARTF M10AV": "ARTS M12HS",
+    "ARTF M10AW": "ARTS M12HT",
+    "ARTP M10AA": "PHOT M10RG",
+    "ARTP M10AB": "PHOT M10RH",
+    "ARTP M10AN": "PHOT M10RI",
+    "ARTP M10AO": "PHOT M10RJ",
+    "ARTP M90AA": "PHOT M90BO",
+    "BRDC M1003": "BCST M1058",
+    "BRDC M10AL": "BCST M10KF",
+    "BRDC M10AV": "BCST M10KG",
+    "BRDC M10BF": "BCST M10KH",
+    "BRDC M10BG": "BCST M10KI",
+    "BRDC M10BH": "BCST M10KJ",
+    "BRDC M10BI": "BCST M10KK",
+    "BRDC M10BK": "BCST M10KL",
+    "CSMT M10AC": "COSM M10LM",
+    "CSMT M10AD": "COSM M10LN",
+    "CSMT M10AE": "COSM M10LO",
+    "CSMT M10AK": "COSM M10LP",
+    "CSMT M10AN": "COSM M10LQ",
+    "CSMT M10AV": "COSM M10LR",
+    "CSMT M10AW": "COSM M10LS",
+    "CSMT M10AX": "COSM M10LT",
+    "CSMT M10AY": "COSM M10LU",
+    "CSMT M10AZ": "COSM M10LV",
+    "CSMT M10BA": "COSM M10LW",
+    "CSMT M10BB": "COSM M10LX",
+    "CSMT M10BC": "COSM M10LY",
+    "CSMT M10BD": "COSM M10LZ",
+    "CSMT M10BE": "COSM M10MA",
+    "CSMT M10BF": "COSM M10MB",
+    "FLGH M1002": "AVIA M1022",
+    "FLGH M10AB": "AVIA M10PV",
+    "FLGH M10AE": "AVIA M10PW",
+    "FLGH M10AF": "AVIA M10PX",
+    "FLGH M10AH": "AVIA M10PY",
+    "FLGH M90AA": "AVIA M90AP",
+    "NCAR M90AA": "ARTS M90FE",
+    "NCAR M90AC": "ARTS M90FF",
+    "NCAR M90AD": "ARTS M90FG",
+    "NCAR M90AE": "ARTS M90FH",
+    "NCAR M90AF": "ARTS M90FI",
+    "NCAR M90AG": "ARTS M90FJ",
+    "NCAR M90AJ": "ARTS M90FK",
+    "NCAR M90AK": "ARTS M90FL",
+    "NCAR M90AL": "ARTS M90FM",
+    "NCAR M90AM": "ARTS M90FN",
+    "WELL M10AU": "HLTH M11FY"
+  },
+  "validation": {
+    "V0_pinned_set": {
+      "pass": true,
+      "problems": [],
+      "found": 79,
+      "pinned": 79
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    }
+  },
+  "gapfilled": [
+    {
+      "old_id": "ARCE M10AA",
+      "wanted": "ARTS M10AA",
+      "new_id": "ARTS M12GS",
+      "why": "ARCE M10AA -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AB",
+      "wanted": "ARTS M10AB",
+      "new_id": "ARTS M12GT",
+      "why": "ARCE M10AB -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AC",
+      "wanted": "ARTS M10AC",
+      "new_id": "ARTS M12GU",
+      "why": "ARCE M10AC -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AD",
+      "wanted": "ARTS M10AD",
+      "new_id": "ARTS M12GV",
+      "why": "ARCE M10AD -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AE",
+      "wanted": "ARTS M10AE",
+      "new_id": "ARTS M12GW",
+      "why": "ARCE M10AE -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AF",
+      "wanted": "ARTS M10AF",
+      "new_id": "ARTS M12GX",
+      "why": "ARCE M10AF -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AG",
+      "wanted": "ARTS M10AG",
+      "new_id": "ARTS M12GY",
+      "why": "ARCE M10AG -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AH",
+      "wanted": "ARTS M10AH",
+      "new_id": "ARTS M12GZ",
+      "why": "ARCE M10AH -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AI",
+      "wanted": "ARTS M10AI",
+      "new_id": "ARTS M12HA",
+      "why": "ARCE M10AI -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AJ",
+      "wanted": "ARTS M10AJ",
+      "new_id": "ARTS M12HB",
+      "why": "ARCE M10AJ -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AK",
+      "wanted": "ARTS M10AK",
+      "new_id": "ARTS M12HC",
+      "why": "ARCE M10AK -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AL",
+      "wanted": "ARTS M10AL",
+      "new_id": "ARTS M12HD",
+      "why": "ARCE M10AL -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AM",
+      "wanted": "ARTS M10AM",
+      "new_id": "ARTS M12HE",
+      "why": "ARCE M10AM -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AN",
+      "wanted": "ARTS M10AN",
+      "new_id": "ARTS M12HF",
+      "why": "ARCE M10AN -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AO",
+      "wanted": "ARTS M10AO",
+      "new_id": "ARTS M12HG",
+      "why": "ARCE M10AO -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARCE M10AP",
+      "wanted": "ARTS M10AP",
+      "new_id": "ARTS M12HH",
+      "why": "ARCE M10AP -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M1001",
+      "wanted": "ARTS M1001",
+      "new_id": "ARTS M1065",
+      "why": "ARTF M1001 -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M1002",
+      "wanted": "ARTS M1002",
+      "new_id": "ARTS M1073",
+      "why": "ARTF M1002 -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M1003",
+      "wanted": "ARTS M1003",
+      "new_id": "ARTS M1102",
+      "why": "ARTF M1003 -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M1008",
+      "wanted": "ARTS M1008",
+      "new_id": "ARTS M1103",
+      "why": "ARTF M1008 -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AA",
+      "wanted": "ARTS M10AA",
+      "new_id": "ARTS M12HI",
+      "why": "ARTF M10AA -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AB",
+      "wanted": "ARTS M10AB",
+      "new_id": "ARTS M12HJ",
+      "why": "ARTF M10AB -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AD",
+      "wanted": "ARTS M10AD",
+      "new_id": "ARTS M12HK",
+      "why": "ARTF M10AD -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AE",
+      "wanted": "ARTS M10AE",
+      "new_id": "ARTS M12HL",
+      "why": "ARTF M10AE -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AI",
+      "wanted": "ARTS M10AI",
+      "new_id": "ARTS M12HM",
+      "why": "ARTF M10AI -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AJ",
+      "wanted": "ARTS M10AJ",
+      "new_id": "ARTS M12HN",
+      "why": "ARTF M10AJ -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AK",
+      "wanted": "ARTS M10AK",
+      "new_id": "ARTS M12HO",
+      "why": "ARTF M10AK -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AR",
+      "wanted": "ARTS M10AR",
+      "new_id": "ARTS M12HP",
+      "why": "ARTF M10AR -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AS",
+      "wanted": "ARTS M10AS",
+      "new_id": "ARTS M12HQ",
+      "why": "ARTF M10AS -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AU",
+      "wanted": "ARTS M10AU",
+      "new_id": "ARTS M12HR",
+      "why": "ARTF M10AU -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AV",
+      "wanted": "ARTS M10AV",
+      "new_id": "ARTS M12HS",
+      "why": "ARTF M10AV -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTF M10AW",
+      "wanted": "ARTS M10AW",
+      "new_id": "ARTS M12HT",
+      "why": "ARTF M10AW -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTP M10AA",
+      "wanted": "PHOT M10AA",
+      "new_id": "PHOT M10RG",
+      "why": "ARTP M10AA -> PHOT (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTP M10AB",
+      "wanted": "PHOT M10AB",
+      "new_id": "PHOT M10RH",
+      "why": "ARTP M10AB -> PHOT (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTP M10AN",
+      "wanted": "PHOT M10AN",
+      "new_id": "PHOT M10RI",
+      "why": "ARTP M10AN -> PHOT (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTP M10AO",
+      "wanted": "PHOT M10AO",
+      "new_id": "PHOT M10RJ",
+      "why": "ARTP M10AO -> PHOT (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "ARTP M90AA",
+      "wanted": "PHOT M90AA",
+      "new_id": "PHOT M90BO",
+      "why": "ARTP M90AA -> PHOT (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M1003",
+      "wanted": "BCST M1003",
+      "new_id": "BCST M1058",
+      "why": "BRDC M1003 -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10AL",
+      "wanted": "BCST M10AL",
+      "new_id": "BCST M10KF",
+      "why": "BRDC M10AL -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10AV",
+      "wanted": "BCST M10AV",
+      "new_id": "BCST M10KG",
+      "why": "BRDC M10AV -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10BF",
+      "wanted": "BCST M10BF",
+      "new_id": "BCST M10KH",
+      "why": "BRDC M10BF -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10BG",
+      "wanted": "BCST M10BG",
+      "new_id": "BCST M10KI",
+      "why": "BRDC M10BG -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10BH",
+      "wanted": "BCST M10BH",
+      "new_id": "BCST M10KJ",
+      "why": "BRDC M10BH -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10BI",
+      "wanted": "BCST M10BI",
+      "new_id": "BCST M10KK",
+      "why": "BRDC M10BI -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "BRDC M10BK",
+      "wanted": "BCST M10BK",
+      "new_id": "BCST M10KL",
+      "why": "BRDC M10BK -> BCST (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AC",
+      "wanted": "COSM M10AC",
+      "new_id": "COSM M10LM",
+      "why": "CSMT M10AC -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AD",
+      "wanted": "COSM M10AD",
+      "new_id": "COSM M10LN",
+      "why": "CSMT M10AD -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AE",
+      "wanted": "COSM M10AE",
+      "new_id": "COSM M10LO",
+      "why": "CSMT M10AE -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AK",
+      "wanted": "COSM M10AK",
+      "new_id": "COSM M10LP",
+      "why": "CSMT M10AK -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AN",
+      "wanted": "COSM M10AN",
+      "new_id": "COSM M10LQ",
+      "why": "CSMT M10AN -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AV",
+      "wanted": "COSM M10AV",
+      "new_id": "COSM M10LR",
+      "why": "CSMT M10AV -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AW",
+      "wanted": "COSM M10AW",
+      "new_id": "COSM M10LS",
+      "why": "CSMT M10AW -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AX",
+      "wanted": "COSM M10AX",
+      "new_id": "COSM M10LT",
+      "why": "CSMT M10AX -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AY",
+      "wanted": "COSM M10AY",
+      "new_id": "COSM M10LU",
+      "why": "CSMT M10AY -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10AZ",
+      "wanted": "COSM M10AZ",
+      "new_id": "COSM M10LV",
+      "why": "CSMT M10AZ -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10BA",
+      "wanted": "COSM M10BA",
+      "new_id": "COSM M10LW",
+      "why": "CSMT M10BA -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10BB",
+      "wanted": "COSM M10BB",
+      "new_id": "COSM M10LX",
+      "why": "CSMT M10BB -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10BC",
+      "wanted": "COSM M10BC",
+      "new_id": "COSM M10LY",
+      "why": "CSMT M10BC -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10BD",
+      "wanted": "COSM M10BD",
+      "new_id": "COSM M10LZ",
+      "why": "CSMT M10BD -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10BE",
+      "wanted": "COSM M10BE",
+      "new_id": "COSM M10MA",
+      "why": "CSMT M10BE -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "CSMT M10BF",
+      "wanted": "COSM M10BF",
+      "new_id": "COSM M10MB",
+      "why": "CSMT M10BF -> COSM (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "FLGH M1002",
+      "wanted": "AVIA M1002",
+      "new_id": "AVIA M1022",
+      "why": "FLGH M1002 -> AVIA (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "FLGH M10AB",
+      "wanted": "AVIA M10AB",
+      "new_id": "AVIA M10PV",
+      "why": "FLGH M10AB -> AVIA (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "FLGH M10AE",
+      "wanted": "AVIA M10AE",
+      "new_id": "AVIA M10PW",
+      "why": "FLGH M10AE -> AVIA (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "FLGH M10AF",
+      "wanted": "AVIA M10AF",
+      "new_id": "AVIA M10PX",
+      "why": "FLGH M10AF -> AVIA (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "FLGH M10AH",
+      "wanted": "AVIA M10AH",
+      "new_id": "AVIA M10PY",
+      "why": "FLGH M10AH -> AVIA (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "FLGH M90AA",
+      "wanted": "AVIA M90AA",
+      "new_id": "AVIA M90AP",
+      "why": "FLGH M90AA -> AVIA (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AA",
+      "wanted": "ARTS M90AA",
+      "new_id": "ARTS M90FE",
+      "why": "NCAR M90AA -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AC",
+      "wanted": "ARTS M90AC",
+      "new_id": "ARTS M90FF",
+      "why": "NCAR M90AC -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AD",
+      "wanted": "ARTS M90AD",
+      "new_id": "ARTS M90FG",
+      "why": "NCAR M90AD -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AE",
+      "wanted": "ARTS M90AE",
+      "new_id": "ARTS M90FH",
+      "why": "NCAR M90AE -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AF",
+      "wanted": "ARTS M90AF",
+      "new_id": "ARTS M90FI",
+      "why": "NCAR M90AF -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AG",
+      "wanted": "ARTS M90AG",
+      "new_id": "ARTS M90FJ",
+      "why": "NCAR M90AG -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AJ",
+      "wanted": "ARTS M90AJ",
+      "new_id": "ARTS M90FK",
+      "why": "NCAR M90AJ -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AK",
+      "wanted": "ARTS M90AK",
+      "new_id": "ARTS M90FL",
+      "why": "NCAR M90AK -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AL",
+      "wanted": "ARTS M90AL",
+      "new_id": "ARTS M90FM",
+      "why": "NCAR M90AL -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "NCAR M90AM",
+      "wanted": "ARTS M90AM",
+      "new_id": "ARTS M90FN",
+      "why": "NCAR M90AM -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
+      "old_id": "WELL M10AU",
+      "wanted": "HLTH M10AU",
+      "new_id": "HLTH M11FY",
+      "why": "WELL M10AU -> HLTH (csr-blank-strays-file-eight)"
+    }
+  ],
+  "reused_retired_ids": [
+    "ARTS M1001",
+    "ARTS M1065",
+    "ARTS M1073",
+    "ARTS M1102",
+    "ARTS M1103",
+    "ARTS M12GS",
+    "ARTS M12GT",
+    "AVIA M1022",
+    "AVIA M10PV",
+    "AVIA M10PW",
+    "AVIA M10PX",
+    "AVIA M10PY",
+    "COSM M10LM",
+    "COSM M10LN",
+    "COSM M10LO",
+    "COSM M10LP",
+    "COSM M10LQ",
+    "COSM M10LR",
+    "COSM M10LS",
+    "COSM M10LT",
+    "COSM M10LU",
+    "COSM M10LV",
+    "COSM M10LW",
+    "COSM M10LX",
+    "COSM M10LY",
+    "COSM M10LZ",
+    "COSM M10MA",
+    "PHOT M10RG",
+    "PHOT M10RH",
+    "PHOT M10RI",
+    "PHOT M10RJ"
+  ]
+}

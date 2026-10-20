@@ -31055,7 +31055,10 @@
   "kb/athl_remint_out/2026-09-30/alias_map.json",
   "kb/agab_remint_out/2026-10-19/alias_map.json",
   "kb/agri_family_remint_out/2026-10-20/alias_map.json",
-  "kb/forestry_wine_remint_out/2026-10-20/alias_map.json"
+  "kb/forestry_wine_remint_out/2026-10-20/alias_map.json",
+  "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",
+  "kb/fl_stray_remint_out/2026-10-20/alias_map.json",
+  "kb/blank_stray_remint_out/2026-10-20/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

@@ -1,6 +1,6 @@
 # Foreign Languages strays (fl-strays-s435) - dry run 2026-10-20
 
-Proposed on Open Asks Sheet 106 (S435, 2026-10-20): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).
+Sam, 2026-10-20 (Open Asks Sheet 107 card 2, 13:08Z, his own call, "rekey-twelve"; proposed on Sheet 106 by S435): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).
 
 ## Validation
 

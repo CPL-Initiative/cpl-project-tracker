@@ -319,6 +319,61 @@
         "nahuatl",
         "nauatl"
       ]
+    },
+    "Aramaic": {
+      "subj4": "FLAM",
+      "top": [],
+      "subjects": [
+        "ARAM"
+      ],
+      "title": [
+        "aramaic"
+      ],
+      "_added": "S436, 2026-10-20, Open Asks Sheet 107 card 2 (Sam, rekey-twelve): a language a student enrolls in takes its own FL code"
+    },
+    "Hupa": {
+      "subj4": "FLHU",
+      "top": [],
+      "subjects": [
+        "HUPA"
+      ],
+      "title": [
+        "hupa"
+      ],
+      "_added": "S436, 2026-10-20, Open Asks Sheet 107 card 2 (Sam, rekey-twelve): a language a student enrolls in takes its own FL code"
+    },
+    "Egyptian Hieroglyphs": {
+      "subj4": "FLEG",
+      "top": [],
+      "subjects": [
+        "HIER"
+      ],
+      "title": [
+        "hieroglyph"
+      ],
+      "_added": "S436, 2026-10-20, Open Asks Sheet 107 card 2 (Sam, rekey-twelve): a language a student enrolls in takes its own FL code"
+    },
+    "Khmer": {
+      "subj4": "FLKH",
+      "top": [],
+      "subjects": [
+        "KHME"
+      ],
+      "title": [
+        "khmer"
+      ],
+      "_added": "S436, 2026-10-20, Open Asks Sheet 107 card 2 (Sam, rekey-twelve): a language a student enrolls in takes its own FL code"
+    },
+    "Turkish": {
+      "subj4": "FLTU",
+      "top": [],
+      "subjects": [
+        "TURK"
+      ],
+      "title": [
+        "turkish"
+      ],
+      "_added": "S436, 2026-10-20, Open Asks Sheet 107 card 2 (Sam, rekey-twelve): a language a student enrolls in takes its own FL code"
     }
   },
   "do_not_fold": {

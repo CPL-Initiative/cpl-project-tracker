@@ -517,6 +517,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/seed_edits.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_zband_retire_dryrun.py` | — |
 | `kb/authority_recode_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
+| `kb/blank_stray_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/budget_snapshot.json` | scripts: `kb/_load_budget.py` | scripts: `kb/_load_budget.py` · committed by: `daily-dashboard.yml` |
 | `kb/catalog_framing.json` | tabs: `program-requirements` | — |
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
@@ -587,8 +588,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference` · scripts: `kb/_build_commons_status.py` | committed by: `daily-dashboard.yml` |
 | `kb/fire_electrical_domain_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py` | — |
+| `kb/fl_stray_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/fl_subj4_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/foreign_language_subj4.json` | tabs: `canonical-subj4` · scripts: `kb/_authority_recode_dryrun.py`, `kb/_fl_subj4_dryrun.py`, `kb/_subj4_dryrun.py`, `kb/_zband_retire_dryrun.py` | — |
+| `kb/forestry_wine_remint_out/<date>-stragglers/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/forestry_wine_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/futuro_hth_map_reference.json` | scripts: `kb/_build_futuro_hth_crosswalk.py` | — |
 | `kb/governance_candidates.json` | tabs: `governance` | committed by: `daily-dashboard.yml` |
@@ -1175,5 +1178,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 702 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 705 file
 datasets · 184 external services · 462 consumers · 58 workflows · 39 tabs.

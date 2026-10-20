@@ -1,0 +1,417 @@
+{
+  "_status": "Blank stray re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-10-20",
+  "_scope": [
+    "csr-blank-strays-file-eight"
+  ],
+  "_count": 79,
+  "_ruling": "Sam, 2026-10-20 (Open Asks Sheet 107 card 3, 13:09Z, his own call, \"file-eight\"; proposed on Sheet 106 by S435): the 79 identities on the eight stray codes whose two signals agree take the discipline both name and re-key to its Common SUBJ",
+  "aliases": {
+    "ARCE M1001": {
+      "new_id": "ARTS M1001",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AA": {
+      "new_id": "ARTS M12GS",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AB": {
+      "new_id": "ARTS M12GT",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AC": {
+      "new_id": "ARTS M12GU",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AD": {
+      "new_id": "ARTS M12GV",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AE": {
+      "new_id": "ARTS M12GW",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AF": {
+      "new_id": "ARTS M12GX",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AG": {
+      "new_id": "ARTS M12GY",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AH": {
+      "new_id": "ARTS M12GZ",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AI": {
+      "new_id": "ARTS M12HA",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AJ": {
+      "new_id": "ARTS M12HB",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AK": {
+      "new_id": "ARTS M12HC",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AL": {
+      "new_id": "ARTS M12HD",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AM": {
+      "new_id": "ARTS M12HE",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AN": {
+      "new_id": "ARTS M12HF",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AO": {
+      "new_id": "ARTS M12HG",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARCE M10AP": {
+      "new_id": "ARTS M12HH",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M1001": {
+      "new_id": "ARTS M1065",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M1002": {
+      "new_id": "ARTS M1073",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M1003": {
+      "new_id": "ARTS M1102",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M1008": {
+      "new_id": "ARTS M1103",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AA": {
+      "new_id": "ARTS M12HI",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AB": {
+      "new_id": "ARTS M12HJ",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AD": {
+      "new_id": "ARTS M12HK",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AE": {
+      "new_id": "ARTS M12HL",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AI": {
+      "new_id": "ARTS M12HM",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AJ": {
+      "new_id": "ARTS M12HN",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AK": {
+      "new_id": "ARTS M12HO",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AR": {
+      "new_id": "ARTS M12HP",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AS": {
+      "new_id": "ARTS M12HQ",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AU": {
+      "new_id": "ARTS M12HR",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AV": {
+      "new_id": "ARTS M12HS",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTF M10AW": {
+      "new_id": "ARTS M12HT",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "ARTP M10AA": {
+      "new_id": "PHOT M10RG",
+      "route": "PHOT",
+      "discipline": "Photography"
+    },
+    "ARTP M10AB": {
+      "new_id": "PHOT M10RH",
+      "route": "PHOT",
+      "discipline": "Photography"
+    },
+    "ARTP M10AN": {
+      "new_id": "PHOT M10RI",
+      "route": "PHOT",
+      "discipline": "Photography"
+    },
+    "ARTP M10AO": {
+      "new_id": "PHOT M10RJ",
+      "route": "PHOT",
+      "discipline": "Photography"
+    },
+    "ARTP M90AA": {
+      "new_id": "PHOT M90BO",
+      "route": "PHOT",
+      "discipline": "Photography"
+    },
+    "BRDC M1003": {
+      "new_id": "BCST M1058",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10AL": {
+      "new_id": "BCST M10KF",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10AV": {
+      "new_id": "BCST M10KG",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10BF": {
+      "new_id": "BCST M10KH",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10BG": {
+      "new_id": "BCST M10KI",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10BH": {
+      "new_id": "BCST M10KJ",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10BI": {
+      "new_id": "BCST M10KK",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "BRDC M10BK": {
+      "new_id": "BCST M10KL",
+      "route": "BCST",
+      "discipline": "Broadcasting Technology"
+    },
+    "CSMT M10AC": {
+      "new_id": "COSM M10LM",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AD": {
+      "new_id": "COSM M10LN",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AE": {
+      "new_id": "COSM M10LO",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AK": {
+      "new_id": "COSM M10LP",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AN": {
+      "new_id": "COSM M10LQ",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AV": {
+      "new_id": "COSM M10LR",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AW": {
+      "new_id": "COSM M10LS",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AX": {
+      "new_id": "COSM M10LT",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AY": {
+      "new_id": "COSM M10LU",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10AZ": {
+      "new_id": "COSM M10LV",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10BA": {
+      "new_id": "COSM M10LW",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10BB": {
+      "new_id": "COSM M10LX",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10BC": {
+      "new_id": "COSM M10LY",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10BD": {
+      "new_id": "COSM M10LZ",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10BE": {
+      "new_id": "COSM M10MA",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "CSMT M10BF": {
+      "new_id": "COSM M10MB",
+      "route": "COSM",
+      "discipline": "Cosmetology"
+    },
+    "FLGH M1002": {
+      "new_id": "AVIA M1022",
+      "route": "AVIA",
+      "discipline": "Aviation"
+    },
+    "FLGH M10AB": {
+      "new_id": "AVIA M10PV",
+      "route": "AVIA",
+      "discipline": "Aviation"
+    },
+    "FLGH M10AE": {
+      "new_id": "AVIA M10PW",
+      "route": "AVIA",
+      "discipline": "Aviation"
+    },
+    "FLGH M10AF": {
+      "new_id": "AVIA M10PX",
+      "route": "AVIA",
+      "discipline": "Aviation"
+    },
+    "FLGH M10AH": {
+      "new_id": "AVIA M10PY",
+      "route": "AVIA",
+      "discipline": "Aviation"
+    },
+    "FLGH M90AA": {
+      "new_id": "AVIA M90AP",
+      "route": "AVIA",
+      "discipline": "Aviation"
+    },
+    "NCAR M90AA": {
+      "new_id": "ARTS M90FE",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AC": {
+      "new_id": "ARTS M90FF",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AD": {
+      "new_id": "ARTS M90FG",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AE": {
+      "new_id": "ARTS M90FH",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AF": {
+      "new_id": "ARTS M90FI",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AG": {
+      "new_id": "ARTS M90FJ",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AJ": {
+      "new_id": "ARTS M90FK",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AK": {
+      "new_id": "ARTS M90FL",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AL": {
+      "new_id": "ARTS M90FM",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "NCAR M90AM": {
+      "new_id": "ARTS M90FN",
+      "route": "ARTS",
+      "discipline": "Art"
+    },
+    "WELL M10AU": {
+      "new_id": "HLTH M11FY",
+      "route": "HLTH",
+      "discipline": "Health"
+    }
+  },
+  "_applied_at": "2026-10-20",
+  "_applied_ruling": "Sam, 2026-10-20 (Open Asks Sheet 107 card 3, 13:09Z, his own call, \"file-eight\"; proposed on Sheet 106 by S435): the 79 identities on the eight stray codes whose two signals agree take the discipline both name and re-key to its Common SUBJ",
+  "_counts": {
+    "courses": 7,
+    "singletons": 72,
+    "articulations": 2,
+    "identities": 2,
+    "pointers": 10,
+    "curation_keys": 30,
+    "discipline_sources_cleared": 79
+  }
+}
