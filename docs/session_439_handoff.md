@@ -79,6 +79,25 @@ first.
 - `cpl_memory` writes timed out three times (60s each, nothing reached the database; reads worked): stage them in a
   receipt, as the playbook says, rather than retrying.
 
+## The side session beside S438 (Funding tab, `session_01DyFzLDqybndyR7vXBDAuGQ`, no number taken)
+
+**Sam's words, ~16:49Z** (verbatim in `docs/cpl_funding_lessons.md`; `cpl_memory`
+`sam-funding-view-first-my-institution-2026-10-20`, verified): the view first (*All Institutions* or *My
+Institution*, the hover saying an institution is a college or a district); under My Institution, require a college or
+district; the Funding outcomes numbers follow the chosen institution.
+
+**Shipped, #2293 merged:** Step 1 is the view, Step 2 the chooser (under My Institution only); the explainer's outcome
+cards show the chosen college's or district's own target and progress (`scopeProgress()` over `addInstPrios()`, the
+step `earnAgg()` sums statewide). Guards `cpl_funding_step_two_view`, `cpl_funding_outcomes_follow_institution`.
+Lane `implementation-funding` and the funding lessons updated (both compacted under budget). UI pass: `privacy`,
+clean, nothing to fix (ledger recorded).
+
+**Nothing open from it.** If Sam asks for more on the outcome cards, the other sections of the explainer (boxes, worked
+examples) are still statewide by design; only Funding outcomes follows the institution.
+
+**Lesson:** renaming rendered text, grep every test for the old words before the push (a sixth suite pinned
+*All institutions* and turned CI red once).
+
 ## Not refreshed
 
 The UI pass (the ledger keeps its view due), the Pipeline tab (nothing moved), `kb/README.md`, `README.md`, no KB note,
@@ -86,5 +105,5 @@ The UI pass (the ledger keeps its view due), the Pipeline tab (nothing moved), `
 
 ## Let go
 
-S438 holds no PR subscription (#2291 merged), no artifact watch, and its one check-in fired. The CPL Queue routine
+S438 holds no PR subscription (#2291 merged), no artifact watch, and its one check-in fired. The side session holds none either (#2293 merged, unsubscribed). The CPL Queue routine
 fires next at 05:12Z on 2026-10-21.
