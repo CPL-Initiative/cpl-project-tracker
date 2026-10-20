@@ -131,6 +131,13 @@ def answer_row(identity, answers):
     }
 
 
+def fmt_p(value):
+    """A probability as two decimals, or '-' when the answer is missing."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return "-"
+    return "%.2f" % value
+
+
 def load_inputs(kb_dir=None):
     kb_dir = kb_dir or HERE
     courses = json.load(open(os.path.join(kb_dir, "coci_minted_courses.json"), encoding="utf-8"))["courses"]
@@ -167,9 +174,12 @@ def run(limit=None, dry_run=False, key=None, call=system_one, out_dir=OUT, input
             row = answer_row(ident, {})
             row["error"] = str(exc).splitlines()[0][:200]
         rows.append(row)
-        out("%-12s %-5s %-5s %-50s %s" % (row["id"], row["family"] or "-",
-                                          ("%.2f" % row["family_confidence"]) if isinstance(row["family_confidence"], (int, float)) else "-",
-                                          row["title"][:50], ("error: " + row["error"]) if row.get("error") else ("plain" if row["plain"] else "")))
+        # A noul is a probability (kb/_typesafe_smoke.py, ANSWER SHAPES), so the line prints it. The first
+        # sitting (run 39352507898) printed the word "plain" for any non-zero value, all 404 rows alike, and its
+        # file sits on a blob host the sandbox cannot reach: the log line is the reading a session can get.
+        out("%-12s %-5s %-5s %-50s %s" % (row["id"], row["family"] or "-", fmt_p(row["family_confidence"]),
+                                          row["title"][:50], ("error: " + row["error"]) if row.get("error")
+                                          else "plain=" + fmt_p(row["plain"])))
     tally = {}
     for r in rows:
         tally[r["family"] or "error"] = tally.get(r["family"] or "error", 0) + 1
