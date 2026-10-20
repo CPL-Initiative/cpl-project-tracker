@@ -25,6 +25,7 @@ Run:
   python3 kb/_forestry_wine_remint.py --apply --receipt kb/forestry_wine_remint_out/<date>/alias_map.json \\
       --fresh-read <live.json>
   python3 kb/_forestry_wine_remint.py --rekey-skyview --receipt kb/forestry_wine_remint_out/<date>/alias_map.json
+  Add `--set stragglers` to each for the two forestry identities merged into ENVR M1069 (out dir <date>-stragglers).
 """
 import argparse
 import json
@@ -62,6 +63,19 @@ PINS = {
     "AGRI M1119": ("Wines of Italy", "AGPR"),
     "AGRI M1113": ("Wine Service and Hospitality", "AGPR"),
     "AGRI M10FP": ("Beginning Wine Sensory Analysis", "AGPR"),
+}
+# The follow-up set (S432; dry run only, Open Asks Sheet 105 asks Sam, since the session's permission check held the apply): two
+# forestry identities the Sheet 103 sitting never set aside, because Jev placed them in AGPS below the gate, stay
+# on AGRI while merged into ENVR M1069, the forestry parent "move-ten" moved. Both carry TOP 0114.00 (Forestry).
+SETS = {
+    "sheet104": (SCOPE, RULING, PINS, ""),
+    "stragglers": (
+        "sheet104-forestry-stragglers",
+        'Open Asks Sheet 105 (S432, 2026-10-20), following Sam\'s Sheet 104 "move-ten": the two forestry '
+        'identities merged into ENVR M1069 that the sitting never named follow their parent to ENVR',
+        {"AGRI M10SY": ("Forest Surveying", "ENVR"),
+         "AGRI M1104": ("Introduction to Forest Operations", "ENVR")},
+        "-stragglers"),
 }
 SOURCE_KEYS = ("discipline_source", "discipline_confidence", "discipline_inferred_at")
 
@@ -138,7 +152,7 @@ def render_report(plan, today, receipt):
     by = {}
     for v in plan["moves"].values():
         by[v["route"]] = by.get(v["route"], 0) + 1
-    L = [f"# Sheet 104 re-mint: forestry to ENVR, wine to AGPR - dry run {today}", "",
+    L = [f"# Sheet 104 re-mint ({SCOPE}): forestry to ENVR, wine to AGPR - dry run {today}", "",
          f"The ruling: {RULING}. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).", "",
          "## Validation", ""]
     for k, v in plan["validation"].items():
@@ -176,7 +190,11 @@ def main(argv=None):
     ap.add_argument("--fresh-read", help="live kb_curation rows (JSON list of {course_id, field, value}) (P3)")
     ap.add_argument("--rekey-skyview", action="store_true",
                     help="after an apply: re-key SkyView's hand-built layout files from the APPLIED --receipt")
+    ap.add_argument("--set", default="sheet104", choices=sorted(SETS),
+                    help="which pinned set: the fourteen Sheet 104 named, or the two forestry stragglers")
     args = ap.parse_args(argv)
+    global SCOPE, RULING, PINS
+    SCOPE, RULING, PINS, suffix = SETS[args.set]
     if args.rekey_skyview:
         if not args.receipt:
             sys.exit("--rekey-skyview needs --receipt (an applied one)")
@@ -202,7 +220,7 @@ def main(argv=None):
         print(f"  {k}: {'ok' if v.get('pass') else 'FAIL'}")
 
     if not args.apply:
-        out = os.path.join(OUT_ROOT, today)
+        out = os.path.join(OUT_ROOT, today + suffix)
         rp = os.path.join(out, "alias_map.json")
         if os.path.exists(rp):
             with open(rp, encoding="utf-8") as f:

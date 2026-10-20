@@ -15887,8 +15887,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 403,
+   "count": 404,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 433,
+     "path": "docs/session_433_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "common-subjects-reference",
+      "agri",
+      "envr",
+      "agpr",
+      "remint",
+      "decision-sheet"
+     ],
+     "title": "Session 433 handoff: Sheet 104 applied and live; the forestry stragglers asked on Sheet 105; the quarterly probe read twice",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22848,5 +22867,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1200
+ "total": 1201
 }

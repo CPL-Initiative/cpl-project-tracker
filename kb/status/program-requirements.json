@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T03:46:40Z",
-  "session": 431,
-  "moniker": "SkyChaparral",
-  "run": "Sam's session",
+  "written_at": "2026-10-20T05:51:42Z",
+  "session": 432,
+  "moniker": "SkyYerbaSanta",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_432_handoff.md",
+  "handoff": "docs/session_433_handoff.md",
   "next_step": {
-    "title": "Re-key the ten forestry and four wine courses off AGRI",
-    "text": "Sam ruled on Open Asks Sheet 104 (move-ten, agpr): one re-key window under the playbook moves the ten forestry courses to ENVR and the four wine courses to AGPR, each record's discipline following its code, then the live curation re-key after merge."
+    "title": "Move the two forestry stragglers on Sam's word",
+    "text": "Open Asks Sheet 105 asks whether Forest Surveying and Introduction to Forest Operations, both merged into Forest Ecology on ENVR, follow it off AGRI. On move-both the next session applies the committed dry run in one window; otherwise the quarterly probe's comparison mode comes next."
   },
   "calls": [
     {
@@ -24,20 +24,16 @@
   },
   "changes": [
     {
-      "at": "2026-10-20T02:49:00Z",
-      "text": "The nine MQ discipline names took the handbook's spellings (#2269)."
+      "at": "2026-10-20T05:38:00Z",
+      "text": "The ten forestry identities moved to Forestry/Natural Resources and the four wine identities to Agricultural Production, each taking its new code's discipline (#2276)."
     },
     {
-      "at": "2026-10-20T03:08:00Z",
-      "text": "The 44 AGRI identities Sam confirmed on Sheet 103 were re-keyed in the files (#2270) and in the live curation rows."
+      "at": "2026-10-20T05:40:00Z",
+      "text": "The live curation rows re-keyed for those fourteen, read back with none left on an old id."
     },
     {
-      "at": "2026-10-20T03:32:00Z",
-      "text": "Sam ruled Open Asks Sheet 104: the ten forestry courses move to Forestry/Natural Resources and the four wine courses to Agricultural Production."
-    },
-    {
-      "at": "2026-10-20T03:44:00Z",
-      "text": "The dashboard's handbook link now opens the Chancellor's Office's live Minimum Qualifications page (#2273)."
+      "at": "2026-10-20T05:52:00Z",
+      "text": "Open Asks Sheet 105 asks about the two forestry courses still on AGRI."
     }
   ],
   "headline": [
@@ -123,7 +119,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-20T05:12:00Z"
+    "at": "2026-10-20T06:12:00Z"
   },
   "harvest": {
     "day": "2026-10-20",

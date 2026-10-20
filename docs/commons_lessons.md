@@ -27,6 +27,32 @@ keeps what each step taught, once. Sam's framing (2026-10-18): *"each of our 'co
 approach and tracking and feedback system... It all needs to culminate in a 'Commons' dash."* The ruled order (Open
 Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress view, then the Commons tab.
 
+## S432 SkyYerbaSanta (2026-10-20): Sheet 104 applied, the forestry stragglers asked, the probe read twice
+
+- **A ruling that moves a course out of an umbrella moves its discipline with the key, and the TOP source goes too.**
+  Sheet 103's family codes sat inside the Agriculture umbrella, so S430 kept each record's discipline; Sheet 104's
+  ENVR and AGPR are other MQ disciplines, so `kb/_forestry_wine_remint.py` sets the discipline from the target code and
+  clears `discipline_source`/`_confidence`/`_inferred_at` to the manual state (`_kin_pe_pass2.py`'s `flip_disc`).
+  Left as `top_division`, eight of the fourteen would have been held out of the fold by the TOP gate even though a
+  curator ruled their home (#2276).
+- **A card names the set it measured; the re-key finds the rest by their pointers.** Two forestry identities merged
+  into Forest Ecology (AGRI M10SY, M1104) were never in the sitting's `second_look`, because Jev placed them in AGPS
+  below the gate. After the window they sat on AGRI under an ENVR parent. List what points at each moved id
+  (`merge_into`) and what each moved id points at before writing the receipt. Of the four "same-subject" ENVR courses
+  the handoff queued for merging, two already merge into the moved parents.
+- **The CSR seeder drops the overlay's provenance fields.** `kb/_seed_canonical_subj4.py` (post-apply step 2) rewrote
+  `discipline_canonical_subj4.json` without `_notes_by`/`_notes_at` (13 disciplines) and the top-level `_synced_*`;
+  the cron's `_apply_canonical_subj4.py` puts them back, so the commit restores them from HEAD to keep the diff to the
+  re-key alone.
+- **A permission-check denial converts a proceeded-on call into an ask, the same turn.** The stragglers' apply was
+  refused; the dry run stays committed, the card on Sheet 105 asks instead of reporting, and the lane carries NEEDS
+  SAM 9. Proceeding means the session acts; when it cannot act, the card cannot say it did.
+- **A fixture with fixed stamps needs a fixed clock.** `tests/commons.test.js` held `NOW` for its unit checks while
+  `boot()` rendered on the real clock, so the "inside 36 hours reads current" check failed at 05:47Z on 2026-10-20,
+  36 hours after its stamp, on every branch. The test now pins the window's `Date` to `NOW`.
+- **The quarterly probe reads the same twice.** MQ page 200 and edition 19 both runs; c-id.net 403 to a runner;
+  www.data-c-idsystem.org does not resolve. The comparison mode needs a C-ID source a runner can reach.
+
 ## S431 SkyChaparral (2026-10-20): the 44 live, Sheet 104 asked and ruled, the handbook's live page, the probe
 
 - **A card's measured context can overturn its own first proposal; measure before writing the rec.** The wine card
