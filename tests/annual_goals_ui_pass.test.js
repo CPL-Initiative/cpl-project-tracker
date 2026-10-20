@@ -13,6 +13,15 @@
 //       invited to add one;
 //   (f) the live Current in a filled blue badge, and Unlock editing a boxed button
 //       (controls are underlined words, Sam 2026-10-09).
+// S438 (Sam, 2026-10-20) changed four of them:
+//   (h) no Total column: most ladders are cumulative, so the five-year sum overstated
+//       the 2030 target;
+//   (i) the numbers centered, and no blue rule under an editable value ("the thin blue
+//       outlines look like someone didn't finish the formatting");
+//   (j) everything under a sub-activity's title folds by default behind "Details", so
+//       its three rows stand at single height; "Show all details" opens every panel;
+//   (k) "Activity card" under each title and "Activity cards" on each Activity header
+//       (tests/annual_goals_card_links.test.js follows them to the cards).
 // The renderer is run for real (python3, openpyxl stubbed: the table needs none of it),
 // so a markup change that breaks the editor fails here, not on the published page.
 //
@@ -65,12 +74,15 @@ const dom0 = new JSDOM("<!doctype html><body>" + HTML + "</body>");
 const t0 = dom0.window.document;
 const colHeads = t0.querySelectorAll("thead th");
 check("(b) every column header carries scope=col",
-  colHeads.length === 8 && Array.prototype.every.call(colHeads, (th) => th.getAttribute("scope") === "col"));
+  colHeads.length === 7 && Array.prototype.every.call(colHeads, (th) => th.getAttribute("scope") === "col"));
+check("(h) the columns are the name, the type and the five years: no Total",
+  Array.prototype.map.call(colHeads, (th) => th.textContent).join(",") ===
+    "Sub-Activity,Type,2025-26,2026-27,2027-28,2028-29,2029-30" && !t0.querySelector("col.wpg-c-total"));
 const groups = t0.querySelectorAll("table > tbody");
 check("(b) each Activity is its own tbody, headed by a rowgroup th",
   groups.length === 2 && Array.prototype.every.call(groups, (tb) => {
     const h = tb.querySelector("tr:first-child > th");
-    return h && h.getAttribute("scope") === "rowgroup" && h.getAttribute("colspan") === "8";
+    return h && h.getAttribute("scope") === "rowgroup" && h.getAttribute("colspan") === "7";
   }));
 const names = t0.querySelectorAll("th.wpg-name");
 check("(b) each sub-activity name is a row header spanning its three rows",
@@ -87,10 +99,41 @@ check("(c) the only inline style left is the nesting indent",
   styled.length === 1 && /^style="--wpg-indent:[\d.]+rem"$/.test(styled[0]));
 const vals = t0.querySelectorAll("td.wpg-val");
 check("(c) every value cell carries its column label for the phone card",
-  vals.length === 3 * 3 * 6 && Array.prototype.every.call(vals, (td) => !!td.getAttribute("data-label")));
-check("(c) the labels are the short years and Total",
-  Array.prototype.slice.call(vals, 0, 6).map((td) => td.getAttribute("data-label")).join(",") ===
-    "25-26,26-27,27-28,28-29,29-30,Total");
+  vals.length === 3 * 3 * 5 && Array.prototype.every.call(vals, (td) => !!td.getAttribute("data-label")));
+check("(c) the labels are the short years",
+  Array.prototype.slice.call(vals, 0, 5).map((td) => td.getAttribute("data-label")).join(",") ===
+    "25-26,26-27,27-28,28-29,29-30");
+check("(h) no Total cell, and no editor mirror of one",
+  !t0.querySelector('.wpg-total, [data-total], [data-label="Total"]') && !/>Total</.test(HTML));
+
+// ── (j) the details fold under the title ──
+const moreBtns = t0.querySelectorAll("th.wpg-name .wpg-more-btn");
+check("(j) each sub-activity has a Details button, closed, naming its panel",
+  moreBtns.length === 3 && Array.prototype.every.call(moreBtns, (b) =>
+    b.tagName === "BUTTON" && b.getAttribute("type") === "button" && b.textContent === "Details" &&
+    b.getAttribute("aria-expanded") === "false" && !!t0.getElementById(b.getAttribute("aria-controls"))));
+check("(j) each panel starts hidden and holds the description, the counting lines and the chips",
+  Array.prototype.every.call(moreBtns, (b) => {
+    const panel = t0.getElementById(b.getAttribute("aria-controls"));
+    return panel.hidden && panel.closest("th.wpg-name") === b.closest("th.wpg-name") &&
+      !!panel.querySelector("[data-desc-edit]") && panel.querySelectorAll(".wpg-count-line").length === 2 &&
+      !!panel.querySelector("[data-assoc-edit]");
+  }));
+check("(j) the title stays outside the panel",
+  Array.prototype.every.call(t0.querySelectorAll("th.wpg-name [data-title-edit]"), (t) => !t.closest(".wpg-more")));
+check("(j) the head row offers Show all details",
+  (t0.querySelector(".wpg-annual-head .wpg-more-all") || {}).textContent === "Show all details");
+// ── (k) the links to the Activities tab ──
+const cardLinks = t0.querySelectorAll("th.wpg-name a.wpg-card-link");
+check("(k) each sub-activity links its card in words",
+  cardLinks.length === 3 && Array.prototype.every.call(cardLinks, (a) => a.textContent === "Activity card" &&
+    a.getAttribute("href") === "#activities-projects/card-" + a.closest("th").querySelector("[data-title-edit]").getAttribute("data-pid") &&
+    /^Activity card for /.test(a.getAttribute("aria-label")) && !a.closest(".wpg-more")));
+const actLinks = t0.querySelectorAll("th.wpg-act-head a.wpg-card-link");
+check("(k) each Activity header links its cards",
+  actLinks.length === 2 && Array.prototype.map.call(actLinks, (a) => a.getAttribute("href")).join(",") ===
+    "#activities-projects/activity-1,#activities-projects/activity-4" &&
+  Array.prototype.every.call(actLinks, (a) => a.textContent === "Activity cards"));
 
 // ── (e) the empty description ──
 const emptyDesc = t0.querySelector('[data-desc-edit="1"][data-pid="4.1"]');
@@ -110,7 +153,6 @@ const curCells = t0.querySelectorAll('td[data-editable="1"][data-aid="1.1"][data
 check("(g) a manual Current is an editable ladder: five year cells, keyed cur_<year>",
   curCells.length === 5 && Array.prototype.map.call(curCells, (td) => td.getAttribute("data-yr-key")).join(",") ===
     "cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30");
-check("(g) its Total mirrors the row for the editor", !!t0.querySelector('td[data-aid="1.1"][data-rt="CURRENT"][data-total="1"]'));
 check("(g) a live row's Current cells are not editable", !t0.querySelector('td[data-editable="1"][data-aid="4.1"][data-rt="CURRENT"]'));
 check("(g) the head row holds the title and the sign-in slot",
   !!t0.querySelector(".wpg-annual-head > h2.wpg-annual-title") && !!t0.querySelector(".wpg-annual-head > .wpg-auth-slot"));
@@ -194,8 +236,7 @@ function key(w, node, k) { node.dispatchEvent(new w.KeyboardEvent("keydown", { k
   check("(g) Enter on a Current value opens a field that names the year", curInput && curInput.getAttribute("aria-label") === "Current 2026-27 for 1.1");
   if (curInput) { curInput.value = "7"; curInput.dispatchEvent(new w.Event("blur")); }
   await new Promise((r) => setTimeout(r, 5));
-  const curTotal = doc.querySelector('td[data-aid="1.1"][data-rt="CURRENT"][data-total="1"]');
-  check("(g) a Current save repaints the row's Total", cur.textContent === "7" && curTotal.textContent === "7");
+  check("(g) a Current save repaints the value", cur.textContent === "7");
   // Chrome fires the removed field's blur, and blur commits: a second close must be a
   // no-op, not a second restore (which threw "node to be removed is no longer a child").
   g.focus(); key(w, g, "Enter");
@@ -205,6 +246,26 @@ function key(w, node, k) { node.dispatchEvent(new w.KeyboardEvent("keydown", { k
   let threw = null;
   try { again.dispatchEvent(new w.Event("blur")); } catch (e) { threw = e; }
   check("(a) ...and a second blur is a no-op", !threw && g.textContent === "1");
+
+  // (j) the panels open and close, one at a time or all at once.
+  const btn11 = doc.querySelector('th.wpg-name .wpg-more-btn[aria-controls="wpg-more-1-1"]');
+  const panel11 = doc.getElementById("wpg-more-1-1");
+  btn11.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+  check("(j) Details opens its panel and says so", !panel11.hidden && btn11.getAttribute("aria-expanded") === "true");
+  check("(j) ...and only its own", doc.querySelectorAll(".wpg-more:not([hidden])").length === 1);
+  btn11.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+  check("(j) a second click closes it", panel11.hidden && btn11.getAttribute("aria-expanded") === "false");
+  const all = doc.querySelector(".wpg-more-all");
+  all.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+  check("(j) Show all details opens every panel and becomes Hide all details",
+    doc.querySelectorAll(".wpg-more[hidden]").length === 0 && all.textContent === "Hide all details" &&
+    Array.prototype.every.call(doc.querySelectorAll(".wpg-more-btn"), (b) => b.getAttribute("aria-expanded") === "true"));
+  all.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+  check("(j) Hide all details closes them again", doc.querySelectorAll(".wpg-more:not([hidden])").length === 0 &&
+    all.textContent === "Show all details");
+  const move = doc.querySelector('.wpg-move[aria-label^="Move 1.1 "]');
+  check("(j) an editor's Move and Table fold with the details", move && !!move.closest(".wpg-more"));
+  check("(j) a click on Details opens no editor", !doc.querySelector(".wpg-editing"));
 
   title.focus();
   key(w, title, " ");
@@ -243,13 +304,22 @@ function key(w, node, k) { node.dispatchEvent(new w.KeyboardEvent("keydown", { k
     !/italic/.test(rule(".wpg-annual-table .wpg-r-stretch")));
   check("(d) rows are hairlines, no vertical grid: a value cell has only a bottom border",
     /border:0;border-bottom:1px solid var\(--border\)/.test(rule(".wpg-annual-table td, .wpg-annual-table .wpg-type, .wpg-annual-table .wpg-name")));
-  check("(d) numbers sit right-aligned in tabular figures", /text-align:right/.test(rule(".wpg-annual-table .wpg-val")) &&
-    /tabular-nums/.test(rule(".wpg-annual-table")));
+  check("(i) numbers sit centered in tabular figures, under centered year headers",
+    /text-align:center/.test(rule(".wpg-annual-table .wpg-val")) && /tabular-nums/.test(rule(".wpg-annual-table")) &&
+    /text-align:center/.test(rule(".wpg-annual-table thead th")) &&
+    /text-align:left/.test(rule(".wpg-annual-table thead th.wpg-h-name, .wpg-annual-table thead th.wpg-h-type")));
   check("(d) an Activity header is a subtle band in strong ink, not a navy block",
     /background:var\(--surface-subtle\)/.test(rule(".wpg-annual-table .wpg-act-head")) && /color:var\(--text-strong\)/.test(rule(".wpg-annual-table .wpg-act-head")));
   check("(d) no pencil hint rides a value", !/wpg-manual-hint/.test(css) && !/✎/.test(HTML.replace(/wpg-assoc-edit-hint[^<]*<\/span>/g, "")));
   check("(d) no row sits on the gray fill", !/bg-off-white|paper/.test(css));
-  check("(d) an editable value has an at-rest cue", /box-shadow:inset 0 -1px 0 var\(--cobalt\)/.test(rule(".wpg-annual-table td.wpg-editable")));
+  check("(i) no blue rule under an editable value: the gray hairlines are the only borders",
+    !/box-shadow:inset[^;}]*var\(--cobalt\)/.test(css) && !/wpg-editable \{[^}]*(border|box-shadow)[^}]*cobalt/.test(css));
+  check("(i) hovering a value in the table tints it without the dashed blue outline, keyboard focus keeps its ring",
+    /outline:0/.test(rule(".wpg-annual-table .wpg-editable:hover:not(:focus-visible)")) &&
+    /outline:2px solid var\(--focus-ring\)/.test(rule(".wpg-editable:focus-visible")));
+  check("(h) no Total rule left in the table's CSS", !/wpg-total|wpg-c-total/.test(css));
+  check("(k) the card links are underlined words, 24px tall",
+    /min-height:24px/.test(rule(".wpg-card-link")) && /text-decoration:underline/.test(rule(".wpg-card-link")));
   check("(d) a focused value shows a focus ring", /outline:2px solid var\(--focus-ring\)/.test(rule(".wpg-editable:focus-visible")));
   check("(c) below 560px each sub-activity is a card (a wrapping row, the year above each value)",
     /@media \(max-width: 560px\)/.test(css) && /\.wpg-annual-table \.wpg-r \{ ?display:flex;flex-wrap:wrap/.test(css) &&

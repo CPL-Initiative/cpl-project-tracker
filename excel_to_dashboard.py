@@ -1446,11 +1446,13 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
     # rules): classes here, no inline colors, so the theme tokens and the phone
     # card layout (below 560px) can reach every cell. S375 UI pass: the inline
     # styles carried 715 raw hexes and no media query could override them.
-    # The head row holds the title and, for an editor, the sign-in controls
+    # The head row holds the title, "Show all details" (each row's details fold
+    # under its title, below), and, for an editor, the sign-in controls
     # workplan_goals.js mounts in .wpg-auth-slot (S426: one card, no band above).
     html = '''        <div class="wpg-annual">
             <div class="wpg-annual-head">
             <h2 class="wpg-annual-title">Annual Workplan Goals</h2>
+            <button type="button" class="wpg-btn wpg-more-all">Show all details</button>
             <div class="wpg-auth-slot"></div>
             </div>
 '''
@@ -1460,8 +1462,11 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
     html += '''            <div class="wpg-annual-scroll" tabindex="0" role="region" aria-label="Annual Workplan Goals table">
             <table class="wpg-annual-table">
                 <colgroup><col class="wpg-c-name"><col class="wpg-c-type">'''
+    # No Total column (Sam, 2026-10-20): most ladders are cumulative, so a sum of
+    # the five years overstated the 2030 target (1.1's 4/9/18/22/25 summed to 78).
+    # The 2029-30 column is the 2030 target.
     html += '<col class="wpg-c-yr">' * len(year_cols)
-    html += '''<col class="wpg-c-total"></colgroup>
+    html += '''</colgroup>
                 <thead>
                     <tr>
                         <th scope="col" class="wpg-h-name">Sub-Activity</th>
@@ -1469,7 +1474,6 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
 '''
     for yr in year_cols:
         html += f'                        <th scope="col">{yr}</th>\n'
-    html += '                        <th scope="col">Total</th>\n'
     html += '                    </tr>\n                </thead>\n'
 
     # Activity header lookup: display label ("Activity N: Name") → the activity
@@ -1499,11 +1503,16 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
                 act_desc = act.get("description") or ""
                 # An empty description renders hidden: a reader sees nothing, an
                 # editor sees "Add description" (workplan_goals.js paints it).
+                # "Activity cards" opens this Activity's cards on the Activities
+                # tab (Sam, 2026-10-20), the way its "Targets" link comes here.
                 header_inner = (
                     f'<span class="wpg-act-num">Activity {html_escape(aid_num)}: </span>'
                     f'<span class="wpg-title-cell" data-activity-title-edit="1" '
                     f'data-aid="{html_escape(aid_num, quote=True)}" '
                     f'data-val="{html_escape(name_part, quote=True)}">{html_escape(name_part)}</span>'
+                    f'<a class="wpg-card-link wpg-act-cards" '
+                    f'href="#activities-projects/activity-{html_escape(aid_num, quote=True)}" '
+                    f'aria-label="Activity cards for Activity {html_escape(aid_num, quote=True)}">Activity cards</a>'
                     f'<div class="wpg-act-desc-cell" data-activity-desc-edit="1" '
                     f'data-aid="{html_escape(aid_num, quote=True)}" '
                     f'data-val="{html_escape(act_desc, quote=True)}"{"" if act_desc else " hidden"}>'
@@ -1513,7 +1522,7 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
                 header_inner = html_escape(current_activity)
             html += ('                <tbody class="wpg-act-group">\n'
                      '                    <tr class="wpg-act-row">\n'
-                     f'                        <th scope="rowgroup" colspan="{len(year_cols) + 3}" class="wpg-act-head">{header_inner}</th>\n'
+                     f'                        <th scope="rowgroup" colspan="{len(year_cols) + 2}" class="wpg-act-head">{header_inner}</th>\n'
                      '                    </tr>\n')
 
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
@@ -1605,6 +1614,24 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
                                 if _indent_rem else "")
                 _sub_marker = ('<span class="wpg-sub-marker" aria-hidden="true">↳ </span>'
                                if _depth >= 2 else '')
+                # Everything under the title folds by default (Sam, 2026-10-20: "auto
+                # collapse everything under the first row title ... which will make the
+                # 3 rows single height as a default and less intimidating to look at").
+                # Under the title sit two words: "Details" opens the description, the
+                # counting notes and the chips (workplan_goals.js puts Move, Table and
+                # Set targets there too), and "Activity card" opens this sub-activity's
+                # card on the Activities tab (card_actions.js scrolls to it).
+                pid_q = html_escape(row["id"], quote=True)
+                label_q = html_escape(f'{row["id"]} {row["name"]}', quote=True)
+                more_id = "wpg-more-" + re.sub(r"[^0-9A-Za-z]+", "-", str(row["id"]))
+                name_links = (
+                    f'<div class="wpg-name-links">'
+                    f'<button type="button" class="wpg-btn wpg-more-btn" aria-expanded="false" '
+                    f'aria-controls="{more_id}" aria-label="Details for {label_q}">Details</button>'
+                    f'<a class="wpg-card-link" href="#activities-projects/card-{pid_q}" '
+                    f'aria-label="Activity card for {label_q}">Activity card</a>'
+                    f'</div>'
+                )
                 # The name is the row header for its three rows (Goal, Current,
                 # Stretch): a screen reader names the sub-activity for each value.
                 name_cell = (f'<th scope="row" rowspan="3" class="wpg-name{_nest_cls}"'
@@ -1612,8 +1639,10 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
                              f'{_sub_marker}'
                              f'<span class="wpg-pid">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
-                             f'data-pid="{html_escape(row["id"], quote=True)}">'
-                             f'{html_escape(row["name"])}</span>{desc_line}{count_line}{chip_line}</th>')
+                             f'data-pid="{pid_q}">'
+                             f'{html_escape(row["name"])}</span>{name_links}'
+                             f'<div class="wpg-more" id="{more_id}" hidden>'
+                             f'{desc_line}{count_line}{chip_line}</div></th>')
 
             html += f'                    <tr class="wpg-r wpg-r-{rtype.lower()}">\n'
             if name_cell:
@@ -1683,32 +1712,6 @@ def render_annual_goals_table_html(annual_goals, activities=None, fy=None):
                         f'data-yr="{yr}" data-yr-key="{year_keys_map[yr]}" data-val="{v if v else 0}"'
                     )
                 html += f'                        <td class="wpg-val"{label}{data_attrs}>{disp}</td>\n'
-            total = vals.get("total", 0)
-            if isinstance(total, float) and total == int(total):
-                total = int(total)
-            total_label = ' data-label="Total"'
-            total_attrs = ""
-            if editable:
-                total_attrs = (
-                    f' data-aid="{row["id"]}" data-kind="project" data-rt="{rt_attr}" data-total="1" '
-                    f'data-val="{total if total else 0}"'
-                )
-            elif is_current and cur_live:
-                # Live: TOTAL mirrors the verbatim headline string (read-only).
-                live_disp = html_escape(str(row.get("current_live_display", "")))
-                html += (f'                        <td class="wpg-val wpg-total"{total_label}>'
-                         f'{live_disp}</td>\n')
-                html += '                    </tr>\n'
-                continue
-            elif is_current and has_ladder:
-                # Manual: TOTAL sums the years, as Goal and Stretch do; the editor
-                # repaints it optimistically on a save (data-total, like theirs).
-                total_attrs = (
-                    f' data-aid="{html_escape(row["id"], quote=True)}" data-kind="project" data-rt="CURRENT" '
-                    f'data-total="1" data-val="{total if total else 0}"'
-                )
-            html += (f'                        <td class="wpg-val wpg-total"{total_label}{total_attrs}>'
-                     f'{fmt_number(total) if total else ""}</td>\n')
             html += '                    </tr>\n'
 
     if current_activity is not None:
@@ -2240,7 +2243,9 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     + '</div>'
                 )
 
-        html += f'            <div class="activity-group">\n'
+        # data-activity-id: the Annual Workplan Goals tab's "Activity cards" link
+        # lands here (card_actions.js, #activities-projects/activity-N).
+        html += f'            <div class="activity-group" data-activity-id="{html_escape(str(act_num), quote=True)}">\n'
         html += (f'            <div class="activity-group-header">\n'
                  f'                <h3><span style="color:var(--text-muted);font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
                  # The row wraps (each link keeps nowrap): with Add sub-activity it ran

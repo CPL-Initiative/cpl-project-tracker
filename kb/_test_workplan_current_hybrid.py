@@ -190,8 +190,10 @@ html4 = e.render_annual_goals_table_html(annual4, activities=_a4, fy="2026-27")
 check("render: each year's Current is its own editable cell, keyed cur_<year>, on the Current row",
       html4.count('data-aid="1.1" data-kind="project" data-rt="CURRENT" data-yr=') == 5
       and 'data-rt="CURRENT" data-yr="2026-27" data-yr-key="cur_2026_27" data-val="11"' in html4)
-check("render: the Current total carries the editor's mirror marker and the sum",
-      'data-rt="CURRENT" data-total="1" data-val="19"' in html4)
+# The ladder still sums (current.total, above); the table prints no Total column
+# (Sam, 2026-10-20: a cumulative ladder's sum overstated the 2030 target).
+check("render: no Total cell and no editor mirror of one",
+      'data-total=' not in html4 and 'data-label="Total"' not in html4)
 
 # ── Population breakdown sub-activities (StarMax fix): the Annual Workplan
 #    "Current" for 3.1.1/3.1.2/3.1.3 flips to live from a STUDENTS-SERVED
@@ -260,7 +262,7 @@ check("render: manual Current cells are editable, five per manual row (1.1 + 3.4
 check("render: live Current cells are NOT editable (3.1 carries none)",
       'data-aid="3.1" data-kind="project" data-rt="CURRENT"' not in html)
 check("render: editable title span", 'data-title-edit="1"' in html)
-check("render: the Current total mirror marker", html.count('data-rt="CURRENT" data-total="1"') == 2)
+check("render: no Total column (S438)", 'data-total=' not in html and '>Total<' not in html)
 check("render: GOAL/STRETCH editor untouched (data-editable present)",
       'data-editable="1"' in html)
 check("render: authoritative title text present",
