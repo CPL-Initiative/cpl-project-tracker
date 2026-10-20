@@ -141,10 +141,30 @@ matches MAP, every title stamped) and eight cards. A count opens the lane that l
 routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
 `npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
 
-**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, his own call, "keep"):** the Exhibit Progress view
-stays as built: complete = a title with a review stamp (a person's or a procedure's cohort's), and the tab opens on
-Needs you.
+**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, and again on Sheet 108 card 4, 13:24Z, his own call:
+keep).** The Exhibit Progress view stays as S436 built it: complete = a title with a review stamp (the Commons row's
+pair), and the tab opens on Needs you.
 
-**NEXT:** the Course and CR Progress views from the shared module, each with its definition of complete on a card
-for Sam, and the deep link behind each of their counts. Course is SkyView alone (Sam, 2026-10-18), so its view lives
-where SkyView's counts can reach it.
+**Step 3's third Progress view, CR (S437, 2026-10-20).** The Common CR Reference tab gains a view row, *Progress* and
+*Worklist*; the tab still opens on the worklist's Needs a decision. The definitions live in `cr_progress.js`, loaded with
+`commons_progress.js` the first time the view opens. **Complete changed unit:** a *wording* colleges wrote resolves to a
+settled reference when a rung 1 to 4 rule places it or a curator's decision names it (confirmed or not a topic; deferred
+and cleared settle nothing), so the Commons row's pair moved from two group counts (156 by rule, 30 decided) to one:
+**459 of 2,344 wordings, 5,750 of 9,413 articulations** (408 by a rule, 51 more by Sam's 2026-09-20 sitting). The
+builder (`row_cr()`) and the tab (`SETTLES`) apply one rule; the builder reads the committed receipts, and the view's
+Curator decisions card says when the live table and the receipts differ. Milestones walk the head-heavy corpus: the
+rules applied, the top 50, 100 and 250 wordings settled, every wording settled; You are here is the head (44 of 50; the
+six left are the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine
+Performance I). Two new worklist filters back the counts, *No rule or decision* (1,885) and *Name to check* (37), and
+`#cr-reference/<view or filter>` routes from the address. The tab had drawn inside its loading placeholder's inline
+style (a dashed box, muted centered text) since it shipped; the module now clears it on first paint. Guards
+`tests/cr_progress.test.js` (42) and `tests/commons_status_build_test.py` (77, a fixture for the settling rule);
+`npm run a11y -- cr-progress cr-progress-dark` passes. The fourth host needed no change to the module.
+
+**RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
+`sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
+curator decides, and the tab opens on its worklist.
+
+**NEXT:** the Course Progress view from the shared module, with its definition of complete on a card for Sam and the
+deep link behind each count. Course is SkyView alone (Sam, 2026-10-18), so its view lives where SkyView's counts can
+reach it.

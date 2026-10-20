@@ -1,20 +1,28 @@
 {
   "schema": 1,
-  "session": 423,
-  "moniker": "SkyLaurel",
-  "run": "the CPL Queue routine",
+  "session": 437,
+  "moniker": "SkySagebrush",
+  "run": "a session Sam opened",
   "decider": "Sam",
-  "handoff": "docs/session_424_handoff.md",
+  "handoff": "docs/session_437_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T11:18:05Z",
+  "written_at": "2026-10-20T13:28:43Z",
   "project": "cr",
   "next_step": {
-    "title": "A title-rung sitting to calibrate that rung",
-    "text": "Run a sitting over the title rung, whose verdicts calibrate it; then rung 2 asks again only what rung 1 left unsettled. Rung 4 (the parent's own title and number) waits on settled membership."
+    "title": "Decide the head, then the course pairing",
+    "text": "Six of the 50 wordings with the most articulations wait on a curator: the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine Performance I. Then the sitting Sam ruled on Sheet 3 card 9: pair groups by shared course identity behind the course-count guard, run Jev under the 0.85 gate, and a sheet of 40 to 60."
   },
   "changes": [
+    {
+      "at": "2026-10-20T13:24:18Z",
+      "text": "Sam kept the Progress view as built (Open Asks Sheet 108, card 5)."
+    },
+    {
+      "at": "2026-10-20T13:20:00Z",
+      "text": "The Progress view: the Commons' shape on this reference, beside the worklist, with every count opening a filter; the Commons row now counts wordings."
+    },
     {
       "at": "2026-10-19T11:00:00Z",
       "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."

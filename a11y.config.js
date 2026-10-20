@@ -609,6 +609,18 @@ async function seedCerProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Common CR Reference's Progress view (S437), opened by its own word the way a reader
+// opens it, then drawn once the shared module and the figures are in.
+async function seedCrProgress(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cr-reference") location.hash = "cr-reference"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector('#tab-cr-reference button.crr-view[data-view="progress"]', { timeout: 60000 });
+  await page.evaluate(() => document.querySelector('#tab-cr-reference button.crr-view[data-view="progress"]').focus());
+  await page.keyboard.press("Enter");
+  await page.waitForSelector("#tab-cr-reference #cq-progress .prh-pg-part", { timeout: 60000 });
+  await page.waitForTimeout(300);
+}
+
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
@@ -2395,6 +2407,25 @@ module.exports = {
     routes: [{ hash: "credential-reference", name: "progress-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCerProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* The Common CR Reference's Progress view (S437): the Commons' dash for the reference,
+     drawn once the module, the definitions, the run log and the Commons figures are in. The
+     cobi sweep lands on the worklist, so the view needs its own target. */
+  "cr-progress": {
+    file: "index.html",
+    title: "Common CR Reference: Progress, the Commons' dash",
+    routes: [{ hash: "cr-reference", name: "progress" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCrProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cr-progress-dark": {
+    file: "index.html",
+    title: "Common CR Reference: Progress, dark",
+    routes: [{ hash: "cr-reference", name: "progress-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCrProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cer-reference-dark": {
