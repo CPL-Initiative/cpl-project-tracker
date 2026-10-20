@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPL Library — Credit for Prior Learning Initiative</title>
+<meta name="description" content="Presentations, films and briefs from the California Community Colleges Credit for Prior Learning (CPL) Initiative.">
+<link rel="icon" href="../cccco_seal.png">
+<!-- The public library (Sam, 2026-10-20; mock-up https://claude.ai/artifact/Ebz253XFREqAni5D3sgVP9,
+     "Mock up looks great!"). It lists only the Library pieces a reviewer has listed,
+     read live through cpl_library_public() (kb/supabase_cpl_library_public.sql): title,
+     kind, occasion, date, public summary, topics and link. Nothing is copied here; the
+     switch lives on each record in COBI's Library tab. Test: tests/public_library.test.js -->
+<script>(function(){function a(t){var r=document.documentElement;if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else r.removeAttribute("data-theme")}
+try{a(localStorage.getItem("cpl_theme"))}catch(e){}
+window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newValue)})})()</script>
+<style>
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../sierra/fonts/playfair-display-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../sierra/fonts/source-sans-3-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../sierra/fonts/source-sans-3-latin-600-normal.woff2') format('woff2'); }
+:root {
+  --paper: #F4F2ED; --surface: #FFFFFF; --surface-subtle: #F7F5F1; --border: #D9D5CB;
+  --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
+  --seal-blue: #002F6D; --cobalt: #0047AB;
+  --cpl-measure: none;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #15171B; --surface: #1E2127; --surface-subtle: #23262D; --border: #3A3F49;
+  --text-strong: #F2F0EA; --text-body: #D8D5CD; --text-muted: #AFAB9F;
+  --seal-blue: #9DB8E0; --cobalt: #7DA1D4; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #15171B; --surface: #1E2127; --surface-subtle: #23262D; --border: #3A3F49;
+  --text-strong: #F2F0EA; --text-body: #D8D5CD; --text-muted: #AFAB9F;
+  --seal-blue: #9DB8E0; --cobalt: #7DA1D4; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--text-body); font-family: 'Source Sans 3', Arial, sans-serif; font-size: clamp(1rem, 0.96rem + 0.2vw, 1.06rem); line-height: 1.55; }
+.skip-link { position: absolute; left: -999px; top: 8px; background: var(--surface); color: var(--cobalt); padding: 6px 10px; }
+.skip-link:focus { left: 16px; }
+main { max-width: 1080px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem) max(16px, env(safe-area-inset-right, 0px)) 3rem max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 1.4rem; }
+h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: var(--text-strong); margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(1.8rem, 1.4rem + 2vw, 2.6rem); }
+h2 { font-size: 1.15rem; }
+p { margin: 0; max-width: var(--cpl-measure, none); }
+.eyebrow { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+.filters { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; }
+.filters label { color: var(--text-muted); font-size: .92rem; }
+.filters input { font: inherit; padding: .35rem .55rem; border: 1px solid var(--border); background: var(--surface); color: var(--text-body); width: min(280px, 100%); }
+.word { background: none; border: 0; padding: 0 2px; min-height: 24px; min-width: 24px; font: inherit; font-weight: 600; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.word[aria-pressed="true"] { color: var(--text-strong); text-decoration-thickness: 2px; }
+.word:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+.kinds { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.piece { background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.1rem; display: grid; gap: .45rem; align-content: start; min-width: 0; }
+.piece .meta { font-size: .88rem; color: var(--text-muted); }
+.piece a { color: var(--cobalt); font-weight: 600; }
+.state, .foot { color: var(--text-muted); font-size: .92rem; }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#pieces">Skip to the library</a>
+<main>
+  <header style="display:grid;gap:.5rem">
+    <div class="eyebrow">California Community Colleges · CPL Initiative</div>
+    <h1>CPL Library</h1>
+    <p>Presentations, films and briefs from the Credit for Prior Learning Initiative, for colleges, partners and the public. Each piece opens where it lives.</p>
+  </header>
+  <div class="filters">
+    <label for="lib-q">Search</label><input id="lib-q" type="search" placeholder="Title, occasion or topic">
+    <div class="kinds" role="group" aria-label="Kind" id="lib-kinds"></div>
+  </div>
+  <section id="pieces" aria-labelledby="lib-h" style="display:grid;gap:.8rem">
+    <h2 id="lib-h" class="eyebrow">The library</h2>
+    <p class="state" id="lib-state" role="status">Loading the library…</p>
+    <div class="grid" id="lib-grid"></div>
+  </section>
+  <p class="foot">Published by the California Community Colleges Chancellor's Office, Credit for Prior Learning Initiative. Licensed CC BY 4.0 unless a piece says otherwise.</p>
+</main>
+<script src="./public_library.js"></script>
+</body>
+</html>

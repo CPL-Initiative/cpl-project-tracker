@@ -221,7 +221,9 @@ window.COBI_ADMIN_SURFACE = {
         "cobi_nav"
       ],
       "rpcs": [
-        "cobi_rls_gates"
+        "cobi_rls_gates",
+        "cpl_library_public",
+        "cpl_library_set_public"
       ],
       "measured": true
     },
@@ -560,7 +562,9 @@ window.COBI_ADMIN_SURFACE = {
       "writes": [
         "cpl_library"
       ],
-      "rpcs": [],
+      "rpcs": [
+        "cpl_library_set_public"
+      ],
       "measured": true
     }
   }

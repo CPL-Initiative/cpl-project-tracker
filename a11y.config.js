@@ -38,6 +38,27 @@
    whether a keyboard reaches its end. One answer carries a table wider than a
    phone, and one a feedback row (Copy, the two ratings), so their targets,
    contrast and rings are measured too. */
+async function seedPublicLibrary(page, theme) {
+  await page.evaluate((th) => {
+    if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    const api = window.CPL_PUBLIC_LIBRARY;
+    if (!api) return;
+    api._state.error = null;
+    api._state.rows = [
+      { slug: "a", title: "DSP Credit Starting Points", kind: "document", occasion: "DDS, Aging and LWDA meeting on DSP Training", made_on: "2026-10-20",
+        summary: "Where California Community Colleges courses could award credit for the state's Direct Support Professional Training.", topics: ["DSP training"], url: "https://claude.ai/artifact/example" },
+      { slug: "b", title: "Ironworker Pathway in Motion", kind: "film", occasion: "Cerritos College ironworker pathway", made_on: "2026-10-04",
+        summary: "High school to a bachelor's degree, with CPL at each step.", topics: [], url: "https://example.org/film" },
+      { slug: "c", title: "Update to the Board of Governors on credit for prior learning across the California Community Colleges", kind: "deck", occasion: "Board of Governors, July 2026", made_on: "2026-07-16",
+        summary: "The CPL Initiative's update to the Board.", topics: [], url: "https://example.org/deck" }
+    ];
+    api.init && document.getElementById("lib-kinds") && (document.getElementById("lib-kinds").innerHTML = "");
+    api.render();
+    const kinds = document.getElementById("lib-kinds");
+    if (kinds) kinds.innerHTML = ["All", "Slides", "Film", "Document"].map((w, i) =>
+      '<button type="button" class="word" aria-pressed="' + (i === 0) + '">' + w + "</button>").join("");
+  }, theme);
+}
 async function seedSierraConversation(page, theme) {
   await page.evaluate((th) => {
     if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
@@ -1868,6 +1889,20 @@ module.exports = {
     title: "CPL Fact Sheet (public), dark",
     mayHideBelow: [".sw-head"],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+  },
+
+  /* The public CPL Library (2026-10-20). It reads cpl_library_public() live, which a
+     test run cannot reach, so the seed paints three listed pieces through the page's
+     own render: a card grid, the kind filter and a long title are what we measure. */
+  "public-library": {
+    file: "library/index.html",
+    title: "CPL Library (public)",
+    seed: seedPublicLibrary,
+  },
+  "public-library-dark": {
+    file: "library/index.html",
+    title: "CPL Library (public), dark",
+    seed: (page) => seedPublicLibrary(page, "dark"),
   },
 
   /* The Knowledge Base portal, as a team member sees it (S423): the sign-in view, the reader
