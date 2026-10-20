@@ -926,11 +926,15 @@ check("the status line is empty on a successful paint",
       P0.rate.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " base rate times a factor of " +
       (+P0.factor).toFixed(1) + "). The institutions' targets add up to this figure; the maximum award lowers the targets of the seven institutions that reach it.");
   // Sheet 19 card 2 ("sum"): the count is the model's, and the film's slide
-  // prints the same target and the same count (build.py HOW, Scenario 2).
+  // prints the target and the count the model gives the PUBLISHED scenario
+  // (figures.json, read from the live config), which this page's fixture
+  // (Scenario 2) no longer is since Scenario 3 was published (S439).
   const filmCfg = JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(ROOT, "prototype", "funding_video", "funding_in_motion_s2.html"), "utf8"))[1]);
+  const FIG = JSON.parse(fs.readFileSync(path.join(ROOT, "prototype", "funding_video", "figures.json"), "utf8"));
+  const pubFig = FIG.scenarios[FIG.published];
   check("p3b the explainer and the film print the engine's target and its count of institutions at the maximum",
-    D3.atMax === 7 && filmCfg.how.capped === D3.atMax &&
-      D3.progress.prios.every((x, i) => filmCfg.how.rows[i] && filmCfg.how.rows[i][3] === Math.round(x.target * 10) / 10));
+    D3.atMax === 7 && filmCfg.how.capped === pubFig.capped &&
+      pubFig.priorities.every((x, i) => filmCfg.how.rows[i] && filmCfg.how.rows[i][3] === Math.round(x.target * 10) / 10));
   // rendered text only: the page's own script names `pr.price`, an identifier
   const vis = doc.body.cloneNode(true);
   vis.querySelectorAll("script, style, template").forEach((e) => e.remove());
