@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 60 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 408 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1205** | |
+| Session handoffs | 409 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1206** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-20 (S437 SkySagebrush, opened by Sam): the CR Progress view (#2287), the C-ID site found and baselined (#2289), Open Asks Sheet 108 answered, the auto-mark rule drafted and waiting on Sam's word; handoff 438 (SkySumac); no KB note.
 - 2026-10-20 (S436 SkyTanbark): the Exhibit Progress view (#2285), the Fact Sheet's UI pass, Open Asks Sheet 107; handoff 437 (SkySagebrush).
 - 2026-10-20 (S434 SkyElderberry, the routine): Sierra's third UI pass, Copy, Helpful, Not helpful and the note's Send as underlined words (#2281); Sheet 105 still open; the strays wait on a curator's discipline calls; handoff 435; no KB note.
 - 2026-10-20 (S433 SkyCoffeeberry, the routine): the two ENVR forestry pairs queued for a faculty reviewer as `surfaced` pairs (#2278); the CSR quarterly routine compares the handbook with the accepted 19th edition on a quarterly cron (#2279); the CSR lane compacted under its budget; Sheet 105 still open; handoff 434; no KB note.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-20 (S431 SkyChaparral): #2269 and #2270 landed and the 44 re-keyed live (run 39362668144, read back); the Sierra hashchange test waits for its state (#2271); Open Asks Sheet 104 asked and ruled, move-ten and agpr (#2272, CPLBrain#404); the handbook link to the live page (#2273); the CSR quarterly probe (#2274); handoff 432.
 - 2026-10-20 (S430 SkyLupine): the CTDL exchange's seed for Malone (contract v0, the drop check, decisions) and DR-27..29 (#2267); the AGRI sitting twice over, 397 of 404 agree (#2268); Sheet 103 answered, the 44 re-keyed to their family codes (#2270); the nine MQ names renamed to the handbook's spellings (#2269); handoff 431; no KB note.
 - 2026-10-20 (S428 SkyPinyon): the CTDL partner exchange scoped on Sam's ask (Credential Engine and WestEd, COBI authoritative): the strategy as a Claude Doc, the lane `ctdl-partner-exchange`, CE's xTRA code and ten Ready to Publish extracts read, Open Asks Sheet 102; handoff 430; KB note reference-ctdl-classes-for-cobi-records.
-- 2026-10-19 (S427 SkyMadrona): Sheet 99 rulings 1, 2, 3 and 5 applied (the nightly confirm's first run, AGAB, the Validate column), the AGRI sitting built, Open Asks Sheet 101; handoff 428; KB note methodology-a-ruling-names-a-record-the-store-may-count-another.
-- 2026-10-19 (the funding side session beside S427): the memo, letter, report and brief as saved passages leading with SB 135 (the opening follows the explainer's Overview passage); CPL Funding in Motion reads the model through a filed, stamped `figures.json` that Refresh everything checks; Step 2 in the Step 1 box; two reset controls retired; the Scenario block beside the Project block (#2265); KB note on the filed stamp; lane and lessons compacted under their caps.

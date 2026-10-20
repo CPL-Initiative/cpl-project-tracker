@@ -27,6 +27,34 @@ keeps what each step taught, once. Sam's framing (2026-10-18): *"each of our 'co
 approach and tracking and feedback system... It all needs to culminate in a 'Commons' dash."* The ruled order (Open
 Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress view, then the Commons tab.
 
+## S437 SkySagebrush (2026-10-20): the CR Progress view, the C-ID site found, Sheet 108 answered, decision lock
+
+- **A greeting can be five sessions stale.** Sam pasted handoff 432's opening line at 04:47Z; the session started
+  near 12:40Z, after the routine had run S432 to S436. The highest handoff (437) is the authority; claim its moniker
+  and say so in one line rather than repeating finished work.
+- **Pick the unit a reader settles, then make the Commons row count it.** The CR row counted groups (156 by rule,
+  30 decided), but a curator's fold settles a *wording* whose own group stays undecided (41 such), so groups
+  undercount. Complete = a wording a rung 1 to 4 rule places or a decision names (confirmed or not a topic):
+  459 of 2,344, 5,750 of 9,413 articulations. The builder's `row_cr()` and the tab's `SETTLES` apply one rule, and a
+  fixture guards it (a split-out wording and a deferred decision settle nothing).
+- **The tab's first queue was not the reference's backlog.** Needs a decision listed 138 groups, all rule-folded; the
+  real backlog is 1,885 single wordings at rung 5, which no filter showed. The view's counts needed two new filters
+  (No rule or decision, Name to check) to open what they count.
+- **An inline style on a shell placeholder outranks injected CSS.** `#cr-reference-root` kept its loading stub's
+  dashed box and centered muted text under every render since the tab shipped; a screenshot found it, no test did.
+  The module now clears the root's style on first paint. Look at the screen before calling a view done.
+- **Hosts move; probe the current address.** The C-ID site moved from c-id.net to c-idsystem.org (ASCCC), its data on
+  data-c-idsystem.org with no `www`. A 2025 training deck named the new host; WebFetch read the site's own links; the
+  sandbox proxy refuses the data host, a runner reads it. `/descriptors/final/csv` hashed the same twice, so it is the
+  `authority_tables` baseline.
+- **The generator check runs on every branch you push, not only the main one.** #2289's lints went red on a stale
+  dependency map (the probe's URLs are read edges) because the check ran on the other branch only.
+- **A vault check that reads the tracker's `main` goes red until the tracker PR merges.** CPLBrain#411's coverage
+  measured card 5's premise against `main`, which lacked the CR view; order the merges and re-run once.
+- **Decision lock is two things.** Doctrine routed re-key windows and migrations to Sam's reply; the permission check
+  refuses data writes it cannot tie to his approval, and refused this session's commit of the new auto-mark rule as
+  Self-Modification. The rule change and any allow-list growth need his explicit word; the check is right to ask.
+
 ## S433 SkyCoffeeberry (2026-10-20): the ENVR pairs queued, the quarterly comparison on a cron, the CSR lane compacted
 
 - **A merge a session can see is still a reviewer's call.** The two ENVR pairs left by the forestry window (Dendrology

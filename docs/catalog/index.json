@@ -15887,8 +15887,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 408,
+   "count": 409,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 438,
+     "path": "docs/session_438_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-cr-reference",
+      "common-subjects-reference",
+      "decision-sheet",
+      "autonomy"
+     ],
+     "title": "Session 438 handoff: the CR Progress view live, the C-ID site found, Sheet 108 answered, the auto-mark rule waiting on Sam's word",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22936,5 +22954,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1205
+ "total": 1206
 }
