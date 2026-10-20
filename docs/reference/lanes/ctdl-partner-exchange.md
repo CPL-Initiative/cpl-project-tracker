@@ -69,6 +69,7 @@ Valley 674, Norco 817), so CE's course competencies there have a second reading 
    *"Provided you think it's as good as our pull."* S428's answer: for program requirements it is not, since xTRA reads
    none; for courses, credentials and outcomes the pilot measures it, college by college, against COCI and our records.
    CE's rows enter as a second reading and a source of CTIDs and outcomes, and replace nothing of ours.
+   Sam, ~00:50Z, on that answer: *"Good call! I suspected our pulls would be better than theirs, so the real benefit will be dragging in their CtdL and any missing data they have compared to ours."* The pilot's deliverable is CE's CTIDs and the fields CE holds that we lack.
 3. *linked-step*: a Linked step at the end of each Commons reference, after Complete.
 4. *hold*: the CCR stays out of the Registry until the M-ID layer is declared faculty-published.
 5. *reviewers*: WestEd's reviewers propose on COBI's surfaces; a COBI curator confirms; M-ID minting stays with the CPL

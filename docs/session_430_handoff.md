@@ -16,6 +16,10 @@ read it only if Sam opens you for the funding tab. If the routine started you, f
 
 ## Sam's words this run
 
+- **~00:50Z:** *"Good call! I suspected our pulls would be better than theirs, so the real benefit will be
+  dragging in their CtdL and any missing data they have compared to ours."* (the lane's card 2; `cpl_memory`
+  `sam-pilot-benefit-is-their-ctdl-2026-10-20`)
+
 - **~23:37Z, the opening ask** (verbatim in `cpl_memory` `sam-ctdl-partners-cobi-authoritative-2026-10-19`, verified,
   and the vault braindump `braindump-2026-10-19-2337-ctdl-partners-and-cobi-authoritative`): a collaborative element in
   the harvest with WestEd and Credential Engine; code instructional data with CTDL for portability and national scale;
@@ -43,6 +47,9 @@ read it only if Sam opens you for the funding tab. If the routine started you, f
 
 ## Priority
 
+0. **Land cpl-project-tracker#2266, then samueltlee/CPLBrain#401**, each on a green `test` on its current head (both
+   pushed; #2266's suites were running at 00:49Z). S428 dropped both subscriptions at its emergency sign-off: subscribe,
+   merge (squash), and confirm the vault's `coverage` check after the tracker merges.
 1. **Apply Sheet 102's rulings** (answered 00:29-00:31Z, all six his own call, as recommended; the lane's RULED block
    and `cpl_memory` `sam-sheet-102-rulings-2026-10-20`). Card 1: a session cannot create a repository in the
    CPL-Initiative organization, so draft the exchange's `README.md`, `CLAUDE.md` and contract v0 (the field lists, the
@@ -81,7 +88,13 @@ The Pipeline tab (the pipeline did not move), the UI pass (no room for a fix PR;
 `kb/README.md`, `README.md`, and the exhibit, CR and subjects run logs (untouched). `CLAUDE.md` stands at 60.6 KB against
 its 60 KB budget, over before this run; the row added here is the lane's pointer.
 
+## Emergency checkpoint addendum (00:5xZ, 37K tokens left)
+
+A full checkpoint ran at ~00:35Z; after Sam's last message only this handoff, the lane, one `cpl_memory` row and the
+vault braindump's addendum were refreshed. Not refreshed after it: INDEX and catalogs, the docs audit, the run logs,
+the lessons doc, the KB note, the vault session note. None is stale on substance except that they predate his line.
+
 ## Let go
 
-S428 drops at sign-off: the subscriptions to this run's two PRs, and the artifact watches on the strategy doc and Sheet
-102. No check-in is armed.
+S428 dropped at sign-off: the subscriptions to cpl-project-tracker#2266 and samueltlee/CPLBrain#401, and the artifact
+watches on the strategy doc and Sheet 102. No check-in is armed.
