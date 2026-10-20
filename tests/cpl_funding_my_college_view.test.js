@@ -72,16 +72,17 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
   pub(T);
   const step = doc.querySelector(".cplfund-step1");
   const sec = step && step.closest('[data-sec="college"]');
-  // The view switch moved INTO the box, to the right, as Step 2 (Sam,
-  // 2026-10-19); nothing of it is left under the section's introduction.
+  // The view switch moved INTO the box (Sam, 2026-10-19) and leads it as
+  // Step 1 since 2026-10-20; the chooser follows as Step 2. Nothing of the
+  // switch is left under the section's introduction.
   const seg = step && step.querySelector(".cplfund-step1-view #cplFundCollegeView");
-  check("1b: a public rendering carries Step 1 inside the College Dashboard, with the view switch in its box as Step 2",
+  check("1b: a public rendering carries the Step 1 box inside the College Dashboard, the view switch first as Step 1",
     !!step && !!sec && !!seg && !doc.querySelector(".cplfund-viewswitch") &&
-    /^Step 2$/.test(step.querySelector(".cplfund-step1-k2").textContent) &&
+    /^Step 1$/.test(step.querySelector(".cplfund-step1-view .cplfund-step1-k").textContent) &&
     Array.from(seg.querySelectorAll("button")).every((b) => (b.getAttribute("title") || "").length > 40));
   const pick = doc.getElementById("cplFundOnePick");
-  check("1c: Step 1 names itself in words and labels its chooser",
-    /^Step 1$/.test(step.querySelector(".cplfund-step1-k").textContent) &&
+  check("1c: Step 2 names itself in words and labels its chooser",
+    /^Step 2$/.test(step.querySelector(".cplfund-step1-pick .cplfund-step1-k2").textContent) &&
     doc.querySelector('label[for="cplFundOnePick"]').textContent === "Choose your college or district" &&
     !!pick && step.contains(pick) && pick.options[0].textContent === "Choose your college or district");
   check("1d: with nothing chosen the table shows, and nothing is stored",
@@ -105,28 +106,28 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
   check("3c: the statewide choice prints, and the print window is landscape",
     !dlg.hasAttribute("open") && printed.length === before + 1 && /@page\{size:letter landscape/.test(html));
 
-  // 1-2. Choose a college in Step 1.
+  // 1-2. Choose a college in Step 2.
   const D = w.CPL_FUNDING;
   const one = D.colleges[0].college;
   let heard = null;
   doc.addEventListener("cplfund:onechoice", (e) => { heard = e.detail && e.detail.value; });
   pick.value = one;
   pick.dispatchEvent(new w.Event("change", { bubbles: true }));
-  check("1e: choosing in Step 1 opens that institution's funding",
+  check("1e: choosing in Step 2 opens that institution's funding",
     T._state.collegeView === "one" && T._state.oneCollege === one && T.oneChoice() === one &&
     !!doc.querySelector("#cplFundOnePanel > .cb-panel"));
   check("2a: …remembers it in this browser and tells the page", w.localStorage.getItem("cplfund_one_choice_v1") === one &&
     heard === one);
-  check("1f: …and Step 1 says what it shows, with Choose another college beside it",
+  check("1f: …and Step 2 says what it shows, with Choose another institution beside it",
     /Showing /.test(doc.querySelector(".cplfund-step1-s").textContent) &&
-    doc.getElementById("cplFundOneClear").textContent === "Choose another college" &&
+    doc.getElementById("cplFundOneClear").textContent === "Choose another institution" &&
     doc.getElementById("cplFundOnePick").value === one);
   // 3. With a college chosen, PDF prints straight away.
   const n2 = printed.length;
   click(w, doc.getElementById("cplFundPdfTop"));
   check("3d: with a college chosen, PDF prints without asking", printed.length === n2 + 1);
   click(w, doc.getElementById("cplFundOneClear"));
-  check("2b: Choose another college forgets the choice and returns to the chooser",
+  check("2b: Choose another institution forgets the choice and returns to the chooser",
     T.oneChoice() === "" && w.localStorage.getItem("cplfund_one_choice_v1") === null &&
     doc.getElementById("cplFundOnePick").value === "" && doc.activeElement === doc.getElementById("cplFundOnePick"));
 }

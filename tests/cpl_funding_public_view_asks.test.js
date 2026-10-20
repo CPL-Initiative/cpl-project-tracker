@@ -139,7 +139,8 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
   check("3c: showMyFunding opens the one-institution view and puts the reader on the chooser",
     T._state.collegeView === "one" && !!pick && doc.activeElement === pick);
   const groups = Array.from(pick.querySelectorAll("optgroup")).map((g) => g.getAttribute("label"));
-  check("3d: the chooser offers Institutions and Districts", JSON.stringify(groups) === JSON.stringify(["Institutions", "Districts"]));
+  // "Colleges" since 2026-10-20: the views call a college or a district an institution.
+  check("3d: the chooser offers Colleges and Districts", JSON.stringify(groups) === JSON.stringify(["Colleges", "Districts"]));
   const byD = {};
   D.colleges.forEach((c) => { if (c.district) (byD[c.district] = byD[c.district] || []).push(c.college); });
   const multi = Object.keys(byD).filter((d) => byD[d].length > 1);

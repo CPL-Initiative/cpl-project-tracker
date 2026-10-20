@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-15
+updated: 2026-10-20
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1162,3 +1162,14 @@ renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` re
 - **The view switch moved into the Step 1 box as Step 2.** The box's `<select>` survives every redraw (call 7, 2026-10-15), so the buttons beside it are redrawn on every patch; a button that survived would hear each click twice because `wire()` adds a listener per render.
 - **The strip never wraps a block under the other.** `flex-wrap: nowrap` on the strip, `flex-wrap: wrap` on each block, the scenario block `1 1 18rem`: the published sentence drops under its selector when the window is narrow, and the phone rule (≤640px) still stacks. Measured in Chromium at 1440 and 390.
 - **Two controls retired, one kept.** Reset scenario to defaults and Restore the default section order are gone (a new scenario is the way to start over); the locked what-if's Reset exploration stays, because it clears a private overlay, never the shared model.
+
+## 2026-10-20 — the side session beside S438: the view first, and the outcome cards follow the institution
+
+**Sam's words, verbatim** (~16:49Z, *"While another session is working on PR harvest, I need a few more changes on the Funding tab"*): *"1. Refine the Step 1 and 2 by having the user select first which view they want: "All Institutions" or "My Institution" (note that I'm using Institution rather than spelling our "College or District" to save space...but the hover over should clarify this 2. Once a view is chosen, if user selects My Institutions, require them to choose one (either college or district) 3. For the Funding Outcomes section, adjust the numbers to match the selected institution rather than the whole state (if an institution is selected)"*
+
+- **One function adds an institution into the priority figures, for both scopes.** `earnAgg()`'s loop body became `addInstPrios()`; the statewide cards sum it over the roster and a chosen college or district sums it over its members. The test asserts the identity outright rather than re-deriving a figure: every institution's lanes (`_prios` + `_ncPrios`) add up to the statewide target and Total Possible.
+- ⚠️ **`_publicProgress()` re-solves the model on every call (~0.9 s in jsdom),** because it clears the caches for a caller reading between a config change and a render. A test that called it once per college took 2.5 minutes; the identity reads the cached per-institution API instead, and the scoped path runs on four colleges chosen for the rule each bites on (both lanes, credit only, quarter calendar, the maximum award).
+- **The remembered choice now returns before `render()` notifies.** It returned after, so the explainer's first paint drew statewide cards and only a later paint corrected them.
+- **A renamed button renames the sentences that name it.** Three My CPL Funding sentences said *"under All institutions"*; the live config held no saved copy, so the house defaults changed with the button.
+- **The list stays in the box, hidden, under All Institutions.** Hiding the column rather than removing it keeps the one `<select>` call 7 protects.
+

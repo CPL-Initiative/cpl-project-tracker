@@ -2777,7 +2777,7 @@
           : "name the college's CPL Coordinator (primary CPL contact) in MAP");
       } else if (it.kind === "part") {
         steps.push("confirm the college's participation " + (cond.deadlinePassed ? "now" : "by " + apDate(cond.deadline))
-          + (standalone ? ", with the Confirm button on its row under All institutions" : " on the Implementation Funding tab"));
+          + (standalone ? ", with the Confirm button on its row under All Institutions" : " on the Implementation Funding tab"));
       } else if (it.kind === "vetstar") {
         steps.push("upload JSTs to MAP for at least " + (cond.vetPct || "75%") + " of enrolled veterans");
       } else if (it.kind === "exhibits") {
@@ -2958,7 +2958,7 @@
       // from, so it points there rather than at a tab the reader cannot see.
       fundBody += ctx.standalone
         ? '<div class="cb-note">' + mcText("mc_close", {},
-            "CPL funding follows the same procedure for every institution under All institutions.") + "</div>"
+            "CPL funding follows the same procedure for every institution under All Institutions.") + "</div>"
         : '<div class="cb-note">' + mcText("mc_close_mc", {}, "CPL funding follows the same procedure for every "
           + "institution. The Implementation Funding tab shows the full derivation and the year split.") + "</div>";
     }

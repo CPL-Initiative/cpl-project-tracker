@@ -454,24 +454,30 @@
     ".cplfund-prio-title-input:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
-    // Step 1: the chooser, first (Sam, 2026-10-15). A light card, the select
-    // large and outlined in the seal blue, the step named in words.
-    ".cplfund-step1 { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; column-gap: 20px; row-gap: 6px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
-    // Step 2, the view, in the same box to the right (Sam, 2026-10-19). Its
-    // kicker matches Step 1's; the buttons are the one view control.
-    ".cplfund-step1-view { grid-column: 3; grid-row: 1 / span 3; align-self: stretch; display: flex; align-items: center; gap: 20px; padding-left: 20px; border-left: 1px solid var(--border-strong); }",
-    ".cplfund-step1-k2 { grid-row: auto; border-right: 0; padding-right: 0; }",
-    ".cplfund-step1-vbody { display: flex; flex-direction: column; gap: 6px; }",
+    // The Step 1 box (Sam, 2026-10-15; reordered 2026-10-20): Step 1, the view,
+    // on the left; Step 2, the college or district, to its right under My
+    // Institution alone. A light card, the list large and outlined in the seal
+    // blue, each step named in words.
+    ".cplfund-step1 { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: stretch; column-gap: 20px; row-gap: 12px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
+    ".cplfund-step1-view, .cplfund-step1-pick { display: flex; align-items: center; gap: 20px; min-width: 0; }",
+    ".cplfund-step1-pick { padding-left: 20px; border-left: 1px solid var(--border-strong); }",
+    ".cplfund-step1-pick[hidden] { display: none; }",
+    ".cplfund-step1-vbody, .cplfund-step1-pbody { display: flex; flex-direction: column; gap: 6px; min-width: 0; }",
+    ".cplfund-step1-pbody { flex: 1 1 auto; }",
     ".cplfund-step1-vl { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1rem, .9rem + .4vw, 1.2rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
     ".cplfund-step1-vs { margin: 0; font-size: .8rem; color: var(--text-muted); }",
-    ".cplfund-step1-k { grid-row: 1 / span 3; margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.05rem, .9rem + .6vw, 1.35rem); color: var(--seal-blue-text, var(--cobalt)); white-space: nowrap; padding-right: 20px; border-right: 1px solid var(--border-strong); align-self: stretch; display: flex; align-items: center; }",
+    ".cplfund-step1-k { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.05rem, .9rem + .6vw, 1.35rem); color: var(--seal-blue-text, var(--cobalt)); white-space: nowrap; padding-right: 20px; border-right: 1px solid var(--border-strong); align-self: stretch; display: flex; align-items: center; }",
     ".cplfund-step1-l { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
     ".cplfund-step1-sel { font: inherit; font-size: 1.05rem; color: var(--text-strong); background: var(--surface-opaque); border: 2px solid var(--seal-blue-text, var(--cobalt)); border-radius: 4px; min-height: 48px; padding: 8px 12px; width: min(100%, 30rem); }",
     ".cplfund-step1-sel:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; }",
     ".cplfund-step1-s { margin: 0; font-size: .92rem; color: var(--text-muted); max-width: var(--cpl-measure, none); }",
     ".cplfund-step1-clear { margin-left: 6px; }",
-    "@media (max-width: 560px) { .cplfund-step1 { grid-template-columns: 1fr; } .cplfund-step1-k { grid-row: auto; border-right: 0; padding-right: 0; } " +
-      ".cplfund-step1-view { grid-column: auto; grid-row: auto; padding-left: 0; border-left: 0; padding-top: 10px; border-top: 1px solid var(--border-strong); } }",
+    // The two steps side by side need about 860px; below it Step 2 drops under
+    // Step 1, and on a phone each kicker sits above its step.
+    "@media (max-width: 860px) { .cplfund-step1 { grid-template-columns: 1fr; } " +
+      ".cplfund-step1-pick { padding-left: 0; border-left: 0; padding-top: 12px; border-top: 1px solid var(--border-strong); } }",
+    "@media (max-width: 560px) { .cplfund-step1-view, .cplfund-step1-pick { flex-direction: column; align-items: flex-start; gap: 6px; } " +
+      ".cplfund-step1-k { border-right: 0; padding-right: 0; } }",
     // The PDF prompt (Sam, 2026-10-15): a dialog, words for every control.
     ".cplfund-pdfask { border: 1px solid var(--border-strong); border-radius: 8px; padding: 0; max-width: min(92vw, 560px); background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-pdfask-in { padding: 20px 22px; display: grid; gap: 12px; }",
@@ -3866,7 +3872,7 @@
     { key: "mc_progress", where: "Under the priority outcomes",
       plain: "Progress toward each priority goal is measured in FTES and funded up to the cap." },
     { key: "mc_close", where: "The closing line on the tab and the explainer",
-      plain: "CPL funding follows the same procedure for every institution under All institutions." },
+      plain: "CPL funding follows the same procedure for every institution under All Institutions." },
     { key: "mc_close_mc", where: "The closing line on My College",
       plain: "CPL funding follows the same procedure for every institution. The Implementation Funding tab shows " +
         "the full derivation and the year split." },
@@ -9490,61 +9496,70 @@
   // statewide cap+earned for the priority cards, and the window cap+earned totals
   // (Σ colleges — the real disbursement) for the pool cards. Cached like _alloc.
   var _earnCache = null;
+  // `crReleased` / `ncReleased` add only what an institution RECEIVES — the
+  // same per-priority figure its drill-in prints ($0 while it has yet to meet
+  // its minimum conditions) — so the statewide drill-in sums to the Statewide
+  // row's Curr columns (2026-09-28). `earned` / `ncEarned` stay gate-agnostic:
+  // the priority cards' Progress line reports what the measures demonstrate.
+  function emptyPrioFigs() {
+    return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crReleased: 0, ncReleased: 0,
+      crTarget: 0, ncTarget: 0, statuses: {} };
+  }
+  // ONE institution's part of each priority's figures, added into `perPrio`.
+  // earnAgg() adds every institution for the statewide cards; the Funding
+  // outcomes for a chosen college or district add its own (Sam, 2026-10-20),
+  // so a chosen institution's figures are the same terms the statewide ones sum.
+  //
+  // perPrio drives the priority CARDS. Under one pool a priority's card
+  // ceiling — Sam's "Total Possible" (ruled 2026-08-31) — is its credit and
+  // noncredit shares TOGETHER, so `cap` sums the FULL award's slice while the
+  // earned line adds each lane on its own measures: the credit slices on the
+  // credit priorities (advances included), the noncredit slices on the
+  // noncredit priorities (f = 0 until their feeds report — F1 — and never an
+  // advance). Position i pairs the two lanes: ncPs is the same three
+  // priorities re-pointed at the noncredit measures.
+  function addInstPrios(perPrio, col, slot, ps, ncPs, gateBlocked) {
+    var sp = instSplit(col);
+    ps.forEach(function (p, i) {
+      perPrio[i].cap += prioCap(sp.w, slot, p);
+      perPrio[i].crCap += prioCap(sp.cr, slot, p);
+      var fr = earnFraction(col, p);
+      perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
+      if (!gateBlocked) perPrio[i].crReleased += prioCap(sp.cr, slot, p) * fr.f;
+      // Each lane's statewide target is the SUM of the institutions' lane
+      // targets (the statewide drill-in's Max FTES, 2026-09-24); the two
+      // lanes together are sysTarget(p), the card's figure (sheet 19, "sum").
+      if (sp.cr > 0) perPrio[i].crTarget += prioTarget(col, p);
+      // Status counts describe the CREDIT measures; the noncredit-only rows
+      // hold no credit slice, so counting their (empty) credit status would
+      // add noise the diagnostic then reports.
+      if (!col.nco) perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
+    });
+    ncPs.forEach(function (p, i) {
+      if (!(sp.nc > 0)) return;
+      var capNc = ncPrioCap(sp.nc, slot, p);
+      perPrio[i].ncCap += capNc;
+      perPrio[i].ncTarget += prioTarget(col, p);
+      var fr = earnFraction(col, p);
+      var paid = capNc * fr.f;
+      perPrio[i].earned += paid;
+      perPrio[i].ncEarned += paid;
+      if (!gateBlocked) perPrio[i].ncReleased += paid;
+    });
+  }
   function earnAgg() {
     if (_earnCache) return _earnCache;
     var slot = state.viewSlot;
     var ps = priorities(slot);
     var ncPs = ncPriorities(slot);
-    // `crReleased` / `ncReleased` add only what an institution RECEIVES — the
-    // same per-priority figure its drill-in prints ($0 while it has yet to meet
-    // its minimum conditions) — so the statewide drill-in sums to the Statewide
-    // row's Curr columns (2026-09-28). `earned` / `ncEarned` stay gate-agnostic:
-    // the priority cards' Progress line reports what the measures demonstrate.
-    var perPrio = ps.map(function () {
-      return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crReleased: 0, ncReleased: 0,
-        crTarget: 0, ncTarget: 0, statuses: {} };
-    });
+    var perPrio = ps.map(function () { return emptyPrioFigs(); });
     var winCap = 0, winEarned = 0, winHeld = 0, gatedN = 0;
     var winMeasured = 0, winAdvance = 0;
     oneRoster().forEach(function (col) {
       var a = collegeAlloc(col);
-      // perPrio drives the priority CARDS. Under one pool a priority's card
-      // ceiling — Sam's "Total Possible" (ruled 2026-08-31) — is its credit
-      // and noncredit shares TOGETHER, so `cap` sums the FULL award's slice
-      // while the earned line adds each lane on its own measures: the credit
-      // slices on the credit priorities (advances included), the noncredit
-      // slices on the noncredit priorities (f = 0 until their feeds report —
-      // F1 — and never an advance). Position i pairs the two lanes: ncPs is
-      // the same three priorities re-pointed at the noncredit measures.
       // winCap/winEarned below read collegeAlloc to match the distribution
       // surfaces (Sam, 2026-07-28).
-      var sp = instSplit(col);
-      ps.forEach(function (p, i) {
-        perPrio[i].cap += prioCap(sp.w, slot, p);
-        perPrio[i].crCap += prioCap(sp.cr, slot, p);
-        var fr = earnFraction(col, p);
-        perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
-        if (!a.gate_blocked) perPrio[i].crReleased += prioCap(sp.cr, slot, p) * fr.f;
-        // Each lane's statewide target is the SUM of the institutions' lane
-        // targets (the statewide drill-in's Max FTES, 2026-09-24); the two
-        // lanes together are sysTarget(p), the card's figure (sheet 19, "sum").
-        if (sp.cr > 0) perPrio[i].crTarget += prioTarget(col, p);
-        // Status counts describe the CREDIT measures; the noncredit-only rows
-        // hold no credit slice, so counting their (empty) credit status would
-        // add noise the diagnostic then reports.
-        if (!col.nco) perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
-      });
-      ncPs.forEach(function (p, i) {
-        if (!(sp.nc > 0)) return;
-        var capNc = ncPrioCap(sp.nc, slot, p);
-        perPrio[i].ncCap += capNc;
-        perPrio[i].ncTarget += prioTarget(col, p);
-        var fr = earnFraction(col, p);
-        var paid = capNc * fr.f;
-        perPrio[i].earned += paid;
-        perPrio[i].ncEarned += paid;
-        if (!a.gate_blocked) perPrio[i].ncReleased += paid;
-      });
+      addInstPrios(perPrio, col, slot, ps, ncPs, !!a.gate_blocked);
       winCap += a.total;
       winEarned += a.earned_total;
       winMeasured += a.earned_measured || 0;
@@ -9556,6 +9571,58 @@
       winMeasured: winMeasured, winAdvance: winAdvance,
       winHeld: winHeld, gatedN: gatedN };
     return _earnCache;
+  }
+  // ── THE FUNDING OUTCOMES FOR THE CHOSEN INSTITUTION (Sam, 2026-10-20) ────
+  // "For the Funding Outcomes section, adjust the numbers to match the selected
+  // institution rather than the whole state (if an institution is selected)."
+  // The institution is the one My Institution shows: a college, or a
+  // district's colleges (the members its My CPL Funding view lists). Null
+  // under All Institutions, or with none chosen, and the cards stay statewide.
+  function chosenScope() {
+    var v = oneCollegeView() ? state.oneCollege : "";
+    if (!v || !oneChoiceValid(v)) return null;
+    var dist = v.indexOf(ONE_DISTRICT) === 0;
+    var rows = (dist ? districtMembers(v.slice(ONE_DISTRICT.length)) : [v]).map(rosterRow).filter(Boolean);
+    return rows.length ? { value: v, name: oneChoiceName(v), district: dist, rows: rows } : null;
+  }
+  // Each priority's progress line for the scope, in _publicProgress's shape.
+  // addInstPrios adds the figures, so they are the terms the statewide line
+  // sums. The target is each member's two lane targets (sysTarget's terms);
+  // its units convert at each member's own calendar (De Anza and Foothill run
+  // quarters), and the unit word says which. The demonstrated dollars follow
+  // the public dollar rule (publicDollarWords): an institution's figure is
+  // college-facing wherever it renders. The percentage reads the coarse figure
+  // and, under the floor, the floor's share as an upper bound (`under`), as
+  // the CSV's does (curPct), so the line hands back nothing the rule withholds.
+  function scopeProgress(sc, slot) {
+    var ps = priorities(slot), ncPs = ncPriorities(slot);
+    var tot = ps.map(function () { return emptyPrioFigs(); });
+    var units = ps.map(function () { return 0; });
+    var cal = {}, am = allocModel(), atMax = 0;
+    sc.rows.forEach(function (col) {
+      var one = ps.map(function () { return emptyPrioFigs(); });
+      addInstPrios(one, col, slot, ps, ncPs, !!collegeAlloc(col).gate_blocked);
+      var upf = unitsPerCplFtes(col);
+      cal[col.quarter ? "quarter" : "semester"] = true;
+      if (am.capped[col.college]) atMax++;
+      one.forEach(function (f, i) {
+        Object.keys(f).forEach(function (k) { if (k !== "statuses") tot[i][k] += f[k]; });
+        units[i] += (f.crTarget + f.ncTarget) * upf;
+      });
+    });
+    var unitWord = cal.quarter && cal.semester ? "" : (cal.quarter ? "quarter" : "semester");
+    var prios = ps.map(function (p, i) {
+      var f = tot[i], ftes = prioIsFtes(p), cap = f.cap || 0;
+      var a = Math.abs(f.earned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR;
+      var shown = a < 0.5 ? 0 : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.earned));
+      return { label: p.label, title: p.title || "", ftes: ftes, target: f.crTarget + f.ncTarget,
+               units: ftes ? units[i] : null, unitWord: unitWord,
+               factor: prioFactor(p), price: prioPrice(p), rate: ftesRate(),
+               totalPossible: cap,
+               demonstrated: cap > 0 ? shown : null, under: cap > 0 && under,
+               pct: cap > 0 ? shown / cap : null };
+    });
+    return { prios: prios, atMax: atMax };
   }
 
   // `target` is whatever prioTarget() returned for this priority — CPL FTES for
@@ -12909,22 +12976,25 @@
   // the two pages cannot describe one institution two ways. It reads this
   // module, so every redraw of the model redraws it too.
   function oneCollegeView() { return publicMode() && state.collegeView === "one"; }
-  // THE VIEW IS CHOSEN IN THE STEP 1 BOX, AS STEP 2 (Sam, 2026-10-19: "Move the
-  // Funding by Institution and its buttons up in the Step 1 box to the right so
-  // the user is prompted to select a view after a college. Add hover over
-  // instructions for each button"). The two buttons sat under the section's
-  // introduction; they now sit to the right of the chooser (stepOneViewHtml),
-  // each saying on hover what it shows. One control, one id (cplFundCollegeView),
-  // so every reader of the old switch still finds it.
+  // THE VIEW COMES FIRST, AS STEP 1 (Sam, 2026-10-20: "Refine the Step 1 and 2
+  // by having the user select first which view they want: 'All Institutions' or
+  // 'My Institution' (note that I'm using Institution rather than spelling out
+  // 'College or District' to save space...but the hover over should clarify
+  // this"). The buttons sat to the right of the chooser as Step 2 (2026-10-19);
+  // they lead the box now, each saying on hover what an institution is and what
+  // the view shows, and the chooser follows as Step 2 under My Institution
+  // alone (stepOneHtml). One control, one id (cplFundCollegeView), so every
+  // reader of the old switch still finds it.
   var VIEW_ITEMS = [
-    { val: "all", label: "All institutions",
-      title: "Every institution in one table: its max award with the credit and noncredit shares, " +
-        "the minimum conditions it meets, and the funding qualifying so far. Open a row for its priorities." },
-    { val: "one", label: "My CPL Funding",
-      title: "A one-page summary for the college or district chosen in Step 1: its funding, minimum " +
-        "conditions, targets and suggested next steps." }];
+    { val: "all", label: "All Institutions",
+      title: "An institution is a college or a district. This view lists them all in one table, grouped by " +
+        "district if you choose: each one's max award, the minimum conditions it meets and the funding " +
+        "qualifying so far. Open a row for its priorities." },
+    { val: "one", label: "My Institution",
+      title: "An institution is a college or a district. Choose yours in Step 2 to see its funding, minimum " +
+        "conditions, targets and suggested next steps; the funding outcomes then show its figures." }];
   function stepOneViewInner() {
-    return '<p class="cplfund-step1-k cplfund-step1-k2">Step 2</p>' +
+    return '<p class="cplfund-step1-k">Step 1</p>' +
       '<div class="cplfund-step1-vbody"><p class="cplfund-step1-vl">Choose a view</p>' +
       segHtml("cplFundCollegeView", VIEW_ITEMS, oneCollegeView() ? "one" : "all") +
       '<p class="cplfund-step1-vs">Hover over a view for what it shows.</p></div>';
@@ -12963,8 +13033,11 @@
       return '<option value="' + esc(v) + '"' + (v === selected ? " selected" : "") + ">" +
         esc(districtShort(d)) + "</option>";
     }).join("");
+    // "Colleges" (2026-10-20): the views now call a college or a district an
+    // institution, so a group of colleges named Institutions above Districts
+    // read as if a district were not one. The list holds the credit colleges.
     return '<option value="">Choose your college or district</option>' +
-      '<optgroup label="Institutions">' + opts + "</optgroup>" +
+      '<optgroup label="Colleges">' + opts + "</optgroup>" +
       (dopts ? '<optgroup label="Districts">' + dopts + "</optgroup>" : "");
   }
   function oneChoiceValid(v) {
@@ -12973,12 +13046,18 @@
     if (v.indexOf(ONE_DISTRICT) === 0) return multiDistricts().indexOf(v.slice(ONE_DISTRICT.length)) >= 0;
     return base().colleges.some(function (c) { return c.college === v; });
   }
-  // ── STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15, his mockup) ───────────
-  // "Make the College selector more prominent so folks see that it is an
-  // important first step." One chooser, first: at the top of the College
-  // Dashboard on the tab's Public view, and above the Contents on the explainer,
-  // which gives it a mount (#cplFundStep1Mount) outside the embedded section.
-  // The id stays cplFundOnePick, so every reader of the old chooser still finds it.
+  // ── THE STEP 1 BOX: THE VIEW, THEN THE INSTITUTION ─────────────────────
+  // The box first (Sam, 2026-10-15, his mockup: "Make the College selector
+  // more prominent so folks see that it is an important first step"): at the
+  // top of the College Dashboard on the tab's Public view, and above the
+  // Contents on the explainer, which gives it a mount (#cplFundStep1Mount)
+  // outside the embedded section. Since 2026-10-20 the view leads as Step 1,
+  // and the chooser is Step 2: "Once a view is chosen, if user selects My
+  // Institutions, require them to choose one (either college or district)."
+  // Step 2 shows under My Institution alone, and that view shows no figures
+  // until one is chosen (oneCollegeHtml). The list stays in the box, hidden,
+  // under All Institutions, so it is never rebuilt (call 7, below). The id
+  // stays cplFundOnePick, so every reader of the old chooser still finds it.
   function stepOneExternal() {
     return embedMode() && !!document.getElementById("cplFundStep1Mount");
   }
@@ -12987,18 +13066,20 @@
     return chosen
       ? "Showing " + esc(oneChoiceName(chosen)) + ". Its funding, minimum conditions, targets and suggested " +
         'steps lead the page. <button type="button" class="cplfund-textbtn cplfund-step1-clear" id="cplFundOneClear">' +
-        "Choose another college</button>"
-      : "Your college&rsquo;s funding, minimum conditions, targets and suggested steps then lead the page.";
+        "Choose another institution</button>"
+      : "Its funding, minimum conditions, targets and suggested steps then lead the page.";
   }
   function stepOneHtml() {
     if (!publicMode()) return "";
     var chosen = stepOneChosen();
-    return '<div class="cplfund-step1" data-step1="1">' +
-      '<p class="cplfund-step1-k">Step 1</p>' +
+    return '<div class="cplfund-step1" data-step1="1" data-view="' + (oneCollegeView() ? "one" : "all") + '">' +
+      stepOneViewHtml() +
+      '<div class="cplfund-step1-pick"' + (oneCollegeView() ? "" : " hidden") + ">" +
+      '<p class="cplfund-step1-k cplfund-step1-k2">Step 2</p>' +
+      '<div class="cplfund-step1-pbody">' +
       '<label class="cplfund-step1-l" for="cplFundOnePick">Choose your college or district</label>' +
       '<select id="cplFundOnePick" class="cplfund-step1-sel">' + oneOptionsHtml(chosen) + "</select>" +
-      '<p class="cplfund-step1-s">' + stepOneLineHtml(chosen) + "</p>" +
-      stepOneViewHtml() + "</div>";
+      '<p class="cplfund-step1-s">' + stepOneLineHtml(chosen) + "</p></div></div></div>";
   }
   // ⚠ THE LIST STAYS PUT ACROSS REDRAWS (Sam, 2026-10-15, call 7: the black
   // box). Every render() rebuilt #cplFundOnePick, five times while the page
@@ -13015,12 +13096,17 @@
     var line = box && box.querySelector(".cplfund-step1-s");
     var html = stepOneLineHtml(chosen);
     if (line && line._cplHtml !== html) { line.innerHTML = html; line._cplHtml = html; }
+    // Step 2 shows under My Institution alone (2026-10-20).
+    var one = oneCollegeView();
+    if (box) box.setAttribute("data-view", one ? "one" : "all");
+    var pick = box && box.querySelector(".cplfund-step1-pick");
+    if (pick) pick.hidden = !one;
     // The view buttons are redrawn on every patch: wire() adds a listener to
     // each button it finds, so a button that survived a redraw would hear
     // every click twice.
     var view = box && box.querySelector(".cplfund-step1-view");
     if (view) view.innerHTML = stepOneViewInner();
-    else if (box) { box.insertAdjacentHTML("beforeend", stepOneViewHtml()); }
+    else if (box) { box.insertAdjacentHTML("afterbegin", stepOneViewHtml()); }
   }
   function paintStepOneMount(host) {
     var sel = host.querySelector("#cplFundOnePick");
@@ -13217,7 +13303,7 @@
       (state.oneCollege ? "" : " disabled") +
       ' title="Open a print-ready copy of this funding view, then choose Save as PDF">Save as PDF</button></div>') +
       '<div id="cplFundOnePanel" class="cplfund-onepanel" aria-live="polite">' +
-      '<p class="dk">' + (state.oneCollege ? "Loading this funding view&hellip;" : "Choose an institution or district to see its funding.") + "</p></div>";
+      '<p class="dk">' + (state.oneCollege ? "Loading this funding view&hellip;" : "Choose your college or district in Step 2 to see its funding.") + "</p></div>";
   }
   // A district's line above its institutions' blocks: the same figures its
   // subtotal row carries in the table, through the same public dollar rule.
@@ -13284,7 +13370,7 @@
       var now = document.getElementById("cplFundOnePanel");
       if (!now || state.oneCollege !== key) return;   // the reader moved on
       if (!B || typeof B.fundingPanel !== "function") {
-        now.innerHTML = '<p class="dk">This view did not load. Choose All institutions for every institution&#39;s figures.</p>';
+        now.innerHTML = '<p class="dk">This view did not load. Choose All Institutions for every institution&#39;s figures.</p>';
         return;
       }
       if (key.indexOf(ONE_DISTRICT) === 0) {
@@ -13704,6 +13790,10 @@
     // change, and a page with no funding mount never cleared them at all. My
     // College escaped it only because fundingFor() calls _model() first.
     _allocCache = null; _ncoRows = null; _earnCache = null;
+    // The remembered institution returns before the subscribers hear, so the
+    // explainer's first paint shows its Funding outcomes (2026-10-20).
+    var bd = base();
+    if (bd && bd.colleges) restoreOneChoice();
     notifyModel();
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return;
@@ -14415,6 +14505,13 @@
       if (!publicMode() || v === (state.collegeView || "all")) return;
       state.collegeView = v;
       render();
+      // The redraw replaced the button that was pressed, so focus goes where
+      // the reader goes next: Step 2's list when My Institution has none
+      // chosen yet (Sam, 2026-10-20: "require them to choose one"), the
+      // pressed button otherwise.
+      var to = v === "one" && !state.oneCollege ? document.getElementById("cplFundOnePick")
+        : document.querySelector('#cplFundCollegeView button[data-val="' + v + '"]');
+      if (to) { try { to.focus(); } catch (e) {} }
     });
     // Handlers by property: the list and its line survive redraws (call 7), so
     // a listener added on every wire() would stack one deep per redraw.
@@ -15582,7 +15679,10 @@
       // change and the render that clears it (the explainer's test does)
       _allocCache = null; _ncoRows = null; _earnCache = null;
       var agg = earnAgg();
-      var prios = agg.ps.map(function (p, i) {
+      // The institution My Institution shows, when one is chosen: its own
+      // figures, and `scope` names it (Sam, 2026-10-20). Statewide otherwise.
+      var sc = chosenScope(), scoped = sc ? scopeProgress(sc, state.viewSlot) : null;
+      var prios = scoped ? scoped.prios : agg.ps.map(function (p, i) {
         var pp = agg.perPrio[i] || {}, ftes = prioIsFtes(p), target = sysTarget(p, state.viewSlot);
         return { label: p.label, title: p.title || "", ftes: ftes, target: target,
                  units: ftes ? target * unitsPerCplFtes(null) : null,
@@ -15613,7 +15713,9 @@
         conditions.push({ kind: "jst", n: metN, of: total, star: starN,
           asOf: pfv && pfv.vet_star_as_of ? String(pfv.vet_star_as_of).slice(0, 10) : "" });
       });
-      return { prios: prios, conditions: conditions };
+      return { prios: prios, conditions: conditions,
+               scope: sc ? { kind: sc.district ? "district" : "college", name: sc.name,
+                             members: sc.rows.length, atMax: scoped.atMax } : null };
     },
     _prios: function (name, slot) {
       var c = rosterRow(name);

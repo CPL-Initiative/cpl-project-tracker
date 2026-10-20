@@ -108,8 +108,9 @@ check("(1) card 9: the noncredit portion",
     "college or district's noncredit program."));
 check("(1) card 12: how progress qualifies",
   t.includes("Progress toward each priority goal is measured in FTES and funded up to the cap."));
+// "All Institutions" names the view button, which Sam renamed on 2026-10-20.
 check("(1) card 14: the closing note starts with CPL funding",
-  t.includes("CPL funding follows the same procedure for every institution under All institutions."));
+  t.includes("CPL funding follows the same procedure for every institution under All Institutions."));
 check("(1) card 15: the PDF's line, dated the style guide's way",
   /CPL potential and current outcomes-based funding as of ' \+ esc\(apDate\(asOf\)\)/.test(fs.readFileSync("college_briefing.js", "utf8")));
 
@@ -137,7 +138,7 @@ check("(2) a noncredit institution's third condition is its certificates",
 const nexts = Array.from(doc.querySelectorAll(".cb-next li")).map((li) => li.textContent.replace(/\s+/g, " ").trim());
 check("(3) the implementation step names what is owed, with the date and the control",
   nexts[0] === "For the implementation funding: name the college's CPL Coordinator (primary CPL contact) in MAP, " +
-    "and confirm the college's participation by Nov. 1, 2026, with the Confirm button on its row under All institutions.",
+    "and confirm the college's participation by Nov. 1, 2026, with the Confirm button on its row under All Institutions.",
   nexts[0]);
 check("(3) the seed step adopts or adapts any statewide recommendation (card 4)",
   nexts[1] === "For the seed funding: adopt or adapt any statewide CPL recommendation in MAP for local course, GE area, " +

@@ -5,12 +5,18 @@
 //
 //   3. "Move the Funding by Institution and its buttons up in the Step 1 box
 //      to the right so the user is prompted to select a view after a college.
-//      Add hover over instructions for each button." The All institutions ·
-//      My CPL Funding control is Step 2, inside the Step 1 box, each button
-//      carrying its hover text; nothing of it stays under the section's
-//      introduction. It keeps its id, so every reader of the old switch still
-//      finds it, and it is redrawn on every patch of the box so a redraw never
-//      leaves a button hearing each click twice.
+//      Add hover over instructions for each button." The view control sits in
+//      the Step 1 box, each button carrying its hover text; nothing of it stays
+//      under the section's introduction. It keeps its id, so every reader of
+//      the old switch still finds it, and it is redrawn on every patch of the
+//      box so a redraw never leaves a button hearing each click twice.
+//      REORDERED 2026-10-20 (Sam: "Refine the Step 1 and 2 by having the user
+//      select first which view they want: 'All Institutions' or 'My
+//      Institution' ... the hover over should clarify this", and "Once a view
+//      is chosen, if user selects My Institutions, require them to choose one
+//      (either college or district)"): the view is Step 1, on the left; the
+//      chooser is Step 2, shown under My Institution alone, and the reader
+//      lands on it when My Institution has none chosen.
 //   4. "We can delete the button links to restoring default order and funding
 //      defaults--I would just create a new scenario and make any changes
 //      needed to do that." No Reset scenario to defaults for a signed-in
@@ -57,43 +63,65 @@ function reviewerSession() {
     authHeaders: () => ({ Authorization: "Bearer header.payload.sig" }) };
 }
 
-// ── 3. Step 2 in the Step 1 box (the tab's Public view) ─────────────────────
+// ── 3. the view as Step 1, the chooser as Step 2 (the tab's Public view) ───
 {
   const { w, doc, T } = setup();
   w.CPL_FUNDING_PUBLIC = true;
   T.render();
   const step = doc.querySelector(".cplfund-step1");
-  const view = step && step.querySelector(".cplfund-step1-view");
+  const kids = step ? Array.from(step.children) : [];
+  const view = kids[0], pickCol = kids[1];
   const seg = view && view.querySelector("#cplFundCollegeView");
-  check("3a: the view control sits inside the Step 1 box, in its own column, headed Step 2",
-    !!view && !!seg && /^Step 2$/.test(view.querySelector(".cplfund-step1-k2").textContent) &&
-    view.querySelector(".cplfund-step1-vl").textContent === "Choose a view");
+  check("3a: the box leads with the view, headed Step 1, and the chooser follows, headed Step 2",
+    kids.length === 2 && /\bcplfund-step1-view\b/.test(view.className) && !!seg &&
+    view.querySelector(".cplfund-step1-k").textContent === "Step 1" &&
+    view.querySelector(".cplfund-step1-vl").textContent === "Choose a view" &&
+    /\bcplfund-step1-pick\b/.test(pickCol.className) && pickCol.contains(doc.getElementById("cplFundOnePick")) &&
+    pickCol.querySelector(".cplfund-step1-k2").textContent === "Step 2" &&
+    pickCol.querySelector('label[for="cplFundOnePick"]').textContent === "Choose your college or district");
   check("3b: nothing of the old switch stays under the section's introduction",
     !doc.querySelector(".cplfund-viewswitch") && doc.querySelectorAll("#cplFundCollegeView").length === 1);
   const btns = seg ? Array.from(seg.querySelectorAll("button")) : [];
-  check("3c: the two views, in Sam's words, each with hover text saying what it shows",
-    btns.map((b) => b.textContent).join("|") === "All institutions|My CPL Funding" &&
-    /max award/.test(btns[0].getAttribute("title") || "") &&
-    /chosen in Step 1/.test(btns[1].getAttribute("title") || ""));
-  // The box lays out as a three-column grid, one column on a phone.
+  check("3c: the two views in Sam's words, each hover saying an institution is a college or a district",
+    btns.map((b) => b.textContent).join("|") === "All Institutions|My Institution" &&
+    btns.every((b) => /^An institution is a college or a district\. /.test(b.getAttribute("title") || "")) &&
+    /max award/.test(btns[0].getAttribute("title")) && /Step 2/.test(btns[1].getAttribute("title")) &&
+    /funding outcomes/.test(btns[1].getAttribute("title")));
+  check("3d: All Institutions is the view a first visit opens on, and Step 2 waits hidden",
+    btns[0].getAttribute("aria-pressed") === "true" && pickCol.hidden && step.getAttribute("data-view") === "all" &&
+    !!doc.getElementById("cplFundTable"));
+  // The box lays out as two columns, one at a tablet's width, kickers above on a phone.
   const css = doc.getElementById("cpl-funding-css").textContent;
-  check("3d: three columns at desktop width, and the view column drops below on a phone",
-    /\.cplfund-step1 \{ display: grid; grid-template-columns: auto minmax\(0,1fr\) auto;/.test(css) &&
-    /@media \(max-width: 560px\) \{ \.cplfund-step1 \{ grid-template-columns: 1fr; \}[^}]*\}[^@]*\.cplfund-step1-view \{ grid-column: auto; grid-row: auto;/.test(css));
-  // The buttons work from the box: choose a college, then switch views.
-  const one = w.CPL_FUNDING.colleges[0].college;
+  check("3e: two columns at desktop width; Step 2 drops under Step 1 below 860px; Step 2 hides by its attribute",
+    /\.cplfund-step1 \{ display: grid; grid-template-columns: auto minmax\(0,1fr\);/.test(css) &&
+    /@media \(max-width: 860px\) \{ \.cplfund-step1 \{ grid-template-columns: 1fr; \} \.cplfund-step1-pick \{ padding-left: 0; border-left: 0;/.test(css) &&
+    /@media \(max-width: 560px\) \{ \.cplfund-step1-view, \.cplfund-step1-pick \{ flex-direction: column;/.test(css) &&
+    /\.cplfund-step1-pick\[hidden\] \{ display: none; \}/.test(css));
+  // My Institution first: Step 2 shows, the view asks for one, and the reader lands on the list.
+  click(w, doc.querySelector('#cplFundCollegeView button[data-val="one"]'));
   const pick = doc.getElementById("cplFundOnePick");
+  check("3f: My Institution shows Step 2 and puts the reader on its list, with no figures until one is chosen",
+    T._state.collegeView === "one" && !doc.querySelector(".cplfund-step1-pick").hidden &&
+    doc.querySelector(".cplfund-step1").getAttribute("data-view") === "one" &&
+    doc.activeElement === pick && !doc.getElementById("cplFundTable") &&
+    /Choose your college or district in Step 2/.test(doc.getElementById("cplFundOnePanel").textContent));
+  const one = w.CPL_FUNDING.colleges[0].college;
   pick.value = one;
   pick.dispatchEvent(new w.Event("change", { bubbles: true }));
-  check("3e: choosing a college turns My CPL Funding on", T._state.collegeView === "one" &&
+  check("3g: choosing one in Step 2 shows its funding, and the line names it",
+    T._state.collegeView === "one" && T._state.oneCollege === one &&
     doc.querySelector('#cplFundCollegeView button[data-val="one"]').getAttribute("aria-pressed") === "true" &&
-    !!doc.querySelector("#cplFundOnePanel"));
+    !!doc.querySelector("#cplFundOnePanel") && /^Showing /.test(doc.querySelector(".cplfund-step1-s").textContent) &&
+    doc.getElementById("cplFundOneClear").textContent === "Choose another institution");
   click(w, doc.querySelector('#cplFundCollegeView button[data-val="all"]'));
-  check("3f: All institutions from the box shows the table", T._state.collegeView === "all" &&
-    !!doc.getElementById("cplFundTable") && !doc.querySelector("#cplFundOnePanel > .cb-panel"));
+  check("3h: All Institutions from the box shows the table, hides Step 2, and keeps focus on its button",
+    T._state.collegeView === "all" && !!doc.getElementById("cplFundTable") &&
+    !doc.querySelector("#cplFundOnePanel > .cb-panel") && doc.querySelector(".cplfund-step1-pick").hidden &&
+    doc.activeElement === doc.querySelector('#cplFundCollegeView button[data-val="all"]'));
   click(w, doc.querySelector('#cplFundCollegeView button[data-val="one"]'));
-  check("3g: My CPL Funding from the box brings the chosen college back", T._state.collegeView === "one" &&
-    T._state.oneCollege === one && doc.getElementById("cplFundOnePick").value === one);
+  check("3i: My Institution from the box brings the chosen college back, with focus on its button",
+    T._state.collegeView === "one" && T._state.oneCollege === one && doc.getElementById("cplFundOnePick").value === one &&
+    doc.activeElement === doc.querySelector('#cplFundCollegeView button[data-val="one"]'));
 }
 
 // ── 3, on the explainer: the box lives in an external mount and is PATCHED ──
@@ -102,12 +130,16 @@ function reviewerSession() {
   T.render();
   const mount = doc.getElementById("cplFundStep1Mount");
   const seg0 = mount.querySelector("#cplFundCollegeView");
-  check("3h: the explainer's Step 1 mount carries the view control too", !!seg0 &&
+  check("3j: the explainer's Step 1 mount carries the view control too", !!seg0 &&
     !doc.querySelector("#cplFundingMount #cplFundCollegeView"));
   const pick = mount.querySelector("#cplFundOnePick");
   T.render();
-  check("3i: a redraw keeps the chooser and redraws the view buttons (so no button hears a click twice)",
+  check("3k: a redraw keeps the chooser and redraws the view buttons (so no button hears a click twice)",
     mount.querySelector("#cplFundOnePick") === pick && mount.querySelector("#cplFundCollegeView") !== seg0);
+  click(w, mount.querySelector('#cplFundCollegeView button[data-val="one"]'));
+  check("3l: My Institution from the external box shows Step 2 there, on the same list",
+    !mount.querySelector(".cplfund-step1-pick").hidden && mount.querySelector("#cplFundOnePick") === pick &&
+    doc.activeElement === pick);
   const one = w.CPL_FUNDING.colleges[1].college;
   pick.value = one;
   pick.dispatchEvent(new w.Event("change", { bubbles: true }));
@@ -115,7 +147,9 @@ function reviewerSession() {
   const off = T.onModelChange(() => { renders++; });
   click(w, mount.querySelector('#cplFundCollegeView button[data-val="all"]'));
   off();
-  check("3j: one click from the external box is one change", T._state.collegeView === "all" && renders === 1);
+  check("3m: one click from the external box is one change, and Step 2 hides again",
+    T._state.collegeView === "all" && renders === 1 && mount.querySelector(".cplfund-step1-pick").hidden &&
+    mount.querySelector("#cplFundOnePick") === pick);
 }
 
 // ── 4. the two default-restoring controls are gone ───────────────────────────
