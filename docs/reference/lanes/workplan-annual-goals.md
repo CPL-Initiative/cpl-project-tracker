@@ -1,7 +1,7 @@
 ---
 title: "Annual Workplan Goals / adding, moving and counting sub-activities — lane state"
 created: 2026-10-12
-updated: 2026-10-19
+updated: 2026-10-20
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -19,6 +19,26 @@ related:
 
 ## Status
 
+✅ **S438 SkySumac (2026-10-20): no Total column, the details folded, gray borders only, links to the cards (#2291,
+live after dashboard run 619).** Sam's asks of the morning: the Total column *"mis-states the 2030 target"* (most
+ladders are cumulative; 1.1's 4/9/18/22/25 summed to 78), center the numbers, *"auto collapse everything under the
+first row title"* so the three rows stand at single height, delete the blue outline on editable cells (*"the thin blue
+outlines look like someone didn't finish the formatting"*), and link the Activity cards (`cpl_memory`
+`sam-annual-goals-no-total-fold-gray-2026-10-20`).
+- **The table:** five year columns, values and headers centered; each name cell is the title, then "Details" (a
+  button, `aria-controls` its `.wpg-more` panel, printed hidden) and "Activity card"; the panel holds the description,
+  the counting lines and the chips, and an editor's Move and Table fold into it (Set targets stays on the line under
+  the title, since it explains the blank cells). "Show all details" in the head row opens or closes every panel. The
+  editor still sends the ladder's sum to `workplan_goals.total`; nothing reads the dropped column.
+- **The links:** `#activities-projects/card-<id>` and `#activities-projects/activity-<N>` (each Activity header,
+  "Activity cards"); `card_actions.js` opens the folded section, clears a filter hiding the card, scrolls it clear of
+  the sticky actions bar (145px at 1440; centered, a 1,554px card hid its own name), focuses and marks it for 2.5s.
+  The Activities groups carry `data-activity-id`; an older page is found by its RACI link.
+- **Borders:** no cobalt rule under an editable value and no dashed outline on hover in the table; the focus ring
+  stays. The nested rows keep their navy left bar (it matches the nested cards).
+- Tests: `tests/annual_goals_card_links.test.js` (17, both renderers), `annual_goals_ui_pass` (74),
+  `workplan_goals_set_targets` (15), `workplan_goals_authoritative` (26), the hybrid python test.
+
 ✅ **S426 SkyTorreya (2026-10-19): a Current for every year, one editor for all three rows, the formatting pass.**
 Sam, 2026-10-19: *"make sure all of the annual columns can be edited. Currently, only the 2025-2026 year is
 editable."* Goal and Stretch already edited for all five years; the Current row had one column, `workplan_goals.current`
@@ -28,7 +48,7 @@ on the GOAL row, so fiscal year 2026-27 (from July 1, 2026) had nowhere to go.
   was typed under: 1.2's value of 2, typed 2026-10-19). `current` stays unread; a later migration drops it.
 - **Editor:** the Current row is a ladder like Goal and Stretch (`data-rt="CURRENT"`, `data-yr-key="cur_<year>"`), saved
   by the same `startEdit`/`saveCell` path (PATCH the GOAL row, no `total`); `startCurrentEdit`, `saveCurrent` and the
-  pencil hint are gone. The Total of the Current row sums the years, as the other two do.
+  pencil hint are gone.
 - **Live rows (3.1, 3.1.1-3, 3.2, 2.1, 3.3, 4.1):** the live value prints under the fiscal year the run is in
   (`current_workplan_year()`, July 1 boundary, clamped to the ladder); each closed year reads the June 30 entry of
   `kpi_history.json` (`_history_year_end`; 2025-26 = 48,219 students, 24,881 military, 99,534 units, 12,566 CRs, 100
@@ -39,14 +59,12 @@ on the GOAL row, so fiscal year 2026-27 (from July 1, 2026) had nowhere to go.
   inserts only the missing ones, then `activateLadder` gives the row its ladder attributes and removes the control.
   Before this a second press inserted a second pair, which is how the duplicates below landed.
 - **Formatting pass (verified with `npm run a11y`, light and dark, 390 and 1440):** hairline rows in place of the full
-  grid, numbers right-aligned in tabular figures, Activity headers on the subtle surface, Stretch in its text grade
+  grid, tabular figures, Activity headers on the subtle surface, Stretch in its text grade
   without italics, the sign-in controls in the card's head row ("Add sub-activity", "Sign out"; signed out, the row
   takes its own line), one as-of line for every live value. Phone: each row is a wrapping flex line whose cells take
   the width their number needs (a 1,500,000 used to break mid-digit in a sixth of 300px).
-- Tests: `tests/workplan_goals_set_targets.test.js` (14, new), `tests/annual_goals_ui_pass.test.js` (57),
-  `tests/workplan_goals_authoritative.test.js` (26), `tests/activity_summaries.test.js` (42),
-  `kb/_test_workplan_current_hybrid.py` (rewritten; its 3.1.2a fixture had been failing since the July reorg renamed
-  it 3.1.3), `tests/annual_goals_reflect_all_projects_test.py`, `tests/annual_goals_contrast_test.py`.
+- Tests: the S438 list above, plus `tests/activity_summaries.test.js`, `tests/annual_goals_reflect_all_projects_test.py`,
+  `tests/annual_goals_contrast_test.py`.
 
 ✅ **Descriptions show, and the two rows without one have drafts (S426, Sam's second ask of 2026-10-19:** *"add a
 procedure that drafts a description to insert in the Descriptions box on the annual goals ... If you don't have any
@@ -99,7 +117,6 @@ The paste that deletes the 12 extra rows and adds the unique index is
 0a. **The migration run:** `supabase-migrate.yml` fires on the S426 push; read `supabase_migrations.schema_migrations`
     for `workplan_goals_current_by_year_2026_10_19_s426` and the receipt the runner commits. Until it lands, the
     loader's select falls back to the `current` shape and the page shows the old one-column value under 2025-26.
-0b. ✅ The dedupe paste ran and read back clean (21:07Z); the receipt says APPLIED.
 0c. **Drop `current`** once a build has published with `cur_*` (one migration: `alter table ... drop column current`;
     `activity_summaries.js` and `_row_current_years` still read it as a fallback until then).
 0e. ✅ The two drafted descriptions landed through the runner (read back 21:07Z); the tab shows all 34 after the
@@ -107,12 +124,11 @@ The paste that deletes the 12 extra rows and adds the unique index is
 0d. **The reports still print the 2025-26 pair** (`generate_reports.js` and `master_report.js` hard-code
     `kpi_goal_2526` beside `kpi_metric`); the fiscal-year pair belongs there too, with `kpi_current_<year>` exported
     from the GOAL row's `cur_*` columns.
-0. ✅ #2063 merged; dashboard run 586 (04:43Z) published green.
 0b. ✅ **Move stays reviewer-only (Sam, Open Asks Sheet 73 card 1, *Keep it reviewer-only*, 2026-10-13 11:45:21Z).** His later, direct answer stands over Sheet 72 card 4's *phrase* (03:50Z); read from the sheet store by S381 (`cpl_memory` `sam-sheet-73-card-1-keep-reviewer-only-2026-10-13`). Nothing to build; the function and the control stay as they went live.
 1. **The first Refresh Sam runs:** read the posted rows (`item_updates` where `item_type = 'activity'` and `raw` names `activity_summaries.js`) and his edits (`raw.edited`, `raw.draft`). What he changes in a draft is the prompt's next revision.
 2. **The first Move a reviewer makes:** read its `workplan_id_moves` row (before-values and counts) and the guard's verdict; the undo is in `kb/supabase_workplan_move.sql`'s header.
-3. `card_actions.js` still lists `a.act-update-link` in `UPDATE_SEL`; no page prints it since run 583. Drop it with the next change to that file.
+3. ✅ `a.act-update-link` left `UPDATE_SEL` with #2291.
 4. **`apply_migration`:** before a session's next DDL, read `supabase_migrations.schema_migrations` for anything newer than 23:19Z on 2026-10-12; none means the tool is still down and the SQL goes to Sam as a paste.
 5. **Sheet 75 card 2, built (#2083):** an add, a move, and a Table, Archive or Restore on either tab queue `daily-dashboard.yml` through `chatbox/supabase/functions/workplan-rebuild` (it checks its caller as the caller, reviewer or phrase, reuses a build already waiting, writes no table; `kb/governance_surface_map.json` dismisses it with its reason), and a signed-in editor sees a sub-activity added since the build under its home Activity, and a row moved away hidden, at once. ✅ **Merged and deployed (S384):** `cpl-chat-deploy.yml` run 38464141223; the function reads back ACTIVE, version 1, `verify_jwt` off, its source matching main; without the key it answers 503. ✅ **Sam, Open Asks Sheet 77 (22:24-22:25Z, `cpl_memory` `sam-sheet-77-rulings-2026-10-13`):** card 1 done, the key `WORKPLAN_DISPATCH_TOKEN` is set (confirm on the next save: the add or move message says *within about 10 minutes*); card 2 *reviewer*: Table and Archive become reviewer-only on the Activities tab too. ✅ **Built and merged (S385, #2092):** `project_lifecycle.js` shows Table / Archive and Restore to a signed-in reviewer only and sends no `x-team-pass`; signed out, the dialog asks for a reviewer sign-in. The three write policies in `kb/supabase_project_lifecycle.sql` name `is_allowed_reviewer()` alone, applied by `supabase-migrate.yml` run 38480012281 (its first use, no approval wait; ledger `20261013224742`; receipt `kb/receipts/migration_project_lifecycle_reviewer_only_2026_10_13_s385_38480012281.json`; rollback `kb/receipts/project_lifecycle_reviewer_only_2026_10_13_s385_rollback.sql`). ✅ Read back live 22:52Z: `plc_insert`, `plc_update`, `plc_delete` name `is_allowed_reviewer()` alone; `plc_select` stays open. DR-13 in `kb/governance_register.json` says so.
 
-**Related:** the 50% Law finding for CPL spending (restricted funds sit outside the calculation; `cpl_memory` `fifty-percent-law-restricted-cpl-funds-outside-cee-2026-10-12`; public KB `policy-and-funding/fifty-percent-law-and-cpl-funds.md`) belongs to the funding lane, whose file is at its size limit.
+**Related:** the 50% Law finding (restricted CPL funds sit outside the calculation; `cpl_memory` `fifty-percent-law-restricted-cpl-funds-outside-cee-2026-10-12`; public KB `policy-and-funding/fifty-percent-law-and-cpl-funds.md`) belongs to the funding lane.

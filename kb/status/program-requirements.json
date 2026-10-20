@@ -1,20 +1,20 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T13:46:14Z",
-  "session": 437,
-  "moniker": "SkySagebrush",
+  "written_at": "2026-10-20T16:42:32Z",
+  "session": 438,
+  "moniker": "SkySumac",
   "run": "a session Sam opened",
   "decider": "Sam",
-  "handoff": "docs/session_438_handoff.md",
+  "handoff": "docs/session_439_handoff.md",
   "next_step": {
-    "title": "Apply Sheet 106's answers in one re-key window, or build the Commons' next Progress view",
-    "text": "Open Asks Sheet 106 asks three things: move the two forestry stragglers, re-key the twelve Foreign Languages courses on stray codes to their language's code, and file the 79 courses on eight stray codes whose two signals agree. On Sam's answers the next session applies them in one window. Until then it builds the Commons' Exhibit Progress view."
+    "title": "Build the Course Progress view where SkyView's counts can reach it",
+    "text": "The Commons' last Progress view: the Common Course Reference's, drawn by the shared module inside SkyView, with its definition of complete (an auditor score of 0.85 or better) on a card for Sam and a link behind each count."
   },
   "calls": [
     {
-      "title": "The second reader waits on Sam's new xAI subscription",
-      "text": "Sam ruled later on Open Asks Sheet 98 card 2 (13:41Z, 2026-10-19): a new subscription first, which will take a few days. When he says it is set: the Edge Function secrets XAI_API_KEY and XAI_MODEL on project hvuwhnbuahrtptokpqfh, cpl-chat-deploy.yml for program-requirements-extract, then second-reader.yml with college Canada College.",
+      "title": "The second reader waits on the xAI API billing moving to the district card",
+      "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card, which will take some time. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
       "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
       "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu"
     }
@@ -24,12 +24,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-20T10:40:00Z",
-      "text": "The veteran map's Zoom in, Zoom out, Reset and region buttons are underlined words instead of pills, after its interface check."
+      "at": "2026-10-20T16:08:00Z",
+      "text": "The Annual Workplan Goals table drops its Total column, centers its numbers, folds each row's details behind one word and links each row to its Activity card."
     },
     {
-      "at": "2026-10-20T10:25:00Z",
-      "text": "The 110 identity codes that are neither a common subject code nor an umbrella code are sorted by whether their answer can be checked; three questions went to Sam on Open Asks Sheet 106."
+      "at": "2026-10-20T16:35:00Z",
+      "text": "The second reader's wait moved from a new subscription to the API billing on the district card."
     }
   ],
   "headline": [

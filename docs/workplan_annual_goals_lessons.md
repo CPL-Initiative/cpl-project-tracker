@@ -159,3 +159,23 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **A drafting procedure is a brief, a record and a guard.** `kb/_draft_workplan_descriptions.py` prints the facts the
   repo holds for each empty row, keeps each draft with its sources and a best-guess flag, refuses a stale or careless
   one, and writes a guarded UPDATE that yields to anything typed on the tab since. The writing stays the session's.
+
+## S438 SkySumac (2026-10-20): a sum of running totals, the folded rows, and a link that lands
+
+- **A cumulative ladder has no meaningful sum.** Each year's goal already includes the years before it, so the Total
+  column printed 78 for a 2030 goal of 25. The last year is the target; the column left the table, and the editor
+  keeps writing the sum only because other readers of `workplan_goals.total` might exist.
+- **Read the ask against the screen in both states.** Signed out, the only blue on the table was the nested rows'
+  bar; signed in, a cobalt rule sat under every editable value. Sam edits signed in, and "thin blue outlines" named
+  the editor's cue. Two screenshots settled it before any code changed.
+- **A fold is cheaper than a redesign.** The three rows stood tall because the name cell carried the description,
+  two counting lines and the chips. A hidden panel behind one word brought the table from 5,269px to 3,658px with no
+  data change, and the editor's rare controls (Move, Table) folded with it.
+- **jsdom fires its own DOMContentLoaded after a test's,** so init runs twice there; a delegated toggle added twice
+  cancels itself. Guard a document-level listener with a flag.
+- **A link that lands must clear what sits on top.** The Activities tab's actions bar is sticky; a card scrolled to
+  the top hid under it, and a card taller than the screen hid its own name when centered. Read the bar's height at
+  landing and set the target's scroll margin from it.
+- **A test that pins a removed cell lives in more than one file.** Three tests pinned the Total cell; one surfaced
+  only in CI's shard 2. Grep every test for the selector being removed before the first push.
+
