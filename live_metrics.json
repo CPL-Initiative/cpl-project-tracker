@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-20T05:43:20.501Z",
+  "scraped_at": "2026-10-20T11:45:10.485Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -473,13 +473,13 @@
         },
         {
           "college": "Fullerton College",
-          "students": 564,
+          "students": 565,
           "units": 1090,
-          "avgUnits": 1.9326241134751774,
+          "avgUnits": 1.9292035398230087,
           "transcriptionRate": 0.6,
-          "avgTranscribed": 0.012411347517730497,
+          "avgTranscribed": 0.012389380530973451,
           "criteriaMetCount": 1,
-          "militaryStudents": 561,
+          "militaryStudents": 562,
           "nonMilitaryStudents": 3,
           "apprenticeStudents": 0,
           "savings": 1878780,
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,439",
+      "value": "57,440",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,165"
+          "value": "29,166"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57439,
+    "Students": 57440,
     "Units": 276293.9,
     "TranscribedUnits": 83862.84999999999,
     "Savings": 390997245.25,
     "YearImpact": 1589237846.3999999,
-    "MilitaryStudents": 29165,
+    "MilitaryStudents": 29166,
     "NonMilitaryStudents": 28369,
     "AprenticeStudents": 952,
-    "AverageUnits": 4.810214314316058,
-    "TranscribedAverage": 1.4600332526680477
+    "AverageUnits": 4.8101305710306415,
+    "TranscribedAverage": 1.4600078342618383
   }
 }
