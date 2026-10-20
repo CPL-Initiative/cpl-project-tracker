@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 60 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 402 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1199** | |
+| Session handoffs | 403 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1200** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-20 (S431 SkyChaparral): #2269 and #2270 landed and the 44 re-keyed live (run 39362668144, read back); the Sierra hashchange test waits for its state (#2271); Open Asks Sheet 104 asked and ruled, move-ten and agpr (#2272, CPLBrain#404); the handbook link to the live page (#2273); the CSR quarterly probe (#2274); handoff 432.
 - 2026-10-20 (S430 SkyLupine): the CTDL exchange's seed for Malone (contract v0, the drop check, decisions) and DR-27..29 (#2267); the AGRI sitting twice over, 397 of 404 agree (#2268); Sheet 103 answered, the 44 re-keyed to their family codes (#2270); the nine MQ names renamed to the handbook's spellings (#2269); handoff 431; no KB note.
 - 2026-10-20 (S428 SkyPinyon): the CTDL partner exchange scoped on Sam's ask (Credential Engine and WestEd, COBI authoritative): the strategy as a Claude Doc, the lane `ctdl-partner-exchange`, CE's xTRA code and ten Ready to Publish extracts read, Open Asks Sheet 102; handoff 430; KB note reference-ctdl-classes-for-cobi-records.
 - 2026-10-19 (S427 SkyMadrona): Sheet 99 rulings 1, 2, 3 and 5 applied (the nightly confirm's first run, AGAB, the Validate column), the AGRI sitting built, Open Asks Sheet 101; handoff 428; KB note methodology-a-ruling-names-a-record-the-store-may-count-another.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-19 (S426 SkyTorreya): the Annual Workplan Goals tab edits every year (a Current per year), shows its stored descriptions, Set targets fixed, the formatting pass; KB note on idempotent controls; handoff 427.
 - 2026-10-19 (S424 SkyBuckthorn): the Jev sitting asks only about the gating checks and two certificate scorer rules (#2256); Taft's renumbered BUSN 550/555 and Administrative Services II on its own page, display build e0407fdcb54b (#2258); Open Asks Sheet 98 answered (remove Taft's 38661 row; the second reader on ice); lessons S424, S394-S398 archived.
 - 2026-10-19 (S423 SkyLaurel, the routine): Merced's renumbered courses, a cited per-college `course_renumbers` map, 154 to 163 of 172 found and 125 to 134 passing (#2253); the Knowledge Base portal's first UI pass (#2254); the Commons' four run logs; lessons S423, handoff 424.
-- 2026-10-19 (S422 SkyWillow, the routine): San Joaquin Delta's three scorer readings, 154 to 195 of 202 live rows passing (#2250); Taft's two local GE patterns, no step (#2249); the Sierra Training UI pass (#2251); lessons S422, handoff 423.

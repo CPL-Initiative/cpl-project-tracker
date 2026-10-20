@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T02:12:57Z",
-  "session": 430,
-  "moniker": "SkyLupine",
+  "written_at": "2026-10-20T03:46:40Z",
+  "session": 431,
+  "moniker": "SkyChaparral",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_431_handoff.md",
+  "handoff": "docs/session_432_handoff.md",
   "next_step": {
-    "title": "Land the rename and the AGRI re-key, then re-key the live curation rows",
-    "text": "Merge #2269 (the nine MQ names) and #2270 (Sheet 103's 44 AGRI identities to their family codes) on a green test, dispatch supabase-rekey.yml with the re-key's receipt before the next curation sync, then daily-dashboard.yml; Sam hands Malone the exchange paste."
+    "title": "Re-key the ten forestry and four wine courses off AGRI",
+    "text": "Sam ruled on Open Asks Sheet 104 (move-ten, agpr): one re-key window under the playbook moves the ten forestry courses to ENVR and the four wine courses to AGPR, each record's discipline following its code, then the live curation re-key after merge."
   },
   "calls": [
     {
@@ -24,12 +24,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-20T01:15:00Z",
-      "text": "The CTDL exchange's seed drafted for Malone, with the three decision rights on the governance register (#2267)."
+      "at": "2026-10-20T02:49:00Z",
+      "text": "The nine MQ discipline names took the handbook's spellings (#2269)."
     },
     {
-      "at": "2026-10-20T01:30:00Z",
-      "text": "The two Jev sittings over the AGRI residual filed: 397 of 404 agree, 56 at the gate (#2268)."
+      "at": "2026-10-20T03:08:00Z",
+      "text": "The 44 AGRI identities Sam confirmed on Sheet 103 were re-keyed in the files (#2270) and in the live curation rows."
+    },
+    {
+      "at": "2026-10-20T03:32:00Z",
+      "text": "Sam ruled Open Asks Sheet 104: the ten forestry courses move to Forestry/Natural Resources and the four wine courses to Agricultural Production."
+    },
+    {
+      "at": "2026-10-20T03:44:00Z",
+      "text": "The dashboard's handbook link now opens the Chancellor's Office's live Minimum Qualifications page (#2273)."
     }
   ],
   "headline": [
