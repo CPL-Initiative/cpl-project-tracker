@@ -69,12 +69,13 @@ header .lede{margin:0;font-size:clamp(1rem,.95rem + .25vw,1.15rem);color:var(--b
 .figures .n{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.1;color:var(--seal)}
 .figures .l{font-size:.92rem;color:var(--muted)}
 .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:22px 0 12px}
-.group{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.group{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .group-lab{font-size:.85rem;font-weight:600;color:var(--muted);margin-right:4px}
-.btn{font:inherit;font-size:.9rem;font-weight:600;min-height:36px;padding:5px 14px;border-radius:999px;cursor:pointer;
-  border:1px solid var(--border-strong);background:var(--surface);color:var(--ink)}
-.btn:hover{border-color:var(--cobalt)}
-.btn[aria-pressed="true"]{background:var(--seal);border-color:var(--seal);color:var(--on-seal)}
+.btn{font:inherit;font-size:.9rem;font-weight:500;min-height:24px;padding:2px 0;cursor:pointer;
+  border:0;background:none;color:var(--cobalt);
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.btn:hover{text-decoration-thickness:2px}
+.btn[aria-pressed="true"]{font-weight:700;color:var(--ink);text-decoration-thickness:2px}
 .zoom{margin-left:auto}
 label.toggle{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 4px;font-size:.92rem;color:var(--body);cursor:pointer}
 label.toggle input{width:18px;height:18px;accent-color:var(--cobalt);margin:0}
