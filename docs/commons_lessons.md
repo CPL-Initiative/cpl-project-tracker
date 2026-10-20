@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-20
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -26,6 +26,28 @@ The lane ([`docs/reference/lanes/commons.md`](reference/lanes/commons.md)) state
 keeps what each step taught, once. Sam's framing (2026-10-18): *"each of our 'common' projects should have the same
 approach and tracking and feedback system... It all needs to culminate in a 'Commons' dash."* The ruled order (Open
 Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress view, then the Commons tab.
+
+## S431 SkyChaparral (2026-10-20): the 44 live, Sheet 104 asked and ruled, the handbook's live page, the probe
+
+- **A card's measured context can overturn its own first proposal; measure before writing the rec.** The wine card
+  started as Culinary Arts (CULN holds French Wines and Italian Wines). Counting where the two colleges' own wine
+  courses sit (Santa Rosa 15 of 24 and Canyons 5 of 9 under AGPR) moved it to Agricultural Production, which Sam
+  took. Count the colleges' siblings, not only the title twins.
+- **Check `discipline_source` on a set the fold placed.** Five of the ten forestry identities carried Agriculture from
+  `top_division` alone, and their `_subj4_fold_from` stamps show each sat on its college's forestry code (ENVR, FNR,
+  NRM) before the fold. The 2026-07-16 ruling holds such a row out of the fold; the AGPR wine identities rest on TOP
+  too (38 of 61). A curator's ruling is what corroborates the home.
+- **A fixed sleep in a jsdom test is a load test in disguise.** `sierra_one_cobi.test.js` waited 20 ms for a
+  hashchange and failed 5 of 16 runs under eight-way load; polling for the checked state (up to 2 s) failed 0 of 16
+  (#2271). Reproduce with concurrent copies before calling a failure a flake.
+- **Rehearse a known merge conflict while CI runs.** #2270 shared files with #2269; a trial merge in a worktree found
+  the three conflicts, the resolution and a clean `check_generated.sh` before #2269 landed, so the real merge took one
+  push.
+- **WebFetch reaches cccco.edu from the sandbox where Python cannot.** It found the live Minimum Qualifications page
+  (19th edition) and confirmed the old `.../Curriculum/MQ-Handbook` link answers 404 (#2273). The runner probe
+  (#2274) still owns the unattended quarterly read.
+- **A coverage check passes for a card whose lane carries no marker yet**: CPLBrain#404 went green against a tracker
+  main without NEEDS SAM 8. Merge the lane PR first anyway, so the record never shows a sheet asking what no lane asks.
 
 ## S430 SkyLupine (2026-10-20): the AGRI sitting, Sheet 103's 44 re-keyed, the nine MQ names renamed
 

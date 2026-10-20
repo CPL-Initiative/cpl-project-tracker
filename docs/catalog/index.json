@@ -13174,7 +13174,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-10-18"
+     "updated": "2026-10-20"
     },
     {
      "created": "2026-10-06",
@@ -15887,8 +15887,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 402,
+   "count": 403,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 432,
+     "path": "docs/session_432_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "common-subjects-reference",
+      "agri",
+      "remint",
+      "decision-sheet",
+      "mq",
+      "ci-flake"
+     ],
+     "title": "Session 432 handoff: Sheet 104 ruled (forestry to ENVR, wine to AGPR), the re-key window waits; the 44 live; the handbook's live page and the quarterly probe",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22829,5 +22848,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1199
+ "total": 1200
 }

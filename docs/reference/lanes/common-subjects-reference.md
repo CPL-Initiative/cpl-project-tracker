@@ -175,13 +175,12 @@ four known issues with owners, the procedures in force, and deep links into the 
    Agriculture carries Auto Body Technology on its record (the overlay reads Agriculture).
    kb_curation re-keyed live by `supabase-rekey.yml` run 39362668144 (S431, 03:08Z): read back, no row on an old id,
    23 rows keyed and 8 `merge_into` pointers on the new ids.
-   **NEEDS SAM 8 (S431):** the twelve `second_look`, read against the Forestry/Natural Resources and Agricultural
-   Production rows ([Open Asks Sheet 104](https://claude.ai/artifact/5rzvgKxmPpmDJfUiRbDrRo)). Card 1: move the ten forestry courses to
-   Forestry/Natural Resources (ENVR), all ten, or only the five their colleges file under forestry codes (ENVR, FNR,
-   NRM), whose Agriculture rests on the TOP division alone; the other five sit under Shasta's AGNR and Sierra's AGRI.
-   Card 2: move the four wine courses on AGRI (Wines of France, Wines of Italy, Wine Service and Hospitality,
-   Beginning Wine Sensory Analysis; Canyons WINEST and Santa Rosa WINE, all four TOP-only) to Agricultural
-   Production (AGPR), where the reference keys most of the two colleges' wine courses, or to Culinary Arts (CULN).
+   **Sam, Open Asks Sheet 104 (https://claude.ai/artifact/5rzvgKxmPpmDJfUiRbDrRo), 03:31-03:32Z 2026-10-20, both his
+   own call as proposed (`cpl_memory` `sam-sheet-104-rulings-2026-10-20`): "move-ten"** (the ten forestry courses
+   the sitting set aside re-key from AGRI to ENVR under Forestry/Natural Resources, Shasta's three AGNR-filed and
+   Sierra's AGRI-filed ones included; five of the ten held an Agriculture discipline from the TOP division alone)
+   **and "agpr"** (the four wine courses on AGRI, Wines of France, Wines of Italy, Wine Service and Hospitality and
+   Beginning Wine Sensory Analysis, re-key to AGPR under Agricultural Production). Not yet applied: NEXT.
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
    faculty-published moment. The Progress card's foot now names the nightly procedure instead of the unused stage.
@@ -199,8 +198,9 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 ## NEXT
 
-Sheet 104's two cards (NEEDS SAM 8): on Sam's answer, one re-key window under the playbook moves the forestry and
-wine courses off AGRI (one dry run, one alias map, the fresh live read, `supabase-rekey.yml` after merge); the four
-ENVR courses on the same subjects (ENVR M1009, M10CM, M10DI, M1025) then go to the merge worklist. The two quarterly routines on a runner (the handbook check; the C-ID and
-CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
+Sheet 104's rulings, one re-key window under the playbook: AGRI M1064, M1069, M10AX, M10IL, M10IZ, M10KI, M10OP,
+M10OQ, M10SX and M1103 to ENVR, AGRI M1106, M1119, M1113 and M10FP to AGPR, each record's discipline following its
+code (modeled on `kb/_agri_family_remint.py`) (one dry run, one alias map, the fresh live read, `supabase-rekey.yml` after merge); the four
+ENVR courses on the same subjects (ENVR M1009, M10CM, M10DI, M1025) then go to the merge worklist. The quarterly routines' probe (#2274, `kb/_csr_quarterly_probe.py`): land it, dispatch
+`csr-quarterly.yml` once and record its three `PROBE` lines, then the comparison mode and its schedule; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

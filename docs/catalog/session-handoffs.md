@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-402 document(s).
+403 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 432 | [Session 432 handoff: Sheet 104 ruled (forestry to ENVR, wine to AGPR), the re-key window waits; the 44 live; the handbook's live page and the quarterly probe](../session_432_handoff.md) | 2026-10-20 |
 | 431 | [Session 431 handoff: the CTDL exchange's seed waits on Malone; the AGRI sitting ruled and re-keyed (Sheet 103); the nine MQ names renamed](../session_431_handoff.md) | 2026-10-20 |
 | 430 | [Session 430 handoff: the CTDL partner exchange scoped (the strategy doc, the lane, Open Asks Sheet 102 open); the queue's AGRI sitting and renames after Sam's calls](../session_430_handoff.md) | 2026-10-20 |
 | 429 | [Session 429 handoff: the funding side session's state (the memo as passages, the film reads the model) beside the queue's 428](../session_429_handoff.md) | 2026-10-19 |
