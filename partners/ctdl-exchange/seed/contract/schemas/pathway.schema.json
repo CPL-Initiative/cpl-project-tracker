@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pathway.schema.json",
+  "title": "Pathway document, contract v0",
+  "description": "A program's requirements as one CTDL JSON-LD document. This checks the document's shape; CTDL itself is checked by the Registry when a document is published.",
+  "type": "object",
+  "required": ["@context", "@graph"],
+  "properties": {
+    "@context": {"const": "https://credreg.net/ctdl/schema/context/json"},
+    "@graph": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["@id", "@type"],
+        "properties": {
+          "@id": {"type": "string", "pattern": "^(_:[A-Za-z0-9_.-]+|https://credentialengineregistry\\.org/resources/ce-[0-9a-f-]{36})$"},
+          "@type": {"type": "string", "pattern": "^ce(terms|asn):[A-Za-z]+$"}
+        }
+      },
+      "contains": {
+        "type": "object",
+        "required": ["@type", "ceterms:name", "ceterms:hasDestinationComponent"],
+        "properties": {"@type": {"const": "ceterms:Pathway"}}
+      }
+    }
+  }
+}

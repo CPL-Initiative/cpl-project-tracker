@@ -16,6 +16,38 @@ related:
 
 # CTDL and the partner exchange — Decisions & Lessons
 
+## S430 SkyLupine (2026-10-20): the exchange's seed and the three decision rights
+
+**What shipped.** Sheet 102's card 1 as files: `partners/ctdl-exchange/seed/` is the private exchange repository
+Malone copies, and `partners/ctdl-exchange/README.md` carries his paste. Card 6 on the register: DR-27 (Malone),
+DR-28 and DR-29 (Sam), and `table:identifier_crosswalk` mapped to DR-28 before the table exists.
+
+**Decisions taken in the drafting, each open at the joint read that sets version 1.**
+
+- Credential Engine files xTRA's CSVs as they are; the contract requires only the columns a join needs
+  (`External Identifier` and a name, read from `server/src/csv.ts` at `03a9a1b`). Asking CE to reshape its files
+  would cost the pilot its premise, that it costs CE nothing beyond what it already makes.
+- COCI's course control number is `CCC` and nine digits (141,694 of 141,738 rows in the 2026-05-21 list; the other 44
+  read `NULL`), a program control number five digits (all 15,964 harvest records, read live). The crosswalk schema
+  pins both shapes.
+- M-IDs, CR groups and exhibit keys stay out of the exchange in version 0. Card 4 ruled only on the Registry; the same
+  reason (a CTID names one version for good, and the layer still re-mints) covers a partner's copy of a key.
+- The exchange's people are recorded by name or role, never by email address (the 2026-10-14 measurement of reviewer
+  emails on public rows is the reason).
+
+**How it is built to be checked.**
+
+- The seed's `CLAUDE.md` is stored as `CLAUDE.exchange.md`. A nested `CLAUDE.md` loads into any tracker session that
+  reads its folder, and would tell that session it works in the exchange. The test fails if a `CLAUDE.md` appears.
+- `tools/check_drop.py` is standard library only, so the tracker's lints job can run it. It implements the JSON Schema
+  keywords the contract's schemas use and refuses a schema with any other, so a schema cannot ask for a check that
+  does not run.
+- The CI workflow passes branch names through the environment, never through `${{ }}` inside the script: a branch
+  name is text a partner chooses.
+
+**One writer per store.** The seed lives in the tracker only until the exchange exists; the PR that records the
+repository's address deletes `partners/ctdl-exchange/`.
+
 ## S428 SkyPinyon (2026-10-20): the strategy, Credential Engine's code and extracts read, Sheet 102
 
 **The ask.** Sam opened S428 at ~23:37Z with a new direction for the harvest: a collaborative element with WestEd and
