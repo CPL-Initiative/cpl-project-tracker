@@ -5,24 +5,20 @@
   "run": "a session Sam opened",
   "decider": "Sam",
   "handoff": "docs/session_437_handoff.md",
-  "calls": [
-    {
-      "title": "Keep the Progress view as built?",
-      "text": "Complete means a wording a rung 1 to 4 rule places or a curator's decision names, and the tab still opens on its worklist. Built on the recommendation; reply to reverse.",
-      "if_no_reply": "It stays as built.",
-      "link": "https://claude.ai/artifact/GFyQFAPfFfkPm2fvzoMdGc",
-      "link_text": "Open Sheet 108, card 5"
-    }
-  ],
+  "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-20T13:05:40Z",
+  "written_at": "2026-10-20T13:28:43Z",
   "project": "cr",
   "next_step": {
     "title": "Decide the head, then the course pairing",
     "text": "Six of the 50 wordings with the most articulations wait on a curator: the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine Performance I. Then the sitting Sam ruled on Sheet 3 card 9: pair groups by shared course identity behind the course-count guard, run Jev under the 0.85 gate, and a sheet of 40 to 60."
   },
   "changes": [
+    {
+      "at": "2026-10-20T13:24:18Z",
+      "text": "Sam kept the Progress view as built (Open Asks Sheet 108, card 5)."
+    },
     {
       "at": "2026-10-20T13:20:00Z",
       "text": "The Progress view: the Commons' shape on this reference, beside the worklist, with every count opening a filter; the Commons row now counts wordings."

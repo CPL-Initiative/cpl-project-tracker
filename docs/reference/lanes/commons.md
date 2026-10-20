@@ -141,10 +141,9 @@ matches MAP, every title stamped) and eight cards. A count opens the lane that l
 routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
 `npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
 
-**NEEDS SAM (Open Asks Sheet 108, card 4; first asked on Sheet 107, card 4): the Exhibit Progress view, proceeded on
-the recommendation (S436, 2026-10-20); reply to reverse.** Complete = a title with a review stamp (the Commons row's
-pair), and the tab still opens on Needs you. His chips: keep, open-progress (open on Progress, like Subjects),
-person-only (count only a person's stamp).
+**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, and again on Sheet 108 card 4, 13:24Z, his own call:
+keep).** The Exhibit Progress view stays as S436 built it: complete = a title with a review stamp (the Commons row's
+pair), and the tab opens on Needs you.
 
 **Step 3's third Progress view, CR (S437, 2026-10-20).** The Common CR Reference tab gains a view row, *Progress* and
 *Worklist*; the tab still opens on the worklist's Needs a decision. The definitions live in `cr_progress.js`, loaded with
@@ -162,9 +161,9 @@ style (a dashed box, muted centered text) since it shipped; the module now clear
 `tests/cr_progress.test.js` (42) and `tests/commons_status_build_test.py` (77, a fixture for the settling rule);
 `npm run a11y -- cr-progress cr-progress-dark` passes. The fourth host needed no change to the module.
 
-**NEEDS SAM (Open Asks Sheet 108, card 5): the CR Progress view, proceeded on the recommendation (S437, 2026-10-20);
-reply to reverse.** Complete = a wording a rule places or a curator decides, and the tab still opens on its worklist.
-His chips: keep, open-progress, curator-only (count only a curator's decision: 97 wordings).
+**RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
+`sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
+curator decides, and the tab opens on its worklist.
 
 **NEXT:** the Course Progress view from the shared module, with its definition of complete on a card for Sam and the
 deep link behind each count. Course is SkyView alone (Sam, 2026-10-18), so its view lives where SkyView's counts can

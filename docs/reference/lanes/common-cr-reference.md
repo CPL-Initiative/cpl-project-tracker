@@ -25,8 +25,7 @@ The tab carries the Commons' Progress view beside its worklist (`cr_progress.js`
 [commons](commons.md)). **Complete = a wording that resolves to a settled reference**: a rung 1 to
 4 rule places it, or a curator's decision names it (confirmed or not a topic). 459 of 2,344 wordings,
 5,750 of 9,413 articulations, on 2026-10-20; the head (the 50 wordings with the most articulations)
-is 44 of 50. Open Asks Sheet 108 card 5 asks Sam to keep it, open on Progress, or count only a
-curator's decision. The worklist gained *No rule or decision* (1,885) and *Name to check* (37).
+is 44 of 50. Sam kept it as built (Open Asks Sheet 108 card 5, 13:24Z 2026-10-20). The worklist gained *No rule or decision* (1,885) and *Name to check* (37).
 
 **NEXT (ruled on Sheet 3 card 9, 2026-09-29, waiting on a session):** pair groups by shared course
 identity behind the course-count guard; Jev runs the new pairs, the unanchored clusters and the newer

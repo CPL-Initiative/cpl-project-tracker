@@ -5,15 +5,7 @@
   "run": "the CPL Queue routine",
   "decider": "Sam",
   "handoff": "docs/session_437_handoff.md",
-  "calls": [
-    {
-      "title": "Keep the Progress view as built?",
-      "text": "Complete means a title with a review stamp, a person's or a procedure's cohort's, and the tab still opens on Needs you. Built on the recommendation; reply to reverse.",
-      "if_no_reply": "It stays as built.",
-      "link": "https://claude.ai/artifact/GFyQFAPfFfkPm2fvzoMdGc",
-      "link_text": "Open Sheet 108, card 4"
-    }
-  ],
+  "calls": [],
   "notes": {},
   "headline": [],
   "written_at": "2026-10-20T11:59:35Z",
@@ -23,6 +15,10 @@
     "text": "If Sam answers card 4 with open-progress or person-only, make that one change to the Progress view; otherwise work the titles the procedures held, first on the Progress view's milestone line."
   },
   "changes": [
+    {
+      "at": "2026-10-20T13:09:52Z",
+      "text": "Sam kept the Progress view as built (Open Asks Sheet 107, card 4; again on Sheet 108, card 4)."
+    },
     {
       "at": "2026-10-20T11:50:00Z",
       "text": "The Progress view: the Commons' shape on this reference, first among the tab's views, with every count opening its lane."
