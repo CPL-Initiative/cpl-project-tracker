@@ -499,8 +499,11 @@
         openAddModal(state, { targetsFor: {
           pid: cell.getAttribute("data-pid"), name: cell.getAttribute("data-name") || "" } });
       });
-      var wrap = el("div", { "class": "wpg-set-targets-row" }, [btn]);
-      cell.appendChild(wrap);
+      // Beside "Details" and "Activity card" under the title (S438), so it shows
+      // while the details stay folded: it is what explains the row's blank cells.
+      var links = cell.querySelector(".wpg-name-links");
+      var wrap = el(links ? "span" : "div", { "class": "wpg-set-targets-row" }, [btn]);
+      (links || cell).appendChild(wrap);
     });
   }
 
@@ -556,7 +559,8 @@
         });
         row.appendChild(tbl);
       }
-      cell.appendChild(row);
+      // Inside the folded details (S438): everything under the title folds.
+      (cell.querySelector(".wpg-more") || cell).appendChild(row);
     });
   }
 
@@ -714,13 +718,12 @@
       var matching = document.querySelectorAll(
         '[data-aid="' + activity_id + '"]' + kindSel + '[data-rt="' + row_type + '"][data-yr-key="' + year_key + '"]'
       );
-      var totalCells = document.querySelectorAll(
-        '[data-aid="' + activity_id + '"]' + kindSel + '[data-rt="' + row_type + '"][data-total="1"]'
-      );
 
       // Compute the new row total by summing current data-val on every year
       // cell of this (aid, rt) row, substituting the new value for the
       // edited year_key. Picks one DOM region's cells (the first table).
+      // The table shows no Total since S438 (Sam, 2026-10-20); the sum still
+      // rides the PATCH so workplan_goals.total stays the ladder's sum.
       var rowYearCells = document.querySelectorAll(
         '[data-aid="' + activity_id + '"]' + kindSel + '[data-rt="' + row_type + '"][data-yr-key]'
       );
@@ -740,11 +743,6 @@
         c.setAttribute("data-val", String(newNum));
         c.innerHTML = fmtVal(newNum, isPct);
       });
-      totalCells.forEach(function (c) {
-        c.classList.add("wpg-saving");
-        c.setAttribute("data-val", String(newTotal));
-        c.innerHTML = fmtVal(newTotal, isPct);
-      });
       cell.classList.remove("wpg-editing");
 
       saveCell(activity_id, db_row_type, year_key, newNum, isCurrent ? null : newTotal, state.sess, kind)
@@ -753,11 +751,6 @@
           var ok = r.ok;
           var paintClass = ok ? "wpg-saved" : "wpg-error";
           matching.forEach(function (c) {
-            c.classList.remove("wpg-saving");
-            c.classList.add(paintClass);
-            setTimeout(function () { c.classList.remove(paintClass); }, 1500);
-          });
-          totalCells.forEach(function (c) {
             c.classList.remove("wpg-saving");
             c.classList.add(paintClass);
             setTimeout(function () { c.classList.remove(paintClass); }, 1500);
@@ -1041,8 +1034,13 @@
   // card's head row rather than a band above it.
   // Goal and Stretch sit on the plain surface: the gray fill read as disabled.
   // Current is plain ink: green is for a state the user must act on.
-  // An editor sees an at-rest cue on every editable value (a cobalt rule under the
-  // cell, a dotted underline under editable words), and every one is reachable by Tab.
+  // S438 (Sam, 2026-10-20): no Total column (a cumulative ladder's sum overstated the
+  // 2030 target), the numbers centered, and no blue rule under an editable value ("the
+  // thin blue outlines look like someone didn't finish the formatting"): the gray
+  // hairlines are the only borders. An editor finds an editable value by the pointer
+  // and the hover tint, an editable word by its dotted underline, and every one by Tab.
+  // Each sub-activity's details fold under its title behind "Details", so its three
+  // rows stand at single height.
   var ANNUAL_TABLE_CSS = ''
     + '.wpg-annual { margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(28,28,26,0.06); }'
     + '.wpg-annual-head { display:flex;flex-wrap:wrap;align-items:center;gap:0.35rem 1.25rem;margin-bottom:0.6rem; }'
@@ -1060,10 +1058,9 @@
     + '.wpg-annual-table { width:100%;border-collapse:collapse;font-size:0.82rem;table-layout:fixed;font-variant-numeric:tabular-nums; }'
     + '.wpg-annual-table .wpg-c-name { width:34%; }'
     + '.wpg-annual-table .wpg-c-type { width:4.75rem; }'
-    + '.wpg-annual-table .wpg-c-total { width:5.5rem; }'
     // --white, not --on-accent: --seal-blue stays the navy in dark, where --on-accent
     // turns near-black (1.43:1 measured on the S375 preview).
-    + '.wpg-annual-table thead th { background:var(--seal-blue);color:var(--white);padding:0.5rem 0.5rem;text-align:right;font-size:0.78rem;border:0; }'
+    + '.wpg-annual-table thead th { background:var(--seal-blue);color:var(--white);padding:0.5rem 0.5rem;text-align:center;font-size:0.78rem;border:0; }'
     + '.wpg-annual-table thead th.wpg-h-name, .wpg-annual-table thead th.wpg-h-type { text-align:left; }'
     + '.wpg-annual-table thead th.wpg-h-name { padding-left:0.6rem; }'
     + '.wpg-annual-table .wpg-act-head { background:var(--surface-subtle);color:var(--text-strong);text-align:left;font-weight:700;padding:0.55rem 0.6rem;border:0;border-top:2px solid var(--border-strong); }'
@@ -1078,12 +1075,11 @@
     + '.wpg-annual-table .wpg-assoc-cell { font-weight:400;font-size:0.65rem;color:var(--text-muted);margin-top:0.25rem; }'
     + '.wpg-annual-table .wpg-act-chip { margin-right:0.2rem;font-size:0.65rem; }'
     + '.wpg-annual-table .wpg-type { text-align:left;font-weight:600;font-size:0.72rem;color:var(--text-muted);padding:0.3rem 0.4rem; }'
-    + '.wpg-annual-table .wpg-val { text-align:right;padding:0.3rem 0.5rem; }'
-    + '.wpg-annual-table .wpg-total { font-weight:700;border-left:1px solid var(--border); }'
+    + '.wpg-annual-table .wpg-val { text-align:center;padding:0.3rem 0.5rem; }'
     + '.wpg-annual-table .wpg-r-goal { color:var(--text-strong); }'
     + '.wpg-annual-table .wpg-r-current { color:var(--text-strong);font-weight:700; }'
     + '.wpg-annual-table .wpg-r-stretch { color:var(--mustard-text); }'
-    + '.wpg-annual-table td.wpg-editable { box-shadow:inset 0 -1px 0 var(--cobalt); }'
+    + '.wpg-annual-table .wpg-editable:hover:not(:focus-visible) { outline:0; }'
     + '.wpg-title-cell.wpg-editable, .wpg-desc-cell.wpg-editable, .wpg-act-desc-cell.wpg-editable, .wpg-unit-cell.wpg-editable, .wpg-note-cell.wpg-editable { text-decoration:underline dotted 1px;text-underline-offset:3px; }'
     // An editable word is a target once it takes focus, so it meets the 24x24
     // minimum (WCAG 2.5.8): the one-line words grow to 24px, "Add" included.
@@ -1093,10 +1089,19 @@
     + '.wpg-assoc-cell.wpg-assoc-on .wpg-assoc-label { text-decoration:underline dotted 1px;text-underline-offset:3px; }'
     + '.wpg-assoc-cell.wpg-assoc-on:focus-visible .wpg-assoc-edit-hint { opacity:1;color:var(--cobalt); }'
     + '.wpg-assoc-cell.wpg-assoc-on:focus-visible { outline:2px solid var(--focus-ring);outline-offset:2px; }'
+    + '.wpg-annual-head .wpg-more-all { font-size:0.8rem; }'
+    + '.wpg-annual-table .wpg-name-links { display:flex;flex-wrap:wrap;align-items:center;gap:0 1rem;font-weight:400; }'
+    + '.wpg-annual-table .wpg-more-btn, .wpg-annual-table .wpg-name-links .wpg-set-targets { font-size:0.72rem; }'
+    + '.wpg-annual-table .wpg-name-links .wpg-set-targets-row { margin-top:0; }'
+    + '.wpg-annual-table .wpg-more { margin-top:0.1rem; }'
+    + '.wpg-card-link { display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap; }'
+    + '.wpg-card-link:hover { text-decoration-thickness:2px; }'
+    + '.wpg-card-link:focus-visible { outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:2px; }'
+    + '.wpg-annual-table .wpg-act-cards { margin-left:0.9rem; }'
     // Phone: each sub-activity becomes a card. Its name runs full width; each of
-    // its three rows is the row's word, then its six values, each printing its
+    // its three rows is the row's word, then its five values, each printing its
     // year above it. A cell takes the width its number needs and the row wraps
-    // when the six will not fit (a 1,500,000 used to break mid-digit in a sixth
+    // when the five will not fit (a 1,500,000 used to break mid-digit in a sixth
     // of 300px). The column headers stay in the page for a screen reader.
     + '@media (max-width: 560px) {'
     +   '.wpg-annual { margin:1rem 0;padding:1rem 0.75rem; }'
@@ -1112,7 +1117,6 @@
     +   '.wpg-annual-table .wpg-r-goal > td, .wpg-annual-table .wpg-r-goal > .wpg-type { border-top:0; }'
     +   '.wpg-annual-table .wpg-type { flex:0 0 2.9rem;box-sizing:border-box;text-align:left;padding:0.3rem 0 0.3rem 0.2rem;margin-right:auto; }'
     +   '.wpg-annual-table .wpg-val { flex:1 1 auto;min-width:2.4rem;padding:0.3rem 0.05rem;font-size:0.75rem;white-space:nowrap; }'
-    +   '.wpg-annual-table .wpg-total { border-left:0; }'
     +   '.wpg-annual-table .wpg-val::before { content:attr(data-label);display:block;font-size:0.62rem;font-weight:600;color:var(--text-muted);margin-bottom:0.1rem; }'
     + '}';
 
@@ -1829,13 +1833,11 @@
       var r = rows[rt];
       if (!r) return;
       var vals = (ladder && ladder[rt]) || {};
-      var total = 0;
       r.querySelectorAll("td.wpg-val").forEach(function (td) {
         var y = YEAR_BY_SHORT[td.getAttribute("data-label")];
         if (!y) return;
         var key = rt === "CURRENT" ? y.cur : y.key;
         var v = Number(vals[key] || 0);
-        total += v;
         td.setAttribute("data-editable", "1");
         td.setAttribute("data-aid", pid);
         td.setAttribute("data-kind", "project");
@@ -1845,15 +1847,6 @@
         td.setAttribute("data-val", String(v));
         td.textContent = v ? fmtVal(v, false) : "";
       });
-      var tot = r.querySelector('td.wpg-val[data-label="Total"]');
-      if (tot) {
-        tot.setAttribute("data-aid", pid);
-        tot.setAttribute("data-kind", "project");
-        tot.setAttribute("data-rt", rt);
-        tot.setAttribute("data-total", "1");
-        tot.setAttribute("data-val", String(total));
-        tot.textContent = total ? fmtVal(total, false) : "";
-      }
     });
     name.removeAttribute("data-no-ladder");
     var ctl = name.querySelector(".wpg-set-targets-row");
@@ -1965,10 +1958,51 @@
     });
   }
 
+  // ─── Folded details (S438) ───────────────────────────────────────────────
+  // Sam, 2026-10-20: "auto collapse everything under the first row title ...
+  // which will make the 3 rows single height as a default". Each sub-activity's
+  // description, counting notes and chips sit in a panel the generator prints
+  // hidden; its "Details" button opens and closes it, and "Show all details" in
+  // the card's head row opens every panel, or closes them when all are open.
+  function setDetails(btn, open) {
+    var panel = document.getElementById(btn.getAttribute("aria-controls") || "");
+    if (!panel) return;
+    panel.hidden = !open;
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function anyDetailsClosed() {
+    return Array.prototype.some.call(document.querySelectorAll(".wpg-more-btn"), function (b) {
+      return b.getAttribute("aria-expanded") !== "true";
+    });
+  }
+  function syncShowAll() {
+    var all = document.querySelector(".wpg-more-all");
+    if (all) all.textContent = anyDetailsClosed() ? "Show all details" : "Hide all details";
+  }
+  // Once per page: a second init (jsdom fires its own DOMContentLoaded after a
+  // test's) would add a second listener, and two toggles cancel.
+  var detailsWired = false;
+  function wireDetails() {
+    if (detailsWired) return;
+    detailsWired = true;
+    document.addEventListener("click", function (e) {
+      var t = e.target && e.target.closest ? e.target.closest(".wpg-more-btn, .wpg-more-all") : null;
+      if (!t) return;
+      if (t.classList.contains("wpg-more-all")) {
+        var open = anyDetailsClosed();
+        document.querySelectorAll(".wpg-more-btn").forEach(function (b) { setDetails(b, open); });
+      } else {
+        setDetails(t, t.getAttribute("aria-expanded") !== "true");
+      }
+      syncShowAll();
+    });
+  }
+
   // ─── Init ────────────────────────────────────────────────────────────────
   function init() {
     if (!document.getElementById("tab-workplan-goals")) return;
     injectStyles();
+    wireDetails();
     var state = { sess: fullSession() };
     mountAuthWidget(state);
     paintEditability(state);

@@ -9,6 +9,8 @@
 //   (b) after the save the row's cells take the ladder attributes (Goal, Current, Stretch),
 //       Set targets leaves, and the cells edit at once;
 //   (c) a Current cell saved from that row PATCHes cur_<year> on the GOAL row.
+// S438 (Sam, 2026-10-20): the table has no Total column, and Set targets sits on the line
+// under the title beside Details and Activity card, so it shows while the details fold.
 //
 // Run from repo root: `npm test` (or `node tests/workplan_goals_set_targets.test.js`).
 const fs = require("fs");
@@ -19,17 +21,21 @@ function check(name, cond) { results.push([name, !!cond]); }
 const SRC = fs.readFileSync("workplan_goals.js", "utf8");
 
 function cells(label) {
-  return ["25-26", "26-27", "27-28", "28-29", "29-30", "Total"]
+  return ["25-26", "26-27", "27-28", "28-29", "29-30"]
     .map((l) => '<td class="wpg-val" data-label="' + l + '"></td>').join("");
 }
 // The renderer's shape for a ladderless sub-activity: the name cell carries data-no-ladder,
-// the three rows carry blank value cells with their column labels.
+// the title, the line under it and the folded details; the three rows carry blank value
+// cells with their column labels.
 const TABLE =
   '<table><tbody class="wpg-act-group">' +
-    '<tr class="wpg-act-row"><th scope="rowgroup" colspan="8" class="wpg-act-head"><span>Activity 1: </span>' +
+    '<tr class="wpg-act-row"><th scope="rowgroup" colspan="7" class="wpg-act-head"><span>Activity 1: </span>' +
       '<span class="wpg-title-cell" data-activity-title-edit="1" data-aid="1" data-val="Infrastructure">Infrastructure</span></th></tr>' +
     '<tr class="wpg-r wpg-r-goal"><th scope="row" rowspan="3" class="wpg-name" data-no-ladder="1" data-pid="1.1.2" data-name="AI Apprenticeship CPL Tools">' +
-      '<span class="wpg-pid">1.1.2</span> <span class="wpg-title-cell" data-title-edit="1" data-pid="1.1.2">AI Apprenticeship CPL Tools</span></th>' +
+      '<span class="wpg-pid">1.1.2</span> <span class="wpg-title-cell" data-title-edit="1" data-pid="1.1.2">AI Apprenticeship CPL Tools</span>' +
+      '<div class="wpg-name-links"><button type="button" class="wpg-btn wpg-more-btn" aria-expanded="false" aria-controls="wpg-more-1-1-2">Details</button>' +
+      '<a class="wpg-card-link" href="#activities-projects/card-1.1.2">Activity card</a></div>' +
+      '<div class="wpg-more" id="wpg-more-1-1-2" hidden></div></th>' +
       '<th scope="row" class="wpg-type">Goal</th>' + cells() + '</tr>' +
     '<tr class="wpg-r wpg-r-current"><th scope="row" class="wpg-type">Current</th>' + cells() + '</tr>' +
     '<tr class="wpg-r wpg-r-stretch"><th scope="row" class="wpg-type">Stretch</th>' + cells() + '</tr>' +
@@ -66,6 +72,8 @@ const writes = (dom) => dom._calls.filter((c) => /\/rest\/v1\/workplan_goals/.te
   let dom = makeDom([]), w = dom.window, doc = w.document;
   let st = doc.querySelector('[data-no-ladder="1"] .wpg-set-targets');
   check("a ladderless row offers Set targets", !!st);
+  check("Set targets sits on the line under the title, outside the folded details",
+    st && !!st.closest(".wpg-name-links") && !st.closest(".wpg-more"));
   click(w, st); await settle();
   let card = doc.querySelector(".wpg-modal-card");
   doc.getElementById("wpg-add-goal-yr_2026_27").value = "4";
@@ -88,9 +96,8 @@ const writes = (dom) => dom._calls.filter((c) => /\/rest\/v1\/workplan_goals/.te
   check("(b) its Goal, Current and Stretch cells carry the ladder attributes",
     goal && cur && stretch && goal.getAttribute("data-yr-key") === "yr_2026_27" && cur.getAttribute("data-yr-key") === "cur_2026_27"
       && stretch.getAttribute("data-yr-key") === "yr_2026_27");
-  check("(b) the typed values and their totals show", goal.textContent === "4" && stretch.textContent === "8"
-    && doc.querySelector('td[data-aid="1.1.2"][data-rt="GOAL"][data-total="1"]').textContent === "4"
-    && doc.querySelector('td[data-aid="1.1.2"][data-rt="STRETCH"][data-total="1"]').textContent === "8");
+  check("(b) the typed values show, and no Total cell is made", goal.textContent === "4" && stretch.textContent === "8"
+    && !doc.querySelector("[data-total]"));
   check("(b) the cells are lit for the editor and reachable by Tab",
     goal.classList.contains("wpg-editable") && cur.getAttribute("tabindex") === "0");
   check("(b) the editor is told the row edits now", /The row edits now/.test(card.querySelector(".wpg-status").textContent));
@@ -106,7 +113,7 @@ const writes = (dom) => dom._calls.filter((c) => /\/rest\/v1\/workplan_goals/.te
   check("(c) ...and PATCHes cur_2026_27 on the GOAL row of 1.1.2, no total",
     patch && /activity_id=eq\.1\.1\.2&row_type=eq\.GOAL&kind=eq\.project/.test(patch.url)
       && JSON.parse(patch.opts.body).cur_2026_27 === 3 && !("total" in JSON.parse(patch.opts.body)));
-  check("(c) the Current total repaints", doc.querySelector('td[data-aid="1.1.2"][data-rt="CURRENT"][data-total="1"]').textContent === "3");
+  check("(c) the Current value repaints", cur.textContent === "3");
 
   // ── (a) rows already there: PATCH each, insert none ──
   dom = makeDom(["GOAL", "STRETCH"]); w = dom.window; doc = w.document;
