@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-405 document(s).
+406 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 435 | [Session 435 handoff: Sierra's feedback controls as words, Sheet 105 still open, the strays wait on a curator](../session_435_handoff.md) | 2026-10-20 |
 | 434 | [Session 434 handoff: the ENVR pairs queued for a reviewer, the CSR quarterly comparison on a cron, Sheet 105 still open](../session_434_handoff.md) | 2026-10-20 |
 | 433 | [Session 433 handoff: Sheet 104 applied and live; the forestry stragglers asked on Sheet 105; the quarterly probe read twice](../session_433_handoff.md) | 2026-10-20 |
 | 432 | [Session 432 handoff: Sheet 104 ruled (forestry to ENVR, wine to AGPR), the re-key window waits; the 44 live; the handbook's live page and the quarterly probe](../session_432_handoff.md) | 2026-10-20 |

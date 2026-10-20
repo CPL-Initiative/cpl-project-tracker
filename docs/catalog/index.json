@@ -15887,8 +15887,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 405,
+   "count": 406,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 435,
+     "path": "docs/session_435_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "sierra",
+      "common-subjects-reference",
+      "decision-sheet"
+     ],
+     "title": "Session 435 handoff: Sierra's feedback controls as words, Sheet 105 still open, the strays wait on a curator",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22884,5 +22901,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1202
+ "total": 1203
 }
