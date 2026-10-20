@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-19T23:39:59Z",
+ "written_at": "2026-10-20T03:17:51Z",
  "rows": [
   {
    "key": "requirements",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-19T23:34:30Z",
+    "at": "2026-10-20T03:13:17Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2646,
     "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-19T23:34:30Z"
+    "fold_at": "2026-10-20T03:13:17Z"
    },
    "sources": [
     "kb/unified_titles.json",
@@ -216,7 +216,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-19T23:36:38+00:00",
+    "at": "2026-10-20T03:15:26+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -279,7 +279,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-18T17:50:29Z",
+    "at": "2026-10-19T23:40:03Z",
     "every_hours": null
    },
    "facts": {
@@ -359,7 +359,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-19T23:34:28Z",
+    "at": "2026-10-20T03:13:15Z",
     "every_hours": 24
    },
    "facts": {
@@ -371,7 +371,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-19",
+    "scanned_at": "2026-10-20",
     "procedures_on": 6
    },
    "sources": [

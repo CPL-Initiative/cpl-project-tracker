@@ -1,6 +1,6 @@
 {
- "_scanned_at": "2026-10-19",
- "_registry_synced_at": "2026-10-19T23:34:28Z",
+ "_scanned_at": "2026-10-20",
+ "_registry_synced_at": "2026-10-20T03:13:15Z",
  "_disciplines": 147,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -1173,7 +1173,7 @@
   {
    "id": "CSR0041",
    "rule": "cs7_unreviewed",
-   "item": "Disabled Student Programs and",
+   "item": "Disabled Student Programs and Services (DSPS)",
    "evidence": "no reviewed_by stamp",
    "suggestion": null,
    "needs_judgment": true,

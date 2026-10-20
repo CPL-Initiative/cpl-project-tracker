@@ -3,10 +3,10 @@
   "_generated_by": "kb/_build_orphan_parent_worklist.py",
   "_read_this_first": "`decidable` is the column that matters. A false there means the payload holds nothing to check a proposed discipline against — the members disagree, or every signal rests on a one or two character subject code, or the row carries an approved identifier. Filling those from the modal member would reproduce the `ES`-reads-Ethnic-Studies error in reverse. ⚠ And `members_say` is what the colleges typed, never a verdict on the parent: AUTD M1040 Medium and Heavy Truck Drivetrain Service is recorded Diesel Mechanics while its members read Automotive Technology, and Diesel Mechanics is arguably the better answer. A decidable row is one a curator can settle from what is here, whichever way they settle it.",
   "_counts": {
-    "orphan_parents": 117,
+    "orphan_parents": 114,
     "decidable": 19,
-    "undecidable": 98,
-    "members_disagree": 96,
+    "undecidable": 95,
+    "members_disagree": 93,
     "short_codes_only": 2,
     "carries_an_approved_identifier": 0
   },
@@ -1142,28 +1142,6 @@
       "members_say": null
     },
     {
-      "id": "DSPS M9007",
-      "title": "Self-Advocacy for Adult Learners with Disabilities",
-      "id_system": "M-ID",
-      "recorded_discipline": "Disabled Student Programs and",
-      "members": 8,
-      "subject_codes": [
-        "DSPS",
-        "ESLA"
-      ],
-      "member_disciplines": {
-        "Disabled Student Programs and Services (DSPS)": 1,
-        "English as a Second Language": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Disabled Student Programs and Services (DSPS)": 1,
-        "English as a Second Language": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Disabled Student Programs and Services (DSPS) and English as a Second Language), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
       "id": "ELEC M1088",
       "title": "Advanced Motor Controls, Variable Frequency Drives, Programmable Logic Controls",
       "id_system": "M-ID",
@@ -1952,28 +1930,6 @@
       "members_say": null
     },
     {
-      "id": "DSPS M1009",
-      "title": "Strategies for Success in Math",
-      "id_system": "M-ID",
-      "recorded_discipline": "Disabled Student Programs and",
-      "members": 4,
-      "subject_codes": [
-        "DSPS",
-        "MATH"
-      ],
-      "member_disciplines": {
-        "Disabled Student Programs and Services (DSPS)": 1,
-        "Mathematics": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Disabled Student Programs and Services (DSPS)": 1,
-        "Mathematics": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Disabled Student Programs and Services (DSPS) and Mathematics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
       "id": "ETHS M1088",
       "title": "History of the Chicano/Mexican American",
       "id_system": "M-ID",
@@ -2413,28 +2369,6 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Automotive Technology and Fire Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
-      "id": "DSPS M1006",
-      "title": "Fundamentals of Writing",
-      "id_system": "M-ID",
-      "recorded_discipline": "Disabled Student Programs and",
-      "members": 2,
-      "subject_codes": [
-        "DSPS",
-        "ENGL"
-      ],
-      "member_disciplines": {
-        "Disabled Student Programs and Services (DSPS)": 1,
-        "English": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Disabled Student Programs and Services (DSPS)": 1,
-        "English": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Disabled Student Programs and Services (DSPS) and English), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     },
     {

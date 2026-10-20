@@ -178500,6 +178500,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Building Construction for Fire Protection"
         },
         {
+          "course": "FT 4",
+          "credit": "3 hours in Building Construction for Fire  Protection"
+        },
+        {
           "course": "FIRE 0001",
           "credit": "3 hours in Principles of Fire and Emergency Services"
         },
@@ -178558,13 +178562,13 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICI-CFE-1-001",
           "title": "Cal-JAC Firefighter EMT",
-          "units": 0,
-          "lines": 0
+          "units": 3.0,
+          "lines": 1
         }
       ],
       "adopter_units": {
         "Bakersfield College": 9.0,
-        "Cabrillo College": 13.0,
+        "Cabrillo College": 16.0,
         "Chaffey College": 19.0,
         "City College of San Francisco": 9.0,
         "College of the Sequoias": 16.0,
@@ -178576,7 +178580,7 @@ window.CPL_STATEWIDE = {
       },
       "adopter_lines": {
         "Bakersfield College": 3,
-        "Cabrillo College": 3,
+        "Cabrillo College": 4,
         "Chaffey College": 5,
         "City College of San Francisco": 3,
         "College of the Sequoias": 4,
@@ -178595,7 +178599,8 @@ window.CPL_STATEWIDE = {
         "Cabrillo College": [
           15,
           16,
-          17
+          17,
+          30
         ],
         "Chaffey College": [
           0,
@@ -178636,16 +178641,16 @@ window.CPL_STATEWIDE = {
           22
         ],
         "Sierra College": [
-          30,
           31,
           32,
           33,
-          34
+          34,
+          35
         ]
       },
-      "peer_units_median": 11.0,
+      "peer_units_median": 12.5,
       "peer_units_max": 28.5,
-      "rec_units_total": 138.5
+      "rec_units_total": 141.5
     },
     {
       "exhibit_id": "MAPICI-A6C11-1-001|MAPICI-AC(A8-1-001|MAPICI-ASE(1-1-001|MAPICI-ASE(26-1-001|MAPICI-ASE(36-1-001|MAPICI-ASE(8-1-001|MAPICI-IFAA8-1-001",
@@ -333644,6 +333649,93 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXS-CCFP-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CCFP-1-001"
+      ],
+      "title": "CEM151 Construction Fundamentals: Principles and Practices",
+      "unified_title": "CEM151 Construction Fundamentals: Principles and Practices",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CEM151 Construction Fundamentals: Principles and Practices"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "68"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 25,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 26,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3 hours in Construction Fundamentals: Principles and Practices"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-CCFP-1-001",
+          "title": "CEM151 Construction Fundamentals: Principles and Practices",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPPRA-IBEW-1-001",
       "exhibit_ids": [
         "MAPPRA-IBEW-1-001"
@@ -408661,11 +408753,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Cabrillo College",
-        "credit_recs": 475,
-        "exhibits": 365,
+        "credit_recs": 477,
+        "exhibits": 367,
         "disciplines": 15,
         "ccc_collaborative": 133,
-        "industry_certs": 213,
+        "industry_certs": 214,
         "pct": 3.3
       },
       {
@@ -409536,8 +409628,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6174,
-        "exhibits": 2340,
+        "credit_recs": 6173,
+        "exhibits": 2339,
         "courses": 350,
         "colleges": 88,
         "ccc_collaborative": 35,
@@ -409545,8 +409637,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2482,
-        "exhibits": 1083,
+        "credit_recs": 2483,
+        "exhibits": 1084,
         "courses": 1219,
         "colleges": 57,
         "ccc_collaborative": 594,
@@ -409554,8 +409646,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1556,
-        "exhibits": 582,
+        "credit_recs": 1557,
+        "exhibits": 583,
         "courses": 679,
         "colleges": 55,
         "ccc_collaborative": 536,
@@ -409759,8 +409851,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2248,
-        "exhibits": 1758,
+        "credit_recs": 2249,
+        "exhibits": 1759,
         "colleges": 62,
         "pct": 15.5
       },
@@ -409789,8 +409881,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8966,
-        "exhibits": 3940,
+        "credit_recs": 8967,
+        "exhibits": 3941,
         "colleges": 91,
         "pct": 61.8
       },
@@ -409806,7 +409898,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 1457,
         "exhibits": 409,
         "colleges": 43,
-        "pct": 10.1
+        "pct": 10.0
       },
       {
         "mode": "High school coursework (H)",
@@ -409861,11 +409953,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12779,
-        "exhibits": 6097,
+        "credit_recs": 12780,
+        "exhibits": 6098,
         "colleges": 98,
         "disciplines": 23,
-        "pct": 88.1
+        "pct": 88.2
       },
       {
         "category": "CCC Collaborative",
@@ -410287,8 +410379,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-19T23:33:27",
-  "total_credit_recs": 14497,
+  "generated_at": "2026-10-20T03:12:12",
+  "total_credit_recs": 14498,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-10-19T23:34:27Z",
+  "_synced_at": "2026-10-20T03:13:14Z",
   "count": 30709,
   "curations": {
     "AERO M1001": {
@@ -68,6 +68,12 @@
       "unified_title": "Introduction to Sustainable Agriculture and Farm Management",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGAB M10AL": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00",
+      "discipline": "Agriculture"
     },
     "AGAB M10BX": {
       "merge_into": "AGAB M1002",
@@ -709,8 +715,28 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AGEH M10TL": {
+      "merge_into": "HORT M1049",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "AGEH M10TM": {
       "merge_into": "HORT M1049",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGEH M10TU": {
+      "merge_into": "HORT M1071",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGEH M10VQ": {
+      "merge_into": "HORT M1090",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGEH M10VY": {
+      "merge_into": "AGEH M1121",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -721,6 +747,11 @@
     },
     "AGEH M1107": {
       "merge_into": "HORT M1073",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGEH M1108": {
+      "merge_into": "HORT M1049",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -899,6 +930,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AGMA M1035": {
+      "unified_title": "Heavy Logging Equipment Operations and Maintenance",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGMA M1061": {
+      "unified_title": "Equipment Operation, Configuration and Troubleshooting",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "AGMA M1072": {
       "unified_title": "Equipment Technician: Electrical, Hydraulic Systems, & Welding",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -930,6 +971,11 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "AGMA M10MP": {
+      "merge_into": "AGMA M1001",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGMA M10QQ": {
       "merge_into": "AGMA M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -971,6 +1017,16 @@
     },
     "AGMA M9001": {
       "unified_title": "Mobile Electrical Systems Symbols & Schematics",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGMA M9005": {
+      "unified_title": "Agricultural Equipment Operation, Configuration and Troubleshooting",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGMA M90AE": {
+      "merge_into": "AGMA M9005",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -1424,6 +1480,21 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "AGPS M1032": {
+      "unified_title": "High Altitude Crop Production - Early Season",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGPS M1093": {
+      "merge_into": "FDNT M1014",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "AGPS M10AB": {
+      "merge_into": "AGPS M1032",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "AGPS M10AR": {
       "merge_into": "AGRI M1024",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -1534,6 +1605,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AGPS M10FM": {
+      "merge_into": "AGPS M1032",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "AGPS M10FO": {
       "merge_into": "CULN M1141",
       "reviewed_by": "automerge-v1@bot",
@@ -1569,8 +1645,18 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AGPS M10KP": {
+      "merge_into": "HORT M1012",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "AGPS M10LH": {
       "merge_into": "AGPS M1023",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGPS M10MY": {
+      "merge_into": "AGPS M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -1579,7 +1665,17 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "AGPS M10SZ": {
+      "merge_into": "HORT M1012",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "AGPS M10TA": {
+      "merge_into": "AGPS M1028",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGPS M10TB": {
       "merge_into": "AGPS M1028",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -1591,6 +1687,21 @@
     },
     "AGPS M10VZ": {
       "merge_into": "HORT M1071",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGPS M1115": {
+      "unified_title": "Integrated Pest Management",
+      "reviewed_by": "trailcrew-ccr1-s111@bot",
+      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
+    },
+    "AGPS M1124": {
+      "merge_into": "AGPR M1020",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "AGPS M1131": {
+      "merge_into": "AGPS M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -1649,11 +1760,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AGPS M1032": {
-      "unified_title": "High Altitude Crop Production - Early Season",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M1017": {
       "unified_title": "Animal Food PCQI (Preventive Controls Qualified Individual) Training",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -1709,11 +1815,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AGMA M1035": {
-      "unified_title": "Heavy Logging Equipment Operations and Maintenance",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M1036": {
       "unified_title": "Spring Farming Practices",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -1726,11 +1827,6 @@
     },
     "AGRI M1038": {
       "unified_title": "Introduction to Sea Kayaking",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGMA M1061": {
-      "unified_title": "Equipment Operation, Configuration and Troubleshooting",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -1764,11 +1860,6 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "AGPS M1093": {
-      "merge_into": "FDNT M1014",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
     "AGRI M1097": {
       "unified_title": "Food Safety - HACCP (Hazard Analysis and Critical Control Point) Training and Certification",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -1783,12 +1874,6 @@
       "merge_into": "AGRI M1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGAB M10AL": {
-      "cross_listed_disciplines": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T22:22:13.20997+00:00",
-      "discipline": "Agriculture"
     },
     "AGRI M10AP": {
       "merge_into": "AGRI M1003",
@@ -1900,16 +1985,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AGPS M10FM": {
-      "merge_into": "AGPS M1032",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGPS M10AB": {
-      "merge_into": "AGPS M1032",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M10FQ": {
       "merge_into": "AGRI M1097",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -1949,11 +2024,6 @@
       "merge_into": "AGRI M1030",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "AGPS M10KP": {
-      "merge_into": "HORT M1012",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "AGRI M10KR": {
       "merge_into": "AGRI M1031",
@@ -2012,11 +2082,6 @@
     },
     "AGRI M10MW": {
       "merge_into": "AGRI M1017",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGPS M10MY": {
-      "merge_into": "AGPS M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -2079,11 +2144,6 @@
       "merge_into": "PLGL M1029",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "AGMA M10QQ": {
-      "merge_into": "AGMA M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "AGRI M10QS": {
       "merge_into": "AGMA M1035",
@@ -2150,16 +2210,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AGPS M10SZ": {
-      "merge_into": "HORT M1012",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGPS M10TB": {
-      "merge_into": "AGPS M1028",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M10TE": {
       "merge_into": "AGPS M1022",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -2167,16 +2217,6 @@
     },
     "AGRI M10TF": {
       "merge_into": "AGPS M1022",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGEH M10TL": {
-      "merge_into": "HORT M1049",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGEH M10TU": {
-      "merge_into": "HORT M1071",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -2215,18 +2255,8 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AGEH M10VQ": {
-      "merge_into": "HORT M1090",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M10VS": {
       "merge_into": "AGRI M1013",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGEH M10VY": {
-      "merge_into": "AGEH M1121",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -2265,16 +2295,6 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "AGEH M1108": {
-      "merge_into": "HORT M1049",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGPS M1115": {
-      "unified_title": "Integrated Pest Management",
-      "reviewed_by": "trailcrew-ccr1-s111@bot",
-      "reviewed_at": "2026-07-10T19:23:34.208558+00:00"
-    },
     "AGRI M1119": {
       "unified_title": "The Wines of Italy",
       "reviewed_by": "automerge-v1@bot",
@@ -2285,23 +2305,8 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AGPS M1124": {
-      "merge_into": "AGPR M1020",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "AGRI M1127": {
       "unified_title": "Introduction to Wildlife Ecology and Management",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGPS M1131": {
-      "merge_into": "AGPS M1027",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGMA M9005": {
-      "unified_title": "Agricultural Equipment Operation, Configuration and Troubleshooting",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -2322,11 +2327,6 @@
     },
     "AGRI M90AD": {
       "merge_into": "AGRI M9007",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "AGMA M90AE": {
-      "merge_into": "AGMA M9005",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
