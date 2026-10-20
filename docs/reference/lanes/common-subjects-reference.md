@@ -172,6 +172,15 @@ four known issues with owners, the procedures in force, and deep links into the 
    `second_look` stay on AGRI, a discipline question for the Forestry/Natural Resources row. Two findings the report
    names: AGRI M1093 Fertilizers & Plant Nutrition is merged into FDNT M1014, and AGRI M10AL Management Accounting for
    Agriculture carries Auto Body Technology on its record (the overlay reads Agriculture).
+   kb_curation re-keyed live by `supabase-rekey.yml` run 39362668144 (S431, 03:08Z): read back, no row on an old id,
+   23 rows keyed and 8 `merge_into` pointers on the new ids.
+   **NEEDS SAM 8 (S431):** the twelve `second_look`, read against the Forestry/Natural Resources and Agricultural
+   Production rows ([Open Asks Sheet 104](https://claude.ai/artifact/5rzvgKxmPpmDJfUiRbDrRo)). Card 1: move the ten forestry courses to
+   Forestry/Natural Resources (ENVR), all ten, or only the five their colleges file under forestry codes (ENVR, FNR,
+   NRM), whose Agriculture rests on the TOP division alone; the other five sit under Shasta's AGNR and Sierra's AGRI.
+   Card 2: move the four wine courses on AGRI (Wines of France, Wines of Italy, Wine Service and Hospitality,
+   Beginning Wine Sensory Analysis; Canyons WINEST and Santa Rosa WINE, all four TOP-only) to Agricultural
+   Production (AGPR), where the reference keys most of the two colleges' wine courses, or to Culinary Arts (CULN).
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
    faculty-published moment. The Progress card's foot now names the nightly procedure instead of the unused stage.
@@ -189,9 +198,9 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 ## NEXT
 
-After the re-key's merge: `supabase-rekey.yml` with `alias_map_path=kb/agri_family_remint_out/2026-10-20/alias_map.json`,
-the read-back (no kb_curation row on an old id), and `daily-dashboard.yml`. The twelve `second_look` AGRI identities
-(ten forestry, two wine appreciation) are a card once the Forestry/Natural Resources row is read. The two quarterly routines on a runner (the handbook check; the C-ID and
+Sheet 104's two cards (NEEDS SAM 8): on Sam's answer, one re-key window under the playbook moves the forestry and
+wine courses off AGRI (one dry run, one alias map, the fresh live read, `supabase-rekey.yml` after merge); the four
+ENVR courses on the same subjects (ENVR M1009, M10CM, M10DI, M1025) then go to the merge worklist. The two quarterly routines on a runner (the handbook check; the C-ID and
 CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the dead
 handbook link replaced by the live page; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.
