@@ -47,6 +47,9 @@ const lp = fs.readFileSync(path.join(ROOT, "prototype/landing_page_video/index.h
 const vsrc = (/<source src="([^"]+)"/.exec(lp) || [])[1];
 check("(d3) the training video page plays the committed file, with no YouTube address",
   !!vsrc && fs.existsSync(path.join(ROOT, "prototype/landing_page_video", vsrc)) && !/youtube(-nocookie)?\.com|youtu\.be/i.test(lp));
+const vtt = (/<track kind="captions" src="([^"]+)"/.exec(lp) || [])[1];
+check("(d5) the training video carries English captions from a committed WebVTT file",
+  !!vtt && /^WEBVTT/.test(fs.readFileSync(path.join(ROOT, "prototype/landing_page_video", vtt), "utf8")));
 check("(d4) the player page leads back to the funding page at its top and its foot",
   (lp.match(/href="\.\.\/\.\.\/funding-model\/"/g) || []).length === 2);
 check("(d2) the landing page link's hover recommends office hours",
