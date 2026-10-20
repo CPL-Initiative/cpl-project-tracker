@@ -92,7 +92,8 @@ four known issues with owners, the procedures in force, and deep links into the 
   Course, CR, Subjects. Sam's ask today moved Subjects first; his call, recorded.
 - **Steps 1 and 2, the quarterly routines.** The three sources were last read in May (the handbook re-validated
   in July). A check that diffs and opens a card is the right routine; an automatic rewrite would rename
-  disciplines that carry picks. The tab's handbook link answers 404; c-id.net is unreachable from the sandbox and
+  disciplines that carry picks. The scope note's handbook link answered 404 and is replaced by the Chancellor's Office's live
+  Minimum Qualifications page, which lists the 19th edition (S431); c-id.net is unreachable from the sandbox and
   reachable from a runner. Eight MQ names carry a Title 5 section number from the PDF read and one is cut short
   (*Disabled Student Programs and*); Sam's rename ruling of 2026-09-08 has not been applied.
 - **Step 3, the AG example.** The authority recode of 2026-09-03 already adopted every four-letter CCN and C-ID
@@ -201,6 +202,5 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 Sheet 104's two cards (NEEDS SAM 8): on Sam's answer, one re-key window under the playbook moves the forestry and
 wine courses off AGRI (one dry run, one alias map, the fresh live read, `supabase-rekey.yml` after merge); the four
 ENVR courses on the same subjects (ENVR M1009, M10CM, M10DI, M1025) then go to the merge worklist. The two quarterly routines on a runner (the handbook check; the C-ID and
-CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the dead
-handbook link replaced by the live page; the Commons' remaining Progress views (Exhibit, Course, CR) from the
+CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

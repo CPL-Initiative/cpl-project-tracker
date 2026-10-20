@@ -13,7 +13,7 @@
       "owner": "a runner, then a card for Sam",
       "rule": "The discipline names come from the Chancellor's Office Minimum Qualifications handbook's Disciplines Index and nowhere else. Each quarter a runner fetches the handbook's page, records the edition and the date, and compares the index with the committed list; a change opens a card for Sam and the routine applies nothing. Every MQ discipline that carries courses on the map carries one Common SUBJ; a discipline with no courses carries none until its first course appears, and the mint path then takes the code from this reference.",
       "steps": [
-        "Fetch the handbook page on cccco.edu from a runner (the sandbox cannot reach it) and record the edition, the date and a hash of the Disciplines Index.",
+        "Fetch the handbook page on cccco.edu (https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Educational-Programs-and-Professional-Development/Minimum-Qualifications/, which lists the 19th edition on 2026-10-20) from a runner and record the edition, the date and a hash of the Disciplines Index.",
         "Compare the index with kb/reference/mq_disciplines.json and kb/reference/mq_sections.json; list added, removed and renamed titles.",
         "A change opens a card on the standing sheet with the diff; a session applies what Sam rules through the fan-in alias file or a seed edit, never a blind overwrite.",
         "Correct the eight names that carry a Title 5 section number from the PDF extraction and the one truncated name once Sam confirms the handbook's spelling."
