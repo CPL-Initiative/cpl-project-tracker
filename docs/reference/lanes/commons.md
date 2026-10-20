@@ -141,10 +141,9 @@ matches MAP, every title stamped) and eight cards. A count opens the lane that l
 routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
 `npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
 
-**NEEDS SAM (Open Asks Sheet 107, card 4): the Exhibit Progress view, proceeded on the recommendation (S436,
-2026-10-20); reply to reverse.** Complete = a title with a review stamp (the Commons row's pair), and the tab still
-opens on Needs you. His chips: keep, open-progress (open on Progress, like Subjects), person-only (count only a
-person's stamp).
+**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, his own call, "keep"):** the Exhibit Progress view
+stays as built: complete = a title with a review stamp (a person's or a procedure's cohort's), and the tab opens on
+Needs you.
 
 **NEXT:** the Course and CR Progress views from the shared module, each with its definition of complete on a card
 for Sam, and the deep link behind each of their counts. Course is SkyView alone (Sam, 2026-10-18), so its view lives
