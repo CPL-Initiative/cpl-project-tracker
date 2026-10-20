@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_dsp_starting_points_2026-10-20.sql",
+ "name": "cpl_library_dsp_starting_points_2026_10_20",
+ "version": "20261020212606",
+ "sha256": "3c4ffb3ae167297c89a66d8d53d412e6681d9f0fc7315d1819b3e9852f66b009",
+ "run": "39500044669",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-09
+updated: 2026-10-20
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -105,6 +105,16 @@ page plays (the funding explainer's cuts stay where Pages serves them). Pipeline
 outputs (`reports/*.docx`) and source documents under `docs/reference/` are
 inputs, not deliverables. Claude artifacts (decision sheets, mockups) stay on
 claude.ai.
+
+**A shareable Claude artifact gets a Library record, routinely (Sam, 2026-10-20):**
+*"I want to add artifacts like this routinely to the library."* A page made for others
+stays on claude.ai; the session adds a record with `home` `web`, the artifact link, and
+`rebuild_from` naming the HTML source it commits to the vault beside the work. Writes go
+through a committed receipt and `supabase-migrate.yml`. First:
+`dsp-credit-starting-points` (`kb/receipts/cpl_library_dsp_starting_points_2026-10-20.sql`,
+applied 2026-10-20 by `supabase-migrate.yml` run 39500044669; the record, the memory row and
+its log row read back 1, 1, 1).
+`cpl_memory` `sam-claude-artifacts-go-in-library-2026-10-20`.
 
 ## Filed in Drive so far
 

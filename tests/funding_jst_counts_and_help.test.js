@@ -46,10 +46,10 @@ check("(d2) the landing page link's hover recommends office hours",
 
 // The introduction video defaults to the two-priority film, built from the
 // published scenario whatever its name (Sam, 2026-10-20: the page linked the
-// three-priority film once Scenario 3 was published). Scenario 1 alone keeps it.
-check("(e) the video link defaults to the published scenario's film",
+// three-priority film once Scenario 3 was published), and nothing switches it.
+check("(e) the video link is the published scenario's film, and nothing switches it to the three-priority film",
   /funding_in_motion_s2\.html/.test(dom.window.document.getElementById("video-link").getAttribute("href")) &&
-  !/"Scenario 2":\s*\{ page/.test(html) && /"Scenario 1":\s*\{ page: "\.\.\/prototype\/funding_video\/funding_in_motion\.html"/.test(html));
+  !/funding_in_motion\.html/.test(html));
 
 console.log("funding_jst_counts_and_help.test.js: " + (fails ? fails + " FAILED" : "all passed"));
 if (fails) process.exit(1);

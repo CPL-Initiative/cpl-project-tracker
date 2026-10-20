@@ -67,8 +67,10 @@ const explainer = fs.readFileSync("funding-model/index.html", "utf8");
 
 check("a1 the explainer's link says introduction, not guide, and the film's true length",
   /id="video-link"[^>]*>Watch the 100-second introduction</.test(explainer));
-check("a2 the Scenario 2 label says introduction and names no scenario (it is the published one)",
-  explainer.includes('label: "Watch the 100-second introduction"') && !/label: "Watch[^"]*Scenario/.test(explainer));
+// Since 2026-10-20 (S439) the link is the published film alone, so no
+// per-scenario label rewrites it.
+check("a2 the link opens the published film and no per-scenario label renames it",
+  /id="video-link" href="\.\.\/prototype\/funding_video\/funding_in_motion_s2\.html"/.test(explainer) && !/label: "Watch/.test(explainer));
 // Sam, 2026-10-09 (a marked-up screenshot of the explainer): the Contents keeps
 // the introduction alone; the MP4 download and the narrated cut left it. The
 // files stay where the narrated checks below read them.
@@ -132,7 +134,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v8.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -344,8 +346,11 @@ NARRATED.forEach(({ tag, v, s }) => {
     s2.scenes.every((x) => !x.pending && x.read));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
-  const PICTURE = ["prios", "prioText", "how", "split", "ex", "target", "timing", "deadline", "close", "explainer", "kick", "titleText"];
-  check("k5 the n2 picture is the introduction's: every figure, the targets slide, the dates, the closing and the address",
+  // The narrated cut keeps the frames its voice was read on (34.5 FTES); the
+  // introduction moved to the published Scenario 3's figures on 2026-10-20
+  // (S439), so only the parts no figure drives still match until a new read.
+  const PICTURE = ["split", "timing", "deadline", "close", "explainer", "kick", "titleText"];
+  check("k5 the n2 picture shares the introduction's dates, closing and address, and keeps its voiced figures",
     PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && cfg.how && cfg.target.ftesWords === "34.5");
   // Sierra by name, on the video (Sam, 2026-10-02): beneath the lockup as she says it, and in the closing credit
   const w = boot("funding_in_motion_n2.html", false), d = w.document;
@@ -375,7 +380,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   const cfgOf = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const stageAt = (w, t) => { w.__film.seek(t); return w.document.getElementById("stage").textContent.replace(/\s+/g, " "); };
   [["funding_in_motion.html", "", "Access", "$8,329,302", "2,948.6", "Dec 2026"],
-   ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,366.7", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
+   ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,268.6", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
     const raw = fs.readFileSync(path.join(DIR, file), "utf8"), cfg = cfgOf(file), w = boot(file, false);
     const how = stageAt(w, 54.5);
     check(tag + "m1 the targets slide divides the statewide funding by the FTES reimbursement rate, and never says price (Sam, 2026-10-02)",
@@ -387,7 +392,7 @@ NARRATED.forEach(({ tag, v, s }) => {
     const sum = cfg.how.rows[0][3] != null;
     check(tag + "m1b " + (sum ? "the slide subtracts the maximum award's difference and names the target the institutions' sum"
                                : "the slide prints the division as the target"),
-      sum ? how.includes("100.9") && how.includes("the maximum award lowers seven institutions’ targets")
+      sum ? how.includes((cfg.how.rows[0][2] - cfg.how.rows[0][3]).toFixed(1)) && how.includes("the maximum award lowers seven institutions’ targets")
               && how.includes("the institutions’ targets added up") && !how.includes("4,467.6")
               && cfg.how.rows.every((r) => Math.round(r[2] * 10) - Math.round((r[2] - r[3]) * 10) === Math.round(r[3] * 10))
           : !/maximum award/.test(how));

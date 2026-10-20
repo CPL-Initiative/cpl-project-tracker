@@ -982,24 +982,12 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var vm = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(D.model_version));
     setText("x-version", vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1].slice(2) : String(D.model_version));
   }
-  // The introduction video is per scenario: each one is typed from its scenario's
-  // dials. The two-priority film (funding_in_motion_s2) is built from the
-  // PUBLISHED scenario, whatever its name (build.py), so it is the default; the
-  // three-priority film belongs to Scenario 1 alone. Keyed by "Scenario 2", the
-  // page fell back to the three-priority film once Scenario 3 was published
-  // (Sam, 2026-10-20: "an old version with the 3 priorities instead of 2"). The
-  // MP4 and narrated alternates left the Contents on 2026-10-09 (Sam's
-  // screenshot); the introduction alone stays.
-  (function () {
-    var VIDEOS = {
-      "Scenario 1": { page: "../prototype/funding_video/funding_in_motion.html",
-        label: "Watch the 100-second introduction" }
-    };
-    var v = VIDEOS[String(D.scenario || "").trim()];
-    var link = document.getElementById("video-link");
-    if (!v || !link) return;
-    link.href = v.page; link.textContent = v.label;
-  })();
+  // The introduction video is the published scenario's film, always
+  // (funding_in_motion_s2, built from the published scenario whatever its
+  // name). It used to switch per scenario, and the first paint, which runs
+  // before the live config loads, reads Scenario 1: the link went to the
+  // three-priority film and no later paint put it back (Sam, 2026-10-20). The
+  // MP4 and narrated alternates left the Contents on 2026-10-09.
   // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
   // at the top, so a preview link passed along is never mistaken for the
   // published page.
