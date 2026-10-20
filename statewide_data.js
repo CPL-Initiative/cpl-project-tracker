@@ -279171,6 +279171,200 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 9.0
     },
     {
+      "exhibit_id": "MAPICI-IFE14-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFE14-1-001"
+      ],
+      "title": "Industry for EMS 10",
+      "unified_title": "Industry for EMS 10",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for EMS 10"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "104"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Contra Costa College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lemoore College",
+        "Merced College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Palomar College",
+        "Saddleback College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "EMS 10",
+          "credit": "8 units in EMS 10 Paramedic Theory 1"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFE14-1-001",
+          "title": "Industry for EMS 10",
+          "units": 8.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 8.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPICI-IFE15-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFE15-1-001"
+      ],
+      "title": "Industry for EMS 11",
+      "unified_title": "Industry for EMS 11",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for EMS 11"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "104"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Contra Costa College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lemoore College",
+        "Merced College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Palomar College",
+        "Saddleback College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "EMS 11",
+          "credit": "8 units in EMS 11 Paramedic Theory 2"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFE15-1-001",
+          "title": "Industry for EMS 11",
+          "units": 8.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 8.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
       "exhibit_id": "MAPSAH-AELA-1-001|MAPSAH-AELA2-1-001|MAPSAH-AELA4-1-001|MAPSAH-AELA5-1-001|MAPSAS-A-EL1-1-001|MAPSAS-A-EL3-1-001|MAPSAS-A:EL-1-001|MAPSAS-A:E–-1-001|MAPSAS-AE-L-1-001|MAPSAS-AE-L11-1-001|MAPSAS-AE-L12-1-001|MAPSAS-AE-L3-1-001|MAPSAS-AE-L6-1-001|MAPSAS-AE-L7-1-001|MAPSAS-AE-L8-1-001|MAPSAS-AEEL1-1-001|MAPSAS-AEL&17-1-001|MAPSAS-AEL&2-1-001|MAPSAS-AEL&5-1-001|MAPSAS-AEL&6-1-001|MAPSAS-AEL&7-1-001|MAPSAS-AEL&8-1-001|MAPSAS-AEL(-1-001|MAPSAS-AEL(3-1-001|MAPSAS-AEL3-1-001|MAPSAS-AEL5-1-001|MAPSAS-AEL7-1-001|MAPSAS-AEL8-1-001|MAPSAS-AELA1-1-001|MAPSAS-AELA11-1-001|MAPSAS-AELA13-1-001|MAPSAS-AELA17-1-001|MAPSAS-AELA19-1-001|MAPSAS-AELA21-1-001|MAPSAS-AELA24-1-001|MAPSAS-AELA25-1-001|MAPSAS-AELA4-1-001|MAPSAS-AELA8-1-001|MAPSAS-AELA9-1-001|MAPSAS-EL&C-1-001",
       "exhibit_ids": [
         "MAPSAH-AELA-1-001",
@@ -304906,6 +305100,192 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 0.5,
       "peer_units_max": 0.5,
       "rec_units_total": 0.5
+    },
+    {
+      "exhibit_id": "MAPICI-IFE2-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFE2-1-001"
+      ],
+      "title": "Industry for EMS 20",
+      "unified_title": "Industry for EMS 20",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for EMS 20"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "103"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "EMS 20",
+          "credit": "7 units in EMS 20 Emergency Medical Technician"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFE2-1-001",
+          "title": "Industry for EMS 20",
+          "units": 7.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 7.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 7.0,
+      "peer_units_max": 7.0,
+      "rec_units_total": 7.0
+    },
+    {
+      "exhibit_id": "MAPICI-IFE3-1-001",
+      "exhibit_ids": [
+        "MAPICI-IFE3-1-001"
+      ],
+      "title": "Industry for EMS 30",
+      "unified_title": "Industry for EMS 30",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Industry for EMS 30"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "103"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "EMS 30",
+          "credit": "3 units in EMS 30 Emergency Medical Responder"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IFE3-1-001",
+          "title": "Industry for EMS 30",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPSAH-AES-1-001|MAPSAS-A-ES-1-001|MAPSAS-A:ES-1-001|MAPSAS-AE-E1-1-001|MAPSAS-AEES-1-001|MAPSAS-AEES1-1-001|MAPSAS-AES(-1-001|MAPSAS-AES(1-1-001|MAPSAS-AES(2-1-001|MAPSAS-AES-1-001|MAPSAS-AES-2-1-001|MAPSAS-AES-3-1-001|MAPSAS-AES1-1-001|MAPSAS-AES10-1-001|MAPSAS-AES11-1-001|MAPSAS-AES14-1-001|MAPSAS-AES15-1-001|MAPSAS-AES16-1-001|MAPSAS-AES17-1-001|MAPSAS-AES18-1-001|MAPSAS-AES19-1-001|MAPSAS-AES20-1-001|MAPSAS-AES21-1-001|MAPSAS-AES3-1-001|MAPSAS-AES7-1-001|MAPSAS-AES8-1-001|MAPSAS-AES9-1-001|MAPSAS-AESG-1-001|MAPSAS-AESG1-1-001",
@@ -408897,11 +409277,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Las Positas College",
-        "credit_recs": 176,
-        "exhibits": 129,
+        "credit_recs": 179,
+        "exhibits": 133,
         "disciplines": 9,
         "ccc_collaborative": 12,
-        "industry_certs": 79,
+        "industry_certs": 83,
         "pct": 1.2
       },
       {
@@ -409637,7 +410017,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2483,
+        "credit_recs": 2482,
         "exhibits": 1084,
         "courses": 1219,
         "colleges": 57,
@@ -409682,9 +410062,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 475,
-        "exhibits": 241,
-        "courses": 318,
+        "credit_recs": 479,
+        "exhibits": 245,
+        "courses": 322,
         "colleges": 47,
         "ccc_collaborative": 36,
         "pct": 3.3
@@ -409844,14 +410224,14 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4015,
-        "exhibits": 1270,
+        "credit_recs": 4019,
+        "exhibits": 1274,
         "colleges": 81,
         "pct": 27.7
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2249,
+        "credit_recs": 2248,
         "exhibits": 1759,
         "colleges": 62,
         "pct": 15.5
@@ -409888,10 +410268,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3035,
-        "exhibits": 1211,
+        "credit_recs": 3039,
+        "exhibits": 1215,
         "colleges": 78,
-        "pct": 20.9
+        "pct": 21.0
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -409909,7 +410289,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 257,
+        "credit_recs": 256,
         "exhibits": 221,
         "colleges": 13,
         "pct": 1.8
@@ -409953,8 +410333,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12780,
-        "exhibits": 6098,
+        "credit_recs": 12783,
+        "exhibits": 6102,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.2
@@ -410379,8 +410759,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-20T03:12:12",
-  "total_credit_recs": 14498,
+  "generated_at": "2026-10-20T05:42:37",
+  "total_credit_recs": 14501,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

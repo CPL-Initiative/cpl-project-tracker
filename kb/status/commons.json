@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-20T03:17:51Z",
+ "written_at": "2026-10-20T05:47:07Z",
  "rows": [
   {
    "key": "requirements",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-20T03:13:17Z",
+    "at": "2026-10-20T05:43:32Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2646,
     "records_stamped": 1827,
     "saved_at": "2026-10-18T17:37:29Z",
-    "fold_at": "2026-10-20T03:13:17Z"
+    "fold_at": "2026-10-20T05:43:32Z"
    },
    "sources": [
     "kb/unified_titles.json",
@@ -165,9 +165,9 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 3208,
+     "n": 3204,
      "of": 27581,
-     "words": "cards the auditor scores 0.85 or better; 17,033 at needs review, 7,334 at needs repair, 6 not ready",
+     "words": "cards the auditor scores 0.85 or better; 17,037 at needs review, 7,334 at needs repair, 6 not ready",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     }
    ],
@@ -176,7 +176,7 @@
    ],
    "issues": [
     {
-     "n": 14511,
+     "n": 14516,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
@@ -216,13 +216,13 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-20T03:15:26+00:00",
+    "at": "2026-10-20T05:45:14+00:00",
     "every_hours": 24
    },
    "facts": {
     "total": 27581,
-    "ready": 3208,
-    "needs_review": 17033,
+    "ready": 3204,
+    "needs_review": 17037,
     "needs_repair": 7334,
     "not_ready": 6,
     "cap": 0.79
@@ -279,7 +279,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-19T23:40:03Z",
+    "at": "2026-10-20T03:17:58Z",
     "every_hours": null
    },
    "facts": {
@@ -359,7 +359,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-20T03:13:15Z",
+    "at": "2026-10-20T05:43:30Z",
     "every_hours": 24
    },
    "facts": {
