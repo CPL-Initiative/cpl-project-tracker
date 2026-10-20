@@ -1,55 +1,27 @@
 {
   "schema": 1,
-  "session": 427,
-  "moniker": "SkyMadrona",
+  "session": 430,
+  "moniker": "SkyLupine",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_427_handoff.md",
+  "handoff": "docs/session_431_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T22:52:03Z",
+  "written_at": "2026-10-20T02:13:18Z",
   "project": "subjects",
   "next_step": {
-    "title": "Land #2264 and run its live steps; then the Jev sitting over the AGRI residual, then the nine MQ renames",
-    "text": "Sam's six Sheet 99 rulings run in his order. Settled, on, agab and hide are built: the nightly confirm's first run confirmed the thirteen picks on the authority's own code; Agricultural Business and Related Services is AGAB and AUTB M1006 is AGAB M1006, so the reference has no collision. Sam answered Sheet 101 at 22:38Z: AUTB M1071 Import Body Customizing returns to Auto Body Technology, one discipline field and no re-key, applied in the same PR. After the merge: dispatch supabase-rekey.yml with the AGAB receipt and read the pick, his M1071 row and the note back. Then the Jev sitting that proposes a C-ID family for each of the 404 AGRI identities for Sam to confirm, then the eight Title 5-numbered names and the cut-short one through the alias file and one re-key window."
+    "title": "Re-key the live curation rows after the AGRI re-key merges",
+    "text": "After #2270 merges, dispatch supabase-rekey.yml with kb/agri_family_remint_out/2026-10-20/alias_map.json and read back that no curation row sits on an old id; then the quarterly routines and the strays."
   },
   "changes": [
     {
-      "at": "2026-10-19T11:00:00Z",
-      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+      "at": "2026-10-20T01:56:00Z",
+      "text": "The nine Title 5-numbered and cut-short MQ names take the handbook's spellings, with the four live curation rows moved (Sheet 99 card 6, #2269)."
     },
     {
-      "at": "2026-10-19T16:30:00Z",
-      "text": "The Progress view: the Commons' dash for this reference, with a card for each of Sam's eight steps, the procedures under the cards and a count that opens the filtered table (the Commons' step 3, the deep link behind a count)."
-    },
-    {
-      "at": "2026-10-19T16:30:00Z",
-      "text": "The daily scan runs from the daily workflow and writes kb/csr_out/latest.json with every minted identity's code: 282 codes on 75,581 identities, 110 strays on 396; its missed-alignment rule honors a recorded note, so CMUS and HIT stop asking."
-    },
-    {
-      "at": "2026-10-19T16:30:00Z",
-      "text": "The handbook's discipline is the MQ discipline on the tab and the Commons row (Sam's word); the pick's reviewer is read from the code row, so eleven picks a person made no longer read as a cohort's."
-    },
-    {
-      "at": "2026-10-19T16:37:00Z",
-      "text": "Sam answered Open Asks Sheet 99's six cards, all his own call: settled, on, agab, sitting, hide, rename. The lane records them; Session 426 executes them, the nightly cohort confirm first."
-    },
-    {
-      "at": "2026-10-19T21:50:00Z",
-      "text": "Sam's Sheet 99 rulings 1, 2 and 5 applied (S427): the definition of complete reads as ruled, with the words saying a person or the nightly procedure confirms; kb/_csr_confirm_authority.py and csr-confirm.yml confirm the picks on the authority's own code nightly under csr-confirm-authority@bot, a receipt before each write; the Validate column, its control and filter left the Reference view, the data staying."
-    },
-    {
-      "at": "2026-10-19T21:55:00Z",
-      "text": "Sheet 99 ruling 3 applied (S427): Agricultural Business and Related Services takes AGAB; AUTB M1006 Supervision and Management in Agriculture is AGAB M1006 under kb/_agab_one_remint.py (receipt kb/agab_remint_out/2026-10-19/), the post-apply chain run, SkyView re-keyed; the scan reads no collision. The tab's SUBJ check reads a family code one discipline took while the umbrellas declare it as shared by design."
-    },
-    {
-      "at": "2026-10-19T22:09:21Z",
-      "text": "The nightly confirm's first run (csr-confirm.yml run 39332576973, save on) confirmed the thirteen picks on the authority's own code under csr-confirm-authority@bot: Anthropology, Astronomy, Communication Studies, Economics, English, History and Mathematics on CCN; Chemistry, Earth Science, Engineering, Geography, Philosophy and Physics/Astronomy on C-ID. The receipt is under kb/csr_out/confirm/; the daily sync folds the rows into the seed."
-    },
-    {
-      "at": "2026-10-19T22:38:25Z",
-      "text": "Sam answered Open Asks Sheet 101 (his own call: autobody): AUTB M1071 Import Body Customizing returns to Auto Body Technology, one discipline field and no re-key. The record, the overlay and his 2026-07-13 row (under his own email, through kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql) say so; Agricultural Business carries AGAB M1006 alone, the row audit's subject_collision_signal reads 113 and the scan 61 findings with no collision."
+      "at": "2026-10-20T02:00:00Z",
+      "text": "Sam confirmed the 44 AGRI identities on Sheet 103; they re-key to their family codes AGPS, AGEH, AGMA, AGAB and AGAS (#2270)."
     }
   ]
 }

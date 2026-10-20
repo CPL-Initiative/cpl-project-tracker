@@ -15887,8 +15887,28 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 401,
+   "count": 402,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 431,
+     "path": "docs/session_431_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ctdl",
+      "common-subjects-reference",
+      "agri",
+      "jev",
+      "remint",
+      "mq",
+      "decision-sheet"
+     ],
+     "title": "Session 431 handoff: the CTDL exchange's seed waits on Malone; the AGRI sitting ruled and re-keyed (Sheet 103); the nine MQ names renamed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-20",
      "governs": [],
@@ -22809,5 +22829,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1198
+ "total": 1199
 }
