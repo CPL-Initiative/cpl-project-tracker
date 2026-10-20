@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T07:57:26Z",
-  "session": 433,
-  "moniker": "SkyCoffeeberry",
+  "written_at": "2026-10-20T09:37:01Z",
+  "session": 434,
+  "moniker": "SkyElderberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_434_handoff.md",
+  "handoff": "docs/session_435_handoff.md",
   "next_step": {
     "title": "Move the two forestry stragglers on Sam's word, or work the strays",
-    "text": "Open Asks Sheet 105 still waits: on move-both the next session applies the committed dry run for Forest Surveying and Introduction to Forest Operations in one window. Otherwise it takes the 110 stray codes through the discipline-blank worklist toward one re-key window."
+    "text": "Open Asks Sheet 105 still waits: on move-both the next session applies the committed dry run for Forest Surveying and Introduction to Forest Operations in one window. Otherwise it takes the 110 stray codes through the discipline-blank worklist, which a curator answers, toward one re-key window."
   },
   "calls": [
     {
@@ -24,12 +24,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-20T07:39:00Z",
-      "text": "The two ENVR forestry pairs joined the faculty merge-candidate queue, survivors proposed and nothing merged (#2278)."
-    },
-    {
-      "at": "2026-10-20T07:56:00Z",
-      "text": "The quarterly check of the handbook now compares what it reads with the accepted 19th edition and runs on the first of each quarter (#2279)."
+      "at": "2026-10-20T09:36:00Z",
+      "text": "Sierra's public page shows Copy, Helpful and Not helpful as underlined words instead of pills, after its third interface check (#2281)."
     }
   ],
   "headline": [
@@ -115,7 +111,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-20T08:12:00Z"
+    "at": "2026-10-20T10:12:00Z"
   },
   "harvest": {
     "day": "2026-10-20",

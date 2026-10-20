@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1215,
-    "bytes": 12483820,
+    "files": 1216,
+    "bytes": 12489530,
     "over_budget": 8,
-    "handoff_max": 434,
+    "handoff_max": 435,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60600,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 122,
-        "bytes": 3841605,
+        "bytes": 3841873,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9631,
+        "bytes": 9658,
         "over": 0
       },
       "lessons": {
         "files": 84,
-        "bytes": 2305246,
+        "bytes": 2306352,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 404461,
+        "bytes": 404600,
         "over": 3
       },
       "handoff": {
-        "files": 405,
-        "bytes": 3094335,
+        "files": 406,
+        "bytes": 3098505,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22880,
-      "bytes": 3202942239,
+      "files": 22883,
+      "bytes": 3202971771,
       "heavy_bytes": 2113708558,
       "heavy_share": 0.66,
       "ignore_filters": [
@@ -456,13 +456,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 736994,
+        "bytes": 737262,
         "limit": 150000,
         "lane": "other",
-        "over_by": 586994,
-        "ratio": 4.91
+        "over_by": 587262,
+        "ratio": 4.92
       },
-      "message": "736,994 B is 4.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "737,262 B is 4.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

@@ -299,3 +299,16 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
   the grid tests passed unchanged because no fixture serves a report, so they open on Reference.
 - **The `cobi` sweeps still fail on three other tabs** (CPL News, Pipeline, Our Process); the CER is clean in both
   themes on its new first screen and in its four new seeded targets.
+
+## S434 SkyElderberry (2026-10-20): Sierra's third pass, the feedback words (#2281)
+
+- **A clean sweep is not a clean pass when a rule is newer than the view's last pass.** All four Sierra targets
+  measured clean before any change; the one gap was First Light's Controls rule (2026-10-09), which the sweep cannot
+  see because a bordered pill meets AA. The lane had queued it for this pass in S405, which is where the pass found it.
+  Read the view's lane NEXT before calling a sweep-clean view done.
+- **One assistant, one control form.** My College's Sierra (`cpl_chat.js`) took the word form in S405; the public
+  page now matches it: no border, no fill, underlined at rest, 18px apart, the pick bold beside `aria-pressed`. The
+  round *Ask* stays: Sam approved it on the S405 mock-up as the box's one action.
+- **A CSS-reading guard has to strip comments first.** The first draft of `tests/sierra_feedback_words.test.js`
+  anchored rules on a preceding `}` and missed every rule that followed a comment; it read 7/18 on the new CSS too.
+  Stripped, it reads 18/18 on the new CSS and 7/18 on the old.
