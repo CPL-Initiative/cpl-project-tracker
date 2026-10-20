@@ -47,6 +47,9 @@ Asks Sheet 95 card 1): a shared Progress module, then each reference's Progress 
 - **A permission-check denial converts a proceeded-on call into an ask, the same turn.** The stragglers' apply was
   refused; the dry run stays committed, the card on Sheet 105 asks instead of reporting, and the lane carries NEEDS
   SAM 9. Proceeding means the session acts; when it cannot act, the card cannot say it did.
+- **A fixture with fixed stamps needs a fixed clock.** `tests/commons.test.js` held `NOW` for its unit checks while
+  `boot()` rendered on the real clock, so the "inside 36 hours reads current" check failed at 05:47Z on 2026-10-20,
+  36 hours after its stamp, on every branch. The test now pins the window's `Date` to `NOW`.
 - **The quarterly probe reads the same twice.** MQ page 200 and edition 19 both runs; c-id.net 403 to a runner;
   www.data-c-idsystem.org does not resolve. The comparison mode needs a C-ID source a runner can reach.
 

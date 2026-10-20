@@ -107,6 +107,11 @@ function load(opts) {
   const w = dom.window;
   w.fetch = opts.fetch || responder({ "kb/status/commons.json": STATUS, "kb/status/program-requirements.json": PR_LOG });
   if (opts.noStorage) Object.defineProperty(w, "localStorage", { get: function () { throw new Error("SecurityError"); } });
+  // boot() reads the clock (new Date()), so the window's clock is pinned to NOW: the fixture's stamps are fixed, and
+  // on the real clock the "inside 36 hours" check turned red 36 hours after its stamp (2026-10-20 05:47Z, S432).
+  w.eval("(function(){var R=Date,T=" + NOW.getTime() + ";function D(){if(!(this instanceof D))return new R(T).toString();" +
+         "return arguments.length?new(Function.prototype.bind.apply(R,[null].concat([].slice.call(arguments)))):new R(T);}" +
+         "D.prototype=R.prototype;D.now=function(){return T;};D.UTC=R.UTC;D.parse=R.parse;Date=D;})();");
   if (!opts.noModule) { const s0 = w.document.createElement("script"); s0.textContent = COMMONS; w.document.body.appendChild(s0); }
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_COMMONS, root: w.document.getElementById("commons-root") };
