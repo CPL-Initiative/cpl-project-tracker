@@ -670,6 +670,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/college_identity_rulings.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/cos_certifications.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_match_cos_authority.py`, `kb/_suggest_unclassified.py`, `kb/_sync_cos_certifications.py` | scripts: `kb/_sync_cos_certifications.py` · committed by: `cos-authority-sync.yml` |
 | `kb/reference/credential_registry_national_sample.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
+| `kb/reference/csr_quarterly_baseline.json` | scripts: `kb/_csr_quarterly_probe.py` | — |
 | `kb/reference/eacr_cip_title_rules.json` | scripts: `excel_to_dashboard.py` | — |
 | `kb/reference/esl_level_sets.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
 | `kb/reference/handout_logos.json` | scripts: `kb/_build_regional_cpl_opportunity.py` | — |
@@ -1170,5 +1171,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 698 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 699 file
 datasets · 184 external services · 460 consumers · 58 workflows · 39 tabs.

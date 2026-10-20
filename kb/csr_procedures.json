@@ -8,7 +8,7 @@
       "name": "Keep the MQ discipline list current",
       "kind": "routine",
       "on": false,
-      "status": "to build: a quarterly check on a runner",
+      "status": "half built: a quarterly runner compares the edition and the handbook PDF's hash with kb/reference/csr_quarterly_baseline.json and reads red on a change (S433, csr-quarterly.yml); the index diff and the card stay a session's step",
       "cadence": "quarterly",
       "owner": "a runner, then a card for Sam",
       "rule": "The discipline names come from the Chancellor's Office Minimum Qualifications handbook's Disciplines Index and nowhere else. Each quarter a runner fetches the handbook's page, records the edition and the date, and compares the index with the committed list; a change opens a card for Sam and the routine applies nothing. Every MQ discipline that carries courses on the map carries one Common SUBJ; a discipline with no courses carries none until its first course appears, and the mint path then takes the code from this reference.",

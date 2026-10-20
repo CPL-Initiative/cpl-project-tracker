@@ -8,13 +8,20 @@ current). Their sources answer a runner and refuse the sandbox, so they run on o
 
 Probe mode is the first step the lane names: it asks each source what it serves today and prints one line per
 source, `PROBE {json}`, carrying every value, because a session reads a runner through its job log (a run's
-artifact sits on a host the sandbox proxy refuses). It writes no file and applies nothing. The comparison mode,
-which opens a card on a change, follows once a probe has shown what each source serves.
+artifact sits on a host the sandbox proxy refuses). It writes no file and applies nothing.
+
+Comparison mode (`--compare`, S433, 2026-10-20) reads each source against kb/reference/csr_quarterly_baseline.json,
+what the source served when last read and accepted, and prints one `COMPARE {json}` line per source with a verdict:
+`same`, `changed` (the edition or the handbook PDF's hash moved), `unread` (the source did not answer) or
+`no_baseline` (nothing accepted yet: the C-ID hosts refuse a runner). It also writes the verdicts to the job's step
+summary when GITHUB_STEP_SUMMARY is set, and exits 1 on `changed`, so the quarterly run reads red when the handbook
+moved and a session turns the diff into a card for Sam. It applies nothing and never edits the baseline.
 
 For the handbook it also follows the page's handbook link, hashes the PDF, reads the edition from the link, and
 compares it with the edition kb/reference/mq_sections.json was read from.
 
     python3 kb/_csr_quarterly_probe.py            # probe every source
+    python3 kb/_csr_quarterly_probe.py --compare  # probe, then read each source against the baseline
     python3 kb/_csr_quarterly_probe.py --dry-run  # list the sources, fetch nothing
 """
 import hashlib
@@ -29,6 +36,7 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MQ_SECTIONS = os.path.join(ROOT, "kb", "reference", "mq_sections.json")
+BASELINE = os.path.join(ROOT, "kb", "reference", "csr_quarterly_baseline.json")
 
 MQ_PAGE = ("https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/"
            "What-we-do/Educational-Programs-and-Professional-Development/Minimum-Qualifications/")
@@ -142,16 +150,60 @@ def probe(target, get=fetch, committed=None):
     return out
 
 
+def load_baseline(path=BASELINE):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def compare(result, base):
+    """One source's verdict against its accepted baseline: same, changed, unread or no_baseline."""
+    doc = result.get("document") or {}
+    seen = {"edition": doc.get("edition"), "document_sha256": doc.get("sha256")}
+    out = {"key": result["key"], "routine": result["routine"], "status": result["status"], "seen": seen}
+    if not base or not base.get("document_sha256"):
+        out["verdict"] = "no_baseline"
+    elif result["status"] != 200 or doc.get("status") != 200 or not doc.get("sha256"):
+        out["verdict"] = "unread"
+    else:
+        moved = [k for k in ("edition", "document_sha256") if seen[k] != base.get(k)]
+        out["verdict"] = "changed" if moved else "same"
+        if moved:
+            out["moved"] = moved
+            out["baseline"] = {k: base.get(k) for k in ("edition", "document_sha256", "read_at")}
+    return out
+
+
+def summary_md(verdicts):
+    lines = ["## CSR quarterly comparison", "", "| source | routine | status | verdict |", "|---|---|---|---|"]
+    for v in verdicts:
+        lines.append("| %s | %s | %s | %s |" % (v["key"], v["routine"], v["status"], v["verdict"]))
+    if any(v["verdict"] == "changed" for v in verdicts):
+        lines += ["", "A source moved. A session reads the diff and opens a card for Sam; nothing is applied."]
+    return "\n".join(lines) + "\n"
+
+
 def main(argv):
     if "--dry-run" in argv:
         for t in TARGETS:
             print("TARGET %s %s %s" % (t["key"], t["routine"], t["url"]))
         return 0
     committed = committed_edition()
+    results = []
     for t in TARGETS:
-        print("PROBE " + json.dumps(probe(t, committed=committed if t["routine"] == "mq_list" else None),
-                                    sort_keys=True))
-    return 0
+        r = probe(t, committed=committed if t["routine"] == "mq_list" else None)
+        results.append(r)
+        print("PROBE " + json.dumps(r, sort_keys=True))
+    if "--compare" not in argv:
+        return 0
+    base = load_baseline()
+    verdicts = [compare(r, base.get(r["key"])) for r in results]
+    for v in verdicts:
+        print("COMPARE " + json.dumps(v, sort_keys=True))
+    step = os.environ.get("GITHUB_STEP_SUMMARY")
+    if step:
+        with open(step, "a", encoding="utf-8") as f:
+            f.write(summary_md(verdicts))
+    return 1 if any(v["verdict"] == "changed" for v in verdicts) else 0
 
 
 if __name__ == "__main__":

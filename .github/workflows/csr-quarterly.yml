@@ -1,15 +1,19 @@
-name: CSR quarterly (probe)
+name: CSR quarterly (compare)
 
 # The Common Subjects Reference's two quarterly routines (kb/csr_procedures.json: mq_list and
 # authority_tables, Sam 2026-10-19), in probe mode: kb/_csr_quarterly_probe.py asks the
 # Chancellor's Office Minimum Qualifications page and the C-ID hosts what they serve and prints
-# one `PROBE {json}` line per source. The sandbox cannot reach these hosts and cannot download a
-# run's artifact, so a session reads the job log. It writes no file and applies nothing, so the
-# job only reads the repository. Dispatch only until a probe has shown what each source serves;
-# the comparison mode and its quarterly schedule follow (lane: common-subjects-reference).
+# one `PROBE {json}` line per source, then reads each against kb/reference/csr_quarterly_baseline.json
+# and prints one `COMPARE {json}` line (same, changed, unread, no_baseline) and a step summary. The job
+# fails on `changed`, so a moved handbook shows as a red run; a session reads the log and opens a card
+# for Sam. The sandbox cannot reach these hosts, so a session reads the job log. It writes no file and
+# applies nothing, so the job only reads the repository (lane: common-subjects-reference).
 
 on:
   workflow_dispatch:
+  schedule:
+    # 13:17 UTC on the 1st of January, April, July and October.
+    - cron: '17 13 1 1,4,7,10 *'
 
 permissions:
   contents: read
@@ -27,5 +31,5 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Probe the handbook page and the C-ID hosts
-        run: python3 kb/_csr_quarterly_probe.py
+      - name: Probe the handbook page and the C-ID hosts, and compare with the baseline
+        run: python3 kb/_csr_quarterly_probe.py --compare
