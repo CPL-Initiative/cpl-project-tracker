@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 702,
+  "file_datasets": 703,
   "external_services": 184,
   "consumers": 462,
   "workflows": 58,
@@ -1320,7 +1320,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1475
+     "line": 1487
     }
    ],
    "main_committers": []
@@ -1543,6 +1543,7 @@
      "tabs": [
       "canonical-subj4",
       "commons",
+      "cr-reference",
       "credential-reference",
       "program-requirements"
      ]
@@ -1846,7 +1847,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 657
+     "line": 669
     }
    ],
    "main_committers": []
@@ -3682,7 +3683,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1149
+     "line": 1161
     }
    ],
    "main_committers": []
@@ -4722,7 +4723,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1040
+     "line": 1052
     },
     {
      "id": "module:admin.js",
@@ -5311,6 +5312,16 @@
      ]
     },
     {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 817,
+     "tabs": [
+      "cr-reference"
+     ]
+    },
+    {
      "id": "module:credential_reference.js",
      "kind": "module",
      "direction": "read",
@@ -5487,7 +5498,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1414
+     "line": 1426
     },
     {
      "id": "module:college_briefing.js",
@@ -5937,6 +5948,22 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:cr_progress.js": {
+   "consumers": [
+    {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 818,
+     "tabs": [
+      "cr-reference"
+     ]
     }
    ],
    "served": true,
@@ -11167,7 +11194,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 296
+     "line": 305
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -11600,7 +11627,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 358
+     "line": 395
     }
    ],
    "producers": [
@@ -11657,7 +11684,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 359
+     "line": 396
     }
    ],
    "served": true,
@@ -11888,7 +11915,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 337
+     "line": 374
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13626,7 +13653,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 299
+     "line": 308
     }
    ],
    "served": false,
@@ -15066,7 +15093,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 310
+     "line": 336
     }
    ],
    "served": true,
@@ -15132,7 +15159,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 402
+     "line": 439
     }
    ],
    "served": true,
@@ -22103,7 +22130,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 198,
+     "line": 207,
      "tabs": [
       "cr-reference"
      ]
@@ -22113,7 +22140,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 242,
+     "line": 251,
      "tabs": [
       "cr-reference"
      ]
@@ -24302,6 +24329,7 @@
   "commons_progress.js": [
    "canonical-subj4",
    "commons",
+   "cr-reference",
    "credential-reference",
    "program-requirements"
   ],
@@ -24335,6 +24363,9 @@
   ],
   "cpl_pathways_membership_data.js": [
    "cpl-pathways"
+  ],
+  "cr_progress.js": [
+   "cr-reference"
   ],
   "cr_reference.js": [
    "cr-reference"
@@ -25799,6 +25830,7 @@
   "chatbox/sync_program_courses.py",
   "commons.js",
   "cpl_session.js",
+  "cr_progress.js",
   "exhibit_progress.js",
   "kb/_program_requirements_extract.py",
   "reviewer_signin.js",

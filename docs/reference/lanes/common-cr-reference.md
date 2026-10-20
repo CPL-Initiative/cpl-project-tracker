@@ -1,7 +1,7 @@
 ---
 title: "Common CR Reference — lane state"
 created: 2026-08-28
-updated: 2026-09-29
+updated: 2026-10-20
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -18,6 +18,20 @@ related:
 ## Status
 
 ✅ **WORKLIST LIVE.** ⭐ **SAM'S DESIGN RULING:** *"CID is only one factor… similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* — illustrative, not exhaustive. C-ID-as-key fails BOTH ways: it over-merges (`AJ 110` on two genuinely different POST lines) and under-merges badly (only ~17% of the 2,344 strings carry a C-ID at all). ⭐ **AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE** — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 of those · rung 3 CCR course identity 40 strings · rung 4 mechanical twin ~160 · rung 5 similarity **suggests, never merges**. **~90% is curator judgment no matcher reaches** (*Racial Issues and the Police* ≡ *Community Relations* — one POST topic, unrelated words), which is what the **+ Add a wording** picker is for. ⭐ **SCOPE IS GLOBAL + a split affordance (Sam, 2026-08-13):** 407 strings (17%) span >1 credential but carry **45% of all articulation rows**, and `Introduction to FCAW` is one recommendation under all ten AWS/ASME credentials carrying it. ⚠️ **RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED** — the widest-spreading string is `3 hours in Elective Course Credits`: 61 credentials, **1 college**, a placeholder. Credentials-spanned would have ranked the corpus's least useful string #1; collapse value sinks it to #174 with no special case. Real head: `Intro to Administration of Justice` (5 wordings/26 colleges), then Principles & Procedures, then Criminal Investigation. **30 groups carry a curator decision as of 2026-09-20 (the older "156" counted the mechanical rung ladder); top 50 strings = 49.4% of all articulations — an afternoon, not an ocean.** ⚠️ **Units never split an identity** (`SPAN 100` at 4/4.5/5): no rung holds a merge for them, and a group named by a wording states its range (cards 13–14, below). **0 hours reads as noncredit** (sheet 4, card 3, ruled 2026-09-29, ✅ built #1768): a 0 never opens a range (*Oral Radiology (2 units or noncredit)*) and an all-0 group reads *(noncredit)*; the 2026-09-30 run renamed the ten (seven *(noncredit)*, three ranges); A30 in `tests/cr_reference.test.js` holds it. ⚠️ **Grouping is by KEY, NEVER transitive** — 164 strings bridge ≥2 course identities, so components would chain `AJ 110`↔*Community Relations*↔`AJ 160`. ⚠️ **Two gates DON'T work: `attribution='per_course'`** (every poisoned `AJ 110` row carries it) **and a line-fraction/cartesian test** (`AJ 110` hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's **COURSE count**. Decisions live in gated Supabase `cr_reference_decisions` keyed on `group_key`, so a rebuild can never overwrite a judgment. **NEXT: Sam works the head — the top ~50 groups — and we watch which rungs he overrides.** Story + the fixed-bug postmortems: [`common_cr_reference_lessons`](docs/common_cr_reference_lessons.md) · scope [`common_cr_reference_scope`](docs/common_cr_reference_scope.md).
+
+## Progress, and what complete means (S437, 2026-10-20)
+
+The tab carries the Commons' Progress view beside its worklist (`cr_progress.js`; lane
+[commons](commons.md)). **Complete = a wording that resolves to a settled reference**: a rung 1 to
+4 rule places it, or a curator's decision names it (confirmed or not a topic). 459 of 2,344 wordings,
+5,750 of 9,413 articulations, on 2026-10-20; the head (the 50 wordings with the most articulations)
+is 44 of 50. Sam kept it as built (Open Asks Sheet 108 card 5, 13:24Z 2026-10-20). The worklist gained *No rule or decision* (1,885) and *Name to check* (37).
+
+**NEXT (ruled on Sheet 3 card 9, 2026-09-29, waiting on a session):** pair groups by shared course
+identity behind the course-count guard; Jev runs the new pairs, the unanchored clusters and the newer
+anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six head wordings left
+are Sam's to decide on the tab. The title-rung sitting at the foot of this file is the CCR's ladder,
+not this reference's.
 
 ## Jev on this lane — the blocking, the gate, the verdicts (S279/S280, 2026-09-20)
 

@@ -78,7 +78,37 @@ check("Course: SkyView alone is the row's home, and every count opens it (Sam, 2
       co["links"] == [{"href": co["tab"], "text": "Open SkyView"}] and co["tab"].endswith("/prototype/skyview.html")
       and all(i.get("open") == co["tab"] for i in co["issues"]) and co["pair"][0]["open"] == co["tab"])
 cr = rows[3]
-check("CR: the curator's decisions are a second pair line with no universe", len(cr["pair"]) == 2 and "of" not in cr["pair"][1] and isinstance(cr["pair"][1].get("n"), int))
+crf = cr.get("facts") or {}
+# S437 (the CR Progress view; Open Asks Sheet 108 card 5): one pair, the wordings that resolve to a
+# settled reference of every wording, a rule's placements and a curator's beyond them summing to it.
+check("CR: one pair, settled wordings of every wording, opening the Progress view",
+      len(cr["pair"]) == 1 and cr["pair"][0]["n"] == crf.get("settled") and cr["pair"][0]["of"] == crf.get("wordings")
+      and cr["pair"][0]["open"] == "#cr-reference/progress" and cr["tests"] == ["rule-settled", "curator-decided"])
+check("CR: a rule's wordings and a curator's beyond them sum to the settled count, the rest unsettled",
+      crf.get("rule_wordings") + crf.get("curator_only") == crf.get("settled")
+      and crf.get("settled") + crf.get("unsettled") == crf.get("wordings")
+      and crf.get("settled_rows") + crf.get("unsettled_rows") == crf.get("rows"))
+check("CR: the head bands nest (top 50, 100, 250) and none settles more than it holds",
+      all(crf["head"][k]["settled"] <= crf["head"][k]["of"] for k in ("50", "100", "250"))
+      and crf["head"]["50"]["settled"] <= crf["head"]["100"]["settled"] <= crf["head"]["250"]["settled"])
+check("CR: every count opens a filter of the tab",
+      all(i["open"] in ("#cr-reference/open", "#cr-reference/names") for i in cr["issues"]) and cr["procedures"][0]["open"] == "#cr-reference/auto")
+# The settling rule on a fixture: a confirmed decision settles its members less the ones it split out,
+# a folded wording settles though its own group carries no decision, and a deferred decision settles nothing.
+with tempfile.TemporaryDirectory() as fx:
+    os.makedirs(os.path.join(fx, "kb", "receipts"))
+    def grp(key, recs, auto=False, rows=1):
+        return {"key": key, "acts_automatically": auto, "wordings": len(recs), "members": [{"rec": r, "rows": rows} for r in recs]}
+    with open(os.path.join(fx, "kb", "cr_reference_worklist.json"), "w") as f:
+        json.dump({"_stats": {"auto_groups": 1, "rung_5_groups": 4, "total_rows": 13},
+                   "groups": [grp("a", ["a1", "a2"], auto=True, rows=5), grp("b", ["b1", "b2"]), grp("c", ["c1"]), grp("d", ["d1"]), grp("e", ["e1"])]}, f)
+    with open(os.path.join(fx, "kb", "receipts", "cr_reference_decisions_2026-10-20_fixture.json"), "w") as f:
+        json.dump({"items": [], "rows": [
+            {"group_key": "b", "decision": "confirmed", "members": ["b1", "b2", "c1"], "excluded": ["b2"]},
+            {"group_key": "d", "decision": "deferred", "members": ["d1"], "excluded": []}]}, f)
+    fxr = B.row_cr(fx)["facts"]
+    check("CR fixture: a rule settles a1 and a2; a decision b1 and the folded c1, not the split-out b2 or the deferred d1",
+          fxr["rule_wordings"] == 2 and fxr["curator_only"] == 2 and fxr["settled"] == 4 and fxr["unsettled"] == 3, fxr)
 sub = rows[4].get("facts") or {}
 check("Subjects: a person's and a cohort's confirmations sum to the confirmed count", sub.get("person") + sub.get("cohort") == sub.get("confirmed"))
 # S425: the pair is the settled count (confirmed, on the authority rule, in no collision), never above the confirmed count,
