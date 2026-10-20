@@ -1,6 +1,6 @@
 {
   "_what": "What each CSR quarterly source served when last read and accepted. kb/_csr_quarterly_probe.py --compare reads a source today against this file; a session updates it only after a change has been ruled on.",
-  "_source": "csr-quarterly.yml run 39374671352 (job 118470014692), 2026-10-20 05:24Z, read by S433 from the job log",
+  "_source": "csr-quarterly.yml run 39374671352 (job 118470014692), 2026-10-20 05:24Z, read by S433 from the job log; cid_data from csr-quarterly.yml runs 39428759620 and 39429169362 (2026-10-20 13:16Z, 13:18Z), read by S437 from the job logs",
   "mq_page": {
     "routine": "mq_list",
     "edition": 19,
@@ -13,14 +13,23 @@
     "routine": "authority_tables",
     "edition": null,
     "document_sha256": null,
-    "note": "c-id.net answers a runner 403 (2026-10-20, twice); no baseline until a source a runner can read is found",
+    "note": "c-id.net answered a runner 403 (2026-10-20, twice); the site moved to c-idsystem.org (S437), probed from here on",
     "read_at": "2026-10-20"
   },
   "cid_data": {
     "routine": "authority_tables",
     "edition": null,
+    "document_sha256": "22595b5f6e9331e00874bbb95140942b2c4a6fe8b2e3e4690fbf31c8753d4822",
+    "document_bytes": 217763,
+    "document_final_url": "https://data-c-idsystem.org/descriptors/final/csv",
+    "note": "The C-ID final descriptors list, its own CSV export (text/csv), read the same by runs 39428759620 and 39429169362 (13:16Z and 13:18Z); www.data-c-idsystem.org did not resolve, the data host has no www (S437)",
+    "read_at": "2026-10-20"
+  },
+  "cid_courses": {
+    "routine": "authority_tables",
+    "edition": null,
     "document_sha256": null,
-    "note": "www.data-c-idsystem.org does not resolve (2026-10-20, twice)",
+    "note": "data-c-idsystem.org/approved-courses, the approved-course search c-idsystem.org/courses/ links (S437); no baseline until a runner reads it",
     "read_at": "2026-10-20"
   }
 }

@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 1218,
-    "bytes": 12507959,
+    "files": 1219,
+    "bytes": 12519031,
     "over_budget": 8,
-    "handoff_max": 437,
+    "handoff_max": 438,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60749,
+    "always_loaded_bytes": 60683,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60749,
+        "bytes": 60683,
         "over": 1
       },
       "other": {
         "files": 122,
-        "bytes": 3842769,
+        "bytes": 3842870,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 84,
-        "bytes": 2310651,
+        "bytes": 2313384,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 408165,
+        "bytes": 411087,
         "over": 3
       },
       "handoff": {
-        "files": 408,
-        "bytes": 3107883,
+        "files": 409,
+        "bytes": 3113265,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22895,
-      "bytes": 3203131472,
-      "heavy_bytes": 2113708558,
+      "files": 22898,
+      "bytes": 3203228161,
+      "heavy_bytes": 2113715468,
       "heavy_share": 0.66,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60749,
+        "bytes": 60683,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 749,
+        "over_by": 683,
         "ratio": 1.01
       },
-      "message": "60,749 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,683 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -418,13 +418,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20285,
+        "bytes": 21315,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 285,
-        "ratio": 1.01
+        "over_by": 1315,
+        "ratio": 1.07
       },
-      "message": "20,285 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "21,315 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
@@ -760,10 +760,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11817430,
+        "bytes": 11823934,
         "kind": "file"
       },
-      "message": "11,817,430 B single file inside the vault"
+      "message": "11,823,934 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1140,10 +1140,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2047303,
+        "bytes": 2047709,
         "kind": "file"
       },
-      "message": "2,047,303 B single file inside the vault"
+      "message": "2,047,709 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
