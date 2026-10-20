@@ -321,8 +321,8 @@
     bar.className = 's-fb';
 
     // Copy sits FIRST in the bar — it is what people reach for on a GOOD answer,
-    // and it should not sit behind the rating flow. Reuses the .s-fb-btn pill so
-    // it needs no new CSS and inherits the theme tokens.
+    // and it should not sit behind the rating flow. An underlined word like the
+    // ratings, on its own class (.s-fb-copy) so the theme tokens carry it.
     var copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 's-fb-copy';

@@ -368,31 +368,33 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
 
 /* ── Per-answer feedback (Helpful / Not helpful + note) and Copy ── */
 .s-fb {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px;
   margin-top: -12px; font-size: .8125rem; color: var(--sierra-faint);
 }
-/* The rating buttons carry WORDS. A <button> does not inherit font-family or
-   color from the page, so both are spelled out; nowrap keeps "Not helpful" on
-   one line inside its pill while the row itself wraps. */
+/* The rating and Copy controls are underlined words (First Light's Controls
+   rule, 2026-10-09; the same words My College's Sierra carries in cpl_chat.js).
+   A <button> does not inherit font-family or color from the page, so both are
+   spelled out; nowrap keeps "Not helpful" on one line while the row wraps. The
+   pick reads by weight beside aria-pressed, never color alone. */
 .s-fb-btn {
-  border: 1px solid var(--sierra-border-strong); background: var(--sierra-surface);
-  border-radius: 999px; padding: 3px 11px; min-height: 28px; cursor: pointer;
+  border: 0; background: none; border-radius: 0; padding: 2px 0; min-height: 24px; cursor: pointer;
   font-size: .8125rem; line-height: 1.4; color: inherit;
   font-family: inherit; white-space: nowrap;
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
 }
-.s-fb-btn:hover { border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
-.s-fb-btn.on { background: var(--sierra-tint); border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
-/* Copy shares the pill shape but NOT the .s-fb-btn class: that class means "a
+.s-fb-btn:hover { color: var(--sierra-ink); text-decoration-thickness: 2px; }
+.s-fb-btn.on { color: var(--sierra-ink); font-weight: 700; }
+/* Copy shares the word form but NOT the .s-fb-btn class: that class means "a
    rating button" to the code (btns.up/btns.down) and to the tests, which assert
    exactly two of them. */
 .s-fb-copy {
-  border: 1px solid var(--sierra-border-strong); background: var(--sierra-surface);
-  border-radius: 999px; padding: 3px 11px; min-height: 28px; cursor: pointer;
+  border: 0; background: none; border-radius: 0; padding: 2px 0; min-height: 24px; cursor: pointer;
   font-size: .8125rem; line-height: 1.4; color: inherit;
   font-family: inherit; white-space: nowrap;
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
 }
-.s-fb-copy:hover { border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
-.s-fb-copy.on { background: var(--sierra-tint); border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
+.s-fb-copy:hover { color: var(--sierra-ink); text-decoration-thickness: 2px; }
+.s-fb-copy.on { color: var(--sierra-ink); font-weight: 700; }
 /* An author `display` rule beats the UA stylesheet's [hidden], so the note
    composer needs this companion (the 2026-08-14 root defect). */
 .s-fb-note { display: flex; flex: 1 1 100%; gap: 6px; margin-top: 4px; }
@@ -404,10 +406,12 @@ body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display:
   background: var(--sierra-surface); color: var(--sierra-ink);
 }
 .s-fb-note button {
-  border: none; border-radius: 8px; padding: 6px 12px; min-height: 36px; cursor: pointer;
-  background: var(--sierra-cobalt); color: var(--sierra-on-cobalt); font: 600 .875rem var(--sierra-font);
+  border: 0; background: none; border-radius: 0; padding: 2px 4px; min-height: 36px; cursor: pointer;
+  color: var(--sierra-cobalt); font: 600 .875rem var(--sierra-font);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
 }
-.s-fb-note button:disabled { opacity: .6; cursor: default; }
+.s-fb-note button:hover { text-decoration-thickness: 2px; }
+.s-fb-note button:disabled { opacity: .6; cursor: default; text-decoration: none; }
 .s-fb-done { color: var(--sierra-muted); font-weight: 600; }
 .s-fb-sending { color: var(--sierra-faint); font-weight: 600; }
 .s-fb-fail { color: var(--sierra-crimson); font-weight: 600; }
