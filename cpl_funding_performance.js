@@ -18,7 +18,7 @@ window.CPL_FUNDING_PERF = {
   "pac": 5276,
   "ptc": 4604,
   "pe_u": 1505872.45,
-  "pa_u": 275569.4,
+  "pa_u": 275572.4,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 37724.7,
@@ -111,7 +111,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 623,
    "pe_u": 26954.0,
    "pa": 615,
-   "pa_u": 8962.0,
+   "pa_u": 8965.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
@@ -4066,12 +4066,12 @@ window.CPL_FUNDING_PERF = {
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
    "pe_u": 1505872.45,
-   "pa_u": 275569.4,
+   "pa_u": 275572.4,
    "p3_u": 83799.35
   },
   "map": {
    "pe_u": 1512697.95,
-   "pa_u": 276290.9,
+   "pa_u": 276293.9,
    "p3_u": 83862.85
   },
   "ratio": {
