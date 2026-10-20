@@ -479,7 +479,7 @@ section[hidden], #contents[hidden]{display:none}
       <!-- The introduction video, the list's last item (Sam, 2026-10-09). The
            list is rebuilt from the sections after every paint, and this item
            rides the rebuild to the end (contentsFromSections). -->
-      <li class="toc-video toc-tail"><a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a></li>
+      <li class="toc-video toc-tail"><a id="video-link" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
       <!-- Help, after the video (Sam, 2026-10-20): the MAP team's office hours,
            the chosen college's CPL landing page (its hover recommends office
            hours for configuring one), and the training video on configuring a
@@ -983,14 +983,16 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     setText("x-version", vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1].slice(2) : String(D.model_version));
   }
   // The introduction video is per scenario: each one is typed from its scenario's
-  // dials, so a page showing Scenario 2 links Scenario 2's introduction (Sam,
-  // 2026-09-26). Scenario 1's stays the default for every other name. Scenario 2
-  // is the published one, so its link names no scenario (Sam, 2026-10-01). The
+  // dials. The two-priority film (funding_in_motion_s2) is built from the
+  // PUBLISHED scenario, whatever its name (build.py), so it is the default; the
+  // three-priority film belongs to Scenario 1 alone. Keyed by "Scenario 2", the
+  // page fell back to the three-priority film once Scenario 3 was published
+  // (Sam, 2026-10-20: "an old version with the 3 priorities instead of 2"). The
   // MP4 and narrated alternates left the Contents on 2026-10-09 (Sam's
   // screenshot); the introduction alone stays.
   (function () {
     var VIDEOS = {
-      "Scenario 2": { page: "../prototype/funding_video/funding_in_motion_s2.html",
+      "Scenario 1": { page: "../prototype/funding_video/funding_in_motion.html",
         label: "Watch the 100-second introduction" }
     };
     var v = VIDEOS[String(D.scenario || "").trim()];
