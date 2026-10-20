@@ -1638,6 +1638,12 @@
       + '<h2 class="cb-welcome-t">' + esc(title) + "</h2>"
       + '<div class="cb-welcome-acts">'
       + '<button type="button" class="cb-act" id="cb-report">Create a briefing</button>'
+      // Ashley's opportunity workbook and its one-page summary (Sam, 2026-10-20):
+      // one college's courses, programs, exhibits and the CPL it could add.
+      + (state.scope === "college" && state.college
+          ? '<a class="cb-act" id="cb-oppvisual" target="_blank" rel="noopener" href="' + esc(opportunityPageUrl(state.college)) + '">View CPL Visual</a>'
+            + '<button type="button" class="cb-act" id="cb-workbook">Download CPL Extract</button>'
+          : "")
       // Two ways back, because they are different journeys. Switching college is
       // the common one and must not cost a trip through "who are you" — that
       // question is answered once. "Change view" is the rarer, deliberate one.
@@ -3698,6 +3704,30 @@
     return out;
   }
 
+  /* The CPL opportunity analysis (Ashley and Sam, 2026-10-20). "View CPL Visual"
+   * opens the college's shareable page; "Download CPL Extract" builds the same
+   * analysis here as an Excel workbook (college_cpl_workbook.js, loaded on first use). */
+  var OPP_PAGE = "cpl-opportunity/";
+  function opportunityPageUrl(college) { return OPP_PAGE + "?college=" + encodeURIComponent(college); }
+  function buildOpportunityExtract(btn) {
+    var was = btn.textContent, college = state.college;
+    var done = function (msg) {
+      btn.disabled = false; btn.textContent = msg || was;
+      if (msg) setTimeout(function () { btn.textContent = was; }, 3200);
+    };
+    btn.disabled = true;
+    btn.textContent = "Building… (the first time reads about 45 MB)";
+    loadScript("college_cpl_workbook.js", "CPL_COLLEGE_WORKBOOK", function () {
+      var W = window.CPL_COLLEGE_WORKBOOK;
+      if (!W) { done("Could not load the workbook builder"); return; }
+      W.prepare({ college: college, loadScript: loadScript }, function (err, b) {
+        if (err || !b) { done("Could not build it: " + (err && err.message || "no data")); return; }
+        W.downloadWorkbook(b);
+        done("Downloaded");
+      });
+    });
+  }
+
   function buildBriefingReport(root) {
     var btn = root && root.querySelector("#cb-report");
     var was = btn ? btn.textContent : null;
@@ -3844,6 +3874,8 @@
     });
     var rep = root.querySelector("#cb-report");
     if (rep) rep.onclick = function () { buildBriefingReport(root); };
+    var wbk = root.querySelector("#cb-workbook");
+    if (wbk) wbk.onclick = function () { buildOpportunityExtract(wbk); };
     // The roster's spelling, which the funding module keys on (MAP says
     // "Laney College"; the roster, "Laney").
     wireHowTo(root, state.college ? rosterKey(state.college) : null, "mycollege");

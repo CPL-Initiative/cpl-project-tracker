@@ -150,6 +150,7 @@ window.COBI_ADMIN_SURFACE = {
     },
     "cpl-pathways": {
       "modules": [
+        "college_cpl_workbook.js",
         "cpl_baccalaureates_data.js",
         "cpl_pathways.js",
         "cpl_pathways_ccr_data.js",
@@ -251,6 +252,7 @@ window.COBI_ADMIN_SURFACE = {
     "college-briefing": {
       "modules": [
         "college_briefing.js",
+        "college_cpl_workbook.js",
         "cpl_chat.js",
         "cpl_funding.js"
       ],
@@ -269,6 +271,7 @@ window.COBI_ADMIN_SURFACE = {
         "map_colleges",
         "map_credential_student_rollup",
         "program_record_college_items",
+        "program_requirement_records",
         "program_source_registry"
       ],
       "writes": [

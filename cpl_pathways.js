@@ -275,6 +275,9 @@
     ".cplpw-colsel { font-family:inherit; font-size:.86rem; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:7px 12px; max-width:100%; min-height:40px; cursor:pointer; }",
     ".cplpw-select { font-family:inherit; font-size:.86rem; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:7px 12px; max-width:100%; min-width:min(340px, 100%); cursor:pointer; }",
     ".cplpw-selcount { font-size:.76rem; color: var(--text-muted); }",
+    ".cplpw-oppacts { display:inline-flex; flex-wrap:wrap; gap:12px; align-items:center; }",
+    ".cplpw-oppacts[hidden] { display:none; }",
+    ".cplpw-oppact { font:inherit; font-size:.85rem; font-weight:600; color: var(--cobalt); background:none; border:0; padding:0; min-height:24px; text-decoration:underline; cursor:pointer; }",
     ".cplpw-select, .cplpw-colsel { min-height:40px; }",
     /* a link in the Sources line is a target of its own, not a word in a sentence (WCAG 2.2 SC 2.5.8) */
     ".cplpw-dsrc a { display:inline-block; padding-block:6px; }",
@@ -2905,9 +2908,43 @@
     row.appendChild(colWrap);
     row.appendChild(selWrap);
     row.appendChild(caption);
+    /* The chosen college's CPL opportunity analysis (Ashley and Sam, 2026-10-20):
+     * its shareable visual and the same analysis as an Excel extract, built by
+     * college_cpl_workbook.js on first use. Shown only once a college is chosen. */
+    var opp = el("span", "cplpw-oppacts");
+    var oppView = document.createElement("a");
+    oppView.className = "cplpw-oppact"; oppView.target = "_blank"; oppView.rel = "noopener";
+    oppView.textContent = "View CPL Visual";
+    var oppGet = document.createElement("button");
+    oppGet.type = "button"; oppGet.className = "cplpw-oppact"; oppGet.textContent = "Download CPL Extract";
+    opp.appendChild(oppView); opp.appendChild(oppGet);
+    function syncOpp() {
+      opp.hidden = !col.value;
+      if (col.value) oppView.href = "cpl-opportunity/?college=" + encodeURIComponent(col.value);
+    }
+    oppGet.addEventListener("click", function () {
+      var college = col.value, was = "Download CPL Extract";
+      if (!college || !(window.CPL_TABS && window.CPL_TABS.loadScript)) return;
+      oppGet.disabled = true; oppGet.textContent = "Building… (the first time reads about 45 MB)";
+      var done = function (msg) {
+        oppGet.disabled = false; oppGet.textContent = msg;
+        setTimeout(function () { oppGet.textContent = was; }, 3200);
+      };
+      window.CPL_TABS.loadScript("college_cpl_workbook.js", "CPL_COLLEGE_WORKBOOK", function () {
+        var W = window.CPL_COLLEGE_WORKBOOK;
+        if (!W) { done("Could not load the workbook builder"); return; }
+        W.prepare({ college: college, loadScript: window.CPL_TABS.loadScript }, function (err, b) {
+          if (err || !b) { done("Could not build it"); return; }
+          W.downloadWorkbook(b); done("Downloaded");
+        });
+      });
+    });
+    col.addEventListener("change", syncOpp);
+    syncOpp();
+    row.appendChild(opp);
     // Opening a pathway another college offers (a ladder's link) widens to All colleges.
     function show(value) {
-      if (!has(value)) { col.value = ""; fill(""); }
+      if (!has(value)) { col.value = ""; fill(""); syncOpp(); }
       sel.value = String(value);
     }
     return { row: row, select: sel, college: col, show: show };
