@@ -507,7 +507,8 @@ first day.** Do the remembering for them.
   Fewer screenshots, tail long logs: tool output fills the context too.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
-  repos, no visibility into other sessions except through committed docs.
+  repos. Other sessions are visible (`list_sessions`, `list_events`) and
+  reachable (`send_message`); agree one writer per file.
 - **Sign off with the exact opening line Sam pastes into the next session (Sam,
   2026-08-13; the template is his, ruled 2026-09-03).** At the end of a session —
   or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
