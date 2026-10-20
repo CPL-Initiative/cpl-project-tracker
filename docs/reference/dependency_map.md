@@ -308,6 +308,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `.claude/settings.json` | scripts: `scripts/check_hooks_live.py`, `scripts/install_prompt_guards.py` | scripts: `scripts/install_prompt_guards.py` |
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
+| `<date>.json` | scripts: `kb/_agri_family_remint.py` | — |
 | `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
 | `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
@@ -508,6 +509,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_xai_smoke.py` | workflows: `xai-smoke.yml` | — |
 | `kb/agab_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
+| `kb/agri_family_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/athl_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
@@ -1164,5 +1166,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 694 file
-datasets · 182 external services · 457 consumers · 57 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 696 file
+datasets · 182 external services · 458 consumers · 57 workflows · 39 tabs.

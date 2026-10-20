@@ -84,6 +84,7 @@ ALIAS_MAPS = [
     "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",  # 2026-09-29 (the ETHS re-mint's 43, Session 302 — stamps: _eths_remint_from; Sam's "remint", open-asks sheet 3 card 3; 40 moved, 3 held, the 42 merged stay)
     "kb/athl_remint_out/2026-09-30/alias_map.json",       # 2026-09-30 (card 9, Session 304 — stamps: _athl_remint_from; Grossmont's four KINE titles to ATHL, Sam's "Move them to ATHL", open-asks sheet 4)
     "kb/agab_remint_out/2026-10-19/alias_map.json",       # 2026-10-19 (Sheet 99 card 3, Session 427 — stamps: _agab_remint_from; Agricultural Business and Related Services takes AGAB, AUTB M1006 -> AGAB M1006, Sam's "agab")
+    "kb/agri_family_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 103, Session 430 — stamps: _agri_family_remint_from; 44 AGRI identities to their C-ID family codes, Sam's "Confirm the 44")
 ]
 
 

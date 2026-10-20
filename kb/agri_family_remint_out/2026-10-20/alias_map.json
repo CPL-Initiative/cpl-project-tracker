@@ -1,0 +1,241 @@
+{
+  "_status": "Sheet 103 re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-10-20",
+  "_scope": [
+    "sheet103-confirm-44"
+  ],
+  "_count": 44,
+  "_ruling": "Sam, 2026-10-20 (Open Asks Sheet 103, 01:49Z, \"Confirm the 44\"): the AGRI identities Jev placed in the same C-ID family in both sittings at 0.9 or above, less forestry and wine appreciation, move to their family codes under the playbook",
+  "aliases": {
+    "AGRI M1014": {
+      "new_id": "AGAB M1014",
+      "route": "AGAB",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1015": {
+      "new_id": "AGPS M1032",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1035": {
+      "new_id": "AGMA M1035",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1061": {
+      "new_id": "AGMA M1061",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1063": {
+      "new_id": "AGPS M1063",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1066": {
+      "new_id": "AGAB M1066",
+      "route": "AGAB",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1087": {
+      "new_id": "AGAB M1087",
+      "route": "AGAB",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1093": {
+      "new_id": "AGPS M1093",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1094": {
+      "new_id": "AGPS M1094",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10AL": {
+      "new_id": "AGAB M10AL",
+      "route": "AGAB",
+      "discipline": "Auto Body Technology"
+    },
+    "AGRI M10CJ": {
+      "new_id": "AGPS M10CJ",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10DF": {
+      "new_id": "AGPS M10AA",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10FB": {
+      "new_id": "AGMA M10FB",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10FM": {
+      "new_id": "AGPS M10FM",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10FN": {
+      "new_id": "AGPS M10AB",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10HC": {
+      "new_id": "AGAS M10HC",
+      "route": "AGAS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10KP": {
+      "new_id": "AGPS M10KP",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10KV": {
+      "new_id": "AGAS M10KV",
+      "route": "AGAS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10KW": {
+      "new_id": "AGAS M10KW",
+      "route": "AGAS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10LM": {
+      "new_id": "AGEH M10LM",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10MB": {
+      "new_id": "AGAS M10MB",
+      "route": "AGAS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10MY": {
+      "new_id": "AGPS M10MY",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10ND": {
+      "new_id": "AGPS M10ND",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10NE": {
+      "new_id": "AGPS M10NE",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10QQ": {
+      "new_id": "AGMA M10QQ",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10SZ": {
+      "new_id": "AGPS M10SZ",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10TB": {
+      "new_id": "AGPS M10TB",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10TL": {
+      "new_id": "AGEH M10TL",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10TN": {
+      "new_id": "AGEH M10TN",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10TU": {
+      "new_id": "AGEH M10TU",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10VM": {
+      "new_id": "AGPS M10VM",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10VQ": {
+      "new_id": "AGEH M10VQ",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10VY": {
+      "new_id": "AGEH M10VY",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M10WM": {
+      "new_id": "AGMA M10WM",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1108": {
+      "new_id": "AGEH M1108",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1115": {
+      "new_id": "AGPS M1115",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1117": {
+      "new_id": "AGPS M1117",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1124": {
+      "new_id": "AGPS M1124",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1130": {
+      "new_id": "AGEH M1130",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M1131": {
+      "new_id": "AGPS M1131",
+      "route": "AGPS",
+      "discipline": "Agriculture"
+    },
+    "AGRI M9001": {
+      "new_id": "AGEH M9001",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M9004": {
+      "new_id": "AGEH M9004",
+      "route": "AGEH",
+      "discipline": "Agriculture"
+    },
+    "AGRI M9005": {
+      "new_id": "AGMA M9005",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    },
+    "AGRI M90AE": {
+      "new_id": "AGMA M90AE",
+      "route": "AGMA",
+      "discipline": "Agriculture"
+    }
+  },
+  "_applied_at": "2026-10-20",
+  "_applied_ruling": "Sam, 2026-10-20 (Open Asks Sheet 103, 01:49Z, \"Confirm the 44\"): the AGRI identities Jev placed in the same C-ID family in both sittings at 0.9 or above, less forestry and wine appreciation, move to their family codes under the playbook",
+  "_counts": {
+    "courses": 18,
+    "singletons": 26,
+    "articulations": 2,
+    "identities": 1,
+    "curation_keys": 22,
+    "pointers": 8
+  }
+}

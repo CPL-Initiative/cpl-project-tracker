@@ -41305,8 +41305,8 @@
       "cte": true,
       "_subj4_fold_from": "OFSY M9015"
     },
-    "AGRI M1108": {
-      "course_id": "AGRI M1108",
+    "AGEH M1108": {
+      "course_id": "AGEH M1108",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -41315,7 +41315,7 @@
       "description": "Study of greenhouse plant production. Emphasis on the programming of greenhouse crops common to Southern California. The course will cover equipment, structures, environmental control, estimation of crop production requirements, and production and sales of common greenhouse crops.",
       "description_source": "local catalog (representative/modal)",
       "subject": "OH",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "discipline": "Agriculture",
       "discipline_provisional": "OH",
       "typical_units": 3.0,
@@ -41344,7 +41344,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID OH 100",
       "cte": true,
-      "_subj4_fold_from": "OH M1001"
+      "_subj4_fold_from": "OH M1001",
+      "_agri_family_remint_from": "AGRI M1108"
     },
     "IDST M9099": {
       "course_id": "IDST M9099",
@@ -50514,8 +50515,8 @@
       "_subj4_remint_from": "ABSE M9006",
       "cte": false
     },
-    "AGRI M1014": {
-      "course_id": "AGRI M1014",
+    "AGAB M1014": {
+      "course_id": "AGAB M1014",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -50524,7 +50525,7 @@
       "description": "Intended for Agricultural Production majors and entrepreneurial students with interest in starting their own farming operation and beginning the process of business planning. Covers the legal obligations, state regulations, and federal laws governing agricultural operations with a focus on developing a business and marketing plan. Students will incorporate business-planning concepts into a presentation at the end of the course sequence.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAB",
       "discipline": "Agriculture",
       "discipline_provisional": "ABT",
       "typical_units": 1.5,
@@ -50551,7 +50552,8 @@
       "_remint_from": "M-ID ABT 102",
       "_subj4_remint_from": "ABT M1001",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1013"
+      "_subj4_fold_from": "AGRI M1013",
+      "_agri_family_remint_from": "AGRI M1014"
     },
     "AGAB M1015": {
       "course_id": "AGAB M1015",
@@ -50593,8 +50595,8 @@
       "_subj4_fold_from": "AGRI M1014",
       "_authority_recode_from": "AGRI M1015"
     },
-    "AGRI M1087": {
-      "course_id": "AGRI M1087",
+    "AGAB M1087": {
+      "course_id": "AGAB M1087",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -50603,7 +50605,7 @@
       "description": "Intended for Agriculture Production majors and entrepreneurial students with interest in organic farming operations and organic production methods. Covers the marketing and sales options for organic produce with a focus on diverse marketing options available to small growers. Students will research and present the advantages and disadvantages of different marketing channels, sales strategies, and pricing in a growing vegetable market.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAB",
       "discipline": "Agriculture",
       "discipline_provisional": "ABT",
       "typical_units": 1.5,
@@ -50630,10 +50632,11 @@
       "_remint_from": "M-ID ABT 118",
       "_subj4_remint_from": "ABT M1003",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1078"
+      "_subj4_fold_from": "AGRI M1078",
+      "_agri_family_remint_from": "AGRI M1087"
     },
-    "AGRI M1094": {
-      "course_id": "AGRI M1094",
+    "AGPS M1094": {
+      "course_id": "AGPS M1094",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -50642,7 +50645,7 @@
       "description": "Intended for Agriculture Production majors and entrepreneurial students with interest in organic farming operations and organic production methods. Covers the practical field methods involved in soil preparation, nutrient management, farm equipment management and maintenance, plant disease management, irrigation set-up and management, weed control, and integrated pest management that insures sustainable production for long-term farm viability. Students will complete field designs for a model 0.5-acre organic farm with descriptions of all inputs, potential control methods, and monitoring methods for crop health.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "ABT",
       "typical_units": 1.5,
@@ -50669,10 +50672,11 @@
       "_remint_from": "M-ID ABT 120",
       "_subj4_remint_from": "ABT M1004",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1085"
+      "_subj4_fold_from": "AGRI M1085",
+      "_agri_family_remint_from": "AGRI M1094"
     },
-    "AGRI M1131": {
-      "course_id": "AGRI M1131",
+    "AGPS M1131": {
+      "course_id": "AGPS M1131",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -50681,7 +50685,7 @@
       "description": "Intended for Agriculture Production majors and entrepreneurial students with interest in organic farming operations and organic production methods. Covers the practical aspects of developing a crop plan that meets USDA organic certification requirements and insures sustainable production for long-term farm viability. Students will develop a crop plan that includes the following areas of detail: choosing appropriate crops and cultivars, establishing crop rotations, planting annual cover crops, and managing soil fertility in organic systems. Students will apply course concepts in a real field setting.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "ABT",
       "typical_units": 1.5,
@@ -50708,10 +50712,11 @@
       "_remint_from": "M-ID ABT 122",
       "_subj4_remint_from": "ABT M1005",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1111"
+      "_subj4_fold_from": "AGRI M1111",
+      "_agri_family_remint_from": "AGRI M1131"
     },
-    "AGRI M1124": {
-      "course_id": "AGRI M1124",
+    "AGPS M1124": {
+      "course_id": "AGPS M1124",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -50720,7 +50725,7 @@
       "description": "Provides a thorough overview of the production and management practices of grapes with an_x000D_ emphasis on California wine grapes and berry products. Topics will include climate zones, soil_x000D_ selection, financing, farm organization, irrigation systems, field layout, varietal selection, nutritional_x000D_ needs, production methods, pest management, harvesting, labor management, marketing and_x000D_ budgeting. Includes a brief introduction into the winemaking process.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "ABT",
       "typical_units": 3.0,
@@ -50750,7 +50755,8 @@
       "_remint_from": "M-ID ABT 128",
       "_subj4_remint_from": "ABT M1006",
       "cte": true,
-      "_subj4_fold_from": "AGRI M1106"
+      "_subj4_fold_from": "AGRI M1106",
+      "_agri_family_remint_from": "AGRI M1124"
     },
     "HVAC M1013": {
       "course_id": "HVAC M1013",
@@ -71096,8 +71102,8 @@
       "_subj4_fold_from": "AGRI M1063",
       "_authority_recode_from": "AGRI M1070"
     },
-    "AGRI M1061": {
-      "course_id": "AGRI M1061",
+    "AGMA M1061": {
+      "course_id": "AGMA M1061",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -71106,7 +71112,7 @@
       "description": "Students will be familiarized with electronic and mechanical agricultural equipment operation. The course covers troubleshooting agricultural equipment, hardware and software.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "discipline": "Agriculture",
       "discipline_provisional": "AG",
       "typical_units": 3.0,
@@ -71137,7 +71143,8 @@
       "_remint_from": "M-ID AG 124",
       "_subj4_remint_from": "AG M1007",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1054"
+      "_subj4_fold_from": "AGRI M1054",
+      "_agri_family_remint_from": "AGRI M1061"
     },
     "FDNT M1014": {
       "course_id": "FDNT M1014",
@@ -71181,8 +71188,8 @@
       "cte": null,
       "_subj4_fold_from": "AGRI M1083"
     },
-    "AGRI M1093": {
-      "course_id": "AGRI M1093",
+    "AGPS M1093": {
+      "course_id": "AGPS M1093",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -71191,7 +71198,7 @@
       "description": "This course will provide an introduction to fertilizers and plant nutrition. Essential nutrients for plant development will be studied as well as deficiency symptoms and methods of correcting for these deficiencies. Fertilizer and other soil amendments will be studied as well as the proper management and application methods for these products. This course is not open to students who have completed or are enrolled in VEN 126.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "AG",
       "typical_units": 4.0,
@@ -71218,7 +71225,8 @@
       "_remint_from": "M-ID AG 130",
       "_subj4_remint_from": "AG M1009",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1084"
+      "_subj4_fold_from": "AGRI M1084",
+      "_agri_family_remint_from": "AGRI M1093"
     },
     "AGRI M1097": {
       "course_id": "AGRI M1097",
@@ -71259,8 +71267,8 @@
       "cte": null,
       "_subj4_fold_from": "AGRI M1087"
     },
-    "AGRI M1115": {
-      "course_id": "AGRI M1115",
+    "AGPS M1115": {
+      "course_id": "AGPS M1115",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -71269,7 +71277,7 @@
       "description": "A study of the various pests and diseases found in California vineyard, fruit, vegetable, nut and grain crops -emphasizing pest and disease identification, sampling and monitoring techniques, and control methods. Integrated pest management approaches will be emphasized, including the latest bio-control strategies, biotechnological advances, and disease modeling for risk management. Students will visit local vineyards and farms providing \"hands-on\" learning opportunities. Two separate lab sections will be offered in order to provide students the appropriate option for their agricultural field of interest. Section I will be for the Viticulture focus, Section II will be for the Agriculture focus.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "AG",
       "typical_units": 4.0,
@@ -71296,7 +71304,8 @@
       "_remint_from": "M-ID AG 134",
       "_subj4_remint_from": "AG M1011",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1099"
+      "_subj4_fold_from": "AGRI M1099",
+      "_agri_family_remint_from": "AGRI M1115"
     },
     "AGRI M1021": {
       "course_id": "AGRI M1021",
@@ -72009,8 +72018,8 @@
       "_subj4_remint_from": "AG M9002",
       "cte": true
     },
-    "AGRI M9005": {
-      "course_id": "AGRI M9005",
+    "AGMA M9005": {
+      "course_id": "AGMA M9005",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -72019,7 +72028,7 @@
       "description": "This course provides familiarization with electronic and mechanical agricultural equipment operation. The course covers manual/automated controls, troubleshooting electrical and mechanical equipment, and hardware and software. This course ensures proficiency in digital practices crucial for success and compliance in the agriculture industry. This course operates under the framework of course-based, Competency-Based Education.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "discipline": "Agriculture",
       "discipline_provisional": "AG",
       "typical_units": 0.0,
@@ -72048,7 +72057,8 @@
       "discipline_inferred_at": null,
       "_remint_from": "M-ID AG 126",
       "_subj4_remint_from": "AG M9003",
-      "cte": true
+      "cte": true,
+      "_agri_family_remint_from": "AGRI M9005"
     },
     "AGRI M1003": {
       "course_id": "AGRI M1003",
@@ -73637,8 +73647,8 @@
       "_subj4_fold_from": "AGRI M1100",
       "_authority_recode_from": "AGRI M1116"
     },
-    "AGRI M1117": {
-      "course_id": "AGRI M1117",
+    "AGPS M1117": {
+      "course_id": "AGPS M1117",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -73647,7 +73657,7 @@
       "description": "This course offers students a hands on introduction to the base of all agriculture, soils. Students will collect soil samples and analyze them for pH, fertility, crop suitability, etc. Soil will be looked at as a \"living thing.\"",
       "description_source": "local catalog (representative/modal)",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "AGRI",
       "typical_units": 3.0,
@@ -73678,10 +73688,11 @@
       "_remint_from": "M-ID AGRI 110",
       "_subj4_remint_from": "AGRI M1005",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1101"
+      "_subj4_fold_from": "AGRI M1101",
+      "_agri_family_remint_from": "AGRI M1117"
     },
-    "AGRI M1130": {
-      "course_id": "AGRI M1130",
+    "AGEH M1130": {
+      "course_id": "AGEH M1130",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -73690,7 +73701,7 @@
       "description": "Plant propagation and production practices with a focus on nursery operations. Topics include sexual and asexual reproduction, planting and transplanting, fertilization, pest and disease management, site layout and structures, preparation and use of propagation and planting media, proper use and maintenance of common tools and equipment, and regulations governing plant production.",
       "description_source": "local catalog (representative/modal)",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "discipline": "Agriculture",
       "discipline_provisional": "AGRI",
       "typical_units": 3.0,
@@ -73717,7 +73728,8 @@
       "_remint_from": "M-ID AGRI 112",
       "_subj4_remint_from": "AGRI M1006",
       "cte": null,
-      "_subj4_fold_from": "AGRI M1110"
+      "_subj4_fold_from": "AGRI M1110",
+      "_agri_family_remint_from": "AGRI M1130"
     },
     "AGRI M1064": {
       "course_id": "AGRI M1064",
@@ -73800,8 +73812,8 @@
       "_subj4_remint_from": "AGRI M9001",
       "cte": true
     },
-    "AGRI M9001": {
-      "course_id": "AGRI M9001",
+    "AGEH M9001": {
+      "course_id": "AGEH M9001",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -73810,7 +73822,7 @@
       "description": null,
       "description_source": null,
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "discipline": "Agriculture",
       "discipline_provisional": "AGRI",
       "typical_units": 0.0,
@@ -73836,10 +73848,11 @@
       "discipline_inferred_at": "2026-06-11",
       "_remint_from": "M-ID AGRI 140",
       "_subj4_remint_from": "AGRI M9002",
-      "cte": true
+      "cte": true,
+      "_agri_family_remint_from": "AGRI M9001"
     },
-    "AGRI M9004": {
-      "course_id": "AGRI M9004",
+    "AGEH M9004": {
+      "course_id": "AGEH M9004",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -73848,7 +73861,7 @@
       "description": null,
       "description_source": null,
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "discipline": "Agriculture",
       "discipline_provisional": "AGRI",
       "typical_units": 0.0,
@@ -73874,7 +73887,8 @@
       "discipline_inferred_at": "2026-06-11",
       "_remint_from": "M-ID AGRI 142",
       "_subj4_remint_from": "AGRI M9003",
-      "cte": true
+      "cte": true,
+      "_agri_family_remint_from": "AGRI M9004"
     },
     "WELD M1028": {
       "course_id": "WELD M1028",
@@ -82384,8 +82398,8 @@
       "_subj4_fold_from": "AGRI M1081",
       "_authority_recode_from": "AGRI M1091"
     },
-    "AGRI M1063": {
-      "course_id": "AGRI M1063",
+    "AGPS M1063": {
+      "course_id": "AGPS M1063",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -82394,7 +82408,7 @@
       "description": "Students will explore plants on managed lands in Sonoma County that are important to grassland and shrubland management. This course will include identification, taxonomy, distribution, forage value, and ecological relationships of primarily grasses and forbs and a limited overview of ecologically important trees and shrubs. Field trips are a required part of this course.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ANSC",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": "ANSC",
       "typical_units": 2.0,
@@ -82421,7 +82435,8 @@
       "_remint_from": "M-ID ANSC 112",
       "_subj4_remint_from": "ANSC M1006",
       "cte": true,
-      "_subj4_fold_from": "AGRI M1056"
+      "_subj4_fold_from": "AGRI M1056",
+      "_agri_family_remint_from": "AGRI M1063"
     },
     "AGRI M1058": {
       "course_id": "AGRI M1058",
@@ -605303,8 +605318,8 @@
       "cte": true,
       "_subj4_fold_from": "HLTH M1008"
     },
-    "AGRI M1066": {
-      "course_id": "AGRI M1066",
+    "AGAB M1066": {
+      "course_id": "AGAB M1066",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -605313,7 +605328,7 @@
       "description": "Overview of direct farm marketing. Includes innovative marketing alternatives for the small to medium size grower, methods of product development, promotion, pricing and distribution.",
       "description_source": "local catalog (representative/modal)",
       "subject": "SUAG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAB",
       "discipline": "Agriculture",
       "discipline_provisional": "AGRI",
       "typical_units": 2.0,
@@ -605343,7 +605358,8 @@
       "discipline_source": "top_division",
       "discipline_confidence": 0.4,
       "discipline_inferred_at": "2026-06-11",
-      "_subj4_fold_from": "AGRI M1059"
+      "_subj4_fold_from": "AGRI M1059",
+      "_agri_family_remint_from": "AGRI M1066"
     },
     "MGMT M1017": {
       "course_id": "MGMT M1017",
@@ -637589,8 +637605,8 @@
         "AGRI M10VS"
       ]
     },
-    "AGRI M1015": {
-      "course_id": "AGRI M1015",
+    "AGPS M1032": {
+      "course_id": "AGPS M1032",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -637599,7 +637615,7 @@
       "description": null,
       "description_source": null,
       "subject": "ENVR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "discipline": "Agriculture",
       "discipline_provisional": null,
       "typical_units": 2.0,
@@ -637628,7 +637644,8 @@
       "_machine_cluster_members": [
         "AGRI M10FM",
         "AGRI M10FN"
-      ]
+      ],
+      "_agri_family_remint_from": "AGRI M1015"
     },
     "AGRI M1017": {
       "course_id": "AGRI M1017",
@@ -638003,8 +638020,8 @@
         "HORT M10NB"
       ]
     },
-    "AGRI M1035": {
-      "course_id": "AGRI M1035",
+    "AGMA M1035": {
+      "course_id": "AGMA M1035",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -638013,7 +638030,7 @@
       "description": null,
       "description_source": null,
       "subject": "AGNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "discipline": "Agriculture",
       "discipline_provisional": null,
       "typical_units": 4.0,
@@ -638046,7 +638063,8 @@
         "AGRI M10QY",
         "AGRI M10QZ",
         "AGRI M10RA"
-      ]
+      ],
+      "_agri_family_remint_from": "AGRI M1035"
     },
     "AGRI M1036": {
       "course_id": "AGRI M1036",

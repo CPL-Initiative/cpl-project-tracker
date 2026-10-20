@@ -1,0 +1,142 @@
+[
+ {
+  "course_id": "AGRI M1015",
+  "field": "unified_title",
+  "value": "High Altitude Crop Production - Early Season"
+ },
+ {
+  "course_id": "AGRI M1035",
+  "field": "unified_title",
+  "value": "Heavy Logging Equipment Operations and Maintenance"
+ },
+ {
+  "course_id": "AGRI M1061",
+  "field": "unified_title",
+  "value": "Equipment Operation, Configuration and Troubleshooting"
+ },
+ {
+  "course_id": "AGRI M1093",
+  "field": "merge_into",
+  "value": "FDNT M1014"
+ },
+ {
+  "course_id": "AGRI M10AL",
+  "field": "cross_listed_disciplines",
+  "value": "Business"
+ },
+ {
+  "course_id": "AGRI M10AL",
+  "field": "discipline",
+  "value": "Agriculture"
+ },
+ {
+  "course_id": "AGRI M10FM",
+  "field": "merge_into",
+  "value": "AGRI M1015"
+ },
+ {
+  "course_id": "AGRI M10FN",
+  "field": "merge_into",
+  "value": "AGRI M1015"
+ },
+ {
+  "course_id": "AGRI M10JL",
+  "field": "merge_into",
+  "value": "AGRI M1061"
+ },
+ {
+  "course_id": "AGRI M10KP",
+  "field": "merge_into",
+  "value": "HORT M1012"
+ },
+ {
+  "course_id": "AGRI M10MY",
+  "field": "merge_into",
+  "value": "AGPS M1027"
+ },
+ {
+  "course_id": "AGRI M10QQ",
+  "field": "merge_into",
+  "value": "AGMA M1001"
+ },
+ {
+  "course_id": "AGRI M10QS",
+  "field": "merge_into",
+  "value": "AGRI M1035"
+ },
+ {
+  "course_id": "AGRI M10QY",
+  "field": "merge_into",
+  "value": "AGRI M1035"
+ },
+ {
+  "course_id": "AGRI M10QZ",
+  "field": "merge_into",
+  "value": "AGRI M1035"
+ },
+ {
+  "course_id": "AGRI M10RA",
+  "field": "merge_into",
+  "value": "AGRI M1035"
+ },
+ {
+  "course_id": "AGRI M10SZ",
+  "field": "merge_into",
+  "value": "HORT M1012"
+ },
+ {
+  "course_id": "AGRI M10TB",
+  "field": "merge_into",
+  "value": "AGPS M1028"
+ },
+ {
+  "course_id": "AGRI M10TL",
+  "field": "merge_into",
+  "value": "HORT M1049"
+ },
+ {
+  "course_id": "AGRI M10TU",
+  "field": "merge_into",
+  "value": "HORT M1071"
+ },
+ {
+  "course_id": "AGRI M10VQ",
+  "field": "merge_into",
+  "value": "HORT M1090"
+ },
+ {
+  "course_id": "AGRI M10VY",
+  "field": "merge_into",
+  "value": "AGEH M1121"
+ },
+ {
+  "course_id": "AGRI M1108",
+  "field": "merge_into",
+  "value": "HORT M1049"
+ },
+ {
+  "course_id": "AGRI M1115",
+  "field": "unified_title",
+  "value": "Integrated Pest Management"
+ },
+ {
+  "course_id": "AGRI M1124",
+  "field": "merge_into",
+  "value": "AGPR M1020"
+ },
+ {
+  "course_id": "AGRI M1131",
+  "field": "merge_into",
+  "value": "AGPS M1027"
+ },
+ {
+  "course_id": "AGRI M9005",
+  "field": "unified_title",
+  "value": "Agricultural Equipment Operation, Configuration and Troubleshooting"
+ },
+ {
+  "course_id": "AGRI M90AE",
+  "field": "merge_into",
+  "value": "AGRI M9005"
+ }
+]

@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 694,
+  "file_datasets": 696,
   "external_services": 182,
-  "consumers": 457,
+  "consumers": 458,
   "workflows": 57,
   "data_js_files": 70,
   "tabs": 39
@@ -3804,6 +3804,19 @@
      "direction": "write",
      "how": "literal",
      "line": 10
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_agri_family_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
     }
    ],
    "served": false,
@@ -8458,6 +8471,19 @@
      "direction": "read",
      "how": "literal",
      "line": 86
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/agri_family_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
     }
    ],
    "served": false,

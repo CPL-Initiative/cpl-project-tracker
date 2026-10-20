@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T00:38:24Z",
-  "session": 428,
-  "moniker": "SkyPinyon",
+  "written_at": "2026-10-20T02:12:57Z",
+  "session": 430,
+  "moniker": "SkyLupine",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_430_handoff.md",
+  "handoff": "docs/session_431_handoff.md",
   "next_step": {
-    "title": "Apply Sheet 102's rulings: the exchange's files for Malone, then the AGRI sitting",
-    "text": "Draft the exchange repository's README, CLAUDE.md and contract v0 for Malone, add the three decision rights, then the queue: the Jev sitting over the AGRI residual (Sheet 99 card 4) and the nine renames (card 6)."
+    "title": "Land the rename and the AGRI re-key, then re-key the live curation rows",
+    "text": "Merge #2269 (the nine MQ names) and #2270 (Sheet 103's 44 AGRI identities to their family codes) on a green test, dispatch supabase-rekey.yml with the re-key's receipt before the next curation sync, then daily-dashboard.yml; Sam hands Malone the exchange paste."
   },
   "calls": [
     {
@@ -24,12 +24,12 @@
   },
   "changes": [
     {
-      "text": "No change to the harvest's records this run. S428 read Credential Engine's xTRA code and its ten Ready to Publish colleges' extracts, mapped the harvest's 36,090 blocks to CTDL, and opened the CTDL partner exchange lane and Open Asks Sheet 102.",
-      "at": "2026-10-20T00:31:27Z"
+      "at": "2026-10-20T01:15:00Z",
+      "text": "The CTDL exchange's seed drafted for Malone, with the three decision rights on the governance register (#2267)."
     },
     {
-      "text": "Sam answered Open Asks Sheet 102 (00:31Z, all six as recommended); its calls left the run log.",
-      "at": "2026-10-20T00:37:45Z"
+      "at": "2026-10-20T01:30:00Z",
+      "text": "The two Jev sittings over the AGRI residual filed: 397 of 404 agree, 56 at the gate (#2268)."
     }
   ],
   "headline": [

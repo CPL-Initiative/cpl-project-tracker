@@ -6053,3 +6053,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history, moved verbatim on 2026-10-19 (the merge with #2264)
 
 - 2026-10-18 (S419 SkyCottonwood, hand-opened): the Commons' step 1 landed (#2237: the Progress view drawn by the shared `commons_progress.js`, nothing changing on screen, the status file under `kb/status/`) and Sam approved the mock-up (19:08Z, to S417; version 4 collapses per row and all at once); Cañada's PDF picker reads the catalog's three heading shapes (#2241; the capture-only run moved 26 pages, eight of the eleven empty records onto their own headings); `docs/commons_lessons.md` and a KB note on the shared-view pattern added.
+
+### INDEX update history moved 2026-10-20 (S430)
+
+- 2026-10-19 (S421 SkyTupelo): the second reader built (#2246); Cañada's Cal-GETC step and the six-row rollback (#2247); three Jev sittings read, verdicts in `kb/jev_harvest_verdicts/`; lessons S421; handoff 422.

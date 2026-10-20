@@ -1016,7 +1016,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "AGGE M10AB"
     },
-    "AGRI M1115": {
+    "AGPS M1115": {
       "identity_system": "M-ID",
       "title": "Integrated Pest Managment",
       "discipline": "Agriculture",
@@ -58482,7 +58482,7 @@
       "_remint_from": "M-ID AERO 276"
     },
     {
-      "course_id": "AGRI M1115",
+      "course_id": "AGPS M1115",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -58514,7 +58514,7 @@
       "_remint_from": "M-ID AG 134"
     },
     {
-      "course_id": "AGRI M1115",
+      "course_id": "AGPS M1115",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,

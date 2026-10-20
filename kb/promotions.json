@@ -266,6 +266,17 @@
     }
    }
   },
+  "AGMA M10WM": {
+   "minted_remnant_members": 1,
+   "official_targets": {
+    "C-ID:AG-MA 108 L": {
+     "members": 1,
+     "colleges": [
+      "Coalinga College"
+     ]
+    }
+   }
+  },
   "AGPR M10FW": {
    "minted_remnant_members": 1,
    "official_targets": {
@@ -410,6 +421,27 @@
     }
    }
   },
+  "AGPS M1117": {
+   "minted_remnant_members": 6,
+   "official_targets": {
+    "C-ID:AG-PS 128 L": {
+     "members": 12,
+     "colleges": [
+      "Allan Hancock College",
+      "Bakersfield College",
+      "Coalinga College",
+      "Cuesta College",
+      "Feather River College",
+      "Lemoore College",
+      "Los Angeles Pierce College",
+      "Los Angeles Southwest College",
+      "Porterville College",
+      "Santa Rosa Junior College",
+      "Ventura College"
+     ]
+    }
+   }
+  },
   "AGRI M10DX": {
    "minted_remnant_members": 1,
    "official_targets": {
@@ -443,17 +475,6 @@
     }
    }
   },
-  "AGRI M10WM": {
-   "minted_remnant_members": 1,
-   "official_targets": {
-    "C-ID:AG-MA 108 L": {
-     "members": 1,
-     "colleges": [
-      "Coalinga College"
-     ]
-    }
-   }
-  },
   "AGRI M1102": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -461,27 +482,6 @@
      "members": 1,
      "colleges": [
       "Pasadena City College"
-     ]
-    }
-   }
-  },
-  "AGRI M1117": {
-   "minted_remnant_members": 6,
-   "official_targets": {
-    "C-ID:AG-PS 128 L": {
-     "members": 12,
-     "colleges": [
-      "Allan Hancock College",
-      "Bakersfield College",
-      "Coalinga College",
-      "Cuesta College",
-      "Feather River College",
-      "Lemoore College",
-      "Los Angeles Pierce College",
-      "Los Angeles Southwest College",
-      "Porterville College",
-      "Santa Rosa Junior College",
-      "Ventura College"
      ]
     }
    }
@@ -31033,7 +31033,7 @@
    }
   }
  },
- "_rekeyed_at": "2026-10-19",
+ "_rekeyed_at": "2026-10-20",
  "_rekeyed_through": [
   "kb/subj4_apply/alias_map.json",
   "kb/crossdisc_out/alias_map.json",
@@ -31053,7 +31053,8 @@
   "kb/eths_remint_out/2026-09-28/ruled/alias_map.json",
   "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
   "kb/athl_remint_out/2026-09-30/alias_map.json",
-  "kb/agab_remint_out/2026-10-19/alias_map.json"
+  "kb/agab_remint_out/2026-10-19/alias_map.json",
+  "kb/agri_family_remint_out/2026-10-20/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

@@ -1,0 +1,38 @@
+{
+ "date": "2026-10-20",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/agri_family_remint_out/2026-10-20/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 2,
+  "folded": 0,
+  "unresolved": 0,
+  "unchanged": 1984
+ },
+ "rekeyed": [
+  {
+   "old": "AGRI M10WM",
+   "new": "AGMA M10WM",
+   "hops": [
+    "AGMA M10WM"
+   ]
+  },
+  {
+   "old": "AGRI M1117",
+   "new": "AGPS M1117",
+   "hops": [
+    "AGPS M1117"
+   ]
+  }
+ ],
+ "folded": [],
+ "unresolved": [],
+ "unchanged": 1984
+}
