@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-20T05:43:20.879732+00:00",
+  "scraped_at": "2026-10-20T11:45:10.769734+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29165,
+    "jst": 29166,
     "star_colleges": 63
   },
   "computed_star_colleges": 63,
@@ -202,7 +202,7 @@
     },
     "Fullerton College": {
       "vets": 291,
-      "jst": 561,
+      "jst": 562,
       "star": true
     },
     "Victor Valley College": {

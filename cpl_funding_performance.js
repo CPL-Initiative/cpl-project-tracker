@@ -4393,8 +4393,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Fullerton": {
    "vets": 291,
-   "jst": 561,
-   "pct": 1.9278
+   "jst": 562,
+   "pct": 1.9313
   },
   "Victor Valley": {
    "vets": 97,

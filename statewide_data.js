@@ -20177,9 +20177,10 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.5
     },
     {
-      "exhibit_id": "MAPCXN-NFE11-1-001",
+      "exhibit_id": "MAPCXN-NFE11-1-001|MAPCXN-NFE16-1-001",
       "exhibit_ids": [
-        "MAPCXN-NFE11-1-001"
+        "MAPCXN-NFE11-1-001",
+        "MAPCXN-NFE16-1-001"
       ],
       "title": "Noncredit for ENG 110",
       "unified_title": "Noncredit for ENG 110",
@@ -20324,6 +20325,12 @@ window.CPL_STATEWIDE = {
       "exhibit_records": [
         {
           "id": "MAPCXN-NFE11-1-001",
+          "title": "Noncredit for ENG 110",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXN-NFE16-1-001",
           "title": "Noncredit for ENG 110",
           "units": 2.0,
           "lines": 1
@@ -107499,6 +107506,153 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.0,
       "peer_units_max": 1.0,
       "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPCXN-NFF11-1-001",
+      "exhibit_ids": [
+        "MAPCXN-NFF11-1-001"
+      ],
+      "title": "Noncredit for FREN 1B",
+      "unified_title": "Noncredit for FREN 1B",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Noncredit for FREN 1B"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "81"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "FREN 1B",
+          "credit": "5 units in FREN 1B Elementary French"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXN-NFF11-1-001",
+          "title": "Noncredit for FREN 1B",
+          "units": 5.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 5.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 5.0,
+      "peer_units_max": 5.0,
+      "rec_units_total": 5.0
     },
     {
       "exhibit_id": "MAPICI-CA(-1-001|MAPICI-CA-1-001|MAPICI-CA1-1-001|MAPICI-CA3-1-001|MAPICI-CA4-1-001|MAPICI-CA5-1-001|MAPICI-CAC-1-001|MAPICI-CAC1-1-001|MAPICI-CAC2-1-001|MAPICI-CAC4-1-001|MAPICI-CAC5-1-001|MAPICI-CAC6-1-001|MAPICI-CAFC-1-001|MAPICS-I8-1-001",
@@ -357830,6 +357984,85 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
+      "exhibit_id": "MAPCXN-NFM11-1-001",
+      "exhibit_ids": [
+        "MAPCXN-NFM11-1-001"
+      ],
+      "title": "Noncredit for MATH 100C",
+      "unified_title": "Noncredit for MATH 100C",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Noncredit for MATH 100C"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [
+        "121"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Cabrillo College",
+        "Chabot College",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Desert",
+        "Golden West College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Riverside City College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "MATH 100C",
+          "credit": "1 unit in MATH 100C Concurrent Support for SLAM Mathematics"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXN-NFM11-1-001",
+          "title": "Noncredit for MATH 100C",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 1.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
       "exhibit_id": "MAPSAS-D:A-1-001|MAPSAS-DA1-1-001|MAPSAS-DA2-1-001|MAPSAS-DE-A-1-001",
       "exhibit_ids": [
         "MAPSAS-D:A-1-001",
@@ -409277,12 +409510,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Las Positas College",
-        "credit_recs": 179,
-        "exhibits": 133,
+        "credit_recs": 182,
+        "exhibits": 136,
         "disciplines": 9,
         "ccc_collaborative": 12,
         "industry_certs": 83,
-        "pct": 1.2
+        "pct": 1.3
       },
       {
         "college": "Woodland Community College",
@@ -410008,9 +410241,9 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6173,
-        "exhibits": 2339,
-        "courses": 350,
+        "credit_recs": 6174,
+        "exhibits": 2340,
+        "courses": 351,
         "colleges": 88,
         "ccc_collaborative": 35,
         "pct": 42.6
@@ -410071,12 +410304,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Foreign Languages",
-        "credit_recs": 369,
-        "exhibits": 206,
+        "credit_recs": 370,
+        "exhibits": 207,
         "courses": 170,
         "colleges": 37,
         "ccc_collaborative": 40,
-        "pct": 2.5
+        "pct": 2.6
       },
       {
         "discipline": "Social Sciences",
@@ -410116,8 +410349,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Humanities (Letters)",
-        "credit_recs": 179,
-        "exhibits": 158,
+        "credit_recs": 180,
+        "exhibits": 159,
         "courses": 46,
         "colleges": 30,
         "ccc_collaborative": 0,
@@ -410231,8 +410464,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2248,
-        "exhibits": 1759,
+        "credit_recs": 2251,
+        "exhibits": 1762,
         "colleges": 62,
         "pct": 15.5
       },
@@ -410289,8 +410522,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 256,
-        "exhibits": 221,
+        "credit_recs": 259,
+        "exhibits": 224,
         "colleges": 13,
         "pct": 1.8
       },
@@ -410333,8 +410566,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12783,
-        "exhibits": 6102,
+        "credit_recs": 12786,
+        "exhibits": 6105,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.2
@@ -410759,8 +410992,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-20T05:42:37",
-  "total_credit_recs": 14501,
+  "generated_at": "2026-10-20T11:44:24",
+  "total_credit_recs": 14504,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
