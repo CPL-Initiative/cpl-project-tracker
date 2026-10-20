@@ -6064,3 +6064,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history moved 2026-10-20 (S434)
 
 - 2026-10-19 (S426 SkyTorreya): the Annual Workplan Goals tab edits every year (a Current per year), shows its stored descriptions, Set targets fixed, the formatting pass; KB note on idempotent controls; handoff 427.
+
+- 2026-10-19 (S427 SkyMadrona): Sheet 99 rulings 1, 2, 3 and 5 applied (the nightly confirm's first run, AGAB, the Validate column), the AGRI sitting built, Open Asks Sheet 101; handoff 428; KB note methodology-a-ruling-names-a-record-the-store-may-count-another.
+- 2026-10-19 (the funding side session beside S427): the memo, letter, report and brief as saved passages leading with SB 135 (the opening follows the explainer's Overview passage); CPL Funding in Motion reads the model through a filed, stamped `figures.json` that Refresh everything checks; Step 2 in the Step 1 box; two reset controls retired; the Scenario block beside the Project block (#2265); KB note on the filed stamp; lane and lessons compacted under their caps.
