@@ -4030,8 +4030,8 @@
       "cte": true,
       "_subj4_fold_from": "APTE M1004"
     },
-    "ARCE M1001": {
-      "course_id": "ARCE M1001",
+    "ARTS M1663": {
+      "course_id": "ARTS M1663",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4040,8 +4040,8 @@
       "description": "This course is a continuation of ARCE 1A, including handbuilding techniques, experimentation with clay bodies, glazing, and finishing processes. Portions of instruction may be offered online; may also be offered fully online.",
       "description_source": "local catalog (representative/modal)",
       "subject": "ARCE",
-      "subject_4letter": "ARCE",
-      "discipline": null,
+      "subject_4letter": "ARTS",
+      "discipline": "Art",
       "discipline_provisional": "ARCE",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -4070,11 +4070,9 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID ARCE 100",
-      "cte": null
+      "cte": null,
+      "_blank_stray_remint_from": "ARCE M1001"
     },
     "ARME M1001": {
       "course_id": "ARME M1001",
@@ -4774,8 +4772,8 @@
       "cte": true,
       "_prefix_fold_from": "ARTD M1009"
     },
-    "ARTF M1001": {
-      "course_id": "ARTF M1001",
+    "ARTS M1664": {
+      "course_id": "ARTS M1664",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4784,8 +4782,8 @@
       "description": null,
       "description_source": null,
       "subject": "ARTF",
-      "subject_4letter": "ARTF",
-      "discipline": null,
+      "subject_4letter": "ARTS",
+      "discipline": "Art",
       "discipline_provisional": "ARTF",
       "typical_units": 1.0,
       "confidence": 0.68,
@@ -4805,14 +4803,12 @@
       "top_code_distribution": null,
       "noncredit_category_mixed": null,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID ARTF 106",
-      "cte": null
+      "cte": null,
+      "_blank_stray_remint_from": "ARTF M1001"
     },
-    "ARTF M1002": {
-      "course_id": "ARTF M1002",
+    "ARTS M1665": {
+      "course_id": "ARTS M1665",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4821,8 +4817,8 @@
       "description": null,
       "description_source": null,
       "subject": "ARTF",
-      "subject_4letter": "ARTF",
-      "discipline": null,
+      "subject_4letter": "ARTS",
+      "discipline": "Art",
       "discipline_provisional": "ARTF",
       "typical_units": 1.0,
       "confidence": 0.68,
@@ -4842,14 +4838,12 @@
       "top_code_distribution": null,
       "noncredit_category_mixed": null,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID ARTF 108",
-      "cte": null
+      "cte": null,
+      "_blank_stray_remint_from": "ARTF M1002"
     },
-    "ARTF M1003": {
-      "course_id": "ARTF M1003",
+    "ARTS M1666": {
+      "course_id": "ARTS M1666",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4858,8 +4852,8 @@
       "description": null,
       "description_source": null,
       "subject": "ARTF",
-      "subject_4letter": "ARTF",
-      "discipline": null,
+      "subject_4letter": "ARTS",
+      "discipline": "Art",
       "discipline_provisional": "ARTF",
       "typical_units": 3.0,
       "confidence": 0.68,
@@ -4879,14 +4873,12 @@
       "top_code_distribution": null,
       "noncredit_category_mixed": null,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID ARTF 110",
-      "cte": false
+      "cte": false,
+      "_blank_stray_remint_from": "ARTF M1003"
     },
-    "ARTF M1008": {
-      "course_id": "ARTF M1008",
+    "ARTS M1667": {
+      "course_id": "ARTS M1667",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4895,8 +4887,8 @@
       "description": null,
       "description_source": null,
       "subject": "ARTF",
-      "subject_4letter": "ARTF",
-      "discipline": null,
+      "subject_4letter": "ARTS",
+      "discipline": "Art",
       "discipline_provisional": "ARTF",
       "typical_units": 1.0,
       "confidence": 0.68,
@@ -4916,11 +4908,9 @@
       "top_code_distribution": null,
       "noncredit_category_mixed": null,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID ARTF 126",
-      "cte": null
+      "cte": null,
+      "_blank_stray_remint_from": "ARTF M1008"
     },
     "INDT M1063": {
       "course_id": "INDT M1063",
@@ -6691,8 +6681,8 @@
       "cte": true,
       "_subj4_fold_from": "BMGR M9016"
     },
-    "BRDC M1003": {
-      "course_id": "BRDC M1003",
+    "BCST M1058": {
+      "course_id": "BCST M1058",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -6701,8 +6691,8 @@
       "description": null,
       "description_source": null,
       "subject": "BRDC",
-      "subject_4letter": "BRDC",
-      "discipline": null,
+      "subject_4letter": "BCST",
+      "discipline": "Broadcasting Technology",
       "discipline_provisional": "BRDC",
       "typical_units": 1.0,
       "confidence": 0.85,
@@ -6722,11 +6712,9 @@
       "top_code_distribution": null,
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID BRDC 104",
-      "cte": true
+      "cte": true,
+      "_blank_stray_remint_from": "BRDC M1003"
     },
     "BUSI M9093": {
       "course_id": "BUSI M9093",
@@ -34957,8 +34945,8 @@
       "_subj4_fold_from": "JRNL M1003",
       "_prefix_fold_from": "HUMA M1109"
     },
-    "KHME M1001": {
-      "course_id": "KHME M1001",
+    "FLKH M1001": {
+      "course_id": "FLKH M1001",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -34967,7 +34955,7 @@
       "description": "This course is the first semester of intermediate Khmer. It develops reading and writing skills of Heritage Khmer speakers. The Khmer 9 course also increases studentÃ¢â‚¬â„¢s oral proficiency and understanding of Khmer cultural practices. Students explore Khmer colloquial usage and common spellings to gain an understanding of how to use Khmer characters in word formation. This course includes extensive analysis of the Khmer writing system, conventions in spelling, and key vocabulary delivered through a culturally rich content and community based learning.",
       "description_source": "local catalog (representative/modal)",
       "subject": "KHMER",
-      "subject_4letter": "KHME",
+      "subject_4letter": "FLKH",
       "discipline": "Foreign Languages",
       "discipline_provisional": "KHMER",
       "typical_units": 5.0,
@@ -34992,7 +34980,8 @@
       "discipline_confidence": 0.4,
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID KHMER 100",
-      "cte": false
+      "cte": false,
+      "_fl_stray_remint_from": "KHME M1001"
     },
     "HLTH M1071": {
       "course_id": "HLTH M1071",
@@ -378858,8 +378847,8 @@
       "_subj4_fold_from": "AGRI M1091",
       "_forestry_wine_remint_from": "AGRI M1103"
     },
-    "AGRI M1104": {
-      "course_id": "AGRI M1104",
+    "ENVR M1104": {
+      "course_id": "ENVR M1104",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -378868,8 +378857,8 @@
       "description": "This course introduces information and skills needed to recognize the capabilities and limitations of timber harvesting equipment and systems operating in a broad range of forest resource management situations. After completing the course, students will be able to identify harvest systems that are best matched with the characteristics of the physical, environmental, economic, and social operating environments. Harvest process evaluations and decisions are aided with various forest engineering analysis and tools. The lecture portion of this course may be offered in a distance education format.",
       "description_source": "local catalog (representative/modal)",
       "subject": "FNR",
-      "subject_4letter": "AGRI",
-      "discipline": "Agriculture",
+      "subject_4letter": "ENVR",
+      "discipline": "Forestry/Natural Resources",
       "discipline_provisional": "AGNR",
       "typical_units": 3.0,
       "confidence": 0.72,
@@ -378893,13 +378882,11 @@
       },
       "noncredit_category_mixed": false,
       "noncredit_category_distribution": null,
-      "discipline_source": null,
-      "discipline_confidence": null,
-      "discipline_inferred_at": null,
       "_remint_from": "M-ID AGNR 114",
       "_subj4_remint_from": "FNR M1004",
       "cte": true,
-      "_subj4_fold_from": "AGRI M1092"
+      "_subj4_fold_from": "AGRI M1092",
+      "_forestry_wine_remint_from": "AGRI M1104"
     },
     "ENVR M1021": {
       "course_id": "ENVR M1021",
@@ -720311,8 +720298,8 @@
         "FDNT M10CP"
       ]
     },
-    "FILI M1001": {
-      "course_id": "FILI M1001",
+    "FLTA M1006": {
+      "course_id": "FLTA M1006",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -720321,7 +720308,7 @@
       "description": null,
       "description_source": null,
       "subject": "PIL",
-      "subject_4letter": "FILI",
+      "subject_4letter": "FLTA",
       "discipline": "Foreign Languages",
       "discipline_provisional": null,
       "typical_units": 5.0,
@@ -720351,7 +720338,8 @@
       "_machine_cluster_members": [
         "FLTA M10AI",
         "FLTA M10AR"
-      ]
+      ],
+      "_fl_stray_remint_from": "FILI M1001"
     },
     "FIRE M1391": {
       "course_id": "FIRE M1391",
@@ -724033,8 +724021,8 @@
         "WELD M10YE"
       ]
     },
-    "FLGH M1002": {
-      "course_id": "FLGH M1002",
+    "AVIA M1094": {
+      "course_id": "AVIA M1094",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -724043,8 +724031,8 @@
       "description": null,
       "description_source": null,
       "subject": "APT",
-      "subject_4letter": "FLGH",
-      "discipline": null,
+      "subject_4letter": "AVIA",
+      "discipline": "Aviation",
       "discipline_provisional": null,
       "typical_units": 3.0,
       "confidence": null,
@@ -724072,7 +724060,8 @@
       "_machine_cluster_members": [
         "APT M10AL",
         "FLGH M10AH"
-      ]
+      ],
+      "_blank_stray_remint_from": "FLGH M1002"
     },
     "FLHM M1001": {
       "course_id": "FLHM M1001",
@@ -729055,8 +729044,8 @@
         "GRAF M90AQ"
       ]
     },
-    "GREE M1001": {
-      "course_id": "GREE M1001",
+    "FLGR M1001": {
+      "course_id": "FLGR M1001",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -729065,7 +729054,7 @@
       "description": null,
       "description_source": null,
       "subject": "GREEK",
-      "subject_4letter": "GREE",
+      "subject_4letter": "FLGR",
       "discipline": "Foreign Languages",
       "discipline_provisional": null,
       "typical_units": 4.0,
@@ -729094,7 +729083,8 @@
       "_machine_cluster_members": [
         "FLGR M10AA",
         "FLGR M10AB"
-      ]
+      ],
+      "_fl_stray_remint_from": "GREE M1001"
     },
     "GSMI M1003": {
       "course_id": "GSMI M1003",
@@ -754744,8 +754734,8 @@
         "ITIS M90HX"
       ]
     },
-    "JAPA M1001": {
-      "course_id": "JAPA M1001",
+    "JAPN M1041": {
+      "course_id": "JAPN M1041",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -754754,7 +754744,7 @@
       "description": null,
       "description_source": null,
       "subject": "JAPA",
-      "subject_4letter": "JAPA",
+      "subject_4letter": "JAPN",
       "discipline": "Foreign Languages",
       "discipline_provisional": null,
       "typical_units": 3.0,
@@ -754783,7 +754773,8 @@
       "_machine_cluster_members": [
         "JAPN M10EF",
         "JAPN M10EG"
-      ]
+      ],
+      "_fl_stray_remint_from": "JAPA M1001"
     },
     "JAPN M1034": {
       "course_id": "JAPN M1034",

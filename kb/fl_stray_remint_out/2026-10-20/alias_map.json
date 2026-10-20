@@ -1,11 +1,11 @@
 {
-  "_status": "FL strays re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_status": "FL strays re-mint old->new alias (receipt + rollback inverse) - APPLIED",
   "_at": "2026-10-20",
   "_scope": [
     "fl-strays-s435"
   ],
   "_count": 12,
-  "_ruling": "Proposed on Open Asks Sheet 106 (S435, 2026-10-20): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged",
+  "_ruling": "Sam, 2026-10-20 (Open Asks Sheet 107 card 2, 13:08Z, his own call, \"rekey-twelve\"; proposed on Sheet 106 by S435): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged",
   "aliases": {
     "ARAM M10AA": {
       "new_id": "FLAM M10AA",
@@ -58,7 +58,7 @@
       "discipline": "Foreign Languages"
     },
     "LING M10AF": {
-      "new_id": "FLNG M10AF",
+      "new_id": "FLNG M11LR",
       "route": "FLNG",
       "discipline": "Foreign Languages"
     },
@@ -67,5 +67,12 @@
       "route": "FLTU",
       "discipline": "Foreign Languages"
     }
+  },
+  "_applied_at": "2026-10-20",
+  "_counts": {
+    "courses": 4,
+    "singletons": 8,
+    "curation_keys": 3,
+    "pointers": 6
   }
 }

@@ -498,6 +498,19 @@ def fresh_read_check(live_rows, curations, plan):
 SKYVIEW_FILES = ("prototype/ccr_universe.json", "prototype/ccr_universe_members.json")
 
 
+def skyview_ids(root=ROOT):
+    """Every point id SkyView's hand-built layout draws. The layout keeps points under ids
+    an earlier re-mint vacated (it is never rebuilt), so a gap-fill onto one of those slots
+    draws the id twice (S436, 2026-10-20: six duplicates). A re-mint treats them as taken."""
+    ids = set()
+    path = os.path.join(root, SKYVIEW_FILES[0])
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            for isl in json.load(f).get("islands", []):
+                ids.update(p.get("i") for p in isl.get("p", []) if p.get("i"))
+    return ids
+
+
 def rekey_skyview(alias, root=ROOT):
     """-> {file: replacements}. Exact id tokens only, never a substring."""
     if not alias:

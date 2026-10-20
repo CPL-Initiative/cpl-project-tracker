@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 703,
+  "file_datasets": 706,
   "external_services": 184,
   "consumers": 462,
   "workflows": 58,
@@ -8666,6 +8666,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/blank_stray_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 91
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/budget_snapshot.json": {
    "consumers": [
     {
@@ -11936,14 +11949,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 181
+     "line": 182
     },
     {
      "id": "script:kb/_fl_stray_remint.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 232
+     "line": 233
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -12414,7 +12427,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 522
+     "line": 535
     }
    ],
    "served": false,
@@ -12497,6 +12510,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/fl_stray_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/fl_subj4_out/<date>/alias_map.json": {
    "consumers": [
     {
@@ -12552,6 +12578,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/forestry_wine_remint_out/<date>-stragglers/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/forestry_wine_remint_out/<date>/alias_map.json": {

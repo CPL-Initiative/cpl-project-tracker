@@ -382,3 +382,7 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
 - **A draft PR runs no CI here.** `get_check_runs` read zero runs on #2285 until it was marked ready; never park in draft.
 - **`npm test` does not finish inside a 10-minute sandbox call**, even in four background shards. CI's sharded `test`
   check is the gate; locally, run the changed tests and the ones that pin the view.
+- **A gap-fill must not take a slot SkyView still draws.** SkyView's layout is hand-built and keeps points under ids
+  an earlier re-mint vacated, so the first Sheet 107 apply drew six ids twice and the lints job failed. The allocator
+  in the three Sheet 107 scripts now treats `er.ever_minted_ids()` and `er.skyview_ids()` as taken, and the window
+  was re-applied from the pre-apply files: no reused slot, no duplicate.

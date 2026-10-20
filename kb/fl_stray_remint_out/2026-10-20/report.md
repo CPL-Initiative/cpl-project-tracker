@@ -1,6 +1,6 @@
 # Foreign Languages strays (fl-strays-s435) - dry run 2026-10-20
 
-Proposed on Open Asks Sheet 106 (S435, 2026-10-20): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).
+Sam, 2026-10-20 (Open Asks Sheet 107 card 2, 13:08Z, his own call, "rekey-twelve"; proposed on Sheet 106 by S435): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).
 
 ## Validation
 
@@ -24,7 +24,7 @@ Proposed on Open Asks Sheet 106 (S435, 2026-10-20): the twelve Foreign Languages
 | HUPA M10AB | FLHU M10AB | kept number | Elementary Hupa 1B | Hupa (new) |  | 1199.00 |
 | JAPA M1001 | JAPN M1041 | gap-filled | Continuation of Beginning Kanji for Reading and Writing | Japanese |  | 1108.00 |
 | KHME M1001 | FLKH M1001 | kept number | Khmer for Heritage Speakers | Khmer (new) |  | 1117.00 |
-| LING M10AF | FLNG M10AF | kept number | Honors Linguistics 1 | no one language: the residual |  | 1199.00 |
+| LING M10AF | FLNG M11LR | gap-filled | Honors Linguistics 1 | no one language: the residual |  | 1199.00 |
 | TURK M10AA | FLTU M10AA | kept number | Elementary Turkish 1 | Turkish (new) |  | 1199.00 |
 
 New umbrella codes: FLAM (Aramaic), FLEG (Egyptian Hieroglyphs), FLHU (Hupa), FLKH (Khmer), FLTU (Turkish).

@@ -154,8 +154,8 @@
       "discipline_source_before": "top_division",
       "top_code": "1199.00",
       "merged_into": null,
-      "new_id": "FLNG M10AF",
-      "how": "kept number"
+      "new_id": "FLNG M11LR",
+      "how": "gap-filled"
     },
     "TURK M10AA": {
       "old_id": "TURK M10AA",
@@ -183,7 +183,7 @@
     "HUPA M10AB": "FLHU M10AB",
     "JAPA M1001": "JAPN M1041",
     "KHME M1001": "FLKH M1001",
-    "LING M10AF": "FLNG M10AF",
+    "LING M10AF": "FLNG M11LR",
     "TURK M10AA": "FLTU M10AA"
   },
   "validation": {
@@ -221,9 +221,13 @@
       "wanted": "JAPN M1001",
       "new_id": "JAPN M1041",
       "why": "JAPA M1001 -> JAPN (fl-strays-s435)"
+    },
+    {
+      "old_id": "LING M10AF",
+      "wanted": "FLNG M10AF",
+      "new_id": "FLNG M11LR",
+      "why": "LING M10AF -> FLNG (fl-strays-s435)"
     }
   ],
-  "reused_retired_ids": [
-    "FLNG M10AF"
-  ]
+  "reused_retired_ids": []
 }

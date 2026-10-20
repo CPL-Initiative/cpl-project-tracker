@@ -51,12 +51,12 @@
    "cos_max": 1.0,
    "cross_college": true,
    "shared_terms": [
-    "advocated",
     "bureaucratic",
+    "advocated",
     "debated",
     "reducing",
-    "parties",
-    "degradation"
+    "degradation",
+    "parties"
    ]
   },
   {
@@ -144,8 +144,8 @@
     "recognized",
     "driver",
     "simulated",
-    "positioning",
     "inspections",
+    "positioning",
     "apparatus"
    ]
   },
@@ -361,8 +361,8 @@
    "cos_max": 0.921,
    "cross_college": true,
    "shared_terms": [
-    "patrol",
     "traffic",
+    "patrol",
     "officer",
     "philosophies",
     "expectations",
@@ -695,8 +695,8 @@
    "cos_max": 0.851,
    "cross_college": true,
    "shared_terms": [
-    "organize",
     "operate",
+    "organize",
     "philosophies",
     "administrative",
     "childhood",
@@ -866,8 +866,8 @@
    "shared_terms": [
     "studying",
     "desiring",
-    "conversation",
     "customs",
+    "conversation",
     "conversational"
    ]
   },
@@ -897,8 +897,8 @@
    "cos_max": 0.742,
    "cross_college": true,
    "shared_terms": [
-    "responded",
     "geog",
+    "responded",
     "exclusion",
     "segregation",
     "intersections",
@@ -1539,8 +1539,8 @@
    "shared_terms": [
     "criterion",
     "noted",
-    "actually",
     "discontinue",
+    "actually",
     "submitted",
     "committee"
    ]
@@ -1614,10 +1614,10 @@
    "cross_college": false,
    "shared_terms": [
     "bazooka",
-    "skim",
     "spotters",
-    "coat",
+    "skim",
     "butt",
+    "coat",
     "boxes"
    ]
   },
@@ -1722,8 +1722,8 @@
    "cos_max": 0.969,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
@@ -1771,8 +1771,8 @@
     "mos",
     "similar",
     "thorough",
-    "examinations",
     "coverage",
+    "examinations",
     "specialist"
    ]
   },
@@ -1838,8 +1838,8 @@
    "shared_terms": [
     "hybrids",
     "guiding",
-    "elec",
     "cars",
+    "elec",
     "voltage",
     "hybrid"
    ]
@@ -1995,8 +1995,8 @@
     "mos",
     "similar",
     "thorough",
-    "examinations",
     "coverage",
+    "examinations",
     "specialist"
    ]
   },
@@ -2030,8 +2030,8 @@
    "shared_terms": [
     "accommodate",
     "aptitude",
-    "varying",
     "enrichment",
+    "varying",
     "stylistic",
     "repertoire"
    ]
@@ -2301,8 +2301,8 @@
    "cos_max": 0.934,
    "cross_college": false,
    "shared_terms": [
-    "less",
     "bot",
+    "less",
     "desiring",
     "mos",
     "similar",
@@ -2536,8 +2536,8 @@
    "cross_college": false,
    "shared_terms": [
     "extended",
-    "experiments",
     "pursue",
+    "experiments",
     "regular",
     "available"
    ]
@@ -2823,10 +2823,10 @@
    "cos_max": 0.905,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "intonation",
-    "rehearsing",
+    "microphone",
     "outcome",
+    "rehearsing",
     "articulation",
     "rehearse"
    ]
@@ -3037,8 +3037,8 @@
     "stay",
     "overnight",
     "observed",
-    "geographical",
     "landscapes",
+    "geographical",
     "possible"
    ]
   },
@@ -3504,8 +3504,8 @@
    "cos_max": 0.863,
    "cross_college": false,
    "shared_terms": [
-    "brn",
     "provision",
+    "brn",
     "put",
     "attributes",
     "inform",
@@ -3953,10 +3953,10 @@
    "cross_college": false,
    "shared_terms": [
     "fabrications",
-    "parsing",
     "conditionals",
-    "outputs",
+    "parsing",
     "iteration",
+    "outputs",
     "programming"
    ]
   },
@@ -4035,8 +4035,8 @@
    "cos_max": 0.831,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "intonation",
+    "microphone",
     "outcome",
     "articulation",
     "rehearse",
@@ -4069,8 +4069,8 @@
    "cos_max": 0.827,
    "cross_college": false,
    "shared_terms": [
-    "uneven",
     "erths",
+    "uneven",
     "pepperwood",
     "steward",
     "preserve",
@@ -4106,8 +4106,8 @@
    "cos_max": 0.827,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "intonation",
+    "microphone",
     "outcome",
     "articulation",
     "rehearse",
@@ -4180,8 +4180,8 @@
    "cos_max": 0.82,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
@@ -4339,8 +4339,8 @@
    "cross_college": false,
    "shared_terms": [
     "ranked",
-    "kennedy",
     "kcactf",
+    "kennedy",
     "festival",
     "workshop",
     "theatrical"
@@ -4384,8 +4384,8 @@
     "tutorials",
     "lessons",
     "assessments",
-    "prescribed",
     "individually",
+    "prescribed",
     "assigned"
    ]
   },
@@ -4610,8 +4610,8 @@
    "shared_terms": [
     "counting",
     "listing",
-    "phrasing",
     "clarity",
+    "phrasing",
     "sense",
     "musicality"
    ]
@@ -4909,8 +4909,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "roughly",
     "revival",
+    "roughly",
     "decorative",
     "classical",
     "relates",
@@ -4945,8 +4945,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "miramar",
     "articulated",
+    "miramar",
     "malfunctions",
     "repairing",
     "natef",
@@ -5094,8 +5094,8 @@
    "cos_max": 0.72,
    "cross_college": false,
    "shared_terms": [
-    "completions",
     "pevm",
+    "completions",
     "allowed",
     "mentally",
     "collegiate",
@@ -5166,8 +5166,8 @@
    "shared_terms": [
     "bias",
     "exposed",
-    "cases",
     "surrounding",
+    "cases",
     "deep"
    ]
   },
@@ -6081,8 +6081,8 @@
     "clubs",
     "shared",
     "governance",
-    "meetings",
-    "advocacy"
+    "advocacy",
+    "meetings"
    ]
   },
   {
@@ -6256,8 +6256,8 @@
    "cos_max": 0.635,
    "cross_college": false,
    "shared_terms": [
-    "gtaw",
     "fcaw",
+    "gtaw",
     "arc",
     "gas",
     "metal",
@@ -6529,9 +6529,9 @@
    "shared_terms": [
     "nine",
     "campuses",
-    "fund",
-    "holistic",
     "transformative",
+    "holistic",
+    "fund",
     "education"
    ]
   },
@@ -6624,8 +6624,8 @@
    "cos_max": 0.62,
    "cross_college": false,
    "shared_terms": [
-    "empire",
     "roman",
+    "empire",
     "constructions",
     "older",
     "adults"
@@ -6810,7 +6810,7 @@
     "culturally",
     "conducted",
     "third",
-    "acquire"
+    "readings"
    ]
   },
   {
@@ -6890,8 +6890,8 @@
    "shared_terms": [
     "icc",
     "council",
-    "admissions",
     "petition",
+    "admissions",
     "published",
     "repeat"
    ]

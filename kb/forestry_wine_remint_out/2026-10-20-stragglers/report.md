@@ -1,6 +1,6 @@
 # Sheet 104 re-mint (sheet104-forestry-stragglers): forestry to ENVR, wine to AGPR - dry run 2026-10-20
 
-The ruling: S432 on Sam's Sheet 104 "move-ten" (2026-10-20), proceeded on the recommendation: the two forestry identities merged into ENVR M1069 that the sitting never named follow their parent to ENVR. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).
+The ruling: Sam, 2026-10-20 (Open Asks Sheet 107 card 1, 13:08Z, his own call, "move-both"; carried from Sheet 105): the two forestry identities merged into ENVR M1069 that the Sheet 104 sitting never named follow their parent to ENVR. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md).
 
 ## Validation
 

@@ -71,8 +71,9 @@ SETS = {
     "sheet104": (SCOPE, RULING, PINS, ""),
     "stragglers": (
         "sheet104-forestry-stragglers",
-        'Open Asks Sheet 105 (S432, 2026-10-20), following Sam\'s Sheet 104 "move-ten": the two forestry '
-        'identities merged into ENVR M1069 that the sitting never named follow their parent to ENVR',
+        'Sam, 2026-10-20 (Open Asks Sheet 107 card 1, 13:08Z, his own call, "move-both"; carried from Sheet 105): '
+        'the two forestry identities merged into ENVR M1069 that the Sheet 104 sitting never named follow their '
+        'parent to ENVR',
         {"AGRI M10SY": ("Forest Surveying", "ENVR"),
          "AGRI M1104": ("Introduction to Forest Operations", "ENVR")},
         "-stragglers"),
@@ -116,6 +117,8 @@ def compute_plan(courses, singletons, curations, reservations, pins):
                       "top_code": r.get("top_code"),
                       "merged_into": (curations.get(cid) or {}).get("merge_into")}
     real = set(courses) | set(singletons) | set(curations)
+    # S436: never a slot an earlier re-mint used or SkyView still draws (the duplicate-point failure)
+    real |= er.ever_minted_ids() | er.skyview_ids()
     alloc = rec.Allocator(real - set(moves), reservations)
     order = sorted(moves)
     for cid in order:                                   # pass 1: keep the number

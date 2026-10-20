@@ -16,8 +16,7 @@ The discipline never changes (V3: Foreign Languages before and after). The apply
 the umbrella's `umbrella_codes` in kb/discipline_canonical_subj4.json and kb/foreign_language_subj4.json, so the
 daily scan reads them as by design rather than as strays.
 
-DRY RUN ONLY until Sam answers the card (Open Asks Sheet 106): S432's apply of the same shape was held by the
-session's permission check. The apply path is kb/_forestry_wine_remint.py's, via kb/_eths_remint.py.
+Ruled: Sam answered "rekey-twelve" on Open Asks Sheet 107 card 2 (13:08Z 2026-10-20); S436 applied it. The apply path is kb/_forestry_wine_remint.py's, via kb/_eths_remint.py.
 
 Run:
   python3 kb/_fl_stray_remint.py                    # dry run -> kb/fl_stray_remint_out/<date>/
@@ -41,7 +40,7 @@ OUT_ROOT = os.environ.get("FL_STRAY_REMINT_OUT") or os.path.join(HERE, "fl_stray
 STAMP = "_fl_stray_remint_from"
 DISCIPLINE = "Foreign Languages"
 SCOPE = "fl-strays-s435"
-RULING = ("Proposed on Open Asks Sheet 106 (S435, 2026-10-20): the twelve Foreign Languages identities on stray "
+RULING = ("Sam, 2026-10-20 (Open Asks Sheet 107 card 2, 13:08Z, his own call, \"rekey-twelve\"; proposed on Sheet 106 by S435): the twelve Foreign Languages identities on stray "
           "codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline "
           "unchanged")
 # id -> (title, target code, why)
@@ -95,6 +94,8 @@ def compute_plan(courses, singletons, curations, reservations, pins, umbrella):
                       "discipline_source_before": r.get("discipline_source"), "top_code": r.get("top_code"),
                       "merged_into": (curations.get(cid) or {}).get("merge_into")}
     real = set(courses) | set(singletons) | set(curations)
+    # S436: never a slot an earlier re-mint used or SkyView still draws (the duplicate-point failure)
+    real |= er.ever_minted_ids() | er.skyview_ids()
     alloc = rec.Allocator(real - set(moves), reservations)
     order = sorted(moves)
     for cid in order:                                   # pass 1: keep the number

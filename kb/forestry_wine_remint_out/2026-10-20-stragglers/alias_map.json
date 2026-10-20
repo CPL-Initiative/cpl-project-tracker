@@ -1,11 +1,11 @@
 {
-  "_status": "Sheet 104 re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_status": "Sheet 104 re-mint old->new alias (receipt + rollback inverse) - APPLIED",
   "_at": "2026-10-20",
   "_scope": [
     "sheet104-forestry-stragglers"
   ],
   "_count": 2,
-  "_ruling": "S432 on Sam's Sheet 104 \"move-ten\" (2026-10-20), proceeded on the recommendation: the two forestry identities merged into ENVR M1069 that the sitting never named follow their parent to ENVR",
+  "_ruling": "Sam, 2026-10-20 (Open Asks Sheet 107 card 1, 13:08Z, his own call, \"move-both\"; carried from Sheet 105): the two forestry identities merged into ENVR M1069 that the Sheet 104 sitting never named follow their parent to ENVR",
   "aliases": {
     "AGRI M10SY": {
       "new_id": "ENVR M10SY",
@@ -17,5 +17,13 @@
       "route": "ENVR",
       "discipline": "Forestry/Natural Resources"
     }
+  },
+  "_applied_at": "2026-10-20",
+  "_applied_ruling": "Sam, 2026-10-20 (Open Asks Sheet 107 card 1, 13:08Z, his own call, \"move-both\"; carried from Sheet 105): the two forestry identities merged into ENVR M1069 that the Sheet 104 sitting never named follow their parent to ENVR",
+  "_counts": {
+    "courses": 1,
+    "singletons": 1,
+    "curation_keys": 2,
+    "discipline_sources_cleared": 2
   }
 }
