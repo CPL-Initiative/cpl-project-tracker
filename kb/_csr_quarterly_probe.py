@@ -50,8 +50,10 @@ TARGETS = [
     # /approved-courses). The sandbox proxy refuses the data host, so a runner reads it.
     {"key": "cid_home", "routine": "authority_tables", "url": "https://c-idsystem.org/",
      "links": r"descriptor|course|export|download|\.csv|data-c-idsystem"},
+    # The final descriptors page links its own export, /descriptors/final/csv ("[CSV-Excel]", run 39428532559);
+    # the probe follows it and hashes the list, the document the authority_tables baseline holds.
     {"key": "cid_data", "routine": "authority_tables", "url": "https://data-c-idsystem.org/descriptors/final",
-     "links": r"descriptor|export|download|\.csv|\.xlsx|page="},
+     "links": r"/csv$|\.csv|export|download", "follow": True},
     {"key": "cid_courses", "routine": "authority_tables", "url": "https://data-c-idsystem.org/approved-courses",
      "links": r"export|download|\.csv|\.xlsx|discipline|page="},
 ]
