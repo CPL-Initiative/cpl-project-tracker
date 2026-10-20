@@ -5396,11 +5396,11 @@
       "cte": true,
       "_subj4_fold_from": "AGR M10AF"
     },
-    "AGRI M10MB": {
-      "course_id": "AGRI M10MB",
+    "AGAS M10MB": {
+      "course_id": "AGAS M10MB",
       "common_title": "Colt Training",
       "subject": "AGR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAS",
       "course_number": "53",
       "college": "Lassen College",
       "control_number": "CCC000100251",
@@ -5413,7 +5413,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID AGR 114",
       "cte": true,
-      "_subj4_fold_from": "AGR M10AH"
+      "_subj4_fold_from": "AGR M10AH",
+      "_agri_family_remint_from": "AGRI M10MB"
     },
     "AGRI M10VC": {
       "course_id": "AGRI M10VC",
@@ -5434,11 +5435,11 @@
       "cte": null,
       "_subj4_fold_from": "AGR M10AP"
     },
-    "AGRI M10VQ": {
-      "course_id": "AGRI M10VQ",
+    "AGEH M10VQ": {
+      "course_id": "AGEH M10VQ",
       "common_title": "Landscaping with Native Plants",
       "subject": "AGR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "course_number": "53",
       "college": "Mendocino College",
       "control_number": "CCC000368796",
@@ -5451,7 +5452,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID AGR 132",
       "cte": true,
-      "_subj4_fold_from": "AGR M10AQ"
+      "_subj4_fold_from": "AGR M10AQ",
+      "_agri_family_remint_from": "AGRI M10VQ"
     },
     "AGRI M10NH": {
       "course_id": "AGRI M10NH",
@@ -5472,11 +5474,11 @@
       "cte": true,
       "_subj4_fold_from": "AGR M10AR"
     },
-    "AGRI M10VY": {
-      "course_id": "AGRI M10VY",
+    "AGEH M10VY": {
+      "course_id": "AGEH M10VY",
       "common_title": "Nursery Management and Practices",
       "subject": "AGR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "course_number": "144",
       "college": "Mendocino College",
       "control_number": "CCC000250734",
@@ -5489,7 +5491,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID AGR 140",
       "cte": true,
-      "_subj4_fold_from": "AGR M10AU"
+      "_subj4_fold_from": "AGR M10AU",
+      "_agri_family_remint_from": "AGRI M10VY"
     },
     "AGRI M10MU": {
       "course_id": "AGRI M10MU",
@@ -40996,11 +40999,11 @@
       "cte": true,
       "_subj4_fold_from": "ENTR M10CC"
     },
-    "AGRI M10TL": {
-      "course_id": "AGRI M10TL",
+    "AGEH M10TL": {
+      "course_id": "AGEH M10TL",
       "common_title": "Greenhouse Management",
       "subject": "ENVHR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "course_number": "24",
       "college": "Woodland Community College",
       "control_number": "CCC000500155",
@@ -41013,7 +41016,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID ENVHR 108",
       "cte": true,
-      "_subj4_fold_from": "ENVH M10AC"
+      "_subj4_fold_from": "ENVH M10AC",
+      "_agri_family_remint_from": "AGRI M10TL"
     },
     "AGRI M10IP": {
       "course_id": "AGRI M10IP",
@@ -41129,11 +41133,11 @@
       "cte": true,
       "_subj4_fold_from": "ENVR M10AB"
     },
-    "AGRI M10HC": {
-      "course_id": "AGRI M10HC",
+    "AGAS M10HC": {
+      "course_id": "AGAS M10HC",
       "common_title": "Animal Husbandry on the Small Farm",
       "subject": "ENVR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAS",
       "course_number": "136",
       "college": "Feather River College",
       "control_number": "CCC000620919",
@@ -41146,7 +41150,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID ENVR 124",
       "cte": null,
-      "_subj4_fold_from": "ENVR M10AE"
+      "_subj4_fold_from": "ENVR M10AE",
+      "_agri_family_remint_from": "AGRI M10HC"
     },
     "AGRI M10OM": {
       "course_id": "AGRI M10OM",
@@ -41224,11 +41229,11 @@
       "cte": true,
       "_subj4_fold_from": "ENVR M10AR"
     },
-    "AGRI M10KP": {
-      "course_id": "AGRI M10KP",
+    "AGPS M10KP": {
+      "course_id": "AGPS M10KP",
       "common_title": "Fruit Tree and Berry Production",
       "subject": "ENVR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "137",
       "college": "Feather River College",
       "control_number": "CCC000620468",
@@ -41241,13 +41246,14 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID ENVR 150",
       "cte": null,
-      "_subj4_fold_from": "ENVR M10AS"
+      "_subj4_fold_from": "ENVR M10AS",
+      "_agri_family_remint_from": "AGRI M10KP"
     },
-    "AGRI M10FM": {
-      "course_id": "AGRI M10FM",
+    "AGPS M10FM": {
+      "course_id": "AGPS M10FM",
       "common_title": "High Altitude Crop Production - Early Season",
       "subject": "ENVR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "132",
       "college": "Feather River College",
       "control_number": "CCC000576152",
@@ -41260,13 +41266,14 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID ENVR 152",
       "cte": null,
-      "_subj4_fold_from": "ENVR M10AT"
+      "_subj4_fold_from": "ENVR M10AT",
+      "_agri_family_remint_from": "AGRI M10FM"
     },
-    "AGRI M10FN": {
-      "course_id": "AGRI M10FN",
+    "AGPS M10AB": {
+      "course_id": "AGPS M10AB",
       "common_title": "High Altitude Crop Production - Late Season",
       "subject": "ENVR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "131",
       "college": "Feather River College",
       "control_number": "CCC000576153",
@@ -41279,7 +41286,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID ENVR 154",
       "cte": null,
-      "_subj4_fold_from": "ENVR M10AU"
+      "_subj4_fold_from": "ENVR M10AU",
+      "_agri_family_remint_from": "AGRI M10FN"
     },
     "SOCS M10FX": {
       "course_id": "SOCS M10FX",
@@ -45166,11 +45174,11 @@
       "cte": true,
       "_subj4_fold_from": "FERM M10AF"
     },
-    "AGRI M10VM": {
-      "course_id": "AGRI M10VM",
+    "AGPS M10VM": {
+      "course_id": "AGPS M10VM",
       "common_title": "Wine Production Laboratory",
       "subject": "FERM",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "150",
       "college": "San Diego Mesa College",
       "control_number": "CCC000597455",
@@ -45183,7 +45191,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID FERM 112",
       "cte": true,
-      "_subj4_fold_from": "FERM M10AG"
+      "_subj4_fold_from": "FERM M10AG",
+      "_agri_family_remint_from": "AGRI M10VM"
     },
     "FLTA M10AM": {
       "course_id": "FLTA M10AM",
@@ -103962,11 +103971,11 @@
       "cte": null,
       "_subj4_fold_from": "SUAG M10AB"
     },
-    "AGRI M10MY": {
-      "course_id": "AGRI M10MY",
+    "AGPS M10MY": {
+      "course_id": "AGPS M10MY",
       "common_title": "Cool Season Vegetable Production",
       "subject": "SUAG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "65",
       "college": "Santa Rosa Junior College",
       "control_number": "CCC000577199",
@@ -103979,7 +103988,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID SUAG 104",
       "cte": null,
-      "_subj4_fold_from": "SUAG M10AC"
+      "_subj4_fold_from": "SUAG M10AC",
+      "_agri_family_remint_from": "AGRI M10MY"
     },
     "AGRI M10CN": {
       "course_id": "AGRI M10CN",
@@ -104000,11 +104010,11 @@
       "cte": true,
       "_subj4_fold_from": "SUAG M10AI"
     },
-    "AGRI M10NE": {
-      "course_id": "AGRI M10NE",
+    "AGPS M10NE": {
+      "course_id": "AGPS M10NE",
       "common_title": "Warm Season Crop Production",
       "subject": "SUAG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "64",
       "college": "Santa Rosa Junior College",
       "control_number": "CCC000577200",
@@ -104017,7 +104027,8 @@
       "discipline_inferred_at": "2026-06-09",
       "_remint_from": "M-ID SUAG 118",
       "cte": null,
-      "_subj4_fold_from": "SUAG M10AJ"
+      "_subj4_fold_from": "SUAG M10AJ",
+      "_agri_family_remint_from": "AGRI M10NE"
     },
     "BUSI M10YY": {
       "course_id": "BUSI M10YY",
@@ -112902,11 +112913,11 @@
       "cte": true,
       "_subj4_fold_from": "AUTB M10EZ"
     },
-    "AGRI M10AL": {
-      "course_id": "AGRI M10AL",
+    "AGAB M10AL": {
+      "course_id": "AGAB M10AL",
       "common_title": "Management Accounting for Agriculture",
       "subject": "AB",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAB",
       "course_number": "51",
       "college": "Butte College",
       "control_number": "CCC000650401",
@@ -112920,7 +112931,8 @@
       "_remint_from": "M-ID AB 194",
       "_subj4_remint_from": "AB M10BG",
       "cte": true,
-      "_subj4_fold_from": "AUTB M10BJ"
+      "_subj4_fold_from": "AUTB M10BJ",
+      "_agri_family_remint_from": "AGRI M10AL"
     },
     "AUTB M10BJ": {
       "course_id": "AUTB M10BJ",
@@ -114143,11 +114155,11 @@
       "cte": null,
       "_subj4_fold_from": "AGRI M10DH"
     },
-    "AGRI M10TB": {
-      "course_id": "AGRI M10TB",
+    "AGPS M10TB": {
+      "course_id": "AGPS M10TB",
       "common_title": "Introduction to Small Fruit Science",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "95",
       "college": "Hartnell College",
       "control_number": "CCC000556395",
@@ -114161,7 +114173,8 @@
       "_remint_from": "M-ID ABT 156",
       "_subj4_remint_from": "ABT M10AM",
       "cte": null,
-      "_subj4_fold_from": "AGRI M10MI"
+      "_subj4_fold_from": "AGRI M10MI",
+      "_agri_family_remint_from": "AGRI M10TB"
     },
     "AGRI M10EM": {
       "course_id": "AGRI M10EM",
@@ -114265,11 +114278,11 @@
       "_subj4_fold_from": "AGRI M10IP",
       "_authority_recode_from": "AGRI M10NF"
     },
-    "AGRI M90AE": {
-      "course_id": "AGRI M90AE",
+    "AGMA M90AE": {
+      "course_id": "AGMA M90AE",
       "common_title": "Agricultural Equipment Operation, Configuration and Troubleshooting",
       "subject": "ABT",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "course_number": "394",
       "college": "Hartnell College",
       "control_number": "CCC000660096",
@@ -114283,7 +114296,8 @@
       "_remint_from": "M-ID ABT 132",
       "_subj4_remint_from": "ABT M90AA",
       "cte": null,
-      "_subj4_fold_from": "AGRI M90AB"
+      "_subj4_fold_from": "AGRI M90AB",
+      "_agri_family_remint_from": "AGRI M90AE"
     },
     "HVAC M10GP": {
       "course_id": "HVAC M10GP",
@@ -142343,11 +142357,11 @@
       "cte": null,
       "_subj4_fold_from": "AGRI M10CA"
     },
-    "AGRI M10DF": {
-      "course_id": "AGRI M10DF",
+    "AGPS M10AA": {
+      "course_id": "AGPS M10AA",
       "common_title": "Agricultural Plant Pathology",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "162",
       "college": "Allan Hancock College",
       "control_number": "CCC000610342",
@@ -142361,7 +142375,8 @@
       "_remint_from": "M-ID AG 210",
       "_subj4_remint_from": "AG M10AR",
       "cte": null,
-      "_subj4_fold_from": "AGRI M10CD"
+      "_subj4_fold_from": "AGRI M10CD",
+      "_agri_family_remint_from": "AGRI M10DF"
     },
     "AGRI M10CC": {
       "course_id": "AGRI M10CC",
@@ -142443,11 +142458,11 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M10BH"
     },
-    "AGRI M10CJ": {
-      "course_id": "AGRI M10CJ",
+    "AGPS M10CJ": {
+      "course_id": "AGPS M10CJ",
       "common_title": "Agricultural Systems - Crop Production Systems",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "51C",
       "college": "Clovis Community College",
       "control_number": "CCC000646010",
@@ -142461,7 +142476,8 @@
       "_remint_from": "M-ID AG 220",
       "_subj4_remint_from": "AG M10AW",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10BP"
+      "_subj4_fold_from": "AGRI M10BP",
+      "_agri_family_remint_from": "AGRI M10CJ"
     },
     "AGRI M10BW": {
       "course_id": "AGRI M10BW",
@@ -143435,11 +143451,11 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M10HX"
     },
-    "AGRI M10ND": {
-      "course_id": "AGRI M10ND",
+    "AGPS M10ND": {
+      "course_id": "AGPS M10ND",
       "common_title": "Plant and Crop Science",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "1015",
       "college": "College of the Siskiyous",
       "control_number": "CCC000363361",
@@ -143453,7 +143469,8 @@
       "_remint_from": "M-ID AG 340",
       "_subj4_remint_from": "AG M10CT",
       "cte": null,
-      "_subj4_fold_from": "AGRI M10IO"
+      "_subj4_fold_from": "AGRI M10IO",
+      "_agri_family_remint_from": "AGRI M10ND"
     },
     "AGPS M10NJ": {
       "course_id": "AGPS M10NJ",
@@ -143779,11 +143796,11 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M10DG"
     },
-    "AGRI M10WM": {
-      "course_id": "AGRI M10WM",
+    "AGMA M10WM": {
+      "course_id": "AGMA M10WM",
       "common_title": "Tractor Operations",
       "subject": "AG",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "course_number": "14",
       "college": "Lemoore College",
       "control_number": "CCC000655680",
@@ -143797,7 +143814,8 @@
       "_remint_from": "M-ID AG 376",
       "_subj4_remint_from": "AG M10DK",
       "cte": null,
-      "_subj4_fold_from": "AGRI M10OI"
+      "_subj4_fold_from": "AGRI M10OI",
+      "_agri_family_remint_from": "AGRI M10WM"
     },
     "AGAS M10NS": {
       "course_id": "AGAS M10NS",
@@ -147313,11 +147331,11 @@
       "cte": false,
       "_subj4_fold_from": "AGRI M10KY"
     },
-    "AGRI M10TU": {
-      "course_id": "AGRI M10TU",
+    "AGEH M10TU": {
+      "course_id": "AGEH M10TU",
       "common_title": "Integrated Pest Mgmt for Landscape/Home",
       "subject": "AGNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "course_number": "61G",
       "college": "Victor Valley College",
       "control_number": "CCC000390463",
@@ -147331,7 +147349,8 @@
       "_remint_from": "M-ID AGNR 158",
       "_subj4_remint_from": "AGNR M10AR",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10MR"
+      "_subj4_fold_from": "AGRI M10MR",
+      "_agri_family_remint_from": "AGRI M10TU"
     },
     "AGRI M10QY": {
       "course_id": "AGRI M10QY",
@@ -147599,11 +147618,11 @@
       "_subj4_fold_from": "AGRI M10NB",
       "_authority_recode_from": "AGRI M10UI"
     },
-    "AGRI M10TN": {
-      "course_id": "AGRI M10TN",
+    "AGEH M10TN": {
+      "course_id": "AGEH M10TN",
       "common_title": "Plant Propagation/Greenhouse Production",
       "subject": "AGNR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "course_number": "122",
       "college": "Victor Valley College",
       "control_number": "CCC000591379",
@@ -147617,7 +147636,8 @@
       "_remint_from": "M-ID AGNR 190",
       "_subj4_remint_from": "AGNR M10BF",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10MP"
+      "_subj4_fold_from": "AGRI M10MP",
+      "_agri_family_remint_from": "AGRI M10TN"
     },
     "AGRI M10RA": {
       "course_id": "AGRI M10RA",
@@ -148559,11 +148579,11 @@
       "_subj4_fold_from": "AGRI M10GT",
       "_authority_recode_from": "AGRI M10JY"
     },
-    "AGRI M10KV": {
-      "course_id": "AGRI M10KV",
+    "AGAS M10KV": {
+      "course_id": "AGAS M10KV",
       "common_title": "Bovine Embryo Transfer",
       "subject": "AGR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAS",
       "course_number": "31",
       "college": "Lassen College",
       "control_number": "CCC000122043",
@@ -148577,7 +148597,8 @@
       "_remint_from": "M-ID AGR 112",
       "_subj4_remint_from": "AGR M10AG",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10HG"
+      "_subj4_fold_from": "AGRI M10HG",
+      "_agri_family_remint_from": "AGRI M10KV"
     },
     "AGPS M10EE": {
       "course_id": "AGPS M10EE",
@@ -148702,11 +148723,11 @@
       "_subj4_fold_from": "AGRI M10FK",
       "_authority_recode_from": "AGRI M10HP"
     },
-    "AGRI M10KW": {
-      "course_id": "AGRI M10KW",
+    "AGAS M10KW": {
+      "course_id": "AGAS M10KW",
       "common_title": "Introduction to Bovine Reproduction",
       "subject": "AGR",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGAS",
       "course_number": "61",
       "college": "Lassen College",
       "control_number": "CCC000207130",
@@ -148720,7 +148741,8 @@
       "_remint_from": "M-ID AGR 128",
       "_subj4_remint_from": "AGR M10AO",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10HH"
+      "_subj4_fold_from": "AGRI M10HH",
+      "_agri_family_remint_from": "AGRI M10KW"
     },
     "AGRI M10RR": {
       "course_id": "AGRI M10RR",
@@ -148940,11 +148962,11 @@
       "cte": null,
       "_subj4_fold_from": "AGRI M10CB"
     },
-    "AGRI M10FB": {
-      "course_id": "AGRI M10FB",
+    "AGMA M10FB": {
+      "course_id": "AGMA M10FB",
       "common_title": "Agriculture Mechanics",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "course_number": "213",
       "college": "Sierra College",
       "control_number": "CCC000591552",
@@ -148958,7 +148980,8 @@
       "_remint_from": "M-ID AGRI 120",
       "_subj4_remint_from": "AGRI M10AD",
       "cte": null,
-      "_subj4_fold_from": "AGRI M10DN"
+      "_subj4_fold_from": "AGRI M10DN",
+      "_agri_family_remint_from": "AGRI M10FB"
     },
     "AGPS M10JR": {
       "course_id": "AGPS M10JR",
@@ -148981,11 +149004,11 @@
       "_subj4_fold_from": "AGRI M10GO",
       "_authority_recode_from": "AGRI M10JR"
     },
-    "AGRI M10QQ": {
-      "course_id": "AGRI M10QQ",
+    "AGMA M10QQ": {
+      "course_id": "AGMA M10QQ",
       "common_title": "Farm Power: Equipment Operation and Maintenance",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGMA",
       "course_number": "P120",
       "college": "Porterville College",
       "control_number": "CCC000659493",
@@ -148999,7 +149022,8 @@
       "_remint_from": "M-ID AGRI 124",
       "_subj4_remint_from": "AGRI M10AF",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10KW"
+      "_subj4_fold_from": "AGRI M10KW",
+      "_agri_family_remint_from": "AGRI M10QQ"
     },
     "AGRI M10SU": {
       "course_id": "AGRI M10SU",
@@ -149103,11 +149127,11 @@
       "_subj4_fold_from": "AGRI M10BX",
       "_authority_recode_from": "AGRI M10CY"
     },
-    "AGRI M10SZ": {
-      "course_id": "AGRI M10SZ",
+    "AGPS M10SZ": {
+      "course_id": "AGPS M10SZ",
       "common_title": "Introduction to Fruit Tree Management",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGPS",
       "course_number": "110",
       "college": "San Diego City College",
       "control_number": "CCC000521819",
@@ -149121,7 +149145,8 @@
       "_remint_from": "M-ID AGRI 136",
       "_subj4_remint_from": "AGRI M10AL",
       "cte": true,
-      "_subj4_fold_from": "AGRI M10MG"
+      "_subj4_fold_from": "AGRI M10MG",
+      "_agri_family_remint_from": "AGRI M10SZ"
     },
     "AGRI M10OS": {
       "course_id": "AGRI M10OS",
@@ -149224,11 +149249,11 @@
       "cte": true,
       "_subj4_fold_from": "AGRI M10DP"
     },
-    "AGRI M10LM": {
-      "course_id": "AGRI M10LM",
+    "AGEH M10LM": {
+      "course_id": "AGEH M10LM",
       "common_title": "Sustainable Tree Care",
       "subject": "AGRI",
-      "subject_4letter": "AGRI",
+      "subject_4letter": "AGEH",
       "course_number": "164",
       "college": "Sierra College",
       "control_number": "CCC000367955",
@@ -149242,7 +149267,8 @@
       "_remint_from": "M-ID AGRI 150",
       "_subj4_remint_from": "AGRI M10AR",
       "cte": null,
-      "_subj4_fold_from": "AGRI M10HT"
+      "_subj4_fold_from": "AGRI M10HT",
+      "_agri_family_remint_from": "AGRI M10LM"
     },
     "AGRI M10DG": {
       "course_id": "AGRI M10DG",

@@ -2237,7 +2237,7 @@
         "top_code": "4930.62: Secondary Education (Grades 9-12) and G.E.D."
       }
     ],
-    "AGRI M1014": [
+    "AGAB M1014": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000166921",
@@ -2277,7 +2277,7 @@
         "top_code": "0112.00: Agriculture Business, Sales and Service"
       }
     ],
-    "AGRI M1087": [
+    "AGAB M1087": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000032243",
@@ -2297,7 +2297,7 @@
         "top_code": "0101.00: Agriculture Technology and Sciences, General"
       }
     ],
-    "AGRI M1094": [
+    "AGPS M1094": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000026161",
@@ -2317,7 +2317,7 @@
         "top_code": "0101.00: Agriculture Technology and Sciences, General"
       }
     ],
-    "AGRI M1131": [
+    "AGPS M1131": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000160528",
@@ -2337,7 +2337,7 @@
         "top_code": "0101.00: Agriculture Technology and Sciences, General"
       }
     ],
-    "AGRI M1124": [
+    "AGPS M1124": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000519247",
@@ -20202,7 +20202,7 @@
         "top_code": "0103.00: Plant Science"
       }
     ],
-    "AGRI M1061": [
+    "AGMA M1061": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000645254",
@@ -20305,7 +20305,7 @@
         "top_code": "0103.00: Plant Science"
       }
     ],
-    "AGRI M1093": [
+    "AGPS M1093": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000638990",
@@ -20345,7 +20345,7 @@
         "top_code": "0101.00: Agriculture Technology and Sciences, General"
       }
     ],
-    "AGRI M1115": [
+    "AGPS M1115": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000608916",
@@ -20948,7 +20948,7 @@
         "top_code": "0101.00: Agriculture Technology and Sciences, General"
       }
     ],
-    "AGRI M9005": [
+    "AGMA M9005": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000646015",
@@ -22301,7 +22301,7 @@
         "top_code": "0109.00: Horticulture"
       }
     ],
-    "AGRI M1117": [
+    "AGPS M1117": [
       {
         "college": "College of the Siskiyous",
         "control_number": "CCC000358024",
@@ -22357,7 +22357,7 @@
         "top_code": "0103.00: Plant Science"
       }
     ],
-    "AGRI M1130": [
+    "AGEH M1130": [
       {
         "college": "Sierra College",
         "control_number": "CCC000197306",
@@ -22417,7 +22417,7 @@
         "top_code": "0950.00: Aeronautical and Aviation Technology"
       }
     ],
-    "AGRI M9001": [
+    "AGEH M9001": [
       {
         "college": "San Diego College of Continuing Education",
         "control_number": "CCC000082947",
@@ -22437,7 +22437,7 @@
         "top_code": "0109.10: Landscape Design and Maintenance"
       }
     ],
-    "AGRI M9004": [
+    "AGEH M9004": [
       {
         "college": "San Diego College of Continuing Education",
         "control_number": "CCC000179713",
@@ -30303,7 +30303,7 @@
         "top_code": "0102.00: Animal Science"
       }
     ],
-    "AGRI M1063": [
+    "AGPS M1063": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000649266",
@@ -487442,7 +487442,7 @@
         "top_code": "0514.00: Office Technology/Office Computer Applications"
       }
     ],
-    "AGRI M1108": [
+    "AGEH M1108": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000088783",
@@ -559911,7 +559911,7 @@
         "top_code": "0614.50: Desktop Publishing"
       }
     ],
-    "AGRI M1066": [
+    "AGAB M1066": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000440168",

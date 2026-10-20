@@ -133,25 +133,25 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1014": {
+  "AGAB M1014": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1087": {
+  "AGAB M1087": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1094": {
+  "AGPS M1094": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1131": {
+  "AGPS M1131": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -1191,7 +1191,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1061": {
+  "AGMA M1061": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
@@ -1250,7 +1250,7 @@
     ]
    ]
   },
-  "AGRI M9005": {
+  "AGMA M9005": {
    "class": "partial_mirror",
    "nc_total": 3,
    "nc_mirrored": 2,
@@ -24408,8 +24408,9 @@
   "kb/eths_remint_out/2026-09-28/ruled/alias_map.json",
   "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
   "kb/athl_remint_out/2026-09-30/alias_map.json",
-  "kb/agab_remint_out/2026-10-19/alias_map.json"
+  "kb/agab_remint_out/2026-10-19/alias_map.json",
+  "kb/agri_family_remint_out/2026-10-20/alias_map.json"
  ],
- "_rekeyed_at": "2026-10-19",
+ "_rekeyed_at": "2026-10-20",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }

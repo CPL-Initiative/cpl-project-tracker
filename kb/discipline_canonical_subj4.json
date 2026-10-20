@@ -1,6 +1,6 @@
 {
   "_about": "Curator-confirmed canonical SUBJ4 per M-ID discipline. Consumed by the Phase 1e re-mint (kb/_subj4_dryrun.py / kb/_subj4_apply.py) to fold same-discipline SUBJ4 variants. Every canonical_subj4 MUST be exactly 4 letters [A-Z]{4}. Seeded from data-modal where the modal is 4 letters and comprises ≥60% of the discipline's M-IDs; otherwise blank pending curator review. Edited via the Canonical SUBJ4 tab (Supabase kb_curation, course_id namespace '_CANON_SUBJ4::<discipline>'); kb/_apply_canonical_subj4.py folds Supabase edits back into this file.",
-  "_seeded_at": "2026-10-19",
+  "_seeded_at": "2026-10-20",
   "_seeded_by": "kb/_seed_canonical_subj4.py",
   "_invariant": "every canonical_subj4 must match ^[A-Z]{4}$",
   "_counts": {
@@ -139,9 +139,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AGAB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "csr-s427@bot",
-      "_notes_at": "2026-10-19T22:15:43.263004+00:00"
+      "authority_note": "Common SUBJ AGAB is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Agricultural Production": {
       "canonical_subj4": "AGPR",
@@ -250,12 +248,12 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.296,
       "variants_observed": {
-        "AGRI": 216,
+        "AGRI": 188,
         "AGAS": 167,
-        "AGPS": 20,
-        "AGEH": 16,
-        "AGAB": 12,
-        "AGMA": 8,
+        "AGPS": 33,
+        "AGEH": 22,
+        "AGMA": 15,
+        "AGAB": 14,
         "HORT": 1
       },
       "total_mids": 440,
@@ -904,7 +902,7 @@
       "data_modal_share": 0.277,
       "variants_observed": {
         "AUTB": 220,
-        "AGRI": 1
+        "AGAB": 1
       },
       "total_mids": 221,
       "local_subject_variants": {
@@ -1797,9 +1795,7 @@
         }
       ],
       "authority_flag": null,
-      "authority_note": "Common SUBJ CDEV is the CCN subject code (rule 2: CCN first).",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ CDEV is the CCN subject code (rule 2: CCN first)."
     },
     "Commercial Art": {
       "canonical_subj4": "ARTD",
@@ -1897,9 +1893,7 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ MUSC is the CSR's four-letter code; the authority says C-ID CMUS (rule 3: four letters, verbatim code on the chip).",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ MUSC is the CSR's four-letter code; the authority says C-ID CMUS (rule 3: four letters, verbatim code on the chip)."
     },
     "Communication Studies": {
       "canonical_subj4": "COMM",
@@ -2069,9 +2063,7 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ ITIS is the C-ID subject code.",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ ITIS is the C-ID subject code."
     },
     "Computer Science": {
       "canonical_subj4": "COMP",
@@ -2157,9 +2149,7 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ COMP is the C-ID subject code.",
-      "_notes_by": "authority-recode-s224@bot",
-      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
+      "authority_note": "Common SUBJ COMP is the C-ID subject code."
     },
     "Construction Management": {
       "canonical_subj4": "CNSM",
@@ -3182,9 +3172,7 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ THTR is the C-ID subject code.",
-      "_notes_by": "map@rccd.edu",
-      "_notes_at": "2026-06-12T17:18:32.914671+00:00"
+      "authority_note": "Common SUBJ THTR is the C-ID subject code."
     },
     "Earth Science": {
       "canonical_subj4": "GEOL",
@@ -4559,9 +4547,7 @@
       "fan_in_with": [
         "Media Production"
       ],
-      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
-      "_notes_by": "authority-recode-s224@bot",
-      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
+      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away."
     },
     "Fire Technology": {
       "canonical_subj4": "FIRE",
@@ -5340,9 +5326,7 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HEIT is the CSR's four-letter code; the authority says C-ID HIT (rule 3: four letters, verbatim code on the chip).",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ HEIT is the CSR's four-letter code; the authority says C-ID HIT (rule 3: four letters, verbatim code on the chip)."
     },
     "Heavy Duty Equipment Mechanics": {
       "canonical_subj4": "HMDT",
@@ -5743,9 +5727,7 @@
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ EDTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ EDTC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Interdisciplinary Studies": {
       "canonical_subj4": "IDST",
@@ -6859,9 +6841,7 @@
       "fan_in_with": [
         "Film and Media Studies"
       ],
-      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
-      "_notes_by": "authority-recode-s224@bot",
-      "_notes_at": "2026-09-03T20:34:21.060362+00:00"
+      "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away."
     },
     "Mortuary Science": {
       "canonical_subj4": "MORT",
@@ -7415,9 +7395,7 @@
       "canonical_source": "c-id",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ BSOT is the C-ID subject code.",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ BSOT is the C-ID subject code."
     },
     "Older Adults: Noncredit": {
       "canonical_subj4": "OLAD",
@@ -8206,9 +8184,7 @@
       "canonical_source": "ccn",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ POLS is the CCN subject code (rule 2: CCN first).",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T16:05:11.748313+00:00"
+      "authority_note": "Common SUBJ POLS is the CCN subject code (rule 2: CCN first)."
     },
     "Psychiatric Technician": {
       "canonical_subj4": "NURP",
@@ -9127,9 +9103,7 @@
       "canonical_source": "ccn",
       "authority_chips": [],
       "authority_flag": null,
-      "authority_note": "Common SUBJ SOCI is the CCN subject code (rule 2: CCN first).",
-      "_notes_by": "csr-doctrine-s111@bot",
-      "_notes_at": "2026-07-10T15:58:36.55856+00:00"
+      "authority_note": "Common SUBJ SOCI is the CCN subject code (rule 2: CCN first)."
     },
     "Speech Language Pathology": {
       "canonical_subj4": "SLPA",
@@ -9668,7 +9642,7 @@
   },
   "_authority_codes": {
     "_about": "Item 19 of kb/csr_authority_codes_rulings_2026-09-03.json: per discipline, the CCN / C-ID subject codes attributed from kb/promotions.json evidence plus the rulings; canonical_source says who owns the canonical code; authority_chips is what the CSR, CCR and SkyView show. Rebuilt by kb/_seed_authority_codes.py; the attribution table with its evidence is kb/reference/authority_subject_codes.json.",
-    "_built_at": "2026-10-19",
+    "_built_at": "2026-10-20",
     "counts": {
       "ccn": 13,
       "c-id": 20,
@@ -9676,7 +9650,5 @@
       "no_canonical": 0,
       "with_chips": 23
     }
-  },
-  "_synced_at": "2026-10-19T23:34:28Z",
-  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
+  }
 }
