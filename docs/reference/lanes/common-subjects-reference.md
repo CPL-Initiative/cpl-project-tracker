@@ -212,7 +212,7 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 M1104), move them to ENVR? The dry run is committed (`python3 kb/_forestry_wine_remint.py --set stragglers`,
 `kb/forestry_wine_remint_out/2026-10-20-stragglers/`, every gate passing, both keep their number); S432 meant to
 proceed on the recommendation and the session's permission check held the apply. On *move-both*: re-run the dry run,
-a fresh live read, `--apply`, ALIAS_MAPS, the post-apply chain, `--rekey-skyview`, merge, `supabase-rekey.yml`. Then the two ENVR merge candidates (M1009 with M1064, M1025 with M10OP) go to the merge worklist. The quarterly probe (#2274) has run twice (03:54Z and 05:24Z, run 39374671352), the same both times: the MQ page
+a fresh live read, `--apply`, ALIAS_MAPS, the post-apply chain, `--rekey-skyview`, merge, `supabase-rekey.yml`. The two ENVR merge candidates are queued for a faculty reviewer (S433): `kb/_merge_candidate_queue.py` carries them as `surfaced` pairs, `kb/merge_candidates/2026-10-20-forestry/report.md`, survivors proposed by the rule (ENVR M1009 over M1064, 4 colleges to 3; ENVR M1025 over M10OP, 2 to 1; no articulations on any). The merge is a curriculum judgment and waits for that reviewer in the curation UI (ruling 6, 2026-09-05). The quarterly probe (#2274) has run twice (03:54Z and 05:24Z, run 39374671352), the same both times: the MQ page
 200 with the 19th edition (`edition_matches` true); c-id.net 403 to a runner; www.data-c-idsystem.org does not
 resolve. Next, its comparison mode and quarterly cron, with the C-ID read moved to a source a runner can reach; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

@@ -606,7 +606,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/kin_pe_pass2_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/liftoff_plan.json` | pages: `CPL_Dashboard.html` | — |
 | `kb/memory_audit/latest.json` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | — |
-| `kb/merge_candidates/2026-09-05/queue.json` | none found | scripts: `kb/_merge_candidate_queue.py` |
 | `kb/morph_variant_out/2026-06-24/dryrun.json` | none found | scripts: `kb/_morphological_variant_dryrun.py` |
 | `kb/nc_learning_partners.json` | tabs: `nc-learning-partners` | — |
 | `kb/non_ccc_institutions.json` | scripts: `excel_to_dashboard.py`, `funding/_build_funding_performance.py` | — |
@@ -1171,5 +1170,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 699 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 698 file
 datasets · 184 external services · 460 consumers · 58 workflows · 39 tabs.

@@ -102,11 +102,18 @@ check("an id missing from the catalog is flagged by name",
 check("it is still listed as a member, not dropped",
       any(m["id"] == "WELD M9999" for m in ghost["members"]))
 
+# ── a surfaced pair keeps its lane and leaves the survivor to the rule ──────
+surf = [g for g in q.SEEDED if g.get("lane") == "surfaced"]
+check("surfaced pairs carry where they came from and no named survivor",
+      surf and all(g["source"] and "survivor" not in g for g in surf))
+
 # ── the committed queue, on real data ────────────────────────────────────────
 live = os.path.join(ROOT, "kb", "merge_candidates")
 if os.path.isdir(live):
-    newest = sorted(os.listdir(live))[-1]
-    doc = json.load(open(os.path.join(live, newest, "queue.json"), encoding="utf-8"))
+    # The newest Welding queue: a queue for another discipline sits beside it.
+    docs = [json.load(open(os.path.join(live, d, "queue.json"), encoding="utf-8"))
+            for d in sorted(os.listdir(live))]
+    doc = [d for d in docs if d["discipline"] == "Welding"][-1]
     check("the committed queue says plainly that it applied nothing",
           "NOTHING APPLIED" in doc["_status"] and doc["_writes"].startswith("none"))
     trio = [g for g in doc["groups"] if g["lane"] == "seeded"]
