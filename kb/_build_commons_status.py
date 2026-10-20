@@ -291,6 +291,15 @@ def git_stamp(root, rel):
         return None
 
 
+# Complete, for this reference (S437, the CR Progress view; Open Asks Sheet 108 card 5): a wording
+# colleges wrote resolves to a settled reference when a rung 1 to 4 rule places it (the rules act
+# without a curator) or a curator's decision names it, confirmed or set aside as not a topic. The
+# unit is the wording, the way the Exhibit row counts titles; the articulations ride beside it,
+# since the corpus is head-heavy (the top 50 wordings carry about half of them).
+SETTLES = ("confirmed", "not_a_topic")
+HEAD_BANDS = (50, 100, 250)
+
+
 def row_cr(root):
     tab = "#cr-reference"
     W = load_json(root, "kb/cr_reference_worklist.json")
@@ -304,25 +313,53 @@ def row_cr(root):
             decided[r.get("group_key")] = r
         verdicts += len(R.get("items", []))
         reached += sum(int(i.get("rows") or 0) for i in R.get("items", []))
+    # The latest receipt row per group stands; a cleared or deferred decision settles nothing.
+    settling = {k: r for k, r in decided.items() if r.get("decision") in SETTLES}
+    rows_of = {m["rec"]: int(m.get("rows") or 0) for g in G for m in g["members"]}
+    by_rule = {m["rec"] for g in G if g.get("acts_automatically") for m in g["members"]}
+    by_curator = set()
+    for r in settling.values():
+        out = set(r.get("excluded") or [])
+        by_curator |= {w for w in (r.get("members") or []) if w not in out and w in rows_of}
+    settled = by_rule | by_curator
+    unsettled = [w for w in rows_of if w not in settled]
+    ranked = sorted(rows_of, key=lambda w: (-rows_of[w], w))
+    head = {str(n): {"settled": sum(1 for w in ranked[:n] if w in settled), "of": min(n, len(ranked)),
+                     "rows": sum(rows_of[w] for w in ranked[:n])} for n in HEAD_BANDS}
+    look = [g for g in G if g.get("acts_automatically") and g["wordings"] > 1 and g["key"] not in decided]
+    names = [g for g in G if g.get("official_id") and g.get("title_divergent") and g["key"] not in settling]
+    words = ("wordings resolve to a settled reference (%s by a rung 1 to 4 rule, %s more by a curator); %s of %s articulations"
+             % (fmt(len(by_rule)), fmt(len(by_curator - by_rule)), fmt(sum(rows_of[w] for w in settled)), fmt(st["total_rows"])))
     return {
         "key": "cr", "title": "Common CR Reference", "tab": tab,
         "links": [{"href": tab, "text": "Open the tab"}],
         "status_file": "kb/status/cr.json" if exists(root, "kb/status/cr.json") else None,
-        "pair": [{"n": st["auto_groups"], "of": len(G), "words": "groups collapsed by a rung-1 to 4 rule", "open": tab},
-                 {"n": len(decided) if receipts else None,
-                  "words": "groups a curator decided: %s verdicts reaching %s of %s rows by its receipt" % (fmt(verdicts), fmt(reached), fmt(st["total_rows"])),
-                  "open": tab}],
-        "tests": ["assigned by rung", "curator-decided"],
+        "pair": [{"n": len(settled), "of": len(rows_of), "words": words, "open": tab + "/progress"}],
+        "tests": ["rule-settled", "curator-decided"],
         "issues": [
-            {"n": st["rung_5_groups"], "words": "groups at rung 5, where similarity suggests a match for a curator to confirm", "owner": "a curator", "open": tab},
+            {"n": len(unsettled), "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
+             "owner": "a curator", "open": tab + "/open"},
+            {"n": len(names), "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
+             "owner": "a curator", "open": tab + "/names"},
         ],
         "procedures": [
-            {"words": "Five rungs; groups form on a shared key, each pair on its own; the course count gates a cartesian line"},
+            {"n": st["auto_groups"], "words": "groups a rung 1 to 4 rule folds: five rungs, groups form on a shared key, the course count gates a cartesian line",
+             "open": tab + "/auto"},
             {"words": "0 hours reads as noncredit; a range names the group"},
         ],
         "machine": {"what": "the worklist build, last changed", "at": git_stamp(root, "kb/cr_reference_worklist.json"), "every_hours": None},
         "facts": {"groups": len(G), "by_rule": st["auto_groups"], "rung_5": st["rung_5_groups"], "rows": st["total_rows"],
-                  "decided": len(decided), "verdicts": verdicts, "reached": reached, "receipts": len(receipts)},
+                  "decided": len(decided), "verdicts": verdicts, "reached": reached, "receipts": len(receipts),
+                  "wordings": len(rows_of), "settled": len(settled), "settled_rows": sum(rows_of[w] for w in settled),
+                  "rule_wordings": len(by_rule), "rule_rows": sum(rows_of[w] for w in by_rule),
+                  "rule_groups": sum(1 for g in G if g.get("acts_automatically")),
+                  "curator_wordings": len(by_curator), "curator_only": len(by_curator - by_rule),
+                  "curator_only_rows": sum(rows_of[w] for w in by_curator - by_rule),
+                  "unsettled": len(unsettled), "unsettled_rows": sum(rows_of[w] for w in unsettled),
+                  "head": head, "awaiting_look": len(look), "names_to_check": len(names),
+                  "held_by_screen": st.get("groups_held_by_a_screen"), "named_by_range": st.get("groups_named_by_range"),
+                  "named_noncredit": st.get("groups_named_noncredit"), "units_differ": sum(1 for g in G if g.get("units_differ")),
+                  "named_official": sum(1 for g in G if g.get("official_applied"))},
         "sources": ["kb/cr_reference_worklist.json", "kb/receipts/cr_reference_decisions_*.json"],
     }
 

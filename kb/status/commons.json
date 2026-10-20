@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-20T12:00:42Z",
+ "written_at": "2026-10-20T12:52:13Z",
  "rows": [
   {
    "key": "requirements",
@@ -251,32 +251,35 @@
    "status_file": "kb/status/cr.json",
    "pair": [
     {
-     "n": 156,
-     "of": 2159,
-     "words": "groups collapsed by a rung-1 to 4 rule",
-     "open": "#cr-reference"
-    },
-    {
-     "n": 30,
-     "words": "groups a curator decided: 51 verdicts reaching 1,184 of 9,413 rows by its receipt",
-     "open": "#cr-reference"
+     "n": 459,
+     "of": 2344,
+     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,750 of 9,413 articulations",
+     "open": "#cr-reference/progress"
     }
    ],
    "tests": [
-    "assigned by rung",
+    "rule-settled",
     "curator-decided"
    ],
    "issues": [
     {
-     "n": 1936,
-     "words": "groups at rung 5, where similarity suggests a match for a curator to confirm",
+     "n": 1885,
+     "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
      "owner": "a curator",
-     "open": "#cr-reference"
+     "open": "#cr-reference/open"
+    },
+    {
+     "n": 37,
+     "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
+     "owner": "a curator",
+     "open": "#cr-reference/names"
     }
    ],
    "procedures": [
     {
-     "words": "Five rungs; groups form on a shared key, each pair on its own; the course count gates a cartesian line"
+     "n": 156,
+     "words": "groups a rung 1 to 4 rule folds: five rungs, groups form on a shared key, the course count gates a cartesian line",
+     "open": "#cr-reference/auto"
     },
     {
      "words": "0 hours reads as noncredit; a range names the group"
@@ -295,7 +298,42 @@
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
-    "receipts": 1
+    "receipts": 1,
+    "wordings": 2344,
+    "settled": 459,
+    "settled_rows": 5750,
+    "rule_wordings": 408,
+    "rule_rows": 4566,
+    "rule_groups": 223,
+    "curator_wordings": 97,
+    "curator_only": 51,
+    "curator_only_rows": 1184,
+    "unsettled": 1885,
+    "unsettled_rows": 3663,
+    "head": {
+     "50": {
+      "settled": 44,
+      "of": 50,
+      "rows": 4650
+     },
+     "100": {
+      "settled": 76,
+      "of": 100,
+      "rows": 5546
+     },
+     "250": {
+      "settled": 150,
+      "of": 250,
+      "rows": 6555
+     }
+    },
+    "awaiting_look": 138,
+    "names_to_check": 37,
+    "held_by_screen": 0,
+    "named_by_range": 88,
+    "named_noncredit": 7,
+    "units_differ": 113,
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",

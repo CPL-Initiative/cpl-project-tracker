@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 107](https://claude.ai/artifact/DxwPak4waxKhMByt8oL6BU), 2026-10-20, **open**: four cards, Sheet 106's three (the forestry stragglers, the twelve Foreign Languages strays, the eight checkable blank strays) and the Exhibit Progress view built on the recommendation; supersedes 106). Answering
+> (latest: [Open Asks Sheet 108](https://claude.ai/artifact/GFyQFAPfFfkPm2fvzoMdGc), 2026-10-20, **open**: five cards, Sheet 107's four (the forestry stragglers, the twelve Foreign Languages strays, the eight checkable blank strays, the Exhibit Progress view) and the CR Progress view, both views built on the recommendation; supersedes 107). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -794,7 +794,7 @@ stays here.
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
 | **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
-| **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; the Subjects Progress view, 2026-10-19; Exhibit, Course and CR next) — [lane state](docs/reference/lanes/commons.md) |
+| **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; the Subjects, Exhibit and CR Progress views; Course next) — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
 | **CTDL and the partner exchange** | Credential Engine and WestEd plug into COBI through one exchange; COBI's records carry their CTDL identity. | 🔨 seed drafted, waits on Malone · open work — [lane state](docs/reference/lanes/ctdl-partner-exchange.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |

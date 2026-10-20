@@ -57,6 +57,7 @@
     decisionsStale: false,  // the READ failed — the map is last-known-good, NOT the truth
     loadedSignedIn: false,
     loading: false, error: null,
+    view: "worklist",       // or "progress" (S437): the Commons' dash for this reference
     filter: "todo", q: "",
     open: {},               // group_key -> true. Lives HERE, not in the DOM:
                             // render() rewrites innerHTML and would drop it.
@@ -181,6 +182,14 @@
       ".crr-pick-r{display:flex;gap:8px;align-items:baseline;padding:5px 7px;border-radius:5px;font-size:12.5px;cursor:pointer}",
       ".crr-pick-r:hover{background:var(--surface-subtle)}",
       ".crr-more{text-align:center;padding:13px}",
+      // The view switch (S437), the Exhibit tab's words: the one in use darker, heavier and
+      // thickly underlined, and said so by aria-pressed.
+      ".crr-views{display:flex;gap:6px 24px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:6px;margin:0 0 14px}",
+      "#tab-cr-reference.cpl-tab-pane button.crr-view{border:0;border-radius:0;background:none;color:var(--cobalt);font-weight:600;font-size:1rem;",
+      "  padding:2px 0;min-height:24px;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}",
+      "#tab-cr-reference.cpl-tab-pane button.crr-view:hover{background:none;text-decoration-thickness:2px}",
+      "#tab-cr-reference.cpl-tab-pane button.crr-view[aria-pressed=\"true\"]{color:var(--text-strong);font-weight:700;text-decoration-thickness:3px}",
+      "#tab-cr-reference.cpl-tab-pane button.crr-view:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}",
     ].join("\n");
     document.head.appendChild(st);
   }
@@ -352,8 +361,38 @@
   }
   function needsDecision(g) { return g.wordings > 1 || addedTo(g.key).length > 0; }
 
+  // What settles a wording (S437, the Progress view's definition of complete; Open Asks Sheet
+  // 108 card 5): a rung 1 to 4 rule places it, or a decision names it, confirmed or set aside
+  // as not a topic. A deferred or cleared decision settles nothing. kb/_build_commons_status.py
+  // row_cr() is the same rule over the committed receipts.
+  var SETTLES = ["confirmed", "not_a_topic"];
+  function settling(g) {
+    var d = state.decisions[g.key];
+    return d && SETTLES.indexOf(d.decision) >= 0 ? d : null;
+  }
+  function curatorNamed() {
+    var out = {};
+    Object.keys(state.decisions).forEach(function (k) {
+      var d = state.decisions[k];
+      if (!d || SETTLES.indexOf(d.decision) < 0) return;
+      var ex = d.excluded || [];
+      (d.members || []).forEach(function (r) { if (ex.indexOf(r) < 0) out[r] = 1; });
+    });
+    return out;
+  }
+  // No rule or decision: a group no rule places, no decision settles, and whose wordings no
+  // decision has pulled into another group (a folded wording leaves its own group behind).
+  function isOpen(g, named) {
+    if (g.acts_automatically || settling(g)) return false;
+    return g.members.some(function (m) { return !named[m.rec]; });
+  }
+  // A name to check: an official number reaches the group, but its title shares no word with
+  // what colleges wrote, so the builder proposed it and did not apply it.
+  function isName(g) { return !!(g.official_id && g.title_divergent && !settling(g)); }
+
   function visibleGroups() {
     var q = state.q.trim().toLowerCase();
+    var named = state.filter === "open" ? curatorNamed() : null;
     return state.groups.filter(function (g) {
       if (q) {
         var hay = (g.canonical + " " + g.key + " " + g.members.map(function (m) { return m.rec; }).join(" ")).toLowerCase();
@@ -365,6 +404,8 @@
       if (state.filter === "held") return (g.screens_objecting || []).length > 0;
       if (state.filter === "done") return !!d;
       if (state.filter === "solo") return !needsDecision(g);
+      if (state.filter === "open") return isOpen(g, named);
+      if (state.filter === "names") return isName(g);
       return true;
     });
   }
@@ -374,6 +415,10 @@
     var root = document.getElementById("cr-reference-root");
     if (!root) return;
     ensureCss();
+    // The shell's loading placeholder styles this root inline (a dashed box, muted and
+    // centered text), and an inline style outranks the injected CSS, so the worklist drew
+    // centered inside it until S437. The module owns the root once it paints.
+    if (root.getAttribute("style")) root.removeAttribute("style");
 
     if (state.loading) { root.innerHTML = '<div class="crr-info">Loading the CR Reference worklist&hellip;</div>'; return; }
     if (state.error) {
@@ -393,13 +438,31 @@
 
     var h = [];
 
-    h.push('<div class="crr-head">',
-      "<h2>Common CR Reference</h2>",
-      '<div class="crr-sub">A canonical vocabulary for credit recommendations &mdash; what the CER did for ',
-      "freehand credential titles, for the freehand recommendation text. Colleges wrote ",
-      "<b>" + fmt(s.distinct_strings) + "</b> different strings across <b>" + fmt(s.total_rows) + "</b> articulations; ",
-      "many are the same recommendation in different words. Confirm a group and every wording in it ",
-      "resolves to one reference.</div></div>");
+    var progress = state.view === "progress";
+    h.push('<div class="crr-head">', "<h2>Common CR Reference</h2>");
+    if (!progress) {
+      h.push('<div class="crr-sub">A canonical vocabulary for credit recommendations &mdash; what the CER did for ',
+        "freehand credential titles, for the freehand recommendation text. Colleges wrote ",
+        "<b>" + fmt(s.distinct_strings) + "</b> different strings across <b>" + fmt(s.total_rows) + "</b> articulations; ",
+        "many are the same recommendation in different words. Confirm a group and every wording in it ",
+        "resolves to one reference.</div>");
+    }
+    h.push("</div>");
+
+    // The views are words; the one in use is heavier and says so with aria-pressed (the
+    // Exhibit tab's row, S413). Progress leads, and the tab still opens on the worklist.
+    h.push('<div class="crr-views" role="group" aria-label="Common CR Reference views">',
+      '<button type="button" class="crr-view" data-view="progress" aria-pressed="' + progress + '"',
+      ' title="Where the reference stands, in the shape every common reference shares.">Progress</button>',
+      '<button type="button" class="crr-view" data-view="worklist" aria-pressed="' + !progress + '"',
+      ' title="The groups, ranked by collapse value, with a filter for each list.">Worklist</button></div>');
+    if (progress) {
+      h.push('<div id="crr-progress-mount"></div>');
+      root.innerHTML = h.join("");
+      wire(root);
+      mountProgress();
+      return;
+    }
 
     // The measured stance. These are computed from the artifact at render time
     // rather than carried as prose, so they cannot quietly go stale.
@@ -440,6 +503,11 @@
      ["auto", "Automatic proposals", state.groups.filter(function (g) { return g.acts_automatically && needsDecision(g); }).length],
      ["held", "Held by a safety screen", state.groups.filter(function (g) { return (g.screens_objecting || []).length; }).length],
      ["done", "Decided", decidedN],
+     ["open", "No rule or decision", (function () {
+       var named = curatorNamed();
+       return state.groups.filter(function (g) { return isOpen(g, named); }).length;
+     })()],
+     ["names", "Name to check", state.groups.filter(isName).length],
      ["solo", "Single wording", state.groups.filter(function (g) { return !needsDecision(g); }).length],
      ["all", "All", total]].forEach(function (f) {
       h.push('<button class="crr-chip' + (state.filter === f[0] ? " on" : "") + '" data-filter="' + f[0] + '">'
@@ -637,6 +705,9 @@
   }
 
   function wire(root) {
+    root.querySelectorAll("[data-view]").forEach(function (b) {
+      b.onclick = function () { setView(b.getAttribute("data-view")); };
+    });
     root.querySelectorAll("[data-filter]").forEach(function (b) {
       b.onclick = function () { state.filter = b.getAttribute("data-filter"); state.limit = 60; render(); };
     });
@@ -723,8 +794,68 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
   }
 
+  // ── The Progress view (S437): the Commons' dash for this reference ──────
+  // cr_progress.js holds the definitions and commons_progress.js draws them;
+  // both load the first time the view opens. The tab lends its filter switch,
+  // so a count opens the list it counted, and its live read of the decisions
+  // table, so the view can say when a sitting has not landed its receipt.
+  var FILTERS = ["todo", "auto", "held", "done", "open", "names", "solo", "all"];
+  function setView(v) {
+    state.view = v === "progress" ? "progress" : "worklist";
+    render();
+  }
+  function setFilter(f) {
+    state.view = "worklist"; state.filter = f; state.limit = 60;
+    render();
+    var root = document.getElementById("cr-reference-root");
+    if (root && root.scrollIntoView) root.scrollIntoView({ block: "start" });
+  }
+  function withProgressModules(cb) {
+    var T = window.CPL_TABS;
+    if (window.CPL_CR_PROGRESS && window.CPL_COMMONS_PROGRESS) { cb(); return; }
+    if (!T || typeof T.loadScript !== "function") { cb(); return; }
+    T.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", function () {
+      T.loadScript("cr_progress.js", "CPL_CR_PROGRESS", cb);
+    });
+  }
+  function progressApi() {
+    // The table's rows, read live; null when the read is gated or failed, so the
+    // view says nothing about the table rather than comparing against an empty one.
+    var live = signedIn() && state.loadedSignedIn && !state.decisionsStale ? Object.keys(state.decisions).length : null;
+    return { go: function (f) { if (FILTERS.indexOf(f) >= 0) setFilter(f); }, liveDecided: live };
+  }
+  function mountProgress() {
+    withProgressModules(function () {
+      var node = document.getElementById("crr-progress-mount");
+      if (!node || state.view !== "progress") return;
+      var CRP = window.CPL_CR_PROGRESS;
+      if (!CRP) {
+        node.innerHTML = '<div class="crr-warn" role="alert">The Progress view (cr_progress.js) could not be loaded. '
+          + "The worklist reads as usual; reload the tab to try again.</div>";
+        return;
+      }
+      CRP.mount(node, progressApi());
+    });
+  }
+  // #cr-reference/progress opens the view, #cr-reference/<filter> the worklist
+  // on that filter (the Commons row's counts link here).
+  function routeFromHash() {
+    var parts = (location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] !== "cr-reference" || !parts[1]) return false;
+    if (parts[1] === "progress" || parts[1] === "worklist") { state.view = parts[1]; return true; }
+    if (FILTERS.indexOf(parts[1]) < 0) return false;
+    state.view = "worklist"; state.filter = parts[1]; state.limit = 60;
+    return true;
+  }
+  var hashWired = false;
+
   function activate() {
     ensureCss();
+    routeFromHash();
+    if (!hashWired) {
+      hashWired = true;
+      window.addEventListener("hashchange", function () { if (state.data && routeFromHash()) render(); });
+    }
     // Re-read when the sign-in state changed since the last load: the decisions
     // are a GATED read, so a curator who unlocks after opening the tab would
     // otherwise keep seeing an empty queue.
@@ -734,6 +865,11 @@
 
   window.CPL_CR_REFERENCE = {
     activate: activate,
+    _setView: setView,
+    _route: routeFromHash,
+    _isOpen: function (g) { return isOpen(g, curatorNamed()); },
+    _isName: isName,
+    _progressApi: progressApi,
     // exported for tests
     _state: state,
     _render: render,
