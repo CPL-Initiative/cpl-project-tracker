@@ -380,7 +380,6 @@
         }).join("") + "</tbody></table></div></dd>";
     }
     html += "</dl>";
-    html += '<div class="lib-actions-row"><button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button></div>';
     if (state.edit === r.id) html += editForm(r);
     return html;
   }
@@ -455,8 +454,13 @@
       ? '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open</a>' +
         '<button type="button" class="lib-btn" data-copy="' + esc(r.id) + '">Copy link</button>'
       : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
+    // Edit and the public switch sit on the card itself (Sam, 2026-10-20: "move the
+    // Edit button onto the top layer of the card"); each opens its form below.
+    acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
+    if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
     acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
+      (r.public_listed ? chip("In the public library") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) +
       (r.home === "not_filed" ? "" : chip(homeOf(r).label));
     return '<article class="lib-item" aria-labelledby="lib-t-' + esc(r.id) + '">' + thumb(r) +
@@ -859,6 +863,15 @@
       }
       else if ((v = b.getAttribute("data-copy"))) copyLink(b, v);
       else if ((v = b.getAttribute("data-edit"))) { state.edit = state.edit === v ? null : v; state.retireAsk = null; render(); }
+      else if ((v = b.getAttribute("data-edittop"))) {
+        var opening = state.edit !== v;
+        state.edit = opening ? v : null; state.retireAsk = null; if (opening) state.open[v] = true; render();
+        var es = document.getElementById("le-status"); if (opening && es) es.focus();
+      }
+      else if ((v = b.getAttribute("data-pubtop"))) {
+        state.pub = v; state.open[v] = true; say(""); render();
+        var ps2 = document.getElementById("lp-sum"); if (ps2) ps2.focus();
+      }
       else if (b.getAttribute("data-editcancel")) { state.edit = null; state.retireAsk = null; render(); }
       else if ((v = b.getAttribute("data-retire"))) { state.retireAsk = v; render(); }
       else if (b.getAttribute("data-retireno")) { state.retireAsk = null; render(); }
