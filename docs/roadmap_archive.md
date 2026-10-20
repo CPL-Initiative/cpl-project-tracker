@@ -6059,3 +6059,4 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history moved 2026-10-20 (S430)
 
 - 2026-10-19 (S421 SkyTupelo): the second reader built (#2246); Cañada's Cal-GETC step and the six-row rollback (#2247); three Jev sittings read, verdicts in `kb/jev_harvest_verdicts/`; lessons S421; handoff 422.
+- 2026-10-19 (S424 SkyBuckthorn): the Jev sitting asks only about the gating checks and two certificate scorer rules (#2256); Taft's renumbered BUSN 550/555 and Administrative Services II on its own page, display build e0407fdcb54b (#2258); Open Asks Sheet 98 answered (remove Taft's 38661 row; the second reader on ice); lessons S424, S394-S398 archived.

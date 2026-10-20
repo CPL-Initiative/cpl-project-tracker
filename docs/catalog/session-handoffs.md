@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-404 document(s).
+405 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 434 | [Session 434 handoff: the ENVR pairs queued for a reviewer, the CSR quarterly comparison on a cron, Sheet 105 still open](../session_434_handoff.md) | 2026-10-20 |
 | 433 | [Session 433 handoff: Sheet 104 applied and live; the forestry stragglers asked on Sheet 105; the quarterly probe read twice](../session_433_handoff.md) | 2026-10-20 |
 | 432 | [Session 432 handoff: Sheet 104 ruled (forestry to ENVR, wine to AGPR), the re-key window waits; the 44 live; the handbook's live page and the quarterly probe](../session_432_handoff.md) | 2026-10-20 |
 | 431 | [Session 431 handoff: the CTDL exchange's seed waits on Malone; the AGRI sitting ruled and re-keyed (Sheet 103); the nine MQ names renamed](../session_431_handoff.md) | 2026-10-20 |
