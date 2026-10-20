@@ -93,8 +93,8 @@ four known issues with owners, the procedures in force, and deep links into the 
 - **Steps 1 and 2, the quarterly routines.** The three sources were last read in May (the handbook re-validated
   in July). A check that diffs and opens a card is the right routine; an automatic rewrite would rename
   disciplines that carry picks. The scope note's handbook link answered 404 and is replaced by the Chancellor's Office's live
-  Minimum Qualifications page, which lists the 19th edition (S431); c-id.net is unreachable from the sandbox and
-  reachable from a runner. Eight MQ names carry a Title 5 section number from the PDF read and one is cut short
+  Minimum Qualifications page, which lists the 19th edition (S431); the C-ID site moved from c-id.net to
+  c-idsystem.org, its data on data-c-idsystem.org (S437), which a runner reads and the sandbox proxy refuses. Eight MQ names carry a Title 5 section number from the PDF read and one is cut short
   (*Disabled Student Programs and*); Sam's rename ruling of 2026-09-08 has not been applied.
 - **Step 3, the AG example.** The authority recode of 2026-09-03 already adopted every four-letter CCN and C-ID
   code (0 missed alignments); the five hyphenated agriculture codes became the umbrella codes AGAB, AGAS, AGEH,
@@ -159,9 +159,13 @@ any. The merge is a curriculum judgment made in the curation UI (ruling 6, 2026-
 `kb/_csr_quarterly_probe.py --compare` at 13:17Z on the 1st of January, April, July and October, and on dispatch. It
 reads each source against `kb/reference/csr_quarterly_baseline.json` (the 19th edition and the handbook PDF's sha256,
 from run 39374671352), prints `COMPARE` lines (same, changed, unread, no_baseline) and a step summary, and reads red on
-`changed`; a session then diffs the Disciplines Index and opens a card. Both C-ID hosts read `no_baseline` (c-id.net
-answers a runner 403; www.data-c-idsystem.org does not resolve). Next for it: a C-ID source a runner can reach, then the
-`authority_tables` baseline. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
+`changed`; a session then diffs the Disciplines Index and opens a card. **The C-ID source a runner reaches (S437,
+#2289):** the site moved to c-idsystem.org (ASCCC), and its search pages live on data-c-idsystem.org with no `www`
+(the probe had asked c-id.net, a runner 403, and www.data-c-idsystem.org, no such host). `/descriptors/final` links its
+own export, `/descriptors/final/csv` (217,763 bytes, `text/csv`); the probe follows and hashes it, and two runs (13:16Z
+and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-courses` answers 200 with no export link, so
+`cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
+(495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
 
 **Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
 the discipline-blank worklist for a curator; the Commons' remaining Progress
