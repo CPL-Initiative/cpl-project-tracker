@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 106](https://claude.ai/artifact/7jdv3UK2X5iegWRjkViyjG), 2026-10-20, **open**: three cards, the forestry stragglers, the twelve Foreign Languages strays, the eight checkable blank strays; supersedes 105). Answering
+> (latest: [Open Asks Sheet 107](https://claude.ai/artifact/DxwPak4waxKhMByt8oL6BU), 2026-10-20, **open**: four cards, Sheet 106's three (the forestry stragglers, the twelve Foreign Languages strays, the eight checkable blank strays) and the Exhibit Progress view built on the recommendation; supersedes 106). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

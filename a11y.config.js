@@ -601,6 +601,14 @@ async function seedCerReference(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Progress (S436): the Commons' dash for the reference, drawn once the module, the
+// definitions, the run log and the Commons figures are in.
+async function seedCerProgress(page, theme) {
+  await openCerView(page, theme, "progress");
+  await page.waitForSelector("#tab-credential-reference #cx-progress .prh-pg-part", { timeout: 60000 });
+  await page.waitForTimeout(300);
+}
+
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
@@ -2371,6 +2379,22 @@ module.exports = {
     routes: [{ hash: "credential-reference", name: "reference" }],
     widths: [320, 390, 1440],
     seed: (page) => seedCerReference(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cer-progress": {
+    file: "index.html",
+    title: "Common Exhibit Reference: Progress, the Commons' dash",
+    routes: [{ hash: "credential-reference", name: "progress" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCerProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cer-progress-dark": {
+    file: "index.html",
+    title: "Common Exhibit Reference: Progress, dark",
+    routes: [{ hash: "credential-reference", name: "progress-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCerProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cer-reference-dark": {

@@ -104,9 +104,9 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   const doc = window.document;
   await sleep(150);
 
-  // S413: three views; with no procedures report the tab opens on Reference,
+  // S413: the views (four since S436, Progress first); with no procedures report the tab opens on Reference,
   // whose four lanes are the only ones painted.
-  check("views: three render", doc.querySelectorAll("button.cr-view").length === 3);
+  check("views: four render", doc.querySelectorAll("button.cr-view").length === 4);
   check("views: no report, so the tab opens on Reference",
     doc.getElementById("cr-view-ref").getAttribute("aria-pressed") === "true");
   const lanes = Array.from(doc.querySelectorAll(".cr-lane")).map((b) => txt(b).replace(/\s*\(.*$/, ""));

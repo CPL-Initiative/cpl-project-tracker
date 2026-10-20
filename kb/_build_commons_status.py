@@ -168,6 +168,12 @@ def row_exhibit(root):
     rec_stamped = sum(1 for r in records if r.get("reviewed_at"))
     left = figure(lambda: sum(1 for c in load_json(root, "kb/exhibit_audit/latest.json")["title_cards"]
                               if "unclassified_in_map" not in c["tags"] and "stale_kb_entry" in c["tags"]))
+    # The auditor's own tallies, for the tab's Progress view (S436): the titles MAP carries today,
+    # the ones with no identity yet, and the classifier's title confidence below 0.80 and 0.60.
+    stats = figure(lambda: load_json(root, "kb/exhibit_audit/latest.json")["stats"])
+    bands = (stats["n"] or {}).get("title_confidence_bands") or {}
+    below_60 = sum(bands.get(b, 0) for b in ("0.40-0.59", "<0.40")) if bands else None
+    below_80 = below_60 + bands.get("0.60-0.79", 0) if bands else None
     run = figure(lambda: load_json(root, "kb/cer_procedures_out/latest.json"))
     held_n, held_why, conflicts = None, "", None
     if run["n"] is not None:
@@ -200,25 +206,28 @@ def row_exhibit(root):
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
         "pair": [{"n": len(stamped), "of": len(ut),
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
-                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab}],
+                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/progress"}],
         "tests": ["curator-stamped", "procedure-settled"],
         "issues": [
             {"n": held_n, "words": "titles held for a person", "owner": "a curator" + (" (" + held_why + ")" if held_why else ""),
-             "open": tab, "error": run["error"]},
+             "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
-             "open": tab, "error": run["error"]},
+             "open": tab + "/held", "error": run["error"]},
             {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
-             "open": tab, "error": left["error"]},
+             "open": tab + "/all", "error": left["error"]},
         ],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
              "words": "in force: %d rules applied by code, %d read by the classifier" % (kinds.get("rule", 0), kinds.get("guidance", 0))
-             if procs["n"] is not None else "in force", "open": tab, "error": procs["error"]},
+             if procs["n"] is not None else "in force", "open": tab + "/procs", "error": procs["error"]},
             {"words": "A procedure's saves undo together"},
         ],
         "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
         "facts": {"titles": len(ut), "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
-                  "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at},
+                  "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at,
+                  "map_titles": (stats["n"] or {}).get("map_titles_in_current_dataset"),
+                  "unclassified": (stats["n"] or {}).get("unclassified_in_map"),
+                  "left_map": left["n"], "below_80": below_80, "below_60": below_60},
         "sources": ["kb/unified_titles.json", "kb/credentials.json", "kb/exhibit_audit/latest.json",
                     "kb/cer_procedures_out/latest.json", "kb/cer_procedures.json", "kb/cer_procedures_out/saved/",
                     "kb/unclassified_fold/*/report.json"],

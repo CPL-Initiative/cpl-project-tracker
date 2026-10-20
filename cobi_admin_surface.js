@@ -440,7 +440,9 @@ window.COBI_ADMIN_SURFACE = {
     },
     "credential-reference": {
       "modules": [
-        "credential_reference.js"
+        "commons_progress.js",
+        "credential_reference.js",
+        "exhibit_progress.js"
       ],
       "reads": [],
       "writes": [

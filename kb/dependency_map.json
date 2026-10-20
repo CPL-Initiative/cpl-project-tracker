@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 701,
+  "file_datasets": 702,
   "external_services": 184,
   "consumers": 462,
   "workflows": 58,
@@ -947,7 +947,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 232
+     "line": 241
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1073,7 +1073,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3743,
+     "line": 3752,
      "tabs": [
       "credential-reference"
      ]
@@ -1320,7 +1320,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1467
+     "line": 1475
     }
    ],
    "main_committers": []
@@ -1543,6 +1543,7 @@
      "tabs": [
       "canonical-subj4",
       "commons",
+      "credential-reference",
       "program-requirements"
      ]
     },
@@ -1845,7 +1846,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 649
+     "line": 657
     }
    ],
    "main_committers": []
@@ -2928,7 +2929,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3763,
+     "line": 3772,
      "tabs": [
       "credential-reference"
      ]
@@ -3681,7 +3682,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1141
+     "line": 1149
     }
    ],
    "main_committers": []
@@ -4721,7 +4722,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1032
+     "line": 1040
     },
     {
      "id": "module:admin.js",
@@ -5310,6 +5311,16 @@
      ]
     },
     {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 5602,
+     "tabs": [
+      "credential-reference"
+     ]
+    },
+    {
      "id": "page:CPL_Dashboard.html",
      "kind": "page",
      "direction": "read",
@@ -5476,7 +5487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1406
+     "line": 1414
     },
     {
      "id": "module:college_briefing.js",
@@ -6001,7 +6012,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5650,
+     "line": 5714,
      "tabs": [
       "credential-reference"
      ]
@@ -6764,6 +6775,22 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:exhibit_progress.js": {
+   "consumers": [
+    {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 5603,
+     "tabs": [
+      "credential-reference"
+     ]
     }
    ],
    "served": true,
@@ -8702,7 +8729,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 182
+     "line": 188
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -8722,7 +8749,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5332,
+     "line": 5341,
      "tabs": [
       "credential-reference"
      ]
@@ -8732,7 +8759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 171
+     "line": 177
     }
    ],
    "producers": [
@@ -8762,7 +8789,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 186
+     "line": 192
     }
    ],
    "served": false,
@@ -11019,7 +11046,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4990,
+     "line": 4999,
      "tabs": [
       "credential-reference"
      ]
@@ -11140,7 +11167,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 287
+     "line": 296
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -11573,7 +11600,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 349
+     "line": 358
     }
    ],
    "producers": [
@@ -11630,7 +11657,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 350
+     "line": 359
     }
    ],
    "served": true,
@@ -11861,7 +11888,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 328
+     "line": 337
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -12660,7 +12687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5013,
+     "line": 5022,
      "tabs": [
       "credential-reference"
      ]
@@ -13599,7 +13626,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 290
+     "line": 299
     }
    ],
    "served": false,
@@ -14923,7 +14950,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 233
+     "line": 242
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -15026,7 +15053,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 260
     }
    ],
    "served": true,
@@ -15039,7 +15066,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 301
+     "line": 310
     }
    ],
    "served": true,
@@ -15052,7 +15079,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 200
+     "line": 206
     }
    ],
    "served": true,
@@ -15105,7 +15132,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 393
+     "line": 402
     }
    ],
    "served": true,
@@ -15591,7 +15618,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 191
+     "line": 197
     }
    ],
    "served": false,
@@ -16740,7 +16767,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 236
+     "line": 245
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -20223,7 +20250,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 237
+     "line": 246
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24275,6 +24302,7 @@
   "commons_progress.js": [
    "canonical-subj4",
    "commons",
+   "credential-reference",
    "program-requirements"
   ],
   "contracts.js": [
@@ -24312,6 +24340,9 @@
    "cr-reference"
   ],
   "credential_reference.js": [
+   "credential-reference"
+  ],
+  "exhibit_progress.js": [
    "credential-reference"
   ],
   "governance.js": [
@@ -25768,6 +25799,7 @@
   "chatbox/sync_program_courses.py",
   "commons.js",
   "cpl_session.js",
+  "exhibit_progress.js",
   "kb/_program_requirements_extract.py",
   "reviewer_signin.js",
   "scripts/supabase_migrate.py"
