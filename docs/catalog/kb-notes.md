@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-558 document(s).
+559 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -542,6 +542,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-06-23 |
 | [Common-Course level convention (Beg/Int/Adv)](../kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 |  |
 | [CPL eligibility — military vs non-military + the Exhibit CRs Catalog rollup](../kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md) | reference | published | 2026-06-09 | 2026-06-09 |
+| [CTDL classes for COBI's records, verified against Credential Engine's schema](../kb-notes/reference-ctdl-classes-for-cobi-records.md) | reference | published | 2026-10-20 | 2026-10-20 |
 | [Daily dashboard data pipeline — accounting for the whole daily dataset](../kb-notes/reference-daily-dashboard-data-pipeline.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Excel dependency audit — what still touches CPL_Initiative_Project_List_v3.xlsx, and the fix queue](../kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Exhibit CRs Catalog — all 27 fields, measured](../kb-notes/reference-exhibit-crs-catalog-field-census.md) | reference | published | 2026-08-14 | 2026-08-14 |

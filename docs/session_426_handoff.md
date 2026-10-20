@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 425 (SkyMadrone)
 tags: [handoff, commons, csr, common-subjects-reference, progress-view, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 426

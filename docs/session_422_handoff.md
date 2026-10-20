@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 421 (SkyTupelo)
 tags: [handoff, program-requirements-harvest, jev, second-reader, reconcile, rollback]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 422

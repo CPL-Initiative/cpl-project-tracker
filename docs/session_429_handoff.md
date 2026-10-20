@@ -4,6 +4,8 @@ date: 2026-10-19
 session: side session beside 427 (the funding job)
 tags: [handoff, implementation-funding, funding-memo, funding-video, side-session]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 429

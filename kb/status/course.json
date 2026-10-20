@@ -1,14 +1,27 @@
 {
   "schema": 1,
-  "session": 423,
-  "moniker": "SkyLaurel",
-  "run": "the CPL Queue routine",
+  "session": 428,
+  "moniker": "SkyPinyon",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_424_handoff.md",
-  "calls": [],
+  "handoff": "docs/session_430_handoff.md",
+  "calls": [
+    {
+      "title": "Sheet 102 card 4: the CCR in the Credential Registry",
+      "text": "Hold the M-IDs out of the Registry until the layer is declared faculty-published, or publish settled clusters now. A CTID names one version for good, and the CCR's class, TransferIntermediary, is still marked unstable in CTDL.",
+      "no_reply": "Nothing is published; the crosswalk would carry M-IDs privately in the exchange.",
+      "link": "https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4"
+    },
+    {
+      "title": "Sheet 102 card 5: WestEd and the CCR",
+      "text": "WestEd's reviewers proposing on COBI's surfaces, their entries confirmed by a COBI curator, or a WestEd-hosted copy synced back. 17,033 cards sit at needs review.",
+      "no_reply": "WestEd's part in the CCR stays undefined, and the review backlog stays with COBI's curators.",
+      "link": "https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4"
+    }
+  ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T11:18:05Z",
+  "written_at": "2026-10-20T00:32:15Z",
   "project": "course",
   "next_step": {
     "title": "Finish the Common Course Reference list's UI pass",
@@ -16,8 +29,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-19T11:00:00Z",
-      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+      "at": "2026-10-20T00:31:27Z",
+      "text": "No change to the CCR this run; two calls from the CTDL partner exchange lane wait on Sam (Sheet 102 cards 4 and 5)."
     }
   ]
 }

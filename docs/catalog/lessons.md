@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-89 document(s).
+90 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -53,6 +53,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [CPL Pathways tab — apprenticeship-to-baccalaureate course maps (lessons)](../cpl_pathways_lessons.md) | `cpl_pathways_lessons.md` | 2026-07-10 |  |
 | [CPL Student Portal "Credit for Being You" video — audio restoration & accessibility lessons](../cpl_portal_video_lessons.md) | `cpl_portal_video_lessons.md` | 2026-07-23 |  |
 | [Cross-discipline Over-merge Re-mint — Lessons & State](../overmerge_remint_lessons.md) | `overmerge_remint_lessons.md` | 2026-05-29 |  |
+| [CTDL and the partner exchange — Decisions & Lessons](../ctdl_partner_exchange_lessons.md) | `ctdl_partner_exchange_lessons.md` | 2026-10-20 |  |
 | [Dashboard Cleanup & Cross-Disciplinary Accounting — Lessons](../dashboard_cleanup_lessons.md) | `dashboard_cleanup_lessons.md` | 2026-05-30 |  |
 | [Dethroning TOP — from gatekeeper to last-in-line signal (lessons)](../top_dethroning_lessons.md) | `top_dethroning_lessons.md` | 2026-07-16 |  |
 | [Doctrine enforcement — lessons](../doctrine_enforcement_lessons.md) | `doctrine_enforcement_lessons.md` | 2026-08-21 |  |

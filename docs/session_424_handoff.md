@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 423 (SkyLaurel)
 tags: [handoff, program-requirements-harvest, merced, renumbered-courses, ui-pass, commons]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 424
