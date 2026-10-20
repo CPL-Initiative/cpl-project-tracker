@@ -586,6 +586,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/fire_electrical_domain_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py` | — |
 | `kb/fl_subj4_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/foreign_language_subj4.json` | tabs: `canonical-subj4` · scripts: `kb/_authority_recode_dryrun.py`, `kb/_fl_subj4_dryrun.py`, `kb/_subj4_dryrun.py`, `kb/_zband_retire_dryrun.py` | — |
+| `kb/forestry_wine_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/futuro_hth_map_reference.json` | scripts: `kb/_build_futuro_hth_crosswalk.py` | — |
 | `kb/governance_candidates.json` | tabs: `governance` | committed by: `daily-dashboard.yml` |
 | `kb/governance_register.json` | tabs: `governance` | — |
@@ -1170,5 +1171,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 698 file
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 699 file
 datasets · 184 external services · 460 consumers · 58 workflows · 39 tabs.

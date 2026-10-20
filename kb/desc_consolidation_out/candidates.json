@@ -51,12 +51,12 @@
    "cos_max": 1.0,
    "cross_college": true,
    "shared_terms": [
-    "bureaucratic",
     "advocated",
+    "bureaucratic",
     "debated",
     "reducing",
-    "degradation",
-    "parties"
+    "parties",
+    "degradation"
    ]
   },
   {
@@ -91,8 +91,8 @@
     "youth",
     "observational",
     "practitioners",
-    "anxiety",
     "adherence",
+    "anxiety",
     "counseling"
    ]
   },
@@ -142,8 +142,8 @@
    "cross_college": true,
    "shared_terms": [
     "recognized",
-    "simulated",
     "driver",
+    "simulated",
     "positioning",
     "inspections",
     "apparatus"
@@ -695,8 +695,8 @@
    "cos_max": 0.851,
    "cross_college": true,
    "shared_terms": [
-    "operate",
     "organize",
+    "operate",
     "philosophies",
     "administrative",
     "childhood",
@@ -866,8 +866,8 @@
    "shared_terms": [
     "studying",
     "desiring",
-    "customs",
     "conversation",
+    "customs",
     "conversational"
    ]
   },
@@ -1430,8 +1430,8 @@
     "therefore",
     "detail",
     "interview",
-    "existing",
-    "disciplines"
+    "disciplines",
+    "existing"
    ]
   },
   {
@@ -1482,8 +1482,8 @@
     "therefore",
     "detail",
     "interview",
-    "existing",
-    "disciplines"
+    "disciplines",
+    "existing"
    ]
   },
   {
@@ -1538,9 +1538,9 @@
    "cross_college": false,
    "shared_terms": [
     "criterion",
+    "noted",
     "actually",
     "discontinue",
-    "noted",
     "submitted",
     "committee"
    ]
@@ -1613,9 +1613,9 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
+    "bazooka",
     "skim",
     "spotters",
-    "bazooka",
     "coat",
     "butt",
     "boxes"
@@ -1722,8 +1722,8 @@
    "cos_max": 0.969,
    "cross_college": false,
    "shared_terms": [
-    "shin",
     "guards",
+    "shin",
     "cleats",
     "attire",
     "soccer",
@@ -1838,8 +1838,8 @@
    "shared_terms": [
     "hybrids",
     "guiding",
-    "cars",
     "elec",
+    "cars",
     "voltage",
     "hybrid"
    ]
@@ -1915,8 +1915,8 @@
    "shared_terms": [
     "mundane",
     "illuminate",
-    "accomplishments",
     "paradigms",
+    "accomplishments",
     "constructs",
     "transnational"
    ]
@@ -2141,8 +2141,8 @@
    "cos_max": 0.943,
    "cross_college": false,
    "shared_terms": [
-    "reflection",
     "civic",
+    "reflection",
     "institution",
     "hrs",
     "work"
@@ -2250,7 +2250,7 @@
     "wines",
     "evaluations",
     "sensory",
-    "wine"
+    "old"
    ]
   },
   {
@@ -2336,8 +2336,8 @@
    "cross_college": false,
    "shared_terms": [
     "club",
-    "consent",
     "relative",
+    "consent",
     "soccer",
     "competitive",
     "hrs"
@@ -2536,8 +2536,8 @@
    "cross_college": false,
    "shared_terms": [
     "extended",
-    "pursue",
     "experiments",
+    "pursue",
     "regular",
     "available"
    ]
@@ -2651,8 +2651,8 @@
    "shared_terms": [
     "dermatology",
     "dictation",
-    "htec",
     "transcription",
+    "htec",
     "speech",
     "recognition"
    ]
@@ -2885,8 +2885,8 @@
    "cross_college": false,
    "shared_terms": [
     "producer",
-    "contributing",
     "freelance",
+    "contributing",
     "run",
     "publication",
     "offers"
@@ -3035,8 +3035,8 @@
    "cross_college": false,
    "shared_terms": [
     "stay",
-    "observed",
     "overnight",
+    "observed",
     "geographical",
     "landscapes",
     "possible"
@@ -3106,8 +3106,8 @@
    "shared_terms": [
     "memorizing",
     "expectations",
-    "rehearsal",
     "concert",
+    "rehearsal",
     "choreography",
     "stage"
    ]
@@ -3233,8 +3233,8 @@
     "cadd",
     "operator",
     "orthographic",
-    "latest",
-    "illustration"
+    "illustration",
+    "latest"
    ]
   },
   {
@@ -3468,9 +3468,9 @@
    "cos_max": 0.864,
    "cross_college": false,
    "shared_terms": [
+    "relied",
     "perceived",
     "consequential",
-    "relied",
     "interacted",
     "impacted",
     "technological"
@@ -3504,10 +3504,10 @@
    "cos_max": 0.863,
    "cross_college": false,
    "shared_terms": [
-    "provision",
     "brn",
-    "attributes",
+    "provision",
     "put",
+    "attributes",
     "inform",
     "adn"
    ]
@@ -3546,8 +3546,8 @@
     "sponsored",
     "attend",
     "produced",
-    "master",
     "concert",
+    "master",
     "department"
    ]
   },
@@ -3633,12 +3633,12 @@
    "cos_max": 0.853,
    "cross_college": false,
    "shared_terms": [
-    "raster",
     "spatially",
+    "raster",
     "arcgis",
     "esri",
     "smart",
-    "vector"
+    "gis"
    ]
   },
   {
@@ -3863,8 +3863,8 @@
     "sponsored",
     "attend",
     "produced",
-    "master",
     "concert",
+    "master",
     "department"
    ]
   },
@@ -3874,7 +3874,7 @@
      "id": "BSKL M9002",
      "title": "21ST Century Employability Skills: Analysis/Solution Mindset",
      "units": 0.0,
-     "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
+     "disc": "Interdisciplinary-Basic Skills: Noncredit",
      "colleges": [
       "Los Angeles Southwest College",
       "Los Angeles Valley College",
@@ -3885,7 +3885,7 @@
      "id": "BSKL M9008",
      "title": "21ST Century Employability Skills: Empathy",
      "units": 0.0,
-     "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
+     "disc": "Interdisciplinary-Basic Skills: Noncredit",
      "colleges": [
       "Los Angeles Southwest College",
       "Los Angeles Valley College",
@@ -3896,7 +3896,7 @@
      "id": "BSKL M9009",
      "title": "21ST Century Employability Skills: Entrepreneurial Mindset",
      "units": 0.0,
-     "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
+     "disc": "Interdisciplinary-Basic Skills: Noncredit",
      "colleges": [
       "Los Angeles Southwest College",
       "Los Angeles Valley College",
@@ -3953,8 +3953,8 @@
    "cross_college": false,
    "shared_terms": [
     "fabrications",
-    "conditionals",
     "parsing",
+    "conditionals",
     "outputs",
     "iteration",
     "programming"
@@ -4070,9 +4070,9 @@
    "cross_college": false,
    "shared_terms": [
     "uneven",
-    "steward",
     "erths",
     "pepperwood",
+    "steward",
     "preserve",
     "hiking"
    ]
@@ -4343,7 +4343,7 @@
     "kcactf",
     "festival",
     "workshop",
-    "theater"
+    "theatrical"
    ]
   },
   {
@@ -4610,8 +4610,8 @@
    "shared_terms": [
     "counting",
     "listing",
-    "clarity",
     "phrasing",
+    "clarity",
     "sense",
     "musicality"
    ]
@@ -4875,8 +4875,8 @@
    "cos_max": 0.738,
    "cross_college": false,
    "shared_terms": [
-    "indicate",
     "frequent",
+    "indicate",
     "reinforces",
     "feedback",
     "additional",
@@ -4909,8 +4909,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "revival",
     "roughly",
+    "revival",
     "decorative",
     "classical",
     "relates",
@@ -4945,8 +4945,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "articulated",
     "miramar",
+    "articulated",
     "malfunctions",
     "repairing",
     "natef",
@@ -5096,8 +5096,8 @@
    "shared_terms": [
     "completions",
     "pevm",
-    "mentally",
     "allowed",
+    "mentally",
     "collegiate",
     "play"
    ]
@@ -5166,8 +5166,8 @@
    "shared_terms": [
     "bias",
     "exposed",
-    "surrounding",
     "cases",
+    "surrounding",
     "deep"
    ]
   },
@@ -5435,8 +5435,8 @@
    "cos_max": 0.693,
    "cross_college": false,
    "shared_terms": [
-    "manufacturer",
     "mixture",
+    "manufacturer",
     "coating",
     "consistency",
     "finishing"
@@ -5543,8 +5543,8 @@
     "suspended",
     "drywall",
     "ceilings",
-    "ceiling",
     "square",
+    "ceiling",
     "suspension"
    ]
   },
@@ -6256,8 +6256,8 @@
    "cos_max": 0.635,
    "cross_college": false,
    "shared_terms": [
-    "fcaw",
     "gtaw",
+    "fcaw",
     "arc",
     "gas",
     "metal",
@@ -6529,9 +6529,9 @@
    "shared_terms": [
     "nine",
     "campuses",
+    "fund",
     "holistic",
     "transformative",
-    "fund",
     "education"
    ]
   },
@@ -6624,8 +6624,8 @@
    "cos_max": 0.62,
    "cross_college": false,
    "shared_terms": [
-    "roman",
     "empire",
+    "roman",
     "constructions",
     "older",
     "adults"
@@ -6659,8 +6659,8 @@
    "cos_max": 0.62,
    "cross_college": false,
    "shared_terms": [
-    "solo",
     "theatrical",
+    "solo",
     "performances",
     "theatre",
     "musical",

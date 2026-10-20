@@ -1,0 +1,236 @@
+{
+  "scopes": [
+    "sheet104-move-ten-agpr"
+  ],
+  "moves": {
+    "AGRI M1064": {
+      "old_id": "AGRI M1064",
+      "source": "minted",
+      "title": "Wildland Trees and Shrubs (Dendrology)",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "subject_map",
+      "top_code": "0401.00",
+      "merged_into": null,
+      "new_id": "ENVR M1064",
+      "how": "kept number"
+    },
+    "AGRI M1069": {
+      "old_id": "AGRI M1069",
+      "source": "minted",
+      "title": "Forest Ecology",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": null,
+      "top_code": "0114.00",
+      "merged_into": null,
+      "new_id": "ENVR M1069",
+      "how": "kept number"
+    },
+    "AGRI M10AX": {
+      "old_id": "AGRI M10AX",
+      "source": "singleton",
+      "title": "Advanced Forest Ecology and Management",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0114.00",
+      "merged_into": "AGRI M1069",
+      "new_id": "ENVR M10EO",
+      "how": "gap-filled"
+    },
+    "AGRI M10FP": {
+      "old_id": "AGRI M10FP",
+      "source": "singleton",
+      "title": "Beginning Wine Sensory Analysis",
+      "route": "AGPR",
+      "discipline": "Agricultural Production",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0112.00",
+      "merged_into": null,
+      "new_id": "AGPR M10FP",
+      "how": "kept number"
+    },
+    "AGRI M10IL": {
+      "old_id": "AGRI M10IL",
+      "source": "singleton",
+      "title": "Applied Forest Inventory and Management",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0114.00",
+      "merged_into": null,
+      "new_id": "ENVR M10IL",
+      "how": "kept number"
+    },
+    "AGRI M10IZ": {
+      "old_id": "AGRI M10IZ",
+      "source": "singleton",
+      "title": "Forest Management and Assessment",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0114.00",
+      "merged_into": "AGRI M1069",
+      "new_id": "ENVR M10IZ",
+      "how": "kept number"
+    },
+    "AGRI M10KI": {
+      "old_id": "AGRI M10KI",
+      "source": "singleton",
+      "title": "Beginning Forestry",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": null,
+      "top_code": "0114.00",
+      "merged_into": null,
+      "new_id": "ENVR M10KI",
+      "how": "kept number"
+    },
+    "AGRI M10OP": {
+      "old_id": "AGRI M10OP",
+      "source": "singleton",
+      "title": "Silviculture and Fire Ecology",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": null,
+      "top_code": "0115.00",
+      "merged_into": null,
+      "new_id": "ENVR M10OP",
+      "how": "kept number"
+    },
+    "AGRI M10OQ": {
+      "old_id": "AGRI M10OQ",
+      "source": "singleton",
+      "title": "Forest Ecology and Management",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0114.00",
+      "merged_into": "AGRI M1069",
+      "new_id": "ENVR M10OQ",
+      "how": "kept number"
+    },
+    "AGRI M10SX": {
+      "old_id": "AGRI M10SX",
+      "source": "singleton",
+      "title": "Forest Protection and Health",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": null,
+      "top_code": "0115.00",
+      "merged_into": "AGRI M1103",
+      "new_id": "ENVR M10SX",
+      "how": "kept number"
+    },
+    "AGRI M1103": {
+      "old_id": "AGRI M1103",
+      "source": "minted",
+      "title": "Forest Health and Protection",
+      "route": "ENVR",
+      "discipline": "Forestry/Natural Resources",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0114.00",
+      "merged_into": null,
+      "new_id": "ENVR M1103",
+      "how": "kept number"
+    },
+    "AGRI M1106": {
+      "old_id": "AGRI M1106",
+      "source": "minted",
+      "title": "Wines of France",
+      "route": "AGPR",
+      "discipline": "Agricultural Production",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0112.00",
+      "merged_into": null,
+      "new_id": "AGPR M1106",
+      "how": "kept number"
+    },
+    "AGRI M1113": {
+      "old_id": "AGRI M1113",
+      "source": "minted",
+      "title": "Wine Service and Hospitality",
+      "route": "AGPR",
+      "discipline": "Agricultural Production",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0112.00",
+      "merged_into": null,
+      "new_id": "AGPR M1113",
+      "how": "kept number"
+    },
+    "AGRI M1119": {
+      "old_id": "AGRI M1119",
+      "source": "minted",
+      "title": "Wines of Italy",
+      "route": "AGPR",
+      "discipline": "Agricultural Production",
+      "discipline_before": "Agriculture",
+      "discipline_source_before": "top_division",
+      "top_code": "0112.00",
+      "merged_into": null,
+      "new_id": "AGPR M1119",
+      "how": "kept number"
+    }
+  },
+  "alias": {
+    "AGRI M1064": "ENVR M1064",
+    "AGRI M1069": "ENVR M1069",
+    "AGRI M10AX": "ENVR M10EO",
+    "AGRI M10FP": "AGPR M10FP",
+    "AGRI M10IL": "ENVR M10IL",
+    "AGRI M10IZ": "ENVR M10IZ",
+    "AGRI M10KI": "ENVR M10KI",
+    "AGRI M10OP": "ENVR M10OP",
+    "AGRI M10OQ": "ENVR M10OQ",
+    "AGRI M10SX": "ENVR M10SX",
+    "AGRI M1103": "ENVR M1103",
+    "AGRI M1106": "AGPR M1106",
+    "AGRI M1113": "AGPR M1113",
+    "AGRI M1119": "AGPR M1119"
+  },
+  "validation": {
+    "V0_pinned_set": {
+      "pass": true,
+      "problems": [],
+      "found": 14,
+      "pinned": 14
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    }
+  },
+  "gapfilled": [
+    {
+      "old_id": "AGRI M10AX",
+      "wanted": "ENVR M10AX",
+      "new_id": "ENVR M10EO",
+      "why": "AGRI M10AX -> ENVR (sheet104-move-ten-agpr)"
+    }
+  ],
+  "reused_retired_ids": [
+    "AGPR M10FP",
+    "ENVR M10EO"
+  ]
+}

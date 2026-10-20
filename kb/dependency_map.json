@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 698,
+  "file_datasets": 699,
   "external_services": 184,
   "consumers": 460,
   "workflows": 58,
@@ -12437,6 +12437,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/forestry_wine_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/futuro_hth_map_reference.json": {
