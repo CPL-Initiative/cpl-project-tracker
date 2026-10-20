@@ -468,6 +468,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_cred_rename_apply_supabase.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_dryrun.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_csr_confirm_authority.py` | workflows: `csr-confirm.yml` | — |
+| `kb/_csr_quarterly_probe.py` | workflows: `csr-quarterly.yml` | — |
 | `kb/_csr_trail.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_esl_sheet_apply.py` | workflows: `esl-sheet-apply.yml` | — |
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
@@ -678,7 +679,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/mis_district_college_codes.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/moc_crosswalk.json` | scripts: `kb/_sync_moc_crosswalk.py` | scripts: `kb/_sync_moc_crosswalk.py` · committed by: `moc-crosswalk-sync.yml` |
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py` | — |
-| `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py`, `kb/_mq_title5_rename.py` | — |
+| `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py`, `kb/_csr_quarterly_probe.py`, `kb/_mq_title5_rename.py` | — |
 | `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_jev_next_steps.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
 | `kb/reference/swp_region_roster.json` | scripts: `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_regional_opps_data.py`, `kb/_emit_swp_region_data.py` | — |
 | `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_correct_top_lookup_code4.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
@@ -857,6 +858,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_confirm_authority_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_procedures_test.py` | workflows: `js-tests.yml` | — |
+| `tests/csr_quarterly_probe_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_trail_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ctdl_exchange_seed_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
@@ -976,7 +978,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `bakersfield.elumenapp.com` | scripts: `kb/_program_requirements_college.py` |
 | `bsky.app` | `edgefn:cpl-news-harvest` |
-| `c-id.net` | scripts: `kb/_ingest_cid_articulations.py` |
+| `c-id.net` | scripts: `kb/_csr_quarterly_probe.py`, `kb/_ingest_cid_articulations.py` |
 | `c-idsystem.org` | scripts: `tmc/_parse_tmc_pdfs.py` |
 | `california.public.law` | tabs: `college-briefing`, `implementation-funding` |
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
@@ -1014,6 +1016,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-knowledge-base` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
+| `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/_csr_quarterly_probe.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
 | `hartnell.catalog.prod.coursedog.com` | scripts: `kb/_course_outline_census.py` |
@@ -1072,7 +1075,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.calbright.edu` | tabs: `map-queue`, `map-users` |
 | `www.canyons.edu` | tabs: `map-queue`, `map-users` |
 | `www.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py` |
-| `www.cccco.edu` | tabs: `cip-crosswalk`, `college-briefing`, `cpl-pathways` · `edgefn:cpl-news-harvest` |
+| `www.cccco.edu` | tabs: `cip-crosswalk`, `college-briefing`, `cpl-pathways` · scripts: `kb/_csr_quarterly_probe.py` · `edgefn:cpl-news-harvest` |
 | `www.chaffey.edu` | tabs: `map-queue`, `map-users` |
 | `www.citruscollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.cmccd.edu` | tabs: `map-queue`, `map-users` |
@@ -1083,6 +1086,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.craftonhills.edu` | tabs: `map-queue`, `map-users` |
 | `www.cuyamaca.edu` | tabs: `map-queue`, `map-users` |
 | `www.cypresscollege.edu` | tabs: `map-queue`, `map-users` |
+| `www.data-c-idsystem.org` | scripts: `kb/_csr_quarterly_probe.py` |
 | `www.dir.ca.gov` | scripts: `kb/_preseed_null_issuers.py`, `kb/fire_electrical_external_credentials.py` |
 | `www.dvc.edu` | tabs: `map-queue`, `map-users` |
 | `www.electricaltrainingalliance.org` | scripts: `kb/fire_electrical_external_credentials.py` |
@@ -1166,5 +1170,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 696 file
-datasets · 182 external services · 458 consumers · 57 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 698 file
+datasets · 184 external services · 460 consumers · 58 workflows · 39 tabs.

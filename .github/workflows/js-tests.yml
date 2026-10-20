@@ -234,6 +234,11 @@ jobs:
       # Pure-stdlib python.
       - name: MQ Title 5 rename (no old spelling in any store)
         run: python3 tests/mq_title5_rename_test.py
+      # The CSR's quarterly routines in probe mode (S431): the handbook link and its
+      # edition, a dead or unreachable source reported without raising, no file
+      # written, a workflow that only reads. Pure-stdlib python, no network.
+      - name: CSR quarterly probe (reads only, one line per source)
+        run: python3 tests/csr_quarterly_probe_test.py
       # The CTDL exchange seed (S430, Sheet 102 card 1): the files Malone copies
       # into the private exchange repository, and the check that refuses a drop
       # whose manifest, checksums, CTIDs or folder disagree with its contract.

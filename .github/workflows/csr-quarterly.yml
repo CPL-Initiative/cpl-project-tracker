@@ -1,0 +1,31 @@
+name: CSR quarterly (probe)
+
+# The Common Subjects Reference's two quarterly routines (kb/csr_procedures.json: mq_list and
+# authority_tables, Sam 2026-10-19), in probe mode: kb/_csr_quarterly_probe.py asks the
+# Chancellor's Office Minimum Qualifications page and the C-ID hosts what they serve and prints
+# one `PROBE {json}` line per source. The sandbox cannot reach these hosts and cannot download a
+# run's artifact, so a session reads the job log. It writes no file and applies nothing, so the
+# job only reads the repository. Dispatch only until a probe has shown what each source serves;
+# the comparison mode and its quarterly schedule follow (lane: common-subjects-reference).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Probe the handbook page and the C-ID hosts
+        run: python3 kb/_csr_quarterly_probe.py
