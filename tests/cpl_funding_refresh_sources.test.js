@@ -199,14 +199,15 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     // 6. My CPL Funding beside the table
     w.eval(briefSrc);
     const seg = doc.getElementById("cplFundCollegeView");
-    check("6a: the public rendering offers All institutions and My CPL Funding",
-      seg && Array.from(seg.querySelectorAll("button")).map((b) => b.textContent).join("|") === "All institutions|My CPL Funding");
+    // Sam's names since 2026-10-20: All Institutions and My Institution.
+    check("6a: the public rendering offers All Institutions and My Institution",
+      seg && Array.from(seg.querySelectorAll("button")).map((b) => b.textContent).join("|") === "All Institutions|My Institution");
     click(w, seg.querySelector('[data-val="one"]'));
     const pick = doc.getElementById("cplFundOnePick");
     // Every institution, then (Sam, 2026-09-30) each district of two or more in
     // its own group: tests/cpl_funding_public_view_asks.test.js guards the districts.
-    check("6b: My CPL Funding swaps the table for an institution or district picker", pick && !doc.getElementById("cplFundTable") &&
-      pick.querySelectorAll('optgroup[label="Institutions"] option').length === H.D.colleges.length &&
+    check("6b: My Institution swaps the table for a college or district picker", pick && !doc.getElementById("cplFundTable") &&
+      pick.querySelectorAll('optgroup[label="Colleges"] option').length === H.D.colleges.length &&
       pick.querySelector('option[value=""]') !== null);
     pick.value = SEM.college;
     pick.dispatchEvent(new w.Event("change"));
@@ -217,7 +218,7 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
       panel && /2026–2028 College Implementation Funding/.test(panel.textContent) && panel.textContent.indexOf(money) >= 0 &&
       /Priority outcomes/.test(panel.textContent));
     check("6d: it points at the table beside it, never at a tab the reader cannot see",
-      /under All institutions\./.test(panel.textContent) && !/Implementation Funding tab shows/.test(panel.textContent));
+      /under All Institutions\./.test(panel.textContent) && !/Implementation Funding tab shows/.test(panel.textContent));
     w.CPL_FUNDING_PUBLIC = false;
     T.render();
     check("6e: the Internal view keeps the table alone", !doc.getElementById("cplFundCollegeView") && !!doc.getElementById("cplFundTable"));

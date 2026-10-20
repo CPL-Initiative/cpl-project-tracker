@@ -65,7 +65,7 @@ const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
   check("(a4) redraws after the choice keep the list and its value", doc.getElementById("cplFundOnePick") === first &&
     first.value === KEY);
   doc.getElementById("cplFundOneClear").click();
-  check("(a5) Choose another college clears it in place", doc.getElementById("cplFundOnePick") === first &&
+  check("(a5) Choose another institution clears it in place", doc.getElementById("cplFundOnePick") === first &&
     first.value === "" && /then lead the page/.test(line()));
 }
 

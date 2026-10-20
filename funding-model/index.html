@@ -252,6 +252,8 @@ details.fold > .fold-body{padding-top:1.4em}
 .prio .pct{font-variant-numeric:tabular-nums; font-weight:700; color:var(--cobalt); white-space:nowrap}
 .prio .metric{margin:.5em 0 0; font-size:.94rem}
 .prio .aim{margin:.35em 0 0; font-size:.88rem; color:var(--text-muted)}
+/* whose figures the cards show, when My Institution has one chosen (2026-10-20) */
+#prios .prios-scope{margin:0 0 12px; font-weight:600; color:var(--text-strong)}
 /* the count under a minimum condition (sheet 14 card 6), quieter than the condition */
 #req-list .req-count{color:var(--text-muted)}
 
@@ -358,8 +360,12 @@ footer p{max-width:none}
   #cplFundingMount .cplfund-colmenu,
   #cplFundingMount .cplfund-seg,
   #cplFundStep1Mount .cplfund-step1-view,
+  #cplFundStep1Mount .cplfund-step1[data-view="all"],
   #cplFundingMount .cplfund-optin-jump,
   #cplFundingMount input[type="search"]{display:none !important}
+  /* Step 2 prints alone under My Institution: its name says whose PDF this is */
+  #cplFundStep1Mount .cplfund-step1{grid-template-columns:1fr}
+  #cplFundStep1Mount .cplfund-step1-pick{border:0; padding:0}
   /* ⚠ THE CARET IS THE INSTITUTION'S NAME, not a chevron beside it — the calm
      pass turned the row toggle INTO the name as a real button. Hiding it here
      (the first draft of this stylesheet did) printed 119 rows of figures with
@@ -1032,6 +1038,21 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // The model already carries a `description` per priority, curated on the same
   // tab as the share and the measure; that is what the card says now.
   var box = document.getElementById("prios");
+  // THE CARDS FOLLOW THE CHOSEN INSTITUTION (Sam, 2026-10-20: "adjust the
+  // numbers to match the selected institution rather than the whole state (if
+  // an institution is selected)"). Under My Institution with a college or
+  // district chosen, _publicProgress returns its own lines and names it in
+  // `scope`; one sentence before the cards says whose figures they are.
+  var SC = (D.progress && D.progress.scope) || null;
+  var countWord = function (n) {
+    return ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"][n - 1] || num(n);
+  };
+  if (SC) {
+    var sn = document.createElement("p"); sn.className = "prios-scope";
+    sn.textContent = "The targets and progress below are for " + SC.name +
+      ". Choose All Institutions in Step 1 for the statewide figures.";
+    box.appendChild(sn);
+  }
   D.prios.forEach(function(p){
     var el = document.createElement("div");
     el.className = "prio";
@@ -1056,9 +1077,21 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       // 2026-09-15), and a priority with no target has none to state.
       if (pr.ftes && pr.target > 0) {
         var tl = document.createElement("p"); tl.className = "aim prog";
-        tl.textContent = "Target: " + pr.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) +
-          " CPL FTES statewide, about " + num(pr.units) + " semester units, at an FTES reimbursement rate of " + money2(pr.price) +
-          " (the " + money2(pr.rate) + " base rate times a factor of " + (+pr.factor).toFixed(1) + ")." +
+        var rateWords = ", at an FTES reimbursement rate of " + money2(pr.price) +
+          " (the " + money2(pr.rate) + " base rate times a factor of " + (+pr.factor).toFixed(1) + ").";
+        var tgt = pr.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+        tl.textContent = SC
+          // One institution's target, in its own calendar's units; a district's
+          // is its colleges' targets added up, and the maximum award lowers the
+          // target of a college that reaches it, as it does statewide.
+          ? "Target: " + tgt + " CPL FTES for " + SC.name + ", about " + num(pr.units) + " " +
+            (pr.unitWord ? pr.unitWord + " " : "") + "units" + rateWords +
+            (SC.kind === "district"
+              ? " Its " + countWord(SC.members) + " colleges' targets add up to this figure" +
+                (SC.atMax > 0 ? "; the maximum award lowers the " + (SC.atMax === 1 ? "target of the one that reaches"
+                  : "targets of the " + countWord(SC.atMax) + " that reach") + " it." : ".")
+              : (SC.atMax > 0 ? " The maximum award lowers this target." : ""))
+          : "Target: " + tgt + " CPL FTES statewide, about " + num(pr.units) + " semester units" + rateWords +
           // The statewide target is the institutions' targets added up (Sam,
           // sheet 19 card 2, 2026-10-02: "sum"), so it falls short of the funding
           // divided by the rate; one sentence says why, from the model's count.
@@ -1069,11 +1102,14 @@ window.CPL_PAINT_EXPLAINER = function (D) {
             : "");
         el.appendChild(tl);
       }
+      // An institution's demonstrated dollars arrive coarsened to the nearest
+      // $1,000; under the floor `under` is set, and the line says "less than"
+      // and gives the floor's share as an upper bound.
       var pl = document.createElement("p"); pl.className = "aim prog";
       pl.textContent = pr.demonstrated == null
         ? "Progress: TBA."
-        : "Progress: MAP records demonstrate " + money(pr.demonstrated) + " of the " + money(pr.totalPossible) +
-          " Total Possible (" + pct2(pr.pct) + ").";
+        : "Progress: MAP records demonstrate " + (pr.under ? "less than " : "") + money(pr.demonstrated) +
+          " of the " + money(pr.totalPossible) + " Total Possible (" + (pr.under ? "under " : "") + pct2(pr.pct) + ").";
       el.appendChild(pl);
     }
     // The recommended strategies for the year, as the tab's card lists them
