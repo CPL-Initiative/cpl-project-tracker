@@ -4,7 +4,9 @@
 //   (a) Rule 4 + the script is wired into both HTMLs;
 //   (b) signed in, a MANUAL Current cell is click-editable like a Goal cell
 //       (S426: data-rt="CURRENT", one cell per year) → PATCH workplan_goals.cur_<year>
-//       on the GOAL row with no total, and its TOTAL mirror cell repaints optimistically;
+//       on the GOAL row with no total, and the cell repaints optimistically (the table has
+//       no Total column since S438, Sam 2026-10-20: a cumulative ladder's sum overstated
+//       the 2030 target);
 //   (c) a sub-activity TITLE span (data-title-edit) is click-editable
 //       → PATCH projects.name (the single title store);
 //   (d) a LIVE Current cell (no edit attr, read-only) does NOT open an editor;
@@ -32,28 +34,25 @@ check("source has no separate Current editor: one ladder editor (saveCell) serve
 check("source defines saveTitle (projects.name PATCH)", /function saveTitle/.test(SRC));
 
 // A representative slice of the rendered Annual Workplan table: one manual
-// Current cell + its TOTAL mirror, one live Current cell (read-only), an
-// editable title span, and a GOAL year cell (legacy editor).
+// Current cell, one live Current cell (read-only), an editable title span, and a
+// GOAL year cell (legacy editor). No Total column (S438).
 const TABLE =
   '<table><tbody>' +
     // ── manual sub-activity 1.1 ──
     '<tr><td rowspan="3"><span style="color:#888;font-size:0.75rem;">1.1</span> ' +
       '<span class="wpg-title-cell" data-title-edit="1" data-pid="1.1">MAP Platform Development</span></td>' +
       '<td>Goal</td>' +
-      '<td data-editable="1" data-aid="1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="4">4</td>' +
-      '<td data-aid="1.1" data-kind="project" data-rt="GOAL" data-total="1" data-val="78">78</td></tr>' +
+      '<td data-editable="1" data-aid="1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="4">4</td></tr>' +
     '<tr><td>Current</td>' +
-      '<td data-editable="1" data-aid="1.1" data-kind="project" data-rt="CURRENT" data-yr="2026-27" data-yr-key="cur_2026_27" data-val="8">8</td>' +
-      '<td data-aid="1.1" data-kind="project" data-rt="CURRENT" data-total="1" data-val="8">8</td></tr>' +
-    '<tr><td>Stretch</td><td>8</td><td>140</td></tr>' +
+      '<td data-editable="1" data-aid="1.1" data-kind="project" data-rt="CURRENT" data-yr="2026-27" data-yr-key="cur_2026_27" data-val="8">8</td></tr>' +
+    '<tr><td>Stretch</td><td>8</td></tr>' +
     // ── live sub-activity 3.1 (read-only Current) ──
     '<tr><td rowspan="3"><span>3.1</span> ' +
       '<span class="wpg-title-cell" data-title-edit="1" data-pid="3.1">CPL Offers</span></td>' +
-      '<td>Goal</td><td>40,000</td><td>716,000</td></tr>' +
+      '<td>Goal</td><td>40,000</td></tr>' +
     '<tr><td>Current</td>' +
-      '<td>48,142 <span class="wpg-live-badge">live · as of 2026-06-30</span></td>' +
-      '<td>48,142</td></tr>' +
-    '<tr><td>Stretch</td><td>80,000</td><td>1,260,000</td></tr>' +
+      '<td>48,142 <span class="wpg-live-badge">live · as of 2026-06-30</span></td></tr>' +
+    '<tr><td>Stretch</td><td>80,000</td></tr>' +
   '</tbody></table>';
 
 function makeDom(signedIn) {
@@ -94,7 +93,6 @@ function blur(w, node) {
   let dom = makeDom(true);
   let w = dom.window, doc = w.document;
   const curCell = doc.querySelector('[data-editable="1"][data-aid="1.1"][data-rt="CURRENT"]');
-  const curTotal = doc.querySelector('[data-aid="1.1"][data-rt="CURRENT"][data-total="1"]');
   check("signed in: manual Current cell lights up (wpg-editable)",
     curCell.classList.contains("wpg-editable"));
   click(w, curCell);
@@ -111,8 +109,7 @@ function blur(w, node) {
   check("...with body { cur_2026_27: 12345 } and no total (that column is the Goal total)",
     curCall && JSON.parse(curCall.opts.body).cur_2026_27 === 12345 && !("total" in JSON.parse(curCall.opts.body))
       && !("current" in JSON.parse(curCall.opts.body)));
-  check("manual Current TOTAL mirror repainted to 12,345",
-    /12,345/.test(curTotal.textContent));
+  check("the manual Current cell repaints to 12,345", /12,345/.test(curCell.textContent));
 
   // ── (c) title edit ──
   dom = makeDom(true); w = dom.window; doc = w.document;
