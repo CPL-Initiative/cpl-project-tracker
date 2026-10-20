@@ -40,6 +40,13 @@ async function block(label, fn) {
   try { await fn(); } catch (e) { check(label + " — driver threw: " + (e && e.stack || e), false); }
 }
 const tick = (ms) => new Promise((r) => setTimeout(r, ms || 0));
+// A hashchange reaches tabs.js and cpl_chat.js on a later task, and on a CI runner
+// holding four jsdom processes that task can land past a fixed 20 ms (#2269, run
+// 39356766779, shard 2). Wait for the state the check reads, up to 2 s.
+const settle = async (cond, ms) => {
+  const end = Date.now() + (ms || 2000);
+  while (!cond() && Date.now() < end) await tick(10);
+};
 
 const CHAT = fs.readFileSync("cpl_chat.js", "utf8");
 const TABS = fs.readFileSync("tabs.js", "utf8");
@@ -263,10 +270,11 @@ const cobiWrap = (w) => w.document.querySelector("body > .cplchat.cplchat-full, 
     check("(5) the address now names the tab beneath her", !/#chatbot/.test(w.location.href));
     w.CPL_CHAT._collapseDock();
     w.location.hash = "#chatbot";
-    await tick(20);
+    await settle(() => w.CPL_CHAT._dockExpanded());
     check("(5) a #chatbot link followed later opens her again", w.CPL_CHAT._dockExpanded());
     w.location.hash = "#sierra-training";
-    await tick(20);
+    await settle(() => !w.CPL_CHAT._dockExpanded()
+      && w.document.getElementById("tab-sierra-training").classList.contains("active"));
     check("(5) going to another tab (Back, a link) closes her", !w.CPL_CHAT._dockExpanded()
       && w.document.getElementById("tab-sierra-training").classList.contains("active"));
   });
