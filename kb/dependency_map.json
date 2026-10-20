@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 695,
+  "file_datasets": 696,
   "external_services": 182,
-  "consumers": 457,
+  "consumers": 458,
   "workflows": 57,
   "data_js_files": 70,
   "tabs": 39
@@ -9294,6 +9294,13 @@
      "line": 162
     },
     {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
+    },
+    {
      "id": "script:kb/_overmerge_apply.py",
      "kind": "script",
      "direction": "read",
@@ -9673,6 +9680,13 @@
      "direction": "read",
      "how": "literal",
      "line": 158
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     },
     {
      "id": "script:kb/_normalize_common_titles.py",
@@ -10425,6 +10439,13 @@
      "direction": "read",
      "how": "literal",
      "line": 160
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     },
     {
      "id": "script:kb/_normalize_common_titles.py",
@@ -11607,6 +11628,20 @@
      "line": 308
     },
     {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 80
+    },
+    {
      "id": "script:kb/_uc_cur_promote.py",
      "kind": "script",
      "direction": "read",
@@ -11757,6 +11792,13 @@
      "direction": "read",
      "how": "literal",
      "line": 164
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
     },
     {
      "id": "script:kb/_overmerge_dryrun.py",
@@ -11917,6 +11959,13 @@
      "direction": "read",
      "how": "literal",
      "line": 69
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     },
     {
      "id": "script:kb/_overmerge_dryrun.py",
@@ -14377,6 +14426,13 @@
      "line": 61
     },
     {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    },
+    {
      "id": "script:kb/_preseed_null_issuers.py",
      "kind": "script",
      "direction": "read",
@@ -14433,6 +14489,13 @@
      "direction": "read",
      "how": "literal",
      "line": 95
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 72
     }
    ],
    "served": true,
@@ -14495,6 +14558,13 @@
      "direction": "read",
      "how": "literal",
      "line": 132
+    },
+    {
+     "id": "script:kb/_mq_title5_rename.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -18715,6 +18785,19 @@
    "main_committers": []
   },
   "file:tests/mid_short_code_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/mq_title5_rename_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24712,6 +24795,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
+    "tests/mq_title5_rename_test.py",
     "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/college_page_read_test.py",

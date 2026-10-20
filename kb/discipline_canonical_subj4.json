@@ -2960,7 +2960,7 @@
       "authority_flag": "proposed",
       "authority_note": "Common SUBJ MAKR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
-    "Disabled Student Programs and": {
+    "Disabled Student Programs and Services (DSPS)": {
       "canonical_subj4": "DSPS",
       "source": "data_modal",
       "data_modal": "DSPS",
@@ -4055,7 +4055,7 @@
       "authority_flag": "proposed",
       "authority_note": "Common SUBJ ESOL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
-    "English as a Second Language Noncredit 53412": {
+    "English as a Second Language (ESL): Noncredit": {
       "canonical_subj4": "ESLN",
       "source": "curator_override",
       "data_modal": "ESL NC",
@@ -5785,7 +5785,7 @@
       "authority_flag": "proposed",
       "authority_note": "Common SUBJ IDST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
-    "Interdisciplinary-Basic Skills: Noncredit 53412": {
+    "Interdisciplinary-Basic Skills: Noncredit": {
       "canonical_subj4": "BSKL",
       "source": "curator_override",
       "data_modal": "BSICSKL",

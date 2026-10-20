@@ -13,5 +13,17 @@
     ]
   },
   "_updated_at": "2026-09-08",
-  "_updated_by": "Sam, 2026-09-08 (the hard-ones sheet, item 2): \"Put these in ethnic studies.\" African American Studies and Asian American Studies are MQ disciplines carrying ZERO courses anywhere on the map, while their three siblings carry 534 (Ethnic Studies, ETHS), 35 (Chicano Studies, ETHN) and 33 (Native American/American Indian Studies, ETHA). The two with courses stay distinct; the two empty ones fold in. ⚠️ They are real MQ disciplines, not alternate spellings — this records where we FILE such a course, not that the names are synonyms."
+  "_updated_by": "Sam, 2026-09-08 (the hard-ones sheet, item 2): \"Put these in ethnic studies.\" African American Studies and Asian American Studies are MQ disciplines carrying ZERO courses anywhere on the map, while their three siblings carry 534 (Ethnic Studies, ETHS), 35 (Chicano Studies, ETHN) and 33 (Native American/American Indian Studies, ETHA). The two with courses stay distinct; the two empty ones fold in. ⚠️ They are real MQ disciplines, not alternate spellings — this records where we FILE such a course, not that the names are synonyms.",
+  "renamed": {
+    "Community College Counselor of Students with Disabilities 53414": "Community College Counselor of Students with Disabilities",
+    "Deaf and Hearing Impaired: Disabled Students Programs 53414": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+    "Developmental Disabilities: Disabled Students Programs and Services 53414": "Developmental Disabilities: Disabled Students Programs and Services",
+    "Disabled Student Programs and": "Disabled Student Programs and Services (DSPS)",
+    "English as a Second Language Noncredit 53412": "English as a Second Language (ESL): Noncredit",
+    "Interdisciplinary-Basic Skills: Noncredit 53412": "Interdisciplinary-Basic Skills: Noncredit",
+    "Learning Disabilities: Disabled Student Programs and Services 53414": "Learning Disabilities: Disabled Student Programs and Services",
+    "Physical Disabilities: Disabled Student Programs and Services 53414": "Physical Disabilities: Disabled Student Programs and Services",
+    "Speech Language Pathology: Disabled Student Programs and 53414 Services": "Speech Language Pathology: Disabled Student Programs and Services"
+  },
+  "_renamed_about": "Old spelling -> current MQ name, resolved by kb/_alias_canon.py for the inference passes; the CSR's also: chips read `aliases` only. The nine Title 5-numbered and cut-short names took the handbook's spellings on Sam's Open Asks Sheet 99 card 6 (2026-10-19, \"Rename as the handbook spells them\"; kb/_mq_title5_rename.py, S430)."
 }

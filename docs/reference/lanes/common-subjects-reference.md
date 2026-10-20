@@ -175,8 +175,14 @@ four known issues with owners, the procedures in force, and deep links into the 
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
    faculty-published moment. The Progress card's foot now names the nightly procedure instead of the unused stage.
-6. **rename**: the eight Title 5-numbered names and the cut-short one take the handbook's spellings, through the alias
-   file and one re-key window.
+6. ✅ **rename** (S430, one window): the eight Title 5-numbered names and the cut-short one take `mq_sections.json`'s
+   `index_name` verbatim, *(DSPS)* and *(ESL)* included (Sam's reply: *"Rename as the handbook spells them"*).
+   `kb/_mq_title5_rename.py` renamed 355 whole strings across eight stores (the identity files 329), dropped the
+   now-redundant `index_name`, and filed the nine under `renamed` in `kb/discipline_aliases.json`, which
+   `kb/_alias_canon.py` resolves for the inference passes and the CSR's chips never read. The four live `kb_curation`
+   rows (Sam's ESLN and BSKL picks keyed `_CANON_SUBJ4::<old name>`, the discipline rows on BSKL M9001 and M9252) moved
+   by guarded UPDATE, `kb/receipts/mq_title5_rename_2026-10-20_s430.sql`, before-values and rollback in it.
+   `tests/mq_title5_rename_test.py` (7) fails on an old spelling in any store.
 
 S425 recorded them at context EMERGENCY; S427 executes them in this order (1, 2 and 5 landed together as one code
 change; 3, 4 and 6 are data windows and follow). The six cards left the vault builder in CPLBrain#395.
@@ -185,11 +191,7 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 After the re-key's merge: `supabase-rekey.yml` with `alias_map_path=kb/agri_family_remint_out/2026-10-20/alias_map.json`,
 the read-back (no kb_curation row on an old id), and `daily-dashboard.yml`. The twelve `second_look` AGRI identities
-(ten forestry, two wine appreciation) are a card once the Forestry/Natural Resources row is read. Ruling 6: the nine
-names take `mq_sections.json`'s `index_name` verbatim, the parentheticals *(DSPS)* and *(ESL)* included, since Sam's
-reply was *"Rename as the handbook spells them"*; one window re-keys the reference files, the identity files, the
-maps and four live `kb_curation` rows (two picks keyed `_CANON_SUBJ4::<old name>`, two discipline rows on BSKL M9001
-and M9252) by a guarded UPDATE whose receipt carries the before-values. The two quarterly routines on a runner (the handbook check; the C-ID and
+(ten forestry, two wine appreciation) are a card once the Forestry/Natural Resources row is read. The two quarterly routines on a runner (the handbook check; the C-ID and
 CCN refresh), probe mode first; the strays through the discipline-blank worklist and one re-key window; the dead
 handbook link replaced by the live page; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

@@ -101,7 +101,7 @@ GROUPS = {
     "Emergency Medical Technologies": ["EMS", "EMT", "CALJA"],
     "English": ["ENGL", "ENG", "ENGLISH"],
     "English as a Second Language": ["ESL", "EMLS", "ESOL", "ESLN", "ESLA", "ESLV"],
-    "English as a Second Language Noncredit 53412": ["ESLNC"],
+    "English as a Second Language (ESL): Noncredit": ["ESLNC"],
     "Reading": ["READ"],
     "Fire Technology": ["FIRE", "FIRETEC", "FT", "FIRET", "FIR", "FOT", "FAC", "FFS", "FTEC"],
     "Geography": ["GEOG", "GEO"],
@@ -154,7 +154,7 @@ GROUPS = {
     "Vocational": ["VOCED", "VOC", "VOCE"],
     "Parent Education: Noncredit": ["PARN"],
     "Public Safety": ["PUBSERV"],
-    "Disabled Student Programs and": ["DSPS"],
+    "Disabled Student Programs and Services (DSPS)": ["DSPS"],
 }
 
 # Notable subjects we deliberately leave unmapped (kept for reviewer context).
