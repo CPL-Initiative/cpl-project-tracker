@@ -99,7 +99,9 @@ claude.ai.
 stays on claude.ai; the session adds a record with `home` `web`, the artifact link, and
 `rebuild_from` naming the HTML source it commits to the vault beside the work. Writes go
 through a committed receipt and `supabase-migrate.yml`. First:
-`dsp-credit-starting-points` (`kb/receipts/cpl_library_dsp_starting_points_2026-10-20.sql`).
+`dsp-credit-starting-points` (`kb/receipts/cpl_library_dsp_starting_points_2026-10-20.sql`,
+applied 2026-10-20 by `supabase-migrate.yml` run 39500044669; the record, the memory row and
+its log row read back 1, 1, 1).
 `cpl_memory` `sam-claude-artifacts-go-in-library-2026-10-20`.
 
 ## Filed in Drive so far
