@@ -47,6 +47,10 @@ update public.kb_curation
  where course_id = 'BSKL M9252' and field = 'discipline'
    and value = 'Interdisciplinary-Basic Skills: Noncredit 53412' and reviewer_email = 'trailcrew-ccr3-s112@bot';
 
+-- Applied by supabase-migrate.yml run 39356049395 (2026-10-20 01:56Z). Read back live through the Supabase MCP
+-- at ~02:05Z: the four rows under their new names (ESLN and BSKL picks under map@rccd.edu, reviewed_at unchanged;
+-- BSKL M9001 and M9252 reading Interdisciplinary-Basic Skills: Noncredit), no row under an old name.
+--
 -- Read back: expect the four rows under their new names and no row left under an old one.
 select course_id, field, left(value, 60) as value, reviewer_email, reviewed_at
   from public.kb_curation
