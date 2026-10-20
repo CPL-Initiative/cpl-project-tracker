@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-10-19
+updated: 2026-10-20
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -40,7 +40,7 @@ together and places them in some order of priority and completion and known issu
 | Reference | Tab | Lane | Where it stands |
 |---|---|---|---|
 | Program Requirements (Catalog ROEP) | `#program-requirements` | [program-requirements-harvest](program-requirements-harvest.md) | carries all five parts |
-| Common Exhibit Reference | `#credential-reference` | [cer-procedures](cer-procedures.md) | procedures run nightly; the first saving run and the first fold since July landed 2026-10-18 |
+| Common Exhibit Reference | `#credential-reference` | [cer-procedures](cer-procedures.md) | procedures run nightly; the Progress view since S436 |
 | Common Course Reference, SkyView | `#unified-courses`, SkyView | [skyview-ccr-interface](skyview-ccr-interface.md) | built and stable; the auditor's receipt on the Pipeline tab |
 | Common CR Reference, with its military half | `#cr-reference` | [common-cr-reference](common-cr-reference.md), [military-ace-cr-reference](military-ace-cr-reference.md) | worklist live; the military half scoped |
 | Common Subjects Reference (Sam's addition, Sheet 95) | `#canonical-subj4` | [common-subjects-reference](common-subjects-reference.md) | carries all five parts since S425: the Progress view, a procedure per card, the daily scan, the run log |
@@ -127,5 +127,25 @@ count; the Commons row's counts link the same way. The second host proved the co
 own section classes, no change to the module but an optional second word per part. Lane:
 [common-subjects-reference](common-subjects-reference.md).
 
-**NEXT:** the Exhibit, Course and CR Progress views from the shared module, each with its definition of complete on a
-card for Sam, and the deep link behind each of their counts.
+**Step 3's second Progress view, Exhibit (S436, 2026-10-20).** The Common Exhibit Reference tab gains a fourth view,
+*Progress*, first in its row; the tab still opens on Needs you (S413), so nothing a curator lands on moved. The
+definitions live in `exhibit_progress.js`, loaded with `commons_progress.js` the first time the view opens. **One
+definition, two readers:** the headline pair and the auditor's tallies come from the Exhibit row of
+`kb/status/commons.json` (the builder now writes `map_titles`, `unclassified`, `left_map`, `below_80`, `below_60`), so
+the Commons row and the view cannot disagree; the rest is the tab's live state lent through an `api` (last night's
+procedures report, the Unclassified, No issuer and Merge confirms queues, the lane switch). Definition of complete,
+carried from the Commons row: a title carries a review stamp, a person's or a procedure's cohort's (1,729 of 4,915).
+Five milestones (every MAP title classified, the held titles decided, an issuer for every credential, the reference
+matches MAP, every title stamped) and eight cards. A count opens the lane that lists it, and
+`#credential-reference/<lane>` (progress, held, unc, noiss, merge, procs, all, industry; `needs` and `ref` name a view)
+routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
+`npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
+
+**NEEDS SAM (Open Asks Sheet 107, card 4): the Exhibit Progress view, proceeded on the recommendation (S436,
+2026-10-20); reply to reverse.** Complete = a title with a review stamp (the Commons row's pair), and the tab still
+opens on Needs you. His chips: keep, open-progress (open on Progress, like Subjects), person-only (count only a
+person's stamp).
+
+**NEXT:** the Course and CR Progress views from the shared module, each with its definition of complete on a card
+for Sam, and the deep link behind each of their counts. Course is SkyView alone (Sam, 2026-10-18), so its view lives
+where SkyView's counts can reach it.

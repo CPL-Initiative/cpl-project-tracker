@@ -935,7 +935,7 @@
     // when the procedures held titles for a person, else on Reference (openingLane).
     lane: "all",           // held | unc | noiss | merge | procs | all | industry | open | done
     laneChosen: false,     // a click or a quickstart hint picked the lane: keep it
-    viewLast: { needs: "held", procs: "procs", ref: "all" },  // each view's last lane
+    viewLast: { progress: "progress", needs: "held", procs: "procs", ref: "all" },  // each view's last lane
     wlOnly: null,          // a raw title opened from Held: Unclassified shows it alone
     cplTypeFilter: "all",  // new lean-filter row
     discFilter: "all",
@@ -1669,6 +1669,7 @@
     if (state.worklistOpen) { renderWorklist(); return; }
     if (state.lane === "industry") { renderIndustry(); return; }
     if (state.lane === "procs") { renderProcedures(); return; }
+    if (state.lane === "progress") { renderProgressView(); return; }
     if (state.lane === "held") { renderHeld(); return; }
     // v2 triage lanes reuse the (already in-cell) worklist sections.
     if (state.lane === "unc" || state.lane === "noiss" || state.lane === "merge") {
@@ -1937,6 +1938,8 @@
     var staged = niQueue.filter(function (r) { return state.issuerPreseed[r.unified_title]; }).length;
     var rep = state.procReport;
     var lanes = [
+      { k: "progress", label: "Progress", n: null,
+        title: "Where the reference stands: the headline pair, the milestones and a card per part, the Commons' shape." },
       { k: "held",  label: "Held",
         n: rep ? (rep.needs_you || []).length : null,
         nText: state.procError ? "(unavailable)" : null,
@@ -1970,12 +1973,12 @@
     VIEWS.forEach(function (v) {
       var on = v.k === cur.k && !state.worklistOpen;
       var head = byKey[v.lanes[0]];
-      var nText = v.k === "needs" ? countOf(head)
+      var nText = v.k === "progress" ? null : v.k === "needs" ? countOf(head)
         : v.k === "procs" ? countOf(byKey.procs) : countOf(byKey.all);
       var b = el("button", { type: "button", class: "cr-view",
         id: "cr-view-" + v.k, "aria-pressed": on ? "true" : "false", title: v.title });
-      b.appendChild(document.createTextNode(v.label + " "));
-      b.appendChild(el("span", { class: "cr-lane-n" }, [nText]));
+      b.appendChild(document.createTextNode(v.label + (nText ? " " : "")));
+      if (nText) b.appendChild(el("span", { class: "cr-lane-n" }, [nText]));
       b.onclick = function () { setLane(state.viewLast[v.k] || v.lanes[0]); };
       tl.appendChild(b);
     });
@@ -2001,7 +2004,12 @@
   // that decide the rest), then Reference (the credentials themselves). The
   // Initiated sign-off's two lanes left Reference on 2026-10-18 (Sam, Open
   // Asks Sheet 94 card 3).
+  // Progress (S436) is the Commons' dash for this reference, drawn by the shared
+  // commons_progress.js from exhibit_progress.js; it leads the row, the way the
+  // Subjects tab's does, and the tab still opens on Needs you.
   var VIEWS = [
+    { k: "progress", label: "Progress", lanes: ["progress"],
+      title: "Where the reference stands, in the shape every common reference shares." },
     { k: "needs", label: "Needs you", lanes: ["held", "unc", "noiss", "merge"],
       title: "What a person must decide: the titles the procedures held, the waiting titles, credentials with no issuer, and merges to confirm." },
     { k: "procs", label: "Procedures", lanes: ["procs"],
@@ -3121,6 +3129,7 @@
     if (k === "industry") { state.indShown = INDUSTRY_PAGE; fetchIndustry(); }
     if (k === "held") { state.procNeedsShown = PROC_NEEDS_PAGE; fetchProcReport(); }
     if (k === "procs") fetchProcReport();
+    if (k === "progress") { ensureWorklistData(); fetchProcReport(); }
     render();
   }
 
@@ -5582,8 +5591,63 @@
     state.viewLast[viewOf(state.lane).k] = state.lane;
   }
 
+  // ── The Progress view (S436): the Commons' dash for this reference ───────
+  // exhibit_progress.js holds the definitions and commons_progress.js draws
+  // them; both load the first time the view opens. The tab lends its state
+  // and its lane switch, so a count opens the lane that lists it.
+  function withProgressModules(cb) {
+    var T = window.CPL_TABS;
+    if (window.CPL_EXHIBIT_PROGRESS && window.CPL_COMMONS_PROGRESS) { cb(); return; }
+    if (!T || typeof T.loadScript !== "function") { cb(); return; }
+    T.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", function () {
+      T.loadScript("exhibit_progress.js", "CPL_EXHIBIT_PROGRESS", cb);
+    });
+  }
+  function progressApi() {
+    var unc = state.unclassified ? state.unclassified.filter(function (it) {
+      var a = state.unclassAssign[it.raw_title];
+      return !(a && a.title);
+    }).length : null;
+    return {
+      go: function (lane) { setLane(lane); },
+      report: state.procReport, reportError: !!state.procError,
+      unclassOpen: unc, issuerN: state.unclassified ? issuerQueue().length : null,
+      mergeN: state.unclassified ? pendingMerges().length : null,
+      credentials: (state.rows || []).length || null
+    };
+  }
+  function renderProgressView() {
+    var wrap = document.getElementById("cr-table-wrap");
+    if (!wrap) return;
+    clearNode(wrap);
+    withProgressModules(function () {
+      if (state.lane !== "progress") return;
+      var EP = window.CPL_EXHIBIT_PROGRESS;
+      if (!EP) {
+        clearNode(wrap);
+        wrap.appendChild(el("p", { class: "cr-proc-intro", role: "alert" },
+          ["The Progress view (exhibit_progress.js) could not be loaded. The other views read as usual; reload the tab to try again."]));
+        return;
+      }
+      EP.mount(wrap, progressApi());
+    });
+  }
+  // #credential-reference/<lane> opens that lane (the Commons row's counts
+  // link here); #credential-reference/needs and /ref name a view.
+  function routeFromHash() {
+    var parts = (location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] !== "credential-reference" || !parts[1]) return false;
+    var r = parts[1] === "needs" ? "held" : parts[1] === "ref" ? "all" : parts[1];
+    var known = false;
+    VIEWS.forEach(function (v) { if (v.lanes.indexOf(r) >= 0) known = true; });
+    if (!known) return false;
+    setLane(r);
+    return true;
+  }
+
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
+    window.addEventListener("hashchange", function () { if (state.rows && state.rows.length) routeFromHash(); });
     state.sess = getSession();
     // Apply any pending quickstart hint stashed before init (refresh case).
     if (window.CPL_QS) applyQsHint(window.CPL_QS.consume(QS_TAB));
@@ -5615,7 +5679,7 @@
         state.topCategories = baked.top_categories || {};
         state.discGeAreas = baked.disc_ge_areas || {};
         renderToolbar();
-        render();
+        if (!routeFromHash()) render();
         loadOverlays();
         ensureWorklistData();  // v2 lanes — populate queue counts up front
       }).catch(renderInitError);
@@ -5634,7 +5698,7 @@
       );
       state.overlay = parts[1];
       renderToolbar();
-      render();
+      if (!routeFromHash()) render();
       loadOverlays();
     }).catch(renderInitError);
   }

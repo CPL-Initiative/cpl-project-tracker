@@ -97,16 +97,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("load: the report is fetched once",
     log.urls.filter((u) => u.indexOf("cer_procedures_out/latest.json") >= 0).length === 1);
 
-  // S413: three views, and the tab opens on Needs you › Held when the run
-  // held titles for a person.
+  // S413: the views, and the tab opens on Needs you › Held when the run
+  // held titles for a person. S436 put Progress (the Commons' dash) ahead of them.
   const views = Array.from(doc.querySelectorAll("button.cr-view"));
-  check("views: three words, Needs you · Procedures · Reference",
-    views.map((v) => txt(v).replace(/\s*\(.*$/, "")).join(" · ") === "Needs you · Procedures · Reference");
+  check("views: four words, Progress · Needs you · Procedures · Reference",
+    views.map((v) => txt(v).replace(/\s*\(.*$/, "")).join(" · ") === "Progress · Needs you · Procedures · Reference");
+  check("views: Progress carries no count", txt(views[0]) === "Progress");
   check("views: a labelled group, the view in use said by aria-pressed",
     /views/.test(doc.querySelector(".cr-views").getAttribute("aria-label"))
-    && views[0].getAttribute("aria-pressed") === "true" && views[2].getAttribute("aria-pressed") === "false");
-  check("views: Needs you counts the held titles", /Needs you \(42\)/.test(txt(views[0])));
-  check("views: Reference counts the credentials", /Reference \(1\)/.test(txt(views[2])));
+    && views[1].getAttribute("aria-pressed") === "true" && views[0].getAttribute("aria-pressed") === "false"
+    && views[3].getAttribute("aria-pressed") === "false");
+  check("views: Needs you counts the held titles", /Needs you \(42\)/.test(txt(views[1])));
+  check("views: Reference counts the credentials", /Reference \(1\)/.test(txt(views[3])));
   const subs = Array.from(doc.querySelectorAll(".cr-sublanes button.cr-lane")).map((b) => txt(b).replace(/\s*\(.*$/, ""));
   check("needs you: its lanes are Held, Unclassified, No issuer, Merge confirms",
     subs.join(" · ") === "Held · Unclassified · No issuer · Merge confirms");
