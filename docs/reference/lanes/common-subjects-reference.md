@@ -161,15 +161,17 @@ four known issues with owners, the procedures in force, and deep links into the 
    his row reads Auto Body Technology at 22:38:25Z under his email, the note names Sheet 101). Agricultural Business
    carries AGAB M1006 alone; the row audit's
    `subject_collision_signal` reads 113 (114 before), the scan 0 collisions and no row off its code.
-4. **sitting** (S430, run; the confirmation is Sam's): Jev proposed a C-ID family for each of the 404 AGRI identities
-   twice (runs 39352507898 and 39353307914, 0 errors each), read from the job logs because the artifacts sit on a
-   blob host the sandbox refuses: `kb/jev_agri_families/2026-10-20.json`. The two sittings agree on 397 of 404; 229 stay
-   AGRI both times. **56 pass the gate** (both sittings name the same family, both at 0.9 or above): AGPS 31, AGEH 10,
-   AGMA 7, AGAB 4, AGAS 4. Ten of the 56 are forestry courses (Forestry/Natural Resources is its own MQ discipline)
-   and two are wine appreciation, so the proposal is the other 44. The first sitting's log printed `plain` for any
-   non-zero probability; `kb/_jev_agri_families.py` now prints the value (cpl-project-tracker#2268).
-   **NEEDS SAM 7 (S430):** confirm the 44 at the gate (they re-key to their family codes under the playbook, one dry
-   run and one alias map), the 56 including forestry and wine, or review each.
+4. ✅ **sitting** (S430): Jev proposed a C-ID family for each of the 404 AGRI identities twice (runs 39352507898 and
+   39353307914, 0 errors each), read from the job logs because the artifacts sit on a blob host the sandbox refuses:
+   `kb/jev_agri_families/2026-10-20.json`. The two sittings agree on 397 of 404; 229 stay AGRI both times. 56 passed
+   the gate (same family both times, both at 0.9 or above). **Sam, Open Asks Sheet 103, 01:49Z 2026-10-20: "Confirm
+   the 44"** (the 56 less ten forestry courses and two wine-appreciation courses, marked `second_look`). Applied in one
+   window: `kb/_agri_family_remint.py`, receipt `kb/agri_family_remint_out/2026-10-20/alias_map.json` in ALIAS_MAPS,
+   stamps `_agri_family_remint_from`: AGPS 19, AGEH 10, AGMA 7, AGAB 4, AGAS 4 (39 kept their number, 5 gap-filled),
+   each record's discipline unchanged; kb_curation re-keyed by `supabase-rekey.yml` after merge. The twelve
+   `second_look` stay on AGRI, a discipline question for the Forestry/Natural Resources row. Two findings the report
+   names: AGRI M1093 Fertilizers & Plant Nutrition is merged into FDNT M1014, and AGRI M10AL Management Accounting for
+   Agriculture carries Auto Body Technology on its record (the overlay reads Agriculture).
 5. ✅ **hide** (S427): the Validate column, its control and the *Validated* filter left the Reference view; the data
    (`validated_at`, `validated_by`) stays in the store, the seed and the sync, and the stage returns at the
    faculty-published moment. The Progress card's foot now names the nightly procedure instead of the unused stage.
@@ -181,8 +183,9 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 ## NEXT
 
-Ruling 4 waits on Sam's card (NEEDS SAM 7); on his answer, the confirmed identities re-key to their family codes
-under the playbook (one dry run, one alias map, one window, modeled on `kb/_agab_one_remint.py`). Ruling 6: the nine
+After the re-key's merge: `supabase-rekey.yml` with `alias_map_path=kb/agri_family_remint_out/2026-10-20/alias_map.json`,
+the read-back (no kb_curation row on an old id), and `daily-dashboard.yml`. The twelve `second_look` AGRI identities
+(ten forestry, two wine appreciation) are a card once the Forestry/Natural Resources row is read. Ruling 6: the nine
 names take `mq_sections.json`'s `index_name` verbatim, the parentheticals *(DSPS)* and *(ESL)* included, since Sam's
 reply was *"Rename as the handbook spells them"*; one window re-keys the reference files, the identity files, the
 maps and four live `kb_curation` rows (two picks keyed `_CANON_SUBJ4::<old name>`, two discipline rows on BSKL M9001
