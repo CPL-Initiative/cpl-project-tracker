@@ -208,8 +208,11 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
 
 ## NEXT
 
-The two forestry stragglers on AGRI merged into ENVR M1069 (AGRI M10SY, M1104) follow the ten to ENVR in a
-small window; the two ENVR merge candidates (M1009 with M1064, M1025 with M10OP) go to the merge worklist. The quarterly probe (#2274) has run twice (03:54Z and 05:24Z, run 39374671352), the same both times: the MQ page
+**NEEDS SAM 9 (Open Asks Sheet 105):** the two forestry stragglers on AGRI merged into ENVR M1069 (AGRI M10SY,
+M1104), move them to ENVR? The dry run is committed (`python3 kb/_forestry_wine_remint.py --set stragglers`,
+`kb/forestry_wine_remint_out/2026-10-20-stragglers/`, every gate passing, both keep their number); S432 meant to
+proceed on the recommendation and the session's permission check held the apply. On *move-both*: re-run the dry run,
+a fresh live read, `--apply`, ALIAS_MAPS, the post-apply chain, `--rekey-skyview`, merge, `supabase-rekey.yml`. Then the two ENVR merge candidates (M1009 with M1064, M1025 with M10OP) go to the merge worklist. The quarterly probe (#2274) has run twice (03:54Z and 05:24Z, run 39374671352), the same both times: the MQ page
 200 with the 19th edition (`edition_matches` true); c-id.net 403 to a runner; www.data-c-idsystem.org does not
 resolve. Next, its comparison mode and quarterly cron, with the C-ID read moved to a source a runner can reach; the strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress views (Exhibit, Course, CR) from the
 same module.

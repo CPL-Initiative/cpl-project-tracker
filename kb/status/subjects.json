@@ -1,31 +1,38 @@
 {
   "schema": 1,
-  "session": 431,
-  "moniker": "SkyChaparral",
-  "run": "Sam's session",
+  "session": 432,
+  "moniker": "SkyYerbaSanta",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_432_handoff.md",
-  "calls": [],
+  "handoff": "docs/session_433_handoff.md",
+  "calls": [
+    {
+      "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
+      "text": "Open Asks Sheet 105 card 1: AGRI M10SY Forest Surveying and AGRI M1104 Introduction to Forest Operations are merged into Forest Ecology, which moved to ENVR on Sheet 104. The dry run that moves both to ENVR is committed; the session's permission check held its apply.",
+      "no_reply": "Both stay on AGRI, merged into an ENVR parent; nothing else waits on the card.",
+      "link": "https://claude.ai/artifact/7mPQz4PNmc7ezD2Dkkijxc"
+    }
+  ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-20T03:46:49Z",
+  "written_at": "2026-10-20T05:51:42Z",
   "project": "subjects",
   "next_step": {
-    "title": "Re-key the ten forestry and four wine courses off AGRI",
-    "text": "Sam ruled on Open Asks Sheet 104 (move-ten, agpr): one window under the playbook moves the ten forestry courses to ENVR and the four wine courses to AGPR, each record's discipline following its code."
+    "title": "Move the two forestry stragglers on Sam's word",
+    "text": "Open Asks Sheet 105 asks whether Forest Surveying and Introduction to Forest Operations, both merged into Forest Ecology on ENVR, follow it off AGRI. On move-both the next session applies the committed dry run in one window; otherwise the quarterly probe's comparison mode comes next."
   },
   "changes": [
     {
-      "at": "2026-10-20T03:08:00Z",
-      "text": "The 44 AGRI identities Sam confirmed on Sheet 103 re-keyed in the live curation rows, read back with none left on an old id."
+      "at": "2026-10-20T05:38:00Z",
+      "text": "The ten forestry identities moved to Forestry/Natural Resources and the four wine identities to Agricultural Production, each taking its new code's discipline (#2276)."
     },
     {
-      "at": "2026-10-20T03:32:00Z",
-      "text": "Sam ruled Open Asks Sheet 104: the ten forestry courses move to Forestry/Natural Resources and the four wine courses to Agricultural Production."
+      "at": "2026-10-20T05:40:00Z",
+      "text": "The live curation rows re-keyed for those fourteen, read back with none left on an old id."
     },
     {
-      "at": "2026-10-20T03:44:00Z",
-      "text": "The handbook link opens the Chancellor's Office's live Minimum Qualifications page, 19th edition (#2273)."
+      "at": "2026-10-20T05:52:00Z",
+      "text": "Open Asks Sheet 105 asks about the two forestry courses still on AGRI."
     }
   ]
 }

@@ -64,14 +64,14 @@ PINS = {
     "AGRI M1113": ("Wine Service and Hospitality", "AGPR"),
     "AGRI M10FP": ("Beginning Wine Sensory Analysis", "AGPR"),
 }
-# The follow-up set (S432, proceeded on the recommendation; a card on the standing sheet reverses it): two
+# The follow-up set (S432; dry run only, Open Asks Sheet 105 asks Sam, since the session's permission check held the apply): two
 # forestry identities the Sheet 103 sitting never set aside, because Jev placed them in AGPS below the gate, stay
 # on AGRI while merged into ENVR M1069, the forestry parent "move-ten" moved. Both carry TOP 0114.00 (Forestry).
 SETS = {
     "sheet104": (SCOPE, RULING, PINS, ""),
     "stragglers": (
         "sheet104-forestry-stragglers",
-        'S432 on Sam\'s Sheet 104 "move-ten" (2026-10-20), proceeded on the recommendation: the two forestry '
+        'Open Asks Sheet 105 (S432, 2026-10-20), following Sam\'s Sheet 104 "move-ten": the two forestry '
         'identities merged into ENVR M1069 that the sitting never named follow their parent to ENVR',
         {"AGRI M10SY": ("Forest Surveying", "ENVR"),
          "AGRI M1104": ("Introduction to Forest Operations", "ENVR")},
