@@ -44,15 +44,21 @@ first.
 0. **First, three `cpl_memory` rows S438 could not write** (three `execute_sql` timeouts, nothing landed): run
    `kb/receipts/cpl_memory_s438_unwritten_2026-10-20.sql` as one call, read its verify line, and delete this item.
    The slugs named above are in that file.
-1. **The Course Progress view** (Commons lane NEXT): the fourth host of `commons_progress.js`, inside SkyView
+1. **The CLAUDE.md pass (Sam, 2026-10-20 ~17:15Z: "yes" to S438's proposal).** Tag every rule in the tracker's
+   CLAUDE.md keep, update or pull, each with its evidence: stale capability limits (S438 found two: other sessions
+   are visible, and the context meter's 786k ceiling against a 1M window), ritual weight (propose a light checkpoint
+   for small sessions: handoff, lane, memory rows, status file; the full 13 on a lane state change), and what waits on
+   Sam (the auto-mark rule). Change nothing in CLAUDE.md on your own: put the proposed edits on one short sheet and
+   apply them on his answers. Keep the PUSH rules (naming, funding vocabulary, data safety, Rules 4 and 5).
+2. **The Course Progress view** (Commons lane NEXT): the fourth host of `commons_progress.js`, inside SkyView
    (`prototype/skyview.html`, built by `build_ccr_atlas.py`; a Views-menu entry), its pair from the Commons Course row
    (3,204 of 27,581 cards the auditor scores 0.85 or better), its definition of complete on a card for Sam. Model it on
    `cr_progress.js` and `tests/cr_progress.test.js`; add `a11y.config.js` targets.
-2. **The auto-mark rule still waits on Sam's word.** Asked in chat ~15:20Z, unanswered at sign-off. Do not commit it
+3. **The auto-mark rule still waits on Sam's word.** Asked in chat ~15:20Z, unanswered at sign-off. Do not commit it
    without "commit the auto-mark rule". If he has not answered, put it on the standing sheet as a card (Sheet 109;
    `CPLBrain/decision-sheets/decision_sheets.md`), with the six GitHub tools it names.
-3. **Grok:** nothing until Sam says the key is in.
-4. Small: `kb/_test_activity_card_current.py` (a stale 3.1.2a fixture, as S426 found in the hybrid test) and
+4. **Grok:** nothing until Sam says the key is in.
+5. Small: `kb/_test_activity_card_current.py` (a stale 3.1.2a fixture, as S426 found in the hybrid test) and
    `tests/workplan_description_drafts_test.py` fail on main; CI runs neither. Annual Goals lane NEXT 0a, 0c, 0d.
 
 ## Patterns that worked
