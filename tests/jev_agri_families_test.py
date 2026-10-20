@@ -71,10 +71,10 @@ check("two questions: the family (a choice among the five and the residual) and 
       and qs["plain"]["type"] == "noul")
 
 # ── the rows ──
-row = J.answer_row(every[0], {"family": {"choice": "AGAS", "confidence": 0.93}, "plain": {"noul": True}})
-check("a row carries the family, its confidence, plain, and the uncalibrated posture",
-      row["family"] == "AGAS" and row["family_confidence"] == 0.93 and row["plain"] is True and row["residual"] is False and row["posture"] == "uncalibrated")
-row2 = J.answer_row(every[1], {"family": {"choice": "AGRI", "confidence": 0.6}, "plain": {"noul": False}})
+row = J.answer_row(every[0], {"family": {"choice": "AGAS", "confidence": 0.93}, "plain": {"noul": 0.88}})
+check("a row carries the family, its confidence, plain (a probability), and the uncalibrated posture",
+      row["family"] == "AGAS" and row["family_confidence"] == 0.93 and row["plain"] == 0.88 and row["residual"] is False and row["posture"] == "uncalibrated")
+row2 = J.answer_row(every[1], {"family": {"choice": "AGRI", "confidence": 0.6}, "plain": {"noul": 0.12}})
 check("a residual answer is marked residual", row2["residual"] is True)
 check("an empty answer leaves the family blank, never a guess", J.answer_row(every[2], {})["family"] is None)
 
@@ -85,7 +85,7 @@ calls = []
 def fake_call(state, questions, key):
     calls.append(state["identity"]["id"])
     fam = {"AGRI M1001": "AGAS", "AGRI M1002": "AGRI", "AGRI M10AA": "AGEH"}[state["identity"]["id"]]
-    return {"answers": {"family": {"choice": fam, "confidence": 0.9}, "plain": {"noul": fam != "AGRI"}}}
+    return {"answers": {"family": {"choice": fam, "confidence": 0.9}, "plain": {"noul": 0.07 if fam == "AGRI" else 0.91}}}
 
 
 tmp = tempfile.mkdtemp()
@@ -97,6 +97,11 @@ check("the file tallies the families and names the posture and the ruling",
       doc["families"] == {"AGAS": 1, "AGRI": 1, "AGEH": 1} and doc["posture"] == "uncalibrated" and "Sheet 99 card 4" in doc["_doc"]
       and doc["identities_on_residual"] == 3 and doc["asked"] == 3 and doc["errors"] == 0)
 check("the run says what it did", any("3 identities on AGRI" in ln for ln in lines) and any("wrote" in ln for ln in lines))
+# A noul is a probability: the first sitting's log printed "plain" for any non-zero value (all 404 rows), and the
+# log is the only reading a session can get when the artifact's blob host is refused.
+check("each identity's log line carries the plain probability, never the bare word",
+      any(ln.startswith("AGRI M1002") and ln.rstrip().endswith("plain=0.07") for ln in lines)
+      and any(ln.startswith("AGRI M1001") and ln.rstrip().endswith("plain=0.91") for ln in lines))
 res2 = J.run(limit=1, call=fake_call, key="k", out_dir=tmp, inputs=(COURSES, SINGLETONS, DESCRIPTORS), out=lines.append)
 check("a limit caps the tranche", res2["asked"] == 1)
 
