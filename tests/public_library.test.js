@@ -164,6 +164,19 @@ block("(3c)", function () {
   });
 });
 
+block("(3d)", function () {
+  const m = loadLib({ token: "t" });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const acts = m.root.querySelector(".lib-acts");
+    check("(3d) Edit sits on the card's top row", !!(acts && acts.querySelector('[data-edittop="r1"]')));
+    check("(3d) so does List publicly", !!(acts && acts.querySelector('[data-pubtop="r1"]')));
+    click(m.w, acts.querySelector('[data-pubtop="r1"]'));
+    check("(3d) List publicly opens the listing form under the card", !!m.root.querySelector('[data-pubform="r1"]'));
+    click(m.w, m.root.querySelector('[data-edittop="r1"]'));
+    check("(3d) Edit opens the edit form under the card", !!m.root.querySelector('[data-editform="r1"]'));
+  });
+});
+
 // ── (4) The Admin panel ──────────────────────────────────────────────────
 block("(4)", function () {
   check("(4) Admin reads the same public function", /\/rpc\/cpl_library_public"/.test(ADMIN));

@@ -213,7 +213,7 @@ block("(6)", function () {
       check("(6) File it PATCHes that one record with its link", w1.init.method === "PATCH" && /cpl_library\?id=eq\.a1$/.test(w1.url) &&
         w1.body.url === "https://drive.google.com/file/d/deck/view" && w1.body.home === "drive" && w1.body.updated_by === "Ashley");
       click(m.w, m.root.querySelector('[data-toggle="a5"]'));
-      click(m.w, m.root.querySelector('[data-edit="a5"]'));
+      click(m.w, m.root.querySelector('[data-edittop="a5"]'));
       doc.getElementById("le-seen").value = "public";
       doc.getElementById("le-status").value = "presented";
       click(m.w, m.root.querySelector('[data-retire="a5"]'));
@@ -226,7 +226,7 @@ block("(6)", function () {
       const w2 = writes[2] || { body: {}, init: {} };
       check("(6) Save PATCHes status and audience with who changed it",
         w2.init.method === "PATCH" && w2.body.seen_by === "public" && w2.body.status === "presented" && w2.body.updated_by === "Ashley", JSON.stringify(w2.body));
-      click(m.w, m.root.querySelector('[data-edit="a5"]'));
+      click(m.w, m.root.querySelector('[data-edittop="a5"]'));
       click(m.w, m.root.querySelector('[data-retire="a5"]'));
       click(m.w, m.root.querySelector('[data-retireyes="a5"]'));
       return settle();
