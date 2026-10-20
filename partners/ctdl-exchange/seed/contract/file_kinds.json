@@ -1,0 +1,132 @@
+{
+  "_about": "Contract v0: every file kind a drop may carry, who may file it, its format, the columns a CSV must carry, and the schema each row (CSV) or document (JSON-LD) must match. tools/check_drop.py reads this file; contract/README.md describes it for people.",
+  "contract_version": "0",
+  "parties": {
+    "credential-engine": {
+      "folder": "inbound/credential-engine/<college>/<date>",
+      "branch_prefix": "ce/"
+    },
+    "wested": {
+      "folder": "inbound/wested/coci/<date>",
+      "branch_prefix": "wested/"
+    },
+    "cobi": {
+      "folder": "outbound/cobi/<date>",
+      "branch_prefix": "cobi/"
+    }
+  },
+  "kinds": {
+    "ce.courses": {
+      "party": "credential-engine",
+      "format": "csv",
+      "required_columns": [
+        "External Identifier",
+        "Learning Opportunity Name"
+      ],
+      "resource_key": "External Identifier"
+    },
+    "ce.learning_programs": {
+      "party": "credential-engine",
+      "format": "csv",
+      "required_columns": [
+        "External Identifier",
+        "Learning Opportunity Name"
+      ],
+      "resource_key": "External Identifier"
+    },
+    "ce.credentials": {
+      "party": "credential-engine",
+      "format": "csv",
+      "required_columns": [
+        "External Identifier",
+        "Credential Name",
+        "Credential Type"
+      ],
+      "resource_key": "External Identifier"
+    },
+    "ce.competencies": {
+      "party": "credential-engine",
+      "format": "csv",
+      "required_columns": [
+        "@type",
+        "@id"
+      ],
+      "resource_key": "@id"
+    },
+    "ce.registry_ctids": {
+      "party": "credential-engine",
+      "format": "csv",
+      "required_columns": [
+        "resource_type",
+        "external_identifier",
+        "ctid"
+      ],
+      "resource_key": "external_identifier"
+    },
+    "wested.coci_courses": {
+      "party": "wested",
+      "format": "csv",
+      "required_columns": [
+        "College",
+        "CourseControlNumber",
+        "Subject",
+        "Course_Number",
+        "CourseTitle"
+      ]
+    },
+    "wested.coci_programs": {
+      "party": "wested",
+      "format": "csv",
+      "required_columns": [
+        "College",
+        "ProgramControlNumber"
+      ]
+    },
+    "cobi.identifier_crosswalk": {
+      "party": "cobi",
+      "format": "csv",
+      "required_columns": [
+        "cobi_kind",
+        "cobi_key",
+        "scheme",
+        "value",
+        "source",
+        "supplied_by",
+        "supplied_at",
+        "status",
+        "confirmed_by",
+        "confirmed_at",
+        "note"
+      ],
+      "row_schema": "schemas/identifier_crosswalk.schema.json"
+    },
+    "cobi.findings": {
+      "party": "cobi",
+      "format": "csv",
+      "required_columns": [
+        "college",
+        "drop",
+        "file",
+        "row",
+        "field",
+        "finding",
+        "detail",
+        "fix_owner"
+      ],
+      "row_schema": "schemas/finding.schema.json"
+    },
+    "cobi.pathway": {
+      "party": "cobi",
+      "format": "jsonld",
+      "document_schema": "schemas/pathway.schema.json"
+    }
+  },
+  "ctid_pattern": "^ce-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+  "ctid_columns": [
+    "CTID",
+    "ctid",
+    "Credential CTID",
+    "Course CTID"
+  ],
+  "refused_column_pattern": "(?i)student[ _-]?(id|name|email|number|record)|\\bssn\\b|social security|birth ?date|date of birth|\\bdob\\b"
+}

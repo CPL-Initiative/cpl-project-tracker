@@ -229,6 +229,12 @@ jobs:
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline census (systems, sign-in, curriculum links)
         run: python3 tests/course_outline_census_test.py
+      # The CTDL exchange seed (S430, Sheet 102 card 1): the files Malone copies
+      # into the private exchange repository, and the check that refuses a drop
+      # whose manifest, checksums, CTIDs or folder disagree with its contract.
+      # Builds throwaway git repositories. Pure-stdlib python.
+      - name: CTDL exchange seed (contract, drops, merged-drop and branch rules)
+        run: python3 tests/ctdl_exchange_seed_test.py
       # The display apply (S356): the college workflow's display job writes a
       # display build's receipt from a runner, exactly as reviewed, and files
       # each row's prior build as the rollback. Pure-stdlib python.

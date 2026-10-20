@@ -750,6 +750,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `nudges/team_directory.json` | scripts: `nudges/build_nudges.py` | — |
 | `our_process.js` | pages: `CPL_Dashboard.html` | — |
 | `package.json` | scripts: `kb/doctrine.py` | — |
+| `partners/ctdl-exchange/seed/contract/file_kinds.json` | scripts: `partners/ctdl-exchange/seed/tools/check_drop.py` | — |
 | `picks kb/<slug-with-underscores>_domain_map.json` | scripts: `kb/_build_domain_cpl_crosswalk.py` | — |
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
 | `privacy.html` | scripts: `scripts/ui_pass.py` | — |
@@ -855,6 +856,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/csr_confirm_authority_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_procedures_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_trail_rules_test.py` | workflows: `js-tests.yml` | — |
+| `tests/ctdl_exchange_seed_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
@@ -1161,5 +1163,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 691 file
-datasets · 182 external services · 455 consumers · 57 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 9 edge functions · 693 file
+datasets · 182 external services · 456 consumers · 57 workflows · 39 tabs.

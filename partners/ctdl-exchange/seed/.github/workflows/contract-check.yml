@@ -1,0 +1,35 @@
+name: contract-check
+
+# Every pull request's drops are checked against the contract before anyone reviews them:
+# the folder and manifest, each file's checksum, row count and columns, every CTID, and that
+# no merged drop changed and a party branch wrote only its own folder (tools/check_drop.py).
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the drops against the contract
+        if: github.event_name == 'pull_request'
+        # Branch names reach the shell through the environment, never through ${{ }} in the script.
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: python3 tools/check_drop.py --base "origin/$BASE_REF" --branch "$HEAD_REF"
+      - name: Check the tree on main
+        if: github.event_name == 'push'
+        run: python3 tools/check_drop.py

@@ -1,6 +1,6 @@
 {
  "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
- "_as_of": "2026-09-30",
+ "_as_of": "2026-10-20",
  "mapped": {
   "workflow:daily-dashboard.yml": "CA-01",
   "workflow:map-users-sync.yml": "CA-02",
@@ -65,7 +65,8 @@
   "file:kb/discipline_canonical_subj4.json": "DR-25",
   "tab:ccr-anchor-proposal-apply": "DR-25",
   "table:cobi_live_session": "DR-26",
-  "file:scripts/announce_session_hint.py": "DR-26"
+  "file:scripts/announce_session_hint.py": "DR-26",
+  "table:identifier_crosswalk": "DR-28"
  },
  "dismissed": {
   "table:cpl_library": "The Library tab's register of decks, films and documents (Sam, 2026-10-05: build it; files live in the team Drive). Each row is a link and its metadata, never the file. Read and written only under the team phrase or a reviewer sign-in (team_pass_ok() or is_allowed_reviewer()), the same audience as the tab; no anon read, no delete policy, delete and truncate revoked. Every edit files the prior row in cpl_library_history through a trigger, so a write is reversible from the database (Rule 10 a2). It carries no student or staff detail beyond the name a teammate types as added_by or updated_by. Who decides a piece's audience is Sam: a public file with no audience set shows under Needs attention until he rules, so the decision right already has its owner and needs no register row. A second writer, the session-side filer scripts/library_file.py (Sam's calls 7-8, 2026-10-05), records each file it puts in Drive: a receipt applied as a named migration, guarded on the Drive file id so a second apply changes nothing, under updated_by library-filer@bot, with the history trigger keeping the prior row. It writes the link, the version list and home, moves a Requested record to Draft on its first draft and changes no other status, and never sets an audience, so Sam's two decision rights stay his.",

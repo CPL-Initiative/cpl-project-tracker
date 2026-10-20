@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "identifier_crosswalk.schema.json",
+  "title": "Identifier crosswalk row, contract v0",
+  "description": "One CSV row: a COBI record and an outside number that name the same thing. Empty cells are absent. Rows are added, never edited; a wrong match is answered by a retired row.",
+  "type": "object",
+  "required": ["cobi_kind", "cobi_key", "scheme", "value", "source", "supplied_by", "supplied_at", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "cobi_kind": {"enum": ["coci_course", "coci_program", "harvest_record"]},
+    "cobi_key": {"type": "string", "minLength": 1},
+    "scheme": {"enum": ["coci_course_control_number", "coci_program_control_number", "ctid", "c_id", "ce_external_identifier", "catalog_url"]},
+    "value": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "supplied_by": {"type": "string", "minLength": 1, "pattern": "^[^@]*$"},
+    "supplied_at": {"$ref": "#/$defs/datetime"},
+    "status": {"enum": ["proposed", "confirmed", "retired"]},
+    "confirmed_by": {"type": "string", "minLength": 1, "pattern": "^[^@]*$"},
+    "confirmed_at": {"$ref": "#/$defs/datetime"},
+    "note": {"type": "string"}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "confirmed"}}, "required": ["status"]}, "then": {"required": ["confirmed_by", "confirmed_at"]}},
+    {"if": {"properties": {"cobi_kind": {"const": "coci_course"}}, "required": ["cobi_kind"]}, "then": {"properties": {"cobi_key": {"pattern": "^CCC[0-9]{9}$"}}}},
+    {"if": {"properties": {"cobi_kind": {"const": "coci_program"}}, "required": ["cobi_kind"]}, "then": {"properties": {"cobi_key": {"pattern": "^[0-9]{5}$"}}}},
+    {"if": {"properties": {"cobi_kind": {"const": "harvest_record"}}, "required": ["cobi_kind"]}, "then": {"properties": {"cobi_key": {"pattern": "^[0-9]{5} [0-9]{4}-[0-9]{4}$"}}}},
+    {"if": {"properties": {"scheme": {"const": "coci_course_control_number"}}, "required": ["scheme"]}, "then": {"properties": {"value": {"pattern": "^CCC[0-9]{9}$"}}}},
+    {"if": {"properties": {"scheme": {"const": "coci_program_control_number"}}, "required": ["scheme"]}, "then": {"properties": {"value": {"pattern": "^[0-9]{5}$"}}}},
+    {"if": {"properties": {"scheme": {"const": "ctid"}}, "required": ["scheme"]}, "then": {"properties": {"value": {"pattern": "^ce-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"}}}},
+    {"if": {"properties": {"scheme": {"const": "catalog_url"}}, "required": ["scheme"]}, "then": {"properties": {"value": {"pattern": "^https://"}}}}
+  ],
+  "$defs": {
+    "datetime": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]+)?)?(Z|[+-][0-9]{2}:[0-9]{2})$"}
+  }
+}

@@ -32,9 +32,23 @@ block-by-block mapping of a harvest record to a Pathway, and what xTRA's keys ar
 
 ## Status
 
-🔨 **Ruled (Sheet 102, 2026-10-20); nothing built.** The plan in one line: one owner per fact, one writer per store,
-partners file into a private exchange repository Malone administers, and COBI's contribution is the crosswalk from
-every COBI record to the state's numbers and, once published, its CTID.
+🔨 **Ruled (Sheet 102, 2026-10-20); the exchange's seed is drafted and waits on Malone.** The plan in one line: one
+owner per fact, one writer per store, partners file into a private exchange repository Malone administers, and
+COBI's contribution is the crosswalk from every COBI record to the state's numbers and, once published, its CTID.
+
+**The exchange's seed** (S430, card 1): [`partners/ctdl-exchange/`](../../../partners/ctdl-exchange/README.md) holds
+the repository Malone copies (the README, the exchange's `CLAUDE.md` kept as `CLAUDE.exchange.md` so it never loads
+into a tracker session, contract v0 with its identifier rules, CTDL mapping, file kinds and four JSON Schemas,
+`tools/check_drop.py`, the CI workflow, CODEOWNERS and decisions 0001 and 0002) and the paste that creates it.
+The check refuses a drop whose folder, manifest, checksums, row counts, required columns or CTIDs disagree with the
+contract, a CTID that names two resources (Taft's case), a column named for student data, an edit to a merged drop,
+and a party branch writing another party's folder; `tests/ctdl_exchange_seed_test.py` (24 cases) runs it in the lints
+job. Version 0 holds M-IDs, CR groups and exhibit keys out of the exchange, by card 4's reasoning.
+
+**The three decision rights** (card 6) are on the register: DR-27 partner intake (Malone), DR-28 match confirmation
+(Sam, until he delegates it), DR-29 Registry publishing (Sam); the crosswalk table is mapped to DR-28 on
+`kb/governance_surface_map.json` as `table:identifier_crosswalk` before its migration. The table is named
+`identifier_crosswalk` because the partner-crosswalks lane already uses "crosswalk" for occupations.
 
 **What Credential Engine runs** (read 2026-10-20, `CredentialEngine/ctdl-xtra@03a9a1b`, branch `xtra-backup`): xTRA
 crawls a catalog and a model extracts four separate lists (courses, learning programs, credentials, competencies)
@@ -79,11 +93,9 @@ Valley 674, Norco 817), so CE's course competencies there have a second reading 
 
 ## NEXT
 
-- Card 1: draft the exchange repository's `README.md`, `CLAUDE.md` and contract v0 (the field lists, the identifier
-  rules, the CTDL mapping, JSON Schemas) as files and hand Malone the paste; a session cannot create a repository in the
-  CPL-Initiative organization.
-- Card 6: the three decision rights in `kb/governance_register.json`, and the crosswalk table on
-  `kb/governance_surface_map.json`, before the table is built (Rule 10 a3).
+- Malone runs the paste in `partners/ctdl-exchange/README.md` (Sam hands it to him; a session cannot create a
+  repository in the CPL-Initiative organization). When the repository exists, the PR that records its address here
+  also deletes `partners/ctdl-exchange/`, so the contract has one home.
 - Card 2: once the exchange holds CE's ten extracts, the crosswalk to COCI and our records, the agreement rate per
   college (the answer to Sam's condition), three sample Pathways in CTDL JSON-LD, and the findings back to CE.
 - Card 3: the Linked step in `commons_progress.js`, Program Requirements first, with its procedure card and check.
