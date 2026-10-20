@@ -29780,7 +29780,7 @@
       "colleges_offering_count": 3,
       "_identities_rekeyed_from": "FTEC M1005"
     },
-    "AVIA M10PW": {
+    "AVIA M10QG": {
       "identity_system": "M-ID",
       "title": "Commercial Pilot 1 Flight Lab",
       "discipline": null,
@@ -29797,7 +29797,7 @@
       ],
       "colleges_offering_count": 1
     },
-    "AVIA M10PX": {
+    "AVIA M10QH": {
       "identity_system": "M-ID",
       "title": "Commercial Pilot 2 Flight Lab",
       "discipline": null,
@@ -170292,7 +170292,7 @@
       "_remint_from": "M-ID FLGHT 100"
     },
     {
-      "course_id": "AVIA M10PW",
+      "course_id": "AVIA M10QG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -170322,7 +170322,7 @@
       "_remint_from": "M-ID FLGHT 110"
     },
     {
-      "course_id": "AVIA M10PX",
+      "course_id": "AVIA M10QH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,

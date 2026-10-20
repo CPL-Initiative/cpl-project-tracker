@@ -133,7 +133,10 @@ re-key window, three receipts in apply order in ALIAS_MAPS):**
   five new umbrella codes FLAM, FLHU, FLEG, FLKH, FLTU, also in `kb/foreign_language_subj4.json`.
 - *file-eight*: the 79 identities on ARCE, ARTF, NCAR (to ARTS), CSMT (COSM), BRDC (BCST), FLGH (AVIA), ARTP (PHOT)
   and WELL (HLTH), each taking that discipline (`kb/_blank_stray_remint.py`, `kb/blank_stray_remint_out/2026-10-20/`;
-  1 kept its number, 78 gap-filled).
+  all 79 gap-filled).
+- The allocator now treats every id an earlier re-mint used, and every id SkyView's hand-built layout still draws,
+  as taken: the first apply gap-filled six ids onto vacated slots the layout still drew, and CI's orbits lint read
+  six duplicate points (`er.skyview_ids()`, S436). Honors Linguistics went to FLNG M11LR instead of M10AF.
 
 Every gate passed on all three (P3 fresh reads of 2, 9 and 39 live rows). After the merge: `supabase-rekey.yml` once
 per receipt, in that order, then the read-back.

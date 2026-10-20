@@ -117,6 +117,8 @@ def compute_plan(courses, singletons, curations, reservations, pins):
                       "top_code": r.get("top_code"),
                       "merged_into": (curations.get(cid) or {}).get("merge_into")}
     real = set(courses) | set(singletons) | set(curations)
+    # S436: never a slot an earlier re-mint used or SkyView still draws (the duplicate-point failure)
+    real |= er.ever_minted_ids() | er.skyview_ids()
     alloc = rec.Allocator(real - set(moves), reservations)
     order = sorted(moves)
     for cid in order:                                   # pass 1: keep the number

@@ -13,8 +13,8 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M1001",
-      "how": "kept number"
+      "new_id": "ARTS M1663",
+      "how": "gap-filled"
     },
     "ARCE M10AA": {
       "old_id": "ARCE M10AA",
@@ -26,7 +26,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1568",
-      "new_id": "ARTS M12GS",
+      "new_id": "ARTS M12GU",
       "how": "gap-filled"
     },
     "ARCE M10AB": {
@@ -39,7 +39,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12GT",
+      "new_id": "ARTS M12GV",
       "how": "gap-filled"
     },
     "ARCE M10AC": {
@@ -52,7 +52,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1229",
-      "new_id": "ARTS M12GU",
+      "new_id": "ARTS M12GW",
       "how": "gap-filled"
     },
     "ARCE M10AD": {
@@ -65,7 +65,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1231",
-      "new_id": "ARTS M12GV",
+      "new_id": "ARTS M12GX",
       "how": "gap-filled"
     },
     "ARCE M10AE": {
@@ -78,7 +78,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1551",
-      "new_id": "ARTS M12GW",
+      "new_id": "ARTS M12GY",
       "how": "gap-filled"
     },
     "ARCE M10AF": {
@@ -91,7 +91,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1597",
-      "new_id": "ARTS M12GX",
+      "new_id": "ARTS M12GZ",
       "how": "gap-filled"
     },
     "ARCE M10AG": {
@@ -104,7 +104,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1662",
-      "new_id": "ARTS M12GY",
+      "new_id": "ARTS M12HA",
       "how": "gap-filled"
     },
     "ARCE M10AH": {
@@ -117,7 +117,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": "ARTS M1459",
-      "new_id": "ARTS M12GZ",
+      "new_id": "ARTS M12HB",
       "how": "gap-filled"
     },
     "ARCE M10AI": {
@@ -130,7 +130,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HA",
+      "new_id": "ARTS M12HC",
       "how": "gap-filled"
     },
     "ARCE M10AJ": {
@@ -143,7 +143,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HB",
+      "new_id": "ARTS M12HD",
       "how": "gap-filled"
     },
     "ARCE M10AK": {
@@ -156,7 +156,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HC",
+      "new_id": "ARTS M12HE",
       "how": "gap-filled"
     },
     "ARCE M10AL": {
@@ -169,7 +169,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HD",
+      "new_id": "ARTS M12HF",
       "how": "gap-filled"
     },
     "ARCE M10AM": {
@@ -182,7 +182,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HE",
+      "new_id": "ARTS M12HG",
       "how": "gap-filled"
     },
     "ARCE M10AN": {
@@ -195,7 +195,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HF",
+      "new_id": "ARTS M12HH",
       "how": "gap-filled"
     },
     "ARCE M10AO": {
@@ -208,7 +208,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HG",
+      "new_id": "ARTS M12HI",
       "how": "gap-filled"
     },
     "ARCE M10AP": {
@@ -221,7 +221,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M12HH",
+      "new_id": "ARTS M12HJ",
       "how": "gap-filled"
     },
     "ARTF M1001": {
@@ -234,7 +234,7 @@
       "discipline_source_before": null,
       "top_code": "1002.10",
       "merged_into": null,
-      "new_id": "ARTS M1065",
+      "new_id": "ARTS M1664",
       "how": "gap-filled"
     },
     "ARTF M1002": {
@@ -247,7 +247,7 @@
       "discipline_source_before": null,
       "top_code": "1002.20",
       "merged_into": null,
-      "new_id": "ARTS M1073",
+      "new_id": "ARTS M1665",
       "how": "gap-filled"
     },
     "ARTF M1003": {
@@ -260,7 +260,7 @@
       "discipline_source_before": null,
       "top_code": "1001.00",
       "merged_into": null,
-      "new_id": "ARTS M1102",
+      "new_id": "ARTS M1666",
       "how": "gap-filled"
     },
     "ARTF M1008": {
@@ -273,7 +273,7 @@
       "discipline_source_before": null,
       "top_code": "1002.30",
       "merged_into": null,
-      "new_id": "ARTS M1103",
+      "new_id": "ARTS M1667",
       "how": "gap-filled"
     },
     "ARTF M10AA": {
@@ -286,7 +286,7 @@
       "discipline_source_before": null,
       "top_code": "1099.00",
       "merged_into": null,
-      "new_id": "ARTS M12HI",
+      "new_id": "ARTS M12HK",
       "how": "gap-filled"
     },
     "ARTF M10AB": {
@@ -299,7 +299,7 @@
       "discipline_source_before": null,
       "top_code": "1001.00",
       "merged_into": "ARTS M1576",
-      "new_id": "ARTS M12HJ",
+      "new_id": "ARTS M12HL",
       "how": "gap-filled"
     },
     "ARTF M10AD": {
@@ -312,7 +312,7 @@
       "discipline_source_before": null,
       "top_code": "1009.00",
       "merged_into": null,
-      "new_id": "ARTS M12HK",
+      "new_id": "ARTS M12HM",
       "how": "gap-filled"
     },
     "ARTF M10AE": {
@@ -325,7 +325,7 @@
       "discipline_source_before": null,
       "top_code": "1009.00",
       "merged_into": null,
-      "new_id": "ARTS M12HL",
+      "new_id": "ARTS M12HN",
       "how": "gap-filled"
     },
     "ARTF M10AI": {
@@ -338,7 +338,7 @@
       "discipline_source_before": null,
       "top_code": "1099.00",
       "merged_into": null,
-      "new_id": "ARTS M12HM",
+      "new_id": "ARTS M12HO",
       "how": "gap-filled"
     },
     "ARTF M10AJ": {
@@ -351,7 +351,7 @@
       "discipline_source_before": null,
       "top_code": "1099.00",
       "merged_into": null,
-      "new_id": "ARTS M12HN",
+      "new_id": "ARTS M12HP",
       "how": "gap-filled"
     },
     "ARTF M10AK": {
@@ -364,7 +364,7 @@
       "discipline_source_before": null,
       "top_code": "1001.00",
       "merged_into": "ARTS M1633",
-      "new_id": "ARTS M12HO",
+      "new_id": "ARTS M12HQ",
       "how": "gap-filled"
     },
     "ARTF M10AR": {
@@ -377,7 +377,7 @@
       "discipline_source_before": null,
       "top_code": "1001.00",
       "merged_into": null,
-      "new_id": "ARTS M12HP",
+      "new_id": "ARTS M12HR",
       "how": "gap-filled"
     },
     "ARTF M10AS": {
@@ -390,7 +390,7 @@
       "discipline_source_before": null,
       "top_code": "1001.00",
       "merged_into": null,
-      "new_id": "ARTS M12HQ",
+      "new_id": "ARTS M12HS",
       "how": "gap-filled"
     },
     "ARTF M10AU": {
@@ -403,7 +403,7 @@
       "discipline_source_before": null,
       "top_code": "1099.00",
       "merged_into": null,
-      "new_id": "ARTS M12HR",
+      "new_id": "ARTS M12HT",
       "how": "gap-filled"
     },
     "ARTF M10AV": {
@@ -416,7 +416,7 @@
       "discipline_source_before": null,
       "top_code": "1099.00",
       "merged_into": null,
-      "new_id": "ARTS M12HS",
+      "new_id": "ARTS M12HU",
       "how": "gap-filled"
     },
     "ARTF M10AW": {
@@ -429,7 +429,7 @@
       "discipline_source_before": null,
       "top_code": "1099.00",
       "merged_into": null,
-      "new_id": "ARTS M12HT",
+      "new_id": "ARTS M12HV",
       "how": "gap-filled"
     },
     "ARTP M10AA": {
@@ -442,7 +442,7 @@
       "discipline_source_before": null,
       "top_code": "1011.00",
       "merged_into": null,
-      "new_id": "PHOT M10RG",
+      "new_id": "PHOT M10RK",
       "how": "gap-filled"
     },
     "ARTP M10AB": {
@@ -455,7 +455,7 @@
       "discipline_source_before": null,
       "top_code": "1012.00",
       "merged_into": null,
-      "new_id": "PHOT M10RH",
+      "new_id": "PHOT M10RL",
       "how": "gap-filled"
     },
     "ARTP M10AN": {
@@ -468,7 +468,7 @@
       "discipline_source_before": null,
       "top_code": "1011.00",
       "merged_into": null,
-      "new_id": "PHOT M10RI",
+      "new_id": "PHOT M10RM",
       "how": "gap-filled"
     },
     "ARTP M10AO": {
@@ -481,7 +481,7 @@
       "discipline_source_before": null,
       "top_code": "1012.00",
       "merged_into": null,
-      "new_id": "PHOT M10RJ",
+      "new_id": "PHOT M10RN",
       "how": "gap-filled"
     },
     "ARTP M90AA": {
@@ -611,7 +611,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1085",
-      "new_id": "COSM M10LM",
+      "new_id": "COSM M10MB",
       "how": "gap-filled"
     },
     "CSMT M10AD": {
@@ -624,7 +624,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1088",
-      "new_id": "COSM M10LN",
+      "new_id": "COSM M10MC",
       "how": "gap-filled"
     },
     "CSMT M10AE": {
@@ -637,7 +637,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1103",
-      "new_id": "COSM M10LO",
+      "new_id": "COSM M10MD",
       "how": "gap-filled"
     },
     "CSMT M10AK": {
@@ -650,7 +650,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": null,
-      "new_id": "COSM M10LP",
+      "new_id": "COSM M10ME",
       "how": "gap-filled"
     },
     "CSMT M10AN": {
@@ -663,7 +663,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1101",
-      "new_id": "COSM M10LQ",
+      "new_id": "COSM M10MF",
       "how": "gap-filled"
     },
     "CSMT M10AV": {
@@ -676,7 +676,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1102",
-      "new_id": "COSM M10LR",
+      "new_id": "COSM M10MG",
       "how": "gap-filled"
     },
     "CSMT M10AW": {
@@ -689,7 +689,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": null,
-      "new_id": "COSM M10LS",
+      "new_id": "COSM M10MH",
       "how": "gap-filled"
     },
     "CSMT M10AX": {
@@ -702,7 +702,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": null,
-      "new_id": "COSM M10LT",
+      "new_id": "COSM M10MI",
       "how": "gap-filled"
     },
     "CSMT M10AY": {
@@ -715,7 +715,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1069",
-      "new_id": "COSM M10LU",
+      "new_id": "COSM M10MJ",
       "how": "gap-filled"
     },
     "CSMT M10AZ": {
@@ -728,7 +728,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": null,
-      "new_id": "COSM M10LV",
+      "new_id": "COSM M10MK",
       "how": "gap-filled"
     },
     "CSMT M10BA": {
@@ -741,7 +741,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": null,
-      "new_id": "COSM M10LW",
+      "new_id": "COSM M10ML",
       "how": "gap-filled"
     },
     "CSMT M10BB": {
@@ -754,7 +754,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1031",
-      "new_id": "COSM M10LX",
+      "new_id": "COSM M10MM",
       "how": "gap-filled"
     },
     "CSMT M10BC": {
@@ -767,7 +767,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1076",
-      "new_id": "COSM M10LY",
+      "new_id": "COSM M10MN",
       "how": "gap-filled"
     },
     "CSMT M10BD": {
@@ -780,7 +780,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1084",
-      "new_id": "COSM M10LZ",
+      "new_id": "COSM M10MO",
       "how": "gap-filled"
     },
     "CSMT M10BE": {
@@ -793,7 +793,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": "COSM M1078",
-      "new_id": "COSM M10MA",
+      "new_id": "COSM M10MP",
       "how": "gap-filled"
     },
     "CSMT M10BF": {
@@ -806,7 +806,7 @@
       "discipline_source_before": null,
       "top_code": "3007.00",
       "merged_into": null,
-      "new_id": "COSM M10MB",
+      "new_id": "COSM M10MQ",
       "how": "gap-filled"
     },
     "FLGH M1002": {
@@ -819,7 +819,7 @@
       "discipline_source_before": null,
       "top_code": "3020.20",
       "merged_into": null,
-      "new_id": "AVIA M1022",
+      "new_id": "AVIA M1094",
       "how": "gap-filled"
     },
     "FLGH M10AB": {
@@ -832,7 +832,7 @@
       "discipline_source_before": null,
       "top_code": "3020.20",
       "merged_into": "AVIA M1061",
-      "new_id": "AVIA M10PV",
+      "new_id": "AVIA M10QF",
       "how": "gap-filled"
     },
     "FLGH M10AE": {
@@ -845,7 +845,7 @@
       "discipline_source_before": null,
       "top_code": "3020.20",
       "merged_into": null,
-      "new_id": "AVIA M10PW",
+      "new_id": "AVIA M10QG",
       "how": "gap-filled"
     },
     "FLGH M10AF": {
@@ -858,7 +858,7 @@
       "discipline_source_before": null,
       "top_code": "3020.20",
       "merged_into": null,
-      "new_id": "AVIA M10PX",
+      "new_id": "AVIA M10QH",
       "how": "gap-filled"
     },
     "FLGH M10AH": {
@@ -871,7 +871,7 @@
       "discipline_source_before": null,
       "top_code": "3020.20",
       "merged_into": "FLGH M1002",
-      "new_id": "AVIA M10PY",
+      "new_id": "AVIA M10QI",
       "how": "gap-filled"
     },
     "FLGH M90AA": {
@@ -1032,43 +1032,43 @@
     }
   },
   "alias": {
-    "ARCE M1001": "ARTS M1001",
-    "ARCE M10AA": "ARTS M12GS",
-    "ARCE M10AB": "ARTS M12GT",
-    "ARCE M10AC": "ARTS M12GU",
-    "ARCE M10AD": "ARTS M12GV",
-    "ARCE M10AE": "ARTS M12GW",
-    "ARCE M10AF": "ARTS M12GX",
-    "ARCE M10AG": "ARTS M12GY",
-    "ARCE M10AH": "ARTS M12GZ",
-    "ARCE M10AI": "ARTS M12HA",
-    "ARCE M10AJ": "ARTS M12HB",
-    "ARCE M10AK": "ARTS M12HC",
-    "ARCE M10AL": "ARTS M12HD",
-    "ARCE M10AM": "ARTS M12HE",
-    "ARCE M10AN": "ARTS M12HF",
-    "ARCE M10AO": "ARTS M12HG",
-    "ARCE M10AP": "ARTS M12HH",
-    "ARTF M1001": "ARTS M1065",
-    "ARTF M1002": "ARTS M1073",
-    "ARTF M1003": "ARTS M1102",
-    "ARTF M1008": "ARTS M1103",
-    "ARTF M10AA": "ARTS M12HI",
-    "ARTF M10AB": "ARTS M12HJ",
-    "ARTF M10AD": "ARTS M12HK",
-    "ARTF M10AE": "ARTS M12HL",
-    "ARTF M10AI": "ARTS M12HM",
-    "ARTF M10AJ": "ARTS M12HN",
-    "ARTF M10AK": "ARTS M12HO",
-    "ARTF M10AR": "ARTS M12HP",
-    "ARTF M10AS": "ARTS M12HQ",
-    "ARTF M10AU": "ARTS M12HR",
-    "ARTF M10AV": "ARTS M12HS",
-    "ARTF M10AW": "ARTS M12HT",
-    "ARTP M10AA": "PHOT M10RG",
-    "ARTP M10AB": "PHOT M10RH",
-    "ARTP M10AN": "PHOT M10RI",
-    "ARTP M10AO": "PHOT M10RJ",
+    "ARCE M1001": "ARTS M1663",
+    "ARCE M10AA": "ARTS M12GU",
+    "ARCE M10AB": "ARTS M12GV",
+    "ARCE M10AC": "ARTS M12GW",
+    "ARCE M10AD": "ARTS M12GX",
+    "ARCE M10AE": "ARTS M12GY",
+    "ARCE M10AF": "ARTS M12GZ",
+    "ARCE M10AG": "ARTS M12HA",
+    "ARCE M10AH": "ARTS M12HB",
+    "ARCE M10AI": "ARTS M12HC",
+    "ARCE M10AJ": "ARTS M12HD",
+    "ARCE M10AK": "ARTS M12HE",
+    "ARCE M10AL": "ARTS M12HF",
+    "ARCE M10AM": "ARTS M12HG",
+    "ARCE M10AN": "ARTS M12HH",
+    "ARCE M10AO": "ARTS M12HI",
+    "ARCE M10AP": "ARTS M12HJ",
+    "ARTF M1001": "ARTS M1664",
+    "ARTF M1002": "ARTS M1665",
+    "ARTF M1003": "ARTS M1666",
+    "ARTF M1008": "ARTS M1667",
+    "ARTF M10AA": "ARTS M12HK",
+    "ARTF M10AB": "ARTS M12HL",
+    "ARTF M10AD": "ARTS M12HM",
+    "ARTF M10AE": "ARTS M12HN",
+    "ARTF M10AI": "ARTS M12HO",
+    "ARTF M10AJ": "ARTS M12HP",
+    "ARTF M10AK": "ARTS M12HQ",
+    "ARTF M10AR": "ARTS M12HR",
+    "ARTF M10AS": "ARTS M12HS",
+    "ARTF M10AU": "ARTS M12HT",
+    "ARTF M10AV": "ARTS M12HU",
+    "ARTF M10AW": "ARTS M12HV",
+    "ARTP M10AA": "PHOT M10RK",
+    "ARTP M10AB": "PHOT M10RL",
+    "ARTP M10AN": "PHOT M10RM",
+    "ARTP M10AO": "PHOT M10RN",
     "ARTP M90AA": "PHOT M90BO",
     "BRDC M1003": "BCST M1058",
     "BRDC M10AL": "BCST M10KF",
@@ -1078,27 +1078,27 @@
     "BRDC M10BH": "BCST M10KJ",
     "BRDC M10BI": "BCST M10KK",
     "BRDC M10BK": "BCST M10KL",
-    "CSMT M10AC": "COSM M10LM",
-    "CSMT M10AD": "COSM M10LN",
-    "CSMT M10AE": "COSM M10LO",
-    "CSMT M10AK": "COSM M10LP",
-    "CSMT M10AN": "COSM M10LQ",
-    "CSMT M10AV": "COSM M10LR",
-    "CSMT M10AW": "COSM M10LS",
-    "CSMT M10AX": "COSM M10LT",
-    "CSMT M10AY": "COSM M10LU",
-    "CSMT M10AZ": "COSM M10LV",
-    "CSMT M10BA": "COSM M10LW",
-    "CSMT M10BB": "COSM M10LX",
-    "CSMT M10BC": "COSM M10LY",
-    "CSMT M10BD": "COSM M10LZ",
-    "CSMT M10BE": "COSM M10MA",
-    "CSMT M10BF": "COSM M10MB",
-    "FLGH M1002": "AVIA M1022",
-    "FLGH M10AB": "AVIA M10PV",
-    "FLGH M10AE": "AVIA M10PW",
-    "FLGH M10AF": "AVIA M10PX",
-    "FLGH M10AH": "AVIA M10PY",
+    "CSMT M10AC": "COSM M10MB",
+    "CSMT M10AD": "COSM M10MC",
+    "CSMT M10AE": "COSM M10MD",
+    "CSMT M10AK": "COSM M10ME",
+    "CSMT M10AN": "COSM M10MF",
+    "CSMT M10AV": "COSM M10MG",
+    "CSMT M10AW": "COSM M10MH",
+    "CSMT M10AX": "COSM M10MI",
+    "CSMT M10AY": "COSM M10MJ",
+    "CSMT M10AZ": "COSM M10MK",
+    "CSMT M10BA": "COSM M10ML",
+    "CSMT M10BB": "COSM M10MM",
+    "CSMT M10BC": "COSM M10MN",
+    "CSMT M10BD": "COSM M10MO",
+    "CSMT M10BE": "COSM M10MP",
+    "CSMT M10BF": "COSM M10MQ",
+    "FLGH M1002": "AVIA M1094",
+    "FLGH M10AB": "AVIA M10QF",
+    "FLGH M10AE": "AVIA M10QG",
+    "FLGH M10AF": "AVIA M10QH",
+    "FLGH M10AH": "AVIA M10QI",
     "FLGH M90AA": "AVIA M90AP",
     "NCAR M90AA": "ARTS M90FE",
     "NCAR M90AC": "ARTS M90FF",
@@ -1133,219 +1133,225 @@
   },
   "gapfilled": [
     {
+      "old_id": "ARCE M1001",
+      "wanted": "ARTS M1001",
+      "new_id": "ARTS M1663",
+      "why": "ARCE M1001 -> ARTS (csr-blank-strays-file-eight)"
+    },
+    {
       "old_id": "ARCE M10AA",
       "wanted": "ARTS M10AA",
-      "new_id": "ARTS M12GS",
+      "new_id": "ARTS M12GU",
       "why": "ARCE M10AA -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AB",
       "wanted": "ARTS M10AB",
-      "new_id": "ARTS M12GT",
+      "new_id": "ARTS M12GV",
       "why": "ARCE M10AB -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AC",
       "wanted": "ARTS M10AC",
-      "new_id": "ARTS M12GU",
+      "new_id": "ARTS M12GW",
       "why": "ARCE M10AC -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AD",
       "wanted": "ARTS M10AD",
-      "new_id": "ARTS M12GV",
+      "new_id": "ARTS M12GX",
       "why": "ARCE M10AD -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AE",
       "wanted": "ARTS M10AE",
-      "new_id": "ARTS M12GW",
+      "new_id": "ARTS M12GY",
       "why": "ARCE M10AE -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AF",
       "wanted": "ARTS M10AF",
-      "new_id": "ARTS M12GX",
+      "new_id": "ARTS M12GZ",
       "why": "ARCE M10AF -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AG",
       "wanted": "ARTS M10AG",
-      "new_id": "ARTS M12GY",
+      "new_id": "ARTS M12HA",
       "why": "ARCE M10AG -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AH",
       "wanted": "ARTS M10AH",
-      "new_id": "ARTS M12GZ",
+      "new_id": "ARTS M12HB",
       "why": "ARCE M10AH -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AI",
       "wanted": "ARTS M10AI",
-      "new_id": "ARTS M12HA",
+      "new_id": "ARTS M12HC",
       "why": "ARCE M10AI -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AJ",
       "wanted": "ARTS M10AJ",
-      "new_id": "ARTS M12HB",
+      "new_id": "ARTS M12HD",
       "why": "ARCE M10AJ -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AK",
       "wanted": "ARTS M10AK",
-      "new_id": "ARTS M12HC",
+      "new_id": "ARTS M12HE",
       "why": "ARCE M10AK -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AL",
       "wanted": "ARTS M10AL",
-      "new_id": "ARTS M12HD",
+      "new_id": "ARTS M12HF",
       "why": "ARCE M10AL -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AM",
       "wanted": "ARTS M10AM",
-      "new_id": "ARTS M12HE",
+      "new_id": "ARTS M12HG",
       "why": "ARCE M10AM -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AN",
       "wanted": "ARTS M10AN",
-      "new_id": "ARTS M12HF",
+      "new_id": "ARTS M12HH",
       "why": "ARCE M10AN -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AO",
       "wanted": "ARTS M10AO",
-      "new_id": "ARTS M12HG",
+      "new_id": "ARTS M12HI",
       "why": "ARCE M10AO -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARCE M10AP",
       "wanted": "ARTS M10AP",
-      "new_id": "ARTS M12HH",
+      "new_id": "ARTS M12HJ",
       "why": "ARCE M10AP -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M1001",
       "wanted": "ARTS M1001",
-      "new_id": "ARTS M1065",
+      "new_id": "ARTS M1664",
       "why": "ARTF M1001 -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M1002",
       "wanted": "ARTS M1002",
-      "new_id": "ARTS M1073",
+      "new_id": "ARTS M1665",
       "why": "ARTF M1002 -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M1003",
       "wanted": "ARTS M1003",
-      "new_id": "ARTS M1102",
+      "new_id": "ARTS M1666",
       "why": "ARTF M1003 -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M1008",
       "wanted": "ARTS M1008",
-      "new_id": "ARTS M1103",
+      "new_id": "ARTS M1667",
       "why": "ARTF M1008 -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AA",
       "wanted": "ARTS M10AA",
-      "new_id": "ARTS M12HI",
+      "new_id": "ARTS M12HK",
       "why": "ARTF M10AA -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AB",
       "wanted": "ARTS M10AB",
-      "new_id": "ARTS M12HJ",
+      "new_id": "ARTS M12HL",
       "why": "ARTF M10AB -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AD",
       "wanted": "ARTS M10AD",
-      "new_id": "ARTS M12HK",
+      "new_id": "ARTS M12HM",
       "why": "ARTF M10AD -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AE",
       "wanted": "ARTS M10AE",
-      "new_id": "ARTS M12HL",
+      "new_id": "ARTS M12HN",
       "why": "ARTF M10AE -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AI",
       "wanted": "ARTS M10AI",
-      "new_id": "ARTS M12HM",
+      "new_id": "ARTS M12HO",
       "why": "ARTF M10AI -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AJ",
       "wanted": "ARTS M10AJ",
-      "new_id": "ARTS M12HN",
+      "new_id": "ARTS M12HP",
       "why": "ARTF M10AJ -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AK",
       "wanted": "ARTS M10AK",
-      "new_id": "ARTS M12HO",
+      "new_id": "ARTS M12HQ",
       "why": "ARTF M10AK -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AR",
       "wanted": "ARTS M10AR",
-      "new_id": "ARTS M12HP",
+      "new_id": "ARTS M12HR",
       "why": "ARTF M10AR -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AS",
       "wanted": "ARTS M10AS",
-      "new_id": "ARTS M12HQ",
+      "new_id": "ARTS M12HS",
       "why": "ARTF M10AS -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AU",
       "wanted": "ARTS M10AU",
-      "new_id": "ARTS M12HR",
+      "new_id": "ARTS M12HT",
       "why": "ARTF M10AU -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AV",
       "wanted": "ARTS M10AV",
-      "new_id": "ARTS M12HS",
+      "new_id": "ARTS M12HU",
       "why": "ARTF M10AV -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTF M10AW",
       "wanted": "ARTS M10AW",
-      "new_id": "ARTS M12HT",
+      "new_id": "ARTS M12HV",
       "why": "ARTF M10AW -> ARTS (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTP M10AA",
       "wanted": "PHOT M10AA",
-      "new_id": "PHOT M10RG",
+      "new_id": "PHOT M10RK",
       "why": "ARTP M10AA -> PHOT (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTP M10AB",
       "wanted": "PHOT M10AB",
-      "new_id": "PHOT M10RH",
+      "new_id": "PHOT M10RL",
       "why": "ARTP M10AB -> PHOT (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTP M10AN",
       "wanted": "PHOT M10AN",
-      "new_id": "PHOT M10RI",
+      "new_id": "PHOT M10RM",
       "why": "ARTP M10AN -> PHOT (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "ARTP M10AO",
       "wanted": "PHOT M10AO",
-      "new_id": "PHOT M10RJ",
+      "new_id": "PHOT M10RN",
       "why": "ARTP M10AO -> PHOT (csr-blank-strays-file-eight)"
     },
     {
@@ -1405,127 +1411,127 @@
     {
       "old_id": "CSMT M10AC",
       "wanted": "COSM M10AC",
-      "new_id": "COSM M10LM",
+      "new_id": "COSM M10MB",
       "why": "CSMT M10AC -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AD",
       "wanted": "COSM M10AD",
-      "new_id": "COSM M10LN",
+      "new_id": "COSM M10MC",
       "why": "CSMT M10AD -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AE",
       "wanted": "COSM M10AE",
-      "new_id": "COSM M10LO",
+      "new_id": "COSM M10MD",
       "why": "CSMT M10AE -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AK",
       "wanted": "COSM M10AK",
-      "new_id": "COSM M10LP",
+      "new_id": "COSM M10ME",
       "why": "CSMT M10AK -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AN",
       "wanted": "COSM M10AN",
-      "new_id": "COSM M10LQ",
+      "new_id": "COSM M10MF",
       "why": "CSMT M10AN -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AV",
       "wanted": "COSM M10AV",
-      "new_id": "COSM M10LR",
+      "new_id": "COSM M10MG",
       "why": "CSMT M10AV -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AW",
       "wanted": "COSM M10AW",
-      "new_id": "COSM M10LS",
+      "new_id": "COSM M10MH",
       "why": "CSMT M10AW -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AX",
       "wanted": "COSM M10AX",
-      "new_id": "COSM M10LT",
+      "new_id": "COSM M10MI",
       "why": "CSMT M10AX -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AY",
       "wanted": "COSM M10AY",
-      "new_id": "COSM M10LU",
+      "new_id": "COSM M10MJ",
       "why": "CSMT M10AY -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10AZ",
       "wanted": "COSM M10AZ",
-      "new_id": "COSM M10LV",
+      "new_id": "COSM M10MK",
       "why": "CSMT M10AZ -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10BA",
       "wanted": "COSM M10BA",
-      "new_id": "COSM M10LW",
+      "new_id": "COSM M10ML",
       "why": "CSMT M10BA -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10BB",
       "wanted": "COSM M10BB",
-      "new_id": "COSM M10LX",
+      "new_id": "COSM M10MM",
       "why": "CSMT M10BB -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10BC",
       "wanted": "COSM M10BC",
-      "new_id": "COSM M10LY",
+      "new_id": "COSM M10MN",
       "why": "CSMT M10BC -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10BD",
       "wanted": "COSM M10BD",
-      "new_id": "COSM M10LZ",
+      "new_id": "COSM M10MO",
       "why": "CSMT M10BD -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10BE",
       "wanted": "COSM M10BE",
-      "new_id": "COSM M10MA",
+      "new_id": "COSM M10MP",
       "why": "CSMT M10BE -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "CSMT M10BF",
       "wanted": "COSM M10BF",
-      "new_id": "COSM M10MB",
+      "new_id": "COSM M10MQ",
       "why": "CSMT M10BF -> COSM (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "FLGH M1002",
       "wanted": "AVIA M1002",
-      "new_id": "AVIA M1022",
+      "new_id": "AVIA M1094",
       "why": "FLGH M1002 -> AVIA (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "FLGH M10AB",
       "wanted": "AVIA M10AB",
-      "new_id": "AVIA M10PV",
+      "new_id": "AVIA M10QF",
       "why": "FLGH M10AB -> AVIA (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "FLGH M10AE",
       "wanted": "AVIA M10AE",
-      "new_id": "AVIA M10PW",
+      "new_id": "AVIA M10QG",
       "why": "FLGH M10AE -> AVIA (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "FLGH M10AF",
       "wanted": "AVIA M10AF",
-      "new_id": "AVIA M10PX",
+      "new_id": "AVIA M10QH",
       "why": "FLGH M10AF -> AVIA (csr-blank-strays-file-eight)"
     },
     {
       "old_id": "FLGH M10AH",
       "wanted": "AVIA M10AH",
-      "new_id": "AVIA M10PY",
+      "new_id": "AVIA M10QI",
       "why": "FLGH M10AH -> AVIA (csr-blank-strays-file-eight)"
     },
     {
@@ -1601,37 +1607,5 @@
       "why": "WELL M10AU -> HLTH (csr-blank-strays-file-eight)"
     }
   ],
-  "reused_retired_ids": [
-    "ARTS M1001",
-    "ARTS M1065",
-    "ARTS M1073",
-    "ARTS M1102",
-    "ARTS M1103",
-    "ARTS M12GS",
-    "ARTS M12GT",
-    "AVIA M1022",
-    "AVIA M10PV",
-    "AVIA M10PW",
-    "AVIA M10PX",
-    "AVIA M10PY",
-    "COSM M10LM",
-    "COSM M10LN",
-    "COSM M10LO",
-    "COSM M10LP",
-    "COSM M10LQ",
-    "COSM M10LR",
-    "COSM M10LS",
-    "COSM M10LT",
-    "COSM M10LU",
-    "COSM M10LV",
-    "COSM M10LW",
-    "COSM M10LX",
-    "COSM M10LY",
-    "COSM M10LZ",
-    "COSM M10MA",
-    "PHOT M10RG",
-    "PHOT M10RH",
-    "PHOT M10RI",
-    "PHOT M10RJ"
-  ]
+  "reused_retired_ids": []
 }

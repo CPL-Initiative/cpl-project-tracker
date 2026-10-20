@@ -11173,8 +11173,8 @@
       "cte": false,
       "_authority_recode_from": "ARB M10AA"
     },
-    "ARTS M12GS": {
-      "course_id": "ARTS M12GS",
+    "ARTS M12GU": {
+      "course_id": "ARTS M12GU",
       "common_title": "Alternative Firing Techniques",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11189,8 +11189,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AA"
     },
-    "ARTS M12GT": {
-      "course_id": "ARTS M12GT",
+    "ARTS M12GV": {
+      "course_id": "ARTS M12GV",
       "common_title": "Alternative Throwing Techniques",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11205,8 +11205,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AB"
     },
-    "ARTS M12GU": {
-      "course_id": "ARTS M12GU",
+    "ARTS M12GW": {
+      "course_id": "ARTS M12GW",
       "common_title": "Ceramic Handbuilding 1",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11221,8 +11221,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AC"
     },
-    "ARTS M12GV": {
-      "course_id": "ARTS M12GV",
+    "ARTS M12GX": {
+      "course_id": "ARTS M12GX",
       "common_title": "Ceramic Handbuilding 3",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11237,8 +11237,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AD"
     },
-    "ARTS M12GW": {
-      "course_id": "ARTS M12GW",
+    "ARTS M12GY": {
+      "course_id": "ARTS M12GY",
       "common_title": "Ceramic Handbuilding 4",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11253,8 +11253,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AE"
     },
-    "ARTS M12GX": {
-      "course_id": "ARTS M12GX",
+    "ARTS M12GZ": {
+      "course_id": "ARTS M12GZ",
       "common_title": "Ceramic Surface Design and Techniques",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11269,8 +11269,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AF"
     },
-    "ARTS M12GY": {
-      "course_id": "ARTS M12GY",
+    "ARTS M12HA": {
+      "course_id": "ARTS M12HA",
       "common_title": "Ceramic Wheel Throwing 1",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11285,8 +11285,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AG"
     },
-    "ARTS M12GZ": {
-      "course_id": "ARTS M12GZ",
+    "ARTS M12HB": {
+      "course_id": "ARTS M12HB",
       "common_title": "Ceramic Wheel Throwing 2",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11301,8 +11301,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AH"
     },
-    "ARTS M12HA": {
-      "course_id": "ARTS M12HA",
+    "ARTS M12HC": {
+      "course_id": "ARTS M12HC",
       "common_title": "Ceramic Wheel Throwing 3",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11317,8 +11317,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AI"
     },
-    "ARTS M12HB": {
-      "course_id": "ARTS M12HB",
+    "ARTS M12HD": {
+      "course_id": "ARTS M12HD",
       "common_title": "Ceramic Wheel Throwing 4",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11333,8 +11333,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AJ"
     },
-    "ARTS M12HC": {
-      "course_id": "ARTS M12HC",
+    "ARTS M12HE": {
+      "course_id": "ARTS M12HE",
       "common_title": "Clay and Glass",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11349,8 +11349,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AK"
     },
-    "ARTS M12HD": {
-      "course_id": "ARTS M12HD",
+    "ARTS M12HF": {
+      "course_id": "ARTS M12HF",
       "common_title": "Introduction to Glaze Experimentation",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11365,8 +11365,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AL"
     },
-    "ARTS M12HE": {
-      "course_id": "ARTS M12HE",
+    "ARTS M12HG": {
+      "course_id": "ARTS M12HG",
       "common_title": "Kiln-Formed Glass 1",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11381,8 +11381,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AM"
     },
-    "ARTS M12HF": {
-      "course_id": "ARTS M12HF",
+    "ARTS M12HH": {
+      "course_id": "ARTS M12HH",
       "common_title": "Kiln-Formed Glass 2",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11397,8 +11397,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AN"
     },
-    "ARTS M12HG": {
-      "course_id": "ARTS M12HG",
+    "ARTS M12HI": {
+      "course_id": "ARTS M12HI",
       "common_title": "Kiln-Formed Glass 3",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -11413,8 +11413,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARCE M10AO"
     },
-    "ARTS M12HH": {
-      "course_id": "ARTS M12HH",
+    "ARTS M12HJ": {
+      "course_id": "ARTS M12HJ",
       "common_title": "Kiln-Formed Glass 4",
       "subject": "ARCE",
       "subject_4letter": "ARTS",
@@ -12329,8 +12329,8 @@
       "_remint_from": "M-ID ARTDM 140",
       "cte": true
     },
-    "ARTS M12HI": {
-      "course_id": "ARTS M12HI",
+    "ARTS M12HK": {
+      "course_id": "ARTS M12HK",
       "common_title": "Art Entrepreneurship",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12345,8 +12345,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AA"
     },
-    "ARTS M12HJ": {
-      "course_id": "ARTS M12HJ",
+    "ARTS M12HL": {
+      "course_id": "ARTS M12HL",
       "common_title": "Art of the United States: Colonial to Modern Period",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12361,8 +12361,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTF M10AB"
     },
-    "ARTS M12HK": {
-      "course_id": "ARTS M12HK",
+    "ARTS M12HM": {
+      "course_id": "ARTS M12HM",
       "common_title": "Ceramic Production 1",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12377,8 +12377,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AD"
     },
-    "ARTS M12HL": {
-      "course_id": "ARTS M12HL",
+    "ARTS M12HN": {
+      "course_id": "ARTS M12HN",
       "common_title": "Ceramic Production 2",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12393,8 +12393,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AE"
     },
-    "ARTS M12HM": {
-      "course_id": "ARTS M12HM",
+    "ARTS M12HO": {
+      "course_id": "ARTS M12HO",
       "common_title": "Industrial and Architectural Ceramic Design 1",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12409,8 +12409,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AI"
     },
-    "ARTS M12HN": {
-      "course_id": "ARTS M12HN",
+    "ARTS M12HP": {
+      "course_id": "ARTS M12HP",
       "common_title": "Industrial and Architectural Ceramic Design 2",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12425,8 +12425,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AJ"
     },
-    "ARTS M12HO": {
-      "course_id": "ARTS M12HO",
+    "ARTS M12HQ": {
+      "course_id": "ARTS M12HQ",
       "common_title": "Introduction to Digital Drawing and Painting",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12441,8 +12441,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTF M10AK"
     },
-    "ARTS M12HP": {
-      "course_id": "ARTS M12HP",
+    "ARTS M12HR": {
+      "course_id": "ARTS M12HR",
       "common_title": "Museum Studies Lab",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12457,8 +12457,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTF M10AR"
     },
-    "ARTS M12HQ": {
-      "course_id": "ARTS M12HQ",
+    "ARTS M12HS": {
+      "course_id": "ARTS M12HS",
       "common_title": "Native American Art",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12473,8 +12473,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTF M10AS"
     },
-    "ARTS M12HR": {
-      "course_id": "ARTS M12HR",
+    "ARTS M12HT": {
+      "course_id": "ARTS M12HT",
       "common_title": "Public Art 1",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12489,8 +12489,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AU"
     },
-    "ARTS M12HS": {
-      "course_id": "ARTS M12HS",
+    "ARTS M12HU": {
+      "course_id": "ARTS M12HU",
       "common_title": "Public Art 2",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12505,8 +12505,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTF M10AV"
     },
-    "ARTS M12HT": {
-      "course_id": "ARTS M12HT",
+    "ARTS M12HV": {
+      "course_id": "ARTS M12HV",
       "common_title": "Sustainable Art and Design",
       "subject": "ARTF",
       "subject_4letter": "ARTS",
@@ -12755,8 +12755,8 @@
       "_remint_from": "M-ID ARTNM 120",
       "cte": true
     },
-    "PHOT M10RG": {
-      "course_id": "PHOT M10RG",
+    "PHOT M10RK": {
+      "course_id": "PHOT M10RK",
       "common_title": "Advanced Photogaphy",
       "subject": "ARTP",
       "subject_4letter": "PHOT",
@@ -12771,8 +12771,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTP M10AA"
     },
-    "PHOT M10RH": {
-      "course_id": "PHOT M10RH",
+    "PHOT M10RL": {
+      "course_id": "PHOT M10RL",
       "common_title": "Alternative Process Photo",
       "subject": "ARTPH",
       "subject_4letter": "PHOT",
@@ -12787,8 +12787,8 @@
       "cte": true,
       "_blank_stray_remint_from": "ARTP M10AB"
     },
-    "PHOT M10RI": {
-      "course_id": "PHOT M10RI",
+    "PHOT M10RM": {
+      "course_id": "PHOT M10RM",
       "common_title": "Portfolio / Laboratory Practices",
       "subject": "ARTP",
       "subject_4letter": "PHOT",
@@ -12803,8 +12803,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTP M10AN"
     },
-    "PHOT M10RJ": {
-      "course_id": "PHOT M10RJ",
+    "PHOT M10RN": {
+      "course_id": "PHOT M10RN",
       "common_title": "Trends in Software and Social Media for Photographers",
       "subject": "ARTPH",
       "subject_4letter": "PHOT",
@@ -29151,8 +29151,8 @@
       "cte": false,
       "_subj4_fold_from": "CSKL M90AK"
     },
-    "COSM M10LM": {
-      "course_id": "COSM M10LM",
+    "COSM M10MB": {
+      "course_id": "COSM M10MB",
       "common_title": "Advanced Hair Coloring and Styling",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29167,8 +29167,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AC"
     },
-    "COSM M10LN": {
-      "course_id": "COSM M10LN",
+    "COSM M10MC": {
+      "course_id": "COSM M10MC",
       "common_title": "Advanced Makeup Techniques",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29183,8 +29183,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AD"
     },
-    "COSM M10LO": {
-      "course_id": "COSM M10LO",
+    "COSM M10MD": {
+      "course_id": "COSM M10MD",
       "common_title": "Contemporary Styling Techniques",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29199,8 +29199,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AE"
     },
-    "COSM M10LP": {
-      "course_id": "COSM M10LP",
+    "COSM M10ME": {
+      "course_id": "COSM M10ME",
       "common_title": "Hair Sculpting Techniques for Women",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29215,8 +29215,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AK"
     },
-    "COSM M10LQ": {
-      "course_id": "COSM M10LQ",
+    "COSM M10MF": {
+      "course_id": "COSM M10MF",
       "common_title": "Intermediate Hair Coloring and Styling",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29231,8 +29231,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AN"
     },
-    "COSM M10LR": {
-      "course_id": "COSM M10LR",
+    "COSM M10MG": {
+      "course_id": "COSM M10MG",
       "common_title": "Introduction to Hair Coloring",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29247,8 +29247,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AV"
     },
-    "COSM M10LS": {
-      "course_id": "COSM M10LS",
+    "COSM M10MH": {
+      "course_id": "COSM M10MH",
       "common_title": "Junior Salon 2",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29263,8 +29263,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AW"
     },
-    "COSM M10LT": {
-      "course_id": "COSM M10LT",
+    "COSM M10MI": {
+      "course_id": "COSM M10MI",
       "common_title": "Long Hair and Period Hair Design and Hair Piece Construction",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29279,8 +29279,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AX"
     },
-    "COSM M10LU": {
-      "course_id": "COSM M10LU",
+    "COSM M10MJ": {
+      "course_id": "COSM M10MJ",
       "common_title": "Multi-Texture Design (Level 1-2)",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29295,8 +29295,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AY"
     },
-    "COSM M10LV": {
-      "course_id": "COSM M10LV",
+    "COSM M10MK": {
+      "course_id": "COSM M10MK",
       "common_title": "Senior Salon 1",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29311,8 +29311,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10AZ"
     },
-    "COSM M10LW": {
-      "course_id": "COSM M10LW",
+    "COSM M10ML": {
+      "course_id": "COSM M10ML",
       "common_title": "Senior Salon 2",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29327,8 +29327,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10BA"
     },
-    "COSM M10LX": {
-      "course_id": "COSM M10LX",
+    "COSM M10MM": {
+      "course_id": "COSM M10MM",
       "common_title": "Skin Therapy 1",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29343,8 +29343,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10BB"
     },
-    "COSM M10LY": {
-      "course_id": "COSM M10LY",
+    "COSM M10MN": {
+      "course_id": "COSM M10MN",
       "common_title": "Skin Therapy 2",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29359,8 +29359,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10BC"
     },
-    "COSM M10LZ": {
-      "course_id": "COSM M10LZ",
+    "COSM M10MO": {
+      "course_id": "COSM M10MO",
       "common_title": "Skin Therapy 3",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29375,8 +29375,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10BD"
     },
-    "COSM M10MA": {
-      "course_id": "COSM M10MA",
+    "COSM M10MP": {
+      "course_id": "COSM M10MP",
       "common_title": "Skin Therapy 4",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -29391,8 +29391,8 @@
       "cte": true,
       "_blank_stray_remint_from": "CSMT M10BE"
     },
-    "COSM M10MB": {
-      "course_id": "COSM M10MB",
+    "COSM M10MQ": {
+      "course_id": "COSM M10MQ",
       "common_title": "Tinting 1",
       "subject": "CSMTLGY",
       "subject_4letter": "COSM",
@@ -45911,8 +45911,8 @@
       "_remint_from": "M-ID FL 100",
       "cte": false
     },
-    "AVIA M10PV": {
-      "course_id": "AVIA M10PV",
+    "AVIA M10QF": {
+      "course_id": "AVIA M10QF",
       "common_title": "Advanced Navigation",
       "subject": "FLGHT",
       "subject_4letter": "AVIA",
@@ -45927,8 +45927,8 @@
       "cte": null,
       "_blank_stray_remint_from": "FLGH M10AB"
     },
-    "AVIA M10PW": {
-      "course_id": "AVIA M10PW",
+    "AVIA M10QG": {
+      "course_id": "AVIA M10QG",
       "common_title": "Commercial Pilot 1 Flight Lab",
       "subject": "FLGHT",
       "subject_4letter": "AVIA",
@@ -45943,8 +45943,8 @@
       "cte": null,
       "_blank_stray_remint_from": "FLGH M10AE"
     },
-    "AVIA M10PX": {
-      "course_id": "AVIA M10PX",
+    "AVIA M10QH": {
+      "course_id": "AVIA M10QH",
       "common_title": "Commercial Pilot 2 Flight Lab",
       "subject": "FLGHT",
       "subject_4letter": "AVIA",
@@ -45959,8 +45959,8 @@
       "cte": null,
       "_blank_stray_remint_from": "FLGH M10AF"
     },
-    "AVIA M10PY": {
-      "course_id": "AVIA M10PY",
+    "AVIA M10QI": {
+      "course_id": "AVIA M10QI",
       "common_title": "Human Factors & Crew Resource Management",
       "subject": "FLGHT",
       "subject_4letter": "AVIA",
@@ -65982,8 +65982,8 @@
       "cte": false,
       "_subj4_fold_from": "LING M10AE"
     },
-    "FLNG M10AF": {
-      "course_id": "FLNG M10AF",
+    "FLNG M11LR": {
+      "course_id": "FLNG M11LR",
       "common_title": "Honors Linguistics 1",
       "subject": "LING",
       "subject_4letter": "FLNG",

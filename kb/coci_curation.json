@@ -3393,7 +3393,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "APT M10AL": {
-      "merge_into": "AVIA M1022",
+      "merge_into": "AVIA M1094",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
@@ -3587,42 +3587,42 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M1001": {
+    "ARTS M1663": {
       "unified_title": "Ceramic-Intermediate Handbuilding",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GS": {
+    "ARTS M12GU": {
       "merge_into": "ARTS M1568",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GU": {
+    "ARTS M12GW": {
       "merge_into": "ARTS M1229",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GV": {
+    "ARTS M12GX": {
       "merge_into": "ARTS M1231",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GW": {
+    "ARTS M12GY": {
       "merge_into": "ARTS M1551",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GX": {
+    "ARTS M12GZ": {
       "merge_into": "ARTS M1597",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GY": {
+    "ARTS M12HA": {
       "merge_into": "ARTS M1662",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12GZ": {
+    "ARTS M12HB": {
       "merge_into": "ARTS M1459",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -4917,22 +4917,22 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M1073": {
+    "ARTS M1665": {
       "unified_title": "Open Studio: Three-Dimensional Media Lab/Jewelry and Metalwork 3",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M1102": {
+    "ARTS M1666": {
       "unified_title": "Introduction to African Art",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
     },
-    "ARTS M12HJ": {
+    "ARTS M12HL": {
       "merge_into": "ARTS M1576",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTS M12HO": {
+    "ARTS M12HQ": {
       "merge_into": "ARTS M1633",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -4963,7 +4963,7 @@
       "reviewed_at": "2026-06-12T21:43:21.598674+00:00"
     },
     "ARTH M1003": {
-      "merge_into": "ARTS M1102",
+      "merge_into": "ARTS M1666",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
     },
@@ -5084,7 +5084,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTH M10AU": {
-      "merge_into": "ARTS M1102",
+      "merge_into": "ARTS M1666",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
@@ -5422,12 +5422,12 @@
       "reviewed_at": "2026-06-12T21:43:21.598674+00:00"
     },
     "ARTS M1070": {
-      "merge_into": "ARTS M1102",
+      "merge_into": "ARTS M1666",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
     },
     "ARTS M1071": {
-      "merge_into": "ARTS M1102",
+      "merge_into": "ARTS M1666",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:40:12.723047+00:00"
     },
@@ -7064,7 +7064,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M11FI": {
-      "merge_into": "ARTS M1001",
+      "merge_into": "ARTS M1663",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -7699,12 +7699,12 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M11RG": {
-      "merge_into": "ARTS M1073",
+      "merge_into": "ARTS M1665",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M11RJ": {
-      "merge_into": "ARTS M1073",
+      "merge_into": "ARTS M1665",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -8350,7 +8350,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS M1230": {
-      "merge_into": "ARTS M1001",
+      "merge_into": "ARTS M1663",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -43981,52 +43981,52 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "COSM M10LM": {
+    "COSM M10MB": {
       "merge_into": "COSM M1085",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LN": {
+    "COSM M10MC": {
       "merge_into": "COSM M1088",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LO": {
+    "COSM M10MD": {
       "merge_into": "COSM M1103",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LQ": {
+    "COSM M10MF": {
       "merge_into": "COSM M1101",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LR": {
+    "COSM M10MG": {
       "merge_into": "COSM M1102",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LU": {
+    "COSM M10MJ": {
       "merge_into": "COSM M1069",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LX": {
+    "COSM M10MM": {
       "merge_into": "COSM M1031",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LY": {
+    "COSM M10MN": {
       "merge_into": "COSM M1076",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10LZ": {
+    "COSM M10MO": {
       "merge_into": "COSM M1084",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "COSM M10MA": {
+    "COSM M10MP": {
       "merge_into": "COSM M1078",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -82934,18 +82934,18 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AVIA M1022": {
+    "AVIA M1094": {
       "unified_title": "Human Factors and Crew Resource Management",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "AVIA M10PV": {
+    "AVIA M10QF": {
       "merge_into": "AVIA M1061",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "AVIA M10PY": {
-      "merge_into": "AVIA M1022",
+    "AVIA M10QI": {
+      "merge_into": "AVIA M1094",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },

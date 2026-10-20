@@ -4030,8 +4030,8 @@
       "cte": true,
       "_subj4_fold_from": "APTE M1004"
     },
-    "ARTS M1001": {
-      "course_id": "ARTS M1001",
+    "ARTS M1663": {
+      "course_id": "ARTS M1663",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4772,8 +4772,8 @@
       "cte": true,
       "_prefix_fold_from": "ARTD M1009"
     },
-    "ARTS M1065": {
-      "course_id": "ARTS M1065",
+    "ARTS M1664": {
+      "course_id": "ARTS M1664",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4807,8 +4807,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARTF M1001"
     },
-    "ARTS M1073": {
-      "course_id": "ARTS M1073",
+    "ARTS M1665": {
+      "course_id": "ARTS M1665",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4842,8 +4842,8 @@
       "cte": null,
       "_blank_stray_remint_from": "ARTF M1002"
     },
-    "ARTS M1102": {
-      "course_id": "ARTS M1102",
+    "ARTS M1666": {
+      "course_id": "ARTS M1666",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -4877,8 +4877,8 @@
       "cte": false,
       "_blank_stray_remint_from": "ARTF M1003"
     },
-    "ARTS M1103": {
-      "course_id": "ARTS M1103",
+    "ARTS M1667": {
+      "course_id": "ARTS M1667",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
@@ -724021,8 +724021,8 @@
         "WELD M10YE"
       ]
     },
-    "AVIA M1022": {
-      "course_id": "AVIA M1022",
+    "AVIA M1094": {
+      "course_id": "AVIA M1094",
       "id_system": "M-ID",
       "ccn_id": null,
       "c_id": null,
