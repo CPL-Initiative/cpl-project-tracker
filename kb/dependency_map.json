@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 699,
+  "file_datasets": 698,
   "external_services": 184,
   "consumers": 460,
   "workflows": 58,
@@ -9005,7 +9005,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 92
+     "line": 110
     },
     {
      "id": "script:kb/_merge_credentials.py",
@@ -12771,19 +12771,6 @@
      "direction": "read",
      "how": "literal",
      "line": 13
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/merge_candidates/2026-09-05/queue.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_merge_candidate_queue.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 216
     }
    ],
    "served": true,
@@ -19826,7 +19813,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 86
+     "line": 104
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -20190,7 +20177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 106
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
