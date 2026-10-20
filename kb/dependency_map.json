@@ -24686,6 +24686,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
+    "tests/mq_title5_rename_test.py",
     "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/college_page_read_test.py",

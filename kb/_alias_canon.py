@@ -33,6 +33,10 @@ def alternate_to_canonical() -> dict:
     for canon, alts in (doc.get("aliases") or {}).items():
         for a in alts or []:
             rev[a] = canon
+    # An old spelling of a renamed MQ discipline resolves too (the nine Title 5-numbered and
+    # cut-short names, Sam's Sheet 99 card 6); the CSR's also: chips read `aliases` only.
+    for old, new in (doc.get("renamed") or {}).items():
+        rev[old] = new
     return rev
 
 

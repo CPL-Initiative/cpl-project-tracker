@@ -472,7 +472,7 @@
     52
    ]
   },
-  "Community College Counselor of Students with Disabilities 53414": {
+  "Community College Counselor of Students with Disabilities": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
    "special_ccr": "CCR 53414(a)",
@@ -481,8 +481,7 @@
    ],
    "printed_pages": [
     25
-   ],
-   "index_name": "Community College Counselor of Students with Disabilities"
+   ]
   },
   "Computer Information Systems": {
    "mq_list": "not_masters",
@@ -595,7 +594,7 @@
     27
    ]
   },
-  "Deaf and Hearing Impaired: Disabled Students Programs 53414": {
+  "Deaf and Hearing Impaired: Disabled Students Programs and Services": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
    "special_ccr": "CCR 53414(d)(1)(2)(C)",
@@ -604,8 +603,7 @@
    ],
    "printed_pages": [
     28
-   ],
-   "index_name": "Deaf and Hearing Impaired: Disabled Students Programs and Services"
+   ]
   },
   "Dental Technology": {
    "mq_list": "not_masters",
@@ -616,7 +614,7 @@
     46
    ]
   },
-  "Developmental Disabilities: Disabled Students Programs and Services 53414": {
+  "Developmental Disabilities: Disabled Students Programs and Services": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
    "special_ccr": "CCR 53414(d)(1)(2)(B)",
@@ -625,8 +623,7 @@
    ],
    "printed_pages": [
     28
-   ],
-   "index_name": "Developmental Disabilities: Disabled Students Programs and Services"
+   ]
   },
   "Diagnostic Medical Technology": {
    "mq_list": "not_masters",
@@ -673,7 +670,7 @@
     47
    ]
   },
-  "Disabled Student Programs and": {
+  "Disabled Student Programs and Services (DSPS)": {
    "mq_list": "both_lists",
    "mq_list_label": "On BOTH lists",
    "special_ccr": "CCR 53414(d)(1)(2)(e)(1-3)(f)",
@@ -684,8 +681,7 @@
     28,
     47,
     62
-   ],
-   "index_name": "Disabled Student Programs and Services (DSPS)"
+   ]
   },
   "Drafting/CADD": {
    "mq_list": "not_masters",
@@ -852,7 +848,7 @@
     31
    ]
   },
-  "English as a Second Language Noncredit 53412": {
+  "English as a Second Language (ESL): Noncredit": {
    "mq_list": "not_masters",
    "mq_list_label": "Bachelor's/Associate + professional experience list",
    "special_ccr": "CCR 53412(e)",
@@ -861,8 +857,7 @@
    ],
    "printed_pages": [
     55
-   ],
-   "index_name": "English as a Second Language (ESL): Noncredit"
+   ]
   },
   "Environmental Technologies": {
    "mq_list": "not_masters",
@@ -1212,7 +1207,7 @@
     34
    ]
   },
-  "Interdisciplinary-Basic Skills: Noncredit 53412": {
+  "Interdisciplinary-Basic Skills: Noncredit": {
    "mq_list": "not_masters",
    "mq_list_label": "Bachelor's/Associate + professional experience list",
    "special_ccr": "CCR 53412(a)",
@@ -1221,8 +1216,7 @@
    ],
    "printed_pages": [
     55
-   ],
-   "index_name": "Interdisciplinary-Basic Skills: Noncredit"
+   ]
   },
   "Interior Design": {
    "mq_list": "not_masters",
@@ -1299,7 +1293,7 @@
    ],
    "index_name": "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators"
   },
-  "Learning Disabilities: Disabled Student Programs and Services 53414": {
+  "Learning Disabilities: Disabled Student Programs and Services": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
    "special_ccr": "CCR 53414(d)(1)(2)",
@@ -1308,8 +1302,7 @@
    ],
    "printed_pages": [
     35
-   ],
-   "index_name": "Learning Disabilities: Disabled Student Programs and Services"
+   ]
   },
   "Learning Disabilities: Specialist": {
    "mq_list": "masters",
@@ -1727,7 +1720,7 @@
     39
    ]
   },
-  "Physical Disabilities: Disabled Student Programs and Services 53414": {
+  "Physical Disabilities: Disabled Student Programs and Services": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
    "special_ccr": "CCR 53414(d)",
@@ -1736,8 +1729,7 @@
    ],
    "printed_pages": [
     39
-   ],
-   "index_name": "Physical Disabilities: Disabled Student Programs and Services"
+   ]
   },
   "Physical Education": {
    "mq_list": "masters",
@@ -2169,7 +2161,7 @@
     43
    ]
   },
-  "Speech Language Pathology: Disabled Student Programs and 53414 Services": {
+  "Speech Language Pathology: Disabled Student Programs and Services": {
    "mq_list": "masters",
    "mq_list_label": "Master's degree list",
    "special_ccr": "CCR 53414(c)",
@@ -2178,8 +2170,7 @@
    ],
    "printed_pages": [
     43
-   ],
-   "index_name": "Speech Language Pathology: Disabled Student Programs and Services"
+   ]
   },
   "Stagecraft": {
    "mq_list": "not_masters",
