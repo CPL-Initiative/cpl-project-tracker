@@ -2753,7 +2753,8 @@
       var st = it.pending ? "pending" : it.met ? "met" : "not";
       h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond))
         + (kinds.indexOf(it.kind) >= 0 ? ' <button type="button" class="cb-howto" data-howto="' + esc(it.kind)
-          + '" aria-haspopup="dialog">How to meet it</button>' : "") + "</div></li>";
+          + '" aria-haspopup="dialog">How to meet it</button>' : "")
+        + (it.counts ? '<div class="cb-d">' + esc(it.counts) + "</div>" : "") + "</div></li>";
     });
     h += "</ol>";
     if (cond.pending) return h + '<div class="cb-lab cb-flagp">The minimum conditions are still loading.</div>';
@@ -2852,6 +2853,8 @@
               + (e.frac.available ? ", and " + e.frac.available + " more " + (e.frac.available === 1 ? "is" : "are") + " available to adopt" : "")
               + ".</div>";
           }
+          // The JST figures beside the outcome (Sam, 2026-10-20).
+          if (e.o.counts) fundBody += '<div class="cb-num">' + esc(e.o.counts) + "</div>";
           fundBody += '<div class="cb-d">' + esc(e.o.why) + "</div>";
           if (e.next) fundBody += '<div class="cb-d">' + esc(e.next) + "</div>";
           fundBody += "</div></li>";

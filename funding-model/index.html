@@ -474,12 +474,20 @@ section[hidden], #contents[hidden]{display:none}
       <li><a href="#allocation">How an allocation is computed</a></li>
       <li><a href="#requirements">Eligibility requirements</a></li>
       <li><a href="#earning">How outcomes count toward funding</a></li>
-      <li><a href="#choices">What is a choice, and what is a given</a></li>
+      <li><a href="#choices">Funding Model Numbers</a></li>
       <li><a href="#questions">Frequently asked questions</a></li>
       <!-- The introduction video, the list's last item (Sam, 2026-10-09). The
            list is rebuilt from the sections after every paint, and this item
            rides the rebuild to the end (contentsFromSections). -->
-      <li class="toc-video"><a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a></li>
+      <li class="toc-video toc-tail"><a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a></li>
+      <!-- Help, after the video (Sam, 2026-10-20): the MAP team's office hours,
+           the chosen college's CPL landing page (its hover recommends office
+           hours for configuring one), and the training video on configuring a
+           landing page. syncLanding() names the page for the chosen college. -->
+      <li class="toc-tail"><a href="https://map.rccd.edu/get-involved/" target="_blank" rel="noopener">MAP team office hours</a></li>
+      <li class="toc-tail"><a id="landing-link" href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener"
+        title="For help configuring your landing page, the MAP team recommends its office hours.">Find your college&rsquo;s CPL landing page</a></li>
+      <li class="toc-tail"><a href="https://www.youtube.com/watch?v=xW0I6iFgRuk" target="_blank" rel="noopener">Watch the training video on configuring a landing page</a></li>
     </ul>
     <p class="toc-note" id="pdf-note">PDF prints the whole page in landscape, your college first; it asks you to
       choose a college when none is chosen. Choose &ldquo;Save as PDF&rdquo; in the print dialog. The file holds the
@@ -859,7 +867,7 @@ section[hidden], #contents[hidden]{display:none}
   <div class="wrap">
     <details class="fold">
     <summary>
-      <h2>What is a choice, and what is a given</h2>
+      <h2>Funding Model Numbers</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
@@ -1657,15 +1665,28 @@ window.CPL_SIERRA_SUGGESTED = [
       li.appendChild(a);
       frag.appendChild(li);
     });
-    // The introduction video stays the list's last item (Sam, 2026-10-09): the
-    // same element, so the href the painter set for this scenario rides along.
-    var video = document.getElementById("video-link");
-    var videoItem = video && video.closest("li");
+    // The introduction video, then the help items, stay the list's last items
+    // (Sam, 2026-10-09; help 2026-10-20): the same elements, so the href the
+    // painter set for this scenario rides along.
+    var tail = Array.prototype.slice.call(list.querySelectorAll("li.toc-tail"));
     list.textContent = "";
     list.appendChild(frag);
-    if (videoItem) list.appendChild(videoItem);
+    tail.forEach(function (li) { list.appendChild(li); });
+    syncLanding();
     syncCollapseAll();
   }
+  // The chosen college's CPL landing page; the directory of landing pages
+  // while none is chosen, or for a district or a college MAP holds no page for.
+  function syncLanding() {
+    var a = document.getElementById("landing-link");
+    var T = window.CPL_FUNDING_TAB;
+    if (!a) return;
+    var lp = T && typeof T.landingPage === "function" ? T.landingPage() : null;
+    var dir = "https://map.rccd.edu/cpllandingpages/";
+    a.href = lp && lp.url ? lp.url : dir;
+    a.textContent = lp && lp.url ? lp.name + " CPL landing page" : "Find your college\u2019s CPL landing page";
+  }
+  document.addEventListener("cplfund:onechoice", syncLanding);
   window.CPL_CONTENTS = { rebuild: contentsFromSections, open: openSection, sync: syncCollapseAll };
   var toc = document.getElementById("contents");
   if (toc) toc.addEventListener("click", function (e) {
