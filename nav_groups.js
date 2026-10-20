@@ -60,7 +60,7 @@
      * as kind='tab' rows, because placement is the only thing the overlay keeps
      * about either and placement works identically for both. What an item IS
      * stays in the markup, where it always was. */
-    { id: 'share', label: 'Share', tabs: ['fact-sheet', 'sierra'] },
+    { id: 'share', label: 'Share', tabs: ['fact-sheet', 'sierra', 'public-library'] },
   ];
   // Groups open by default on a first visit (the daily-driver lane). `share`
   // is here because it opened by default when it was synthesised; promoting it
