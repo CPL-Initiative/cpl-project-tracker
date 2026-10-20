@@ -1,0 +1,71 @@
+{
+  "_status": "FL strays re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_at": "2026-10-20",
+  "_scope": [
+    "fl-strays-s435"
+  ],
+  "_count": 12,
+  "_ruling": "Proposed on Open Asks Sheet 106 (S435, 2026-10-20): the twelve Foreign Languages identities on stray codes re-key to their language's code under the umbrella (docs/fl_subj4_remint_scope.md), the discipline unchanged",
+  "aliases": {
+    "ARAM M10AA": {
+      "new_id": "FLAM M10AA",
+      "route": "FLAM",
+      "discipline": "Foreign Languages"
+    },
+    "ARAM M10AB": {
+      "new_id": "FLAM M10AB",
+      "route": "FLAM",
+      "discipline": "Foreign Languages"
+    },
+    "ARAM M10AC": {
+      "new_id": "FLAM M10AC",
+      "route": "FLAM",
+      "discipline": "Foreign Languages"
+    },
+    "FILI M1001": {
+      "new_id": "FLTA M1006",
+      "route": "FLTA",
+      "discipline": "Foreign Languages"
+    },
+    "GREE M1001": {
+      "new_id": "FLGR M1001",
+      "route": "FLGR",
+      "discipline": "Foreign Languages"
+    },
+    "HIER M10AA": {
+      "new_id": "FLEG M10AA",
+      "route": "FLEG",
+      "discipline": "Foreign Languages"
+    },
+    "HUPA M10AA": {
+      "new_id": "FLHU M10AA",
+      "route": "FLHU",
+      "discipline": "Foreign Languages"
+    },
+    "HUPA M10AB": {
+      "new_id": "FLHU M10AB",
+      "route": "FLHU",
+      "discipline": "Foreign Languages"
+    },
+    "JAPA M1001": {
+      "new_id": "JAPN M1041",
+      "route": "JAPN",
+      "discipline": "Foreign Languages"
+    },
+    "KHME M1001": {
+      "new_id": "FLKH M1001",
+      "route": "FLKH",
+      "discipline": "Foreign Languages"
+    },
+    "LING M10AF": {
+      "new_id": "FLNG M10AF",
+      "route": "FLNG",
+      "discipline": "Foreign Languages"
+    },
+    "TURK M10AA": {
+      "new_id": "FLTU M10AA",
+      "route": "FLTU",
+      "discipline": "Foreign Languages"
+    }
+  }
+}

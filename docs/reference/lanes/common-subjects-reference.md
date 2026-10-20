@@ -133,6 +133,23 @@ proceed on the recommendation and the session's permission check held the apply.
 a fresh live read, `--apply`, ALIAS_MAPS, the post-apply chain, `--rekey-skyview`, merge, `supabase-rekey.yml`.
 Store empty at 07:16Z 2026-10-20 (S433).
 
+**NEEDS SAM 10 (Open Asks Sheet 106, card 2): the twelve Foreign Languages identities on stray codes.** Nine of
+the 110 strays sit on identities already filed under Foreign Languages, so only the code is off. Proposed: each to its
+language's code under the umbrella (JAPA to JAPN, GREE to FLGR, FILI to FLTA; five new codes FLAM, FLHU, FLEG, FLKH,
+FLTU; Honors Linguistics to the residual FLNG). Dry run committed and passing: `python3 kb/_fl_stray_remint.py`,
+`kb/fl_stray_remint_out/2026-10-20/` (S435). On *rekey-twelve*: the dry run again, a fresh live read, `--apply`
+(which adds the new codes to the umbrella's `umbrella_codes`), `kb/foreign_language_subj4.json`, ALIAS_MAPS, the
+post-apply chain, `--rekey-skyview`, merge, `supabase-rekey.yml`, the read-back. On *fold-new*: re-point the eight
+new-language pins to FLNG and re-run the dry run first.
+
+**NEEDS SAM 11 (Open Asks Sheet 106, card 3): the eight checkable blank strays.** `python3 kb/_csr_stray_triage.py`
+(`kb/csr_out/stray_triage.md`, S435) reads the colleges' own signal for the 101 strays with no discipline: the
+discipline the same college's other identities on the same local subject carry. 15 codes pass the gate (85% of at
+least 10 votes); on 8 the titles agree (ARCE, ARTF, NCAR to Art; CSMT Cosmetology; BRDC Broadcasting Technology;
+FLGH Aviation; ARTP Photography; WELL Health; 79 identities). Seven are set aside (SGNG, CMPE, RTVF disagree with
+their titles; EPHO, BUST, GLOB, VFPA too thin). On *file-eight*: a pinned dry run in the shape of
+`kb/_forestry_wine_remint.py` (discipline follows the code), then the same window as cards 1 and 2.
+
 **The two ENVR merge candidates wait for a faculty reviewer (S433, #2278).** `kb/_merge_candidate_queue.py` carries
 them as `surfaced` pairs (`kb/merge_candidates/2026-10-20-forestry/report.md`), survivors proposed by the rule: ENVR
 M1009 *Dendrology* over M1064 (4 colleges to 3), ENVR M1025 *Silviculture* over M10OP (2 to 1), no articulations on
@@ -146,5 +163,6 @@ from run 39374671352), prints `COMPARE` lines (same, changed, unread, no_baselin
 answers a runner 403; www.data-c-idsystem.org does not resolve). Next for it: a C-ID source a runner can reach, then the
 `authority_tables` baseline. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
 
-**Then:** the 110 strays through the discipline-blank worklist and one re-key window; the Commons' remaining Progress
+**Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
+the discipline-blank worklist for a curator; the Commons' remaining Progress
 views (Exhibit, Course, CR) from the same module.

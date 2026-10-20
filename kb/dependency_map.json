@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 699,
+  "file_datasets": 701,
   "external_services": 184,
-  "consumers": 460,
+  "consumers": 462,
   "workflows": 58,
   "data_js_files": 70,
   "tabs": 39
@@ -9621,6 +9621,13 @@
      "line": 99
     },
     {
+     "id": "script:kb/_csr_stray_triage.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -10060,6 +10067,13 @@
      "line": 91
     },
     {
+     "id": "script:kb/_csr_stray_triage.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
+    },
+    {
      "id": "script:kb/_desc_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -10378,6 +10392,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_csr_stray_triage.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11566,6 +11587,32 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/csr_out/stray_triage.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_csr_stray_triage.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 88
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/csr_out/stray_triage.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_csr_stray_triage.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 105
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/csr_procedures.json": {
    "consumers": [
     {
@@ -11829,6 +11876,20 @@
      "direction": "read",
      "how": "literal",
      "line": 262
+    },
+    {
+     "id": "script:kb/_fl_stray_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 181
+    },
+    {
+     "id": "script:kb/_fl_stray_remint.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 232
     },
     {
      "id": "script:kb/_jev_next_steps.py",
