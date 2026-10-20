@@ -1,0 +1,11 @@
+# Each folder's owner reviews changes to it; Malone reviews everything, so a drop always has a reviewer
+# from outside the organization that filed it. Replace the three handles when the repository is created
+# (the paste in the CPL Initiative's tracker, partners/ctdl-exchange/README.md, does this).
+*                             @MALONE_HANDLE
+/inbound/credential-engine/   @CE_CONTACT_HANDLE @MALONE_HANDLE
+/inbound/wested/              @WESTED_CONTACT_HANDLE @MALONE_HANDLE
+/outbound/cobi/               @MALONE_HANDLE
+/contract/                    @MALONE_HANDLE
+/decisions/                   @MALONE_HANDLE
+/tools/                       @MALONE_HANDLE
+/.github/                     @MALONE_HANDLE

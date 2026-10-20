@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1211,
-    "bytes": 12441468,
+    "bytes": 12446481,
     "over_budget": 8,
     "handoff_max": 430,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 122,
-        "bytes": 3838523,
+        "bytes": 3838722,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 84,
-        "bytes": 2285396,
+        "bytes": 2287672,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 406919,
+        "bytes": 408421,
         "over": 3
       },
       "handoff": {
         "files": 401,
-        "bytes": 3072759,
+        "bytes": 3073795,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22823,
-      "bytes": 3194801759,
+      "files": 22845,
+      "bytes": 3194904204,
       "heavy_bytes": 2113111220,
       "heavy_share": 0.661,
       "ignore_filters": [

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manifest.schema.json",
+  "title": "Drop manifest, contract v0",
+  "description": "One per drop folder. Lists every other file in the folder with its kind, row count and checksum.",
+  "type": "object",
+  "required": ["contract_version", "party", "drop_date", "produced_by", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {"const": "0"},
+    "party": {"enum": ["credential-engine", "wested", "cobi"]},
+    "drop_date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "college": {"$ref": "#/$defs/college"},
+    "colleges": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/college"}},
+    "produced_by": {
+      "type": "object",
+      "required": ["tool", "person"],
+      "additionalProperties": false,
+      "properties": {
+        "tool": {"type": "string", "minLength": 1},
+        "version": {"type": "string"},
+        "person": {"type": "string", "minLength": 1, "description": "A name or a role, never an email address."}
+      }
+    },
+    "supersedes": {"type": "string", "pattern": "^(inbound|outbound)/[a-z0-9/-]+/[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "kind", "rows", "sha256"],
+        "additionalProperties": false,
+        "properties": {
+          "path": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*\\.(csv|jsonld)$"},
+          "kind": {"enum": ["ce.courses", "ce.learning_programs", "ce.credentials", "ce.competencies", "ce.registry_ctids", "wested.coci_courses", "wested.coci_programs", "cobi.identifier_crosswalk", "cobi.findings", "cobi.pathway"]},
+          "rows": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {"if": {"properties": {"party": {"const": "credential-engine"}}}, "then": {"required": ["college"]}}
+  ],
+  "$defs": {
+    "college": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "mis_code": {"type": "string", "pattern": "^[0-9]{2}[0-9A-Z]$"}
+      }
+    }
+  }
+}

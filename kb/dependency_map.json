@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 9,
-  "file_datasets": 691,
+  "file_datasets": 693,
   "external_services": 182,
-  "consumers": 455,
+  "consumers": 456,
   "workflows": 57,
   "data_js_files": 70,
   "tabs": 39
@@ -16131,6 +16131,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:partners/ctdl-exchange/seed/contract/file_kinds.json": {
+   "consumers": [
+    {
+     "id": "script:partners/ctdl-exchange/seed/tools/check_drop.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 163
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:picks kb/<slug-with-underscores>_domain_map.json": {
    "consumers": [
     {
@@ -18201,6 +18214,19 @@
    "main_committers": []
   },
   "file:tests/csr_trail_rules_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ctdl_exchange_seed_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24660,6 +24686,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
+    "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
