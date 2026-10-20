@@ -11,32 +11,32 @@
   },
   "summary": {
     "files": 1220,
-    "bytes": 12529723,
+    "bytes": 12534723,
     "over_budget": 8,
     "handoff_max": 439,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60841,
+    "always_loaded_bytes": 60897,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60841,
+        "bytes": 60897,
         "over": 1
       },
       "other": {
         "files": 122,
-        "bytes": 3844628,
+        "bytes": 3851715,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9288,
+        "bytes": 9278,
         "over": 0
       },
       "lessons": {
         "files": 84,
-        "bytes": 2315508,
+        "bytes": 2311302,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 41,
-        "bytes": 412572,
+        "bytes": 412553,
         "over": 3
       },
       "handoff": {
         "files": 410,
-        "bytes": 3118944,
+        "bytes": 3121036,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22910,
-      "bytes": 3203361476,
-      "heavy_bytes": 2113718247,
+      "files": 22912,
+      "bytes": 3203401640,
+      "heavy_bytes": 2113718248,
       "heavy_share": 0.66,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60841,
+        "bytes": 60897,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 841,
+        "over_by": 897,
         "ratio": 1.01
       },
-      "message": "60,841 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,897 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -249,13 +249,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 384762,
+        "bytes": 391508,
         "limit": 150000,
         "lane": "other",
-        "over_by": 234762,
-        "ratio": 2.57
+        "over_by": 241508,
+        "ratio": 2.61
       },
-      "message": "384,762 B is 2.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "391,508 B is 2.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
@@ -456,13 +456,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 738380,
+        "bytes": 738721,
         "limit": 150000,
         "lane": "other",
-        "over_by": 588380,
+        "over_by": 588721,
         "ratio": 4.92
       },
-      "message": "738,380 B is 4.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "738,721 B is 4.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -910,10 +910,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6716247,
+        "bytes": 6716248,
         "kind": "file"
       },
-      "message": "6,716,247 B single file inside the vault"
+      "message": "6,716,248 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

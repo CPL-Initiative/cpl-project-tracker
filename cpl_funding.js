@@ -464,14 +464,15 @@
     ".cplfund-step1-pick[hidden] { display: none; }",
     ".cplfund-step1-vbody, .cplfund-step1-pbody { display: flex; flex-direction: column; gap: 6px; min-width: 0; }",
     ".cplfund-step1-pbody { flex: 1 1 auto; }",
-    ".cplfund-step1-vl { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1rem, .9rem + .4vw, 1.2rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
-    ".cplfund-step1-vs { margin: 0; font-size: .8rem; color: var(--text-muted); }",
+    ".cplfund-step1-vl { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.1rem, .95rem + .5vw, 1.3rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
+    ".cplfund-step1-vs { margin: 0; font-size: .88rem; color: var(--text-muted); }",
     ".cplfund-step1-k { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.05rem, .9rem + .6vw, 1.35rem); color: var(--seal-blue-text, var(--cobalt)); white-space: nowrap; padding-right: 20px; border-right: 1px solid var(--border-strong); align-self: stretch; display: flex; align-items: center; }",
-    ".cplfund-step1-l { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
+    ".cplfund-step1-lrow { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 16px; row-gap: 2px; }",
+    ".cplfund-step1-l { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.1rem, .95rem + .5vw, 1.3rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
     ".cplfund-step1-sel { font: inherit; font-size: 1.05rem; color: var(--text-strong); background: var(--surface-opaque); border: 2px solid var(--seal-blue-text, var(--cobalt)); border-radius: 4px; min-height: 48px; padding: 8px 12px; width: min(100%, 30rem); }",
     ".cplfund-step1-sel:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; }",
-    ".cplfund-step1-s { margin: 0; font-size: .92rem; color: var(--text-muted); max-width: var(--cpl-measure, none); }",
-    ".cplfund-step1-clear { margin-left: 6px; }",
+    ".cplfund-step1-s { margin: 0; font-size: .88rem; color: var(--text-muted); max-width: var(--cpl-measure, none); }",
+    ".cplfund-step1-s:empty { display: none; }",
     // The two steps side by side need about 860px; below it Step 2 drops under
     // Step 1, and on a phone each kicker sits above its step.
     "@media (max-width: 860px) { .cplfund-step1 { grid-template-columns: 1fr; } " +
@@ -3822,7 +3823,7 @@
         "two years are held identical so that a change to one is reflected in the other. Disabling the " +
         "mirror leaves both years as they were, so nothing is overwritten."
     ].join("\n\n") },
-    { key: "x_choices", sec: "choices", title: "What is a choice, and what is a given", where: "Above the table", rows: 3, plain: [
+    { key: "x_choices", sec: "choices", title: "Funding Model Numbers", where: "Above the table", rows: 3, plain: [
       "The Chancellor\u2019s Office sets some of these figures as policy and can change them. Others are " +
         "given, and it uses them as they are."
     ].join("\n\n") }
@@ -3891,8 +3892,9 @@
         "2. Enter the primary CPL contact's name and email. One person may hold both roles.\n" +
         "3. Configure the college's CPL Landing Page, with the email address that receives students' CPL " +
         "requests, and link to it from the college website.\n\n" +
-        "This page reads MAP's contacts each day, so the condition shows as met the day after the change. The MAP " +
-        "team helps colleges with these steps during its [office hours](https://map.rccd.edu/get-involved/)." },
+        "This page reads MAP's contacts each day, so the condition shows as met the day after the change.\n\n" +
+        "For help now, join the MAP team's [office hours](https://map.rccd.edu/get-involved/). For a quick answer, " +
+        "use the chat on the [MAP Dashboard](https://cpldashboardcccco.azurewebsites.net/insights/dashboard)." },
     { key: "mc_how_part", how: "part", title: "Confirm your college's participation", rows: 8,
       where: "How to meet it: the confirmation condition",
       plain: "A senior administrator confirms for the college: the vice president of academic affairs, the vice " +
@@ -4245,7 +4247,7 @@
     { id: "allocation",   label: "How an allocation is computed" },
     { id: "qualify",      label: "Eligibility requirements" },
     { id: "earning",      label: "How outcomes count toward funding" },
-    { id: "choices",      label: "What is a choice, and what is a given" },
+    { id: "choices",      label: "Funding Model Numbers" },
     // The FAQ (Sam, 2026-10-01: the explainer is likely the main view for
     // colleges). `questions`, not `faq`: the tab's own FAQ section keeps its id,
     // and since call 2 the page keeps its own copy of the text (x_faq).
@@ -4955,6 +4957,20 @@
     var n = function (k) { return c[k + "_suppressed"] ? maskLt(false) : fmtInt(c[k] || 0); };
     return n("vets") + " veterans / " + n("jst") + " JSTs" +
       (c.pct != null ? " (" + Math.round(c.pct * 100) + "%)" : "");
+  }
+  // The JST condition in figures (Sam, 2026-10-20): the JSTs in MAP, the
+  // enrolled veterans MIS reports, and the JSTs that reach the threshold, on
+  // the seed outcome and the implementation condition alike. A masked count
+  // gives nothing, as in vetJstWords; "" when the feed has no counts.
+  function jstNeedWords(college) {
+    var pf = perf();
+    var c = pf && pf.vet_jst && pf.vet_jst[college];
+    if (!c || c.vets_suppressed || c.jst_suppressed || !c.vets) return "";
+    var thr = pf.vet_star_threshold || 0.75, jst = c.jst || 0;
+    var need = Math.ceil(c.vets * thr - 1e-9), more = Math.max(0, need - jst);
+    return "MAP holds " + fmtInt(jst) + " JST" + (jst === 1 ? "" : "s") + ", and MIS reports " + fmtInt(c.vets) +
+      " enrolled veteran" + (c.vets === 1 ? "" : "s") + ". " + fmtPctTrim(thr) + " takes " + fmtInt(need) + " JST" +
+      (need === 1 ? "" : "s") + (more ? ", " + fmtInt(more) + " more than today." : ", which the college has.");
   }
   function eligParts(college) {
     var reqs = eligReqList(college), met = 0;
@@ -12534,11 +12550,11 @@
     if (!vs) return { state: "pending", why: ESS_LOADING };
     if (vs[name] === true) {
       return { state: "met", why: "JSTs in MAP cover at least " + pct + " of the enrolled veterans the college " +
-        "reports to the Chancellor's Office, which meets the Veteran Star." };
+        "reports to the Chancellor's Office, which meets the Veteran Star.", counts: jstNeedWords(name) };
     }
     if (vs[name] === false) {
       return { state: "not", why: "The Veteran Star needs JSTs in MAP for at least " + pct + " of the enrolled " +
-        "veterans the college reports to the Chancellor's Office." };
+        "veterans the college reports to the Chancellor's Office.", counts: jstNeedWords(name) };
     }
     return { state: "na", why: "The Chancellor's Office records no enrolled veterans for the college." };
   }
@@ -13062,12 +13078,17 @@
     return embedMode() && !!document.getElementById("cplFundStep1Mount");
   }
   function stepOneChosen() { return oneCollegeView() && state.oneCollege ? state.oneCollege : ""; }
+  // The line under the list names the choice and nothing more, and Choose
+  // another institution sits to the right of the Step 2 title (Sam,
+  // 2026-10-20: "move the choose another institution link to the right of the
+  // step 2 title (to save space)"). With nothing chosen the line is empty and
+  // hidden; the My Institution hover says what the view shows.
   function stepOneLineHtml(chosen) {
-    return chosen
-      ? "Showing " + esc(oneChoiceName(chosen)) + ". Its funding, minimum conditions, targets and suggested " +
-        'steps lead the page. <button type="button" class="cplfund-textbtn cplfund-step1-clear" id="cplFundOneClear">' +
-        "Choose another institution</button>"
-      : "Its funding, minimum conditions, targets and suggested steps then lead the page.";
+    return chosen ? "Showing " + esc(oneChoiceName(chosen)) + "." : "";
+  }
+  function stepOneClearHtml(chosen) {
+    return chosen ? '<button type="button" class="cplfund-textbtn cplfund-step1-clear" id="cplFundOneClear">' +
+      "Choose another institution</button>" : "";
   }
   function stepOneHtml() {
     if (!publicMode()) return "";
@@ -13077,7 +13098,8 @@
       '<div class="cplfund-step1-pick"' + (oneCollegeView() ? "" : " hidden") + ">" +
       '<p class="cplfund-step1-k cplfund-step1-k2">Step 2</p>' +
       '<div class="cplfund-step1-pbody">' +
-      '<label class="cplfund-step1-l" for="cplFundOnePick">Choose your college or district</label>' +
+      '<div class="cplfund-step1-lrow"><label class="cplfund-step1-l" for="cplFundOnePick">Choose your college or district</label>' +
+      '<span class="cplfund-step1-cs">' + stepOneClearHtml(chosen) + "</span></div>" +
       '<select id="cplFundOnePick" class="cplfund-step1-sel">' + oneOptionsHtml(chosen) + "</select>" +
       '<p class="cplfund-step1-s">' + stepOneLineHtml(chosen) + "</p></div></div></div>";
   }
@@ -13096,6 +13118,9 @@
     var line = box && box.querySelector(".cplfund-step1-s");
     var html = stepOneLineHtml(chosen);
     if (line && line._cplHtml !== html) { line.innerHTML = html; line._cplHtml = html; }
+    var cs = box && box.querySelector(".cplfund-step1-cs");
+    var csHtml = stepOneClearHtml(chosen);
+    if (cs && cs._cplHtml !== csHtml) { cs.innerHTML = csHtml; cs._cplHtml = csHtml; }
     // Step 2 shows under My Institution alone (2026-10-20).
     var one = oneCollegeView();
     if (box) box.setAttribute("data-view", one ? "one" : "all");
@@ -15371,6 +15396,15 @@
     // How to meet it, for the college panel and the explainer (call 5)
     howToOpen: howToOpen,
     howToKinds: function () { return Object.keys(HOW_BY_KIND); },
+    // The chosen institution's CPL landing page, for the explainer's Contents
+    // (Sam, 2026-10-20). Null with nothing chosen; url "" for a district or a
+    // college MAP holds no page for.
+    landingPage: function () {
+      var v = stepOneChosen();
+      if (!v) return null;
+      var k = v.indexOf(ONE_DISTRICT) === 0 ? null : ELIG.contact[v];
+      return { name: oneChoiceName(v), url: k ? httpsUrl(k.url) || "" : "" };
+    },
     // The page's own editor (Sam, 2026-10-15, call 1: Edit this page on
     // funding-model/). Every write goes through the layers the tab's editors
     // use, so the database's RLS decides what a save may do.
@@ -15882,6 +15916,7 @@
         demonstrated: demo, demonstratedWords: publicDollarWords(demo),
         items: eligReqList(college).map(function (r) {
           return { kind: r.kind, met: !!r.met, pending: !!r.pending,
+                   counts: r.kind === "vetstar" ? jstNeedWords(college) : "",
                    missing: r.kind === "coord" && !r.met ? ((ELIG.coordMissing || {})[college] || "coord") : "" };
         })
       };

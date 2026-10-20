@@ -11,6 +11,7 @@ status: archive
 # Roadmap Archive — Completed Work & Session Narratives
 
 ## INDEX update-history entries rotated out (2026-10-17)
+- 2026-10-20 (S430 SkyLupine): the CTDL exchange's seed for Malone (contract v0, the drop check, decisions) and DR-27..29 (#2267); the AGRI sitting twice over, 397 of 404 agree (#2268); Sheet 103 answered, the 44 re-keyed to their family codes (#2270); the nine MQ names renamed to the handbook's spellings (#2269); handoff 431; no KB note.
 
 - 2026-10-19 (S423 SkyLaurel, the routine): Merced's renumbered courses, a cited per-college `course_renumbers` map, 154 to 163 of 172 found and 125 to 134 passing (#2253); the Knowledge Base portal's first UI pass (#2254); the Commons' four run logs; lessons S423, handoff 424.
 - 2026-10-16 (S399 SkyRowan, Sam's session): Sierra's statewide catalog A/B'd, put to Sam (Open Asks Sheet 85) and deployed (smoke green); Sheet 85 answered, no card open; wave 5, ten curriQunet colleges, six loaded (#2168, build `9c74da80bad7`); #2167 fixes the curriQunet catalog choice; the Sierra lessons doc compacted (#2165); handoff 400 names SkyBirch.

@@ -66,7 +66,7 @@ const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
     first.value === KEY);
   doc.getElementById("cplFundOneClear").click();
   check("(a5) Choose another institution clears it in place", doc.getElementById("cplFundOnePick") === first &&
-    first.value === "" && /then lead the page/.test(line()));
+    first.value === "" && line() === "" && !doc.getElementById("cplFundOneClear"));
 }
 
 // ── (b) and (c): My College ───────────────────────────────────────────────
