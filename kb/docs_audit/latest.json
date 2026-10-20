@@ -11,22 +11,22 @@
   },
   "summary": {
     "files": 1220,
-    "bytes": 12529065,
+    "bytes": 12529723,
     "over_budget": 8,
     "handoff_max": 439,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60683,
+    "always_loaded_bytes": 60841,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60683,
+        "bytes": 60841,
         "over": 1
       },
       "other": {
         "files": 122,
-        "bytes": 3844449,
+        "bytes": 3844628,
         "over": 3
       },
       "index": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 410,
-        "bytes": 3118623,
+        "bytes": 3118944,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 22909,
-      "bytes": 3203355264,
-      "heavy_bytes": 2113713143,
+      "files": 22910,
+      "bytes": 3203361476,
+      "heavy_bytes": 2113718247,
       "heavy_share": 0.66,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -138,13 +138,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60683,
+        "bytes": 60841,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 683,
+        "over_by": 841,
         "ratio": 1.01
       },
-      "message": "60,683 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,841 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -530,10 +530,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1143356455,
+        "bytes": 1143361559,
         "kind": "dir"
       },
-      "message": "directory totals 1,143,356,455 B inside the vault"
+      "message": "directory totals 1,143,361,559 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

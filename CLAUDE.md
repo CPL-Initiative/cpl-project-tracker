@@ -503,6 +503,8 @@ first day.** Do the remembering for them.
   session goes to Sam as the full message he pastes there: the command, then
   *paste the output, no investigation*, then what a good result looks like.
   *"I doubt I'll remember this habit"* — the session remembers.
+- **Short replies (Sam, 2026-10-20).** Status in a few lines; detail only when asked.
+  Fewer screenshots, tail long logs: tool output fills the context too.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
