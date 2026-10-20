@@ -97,7 +97,7 @@ STRICT_GENERIC_TITLE = {
 GENERIC_DISCIPLINES = {
     "Interdisciplinary Studies",
     "Interdisciplinary-General Education",
-    "Interdisciplinary-Basic Skills: Noncredit 53412",
+    "Interdisciplinary-Basic Skills: Noncredit",
     "Interdisciplinary-Liberal Arts and Sciences",
     "Other",
     "Cooperative Work Experience",

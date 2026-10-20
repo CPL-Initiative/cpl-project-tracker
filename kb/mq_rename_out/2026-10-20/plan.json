@@ -1,0 +1,88 @@
+{
+ "ruling": "Sam, Open Asks Sheet 99 card 6, 2026-10-19 16:37Z: Rename as the handbook spells them",
+ "renames": {
+  "Community College Counselor of Students with Disabilities 53414": "Community College Counselor of Students with Disabilities",
+  "Deaf and Hearing Impaired: Disabled Students Programs 53414": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+  "Developmental Disabilities: Disabled Students Programs and Services 53414": "Developmental Disabilities: Disabled Students Programs and Services",
+  "Disabled Student Programs and": "Disabled Student Programs and Services (DSPS)",
+  "English as a Second Language Noncredit 53412": "English as a Second Language (ESL): Noncredit",
+  "Interdisciplinary-Basic Skills: Noncredit 53412": "Interdisciplinary-Basic Skills: Noncredit",
+  "Learning Disabilities: Disabled Student Programs and Services 53414": "Learning Disabilities: Disabled Student Programs and Services",
+  "Physical Disabilities: Disabled Student Programs and Services 53414": "Physical Disabilities: Disabled Student Programs and Services",
+  "Speech Language Pathology: Disabled Student Programs and 53414 Services": "Speech Language Pathology: Disabled Student Programs and Services"
+ },
+ "stores": {
+  "kb/reference/mq_disciplines.json": {
+   "old_strings": 9,
+   "by_name": {
+    "Community College Counselor of Students with Disabilities 53414": 1,
+    "Deaf and Hearing Impaired: Disabled Students Programs 53414": 1,
+    "Developmental Disabilities: Disabled Students Programs and Services 53414": 1,
+    "Disabled Student Programs and": 1,
+    "English as a Second Language Noncredit 53412": 1,
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 1,
+    "Learning Disabilities: Disabled Student Programs and Services 53414": 1,
+    "Physical Disabilities: Disabled Student Programs and Services 53414": 1,
+    "Speech Language Pathology: Disabled Student Programs and 53414 Services": 1
+   }
+  },
+  "kb/reference/mq_sections.json": {
+   "old_strings": 9,
+   "by_name": {
+    "Community College Counselor of Students with Disabilities 53414": 1,
+    "Deaf and Hearing Impaired: Disabled Students Programs 53414": 1,
+    "Developmental Disabilities: Disabled Students Programs and Services 53414": 1,
+    "Disabled Student Programs and": 1,
+    "English as a Second Language Noncredit 53412": 1,
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 1,
+    "Learning Disabilities: Disabled Student Programs and Services 53414": 1,
+    "Physical Disabilities: Disabled Student Programs and Services 53414": 1,
+    "Speech Language Pathology: Disabled Student Programs and 53414 Services": 1
+   }
+  },
+  "kb/reference/subject_discipline_map.json": {
+   "old_strings": 2,
+   "by_name": {
+    "Disabled Student Programs and": 1,
+    "English as a Second Language Noncredit 53412": 1
+   }
+  },
+  "kb/discipline_canonical_subj4.json": {
+   "old_strings": 3,
+   "by_name": {
+    "Disabled Student Programs and": 1,
+    "English as a Second Language Noncredit 53412": 1,
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 1
+   }
+  },
+  "kb/discipline_inference.json": {
+   "old_strings": 1,
+   "by_name": {
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 1
+   }
+  },
+  "kb/coci_curation.json": {
+   "old_strings": 2,
+   "by_name": {
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 2
+   }
+  },
+  "kb/coci_minted_courses.json": {
+   "old_strings": 159,
+   "by_name": {
+    "Disabled Student Programs and": 75,
+    "English as a Second Language Noncredit 53412": 30,
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 54
+   }
+  },
+  "kb/coci_minted_singletons.json": {
+   "old_strings": 170,
+   "by_name": {
+    "Disabled Student Programs and": 64,
+    "English as a Second Language Noncredit 53412": 39,
+    "Interdisciplinary-Basic Skills: Noncredit 53412": 67
+   }
+  }
+ },
+ "errors": []
+}

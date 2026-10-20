@@ -62,7 +62,7 @@ OUTDIR = os.path.join(ROOT, "kb", "esl_package_out", DATE)
 
 ESL_DISCIPLINES = {
     "English as a Second Language",
-    "English as a Second Language Noncredit 53412",
+    "English as a Second Language (ESL): Noncredit",
 }
 
 # ── Carve-out lexicons (title-PRIMARY — the carve-out theme must be the course's

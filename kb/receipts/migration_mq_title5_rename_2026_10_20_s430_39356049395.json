@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/mq_title5_rename_2026-10-20_s430.sql",
+ "name": "mq_title5_rename_2026_10_20_s430",
+ "version": "20261020015642",
+ "sha256": "e99f281d5ee572c7baed113aa8b8bf8ee35c18e802ba40787e48dc2e9c91f538",
+ "run": "39356049395",
+ "status": 201,
+ "response": "[{\"course_id\":\"_CANON_SUBJ4::English as a Second Language (ESL): Noncredit\",\"field\":\"canonical_subj4\",\"value\":\"ESLN\",\"reviewer_email\":\"map@rccd.edu\",\"reviewed_at\":\"2026-06-12 12:56:20.510479+00\"},{\"course_id\":\"_CANON_SUBJ4::Interdisciplinary-Basic Skills: Noncredit\",\"field\":\"canonical_subj4\",\"value\":\"BSKL\",\"reviewer_email\":\"map@rccd.edu\",\"reviewed_at\":\"2026-06-12 12:57:06.375421+00\"},{\"course_id\":\"BSKL M9001\",\"field\":\"discipline\",\"value\":\"Interdisciplinary-Basic Skills: Noncredit\",\"reviewer_email\":\"map@rccd.edu\",\"reviewed_at\":\"2026-05-21 19:22:55.870894+00\"},{\"course_id\":\"BSKL M9252\",\"field\":\"discipline\",\"value\":\"Interdisciplinary-Basic Skills: Noncredit\",\"reviewer_email\":\"trailcrew-ccr3-s112@bot\",\"reviewed_at\":\"2026-07-12 21:17:48.970211+00\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
