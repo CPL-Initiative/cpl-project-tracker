@@ -34,6 +34,13 @@
 // records too (docs/reference/scheduled_sessions.md). scripts/library_file.py files
 // each draft to CPLLibrary/Drafts and writes the receipt that moves it to Draft.
 //
+// Public library (Sam, 2026-10-20: "Maybe give me a toggle to copy over from the
+// Private library to the public one... Copy or move...to save space"). A piece is
+// listed, never copied: the same record carries public_listed, and the public page
+// (library/index.html) and Sierra read it through cpl_library_public(). Listing is a
+// reviewer's call: the switch calls cpl_library_set_public() with the reviewer
+// sign-in, and the database refuses the shared phrase (kb/supabase_cpl_library_public.sql).
+//
 // STATIC module, lazy-loaded on first #library open (both HTMLs, Rule 4). It
 // injects its own CSS (the ensureCerScopeCss pattern). Tests: tests/library.test.js
 (function () {
@@ -42,6 +49,8 @@
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var TABLE_URL = SUPABASE_URL + "/rest/v1/cpl_library";
+  var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
+  var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var TEAM_KEY = "cpl_team_pass";
   var AUTHOR_KEY = "cpl_library_author";
   var ROOT_ID = "library-root";
@@ -74,7 +83,7 @@
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
-    retireAsk: null, start: null, briefShown: {}
+    retireAsk: null, start: null, briefShown: {}, pub: null
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -93,6 +102,14 @@
     if (p) h["x-team-pass"] = p;
     if (extra) for (var k in extra) if (Object.prototype.hasOwnProperty.call(extra, k)) h[k] = extra[k];
     return h;
+  }
+
+  // The reviewer sign-in (reviewer_signin.js), which listing needs. Never the phrase.
+  function reviewerToken() {
+    try {
+      var s = window.CPL_REVIEWER_SIGNIN && window.CPL_REVIEWER_SIGNIN.getSession();
+      return (s && s.access_token) || "";
+    } catch (e) { return ""; }
   }
 
   // ── small helpers ───────────────────────────────────────────────────────────
@@ -177,6 +194,9 @@
       R + " .lib-btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);}",
       R + " .lib-btn.primary:hover{background:var(--btn-primary-hover);border-color:var(--btn-primary-hover);}",
       R + " .lib-btn[disabled]{opacity:.6;cursor:default;}",
+      R + " .lib-pubsum{color:var(--text-muted);}",
+      R + " .lib-pubwarn{color:var(--text-body);font-weight:600;}",
+      R + " .lib-check{display:flex;gap:8px;align-items:center;}",
       R + " .lib-line{margin:10px 0 0;color:var(--text-muted);font-size:.9rem;}",
       R + " .lib-msg{margin:10px 0 0;font-weight:600;font-size:.92rem;color:var(--hunter);}",
       R + " .lib-msg.err{color:var(--crimson);}",
@@ -345,6 +365,7 @@
     if (r.refresh_note) rows.push(["Refresh", esc(r.refresh_note)]);
     rows.push(["Rebuild from", r.rebuild_from ? "<code>" + esc(r.rebuild_from) + "</code>" : "Not recorded."]);
     if (r.note) rows.push(["Note", esc(r.note)]);
+    rows.push(["Public library", publicCell(r)]);
     rows.push(["Record", esc("Added by " + (r.added_by || "unknown") + (r.updated_by ? "; last edited by " + r.updated_by : "") + ".")]);
     var html = "<dl>" + rows.map(function (x) { return "<dt>" + x[0] + "</dt><dd>" + x[1] + "</dd>"; }).join("");
     var vs = Array.isArray(r.versions) ? r.versions : [];
@@ -362,6 +383,38 @@
     html += '<div class="lib-actions-row"><button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button></div>';
     if (state.edit === r.id) html += editForm(r);
     return html;
+  }
+
+  // Where a link opens for the public, said before the switch rather than after.
+  function publicReach(r) {
+    if (!r.url) return "It has no link yet, so it cannot be listed. File it first.";
+    if (r.home === "web" && /^https:\/\/claude\.ai\//i.test(r.url)) return "A Claude page opens for the public only once its link is set to public in claude.ai's Share menu.";
+    if (r.home === "vault") return "Its link is in the private vault, so the public cannot open it. File a public copy first.";
+    if (r.home === "drive") return "Its link is on the team's SharePoint or Drive, which opens only for people it is shared with.";
+    return "";
+  }
+  function publicCell(r) {
+    if (r.public_listed) {
+      return "Listed" + (r.listed_at ? " since " + esc(fmtDate(String(r.listed_at).slice(0, 10))) : "") +
+        ' on the <a href="' + PUBLIC_PAGE + '" target="_blank" rel="noopener">public library</a>, and Sierra can link it.' +
+        (r.public_summary ? '<br><span class="lib-pubsum">' + esc(r.public_summary) + "</span>" : "") +
+        '<div class="lib-actions-row"><button type="button" class="lib-btn" data-unpub="' + esc(r.id) + '"' + (state.busy ? " disabled" : "") + ">Remove from the public library</button></div>";
+    }
+    if (!r.url) return esc(publicReach(r));
+    if (state.pub !== r.id) {
+      return "Not listed." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">List publicly</button></div>';
+    }
+    var claude = r.home === "web" && /^https:\/\/claude\.ai\//i.test(r.url);
+    var reach = publicReach(r);
+    return '<form class="lib-form" data-pubform="' + esc(r.id) + '"><p>Listing puts the title, occasion, date, the summary below, its topics and the link on the public page, and lets Sierra link it. Nothing else leaves COBI.</p>' +
+      (reach ? '<p class="lib-pubwarn">' + esc(reach) + "</p>" : "") +
+      '<div class="lib-grid">' +
+      '<div class="lib-field wide"><label for="lp-sum">Public summary</label><textarea id="lp-sum" rows="3" maxlength="600" required>' + esc(r.public_summary || r.summary || "") + "</textarea></div>" +
+      '<div class="lib-field wide"><label for="lp-topics">Topics Sierra matches, separated by commas</label><input id="lp-topics" type="text" value="' + esc((r.public_topics || []).join(", ")) + '" placeholder="DSP training, developmental disabilities"></div>' +
+      (claude ? '<div class="lib-field wide"><label class="lib-check"><input type="checkbox" id="lp-shared" required> I set its claude.ai link to public in the Share menu</label></div>' : "") +
+      "</div>" +
+      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">List publicly</button>" +
+      '<button type="button" class="lib-btn" data-pubcancel="1">Cancel</button></div></form>';
   }
 
   // The filer stamps filed_at (ISO, UTC) on each version it files (Sam's call 8).
@@ -697,6 +750,37 @@
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
+  function setPublic(id, listed) {
+    var r = byId(id);
+    if (!r) return;
+    var token = reviewerToken();
+    if (!token) { say("Listing in the public library needs your reviewer sign-in. Sign in from About in the header, then try again.", true); render(); return; }
+    var body = { p_slug: r.slug, p_listed: listed, p_by: storedAuthor() || null };
+    if (listed) {
+      var sum = ((document.getElementById("lp-sum") || {}).value || "").trim();
+      var topics = ((document.getElementById("lp-topics") || {}).value || "").split(",")
+        .map(function (t) { return t.trim(); }).filter(Boolean).slice(0, 12);
+      var shared = document.getElementById("lp-shared");
+      if (!sum) { say("Add a public summary. It is what the public page and Sierra show.", true); render(); return; }
+      if (shared && !shared.checked) { say("Set the claude.ai link to public first, then tick the box.", true); render(); return; }
+      body.p_summary = sum; body.p_topics = topics;
+    }
+    state.busy = true; render();
+    window.fetch(SET_PUBLIC_URL, {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      state.busy = false;
+      if (!res.ok) return res.text().then(function (t) {
+        throw new Error(/reviewer/i.test(t) ? "The database wants a reviewer sign-in for this. Sign in from About and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
+      });
+      say(listed ? "Listed. It is on the public library now, and Sierra can link it." : "Removed from the public library. The record stays here.");
+      state.pub = null;
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
   function retire(id) {
     var by = (document.getElementById("le-by") || {}).value || storedAuthor();
     if (!by) { say("Add your name, so the history says who retired it.", true); render(); return; }
@@ -742,6 +826,7 @@
       if (e.target.id === "lib-addform") submitAdd();
       else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
+      else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
     });
     root.addEventListener("click", function (e) {
       var b = e.target.closest ? e.target.closest("button") : null;
@@ -778,6 +863,9 @@
       else if ((v = b.getAttribute("data-retire"))) { state.retireAsk = v; render(); }
       else if (b.getAttribute("data-retireno")) { state.retireAsk = null; render(); }
       else if ((v = b.getAttribute("data-retireyes"))) retire(v);
+      else if ((v = b.getAttribute("data-pub"))) { state.pub = v; say(""); render(); var ps = document.getElementById("lp-sum"); if (ps) ps.focus(); }
+      else if (b.getAttribute("data-pubcancel")) { state.pub = null; render(); }
+      else if ((v = b.getAttribute("data-unpub"))) setPublic(v, false);
     });
     window.addEventListener("cpl-tab-activated", function (e) {
       if (e && e.detail && e.detail.tab === "library") load();

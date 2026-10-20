@@ -756,6 +756,7 @@
       ".adm-live { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;",
       "margin: 22px 0; background: var(--surface-subtle); max-width: 720px; }",
       ".adm-live h3 { margin-top: 0; }",
+      ".adm-pub { margin-top: 16px; } .adm-pub-list { margin: 8px 0 0; padding-left: 1.2rem; display: grid; gap: 6px; }",
       ".adm-live-note { color: var(--text-muted); font-size: .88rem; margin: 4px 0 10px; }",
       ".adm-live-state { margin: 0 0 12px; font-size: .92rem; }",
       ".adm-live-lbl { display: block; font-size: .82rem; font-weight: 700;",
@@ -1482,6 +1483,66 @@
     if (auto) auto.onchange = function () { saveAutoAnnounce(auto.checked, root); };
   }
 
+  /* ── Public library (Sam, 2026-10-20) ─────────────────────────────────────
+   * "a public library I can copy them over to and set view permissions in the
+   * Admin tab". Each piece is listed from its record in the Library tab (one
+   * record, a switch, never a copy); this panel shows what the public page and
+   * Sierra see right now, read through the same anon function they use, with a
+   * Remove beside each. Listing and removing go through cpl_library_set_public(),
+   * which refuses anything but a reviewer sign-in. */
+  var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
+  var pubRows = null, pubErr = null;
+
+  function pubHtml() {
+    var h = '<section class="adm-live adm-pub"><h3>Public library</h3>'
+      + '<p class="adm-live-note">What the <a href="' + PUBLIC_PAGE + '" target="_blank" rel="noopener">public library</a> '
+      + "lists, and what Sierra can link. List a piece from its record in the Library tab. Remove takes it off the "
+      + "page and out of Sierra's answers at once; the record stays in the Library.</p>";
+    if (pubErr) h += '<p class="adm-live-note">Could not read the public list (' + esc(pubErr) + ").</p>";
+    else if (!pubRows) h += '<p class="adm-live-note">Loading\u2026</p>';
+    else if (!pubRows.length) h += '<p class="adm-live-note">Nothing is listed yet.</p>';
+    else {
+      h += '<ul class="adm-pub-list">' + pubRows.map(function (r) {
+        return '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title) + "</a>"
+          + ' <button type="button" class="adm-btn" data-pubremove="' + esc(r.slug) + '">Remove</button></li>';
+      }).join("") + "</ul>";
+    }
+    return h + '<p class="adm-live-msg" id="adm-pub-msg" role="status"></p></section>';
+  }
+
+  function loadPub(done) {
+    // GET: the function is a read (stable), and a read here never looks like a write.
+    fetch(REST + "/rpc/cpl_library_public", { headers: authHeaders() }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) { pubRows = Array.isArray(rows) ? rows : []; pubErr = null; if (done) done(); })
+      .catch(function (e) { pubRows = null; pubErr = e.message; if (done) done(); });
+  }
+
+  function repaintPub(root) {
+    var host = root.querySelector(".adm-pub");
+    if (host) { host.outerHTML = pubHtml(); wirePub(root); }
+  }
+
+  function wirePub(root) {
+    Array.prototype.forEach.call(root.querySelectorAll("[data-pubremove]"), function (b) {
+      b.onclick = function () {
+        var msg = root.querySelector("#adm-pub-msg");
+        if (msg) msg.textContent = "Removing\u2026";
+        fetch(REST + "/rpc/cpl_library_set_public", {
+          method: "POST",
+          headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
+          body: JSON.stringify({ p_slug: b.getAttribute("data-pubremove"), p_listed: false, p_by: "admin-tab" })
+        }).then(function (r) {
+          if (!r.ok) throw new Error(String(r.status));
+          loadPub(function () { repaintPub(root); var m = root.querySelector("#adm-pub-msg"); if (m) m.textContent = "Removed from the public library."; });
+        }).catch(function (e) {
+          if (msg) msg.textContent = "Could not remove it (" + e.message + "). Sign in on this tab and try again.";
+        });
+      };
+    });
+  }
+
   function render(root) {
     ensureCss();
     var h = '<div class="adm">';
@@ -1718,6 +1779,7 @@
       + "to know they do.</p>";
 
     h += liveHtml();
+    h += pubHtml();
     h += blastShellHtml();
 
     h += "</div>";
@@ -1728,9 +1790,10 @@
     // Repaint the one section once the live row lands, rather than blocking the
     // whole tab on a read it does not need.
     loadLive(function () {
-      var host = root.querySelector(".adm-live");
+      var host = root.querySelector(".adm-live:not(.adm-pub)");
       if (host) { host.outerHTML = liveHtml(); wireLive(root); }
     });
+    loadPub(function () { repaintPub(root); });
   }
 
   function wire(root) {

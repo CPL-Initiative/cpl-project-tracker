@@ -43,6 +43,18 @@ Sam's routine reads Requested records as queue items (step 6 of *At the start* i
 [`scheduled_sessions`](../scheduled_sessions.md)). The versions table shows the time
 each version was filed (`filed_at`, call 8).
 
+✅ **The public library is built** (2026-10-20, DSP side session; mock-up
+https://claude.ai/artifact/Ebz253XFREqAni5D3sgVP9, Sam: *"Mock up looks great!"*). One
+record and a switch, never a copy (*"Copy or move...to save space"*): **List publicly** on a
+record in the Library tab sets `public_listed` through `cpl_library_set_public()`, which
+needs a reviewer sign-in; a trigger refuses the public columns any other way, and retiring a
+piece or narrowing its audience unlists it. `cpl_library_public()` (anon) returns the listed
+pieces' public fields only, to the page at `library/` and the Admin tab's **Public library**
+panel (Remove beside each). A Claude page also needs its claude.ai link set public, which the
+switch asks the lister to confirm. Schema `kb/supabase_cpl_library_public.sql`; test
+`tests/public_library.test.js`; in the a11y sweep light and dark. **Next:** Sierra links
+listed pieces (a separate PR, A/B first); YouTube training videos become film records.
+
 ## Sam's rulings (2026-10-05, all in `cpl_memory`)
 
 His ask: *"I think I may need a COBI tab to store and retrieve artifacts like this

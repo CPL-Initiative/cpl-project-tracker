@@ -1,0 +1,115 @@
+-- supabase_cpl_library_public.sql — the public Library: the pieces Sam lists for
+-- anyone to open, read by the public page (library/index.html) and by Sierra.
+--
+-- Sam, 2026-10-20 (DSP side session): "a public library I can copy them over to and
+-- set view permissions in the Admin tab", then "Maybe give me a toggle to copy over
+-- from the Private library to the public one... Copy or move...to save space." He
+-- approved the mock-up (https://claude.ai/artifact/Ebz253XFREqAni5D3sgVP9): "Mock up
+-- looks great!" And: "It would be great if Sierra could access the info in the public
+-- library... present links to appropriate library artifacts."
+--
+-- ── One record, a switch, never a copy ───────────────────────────────────────
+-- A listed piece is the same cpl_library row with public_listed set. Nothing is
+-- copied, so nothing can drift and nothing takes space twice. Unlisting takes it off
+-- the page and out of Sierra's answers at once.
+--
+-- ── What goes public ─────────────────────────────────────────────────────────
+-- Only what cpl_library_public() returns: title, kind, occasion, made_on, the
+-- public summary, topics and the link. Notes, briefs, made_by, rebuild_from,
+-- versions and the internal summary stay behind the team phrase. The public summary
+-- is its own column because the internal one is written for the team.
+--
+-- ── Who decides ──────────────────────────────────────────────────────────────
+-- Listing is a reviewer's call (a personal sign-in), never the shared team phrase:
+-- a phrase holder able to publish to the world is a wider power than the phrase
+-- carries (the Admin tab's reasoning, admin.js header). The phrase can still edit
+-- every other field; a trigger refuses a change to the four public columns unless
+-- it comes through cpl_library_set_public(), which checks is_allowed_reviewer().
+-- The history trigger files every prior row, so a listing is reversible from the
+-- database (Rule 10 a2). Governance: kb/governance_surface_map.json,
+-- "function:cpl_library_public".
+
+alter table public.cpl_library
+  add column if not exists public_listed  boolean not null default false,
+  add column if not exists public_summary text,
+  add column if not exists public_topics  text[] not null default '{}',
+  add column if not exists listed_at      timestamptz,
+  add column if not exists listed_by      text;
+
+alter table public.cpl_library drop constraint if exists cpl_library_public_ck;
+alter table public.cpl_library add constraint cpl_library_public_ck check (
+  coalesce(char_length(public_summary), 0) <= 600
+  and coalesce(array_length(public_topics, 1), 0) <= 12
+  and coalesce(char_length(listed_by), 0) <= 120
+  and (not public_listed or (
+        url is not null and retired_at is null and seen_by = 'public'
+        and char_length(coalesce(public_summary, '')) between 1 and 600)));
+
+-- The public columns change only inside cpl_library_set_public(), which sets this
+-- transaction-local flag. service_role (receipts, rollback) passes too.
+create or replace function public.cpl_library_guard_public() returns trigger
+  language plpgsql set search_path = public as $$
+begin
+  if (new.public_listed is distinct from old.public_listed
+      or new.public_summary is distinct from old.public_summary
+      or new.public_topics is distinct from old.public_topics
+      or new.listed_by is distinct from old.listed_by)
+     and coalesce(current_setting('cpl.library_public', true), '') <> 'on'
+     and coalesce(auth.role(), '') <> 'service_role' then
+    raise exception 'Listing in the public library needs a reviewer sign-in (cpl_library_set_public)';
+  end if;
+  -- Retiring a piece, or setting its audience to anything but Public, takes it off
+  -- the public list in the same write. Unlisting is the safe direction, so any
+  -- writer may cause it.
+  if new.public_listed and (new.retired_at is not null or new.seen_by is distinct from 'public') then
+    new.public_listed := false;
+  end if;
+  return new;
+end $$;
+revoke execute on function public.cpl_library_guard_public() from public, anon, authenticated;
+
+drop trigger if exists cpl_library_guard_public_trg on public.cpl_library;
+create trigger cpl_library_guard_public_trg before update on public.cpl_library
+  for each row execute function public.cpl_library_guard_public();
+
+-- List or unlist one piece. Listing also sets Seen by to Public, the audience the
+-- listing declares. Returns the row's public fields so the caller can show them.
+create or replace function public.cpl_library_set_public(
+  p_slug text, p_listed boolean, p_summary text default null,
+  p_topics text[] default null, p_by text default null)
+returns table (slug text, public_listed boolean, public_summary text, public_topics text[], listed_at timestamptz)
+  language plpgsql security definer set search_path = public as $$
+begin
+  if not public.is_allowed_reviewer() then
+    raise exception 'Listing in the public library needs a reviewer sign-in';
+  end if;
+  perform set_config('cpl.library_public', 'on', true);
+  update public.cpl_library l set
+    public_listed  = p_listed,
+    seen_by        = case when p_listed then 'public' else l.seen_by end,
+    public_summary = coalesce(nullif(btrim(p_summary), ''), l.public_summary),
+    public_topics  = coalesce(p_topics, l.public_topics),
+    listed_at      = case when p_listed then now() else l.listed_at end,
+    listed_by      = left(coalesce(nullif(btrim(p_by), ''), auth.jwt() ->> 'email', 'reviewer'), 120),
+    updated_by     = left(coalesce(nullif(btrim(p_by), ''), auth.jwt() ->> 'email', 'reviewer'), 120)
+  where l.slug = p_slug and l.retired_at is null;
+  if not found then raise exception 'No current Library piece with slug %', p_slug; end if;
+  return query select l.slug, l.public_listed, l.public_summary, l.public_topics, l.listed_at
+    from public.cpl_library l where l.slug = p_slug;
+end $$;
+revoke execute on function public.cpl_library_set_public(text, boolean, text, text[], text) from public, anon;
+grant execute on function public.cpl_library_set_public(text, boolean, text, text[], text) to authenticated, service_role;
+
+-- The public read: listed pieces only, public fields only. Open to anon on purpose,
+-- because the public page and Sierra both read it.
+create or replace function public.cpl_library_public()
+returns table (slug text, title text, kind text, occasion text, made_on date,
+               summary text, topics text[], url text, listed_at timestamptz)
+  language sql stable security definer set search_path = public as $$
+  select l.slug, l.title, l.kind, l.occasion, l.made_on, l.public_summary, l.public_topics, l.url, l.listed_at
+  from public.cpl_library l
+  where l.public_listed and l.retired_at is null and l.url is not null
+  order by l.made_on desc nulls last, l.title
+$$;
+revoke execute on function public.cpl_library_public() from public;
+grant execute on function public.cpl_library_public() to anon, authenticated, service_role;
