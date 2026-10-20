@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 424 (SkyBuckthorn)
 tags: [handoff, program-requirements-harvest, taft, jev, scorer, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 425

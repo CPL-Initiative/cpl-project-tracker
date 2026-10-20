@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-400 document(s).
+401 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 430 | [Session 430 handoff: the CTDL partner exchange scoped (the strategy doc, the lane, Open Asks Sheet 102 open); the queue's AGRI sitting and renames after Sam's calls](../session_430_handoff.md) | 2026-10-20 |
 | 429 | [Session 429 handoff: the funding side session's state (the memo as passages, the film reads the model) beside the queue's 428](../session_429_handoff.md) | 2026-10-19 |
 | 428 | [Session 428 handoff: Sheet 99's rulings 1, 2, 3 and 5 applied, Sheet 101 answered (AUTB M1071 to Auto Body), the AGRI sitting built; #2264's live steps, then rulings 4 and 6](../session_428_handoff.md) | 2026-10-19 |
 | 427 | [Session 427 handoff: the Annual Workplan Goals tab edits every year, shows its descriptions, and the PR that carries it](../session_427_handoff.md) | 2026-10-19 |

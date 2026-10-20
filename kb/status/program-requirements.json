@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-19T23:04:31Z",
-  "session": 427,
-  "moniker": "the funding side session beside SkyMadrona",
+  "written_at": "2026-10-20T00:38:24Z",
+  "session": 428,
+  "moniker": "SkyPinyon",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_429_handoff.md",
+  "handoff": "docs/session_430_handoff.md",
   "next_step": {
-    "title": "Land cpl-project-tracker#2265, then the queue (handoff 428)",
-    "text": "Squash-merge the Implementation Funding PR on a green test (the memo as saved passages, the film figures filed from the model, Step 2 in the Step 1 box); the harvest continues from the queue handoff 428, SkyMadrona."
+    "title": "Apply Sheet 102's rulings: the exchange's files for Malone, then the AGRI sitting",
+    "text": "Draft the exchange repository's README, CLAUDE.md and contract v0 for Malone, add the three decision rights, then the queue: the Jev sitting over the AGRI residual (Sheet 99 card 4) and the nine renames (card 6)."
   },
   "calls": [
     {
@@ -24,12 +24,12 @@
   },
   "changes": [
     {
-      "text": "No change to the harvest this run; S426 worked the Annual Workplan Goals tab (a Current per year, the stored descriptions, the formatting pass).",
-      "at": "2026-10-19T20:31:49Z"
+      "text": "No change to the harvest's records this run. S428 read Credential Engine's xTRA code and its ten Ready to Publish colleges' extracts, mapped the harvest's 36,090 blocks to CTDL, and opened the CTDL partner exchange lane and Open Asks Sheet 102.",
+      "at": "2026-10-20T00:31:27Z"
     },
     {
-      "text": "No change to the harvest this run; the side session beside S427 worked the Implementation Funding tab (the memo as passages leading with SB 135, the film figures filed from the model, Step 2 in the Step 1 box, two reset controls retired, the Scenario block beside the Project block).",
-      "at": "2026-10-19T23:04:31Z"
+      "text": "Sam answered Open Asks Sheet 102 (00:31Z, all six as recommended); its calls left the run log.",
+      "at": "2026-10-20T00:37:45Z"
     }
   ],
   "headline": [
@@ -104,6 +104,12 @@
       "active": 20282,
       "complete": 11687,
       "colleges": 113
+    },
+    {
+      "day": "2026-10-20",
+      "active": 20282,
+      "complete": 11687,
+      "colleges": 113
     }
   ],
   "next_run": {
@@ -112,7 +118,7 @@
     "at": "2026-10-20T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-19",
+    "day": "2026-10-20",
     "gaps": 3819,
     "parts": {
       "links": {

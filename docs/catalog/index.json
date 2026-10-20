@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 558,
+   "count": 559,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10390,6 +10390,24 @@
      "updated": "2026-06-09"
     },
     {
+     "created": "2026-10-20",
+     "governs": [],
+     "path": "docs/kb-notes/reference-ctdl-classes-for-cobi-records.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "ctdl",
+      "credential-engine",
+      "program-requirements",
+      "ccr",
+      "cpl",
+      "m-id"
+     ],
+     "title": "CTDL classes for COBI's records, verified against Credential Engine's schema",
+     "type": "reference",
+     "updated": "2026-10-20"
+    },
+    {
      "created": "2026-06-01",
      "governs": [
       ".github/workflows/daily-dashboard.yml",
@@ -11159,7 +11177,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 89,
+   "count": 90,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11968,6 +11986,28 @@
       "unified-courses"
      ],
      "title": "Cross-discipline Over-merge Re-mint \u2014 Lessons & State",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-20",
+     "governs": [
+      "docs/reference/lanes/ctdl-partner-exchange.md",
+      "docs/kb-notes/reference-ctdl-classes-for-cobi-records.md",
+      "kb/status/program-requirements.json",
+      "kb/status/course.json"
+     ],
+     "path": "docs/ctdl_partner_exchange_lessons.md",
+     "status": null,
+     "tags": [
+      "ctdl",
+      "credential-engine",
+      "wested",
+      "program-requirements",
+      "commons",
+      "lessons"
+     ],
+     "title": "CTDL and the partner exchange \u2014 Decisions & Lessons",
      "type": null,
      "updated": ""
     },
@@ -14992,7 +15032,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 59,
+   "count": 60,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15131,6 +15171,25 @@
      "title": "CPL clean-up worklist \u2014 lane state",
      "type": null,
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "path": "docs/reference/lanes/ctdl-partner-exchange.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "ctdl",
+      "credential-engine",
+      "wested",
+      "program-requirements",
+      "commons",
+      "partners"
+     ],
+     "title": "CTDL and the partner exchange (Credential Engine, WestEd) \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-20"
     },
     {
      "created": "2026-09-22",
@@ -15828,8 +15887,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 400,
+   "count": 401,
    "docs": [
+    {
+     "created": "2026-10-20",
+     "governs": [],
+     "n": 430,
+     "path": "docs/session_430_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ctdl",
+      "credential-engine",
+      "wested",
+      "program-requirements",
+      "commons",
+      "decision-sheet"
+     ],
+     "title": "Session 430 handoff: the CTDL partner exchange scoped (the strategy doc, the lane, Open Asks Sheet 102 open); the queue's AGRI sitting and renames after Sam's calls",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-19",
      "governs": [],
@@ -22731,5 +22809,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1194
+ "total": 1198
 }

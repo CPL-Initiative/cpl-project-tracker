@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 422 (SkyWillow)
 tags: [handoff, program-requirements-harvest, scorer, reconcile, reread, ui-pass]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 423

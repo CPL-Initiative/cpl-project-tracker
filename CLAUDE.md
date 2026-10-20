@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 101](https://claude.ai/artifact/5EiqK5XHMrTA4MubpAqyLT), 2026-10-19, **answered** 22:38Z: AUTB M1071 Import Body Customizing returns to Auto Body Technology, applied; no card is open, so the builder writes no sheet until a lane marks a new ask; never republished onto). Answering
+> (latest: [Open Asks Sheet 102](https://claude.ai/artifact/4VKzfjdbAUTmUqPfNaNoD4), 2026-10-20, **answered** 00:31Z, all six as recommended; no card is open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -796,6 +796,7 @@ stays here.
 | **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; the Subjects Progress view, 2026-10-19; Exhibit, Course and CR next) — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
+| **CTDL and the partner exchange** | Credential Engine and WestEd plug into COBI through one exchange; COBI's records carry their CTDL identity. | 🔨 ruled · open work — [lane state](docs/reference/lanes/ctdl-partner-exchange.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

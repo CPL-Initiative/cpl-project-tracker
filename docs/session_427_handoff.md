@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 426 (SkyTorreya)
 tags: [handoff, annual-goals, workplan, descriptions, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 427

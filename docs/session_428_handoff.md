@@ -4,6 +4,8 @@ date: 2026-10-19
 session: 427 (SkyMadrona)
 tags: [handoff, commons, csr, common-subjects-reference, decision-sheet, re-mint]
 status: current
+superseded: true
+superseded_by: session_430_handoff.md
 ---
 
 # You are Session 428

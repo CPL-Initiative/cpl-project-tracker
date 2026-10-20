@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "session": 423,
-  "moniker": "SkyLaurel",
-  "run": "the CPL Queue routine",
+  "session": 428,
+  "moniker": "SkyPinyon",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_424_handoff.md",
+  "handoff": "docs/session_430_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-19T11:18:05Z",
+  "written_at": "2026-10-20T00:38:24Z",
   "project": "course",
   "next_step": {
     "title": "Finish the Common Course Reference list's UI pass",
@@ -16,8 +16,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-19T11:00:00Z",
-      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+      "at": "2026-10-20T00:31:27Z",
+      "text": "No change to the CCR this run; two calls from the CTDL partner exchange lane wait on Sam (Sheet 102 cards 4 and 5)."
+    },
+    {
+      "text": "Sam answered Open Asks Sheet 102 (00:31Z, all six as recommended); its calls left the run log.",
+      "at": "2026-10-20T00:37:45Z"
     }
   ]
 }
