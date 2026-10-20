@@ -217,6 +217,12 @@ check("Sierra's question bubble names its text color as a token",
 check("the recs toggle uses First Light's link blue, never the undefined --accent",
   /\.sw-rec-tg\{[^}]*color:var\(--cobalt\)/.test(RECS) && !/--accent/.test(RECS));
 check("the recs toggle reaches the 24px floor", /\.sw-rec-tg\{[^}]*min-height:24px/.test(RECS));
+// S436 UI pass: the Controls rule (Sam, 2026-10-09) reached the recs toggle and the curator's editor.
+check("the recs toggle is an underlined word at rest, with no caret glyph",
+  /\.sw-rec-tg\{[^}]*text-decoration:underline/.test(RECS) && !/sw-rec-ar/.test(RECS) && !/\u25b8|▸/.test(RECS));
+check("the editor's controls are underlined words: no border, no fill, 24px tall",
+  /\.fs-btn\{[^}]*min-height:24px;border:0;[^}]*background:none;[^}]*text-decoration:underline/.test(EDIT)
+  && !/\.fs-primary\{[^}]*background:var\(--cobalt\)/.test(EDIT));
 check("resource titles reach 24px", /\.res a\.res-title \{[^}]*min-height: 24px/.test(CSS));
 check("team emails reach 24px", /\.person \.pe a \{[^}]*min-height: 24px/.test(CSS));
 check("links in running text get a 24px pressable box without moving the line",

@@ -1296,13 +1296,15 @@
       '.fs-dock-ta{width:100%;min-height:96px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;' +
         'padding:8px 10px;border:1px solid var(--border-strong);border-radius:var(--radius-sm);' +
         'background:var(--surface-subtle);color:var(--ink);resize:vertical;}' +
-      '.fs-dock-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;}' +
-      '.fs-btn{font:600 13px var(--font-data);padding:6px 12px;border-radius:var(--radius-sm);' +
-        'border:1px solid var(--border-strong);background:var(--surface);color:var(--ink);cursor:pointer;}' +
-      '.fs-btn:hover{background:var(--surface-muted);}' +
+      '.fs-dock-actions{display:flex;align-items:center;gap:6px 18px;flex-wrap:wrap;margin-top:8px;}' +
+      /* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall (S436 UI pass). */
+      '.fs-btn{font:600 13px var(--font-data);padding:2px 0;min-height:24px;border:0;border-radius:2px;' +
+        'background:none;color:var(--cobalt);cursor:pointer;' +
+        'text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}' +
+      '.fs-btn:hover{text-decoration-thickness:2px;}' +
+      '.fs-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}' +
       '.fs-btn[disabled]{opacity:.5;cursor:default;}' +
-      '.fs-primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-seal);}' +
-      '.fs-primary:hover{background:var(--seal-blue);}' +
+      '.fs-primary{font-weight:700;}' +
       '.fs-reset{color:var(--crimson);}' +
       '.fs-dock-msg{color:var(--muted);font-size:.85rem;}' +
       '.fs-dock-hint{margin-top:6px;color:var(--faint);font-size:.8rem;}' +
