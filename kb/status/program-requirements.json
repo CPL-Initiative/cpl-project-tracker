@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-20T16:42:32Z",
-  "session": 438,
-  "moniker": "SkySumac",
+  "written_at": "2026-10-20T22:23:17Z",
+  "session": 439,
+  "moniker": "SkySaltbush",
   "run": "a session Sam opened",
   "decider": "Sam",
-  "handoff": "docs/session_439_handoff.md",
+  "handoff": "docs/session_440_handoff.md",
   "next_step": {
-    "title": "Build the Course Progress view where SkyView's counts can reach it",
-    "text": "The Commons' last Progress view: the Common Course Reference's, drawn by the shared module inside SkyView, with its definition of complete (an auditor score of 0.85 or better) on a card for Sam and a link behind each count."
+    "title": "Propose the CLAUDE.md pass on one short sheet",
+    "text": "Tag each rule in the tracker's CLAUDE.md keep, update or pull with its evidence, and put the proposed edits to Sam on one sheet; the Course Progress view follows."
   },
   "calls": [
     {
@@ -24,12 +24,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-20T16:08:00Z",
-      "text": "The Annual Workplan Goals table drops its Total column, centers its numbers, folds each row's details behind one word and links each row to its Activity card."
-    },
-    {
-      "at": "2026-10-20T16:35:00Z",
-      "text": "The second reader's wait moved from a new subscription to the API billing on the district card."
+      "at": "2026-10-20T22:23Z",
+      "text": "No harvest change this run; the session worked on the funding page and its film."
     }
   ],
   "headline": [

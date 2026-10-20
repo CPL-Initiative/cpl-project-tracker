@@ -1,3 +1,4 @@
+-- RUN 2026-10-20 by S439 SkySaltbush (rephrased: the word for removing a table in prose hangs the MCP; see cpl_memory supabase-mcp-write-hangs-on-the-word-2026-10-20). Kept as the record.
 -- S438 SkySumac, 2026-10-20: three cpl_memory rows, UNWRITTEN. Three execute_sql attempts (15:36Z, 15:38Z,
 -- 16:44Z) timed out at 60s before reaching the database (no active query in pg_stat_activity; reads worked).
 -- The next session runs this as written, through the Supabase MCP, in ONE execute_sql call, then deletes
