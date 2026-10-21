@@ -3358,6 +3358,9 @@
     wireSession();
     render();
     if (!state.registry && !state.loading) load();
+    /* A list another tab asked for before this module had loaded (CPL Pathways' college line). */
+    var pend = window.CPL_PROGRAM_REQUIREMENTS_GOTO;
+    if (pend) { window.CPL_PROGRAM_REQUIREMENTS_GOTO = null; goTo(pend); }
   }
 
   window.CPL_PROGRAM_REQUIREMENTS = {

@@ -119,7 +119,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_goal2_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_college_users` | tabs: `map-queue`, `map-users` | — |
-| `map_colleges` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `implementation-funding`, `map-queue`, `map-users`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
+| `map_colleges` | tabs: `college-briefing`, `college-identity`, `implementation-funding`, `map-queue`, `map-users`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
 | `map_contact_gaps` | tabs: `governance`, `map-queue`, `map-users` | — |
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_credential_student_rollup` | tabs: `college-briefing` | — |
@@ -135,9 +135,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
 | `program_record_college_items` | tabs: `college-briefing`, `map-queue` | — |
-| `program_record_verdicts` | tabs: `cpl-pathways`, `program-requirements` | — |
+| `program_record_verdicts` | tabs: `program-requirements` | — |
 | `program_requirement_records` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
-| `program_source_addenda` | tabs: `cpl-pathways`, `program-requirements` | — |
+| `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci`, `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
@@ -361,7 +361,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
-| `commons_progress.js` | tabs: `canonical-subj4`, `cpl-pathways`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
+| `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
@@ -523,7 +523,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/authority_recode_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/blank_stray_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/budget_snapshot.json` | scripts: `kb/_load_budget.py` | scripts: `kb/_load_budget.py` · committed by: `daily-dashboard.yml` |
-| `kb/catalog_framing.json` | tabs: `cpl-pathways`, `program-requirements` | — |
+| `kb/catalog_framing.json` | tabs: `program-requirements` | — |
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
 | `kb/cer_classified.json` | scripts: `kb/_cer_procedures.py` | scripts: `kb/_cer_procedures.py` · committed by: `cer-procedures.yml` |
 | `kb/cer_procedures.json` | scripts: `kb/_build_commons_status.py`, `kb/_cer_procedures.py` | — |
@@ -706,7 +706,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/status/program-requirements.json` | tabs: `cpl-pathways`, `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
+| `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
 | `kb/status/subjects.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
@@ -770,7 +770,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `picks kb/<slug-with-underscores>_domain_map.json` | scripts: `kb/_build_domain_cpl_crosswalk.py` | — |
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
 | `privacy.html` | scripts: `scripts/ui_pass.py` | — |
-| `program_requirements.js` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
+| `program_requirements.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
 | `prototype/build_ccr_atlas.py` | workflows: `daily-dashboard.yml` | — |
@@ -1029,7 +1029,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
 | `github.com` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-knowledge-base` | pages: `kb-portal/index.html` |
-| `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `cpl-pathways`, `cr-reference`, `credential-reference`, `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
+| `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `cr-reference`, `credential-reference`, `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/_csr_quarterly_probe.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
