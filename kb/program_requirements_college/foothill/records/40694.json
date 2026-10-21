@@ -1,0 +1,211 @@
+{
+ "college": "Foothill College",
+ "control_number": "40694",
+ "shape": "certificate",
+ "title": "Basic Pharmacy Technician",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7817,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7817,
+    "output_tokens": 1696,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1696,
+  "output_tokens_details": {
+   "thinking_tokens": 640
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06519,
+ "ms": 16061,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PHT63"
+   ],
+   "flagged": [
+    "PHT63"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.5,
+    19.5
+   ],
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Basic Pharmacy Technician",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Graduates will demonstrate pharmaceutical knowledge, clinical skills, and values necessary to practice as a competent pharmacy technician in both community/retail and hospital pharmacy settings.",
+    "Graduates will demonstrate competency with advanced-level clinical skills in accordance with ASHP/ACPE accreditation requirements."
+   ],
+   "careers": [
+    "Pharmacy technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19.5,
+     "max": 19.5
+    },
+    "courses": [
+     {
+      "code": "AHS 50A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AHS 51",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 63",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHT 64A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHT 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints AHS 50A and PHT 64A; closed list stores them as AHS 050A and PHT 064A (same courses, zero-padded), so they are not marked as catalog additions.",
+   "PHT 63 (PTCE Review, 2 units) is not in the closed list; recorded as a catalog addition.",
+   "The 'or AHS 51' row prints no units beside it in this section; AHS 51 is printed as 1.5 units in the Pharmacy Assistant certificate section.",
+   "Units are quarter units; 19.5 quarter units fits the award band of 12Q to fewer than 24Q.",
+   "The outcomes list (heading cut off as 'arning Outcomes') is printed once for the Pharmacy Technician program as a whole; recorded as shared by this award. The second outcome references advanced-level ASHP/ACPE skills and may apply mainly to the Advanced-Level certificate/AS.",
+   "Career Opportunities text lists work settings (community/retail pharmacies, hospitals, home health care, etc.) for pharmacy technicians; only the job title 'Pharmacy technician' recorded as a career.",
+   "Program prerequisites (BIOL 14, Intermediate Algebra, PHT 200L) are listed for program admission and are not recorded as certificate requirements; the 90-unit figure applies to the associate degree, not this certificate."
+  ]
+ },
+ "extracted_run": "39671107254"
+}

@@ -17,7 +17,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 2,
@@ -40,12 +41,24 @@
   "title": "Accounting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG70R"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 4000
  },
  {
   "control_number": "06016",
@@ -66,7 +79,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 3,
@@ -98,7 +112,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 10,
@@ -127,7 +142,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 7,
@@ -186,7 +202,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 1,
@@ -229,7 +246,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 15,
@@ -240,12 +258,49 @@
   "title": "Photography",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "GID60",
+   "GID61",
+   "PHOT10",
+   "PHOT10H",
+   "PHOT11",
+   "PHOT11H",
+   "PHOT22",
+   "PHOT68C",
+   "PHOT68E",
+   "PHOT6A",
+   "PHOT6B",
+   "PHOT6C",
+   "PHOT70R",
+   "PHOT71R",
+   "PHOT72",
+   "PHOT72R",
+   "PHOT73R",
+   "PHOT74A",
+   "PHOT74B",
+   "PHOT74C",
+   "PHOT78A",
+   "PHOT78B",
+   "PHOT78C",
+   "PHOT78D",
+   "PHOT8",
+   "PHOT8H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/photography/",
+   "title": "Photography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 8686
  },
  {
   "control_number": "06051",
@@ -288,12 +343,24 @@
   "title": "Dental Assisting",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA51C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/dental-assisting/",
+   "title": "Dental Assisting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3480
  },
  {
   "control_number": "06068",
@@ -318,7 +385,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 7,
@@ -344,7 +412,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 4,
@@ -355,12 +424,26 @@
   "title": "Paramedic",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60A",
+   "EMS61A",
+   "EMS62A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/paramedic/",
+   "title": "Paramedic < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3539
  },
  {
   "control_number": "06074",
@@ -379,7 +462,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 1,
@@ -414,7 +498,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 1,
@@ -437,7 +522,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 1,
@@ -484,7 +570,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 1,
@@ -507,7 +594,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null
    }
   },
   "listed": 1,
@@ -543,7 +631,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 2,
@@ -567,7 +656,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 2,
@@ -605,7 +695,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 4,
@@ -667,7 +758,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null
    }
   },
   "listed": 5,
@@ -678,12 +770,29 @@
   "title": "Environmental Horticulture & Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT60J",
+   "HORT80A",
+   "HORT80B",
+   "HORT80C",
+   "HORT80D",
+   "HORT91A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/",
+   "title": "Environmental Horticulture and Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4359
  },
  {
   "control_number": "09287",
@@ -715,7 +824,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 14,
@@ -726,12 +836,31 @@
   "title": "Theatre Technology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "THTR1",
+   "THTR21A",
+   "THTR21B",
+   "THTR21C",
+   "THTR31",
+   "THTR45A",
+   "THTR45B",
+   "THTR45E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/theatre-technology/",
+   "title": "Theatre Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "aa"
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 5003
  },
  {
   "control_number": "09293",
@@ -779,7 +908,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa"
    }
   },
   "listed": 6,
@@ -825,7 +955,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 25,
@@ -878,7 +1009,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa"
    }
   },
   "listed": 32,
@@ -916,7 +1048,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 4,
@@ -965,7 +1098,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 27,
@@ -1041,7 +1175,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 42,
@@ -1102,7 +1237,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 39,
@@ -1150,7 +1286,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 31,
@@ -1189,7 +1326,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 21,
@@ -1213,7 +1351,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 2,
@@ -1255,7 +1394,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 20,
@@ -1266,12 +1406,50 @@
   "title": "Inside Wireman",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APEL112",
+   "APEL113",
+   "APEL119A",
+   "APEL120",
+   "APEL120A",
+   "APEL121",
+   "APEL121A",
+   "APEL122",
+   "APEL122A",
+   "APEL123",
+   "APEL123A",
+   "APEL124",
+   "APEL124A",
+   "APEL125",
+   "APEL125A",
+   "APEL126",
+   "APEL126A",
+   "APEL127",
+   "APEL127A",
+   "APEL128",
+   "APEL128A",
+   "APEL129",
+   "APEL129A",
+   "APEL135",
+   "APEL136",
+   "APEL137",
+   "APEL138"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/",
+   "title": "Apprenticeship - Inside Wireman (formerly General Electrician) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 6765
  },
  {
   "control_number": "20086",
@@ -1311,7 +1489,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 24,
@@ -1322,12 +1501,59 @@
   "title": "Music Technology",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.643,
+  "codes_found": [
+   "MDIA13",
+   "MDIA30",
+   "MTEC1A",
+   "MTEC49",
+   "MTEC50A",
+   "MTEC51A",
+   "MTEC51B",
+   "MTEC51C",
+   "MTEC52A",
+   "MTEC52B",
+   "MTEC53A",
+   "MTEC54A",
+   "MTEC55A",
+   "MTEC55B",
+   "MTEC55C",
+   "MTEC57A",
+   "MTEC57B",
+   "MTEC60A",
+   "MTEC62A",
+   "MTEC62B",
+   "MTEC62C",
+   "MTEC70A",
+   "MTEC70B",
+   "MTEC70C",
+   "MTEC70D",
+   "MTEC70E",
+   "MTEC70F",
+   "MTEC72B",
+   "MTEC72C",
+   "MTEC82A",
+   "MTEC88A",
+   "MTEC88B",
+   "MTEC88C",
+   "MUS11D",
+   "MUS11E",
+   "MUS9B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "coa"
+   }
+  },
   "listed": 56,
-  "text_chars": 0
+  "text_chars": 7429
  },
  {
   "control_number": "20088",
@@ -1378,7 +1604,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 33,
@@ -1424,7 +1651,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 12,
@@ -1471,7 +1699,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 25,
@@ -1524,7 +1753,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 31,
@@ -1587,7 +1817,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 41,
@@ -1633,7 +1864,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 24,
@@ -1704,7 +1936,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 49,
@@ -1772,7 +2005,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 46,
@@ -1814,7 +2048,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 20,
@@ -1846,7 +2081,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 10,
@@ -1934,7 +2170,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 66,
@@ -1976,7 +2213,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 21,
@@ -2023,7 +2261,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 25,
@@ -2064,7 +2303,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 19,
@@ -2139,7 +2379,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 53,
@@ -2225,7 +2466,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 73,
@@ -2293,7 +2535,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 50,
@@ -2323,7 +2566,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 9,
@@ -2358,7 +2602,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 13,
@@ -2417,7 +2662,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 37,
@@ -2448,7 +2694,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 9,
@@ -2506,7 +2753,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 13,
@@ -2517,12 +2765,33 @@
   "title": "Geographic Information Systems Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "CS22A",
+   "GEOG1",
+   "GEOG10",
+   "GEOG2",
+   "GIST11",
+   "GIST12",
+   "GIST52",
+   "GIST53",
+   "GIST54A",
+   "GIST58"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/",
+   "title": "Geographic Information Systems Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 5972
  },
  {
   "control_number": "33521",
@@ -2561,7 +2830,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 21,
@@ -2598,7 +2868,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 15,
@@ -2648,7 +2919,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 16,
@@ -2659,36 +2931,118 @@
   "title": "Air Conditioning and Refrigeration Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT129",
+   "APPT130",
+   "APPT151",
+   "APPT152",
+   "APPT153",
+   "APPT154",
+   "APPT155",
+   "APPT156",
+   "APPT157",
+   "APPT158",
+   "APPT159",
+   "APPT171",
+   "APPT172",
+   "APPT173",
+   "APPT174",
+   "APPT175",
+   "APPT176",
+   "APPT178",
+   "APPT179",
+   "APPT180"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/",
+   "title": "Apprenticeship - Air Conditioning and Refrigeration Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 4368
  },
  {
   "control_number": "33526",
   "title": "Plumbing Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT129",
+   "APPT130",
+   "APPT131",
+   "APPT132",
+   "APPT133",
+   "APPT134A",
+   "APPT134B",
+   "APPT135A",
+   "APPT135B",
+   "APPT136",
+   "APPT137A",
+   "APPT137B",
+   "APPT138",
+   "APPT139A",
+   "APPT139B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/",
+   "title": "Apprenticeship - Plumbing Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4511
  },
  {
   "control_number": "33527",
   "title": "Steamfitting and Pipefitting Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT129",
+   "APPT130",
+   "APPT134B",
+   "APPT139A",
+   "APPT139B",
+   "APPT141",
+   "APPT142",
+   "APPT143",
+   "APPT143A",
+   "APPT145",
+   "APPT146",
+   "APPT147A",
+   "APPT147B",
+   "APPT148"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/",
+   "title": "Apprenticeship - Steamfitting and Pipefitting Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 4027
  },
  {
   "control_number": "33837",
@@ -2715,7 +3069,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 9,
@@ -2758,7 +3113,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 9,
@@ -2796,7 +3152,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 16,
@@ -2838,7 +3195,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 20,
@@ -2866,7 +3224,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -2891,7 +3250,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -2916,7 +3276,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -2941,7 +3302,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -2974,7 +3336,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 11,
@@ -3067,7 +3430,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 72,
@@ -3094,7 +3458,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 5,
@@ -3143,7 +3508,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -3192,7 +3558,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 27,
@@ -3251,7 +3618,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 25,
@@ -3292,7 +3660,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 33,
@@ -3339,7 +3708,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 27,
@@ -3350,12 +3720,31 @@
   "title": "Acting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THTR20A",
+   "THTR20B",
+   "THTR20C",
+   "THTR38D",
+   "THTR40A",
+   "THTR43E",
+   "THTR48B",
+   "THTR63A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/theatre-arts/",
+   "title": "Theatre Arts < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 6197
  },
  {
   "control_number": "38825",
@@ -3374,12 +3763,26 @@
   "title": "Veterinary Assisting",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VT52A",
+   "VT52B",
+   "VT88A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/",
+   "title": "Veterinary Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3239
  },
  {
   "control_number": "39351",
@@ -3407,7 +3810,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 12,
@@ -3482,7 +3886,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 5,
@@ -3522,7 +3927,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 18,
@@ -3550,7 +3956,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 7,
@@ -3590,7 +3997,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": "coa"
    }
   },
   "listed": 6,
@@ -3636,7 +4044,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 20,
@@ -3666,17 +4075,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
-   "title": "General Studies: Science < Foothill College",
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": "coa"
    }
   },
   "listed": 14,
-  "text_chars": 6104
+  "text_chars": 12097
  },
  {
   "control_number": "39891",
@@ -3702,7 +4112,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 14,
@@ -3760,17 +4171,18 @@
    "CS55D"
   ],
   "source": {
-   "url": "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/",
-   "title": "Enterprise Networking < Foothill College",
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": "coa"
    }
   },
   "listed": 6,
-  "text_chars": 3332
+  "text_chars": 10773
  },
  {
   "control_number": "39996",
@@ -3796,7 +4208,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 14,
@@ -3827,7 +4240,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 10,
@@ -3858,7 +4272,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 10,
@@ -3971,7 +4386,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 31,
@@ -4025,7 +4441,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 33,
@@ -4048,12 +4465,29 @@
   "title": "Basic Pharmacy Technician",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHS50A",
+   "AHS51",
+   "PHT101",
+   "PHT102",
+   "PHT103",
+   "PHT64A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
+   "title": "Pharmacy Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4301
  },
  {
   "control_number": "40838",
@@ -4113,7 +4547,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -4141,7 +4576,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -4182,7 +4618,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 19,
@@ -4193,24 +4630,55 @@
   "title": "Data Analytics",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "CS31A",
+   "CS48A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+   "title": "General Studies: Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 5411
  },
  {
   "control_number": "41328",
   "title": "Cybersecurity",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS30A",
+   "CS50A",
+   "CS53A",
+   "CS53B",
+   "CS53C",
+   "CS53D"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 10773
  },
  {
   "control_number": "41642",
@@ -4246,7 +4714,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 18,
@@ -4257,84 +4726,264 @@
   "title": "Plumbing and Pipefitting Apprenticeship",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "APPR160A",
+   "APPT162",
+   "APPT166",
+   "APPT168",
+   "APPT170",
+   "APPT185",
+   "APPT186",
+   "APPT187",
+   "APPT189",
+   "APPT191",
+   "APPT192",
+   "APPT193",
+   "APPT194",
+   "APPT195",
+   "APPT196",
+   "APPT198"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/",
+   "title": "Apprenticeship - Plumbing and Pipefitting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4483
  },
  {
   "control_number": "41898",
   "title": "Network Computing",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS50A",
+   "CS50B",
+   "CS50C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 10297
  },
  {
   "control_number": "41899",
   "title": "Introduction to Sports Medicine",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITRN50",
+   "ITRN51",
+   "ITRN52",
+   "ITRN53",
+   "ITRN54",
+   "KINS1",
+   "KINS16A",
+   "KINS16B",
+   "KINS16C",
+   "KINS62A",
+   "KINS62B",
+   "KINS9"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/sports-medicine/",
+   "title": "Sports Medicine < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "coa"
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 5558
  },
  {
   "control_number": "41978",
   "title": "IT Support",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS30A",
+   "CS50A",
+   "CS53A",
+   "CS56B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 10773
  },
  {
   "control_number": "42334",
   "title": "Advanced Sports Medicine",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "ITRN50",
+   "ITRN51",
+   "ITRN52",
+   "ITRN53",
+   "ITRN54",
+   "KINS1",
+   "KINS16A",
+   "KINS16B",
+   "KINS16C",
+   "KINS48",
+   "KINS62A",
+   "KINS62B",
+   "KINS62C",
+   "KINS62D",
+   "KINS62E",
+   "KINS81",
+   "KINS8A",
+   "KINS8B",
+   "KINS9"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/sports-medicine/",
+   "title": "Sports Medicine < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "coa"
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 5558
  },
  {
   "control_number": "42336",
   "title": "Air Conditioning Mechanic",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.767,
+  "codes_found": [
+   "APSM151A",
+   "APSM151B",
+   "APSM151C",
+   "APSM152A",
+   "APSM152B",
+   "APSM152C",
+   "APSM153B",
+   "APSM154A",
+   "APSM154B",
+   "APSM156A",
+   "APSM156B",
+   "APSM156C",
+   "APSM157A",
+   "APSM158A",
+   "APSM158C",
+   "APSM173B",
+   "APSM173C",
+   "APSM174A",
+   "APSM177A",
+   "APSM177B",
+   "APSM177C",
+   "APSM178A",
+   "APSM178C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-mechanic/",
+   "title": "Apprenticeship - Air Conditioning Mechanic < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 30,
-  "text_chars": 0
+  "text_chars": 4952
  },
  {
   "control_number": "42475",
   "title": "Test, Adjust and Balancing (TAB) Technician",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "APSM171A",
+   "APSM171B",
+   "APSM171C",
+   "APSM172A",
+   "APSM172B",
+   "APSM172C",
+   "APSM173A",
+   "APSM173B",
+   "APSM173C",
+   "APSM174A",
+   "APSM174B",
+   "APSM174C",
+   "APSM175A",
+   "APSM175B",
+   "APSM175C",
+   "APSM176A",
+   "APSM176B",
+   "APSM176C",
+   "APSM177A",
+   "APSM177B",
+   "APSM177C",
+   "APSM178A",
+   "APSM178B",
+   "APSM178C",
+   "APSM179B",
+   "APSM179C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-test-adjust-balancing-technician/",
+   "title": "Apprenticeship - Test, Adjust and Balancing (TAB) Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "as"
+   }
+  },
   "listed": 30,
-  "text_chars": 0
+  "text_chars": 4941
  },
  {
   "control_number": "42515",
@@ -4450,7 +5099,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 4,
@@ -4543,7 +5193,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 36,
@@ -4593,7 +5244,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 29,
@@ -4623,7 +5275,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 8,
@@ -4667,7 +5320,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 10,
@@ -4702,7 +5356,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 13,
@@ -4760,7 +5415,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 12,
@@ -4787,7 +5443,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 10,
@@ -4823,7 +5480,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.333,
+    "section": "coa"
    }
   },
   "listed": 14,
@@ -4834,12 +5492,38 @@
   "title": "Advanced Web Applications Development",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS1A",
+   "CS1B",
+   "CS22A",
+   "CS2A",
+   "CS2B",
+   "CS30A",
+   "CS31A",
+   "CS3A",
+   "CS3B",
+   "CS40A",
+   "CS77A",
+   "CS77B",
+   "CS84A",
+   "GID55",
+   "GID57"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 11805
  },
  {
   "control_number": "43828",
@@ -4860,7 +5544,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 3,
@@ -4871,12 +5556,26 @@
   "title": "Semiconductor Processing",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR101A",
+   "ENGR61A",
+   "MATH40A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/semiconductor-process-engineering/",
+   "title": "Semiconductor Process Engineering < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4225
  },
  {
   "control_number": "44221",
@@ -4903,7 +5602,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 9,
@@ -4914,12 +5614,38 @@
   "title": "Archaeological Field Work",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH12",
+   "ANTH16L",
+   "ANTH17L",
+   "ANTH20",
+   "ANTH22",
+   "ANTH3",
+   "ANTH4",
+   "ANTH51",
+   "ANTH52",
+   "ANTH57",
+   "ANTH67A",
+   "ANTH67B",
+   "ANTH67C",
+   "ANTH8",
+   "ANTH8H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/anthropology/",
+   "title": "Anthropology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": "coa"
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 12038
  },
  {
   "control_number": "44253",
@@ -4940,7 +5666,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -4965,7 +5692,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 3,
@@ -4988,12 +5716,28 @@
   "title": "Business and Marketing",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI22",
+   "BUSI22H",
+   "BUSI57",
+   "BUSI59",
+   "BUSI59A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+   "title": "Business Administration < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5,
+    "section": "coa"
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 5400
  },
  {
   "control_number": "44745",
@@ -5038,7 +5782,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 29,
@@ -5065,7 +5810,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 5,
@@ -5094,7 +5840,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 7,
@@ -5123,7 +5870,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 7,
@@ -5172,7 +5920,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -5209,7 +5958,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as"
    }
   },
   "listed": 15,
@@ -5234,7 +5984,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 3,
@@ -5259,7 +6010,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 6,
@@ -5284,7 +6036,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null
    }
   },
   "listed": 3,
@@ -5326,7 +6079,8 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa"
    }
   },
   "listed": 20,
@@ -5361,7 +6115,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 13,
@@ -5398,7 +6153,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 15,
@@ -5451,7 +6207,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt"
    }
   },
   "listed": 31,
@@ -5481,7 +6238,8 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null
    }
   },
   "listed": 15,

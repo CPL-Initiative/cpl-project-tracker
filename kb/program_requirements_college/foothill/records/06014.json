@@ -1,0 +1,539 @@
+{
+ "college": "Foothill College",
+ "control_number": "06014",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7736,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7736,
+    "output_tokens": 3529,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3529,
+  "output_tokens_details": {
+   "thinking_tokens": 1236
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10152,
+ "ms": 27570,
+ "seconds": 28.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 39,
+   "codes": [
+    "ACTG1A",
+    "ACTG1AH",
+    "ACTG1B",
+    "ACTG1BH",
+    "ACTG1C",
+    "ACTG1CH",
+    "ACTG51A",
+    "ACTG51B",
+    "ACTG51C",
+    "ACTG52",
+    "ACTG53",
+    "ACTG54",
+    "ACTG55",
+    "ACTG56",
+    "ACTG57",
+    "ACTG58",
+    "ACTG59",
+    "ACTG60",
+    "ACTG64A",
+    "ACTG64B",
+    "ACTG65",
+    "ACTG66",
+    "ACTG67",
+    "ACTG68A",
+    "ACTG68B",
+    "ACTG68C",
+    "ACTG71R",
+    "ACTG72R",
+    "ACTG73R",
+    "ACTG75",
+    "ACTG76",
+    "BUSI11",
+    "BUSI11H",
+    "BUSI18",
+    "BUSI19",
+    "BUSI22",
+    "BUSI22H",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ACTG1A",
+    "ACTG1AH",
+    "ACTG1B",
+    "ACTG1BH",
+    "ACTG1C",
+    "ACTG1CH",
+    "ACTG51A",
+    "ACTG51B",
+    "ACTG51C",
+    "ACTG52",
+    "ACTG53",
+    "ACTG54",
+    "ACTG55",
+    "ACTG56",
+    "ACTG57",
+    "ACTG58",
+    "ACTG59",
+    "ACTG60",
+    "ACTG64A",
+    "ACTG64B",
+    "ACTG65",
+    "ACTG66",
+    "ACTG67",
+    "ACTG68A",
+    "ACTG68B",
+    "ACTG68C",
+    "ACTG71R",
+    "ACTG72R",
+    "ACTG73R",
+    "ACTG75",
+    "ACTG76",
+    "BUSI11",
+    "BUSI11H",
+    "BUSI18",
+    "BUSI19",
+    "BUSI22",
+    "BUSI22H",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     48.0,
+     48.0
+    ],
+    "stated": [
+     48.0,
+     48.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACTG 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1AH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1BH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACTG 1CH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 67",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Support Courses",
+    "rule": "choose_units",
+    "minimum": 28,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ACTG 51A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 51B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 51C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 52",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 54",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 55",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 56",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 57",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 58",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 59",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 60",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 64A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 64B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 65",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 66",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 68A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 68B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 68C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 70R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACTG 71R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 72R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 73R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 75",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACTG 76",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSI 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSI 11H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSI 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSI 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSI 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSI 22H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list's ACTG 070R is matched to the catalog's ACTG 70R (same title, INDEPENDENT STUDY IN ACCOUNTING), so it is not marked as a catalog addition.",
+   "Foothill is on the quarter system; units are quarter units.",
+   "degree_total 90 comes from 'A minimum of 90 units is required to complete the associate degree, including: Core and support courses for the major (48 units total)'. This may be generic boilerplate rather than this award's own total; reviewer should check. electives_fill_degree is set from the footnote 'Additional elective course work may be necessary to meet the 90-unit minimum requirement.'",
+   "The Core Courses block prints no subtotal; the four core courses print 5 units each. The Support Courses list prints no units beside individual courses, only 'Select 28 units from the following: 28'.",
+   "Honors and 'or' alternatives print no units of their own.",
+   "Total Units 48 is printed for the major; the summary also shows 'Major: 48'.",
+   "Careers (bookkeeper, tax preparer, etc.) are named only in the Certificate of Achievement in Financial Accounting section, so they are not recorded for the A.A. degree.",
+   "No program learning outcomes appear in the provided text.",
+   "The text is cut off at the start and within the Financial Accounting certificate section."
+  ]
+ },
+ "extracted_run": "39671107254"
+}

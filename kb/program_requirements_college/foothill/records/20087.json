@@ -1,0 +1,597 @@
+{
+ "college": "Foothill College",
+ "control_number": "20087",
+ "shape": "certificate",
+ "title": "Music Technology",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11510,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11510,
+    "output_tokens": 4253,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4253,
+  "output_tokens_details": {
+   "thinking_tokens": 1173
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1311,
+ "ms": 32222,
+ "seconds": 32.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 34,
+   "listed": 56,
+   "share": 0.607,
+   "missing": [
+    "MDIA1",
+    "MDIA11",
+    "MDIA11H",
+    "MDIA12",
+    "MDIA13",
+    "MDIA1H",
+    "MDIA20",
+    "MDIA2A",
+    "MDIA2B",
+    "MDIA2C",
+    "MDIA3",
+    "MDIA30",
+    "MDIA31",
+    "MDIA5",
+    "MDIA52",
+    "MDIA81B",
+    "MDIA8A",
+    "MUS11B",
+    "MUS70R",
+    "MUS71R",
+    "MUS72R",
+    "MUS73R"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MTEC57C",
+    "MTEC86A",
+    "MTEC90A"
+   ],
+   "flagged": [
+    "MTEC57C",
+    "MTEC86A",
+    "MTEC90A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Music Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency with audio-video equipment, including live content acquisition, microphones, video cameras, sound reinforcement, post-production editing, mixing, mastering, metering, and system troubleshooting.",
+    "Evaluate merits of professional media productions with an understanding of technical and aesthetic considerations appropriate for various genres.",
+    "Distinguish between related career paths associated with the discipline of Music Technology, including digital media content creation, technical support, marketing, entrepreneurship, and business administrative positions."
+   ],
+   "careers": [
+    "Music Production",
+    "Audio Post-Production",
+    "Game Audio",
+    "Video Production",
+    "Podcasting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MTEC 50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 51A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MTEC 60A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 52A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 55A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 57A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 62A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MTEC 72B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MTEC 72C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "And one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MTEC 49",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 9B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 11D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 11E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Support Courses: Select eight units from the following:",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MTEC 1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 49",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 51B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 51C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 52B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 53A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 54A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 55B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 55C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 57B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 57C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MTEC 60A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 62B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 62C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 70F",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 72B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 72C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 82A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 86A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MTEC 88A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 88B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 88C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTEC 90A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MDIA 001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 002A",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 002B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 002C",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 008A",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 011H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 081B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 13",
+    "why": "named only in the Game Audio I and II certificate sections"
+   },
+   {
+    "code": "MDIA 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 30",
+    "why": "named only in the Audio Post Production certificate section"
+   },
+   {
+    "code": "MDIA 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "MDIA 52",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 011B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 070R",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 071R",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 072R",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 073R",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The Certificate of Achievement in Music Technology (40 units) is awarded after completion of the same core and support courses listed for the A.A.; blocks are read from that shared Core and Support Courses list.",
+   "Catalog codes omit leading zeros (e.g., MTEC 50A vs. closed list MTEC 050A, MUS 9B vs. MUS 009B); treated as the same courses.",
+   "Units are quarter units (Foothill is on the quarter system).",
+   "Footnote 1: MTEC 49, MTEC 60A, MTEC 70A, MTEC 72B and MTEC 72C may be completed only once for credit to satisfy either the core or support requirements; they appear in both core and support lists.",
+   "The outcomes list is printed for the program as a whole and the certificate is taken to share it. The text begins mid-way through the first outcome ('usic theory, computer literacy, and team collaboration...'); that truncated outcome is omitted and should be checked against the full page.",
+   "Courses in the choose blocks carry no per-course units in the text (block totals printed: 4 and 8)."
+  ]
+ },
+ "extracted_run": "39671107254"
+}
