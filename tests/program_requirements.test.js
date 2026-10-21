@@ -2633,6 +2633,36 @@ block("(25b)", function () {
   });
 });
 
+// Sam, 2026-10-21: "put a surface flag on the collapsed row of the colleges we can't access
+// and a way to sort for them". The flag sits in the closed card's summary, says whether a
+// hand-filed copy carries the read, and the Show filter lists the blocked ones.
+block("(26)", function () {
+  const m = loadModule({});
+  const hf = { v: 1, hosts: [{ host: "www.deanza.edu", access: "open", note: "Read from the copy Sam filed on the catalog-files release (the hand-filed step, #2199)." }] };
+  const reg = [
+    { college: "De Anza College", catalog_url: "https://x/a.pdf", access_status: "blocked", procedure: hf },
+    { college: "Cerro Coso Community College", catalog_url: "https://x/b.pdf", access_status: "robots_disallow", procedure: { v: 2, hosts: [] } },
+    { college: "Porterville College", catalog_url: "https://x/c.pdf", access_status: "ok", procedure: hf },
+    { college: "Cerritos College", catalog_url: "https://x/d", access_status: "ok", procedure: { v: 4, hosts: [] } }
+  ];
+  const A = m.M.catalogAccess;
+  check("(26) a blocked catalog read from a filed copy says both, quietly",
+    /blocked \(a challenge page\), read from a hand-filed copy/.test(A(reg[0]).t) && A(reg[0]).c !== "prh-caution");
+  check("(26) a blocked catalog with no copy asks for one",
+    /needs a hand-filed copy/.test(A(reg[1]).t) && A(reg[1]).c === "prh-caution");
+  check("(26) an open catalog with no copy carries no flag", A(reg[3]) === null);
+  check("(26) a 404 catalog reads as not found on the Catalogs view", m.M.catalogStatus({ catalog_url: "u", access_status: "not_found" }).t === "Address answers not found");
+  const f = m.M.filterProcedures(reg, "access").map(function (r) { return r.college; });
+  check("(26) the filter lists blocked and filed colleges, a missing copy first",
+    f.join("|") === "Cerro Coso Community College|De Anza College|Porterville College", f.join("|"));
+  check("(26) Blocked, no hand-filed copy lists only that one",
+    m.M.filterProcedures(reg, "needscopy").length === 1);
+  m.M._state.registry = reg; m.M._state.records = []; m.M._state.view = "procedures"; m.M._render();
+  const sum = Array.prototype.find.call(m.root.querySelectorAll("details.prh-sec summary"), function (s) { return /De Anza/.test(s.textContent); });
+  check("(26) the flag shows on the closed card's summary", sum && sum.querySelector(".prh-sec-flag") && /hand-filed/.test(sum.textContent));
+  check("(26) the glance counts blocked catalogs", /2catalogs block the reader/.test(m.root.textContent.replace(/\s+/g, "")) || /2\s*catalogs block the reader/.test(m.root.textContent));
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
