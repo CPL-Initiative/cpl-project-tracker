@@ -235,7 +235,8 @@
     var joined = {};
     courses.forEach(function (c) { joined[joinKey(c.subj, c.num)] = c.id; });
     function catKey(s) {
-      var k = codeKey(s, ""), m = /^(.*?) ?(\S+)$/.exec(k);
+      // Moreno Valley's catalog writes "ACC-1A" for ACC 1A.
+      var k = codeKey(String(s || "").replace(/^([A-Za-z]+)-(?=[0-9])/, "$1 "), ""), m = /^(.*?) ?(\S+)$/.exec(k);
       return byId[k] || !k ? k : (joined[m ? joinKey(m[1], m[2]) : k.replace(/ /g, "")] || k);
     }
     catalog.forEach(function (p) {

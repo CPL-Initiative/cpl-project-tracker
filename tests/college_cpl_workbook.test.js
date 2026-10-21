@@ -11,7 +11,8 @@
 //   5. the .xlsx is a valid zip with frozen, filtered sheets and escaped names
 //   6. "Could Adopt - View in MAP" is a working hyperlink only for an ID MAP listed
 //   7. a catalog code written without its space (Bakersfield's "AUTOB30") still finds its course,
-//      and one COCI pads with zeros (Foothill's "ACTG 001A" for "ACTG 1A") does too
+//      and one COCI pads with zeros (Foothill's "ACTG 001A" for "ACTG 1A") or a hyphenated one
+//      (Moreno Valley's "ACC-1A") does too
 //   8. each Could Adopt link carries the exhibit ID it copies for MAP's search
 //
 // Run from repo root: `npm test` (or `node tests/college_cpl_workbook.test.js`).
@@ -104,6 +105,10 @@ const by8 = {};
 b8.courses.forEach(function (c) { by8[c.id] = c; });
 check("a catalog ACTG 1A finds COCI's zero-padded ACTG 001A", by8["ACTG 001A"].inCatalog === true);
 check("a catalog C S 1AH finds COCI's C S 01AH", by8["C S 01AH"].inCatalog === true);
+const b9 = W.build({ college: COLLEGE, today: "2026-10-21", lookup: lookup, members: members, aligned: aligned,
+  statewide: statewide, programs: programs, shareBase: "https://example.org/cpl-opportunity/",
+  catalog: [{ control_number: "07200", program_title: "History", blocks: [{ courses: [{ code: "HIST-300" }] }] }] });
+check("a hyphenated catalog code (HIST-300) finds HIST 300", b9.courses.filter(function (c) { return c.id === "HIST 300"; })[0].inCatalog === true);
 
 // 2. AP / IB excluded, CLEP kept
 check("an AP exhibit the college holds is not an existing exhibit", !b.existing.some(function (e) { return /^AP /.test(e.title); }));
