@@ -1,0 +1,723 @@
+{
+ "college": "Oxnard College",
+ "catalog_url": "https://catalog.vcccd.edu/oxnard/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 133,
+ "with_closed_list": 132,
+ "started": "2026-10-21T13:46:03Z",
+ "scope": "/oxnard/",
+ "sitemap": {
+  "url": "https://catalog.vcccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1147,
+  "nested": 0,
+  "program_pages": 241,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 243,
+ "child_pages": 2,
+ "banner_h1": "2026-2027\nAcademic Catalog",
+ "loads": 269,
+ "seconds": 1392.3,
+ "found": 94,
+ "by_method": {
+  "link_search": 2,
+  "no_closed_list": 1,
+  "not_found": 7,
+  "page_claimed": 31,
+  "sitemap_page": 92
+ },
+ "shared_pages": {
+  "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/": [
+   "06915",
+   "40173"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/": [
+   "09552",
+   "45830"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-fighter-i-ii-academy-coa/": [
+   "22472",
+   "35031"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/communication-studies/communication-studies-2-aat/": [
+   "30883",
+   "43105"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/physics/physics-2-ast/": [
+   "31838",
+   "45659"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/mathematics/mathematics-2-ast/": [
+   "31870",
+   "45658"
+  ],
+  "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/": [
+   "32087",
+   "32092",
+   "33666",
+   "38036",
+   "45303"
+  ],
+  "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/": [
+   "32718",
+   "42422",
+   "45578"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/education/elementary-teacher-education-integrated-programs-aat/": [
+   "35482",
+   "45829"
+  ],
+  "https://catalog.vcccd.edu/oxnard/programs-courses/public-health-science/public-health-ast/": [
+   "36518",
+   "44500"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06913",
+   "title": "Air Conditioning and Refrigeration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/air-conditioning-refrigeration-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.714,
+    "net": 5,
+    "listed": 7,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 6591,
+     "content": 112928,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      2054
+     ],
+     [
+      "PLAN OF STUDY",
+      454
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      797
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "06916",
+   "title": "Automotive Body and Fender Repair",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.9,
+    "net": 9,
+    "listed": 10,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 6071,
+     "content": 112646,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      2202
+     ],
+     [
+      "PLAN OF STUDY",
+      576
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      997
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "07084",
+   "title": "Dental Hygiene",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/dental-assisting/dental-assisting-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 25,
+    "why": "coarse net: the page's code tokens name 0 of 25 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5992,
+     "content": 113651,
+     "tabs": 1959
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      2195
+     ],
+     [
+      "PLAN OF STUDY",
+      1572
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      718
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22456",
+   "title": "Air Conditioning and Refrigeration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/air-conditioning-refrigeration-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.714,
+    "net": 5,
+    "listed": 7,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 6504,
+     "content": 111411,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      618
+     ],
+     [
+      "PLAN OF STUDY",
+      454
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      797
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22459",
+   "title": "Automotive Body and Fender Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.9,
+    "net": 9,
+    "listed": 10,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 6074,
+     "content": 111147,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      761
+     ],
+     [
+      "PLAN OF STUDY",
+      508
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      998
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39935",
+   "title": "Business Information Worker Quick Start",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-applications-office-technologies/business-information-worker-quick-start-cocn-noncredit/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 8,
+    "listed": 8,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 5941,
+     "content": 110375,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      342
+     ],
+     [
+      "PLAN OF STUDY",
+      376
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      427
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42311",
+   "title": "Emergency Medical Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/emergency-medical-technician-coa/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5904,
+     "content": 110693,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      304
+     ],
+     [
+      "PLAN OF STUDY",
+      205
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      1098
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "09546",
+   "title": "Restaurant Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/hospitality/hospitality-management-ast/"
+   ]
+  },
+  {
+   "control_number": "18131",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "18409",
+   "title": "General Studies: Natural Sciences or Mathematics Pattern II",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-stem-fundamentals/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "18410",
+   "title": "General Studies: Social & Behavioral Sciences - Pattern II",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-society-human-behavior-culture/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "18411",
+   "title": "General Studies: Arts and Humanities Pattern II",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-creative-arts-humanities/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/art-history-aat/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/"
+   ]
+  },
+  {
+   "control_number": "22458",
+   "title": "Automotive Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "22465",
+   "title": "Culinary Arts",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/hospitality/hospitality-management-ast/"
+   ]
+  },
+  {
+   "control_number": "22466",
+   "title": "Restaurant Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/hospitality/hospitality-management-ast/"
+   ]
+  },
+  {
+   "control_number": "22471",
+   "title": "Addictive Disorders Studies in the Criminal Justice System",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/"
+   ]
+  },
+  {
+   "control_number": "32110",
+   "title": "Computer Networking Information Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/"
+   ]
+  },
+  {
+   "control_number": "32111",
+   "title": "Advanced Skills for Addiction Treatment Counselors",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/"
+   ]
+  },
+  {
+   "control_number": "33938",
+   "title": "Paralegal Studies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/"
+   ]
+  },
+  {
+   "control_number": "35214",
+   "title": "Film, Television, and Electronic Media Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "37414",
+   "title": "Deaf Studies",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-creative-arts-humanities/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/"
+   ]
+  },
+  {
+   "control_number": "37419",
+   "title": "American Sign Language",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-creative-arts-humanities/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/"
+   ]
+  },
+  {
+   "control_number": "37639",
+   "title": "Chicana/o Studies",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-creative-arts-humanities/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-society-human-behavior-culture/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/art-history-aat/"
+   ]
+  },
+  {
+   "control_number": "39110",
+   "title": "Political Science",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/political-science/political-science-aat/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-society-human-behavior-culture/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40062",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40172",
+   "title": "Automotive Air Conditioning Service",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40278",
+   "title": "Automotive Steering and Suspension",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40341",
+   "title": "Automotive Brake Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40342",
+   "title": "Automotive Emissions Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/"
+   ]
+  },
+  {
+   "control_number": "40343",
+   "title": "Automotive Engine Performance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/"
+   ]
+  },
+  {
+   "control_number": "40344",
+   "title": "Automotive Transmission and Driveline Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "41280",
+   "title": "Community Behavioral Health Worker",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/advanced-skills-addiction-treatment-counselors-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/addictive-disorders-studies-as/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "42098",
+   "title": "General Studies: Natural Sciences or Mathematics - Pattern III",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-stem-fundamentals/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "42100",
+   "title": "General Studies: Arts and Humanities - Pattern III",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-creative-arts-humanities/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/art-history-aat/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/"
+   ]
+  },
+  {
+   "control_number": "42101",
+   "title": "General Studies: Social and Behavioral Sciences - Pattern III",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-studies/general-studies-emphasis-society-human-behavior-culture/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/cal-getc-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/general-education-options/ocge/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-as-uctp/",
+    "https://catalog.vcccd.edu/oxnard/transfer-information/c-id/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/political-science/political-science-aat/"
+   ]
+  },
+  {
+   "control_number": "45215",
+   "title": "Law Office Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/legal-secretary-coa/",
+    "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/"
+   ]
+  },
+  {
+   "control_number": "46402",
+   "title": "English as a Second Language - Level 5",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/"
+   ]
+  },
+  {
+   "control_number": "46576",
+   "title": "Baking and Pastry",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 30,
+  "1.0": 53
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/oxnard",
+  "kept": 94,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39610621520"
+}
