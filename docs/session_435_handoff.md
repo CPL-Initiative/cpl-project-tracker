@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 434 (SkyElderberry)
 tags: [handoff, ui-pass, sierra, common-subjects-reference, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 435

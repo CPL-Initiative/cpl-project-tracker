@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 437 (SkySagebrush)
 tags: [handoff, commons, common-cr-reference, common-subjects-reference, decision-sheet, autonomy]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 438

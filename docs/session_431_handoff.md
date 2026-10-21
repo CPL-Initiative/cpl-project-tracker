@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 430 (SkyLupine)
 tags: [handoff, ctdl, common-subjects-reference, agri, jev, remint, mq, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 431

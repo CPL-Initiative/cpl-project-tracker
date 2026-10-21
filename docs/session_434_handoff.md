@@ -4,6 +4,8 @@ date: 2026-10-20
 session: 433 (SkyCoffeeberry)
 tags: [handoff, common-subjects-reference, merge-candidates, csr-quarterly, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_442_handoff.md
 ---
 
 # You are Session 434

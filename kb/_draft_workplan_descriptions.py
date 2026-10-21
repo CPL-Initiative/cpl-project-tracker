@@ -67,6 +67,14 @@ def _load(path):
         return json.load(f)
 
 
+def landed(row, d):
+    """A draft the runner already wrote: the snapshot's description is the draft itself (S441, 2026-10-21).
+    4.7 and 4.8 landed on 2026-10-19 and the check read them as stale, failing on main."""
+    if not row or not isinstance(d, dict):
+        return False
+    return (row.get("description") or "").strip() == (d.get("draft") or "").strip() != ""
+
+
 def projects():
     """The sub-activities (no D.* helper rows), by id, from the committed snapshot."""
     rows = _load(PROJECTS).get("rows") or []
@@ -155,6 +163,8 @@ def check(drafts_path=DRAFTS, quiet=False):
         if pid not in rows:
             problems.append(f"{pid}: no such sub-activity in the snapshot")
             continue
+        if landed(rows[pid], d):
+            continue  # the runner wrote it; the file keeps the record of what was drafted
         if not empty(rows[pid]):
             problems.append(f"{pid}: already carries a description in the snapshot; the draft is stale")
         if len(text) < MIN_LEN:
@@ -196,7 +206,8 @@ def _dollar(text):
 def sql(drafts_path=DRAFTS, session="S?"):
     """The guarded UPDATE file for the runner, with its rollback in the header."""
     drafts = _entries(_load(drafts_path))
-    ids = sorted(drafts, key=_natural)
+    rows = projects()
+    ids = sorted((pid for pid in drafts if not landed(rows.get(pid), drafts[pid])), key=_natural)
     out = []
     out.append("-- Annual Workplan Goals: descriptions drafted for the sub-activities that had none.")
     out.append("-- Procedure: kb/_draft_workplan_descriptions.py; the drafts and their sources:")

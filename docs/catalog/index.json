@@ -15267,7 +15267,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-10-11"
+     "updated": "2026-10-21"
     },
     {
      "created": "2026-08-28",
@@ -15887,8 +15887,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 412,
+   "count": 413,
    "docs": [
+    {
+     "created": "2026-10-21",
+     "governs": [],
+     "n": 442,
+     "path": "docs/session_442_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "claude-md-pass",
+      "governance-team-enablement",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 442 handoff: the CLAUDE.md pass waits on Sheet 109; S440's harvest PR merged; two tests fixed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-21",
      "governs": [],
@@ -23003,5 +23019,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1209
+ "total": 1210
 }

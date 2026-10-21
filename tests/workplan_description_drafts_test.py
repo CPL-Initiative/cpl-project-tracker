@@ -56,6 +56,10 @@ if empty_id:
     check("a draft for a row that is empty passes", not d.check(tmp_drafts({empty_id: good}), quiet=True))
 check("a draft for a row that already has a description is refused as stale",
       any("already carries" in p for p in d.check(tmp_drafts({filled: good}), quiet=True)))
+landed_row = {filled: dict(good, draft=rows[filled]["description"])}
+check("a draft the runner already wrote is a record, not a stale draft",
+      not d.check(tmp_drafts(landed_row), quiet=True)
+      and f"where id = '{filled}'" not in d.sql(tmp_drafts(landed_row)))
 check("a draft for an id the snapshot does not hold is refused",
       any("no such" in p for p in d.check(tmp_drafts({"9.9": good}), quiet=True)))
 if empty_id:

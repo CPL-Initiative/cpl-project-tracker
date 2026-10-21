@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-20
+updated: 2026-10-21
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 60 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 412 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1209** | |
+| Session handoffs | 413 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1210** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-21 (S441 SkyIronbark, the CPL Queue routine): S440's harvest PR #2306 merged; the CLAUDE.md pass sent as Open Asks Sheet 109 (five cards, nothing applied); the two Python tests failing on main fixed.
 - 2026-10-20 (S439 SkySaltbush, opened by Sam): the funding page prints JST counts and the 75% need, office hours and the MAP Dashboard chat as help, the landing page and its training video in the Contents, Funding Model Numbers; the introduction is always the published two-priority film, rebuilt from Scenario 3 with a new MP4 (#2296-#2298); S438's memory rows written; handoff 440 (SkyChaparral); no KB note.
 - 2026-10-20 (side session beside S438, opened by Sam): the funding page asks for the view first (All Institutions / My Institution), then the college or district, and the Funding outcomes cards follow it (#2293); the funding lane and lessons compacted under budget; privacy UI pass clean; handoff 439 gains a section; no KB note.
 - 2026-10-20 (S438 SkySumac, opened by Sam): the Annual Workplan Goals table without its Total column, centered, each row's details folded, gray borders only, links to the Activity cards (#2291, live after run 619); Grok steps given, the reader parked on the district card; handoff 439 (SkySaltbush); no KB note.
