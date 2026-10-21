@@ -97,7 +97,7 @@ const narration = readScript("s1");
 // The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -113,9 +113,10 @@ NARRATED.forEach(({ s }) => {
       ["sˈiː pˈiː ˈɛl", "twˈɛnti twˈɛnti", "ˌɛmˌeɪpˈiː"].every((b) => (script.never || []).some((n) => n.phonemes === b)));
   } else {
     // ElevenLabs reads outside the repo: each committed clip must have been read from its scene's current text
+    // (its `say`, the spoken form, where the captions' written form differs: C.P.L. for CPL)
     const eng = script.engine, voiced = script.scenes.filter((x) => !x.pending);
     check(tag + "n4 every voiced scene's clip is committed and was read from the scene's current text",
-      voiced.length > 0 && voiced.every((x) => x.read && x.read.text_sha1 === sha1(x.text) && fs.existsSync(path.join(DIR, eng.clips, x.read.clip))));
+      voiced.length > 0 && voiced.every((x) => x.read && x.read.text_sha1 === sha1(x.say || x.text) && fs.existsSync(path.join(DIR, eng.clips, x.read.clip))));
     check(tag + "n5 a scene still waiting on its read says why, and carries no clip",
       script.scenes.filter((x) => x.pending).every((x) => x.pending.length > 40 && !x.read));
   }
@@ -230,7 +231,7 @@ NARRATED.forEach(({ tag, v, s }) => {
   const off = anchors.map((a) => Math.max(Math.abs(nt(a.film) - a.t), Math.abs(ft(a.t) - a.film)));
   check(tag + "h2 the clock passes through each anchor within 0.05 s (worst " + Math.max(...off).toExponential(1) + " s)",
     spans.length === L.scenes.length && off.every((x) => x < 0.05));
-  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
+  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").replace(/\./g, "").toLowerCase();
   const onset = anchors.map((a) => {
     const ws = H.scenes[a.scene].words, ph = a.word.split(/\s+/).map(norm);
     const i = ws.findIndex((_, j) => ph.every((p, k) => ws[j + k] && norm(ws[j + k][0]) === p));
@@ -280,7 +281,7 @@ NARRATED.forEach(({ tag, v, s }) => {
     const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + "_layout.json"), "utf8"));
     const spoken8 = readScript(s).scenes.map((x) => [x.scene, x.text].concat((x.cues || []).map((c) => c.word + " " + c.why)).join(" ")).join(" ");
     check(s + " t1 the narration says minimum conditions, never baseline",
-      !RETIRED.test(spoken8) && /meets three minimum conditions/.test(spoken8));
+      !RETIRED.test(spoken8) && /meets three minimum conditions|needs to meet three conditions/.test(spoken8));
     check(s + " t2 the captions and the narrated timeline's scene names never say baseline",
       !RETIRED.test(L.cues.map((c) => c.text).concat(L.scenes.map((x) => x.scene)).join(" ")));
   });
@@ -331,34 +332,36 @@ NARRATED.forEach(({ tag, v, s }) => {
   const s2 = readScript("s2");
   const byName = (sc, n) => (sc.scenes.find((x) => x.scene === n) || {}).text || "";
   const prio = byName(s2, "Two priorities"), targets = byName(s2, "Targets");
-  check("k1 two funded priorities, and career attainment reported with the innovation projects",
-    /^Two priorities carry the funding/.test(prio) && /Access counts/.test(prio) && /Completion counts/.test(prio)
-      && /Chancellor's Office reports on career attainment together with the innovation projects/.test(prio)
+  // Sam's edited script (2026-10-21): his words for the two priorities and the
+  // reported outcomes, and the published Scenario 3's average Access target.
+  check("k1 two funded priorities, and career attainment reported with the infrastructure and innovation projects",
+    /^Funding is based on two priority outcomes/.test(prio) && /access priority counts/.test(prio) && /completion priority counts/.test(prio)
+      && /Chancellor's Office will report on career attainment together with the infrastructure and innovation projects/.test(prio)
       && !/EDD|wage records/.test(prio));
-  check("k2 the Targets voice says the average Access target the picture shows (34.5 FTES)",
-    targets.includes("For the average allocation, the Access target is about thirty-four and a half FTES."));
+  check("k2 the Targets voice says the average Access target the picture shows (31.3 FTES, said as about thirty-one)",
+    targets.includes("For the average allocation, the Access target is about thirty-one FTES."));
   const L2 = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s2_layout.json"), "utf8"));
   const words = s2.scenes.reduce((n, x) => n + x.text.split(/\s+/).length, 0);
   check("k3 a short script (" + words + " words, under 360) voicing each of the picture's eleven scenes, the targets slide included, in its order",
     words < 360 && s2.scenes.length === 11 && L2.scenes.map((x) => x.scene).join("|") === s2.scenes.map((x) => x.scene).join("|")
-      && s2.scenes[5].scene === "How a target is set" && /^Hi, I'm Sierra\./.test(s2.scenes[0].text));
+      && s2.scenes[5].scene === "How a target is set" && /^Greetings CPL heroes!/.test(s2.scenes[0].text));
   check("k4 every scene is read (the plan moved to paid, 2026-10-02)",
     s2.scenes.every((x) => !x.pending && x.read));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
-  // The narrated cut keeps the frames its voice was read on (34.5 FTES); the
-  // introduction moved to the published Scenario 3's figures on 2026-10-20
-  // (S439), so only the parts no figure drives still match until a new read.
-  const PICTURE = ["split", "timing", "deadline", "close", "explainer", "kick", "titleText"];
-  check("k5 the n2 picture shares the introduction's dates, closing and address, and keeps its voiced figures",
-    PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && cfg.how && cfg.target.ftesWords === "34.5");
+  // Re-voiced from the published scenario's figures (S443, 2026-10-21, Sam's
+  // edited script): the narrated cut's picture reads the model, as the
+  // introduction does, so the two share every figure the voice names.
+  const PICTURE = ["split", "timing", "deadline", "close", "explainer", "kick", "titleText", "how", "target"];
+  check("k5 the n2 picture shares the introduction's figures, dates, closing and address",
+    PICTURE.every((k) => JSON.stringify(cfg[k]) === JSON.stringify(intro[k])) && cfg.how && cfg.target.ftesWords === intro.target.ftesWords);
   // Sierra by name, on the video (Sam, 2026-10-02): beneath the lockup as she says it, and in the closing credit
   const w = boot("funding_in_motion_n2.html", false), d = w.document;
-  const said = L2.scenes[0].anchors.find((a) => a.word === "I'm Sierra");
+  const said = L2.scenes[0].anchors.find((a) => a.word === "Greetings CPL heroes");
   // the name line's opacity at a moment of the narrated clock (-1 when the page has no name line)
   const nameAt = (t) => { w.__film.seek(t); const e = Array.from(d.querySelectorAll("#stage p")).find((x) => x.textContent === "Narrated by Sierra"); return e ? Number(e.style.opacity) : -1; };
   const early = nameAt(0.2), later = nameAt(said.said + 0.8);
-  check("k6 the title scene names her, Narrated by Sierra, appearing as she says her name",
+  check("k6 the title scene names her, Narrated by Sierra, appearing as she greets the viewer",
     early === 0 && later > 0.9 && said.t <= said.said);
   w.__film.seek(L2.total - 0.3);
   check("k7 the closing credit says Sierra is a synthetic voice made with ElevenLabs",

@@ -219,7 +219,7 @@ CONFIG['n2'] = dict(
     pageTitle='CPL Funding in Motion: The Narrated Introduction',
     eyebrow='CPL Initiative',
     dek='The introduction to CPL funding for colleges, narrated by Sierra, about two and a half minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4',
     narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
     credit='Sierra is a synthetic voice made with ElevenLabs.',
@@ -360,6 +360,9 @@ LIVE = {}
 if FIG:
     LIVE['s1'] = live_config(CONFIG['s1'], FIG, 'Scenario 1')
     LIVE['s2'] = live_config(CONFIG['s2'], FIG, FIG.get('published') or 'Scenario 2')
+    # Re-voiced from the published scenario's figures (S443, 2026-10-21, Sam's edited
+    # script), so the narrated cut's picture reads the model too.
+    LIVE['n2'] = live_config(CONFIG['n2'], FIG, FIG.get('published') or 'Scenario 2')
 
 if '--check' in sys.argv:
     if not FIG:

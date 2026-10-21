@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-83 document(s).
+84 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -74,6 +74,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Rules-based official-ID folds — the severed evidence index + tiered fold rule (the SPAN 200 case)](../official_id_fold_scope.md) | `official_id_fold_scope.md` | 2026-06-10 |  |
 | [SB 135 sweep — all 16 CPL revisions against Ed. Code §78093–78093.2](../gr_sb135_row_sweep.md) | `gr_sb135_row_sweep.md` | 2026-08-25 | 2026-08-25 |
 | [Scope — MAP performance vs the three funding-priority metrics (funding tab v2)](../funding_priority_metrics_scope.md) | `funding_priority_metrics_scope.md` | 2026-06-11 | 2026-06-11 |
+| [Side session beside S442/S443, 2026-10-21: the funding page's Sierra, the guidance memo, the Sierra funding note, the narrated film](../side_session_2026-10-21_funding_handoff.md) | `side_session_2026-10-21_funding_handoff.md` | 2026-10-21 |  |
 | [Sierra iframe embed — day-one implementation guide (vendor-facing)](../sierra_iframe_implementation_guide.md) | `sierra_iframe_implementation_guide.md` | 2026-07-03 | 2026-07-03 |
 | [Sierra integration guide — suggested implementation plan for vendor developers](../sierra_integration_guide.md) | `sierra_integration_guide.md` | 2026-07-02 | 2026-07-02 |
 | [Sierra maturity roadmap — scope and sequence from iframe to end-state](../sierra_maturity_roadmap.md) | `sierra_maturity_roadmap.md` | 2026-07-03 | 2026-07-03 |
