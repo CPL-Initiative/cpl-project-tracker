@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 209,
  "with_closed_list": 190,
- "started": "2026-10-15T03:15:39Z",
+ "started": "2026-10-21T20:33:22Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.foothill.edu/sitemap.xml",
@@ -20,15 +20,85 @@
  "child_pages": 0,
  "banner_h1": "Academic Catalog",
  "loads": 142,
- "seconds": 665.2,
- "found": 116,
+ "seconds": 669.6,
+ "found": 144,
  "by_method": {
   "no_closed_list": 19,
   "not_found": 1,
-  "page_claimed": 73,
-  "sitemap_page": 116
+  "page_claimed": 45,
+  "sitemap_page": 144
  },
  "shared_pages": {
+  "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/": [
+   "06009",
+   "39211"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/accounting/": [
+   "06014",
+   "19477"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/business-administration/": [
+   "06016",
+   "44600"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/computer-science/": [
+   "06027",
+   "39890",
+   "39983",
+   "41328",
+   "41898",
+   "41978",
+   "43690"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/theatre-arts/": [
+   "06047",
+   "38653"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/photography/": [
+   "06050",
+   "19488"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/dental-assisting/": [
+   "06062",
+   "19489"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/paramedic/": [
+   "06072",
+   "20091"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/anthropology/": [
+   "06094",
+   "44249"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/": [
+   "09277",
+   "19476"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/sports-medicine/": [
+   "09287",
+   "41899",
+   "42334"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/theatre-technology/": [
+   "09290",
+   "19486"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/music-technology/": [
+   "11058",
+   "20087"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/": [
+   "11827",
+   "41696"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/": [
+   "15549",
+   "40694"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/": [
+   "17590",
+   "20084"
+  ],
   "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/": [
    "19484",
    "35561",
@@ -46,6 +116,22 @@
    "32362",
    "46285"
   ],
+  "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/": [
+   "33360",
+   "33437"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/": [
+   "33521",
+   "33525"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/": [
+   "33522",
+   "33526"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/": [
+   "33524",
+   "33527"
+  ],
   "https://catalog.foothill.edu/degrees-certificates/elementary-teacher-education-integrated-programs-aat/": [
    "37567",
    "46325"
@@ -59,6 +145,18 @@
    "43676",
    "45754",
    "46561"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-mechanic/": [
+   "40689",
+   "42336"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/apprenticeship-test-adjust-balancing-technician/": [
+   "40691",
+   "42475"
+  ],
+  "https://catalog.foothill.edu/degrees-certificates/semiconductor-process-engineering/": [
+   "43983",
+   "45694"
   ]
  },
  "not_found": [
@@ -73,14 +171,6 @@
  ],
  "page_claimed": [
   {
-   "control_number": "06014",
-   "title": "Accounting",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/accounting/"
-   ]
-  },
-  {
    "control_number": "06043",
    "title": "Art: General",
    "award": "A.A. Degree",
@@ -88,14 +178,6 @@
     "https://catalog.foothill.edu/degrees-certificates/art/",
     "https://catalog.foothill.edu/degrees-certificates/art-history-aat/",
     "https://catalog.foothill.edu/degrees-certificates/studio-arts-aat/"
-   ]
-  },
-  {
-   "control_number": "06050",
-   "title": "Photography",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/photography/"
    ]
   },
   {
@@ -107,60 +189,11 @@
    ]
   },
   {
-   "control_number": "06062",
-   "title": "Dental Assisting",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/dental-assisting/"
-   ]
-  },
-  {
-   "control_number": "06072",
-   "title": "Paramedic",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/paramedic/"
-   ]
-  },
-  {
-   "control_number": "09277",
-   "title": "Environmental Horticulture & Design",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/"
-   ]
-  },
-  {
-   "control_number": "09290",
-   "title": "Theatre Technology",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/theatre-technology/",
-    "https://catalog.foothill.edu/degrees-certificates/theatre-arts/"
-   ]
-  },
-  {
    "control_number": "14561",
    "title": "Program Supervision and Mentoring",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "pages": [
     "https://catalog.foothill.edu/degrees-certificates/child-development/"
-   ]
-  },
-  {
-   "control_number": "20084",
-   "title": "Inside Wireman",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/"
-   ]
-  },
-  {
-   "control_number": "20087",
-   "title": "Music Technology",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/music-technology/"
    ]
   },
   {
@@ -197,43 +230,11 @@
    ]
   },
   {
-   "control_number": "33437",
-   "title": "Geographic Information Systems Technology",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/"
-   ]
-  },
-  {
    "control_number": "33523",
    "title": "Residential Plumbing",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "pages": [
     "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/"
-   ]
-  },
-  {
-   "control_number": "33525",
-   "title": "Air Conditioning and Refrigeration Technology",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/"
-   ]
-  },
-  {
-   "control_number": "33526",
-   "title": "Plumbing Technology",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/"
-   ]
-  },
-  {
-   "control_number": "33527",
-   "title": "Steamfitting and Pipefitting Technology",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/"
    ]
   },
   {
@@ -253,27 +254,11 @@
    ]
   },
   {
-   "control_number": "38653",
-   "title": "Acting",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/theatre-arts/"
-   ]
-  },
-  {
    "control_number": "38825",
    "title": "Digital Marketing",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://catalog.foothill.edu/degrees-certificates/business-administration/"
-   ]
-  },
-  {
-   "control_number": "39211",
-   "title": "Veterinary Assisting",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/"
    ]
   },
   {
@@ -404,14 +389,6 @@
    ]
   },
   {
-   "control_number": "40694",
-   "title": "Basic Pharmacy Technician",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/"
-   ]
-  },
-  {
    "control_number": "40838",
    "title": "Emerging Educational Technology Leadership",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -433,87 +410,6 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "pages": [
     "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/"
-   ]
-  },
-  {
-   "control_number": "41275",
-   "title": "Data Analytics",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/business-administration/",
-    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
-    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
-    "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/"
-   ]
-  },
-  {
-   "control_number": "41328",
-   "title": "Cybersecurity",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
-    "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/",
-    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/"
-   ]
-  },
-  {
-   "control_number": "41696",
-   "title": "Plumbing and Pipefitting Apprenticeship",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/"
-   ]
-  },
-  {
-   "control_number": "41898",
-   "title": "Network Computing",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
-    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
-    "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/"
-   ]
-  },
-  {
-   "control_number": "41899",
-   "title": "Introduction to Sports Medicine",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/sports-medicine/"
-   ]
-  },
-  {
-   "control_number": "41978",
-   "title": "IT Support",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
-    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
-    "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/"
-   ]
-  },
-  {
-   "control_number": "42334",
-   "title": "Advanced Sports Medicine",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/sports-medicine/"
-   ]
-  },
-  {
-   "control_number": "42336",
-   "title": "Air Conditioning Mechanic",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-mechanic/"
-   ]
-  },
-  {
-   "control_number": "42475",
-   "title": "Test, Adjust and Balancing (TAB) Technician",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/apprenticeship-test-adjust-balancing-technician/"
    ]
   },
   {
@@ -639,45 +535,11 @@
    ]
   },
   {
-   "control_number": "43690",
-   "title": "Advanced Web Applications Development",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/computer-science/",
-    "https://catalog.foothill.edu/degrees-certificates/general-studies-science/"
-   ]
-  },
-  {
-   "control_number": "43983",
-   "title": "Semiconductor Processing",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/semiconductor-process-engineering/"
-   ]
-  },
-  {
-   "control_number": "44249",
-   "title": "Archaeological Field Work",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/anthropology-aat/",
-    "https://catalog.foothill.edu/degrees-certificates/anthropology/"
-   ]
-  },
-  {
    "control_number": "44566",
    "title": "Visual Storytelling and Comic Arts",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "pages": [
     "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/"
-   ]
-  },
-  {
-   "control_number": "44600",
-   "title": "Business and Marketing",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.foothill.edu/degrees-certificates/business-administration/"
    ]
   },
   {
@@ -690,1176 +552,316 @@
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 10,
-  "0.8-1.0": 21,
-  "1.0": 85
+  "0.5-0.8": 14,
+  "0.8-1.0": 26,
+  "1.0": 104
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 116,
+  "against": "kb/program_requirements_college/foothill",
+  "kept": 114,
+  "programs": 30,
   "list": [
    {
-    "control_number": "06009",
-    "title": "Veterinary Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06016",
-    "title": "Business Administration",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/business-administration/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06027",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06031",
-    "title": "Physical Education",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/physical-education/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06045",
-    "title": "Music: General",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/music-general/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06047",
-    "title": "Theatre Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/theatre-arts/",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06068",
-    "title": "Respiratory Therapy",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/respiratory-therapy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06071",
-    "title": "Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/radiologic-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06074",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/english/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06079",
-    "title": "Philosophy",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/philosophy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06082",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/mathematics/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06090",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/psychology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06092",
-    "title": "Child Development Teacher",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06094",
-    "title": "Anthropology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/anthropology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06096",
-    "title": "Economics",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/economics/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06098",
-    "title": "Geography",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/geography/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06104",
-    "title": "General Studies: Humanities",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-social-science/",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09287",
-    "title": "Sports Medicine",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/sports-medicine/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11058",
-    "title": "Music Technology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11827",
-    "title": "Plumbing and Pipefitting Apprenticeship",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11830",
-    "title": "Sheet Metal Building Trades",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-sheet-metal/",
-    "coverage": 0.969,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15549",
-    "title": "Pharmacy Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17590",
-    "title": "Inside Wireman",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19476",
-    "title": "Environmental Horticulture and Design",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19477",
+    "control_number": "06014",
     "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.A. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "19484",
-    "title": "Art History",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 0.839,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19486",
-    "title": "Theatre Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.foothill.edu/degrees-certificates/theatre-technology/",
-    "coverage": 0.81,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19488",
+    "control_number": "06050",
     "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "award": "A.A. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/photography/",
-    "coverage": 1.0,
+    "coverage": 0.929,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "19489",
+    "control_number": "06062",
     "title": "Dental Assisting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/dental-assisting/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "20086",
-    "title": "Art",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/art/",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20088",
-    "title": "Graphic and Interactive Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20091",
+    "control_number": "06072",
     "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/paramedic/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "30483",
-    "title": "Diagnostic Medical Sonography",
+    "control_number": "09277",
+    "title": "Environmental Horticulture & Design",
     "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/diagnostic-medical-sonography/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "30912",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/sociology-aat/",
+    "control_number": "09290",
+    "title": "Theatre Technology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.foothill.edu/degrees-certificates/theatre-technology/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "20084",
+    "title": "Inside Wireman",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "30914",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/psychology-aat/",
-    "coverage": 1.0,
+    "control_number": "20087",
+    "title": "Music Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+    "coverage": 0.643,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "32127",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/mathematics-2-ast/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32152",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/history-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32281",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/english-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32359",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32362",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/physics-2-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32417",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/anthropology-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32422",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/philosophy-aat/",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32431",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/studio-arts-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32468",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/geography-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32772",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/art-history-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32843",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/kinesiology-aat/",
-    "coverage": 0.877,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33001",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/economics-aat/",
-    "coverage": 0.92,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33003",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/spanish-aat/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33004",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/theatre-arts-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33033",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/political-science-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33034",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/early-childhood-education-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33360",
-    "title": "Geographic Information Systems Technology I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "control_number": "33437",
+    "title": "Geographic Information Systems Technology",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/",
-    "coverage": 0.923,
+    "coverage": 0.769,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "33521",
+    "control_number": "33525",
     "title": "Air Conditioning and Refrigeration Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "33522",
+    "control_number": "33526",
     "title": "Plumbing Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "33524",
+    "control_number": "33527",
     "title": "Steamfitting and Pipefitting Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "33837",
-    "title": "Personal Trainer",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.foothill.edu/degrees-certificates/personal-trainer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35561",
-    "title": "Humanities",
-    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35594",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/biology-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35719",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/global-studies-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35772",
-    "title": "Music History & Literature",
-    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35990",
-    "title": "English as a Second Language-Beginning",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-beginning/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35991",
-    "title": "English as a Second Language-Intermediate",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-intermediate/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35993",
-    "title": "Emergency Medical Technician",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-emergency-medical-technician/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36287",
-    "title": "Bridge to College ESL Pathway",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-esl-pathway/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36328",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/social-justice-studies-aat/",
-    "coverage": 0.986,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36342",
-    "title": "English as a Second Language for Food Service Workers",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-food-service-workers/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36459",
-    "title": "Bridge to College Level Mathematics",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-level-mathematics/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36735",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/child-adolescent-development-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37294",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/film-television-electronic-media-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37567",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/elementary-teacher-education-integrated-programs-aat/",
-    "coverage": 0.576,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38476",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/nutrition-dietetics-ast/",
-    "coverage": 0.926,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39351",
-    "title": "Film, Television, and Electronic Media",
+    "control_number": "38653",
+    "title": "Acting",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39512",
-    "title": "Bridge to College Level English",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-level-english/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/theatre-arts/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "39538",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/environmental-science-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39675",
-    "title": "Bio-Health Diversity and Inclusion Leadership",
+    "control_number": "39211",
+    "title": "Veterinary Assisting",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39843",
-    "title": "Sound and Communication Installer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-sound-communication/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39889",
-    "title": "Advanced Software Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "39890",
     "title": "Software Development in Python",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39891",
-    "title": "Software Development in Java",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39983",
     "title": "Cloud Computing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40694",
+    "title": "Basic Pharmacy Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "39996",
-    "title": "Software Development in C++",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40239",
-    "title": "Communication Studies I",
+    "control_number": "41275",
+    "title": "Data Analytics",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.9,
+    "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "coverage": 0.6,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "40240",
-    "title": "Communication Studies II",
+    "control_number": "41328",
+    "title": "Cybersecurity",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.9,
+    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "40689",
+    "control_number": "41696",
+    "title": "Plumbing and Pipefitting Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41898",
+    "title": "Network Computing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41899",
+    "title": "Introduction to Sports Medicine",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/sports-medicine/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41978",
+    "title": "IT Support",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42334",
+    "title": "Advanced Sports Medicine",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/sports-medicine/",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42336",
     "title": "Air Conditioning Mechanic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-mechanic/",
-    "coverage": 1.0,
+    "coverage": 0.767,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "40691",
+    "control_number": "42475",
     "title": "Test, Adjust and Balancing (TAB) Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-test-adjust-balancing-technician/",
-    "coverage": 0.97,
+    "coverage": 0.867,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "40962",
-    "title": "English as a Second Language for College and Careers (High-Intermediate)",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-college-careers-high-intermediate/",
+    "control_number": "43690",
+    "title": "Advanced Web Applications Development",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "40963",
-    "title": "English as a Second Language for College and Careers (Advanced)",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-college-careers-advanced/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41127",
-    "title": "Biochemistry",
-    "award": "A.S. Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/biochemistry/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41642",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/business-administration-2-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42889",
-    "title": "Community Health Worker",
+    "control_number": "43983",
+    "title": "Semiconductor Processing",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/community-health-worker/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43189",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/social-work-and-human-services-aat/",
-    "coverage": 0.972,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43194",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/communication-studies-2-aat/",
-    "coverage": 0.966,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43207",
-    "title": "Photography Criticism",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43399",
-    "title": "Commercial Photography",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-commercial-photography/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43401",
-    "title": "Photography",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-photography/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43445",
-    "title": "Non-Destructive Testing (NDT) Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-non-destructive-testing-technician/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43676",
-    "title": "Web Applications Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43688",
-    "title": "Educational Immersive Media",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43828",
-    "title": "Spanish",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/spanish/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44221",
-    "title": "Respiratory Care",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://catalog.foothill.edu/degrees-certificates/respiratory-care/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44253",
-    "title": "Spanish-Advanced",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44565",
-    "title": "Retail Operations Specialist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-retail-operations-specialist/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44745",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/public-health-ast/",
-    "coverage": 0.931,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45169",
-    "title": "Theatre Production Organization",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-production-organization/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45170",
-    "title": "Theatre Technology",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45171",
-    "title": "Theatre Costume and Makeup",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-costume-and-makeup/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45656",
-    "title": "Vacuum Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/engineering/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45694",
-    "title": "Semiconductor Process Engineering",
-    "award": "A.S. Degree",
     "url": "https://catalog.foothill.edu/degrees-certificates/semiconductor-process-engineering/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "45722",
-    "title": "Emergency Medical Technician",
+    "control_number": "44249",
+    "title": "Archaeological Field Work",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/emergency-medical-technician/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/anthropology/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "45754",
-    "title": "Principles of Machine Learning and Artificial Intelligence",
+    "control_number": "44600",
+    "title": "Business and Marketing",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45930",
-    "title": "12-Lead ECG Interpretation",
-    "award": "Noncredit program",
-    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-12-lead-ecg-interpretation/",
+    "url": "https://catalog.foothill.edu/degrees-certificates/business-administration/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46172",
-    "title": "Independence and Career Readiness",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degrees-certificates/independence-and-career-readiness/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46202",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/mathematics-2-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46285",
-    "title": "Physics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/physics-2-ast/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46325",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.foothill.edu/degrees-certificates/elementary-teacher-education-integrated-programs-aat/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46561",
-    "title": "Pre-Law Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    }
   ]
  },
- "run": "38675242638"
+ "run": "39671107254"
 }

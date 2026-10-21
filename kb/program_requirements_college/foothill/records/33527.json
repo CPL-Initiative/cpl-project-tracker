@@ -1,0 +1,308 @@
+{
+ "college": "Foothill College",
+ "control_number": "33527",
+ "shape": "degree",
+ "title": "Steamfitting and Pipefitting Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7782,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7782,
+    "output_tokens": 2673,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2673,
+  "output_tokens_details": {
+   "thinking_tokens": 1055
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08459,
+ "ms": 22744,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "APPT134C",
+    "APPT144A",
+    "CWE60A"
+   ],
+   "flagged": [
+    "APPT134C",
+    "APPT144A",
+    "CWE60A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    62.5,
+    65.5
+   ],
+   "stated": [
+    62.5,
+    65.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 62.5,
+    "max": 65.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "In compliance with applicable standards and codes, students will demonstrate ability to install and remove piping and equipment for complex heating and air conditioning applications and special industrial piping systems, such as those used in semiconductor, biotechnology, and power generation facilities.",
+    "In compliance with applicable standards and codes, students will demonstrate ability to maintain, extend, and/or alter piping and equipment for heating and air conditioning, and for special industrial piping systems, such as those used in semiconductor, biotechnology, and power generation facilities."
+   ],
+   "careers": [
+    "Foreman",
+    "General Foreman",
+    "Superintendent",
+    "Project Manager",
+    "Estimator",
+    "Detailer",
+    "Building Trades Inspector",
+    "Building Trades Instructor",
+    "Union Business Agent/ Business Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 62.5,
+     "max": 65.5
+    },
+    "courses": [
+     {
+      "code": "APPT 129",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 130",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 134B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "APPT 134C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 139A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 139B",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 141",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 142",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 143",
+      "units": 2,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "APPT 143A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 144A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "APPT 145",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 146",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 147A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 147B",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 148",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSE",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CWE 60A",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page states 'A minimum of 90 units is required to complete the associate degree' (quarter units); read as the general associate-degree minimum rather than a printed total for this award, so degree_total left null. Reviewer may consider recording 90 as degree_total.",
+   "Footnote says additional elective course work may be necessary to meet the 90-unit minimum, with no units printed; electives_fill_degree set true.",
+   "The range 2-5 is printed beside the APPT 143 / APPT 143A or-row; recorded on APPT 143 as 2-5 with APPT 143A units null (state file lists APPT 143 at 5 and APPT 143A at 2).",
+   "APPT 134C printed as alternative with no units; not in closed list.",
+   "CWE 60A is recommended to fulfill additional degree electives, not required; recorded as recommended.",
+   "The Program Learning Outcomes are printed once for the program and shared by the A.S. degree and the Certificate of Achievement.",
+   "Career list also names industries (semiconductor, biotechnology, power generation, healthcare, education, water treatment, food and beverage processing) in which the jobs occur; these were not recorded as careers.",
+   "Catalog text begins mid-sentence ('iceship website.'), so the program description may be cut off."
+  ]
+ },
+ "extracted_run": "39671107254"
+}

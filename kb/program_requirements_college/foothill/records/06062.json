@@ -1,0 +1,364 @@
+{
+ "college": "Foothill College",
+ "control_number": "06062",
+ "shape": "degree",
+ "title": "Dental Assisting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/dental-assisting/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7225,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7225,
+    "output_tokens": 2226,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2226,
+  "output_tokens_details": {
+   "thinking_tokens": 751
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07342,
+ "ms": 18807,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 21,
+   "codes": [
+    "DA100",
+    "DA50",
+    "DA51A",
+    "DA51B",
+    "DA53A",
+    "DA53B",
+    "DA53C",
+    "DA56",
+    "DA57",
+    "DA58",
+    "DA60A",
+    "DA60B",
+    "DA62A",
+    "DA62B",
+    "DA62C",
+    "DA63",
+    "DA71",
+    "DA73",
+    "DA74",
+    "DA85",
+    "DA88"
+   ],
+   "flagged": [
+    "DA100",
+    "DA50",
+    "DA51A",
+    "DA51B",
+    "DA53A",
+    "DA53B",
+    "DA53C",
+    "DA56",
+    "DA57",
+    "DA58",
+    "DA60A",
+    "DA60B",
+    "DA62A",
+    "DA62B",
+    "DA62C",
+    "DA63",
+    "DA71",
+    "DA73",
+    "DA74",
+    "DA85",
+    "DA88"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    57.0,
+    57.0
+   ],
+   "stated": [
+    57.0,
+    57.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 57,
+    "max": 57
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "dental assistants",
+    "receptionist",
+    "office manager",
+    "public health educator",
+    "administrator",
+    "sales representative",
+    "continuing education coordinator",
+    "consultant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 57,
+     "max": 57
+    },
+    "courses": [
+     {
+      "code": "D A 50",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 51A",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 53A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 58",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 62A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 71",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 51B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 53B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 56",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 57",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 60A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 62B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 73",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 51C",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "D A 53C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 60B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 62C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 63",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 74",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 85",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "D A 88",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed-list code D A 051C matched to catalog's D A 51C (zero-padding difference).",
+   "The page states 'A minimum of 90 units is required to complete the associate degree' (quarter units); read as the general associate-degree minimum rather than a printed total for this award, so degree_total left null. Reviewer may wish to check.",
+   "Footnote says additional elective coursework may be necessary to reach the 90-unit minimum; recorded as electives_fill_degree true.",
+   "Core courses (57 units) are shared by the A.S. degree and the Certificate of Achievement; the block is printed as a quarter-by-quarter plan of study grid.",
+   "Catalog text begins mid-sentence ('...tics, and prosthodontics'); the program description was cut off, so careers listed earlier in it may be missing.",
+   "No program learning outcomes are printed in the text.",
+   "Cal-GETC footnote notes students with earlier catalog rights may use IGETC or CSU GE Breadth."
+  ]
+ },
+ "extracted_run": "39671107254"
+}
