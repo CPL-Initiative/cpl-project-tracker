@@ -569,6 +569,7 @@ SECTION_LINE = 140     # characters: a heading, not a paragraph that mentions th
 DEGREE_HEADING = re.compile(r"^associate degree requirements$", re.I)
 AWARD_TYPE_KEY = {"aa": re.compile(r"\bAA\s*=\s*Associate in Arts\b(?! (?:Degree )?for Transfer)", re.I),
                   "as": re.compile(r"\bAS\s*=\s*Associate in Science\b(?! (?:Degree )?for Transfer)", re.I)}
+SECTION_COVERAGE = 0.8   # a section on a page whose label does not name the program needs this share
 SEGMENT = re.compile(r"\n| \u00b7 ")   # a line, or the " · " a page read joins short lines with
 
 
@@ -608,9 +609,13 @@ def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
     named = [(cn, c) for cn, c in claims if c["label"]["award"]]
     # A page naming no claimant's award in its label, whose text heads a section for two
     # or more of the claimants' awards, goes to each award's fullest-named claimant.
+    # A section counts for a claimant the label names at least halfway, or one whose listed courses
+    # the page carries at least SECTION_COVERAGE of: Golden West's Physics hub lists "Computer
+    # Science, Associate in Science Degree" among its degrees, and Computer Science A.S. found 67% of
+    # its courses there, the physics it requires (capture-only run 39661010112, S443).
     by_kind: dict[str, list[tuple[str, dict]]] = {}
     for cn, c in claims:
-        if c["label"].get("section"):
+        if c["label"].get("section") and (c["label"]["title"] >= 0.5 or c.get("coverage", 0) >= SECTION_COVERAGE):
             by_kind.setdefault(c["label"]["section"], []).append((cn, c))
     if not named and len(by_kind) >= 2:
         keep = set()

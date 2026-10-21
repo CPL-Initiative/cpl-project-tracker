@@ -290,8 +290,8 @@ check(C.section_award("AA-T = Associate in Arts for Transfer\nAssociate Degree R
       "an award line naming the transfer degree serves no A.A.")
 
 
-def sclaim(award, title, section):
-    c = claim(award, title)
+def sclaim(award, title, section, cov=1.0):
+    c = claim(award, title, cov)
     c["label"]["section"] = section
     return c
 
@@ -302,6 +302,11 @@ check(C.page_winners([("06014", sclaim(0, 1.0, "aa")), ("19477", sclaim(0, 1.0, 
       "one section heading alone does not share the page")
 check(C.page_winners([("02260", sclaim(0, 1.0, "aa")), ("32355", sclaim(1, 1.0, "adt"))]) == {"32355"},
       "a page whose label names a claimant's award keeps the label's rule")
+check(C.page_winners([("33205", sclaim(0, 1.0, "adt", .83)), ("18358", sclaim(0, 1.0, "aa", 1.0)),
+                      ("35877", sclaim(0, 0.0, "as", .667))]) == {"33205", "18358"},
+      "a hub that lists a degree it does not name, holding two thirds of its courses, is no section for it (Golden West's Physics)")
+check(C.page_winners([("06027", sclaim(0, 1.0, "as")), ("20101", sclaim(0, 0.0, "coa", 1.0))]) == {"06027", "20101"},
+      "a certificate the label does not name keeps its section when the page carries its courses (Foothill's Cloud Computing)")
 check(C.page_winners([("1", sclaim(0, 1.0, "aa")), ("2", sclaim(0, 0.5, "aa")), ("3", sclaim(0, 1.0, "coa"))]) == {"1", "3"},
       "within one award, the title the page names more fully keeps its section")
 
