@@ -4,27 +4,27 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-20",
+ "as_of": "2026-10-21",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 49275,
-  "pa": 45147,
-  "ppa": 120,
-  "p2": 3587,
-  "p3": 16754,
-  "pp": 6,
-  "ppe": 130,
-  "pac": 5278,
-  "ptc": 4607,
-  "pe_u": 1506021.45,
-  "pa_u": 275610.4,
-  "ppa_u": 728.5,
-  "ppe_u": 6995.5,
-  "pac_u": 37745.7,
-  "ptc_u": 31384.65,
-  "p3_u": 83845.35,
-  "pp_u": 63.5
+  "pe": 49277,
+  "pa": 45148,
+  "ppa": 121,
+  "p2": 3593,
+  "p3": 16763,
+  "pp": 7,
+  "ppe": 131,
+  "pac": 5279,
+  "ptc": 4617,
+  "pe_u": 1506092.45,
+  "pa_u": 275691.4,
+  "ppa_u": 738.5,
+  "ppe_u": 7005.5,
+  "pac_u": 37755.7,
+  "ptc_u": 31487.15,
+  "p3_u": 83937.85,
+  "pp_u": 73.5
  },
  "colleges": {
   "Alameda": {
@@ -786,7 +786,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 226,
    "pe_u": 10070.5,
    "pa": 226,
-   "pa_u": 1348.5,
+   "pa_u": 1424.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1600,8 +1600,8 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Sacramento City": {
-   "pe": 77,
-   "pe_u": 2963.0,
+   "pe": 78,
+   "pe_u": 3001.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -2072,10 +2072,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Ventura": {
-   "pe": 192,
-   "pe_u": 11127.0,
-   "pa": 192,
-   "pa_u": 978.0,
+   "pe": 193,
+   "pe_u": 11160.0,
+   "pa": 193,
+   "pa_u": 983.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2158,20 +2158,20 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 8832.0,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 35.0,
-   "p2": 497,
-   "p3": 563,
-   "p3_u": 7446.5,
+   "ppa_u": 45.0,
+   "p2": 503,
+   "p3": 572,
+   "p3_u": 7539.0,
    "pp": null,
    "pp_suppressed": true,
-   "pp_u": 3.0,
+   "pp_u": 13.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 239.0,
-   "pac": 577,
-   "pac_u": 7643.0,
-   "ptc": 562,
-   "ptc_u": 7437.0
+   "ppe_u": 249.0,
+   "pac": 578,
+   "pac_u": 7653.0,
+   "ptc": 572,
+   "ptc_u": 7539.5
   },
   "West Valley": {
    "pe": 55,
@@ -3412,7 +3412,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 77,
+    "pe": 78,
     "pa": 0,
     "p3": 0
    }
@@ -3793,8 +3793,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "Military": {
-    "pe": 192,
-    "pa": 192,
+    "pe": 193,
+    "pa": 193,
     "p3": 0
    }
   },
@@ -3863,7 +3863,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 567,
     "pa": 567,
-    "p3": 537
+    "p3": 545
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -3968,12 +3968,12 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1432,
    "pa": 1409,
-   "p3": 1190
+   "p3": 1198
   },
   "Industry Certification | Military": {
    "pe": 56,
    "pa": 55,
-   "p3": 31
+   "p3": 32
   },
   "Industry Certification | Military | Portfolio Review": {
    "pe": null,
@@ -4013,8 +4013,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28580,
-   "pa": 26233,
+   "pe": 28582,
+   "pa": 26234,
    "p3": 2583
   },
   "Military | Other": {
@@ -4070,19 +4070,19 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1506021.45,
-   "pa_u": 275610.4,
-   "p3_u": 83845.35
+   "pe_u": 1506092.45,
+   "pa_u": 275691.4,
+   "p3_u": 83937.85
   },
   "map": {
-   "pe_u": 1513016.95,
-   "pa_u": 276338.9,
-   "p3_u": 83908.85
+   "pe_u": 1513097.95,
+   "pa_u": 276429.9,
+   "p3_u": 84011.35
   },
   "ratio": {
-   "pe_u": 1.0046,
-   "pa_u": 1.0026,
-   "p3_u": 1.0008
+   "pe_u": 1.0047,
+   "pa_u": 1.0027,
+   "p3_u": 1.0009
   }
  },
  "vet_star": {
@@ -4202,7 +4202,7 @@ window.CPL_FUNDING_PERF = {
   "Cosumnes River": false,
   "Folsom Lake": false
  },
- "vet_star_as_of": "2026-10-20",
+ "vet_star_as_of": "2026-10-21",
  "vet_star_threshold": 0.75,
  "vet_star_n": 63,
  "vet_jst": {
@@ -4418,8 +4418,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "vets": 254,
-   "jst": 192,
-   "pct": 0.7559
+   "jst": 193,
+   "pct": 0.7598
   },
   "LA Mission": {
    "vets": 112,
@@ -4683,8 +4683,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "vets": 203,
-   "jst": 116,
-   "pct": 0.5714
+   "jst": 117,
+   "pct": 0.5764
   },
   "Butte": {
    "vets": 290,

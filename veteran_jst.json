@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-20T17:20:16.739871+00:00",
+  "scraped_at": "2026-10-21T11:56:42.011008+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29171,
+    "jst": 29173,
     "star_colleges": 63
   },
   "computed_star_colleges": 63,
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 192,
+      "jst": 193,
       "star": true
     },
     "Los Angeles Mission College": {
@@ -487,7 +487,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 116,
+      "jst": 117,
       "star": false
     },
     "Butte College": {

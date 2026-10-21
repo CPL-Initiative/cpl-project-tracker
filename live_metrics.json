@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-20T17:20:16.184Z",
+  "scraped_at": "2026-10-21T11:56:41.481Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -48,18 +48,18 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 792,
-          "units": 8867,
-          "avgUnits": 11.195707070707071,
-          "transcriptionRate": 84,
-          "avgTranscribed": 9.405934343434344,
+          "students": 793,
+          "units": 8877,
+          "avgUnits": 11.194199243379572,
+          "transcriptionRate": 85.1,
+          "avgTranscribed": 9.523329129886507,
           "criteriaMetCount": 5,
           "militaryStudents": 158,
-          "nonMilitaryStudents": 637,
+          "nonMilitaryStudents": 638,
           "apprenticeStudents": 0,
-          "savings": 9233477.5,
-          "yearImpact": 43251884,
-          "transcribedUnits": 7449.5
+          "savings": 9224310,
+          "yearImpact": 43206911,
+          "transcribedUnits": 7552
         },
         {
           "college": "Cabrillo College",
@@ -579,16 +579,16 @@
         {
           "college": "Glendale Community College",
           "students": 228,
-          "units": 1348.5,
-          "avgUnits": 5.9144736842105265,
+          "units": 1424.5,
+          "avgUnits": 6.24780701754386,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
           "militaryStudents": 226,
           "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
-          "savings": 2332905,
-          "yearImpact": 8181349.5,
+          "savings": 2464385,
+          "yearImpact": 8642441.5,
           "transcribedUnits": 0
         },
         {
@@ -608,17 +608,17 @@
         },
         {
           "college": "Ventura College",
-          "students": 192,
-          "units": 978,
-          "avgUnits": 5.09375,
+          "students": 193,
+          "units": 983,
+          "avgUnits": 5.0932642487046635,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 192,
+          "militaryStudents": 193,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1691940,
-          "yearImpact": 5933526,
+          "savings": 1700590,
+          "yearImpact": 5963861,
           "transcribedUnits": 0
         },
         {
@@ -1253,13 +1253,13 @@
         },
         {
           "college": "Sacramento City College",
-          "students": 116,
+          "students": 117,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 116,
+          "militaryStudents": 117,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "57,447",
+      "value": "57,450",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,171"
+          "value": "29,173"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,371"
+          "value": "28,372"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 57447,
-    "Units": 276338.9,
-    "TranscribedUnits": 83908.84999999999,
-    "Savings": 391058230.25,
-    "YearImpact": 1589469264.3999999,
-    "MilitaryStudents": 29171,
-    "NonMilitaryStudents": 28371,
+    "Students": 57450,
+    "Units": 276429.9,
+    "TranscribedUnits": 84011.34999999999,
+    "Savings": 391189192.75,
+    "YearImpact": 1589915718.3999999,
+    "MilitaryStudents": 29173,
+    "NonMilitaryStudents": 28372,
     "AprenticeStudents": 952,
-    "AverageUnits": 4.810327780388881,
-    "TranscribedAverage": 1.4606306682681427
+    "AverageUnits": 4.811660574412533,
+    "TranscribedAverage": 1.462338555265448
   }
 }
