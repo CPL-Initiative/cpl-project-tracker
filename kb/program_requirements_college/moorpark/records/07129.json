@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Archaeology",
  "award": "A.A. Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/anthropology/anthropology-aat/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/anthropology/archaeology-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8514,
+  "input_tokens": 8265,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8514,
-    "output_tokens": 1959,
+    "input_tokens": 8265,
+    "output_tokens": 2253,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,55 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1959,
+  "output_tokens": 2253,
   "output_tokens_details": {
-   "thinking_tokens": 469
+   "thinking_tokens": 455
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07324,
- "ms": 16739,
- "seconds": 17.1,
+ "cost_usd": 0.07812,
+ "ms": 17755,
+ "seconds": 18.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 26,
    "listed": 26,
-   "share": 0.0,
-   "missing": [
-    "ANTHM1",
-    "ANTHM10",
-    "ANTHM11",
-    "ANTHM12",
-    "ANTHM122",
-    "ANTHM13",
-    "ANTHM15",
-    "ANTHM16",
-    "ANTHM17",
-    "ANTHM18",
-    "ANTHM19",
-    "ANTHM1L",
-    "ANTHM2",
-    "ANTHM3",
-    "ANTHM5",
-    "ANTHM6",
-    "ANTHM7",
-    "ANTHM8",
-    "ANTHM80",
-    "ANTHM9",
-    "BIOLM5",
-    "GEOLM2",
-    "GEOLM2H",
-    "GEOLM3",
-    "GISM1",
-    "HISTM135"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -87,26 +61,46 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.0,
+     76.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -119,153 +113,267 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the page prints only the AA-T in Anthropology requirements, not the Archaeology A.A. Degree",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 7,
+    "max": 18
    },
-   "ge_pattern": null,
+   "ge_pattern": "Moorpark College General Education (Areas 1-7) or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate an understanding of the perspectives, theories, methods, and core concepts of archaeology as a social science and scientific discipline.",
+    "demonstrate a skill set in archaeological field methods including mapping, excavating, and laboratory analysis that will enable them to be an active member of future archaeological research projects."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ANTH M01",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
+    "name": "REQUIRED CORE COURSES: Select and complete the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH M01L",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
+    "name": "LIST A: Select and complete three courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH M05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH M02",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M03",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M05",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M06",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M07",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M08",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M09",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M10",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M11",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M12",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M122",
-    "why": "not in the text"
-   },
-   {
-    "code": "ANTH M13",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M15",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M16",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M17",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M18",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M19",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "ANTH M80",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL M05",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOL M02",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "GEOL M02H",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "GEOL M03",
-    "why": "not in the text"
-   },
-   {
-    "code": "GIS M01",
-    "why": "Archaeology A.A. section not in the text; named only in the Anthropology AA-T section"
-   },
-   {
-    "code": "HIST M135",
-    "why": "not in the text"
+    "name": "LIST B: Select and complete a minimum of 6 units",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTH M01L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M06",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M08",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M09",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M80",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M122",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL M05",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL M02H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST M135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source URL and text are for the AA-T in Anthropology (anthropology-aat), not the Archaeology A.A. Degree. No section for the Archaeology A.A. appears in the text, so no blocks, totals, outcomes or careers were recorded for it.",
-   "The AA-T page prints Total Units for the Major 22-24, Cal-GETC 34, and Total Units Required for the AA-T Degree 60; these belong to the Anthropology AA-T and were not recorded for this award.",
-   "The program student learning outcomes on the page belong to the Anthropology AA-T and were not recorded for the Archaeology A.A.",
-   "A reviewer should locate the correct Moorpark College catalog page for the Archaeology A.A. Degree (2026-2027)."
+   "The page prints two degree paths: Moorpark College GE Pattern (24 units, 6 double-counted, 18 elective units) and Cal-GETC Pattern (34 units, 6-10 double-counted, 7-12 electives), each totaling 60 units. ge_units records 24-34 and degree_elective_units 7-18 as the span across both paths.",
+   "ANTH M80 is printed as 'Work Experience Education in Anthropology' 1-4 units; the closed list titles it 'Internship in Anthropology' (1 unit).",
+   "GEOL M02H is printed with no units beside it.",
+   "The outcomes list is printed on the page's program outcomes tab for this program; recorded as this award's outcomes.",
+   "No careers named in the text."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

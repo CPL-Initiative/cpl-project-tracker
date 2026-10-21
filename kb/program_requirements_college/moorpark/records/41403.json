@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Screen Printing for Textiles Level I",
  "award": "Noncredit program",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/makerspace/screen-printing-textiles-level-i-coc/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8915,
+  "input_tokens": 7201,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8915,
-    "output_tokens": 940,
+    "input_tokens": 7201,
+    "output_tokens": 585,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 940,
+  "output_tokens": 585,
   "output_tokens_details": {
-   "thinking_tokens": 370
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05446,
- "ms": 9514,
- "seconds": 9.9,
+ "cost_usd": 0.0405,
+ "ms": 4925,
+ "seconds": 5.3,
  "parts": null,
  "error": null,
  "score": {
-  "measure": "units",
+  "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "MAKRM901",
-    "MAKRM903",
-    "MAKRM910",
-    "MAKRM930",
-    "MAKRM935"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -66,23 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record states no figure, but the catalog text names 0 Units, 0 Units, 0 Units, 0 Units"
-   ]
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    52.0,
+    52.0
+   ],
+   "stated": [
+    52.0,
+    52.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -97,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Makerspace",
-   "measure": "units",
+   "section_heading": "Screen Printing for Textiles Level I (Certificate of Completion)",
+   "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 52,
+    "max": 52
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -122,40 +121,68 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "create and apply design thinking solutions through the use of screen printing equipment",
+    "demonstrate proficiency in using industry standard software and equipment to produce screen printed textile products",
+    "demonstrate the ability to collaborate and communicate within a team environment"
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MAKR M901",
-    "why": "Appears only as a course description; program requirements not in text"
-   },
-   {
-    "code": "MAKR M903",
-    "why": "Appears only as a course description; program requirements not in text"
-   },
-   {
-    "code": "MAKR M910",
-    "why": "Appears only as a course description; program requirements not in text"
-   },
-   {
-    "code": "MAKR M930",
-    "why": "Appears only as a course description; program requirements not in text"
-   },
-   {
-    "code": "MAKR M935",
-    "why": "Appears only as a course description; program requirements not in text"
+    "name": "Complete the following five courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MAKR M901",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M903",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M910",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M930",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR M935",
+      "units": 20,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text has no program section for Screen Printing for Textiles Level I. It holds only course descriptions from the noncredit course listings (Environmental Science, Makerspace, Mathematics), so no requirement blocks, totals, outcomes or careers could be recorded.",
-   "section_heading is set to 'Makerspace', the course-listing heading where the closed-list courses appear. It is not a program requirements heading.",
-   "Measure defaults to 'units' because the text gives no hours for this program. As a noncredit program it is likely counted in hours, so the actual program page should be checked.",
-   "All five closed-list courses (MAKR M901, M903, M910, M930, M935) are described in the text, each shown as 0 Units and noncredit. MAKR M935 has prerequisite MAKR M930.",
-   "The text is cut off at the start and the end."
+   "Section heading inferred from the requirements text ('Certificate of Completion in Screen Printing for Textiles Level I'); the captured text does not print a page title.",
+   "Award is counted in hours ('Units/Hours' column, 'Total Hours 52'); course figures are hours."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

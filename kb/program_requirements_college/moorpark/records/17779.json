@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Biotechnology Manufacturing Operator",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/biotechnology-manufacturing-operator-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11605,
+  "input_tokens": 7279,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11605,
-    "output_tokens": 798,
+    "input_tokens": 7279,
+    "output_tokens": 1112,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,65 +30,62 @@
     "model": null
    }
   ],
-  "output_tokens": 798,
+  "output_tokens": 1112,
   "output_tokens_details": {
-   "thinking_tokens": 172
+   "thinking_tokens": 274
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06238,
- "ms": 7730,
- "seconds": 8.1,
+ "cost_usd": 0.05136,
+ "ms": 9358,
+ "seconds": 9.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "BIOLM12A",
-    "BIOLM12B",
-    "BIOLM13",
-    "BIOLM2A",
-    "BIOLM2AH",
-    "BIOTM10",
-    "BIOTM2A",
-    "BIOTM2B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BIOLM1"
+   ],
+   "flagged": [
+    "BIOLM1"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    12.0,
+    13.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    12.0,
+    13.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -103,15 +100,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found; the text holds only the [Tab: COURSES] course descriptions",
+   "section_heading": "Biotechnology Manufacturing Operator, Certificate of Achievement (REQUIREMENTS)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 12,
+    "max": 13
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,51 +125,91 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "work successfully in a clean room environment and understand Quality Control and Validation principles."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BIOL M02A",
-    "why": "no program requirements section in the text; named only in BIOT 300-level prerequisites"
-   },
-   {
-    "code": "BIOL M02AH",
-    "why": "no program requirements section in the text; named only in BIOT 300-level prerequisites"
-   },
-   {
-    "code": "BIOL M12A",
-    "why": "no program requirements section in the text; named only as the same-as for BIOT M02A"
-   },
-   {
-    "code": "BIOL M12B",
-    "why": "no program requirements section in the text; named only as the same-as for BIOT M02B"
-   },
-   {
-    "code": "BIOL M13",
-    "why": "no program requirements section in the text; named only as the same-as for BIOT M10"
-   },
-   {
-    "code": "BIOT M02A",
-    "why": "no program requirements section in the text; course description only"
-   },
-   {
-    "code": "BIOT M02B",
-    "why": "no program requirements section in the text; course description only"
-   },
-   {
-    "code": "BIOT M10",
-    "why": "no program requirements section in the text; course description only"
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "BIOL M01",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "BIOL M02A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL M02AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOT M10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M13",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12A",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL M12B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOT M02B",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text holds site navigation, print options and the COURSES tab of the Biotechnology page only.",
-   "The Biotechnology Manufacturing Operator Certificate of Achievement requirements, total units, outcomes and careers do not appear in the text, so no blocks are recorded.",
-   "The program requirements are likely on a separate tab of the page that was not captured; a reviewer should check the source page.",
-   "The course list is cut off mid-entry at 'BIOT M406 Supply Chain and E'."
+   "The 'Total Units for the Certificate 12 - 13' line was recorded as both the certificate total and the stated total of the single required block, since it is the only block.",
+   "Cross-listed codes printed with a slash (BIOT M10/BIOL M13, BIOT M02A/BIOL M12A, BIOL M12B/BIOT M02B) were recorded as one entry with the other code as an alternative.",
+   "The 4-5 unit range is printed only on the BIOL M01 row, which carries the or-options BIOL M02A and BIOL M02AH. No units are printed beside BIOL M02A or BIOL M02AH, so their units were left null.",
+   "BIOL M01 is not in the closed list and is flagged as a catalog addition.",
+   "The outcomes tab prints one outcome for the program; this certificate shares it, so it was recorded here."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

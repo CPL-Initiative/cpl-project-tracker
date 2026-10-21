@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Global Business",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/global-business-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12721,
+  "input_tokens": 7858,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12721,
-    "output_tokens": 1141,
+    "input_tokens": 7858,
+    "output_tokens": 2033,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,83 +30,66 @@
     "model": null
    }
   ],
-  "output_tokens": 1141,
+  "output_tokens": 2033,
   "output_tokens_details": {
-   "thinking_tokens": 241
+   "thinking_tokens": 370
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0737,
- "ms": 9881,
- "seconds": 10.2,
+ "cost_usd": 0.07209,
+ "ms": 16237,
+ "seconds": 16.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 25,
    "listed": 26,
-   "share": 0.0,
+   "share": 0.962,
    "missing": [
-    "ACCTM1",
-    "ACCTM110",
-    "ANTHM2",
-    "ANTHM7",
-    "BUSM140",
-    "BUSM30",
-    "BUSM31",
-    "BUSM32",
-    "BUSM33",
-    "BUSM35",
-    "BUSM37",
-    "BUSM39",
-    "BUSM70",
-    "BUSM71",
-    "BUSM72",
-    "BUSM73",
-    "COMMM12",
-    "COMMM32",
-    "GEOGM2",
-    "GEOGM3",
-    "GEOGM3H",
-    "HISTM160",
-    "HOSPM100",
-    "PHILM22",
-    "POLSM4",
-    "PSYM14"
+    "COMMM32"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "JOURM14",
+    "JOURM16"
+   ],
+   "flagged": [
+    "JOURM14",
+    "JOURM16"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -114,22 +97,22 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -146,121 +129,242 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "demonstrate an understanding of the fundamentals of global business and how they contribute to organizational success in a global economy."
+   ],
+   "careers": [
+    "entrepreneurship"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS M30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restrictive Electives - Select and complete one course (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ACCT M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT M110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH M07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG M03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG M03H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST M160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP M100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR M14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR M16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL M22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS M04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY M14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ACCT M01",
-    "why": "only a course description in the text; no Global Business requirements printed"
-   },
-   {
-    "code": "ACCT M110",
-    "why": "only a course description in the text; no Global Business requirements printed"
-   },
-   {
-    "code": "ANTH M02",
-    "why": "not in the text"
-   },
-   {
-    "code": "ANTH M07",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M140",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M30",
-    "why": "only a course description in the text; no Global Business requirements printed"
-   },
-   {
-    "code": "BUS M31",
-    "why": "only a course description in the text; no Global Business requirements printed"
-   },
-   {
-    "code": "BUS M32",
-    "why": "only a course description in the text; no Global Business requirements printed"
-   },
-   {
-    "code": "BUS M33",
-    "why": "only a course description in the text (cut off); no Global Business requirements printed"
-   },
-   {
-    "code": "BUS M35",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M37",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M39",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M70",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M71",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M72",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS M73",
-    "why": "not in the text"
-   },
-   {
-    "code": "COMM M12",
-    "why": "not in the text"
-   },
-   {
     "code": "COMM M32",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG M02",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG M03",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG M03H",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST M160",
-    "why": "not in the text"
-   },
-   {
-    "code": "HOSP M100",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHIL M22",
-    "why": "not in the text"
-   },
-   {
-    "code": "POLS M04",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSY M14",
     "why": "not in the text"
    }
   ],
   "notes": [
-   "The provided text contains only site navigation, print options, and the COURSES tab (Accounting and Business course descriptions, cut off mid-description at BUS M33). No Global Business Certificate of Achievement section, requirements, totals, outcomes, or careers appear, so section_heading is empty and no blocks were recorded.",
-   "The program requirements are likely on the page's Programs tab, which was not included in the extracted text; a reviewer should re-fetch that tab."
+   "The text has no program heading of its own; section_heading names the REQUIREMENTS tab of the Global Business Certificate of Achievement page.",
+   "The 'Units from Electives 3' line in the core list refers to the Restrictive Electives block; it is not counted as open electives.",
+   "JOUR M14 and JOUR M16 are printed without titles and are not in the closed list.",
+   "GEOG M03H is printed as an 'or' alternative to GEOG M03 with no units beside it.",
+   "The outcomes tab prints one outcome for the program; recorded as printed (lowercase initial).",
+   "'entrepreneurship' is recorded as a career field from the phrase 'preparation for entrepreneurship or entering the workforce'; a reviewer may judge whether it counts as a career."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Dance",
  "award": "A.A. Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/dance/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/dance/dance-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12695,
+  "input_tokens": 7951,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12695,
-    "output_tokens": 935,
+    "input_tokens": 7951,
+    "output_tokens": 2629,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 935,
+  "output_tokens": 2629,
   "output_tokens_details": {
-   "thinking_tokens": 128
+   "thinking_tokens": 656
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06948,
- "ms": 8822,
- "seconds": 9.2,
+ "cost_usd": 0.08438,
+ "ms": 20602,
+ "seconds": 20.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 20,
    "listed": 20,
-   "share": 0.0,
-   "missing": [
-    "DANCM10B",
-    "DANCM10C",
-    "DANCM11B",
-    "DANCM11C",
-    "DANCM12B",
-    "DANCM12C",
-    "DANCM15A",
-    "DANCM17",
-    "DANCM18",
-    "DANCM19A",
-    "DANCM19B",
-    "DANCM19C",
-    "DANCM20A",
-    "DANCM20AH",
-    "DANCM20B",
-    "DANCM20C",
-    "DANCM3",
-    "DANCM55A",
-    "DANCM55B",
-    "DANCM56"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -82,25 +62,46 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    63.0,
+    76.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the record names no total"
-   ]
+    "the blocks and general education sum to 63.0-76.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     19.0,
+     19.0
+    ],
+    "stated": [
+     19.0,
+     19.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -113,128 +114,277 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Not in the text (only the COURSES tab was captured)",
+   "section_heading": "Associate in Arts Degree in Dance (REQUIREMENTS tab)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 10,
+    "max": 23
    },
-   "ge_pattern": null,
+   "ge_pattern": "Moorpark College General Education (Areas 1-7) or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate literacy in dance history and appreciation.",
+    "dance technique, somatic techniques, and alignment.",
+    "dance theory, analysis, creativity, and performance skills."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "DANC M03",
-    "why": "requirements not in the text; only a course description"
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANC M03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M15A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC M10B",
-    "why": "requirements not in the text; only a course description"
+    "name": "Select and complete one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANC M17",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M55A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M55B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M56",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC M10C",
-    "why": "requirements not in the text; only a course description"
+    "name": "Group A - Complete two courses, 4 units",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "DANC M10B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M10C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC M11B",
-    "why": "requirements not in the text; only a course description"
+    "name": "Group B - Complete one course, 2 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DANC M12B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M12C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC M11C",
-    "why": "requirements not in the text; only a course description"
+    "name": "Group C - Complete one course, 2 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DANC M11B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M11C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC M12B",
-    "why": "requirements not in the text; only a course description"
+    "name": "Group D - Complete one course, 2 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DANC M20A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC M20AH",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M20B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M20C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DANC M12C",
-    "why": "requirements not in the text; only a course description"
-   },
-   {
-    "code": "DANC M15A",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M17",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M18",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M19A",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M19B",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M19C",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M20A",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M20AH",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M20B",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M20C",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M55A",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M55B",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANC M56",
-    "why": "not in the text"
+    "name": "Group E - Complete one course, 2 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DANC M18",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M19A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M19B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC M19C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The captured text holds only site menus, print options and the COURSES tab; the program requirements tab for the Dance A.A. degree (requirements, totals, outcomes, careers) is not in the text, so no blocks were recorded.",
-   "The course listing is cut off mid-description at DANC M13C ('Builds'); later courses (M15A, M17, M18, M19A-C, M20A-C, M55A-B, M56) do not appear.",
-   "Re-fetch the program/requirements tab of the page or the 2026-2027 Moorpark catalog PDF to record this award."
+   "The section heading is not printed in the extracted text; the heading recorded is taken from the requirements sentence 'To earn an Associate in Arts Degree in Dance'.",
+   "The catalog labels Groups A-E as 'Units from Recommended Groups 12' but counts those 12 units toward the 19-unit major total (3+2+2+12=19), so the groups are recorded as required choice blocks, not 'recommended'.",
+   "The first table prints 'Total Units for the AA Degree 19', which matches 'Total Units for the Major 19'. It is read as the major total; the degree total is 60.",
+   "DANC M17 is printed with 2 units, while the state file stores 0.5.",
+   "DANC M20AH (Honors) is recorded as an alternative of DANC M20A.",
+   "Elective units differ by GE path: 23 with the Moorpark GE pattern (34 GE, 6 double-counted) and 10 with Cal-GETC (34 GE, 3 double-counted). These are recorded as degree_elective_units 10-23.",
+   "The Moorpark GE path arithmetic does not reach 60 (19+34-6+23=70), while the Cal-GETC path does (19+34-3+10=60). A reviewer should check the printed figures.",
+   "The outcomes are printed for the program as a whole on the page's outcomes tab and are recorded for this award. The second and third outcomes appear truncated as printed (they lack a leading verb) and are copied verbatim."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Administration of Justice",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14523,
+  "input_tokens": 11667,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14523,
-    "output_tokens": 1973,
+    "input_tokens": 11667,
+    "output_tokens": 2073,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1973,
+  "output_tokens": 2073,
   "output_tokens_details": {
-   "thinking_tokens": 309
+   "thinking_tokens": 435
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09755,
- "ms": 16928,
- "seconds": 17.3,
+ "cost_usd": 0.08813,
+ "ms": 15977,
+ "seconds": 16.3,
  "parts": null,
  "error": null,
  "score": {
@@ -140,7 +141,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Criminal Justice",
+   "section_heading": "Course Identification Numbering System (C-ID)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -169,39 +170,39 @@
   "missing_explained": [
    {
     "code": "BUS M140",
-    "why": "appears only in UC-transferable Business course list, not degree requirements"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "CHEM M01A",
-    "why": "appears only in UC-transferable Chemistry course list, not degree requirements"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "CHEM M01AH",
-    "why": "appears only in UC-transferable Chemistry course list, not degree requirements"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "CJ M01",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 110); no program requirements in the text"
    },
    {
     "code": "CJ M01H",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 110); no program requirements in the text"
    },
    {
     "code": "CJ M02",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 120); no program requirements in the text"
    },
    {
     "code": "CJ M03",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 160); no program requirements in the text"
    },
    {
     "code": "CJ M04",
-    "why": "not in the text"
+    "why": "only in the C-ID equivalency table (AJ 124); no program requirements in the text"
    },
    {
     "code": "CJ M05",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 122); no program requirements in the text"
    },
    {
     "code": "CJ M06",
@@ -213,7 +214,7 @@
    },
    {
     "code": "CJ M08",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "not in the text"
    },
    {
     "code": "CJ M09A",
@@ -229,7 +230,7 @@
    },
    {
     "code": "CJ M11",
-    "why": "not in the text"
+    "why": "only in the C-ID equivalency table (AJ 140); no program requirements in the text"
    },
    {
     "code": "CJ M12",
@@ -237,7 +238,7 @@
    },
    {
     "code": "CJ M14",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 220); no program requirements in the text"
    },
    {
     "code": "CJ M15",
@@ -245,7 +246,7 @@
    },
    {
     "code": "CJ M17",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "not in the text"
    },
    {
     "code": "CJ M18",
@@ -253,11 +254,11 @@
    },
    {
     "code": "CJ M40",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "not in the text"
    },
    {
     "code": "CJ M41",
-    "why": "appears only in UC-transferable Criminal Justice course list, not degree requirements"
+    "why": "only in the C-ID equivalency table (AJ 200); no program requirements in the text"
    },
    {
     "code": "CJ M43",
@@ -265,67 +266,66 @@
    },
    {
     "code": "GIS M01",
-    "why": "appears only in UC-transferable GIS course list, not degree requirements"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "POLS C1000",
-    "why": "not in the text (text cut off before Political Science)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "POLS C1000H",
-    "why": "not in the text (text cut off before Political Science)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "PSY M06",
-    "why": "not in the text (text cut off before Psychology)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "PSY M125",
-    "why": "not in the text (text cut off before Psychology)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "PSYC C1000",
-    "why": "not in the text (text cut off before Psychology)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "PSYC C1000H",
-    "why": "not in the text (text cut off before Psychology)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "SOC M120",
-    "why": "not in the text (text cut off before Sociology)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "SOC M160",
-    "why": "not in the text (text cut off before Sociology)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "SOCIC1000",
-    "why": "not in the text (text cut off before Sociology)"
+    "why": "only in the C-ID equivalency table (printed SOCI C1000); no program requirements in the text"
    },
    {
     "code": "SOCIC1000H",
-    "why": "not in the text (text cut off before Sociology)"
+    "why": "only in the C-ID equivalency table (printed SOCI C1000H); no program requirements in the text"
    },
    {
     "code": "SOCM125",
-    "why": "not in the text (text cut off before Sociology)"
+    "why": "only in the C-ID equivalency table (printed SOC M125); no program requirements in the text"
    },
    {
     "code": "STAT C1000",
-    "why": "not in the text (text cut off before Statistics)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    },
    {
     "code": "STAT C1000H",
-    "why": "not in the text (text cut off before Statistics)"
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    }
   ],
   "notes": [
-   "The source page is Moorpark's 'Transfer to UC' list of UC-transferable courses by subject, not the Administration of Justice A.S.-T program page; it prints no degree requirements, totals, GE pattern, outcomes or careers for this award, so no blocks were recorded.",
-   "section_heading names the 'Criminal Justice' subject heading of the UC-transferable course list, the only part of the text tied to this program; its UC credit limits (e.g., CJ M02, CJ M08 and CJ M40 combined: maximum credit, 1 course) are transfer limits, not award rules.",
-   "The catalog text is truncated at both ends (starts mid-Art, ends mid-Intercollegiate Athletics), so later subjects such as Political Science, Psychology, Sociology and Statistics are absent.",
-   "A reviewer should locate the actual Administration of Justice AS-T program page for the 2026-2027 catalog."
+   "The supplied text is Moorpark College's C-ID designation list (Transfer Information), not the Administration of Justice A.S.-T program page; it prints no requirements, totals, outcomes or careers for this award, so no blocks were recorded.",
+   "Several closed-list courses appear in the C-ID table (e.g., CJ M01/CJ M01H as AJ 110), but the table only shows course equivalencies, not degree requirements.",
+   "Reviewer should fetch the actual Administration of Justice AS-T program page for the 2026-2027 catalog."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "39600815599"
 }
