@@ -1,5 +1,5 @@
 {
- "_readme": "S442 SkyManzanita, 2026-10-21. Moorpark's S395 capture (run 38748862351) labeled Animal Care and Training A.S. (06846) and its certificate (22101) exactly, yet the page's code tokens named 0 of 42 listed courses (the state's file lists ANCT M01B, ANSC M17 ...); 39 more programs lost their page to a sibling. This read loads the two pages and prints how the REQUIREMENTS tab prints a course code. Two loads, no model call.",
+ "_readme": "S442 SkyManzanita, 2026-10-21. Moorpark's S395 capture (run 38748862351) labeled Animal Care and Training A.S. (06846) and its certificate (22101) exactly, yet the page's code tokens named 0 of 42 listed courses (the state's file lists ANCT M01B, ANSC M17 ...); 39 more programs lost their page to a sibling. This read loads the two pages and prints how the REQUIREMENTS tab prints a course code. Two loads, no model call. Read 39595155181 printed only the Overview (the tab is closed); this read opens it.",
  "college": "Moorpark College",
  "questions": {
   "code_shape": "How the REQUIREMENTS tab prints each course's code (with or without the M, spacing, a link), and the program's unit total."
@@ -12,14 +12,20 @@
  ],
  "pages": [
   {
-   "answers": ["code_shape"],
+   "answers": [
+    "code_shape"
+   ],
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/animal20care20and20training/animal-care-and-training-as/",
-   "links": "(?i)ANCT|ANSC|requirement"
+   "links": "(?i)ANCT|ANSC|requirement",
+   "expand": true
   },
   {
-   "answers": ["code_shape"],
+   "answers": [
+    "code_shape"
+   ],
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/animal20care20and20training/animal-care-and-training-coa/",
-   "links": "(?i)ANCT|ANSC|requirement"
+   "links": "(?i)ANCT|ANSC|requirement",
+   "expand": true
   }
  ]
 }
