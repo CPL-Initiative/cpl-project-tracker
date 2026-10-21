@@ -1764,6 +1764,9 @@ window.CPL_SIERRA_SUGGESTED = [
       curateSections();
       orderSections();
       contentsFromSections();
+      // A tabled memo leaves the Contents (its status, set in the tab's Report view).
+      var memoLi = document.getElementById("memo-link");
+      if (memoLi && memoLi.parentNode) memoLi.parentNode.hidden = typeof T._docStatus === "function" && T._docStatus("memo") === "tabled";
       painted = true;
       if (status) status.textContent = "";
     } catch (e) {

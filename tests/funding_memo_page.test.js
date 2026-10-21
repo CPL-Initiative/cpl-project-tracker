@@ -41,6 +41,22 @@ const link = /<a id="memo-link" href="memo\/">([^<]+)<\/a>/.exec(page);
 check("the funding page's Contents links the memo", !!link);
 check("the Contents link does not call it a draft", link && !/draft/i.test(link[1]));
 
+// The memo's status (Sam, 2026-10-21): set in the tab's Report view and saved
+// with the scenario. Draft is the default; a tabled memo leaves this page.
+{
+  const T = w.CPL_FUNDING_TAB;
+  check("a document's status defaults to draft", T._docStatus("memo") === "draft");
+  T._setDocStatus("memo", "final");
+  check("a status set to final reads back as final", T._docStatus("memo") === "final");
+  check("a status the list does not hold is refused", (T._setDocStatus("memo", "bogus"), T._docStatus("memo") === "final"));
+  T._setDocStatus("memo", "tabled");
+  Array.from(doc.querySelectorAll("script:not([src])")).forEach(function (s) { w.eval(s.textContent); });
+  check("a tabled memo leaves the public page and says so",
+    doc.getElementById("memo").hidden && /not available/.test(doc.getElementById("memo-status").textContent));
+  T._setDocStatus("memo", "draft");
+  check("setting it back to draft clears the stored status", T._docStatus("memo") === "draft");
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

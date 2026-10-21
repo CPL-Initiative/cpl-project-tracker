@@ -120,6 +120,14 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
       status.textContent = "The memo could not be built here. The funding page carries the same figures.";
       return;
     }
+    // A tabled memo is withdrawn here (its status, set in the tab's Report view).
+    if (typeof T._docStatus === "function" && T._docStatus("memo") === "tabled") {
+      box.innerHTML = "";
+      box.hidden = true;
+      status.textContent = "The guidance memo is not available at this time. The funding page carries the current figures.";
+      return;
+    }
+    box.hidden = false;
     try {
       box.innerHTML = T._buildMemo("memo");
       // Wide tables scroll inside their own box on a phone, never the page.
