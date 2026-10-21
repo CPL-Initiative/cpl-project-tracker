@@ -89,7 +89,9 @@ const STATUS = {
 };
 const PR_LOG = { schema: 1, project: "program-requirements", written_at: "2026-10-18T18:15:53Z", session: 418, moniker: "SkyMadrone",
   next_step: { title: "Hand Sam the Commons mock-up, then the shared Progress module" },
-  calls: [{ title: "The Commons mock-up, version 3, waits on Sam's look", link: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi" }] };
+  calls: [{ title: "The Commons mock-up, version 3, waits on Sam's look", link: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi" },
+    { title: "The second reader waits on a new xAI subscription", link: "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
+      answer: { by: "Sam", at: "2026-10-21", words: "Later: keep this on ice." } }] };
 
 function responder(map) {
   return function (url) {
@@ -145,6 +147,8 @@ function cellText(li, title) {
   check("a known issue's count opens the tab", req.querySelector(".cmn-cell a.cmn-count").getAttribute("href") === "#program-requirements");
   check("a settled procedure with a count and one without both draw", /114 reading procedures/.test(cellText(req, "Settled procedures")) && /A misread is fixed/.test(cellText(req, "Settled procedures")));
   check("the calls cell lists the run log's call with its sheet link", /1 open/.test(cellText(req, "Calls waiting on Sam")) && req.querySelector('.cmn-cell a[href="https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi"]'));
+  check("a call answered on its sheet stays listed with his words and leaves the open count (Sam, 2026-10-21)",
+    /1 open/.test(cellText(req, "Calls waiting on Sam")) && /Answered by Sam, 2026-10-21: Later: keep this on ice\./.test(cellText(req, "Calls waiting on Sam")));
   check("a sheet link opens in a new tab", req.querySelector('.cmn-cell a[href^="https://"]').getAttribute("target") === "_blank");
   const run = cellText(req, "Last run").replace(/\s+/g, " ");
   check("the machine stamp names what ran and reads on dispatch when it has no cadence", /Machine: the last college read, /.test(run) && /on dispatch · on dispatch/.test(run));

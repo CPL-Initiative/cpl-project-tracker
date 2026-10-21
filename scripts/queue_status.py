@@ -157,6 +157,15 @@ def faults(q, root=ROOT, parts=None):
         need(c.get("link") is None or (isinstance(c.get("link"), str) and c["link"].startswith("https://")),
              w + ".link must be an https address")
         text(c.get("link_text"), w + ".link_text", required=False)
+        # The decider's answer from the sheet (Sam, 2026-10-21): a call carrying one counts as
+        # answered on the Progress view, Sam's to-dos and the Commons dash, and shows its words.
+        a = c.get("answer")
+        if a is not None:
+            need(isinstance(a, dict), w + ".answer must be an object with by, at and words")
+            if isinstance(a, dict):
+                text(a.get("by"), w + ".answer.by")
+                text(a.get("words"), w + ".answer.words")
+                need(isinstance(a.get("at"), str) and bool(DAY.match(a.get("at") or "")), w + ".answer.at must be a date, YYYY-MM-DD")
         v = c.get("view")
         if v is not None:
             need(isinstance(v, dict) and isinstance(v.get("href"), str)

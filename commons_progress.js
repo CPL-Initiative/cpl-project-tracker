@@ -118,9 +118,17 @@
     var first = hist[0] || null;
     return first && complete != null && first.complete < complete ? { day: dayOf(first.day), complete: first.complete } : null;
   }
+  /* A call the decider answered on its sheet carries `answer` ({by, at, words}) in the status
+     file (Sam, 2026-10-21: "the open asks on The Commons doesn't seem to record that I responded
+     to the sheets"). A "later" is an answer: the call then waits on the world, not on him. */
+  function answeredBy(c) { return !!(c && c.answer && c.answer.words); }
   /* The calls in the status file no one has answered yet, by the host's own reading. */
   function openCalls(Q, callAnswered) {
-    return (Q && Array.isArray(Q.calls) ? Q.calls : []).filter(function (c) { return !callAnswered(c); }).length;
+    return (Q && Array.isArray(Q.calls) ? Q.calls : []).filter(function (c) { return !answeredBy(c) && !callAnswered(c); }).length;
+  }
+  function answerLine(c) {
+    var a = c.answer;
+    return el("p", { cls: "prh-pg-foot", text: (a.by || "Sam") + (a.at ? ", " + a.at : "") + ": " + a.words });
   }
 
   /* ── the definitions, applied ── */
@@ -260,7 +268,7 @@
     if (a) out.push(h.goControl(a[0], a[1], "prh-pg-answer"));
     var calls = x.Q && Array.isArray(x.Q.calls) ? x.Q.calls : [];
     calls.forEach(function (c, i) {
-      if (c.part !== p.id || h.callAnswered(c)) return;
+      if (c.part !== p.id || answeredBy(c) || h.callAnswered(c)) return;
       var words = "Answer: " + (c.title || "the call");
       if (c.link && /^https:\/\//.test(c.link)) out.push(el("a", { cls: "prh-word prh-pg-answer", href: c.link, target: "_blank", rel: "noopener", text: words }));
       else {
@@ -377,9 +385,10 @@
       if (Q.next_step && Q.next_step.title) side.appendChild(h.section("progress:next", Q.next_step.title, null,
         [Q.next_step.text ? el("p", { text: Q.next_step.text }) : null], { cls: "prh-pg-box", h: "h4", label: "Next step" }));
       (Array.isArray(Q.calls) ? Q.calls : []).forEach(function (c, i) {
-        var done = h.callAnswered(c);
+        var done = answeredBy(c) || h.callAnswered(c);
         var card = h.section("progress:call:" + i, c.title || "", null, [
           c.text ? el("p", { text: c.text }) : null,
+          answeredBy(c) ? answerLine(c) : null,
           c.if_no_reply && !done ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
           h.callRecords(c),
           h.callLinks(c)],
@@ -511,7 +520,7 @@
 
   window.CPL_COMMONS_PROGRESS = {
     render: render, ensureCss: ensureCss, readStatus: readStatus,
-    steps: steps, partView: partView, missingText: missingText, wholeFacts: wholeFacts, since: since, openCalls: openCalls,
+    steps: steps, partView: partView, missingText: missingText, wholeFacts: wholeFacts, since: since, openCalls: openCalls, answeredBy: answeredBy,
     headlineBand: headlineBand, wholeBand: wholeBand,
     toDate: toDate, ptDay: ptDay, ptTime: ptTime, dayOf: dayOf, stampOf: stampOf, timeOf: timeOf,
     joinAnd: joinAnd, latest: latest, nextWeekly: nextWeekly, nextRun: nextRun, pctOf: pctOf, fmt: fmt, el: el, link: link,
