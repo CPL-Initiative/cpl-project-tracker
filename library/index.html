@@ -63,6 +63,85 @@ p { margin: 0; max-width: var(--cpl-measure, none); }
 </head>
 <body>
 <a class="skip-link" href="#pieces">Skip to the library</a>
+<!-- cpl-public-header:start (copied from CPLBrain/04-projects/cpl-initiative/public-header/header.html; logos from ../sierra/) -->
+<style>
+/* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
+   Office CPL page, the way out to the public CPL pages, and a light/dark control.
+   Its own tokens, so it reads the same on any host page; First Light values. */
+:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-link:#0047AB;--cplh-strong:#1C1C1A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA}}
+:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA}
+.cplh{background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
+.cplh-in{max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
+.cplh-logo{display:inline-flex;min-height:24px}
+.cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
+.cplh-logo .cplh-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
+:root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
+:root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
+.cplh-nav{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin:0;padding:0;list-style:none;flex:1 1 auto}
+.cplh a{color:var(--cplh-link)}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:24px;text-underline-offset:3px}
+.cplh-theme{display:flex;gap:.9rem;align-items:center}
+.cplh-theme span{color:var(--cplh-fg)}
+.cplh-theme button{background:none;border:0;padding:0 2px;min-height:24px;min-width:24px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
+@media (max-width:560px){.cplh-logo img{height:32px}.cplh-nav{flex-basis:100%}}
+</style>
+<header class="cplh" role="banner">
+  <div class="cplh-in">
+    <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
+      <img class="cplh-light" src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+      <img class="cplh-dark" src="../sierra/cpl-initiative-logo.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+    </a>
+    <nav aria-label="CPL pages">
+      <ul class="cplh-nav">
+        <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a></li>
+        <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a></li>
+        <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener">Find your college</a></li>
+        <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP dashboard</a></li>
+        <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></li>
+        <li><a href="./" aria-current="page">CPL Library</a></li>
+      </ul>
+    </nav>
+    <div class="cplh-theme" role="group" aria-label="Theme">
+      <span>Theme</span>
+      <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
+      <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+    </div>
+  </div>
+</header>
+<script>
+(function () {
+  var KEY = "cpl_theme", root = document.documentElement;
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function paint() {
+    var t = current();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-cplh-theme]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-cplh-theme") === t));
+    });
+  }
+  var saved = read();
+  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-cplh-theme]") : null;
+    if (!b) return;
+    var t = b.getAttribute("data-cplh-theme");
+    root.setAttribute("data-theme", t);
+    try { localStorage.setItem(KEY, t); } catch (err) { /* private window: the choice holds for this visit */ }
+    paint();
+  });
+  if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
+  paint();
+})();
+</script>
+<!-- cpl-public-header:end -->
 <main>
   <header style="display:grid;gap:.5rem">
     <div class="eyebrow">California Community Colleges · CPL Initiative</div>
