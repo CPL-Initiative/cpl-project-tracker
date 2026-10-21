@@ -39,9 +39,10 @@ const html = fs.readFileSync(path.join(ROOT, "funding-model/index.html"), "utf8"
 const dom = new JSDOM(html);
 const tails = Array.from(dom.window.document.querySelectorAll("#toc-list li.toc-tail a")).map((a) => a.getAttribute("href"));
 // The guidance memo leads the tail (Sam, 2026-10-21).
-check("(d) the memo, the video, office hours, landing page, then the training video",
-  tails[0] === "memo/" && /funding_in_motion/.test(tails[1]) && tails[2] === "https://map.rccd.edu/get-involved/" &&
-  tails[3] === "https://map.rccd.edu/cpllandingpages/" && tails[4] === "../prototype/landing_page_video/");
+check("(d) the memo, the introduction, the narrated introduction, office hours, landing page, then the training video",
+  tails[0] === "memo/" && /funding_in_motion_s2/.test(tails[1]) && /funding_in_motion_n2/.test(tails[2]) &&
+  tails[3] === "https://map.rccd.edu/get-involved/" &&
+  tails[4] === "https://map.rccd.edu/cpllandingpages/" && tails[5] === "../prototype/landing_page_video/");
 // The training video plays from this site, so no ads and no suggested videos
 // (Sam, 2026-10-20); the page's video file is in the repo.
 const lp = fs.readFileSync(path.join(ROOT, "prototype/landing_page_video/index.html"), "utf8");
