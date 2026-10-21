@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_program_source_ppm_hosts_s444.sql",
+ "name": "program_source_ppm_hosts_s444_2026_10_21",
+ "version": "20261021225617",
+ "sha256": "287ef7fd915b732bce07079a23d018297428a7ec5bd33da0bd298b14bf358147",
+ "run": "39689748697",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
