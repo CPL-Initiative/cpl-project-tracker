@@ -1,0 +1,267 @@
+{
+ "college": "Reedley College",
+ "control_number": "42457",
+ "shape": "noncredit",
+ "title": "Wildfire Resources Supervisors",
+ "award": "Noncredit program",
+ "source_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3324",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7549,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7549,
+    "output_tokens": 1485,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1485,
+  "output_tokens_details": {
+   "thinking_tokens": 408
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0599,
+ "ms": 12166,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 12,
+   "listed": 13,
+   "share": 0.923,
+   "missing": [
+    "NR359"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WLF359"
+   ],
+   "flagged": [
+    "WLF359"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    235.5,
+    235.5
+   ],
+   "stated": [
+    235.4,
+    235.4
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 235.5-235.5; the catalog states 235.4-235.4"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Wildfire Resources Supervisors (no heading printed in the text)",
+   "measure": "hours",
+   "total_units": {
+    "min": 235.4,
+    "max": 235.4
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses (untitled)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WLF 351",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 352",
+      "units": 36.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 353",
+      "units": 12.1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 355",
+      "units": 33.1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 356",
+      "units": 21.1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 357",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 360",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select at least 52 hours",
+    "rule": "choose_units",
+    "minimum": 52,
+    "option_group": null,
+    "stated": {
+     "min": 52,
+     "max": 52
+    },
+    "courses": [
+     {
+      "code": "WLF 350",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 354",
+      "units": 24.3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 358",
+      "units": 16.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 359",
+      "units": 24.3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WLF 361",
+      "units": 153,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLF 362",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NR 359",
+    "why": "not in the text; catalog prints S-236 Heavy Equipment Boss as WLF 359 (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "The extracted text prints no program heading, description, outcomes or careers; only the course table survived (preceded by CSS).",
+   "The first block of required courses has no printed title; it was read as all required because the courses precede the 'Select at least 52 hours' group.",
+   "Required hours sum to 183.5; plus 52 elective hours gives 235.5, while the catalog prints Total : 235.4. Recorded 235.4 as printed; reviewer should check rounding.",
+   "WLF 359 S-236 Heavy Equipment Boss is not in the closed list, which holds NR 359 with the same title; recorded as a catalog addition."
+  ]
+ },
+ "extracted_run": "39616074283"
+}

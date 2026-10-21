@@ -41,8 +41,9 @@ function setup(opts) {
   const dom = new JSDOM('<!doctype html><html><head></head><body>' +
     '<div id="tab-implementation-funding"><div><h2>x</h2><span id="cplFundTitleLink"></span></div>' +
     '<div id="cplFundingMount"></div></div><div id="college-briefing-root"></div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: opts.url || "https://example.org/", runScripts: "dangerously" });
   const w = dom.window;
+  if (opts.public) w.CPL_FUNDING_PUBLIC = true;
   w.scrollTo = function () {};
   w.Element.prototype.scrollIntoView = function () {};
   w.CPL_FUNDING_NO_REMOTE = true;
@@ -238,6 +239,27 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
     /\.wrap\{width:100%; max-width:1320px;/.test(html) && /\.wrap\.wide\{max-width:1320px\}/.test(html));
   check("7f: PDF goes through the tab's prompt, which asks for a college first",
     /T\.pdfGate\(function \(\) \{ window\.print\(\); \}\)/.test(html));
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 8. My College's Open My CPL Funding (Sam, 2026-10-21: "move funding to Implementation
+//    Funding"): ?college=<roster key>&view=one opens the My Institution view on the college;
+//    ?college= alone still opens the table's row.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const probe = setup();
+  const KEY = probe.w.CPL_FUNDING.colleges[0].college;
+  const one = setup({ public: true, url: "https://example.org/funding-model/?college=" + encodeURIComponent(KEY) + "&view=one" });
+  one.T.render();
+  check("8a: view=one opens My Institution on the college", one.T.oneChoice() === KEY);
+  const box = one.doc.querySelector(".cplfund-step1");
+  check("8b: the Step 1 box shows the My Institution view", !!box && box.getAttribute("data-view") === "one");
+  const row = setup({ public: true, url: "https://example.org/funding-model/?college=" + encodeURIComponent(KEY) });
+  row.T.render();
+  check("8c: ?college= alone still opens the table, not My Institution", row.T.oneChoice() === "");
+  const inner = setup({ url: "https://example.org/?college=" + encodeURIComponent(KEY) + "&view=one" });
+  inner.T.render();
+  check("8d: off a public rendering, view=one changes nothing", inner.T.oneChoice() === "");
 }
 
 let pass = 0;
