@@ -15923,8 +15923,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 414,
+   "count": 415,
    "docs": [
+    {
+     "created": "2026-10-21",
+     "governs": [],
+     "n": 444,
+     "path": "docs/session_444_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "my-college-action-page",
+      "implementation-funding",
+      "cpl-pathways"
+     ],
+     "title": "Session 444 handoff: funding moved off My College, a section per award in the harvest reader, Foothill loaded, tabs never remember a filter",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-21",
      "governs": [],
@@ -23072,5 +23089,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1213
+ "total": 1214
 }

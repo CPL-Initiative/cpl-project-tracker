@@ -662,6 +662,11 @@ Read that before a UI rework, a First Light artifact, or a table layout.
 - **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
+- **Tabs never remember a filter or a chosen college across visits (Sam, 2026-10-21).**
+  *"It would be best if tabs didn't remember the previously filtered objects."* A pick lasts
+  the visit; a hand-off between tabs is read once and cleared. Column widths, the theme and
+  section folds are not filters. The public funding page forgets its institution too
+  (Sheet 111 card 2, reversing his call 9).
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
 
@@ -744,7 +749,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 110](https://claude.ai/artifact/5fdto32csyAMPvwWmKdjTX), 2026-10-21, open: the combined tab's name, one card). Answering
+> (latest: [Open Asks Sheet 111](https://claude.ai/artifact/8W3qnADfQzmxcR4LLztk16), 2026-10-21, answered 21:58Z: CPL Pathways; the funding page forgets; no card open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

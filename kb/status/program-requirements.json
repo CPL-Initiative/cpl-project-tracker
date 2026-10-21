@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T18:50:54Z",
-  "session": 442,
-  "moniker": "SkyManzanita",
+  "written_at": "2026-10-21T21:52:18Z",
+  "session": 443,
+  "moniker": "SkyToyon",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_443_handoff.md",
+  "handoff": "docs/session_444_handoff.md",
   "next_step": {
-    "title": "Reader work for five CourseLeaf colleges",
-    "text": "Sierra, MiraCosta, Golden West, Foothill and Oxnard captured exactly as before on October 21, so their missing programs need the CourseLeaf reader to find each program's own page; Reedley's records are loaded and its display build waits on its pull request."
+    "title": "The page-claimed sweep: Imperial Valley, Sierra and Golden West's extraction",
+    "text": "A page that heads a section per award now serves each sibling program. Foothill gained 28 programs and Golden West's capture 14; run each college with many page-claimed programs through a free capture, then extract. Palomar needs its own reader look."
   },
   "calls": [
     {
@@ -24,6 +24,18 @@
   },
   "changes": [
     {
+      "at": "2026-10-21T20:31Z",
+      "text": "A catalog page that heads a section for each award, such as Foothill's A.A. and certificate on one page, now serves each sibling program."
+    },
+    {
+      "at": "2026-10-21T21:05Z",
+      "text": "Foothill re-read and loaded: 144 programs found, up from 116; 97 pass the machine checks, up from 73; 29 new records."
+    },
+    {
+      "at": "2026-10-21T21:45Z",
+      "text": "The Records view no longer remembers picked colleges or filters between visits."
+    },
+    {
       "at": "2026-10-21T14:10Z",
       "text": "Six thin colleges captured again for free; Reedley's reader now finds 196 of its 200 programs with a closed course list, and the five CourseLeaf colleges found the same pages as before."
     },
@@ -34,22 +46,6 @@
     {
       "at": "2026-10-21T17:20Z",
       "text": "Reedley's display build written and its display job started."
-    },
-    {
-      "at": "2026-10-21T17:10Z",
-      "text": "On screen the reference is now called CPL Pathways, and the CPL Pathways tab shows a chosen college's program data in one line."
-    },
-    {
-      "at": "2026-10-21T12:05Z",
-      "text": "The reader now keeps a Requirements tab whose course numbers carry a campus letter, as the Ventura district prints them."
-    },
-    {
-      "at": "2026-10-21T15:20Z",
-      "text": "Moorpark, Oxnard and Ventura read again and loaded: 209 new records, 100, 86 and 121 passing the machine checks, about 32 dollars in extraction."
-    },
-    {
-      "at": "2026-10-21T20:00Z",
-      "text": "One display build from main with Reedley, Moorpark, Oxnard and Ventura, applied once after two runs' builds overlapped."
     }
   ],
   "headline": [
@@ -134,7 +130,7 @@
     {
       "day": "2026-10-21",
       "active": 20282,
-      "complete": 12439,
+      "complete": 12463,
       "colleges": 114
     }
   ],
@@ -145,7 +141,7 @@
   },
   "harvest": {
     "day": "2026-10-21",
-    "gaps": 3894,
+    "gaps": 3621,
     "parts": {
       "links": {
         "catalog": [
@@ -162,11 +158,11 @@
         ]
       },
       "roep": [
-        19198,
+        19181,
         20282
       ],
       "coci": [
-        15531,
+        15560,
         20282
       ],
       "outcomes": {
@@ -175,12 +171,12 @@
           89192
         ],
         "plo": [
-          15531,
+          15560,
           20282
         ]
       },
       "careers": [
-        14481,
+        14510,
         20282
       ]
     }

@@ -117,7 +117,7 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
   check("1e: choosing in Step 2 opens that institution's funding",
     T._state.collegeView === "one" && T._state.oneCollege === one && T.oneChoice() === one &&
     !!doc.querySelector("#cplFundOnePanel > .cb-panel"));
-  check("2a: …remembers it in this browser and tells the page", w.localStorage.getItem("cplfund_one_choice_v1") === one &&
+  check("2a: …tells the page and stores nothing (Sam, Sheet 111 card 2)", w.localStorage.getItem("cplfund_one_choice_v1") === null &&
     heard === one);
   check("1f: …and Step 2 says what it shows, with Choose another institution beside it",
     /Showing /.test(doc.querySelector(".cplfund-step1-s").textContent) &&
@@ -142,8 +142,8 @@ const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
   const s2 = setup({ stored: one });
   check("2d: the Internal view never opens a remembered college", s2.T.oneChoice() === "");
   pub(s2.T);
-  check("2e: a returning reader's Public view opens on their college",
-    s2.T.oneChoice() === one && !!s2.doc.querySelector("#cplFundOnePanel > .cb-panel"));
+  check("2e: a choice an earlier build stored is cleared, never opened (Sam, Sheet 111 card 2: forget)",
+    s2.T.oneChoice() === "" && s2.w.localStorage.getItem("cplfund_one_choice_v1") === null);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -160,10 +160,10 @@
 
   /* records: the index, one row per record; a row stays _light until its full row merges into it
      (the same object, so a card, a call and the counts all see one record). pick: the colleges
-     the Records view lists (remembered); rscope "all" lists every college, as a count the reader
+     the Records view lists (for the visit); rscope "all" lists every college, as a count the reader
      followed counted them. failed: a college whose read failed, kept until the reader asks again. */
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
-    view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", pick: null, rscope: "pick", open: {}, secs: null,
+    view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", pick: null, linkPicks: [], rscope: "pick", open: {}, secs: null,
     review: null, sessionWired: false, framing: null, notice: null, districts: null, regions: null, districtError: null,
     filt: null, cip: null, cipError: null, cipLoading: null,
     failed: {}, draftsRead: null, draftsError: null };
@@ -264,7 +264,7 @@
     read.addEventListener("click", function () {
       /* The record's college joins the picked colleges and loads; the search finds the record. */
       state.rq = ref.control_number; state.rshow = "all";
-      addPick([ref.college]); state.rscope = "pick";
+      linkPick([ref.college]); state.rscope = "pick";
       choose("records", true);
     });
     var key = ref.college + "|" + ref.control_number;
@@ -1914,30 +1914,44 @@
   }
 
   /* ── the colleges the Records view lists (Sam, 2026-10-13) ──
-     A pick is remembered; a college's full records load when it is picked, and stay held, so
-     picking it again reads nothing. */
+     A college's full records load when it is picked, and stay held, so picking it again reads
+     nothing. Picks last for the visit and are never remembered (Sam, 2026-10-21: "It would be best
+     if tabs didn't remember the previously filtered objects"); a pick an earlier build stored is
+     cleared once. */
   function picks() {
     if (!state.pick) {
-      var v = null;
-      try { v = JSON.parse(safeGet(PICK_KEY) || "[]"); } catch (e) { v = null; }
-      state.pick = Array.isArray(v) ? v.filter(function (c) { return typeof c === "string" && !!c; }) : [];
+      state.pick = [];
+      try { window.localStorage.removeItem(PICK_KEY); window.localStorage.removeItem(FILTERS_KEY); } catch (e) { /* private window */ }
     }
     return state.pick;
   }
-  function savePick() { safeSet(PICK_KEY, JSON.stringify(state.pick || [])); }
-  /* The Records view's other filters (Sam, 2026-10-14), remembered beside the college picks:
-     district, SWP region and CIP sector. An empty string is a real choice ("No district on
-     record", "No CIP assigned yet"). */
+  /* Picks are never stored (picks() above). */
+  function savePick() { /* the visit's picks live in state only */ }
+  /* A college a link added (CPL Pathways' college line, a call's "Open it on Program records")
+     lists until the reader opens the Records tab by its own button or sets the College filter
+     (Sam, 2026-10-21: a later look at Program records showed only Bakersfield, opened from
+     CPL Pathways' line). */
+  function linkPick(cols) {
+    var own = picks();
+    state.linkPicks = state.linkPicks || [];
+    (cols || []).forEach(function (c) { if (c && own.indexOf(c) < 0 && state.linkPicks.indexOf(c) < 0) state.linkPicks.push(c); });
+    addPick(cols);
+  }
+  /* The Records tab opened by its own button lists the reader's own picks again. */
+  function dropLinkPicks() {
+    var linked = state.linkPicks || [];
+    if (!linked.length) return;
+    state.pick = picks().filter(function (c) { return linked.indexOf(c) < 0; });
+    state.linkPicks = [];
+  }
+  /* The Records view's other filters (Sam, 2026-10-14): district, SWP region and CIP sector, for
+     the visit like the picks. An empty string is a real choice ("No district on record", "No CIP
+     assigned yet"). */
   function filt() {
-    if (!state.filt) {
-      var v = null;
-      try { v = JSON.parse(safeGet(FILTERS_KEY) || "null"); } catch (e) { v = null; }
-      var ok = function (a) { return Array.isArray(a) ? a.filter(function (x) { return typeof x === "string"; }) : []; };
-      state.filt = { district: ok(v && v.district), region: ok(v && v.region), sector: ok(v && v.sector) };
-    }
+    if (!state.filt) state.filt = { district: [], region: [], sector: [] };
     return state.filt;
   }
-  function saveFilt() { safeSet(FILTERS_KEY, JSON.stringify(state.filt || {})); }
+  function saveFilt() { /* the visit's filters live in state only */ }
   /* A click outside a filter's list closes it (wired once, for every render). */
   var ddWired = false;
   function wireDropdowns() {
@@ -2045,7 +2059,7 @@
     }
     function setFilter(key, next) {
       next = next.filter(function (v, i) { return next.indexOf(v) === i; }).sort();
-      if (key === "college") { state.pick = next; savePick(); }
+      if (key === "college") { state.linkPicks = []; state.pick = next; savePick(); }
       else { F[key] = next; saveFilt(); }
       state.rscope = "pick";
       syncFilters();
@@ -2056,7 +2070,7 @@
       draw();
     }
     clear.addEventListener("click", function () {
-      state.pick = []; savePick();
+      state.linkPicks = []; state.pick = []; savePick();
       F.district = []; F.region = []; F.sector = []; saveFilt();
       syncFilters();
       say.textContent = "No filter is set.";
@@ -2289,7 +2303,7 @@
         el("label", { "for": "prh-rq" }, ["Find a program", q]),
         el("label", { "for": "prh-rshow" }, ["Show", showSel]),
         count]), scopeLine]));
-    /* A remembered pick loads on open; one whose read failed waits for the reader to ask. */
+    /* A pick loads; one whose read failed waits for the reader to ask. */
     if (state.rscope !== "all" && collegeFiltersOn()) {
       var sc0 = scopeColleges();
       if (sc0.length <= EAGER_COLLEGES) loadPicked(sc0, false);
@@ -2955,7 +2969,7 @@
     /* A count spans every college, so its list does too, whatever the reader picked; a target
        that names a college adds it to the picks. Either way the records load as they show. */
     if (to.view === "records") {
-      if (to.rcollege) { addPick([to.rcollege]); state.rscope = "pick"; }
+      if (to.rcollege) { linkPick([to.rcollege]); state.rscope = "pick"; }
       else state.rscope = "all";
     }
     if (to.sec) secSet(to.sec, true);
@@ -3315,7 +3329,7 @@
         "aria-selected": sel ? "true" : "false", tabindex: sel ? "0" : "-1", type: "button" },
         [v.label, n[v.id] == null ? null : el("span", { cls: "prh-n", text: fmt(n[v.id]) })]);
       /* The Records tab itself lists the reader's picks; only a count's word lists every college. */
-      b.addEventListener("click", function () { if (v.id === "records") state.rscope = "pick"; choose(v.id, true); });
+      b.addEventListener("click", function () { if (v.id === "records") { state.rscope = "pick"; dropLinkPicks(); } choose(v.id, true); });
       b.addEventListener("keydown", function (e) {
         var k = e.key, j = null;
         if (k === "ArrowRight") j = (i + 1) % VIEWS.length;
@@ -3324,7 +3338,7 @@
         else if (k === "End") j = VIEWS.length - 1;
         if (j == null) return;
         e.preventDefault();
-        if (VIEWS[j].id === "records") state.rscope = "pick";
+        if (VIEWS[j].id === "records") { state.rscope = "pick"; dropLinkPicks(); }
         choose(VIEWS[j].id, true);
       });
       sw.appendChild(b);

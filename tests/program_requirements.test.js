@@ -2201,7 +2201,7 @@ block("(24c)", function () {
         /Showing 12 of 12/.test(m.root.querySelector(".prh-count").textContent));
       check("(24c) the other colleges stay index rows", m.M._state.records.filter(function (p) { return p._light; }).length === HARVEST.length - 12);
       check("(24c) and the status says they are open", m.root.querySelector(".prh-pick-say").textContent === "Cabrillo College's 12 records are open below.");
-      check("(24c) the pick is remembered", m.w.localStorage.getItem(m.M.PICK_KEY) === '["Cabrillo College"]');
+      check("(24c) the pick lasts the visit and is never stored (Sam, 2026-10-21)", m.w.localStorage.getItem(m.M.PICK_KEY) === null);
       check("(24c) a college's drafts show under it once its records are all here", /Drafts for the college \(2\)/.test(m.root.textContent));
       const before = recordReads(db).length;
       change(m.w, collegeBox(m.root, "Cabrillo College"), false);
@@ -2237,8 +2237,8 @@ block("(24d)", function () {
       change(m.w, collegeBox(m.root, "Cabrillo College"), true);
       check("(24d) a college outside the district matches nothing more", m.root.querySelectorAll("details.prh-college").length === 1);
       wordButton(m.root, "Clear the filters").click();
-      check("(24d) Clear the filters clears them all and is remembered", m.M._state.pick.length === 0 && m.M._state.filt.district.length === 0 &&
-        m.w.localStorage.getItem(m.M.FILTERS_KEY) === '{"district":[],"region":[],"sector":[]}' && !m.root.querySelector("article.prh-rec"));
+      check("(24d) Clear the filters clears them all", m.M._state.pick.length === 0 && m.M._state.filt.district.length === 0 &&
+        m.w.localStorage.getItem(m.M.FILTERS_KEY) === null && !m.root.querySelector("article.prh-rec"));
     });
   });
 });
@@ -2272,15 +2272,15 @@ block("(24m)", function () {
     return m.M._idle();
   }).then(function () {
     check("(24m) and the records with no CIP are one more choice", m.root.querySelectorAll("article.prh-rec").length === 9);
-    check("(24m) the filters are remembered", JSON.parse(m.w.localStorage.getItem(m.M.FILTERS_KEY)).sector.join("|") === "|51");
+    check("(24m) the filters are never stored", m.w.localStorage.getItem(m.M.FILTERS_KEY) === null && m.M._state.filt.sector.join("|") === "|51");
   });
 });
 
 block("(24n)", function () {
-  // A failed CIP read says so and leaves the sector filter out; a remembered sector says why nothing lists.
+  // A failed CIP read says so and leaves the sector filter out; a sector already set says why nothing lists.
   const db = harvestDb({ cipFail: true });
   const m = loadModule({ fetch: db.fetch });
-  m.w.localStorage.setItem("cplProgramRequirements.filters.v1", JSON.stringify({ district: [], region: [], sector: ["51"] }));
+  m.M._state.filt = { district: [], region: [], sector: ["51"] };
   return m.M._load().then(function () {
     m.M._state.view = "records"; m.M._render();
     return m.M._idle();
@@ -2288,20 +2288,27 @@ block("(24n)", function () {
     const txt = m.root.querySelector(".prh-filterbar").textContent;
     check("(24n) a failed CIP read names the table and leaves the filter out",
       /The programs' CIP codes could not be read \(coci_college_programs answered 503\)/.test(txt) && !m.root.querySelector('.prh-dd[data-filter="sector"]'), txt);
-    check("(24n) a remembered sector never reads as no records", /no record can be matched to a sector/.test(m.root.textContent) && !/No record matches/.test(m.root.textContent));
+    check("(24n) a sector set before the CIP read failed never reads as no records", /no record can be matched to a sector/.test(m.root.textContent) && !/No record matches/.test(m.root.textContent));
   });
 });
 
 block("(24e)", function () {
   const db = harvestDb();
   const m = loadModule({ fetch: db.fetch });
-  m.w.localStorage.setItem("cplProgramRequirements.pick.v1", JSON.stringify(["Mt. San Antonio College"]));
+  // A pick an earlier build stored is cleared, never applied (Sam, 2026-10-21: "It would be best if
+  // tabs didn't remember the previously filtered objects").
+  m.w.localStorage.setItem("cplProgramRequirements.pick.v1", JSON.stringify(["Norco College"]));
+  m.w.localStorage.setItem("cplProgramRequirements.filters.v1", JSON.stringify({ district: [], region: [], sector: ["51"] }));
   return m.M._load().then(function () {
     m.M._state.view = "records"; m.M._render();
+    check("(24e) a stored pick and filters from an earlier build are cleared, not applied",
+      m.M._state.pick.length === 0 && m.M._state.filt.sector.length === 0 &&
+      m.w.localStorage.getItem("cplProgramRequirements.pick.v1") === null && m.w.localStorage.getItem("cplProgramRequirements.filters.v1") === null);
+    change(m.w, collegeBox(m.root, "Mt. San Antonio College"), true);
     return m.M._idle();
   }).then(function () {
     const full = recordReads(db).filter(asksFull);
-    check("(24e) a remembered pick loads on open, its name quoted for PostgREST (the period in Mt. San Antonio)",
+    check("(24e) a pick loads, its name quoted for PostgREST (the period in Mt. San Antonio)",
       full.length === 1 && /college=in\.(\(|%28)%22Mt\.%20San%20Antonio%20College%22(\)|%29)/.test(full[0].url) && cardsAt(m.root, "Mt. San Antonio College") === 5,
       full.map(function (a) { return a.url; }).join(" "));
     check("(24e) and its box is checked", collegeBox(m.root, "Mt. San Antonio College").checked === true);
@@ -2481,6 +2488,13 @@ block("(24l)", function () {
   }).then(function () {
     check("(24l) a link that names a college picks it and opens its records", r.M._state.rscope === "pick" &&
       r.M._state.pick.indexOf("Norco College") >= 0 && cardsAt(r.root, "Norco College") === 2);
+    // A link's college lists for this visit and is never remembered (Sam, 2026-10-21: a later visit's
+    // Program records showed only Bakersfield, opened from CPL Pathways' college line).
+    check("(24l) a link's college is not remembered", !/Norco College/.test(r.w.localStorage.getItem(r.M.PICK_KEY) || ""));
+    const recTab = r.root.querySelector("#prh-tab-records");
+    if (recTab) recTab.click();
+    check("(24l) the Records tab's own button lists the reader's own picks again",
+      !!recTab && r.M._state.pick.indexOf("Norco College") < 0 && r.M._state.linkPicks.length === 0);
     // A verdict saved in the reading room re-reads the log and that one record, never the index.
     r.M.activate();
     const before = recordReads(r.db).length;

@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_cpl_opportunity_santiago_canyon_2026-10-21.sql",
+ "name": "cpl_library_cpl_opportunity_santiago_canyon_2026_10_21",
+ "version": "20261021202445",
+ "sha256": "8cc664bf24d6608a4b89bfe06417db7d147d5fdf471537e84b06d353c410276a",
+ "run": "39669423616",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
