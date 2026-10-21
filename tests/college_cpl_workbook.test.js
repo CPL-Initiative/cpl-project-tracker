@@ -10,6 +10,7 @@
 //   4. a college spelled differently in each source still resolves
 //   5. the .xlsx is a valid zip with frozen, filtered sheets and escaped names
 //   6. "Could Adopt - View in MAP" is a working hyperlink only for an ID MAP listed
+//   7. a catalog code written without its space (Bakersfield's "AUTOB30") still finds its course
 //
 // Run from repo root: `npm test` (or `node tests/college_cpl_workbook.test.js`).
 const fs = require("fs");
@@ -81,6 +82,16 @@ check("CISC 323 takes its identity from the members file", byId["CISC 323"].iden
 check("…so the stale identity's credential never reaches it", !byId["CISC 323"].peer.some(function (x) { return x.ent.c === "Stale Credential"; }));
 check("the statewide CR reaches CISC 323 through its three peer colleges",
   byId["CISC 323"].sw.length === 1 && byId["CISC 323"].sw[0].peers.join() === "Other College,Peer A,Peer B");
+
+// 7. an unspaced catalog code resolves to its course; an unknown one stays as read
+const b7 = W.build({ college: COLLEGE, today: "2026-10-21", lookup: lookup, members: members, aligned: aligned,
+  statewide: statewide, programs: programs, shareBase: "https://example.org/cpl-opportunity/",
+  catalog: [{ control_number: "07200", program_title: "Computer Networking", blocks: [{ courses: [{ code: "FIRE1706" }, { code: "ZZZ999", alternatives: ["HIST300"] }] }] }] });
+const by7 = {};
+b7.courses.forEach(function (c) { by7[c.id] = c; });
+check("an unspaced catalog code (FIRE1706) marks FIRE 1706 as in the catalog", by7["FIRE 1706"].inCatalog === true);
+check("an unspaced alternative (HIST300) marks HIST 300 too", by7["HIST 300"].inCatalog === true);
+check("a course the catalog does not list stays out", by7["CISC 323"].inCatalog === false);
 
 // 2. AP / IB excluded, CLEP kept
 check("an AP exhibit the college holds is not an existing exhibit", !b.existing.some(function (e) { return /^AP /.test(e.title); }));

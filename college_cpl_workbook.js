@@ -224,14 +224,23 @@
     // ── catalog harvest: which courses each program lists ───────────────
     var catalog = input.catalog || [];
     var progCourses = {}, inCatalog = {};
+    // Some catalogs write a code without its space (Bakersfield: "AUTOB30" for
+    // AUTO B30, 1,415 of 2,492 codes on 2026-10-21); resolve one to the COCI
+    // course whose subject and number join to the same string.
+    var joined = {};
+    courses.forEach(function (c) { joined[c.id.replace(/ /g, "")] = c.id; });
+    function catKey(s) {
+      var k = codeKey(s, "");
+      return byId[k] || !k ? k : (joined[k.replace(/ /g, "")] || k);
+    }
     catalog.forEach(function (p) {
       var set = {};
       (p.blocks || []).forEach(function (b) {
         (b.courses || []).forEach(function (c) {
-          var code = codeKey(c.code, "");
+          var code = catKey(c.code);
           set[code] = 1; inCatalog[code] = 1;
           (c.alternatives || []).forEach(function (alt) {
-            var a2 = codeKey(typeof alt === "string" ? alt : alt && alt.code, "");
+            var a2 = catKey(typeof alt === "string" ? alt : alt && alt.code);
             if (a2) { set[a2] = 1; inCatalog[a2] = 1; }
           });
         });
