@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 559 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 560 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 61 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 413 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1211** | |
+| Session handoffs | 414 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1213** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-21 (S442 SkyManzanita, opened by Sam): Sheet 109 applied (#2310); CPL Pathways' college line and the name CPL Pathways (#2312); one college choice for My College and CPL Pathways (#2313); My CPL Funding and the expenditure reports leave My College; Reedley re-read and loaded; KB note methodology-hand-another-tab-a-request.
 - 2026-10-21 (S441 SkyIronbark, the CPL Queue routine): S440's harvest PR #2306 merged; the CLAUDE.md pass sent as Open Asks Sheet 109 (five cards, nothing applied); the two Python tests failing on main fixed.
 - 2026-10-20 (S439 SkySaltbush, opened by Sam): the funding page prints JST counts and the 75% need, office hours and the MAP Dashboard chat as help, the landing page and its training video in the Contents, Funding Model Numbers; the introduction is always the published two-priority film, rebuilt from Scenario 3 with a new MP4 (#2296-#2298); S438's memory rows written; handoff 440 (SkyChaparral); no KB note.
 - 2026-10-20 (side session beside S438, opened by Sam): the funding page asks for the view first (All Institutions / My Institution), then the college or district, and the Funding outcomes cards follow it (#2293); the funding lane and lessons compacted under budget; privacy UI pass clean; handoff 439 gains a section; no KB note.

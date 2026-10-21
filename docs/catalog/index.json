@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 559,
+   "count": 560,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6309,6 +6309,26 @@
      "title": "Grouping a flat list into containers silently breaks every querySelector that assumed one",
      "type": "methodology",
      "updated": "2026-09-01"
+    },
+    {
+     "created": "2026-10-21",
+     "governs": [
+      "cpl_pathways.js",
+      "program_requirements.js",
+      "kb/_build_cobi_admin_surface.py",
+      "tests/cpl_pathways_college_status.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-hand-another-tab-a-request.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cobi",
+      "admin-surface",
+      "governance"
+     ],
+     "title": "Hand another tab a request, never load its module",
+     "type": "methodology",
+     "updated": "2026-10-21"
     },
     {
      "created": "2026-09-26",
@@ -15387,7 +15407,7 @@
      ],
      "title": "My College (college action page) / MAP-team queue \u2014 lane state",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-10-21"
     },
     {
      "created": "2026-08-28",
@@ -15903,8 +15923,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 413,
+   "count": 414,
    "docs": [
+    {
+     "created": "2026-10-21",
+     "governs": [],
+     "n": 443,
+     "path": "docs/session_443_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "my-college-action-page",
+      "cpl-pathways",
+      "implementation-funding",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 443 handoff: My College folding into CPL Pathways (step 1 open, funding moved out), Reedley loaded, Sheet 109 applied",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-21",
      "governs": [],
@@ -23035,5 +23072,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1211
+ "total": 1213
 }

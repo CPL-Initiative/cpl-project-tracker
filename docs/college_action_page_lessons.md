@@ -1675,3 +1675,33 @@ converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 39
   section and passed. The seed now waits for `ul.cb-dr li`: a stand-in that stops matching fails the seed.
 - **Prove a test guards the change:** the new drafts test against main's `college_briefing.js` dies on a TypeError,
   and the a11y seed pointed back at the table times out.
+
+## S442 SkyManzanita (2026-10-21): folding My College into CPL Pathways, step 1, and funding moved out
+
+- **Sam's ask and go.** "Thinking we should find a way to consolidate the My College tab with in CPL Pthways. Give it
+  a good think and advise." S442 advised three steps (one shared college choice and links; My College's sections in
+  CPL Pathways' college view; the nav entry retired) and moving funding out, since CPL Pathways is the page the team
+  shows audiences. His go: "go on step 1, move funding to Implementation Funding." The combined tab's name is Open
+  Asks Sheet 110 card 1.
+- **One choice, held in memory.** `window.CPL_COLLEGE_CHOICE` carries the college between the tabs for as long as the
+  page is open and never touches storage, so My College still asks first on a new visit (Sam, 2026-08-21). A choice
+  carries its writer (`by`), so a tab never applies its own choice back to itself, and a cleared choice moves nothing.
+- **Two spellings of one college.** MAP says "Mt San Antonio College", the catalog "Mt. San Antonio College", "College
+  Of The Canyons" against "College of the Canyons". The tabs match names through `cplCollegeShort`, never by spelling.
+- **The onActivate boot fires once.** A module that must react on every return to its tab listens to
+  `cpl-tab-activated` itself; `CPL_TABS.onActivate` calls its callback on the first visit only.
+- **CPL Pathways dropped a picked college when its record list landed** (the index read re-renders the tab and the
+  selector started on All colleges). The pick now lives in `pickedCollege`, kept across the re-render.
+- **Loading another tab's module credits its tables to you.** CPL Pathways loaded `program_requirements.js` to call its
+  `goTo`, and the admin surface (built from the code's loadScript names) then listed reviewer verdicts and addenda
+  among CPL Pathways' reads, so the Admin tab could no longer call its data public (admin_tab.test.js, suite 2 on
+  #2312). The fix hands the tab a request (`window.CPL_PROGRAM_REQUIREMENTS_GOTO`), which its activate() takes once.
+  KB note: `methodology-hand-another-tab-a-request`.
+- **My CPL Funding left the page; its renderer did not move.** The funding page already drew the same block for one
+  institution through `fundingPanel`, so My College's fold now links there (`?college=<roster key>&view=one` opens the
+  My Institution view on a public rendering). The implementation strategies that nested in the block show in Advice.
+  The checks that guarded the block read it where it is drawn now, and Do this next is pinned to a strategy the team's
+  config holds: the old pattern passed on Start here's text elsewhere on the page.
+- **The expenditure reports moved to Implementation Funding** as `reportsPanel`, at the top of the 2026-28 Funding
+  view: asked from My College it shows in every state with the sign-in returning to that tab; unasked, only to a person
+  MAP lists as a college's contact, so a curator's view gains nothing.
