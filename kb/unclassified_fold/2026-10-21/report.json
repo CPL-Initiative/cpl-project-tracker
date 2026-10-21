@@ -1,69 +1,12 @@
 {
-  "_generated_at": "2026-10-21T14:33:50Z",
+  "_generated_at": "2026-10-21T17:23:37Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [
-    {
-      "raw": "ADJUS 57 Report Writing for Public Safety Personnel",
-      "assigned": "Report Writing for Public Safety Personnel",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
-      "assigned": "Introduction to Administration of Justice",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
-      "assigned": "Concepts of Criminal Law",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "FAA Private Pilot Certificate",
-      "assigned": "FAA Private Pilot Certificate",
-      "issuer": "Federal Aviation Administration (FAA)",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Fire Inspector 1 Certificate",
-      "assigned": "Fire Inspector I",
-      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Firefighter 1 Certificate",
-      "assigned": "Firefighter 1",
-      "issuer": "California State Fire Training (SFT)",
-      "reviewed_by": "cer-procedure-statewide-catalog@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
-      "assigned": "FAA Private Pilot Ground School",
-      "issuer": "Federal Aviation Administration (FAA)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Portfolio for BUSN 20",
-      "assigned": "International Business",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    }
-  ],
+  "clean": [],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -111,6 +54,14 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ADJUS 57 Report Writing for Public Safety Personnel",
+      "assigned": "Report Writing for Public Safety Personnel",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -7186,6 +7137,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+      "assigned": "Introduction to Administration of Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+      "assigned": "Concepts of Criminal Law",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Credit by Exam- Introduction to Legal Research and Terminology",
       "assigned": "Introduction to Legal Research and Terminology",
       "issuer": "",
@@ -8234,6 +8201,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "FAA Private Pilot Certificate",
+      "assigned": "FAA Private Pilot Certificate",
+      "issuer": "Federal Aviation Administration (FAA)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "FCC General Radiotelephone Operator License Preparation",
       "assigned": "FCC General Radiotelephone Operator License (GROL)",
       "issuer": "U.S. Federal Communications Commission (FCC)",
@@ -8586,6 +8561,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Fire Inspector 1 Certificate",
+      "assigned": "Fire Inspector I",
+      "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
       "assigned": "Fire Inspector I",
       "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
@@ -8671,6 +8654,14 @@
       "issuer": "Pro Board (National Board on Fire Service Professional Qualifications)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:28.629876+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Firefighter 1 Certificate",
+      "assigned": "Firefighter 1",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-statewide-catalog@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -11618,6 +11609,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+      "assigned": "FAA Private Pilot Ground School",
+      "issuer": "Federal Aviation Administration (FAA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Pathophysiology for Nursing",
       "assigned": "Pathophysiology for Nursing",
       "issuer": "",
@@ -11783,6 +11782,14 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Portfolio for BUSN 20",
+      "assigned": "International Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -13921,22 +13928,7 @@
       "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
     }
   ],
-  "credential_adds": [
-    {
-      "raw": "ADJUS 57 Report Writing for Public Safety Personnel",
-      "assigned": "Report Writing for Public Safety Personnel",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    },
-    {
-      "raw": "Portfolio for BUSN 20",
-      "assigned": "International Business",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-21T13:18:47.359269+00:00"
-    }
-  ],
+  "credential_adds": [],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],
