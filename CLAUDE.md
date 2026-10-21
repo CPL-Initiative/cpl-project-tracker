@@ -178,9 +178,11 @@ nobody finds; `unreferenced_offload` flags any that stop being.
 
    **Run `/checkpoint`; do not improvise one from memory** — an improvised
    checkpoint names a few of its artifacts and still reads as complete. **The
-   artifact list is the checkpoint command, not this file** — all 13, none
-   optional: [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md)
-   is the authority.
+   artifact list is the checkpoint command, not this file** — all 12:
+   [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
+   authority. **A light checkpoint is enough** when no lane's state changed and
+   the run wrote no re-mint or data receipt; the command names its set, and the
+   handoff says it was light and names what it skipped (Sam, Sheet 109, 2026-10-21).
 
    **The usual checkpoint edit is the lane file, not the §11 row.** §11's
    table is a pointer index; each lane's state lives in
@@ -219,7 +221,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    - **EMERGENCY — ≤50,000 tokens left.** Room for one checkpoint and nothing
      else. **Do not ask permission** — a compaction mid-question loses the
      answer. Write only: **`docs/session_<N+1>_handoff.md`** (stating it was an
-     emergency checkpoint and naming which of Rule 9's 13 artifacts were not
+     emergency checkpoint and naming which of Rule 9's 12 artifacts were not
      refreshed) · the **lane files this run actually moved** · the **`cpl_memory`
      rows** · **commit + push**. Everything else defers to the next session —
      which is exactly why the handoff has to name it.
@@ -296,46 +298,20 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   **workspace** (*Disciplines and subjects* tab). Verify such an ask against the screen,
   not the code (`methodology-verify-an-ask-against-what-the-reader-sees`). Files keep
   `ccr_atlas_*` paths; the user-facing name is what changed.
-- **Funding vocabulary — CCC norms, not business norms (Sam, 2026-08-31).** Say
-  **funding**, never "money," on any funding surface. Prefer sector terms:
-  *allocated / fully allocated* (not "spent"/"apportioned" — apportionment is
-  the SCFF term), *restricted / designated* (not "fenced"), *redirect* (not
-  "absorb"), *brought up to the minimum* (not "topped up"); avoid "double count"
-  (an MIS audit-error term — say *the same CPL credits both institutions by
-  design*). The per-institution figure is the **max award**, his verbatim
-  (2026-09-01): *"maximum funding to be awarded based on measurable outcomes and
-  allocated as credit and noncredit subtotals."* Say **funding**, not "pool," for
-  the model's total (vary it — "the total", "the allocation" — rather than
-  drumming "funding"; the name "one-pool" and code identifiers stay); **never
-  "on its face"** — end the statement instead. **Never the concept of advances, and never a
-  reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
-  *"I don't want to suggest that advances are possible in the model,
-  regardless of current missing data feeds or any other factor"*. An unmeasured
-  metric shows **TBA** (Sam, 2026-09-28: *"show TBA everywhere so when it
-  changes, it will already be wired"*), never *"no data yet"* (a guard rejects
-  the phrase). "Advancing the
-  priority outcomes" and the statute's "Advancing career attainment" are the
-  allowed senses; the D13 guard enforces it. Prose only, never identifiers.
-  **Neither the banking sense of "draw" (2026-09-09) nor "earn" (2026-09-13).**
-  *"Earned still smacks of banking... better to use something like 'measured...
-  or... qualified for'"*. **The map:** a measure **counts toward** funding · a
-  college **qualifies for** its award · the result is **demonstrated** (the
-  statute's verb, §78093.2(d)(2)) · unearned is **remaining**; **receives** fits
-  where funding already qualified for is released. Also retired: **unspent**,
-  **the dollars** → *the funding*. **Award cells keep the present participle —
-  *qualifying*:** his 2026-08-27 ruling (a past tense "read like a settled
-  award") survives the sweep. **"Students earn credit" stays — check who the
-  subject is:** a *college* earning *funding* is the banking sense; a *student* earning
-  *credit* is ordinary academic English. Same subject test as *expended*. **But
-  *expended* stays where the subject is a college spending (his rule, same
-  day): *"expended should be kept if I am referring to the colleges spending
-  the funds. Allocated should be used if I am referring to the CO awarding or
-  dispensing the funds to colleges."* The two words are not interchangeable —
-  check who the subject is before sweeping either. `cpl_funding_calm` bans
-  the draw, *unspent* and earn stems in rendered text (the `\b` is load-bearing —
-  without it the ban forbids *credit for prior learning*). **A rendered-text
-  ban covers only the branches a fixture paints** — `cpl_funding_earn_retired`
-  reads the source, and is what caught the CSV header no DOM test can see.
+- **Funding vocabulary — CCC norms, not business norms (Sam, 2026-08-31 to
+  09-28; his words, dates and the guards:
+  [`funding_vocabulary`](docs/reference/funding_vocabulary.md)).** Say
+  **funding**, never "money" or "pool" (identifiers and the name "one-pool"
+  stay); the per-institution figure is the **max award**. *Allocated* when the
+  CO awards it, *expended* when a college spends it: check the subject.
+  *Restricted* (not "fenced"), *redirect* (not "absorb"), *brought up to the
+  minimum* (not "topped up"); never "double count" or "on its face". Never the
+  concept of advances or a not-yet-live data feed, anywhere rendered; an
+  unmeasured metric shows **TBA**, never "no data yet". No *draw*, *unspent*,
+  *the dollars*, or a college *earning* funding (a student earning credit
+  stays): a measure **counts toward** funding, a college **qualifies for** its
+  award, the result is **demonstrated**, the rest is **remaining**; award cells
+  say *qualifying*. Prose only, never identifiers. `cpl_funding_calm` enforces.
 - **House voice — write outward artifacts the way the CO writes (Sam,
   2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
   standard: *"the word choice and tone provide an extensive example of the tone
@@ -432,7 +408,16 @@ first day.** Do the remembering for them.
   asks through chat: per item, what it is in plain words, the measured
   context (from the maps and feeds, never guessed), a proposed disposition
   with its draft reason, and reply-by-number verdicts. Hand it over as a
-  Claude artifact link. ⚠️ **Read the replies BEFORE executing** — they are
+  Claude artifact link. **Mark the recommendation and carry it out in the
+  same run (Sam, 2026-10-20) when `git revert` or its Rule 10 receipt can
+  undo it;** the sheet stays the record, and the card reads *Proceeded on the
+  recommendation (S<N>, <date>); reply to reverse*. **Hold for his reply,
+  still:** anything outward, a public KB merge, deleting data, a production
+  deploy outside a standing authorization, funding figures published to
+  colleges, the program's name or identity, who does what on the team, a cost
+  above a standing limit, reversing a dated ruling of his, a permission-check
+  denial, and any call a lane marks as his. This is the one hold list.
+  ⚠️ **Read the replies BEFORE executing** — they are
   the artifact's own store, not chat. Mechanics (the reply-chip injector,
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
   the worked example) are PULL, in the vault:
@@ -481,7 +466,9 @@ first day.** Do the remembering for them.
   can infer blast radius from a command.
 - **Flag cross-impact before acting, not after.** Shared Supabase tables, the
   public dashboard, the daily cron, the public KB, anything with staff/student
-  PII, anything reaching colleges. Also ask whether another session is live —
+  PII, anything reaching colleges. Also ask whether another session is live
+  (`list_sessions` when the session holds it; without it, the open PRs and
+  `main`'s commits since the handoff, per `scheduled_sessions`) —
   Sam frequently runs several, and a later write silently wins. **Compute the
   impacts, don't guess:**
   [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
@@ -507,8 +494,10 @@ first day.** Do the remembering for them.
   Fewer screenshots, tail long logs: tool output fills the context too.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
-  repos. Other sessions are visible (`list_sessions`, `list_events`) and
-  reachable (`send_message`); agree one writer per file.
+  repos. Other sessions are visible when the session holds `list_sessions`
+  (`list_events`, `send_message`); without it, read the open PRs and `main`'s
+  commits since the handoff ([`scheduled_sessions`](docs/reference/scheduled_sessions.md)).
+  Say which one you had. Agree one writer per file.
 - **Sign off with the exact opening line Sam pastes into the next session (Sam,
   2026-08-13; the template is his, ruled 2026-09-03).** At the end of a session —
   or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
@@ -522,7 +511,8 @@ first day.** Do the remembering for them.
   the path means looking at the file, which catches Rule 9's stale number.
   **Let go in the same turn (Sam, 2026-10-05: *"I need to stay out of the way of
   the automation"*):** drop every PR subscription, check-in and artifact watch,
-  naming each in the handoff. **At start,** `list_sessions`; agree one writer with
+  naming each in the handoff. **At start,** `list_sessions` (without it, the open
+  PRs and `main`'s commits since the handoff); agree one writer with
   an older session still working or holding wakes. Same for Sam's routine:
   [`scheduled_sessions`](docs/reference/scheduled_sessions.md).
 
@@ -754,14 +744,12 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 109](https://claude.ai/artifact/FJ2UbqDiaCfc6adgrTjynE), 2026-10-21, open: the CLAUDE.md pass, five cards, nothing applied until answered). Answering
+> (latest: [Open Asks Sheet 109](https://claude.ai/artifact/FJ2UbqDiaCfc6adgrTjynE), 2026-10-21, answered 13:26Z: all five as recommended and applied; no card open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
 |---|---|---|
-| 1b (3/3) | Curate-write Repair-from-members action | parked (build when ≥5 clusters exist) |
 | 1c | More audit rules in `kb/_row_audit.py` — **9 of 10 landed**; `cluster_title_drift` still queued. | in progress — [lane state](docs/reference/lanes/audit-rules.md) |
-| **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own tab if the page gets dense (Sam's preference: one page, two sections). | parked unless curator usage signals demand |
 | **Excel→Supabase Phase 2-4** | Retire the master `.xlsx`; Supabase is the record. | 🔨 in progress · open work — [lane state](docs/reference/lanes/excel-to-supabase.md) |
 | **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ live · open work — [lane state](docs/reference/lanes/nc-learning-partners.md) |
 | **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`. | ✅ live · open work — [lane state](docs/reference/lanes/map-users-student-contact.md) |
@@ -800,11 +788,7 @@ stays here.
 | **The Commons** | One tracking system for every common reference, aligned dashes, and a Commons dash in Sam's order. | ✅ live · open work (the tab, 2026-10-18; the Subjects, Exhibit and CR Progress views; Course next) — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
 | **CTDL and the partner exchange** | Credential Engine and WestEd plug into COBI through one exchange; COBI's records carry their CTDL identity. | 🔨 seed drafted, waits on Malone · open work — [lane state](docs/reference/lanes/ctdl-partner-exchange.md) |
-| 2 | Articulations by Unified Course — interactive view + curation | parked |
-| 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
-| 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
-| 6 | CIDx submission automation (the eventual goal) | parked (the destination) |
-| 7 | M-ID → CID substitution workflow on approval | parked (Rule 7 governs once re-locked) |
+| Parked | Seven parked phases with no lane file (1b, PR-D, 2, 4, 5, 6, 7). | parked — [the rows](docs/reference/mid_lifecycle.md#parked-roadmap-rows) |
 
 
 ## Troubleshooting

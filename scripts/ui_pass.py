@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ui_pass.py — the checkpoint's UI pass: one view per checkpoint, chosen by rule.
+"""ui_pass.py — the UI pass: one view a night, chosen by rule (a queue item since Sheet 109, 2026-10-21; it was a checkpoint step).
 
 Sam, 2026-10-08, retiring the To-Do step: "Thinking of possibly adding a process in
 checkpoint to pick one COBI surface to prioritize an UI audit and fix to ensure it's

@@ -467,6 +467,21 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `docs/exhibit_canonicalization_lessons.md` ("continued 14"–"15 + addendum").
 
 
+
+## Parked roadmap rows
+
+Moved from `CLAUDE.md` §11 on 2026-10-21 (S442 SkyManzanita, Open Asks Sheet 109 card 5, Sam's "both"). Each is parked with no lane file; §11 keeps one pointer row. A row that wakes gets a lane file and its own §11 row again. `pipeline.js` mirrors the phases on the Pipeline tab.
+
+| Phase | What | Status |
+|---|---|---|
+| 1b (3/3) | Curate-write Repair-from-members action | parked (build when ≥5 clusters exist) |
+| **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own tab if the page gets dense (Sam's preference: one page, two sections). | parked unless curator usage signals demand |
+| 2 | Articulations by Unified Course — interactive view + curation | parked |
+| 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
+| 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
+| 6 | CIDx submission automation (the eventual goal) | parked (the destination) |
+| 7 | M-ID → CID substitution workflow on approval | parked (Rule 7 governs once re-locked) |
+
 ## M-ID structural invariants and the re-mint record
 
 > **Relocated verbatim from `CLAUDE.md` Rule 7 on 2026-08-29** (Session 208).
