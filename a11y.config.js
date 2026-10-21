@@ -223,6 +223,20 @@ async function seedRoepTable(page, theme, which) {
 
 // Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08).
 async function seedCollegeSelect(page) {
+  /* The college's program-data line (Sam, 2026-10-21) reads four public tables; the sweep blocks
+     the database, so they answer here with a few rows and the line paints its three figures. */
+  const PASS = { coverage: true, invented: true, arithmetic: "equal" };
+  const ROWS = {
+    coci_college_programs: [{ control_number: "A1" }, { control_number: "A2" }, { control_number: "A3" }],
+    program_requirement_records: [{ control_number: "A1", checks: PASS, loaded_at: "2026-10-21T08:00:00Z" },
+      { control_number: "A2", checks: { coverage: false, invented: true, arithmetic: "equal" }, loaded_at: "2026-10-20T08:00:00Z" }],
+    course_outcomes: [{ course_code: "FIRE 1", outcomes: ["a", "b"], source_kind: "course_outline" }],
+    coci_program_courses: [{ course_code: "FIRE 1" }, { course_code: "FIRE 2" }]
+  };
+  await page.route(/\/rest\/v1\/(coci_college_programs|program_requirement_records|course_outcomes|coci_program_courses)\?.*college=eq\./, (route) => {
+    const t = /\/rest\/v1\/([a-z_]+)\?/.exec(route.request().url())[1];
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(ROWS[t] || []) });
+  });
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
   await page.waitForFunction(() => {
     const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
@@ -233,6 +247,7 @@ async function seedCollegeSelect(page) {
     s.value = "Mt. San Antonio College";
     s.dispatchEvent(new Event("change", { bubbles: true }));
   });
+  await page.waitForFunction(() => document.querySelectorAll("#cpl-pathways-root .cplpw-colstat button.go").length === 3, null, { timeout: 30000 });
   await page.waitForTimeout(200);
 }
 
@@ -1961,6 +1976,13 @@ module.exports = {
   "funding-model": {
     file: "funding-model/index.html",
     title: "Funding model explainer (public)",
+    mayHideBelow: [],
+  },
+
+  /* The guidance memo (Sam, 2026-10-21), linked from the explainer's Contents. */
+  "funding-memo": {
+    file: "funding-model/memo/index.html",
+    title: "Funding guidance memo (public)",
     mayHideBelow: [],
   },
 
