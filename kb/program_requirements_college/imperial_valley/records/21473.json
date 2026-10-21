@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8613",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6792,
+  "input_tokens": 6846,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6792,
-    "output_tokens": 1118,
+    "input_tokens": 6846,
+    "output_tokens": 1129,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1118,
+  "output_tokens": 1129,
   "output_tokens_details": {
-   "thinking_tokens": 227
+   "thinking_tokens": 222
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04953,
- "ms": 10192,
- "seconds": 10.7,
+ "cost_usd": 0.04996,
+ "ms": 9954,
+ "seconds": 10.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 11,
    "listed": 11,
-   "share": 0.636,
-   "missing": [
-    "AUT110",
-    "AUT150",
-    "AUT170",
-    "AUT230"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -69,12 +64,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    25.0,
-    25.0
+    39.0,
+    39.0
    ],
    "stated": [
-    25.0,
-    25.0
+    39.0,
+    39.0
    ],
    "against": "program",
    "why": []
@@ -84,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 3,
    "courses": 0,
-   "count": 1,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -94,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -105,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+   "section_heading": "AUTOMOTIVE TECHNOLOGY (CERTIFICATE)",
    "measure": "units",
    "total_units": {
-    "min": 25,
-    "max": 25
+    "min": 39,
+    "max": 39
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,23 +122,30 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Demonstrate the necessary skills to pass ASE exams."
+    "Describe the purpose of the fundamental automotive systems.",
+    "Describe the type of skills needed to be an auto technician.",
+    "Correctly answer ASE certification test questions that require a knowledge of the major parts and systems of a vehicle"
    ],
-   "careers": [
-    "Automotive technicians"
-   ]
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "I. Required courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 25,
-     "max": 25
+     "min": 39,
+     "max": 39
     },
     "courses": [
+     {
+      "code": "AU T 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "AU T 125",
       "units": 4,
@@ -159,6 +161,13 @@
       "catalog_addition": false
      },
      {
+      "code": "AU T 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "AU T 155",
       "units": 4,
       "units_max": null,
@@ -167,6 +176,13 @@
      },
      {
       "code": "AU T 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AU T 170",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -192,35 +208,24 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "AU T 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AU T 110",
-    "why": "not in the text"
-   },
-   {
-    "code": "AU T 150",
-    "why": "not in the text"
-   },
-   {
-    "code": "AU T 170",
-    "why": "not in the text"
-   },
-   {
-    "code": "AU T 230",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The only section in the text is 'Automotive Technology: Maintenance and Basic Repair (Certificate)' requiring 25.0 units, which is below the award's 30-unit floor for this Certificate of Achievement category; the page may describe a different or revised certificate than the one in the state file. Reviewer should verify.",
-   "The block name 'Required Courses' is supplied; the catalog prints the courses under no heading, only 'Twenty-five (25.0) units required for the certificate' and 'Total : 25.0'.",
-   "Six of the seven listed courses are marked '( Historical )' in the catalog; only AU T 130 is marked '( Active )'. The certificate may be inactive or under revision.",
-   "Four closed-list courses (AU T 110, 150, 170, 230) do not appear in this section."
+   "Ten of the eleven required courses are marked '( Historical )' in the catalog; only AU T 130 is marked '( Active )'. A reviewer may want to confirm the certificate is still offered as printed for 2026-2027.",
+   "The text names no career or job title in a careers list. 'auto technician' appears only inside a learning outcome and 'this rewarding profession' in the description, so careers was left empty.",
+   "The catalog text ends with a truncated fragment 'FINANC', apparently the start of an unrelated following section."
   ]
  },
- "extracted_run": "38935136329"
+ "extracted_run": "39691376155"
 }

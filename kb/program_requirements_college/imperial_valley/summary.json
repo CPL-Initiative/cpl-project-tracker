@@ -2,54 +2,28 @@
  "college": "Imperial Valley College",
  "programs": 149,
  "with_closed_list": 142,
- "found": 84,
- "extracted": 84,
+ "found": 131,
+ "extracted": 131,
  "errors": 0,
- "passed_machine_checks": 67,
+ "passed_machine_checks": 109,
  "failed": {
-  "coverage": 1,
+  "coverage": 6,
   "invented": 0,
-  "arithmetic": 17,
+  "arithmetic": 22,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.63,
- "cost_per_program": 0.067,
+ "cost_usd": 8.02,
+ "cost_per_program": 0.0612,
  "not_found": [
-  {
-   "control_number": "01893",
-   "title": "Medical Assistant",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5580,
-     "content": 5580,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
   {
    "control_number": "24051",
    "title": "ESL Civics",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 0.5
     },
     "field": "innerText",
@@ -61,8 +35,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 3593,
-     "content": 3593,
+     "body": 1326,
+     "content": 1326,
      "tabs": 0
     },
     "tab_panels": []
@@ -83,65 +57,7 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "36071",
-   "title": "Academic Preparedness in English",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41181",
-   "title": "Fundamentals of English II",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41182",
-   "title": "Fundamentals of English III",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42238",
-   "title": "Care of the Elderly for the Health Assistant",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42535",
-   "title": "Computer Fundamentals for ESL Students",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3593,
-     "content": 3593,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
- "run": "38935136329"
+ "run": "39691376155"
 }
