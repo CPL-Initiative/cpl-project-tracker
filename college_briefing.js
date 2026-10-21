@@ -1643,6 +1643,8 @@
       + (state.scope === "college" && state.college
           ? '<a class="cb-act" id="cb-oppvisual" target="_blank" rel="noopener" href="' + esc(opportunityPageUrl(state.college)) + '">View CPL Visual</a>'
             + '<button type="button" class="cb-act" id="cb-workbook">Download CPL Extract</button>'
+            + (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function"
+                ? '<button type="button" class="cb-act" id="cb-pathways">Open CPL Pathways</button>' : "")
           : "")
       // Two ways back, because they are different journeys. Switching college is
       // the common one and must not cost a trip through "who are you" — that
@@ -3537,7 +3539,56 @@
    * `state.remembered` is deliberately a separate field. Nothing downstream
    * reads it; only the picker does, and only to offer the shortcut. Wrapped
    * because storage can be unavailable. */
+  /* ── one college choice for My College and CPL Pathways (Sam, 2026-10-21) ──
+   * A college picked in either tab is the college the other opens on, while this page is open.
+   * The choice lives in memory only, so a new visit still asks first (above). Names are matched
+   * through the short-name crosswalk: MAP says "Mt San Antonio College", the catalog "Mt. San
+   * Antonio College". The twin of this block is in cpl_pathways.js. */
+  var CHOICE_BY = "college-briefing";
+  function choiceKey(name) {
+    if (!name) return "";
+    var f = window.cplCollegeShort;
+    var k = typeof f === "function" ? f(String(name), "short") : String(name);
+    return String(k || name).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  var shareSeen = null;
+  function shareChoice() {
+    window.CPL_COLLEGE_CHOICE = { college: state.scope === "college" ? (state.college || null) : null, by: CHOICE_BY };
+    shareSeen = window.CPL_COLLEGE_CHOICE;
+  }
+  /* A college CPL Pathways picked since this tab last looked: open it, once the list is read.
+     A cleared choice, or this tab's own, leaves the page as it is. */
+  function applySharedChoice(root) {
+    var C = window.CPL_COLLEGE_CHOICE;
+    if (!C || C === shareSeen || !state.data) return;
+    shareSeen = C;
+    if (!C.college || C.by === CHOICE_BY) return;
+    var k = choiceKey(C.college), names = state.data.colleges || [], m = "";
+    for (var i = 0; i < names.length; i++) if (choiceKey(names[i]) === k) { m = names[i]; break; }
+    if (!m || (state.scope === "college" && state.college === m)) return;
+    state.scope = "college";
+    state.district = ""; state.swpRegion = "";
+    selectCollege(m, root);
+  }
+  var sharedWired = false;
+  function wireSharedChoice() {
+    if (sharedWired) return;
+    sharedWired = true;
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (e && e.detail && e.detail.tab === "college-briefing") {
+        var root = document.getElementById("college-briefing-root");
+        if (root) applySharedChoice(root);
+      }
+    });
+  }
+  function openPathways() {
+    shareChoice();
+    var T = window.CPL_TABS;
+    if (T && typeof T.navigate === "function") T.navigate("cpl-pathways");
+  }
+
   function rememberScope() {
+    shareChoice();
     try {
       localStorage.setItem(SCOPE_KEY, JSON.stringify({
         scope: state.scope, college: state.college, district: state.district,
@@ -3879,6 +3930,8 @@
     if (rep) rep.onclick = function () { buildBriefingReport(root); };
     var wbk = root.querySelector("#cb-workbook");
     if (wbk) wbk.onclick = function () { buildOpportunityExtract(wbk); };
+    var pth = root.querySelector("#cb-pathways");
+    if (pth) pth.onclick = function () { openPathways(); };
     // The roster's spelling, which the funding module keys on (MAP says
     // "Laney College"; the roster, "Laney").
     wireHowTo(root, state.college ? rosterKey(state.college) : null, "mycollege");
@@ -4790,8 +4843,9 @@
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
     if (state.scope === null) restoreScope();
+    wireSharedChoice();
     loadMyReports(root);
-    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
+    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); applySharedChoice(root); return; }
     // No sign-in branch: a public reader loads the `_pub` mirrors through
     // sources(). `loadedSignedIn` above is what reloads from the OTHER source
     // when a reader signs in or out mid-session.
@@ -4804,6 +4858,7 @@
     loadLive(root);
     loadAll().then(function () {
       state.loading = false; state.loadedSignedIn = signedIn(); render(root);
+      applySharedChoice(root);
     }).catch(function (e) {
       state.loading = false; state.error = String(e && e.message || e); state.loadedSignedIn = signedIn(); render(root);
     });
@@ -4916,6 +4971,8 @@
     _SIERRA_Q_KEY: SIERRA_Q_KEY,
     _money: money,
     _state: state,
+    // The one college choice shared with CPL Pathways (Sam, 2026-10-21).
+    _shared: { apply: applySharedChoice, key: choiceKey },
     _SCENARIO: SCENARIO,
     _briefingScenario: briefingScenario,
     _loadFunding: loadFunding,
