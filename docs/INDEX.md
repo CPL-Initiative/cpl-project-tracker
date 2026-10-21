@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 90 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 61 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 414 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1213** | |
+| Session handoffs | 415 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1214** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-21 (S443 SkyToyon, opened by Sam): funding off My College (#2316, #2320); Reedley loaded (#2317); a page heading a section per award serves each sibling (#2322) and Foothill re-read and loaded (#2326); tabs never remember a filter (#2325, a CLAUDE.md rule); Open Asks Sheet 111.
 - 2026-10-21 (S442, the CPL Queue routine's run beside SkyManzanita): the harvest keeps a Requirements tab whose numbers carry a campus letter (#2309); Moorpark, Oxnard and Ventura re-read; one display build with Reedley.
 - 2026-10-21 (S442 SkyManzanita, opened by Sam): Sheet 109 applied (#2310); CPL Pathways' college line and the name CPL Pathways (#2312); one college choice for My College and CPL Pathways (#2313); My CPL Funding and the expenditure reports leave My College; Reedley re-read and loaded; KB note methodology-hand-another-tab-a-request.
 - 2026-10-21 (S441 SkyIronbark, the CPL Queue routine): S440's harvest PR #2306 merged; the CLAUDE.md pass sent as Open Asks Sheet 109 (five cards, nothing applied); the two Python tests failing on main fixed.

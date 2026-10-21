@@ -1705,3 +1705,19 @@ converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 39
 - **The expenditure reports moved to Implementation Funding** as `reportsPanel`, at the top of the 2026-28 Funding
   view: asked from My College it shows in every state with the sign-in returning to that tab; unasked, only to a person
   MAP lists as a college's contact, so a curator's view gains nothing.
+
+## S443 SkyToyon (2026-10-21): funding moved out, and no tab remembers a choice
+
+- **Step 1 and the funding move landed.** #2313 (one college choice), #2316 (My CPL Funding is a link to the
+  funding page's My Institution view) and #2320 (the expenditure reports on Implementation Funding). PR A's last
+  failing check (`cpl_funding_how_to_meet_it` 5n) now reads the funding page's block, where Confirm now is the
+  in-page button rather than a link. Merging main into PR B kept #2313's `wireSharedChoice`/`applySharedChoice`
+  beside the move; the conflict was the reports section #2313 still drew.
+- **A link that picks for the reader must not remember the pick.** CPL Pathways' college line (#2312) opened
+  Program Requirements with its college added to the stored picks, so every later Program records showed only
+  Bakersfield. Sam, asked about it: *"It would be best if tabs didn't remember the previously filtered objects.
+  I've noticed it on other tabs as well (e.g., My College)."* #2325: Program Requirements' picks and filters and
+  My College's choice last the visit; a hand-off between tabs is marked `handoff`, read once and cleared; stored
+  values from earlier builds are cleared once. The rule is in CLAUDE.md beside the UI practices.
+- **Open:** Implementation Funding's public one-institution choice was remembered at Sam's call 9 (2026-10-15);
+  whether the new rule reaches it is his (Open Asks Sheet 111).
