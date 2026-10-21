@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Paralegal Studies",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/paralegal-studies-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12332,
+  "input_tokens": 7970,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12332,
-    "output_tokens": 1516,
+    "input_tokens": 7970,
+    "output_tokens": 2048,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1516,
+  "output_tokens": 2048,
   "output_tokens_details": {
-   "thinking_tokens": 407
+   "thinking_tokens": 437
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07965,
- "ms": 13765,
- "seconds": 14.3,
+ "cost_usd": 0.07284,
+ "ms": 18727,
+ "seconds": 19.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 18,
    "listed": 18,
-   "share": 0.0,
-   "missing": [
-    "BUSR111",
-    "LAWR101",
-    "LAWR102",
-    "LAWR103",
-    "LAWR104",
-    "LAWR105",
-    "LAWR110",
-    "LAWR112",
-    "LAWR113",
-    "LAWR114",
-    "LAWR115",
-    "LAWR120",
-    "LAWR121",
-    "LAWR122",
-    "LAWR123",
-    "LAWR124",
-    "LAWR130",
-    "LAWR191"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -80,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    31.0,
+    31.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -114,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "COURSES",
+   "section_heading": "Paralegal Studies, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 31,
+    "max": 31
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -139,93 +121,178 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply rules and principles to new situations in the Paralegal Studies arena.",
+    "Locate appropriate documents and utilize them to develop legal forms of various kinds used in the Paralegal Studies arena.",
+    "Write clearly and accurately in a variety of contexts and formats while checking, editing, and revising their written work for accurate information, appropriate emphasis, correct citation form and style, and proper grammar on legal documents, memoranda, pleadings and forms.",
+    "Demonstrate familiarity with, and ability to use and write with, appropriate legal terms and legal terminology.",
+    "Demonstrate knowledge and understanding of American system of government, and federal, state and local court systems, and alternative dispute resolution.",
+    "Research California and federal statutes, cases, and court rules appropriate to given factual scenarios."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUS R111",
-    "why": "requirements section not in the text; named only as an advisory in LAW R123's description"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "BUS R111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R130",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "LAW R102",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R103",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R104",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R105",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R110",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R112",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R113",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R114",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R115",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R120",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R121",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R122",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R123",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R124",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R130",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAW R191",
-    "why": "requirements section not in the text; appears only in course descriptions"
-   },
-   {
-    "code": "LAWR101",
-    "why": "requirements section not in the text; printed as LAW R101 only in course descriptions"
+    "name": "Complete 12 units from the following two Tracks and Work Experience",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LAW R110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW R191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text contains only the site navigation menu and the COURSES tab (course descriptions); the program requirements tab for 'Paralegal Studies, Certificate of Achievement' is not included, so no blocks, total, outcomes or careers could be recorded.",
-   "'Paralegal Studies, Certificate of Achievement' appears only as a navigation menu link; the page also lists Law Office Management and Legal Secretary certificates and a Paralegal Studies A.S. in the menu.",
-   "Course descriptions include LAW R125 (Wills, Trusts, and Estates) and LAW R201 (Foundations of Trial Advocacy), which are not in the closed list; they were not placed since no requirements section was available.",
-   "LAW R130's catalog note says it is designed to be taken in the last semester before completing the COA in Paralegal Studies, suggesting it is part of this certificate, but the requirements list itself is not in the text.",
-   "The course text is cut off mid-description in LAW R201.",
-   "Reviewer should fetch the program requirements tab of the source page to complete this record."
+   "LAW R101 printed in the catalog matches closed-list code 'LAWR101' (stored without a space and without units); treated as the same course, not a catalog addition.",
+   "The 12-unit elective block combines the Litigation Track (LAW R110, R112, R114, R121, R124, R115), the Transactional Track (LAW R113, R120, R122, R123) and Work Experience (LAW R191). Footnote 1: students may take all 12 units in one Track or mix both Tracks; the tracks are not mutually exclusive options, so they are recorded as one choose_units block.",
+   "Footnote 2: Work Experience (LAW R191) is optional and limited to 3 units max toward the 12 elective units.",
+   "Trailing '1' and '2' after the elective and Work Experience headings are footnote markers, not units.",
+   "Outcomes are printed in the page's program student learning outcomes tab for this program; recorded as this award's outcomes.",
+   "Section heading taken from the page's navigation entry; the requirements tab itself prints no heading. Core 19 + electives 12 = 31 matches the printed total."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

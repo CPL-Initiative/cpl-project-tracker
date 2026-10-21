@@ -1,0 +1,232 @@
+{
+ "college": "Oxnard College",
+ "control_number": "32111",
+ "shape": "certificate",
+ "title": "Advanced Skills for Addiction Treatment Counselors",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/advanced-skills-addiction-treatment-counselors-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8502,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8502,
+    "output_tokens": 1746,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1746,
+  "output_tokens_details": {
+   "thinking_tokens": 322
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06893,
+ "ms": 13863,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Core Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the organizational structures, management and administrative policies and procedures affecting success and failure of alcohol and drug treatment programs.",
+    "Train, supervise, evaluate, and discipline other counselors in order to enhance and facilitate professional development within an organization.",
+    "Design and effectively lead group counseling sessions utilizing a variety of advanced group leadership practices such as: depth work engagement and the application of effective methods and modalities, interventions, techniques, and theories as applied to addiction and recovery counseling services.",
+    "Describe mental disorders and best practices for their treatment including recognizing the appropriate use of psychotropic medications, and when psychiatric referral and professional consultation is required.",
+    "Identify the major types of eating disorders that are often co-occurring with addictions and the unique nutritional needs of recovering individuals.",
+    "Identify the cycle, patterns and progression of domestic violence/interpersonal abuse through the use of power and control strategies and the relationship between alcohol/drug abuse and domestic/interpersonal abuse.",
+    "Utilize screening, intake and counseling procedures unique to domestic violence/interpersonal abuse (specifically how they relate to those individuals on probation, parole and/or in Batterers' Intervention Programs as per the CA Penal Code.",
+    "Describe the role of public policy in addressing binge and underage drinking and explain the process of formulating and enacting prevention strategies and the rational for community involvement.",
+    "Describe how treatment and recovery from trauma bonds reduces the likelihood of re-experiencing traumatizing events by increasing awareness of these bonds, thereby extinguishing potentially high-risk, repetitive behaviors and addiction.",
+    "Define the concept of the disease of alcoholism as a family disease, describe its effects on family relationships and development of co-dependency and demonstrate knowledge of the reprogramming strategies for adult children of alcoholics."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADS R105B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R113B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADS R125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text prints no program title heading; section_heading uses the requirements list heading 'Required Core Courses' (under 'Course List' in the REQUIREMENTS tab).",
+   "Total taken from 'Total Required Units for Certificate 30'; the Plan of Study also totals 30.",
+   "Catalog title for ADS R122 reads 'Reducing Binge and Underage Drinking: A Collective Responsibility'; the state file spells it with '&' and 'Responsobility'. Same code, so not marked as an addition.",
+   "Outcomes copied verbatim, including 'rational' and an unclosed parenthesis in the seventh outcome."
+  ]
+ },
+ "extracted_run": "39612119359"
+}

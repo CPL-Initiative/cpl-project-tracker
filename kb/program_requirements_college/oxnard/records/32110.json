@@ -1,0 +1,291 @@
+{
+ "college": "Oxnard College",
+ "control_number": "32110",
+ "shape": "certificate",
+ "title": "Computer Networking Information Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/computer-networking-information-technology-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8491,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8491,
+    "output_tokens": 1685,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1685,
+  "output_tokens_details": {
+   "thinking_tokens": 277
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06766,
+ "ms": 13388,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    33.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 30.0-30.0; the catalog states 30.0-33.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Course List",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create a routed network utilizing the proper cabling, IP addressing scheme, and routing protocol.",
+    "Troubleshoot and properly document a computer network problem using a structured methodology.",
+    "Implement technologies to create a secure network to protect the confidentiality of data and demonstrate competency in mitigating network vulnerabilities.",
+    "Demonstrate competency in soft skills to include the ability to communicate effectively, employ critical thinking, and problem solve.",
+    "Create a virtual machine (VM) with specific resource settings, install an OS on the VM, and connect the VM to a computer network to share resources.",
+    "Scan and assess the network and devices for vulnerabilities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "CNIT R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R151",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a minimum of 9 units from the following (no more than 4 units of COT may be selected):",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CNIT R127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R144",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R191A",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R191B",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNIT R191C",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text prints no program heading above the requirements; section_heading uses the requirements table's 'Course List' label on the Certificate of Achievement page.",
+   "Elective block limits COT to no more than 4 units; COT presumably refers to the CNIT R191A/B/C work experience courses (printed 1-14 units each), which the closed list stores at 1 unit.",
+   "The Plan of Study grid totals 33-37 units, differing from the requirements table's 'Total Required Units for Certificate 30-33'; total_units uses the requirements table.",
+   "Outcomes are printed under a program-level outcomes tab on this certificate page ('Upon successful completion of this program')."
+  ]
+ },
+ "extracted_run": "39612119359"
+}

@@ -2,106 +2,20 @@
  "college": "Oxnard College",
  "programs": 133,
  "with_closed_list": 132,
- "found": 94,
- "extracted": 94,
+ "found": 120,
+ "extracted": 120,
  "errors": 0,
- "passed_machine_checks": 37,
+ "passed_machine_checks": 86,
  "failed": {
-  "coverage": 31,
-  "invented": 1,
-  "arithmetic": 56,
+  "coverage": 5,
+  "invented": 3,
+  "arithmetic": 32,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 8.73,
- "cost_per_program": 0.0928,
+ "cost_usd": 8.98,
+ "cost_per_program": 0.0748,
  "not_found": [
-  {
-   "control_number": "06913",
-   "title": "Air Conditioning and Refrigeration",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/air-conditioning-refrigeration-as/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.714,
-    "net": 5,
-    "listed": 7,
-    "why": "coverage 0.00 in innerText+tabs, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 6591,
-     "content": 112928,
-     "tabs": 364
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      2054
-     ],
-     [
-      "PLAN OF STUDY",
-      454
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      797
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "06916",
-   "title": "Automotive Body and Fender Repair",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-as/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.9,
-    "net": 9,
-    "listed": 10,
-    "why": "coverage 0.00 in innerText+tabs, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 6071,
-     "content": 112646,
-     "tabs": 364
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      2202
-     ],
-     [
-      "PLAN OF STUDY",
-      576
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      997
-     ]
-    ]
-   }
-  },
   {
    "control_number": "07084",
    "title": "Dental Hygiene",
@@ -123,7 +37,7 @@
     "chars": {
      "body": 5992,
      "content": 113651,
-     "tabs": 1959
+     "tabs": 4176
     },
     "tab_panels": [
      [
@@ -141,135 +55,6 @@
      [
       "PROGRAM STUDENT LEARNING OUTCOMES",
       718
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "22456",
-   "title": "Air Conditioning and Refrigeration",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/air-conditioning-refrigeration-coa/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.714,
-    "net": 5,
-    "listed": 7,
-    "why": "coverage 0.00 in innerText+tabs, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 6504,
-     "content": 111411,
-     "tabs": 364
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      618
-     ],
-     [
-      "PLAN OF STUDY",
-      454
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      797
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "22459",
-   "title": "Automotive Body and Fender Repair",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-coa/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.9,
-    "net": 9,
-    "listed": 10,
-    "why": "coverage 0.00 in innerText+tabs, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 6074,
-     "content": 111147,
-     "tabs": 364
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      761
-     ],
-     [
-      "PLAN OF STUDY",
-      508
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      998
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "39935",
-   "title": "Business Information Worker Quick Start",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-applications-office-technologies/business-information-worker-quick-start-cocn-noncredit/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 1.0,
-    "net": 8,
-    "listed": 8,
-    "why": "coverage 0.00 in innerText+tabs, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 5941,
-     "content": 110375,
-     "tabs": 364
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      342
-     ],
-     [
-      "PLAN OF STUDY",
-      376
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      427
      ]
     ]
    }
@@ -295,7 +80,7 @@
     "chars": {
      "body": 5904,
      "content": 110693,
-     "tabs": 364
+     "tabs": 918
     },
     "tab_panels": [
      [
@@ -318,5 +103,5 @@
    }
   }
  ],
- "run": "38842203500"
+ "run": "39612119359"
 }

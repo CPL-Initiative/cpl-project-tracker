@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Wildland Fire Academy",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/wildland-fire-academy-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11571,
+  "input_tokens": 7580,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11571,
-    "output_tokens": 688,
+    "input_tokens": 7580,
+    "output_tokens": 1108,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,60 +30,62 @@
     "model": null
    }
   ],
-  "output_tokens": 688,
+  "output_tokens": 1108,
   "output_tokens_details": {
-   "thinking_tokens": 238
+   "thinking_tokens": 253
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06004,
- "ms": 7126,
- "seconds": 7.6,
+ "cost_usd": 0.05248,
+ "ms": 9487,
+ "seconds": 9.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "EMTR109",
-    "FTR180"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "EMTR169"
+   ],
+   "flagged": [
+    "EMTR169"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    13.0,
+    13.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    13.0,
+    13.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 9,
    "courses": 0,
-   "count": 0,
+   "count": 9,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -98,15 +100,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No section for the Wildland Fire Academy certificate appears in the text (course descriptions only)",
+   "section_heading": "Wildland Fire Academy Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 13,
+    "max": 13
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -123,26 +125,61 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Identify and explain environmental factors of fuels, weather, and topography that affect the start and spread of wildland fires and how these factors can affect safety.",
+    "Explain what LCES (Lookouts, Communications, Escape Routes, and Safety Zones) system is and how it relates to the Standard Firefighting Orders and firefighter safety.",
+    "Establish wildland fire control measures using various methods on simulated fire ground situations while communicating clearly and effectively.",
+    "Demonstrate competency and skills to design, set up, operate, troubleshoot and shut down portable water delivery systems.",
+    "Explain and demonstrate basic chain saw operation, troubleshooting, maintenance and fireline construction techniques.",
+    "Describe how to operate safely and effectively in a wildland urban interface incident using situation awareness, performing structure triage and citing appropriate structure protection actions.",
+    "Demonstrate how to interpret a topographical map to determine slope, aspect, acreage, distance and coordinates.",
+    "Identify the fundamental leadership principles, human factors and techniques used to communicate effectively.",
+    "Identify wildland firefighting aircraft and operate safely around them."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FT R180",
-    "why": "appears only as a course description; no program requirements section in the text"
-   },
-   {
-    "code": "EMT R109",
-    "why": "named only in the FT R090 enrollment limitations; no program requirements section in the text"
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FT R180",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT R109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EMT R169",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text holds only Fire Technology course descriptions, starting and ending mid-sentence. It has no program section, requirements list, total, outcomes or careers for the Wildland Fire Academy Certificate of Achievement. The program section was probably cut off or appears elsewhere on the page, so a reviewer should check the full page.",
-   "FT R180 Wildland Fire Academy is printed as a 10-unit course (122.5 lecture, 157.5 laboratory hours). It is not placed in a block because the text prints no requirement rule for the certificate.",
-   "Career mentions appear only inside course descriptions (for example, FT R090), so none were recorded."
+   "The page heading itself is not in the extracted text; section_heading is reconstructed from the program title and award (the requirements were read from the page's REQUIREMENTS tab).",
+   "EMT R169 is recorded as an alternative to EMT R109 per the footnote '*EMT R169 may be substituted for EMT R109.'; no units are printed for EMT R169, and it is not in the closed list.",
+   "Outcomes were taken from the page's program student learning outcomes tab, which applies to this certificate.",
+   "Total Units Required for the Certificate: 13."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

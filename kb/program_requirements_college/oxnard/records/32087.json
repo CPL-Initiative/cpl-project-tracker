@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Spanish",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/spanish/spanish-aat/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13886,
+  "input_tokens": 8039,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13886,
-    "output_tokens": 951,
+    "input_tokens": 8039,
+    "output_tokens": 2092,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,67 +30,54 @@
     "model": null
    }
   ],
-  "output_tokens": 951,
+  "output_tokens": 2092,
   "output_tokens_details": {
-   "thinking_tokens": 261
+   "thinking_tokens": 541
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07456,
- "ms": 8824,
- "seconds": 9.3,
+ "cost_usd": 0.074,
+ "ms": 16232,
+ "seconds": 17.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 19,
    "listed": 19,
-   "share": 0.0,
-   "missing": [
-    "ARTR174H",
-    "CHSTR101",
-    "CHSTR107",
-    "HISTR107",
-    "HISTR109",
-    "HISTR126",
-    "SPANR100",
-    "SPANR110",
-    "SPANR200",
-    "SPANR210",
-    "SPANR220",
-    "SPANR220H",
-    "SPANR230",
-    "SPANR230H",
-    "SPANR232",
-    "SPANR232H",
-    "SPANR234",
-    "SPANR236",
-    "SPANR236H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ARTR174"
+   ],
+   "flagged": [
+    "ARTR174"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    19.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "'Substitution Courses' chooses units but names no minimum"
    ]
   },
   "repeated": {
@@ -98,9 +85,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -113,120 +100,219 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "(none: the text is the UC-transferable course list, not the Spanish A.A-T section)",
+   "section_heading": "Spanish, Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 10,
+    "max": 19
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Distinguish the cultural and linguistic diversity of the Spanish spoken in Latin American countries, Spain, and the U.S.",
+    "Read, analyze, and discuss a wide range of texts in Spanish, including literary works.",
+    "Demonstrate awareness of cultural, political, and social aspects of the Spanish-speaking world.",
+    "Communicate orally and in writing at the Intermediate-High level of proficiency as stated by the American Council on the Teaching of Foreign Languages (ACTFL)."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART R174H",
-    "why": "appears only in the UC-transferable Art course list, not as a Spanish A.A-T requirement"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "SPAN R100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN R110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN R200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN R220",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN R220H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN R210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN R230",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN R230H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHST R101",
-    "why": "appears only in the UC-transferable Chicano Studies course list, not as a program requirement"
+    "name": "Substitution Courses",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN R234",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST R101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST R109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST R107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST R107",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART R174H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "CHST R107",
-    "why": "appears only in the UC-transferable Chicano Studies course list, not as a program requirement"
-   },
-   {
-    "code": "HIST R107",
-    "why": "appears only in the UC-transferable History course list, not as a program requirement"
-   },
-   {
-    "code": "HIST R109",
-    "why": "appears only in the UC-transferable History course list, not as a program requirement"
-   },
-   {
-    "code": "HIST R126",
-    "why": "appears only in the UC-transferable History course list, not as a program requirement"
-   },
-   {
-    "code": "SPAN R100",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R110",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R200",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R210",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R220",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R220H",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R230",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R230H",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R232",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R232H",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R234",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R236",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN R236H",
-    "why": "not in the text"
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SPAN R232",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN R232H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN R236",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN R236H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST R126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no units beside individual courses; only block totals (Core 16, List A 3) are printed, so course units are null.",
+   "Substitution Courses apply only to students who do not have a minimum of 16 units in Core courses; the page states no minimum, so the block is recorded as choose_units with minimum null. Reviewer should check how substitution units count toward the 16-unit core.",
+   "CHST/HIST R107 is a cross-listed course recorded as CHST R107 with HIST R107 as an alternative.",
+   "ART R174 (non-honors Latin American Art) is not in the closed list; recorded as a catalog addition with ART R174H as its alternative.",
+   "Page prints Total Required Major Units 19, Cal-GETC 34, Double Counted Units -3-12, Free Electives Required 10-19, and Total Units Required for AA-T Degree 60. Free electives recorded in degree_elective_units.",
+   "Section heading taken from the navigation entry 'Spanish, Associate in Arts for Transfer'; the requirements tab prints no heading of its own."
+  ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Early Childhood Education Site Supervisor",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/early-childhood-education/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/early-childhood-education/early-childhood-ed-site-supervisor-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7752,
+  "input_tokens": 7746,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7752,
-    "output_tokens": 629,
+    "input_tokens": 7746,
+    "output_tokens": 919,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 629,
+  "output_tokens": 919,
   "output_tokens_details": {
-   "thinking_tokens": 191
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04359,
- "ms": 6980,
- "seconds": 7.3,
+ "cost_usd": 0.04936,
+ "ms": 8071,
+ "seconds": 8.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "ECER115",
-    "ECER116",
-    "ECER117"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -65,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    8.0,
+    8.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    8.0,
+    8.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 10,
    "courses": 0,
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -99,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Early Childhood Education Site Supervisor Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 8,
+    "max": 8
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,30 +121,62 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Interpret best and promising teaching and care practices as it relates to the history of Early Childhood Education, range of delivery systems, program types and philosophies and ethical standards.",
+    "Design, implement and evaluate environments and activities that support positive developmental play and learning outcomes for all young children.",
+    "Critique strategies that support and empower families through respectful, reciprocal relationships to involve all families in their children’s development and learning.",
+    "Critically assess community support services and agencies that are available to families and how those services impact the relationship between children and families.",
+    "Demonstrate systematic observation methods to provide data to assess the impact of the environment, interactions and curriculum on all domains of children’s learning and development.",
+    "Analyze major developmental milestones for children from conception through adolescence in the areas of physical, psychosocial, cognitive, and language development using standard research methodologies.",
+    "Differentiate characteristics of typical and atypical development at various stages.",
+    "Apply effective guidance and interaction strategies that support all children’s social learning, identity and self-confidence.",
+    "Demonstrate effective practices in adult supervision including assigning duties, monitoring performance, and frequent constructive evaluation.",
+    "Design, implement, and evaluate professional managerial documents including job descriptions, compliance regulations, handbooks and manuals for families and staff ensuring that all program policies and procedures follow a professional code of ethics."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ECE R115",
-    "why": "Appears only as a course description; the certificate's requirements are not in the text."
-   },
-   {
-    "code": "ECE R116",
-    "why": "Appears only as a course description; the certificate's requirements are not in the text."
-   },
-   {
-    "code": "ECE R117",
-    "why": "Appears only as a course description; the certificate's requirements are not in the text."
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE R115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE R116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE R117",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text holds only part of the course descriptions list (ECE R112 through part of ECE R119). It has no section for the Early Childhood Education Site Supervisor Certificate of Achievement, so no heading, requirement blocks, total, outcomes or careers could be recorded. section_heading is left empty for that reason.",
-   "The program section should be found elsewhere on the source page and read for the requirements.",
-   "The catalog prints ECE R117's title as 'Adult Supervision Mentor/Teacher'. The state file stores it as 'Adult Supervision/Mentor Teacher'."
+   "The page's heading is not printed in the extracted text; section_heading is inferred from the program title and award.",
+   "The certificate requires an earned A.S. in Early Childhood Studies or AS-T in Early Childhood Education as a prerequisite; those degree courses are not part of this certificate's 8 units.",
+   "The outcomes list appears to cover broader ECE program outcomes, with only the last two specific to site supervision. It is recorded as printed on this award's outcomes tab."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

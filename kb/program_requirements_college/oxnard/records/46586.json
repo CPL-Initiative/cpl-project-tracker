@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Sports, Fitness, and Recreation Management",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/sports-fitness-and-recreation-management-as/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/sports-fitness-and-recreation-management-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9560,
+  "input_tokens": 8320,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9560,
-    "output_tokens": 2071,
+    "input_tokens": 8320,
+    "output_tokens": 2027,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,55 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2071,
+  "output_tokens": 2027,
   "output_tokens_details": {
-   "thinking_tokens": 746
+   "thinking_tokens": 419
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07966,
- "ms": 17240,
- "seconds": 17.6,
+ "cost_usd": 0.07382,
+ "ms": 15518,
+ "seconds": 15.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 25,
    "listed": 25,
-   "share": 0.0,
-   "missing": [
-    "BUSR120",
-    "BUSR121",
-    "BUSR135",
-    "HEDR102",
-    "HEDR104",
-    "HISTR124",
-    "KINR100",
-    "KINR101",
-    "KINR110",
-    "KINR120A",
-    "KINR121A",
-    "KINR123A",
-    "KINR124A",
-    "KINR148",
-    "KINR162A",
-    "KINR163A",
-    "KINR164A",
-    "KINR165A",
-    "KINR170A",
-    "KINR199",
-    "KINR201",
-    "KINR202",
-    "KINR203",
-    "KINR204",
-    "KINR205"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -87,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    16.0,
+    16.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -121,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Requirements (Associate in Science in Sports, Fitness, and Recreation Management; no Certificate of Achievement section in the text)",
+   "section_heading": "Sports, Fitness, and Recreation Management (Certificate of Achievement)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -146,120 +121,222 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate leadership, organization, and communication skills to support daily operations, programs, and services in sports, fitness, and recreation environments.",
+    "apply basic principles of event coordination, facility management, marketing, and customer service to assist with program delivery in sport, fitness, and community recreation settings.",
+    "exhibit professional conduct, teamwork, and ethical practices while supporting inclusive recreation and fitness services for diverse populations."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUS R120",
-    "why": "named only in the A.S. section (Required Core)"
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "KIN R110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS R120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BUS R121",
-    "why": "named only in the A.S. section (Required Core)"
-   },
-   {
-    "code": "BUS R135",
-    "why": "named only in the A.S. section (List A)"
-   },
-   {
-    "code": "HED R102",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "HED R104",
-    "why": "named only in the A.S. section (List A)"
-   },
-   {
-    "code": "HIST R124",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R100",
-    "why": "named only in the A.S. section (Required Core)"
-   },
-   {
-    "code": "KIN R101",
-    "why": "named only in the A.S. section (List A)"
-   },
-   {
-    "code": "KIN R110",
-    "why": "named only in the A.S. section (Required Core)"
-   },
-   {
-    "code": "KIN R120A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R121A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R123A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R124A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R148",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R162A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R163A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R164A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R165A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R170A",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R199",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R201",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R202",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R203",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R204",
-    "why": "named only in the A.S. section (List B)"
-   },
-   {
-    "code": "KIN R205",
-    "why": "named only in the A.S. section (List B)"
+    "name": "Complete a minimum of 7 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS R121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS R135",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R199",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R120A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R121A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R123A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R124A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R162A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R163A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R164A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R165A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R170A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R148",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED R104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST R124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN R205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source URL and text are the Associate in Science in Sports, Fitness, and Recreation Management page; the text prints no section for the Certificate of Achievement, so no blocks were recorded for the certificate.",
-   "The closed list is a subset of the A.S. major (it omits ANAT R101, PHSO R101, STAT C1000, KIN R122, KIN R140 and others), which suggests the certificate's requirements differ from the A.S.; a reviewer should locate the certificate's own catalog page.",
-   "The A.S. section prints Required Core Courses (12 units: KIN R110, KIN R100, BUS R120, BUS R121), List A: Complete Two Courses (6-10 units), List B: Complete Two Courses (2-6 units), Total Required Major Units 20-28, Oxnard College General Education 24 or Cal-GETC 34, and Total Units Required for AS Degree 60; these belong to the A.S., not the certificate.",
-   "The page's outcomes tab prints three program student learning outcomes on the A.S. page; it is not stated that the certificate shares them, so program.outcomes is left empty.",
-   "The closed list spells KIN R124A as 'Jujutsu I'; the catalog prints 'Jujitsu I'."
+   "The page heading itself is not in the extracted text; section_heading is taken from the program title and award.",
+   "The Plan of Study refers to the elective list as 'LIST A' and totals 13-19 units, which differs from the stated 16-unit certificate total; the requirements tab was used.",
+   "Catalog prints KIN R124A as 'Jujitsu I' while the state file has 'Jujutsu I'; same code.",
+   "Outcomes taken from the page's program student learning outcomes tab; they are printed beginning in lowercase with no lead-in in the extracted text."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }

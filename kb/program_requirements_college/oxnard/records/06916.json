@@ -1,0 +1,262 @@
+{
+ "college": "Oxnard College",
+ "control_number": "06916",
+ "shape": "degree",
+ "title": "Automotive Body and Fender Repair",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/automotive-body-fender-repair-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8483,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8483,
+    "output_tokens": 1981,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1981,
+  "output_tokens_details": {
+   "thinking_tokens": 663
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07355,
+ "ms": 17090,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    28.0
+   ],
+   "stated": [
+    24.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Body and Fender Repair, A.S. Degree (REQUIREMENTS tab)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 8,
+    "max": 12
+   },
+   "ge_pattern": "Oxnard College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and recognize environmental safety rules and regulations, in the following areas: shop safety, personal safety, hazardous material safety, air bag safety, respirator safety, welding safety, and power tool and equipment safety.",
+    "Demonstrate and classify areas of a vehicle needing repairs, including estimating the costs of repair and formulating proper procedures of repair.",
+    "Demonstrate and recognize steps required to repair vehicles in the auto body industry in the following areas: cosmetic repairs, painting spot repair, painting a panel repair, painting a complete car, non-structural body repairs, structural body repair, and fine detailing of a vehicle",
+    "Identify different types of collision damage and use best practices in selecting the appropriate repair process.",
+    "Develop extensive repair skills through practice to qualify for the certification tests such as ASE and I-Car  for the Auto Body and Paint career."
+   ],
+   "careers": [
+    "Auto Body and Paint"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "AB R001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB R002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB R003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB R004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB R005A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB R005B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete a minimum of one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AB R007A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB R007B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT R110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT R115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIREMENTS course list prints no units beside individual courses; core course units are taken from the Plan of Study grid on the same page (they sum to the printed 22). Elective course units are left null because the page prints only the block range 2-6.",
+   "The Plan of Study lists the elective as 'AB R007A or AT R110 or AT R115', omitting AB R007B, which the requirements list includes.",
+   "Free Electives Required 8-12 are recorded as degree_elective_units (outside the 24-28 unit major, counted toward the 60-unit degree).",
+   "The outcomes list is printed for the program as a whole on the page's outcomes tab; this award shares it.",
+   "Career entry 'Auto Body and Paint' is taken from the phrase 'for the Auto Body and Paint career' inside an outcome; reviewer may check.",
+   "Students completing Cal-GETC may use it in place of Oxnard College GE for this degree."
+  ]
+ },
+ "extracted_run": "39612119359"
+}

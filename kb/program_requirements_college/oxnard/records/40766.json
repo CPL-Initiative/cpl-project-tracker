@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Emergency Medical Technician",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/emergency-medical-technician-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7606,
+  "input_tokens": 7465,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7606,
-    "output_tokens": 568,
+    "input_tokens": 7465,
+    "output_tokens": 1069,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,59 +30,62 @@
     "model": null
    }
   ],
-  "output_tokens": 568,
+  "output_tokens": 1069,
   "output_tokens_details": {
-   "thinking_tokens": 178
+   "thinking_tokens": 247
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04178,
- "ms": 5904,
- "seconds": 6.7,
+ "cost_usd": 0.05124,
+ "ms": 9792,
+ "seconds": 10.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 1,
    "listed": 1,
-   "share": 0.0,
-   "missing": [
-    "EMTR109"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "EMTR169"
+   ],
+   "flagged": [
+    "EMTR169"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    11.5,
+    11.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    11.5,
+    11.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -97,15 +100,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Credit Courses",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 11.5,
+    "max": 11.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -122,22 +125,55 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply scientific knowledge in providing prehospital and emergency medical care",
+    "Use effective communication and interpersonal skills with patients and other health care workers",
+    "Operate within the roles of an entry level provider of care and contributor to the EMT profession",
+    "Demonstrate and foster high standards of Prehospital and Emergency Medical practice in skill performance and patient advocacy",
+    "Provide competent and safe care in a variety of settings to a group of patients with diverse needs across the life span by demonstrating knowledgeable decision making and judgment based on critical thinking, clinical competence, accountability and collaboration with the patient and health care team",
+    "To promote the personal and professional growth, health and success of each student",
+    "To promote the concept of lifelong learning, including the pursuit of advanced degrees and advanced practice in the health field",
+    "To prepare graduates who are eligible to seek licensure as EMTs and that meet the expectations of the EMS Community"
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "EMT R109",
-    "why": "Appears only as a course description under the COURSES tab; the text prints no requirements section for this certificate."
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EMT R109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT R169",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text holds only the COURSES tab (credit course descriptions for EMT R069, EMT R109, EMT R169); no program section, requirements list, total, outcomes or careers for the Emergency Medical Technician Certificate of Achievement appear. The program tab was likely not captured; a reviewer should check the live page.",
-   "Careers mentioned in the EMT R109 course description (firefighters, peace officers) were not recorded because they come from a course description, not the program section.",
-   "EMT R169 (8.5 units) is not in the closed list and may be the certificate's core course, but no requirements text confirms that, so it is not placed."
+   "The extracted text does not include the page's program title heading; section_heading is the requirements tab name. The page URL indicates the Emergency Medical Technician Certificate of Achievement.",
+   "EMT R169 (8.5 units) is required by the catalog but is not on the closed list; recorded as a catalog addition.",
+   "Total Units 11.5 as printed matches the sum of the two required courses.",
+   "Outcomes are taken from the page's program student learning outcomes tab, which applies to this program as a whole. Some entries read as program goals ('To promote...', 'To prepare...') and are copied as printed.",
+   "The final outcome mentions eligibility for licensure as EMTs. It was not recorded as a career because it appears within an outcome rather than in a program description or careers section."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "39612119359"
 }
