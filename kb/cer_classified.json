@@ -50,6 +50,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "ADJUS 23 Principles and Procedures of the Justice System": {
+   "raw_title": "ADJUS 23 Principles and Procedures of the Justice System",
+   "unified_title": "Principles and Procedures of the Justice System",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.93,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Course code stripped; joins the existing house family. The issuer is CCC because the CPL type is Credit By Exam.",
+   "rules": "575c290d755b",
+   "hints": "359c950fa1",
+   "asked": "2026-10-21"
+  },
+  "ADJUS 25 Community Relations": {
+   "raw_title": "ADJUS 25 Community Relations",
+   "unified_title": "Community Relations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Course code stripped; joins the existing house family. The issuer is CCC because the CPL type is Credit By Exam.",
+   "rules": "575c290d755b",
+   "hints": "e7e40608ef",
+   "asked": "2026-10-21"
+  },
   "AGBUS 015: Computer Application to Agriculture": {
    "raw_title": "AGBUS 015: Computer Application to Agriculture",
    "unified_title": "Agricultural Computer Applications",
@@ -9938,6 +9974,42 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Credit by Exam for ADJUS 21 Introduction to Administration of Justice": {
+   "raw_title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+   "unified_title": "Introduction to Administration of Justice",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.93,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint 'for ADJUS 21 ...' was set aside because it kept a dangling word and the course code. The mechanism and code are stripped, and the title joins the house family.",
+   "rules": "575c290d755b",
+   "hints": "c03621839f",
+   "asked": "2026-10-21"
+  },
+  "Credit by Exam for ADJUS 22 Concepts of Criminal Law": {
+   "raw_title": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+   "unified_title": "Concepts of Criminal Law",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.93,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint was set aside because it kept a dangling 'for' and the course code. The title joins the house family 'Concepts of Criminal Law'.",
+   "rules": "575c290d755b",
+   "hints": "f902383ed3",
+   "asked": "2026-10-21"
+  },
   "Credit by Exam: Introduction to Criminal Justice": {
    "raw_title": "Credit by Exam: Introduction to Criminal Justice",
    "unified_title": "Introduction to Criminal Justice",
@@ -14640,6 +14712,77 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Industry for CIS 66": {
+   "raw_title": "Industry for CIS 66",
+   "unified_title": "Networking Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "This IC-typed exhibit names only a course; the title comes from the catalog course-title hint. The actual industry cert (possibly CompTIA Network+) is unnamed, so the CCC issuer is provisional and needs review.",
+   "rules": "575c290d755b",
+   "hints": "ef0b344657",
+   "asked": "2026-10-21"
+  },
+  "Industry for CNT 52": {
+   "raw_title": "Industry for CNT 52",
+   "unified_title": "Networking Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "Course-only IC exhibit; the catalog title matches CIS 66, so the two are joined. The industry cert is unnamed, so the issuer is provisional.",
+   "rules": "575c290d755b",
+   "hints": "ef0b344657",
+   "asked": "2026-10-21"
+  },
+  "Industry for CNT 68": {
+   "raw_title": "Industry for CNT 68",
+   "unified_title": "Digital Forensics Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Course-only IC exhibit; the catalog title matches a house family. The underlying industry cert is unnamed, so the issuer is provisional.",
+   "rules": "575c290d755b",
+   "hints": "9e1c1c186a",
+   "asked": "2026-10-21"
+  },
+  "Industry for CNT 7285": {
+   "raw_title": "Industry for CNT 7285",
+   "unified_title": "CompTIA Cloud+",
+   "issuing_agency": "CompTIA",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "brand-family",
+    "issuer-issues-the-card",
+    "Rule 8c"
+   ],
+   "_notes": "The catalog course title 'Cloud Infrastructure: CompTIA Cloud+ Certification' names the cert, and the CPL type is Industry Certification. It is therefore joined to the CompTIA Cloud+ family with CompTIA as issuer, replacing the CCC issuer from the hint.",
+   "rules": "575c290d755b",
+   "hints": "2863b1a041",
+   "asked": "2026-10-21"
+  },
   "Industry for EMS 10": {
    "raw_title": "Industry for EMS 10",
    "unified_title": "Paramedic Theory 1",
@@ -15735,6 +15878,24 @@
    "_notes": "Joined house family Cisco IT Essentials; unnamed high school, Cisco kept as real issuer; alternative is Local High School.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "JOBTRAIN PWASC Property Management Training Program": {
+   "raw_title": "JOBTRAIN PWASC Property Management Training Program",
+   "unified_title": "Property Management",
+   "issuing_agency": "JobTrain",
+   "training_agency": "JobTrain",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "local-trainer-is-agency",
+    "Rule 1",
+    "Rule 5f"
+   ],
+   "_notes": "JobTrain, a Bay Area workforce nonprofit, was stripped from the title and treated as issuer and trainer. PWASC is an unidentified partner acronym that may be the true issuer, so this needs review.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-21"
   },
   "Juvenile Corrections Training": {
    "raw_title": "Juvenile Corrections Training",
@@ -17782,6 +17943,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements": {
+   "raw_title": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+   "unified_title": "FAA Private Pilot Ground School",
+   "issuing_agency": "Federal Aviation Administration (FAA)",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "brand-family",
+    "mechanism-collapses",
+    "Rule 8c"
+   ],
+   "_notes": "The evidence is knowledge-test and ground-school completion, not the full Private Pilot Certificate. As a narrower competency it joins the FAA Private Pilot Ground School family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-21"
+  },
   "Peace Officer Standards and Training (POST) Basic Certificate": {
    "raw_title": "Peace Officer Standards and Training (POST) Basic Certificate",
    "unified_title": "POST Basic Academy",
@@ -18050,6 +18229,41 @@
    "_notes": "Hint mended: the mechanism phrase and the 'Arts -' discipline prefix were dropped. The content matches C-ID ARTS 100 (2-D Foundations); verify the alignment of the Napa course.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Portfolio for BUSN 20": {
+   "raw_title": "Portfolio for BUSN 20",
+   "unified_title": "International Business",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint 'for BUSN 20' was set aside as a dangling-word and course-code proposal. The catalog course title is used instead.",
+   "rules": "575c290d755b",
+   "hints": "8ee3c89327",
+   "asked": "2026-10-21"
+  },
+  "Portfolio for BUSN 52": {
+   "raw_title": "Portfolio for BUSN 52",
+   "unified_title": "Business Communication",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog title 'Business Communications' is joined to the CCC house family 'Business Communication', since it is the same course competency. The cx hint was set aside.",
+   "rules": "575c290d755b",
+   "hints": "f657204efa",
+   "asked": "2026-10-21"
   },
   "Portfolio for ENG 19A": {
    "raw_title": "Portfolio for ENG 19A",

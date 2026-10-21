@@ -1,0 +1,245 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-21T13-18-47Z",
+ "run_id": "39606370359",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "575c290d755b",
+ "cohorts": [
+  "cer-procedure-brand-family@bot",
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot",
+  "cer-procedure-statewide-catalog@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::ADJUS 57 Report Writing for Public Safety Personnel",
+   "field": "unified_title_assignment",
+   "value": "Report Writing for Public Safety Personnel",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADJUS 57 Report Writing for Public Safety Personnel",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Administration of Justice",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+   "field": "unified_title_assignment",
+   "value": "Concepts of Criminal Law",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Private Pilot Certificate",
+   "field": "unified_title_assignment",
+   "value": "FAA Private Pilot Certificate",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Private Pilot Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Fire Inspector 1 Certificate",
+   "field": "unified_title_assignment",
+   "value": "Fire Inspector I",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Fire Inspector 1 Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Firefighter 1 Certificate",
+   "field": "unified_title_assignment",
+   "value": "Firefighter 1",
+   "reviewer_email": "cer-procedure-statewide-catalog@bot",
+   "procedure": "statewide-catalog"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Firefighter 1 Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-statewide-catalog@bot",
+   "procedure": "statewide-catalog"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+   "field": "unified_title_assignment",
+   "value": "FAA Private Pilot Ground School",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 20",
+   "field": "unified_title_assignment",
+   "value": "International Business",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 20",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::ADJUS 57 Report Writing for Public Safety Personnel",
+   "field": "unified_title_assignment",
+   "value": "Report Writing for Public Safety Personnel",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ADJUS 57 Report Writing for Public Safety Personnel",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Administration of Justice",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+   "field": "unified_title_assignment",
+   "value": "Concepts of Criminal Law",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Private Pilot Certificate",
+   "field": "unified_title_assignment",
+   "value": "FAA Private Pilot Certificate",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Private Pilot Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Fire Inspector 1 Certificate",
+   "field": "unified_title_assignment",
+   "value": "Fire Inspector I",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Fire Inspector 1 Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Firefighter 1 Certificate",
+   "field": "unified_title_assignment",
+   "value": "Firefighter 1",
+   "reviewer_email": "cer-procedure-statewide-catalog@bot",
+   "procedure": "statewide-catalog"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Firefighter 1 Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-statewide-catalog@bot",
+   "procedure": "statewide-catalog"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+   "field": "unified_title_assignment",
+   "value": "FAA Private Pilot Ground School",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 20",
+   "field": "unified_title_assignment",
+   "value": "International Business",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 20",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
