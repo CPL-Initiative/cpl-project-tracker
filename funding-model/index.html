@@ -58,6 +58,9 @@
    are defined only where this page's own chrome and the Sierra drawer read them. */
 .masthead, .fs-sra-drawer, .fs-sra-backdrop{
   --seal-blue:#002F6D; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
+  /* The drawer paints the reader's question white on seal blue with
+     --on-seal; undefined, it fell back to body ink, navy on navy. */
+  --on-seal:#FFFFFF;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -439,8 +442,10 @@ section[hidden], #contents[hidden]{display:none}
                   aria-describedby="pdf-note">PDF</button>
           <!-- The version, in small type after PDF (Sam, 2026-10-09: "cut
                Version and just use Ver: 10/9/26 -- It doesn't need a chip",
-               then "Put the Ver next to pdf"). -->
-          <span class="ver"><abbr title="Version">Ver</abbr>: <span id="x-version">8/31/26</span></span>
+               then "Put the Ver next to pdf"). 2026-10-21: "As of: 10/21/2026
+               Ver. 3" — the last save's date and the scenario's number, both
+               painted from the live config. -->
+          <span class="ver">As of: <span id="x-version">8/31/2026</span> <abbr title="Version">Ver.</abbr> <span id="x-scenario-no">1</span></span>
         </div>
       </div>
     </div>
@@ -976,12 +981,26 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   };
   // The masthead identity tags come from the engine too — the version the tab
   // prints and the scenario this browser has selected — never typed here.
-  // "Ver: 10/9/26" (Sam, 2026-10-09): the model's version date, month/day/year,
-  // without the ".N" a sub-revision carries.
-  if (D.model_version) {
-    var vm = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(D.model_version));
-    setText("x-version", vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1].slice(2) : String(D.model_version));
-  }
+  // "As of: 10/21/2026 Ver. 3" (Sam, 2026-10-21; was "Ver: 10/9/26"): the
+  // date the shared config was last saved, in Pacific time, and the number of
+  // the scenario this page shows. Before the live config loads, or offline,
+  // the date falls back to the model's version date.
+  (function () {
+    var asOf = "";
+    var t = D.saved_at ? new Date(D.saved_at) : null;
+    if (t && !isNaN(t.getTime())) {
+      try { asOf = t.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles", month: "numeric", day: "numeric", year: "numeric" }); }
+      catch (e) { asOf = (t.getMonth() + 1) + "/" + t.getDate() + "/" + t.getFullYear(); }
+    } else if (D.model_version) {
+      var vm = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(D.model_version));
+      asOf = vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1] : String(D.model_version);
+    }
+    if (asOf) setText("x-version", asOf);
+    if (D.scenario) {
+      var sn = /(\d+)\s*$/.exec(String(D.scenario));
+      setText("x-scenario-no", sn ? sn[1] : String(D.scenario));
+    }
+  })();
   // The introduction video is the published scenario's film, always
   // (funding_in_motion_s2, built from the published scenario whatever its
   // name). It used to switch per scenario, and the first paint, which runs
