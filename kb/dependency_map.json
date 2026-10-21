@@ -1622,7 +1622,6 @@
      "tabs": [
       "canonical-subj4",
       "commons",
-      "cpl-pathways",
       "cr-reference",
       "credential-reference",
       "program-requirements"
@@ -1645,7 +1644,6 @@
      "how": "url",
      "line": 2547,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -5447,16 +5445,6 @@
      ]
     },
     {
-     "id": "module:cpl_pathways.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 3113,
-     "tabs": [
-      "cpl-pathways"
-     ]
-    },
-    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -8861,7 +8849,6 @@
      "how": "literal",
      "line": 126,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -15326,7 +15313,6 @@
      "how": "seeded",
      "line": 0,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -16686,16 +16672,6 @@
   },
   "file:program_requirements.js": {
    "consumers": [
-    {
-     "id": "module:cpl_pathways.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 3114,
-     "tabs": [
-      "cpl-pathways"
-     ]
-    },
     {
      "id": "page:CPL_Dashboard.html",
      "kind": "page",
@@ -21945,7 +21921,6 @@
      "how": "literal",
      "line": 742,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -22034,7 +22009,6 @@
      "how": "literal",
      "line": 1654,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -23590,7 +23564,6 @@
      "how": "literal",
      "line": 667,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -23914,7 +23887,6 @@
      "how": "literal",
      "line": 780,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -23958,7 +23930,6 @@
      "how": "literal",
      "line": 470,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -23988,7 +23959,6 @@
      "how": "literal",
      "line": 846,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     }
@@ -24035,7 +24005,6 @@
      "how": "literal",
      "line": 632,
      "tabs": [
-      "cpl-pathways",
       "program-requirements"
      ]
     },
@@ -24711,7 +24680,6 @@
   "commons_progress.js": [
    "canonical-subj4",
    "commons",
-   "cpl-pathways",
    "cr-reference",
    "credential-reference",
    "program-requirements"
@@ -24794,7 +24762,6 @@
    "pipeline"
   ],
   "program_requirements.js": [
-   "cpl-pathways",
    "program-requirements"
   ],
   "raci.js": [

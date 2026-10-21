@@ -201,6 +201,10 @@ const DEFAULT_GATES = [
   // CPL Pathways reads both since Sheet 65 card 2 (S367); live gates read 2026-10-11.
   { tbl: "program_requirement_records", rls_enabled: true, select_gate: "checked | is_allowed_reviewer()", policy_count: 3 },
   { tbl: "program_source_registry", rls_enabled: true, select_gate: "true", policy_count: 3 },
+  // CPL Pathways' college line reads these three (2026-10-21); each is an anon read, policy `true`.
+  { tbl: "coci_college_programs", rls_enabled: true, select_gate: "true", policy_count: 1 },
+  { tbl: "coci_program_courses", rls_enabled: true, select_gate: "true", policy_count: 1 },
+  { tbl: "course_outcomes", rls_enabled: true, select_gate: "true", policy_count: 1 },
   { tbl: "legacy_open", kind: "table", rls_enabled: false, select_gate: null, policy_count: 0 },
   { tbl: "map_contact_gaps", kind: "view", rls_enabled: false, select_gate: null, policy_count: 0 },
   { tbl: "map_credential_student_rollup", kind: "matview", rls_enabled: false, select_gate: null, policy_count: 0 },

@@ -3104,18 +3104,18 @@
     catch (e) { return d.toISOString().slice(0, 10); }
   }
   var STAT_SOURCE = { course_outline: "course outlines", catalog: "the catalog" };
-  /* A figure opens its list on the Program Requirements tab: the Records view, picked to the college. */
+  /* A figure opens its list on the Program Requirements tab: the Records view, picked to the college.
+     That tab loads its own module; this one never does (it would read as reading that tab's tables).
+     Loaded already, its goTo runs at once; otherwise the request waits for the tab's first activation,
+     which reads it (window.CPL_PROGRAM_REQUIREMENTS_GOTO). */
   function openCollegeRecords(college, rshow) {
     var T = window.CPL_TABS;
     if (!T || typeof T.navigate !== "function") return;
+    var to = { view: "records", rcollege: college, rshow: rshow, sec: "records:find" };
+    var M = window.CPL_PROGRAM_REQUIREMENTS;
+    if (M && typeof M.goTo === "function") { T.navigate("program-requirements"); M.goTo(to); return; }
+    window.CPL_PROGRAM_REQUIREMENTS_GOTO = to;
     T.navigate("program-requirements");
-    if (typeof T.loadScript !== "function") return;
-    T.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", function () {
-      T.loadScript("program_requirements.js", "CPL_PROGRAM_REQUIREMENTS", function () {
-        var M = window.CPL_PROGRAM_REQUIREMENTS;
-        if (M && typeof M.goTo === "function") M.goTo({ view: "records", rcollege: college, rshow: rshow, sec: "records:find" });
-      });
-    });
   }
   function paintCollegeStatus(node, college, s) {
     function go(words, rshow) {
