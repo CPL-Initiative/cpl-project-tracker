@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-411 document(s).
+412 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 441 | [Session 441 handoff: the program requirements harvest reaches Santa Monica, Irvine Valley and West LA; Taft 38661 removed](../session_441_handoff.md) | 2026-10-21 |
 | 440 | [Session 440 handoff: the funding page's JST counts and help, the two-priority film, then the CLAUDE.md pass](../session_440_handoff.md) | 2026-10-20 |
 | 439 | [Session 439 handoff: the Annual Goals table reworked and live, Grok parked on the district card, the Course Progress view next](../session_439_handoff.md) | 2026-10-20 |
 | 438 | [Session 438 handoff: the CR Progress view live, the C-ID site found, Sheet 108 answered, the auto-mark rule waiting on Sam's word](../session_438_handoff.md) | 2026-10-20 |

@@ -1,0 +1,809 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "19709",
+ "shape": "certificate",
+ "title": "Film & TV  Production Crafts",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12158,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12158,
+    "output_tokens": 6258,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6258,
+  "output_tokens_details": {
+   "thinking_tokens": 1774
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.17379,
+ "ms": 47614,
+ "seconds": 48.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 20,
+   "share": 0.75,
+   "missing": [
+    "FLMPRD101",
+    "FLMPRD105",
+    "FLMPRD129",
+    "FLMPRD145A",
+    "FLMPRD145B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "CINEMA107",
+    "CINEMA14",
+    "CINEMA3",
+    "CINEMA4",
+    "CINEMA5",
+    "CINEMA6",
+    "CINEMA9",
+    "FLMPRD110A",
+    "FLMPRD110B",
+    "FLMPRD189",
+    "FLMPRD190",
+    "FLMPRD200",
+    "FLMPRD202",
+    "FLMPRD203"
+   ],
+   "flagged": [
+    "CINEMA107",
+    "CINEMA14",
+    "CINEMA3",
+    "CINEMA4",
+    "CINEMA5",
+    "CINEMA6",
+    "CINEMA9",
+    "FLMPRD110A",
+    "FLMPRD110B",
+    "FLMPRD189",
+    "FLMPRD190",
+    "FLMPRD200",
+    "FLMPRD202",
+    "FLMPRD203"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    10.0,
+    24.0
+   ],
+   "stated": [
+    23.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 10.0-24.0; the catalog states 23.0-29.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W019709D (Certificate of Achievement in Film/TV Production Crafts)",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Effectively communicate both verbally and in writing with a variety of crewmembers using entertainment industry terminology, records and forms.",
+    "Understand all aspects of the production of a film, television show or stage performance from script-to-screen: pre-production to postproduction.",
+    "Apply technological principals in the use of camera, grip, lighting and sound equipment.",
+    "Apply basic mathematics and graphic principals as used in motion picture, television and stage production.",
+    "Learn the proper use of tools, equipment, and safety apparel. The proper procedures for safety in and around the set.",
+    "Demonstrate proper work ethics for independent and collectively working with crew and management in order to maximize efficiency in the workplace.",
+    "Search for career opportunities regularly and effectively network for work with crew on future productions.",
+    "Use proper set etiquette; always be punctual; maintain a positive attitude."
+   ],
+   "careers": [
+    "art department",
+    "grip",
+    "camera",
+    "editing",
+    "filmmaking",
+    "set lighting",
+    "entertainment industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track A: Art Department",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 101C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 103A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 110A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 110B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track B: Grip",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 101C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 103A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 115A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 115B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track C: Camera",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 101C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track C: Camera - Choose One from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 115A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 140A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track C: Camera - Choose One from the following (workshop)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 189",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track D: Editing",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track D: Editing - Choose Two from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track D: Editing - Choose One from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 189",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track E: Lighting",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 101C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 103A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 140A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 140B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track F: Film Maker",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 101C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track F: Film Studies Elective (choose one from the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track F: Technical Expertise Elective (choose one from the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 103A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track F: Specialized Skills Elective (choose one from the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 110A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 115A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 140A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Track F: Practicum (choose one from the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 189",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLM PRD 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Work Experience",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FLM PRD 901",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLM PRD 911",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FLM PRD 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "FLM PRD 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "FLM PRD 129",
+    "why": "not in the text"
+   },
+   {
+    "code": "FLM PRD 145A",
+    "why": "not in the text (catalog lists FLM PRD 110A Set Dressing, Painting and Propmaking Crafts Level 1 instead)"
+   },
+   {
+    "code": "FLM PRD 145B",
+    "why": "not in the text (catalog lists FLM PRD 110B Set Dressing, Painting and Propmaking Crafts Level 2 instead)"
+   }
+  ],
+  "notes": [
+   "The program's title heading is not in the extracted text (section begins with 'ACADEMIC PROGRAM CODE: W019709D' on page 106); section_heading built from that line and the description.",
+   "'Complete One Track from Below 16-22 units': the track total is printed only for the track choice as a whole, so no per-block stated is recorded. All track blocks share option_group 'Track'; blocks whose names begin with the same track letter (e.g., 'Track C: Camera' and its two 'Choose One' blocks) together make up one track option.",
+   "Total 23-29 = core 4 + track 16-22 + work experience 3.",
+   "Work Experience: students repeat FLM PRD 901 and 911 to reach the 3-unit minimum.",
+   "Catalog units differ from the state file for several courses: FLM PRD 120 (catalog 4, state 6), FLM PRD 121 (catalog 4, state 1), FLM PRD 125 (catalog 3, state 6), FLM PRD 126 (catalog 4, state 3). Catalog titles also differ (e.g., FLM PRD 101C 'Production Safety').",
+   "FLM PRD 110A/110B may be renumbered versions of state-list FLM PRD 145A/145B; reviewer should check.",
+   "Outcome 2 hyphenated across a line break ('script-to-/screen') was joined as 'script-to-screen'."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

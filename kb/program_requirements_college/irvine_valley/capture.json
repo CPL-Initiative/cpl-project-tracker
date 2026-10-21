@@ -1,0 +1,1547 @@
+{
+ "college": "Irvine Valley College",
+ "catalog_url": "https://irvine.curriqunet.com/Catalog/iq/48953",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 171,
+ "with_closed_list": 146,
+ "started": "2026-10-21T03:38:56Z",
+ "curriqunet": {
+  "catalog": 4690,
+  "view_prefix": "https://irvine.curriqunet.com/Catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees & Certificates"
+  ],
+  "nodes_read": 19,
+  "calls": 45,
+  "entries": 611,
+  "stopped_at_cap": false,
+  "same_title_entries": 374,
+  "entries_read": 237
+ },
+ "pages_read": 237,
+ "banner_h1": null,
+ "loads": 994,
+ "seconds": 4520.7,
+ "found": 144,
+ "by_method": {
+  "no_closed_list": 25,
+  "not_found": 1,
+  "page_claimed": 1,
+  "sitemap_page": 144
+ },
+ "shared_pages": {
+  "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51442": [
+   "14048",
+   "45011"
+  ],
+  "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51457": [
+   "30627",
+   "43027"
+  ],
+  "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51477": [
+   "31974",
+   "41551"
+  ],
+  "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51436": [
+   "32863",
+   "45857"
+  ],
+  "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51598": [
+   "46291",
+   "46292"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "32814",
+   "title": "ENGLISH",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51417",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.391,
+    "body": 0.391,
+    "content": 0.391,
+    "net": 9,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 9 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5362,
+     "content": 5362,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04177",
+   "title": "Sociology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51426"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 41,
+  "0.8-1.0": 38,
+  "1.0": 65
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 144,
+  "list": [
+   {
+    "control_number": "04127",
+    "title": "English-Literature",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51420",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04130",
+    "title": "Fitness Professional",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51408",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04143",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51401",
+    "coverage": 0.65,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04154",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51475",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04157",
+    "title": "Supervision",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51340",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04162",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51377",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04164",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51373",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04168",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51449",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04171",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51365",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04173",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51362",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04178",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51345",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04179",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51458",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04180",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51336",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04181",
+    "title": "Technical Theater",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51337",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04182",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51359",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10261",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51504",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10262",
+    "title": "Administration of Justice: Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51501",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10263",
+    "title": "Administration of Justice: Supervision",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51499",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10264",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51487",
+    "coverage": 0.826,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10265",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51485",
+    "coverage": 0.913,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10266",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51482",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10269",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51471",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10277",
+    "title": "Computer-Aided Design AS",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51452",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10282",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51717",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10283",
+    "title": "Electronic Technology",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51434",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10285",
+    "title": "English-Creative Writing",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51421",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10295",
+    "title": "Health Sciences",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51397",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10304",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51478",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12637",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51349",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14048",
+    "title": "Digital Media Art",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51442",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16848",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51484",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18362",
+    "title": "Emphasis in the Arts",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51425",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18363",
+    "title": "Emphasis in Humanities",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51429",
+    "coverage": 0.768,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18364",
+    "title": "Emphasis in Natural Sciences",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51427",
+    "coverage": 0.657,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18365",
+    "title": "Emphasis in Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51426",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20818",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51503",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20819",
+    "title": "Business Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51474",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20822",
+    "title": "Supervision",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51339",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20826",
+    "title": "Electronic Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51433",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20849",
+    "title": "Administration of Justice: Law Enforcement",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51500",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20851",
+    "title": "Administration of Justice: Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51498",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30257",
+    "title": "Paralegal Studies",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51370",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30258",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51369",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30627",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51457",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30929",
+    "title": "Recycling and Resource Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51351",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31265",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51376",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31288",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51358",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31359",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51335",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31974",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51477",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31975",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51364",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31976",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51502",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32082",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51396",
+    "coverage": 0.88,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32094",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51402",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32116",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51361",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32812",
+    "title": "STUDIO ARTS",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51065",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32863",
+    "title": "ECONOMICS",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32865",
+    "title": "ANTHROPOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51486",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32875",
+    "title": "ART HISTORY",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51483",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32876",
+    "title": "SPANISH",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51344",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33679",
+    "title": "ELEMENTARY TEACHER EDUCATION",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51431",
+    "coverage": 0.677,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33784",
+    "title": "Web Authoring",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51332",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33817",
+    "title": "Web Authoring",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51333",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33818",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51496",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33852",
+    "title": "Computer Applications",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51456",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33853",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51497",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33862",
+    "title": "Computer Applications",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51455",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33863",
+    "title": "Information Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51389",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33864",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51454",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33914",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51390",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35068",
+    "title": "BIOTECHNOLOGY-LAB ASSISTANT",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51479",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35144",
+    "title": "ADULT ENGLISH AS A SECOND LANGUAGE-INTERMEDIATE",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51493",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35184",
+    "title": "GLOBAL STUDIES",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51399",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35501",
+    "title": "BIOLOGY",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51481",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36064",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51355",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36141",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51356",
+    "coverage": 0.744,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36638",
+    "title": "GLOBAL STUDIES",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51398",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36752",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51476",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38237",
+    "title": "Film and Digital Media",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51412",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38268",
+    "title": "Emphasis in Liberal Studies",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51428",
+    "coverage": 0.622,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38329",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51059",
+    "coverage": 0.517,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38508",
+    "title": "Real Estate Success",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51353",
+    "coverage": 0.743,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38509",
+    "title": "Real Estate Sales",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51354",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38914",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51422",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39220",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51381",
+    "coverage": 0.763,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39684",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51414",
+    "coverage": 0.724,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40115",
+    "title": "Stage Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51342",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40563",
+    "title": "Chinese",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51464",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40836",
+    "title": "Emphasis in Business",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51430",
+    "coverage": 0.878,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41200",
+    "title": "Live Entertainment Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51380",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41302",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51403",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41500",
+    "title": "Information Technology Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51388",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41551",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51477",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42445",
+    "title": "AMERICAN SIGN LANGUAGE (ASL)",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51491",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42470",
+    "title": "Cisco Networking (CCNA)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51462",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42473",
+    "title": "AMERICAN SIGN LANGUAGE (ASL)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51490",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42513",
+    "title": "Electrician Trainee",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51721",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42514",
+    "title": "Energy Solar Photovoltaic System Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51424",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43027",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51457",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43818",
+    "title": "English for Multilingual Professionals",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51418",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43819",
+    "title": "English for Multilingual Educators/Parents",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51419",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43839",
+    "title": "Game and Interactive Media Arts Design, Production Management",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51406",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43910",
+    "title": "Game Design and Interactive Media Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51404",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43919",
+    "title": "Chinese Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51463",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43920",
+    "title": "Japanese Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51384",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44218",
+    "title": "JAPANESE",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51385",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44219",
+    "title": "FRENCH",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51407",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44477",
+    "title": "Chemistry for UC",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50928",
+    "coverage": 0.579,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44629",
+    "title": "Spanish Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50932",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44743",
+    "title": "Piano Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50920",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44881",
+    "title": "Practical Real Estate",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50891",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44882",
+    "title": "Real Estate & Personal Finance",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51525",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44883",
+    "title": "Real Estate Investing & Management",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51524",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44922",
+    "title": "Digital Media Art",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51441",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45011",
+    "title": "DIGITAL MEDIA ART",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51442",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45463",
+    "title": "Career Paths for Multilingual Professionals",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51473",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45526",
+    "title": "Data Analytics",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51527",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45530",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51528",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45584",
+    "title": "Law and Paralegal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49231/51299/50890",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45586",
+    "title": "Law and Paralegal Studies",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49231/51299/50889",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45590",
+    "title": "Introduction To Information Technology and Cybersecurity",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51526",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45633",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51357",
+    "coverage": 0.821,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45743",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51372",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45857",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45860",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51400",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45861",
+    "title": "COMPUTER SCIENCE",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51453",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45862",
+    "title": "Studio Art",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51341",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45863",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51438",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45864",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50909",
+    "coverage": 0.829,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45869",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45870",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51346",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45901",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51382",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46041",
+    "title": "French Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50906",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46044",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50911",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46059",
+    "title": "ESL Milestone: Pathway to STEM",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50904",
+    "coverage": 0.619,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46106",
+    "title": "Insurance Agency",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50899",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46109",
+    "title": "Introduction to Computing for Professionals",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50898",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46227",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51417",
+    "coverage": 0.562,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46291",
+    "title": "Biotechnology Biomanufacturing Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51598",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46292",
+    "title": "Biotechnology Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51598",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46332",
+    "title": "Biotechnology Technician",
+    "award": "A.S. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51568",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46366",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51383",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46418",
+    "title": "Medical Assisting",
+    "award": "Noncredit program",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51681",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46566",
+    "title": "Computer-Aided Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51451",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46587",
+    "title": "Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51705",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39539599944"
+}

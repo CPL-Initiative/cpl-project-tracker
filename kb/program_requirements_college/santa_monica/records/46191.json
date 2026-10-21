@@ -1,0 +1,179 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "46191",
+ "shape": "certificate",
+ "title": "Aquaculture Technician II",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=91",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7650,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7650,
+    "output_tokens": 1383,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1383,
+  "output_tokens_details": {
+   "thinking_tokens": 600
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05826,
+ "ms": 12628,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    8.0,
+    8.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aquaculture Technician II",
+   "measure": "units",
+   "total_units": {
+    "min": 8,
+    "max": 8
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze, evaluate, and apply microbiological and genetic concepts, data, and laboratory techniques to manage the health and sustainability of aquaculture systems.",
+    "Analyze conditions for culturing aquatic species, and develop optimal strategies to maximize production, while minimizing environmental impact.",
+    "Design, justify, and communicate a business model for an aquaculture facility that integrates site selection, permitting, biosecurity, social license, production logistics (food creation/delivery/handling), and sustainable market delivery."
+   ],
+   "careers": [
+    "aquaculture industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "AQUA 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA 4",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA 5",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text begins mid-section on page 91; the program's printed heading is not in the text, so section_heading uses the program title. A reviewer should confirm the heading on the previous page.",
+   "Program Learning Outcomes are printed as one paragraph; the first outcome is joined to the lead-in 'Upon completion of the program, students will', so it is recorded without that lead-in, starting with 'analyze'. The remaining two sentences are recorded as separate outcomes.",
+   "Total of 8 units comes from 'Area of Emphasis: (8 units)' and 'Required Courses: (8 units)'.",
+   "Careers: the description names only 'the aquaculture industry' (and the 'Blue Economy') as a field of work. This was recorded as a career field; please verify.",
+   "The text following the AQUA courses (Arabic, Architecture) belongs to other programs and was not used."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

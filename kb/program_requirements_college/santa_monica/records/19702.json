@@ -1,0 +1,327 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "19702",
+ "shape": "certificate",
+ "title": "Solar Photovoltaic Installation",
+ "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=183",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11859,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11859,
+    "output_tokens": 3492,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3492,
+  "output_tokens_details": {
+   "thinking_tokens": 1510
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11728,
+ "ms": 26270,
+ "seconds": 26.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "INTARC35"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARC21",
+    "ENVRN40"
+   ],
+   "flagged": [
+    "ARC21",
+    "ENVRN40"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    14.0,
+    14.0
+   ],
+   "stated": [
+    14.0,
+    14.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Solar Photovoltaic Installation, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 14
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "students will demonstrate proficiency in basic terminology (solar radiation, solar irradiance, solar insolation, solar constant, solstice, equinox, solar altitude angle, solar azimuth angle, solar incidence angle, semiconductor, circuit, inverter).",
+    "Students will be able to explain how a solar cell converts sunlight into electrical power and how power is conditioned for use in buildings.",
+    "Students will be able to identify the five key electrical output parameters for the I-V curve.",
+    "Student will have achieved a mastery of basic computer-based systems that either assist in design of solar production equipment (computer aided design or CAD) or aid in geographic analysis of renewable resources (geographic information systems or GIS).",
+    "Students will be able to apply appropriate regulatory codes when conducting energy efficiency requirements for new and existing buildings.",
+    "Student will be proficient in conducting an energy utilization index (EUI) analysis.",
+    "Students will be able to recognize the physical properties that consume or produce energy in residential and commercial energy systems, including HVAC, lighting, and renewable energy systems."
+   ],
+   "careers": [
+    "PV installation",
+    "PV design",
+    "solar sales",
+    "repairs",
+    "maintenance",
+    "mid-to-upper level solar design",
+    "sales"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Photovoltaic Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "PV 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PV 12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Energy Efficiency Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENERGY 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Computer-Based Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARC 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 20",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "GIS 20",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Support Courses; Select 1 course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BIOL 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVRN 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVRN 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVRN 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVRN 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL SC 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "INTARC 35",
+    "why": "named only as a former code of ARC 21 (\"formerly INTARC 28A/INTARC 35\"), not as a course to take"
+   }
+  ],
+  "notes": [
+   "Read only the 'Solar Photovoltaic Installation, Certificate of Achievement' section; the Associate Degree (18 units) and the Basic Solar Photovoltaic Installation Department Certificate (8 units) are separate sections on the same page.",
+   "Program learning outcomes are printed as one paragraph; recorded one entry per sentence, with the lead-in 'Upon completion of the program,' omitted from the first sentence.",
+   "ARC 21 (catalog addition) is printed as 'formerly INTARC 28A/INTARC 35'; INTARC 35 is in the closed list, so a reviewer may wish to treat it as the same course as ARC 21. INTARC 28A is not in the closed list either.",
+   "Support course list prints cross-listed pairs (ENVRN 7/GEOG 7, ENVRN 20/PHILOS 20, ENVRN 22/POL SC 22, ENVRN 40/PSYCH 40) as separate rows; recorded each as printed. ENVRN 40 is not in the closed list (catalog addition).",
+   "Computer-Based Courses block is one choice among ARC 21, GEOG 20 or GIS 20 (GEOG 20 and GIS 20 are cross-listed).",
+   "Careers taken from the program description: 'skilled workers in photovoltaic (PV) installation, PV design, and solar sales' and 'jobs in a variety of different capacities including: PV installation, repairs, maintenance, mid-to-upper level solar design, and sales'."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

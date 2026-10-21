@@ -1,0 +1,221 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "35144",
+ "shape": "noncredit",
+ "title": "ADULT ENGLISH AS A SECOND LANGUAGE-INTERMEDIATE",
+ "award": "Noncredit program",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51493",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6387,
+    "output_tokens": 1238,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1238,
+  "output_tokens_details": {
+   "thinking_tokens": 402
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05031,
+ "ms": 16262,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "AESL503",
+    "AESL504",
+    "AESL533",
+    "AESL543"
+   ],
+   "flagged": [
+    "AESL503",
+    "AESL504",
+    "AESL533",
+    "AESL543"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Complete the following course:' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Adult English as a Second Language: Intermediate - Certificate of Competency",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use intermediate-level English and cultural awareness to communicate appropriately at school, for work, or in the community."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete the following course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AESL 504",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete two of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "AESL 503",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AESL 513",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AESL 533",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AESL 543",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AESL 563",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency; the catalog prints no hours for courses or the program, only units of 0.0 ('Units: 0.0', 'Total : 0.0'), so measure is 'units' and total_units records the printed 0.0. Reviewer may want to check hours elsewhere.",
+   "The 'Units: 0.0' printed beside the 'Complete two of the following courses' heading is recorded as that block's stated total; only AESL 513 has 0.0 printed beside it, other courses show no units.",
+   "The 'Complete the following course' block prints 'Units:' with no value.",
+   "AESL 563 is titled 'Everyday Vocabulary: Idioms & Common Phrases' in the catalog but 'Idioms in American English' in the closed list; same code.",
+   "The program has a single learning outcome printed under the summary.",
+   "The catalog page contains CSS styling text, ignored."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

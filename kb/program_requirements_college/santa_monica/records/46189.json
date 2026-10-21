@@ -1,0 +1,20 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "46189",
+ "shape": "degree",
+ "title": "Sustainable Aquaculture Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=89",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 30.3,
+ "parts": null,
+ "error": "HTTP 502: error code: 502\n",
+ "score": null,
+ "record": null,
+ "extracted_run": "39567439681"
+}

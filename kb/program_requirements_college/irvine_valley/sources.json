@@ -1,0 +1,5800 @@
+[
+ {
+  "control_number": "04127",
+  "title": "English-Literature",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HUM2",
+   "HUM3",
+   "HUM4",
+   "LIT45",
+   "LIT46",
+   "LIT46H",
+   "LIT49",
+   "LIT49H",
+   "LIT74",
+   "WR10",
+   "WR11",
+   "WR13",
+   "WR15",
+   "WR16"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51420",
+   "title": "English - Literature - A.A. Degree",
+   "h1": "English - Literature - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4252
+ },
+ {
+  "control_number": "04129",
+  "title": "Fine Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04130",
+  "title": "Fitness Professional",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "KNES106",
+   "KNES215",
+   "NUT2"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51408",
+   "title": "Fitness Professional - Certificate of Achievement",
+   "h1": "Fitness Professional - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2040
+ },
+ {
+  "control_number": "04143",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.65,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "ERTH20",
+   "GEOL1",
+   "GEOL2",
+   "GEOL23",
+   "GEOL61",
+   "GEOL69",
+   "MS20",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51401",
+   "title": "Geology - A.S. Degree",
+   "h1": "Geology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3175
+ },
+ {
+  "control_number": "04145",
+  "title": "American History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04147",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04149",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04154",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1A",
+   "CS1",
+   "MGT1",
+   "MGT104",
+   "MGT125",
+   "MGT12A",
+   "MGT135"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51475",
+   "title": "Business Management - A.S. Degree",
+   "h1": "Business Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2281
+ },
+ {
+  "control_number": "04157",
+  "title": "Supervision",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CIM1121",
+   "CIM201A",
+   "COMMC1000",
+   "MGT1",
+   "MGT102",
+   "MGT104",
+   "MGT125",
+   "MGT68"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51340",
+   "title": "Supervision - A.S. Degree",
+   "h1": "Supervision - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2310
+ },
+ {
+  "control_number": "04162",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "CS10",
+   "CS36",
+   "MATH24",
+   "MATH24H",
+   "MATH26",
+   "MATH4A",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51377",
+   "title": "Mathematics - A.S. Degree",
+   "h1": "Mathematics - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2116
+ },
+ {
+  "control_number": "04164",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3",
+   "MUS39",
+   "MUS4",
+   "MUS40",
+   "MUS42",
+   "MUS44",
+   "MUS46",
+   "MUS5",
+   "MUS50",
+   "MUS51",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS55",
+   "MUS59",
+   "MUS6"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51373",
+   "title": "Music - A.A. Degree",
+   "h1": "Music - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4246
+ },
+ {
+  "control_number": "04167",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04168",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNCE12",
+   "DNCE13",
+   "DNCE17",
+   "DNCE22",
+   "DNCE23",
+   "DNCE27",
+   "DNCE37",
+   "DNCE42",
+   "DNCE50",
+   "DNCE55",
+   "DNCE6",
+   "DNCE7",
+   "DNCE75",
+   "DNCE77",
+   "DNCE85",
+   "DNCE86",
+   "DNCE87",
+   "DNCE88",
+   "DNCE93"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51449",
+   "title": "Dance - A.A. Degree",
+   "h1": "Dance - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3717
+ },
+ {
+  "control_number": "04171",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATH4A",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51365",
+   "title": "Physics - A.S. Degree",
+   "h1": "Physics - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2265
+ },
+ {
+  "control_number": "04173",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON10",
+   "ECON10H",
+   "HLTH10",
+   "MGT10",
+   "MGT10H",
+   "POLS12",
+   "POLS12H",
+   "POLS14",
+   "POLS14H",
+   "POLS17",
+   "POLS21",
+   "POLS3",
+   "POLS30",
+   "POLS4",
+   "POLS5",
+   "POLS6",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC10",
+   "PSYC10H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51362",
+   "title": "Political Science - A.A. Degree",
+   "h1": "Political Science - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3626
+ },
+ {
+  "control_number": "04177",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 44,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04178",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1",
+   "SPAN1H",
+   "SPAN2",
+   "SPAN2H",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51345",
+   "title": "Spanish - A.A. Degree",
+   "h1": "Spanish - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2211
+ },
+ {
+  "control_number": "04179",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "COMM10",
+   "COMM106A",
+   "COMM106B",
+   "COMM106C",
+   "COMM2",
+   "COMM3",
+   "COMM30",
+   "COMM35",
+   "COMM9",
+   "COMMC1000",
+   "COMMC1000H",
+   "TA1",
+   "TA12"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51458",
+   "title": "Communication Studies - A.A. Degree",
+   "h1": "Communication Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2578
+ },
+ {
+  "control_number": "04180",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TA1",
+   "TA10",
+   "TA12",
+   "TA15",
+   "TA15A",
+   "TA15B",
+   "TA16",
+   "TA16A",
+   "TA16B",
+   "TA17",
+   "TA17A",
+   "TA17B",
+   "TA18",
+   "TA18A",
+   "TA18B",
+   "TA19",
+   "TA19A",
+   "TA19B",
+   "TA2",
+   "TA20",
+   "TA21",
+   "TA22",
+   "TA25",
+   "TA25H",
+   "TA26",
+   "TA26H",
+   "TA29H",
+   "TA3",
+   "TA35",
+   "TA40",
+   "TA41",
+   "TA42",
+   "TA43",
+   "TA44",
+   "TA45",
+   "TA46",
+   "TA47",
+   "TA49",
+   "TA52",
+   "TA61",
+   "TA63",
+   "TA64",
+   "TA65",
+   "TA7",
+   "TA71",
+   "TA72",
+   "TA73",
+   "TA74",
+   "TA75",
+   "TA76",
+   "TA8"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51336",
+   "title": "Theatre Arts - A.A. Degree",
+   "h1": "Theatre Arts - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 51,
+  "text_chars": 7121
+ },
+ {
+  "control_number": "04181",
+  "title": "Technical Theater",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "TA1",
+   "TA20",
+   "TA22",
+   "TA29",
+   "TA29H",
+   "TA40",
+   "TA41",
+   "TA42",
+   "TA43",
+   "TA44",
+   "TA45",
+   "TA46",
+   "TA47",
+   "TA49",
+   "TA52",
+   "TA53",
+   "TA54",
+   "TA61",
+   "TA63",
+   "TA64",
+   "TA65",
+   "TA71",
+   "TA72",
+   "TA73",
+   "TA74",
+   "TA75",
+   "TA76"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51337",
+   "title": "Technical Theater - A.S. Degree",
+   "h1": "Technical Theater - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4920
+ },
+ {
+  "control_number": "04182",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON10",
+   "ECON10H",
+   "HD7",
+   "MGT10",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC11",
+   "PSYC115B",
+   "PSYC13",
+   "PSYC13H",
+   "PSYC15A",
+   "PSYC2",
+   "PSYC20",
+   "PSYC3",
+   "PSYC30",
+   "PSYC32",
+   "PSYC33",
+   "PSYC37",
+   "PSYC37H",
+   "PSYC3H",
+   "PSYC3L",
+   "PSYC5",
+   "PSYC5H",
+   "PSYC6",
+   "PSYC7",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC30"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51359",
+   "title": "Psychology - A.A. Degree",
+   "h1": "Psychology - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4888
+ },
+ {
+  "control_number": "10261",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCT1121",
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "CS1",
+   "MGT1",
+   "MGT104",
+   "MGT12A",
+   "MGT12AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51504",
+   "title": "Accounting - A.S. Degree",
+   "h1": "Accounting - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2655
+ },
+ {
+  "control_number": "10262",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ105",
+   "AJ106",
+   "AJ111",
+   "AJ112",
+   "AJ13",
+   "AJ19",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ61",
+   "AJ7",
+   "AJ8"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51501",
+   "title": "Administration of Justice: Law Enforcement - A.S. Degree",
+   "h1": "Administration of Justice: Law Enforcement - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2702
+ },
+ {
+  "control_number": "10263",
+  "title": "Administration of Justice: Supervision",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ105",
+   "AJ106",
+   "AJ111",
+   "AJ112",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ61",
+   "AJ7",
+   "AJ8",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51499",
+   "title": "Administration of Justice: Supervision - A.S. Degree",
+   "h1": "Administration of Justice: Supervision - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2848
+ },
+ {
+  "control_number": "10264",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.826,
+  "codes_found": [
+   "ANTH1",
+   "ANTH1H",
+   "ANTH1L",
+   "ANTH2",
+   "ANTH2H",
+   "ANTH3",
+   "ANTH9",
+   "BIO51",
+   "BIO51H",
+   "BIO52",
+   "BIO52H",
+   "CHEM1A",
+   "CHEM1AH",
+   "CHEM1B",
+   "CHEM1BH",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51487",
+   "title": "Anthropology - A.A. Degree",
+   "h1": "Anthropology - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3387
+ },
+ {
+  "control_number": "10265",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "ART186",
+   "ART195",
+   "ART40",
+   "ART41",
+   "ART50",
+   "ART51",
+   "ART52",
+   "ART53",
+   "ART80",
+   "ART81",
+   "ART82",
+   "ART85",
+   "ART86",
+   "ART91",
+   "ARTH22",
+   "ARTH23",
+   "ARTH24",
+   "ARTH27",
+   "ARTH29",
+   "ARTH30",
+   "ARTH31"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51485",
+   "title": "Art - A.A. Degree",
+   "h1": "Art - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3678
+ },
+ {
+  "control_number": "10266",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "BIO11",
+   "BIO12",
+   "BIO14",
+   "BIO15",
+   "BIO4",
+   "BIO7",
+   "BIO82",
+   "BIO83",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51482",
+   "title": "Biology - A.S. Degree",
+   "h1": "Biology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3413
+ },
+ {
+  "control_number": "10269",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51471",
+   "title": "Chemistry - A.S. Degree",
+   "h1": "Chemistry - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2157
+ },
+ {
+  "control_number": "10277",
+  "title": "Computer-Aided Design AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DR103",
+   "DR50",
+   "DR52",
+   "ENGR21",
+   "ENGR25",
+   "ENGR7",
+   "ENGR83"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51452",
+   "title": "Computer-Aided Design - A.S. Degree",
+   "h1": "Computer-Aided Design - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 7,
+  "text_chars": 2456
+ },
+ {
+  "control_number": "10280",
+  "title": "Infant/Toddler",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10281",
+  "title": "School-Age Child",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10282",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCT1A",
+   "CS1",
+   "ECON10",
+   "ECON13",
+   "ECON6",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH11",
+   "MATHC2210",
+   "MATHC2210H",
+   "MATHC2220",
+   "MATHC2220H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51717",
+   "title": "Economics - AA-T",
+   "h1": "Economics - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4015
+ },
+ {
+  "control_number": "10283",
+  "title": "Electronic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ET104",
+   "ET105",
+   "ET107",
+   "ET116",
+   "ET119",
+   "ET120",
+   "ET122A",
+   "ET122B",
+   "ET92",
+   "ET99"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51434",
+   "title": "Electronic Technology - A.S. Degree",
+   "h1": "Electronic Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2558
+ },
+ {
+  "control_number": "10285",
+  "title": "English-Creative Writing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLC1001H",
+   "LIT40",
+   "LIT41",
+   "LIT45",
+   "LIT49",
+   "WR10",
+   "WR11",
+   "WR13",
+   "WR14",
+   "WR15",
+   "WR16"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51421",
+   "title": "English - Creative Writing - A.A. Degree",
+   "h1": "English - Creative Writing - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3966
+ },
+ {
+  "control_number": "10287",
+  "title": "European History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10292",
+  "title": "Acting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10295",
+  "title": "Health Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "BIO10",
+   "BIO11",
+   "BIO12",
+   "BIO71",
+   "BIO72",
+   "CHEM4",
+   "PSYC10",
+   "PSYC10H",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51397",
+   "title": "Health Sciences - A.S. Degree",
+   "h1": "Health Sciences - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2849
+ },
+ {
+  "control_number": "10304",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1B",
+   "MATH11",
+   "MGT12A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51478",
+   "title": "Business Administration - A.A. Degree",
+   "h1": "Business Administration - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1898
+ },
+ {
+  "control_number": "12637",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ACCT215",
+   "MGT104",
+   "MGT120",
+   "MGT125",
+   "MGT135"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51349",
+   "title": "Retail Management - Certificate of Achievement",
+   "h1": "Retail Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1965
+ },
+ {
+  "control_number": "14048",
+  "title": "Digital Media Art",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "DMA175",
+   "DMA195",
+   "DMA51",
+   "DMA52",
+   "DMA55",
+   "DMA56",
+   "DMA62",
+   "DMA65",
+   "DMA70",
+   "DMA75"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51442",
+   "title": "Digital Media Art - A.S. Degree",
+   "h1": "Digital Media Art - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2922
+ },
+ {
+  "control_number": "15520",
+  "title": "Design Model Making & Rapid Prototyping",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16848",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ARTH1",
+   "ARTH22",
+   "ARTH23",
+   "ARTH24",
+   "ARTH27",
+   "ARTH29",
+   "ARTH30",
+   "ARTH31",
+   "ARTH4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51484",
+   "title": "Art History - A.A. Degree",
+   "h1": "Art History - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2322
+ },
+ {
+  "control_number": "18029",
+  "title": "CSU General Education - Breadth",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18030",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18362",
+  "title": "Emphasis in the Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.986,
+  "codes_found": [
+   "ART186",
+   "ART195",
+   "ART40",
+   "ART41",
+   "ART50",
+   "ART51",
+   "ART52",
+   "ART80",
+   "ART81",
+   "ART82",
+   "ART85",
+   "ART86",
+   "ARTH1",
+   "ARTH20",
+   "ARTH22",
+   "ARTH23",
+   "ARTH24",
+   "ARTH27",
+   "ARTH29",
+   "ARTH30",
+   "ARTH31",
+   "ARTH4",
+   "COMM106A",
+   "COMM106B",
+   "COMM106C",
+   "COMM30",
+   "COMMC1000",
+   "COMMC1000H",
+   "DMA51",
+   "DMA55",
+   "DMA70",
+   "DNCE1",
+   "DNCE12",
+   "DNCE13",
+   "DNCE16",
+   "DNCE17",
+   "DNCE20",
+   "DNCE22",
+   "DNCE23",
+   "DNCE27",
+   "DNCE36",
+   "DNCE37",
+   "DNCE38",
+   "DNCE39",
+   "DNCE40",
+   "DNCE41",
+   "DNCE42",
+   "DNCE5",
+   "DNCE55",
+   "DNCE57",
+   "DNCE58",
+   "DNCE6",
+   "DNCE65A",
+   "DNCE65B",
+   "DNCE69",
+   "DNCE7",
+   "DNCE71",
+   "DNCE72",
+   "DNCE74",
+   "DNCE75",
+   "DNCE76",
+   "DNCE77",
+   "DNCE78",
+   "DNCE79",
+   "DNCE85",
+   "DNCE91",
+   "DNCE92",
+   "IMA22",
+   "IMA27",
+   "IMA30",
+   "IMA79",
+   "IMA88",
+   "IMA90",
+   "IMA96",
+   "IMA98",
+   "MUS1",
+   "MUS1H",
+   "MUS20",
+   "MUS20H",
+   "MUS21",
+   "MUS27",
+   "MUS28",
+   "MUS3",
+   "MUS39",
+   "MUS40",
+   "MUS42",
+   "MUS46",
+   "MUS54",
+   "MUS55",
+   "MUS56",
+   "MUS80",
+   "MUS81",
+   "MUS82",
+   "MUS83",
+   "MUS84",
+   "MUS86",
+   "PHOT1",
+   "TA1",
+   "TA10",
+   "TA15",
+   "TA15A",
+   "TA15B",
+   "TA16",
+   "TA16A",
+   "TA16B",
+   "TA17",
+   "TA17A",
+   "TA17B",
+   "TA18",
+   "TA18A",
+   "TA18B",
+   "TA19",
+   "TA19A",
+   "TA19B",
+   "TA20",
+   "TA21",
+   "TA22",
+   "TA25",
+   "TA25H",
+   "TA26",
+   "TA26H",
+   "TA27",
+   "TA29",
+   "TA29H",
+   "TA30",
+   "TA40",
+   "TA41",
+   "TA42",
+   "TA43",
+   "TA44",
+   "TA45",
+   "TA46",
+   "TA47",
+   "TA49",
+   "TA52",
+   "TA74",
+   "TA75",
+   "TA76"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51425",
+   "title": "Emphasis in the Arts - A.A. Degree",
+   "h1": "Emphasis in the Arts - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 140,
+  "text_chars": 13403
+ },
+ {
+  "control_number": "18363",
+  "title": "Emphasis in Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.768,
+  "codes_found": [
+   "ASL15",
+   "ASL21",
+   "ASL22",
+   "ASL23",
+   "ASL24",
+   "CHI1",
+   "CHI2",
+   "CHI3",
+   "CHI4",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHN10",
+   "ETHN20",
+   "ETHN30",
+   "FILM40",
+   "FR1",
+   "FR10",
+   "FR2",
+   "FR3",
+   "FR4",
+   "GS10",
+   "GS20",
+   "HIST1",
+   "HIST10",
+   "HIST11",
+   "HIST1H",
+   "HIST2",
+   "HIST24",
+   "HIST25",
+   "HIST30",
+   "HIST40",
+   "HIST51",
+   "HIST51H",
+   "HUM1",
+   "HUM10",
+   "HUM1H",
+   "HUM2",
+   "HUM20",
+   "HUM21",
+   "HUM22",
+   "HUM27",
+   "HUM3",
+   "HUM4",
+   "HUM50",
+   "JA1",
+   "JA10",
+   "JA1H",
+   "JA2",
+   "JA21",
+   "JA23",
+   "JA3",
+   "JA4",
+   "LIT40",
+   "LIT41",
+   "LIT45",
+   "LIT49",
+   "PHIL1",
+   "PHIL10",
+   "PHIL11",
+   "PHIL2",
+   "PHIL3",
+   "RD74",
+   "SPAN1",
+   "SPAN10",
+   "SPAN1H",
+   "SPAN2",
+   "SPAN2H",
+   "SPAN3",
+   "SPAN4",
+   "WR10",
+   "WR11",
+   "WR13",
+   "WR14",
+   "WR15",
+   "WR16",
+   "WR17"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51429",
+   "title": "Emphasis in Humanities  - A.A. Degree",
+   "h1": "Emphasis in Humanities  - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 99,
+  "text_chars": 8812
+ },
+ {
+  "control_number": "18364",
+  "title": "Emphasis in Natural Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.657,
+  "codes_found": [
+   "BIO10",
+   "BIO103",
+   "BIO104",
+   "BIO105",
+   "BIO14",
+   "BIO16",
+   "BIO2",
+   "BIO21",
+   "BIO4",
+   "BIO5",
+   "BIO61",
+   "BIO7",
+   "BIO71",
+   "BIO72",
+   "BIO82",
+   "BIO83",
+   "BIOT70",
+   "BIOT70L",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM4",
+   "CS36",
+   "CS37",
+   "ENV1",
+   "ERTH20",
+   "GEOG10",
+   "GEOG10H",
+   "GEOG14",
+   "GEOL1",
+   "GEOL2",
+   "GEOL22",
+   "GEOL23",
+   "GEOL3",
+   "GEOL61",
+   "MATH24",
+   "MATH24H",
+   "MATH26",
+   "MATH4A",
+   "MS20",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51427",
+   "title": "Emphasis in Natural Sciences - A.S. Degree",
+   "h1": "Emphasis in Natural Sciences - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 70,
+  "text_chars": 7453
+ },
+ {
+  "control_number": "18365",
+  "title": "Emphasis in Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.85,
+  "codes_found": [
+   "AJ105",
+   "AJ106",
+   "AJ111",
+   "AJ112",
+   "AJ13",
+   "AJ150",
+   "AJ19",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ61",
+   "AJ7",
+   "AJ8",
+   "ANTH1",
+   "ANTH13",
+   "ANTH1H",
+   "ANTH2",
+   "ANTH2H",
+   "ANTH3",
+   "ANTH4",
+   "ANTH7",
+   "ANTH9",
+   "ECON10",
+   "ECON10H",
+   "ECON13",
+   "ECON20",
+   "ECON20H",
+   "ECON5",
+   "ECON6",
+   "GEOG1",
+   "GEOG10",
+   "GEOG10H",
+   "GEOG14",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG20",
+   "GEOG3",
+   "GEOG38",
+   "GEOG3H",
+   "GS10",
+   "GS20",
+   "HD101",
+   "HD105",
+   "HD120",
+   "HD131",
+   "HD145",
+   "HD15",
+   "HD150",
+   "HD160",
+   "HD181",
+   "HD7",
+   "HIST1",
+   "HIST10",
+   "HIST11",
+   "HIST1H",
+   "HIST2",
+   "HIST24",
+   "HIST25",
+   "HIST30",
+   "HIST40",
+   "HIST51",
+   "HIST51H",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC11",
+   "PSYC115B",
+   "PSYC13",
+   "PSYC13H",
+   "PSYC15A",
+   "PSYC2",
+   "PSYC20",
+   "PSYC3",
+   "PSYC30",
+   "PSYC32",
+   "PSYC33",
+   "PSYC37",
+   "PSYC37H",
+   "PSYC3H",
+   "PSYC3L",
+   "PSYC5",
+   "PSYC5H",
+   "PSYC6",
+   "PSYC7",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC10",
+   "SOC19",
+   "SOC2",
+   "SOC20",
+   "SOC3",
+   "SOC30"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51426",
+   "title": "Emphasis in Social and Behavioral Sciences - A.A. Degree",
+   "h1": "Emphasis in Social and Behavioral Sciences - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 113,
+  "text_chars": 12080
+ },
+ {
+  "control_number": "18480",
+  "title": "Teacher Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20818",
+  "title": "Accounting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCT1121",
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "CS1",
+   "MGT1",
+   "MGT104",
+   "MGT12A",
+   "MGT12AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51503",
+   "title": "Accounting - Certificate of Achievement",
+   "h1": "Accounting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2683
+ },
+ {
+  "control_number": "20819",
+  "title": "Business Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1A",
+   "CS1",
+   "MGT1",
+   "MGT104",
+   "MGT125",
+   "MGT12A",
+   "MGT135"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51474",
+   "title": "Business Management - Certificate of Achievement",
+   "h1": "Business Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2311
+ },
+ {
+  "control_number": "20822",
+  "title": "Supervision",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CIM1121",
+   "CIM201A",
+   "COMMC1000",
+   "MGT1",
+   "MGT102",
+   "MGT104",
+   "MGT125",
+   "MGT68"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51339",
+   "title": "Supervision - Certificate of Achievement",
+   "h1": "Supervision - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2354
+ },
+ {
+  "control_number": "20826",
+  "title": "Electronic Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ET104",
+   "ET105",
+   "ET107",
+   "ET116",
+   "ET119",
+   "ET120",
+   "ET122A",
+   "ET122B",
+   "ET92",
+   "ET99"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51433",
+   "title": "Electronic Technology - Certificate of Achievement",
+   "h1": "Electronic Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2588
+ },
+ {
+  "control_number": "20838",
+  "title": "Design Model Making & Rapid Prototyping",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20843",
+  "title": "Child Development",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20845",
+  "title": "School-Age Child",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20847",
+  "title": "Infant/Toddler",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20849",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ105",
+   "AJ106",
+   "AJ111",
+   "AJ112",
+   "AJ13",
+   "AJ19",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ61",
+   "AJ7",
+   "AJ8"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51500",
+   "title": "Administration of Justice: Law Enforcement - Certificate of Achievement",
+   "h1": "Administration of Justice: Law Enforcement - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2820
+ },
+ {
+  "control_number": "20851",
+  "title": "Administration of Justice: Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ105",
+   "AJ111",
+   "AJ112",
+   "AJ150",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ61",
+   "AJ7",
+   "AJ8",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51498",
+   "title": "Administration of Justice: Supervision - Certificate of Achievement",
+   "h1": "Administration of Justice: Supervision - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2873
+ },
+ {
+  "control_number": "30257",
+  "title": "Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ2",
+   "LGL101",
+   "LGL102",
+   "LGL103",
+   "LGL105",
+   "LGL11",
+   "LGL15",
+   "LGL206A",
+   "LGL206B",
+   "LGL208",
+   "LGL21",
+   "LGL210",
+   "LGL213",
+   "LGL220",
+   "MGT12A",
+   "MGT12AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51370",
+   "title": "Paralegal Studies - A.S. Degree",
+   "h1": "Paralegal Studies - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2476
+ },
+ {
+  "control_number": "30258",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ2",
+   "LGL101",
+   "LGL102",
+   "LGL103",
+   "LGL105",
+   "LGL11",
+   "LGL15",
+   "LGL206A",
+   "LGL206B",
+   "LGL208",
+   "LGL21",
+   "LGL210",
+   "LGL213",
+   "LGL220",
+   "MGT12A",
+   "MGT12AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51369",
+   "title": "Paralegal Studies - Certificate of Achievement",
+   "h1": "Paralegal Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2915
+ },
+ {
+  "control_number": "30627",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMM10",
+   "COMM106A",
+   "COMM106B",
+   "COMM106C",
+   "COMM2",
+   "COMM3",
+   "COMM30",
+   "COMM35",
+   "COMM9",
+   "COMMC1000",
+   "COMMC1000H",
+   "TA30"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51457",
+   "title": "Communication Studies 2.0 for Transfer - AA-T",
+   "h1": "Communication Studies 2.0 for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 2913
+ },
+ {
+  "control_number": "30929",
+  "title": "Recycling and Resource Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ENV6",
+   "GEOG20"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51351",
+   "title": "Recycling and Resource Management - Certificate of Achievement",
+   "h1": "Recycling and Resource Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1822
+ },
+ {
+  "control_number": "31265",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.733,
+  "codes_found": [
+   "CS36",
+   "CS37",
+   "CS38",
+   "CS40A",
+   "CS40B",
+   "CS41",
+   "MATH24",
+   "MATH24H",
+   "MATH26",
+   "MATH4A",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51376",
+   "title": "Mathematics for Transfer - AS-T",
+   "h1": "Mathematics for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3342
+ },
+ {
+  "control_number": "31288",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ECON10",
+   "ECON10H",
+   "HD7",
+   "HLTH10",
+   "MGT10",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC13",
+   "PSYC13H",
+   "PSYC14",
+   "PSYC2",
+   "PSYC3",
+   "PSYC30",
+   "PSYC32",
+   "PSYC33",
+   "PSYC37",
+   "PSYC37H",
+   "PSYC3H",
+   "PSYC3L",
+   "PSYC5",
+   "PSYC5H",
+   "PSYC6",
+   "PSYC7",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51358",
+   "title": "Psychology for Transfer - AA-T",
+   "h1": "Psychology for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4526
+ },
+ {
+  "control_number": "31359",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TA1",
+   "TA15",
+   "TA15A",
+   "TA15B",
+   "TA16",
+   "TA16A",
+   "TA16B",
+   "TA17",
+   "TA17A",
+   "TA17B",
+   "TA19",
+   "TA19A",
+   "TA19B",
+   "TA2",
+   "TA22",
+   "TA25",
+   "TA25H",
+   "TA29",
+   "TA29H",
+   "TA40",
+   "TA41",
+   "TA42",
+   "TA44",
+   "TA49",
+   "TA53",
+   "TA61",
+   "TA63",
+   "TA64",
+   "TA65",
+   "TA73",
+   "TA76",
+   "TA8"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51335",
+   "title": "Theatre Arts for Transfer - AA-T",
+   "h1": "Theatre Arts for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 6020
+ },
+ {
+  "control_number": "31974",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.85,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "ECON10",
+   "ECON10H",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH11",
+   "MGT1",
+   "MGT10",
+   "MGT104",
+   "MGT12A",
+   "MGT12AH",
+   "PSYC10",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51477",
+   "title": "Business Administration 2.0 for Transfer - AS-T",
+   "h1": "Business Administration 2.0 for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3909
+ },
+ {
+  "control_number": "31975",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATH4A",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51364",
+   "title": "Physics for Transfer - AS-T",
+   "h1": "Physics for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2229
+ },
+ {
+  "control_number": "31976",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "AJ105",
+   "AJ106",
+   "AJ111",
+   "AJ112",
+   "AJ13",
+   "AJ150",
+   "AJ19",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ61",
+   "AJ7",
+   "AJ8",
+   "ECON10",
+   "ECON10H",
+   "MGT10",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51502",
+   "title": "Administration of Justice for Transfer - AS-T",
+   "h1": "Administration of Justice for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4005
+ },
+ {
+  "control_number": "32082",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.88,
+  "codes_found": [
+   "ETHN10",
+   "ETHN10H",
+   "ETHN20",
+   "ETHN30",
+   "ETHN40",
+   "GS10",
+   "GS20",
+   "GS50",
+   "HIST1",
+   "HIST10",
+   "HIST11",
+   "HIST1H",
+   "HIST2",
+   "HIST24",
+   "HIST25",
+   "HIST30",
+   "HIST40",
+   "HIST41",
+   "HIST51",
+   "HIST51H",
+   "HIST60",
+   "HIST61"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51396",
+   "title": "History for Transfer - AA-T",
+   "h1": "History for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4200
+ },
+ {
+  "control_number": "32094",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "ANTH2H",
+   "GEOG1",
+   "GEOG10",
+   "GEOG10H",
+   "GEOG12",
+   "GEOG14",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG20",
+   "GEOG3",
+   "GEOG38",
+   "GEOG3H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51402",
+   "title": "Geography for Transfer - AA-T",
+   "h1": "Geography for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2930
+ },
+ {
+  "control_number": "32116",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON10",
+   "ECON10H",
+   "HLTH10",
+   "MGT10",
+   "MGT10H",
+   "PHIL5",
+   "POLS12",
+   "POLS12H",
+   "POLS14",
+   "POLS14H",
+   "POLS167A",
+   "POLS167B",
+   "POLS167C",
+   "POLS167D",
+   "POLS17",
+   "POLS21",
+   "POLS3",
+   "POLS30",
+   "POLS4",
+   "POLS5",
+   "POLS6",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC10",
+   "PSYC10H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51361",
+   "title": "Political Science for Transfer - AA-T",
+   "h1": "Political Science for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4043
+ },
+ {
+  "control_number": "32812",
+  "title": "STUDIO ARTS",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ART40",
+   "ART41",
+   "ART50",
+   "ART51",
+   "ART80",
+   "ART81",
+   "ART85",
+   "ART86",
+   "ARTH22",
+   "ARTH23",
+   "DMA55",
+   "DMA65"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51065",
+   "title": "Studio Art - AA-T",
+   "h1": "Studio Art - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 15,
+  "text_chars": 2926
+ },
+ {
+  "control_number": "32814",
+  "title": "ENGLISH",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32863",
+  "title": "ECONOMICS",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1AH",
+   "ACCT1B",
+   "ACCT1BH",
+   "CS1",
+   "ECON10",
+   "ECON10H",
+   "ECON13",
+   "ECON6",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "HLTH10",
+   "MATH11",
+   "MATH26",
+   "MATH4A",
+   "MATH4AH",
+   "MATHC2210",
+   "MATHC2210H",
+   "MATHC2220",
+   "MATHC2220H",
+   "MGT10",
+   "MGT104",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51436",
+   "title": "Economics for Transfer - AA-T",
+   "h1": "Economics for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4251
+ },
+ {
+  "control_number": "32865",
+  "title": "ANTHROPOLOGY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH1",
+   "ANTH13",
+   "ANTH1H",
+   "ANTH1L",
+   "ANTH2",
+   "ANTH2H",
+   "ANTH3",
+   "ANTH4",
+   "ANTH7",
+   "ANTH9",
+   "BIO11",
+   "ECON10",
+   "ECON10H",
+   "ERTH20",
+   "GEOG12",
+   "GEOL1",
+   "HLTH10",
+   "MGT10",
+   "MGT10H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51486",
+   "title": "Anthropology for Transfer - AA-T",
+   "h1": "Anthropology for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3781
+ },
+ {
+  "control_number": "32875",
+  "title": "ART HISTORY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART40",
+   "ART41",
+   "ART50",
+   "ART51",
+   "ART70",
+   "ART75",
+   "ART80",
+   "ART82",
+   "ART85",
+   "ART86",
+   "ARTH1",
+   "ARTH20",
+   "ARTH22",
+   "ARTH23",
+   "ARTH24",
+   "ARTH27",
+   "ARTH28",
+   "ARTH29",
+   "ARTH30",
+   "ARTH31",
+   "ARTH32",
+   "ARTH33",
+   "ARTH4",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DMA10"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51483",
+   "title": "Art History for Transfer - AA-T",
+   "h1": "Art History for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3481
+ },
+ {
+  "control_number": "32876",
+  "title": "SPANISH",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FR1",
+   "FR1H",
+   "FR2",
+   "SPAN1",
+   "SPAN1H",
+   "SPAN2",
+   "SPAN2H",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51344",
+   "title": "Spanish for Transfer - AA-T",
+   "h1": "Spanish for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3075
+ },
+ {
+  "control_number": "33679",
+  "title": "ELEMENTARY TEACHER EDUCATION",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.677,
+  "codes_found": [
+   "ARTH20",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ERTH20",
+   "GEOG3",
+   "GEOG3H",
+   "HD7",
+   "HIST1",
+   "HIST1H",
+   "MATH20",
+   "MUS20",
+   "MUS20H",
+   "PHYS20",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC7",
+   "TA22"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51431",
+   "title": "Elementary Teacher Education for Transfer - AA-T",
+   "h1": "Elementary Teacher Education for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4023
+ },
+ {
+  "control_number": "33784",
+  "title": "Web Authoring",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CIM141",
+   "CIM143",
+   "CIM144",
+   "CIM148",
+   "CIM49",
+   "CIM51"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51332",
+   "title": "Web Authoring - Certificate of Achievement",
+   "h1": "Web Authoring - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1659
+ },
+ {
+  "control_number": "33817",
+  "title": "Web Authoring",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CIM141",
+   "CIM143",
+   "CIM144",
+   "CIM148",
+   "CIM49",
+   "CIM51"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51333",
+   "title": "Web Authoring - A.S. Degree",
+   "h1": "Web Authoring - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1573
+ },
+ {
+  "control_number": "33818",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CIM1121",
+   "CIM1122",
+   "CIM115",
+   "CIM201A",
+   "CIM201B",
+   "CIM2102",
+   "MGT104"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51496",
+   "title": "Administrative Assistant - Certificate of Achievement",
+   "h1": "Administrative Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2481
+ },
+ {
+  "control_number": "33852",
+  "title": "Computer Applications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CIM103",
+   "CIM1121",
+   "CIM1122",
+   "CIM115",
+   "CIM117",
+   "CIM141",
+   "CIM144",
+   "CIM209",
+   "CIM2102"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51456",
+   "title": "Computer Applications - A.S. Degree",
+   "h1": "Computer Applications - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2404
+ },
+ {
+  "control_number": "33853",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CIM1121",
+   "CIM1122",
+   "CIM115",
+   "CIM201A",
+   "CIM201B",
+   "CIM2102",
+   "MGT104"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51497",
+   "title": "Administrative Assistant - A.S. Degree",
+   "h1": "Administrative Assistant - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2475
+ },
+ {
+  "control_number": "33862",
+  "title": "Computer Applications",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CIM103",
+   "CIM1121",
+   "CIM1122",
+   "CIM115",
+   "CIM117",
+   "CIM141",
+   "CIM144",
+   "CIM209",
+   "CIM2102"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51455",
+   "title": "Computer Applications - Certificate of Achievement",
+   "h1": "Computer Applications - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2199
+ },
+ {
+  "control_number": "33863",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM182",
+   "CIM283"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51389",
+   "title": "Information Technology - Certificate of Achievement",
+   "h1": "Information Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2111
+ },
+ {
+  "control_number": "33864",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "CS1",
+   "CS10",
+   "CS30",
+   "CS36",
+   "CS37",
+   "CS38",
+   "CS39",
+   "CS40A",
+   "CS40B",
+   "CS41",
+   "CS50"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51454",
+   "title": "Computer Science - A.S. Degree",
+   "h1": "Computer Science - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2759
+ },
+ {
+  "control_number": "33914",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM110",
+   "CIM161",
+   "CIM181",
+   "CIM182",
+   "CIM283",
+   "CS10"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51390",
+   "title": "Information Technology - A.S. Degree",
+   "h1": "Information Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2479
+ },
+ {
+  "control_number": "35068",
+  "title": "BIOTECHNOLOGY-LAB ASSISTANT",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BIO10",
+   "BIOT70",
+   "BIOT70L",
+   "CHEM3"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51479",
+   "title": "Biotechnology: Lab Assistant - Certificate of Achievement",
+   "h1": "Biotechnology: Lab Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3069
+ },
+ {
+  "control_number": "35143",
+  "title": "ADULT ENGLISH AS A SECOND LANGUAGE -BEGINNING",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35144",
+  "title": "ADULT ENGLISH AS A SECOND LANGUAGE-INTERMEDIATE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AESL513",
+   "AESL563"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51493",
+   "title": "Adult English as a Second Language: Intermediate - Certificate of Competency",
+   "h1": "Adult English as a Second Language: Intermediate - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1718
+ },
+ {
+  "control_number": "35145",
+  "title": "ADULT ENGLISH AS A SECOND LANGUAGE - ADVANCED",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35184",
+  "title": "GLOBAL STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "ANTH2",
+   "ANTH2H",
+   "ECON6",
+   "GEOG20",
+   "GEOG3",
+   "GEOG3H",
+   "GLBL1",
+   "GLBL2",
+   "HIST2",
+   "SOC3"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51399",
+   "title": "Global Studies - A.A. Degree",
+   "h1": "Global Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3221
+ },
+ {
+  "control_number": "35501",
+  "title": "BIOLOGY",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1AH",
+   "CHEM1B",
+   "CHEM1BH",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51481",
+   "title": "Biology for Transfer - AS-T",
+   "h1": "Biology for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2854
+ },
+ {
+  "control_number": "36064",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "ACCT215",
+   "ECON13",
+   "ECON20",
+   "ECON20H",
+   "MGT12A",
+   "MGT12AH",
+   "RE170",
+   "RE172",
+   "RE175",
+   "RE190",
+   "RE195"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51355",
+   "title": "Real Estate Broker - Certificate of Achievement",
+   "h1": "Real Estate Broker - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3249
+ },
+ {
+  "control_number": "36141",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.744,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "ACCT215",
+   "CIM117",
+   "ECON13",
+   "ECON20",
+   "ECON20H",
+   "ENTR117",
+   "ENTR160",
+   "ENTR200",
+   "ENTR211",
+   "ENTR221",
+   "ENTR224",
+   "ENTR241",
+   "ENTR242",
+   "MGT1",
+   "MGT102",
+   "MGT104",
+   "MGT120",
+   "MGT12A",
+   "MGT12AH",
+   "MGT135",
+   "RE170",
+   "RE172",
+   "RE175",
+   "RE190",
+   "RE195",
+   "RE250"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51356",
+   "title": "Real Estate - A.S. Degree",
+   "h1": "Real Estate - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 4594
+ },
+ {
+  "control_number": "36638",
+  "title": "GLOBAL STUDIES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ANTH2",
+   "ANTH2H",
+   "CHI3",
+   "ECON10",
+   "ECON10H",
+   "FR3",
+   "FR4",
+   "GEOG1",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG3",
+   "GEOG3H",
+   "GLBL1",
+   "GLBL2",
+   "HIST1",
+   "HIST1H",
+   "HIST2",
+   "HUM1",
+   "HUM1H",
+   "HUM27",
+   "JA3",
+   "JA4",
+   "MGT10",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51398",
+   "title": "Global Studies for Transfer - AA-T",
+   "h1": "Global Studies for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 4763
+ },
+ {
+  "control_number": "36752",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "CIM103",
+   "CIM1121",
+   "CIM1122",
+   "CIM201B",
+   "CIM201C",
+   "CIM209",
+   "CIM2102",
+   "MGT104",
+   "MGT125"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51476",
+   "title": "Business Information Worker - Certificate of Achievement",
+   "h1": "Business Information Worker - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2418
+ },
+ {
+  "control_number": "38237",
+  "title": "Film and Digital Media",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "DMA51",
+   "DMA70",
+   "DMA75",
+   "JA23",
+   "JRNL41",
+   "TA1",
+   "WR15"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51412",
+   "title": "Film and Digital Media - A.A. Degree",
+   "h1": "Film and Digital Media - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2932
+ },
+ {
+  "control_number": "38268",
+  "title": "Emphasis in Liberal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.622,
+  "codes_found": [
+   "ANTH2",
+   "ANTH2H",
+   "ANTH3",
+   "ANTH9",
+   "ART50",
+   "ART80",
+   "ARTH20",
+   "ARTH4",
+   "CHEM3",
+   "COMM2",
+   "COMM3",
+   "COMMC1000",
+   "COMMC1000H",
+   "DNCE77",
+   "ECON10",
+   "ECON10H",
+   "ECON20",
+   "ECON20H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ERTH20",
+   "GEOG1",
+   "GEOG10",
+   "GEOG10H",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG3",
+   "GEOG38",
+   "GEOG3H",
+   "GEOL1",
+   "GEOL22",
+   "GEOL23",
+   "HD15",
+   "HD7",
+   "HIST1",
+   "HIST10",
+   "HIST11",
+   "HIST1H",
+   "HIST2",
+   "HIST25",
+   "HUM1",
+   "HUM1H",
+   "HUM27",
+   "MATH11",
+   "MATH124",
+   "MATH2",
+   "MATH20",
+   "MATH24",
+   "MATH24H",
+   "MATH26",
+   "MATH4A",
+   "MATH5",
+   "MATH6A",
+   "MATH6B",
+   "MATH8",
+   "MGT10",
+   "MGT10H",
+   "MUS1",
+   "MUS1H",
+   "MUS20",
+   "MUS20H",
+   "MUS21",
+   "MUS27",
+   "MUS28",
+   "PHIL1",
+   "PHIL10",
+   "PHIL11",
+   "PHIL2",
+   "PHIL3",
+   "PHYS20",
+   "POLS5",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC13",
+   "PSYC13H",
+   "PSYC3",
+   "PSYC3H",
+   "PSYC3L",
+   "PSYC6",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "TA20",
+   "TA22",
+   "TA27"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51428",
+   "title": "Emphasis in Liberal Studies - A.A. Degree",
+   "h1": "Emphasis in Liberal Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 143,
+  "text_chars": 10502
+ },
+ {
+  "control_number": "38308",
+  "title": "Social Justices Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38329",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.517,
+  "codes_found": [
+   "BIO11",
+   "BIO12",
+   "CHEM1A",
+   "CHEM3",
+   "ECON10",
+   "ECON10H",
+   "HLTH1",
+   "HLTH5",
+   "HLTH6",
+   "MGT10",
+   "NUT1",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC5",
+   "PSYC5H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51059",
+   "title": "Associate in Science in Public Health Science - AS-T",
+   "h1": "Associate in Science in Public Health Science - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3889
+ },
+ {
+  "control_number": "38508",
+  "title": "Real Estate Success",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.743,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "ACCT215",
+   "ECON13",
+   "ECON20",
+   "ECON20H",
+   "ENTR117",
+   "ENTR160",
+   "ENTR200",
+   "ENTR211",
+   "ENTR221",
+   "ENTR224",
+   "ENTR241",
+   "ENTR242",
+   "MGT102",
+   "MGT104",
+   "MGT120",
+   "MGT12A",
+   "MGT12AH",
+   "MGT135",
+   "RE170",
+   "RE172",
+   "RE175",
+   "RE190",
+   "RE195"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51353",
+   "title": "Real Estate Success - Certificate of Achievement",
+   "h1": "Real Estate Success - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4404
+ },
+ {
+  "control_number": "38509",
+  "title": "Real Estate Sales",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "ACCT215",
+   "ECON13",
+   "ECON20",
+   "ECON20H",
+   "MGT12A",
+   "MGT12AH",
+   "RE170",
+   "RE172",
+   "RE175",
+   "RE190",
+   "RE195"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51354",
+   "title": "Real Estate Sales - Certificate of Achievement",
+   "h1": "Real Estate Sales - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3198
+ },
+ {
+  "control_number": "38914",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS36",
+   "DR52",
+   "ENGR20",
+   "ENGR21",
+   "ENGR30",
+   "ENGR54",
+   "ENGR7",
+   "ENGR70"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51422",
+   "title": "Engineering - A.S. Degree",
+   "h1": "Engineering - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2692
+ },
+ {
+  "control_number": "39220",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.763,
+  "codes_found": [
+   "AJ19",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ5",
+   "AJ6",
+   "AJ8",
+   "ANTH2",
+   "ANTH2H",
+   "BIO7",
+   "COMM10",
+   "COMM2",
+   "COMM3",
+   "COMMC1000",
+   "COMMC1000H",
+   "COUN1",
+   "COUN10",
+   "COUN6",
+   "COUN6H",
+   "ECON10",
+   "ECON10H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHN10",
+   "GEOG2",
+   "GLBL1",
+   "GLBL2",
+   "GS10",
+   "GS20",
+   "HLTH6",
+   "MGT10",
+   "MGT10H",
+   "MGT12A",
+   "MGT12AH",
+   "PHIL2",
+   "PHIL3",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC10",
+   "PSYC10H",
+   "SOC19",
+   "SOC20",
+   "SOC20H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51381",
+   "title": "Law, Public Policy, and Society for Transfer - AA-T",
+   "h1": "Law, Public Policy, and Society for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 64,
+  "text_chars": 7176
+ },
+ {
+  "control_number": "39684",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.724,
+  "codes_found": [
+   "BIO16",
+   "BIO2",
+   "BIO5",
+   "BIO7",
+   "CHEM1A",
+   "CHEM1B",
+   "ECON10",
+   "ECON10H",
+   "ENV1",
+   "GEOG1",
+   "GEOG1L",
+   "GEOL1",
+   "MATH11",
+   "MGT10",
+   "MGT10H",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PSYC10",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51414",
+   "title": "Environmental Science for Transfer - AS-T",
+   "h1": "Environmental Science for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4556
+ },
+ {
+  "control_number": "40115",
+  "title": "Stage Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "TA1",
+   "TA40",
+   "TA52",
+   "TA53",
+   "TA54",
+   "TA61",
+   "TA63",
+   "TA64",
+   "TA65",
+   "TA71",
+   "TA72",
+   "TA73",
+   "TA74",
+   "TA75",
+   "TA76"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51342",
+   "title": "Stage Management - Certificate of Achievement",
+   "h1": "Stage Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3079
+ },
+ {
+  "control_number": "40563",
+  "title": "Chinese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHI1",
+   "CHI2",
+   "CHI3",
+   "CHI4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51464",
+   "title": "Chinese - A.A. Degree",
+   "h1": "Chinese - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1267
+ },
+ {
+  "control_number": "40836",
+  "title": "Emphasis in Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.878,
+  "codes_found": [
+   "ACCT1121",
+   "ACCT1122",
+   "ACCT1A",
+   "ACCT1B",
+   "ACCT1BH",
+   "CIM103",
+   "CIM110",
+   "CIM1121",
+   "CIM1122",
+   "CIM115",
+   "CIM117",
+   "CIM141",
+   "CIM160",
+   "CIM161",
+   "CIM170",
+   "CIM172",
+   "CIM181",
+   "CIM40",
+   "CIM49",
+   "CIM51",
+   "ENTR117",
+   "ENTR160",
+   "LGL11",
+   "LGL15",
+   "LGL21",
+   "MGT1",
+   "MGT10",
+   "MGT102",
+   "MGT104",
+   "MGT10H",
+   "MGT115",
+   "MGT120",
+   "MGT125",
+   "MGT12A",
+   "MGT12AH",
+   "MGT135",
+   "MGT68",
+   "RE170",
+   "RE172",
+   "RE174",
+   "RE175",
+   "RE190",
+   "RE195"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51430",
+   "title": "Emphasis in Business - A.S. Degree",
+   "h1": "Emphasis in Business - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 58,
+  "text_chars": 6854
+ },
+ {
+  "control_number": "41200",
+  "title": "Live Entertainment Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "TA40",
+   "TA41",
+   "TA43",
+   "TA44",
+   "TA45",
+   "TA46",
+   "TA47",
+   "TA52",
+   "TA61",
+   "TA63",
+   "TA64",
+   "TA75",
+   "TA76"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51380",
+   "title": "Live Entertainment Technician - Certificate of Achievement",
+   "h1": "Live Entertainment Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2792
+ },
+ {
+  "control_number": "41302",
+  "title": "Geography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG1",
+   "GEOG10",
+   "GEOG10H",
+   "GEOG14",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG20",
+   "GEOG3",
+   "GEOG38",
+   "GEOG3H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51403",
+   "title": "Geography - A.A. Degree",
+   "h1": "Geography - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2581
+ },
+ {
+  "control_number": "41500",
+  "title": "Information Technology Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM110",
+   "CIM161",
+   "CIM181"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51388",
+   "title": "Information Technology Fundamentals - Certificate of Achievement",
+   "h1": "Information Technology Fundamentals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1752
+ },
+ {
+  "control_number": "41551",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1AH",
+   "ACCT1B",
+   "ACCT1BH",
+   "ECON10",
+   "ECON10H",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "HLTH10",
+   "MATH11",
+   "MATHC2210",
+   "MATHC2210H",
+   "MGT1",
+   "MGT10",
+   "MGT104",
+   "MGT12A",
+   "MGT12AH",
+   "PSYC10",
+   "PSYC10H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51477",
+   "title": "Business Administration 2.0 for Transfer - AS-T",
+   "h1": "Business Administration 2.0 for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3909
+ },
+ {
+  "control_number": "42445",
+  "title": "AMERICAN SIGN LANGUAGE (ASL)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL15",
+   "ASL21",
+   "ASL22",
+   "ASL23",
+   "ASL24"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51491",
+   "title": "American Sign Language (ASL) - A.A. Degree",
+   "h1": "American Sign Language (ASL) - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2225
+ },
+ {
+  "control_number": "42470",
+  "title": "Cisco Networking (CCNA)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM181",
+   "CIM182",
+   "CIM283"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51462",
+   "title": "Cisco Networking (CCNA) - Certificate of Achievement",
+   "h1": "Cisco Networking (CCNA) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1397
+ },
+ {
+  "control_number": "42473",
+  "title": "AMERICAN SIGN LANGUAGE (ASL)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL15",
+   "ASL21",
+   "ASL22",
+   "ASL23",
+   "ASL24"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51490",
+   "title": "American Sign Language (ASL) - Certificate of Achievement",
+   "h1": "American Sign Language (ASL) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2255
+ },
+ {
+  "control_number": "42513",
+  "title": "Electrician Trainee",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC200A",
+   "ELEC201",
+   "ELEC203",
+   "ET104",
+   "ET92"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51721",
+   "title": "Electrician Trainee - Certificate of Achievement",
+   "h1": "Electrician Trainee - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2293
+ },
+ {
+  "control_number": "42514",
+  "title": "Energy Solar Photovoltaic System Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC200",
+   "ELEC201",
+   "ELEC21",
+   "ELEC211",
+   "ELEC212"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51424",
+   "title": "Energy Solar Photovoltaic System Technician  - Certificate of Achievement",
+   "h1": "Energy Solar Photovoltaic System Technician  - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2061
+ },
+ {
+  "control_number": "43027",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "COMM10",
+   "COMM106A",
+   "COMM106B",
+   "COMM106C",
+   "COMM167A",
+   "COMM167B",
+   "COMM167C",
+   "COMM167D",
+   "COMM2",
+   "COMM3",
+   "COMM30",
+   "COMM35",
+   "COMM9",
+   "COMMC1000",
+   "COMMC1000H",
+   "FILM40",
+   "TA30",
+   "TA35"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51457",
+   "title": "Communication Studies 2.0 for Transfer - AA-T",
+   "h1": "Communication Studies 2.0 for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3274
+ },
+ {
+  "control_number": "43580",
+  "title": "Intro to Computers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43818",
+  "title": "English for Multilingual Professionals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AESL553",
+   "AESL554",
+   "AESL555",
+   "AESL563"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51418",
+   "title": "English for Multilingual Professionals  - Certificate of Competency",
+   "h1": "English for Multilingual Professionals  - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2139
+ },
+ {
+  "control_number": "43819",
+  "title": "English for Multilingual Educators/Parents",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AESL524",
+   "AESL563",
+   "AESL574"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51419",
+   "title": "English for Multilingual Educators/Parents - Certificate of Competency",
+   "h1": "English for Multilingual Educators/Parents - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2076
+ },
+ {
+  "control_number": "43839",
+  "title": "Game and Interactive Media Arts Design, Production Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1121",
+   "ACCT1122",
+   "CIM117",
+   "CS10",
+   "CS36",
+   "CS37",
+   "ENTR160",
+   "IMA22",
+   "IMA27",
+   "IMA30",
+   "IMA79",
+   "IMA88",
+   "IMA90",
+   "IMA96",
+   "IMA98",
+   "MGT1",
+   "MGT104",
+   "MGT125",
+   "MGT12A",
+   "MGT12AH",
+   "MGT135",
+   "MUS112"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51406",
+   "title": "Game and Interactive Media Arts Design, Production Management - A.S. Degree",
+   "h1": "Game and Interactive Media Arts Design, Production Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4156
+ },
+ {
+  "control_number": "43910",
+  "title": "Game Design and Interactive Media Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1121",
+   "ACCT1122",
+   "IMA22",
+   "IMA98",
+   "MGT12A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51404",
+   "title": "Game Design and Interactive Media Arts - Certificate of Achievement",
+   "h1": "Game Design and Interactive Media Arts - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2172
+ },
+ {
+  "control_number": "43919",
+  "title": "Chinese Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHI1",
+   "CHI2",
+   "CHI3",
+   "CHI4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51463",
+   "title": "Chinese Language - Certificate of Achievement",
+   "h1": "Chinese Language - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2107
+ },
+ {
+  "control_number": "43920",
+  "title": "Japanese Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JA1",
+   "JA1H",
+   "JA2",
+   "JA2H",
+   "JA3",
+   "JA4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51384",
+   "title": "Japanese Language - Certificate of Achievement",
+   "h1": "Japanese Language - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2228
+ },
+ {
+  "control_number": "44218",
+  "title": "JAPANESE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JA1",
+   "JA10",
+   "JA1H",
+   "JA2",
+   "JA21",
+   "JA21H",
+   "JA23",
+   "JA23H",
+   "JA2H",
+   "JA3",
+   "JA4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51385",
+   "title": "Japanese - A.A. Degree",
+   "h1": "Japanese - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2574
+ },
+ {
+  "control_number": "44219",
+  "title": "FRENCH",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FR1",
+   "FR1H",
+   "FR2",
+   "FR3",
+   "FR4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51407",
+   "title": "French - A.A. Degree",
+   "h1": "French - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2120
+ },
+ {
+  "control_number": "44477",
+  "title": "Chemistry for UC",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.579,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1AH",
+   "CHEM1B",
+   "MATH24",
+   "MATH24H",
+   "MATH4A",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50928",
+   "title": "Chemistry for UC Transfer - A.S. Degree",
+   "h1": "Chemistry for UC Transfer - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2715
+ },
+ {
+  "control_number": "44629",
+  "title": "Spanish Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1",
+   "SPAN1H",
+   "SPAN2",
+   "SPAN2H",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50932",
+   "title": "Spanish Language - Certificate of Achievement",
+   "h1": "Spanish Language - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2039
+ },
+ {
+  "control_number": "44743",
+  "title": "Piano Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS20",
+   "MUS20H",
+   "MUS21",
+   "MUS21H",
+   "MUS255",
+   "MUS256",
+   "MUS27",
+   "MUS28",
+   "MUS3",
+   "MUS4",
+   "MUS5",
+   "MUS51",
+   "MUS53",
+   "MUS59",
+   "MUS6",
+   "MUS63",
+   "MUS65"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50920",
+   "title": "Piano Performance - Certificate of Achievement",
+   "h1": "Piano Performance - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2872
+ },
+ {
+  "control_number": "44881",
+  "title": "Practical Real Estate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE512",
+   "RE520"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50891",
+   "title": "Practical Real Estate - Certificate of Completion",
+   "h1": "Practical Real Estate - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1039
+ },
+ {
+  "control_number": "44882",
+  "title": "Real Estate & Personal Finance",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE512",
+   "RE540"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51525",
+   "title": "Real Estate & Personal Finance - Certificate of Completion",
+   "h1": "Real Estate & Personal Finance - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1060
+ },
+ {
+  "control_number": "44883",
+  "title": "Real Estate Investing & Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE512",
+   "RE530"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51524",
+   "title": "Real Estate Investing & Management - Certificate of Completion",
+   "h1": "Real Estate Investing & Management - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1054
+ },
+ {
+  "control_number": "44922",
+  "title": "Digital Media Art",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "DMA10",
+   "DMA12",
+   "DMA175",
+   "DMA192",
+   "DMA195",
+   "DMA51",
+   "DMA52",
+   "DMA55",
+   "DMA56",
+   "DMA62",
+   "DMA65",
+   "DMA70"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51441",
+   "title": "Digital Media Art - Certificate of Achievement",
+   "h1": "Digital Media Art - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2908
+ },
+ {
+  "control_number": "44990",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45011",
+  "title": "DIGITAL MEDIA ART",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMA10",
+   "DMA12",
+   "DMA175",
+   "DMA192",
+   "DMA195",
+   "DMA51",
+   "DMA52",
+   "DMA55",
+   "DMA56",
+   "DMA62",
+   "DMA65",
+   "DMA70",
+   "DMA75"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51442",
+   "title": "Digital Media Art - A.S. Degree",
+   "h1": "Digital Media Art - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2922
+ },
+ {
+  "control_number": "45463",
+  "title": "Career Paths for Multilingual Professionals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AESL535",
+   "AESL545",
+   "AESL553",
+   "AESL554",
+   "AESL555",
+   "AESL574",
+   "AESL575",
+   "AESL583",
+   "AESL584",
+   "AESL585",
+   "CIM510",
+   "CIM520",
+   "ENTR522"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51473",
+   "title": "Career Paths for Multilingual Professionals - Certificate of Competency",
+   "h1": "Career Paths for Multilingual Professionals - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2770
+ },
+ {
+  "control_number": "45526",
+  "title": "Data Analytics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM253",
+   "CIM254",
+   "CIM256",
+   "CIM52",
+   "CS10",
+   "CS17"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51527",
+   "title": "Data Analytics - A.S. Degree",
+   "h1": "Data Analytics - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1321
+ },
+ {
+  "control_number": "45530",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM253",
+   "CIM254",
+   "CIM256"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51528",
+   "title": "Data Analytics - Certificate of Achievement",
+   "h1": "Data Analytics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1074
+ },
+ {
+  "control_number": "45584",
+  "title": "Law and Paralegal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ16",
+   "AJ2",
+   "LGL101",
+   "LGL102",
+   "LGL103",
+   "LGL105",
+   "LGL11",
+   "LGL15",
+   "LGL168A",
+   "LGL168B",
+   "LGL168C",
+   "LGL168D",
+   "LGL206A",
+   "LGL206B",
+   "LGL209",
+   "LGL21",
+   "LGL213",
+   "LGL220",
+   "LGL222",
+   "LGL240",
+   "MGT12A",
+   "MGT12AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49231/51299/50890",
+   "title": "Law and Paralegal Studies - Certificate of Achievement",
+   "h1": "Law and Paralegal Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2733
+ },
+ {
+  "control_number": "45586",
+  "title": "Law and Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ16",
+   "AJ2",
+   "LGL101",
+   "LGL102",
+   "LGL103",
+   "LGL105",
+   "LGL11",
+   "LGL15",
+   "LGL168A",
+   "LGL168B",
+   "LGL168C",
+   "LGL168D",
+   "LGL206A",
+   "LGL206B",
+   "LGL209",
+   "LGL21",
+   "LGL213",
+   "LGL220",
+   "LGL222",
+   "LGL240",
+   "MGT12A",
+   "MGT12AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49231/51299/50889",
+   "title": "Law and Paralegal Studies - A.S. Degree",
+   "h1": "Law and Paralegal Studies - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2718
+ },
+ {
+  "control_number": "45590",
+  "title": "Introduction To Information Technology and Cybersecurity",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM110",
+   "CIM170",
+   "CIM181"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51526",
+   "title": "Introduction to Information Technology and Cybersecurity - Certificate of Achievement",
+   "h1": "Introduction to Information Technology and Cybersecurity - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1754
+ },
+ {
+  "control_number": "45633",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.821,
+  "codes_found": [
+   "BIO11",
+   "BIO12",
+   "CHEM1A",
+   "CHEM1AH",
+   "CHEM3",
+   "ECON10",
+   "ECON10H",
+   "HLTH1",
+   "HLTH10",
+   "HLTH3",
+   "HLTH5",
+   "HLTH5H",
+   "HLTH6",
+   "HLTH7",
+   "HLTH8",
+   "HLTH9",
+   "KNES96",
+   "NUT1",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC5",
+   "PSYC5H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51357",
+   "title": "Public Health for Transfer - AS-T",
+   "h1": "Public Health for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3859
+ },
+ {
+  "control_number": "45743",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3",
+   "MUS39",
+   "MUS4",
+   "MUS40",
+   "MUS42",
+   "MUS44",
+   "MUS46",
+   "MUS5",
+   "MUS50",
+   "MUS51",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS6"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51372",
+   "title": "Music for Transfer - AA-T",
+   "h1": "Music for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2794
+ },
+ {
+  "control_number": "45857",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1A",
+   "ACCT1AH",
+   "ACCT1B",
+   "ACCT1BH",
+   "CS1",
+   "ECON10",
+   "ECON10H",
+   "ECON13",
+   "ECON6",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "HLTH10",
+   "MATH11",
+   "MATH26",
+   "MATH4A",
+   "MATH4AH",
+   "MATHC2210",
+   "MATHC2210H",
+   "MATHC2220",
+   "MATHC2220H",
+   "MGT10",
+   "MGT104",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51436",
+   "title": "Economics for Transfer - AA-T",
+   "h1": "Economics for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4251
+ },
+ {
+  "control_number": "45859",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45860",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1AH",
+   "CHEM1B",
+   "GEOL1",
+   "GEOL2",
+   "MATHC2210",
+   "MATHC2210H",
+   "MATHC2220",
+   "MATHC2220H"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51400",
+   "title": "Geology for Transfer - AS-T",
+   "h1": "Geology for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2509
+ },
+ {
+  "control_number": "45861",
+  "title": "COMPUTER SCIENCE",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.733,
+  "codes_found": [
+   "BIO51",
+   "BIO51H",
+   "CHEM1A",
+   "CHEM1AH",
+   "CS38",
+   "CS40A",
+   "CS41",
+   "CS6A",
+   "MATH6A",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51453",
+   "title": "Computer Science for Transfer - AS-T",
+   "h1": "Computer Science for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2788
+ },
+ {
+  "control_number": "45862",
+  "title": "Studio Art",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "ART195",
+   "ART40",
+   "ART41",
+   "ART50",
+   "ART51",
+   "ART52",
+   "ART80",
+   "ART81",
+   "ART85",
+   "ART86",
+   "ARTH22",
+   "ARTH23",
+   "ARTH27",
+   "DMA51",
+   "DMA55",
+   "DMA65"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51341",
+   "title": "Studio Art for Transfer - AA-T",
+   "h1": "Studio Art for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3252
+ },
+ {
+  "control_number": "45863",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "HD101",
+   "HD110",
+   "HD115",
+   "HD120",
+   "HD15",
+   "HD150",
+   "HD181",
+   "HD190",
+   "HD30",
+   "HD4",
+   "HD7",
+   "PSYC7"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51438",
+   "title": "Early Childhood Education for Transfer - AS-T",
+   "h1": "Early Childhood Education for Transfer - AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2961
+ },
+ {
+  "control_number": "45864",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.829,
+  "codes_found": [
+   "ANTH2",
+   "ANTH2H",
+   "ECON10",
+   "ECON10H",
+   "HD10",
+   "HD101",
+   "HD110",
+   "HD115",
+   "HD120",
+   "HD15",
+   "HD150",
+   "HD181",
+   "HD190",
+   "HD30",
+   "HD4",
+   "HD7",
+   "HLTH10",
+   "MGT10",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC6",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC10",
+   "SOC20",
+   "SOC20H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50909",
+   "title": "Child and Adolescent Development For Transfer - AA-T",
+   "h1": "Child and Adolescent Development For Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4880
+ },
+ {
+  "control_number": "45868",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45869",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HIST10",
+   "HIST11",
+   "PHIL1",
+   "PHIL10",
+   "PHIL11",
+   "PHIL2",
+   "PHIL3",
+   "PHIL5",
+   "POLS5"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51366",
+   "title": "Philosophy for Transfer - AA-T",
+   "h1": "Philosophy for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2879
+ },
+ {
+  "control_number": "45870",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.762,
+  "codes_found": [
+   "ECON10",
+   "ECON10H",
+   "HD15",
+   "HLTH10",
+   "MGT10",
+   "MGT10H",
+   "PSYC10",
+   "PSYC10H",
+   "PSYC30",
+   "SOC19",
+   "SOC2",
+   "SOC20",
+   "SOC3",
+   "SOC30",
+   "SOC3H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51346",
+   "title": "Sociology for Transfer - AA-T",
+   "h1": "Sociology for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3569
+ },
+ {
+  "control_number": "45871",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45901",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "BIO11",
+   "BIO12",
+   "CHEM1A",
+   "CHEM1AH",
+   "CHEM4",
+   "DNCE36",
+   "DNCE37",
+   "DNCE38",
+   "DNCE39",
+   "DNCE45",
+   "DNCE46",
+   "DNCE47",
+   "DNCE48",
+   "DNCE51",
+   "DNCE52",
+   "DNCE53",
+   "DNCE54",
+   "DNCE86",
+   "DNCE87",
+   "DNCE88",
+   "ECON10",
+   "ECON10H",
+   "HLTH10",
+   "HLTH2",
+   "KNES11",
+   "KNES12",
+   "KNES13",
+   "KNES20",
+   "KNES22",
+   "KNES23",
+   "KNES25",
+   "KNES26",
+   "KNES27",
+   "KNES28",
+   "KNES3A",
+   "KNES3B",
+   "KNES3C",
+   "KNES4",
+   "KNES40",
+   "KNES41",
+   "KNES42",
+   "KNES43",
+   "KNES5",
+   "KNES6",
+   "KNES61",
+   "KNES62",
+   "KNES63",
+   "KNES65",
+   "KNES66",
+   "KNES67",
+   "KNES68",
+   "KNES7",
+   "KNES71",
+   "KNES72",
+   "KNES73",
+   "KNES74",
+   "KNES76",
+   "KNES77",
+   "KNES78",
+   "KNES79",
+   "KNES81",
+   "KNES82",
+   "KNES99",
+   "MGT10",
+   "MGT10H",
+   "PHYS2A",
+   "PHYS4A",
+   "PSYC10",
+   "PSYC10H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51382",
+   "title": "Kinesiology for Transfer - AA-T",
+   "h1": "Kinesiology for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 96,
+  "text_chars": 6532
+ },
+ {
+  "control_number": "46041",
+  "title": "French Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FR1",
+   "FR1H",
+   "FR2",
+   "FR3",
+   "FR4"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50906",
+   "title": "French Language - Certificate of Achievement",
+   "h1": "French Language - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1920
+ },
+ {
+  "control_number": "46044",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "WR10",
+   "WR11",
+   "WR13",
+   "WR14",
+   "WR15",
+   "WR16",
+   "WR17"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50911",
+   "title": "Creative Writing - Certificate of Achievement",
+   "h1": "Creative Writing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2367
+ },
+ {
+  "control_number": "46059",
+  "title": "ESL Milestone: Pathway to STEM",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.619,
+  "codes_found": [
+   "BIO11",
+   "BIO51",
+   "BIO51H",
+   "BIO52",
+   "BIO52H",
+   "CHEM1A",
+   "CHEM1AH",
+   "CS10",
+   "CS36",
+   "ESL1",
+   "ESL80",
+   "PHYS2A",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50904",
+   "title": "ESL Milestone: Pathway to STEM - Certificate of Achievement",
+   "h1": "ESL Milestone: Pathway to STEM - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3052
+ },
+ {
+  "control_number": "46106",
+  "title": "Insurance Agency",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE580",
+   "RE581",
+   "RE582"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50899",
+   "title": "Insurance Agency - Certificate of Completion",
+   "h1": "Insurance Agency - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1177
+ },
+ {
+  "control_number": "46109",
+  "title": "Introduction to Computing for Professionals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIM510",
+   "CIM516",
+   "CIM520",
+   "CIM530"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50898",
+   "title": "Introduction to Computing Professionals - Certificate of Completion",
+   "h1": "Introduction to Computing Professionals - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1576
+ },
+ {
+  "control_number": "46227",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.562,
+  "codes_found": [
+   "ANTH3",
+   "COMM30",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "FILM74",
+   "LIT43",
+   "LIT45",
+   "LIT46",
+   "LIT46H",
+   "LIT49",
+   "LIT74",
+   "TA22",
+   "TA30",
+   "WR10",
+   "WR11",
+   "WR13",
+   "WR15",
+   "WR16"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51417",
+   "title": "English for Transfer - AA-T",
+   "h1": "English for Transfer - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4342
+ },
+ {
+  "control_number": "46291",
+  "title": "Biotechnology Biomanufacturing Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "BIOT274",
+   "BIOT70",
+   "BIOT70L",
+   "CHEM1A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51598",
+   "title": "Biotechnology Biomanufacturing Technician - Certificate of Achievement",
+   "h1": "Biotechnology Biomanufacturing Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2274
+ },
+ {
+  "control_number": "46292",
+  "title": "Biotechnology Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "BIOT173",
+   "BIOT274",
+   "BIOT70",
+   "BIOT70L",
+   "CHEM1A"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51598",
+   "title": "Biotechnology Biomanufacturing Technician - Certificate of Achievement",
+   "h1": "Biotechnology Biomanufacturing Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2274
+ },
+ {
+  "control_number": "46332",
+  "title": "Biotechnology Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "BIOT173",
+   "BIOT176",
+   "BIOT274",
+   "BIOT275",
+   "BIOT70",
+   "BIOT70L",
+   "BIOT77",
+   "CHEM1A",
+   "CHEM1AH"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51568",
+   "title": "Biotechnology Technician - A.S. Degree",
+   "h1": "Biotechnology Technician - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2545
+ },
+ {
+  "control_number": "46366",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNCE1",
+   "DNCE12",
+   "DNCE13",
+   "DNCE17",
+   "DNCE18",
+   "DNCE22",
+   "DNCE23",
+   "DNCE33",
+   "DNCE34",
+   "DNCE36",
+   "DNCE51",
+   "DNCE6",
+   "DNCE7",
+   "HLTH1",
+   "HLTH131",
+   "HLTH2",
+   "HLTH3",
+   "IA1",
+   "IA10",
+   "IA12",
+   "IA13",
+   "IA15",
+   "IA18",
+   "IA19",
+   "IA1A",
+   "IA2",
+   "IA20",
+   "IA3",
+   "IA6",
+   "IA7",
+   "IA9",
+   "KNES100",
+   "KNES101",
+   "KNES106",
+   "KNES11",
+   "KNES12",
+   "KNES13",
+   "KNES20",
+   "KNES22",
+   "KNES23",
+   "KNES25",
+   "KNES26",
+   "KNES27",
+   "KNES28",
+   "KNES32",
+   "KNES3A",
+   "KNES3B",
+   "KNES3C",
+   "KNES4",
+   "KNES5",
+   "KNES6",
+   "KNES61",
+   "KNES62",
+   "KNES63",
+   "KNES64",
+   "KNES7",
+   "KNES71",
+   "KNES72",
+   "KNES73",
+   "KNES74",
+   "KNES76",
+   "KNES77",
+   "KNES78",
+   "KNES79",
+   "KNES81",
+   "KNES82",
+   "KNES83",
+   "KNES84",
+   "KNES85",
+   "KNES86",
+   "NUT1"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51383",
+   "title": "Kinesiology - A.A. Degree",
+   "h1": "Kinesiology - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 93,
+  "text_chars": 6049
+ },
+ {
+  "control_number": "46418",
+  "title": "Medical Assisting",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDA510",
+   "MEDA520"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51681",
+   "title": "Medical Assisting Certificate of Completion - Certificate of Completion",
+   "h1": "Medical Assisting Certificate of Completion - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1591
+ },
+ {
+  "control_number": "46566",
+  "title": "Computer-Aided Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "DR50",
+   "DR52",
+   "ENGR21",
+   "ENGR23",
+   "ENGR54",
+   "ENGR83",
+   "MATH124"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51451",
+   "title": "Computer-Aided Design - Certificate of Achievement",
+   "h1": "Computer-Aided Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2446
+ },
+ {
+  "control_number": "46587",
+  "title": "Transitional Kindergarten",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HD101",
+   "HD110",
+   "HD115",
+   "HD120",
+   "HD131",
+   "HD15",
+   "HD30",
+   "HD7"
+  ],
+  "source": {
+   "url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51705",
+   "title": "Transitional Kindergarten - Certificate of Achievement",
+   "h1": "Transitional Kindergarten - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1841
+ }
+]

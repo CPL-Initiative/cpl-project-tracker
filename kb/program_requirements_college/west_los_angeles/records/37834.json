@@ -1,0 +1,213 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "37834",
+ "shape": "noncredit",
+ "title": "College Readiness for the English Language Learner",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8949,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8949,
+    "output_tokens": 1291,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1291,
+  "output_tokens_details": {
+   "thinking_tokens": 477
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06162,
+ "ms": 11071,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 4,
+   "share": 0.75,
+   "missing": [
+    "BASICSKILLS73CE"
+   ],
+   "unexplained": [
+    "BASICSKILLS73CE"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BSICSKL5CE",
+    "BSICSKL73CE"
+   ],
+   "flagged": [
+    "BSICSKL5CE"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    63.0,
+    99.0
+   ],
+   "stated": [
+    63.0,
+    81.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 63.0-99.0; the catalog states 63.0-81.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COLLEGE READINESS FOR THE ENGLISH LANGUAGE LEARNER (CY)",
+   "measure": "hours",
+   "total_units": {
+    "min": 63,
+    "max": 81
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Effectively navigate and utilize college website, email system, student portal, and student services.",
+    "Effectively use the computer for college purposes.",
+    "Effectively document your educational goals and develop and utilize an action plan to successfully undertake or progress in an academic or career program."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 075CE",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 005CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC ED 289CE",
+      "units": 18,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives (choose one from the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 027CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 073CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints BSICSKL 073CE (Industry Overview and Career Opportunities); the closed list stores it as BASIC SKILLS 073CE with the same number and title, so it is treated as the same course rather than a catalog addition.",
+   "BSICSKL 005CE Academic Guidance is not in the closed list; recorded as a catalog addition.",
+   "Stated total is 63-81 hours. The printed course hours give a minimum of 63 but a maximum of 99 (9 + 18 + 54 + 18), because VOC ED 289CE is printed as 18-54 hours. The reviewer should check this against the stated 81-hour maximum.",
+   "The electives list continues across the page break from page 230 to page 231."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

@@ -1,0 +1,342 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "44477",
+ "shape": "degree",
+ "title": "Chemistry for UC",
+ "award": "A.S. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/50928",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7315,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7315,
+    "output_tokens": 2528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2528,
+  "output_tokens_details": {
+   "thinking_tokens": 848
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07982,
+ "ms": 21061,
+ "seconds": 21.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 19,
+   "share": 0.579,
+   "missing": [
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220",
+    "MATHC2220H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B",
+    "MATH3BH"
+   ],
+   "flagged": [
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B",
+    "MATH3BH"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    51.0,
+    51.0
+   ],
+   "stated": [
+    51.0,
+    51.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry for UC Transfer - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 51,
+    "max": 51
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 20,
+    "max": 20
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "General Chemistry",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Organic Chemistry",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CHEM 12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mathematics",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 3A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3AH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 3B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3BH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 24H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text (GE course, not part of major)"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "not in the text (GE course, not part of major)"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text (GE course, not part of major)"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "not in the text (GE course, not part of major)"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog lists MATH 3A/3AH instead"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text; catalog lists MATH 3AH instead"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog lists MATH 3B/3BH instead"
+   },
+   {
+    "code": "MATH C2220H",
+    "why": "not in the text; catalog lists MATH 3BH instead"
+   }
+  ],
+  "notes": [
+   "All courses sit under 'Required Core: Units: 51.0'; recorded as the catalog's subheadings General Chemistry, Organic Chemistry, Physics and Mathematics. Total : 51.0 recorded as total_units (major only).",
+   "The '5.0' printed beside 'General Chemistry' and 'Mathematics' appears to be the units of the first OR-group (CHEM 1A/1AH; MATH 3A/3AH), not the subheading total (General Chemistry sums to 10, Mathematics to 19), so stated left null for those blocks.",
+   "Several courses are marked '( Archive )' (CHEM 1B, PHYS 4A-4C, MATH 3A/3AH/3B/3BH/4A/24/24H) in a 2026-2027 catalog; the closed list names MATH C2210/C2220 (and honors) which may have replaced MATH 3A/3B. Reviewer should check whether this page reflects current requirements.",
+   "IGETC General Education Requirements printed as '( 20 units)'; recorded as ge_units. No degree total including GE is printed.",
+   "The Learning Outcome(s) section is cut off mid-word ('Apply chemical concepts to identify or pr'); the outcome was not recorded because it cannot be copied in full.",
+   "The Summary names majors students may pursue (chemistry, biology, nursing, dental hygiene, etc.), not careers; careers left empty."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

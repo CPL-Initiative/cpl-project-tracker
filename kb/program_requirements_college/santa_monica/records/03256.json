@@ -1,0 +1,314 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "03256",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=83",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12351,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12351,
+    "output_tokens": 2255,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2255,
+  "output_tokens_details": {
+   "thinking_tokens": 627
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0945,
+ "ms": 18924,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 26,
+   "share": 0.538,
+   "missing": [
+    "ACCTG1",
+    "ACCTG15",
+    "ACCTG2",
+    "ACCTG31A",
+    "ACCTG31B",
+    "ACCTG9",
+    "BUS1",
+    "BUS32",
+    "BUS62",
+    "CIS30",
+    "CIS35A",
+    "CIS35B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'LIST B: Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "LIST B: Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "LIST B: Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCTG 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 10B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 10C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 19A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 40A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 40B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 1",
+    "why": "not in the A.S. text provided (appears only in CPA Track and Staff Accountant certificates); A.S. section start is cut off"
+   },
+   {
+    "code": "ACCTG 2",
+    "why": "not in the A.S. text provided (appears only in CPA Track and Staff Accountant certificates); A.S. section start is cut off"
+   },
+   {
+    "code": "ACCTG 9",
+    "why": "not in the A.S. text provided (appears only in other certificates); A.S. section start is cut off"
+   },
+   {
+    "code": "ACCTG 15",
+    "why": "not in the A.S. text provided (appears only in CPA Track certificate); A.S. section start is cut off"
+   },
+   {
+    "code": "ACCTG 31A",
+    "why": "not in the A.S. text provided (appears only in other certificates); A.S. section start is cut off"
+   },
+   {
+    "code": "ACCTG 31B",
+    "why": "not in the A.S. text provided (appears only in other certificates); A.S. section start is cut off"
+   },
+   {
+    "code": "BUS 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 32",
+    "why": "not in the A.S. text provided (appears only in Administration of Justice AS-T List B)"
+   },
+   {
+    "code": "BUS 62",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 35A",
+    "why": "not in the A.S. text provided (appears only in Business Bookkeeping certificate)"
+   },
+   {
+    "code": "CIS 35B",
+    "why": "not in the A.S. text provided (appears only in Business Bookkeeping certificate)"
+   }
+  ],
+  "notes": [
+   "The catalog text begins on page 83 (printed 82) mid-section with LIST B; the Accounting A.S. heading, description, outcomes, area of emphasis total, required core and List A are on the preceding page and not in the text. The section_heading records the List B heading because the award heading is not printed in the text.",
+   "List B rule reads 'Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)': a maximum, conditional on List A, not a minimum; minimum left null and stated null. Reviewer should check the full A.S. section on page 82.",
+   "No total, GE pattern, outcomes or careers for the Accounting A.S. appear in the provided text.",
+   "ACCTG 19A is printed as 'IRS Volunteer Income Tax Assistant (VITA) Program' in List B (title wording differs slightly from the closed list)."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

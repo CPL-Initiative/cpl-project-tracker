@@ -1,0 +1,36 @@
+{
+ "_readme": "S440 SkyChaparral, 2026-10-21. Santa Monica's capture (run 39536186746) followed its procedure step from catalog.smc.edu/current/index.php to the whole-catalog PDF (catalog.smc.edu/current/catalog.pdf, 200 on the link) and timed out downloading it at 600 s, so it found 0 of 240 listed programs. This read learns whether the HTML catalog holds a page per program (the reader's custom_html path) and how its program pages are addressed, before any change to SMC's procedure. No model call.",
+ "college": "Santa Monica College",
+ "questions": {
+  "program_pages": "Whether catalog.smc.edu/current/ links a page per program or per department, and how those addresses are written.",
+  "program_shape": "How one program page lists its required courses and units (read on one followed link)."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram",
+  "[Uu]nits"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_pages"
+   ],
+   "url": "https://catalog.smc.edu/current/index.php",
+   "links": "program|degree|certificate|major|department|\\.pdf"
+  },
+  {
+   "answers": [
+    "program_pages",
+    "program_shape"
+   ],
+   "url": "https://catalog.smc.edu/current/",
+   "expand": true,
+   "links": "program|degree|certificate|major|department",
+   "follow": "barber|cosmetolog|accounting"
+  }
+ ]
+}

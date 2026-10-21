@@ -1,0 +1,181 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "24301",
+ "shape": "other",
+ "title": "Pre-Nursing Career Preparation Certificate of Completion",
+ "award": null,
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9061,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9061,
+    "output_tokens": 1295,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1295,
+  "output_tokens_details": {
+   "thinking_tokens": 449
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06214,
+ "ms": 11584,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "PRE-NURSING CAREER PREPARATION (CN)",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Employ basic medical vocabulary and abbreviations used in healthcare professions.",
+    "Comply and demonstrate proper ethical behavior in any healthcare workplace setting.",
+    "Differentiate among healthcare career pathways in: In-Home Health Support Service, Certified Nurse Assistant, Home Health Aide, Geriatric Care Technician, Licensed Vocational Nurse, Nurse Practitioner, and Registered Nurse.",
+    "Build knowledge capacity about California State licensure, job outlook, personnel requirements and program curriculum.",
+    "Demonstrate professional behavior and attire as a healthcare professional."
+   ],
+   "careers": [
+    "healthcare field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 400CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 403CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 409CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours: section prints (54 hours) and 18 hours beside each of the three required courses.",
+   "Program code W024301E; award type is a Certificate of Completion (CN).",
+   "The catalog prints VOC ED 403CE's title garbled as 'Law & Ethics for Health Terminology Professions'; recorded as VOC ED 403CE (Law & Ethics for Health Professions).",
+   "Careers: only 'entry-level positions in healthcare field' is named in the description; outcome 3 lists healthcare career pathways (Certified Nurse Assistant, Home Health Aide, Licensed Vocational Nurse, Registered Nurse, etc.), which were not added as careers—reviewer may wish to check.",
+   "The same VOC ED 400CE and 403CE courses also appear in the preceding Pre-Dental Career Preparation section, which was not read for this record."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

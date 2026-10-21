@@ -1,0 +1,548 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "36141",
+ "shape": "degree",
+ "title": "Real Estate",
+ "award": "A.S. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51356",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8837,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8837,
+    "output_tokens": 4027,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4027,
+  "output_tokens_details": {
+   "thinking_tokens": 1135
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11589,
+ "ms": 29752,
+ "seconds": 30.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 39,
+   "share": 0.744,
+   "missing": [
+    "CIM107",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "MGT105",
+    "MGT203",
+    "MGT235",
+    "RE174",
+    "RE176A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "ACCT204",
+    "CIM1",
+    "ECON1",
+    "ECON1H",
+    "ECON2",
+    "ECON2H",
+    "MGT103",
+    "MGT140",
+    "MGT5",
+    "RE174A",
+    "RE176"
+   ],
+   "flagged": [
+    "ACCT204",
+    "CIM1",
+    "ECON1",
+    "ECON1H",
+    "ECON2",
+    "ECON2H",
+    "MGT103",
+    "MGT140",
+    "MGT5",
+    "RE174A",
+    "RE176"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    34.0
+   ],
+   "stated": [
+    31.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Real Estate - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the requirements and functions of different state licenses, agency relationships and fiduciary duty.",
+    "Explain the various ways of holding title, the benefits of them, how title transfers and the potential issues that can arise in transfer.",
+    "Meet the requirements of the Department of Real Estate Broker License.",
+    "Identify how economics and/or accounting practices align with the legal obligations of being a Real Estate Broker.",
+    "Prepare students to succeed as a business owner and self-employed agent by gaining additional business skills in Business, Entrepreneurship and Computer Information Management"
+   ],
+   "careers": [
+    "business owner",
+    "self-employed agent",
+    "Salesperson",
+    "Broker",
+    "Loan Officer",
+    "Property Manager",
+    "Leasing Agent",
+    "Title Examiner",
+    "Escrow Officer",
+    "Real Estate Developer",
+    "Real Estate Office Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "RE 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 174A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RE 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RE 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 195",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one of the following courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MGT 12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGT 12AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 1BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 2H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 20H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete at least 7 units",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MGT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MGT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MGT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIM 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIM 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENTR 117",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 200",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 211",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 221",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 224",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 242",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 250",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "RE 174",
+    "why": "not in the text; catalog prints RE 174A Legal Aspects of Real Estate I (Archive)"
+   },
+   {
+    "code": "RE 176A",
+    "why": "not in the text; catalog prints RE 176 Real Estate Appraisal (Archive)"
+   },
+   {
+    "code": "MGT 105",
+    "why": "not in the text; catalog prints MGT 5 Personal Financial Planning"
+   },
+   {
+    "code": "MGT 203",
+    "why": "not in the text; catalog prints MGT 103 Business English"
+   },
+   {
+    "code": "MGT 235",
+    "why": "not in the text; catalog prints MGT 140 Advertising"
+   },
+   {
+    "code": "CIM 107",
+    "why": "not in the text; catalog prints CIM 1 Introduction to Personal Computer Applications"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints archived ECON 1"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text; catalog prints archived ECON 1H"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints archived ECON 2"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in the text; catalog prints archived ECON 2H"
+   }
+  ],
+  "notes": [
+   "Several catalog codes differ from closed-list codes with matching titles (RE 174A/RE 174, RE 176/RE 176A, MGT 5/MGT 105, MGT 103/MGT 203, MGT 140/MGT 235, CIM 1/CIM 107, ECON 1/ECON C2001, ECON 2/ECON C2002); likely renumbering—recorded as printed with catalog_addition true.",
+   "Many listed courses are marked '( Archive )' in the catalog (e.g., RE 174A, RE 176, MGT 12AH, ACCT 215, ECON 1/1H/2/2H, ECON 20H, MGT 1); page may reflect outdated course versions for 2026-2027.",
+   "MGT 5 is printed '( same as ECON 5 )'; ECON 5 is a cross-listing, not recorded as a separate alternative.",
+   "CIM 117 and ENTR 117 are cross-listed and printed as an OR pair.",
+   "Summary text calls the award 'This certificate' although the section is the A.S. Degree.",
+   "Total printed as 'Total : 31.0- 34.0' for the major; no degree total or GE pattern printed."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

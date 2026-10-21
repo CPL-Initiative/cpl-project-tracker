@@ -1,0 +1,229 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "19601",
+ "shape": "certificate",
+ "title": "Pharmacy Technician Basic",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8587,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8587,
+    "output_tokens": 1763,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1763,
+  "output_tokens_details": {
+   "thinking_tokens": 549
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06961,
+ "ms": 15499,
+ "seconds": 15.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "PHRMCTK34"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PHRMCTK912"
+   ],
+   "flagged": [
+    "PHRMCTK912"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W019601D",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze situations and respond to the given situations using the evidence presented in a manner which adheres to the laws and ethics of the profession.",
+    "Completely communicate thoughts in both an oral and written format that is clear, concise, cohesive, and courteous.",
+    "Follow the workflow of pharmacy practice in various pharmacy settings.",
+    "Exhibit professionalism competence, growth, and development when practicing the profession.",
+    "Effectively work as a member of a team.",
+    "Know how to advance the profession through leadership service activities and affiliation with professional organizations that promote the field as well as encourage members of different cultures to understand the field."
+   ],
+   "careers": [
+    "pharmacy"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "PHRMCTK 023",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHRMCTK 029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHRMCTK 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHRMCTK 031",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHRMCTK 032",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHRMCTK 912",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ALD HTH 056",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ALD HTH 057",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHRMCTK 34",
+    "why": "not in the text; the catalog lists PHRMCTK 912 Work Experience: Community Pharmacy Externship (2.5 units) in its place, likely a renumbering"
+   }
+  ],
+  "notes": [
+   "The program's own heading (likely 'PHARMACY TECHNICIAN BASIC (CA)') falls before the extracted text; the section begins at 'ACADEMIC PROGRAM CODE: W019601D' on page 139, so that line is used as section_heading.",
+   "The catalog's description calls it 'The Basic Pharmacy Technician Certificate of Achievement'.",
+   "PHRMCTK 912 (Work Experience: Community Pharmacy Externship, 2.5 units) is not on the closed list; the closed list's PHRMCTK 34 Community Pharmacy Externship (2.5 units) appears to be the same course under a former number. Reviewer should confirm.",
+   "Catalog codes are zero-padded (PHRMCTK 023, ALD HTH 056) and were matched to closed-list codes PHRMCTK 23, ALD HTH 56, etc.",
+   "The Pharmacy Technician Advanced certificate section that follows (same PLOs, 30.5 units) was not used.",
+   "Career entry 'pharmacy' is taken from 'prepares students for an exciting career in pharmacy'."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

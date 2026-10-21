@@ -1,0 +1,1261 @@
+{
+ "college": "Irvine Valley College",
+ "control_number": "38268",
+ "shape": "degree",
+ "title": "Emphasis in Liberal Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51428",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14936,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14936,
+    "output_tokens": 10110,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 10110,
+  "output_tokens_details": {
+   "thinking_tokens": 3359
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.26194,
+ "ms": 73444,
+ "seconds": 73.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 89,
+   "listed": 143,
+   "share": 0.622,
+   "missing": [
+    "BIO3",
+    "BIOLC1001",
+    "BIOLC1001H",
+    "BIOLC1001L",
+    "COUN1",
+    "COUN10",
+    "COUN100A",
+    "COUN100B",
+    "COUN103",
+    "COUN12",
+    "COUN150",
+    "COUN2",
+    "COUN20",
+    "COUN4",
+    "COUN47",
+    "COUN6",
+    "COUN6H",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ESL1",
+    "ETHN10",
+    "ETHN10H",
+    "ETHN15",
+    "ETHN20",
+    "ETHN30",
+    "ETHN35",
+    "ETHN40",
+    "ETHN50",
+    "ETHN60",
+    "GS10",
+    "GS20",
+    "GS50",
+    "HISTC1001",
+    "HISTC1002",
+    "HLTH10",
+    "LIB20",
+    "LIB20H",
+    "LIT20",
+    "LIT21",
+    "LIT22",
+    "LIT23",
+    "LIT33",
+    "LIT7",
+    "MATH26H",
+    "MATH4AH",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220",
+    "MATHC2220H",
+    "MUS21H",
+    "SOC15",
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 26,
+   "codes": [
+    "BIO1",
+    "BIO1H",
+    "BIO1L",
+    "BIOL3",
+    "CS6A",
+    "CS6B",
+    "ENGL20",
+    "ENGL21",
+    "ENGL22",
+    "ENGL23",
+    "ENGL33",
+    "ENGL7",
+    "HD10",
+    "HIST20",
+    "HIST21",
+    "LIT1",
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B",
+    "MATH3BH",
+    "PHIL5",
+    "RD74",
+    "SOC1",
+    "SOC1H",
+    "SOCI15",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIO1",
+    "BIO1H",
+    "BIO1L",
+    "BIOL3",
+    "CS6A",
+    "CS6B",
+    "ENGL20",
+    "ENGL21",
+    "ENGL22",
+    "ENGL23",
+    "ENGL33",
+    "ENGL7",
+    "HD10",
+    "HIST20",
+    "HIST21",
+    "LIT1",
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B",
+    "MATH3BH",
+    "PHIL5",
+    "RD74",
+    "SOC1",
+    "SOC1H",
+    "SOCI15",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emphasis in Liberal Studies - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an historical and aesthetic appreciation of human expression and diversity as it reflects the human experience.",
+    "Conceptualize and apply theoretical constructs within the real world as it affects our physical experience.",
+    "Identify, analyze and understand social phenomenon as it affects the human condition."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "ART 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 77",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 20H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RD 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 5",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 6A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 6A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 6B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 6B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 10",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ECON 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MGT 10H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 3A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3AH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 3B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 3BH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 24H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 124",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 3H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 3L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 20H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 3H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HD 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 7",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HD 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HD 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 15",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 13H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 3",
+    "why": "catalog prints this course as BIOL 3 (recorded as catalog addition)"
+   },
+   {
+    "code": "BIOLC1001",
+    "why": "not in the text; catalog lists BIO 1"
+   },
+   {
+    "code": "BIOLC1001H",
+    "why": "not in the text; catalog lists BIO 1H"
+   },
+   {
+    "code": "BIOLC1001L",
+    "why": "not in the text; catalog lists BIO 1L"
+   },
+   {
+    "code": "COUN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 100A",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 100B",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 150",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 47",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 6H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text; catalog lists LIT 1 Introduction to Literature"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 10H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "GS 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "GS 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "GS 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text; catalog lists archived HIST 20"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text; catalog lists archived HIST 21"
+   },
+   {
+    "code": "HLTH 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "LIB 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "LIB 20H",
+    "why": "not in the text"
+   },
+   {
+    "code": "LIT 20",
+    "why": "catalog prints this course as ENGL 20"
+   },
+   {
+    "code": "LIT 21",
+    "why": "catalog prints this course as ENGL 21"
+   },
+   {
+    "code": "LIT 22",
+    "why": "catalog prints this course as ENGL 22"
+   },
+   {
+    "code": "LIT 23",
+    "why": "catalog prints this course as ENGL 23"
+   },
+   {
+    "code": "LIT 33",
+    "why": "catalog prints this course as ENGL 33"
+   },
+   {
+    "code": "LIT 7",
+    "why": "catalog prints this course as ENGL 7"
+   },
+   {
+    "code": "MATH 26H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 4AH",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog lists archived MATH 3A"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text; catalog lists archived MATH 3AH"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog lists archived MATH 3B"
+   },
+   {
+    "code": "MATH C2220H",
+    "why": "not in the text; catalog lists archived MATH 3BH"
+   },
+   {
+    "code": "MUS 21H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 15",
+    "why": "catalog prints this course as SOCI 15 (alternative to HD 15)"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text; catalog lists SOC 1"
+   },
+   {
+    "code": "SOCIC1000H",
+    "why": "not in the text; catalog lists SOC 1H"
+   }
+  ],
+  "notes": [
+   "All courses are recorded in one choose_units block (minimum 18, printed 'Units: 18.0- 22.0' and 'Total : 18.0- 22.0'). The catalog groups them under area subheadings ARTS, ENGLISH COMMUNICATION, HUMANITIES, LITERATURE, MATHEMATICS, NATURAL SCIENCES, SOCIAL SCIENCES, each printed with 'Units: 0.0' and no per-area minimum; the order of courses follows those areas.",
+   "Additional rule: at least one course must be taken in three different disciplines; 'disciplines' may mean the area subheadings or course subjects - reviewer should check.",
+   "Natural sciences prints combined 4-unit options: BIO 1 AND BIO 1L, BIO 1H AND BIO 1L, GEOG 1 AND GEOG 1L, PSYC 3 AND PSYC 3L, PSYC 3H AND PSYC 3L, alongside the lecture-only courses. Each course is listed once; the labs BIO 1L, GEOG 1L and PSYC 3L are recorded as separate entries. PSYC 3 and PSYC 3H are printed as separate rows (not 'OR') but recorded as one entry with PSYC 3H as alternative.",
+   "The ECON 10 / ECON 10H / MGT 10 / MGT 10H / STAT C1000 OR group is printed with '3.0- 4.0'; recorded units 3, units_max 4 (STAT C1000 is 4 units).",
+   "Several closed-list codes differ from the catalog's printed codes: MUS1 and TA27 were matched to MUS 1 and TA 27 (spacing only). BIO 3/BIOL 3, LIT/ENGL literature courses and SOC 15/SOCI 15 were not matched and are marked as catalog additions; the reviewer may treat them as the same courses.",
+   "Many listed courses are marked '( Archive )' in the catalog (e.g., ARTH 4, MUS 1, RD 74, HIST 20, HIST 21, HIST 25, LIT 1, CS 6A, CS 6B, MGT 10, MATH 3A/3B, MATH 4A, MATH 24, MATH 26, CHEM 3, ECON 20H, HD 10).",
+   "No general education pattern or degree total is printed on the page.",
+   "The outcomes list is printed under the summary for this A.A. degree.",
+   "No careers are named."
+  ]
+ },
+ "extracted_run": "39539599944"
+}

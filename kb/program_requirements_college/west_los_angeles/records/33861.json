@@ -1,0 +1,239 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "33861",
+ "shape": "degree",
+ "title": "Health Science",
+ "award": "A.S. Degree",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9243,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9243,
+    "output_tokens": 1759,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1759,
+  "output_tokens_details": {
+   "thinking_tokens": 639
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07215,
+ "ms": 14054,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FAM&CS21"
+   ],
+   "flagged": [
+    "FAM&CS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health Science (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 15,
+    "max": 15
+   },
+   "ge_pattern": "LACCD GE plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply evidence-based models to evaluate scientific literature and other health related concepts.",
+    "Critically analyze factors that influence human health, public health policy, socio-economics, and scientific data that contribute to health disparities.",
+    "Use scientific knowledge to efficaciously affect change in the health of local and global communities.",
+    "Integrate professional and ethical standards with a commitment to lifelong learning."
+   ],
+   "careers": [
+    "nursing",
+    "radiological sciences",
+    "physical therapy",
+    "occupational therapy",
+    "respiratory therapy",
+    "dental hygiene"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAM & CS 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MICRO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 060",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 051",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 101",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section with 'ACADEMIC PROGRAM CODE: W033861C'; the Health Science (A.S.) heading itself is not printed in the text, so section_heading is inferred from the program description.",
+   "Catalog prints codes with leading zeros (ANATOMY 001, BIOLOGY 003, MICRO 020, PHYSIOL 001, CHEM 060, CHEM 051); these match closed-list ANATOMY 1, BIOLOGY 3, MICRO 20, PHYSIOL 1, CHEM 60, CHEM 51.",
+   "Degree breakdown printed: Total Major Units 24, LACCD GE plan units (less double-counted) 21, Additional Degree-applicable Elective Units 15, Total Units 60. GE pattern recorded as LACCD GE plan; the page recommends transfer students consider Cal-GETC.",
+   "Recommended GE courses (ANTHRO 102, COMM C1000, PSYC C1000, PSYCH 041, SOC 001) are listed under '**The following GE courses are recommended'; as general education recommendations they are not recorded in a block.",
+   "Public Health (AS-T) and History (AA-T) sections that follow were not read for this award."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

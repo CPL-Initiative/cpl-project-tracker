@@ -1,0 +1,168 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "38289",
+ "shape": "noncredit",
+ "title": "Statistics Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7052,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7052,
+    "output_tokens": 1007,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1007,
+  "output_tokens_details": {
+   "thinking_tokens": 382
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04835,
+ "ms": 8961,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    90.0
+   ],
+   "stated": [
+    24.0,
+    90.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC PROGRAM CODE: W038289F",
+   "measure": "hours",
+   "total_units": {
+    "min": 24,
+    "max": 90
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use mathematical reasoning, tools and strategies to analyze quantitative aspects problems arising in their major or area of concentration."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACAD PR 015CE",
+      "units": 12,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACAD PR 016CE",
+      "units": 12,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program's title heading (likely 'STATISTICS PREPARATION (CY)') is not in the extracted text; it probably sits at the bottom of the previous page. The section was identified by its description ('The Statistics Preparation certificate program...') and program code W038289F, which is used here as the section heading.",
+   "The description also refers to 'the Liberal Arts Transfer Mathematics Preparation Certificate of Competency', apparently text carried over from another program name; a reviewer should check it.",
+   "The outcome is copied as printed, including the apparent missing word 'of' in 'quantitative aspects problems'.",
+   "Hours are printed as ranges per course (12-36 and 12-54); the program total is printed as 24-90 hours.",
+   "The following section (STEM Math Preparation, W038290F) includes ACAD PR 016CE and ACAD PR 017CE; it was not read for this record."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

@@ -1,0 +1,208 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "44396",
+ "shape": "certificate",
+ "title": "Health, Nutrition, and  Food Sanitation in Early Childhood Education",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11191,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11191,
+    "output_tokens": 1640,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1640,
+  "output_tokens_details": {
+   "thinking_tokens": 473
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07756,
+ "ms": 13206,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHDEV1",
+    "FAM&CS21"
+   ],
+   "flagged": [
+    "CHDEV1",
+    "FAM&CS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    13.0,
+    13.0
+   ],
+   "stated": [
+    13.0,
+    13.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HEALTH, NUTRITION, AND FOOD SANITATION IN EARLY CHILDHOOD EDUCATION PROGRAMS (CA)",
+   "measure": "units",
+   "total_units": {
+    "min": 13,
+    "max": 13
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understanding of Young Children: Practice and demonstrate an understanding of child development and their relationships with children and families to understand children as individuals and to plan responses to their unique needs and potential.",
+    "Equity Fairness, and Diversity: Practice, model, and teach behaviors appropriate in a diverse society by creating a safe, secure learning environment for all children; by showing appreciation of and respect for the individual differences and unique needs of each member of the learning community; and by empowering children to give and expect equity, fairness, and dignity.",
+    "Assessment: Critically investigate, interpret and analyze results of the strengths and weaknesses of multiple assessment methodologies and know how to use them effectively. Utilize a variety of methods, they systematically observe, monitor, and document children's activities and behavior, analyzing, communicating, and using the information they decide would improve their work with children, parents, and others.",
+    "Promoting Child Development and Learning: Practice and demonstrate an understanding of how to promote children's cognitive, social, emotional, physical, and linguistic development by organizing and orchestrating the environment in ways that best facilitate the development and learning of young children.",
+    "Knowledge of Integrated Curriculum: Apply critical thinking to design and implement academic subjects, and assessment tools so that the program design is developmentally appropriate learning experiences that integrate within and across the disciplines."
+   ],
+   "careers": [
+    "preschool teachers",
+    "teaching assistants",
+    "childcare workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "CH DEV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH DEV 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAM & CS 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HEALTH 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HEALTH 012",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 172",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (CH DEV 010, HEALTH 011, HEALTH 012); matched to closed-list CH DEV 10, HEALTH 11, HEALTH 12.",
+   "CH DEV 172 is titled 'Introduction to Child Development Careers' in the catalog vs. 'Introduction to Careers in Child Development' in the state file; treated as the same course.",
+   "The same five program learning outcomes and career description are printed identically for several Early Childhood certificates on these pages; recorded the copy printed in this award's own section.",
+   "Course sum (3+3+3+3+1) matches the printed Required courses and Total Units of 13."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

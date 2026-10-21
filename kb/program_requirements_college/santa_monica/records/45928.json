@@ -1,0 +1,460 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "45928",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=137",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8826,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8826,
+    "output_tokens": 3365,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3365,
+  "output_tokens_details": {
+   "thinking_tokens": 1027
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1026,
+ "ms": 27151,
+ "seconds": 27.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 42,
+   "share": 0.548,
+   "missing": [
+    "ENGL10",
+    "ENGL14",
+    "ENGL15",
+    "ENGL17",
+    "ENGL18",
+    "ENGL32",
+    "ENGL34",
+    "ENGL38",
+    "ENGL39",
+    "ENGL41",
+    "ENGL5",
+    "ENGL53",
+    "ENGL54",
+    "ENGL6",
+    "ENGL7",
+    "ENGL8",
+    "ENGL9",
+    "ENGLC1001",
+    "RELST51"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGL58",
+    "ENGL70"
+   ],
+   "flagged": [
+    "ENGL58",
+    "ENGL70"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    3.0,
+    3.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'Unnamed list continued from previous page (likely List B)' chooses courses but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [
+    "RELST52 in 'List C'"
+   ],
+   "pass": false
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English A.A-T (heading not printed in the excerpt; text begins mid-list, ending at 'Creative Writing, Certificate of Achievement')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Unnamed list continued from previous page (likely List B)",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 26",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "REL ST 52",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "REL ST 52",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL 10",
+    "why": "not in the text (likely on the previous page of the A.A-T section)"
+   },
+   {
+    "code": "ENGL 14",
+    "why": "not in the text (likely on the previous page)"
+   },
+   {
+    "code": "ENGL 15",
+    "why": "not in the text (likely on the previous page)"
+   },
+   {
+    "code": "ENGL 17",
+    "why": "not in the text (likely on the previous page)"
+   },
+   {
+    "code": "ENGL 18",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 32",
+    "why": "not in the text (likely on the previous page)"
+   },
+   {
+    "code": "ENGL 34",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 38",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 39",
+    "why": "not in the text (likely on the previous page)"
+   },
+   {
+    "code": "ENGL 41",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 5",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 53",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 54",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 6",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 7",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 8",
+    "why": "named only in the Creative Writing certificate section"
+   },
+   {
+    "code": "ENGL 9",
+    "why": "not in the text (likely on the previous page)"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text (likely in the Required Core on the previous page)"
+   },
+   {
+    "code": "REL ST 51",
+    "why": "not in the text; catalog prints ENGL 51 as 'same as REL ST 52', likely a typo for REL ST 51"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section: the A.A-T heading, description, outcomes, Required Core, List A and the start of the first list are on the previous page and not in the text. Total units, GE pattern and degree total cannot be read.",
+   "The first block's name and rule are not printed in the excerpt; it is probably the end of List B. Its minimum is left null.",
+   "List C rule: choose one course from Required Core, List A, or List B not already taken, or any course from List C (3 units). The path of using an unused Required Core/List A/List B course is not recorded as courses in this block.",
+   "Catalog prints ENGL 51 as 'same as REL ST 52' and ENGL 52 as 'same as REL ST 52'; the ENGL 51 cross-listing is likely a typo for REL ST 51. Recorded as printed.",
+   "ENGL 58 appears both in the first (continued) list and in List C.",
+   "The Creative Writing Certificate of Achievement section that follows belongs to a different award; its outcomes and courses were not recorded.",
+   "No program learning outcomes or careers for the English A.A-T appear in the excerpt."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

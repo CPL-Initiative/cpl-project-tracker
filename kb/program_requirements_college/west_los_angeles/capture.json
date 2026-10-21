@@ -1,0 +1,5521 @@
+{
+ "college": "West Los Angeles College",
+ "catalog_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 245,
+ "with_closed_list": 228,
+ "started": "2026-10-21T03:13:49Z",
+ "pdf": {
+  "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 22432102,
+  "pages_total": 358,
+  "error": null,
+  "chars_total": 1540542,
+  "pypdf_accepted": 222,
+  "sample": [
+   "p108: 'CREDIT PROGRAMS: DEGREES & CERTIFICATES \\nWest Los Angeles College 2026-2027 Catalog  107 \\nFLM PRD 200 Introduction to Adobe  \\n Photoshop ............................... 3 \\nFLM PRD 202 Visual Effects and  \\n Motion Graphics ..................'",
+   "p215: 'CREDIT COURSE LISTINGS & DESCRIPTIONS \\nWest Los Angeles College 2026-2027 Catalog  214 \\nPrerequisite: ANATOMY001, and CHEM 051 or CHEM 060 or \\nCHEM 101 \\nThis course presents the biochemical and biophysical \\nprinciples underlying the physiol'"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "03304",
+    "pages": [
+     75,
+     76
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] ACADEMIC PROGRAM CODE: W003304C The Associate of Arts in Business degree is a survey of the fundamental aspects of all phases of business including entrepreneurship, management/leadership, marketing, fina"
+   },
+   {
+    "control_number": "03305",
+    "pages": [
+     62,
+     63
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 62] ACADEMIC PROGRAM CODE: W003305C The Associate of Arts degree in Accounting is primarily designed for career and technical education and workforce training/ development. The curriculum is not aligned with "
+   },
+   {
+    "control_number": "03307",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] ACADEMIC PROGRAM CODE: W003307C The Associate of Arts degree in Marketing is primarily designed for career and technical education and workforce training/development. The curriculum is not aligned with c"
+   },
+   {
+    "control_number": "03308",
+    "pages": [
+     145,
+     146,
+     147
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] ACADEMIC PROGRAM CODE: W003308C The Associate of Arts degree in Real Estate is primarily designed for career and technical education and workforce training/development. The curriculum is not aligned with "
+   },
+   {
+    "control_number": "03310",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 91] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 90 Although, students are guaranteed admissions, it is not to any particular campus or program in the CSU system. The cour"
+   },
+   {
+    "control_number": "03311",
+    "pages": [
+     123,
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 123] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 122 1. Understand, recognize, and appreciate the maximum benefits provided by physical movement for developing individual"
+   },
+   {
+    "control_number": "03313",
+    "pages": [
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] ACADEMIC PROGRAM CODE: W003313C The Aviation Maintenance Technician Associate of Science degree meets the aerospace industry’s demand for well- [page 72] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los A"
+   },
+   {
+    "control_number": "03314",
+    "pages": [
+     69,
+     70
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 69] ACADEMIC PROGRAM CODE: W003314C The Associate of Arts degree in Drawing and Painting is designed for students intending to enter the fields of design, illustration, art history, and art education. Students"
+   },
+   {
+    "control_number": "03317",
+    "pages": [
+     125
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 124 BUS 005 Business Law I ........................................ 3 Area 3: ECON C2001* Principles of Microeconomics ."
+   },
+   {
+    "control_number": "03326",
+    "pages": [
+     76,
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 75 MARKET 001 Principles of Selling ................................ 3 MARKET 021 Principles of Marketing ..............."
+   },
+   {
+    "control_number": "03328",
+    "pages": [
+     65,
+     66
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] ACADEMIC PROGRAM CODE: W003328C The Associate of Arts in Administration of Justice is designed to address the principles and practices of the criminal justice system. It will serve students who wish to pre"
+   },
+   {
+    "control_number": "03329",
+    "pages": [
+     67
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] ACADEMIC PROGRAM CODE: W003329C The Associate of Arts degree in Anthropology includes foundational coursework in all four fields of the discipline: biological anthropology, cultural anthropology, archaeolo"
+   },
+   {
+    "control_number": "03330",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] ACADEMIC PROGRAM CODE: W003330C The Associate of Arts degree in Economics includes coursework that aligns with specific lower-division major requirements for the economics major at various universities wi"
+   },
+   {
+    "control_number": "03331",
+    "pages": [
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 118] ACADEMIC PROGRAM CODE: W003331C The Associate of Arts degree in History includes coursework that aligns with specific lower-division major requirements for the history major at various universities within"
+   },
+   {
+    "control_number": "03333",
+    "pages": [
+     143,
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 143] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 142 4. Apply the basic physics principles to a wide/diverse range of problems. Required courses ........................."
+   },
+   {
+    "control_number": "03334",
+    "pages": [
+     155,
+     156
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 155] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 154 The Associate in Arts in Sociology for Transfer (AA-T) degree is designed to provide a solid, multi-disciplinary lower"
+   },
+   {
+    "control_number": "03336",
+    "pages": [
+     135,
+     136,
+     137
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 135] ACADEMIC PROGRAM CODE: W003336C The Associate of Arts (AA) degree in Paralegal Studies is primarily designed for career and technical education and workforce training/ development and is approved by the "
+   },
+   {
+    "control_number": "08599",
+    "pages": [
+     128,
+     129
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 128] ACADEMIC PROGRAM CODE: W008599C The Associate of Arts degree in Management - Small Business is primarily designed for career and technical education and workforce training/development. The curriculum is "
+   },
+   {
+    "control_number": "08603",
+    "pages": [
+     73
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] ACADEMIC PROGRAM CODE: W008603D The Airframe Maintenance Technician Certificate of Achievement program is designed to improve the knowledge and job skills of Aircraft Maintenance Technicians who are prepa"
+   },
+   {
+    "control_number": "08604",
+    "pages": [
+     72,
+     73
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 71 trained, certificated aircraft mechanics. The program is comprised of stackable certificates in Airframe Maintenance Te"
+   },
+   {
+    "control_number": "08605",
+    "pages": [
+     68,
+     69,
+     70
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 68] ACADEMIC PROGRAM CODE: W008605C The Associate of Arts degree in Ceramics is designed for students interested in the field(s) of ceramic arts and will provide students with a basic foundation in these areas"
+   },
+   {
+    "control_number": "08607",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] ACADEMIC PROGRAM CODE: W008607C The Associate of Arts degree in Child Development prepares those entering or currently employed in the rapidly expanding field of early childhood education. This degree is des"
+   },
+   {
+    "control_number": "16585",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 89] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 88 who wish to pursue a career working with Microsoft and CISCO network. This program helps students build core foundation"
+   },
+   {
+    "control_number": "16828",
+    "pages": [
+     63,
+     64,
+     65
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] ACADEMIC PROGRAM CODE: W016828C The Associate of Arts degree in Addiction Studies is primarily designed for career and technical education and workforce training/ development. The coursework indicated belo"
+   },
+   {
+    "control_number": "17111",
+    "pages": [
+     88,
+     89,
+     90,
+     91
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 88] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 87 1. Use current and emerging computing technology to enhance business and individual productivity including customer ser"
+   },
+   {
+    "control_number": "17282",
+    "pages": [
+     119,
+     120,
+     121
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 118 HOSPITALITY BUSINESS DIVISION HOSPITALITY MANAGEMENT (AS-T) MAJOR CODE: 1307.00 ACADEMIC PROGRAM CODE: W041546H "
+   },
+   {
+    "control_number": "17283",
+    "pages": [
+     121
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] ACADEMIC PROGRAM CODE: W017283D The Hospitality Hotel Front Desk & Back Office Operations Certificate of Achievement prepares students to enter the continuously growing world of hotels, resorts, private "
+   },
+   {
+    "control_number": "17284",
+    "pages": [
+     121
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] ACADEMIC PROGRAM CODE: W017284D The Hotel Sales & Marketing Certificate of Achievement provides students with the fundamental elements required for success in this field. This includes the foundations of"
+   },
+   {
+    "control_number": "19283",
+    "pages": [
+     130
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] ACADEMIC PROGRAM CODE: W019283C The Associate of Arts degree in Mathematics degree includes coursework that aligns with specific lower-division major requirements for the Mathematics major at various univ"
+   },
+   {
+    "control_number": "19431",
+    "pages": [
+     125,
+     126,
+     127
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.956,
+    "opens": "[page 125] ACADEMIC PROGRAM CODE: W019431C Coursework in the Associate of Arts degree in Liberal Arts & Sciences: Arts & Humanities emphasis aligns with lower- division major requirements for various majors at univer"
+   },
+   {
+    "control_number": "19433",
+    "pages": [
+     126,
+     127
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 126] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 125 • MUSIC 101, 111 • PHILOS 001, 020, 033, 041 • THEATER 100 • SPANISH 001, 002 Total Elective Units ............."
+   },
+   {
+    "control_number": "19524",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
+   },
+   {
+    "control_number": "19525",
+    "pages": [
+     90,
+     91,
+     92,
+     93
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 90] ACADEMIC PROGRAM CODE: W019525D The Network and Information Security Management Certificate of Achievement program prepares individuals for employment in the Information Technology field in such positions "
+   },
+   {
+    "control_number": "19526",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
+   },
+   {
+    "control_number": "19601",
+    "pages": [
+     139,
+     140
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 139] ACADEMIC PROGRAM CODE: W019601D The Basic Pharmacy Technician Certificate of Achievement program prepares students for an exciting career in pharmacy. Students completing the required course work are able"
+   },
+   {
+    "control_number": "19602",
+    "pages": [
+     139,
+     140
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 139] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 138 1. Analyze situations and respond to the given situations using the evidence presented in a manner which adheres to t"
+   },
+   {
+    "control_number": "19603",
+    "pages": [
+     138,
+     139,
+     140
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 138] ACADEMIC PROGRAM CODE: W019603C The Associate of Science degree in Pharmacy Technician is primarily designed for career and technical education and workforce training/development. The curriculum is not al"
+   },
+   {
+    "control_number": "19709",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 106] ACADEMIC PROGRAM CODE: W019709D The Certificate of Achievement in Film/TV Production Crafts provides education and training in essential entry-level skills in the arts, crafts, and technicians’ department"
+   },
+   {
+    "control_number": "19847",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
+   },
+   {
+    "control_number": "19848",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
+   },
+   {
+    "control_number": "20229",
+    "pages": [
+     62,
+     63
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 61 WLAC DEGREES & CERTIFICATES ACCOUNTING PUBLIC SAFETY AND PARALEGAL DIVISION ACCOUNTING (AA) MAJOR CODE: 0502.00 ACAD"
+   },
+   {
+    "control_number": "20230",
+    "pages": [
+     128,
+     129
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 127 MANAGEMENT – SMALL BUSINESS & ENTREPRENEURSHIP BUSINESS DIVISION MANAGEMENT - SMALL BUSINESS (AA) MAJOR CODE: 05"
+   },
+   {
+    "control_number": "20234",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 92] ACADEMIC PROGRAM CODE: W020234D The Certificate of Achievement in Computer Science Information Technology program provides students with a high-quality education that prepares them for professional career"
+   },
+   {
+    "control_number": "20236",
+    "pages": [
+     88,
+     89,
+     90,
+     91
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 0.812,
+    "opens": "[page 88] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 87 1. Use current and emerging computing technology to enhance business and individual productivity including customer ser"
+   },
+   {
+    "control_number": "20247",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] ACADEMIC PROGRAM CODE: W020247D The Child Development Certificate of Achievement prepares those entering or currently employed in the rapidly expanding field of early childhood education. This certificate "
+   },
+   {
+    "control_number": "20256",
+    "pages": [
+     120,
+     121
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] ACADEMIC PROGRAM CODE: W020256D The Certificate of Achievement in Hospitality is primarily designed for career and technical education and workforce training/development. The curriculum is not aligned wit"
+   },
+   {
+    "control_number": "20258",
+    "pages": [
+     136,
+     137
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 136] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 135 5. Advocate for and represent others ethically and intelligently in a manner consistent with substantive and procedur"
+   },
+   {
+    "control_number": "20260",
+    "pages": [
+     63,
+     64,
+     65
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 62 Major elective units (choose three from the following) ..............................................................."
+   },
+   {
+    "control_number": "23061",
+    "pages": [
+     109,
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 109] ACADEMIC PROGRAM CODE: W023061C The Associate of Science degree in Fire Technology is primarily designed for career and technical education and workforce training/ development. It is designed for students"
+   },
+   {
+    "control_number": "23062",
+    "pages": [
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] ACADEMIC PROGRAM CODE: W023062D The Certificate of Achievement in Fire Technology is designed for students who are looking for instruction with a high degree of specialization to enhance professional dev"
+   },
+   {
+    "control_number": "24160",
+    "pages": [
+     263
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 263] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 262 learning to cope with the challenges of time management, discovering personal learning styles, identifying available resources, "
+   },
+   {
+    "control_number": "24190",
+    "pages": [
+     230
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 230] ACADEMIC PROGRAM CODE: W024190E (36 hours) The Choosing Business Careers certificate program prepares students for success entering the workforce in the current and emerging business workplace. Additionall"
+   },
+   {
+    "control_number": "24200",
+    "pages": [
+     229
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] ACADEMIC PROGRAM CODE: W024200E (36 hours) The Business Tools certificate program will prepare students to successfully conceptualize, create, and engage in effective oral and written business communicatio"
+   },
+   {
+    "control_number": "24227",
+    "pages": [
+     231
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] ACADEMIC PROGRAM CODE: W024227E (36 hours) The Communicating in Business program will cover the styles and techniques that will be encountered in business interview scenarios. Students will learn goals of "
+   },
+   {
+    "control_number": "24228",
+    "pages": [
+     243
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 243] ACADEMIC PROGRAM CODE: W024228E (30-66 hours) The Job Readiness Skills certificate program prepares students with the essential 21st century communication and workplace skills to effectively gain and maint"
+   },
+   {
+    "control_number": "24296",
+    "pages": [
+     240
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 240] ACADEMIC PROGRAM CODE: W024296E (54-108 hours) The IHSS certificate program prepares students to apply for entry-level, short-term high demand employment in the In- Home Supportive Services Provider field m"
+   },
+   {
+    "control_number": "24298",
+    "pages": [
+     240
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 240] ACADEMIC PROGRAM CODE: W024298E (54 hours) The Healthcare Services certificate will enable students to obtain basic documentation techniques and charting methods used in healthcare professions. Upon comple"
+   },
+   {
+    "control_number": "24301",
+    "pages": [
+     245,
+     246
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 245] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 244 Science division of specific health requirements, First Aid and basic life support training, and a clear background check prior "
+   },
+   {
+    "control_number": "30369",
+    "pages": [
+     249
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 248 The Foundation of English Skills certificate program prepares English language learners to achieve intermediate level English co"
+   },
+   {
+    "control_number": "30421",
+    "pages": [
+     239
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 239] ACADEMIC PROGRAM CODE: W030421E (36 hours) The Healthcare Career Discovery certificate program will prepare students with a comprehensive overview of healthcare careers in the US healthcare system. Student"
+   },
+   {
+    "control_number": "31010",
+    "pages": [
+     144,
+     145
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] ACADEMIC PROGRAM CODE: W031010G The Associate in Arts in Psychology for Transfer (AA-T) degree is a solid, multi-disciplinary, lower-division preparation for students who intend to transfer to a Californi"
+   },
+   {
+    "control_number": "31011",
+    "pages": [
+     64,
+     65,
+     66
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] ACADEMIC PROGRAM CODE: W031011H The Associate in Science in Administration of Justice for Transfer (AS-T) Degree is designed to address the principles and practices of the criminal justice system. It will "
+   },
+   {
+    "control_number": "31478",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] ACADEMIC PROGRAM CODE: W031478C The Associate of Science degree in Medical Assisting prepares a student for an exciting career in health care. Students will learn to provide administrative and clinical s"
+   },
+   {
+    "control_number": "31479",
+    "pages": [
+     131,
+     132,
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 130 2. Perform approved clinical techniques including obtaining vitals, administering medications, and minor procedures. "
+   },
+   {
+    "control_number": "31480",
+    "pages": [
+     132,
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 132] ACADEMIC PROGRAM CODE: W031480D The Medical Assisting – Clinical Certificate of Achievement prepares a student for an exciting career in health care. Students will learn to provide clinical support to med"
+   },
+   {
+    "control_number": "31481",
+    "pages": [
+     131,
+     132,
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 130 2. Perform approved clinical techniques including obtaining vitals, administering medications, and minor procedures. "
+   },
+   {
+    "control_number": "32887",
+    "pages": [
+     105,
+     106
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] ACADEMIC PROGRAM CODE: W032887G The Associate in Arts in English for Transfer degree provides students with a comprehensive study of composition, literary theory and rhetorical strategies. Students will b"
+   },
+   {
+    "control_number": "32935",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] associate in science transfer degree in Early Childhood Education. Credit for child development courses taken outside of the LACCD shall be determined by the Division Chair. Transcripts from institutions "
+   },
+   {
+    "control_number": "32972",
+    "pages": [
+     143,
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 143] ACADEMIC PROGRAM CODE: W032972G The Associate in Arts in Political Science for Transfer (AA-T) Degree is a degree that provides a solid lower-division preparation for students who intend to transfer to a "
+   },
+   {
+    "control_number": "32976",
+    "pages": [
+     117,
+     118
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 117] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 116 3. Applies ethical principles in using (e.g., accessing, analyzing, using, maintaining, and disseminating) public hea"
+   },
+   {
+    "control_number": "32977",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] ACADEMIC PROGRAM CODE: W032977G The Associate in Arts in Economics for Transfer (AA-T) is a degree that provides a solid lower-division preparation for students who intend to transfer to a California State"
+   },
+   {
+    "control_number": "32982",
+    "pages": [
+     154,
+     155,
+     156
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 153 Cal-GETC GE Units (less double-counted) ................. 22-25 CSU-transferable Elective Units ...................."
+   },
+   {
+    "control_number": "32990",
+    "pages": [
+     66,
+     67
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] ACADEMIC PROGRAM CODE: W032990G The Associate in Arts in Anthropology for Transfer degree is designed to impart to the student the critical importance of understanding the human condition and its relevancy"
+   },
+   {
+    "control_number": "33024",
+    "pages": [
+     69,
+     70
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 69] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 68 Total units ............................................................... 60 *This course has a prerequisite or cor"
+   },
+   {
+    "control_number": "33448",
+    "pages": [
+     277,
+     278
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.77,
+    "opens": "[page 277] COMPLETING YOUR PATHWAY: GENERAL EDUCATION PATTERNS West Los Angeles College 2026-2027 Catalog 276 Cal-GETC – General Education Plan for UC/CSU Systems 2026-2027 Requirements • Cal-GETC: 34 units wit"
+   },
+   {
+    "control_number": "33520",
+    "pages": [
+     277,
+     278
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.732,
+    "opens": "[page 277] COMPLETING YOUR PATHWAY: GENERAL EDUCATION PATTERNS West Los Angeles College 2026-2027 Catalog 276 Cal-GETC – General Education Plan for UC/CSU Systems 2026-2027 Requirements • Cal-GETC: 34 units wit"
+   },
+   {
+    "control_number": "33554",
+    "pages": [
+     238
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 238] ACADEMIC PROGRAM CODE: W033554F (81-90 hours) The Foundation for Academic Success II Certificate of Competency provides students with a set of courses that will help strengthen their academic readiness to "
+   },
+   {
+    "control_number": "33568",
+    "pages": [
+     140,
+     141
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 140] ACADEMIC PROGRAM CODE: W033568G The Associate in Arts in Philosophy for Transfer (AA-T) degree is a degree that provides a solid lower-division preparation for students who intend to transfer to a Califor"
+   },
+   {
+    "control_number": "33759",
+    "pages": [
+     238
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 238] ACADEMIC PROGRAM CODE: W033759F (144 hours) The Foundation for Academic Success I Certificate of Competency provides students with a set of courses that will help strengthen their academic readiness to und"
+   },
+   {
+    "control_number": "33794",
+    "pages": [
+     95,
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] ACADEMIC PROGRAM CODE: W033794C The Associate of Science in Dental Assistant (ASDA) program is a CTE program that provides students with a high quality education that prepares them to be highly, competent,"
+   },
+   {
+    "control_number": "33798",
+    "pages": [
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] ACADEMIC PROGRAM CODE: W033798D The Dental Assistant Certificate of Achievement provides students with a high-quality education that prepares them to be highly, competent, professional, and caring licensed"
+   },
+   {
+    "control_number": "33861",
+    "pages": [
+     116,
+     117
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] ACADEMIC PROGRAM CODE: W033861C The Associate of Science degree in Health Science is for students who wish to transfer to a four-year institution or complete entrance requirements for health career progr"
+   },
+   {
+    "control_number": "33893",
+    "pages": [
+     113,
+     114
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 113] The Associate in Arts in Global Studies for Transfer (AA-T) degree cultivates global citizens who study the world from an international/global perspective. Integral to this is to be conversant with global p"
+   },
+   {
+    "control_number": "35053",
+    "pages": [
+     137,
+     138
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] ACADEMIC PROGRAM CODE: W035053C Note: Courses in this Degree are not intended to be offered during the 2026-2027 academic year. Students may be eligible for Credit for Prior Learning. The Associate of Sc"
+   },
+   {
+    "control_number": "35058",
+    "pages": [
+     114
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.875,
+    "opens": "[page 114] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 113 • Minimum grade of \"C\" (or \"P\") for each course in the major, and • Completion of the Cal-GETC GE Pattern. Progra"
+   },
+   {
+    "control_number": "35064",
+    "pages": [
+     114
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 114] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 113 • Minimum grade of \"C\" (or \"P\") for each course in the major, and • Completion of the Cal-GETC GE Pattern. Progra"
+   },
+   {
+    "control_number": "35079",
+    "pages": [
+     278
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 278] COMPLETING YOUR PATHWAY: GENERAL EDUCATION PATTERNS West Los Angeles College 2026-2027 Catalog 277 ENGLISH 102, 203, 204, 205, 206, 207, 208, 215, 219, 234, 239, 245 HISTORY 001, 002, 086, 087 HUMAN 0"
+   },
+   {
+    "control_number": "35281",
+    "pages": [
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] ACADEMIC PROGRAM CODE: W035281H The Associate in Science in Nutrition and Dietetics for Transfer (AS-T) Degree is a degree that provides a solid lower-division preparation for students who intend to trans"
+   },
+   {
+    "control_number": "35320",
+    "pages": [
+     232
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] ACADEMIC PROGRAM CODE: W035320E (72-99 hours) The Custodial Technician Preparation certificate program will help students meet the application requirements for entry-level custodial positions. Program Lea"
+   },
+   {
+    "control_number": "35761",
+    "pages": [
+     73,
+     74
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] ACADEMIC PROGRAM CODE: W035761H The Associate in Science in Biology for Transfer (AS-T) Degree is designed to provide a solid lower division [page 74] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Ang"
+   },
+   {
+    "control_number": "36268",
+    "pages": [
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 117] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 116 3. Applies ethical principles in using (e.g., accessing, analyzing, using, maintaining, and disseminating) public hea"
+   },
+   {
+    "control_number": "36801",
+    "pages": [
+     230,
+     231
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 230] ACADEMIC PROGRAM CODE: W036801F (27-63 hours) The College Readiness certificate program prepares students to pursue a post-secondary education, prepare students to become active in setting and achieving "
+   },
+   {
+    "control_number": "36842",
+    "pages": [
+     230
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 230] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 229 on practice designing and programming a working robot and gain experience designing a website blog while incorporating a variety"
+   },
+   {
+    "control_number": "36925",
+    "pages": [
+     138
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] ACADEMIC PROGRAM CODE: W036925D Note: Courses in this Certificate are not intended to be offered during the 2026-2027 academic year. Students may be eligible for Credit for Prior Learning. The Paramedic "
+   },
+   {
+    "control_number": "37003",
+    "pages": [
+     124,
+     125,
+     126,
+     127
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.964,
+    "opens": "[page 124] ACADEMIC PROGRAM CODE: W037003G The Associate in Arts in Law, Public Policy and Society for Transfer Degree (AA-T) is designed to provide a solid, multi- disciplinary lower-division preparation for student"
+   },
+   {
+    "control_number": "37026",
+    "pages": [
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] ACADEMIC PROGRAM CODE: W037026C The Associate of Arts degree in Climate Change and Environmental Studies is an interdisciplinary program designed to provide students with the background necessary to under"
+   },
+   {
+    "control_number": "37029",
+    "pages": [
+     100
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.737,
+    "opens": "[page 100] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 99 * Recommended for students also pursuing the Associate in Science in Business Administration for Transfer (AS-T) Degre"
+   },
+   {
+    "control_number": "37050",
+    "pages": [
+     122,
+     123,
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.792,
+    "opens": "[page 122] ACADEMIC PROGRAM CODE: W037050G The Associate in Arts in Kinesiology for Transfer degree is designed to prepare students for transfer to bachelor degree programs in kinesiology, exercise science, physical"
+   },
+   {
+    "control_number": "37251",
+    "pages": [
+     228,
+     229
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 228] ACADEMIC PROGRAM CODE: W037251E (144-153 hours) The Administrative Assistant certificate program prepares students for entry-level, in-demand positions. Students practice their professional correspondence "
+   },
+   {
+    "control_number": "37830",
+    "pages": [
+     236
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 236] ACADEMIC PROGRAM CODE: W037830E (45-126 hours) The Facilities Management certificate program prepares students to enter the facilities management talent pipeline. Our courses and certificate are aligned w"
+   },
+   {
+    "control_number": "37832",
+    "pages": [
+     231
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] ACADEMIC PROGRAM CODE: W037832E (36-80 hours) The Conservation Studies certificate program serves as a recognizable accomplishment of career preparation and job training to be applied toward future employm"
+   },
+   {
+    "control_number": "37834",
+    "pages": [
+     230,
+     231
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 230] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 229 on practice designing and programming a working robot and gain experience designing a website blog while incorporating a variety"
+   },
+   {
+    "control_number": "37838",
+    "pages": [
+     149,
+     150,
+     151,
+     152
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] ACADEMIC PROGRAM CODE: W037838D The Real Estate Appraiser I Certificate of Achievement is designed to provide students with the required competencies to enter careers in residential and commercial real es"
+   },
+   {
+    "control_number": "37839",
+    "pages": [
+     151,
+     152
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 151] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 150 The Real Estate Appraiser III Certificate of Achievement is designed to provide students with partial training for a"
+   },
+   {
+    "control_number": "37859",
+    "pages": [
+     151,
+     152
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 151] ACADEMIC PROGRAM CODE: W037859D The Real Estate Broker Certificate of Achievement is designed to provide students with the required competencies for a career in residential and commercial real estate. Thi"
+   },
+   {
+    "control_number": "37860",
+    "pages": [
+     150,
+     151,
+     152,
+     153
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.926,
+    "opens": "[page 150] ADADEMIC PROGRAM CODE: W037860D The Real Estate Appraiser II Certificate of Achievement is designed to provide students with the required competencies to upgrade their careers in residential and commercia"
+   },
+   {
+    "control_number": "37863",
+    "pages": [
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] ACADEMIC PROGRAM CODE: W037863C The Associate of Science degree in Engineering: Mechanical Track will prepare students for a bachelor’s degree in mechanical, aerospace and manufacturing engineering from a"
+   },
+   {
+    "control_number": "37864",
+    "pages": [
+     101,
+     102,
+     103,
+     104
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] ACADEMIC PROGRAM CODE: W037864C The Associate of Science degree in Engineering: Civil Track provides students with the lower division course work required to transfer to most four-year colleges and univer"
+   },
+   {
+    "control_number": "37983",
+    "pages": [
+     243
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 243] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 242 Elective Courses (choose one from the following) VOC ED 252CE Exploration of Construction and Maintenance Careers ..........."
+   },
+   {
+    "control_number": "38289",
+    "pages": [
+     248
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 248] ACADEMIC PROGRAM CODE: W038289F (24-90 hours) The Statistics Preparation certificate program supports student success in transfer-level Statistics classes. The Academic Prep classes that make up the Libe"
+   },
+   {
+    "control_number": "38290",
+    "pages": [
+     248
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 248] ACADEMIC PROGRAM CODE: W038290F (24-90 hours) The STEM Math certificate program supports student success in transfer-level STEM mathematics classes. This program will provide supplementary instruction fo"
+   },
+   {
+    "control_number": "38291",
+    "pages": [
+     244
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 244] ACADEMIC PROGRAM CODE: W038291F (24-126 hours) The Liberal Arts Mathematics Preparation certificate program supports student success in transfer-level mathematics classes such as MATH 215, MATH 230 and M"
+   },
+   {
+    "control_number": "38292",
+    "pages": [
+     235
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] ACADEMIC PROGRAM CODE: W038292E (72-99 hours) The Custodial Technician Preparation for the English Language Learner Certificate of Completion will provide students with the necessary knowledge and hands-on"
+   },
+   {
+    "control_number": "38390",
+    "pages": [
+     235
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] ACADEMIC PROGRAM CODE: W038390F (72-162 hours) The ESL Fundamentals I certificate program prepares English language learners to achieve low-advanced/advanced level English competencies in writing incorpora"
+   },
+   {
+    "control_number": "38406",
+    "pages": [
+     247
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 247] ACADEMIC PROGRAM CODE: W038406F (108 hours) The Science Preparation certificate program prepares students to pursue a post-secondary education gaining a stronger foundation in biology and chemistry fundame"
+   },
+   {
+    "control_number": "38624",
+    "pages": [
+     236
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 236] ACADEMIC PROGRAM CODE: W038624F (108-216 hours) The ESL Fundamentals III certificate program prepares English language learners to achieve low-advanced / advanced level English competencies in writing in"
+   },
+   {
+    "control_number": "38647",
+    "pages": [
+     180
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 180] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 179 CIS 148 Introduction to Web Development Using HTML5 CSS (3) CSU This course teaches students to build web pages using "
+   },
+   {
+    "control_number": "38719",
+    "pages": [
+     236
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 236] ACADEMIC PROGRAM CODE: W038719F (108-216 hours) The ESL Fundamentals II certificate will provide intermediate level English language learners the fundamental ESL reading, speaking and writing skills they n"
+   },
+   {
+    "control_number": "38768",
+    "pages": [
+     228,
+     229
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] ACADEMIC PROGRAM CODE: W038768F (117-162 hours) The Administrative Assistant for the English Language Learner Certificate of Completion will provide students with the necessary knowledge and skill sets to "
+   },
+   {
+    "control_number": "38782",
+    "pages": [
+     229
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] ACADEMIC PROGRAM CODE: W038782E (18-81 hours) The Autism Services Aide certificate program prepares students with the knowledge, technical and workplace skills necessary to gain employment and serve as an "
+   },
+   {
+    "control_number": "38943",
+    "pages": [
+     86,
+     87
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] ACADEMIC PROGRAM CODE: W038943D The Certificate of Achievement in Climate Change Studies: Social Science emphasis is an interdisciplinary program designed to provide students with the background necessary "
+   },
+   {
+    "control_number": "38944",
+    "pages": [
+     85,
+     86
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 84 *This course has a prerequisite or corequisite course. Please see the course description for further details. CLIMATE "
+   },
+   {
+    "control_number": "39013",
+    "pages": [
+     239
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 239] ACADEMIC PROGRAM CODE: W039013E (27-54 hours) The Guest and Public Spaces Attendant certificate program prepares students with the necessary job skills and training to gain entry-level employment as a Gues"
+   },
+   {
+    "control_number": "39038",
+    "pages": [
+     243,
+     244
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 243] ACADEMIC PROGRAM CODE: W039038E (45-54 hours) This Leadership and Workplace certificate program prepares students with the necessary skills and training to gain employment in the public sector. Students "
+   },
+   {
+    "control_number": "39039",
+    "pages": [
+     227
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 227] ACADEMIC PROGRAM CODE: W039039E (6-18 hours) The 21st Century Employability Skills: Entrepreneurial and Analytical Mindset certificate program prepares students with the necessary skills and training on th"
+   },
+   {
+    "control_number": "39049",
+    "pages": [
+     239
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 239] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 238 Program Learning Outcomes: Upon successful completion of this program, students will be able to .. 1. Apply concepts and skills "
+   },
+   {
+    "control_number": "39122",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 102] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 101 Civil Engineering Courses for Major ................................. 15 CHEM 101* General Chemistry I ............."
+   },
+   {
+    "control_number": "39123",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] ACADEMIC PROGRAM CODE: W039123C The Associate of Science degree in Engineering: Computer and Software Track prepares students to transfer to a four- year university for a bachelor’s degree in engineering. "
+   },
+   {
+    "control_number": "39126",
+    "pages": [
+     90,
+     91
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] ACADEMIC PROGRAM CODE: W039126H The Associate in Science in Computer Science for Transfer Degree is designed for students desiring advanced degrees in computer science. This degree is designed to provide a c"
+   },
+   {
+    "control_number": "39419",
+    "pages": [
+     74,
+     75
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 74] ACADEMIC PROGRAM CODE: W039419D The Biotechnology Lab Technician Certificate of Achievement is designed to prepare students for employment in a biotechnology laboratory conducting advanced research. This "
+   },
+   {
+    "control_number": "39485",
+    "pages": [
+     152,
+     153,
+     154,
+     155
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 152] ACADEMIC PROGRAM CODE: W039485G The Associate of Arts in Social Justice Studies: Chicana/o Studies for Transfer (AA-T) degree is a degree that provide a solid lower-division preparation for students who i"
+   },
+   {
+    "control_number": "39508",
+    "pages": [
+     226
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] ACADEMIC PROGRAM CODE: W039508E (6-18 hours) The 21st Century Employability Skills: Communication and Digital Literacy certificate program prepares students with the necessary skills and training in commun"
+   },
+   {
+    "control_number": "39509",
+    "pages": [
+     226
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] ACADEMIC PROGRAM CODE: W039509E (6-18 hours) The 21st Century Employability Skills: Diversity Awareness and Collaboration certificate program prepares students with the necessary skills and training in the"
+   },
+   {
+    "control_number": "39510",
+    "pages": [
+     255
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 255] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 254 BSICSKL 109CE 21st Century Employability Skills: Analysis/Solution Mindset (9 hours) (P/NP/SP Option) This course is the part of"
+   },
+   {
+    "control_number": "39511",
+    "pages": [
+     227
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 227] ACADEMIC PROGRAM CODE: W039511E (6-18 hours) The 21st Century Employability Skills: Self-Awareness and Resilience certificate program prepares students with the necessary skills and training in the importa"
+   },
+   {
+    "control_number": "39618",
+    "pages": [
+     246
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 246] ACADEMIC PROGRAM CODE: W039618E (9-18 hours) The Real Estate Supervisory/Trainee Appraiser Licensing certificate prepare students to complete the educational requirements for various Real Estate Appraisa"
+   },
+   {
+    "control_number": "40106",
+    "pages": [
+     113,
+     114
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 113] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 112 Cal-GETC GE Units (less double-counted) ................. 24-25 CSU-transferable Elective Units ......................"
+   },
+   {
+    "control_number": "40202",
+    "pages": [
+     153,
+     154,
+     155,
+     156
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 153] ACADEMIC PROGRAM CODE: W040202G The Associate in Arts in Social Justice: LGBTQ Studies for Transfer (AA-T) degree is intended to meet the lower division requirements for various social science majors (or "
+   },
+   {
+    "control_number": "40223",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] ACADEMIC PROGRAM CODE: W040223D Emergency Medical Technicians (EMTs) are professional medical responders that work to help and transport ill and injured patients in various emergency field and clinical s"
+   },
+   {
+    "control_number": "40810",
+    "pages": [
+     113
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] ACADEMIC PROGRAM CODE: W040810H The Associate in Science in Geology for Transfer (AS-T) degree is designed to meet the minimum requirements for transfer to a California State University (CSU) Bachelor of "
+   },
+   {
+    "control_number": "41340",
+    "pages": [
+     151
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 151] The Real Estate Appraiser III Certificate of Achievement is designed to provide students with partial training for an Office of the Los Angeles County Assessor Appraiser position with the required competenc"
+   },
+   {
+    "control_number": "41358",
+    "pages": [
+     103,
+     104,
+     105
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 103] ACADEMIC PROGRAM CODE: W041358D The Engineering I Certificate of Achievement is designed to give students an introduction the field of engineering by applying theories and principles of science and mathem"
+   },
+   {
+    "control_number": "41359",
+    "pages": [
+     104,
+     105
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] ACADEMIC PROGRAM CODE: W041359D The Engineering II: Mechanical and Civil Engineering Certificate of Achievement is designed to build on the basic Engineering I certificate. Completion of the Engineering I"
+   },
+   {
+    "control_number": "41360",
+    "pages": [
+     104,
+     105
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 104] ACADEMIC PROGRAM CODE: W041360D The Engineering III: Computer and Software, and Electrical Certificate of Achievement is designed to build on the basic Engineering I certificate. Completion of the Enginee"
+   },
+   {
+    "control_number": "41378",
+    "pages": [
+     76,
+     77
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] ACADEMIC PROGRAM CODE: W041378H The Associate in Science in Business Administration for Transfer (AS-T) 2.0 Degree is a degree that provides a solid lower-division preparation for students who intend to tr"
+   },
+   {
+    "control_number": "41381",
+    "pages": [
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 95 DENTAL ASSISTANT (CA) MAJOR CODE 1240.10 ACADEMIC PROGRAM CODE: W033798D The Dental Assistant Certificate of Achieve"
+   },
+   {
+    "control_number": "41448",
+    "pages": [
+     237
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] ACADEMIC PROGRAM CODE: W041448E (36 hours) The Financial Literacy for College and Workforce Success certificate program helps students increase their successful navigation of and access to cost-effective"
+   },
+   {
+    "control_number": "41464",
+    "pages": [
+     244
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 244] ACADEMIC PROGRAM CODE: W041464E (45-108 hours) The Licensing/Employment Test Prep certificate program covers a wide variety of employment certifications, licensures and other contextualized exams to adequa"
+   },
+   {
+    "control_number": "41465",
+    "pages": [
+     232
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] ACADEMIC PROGRAM CODE: W041465E (54 hours) The Dental Career Skill Enhancement certificate program helps those students who are successfully accepted into dental hygiene and dental assisting program. The c"
+   },
+   {
+    "control_number": "41546",
+    "pages": [
+     119,
+     120,
+     121
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] ACADEMIC PROGRAM CODE: W041546H The Associate in Science in Hospitality Management for Transfer degree is a degree that provides a solid lower-division preparation for students who intend to transfer to a"
+   },
+   {
+    "control_number": "41589",
+    "pages": [
+     249
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] ACADEMIC PROGRAM CODE: W041589E (18-36 hours) The Tutor Training certificate program will prepare students to work as tutors and teaching assistants. The program will cover pedagogy, practices, and policie"
+   },
+   {
+    "control_number": "42249",
+    "pages": [
+     113,
+     114
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] ACADEMIC PROGRAM CODE: W042249G The Associate in Arts in Global Studies for Transfer (AA-T) degree cultivates global citizens who study the world from an international/global perspective. Integral to this"
+   },
+   {
+    "control_number": "42377",
+    "pages": [
+     106
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] ACADEMIC PROGRAM CODE: W042377D The Certificate of Achievement in Facilities Management prepares students to work in a profession that encompasses multiple disciplines to ensure functionality of the built"
+   },
+   {
+    "control_number": "42485",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 69 5. Learn to apply fundamental art historical terminology when analyzing the principle developments and primary problems"
+   },
+   {
+    "control_number": "42488",
+    "pages": [
+     157
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 157] ACADEMIC PROGRAM CODE: W042488C The Associate of Arts degree in Spanish includes coursework that aligns with specific lower-division major requirements for the Spanish major at various universities within"
+   },
+   {
+    "control_number": "42555",
+    "pages": [
+     71
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] ACADEMIC PROGRAM CODE: W042555D The Advanced Athletic Training and Sports Medicine (ATSM) Certificate of Achievement is part of a CTE-stackable program that continues to build upon the Fundamentals in ATSM"
+   },
+   {
+    "control_number": "42558",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] ACADEMIC PROGRAM CODE: W042558C The Athletic Training and Sports Medicine (ATSM) Associate of Science degree is part of a CTE-stackable program that included the Fundamentals of Athletic Training and Advan"
+   },
+   {
+    "control_number": "42627",
+    "pages": [
+     240
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 240] ACADEMIC PROGRAM CODE: W042627E (108-198 hours) The IHSS for English Language Learners certificate program provides students the knowledge and skills needed to begin a career in health care as an In-Home S"
+   },
+   {
+    "control_number": "42629",
+    "pages": [
+     231,
+     232
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] ACADEMIC PROGRAM CODE: W042629E (81-216 hours) The Construction Industry Exploration & Preparation Certificate of Completion program will provide students with the essential skills needed to obtain and ret"
+   },
+   {
+    "control_number": "43067",
+    "pages": [
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 122] ACADEMIC PROGRAM CODE: W043067D The Interactive Design I Certificate of Achievement prepares students for assistant or entry-level jobs in graphic & web design, virtual reality, augmented reality, gaming,"
+   },
+   {
+    "control_number": "43073",
+    "pages": [
+     114,
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 114] ACADEMIC PROGRAM CODE: W043073D The Graphic Design I Certificate of Achievement prepares students for internships, assistant, and/or entry-level jobs in graphic & web design, advertising & marketing, social"
+   },
+   {
+    "control_number": "43074",
+    "pages": [
+     122
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.667,
+    "opens": "[page 122] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 121 INTERACTIVE DESIGN ARTS & PERFORMANCE DIVISION INTERACTIVE DESIGN I (CA) MAJOR CODE: 1030.00 ACADEMIC PROGRAM CODE: "
+   },
+   {
+    "control_number": "43178",
+    "pages": [
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 115] ACADEMIC PROGRAM CODE: W043178D The Graphic Design II Certificate of Achievement prepares students for assistant, entry-level jobs or intermediate jobs in graphic & web design, advertising & marketing, soc"
+   },
+   {
+    "control_number": "43260",
+    "pages": [
+     65,
+     66
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 64 ADM JUS 003 Legal Aspects of Evidence ...................... 3 ADM JUS 004 Principles & Procedures of the Justice Sy"
+   },
+   {
+    "control_number": "43351",
+    "pages": [
+     86,
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 85 the Climate Change and Environmental Studies Associate of Arts degree. Program Learning Outcomes: Upon successful co"
+   },
+   {
+    "control_number": "43359",
+    "pages": [
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] ACADEMIC PROGRAM CODE: W043359D The Cyber Security Essentials Certificate of Achievement prepares individuals for employment in Information Technology fields in positions such as system and security tech"
+   },
+   {
+    "control_number": "43450",
+    "pages": [
+     77
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] ACADEMIC PROGRAM CODE: W043450M The Associate in Science in Chemistry for UC Transfer (UCTP) degree is designed to provide a clear pathway and guaranteed admissions to most UC campuses. Completion of this"
+   },
+   {
+    "control_number": "43457",
+    "pages": [
+     112,
+     113,
+     114
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] ACADEMIC PROGRAM CODE: W043457G The Associate in Arts in Geography for Transfer degree provides a clear transfer pathway to the California State University (CSU) system for students wishing to pursue a b"
+   },
+   {
+    "control_number": "43483",
+    "pages": [
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] ACADEMIC PROGRAM CODE: W043483D The Fundamentals of Medical Assisting Certificate of Achievement is part of a CTE-stackable certificate program that introduces students to the healthcare field of medical"
+   },
+   {
+    "control_number": "43507",
+    "pages": [
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 93] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 92 4. Understand database services and features offered by AWS 5. Understand network technologies offered by AWS 6. Under"
+   },
+   {
+    "control_number": "43570",
+    "pages": [
+     108,
+     109
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 108] ACADEMIC PROGRAM CODE: W043570H The Associate in Science in Film, Television, and Electronic Media for Transfer degree provides a clear transfer pathway to the California State University (CSU) system for"
+   },
+   {
+    "control_number": "43628",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] ACADEMIC PROGRAM CODE: W043628M The Associate in Science in Physics for UC Transfer (UCTP) degree is designed to provide a clear pathway and guaranteed admissions to most UC campuses. Completion of this d"
+   },
+   {
+    "control_number": "43667",
+    "pages": [
+     154,
+     155,
+     156
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] ACADEMIC PROGRAM CODE: W043667G The Associate in Arts Degree in Social Work and Human Services for Transfer (AA-T) is designed to provide a solid, multi-disciplinary lower-division preparation for student"
+   },
+   {
+    "control_number": "43694",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 97] ACADEMIC PROGRAM CODE: W043694D The Orthodontic Dental Assistant Certificate of Achievement is an entry-level workforce preparation program that prepares students for employment as an orthodontic assistant."
+   },
+   {
+    "control_number": "43749",
+    "pages": [
+     94,
+     95
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 93 To complete the Certificate of Achievement in AI-Powered Web and Data Management, it is recommended that students mee"
+   },
+   {
+    "control_number": "43762",
+    "pages": [
+     94,
+     95
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] ACADEMIC PROGRAM CODE: W043762D The Certificate of Achievement in Data Science prepares students for careers in careers as data scientists, data analysts, computer system analysts and network support spe"
+   },
+   {
+    "control_number": "43838",
+    "pages": [
+     104,
+     105
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 103 *This course has a prerequisite or corequisite course. Please see the course description for further details. ENGINE"
+   },
+   {
+    "control_number": "44361",
+    "pages": [
+     241
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] ACADEMIC PROGRAM CODE: W044361E (72 hours) The Interpersonal Skills for the Workplace Certificate of Completion provides students with the skills and knowledge needed to communicate effectively and maintai"
+   },
+   {
+    "control_number": "44362",
+    "pages": [
+     228,
+     229
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] ACADEMIC PROGRAM CODE: W044362F (189 hours) The Adult Basic Education Certificate of Competency is designed to prepare students for basic reading, writing, spelling, and math skills used in the high school"
+   },
+   {
+    "control_number": "44396",
+    "pages": [
+     80,
+     81,
+     82,
+     83
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 79 ACADEMIC PROGRAM CODE: W044443D The Administration and Supervision of Early Childhood Education Certificate of Achievem"
+   },
+   {
+    "control_number": "44397",
+    "pages": [
+     83,
+     84
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 82 The School Age Programs Certificate of Achievement is designed for students interested in careers as preschool teachers"
+   },
+   {
+    "control_number": "44398",
+    "pages": [
+     81,
+     82,
+     83,
+     84
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 80 Certificate, and Health, Nutrition and Food Sanitation in Early Childhood Education Programs. Program Learning Outcomes"
+   },
+   {
+    "control_number": "44417",
+    "pages": [
+     237,
+     238
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 236 FIRST-TIME MANAGEMENT SKILLS (CN) ACADEMIC PROGRAM CODE: W045793E (90 hours) The First-Time Management Skills Certificate of "
+   },
+   {
+    "control_number": "44418",
+    "pages": [
+     237,
+     238
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] ACADEMIC PROGRAM CODE: W044418E (48 hours) The Food Handler’s Preparation Certificate of Completion will prepare students with service-industry concepts and skills including food handling and safety, perso"
+   },
+   {
+    "control_number": "44419",
+    "pages": [
+     239
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 239] ACADEMIC PROGRAM CODE: W044419E (72 hours) The Gig Economy Success Kit Certificate of Completion is designed to prepare students with practical skills and knowledge to navigate the gig economy. Students le"
+   },
+   {
+    "control_number": "44443",
+    "pages": [
+     80,
+     81,
+     82,
+     83
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] ACADEMIC PROGRAM CODE: W044443D The Administration and Supervision of Early Childhood Education Certificate of Achievement is designed for students interested in careers as preschool teachers, teaching assi"
+   },
+   {
+    "control_number": "44444",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] ACADEMIC PROGRAM CODE: W044444D The Preschool Associate Teacher Certificate of Achievement is designed for students interested in careers as preschool teachers, teaching assistants, and childcare workers. E"
+   },
+   {
+    "control_number": "44452",
+    "pages": [
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] ACADEMIC PROGRAM CODE: W044452D The Child Development Title 22: Preschool Associate Teacher Certificate of Achievement is a 12-unit low initial level for preschool teaching. It indicates the student's academ"
+   },
+   {
+    "control_number": "44553",
+    "pages": [
+     231
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] ACADEMIC PROGRAM CODE: W044553E (162 hours) The Computer Skills for the Workplace Certificate of Completion is designed to prepare students with practice skills to use software commonly used in educational"
+   },
+   {
+    "control_number": "44586",
+    "pages": [
+     235
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] ACADEMIC PROGRAM CODE: W044586E (45-54 hours) The Entrepreneurship Skills Certificate of Completion is designed to give students the necessary knowledge and skills to plan, develop, and operate a business."
+   },
+   {
+    "control_number": "44587",
+    "pages": [
+     243
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 243] ACADEMIC PROGRAM CODE: W044587E (108 hours) The Introduction to Computers Certificate of Completion is designed to provide foundational knowledge and practical skills for students preparing for employment "
+   },
+   {
+    "control_number": "44613",
+    "pages": [
+     93
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] ACADEMIC PROGRAM CODE: W044613D The Certificate of Achievement in Essentials of Video Game Programming will provide students with essential skills necessary to meet the growing employment demands in the "
+   },
+   {
+    "control_number": "44623",
+    "pages": [
+     109
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] ACADEMIC PROGRAM CODE: W044623D The Certificate of Achievement in Virtual Production is designed for students interested in careers working in the field of virtual production such as screen engineers and t"
+   },
+   {
+    "control_number": "44669",
+    "pages": [
+     49
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 49] AVIONICS BACHELOR OF SCIENCE DEGREE West Los Angeles College 2026-2027 Catalog 48 to solve broadly-defined systems problems appropriate to the discipline. 2. Analyze and interpret aeronautical and aircraft"
+   },
+   {
+    "control_number": "44806",
+    "pages": [
+     248
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 248] ACADEMIC PROGRAM CODE: W044806E (120 hours) The Technology for Success in the Workplace Certificate of Completion provides students with the basic computing skills necessary for success in modern workplace"
+   },
+   {
+    "control_number": "44945",
+    "pages": [
+     273,
+     274,
+     275
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.905,
+    "opens": "[page 273] COMPLETING YOUR PATHWAY: GENERAL EDUCATION PATTERNS West Los Angeles College 2026-2027 Catalog 272 LACCD General Education (GE) Pattern – GE Pattern for Associate Degrees 2026-2027 Requirements • Min"
+   },
+   {
+    "control_number": "45275",
+    "pages": [
+     147,
+     148
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 147] ACADEMIC PROGRAM CODE: W045275D The Residential License Appraiser Practicum I Certificate of Achievement is designed to provide an alternative to the traditional appraisal experience by offering practical"
+   },
+   {
+    "control_number": "45276",
+    "pages": [
+     149
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 149] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 148 Program Learning Outcomes: Upon completion of this program, the student will be able to: 1. Through lecture and lab"
+   },
+   {
+    "control_number": "45277",
+    "pages": [
+     134
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] ACADEMIC PROGRAM CODE: W045277D The Certificate of Achievement in Certified Nursing Assistant (CNA) prepares students for a career in an area with a high demand for employment. The CNA provides basic nursin"
+   },
+   {
+    "control_number": "45278",
+    "pages": [
+     146,
+     147
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 145 REAL ES 004 Real Estate Office Administration ........... 3 REAL ES 011 Escrow Principles ............................"
+   },
+   {
+    "control_number": "45283",
+    "pages": [
+     233
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] ACADEMIC PROGRAM CODE: W045283F (108 hours) The English as a Second Language – Conversation Certificate of Competency is designed to prepare students in listening comprehension and speaking skills by usi"
+   },
+   {
+    "control_number": "45310",
+    "pages": [
+     234
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] ACADEMIC PROGRAM CODE: W045310F (162-270 hours) The English for Speakers of Other Languages (Level 1) Certificate of Competency is designed to prepare students in various levels of beginning English prof"
+   },
+   {
+    "control_number": "45311",
+    "pages": [
+     235
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 234 The English for Speakers of Other Languages (Level 2) Certificate of Competency is designed to prepare students in various level"
+   },
+   {
+    "control_number": "45312",
+    "pages": [
+     233
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] ACADEMIC PROGRAM CODE: W045312F (54 hours) The English as a Second Language Pronunciation Certificate of Competency is designed to prepare students in the areas of pronunciation for effective communicati"
+   },
+   {
+    "control_number": "45613",
+    "pages": [
+     232
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] ACADEMIC PROGRAM CODE: W045613E (108 hours) The Digital Media Production and Streaming Certificate of Completion provides students with an introduction to digital media. Students benefit by learning how to"
+   },
+   {
+    "control_number": "45655",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 81 5. Knowledge of Integrated Curriculum: Apply critical thinking to design and implement academic subjects, and assessmen"
+   },
+   {
+    "control_number": "45672",
+    "pages": [
+     110,
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] ACADEMIC PROGRAM CODE: W045672D The Certificate of Achievement in Game Art is designed for students interested in careers in various art-related positions in the video game industry such as concept artists,"
+   },
+   {
+    "control_number": "45673",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] ACADEMIC PROGRAM CODE: W045673D The Certificate of Achievement in Game Design is designed for students interested in careers in various positions in the video game industry such as game designers, systems "
+   },
+   {
+    "control_number": "45685",
+    "pages": [
+     209
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 209] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 208 understanding of the actions, side effects, and adverse reactions of different drugs. NRS-HCA 082A Psychology in Vocati"
+   },
+   {
+    "control_number": "45719",
+    "pages": [
+     245
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 245] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 244 Science division of specific health requirements, First Aid and basic life support training, and a clear background check prior "
+   },
+   {
+    "control_number": "45793",
+    "pages": [
+     237
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] ACADEMIC PROGRAM CODE: W045793E (90 hours) The First-Time Management Skills Certificate of Completion equips students with the essential skills and knowledge for entry-level supervisory and management role"
+   },
+   {
+    "control_number": "45825",
+    "pages": [
+     129,
+     130
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] ACADEMIC PROGRAM CODE: W045825H Students completing the Associate in Science in Mathematics 2.0 will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determi"
+   },
+   {
+    "control_number": "45855",
+    "pages": [
+     249
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] ACADEMIC PROGRAM CODE: W045855E (72-108 hours) The Virtual and Executive Administrative Assistant Preparation Certificate of Completion will provide a comprehensive overview of the administrative role in v"
+   },
+   {
+    "control_number": "45856",
+    "pages": [
+     246,
+     247
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 246] ACADEMIC PROGRAM CODE: W045856E (72-108 hours) The Roadmap to People Management Certificate of Completion provides students with the skills and knowledge for an entry-level leadership position. Topics incl"
+   },
+   {
+    "control_number": "46130",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 116] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 115 HEALTH SCIENCE (AS) MAJOR CODE: 1260.00 ACADEMIC PROGRAM CODE: W033861C The Associate of Science degree in Health"
+   },
+   {
+    "control_number": "46261",
+    "pages": [
+     266
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 266] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 265 managers play in planning, organizing, leading and motivating teams. VOC ED 940CE Personal Care Aide I (90 hours) NDA This Pers"
+   },
+   {
+    "control_number": "46438",
+    "pages": [
+     241,
+     242,
+     243
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] ACADEMIC PROGRAM CODE: W046438E (126-216 hours) The Introduction to California Building Codes Fundamentals Certificate delivers training in three critical areas of building regulation: mechanical, plumbing"
+   },
+   {
+    "control_number": "46441",
+    "pages": [
+     242,
+     243
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 242] ACADEMIC PROGRAM CODE: W046441E (54-162 hours) The Introduction to Construction, Inspection and Codes Certificate provides foundational training in building inspection processes and the application of the "
+   },
+   {
+    "control_number": "46446",
+    "pages": [
+     242,
+     243
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 242] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 241 funding, ownership, and administration considerations. Required Courses VOC ED 464CE Construction Materials and Process .."
+   },
+   {
+    "control_number": "46447",
+    "pages": [
+     243,
+     244
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 243] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 242 Elective Courses (choose one from the following) VOC ED 252CE Exploration of Construction and Maintenance Careers ..........."
+   },
+   {
+    "control_number": "46522",
+    "pages": [
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 131 HLTHOCC 060 Medical Assisting Internship .................. 3 HLTHOCC 061 Medical Insurance ........................."
+   },
+   {
+    "control_number": "46550",
+    "pages": [
+     100
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 100] ACADEMIC PROGRAM CODE: W046550G Students completing the Associate in Arts in Elementary Teacher Education: Integrated Programs will have satisfied the lower division major preparation for bachelor’s degre"
+   }
+  ],
+  "unproven": [
+   "35058",
+   "35064",
+   "35079",
+   "36842",
+   "39049",
+   "43074",
+   "44669",
+   "45276"
+  ]
+ },
+ "loads": 1,
+ "seconds": 93.6,
+ "found": 214,
+ "by_method": {
+  "no_closed_list": 17,
+  "not_found": 14,
+  "pdf_pages": 214
+ },
+ "shared_pages": {
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62": [
+   "03305",
+   "20229"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129": [
+   "03307",
+   "45825"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71": [
+   "03313",
+   "42555"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69": [
+   "03314",
+   "33024"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125": [
+   "03317",
+   "19431"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76": [
+   "03326",
+   "41378"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65": [
+   "03328",
+   "43260"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143": [
+   "03333",
+   "32972"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128": [
+   "08599",
+   "20230"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73": [
+   "08603",
+   "35761"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78": [
+   "08607",
+   "32935"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63": [
+   "16828",
+   "20260"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88": [
+   "17111",
+   "20236"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119": [
+   "17282",
+   "41546"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121": [
+   "17283",
+   "17284"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130": [
+   "19283",
+   "31478"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179": [
+   "19524",
+   "19526",
+   "19847",
+   "19848"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90": [
+   "19525",
+   "39126",
+   "43359"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139": [
+   "19601",
+   "19602"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138": [
+   "19603",
+   "36925"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106": [
+   "19709",
+   "42377"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109": [
+   "23061",
+   "44623"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110": [
+   "23062",
+   "45672"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230": [
+   "24190",
+   "36801",
+   "37834"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229": [
+   "24200",
+   "38782"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231": [
+   "24227",
+   "37832",
+   "42629",
+   "44553"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243": [
+   "24228",
+   "37983",
+   "39038",
+   "44587",
+   "46447"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240": [
+   "24296",
+   "24298",
+   "42627"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245": [
+   "24301",
+   "45719"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249": [
+   "30369",
+   "41589",
+   "45855"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239": [
+   "30421",
+   "39013",
+   "44419"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131": [
+   "31479",
+   "31481"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132": [
+   "31480",
+   "43483",
+   "46522"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117": [
+   "32976",
+   "36268"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154": [
+   "32982",
+   "43667"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277": [
+   "33448",
+   "33520"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238": [
+   "33554",
+   "33759"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96": [
+   "33798",
+   "41381"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116": [
+   "33861",
+   "46130"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113": [
+   "33893",
+   "40106",
+   "40810",
+   "42249"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232": [
+   "35320",
+   "41465",
+   "45613"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85": [
+   "37026",
+   "38944"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100": [
+   "37029",
+   "46550"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122": [
+   "37050",
+   "43067"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228": [
+   "37251",
+   "38768",
+   "44362"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236": [
+   "37830",
+   "38624",
+   "38719"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151": [
+   "37839",
+   "37859",
+   "41340"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103": [
+   "37863",
+   "41358"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101": [
+   "37864",
+   "40223"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248": [
+   "38289",
+   "38290",
+   "44806"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244": [
+   "38291",
+   "41464"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235": [
+   "38292",
+   "38390",
+   "44586",
+   "45311"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86": [
+   "38943",
+   "43351"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227": [
+   "39039",
+   "39511"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102": [
+   "39122",
+   "39123"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226": [
+   "39508",
+   "39509"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246": [
+   "39618",
+   "45856"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104": [
+   "41359",
+   "41360",
+   "43838"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237": [
+   "41448",
+   "44417",
+   "44418",
+   "45793"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70": [
+   "42485",
+   "42558"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93": [
+   "43507",
+   "44613"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94": [
+   "43749",
+   "43762"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241": [
+   "44361",
+   "46438"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80": [
+   "44396",
+   "44443"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82": [
+   "44444",
+   "45655"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233": [
+   "45283",
+   "45312"
+  ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242": [
+   "46441",
+   "46446"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "15011",
+   "title": "Computer Application Office Technology-Legal Secretary",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "35058",
+   "title": "International Area Studies - Africa",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     114
+    ],
+    "coverage": 0.875,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35064",
+   "title": "International Area Studies - Middle East",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     114
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "35079",
+   "title": "International Area Studies - Latin America",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "pages": [
+     278
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "36842",
+   "title": "Career Exploration: Information Communications Technology/Digital Media",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     230
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "37264",
+   "title": "Workplace Success I: Creative Leadership",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37276",
+   "title": "Workplace Success II: Creativity and Innovation in the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37833",
+   "title": "Workforce Preparation and Career Success",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38677",
+   "title": "ESL Pathways",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39049",
+   "title": "Front Desk Representative and Reservationist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     239
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "41466",
+   "title": "Academic & Workforce Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "43074",
+   "title": "Interactive Design II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     122
+    ],
+    "coverage": 0.667,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "44669",
+   "title": "Aviation Maintenance Technology - Avionics",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "pages": [
+     49
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45276",
+   "title": "Certified Residential License Appraiser Practicum II",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "pages": [
+     149
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 25,
+  "0.8-1.0": 41,
+  "1.0": 148
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 214,
+  "list": [
+   {
+    "control_number": "03304",
+    "title": "Business",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03305",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03307",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03308",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03310",
+    "title": "Computer Science Information Technology",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=91",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03311",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=123",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03313",
+    "title": "Aviation Maintenance Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03314",
+    "title": "Art-Drawing & Painting",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03317",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03326",
+    "title": "Chemistry",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03328",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03329",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03330",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03331",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=118",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03333",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03334",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=155",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03336",
+    "title": "Paralegal",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=135",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08599",
+    "title": "Management: Small Business",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08603",
+    "title": "Airframe Maintenance Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08604",
+    "title": "Aircraft Power Plant Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=72",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08605",
+    "title": "Art- Ceramics",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=68",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08607",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16585",
+    "title": "Computer Network Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=89",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16828",
+    "title": "Addiction Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17111",
+    "title": "Computer Network & Security Management",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17282",
+    "title": "Hospitality",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17283",
+    "title": "Hospitality Hotel Front Desk & Back Office Operations",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17284",
+    "title": "Hospitality Hotel Sales & Marketing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19283",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19431",
+    "title": "Liberal Arts & Sciences Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
+    "coverage": 0.956,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19433",
+    "title": "Liberal Arts & Sciences  Health Professions",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=126",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19524",
+    "title": "Business Application & Database Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19525",
+    "title": "Network & Information System Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19526",
+    "title": "Web Support & Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19601",
+    "title": "Pharmacy Technician Basic",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19602",
+    "title": "Pharmacy Technician Advanced",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19603",
+    "title": "Pharmacy Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19709",
+    "title": "Film & TV  Production Crafts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19847",
+    "title": "Computer Web Support & Database Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19848",
+    "title": "Computer Web Support & Database Administration",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20229",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20230",
+    "title": "Management: Small Business",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20234",
+    "title": "Computer Science Information Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=92",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20236",
+    "title": "Computer Network & Security Mgmt.",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20247",
+    "title": "Child Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20256",
+    "title": "Hospitality",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20258",
+    "title": "Paralegal",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20260",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23061",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23062",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24160",
+    "title": "Healthcare Careers Preparation Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=263",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24190",
+    "title": "Choosing Business Careers Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24200",
+    "title": "Business Tools Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24227",
+    "title": "Communicating in Business Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24228",
+    "title": "Job Readiness Skills",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24296",
+    "title": "In-Home Supportive Services Provider",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24298",
+    "title": "Healthcare Services Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24301",
+    "title": "Pre-Nursing Career Preparation Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30369",
+    "title": "The Foundation of English Skills",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30421",
+    "title": "Healthcare Career Discovery Certificate of Completion",
+    "award": null,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31010",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31011",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31478",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31479",
+    "title": "Medical Assisting - Administrative",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31480",
+    "title": "Medical Assisting - Clinical",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31481",
+    "title": "Medical Assisting - Administrative and Clinical",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32887",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32935",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32972",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32976",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32977",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=98",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32982",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32990",
+    "title": "ANTHROPOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33024",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33448",
+    "title": "IGETC - General Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277",
+    "coverage": 0.77,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33520",
+    "title": "CSU General Education (CSU-GE-Breadth)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277",
+    "coverage": 0.732,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33554",
+    "title": "Foundation for Academic Success II",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33568",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=140",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33759",
+    "title": "Foundation for Academic Success I",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33794",
+    "title": "DENTAL ASSISTANT",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=95",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33798",
+    "title": "Dental Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33861",
+    "title": "Health Science",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33893",
+    "title": "Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35053",
+    "title": "Paramedicine",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35281",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35320",
+    "title": "Custodial Technician Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35761",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36268",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36801",
+    "title": "College Readiness",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36925",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37003",
+    "title": "LAW, PUBLIC POLICY AND SOCIETY",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=124",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37026",
+    "title": "CLIMATE CHANGE AND ENVIRONMENTAL STUDIES",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37029",
+    "title": "ELEMENTARY TEACHER EDUCATION",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
+    "coverage": 0.737,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37050",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122",
+    "coverage": 0.792,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37251",
+    "title": "Administrative Assistant",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37830",
+    "title": "Facilities Management",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37832",
+    "title": "Conservation Studies",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37834",
+    "title": "College Readiness for the English Language Learner",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37838",
+    "title": "REAL ESTATE APPRAISER I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37839",
+    "title": "Real Estate Salesperson",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37859",
+    "title": "REAL ESTATE BROKER",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37860",
+    "title": "REAL ESTATE APPRAISER II",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=150",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37863",
+    "title": "ENGINEERING: MECHANICAL TRACK",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37864",
+    "title": "ENGINEERING: CIVIL TRACK",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37983",
+    "title": "Employment Readiness",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38289",
+    "title": "Statistics Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38290",
+    "title": "STEM Mathematics Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38291",
+    "title": "Liberal Arts Mathematics Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38292",
+    "title": "ESL Fundamentals and Custodial Technicians",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38390",
+    "title": "ESL Fundamentals I",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38406",
+    "title": "Science Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=247",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38624",
+    "title": "ESL Fundamentals III",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38647",
+    "title": "Mobile Application Development Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=180",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38719",
+    "title": "ESL Fundamentals II",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38768",
+    "title": "Administrative Assistant for the English Language Learner",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38782",
+    "title": "Autism Services Aide",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38943",
+    "title": "Climate Change Studies - Social Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38944",
+    "title": "Climate Change Studies - Natural Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39013",
+    "title": "Guest and Public Spaces Attendant",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39038",
+    "title": "Leadership and Workplace Success in the Public Sector",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39039",
+    "title": "21st Century Employability Skills: Entrepreneurial and Analytical Mindset",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39122",
+    "title": "ENGINEERING: ELECTRICAL TRACK",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39123",
+    "title": "ENGINEERING: COMPUTER, SOFTWARE TRACK",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39126",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39419",
+    "title": "Biotechnology Lab Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=74",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39485",
+    "title": "Social Justice Studies: Chicano Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=152",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39508",
+    "title": "21st Century Employability Skills: Communication and Digital Literacy",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39509",
+    "title": "21st Century Employability Skills: Diversity Awareness and Collaboration",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39510",
+    "title": "21st Century Employability Skills: Empathy and Adaptability",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=255",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39511",
+    "title": "21st Century Employability Skills: Self-Awareness and Resilience",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39618",
+    "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40106",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40202",
+    "title": "Social Justice Studies: LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40223",
+    "title": "Emergency Medical Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40810",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41340",
+    "title": "Real Estate Appraiser III",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41358",
+    "title": "Engineering I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41359",
+    "title": "Engineering II: Mechanical and Civil Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41360",
+    "title": "Engineering III: Computer and Software, and Electrical Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41378",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41381",
+    "title": "Fundamentals of Dental Assisting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41448",
+    "title": "Financial Literacy for College & Workforce Success",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41464",
+    "title": "Licensing/Employment Test Prep",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41465",
+    "title": "Dental Career Skill Enhancement",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41546",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41589",
+    "title": "Tutor Training",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42249",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42377",
+    "title": "Facilities Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42485",
+    "title": "Fundamentals of Athletic Training and Sports Medicine",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42488",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=157",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42555",
+    "title": "Advanced Athletic Training and Sports Medicine",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42558",
+    "title": "Athletic Training and Sports Medicine",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42627",
+    "title": "In-Home Supportive Services Provider for the English Language Learner",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42629",
+    "title": "Construction Industry Exploration & Preparation Program",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43067",
+    "title": "Interactive Design I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43073",
+    "title": "Graphic Design I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=114",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43178",
+    "title": "Graphic Design II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=115",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43260",
+    "title": "Corrections",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43351",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43359",
+    "title": "Cyber Security Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43450",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43457",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=112",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43483",
+    "title": "Fundamentals of Medical Assisting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43507",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43570",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=108",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43628",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=142",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43667",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43694",
+    "title": "Orthodontic Dental Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43749",
+    "title": "Data Science Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43762",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43838",
+    "title": "Essentials of Robotics and Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44361",
+    "title": "Interpersonal Skills for the Workplace",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44362",
+    "title": "Adult Basic Education",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44396",
+    "title": "Health, Nutrition, and  Food Sanitation in Early Childhood Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44397",
+    "title": "Teaching Learners with Special Needs",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44398",
+    "title": "Infant and Toddlers Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44417",
+    "title": "Food Service Manager Skills Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44418",
+    "title": "Food Handler’s Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44419",
+    "title": "Gig Economy Success Kit",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44443",
+    "title": "Administration and Supervision of Early Childhood Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44444",
+    "title": "Preschool Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44452",
+    "title": "Title 22: Preschool Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44553",
+    "title": "Computer Skills for the Workplace",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44586",
+    "title": "Entrepreneurship Skills",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44587",
+    "title": "Introduction to Computers",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44613",
+    "title": "Essentials of Video Game Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44623",
+    "title": "Virtual Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44806",
+    "title": "Technology for Success in the Workplace",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44945",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=273",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45275",
+    "title": "Residential License Appraiser Practicum I",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=147",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45277",
+    "title": "Certified Nursing Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45278",
+    "title": "Real Estate Appraisal",
+    "award": "A.S. Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45283",
+    "title": "English as a Second Language - Conversation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45310",
+    "title": "English for Speakers of Other Languages (Level 1)",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45311",
+    "title": "English for Speakers of Other Languages (Level 2)",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45312",
+    "title": "English as a Second Language - Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45613",
+    "title": "Digital Media: Production & Streaming",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45655",
+    "title": "School Age Programs",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45672",
+    "title": "Game Art",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45673",
+    "title": "Game Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45685",
+    "title": "Licensed Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45719",
+    "title": "Nursing Assistant Preparation (CNA)",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45793",
+    "title": "First-Time Management Skills",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45825",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45855",
+    "title": "Virtual and Executive Administrative Assistant",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45856",
+    "title": "Roadmap to People Management",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46130",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46261",
+    "title": "Spanish for the Workplace Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=266",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46438",
+    "title": "Introduction to California Building Codes Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46441",
+    "title": "Introduction to Construction, Inspection and Codes",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46446",
+    "title": "Introduction to Green Construction",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46447",
+    "title": "Leadership for Environmental Conservation",
+    "award": "Noncredit program",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46522",
+    "title": "Medical Assisting Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46550",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39536207109"
+}

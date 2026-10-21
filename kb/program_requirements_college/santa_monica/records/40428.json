@@ -1,0 +1,196 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "40428",
+ "shape": "noncredit",
+ "title": "Low Intermediate ESL",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=138",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8633,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8633,
+    "output_tokens": 1916,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1916,
+  "output_tokens_details": {
+   "thinking_tokens": 972
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07285,
+ "ms": 17079,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Noncredit Certificate of Competency in Low Intermediate ESL",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "students will demonstrate low intermediate level competence in English language skills of listening, speaking, reading, and writing in a variety of contexts.",
+    "Students will be able to demonstrate communicative competence by orally reporting factual information on a familiar topic, demonstrate writing proficiency in short form writing describing an activity including details, apply constructive criticism to improve job/school performance, demonstrate effective study strategies, identify main ideas and supporting ideas in informational listening passages, identify effective pre-reading, reading, and post-reading strategies, identify main ideas and supporting details in a text, compose a written text on a topic covered in class that incorporates appropriate target vocabulary."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 903",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 1 of the following courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 913",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 963",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 973",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's own heading (likely 'Low Intermediate ESL, Certificate of Competency (Noncredit)') falls before page 138 and is not in the text; section_heading uses the program name from the opening sentence.",
+   "The catalog prints 'Area of Emphasis: (0 units)' and 0 beside each course; no hours are printed, so measure is units and total_units records the printed 0.",
+   "Program learning outcomes are printed as a run-on paragraph; recorded as its two sentences without splitting the second sentence's list, with the lead-in 'Upon completion of the program,' dropped. Reviewer may wish to check segmentation.",
+   "Closed list writes 'ESL963' without a space; matched to catalog's 'ESL 963'.",
+   "The following sections (Intermediate ESL, Low Advanced ESL, etc.) belong to other certificates and were not read.",
+   "No specific careers are named; the text only mentions 'a career path of their choice'."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

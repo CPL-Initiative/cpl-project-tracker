@@ -1,0 +1,202 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "43260",
+ "shape": "certificate",
+ "title": "Corrections",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9486,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9486,
+    "output_tokens": 1713,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1713,
+  "output_tokens_details": {
+   "thinking_tokens": 608
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0722,
+ "ms": 14347,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 14,
+   "courses": 0,
+   "count": 14,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CORRECTIONS (CA)",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand how the corrections subsystem fits into the whole system of criminal justice.",
+    "Identify the primary differences between jails, prisons, juvenile halls, and probation camps.",
+    "Understand the concept of incapacitation.",
+    "Have a clear understanding of the juvenile justice system as it relates to delinquent, dependent, and status offenders.",
+    "Explain the juvenile court concept of least restrictive alternative.",
+    "Distinguish the basic difference between an interview with an interrogation.",
+    "Understand the purposes and goals of different correctional system programs offered to inmates such as educational programs, health programs, life skills, religious programs, and vocational programs.",
+    "Describe the three components of the criminal justice system: Explain the relationship",
+    "between the police, courts and corrections.",
+    "Understand the problems of parolees, and describe how they differ from those of probationers. Describe the concept of prisonization.",
+    "Explain the problem involved in confining elderly criminals, female prisoners, and the mentally ill prisoners.",
+    "Compare and contrast the difference between how adults, juveniles, gays, homosexuals, lesbians, and cross-gender persons are handled by the criminal justice system: Explain why this is important.",
+    "Understand the basic rights each inmate is entitled to under the 1st, 4th, 8th, and 14th Amendments.",
+    "Understand the conflicting roles of being a cop and social worker as a Probation Officer and Parole agent."
+   ],
+   "careers": [
+    "Corrections field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ADM JUS 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 039",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 075",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 309",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CORR 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes with leading zeros (ADM JUS 008, 039, 075; CORR 002) were matched to closed-list codes ADM JUS 8, 39, 75 and CORR 2.",
+   "Outcome 8 is split across a page break: '8. Describe the three components of the criminal justice system: Explain the relationship' continues as '9. between the police, courts and corrections.' The catalog numbers the continuation as item 9; recorded as two entries as printed. A reviewer may consider these one outcome.",
+   "The description mentions entry-level employment in any juvenile or adult correctional facility and supervision by a Corrections Officer; only 'Corrections field' was recorded as a career named for the program."
+  ]
+ },
+ "extracted_run": "39536207109"
+}

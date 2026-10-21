@@ -1,0 +1,878 @@
+{
+ "college": "West Los Angeles College",
+ "control_number": "44945",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=273",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12622,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12622,
+    "output_tokens": 8559,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8559,
+  "output_tokens_details": {
+   "thinking_tokens": 1683
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.22167,
+ "ms": 59638,
+ "seconds": 60.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 147,
+   "share": 0.0,
+   "missing": [
+    "ADMJUS1",
+    "ADMJUS4",
+    "ADMJUS67",
+    "AFROAM4",
+    "AFROAM5",
+    "ANATOMY1",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ANTHRO103",
+    "ANTHRO104",
+    "ANTHRO109",
+    "ANTHRO111",
+    "ANTHRO121",
+    "ANTHRO130",
+    "ANTHRO132",
+    "ART101",
+    "ART103",
+    "ART107",
+    "ART117",
+    "ASIAN3",
+    "ASTRON1",
+    "ASTRON5",
+    "BIOLOGY10",
+    "BIOLOGY3",
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "CHEM101",
+    "CHEM102",
+    "CHEM211",
+    "CHEM212",
+    "CHEM221",
+    "CHEM51",
+    "CHEM60",
+    "CHEM66",
+    "CHICANO2",
+    "CHICANO37",
+    "CHICANO47",
+    "CINEMA107",
+    "CINEMA18",
+    "CINEMA3",
+    "CINEMA4",
+    "COMM122",
+    "COMMC1000",
+    "CS131",
+    "DANCEST805",
+    "EARTH1",
+    "EARTH2",
+    "ECON10",
+    "ECON11",
+    "ECONC2001",
+    "ECONC2002",
+    "EDUC211",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLISH101Y",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH209",
+    "ENGLISH215",
+    "ENGLISH219",
+    "ENGLISH234",
+    "ENVSCI1",
+    "ENVSCI2",
+    "ENVSCI24",
+    "GEOG1",
+    "GEOG15",
+    "GEOG2",
+    "GEOG7",
+    "GEOLOGY1",
+    "GEOLOGY12",
+    "GEOLOGY2",
+    "GEOLOGY6",
+    "GEOLOGY7",
+    "HISTC1002",
+    "HISTORY1",
+    "HISTORY11",
+    "HISTORY2",
+    "HISTORY27",
+    "HISTORY29",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY43",
+    "HISTORY44",
+    "HISTORY86",
+    "HISTORY87",
+    "HUMAN30",
+    "HUMAN31",
+    "HUMAN60",
+    "MATH230",
+    "MATH236",
+    "MATH245",
+    "MATH246",
+    "MATH260",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH275",
+    "MICRO20",
+    "MUSIC111",
+    "OCEANO1",
+    "OCEANO10",
+    "PHILOS1",
+    "PHILOS12",
+    "PHILOS20",
+    "PHILOS28",
+    "PHILOS33",
+    "PHILOS41",
+    "PHYSICS12",
+    "PHYSICS37",
+    "PHYSICS38",
+    "PHYSICS39",
+    "PHYSICS6",
+    "PHYSICS7",
+    "PHYSIOL1",
+    "PHYSSC1",
+    "PHYSSC14",
+    "POLSC1000",
+    "POLSCI2",
+    "POLSCI60",
+    "POLSCI61",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH13",
+    "PSYCH14",
+    "PSYCH2",
+    "PSYCH41",
+    "PSYCH52",
+    "PSYCH91",
+    "SOC1",
+    "SOC11",
+    "SOC2",
+    "SOC31",
+    "SPANISH10",
+    "SPANISH12",
+    "SPANISH2",
+    "SPANISH3",
+    "SPANISH4",
+    "STATC1000",
+    "STATC1000E",
+    "THEATER100",
+    "THEATER110"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "LACCD General Education (GE) Pattern – GE Pattern for Associate Degrees",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADM JUS 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ADM JUS 4",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ADM JUS 67",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "AFRO AM 4",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "AFRO AM 5",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANATOMY 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 103",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 104",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 109",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 130",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ANTHRO 132",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ART 101",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ART 103",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ART 107",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ART 117",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ART101",
+    "why": "not in the text (apparent duplicate of ART 101)"
+   },
+   {
+    "code": "ASIAN 3",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ASTRON 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ASTRON 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOLOGY 10",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "BIOLOGY 6",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 221",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 51",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 60",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHEM 66",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHICANO 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHICANO 37",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CINEMA 107",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CINEMA 18",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CINEMA 3",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CINEMA 4",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "COMM 122",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "CS 131",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "DANCEST 805",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "EARTH 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "EARTH 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 10",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ECON 11",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "EDUC 211",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 101Y",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 209",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENGLISH 234",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENV SCI 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "ENV SCI 24",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "GEOG 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "GEOLOGY 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOLOGY 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "GEOLOGY 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOLOGY 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern (as HIST C1002)"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 11",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 27",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 29",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 41",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 42",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 43",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 44",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HUMAN 30",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HUMAN 31",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "HUMAN 60",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 230",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 236",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 245",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 246",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 260",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 261",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 262",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 263",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 270",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MATH 275",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "OCEANO 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "OCEANO 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHILOS 12",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHILOS 28",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHILOS 33",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHILOS 41",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYS SC 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYS SC 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 37",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYSICS 38",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYSICS 39",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern (as PHYSIO 001)"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "POL SCI 60",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "POL SCI 61",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYCH 13",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "PSYCH 91",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SOC 1",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SOC 11",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SOC 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SOC 31",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SPANISH 12",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SPANISH 2",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "Cal-GETC section not in text; listed only in LACCD associate GE pattern"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pp. 272-274) prints only the 'LACCD General Education (GE) Pattern – GE Pattern for Associate Degrees', a different award/pattern from the Cal-GETC Certificate of Achievement requested. The Cal-GETC pattern section itself does not appear in the text, so no blocks, total or outcomes were recorded; the source page link likely points just before the Cal-GETC section and a reviewer should check the following pages.",
+   "The LACCD pattern's 'Minimum of 27 semester units' was not recorded as this award's total because it belongs to the associate-degree GE pattern, not the Cal-GETC certificate.",
+   "The closed list includes Cal-GETC lab courses (ANTHRO 111, ASTRON 5, EARTH 2, GEOG 15, GEOLOGY 6, GEOLOGY 7, OCEANO 10, PHYS SC 14) and ECON C2001/C2002, none of which appear in this text, consistent with the text being the wrong section.",
+   "No program learning outcomes or careers are printed in the text."
+  ]
+ },
+ "extracted_run": "39536207109"
+}
