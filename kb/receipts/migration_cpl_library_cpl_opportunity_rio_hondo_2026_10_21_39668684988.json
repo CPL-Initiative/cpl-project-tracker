@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_library_cpl_opportunity_rio_hondo_2026-10-21.sql",
+ "name": "cpl_library_cpl_opportunity_rio_hondo_2026_10_21",
+ "version": "20261021201836",
+ "sha256": "3771e71424b3b2989681922356dc6630990ffe99c4f3b41a530d5232f68d7ccc",
+ "run": "39668684988",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
