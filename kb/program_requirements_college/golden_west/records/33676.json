@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/music/music-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12089,
+  "input_tokens": 7081,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12089,
-    "output_tokens": 1150,
+    "input_tokens": 7081,
+    "output_tokens": 2134,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,73 +30,91 @@
     "model": null
    }
   ],
-  "output_tokens": 1150,
+  "output_tokens": 2134,
   "output_tokens_details": {
-   "thinking_tokens": 303
+   "thinking_tokens": 545
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07136,
- "ms": 10436,
- "seconds": 11.0,
+ "cost_usd": 0.071,
+ "ms": 18263,
+ "seconds": 18.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 13,
    "listed": 13,
-   "share": 0.0,
-   "missing": [
-    "MUSG111",
-    "MUSG116",
-    "MUSG117",
-    "MUSG121",
-    "MUSG122",
-    "MUSG142",
-    "MUSG216",
-    "MUSG217",
-    "MUSG241",
-    "MUSG242",
-    "MUSG260",
-    "MUSG261",
-    "MUSG290"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "MUSG113",
+    "MUSG141"
+   ],
+   "flagged": [
+    "MUSG113",
+    "MUSG141"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    22.5,
+    23.5
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    29.0,
+    33.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 22.5-23.5; the catalog states 29.0-33.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     46.5,
+     57.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     2.5,
+     13.5
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -106,100 +124,219 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Music (MUS)",
+   "section_heading": "Required Courses",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 33
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local or Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate written and aural understanding of diatonic and chromatic music theory principles.",
+    "Consistently execute a collegiate level of ensemble etiquette, musicianship and performance in a large ensemble setting.",
+    "Consistently execute a collegiate level of performance and musicianship in a solo setting.",
+    "Complete a standard, collegiate-level piano keyboard proficiency or elective courses in music technology."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MUS G111",
-    "why": "course description only; the A.A. requirements section is not in the text"
+    "name": "Music Theory",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MUS G116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G216",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G217",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS G116",
-    "why": "course description only; the A.A. requirements section is not in the text"
+    "name": "Piano or Music Technology (Piano)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Piano or Music Technology",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MUS G141",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G242",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS G117",
-    "why": "course description only; the A.A. requirements section is not in the text"
+    "name": "Piano or Music Technology (Music Technology)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Piano or Music Technology",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MUS G111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "MUS G121",
-    "why": "course description only; the A.A. requirements section is not in the text"
+    "name": "Large Ensemble",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MUS G121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G260",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G261",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS G122",
-    "why": "course description only; the A.A. requirements section is not in the text"
-   },
-   {
-    "code": "MUS G142",
-    "why": "course description only; the A.A. requirements section is not in the text"
-   },
-   {
-    "code": "MUS G216",
-    "why": "not in the text (excerpt cut off at MUS G147)"
-   },
-   {
-    "code": "MUS G217",
-    "why": "not in the text (excerpt cut off at MUS G147)"
-   },
-   {
-    "code": "MUS G241",
-    "why": "not in the text (excerpt cut off at MUS G147)"
-   },
-   {
-    "code": "MUS G242",
-    "why": "not in the text (excerpt cut off at MUS G147)"
-   },
-   {
-    "code": "MUS G260",
-    "why": "not in the text (excerpt cut off at MUS G147)"
-   },
-   {
-    "code": "MUS G261",
-    "why": "not in the text (excerpt cut off at MUS G147)"
-   },
-   {
-    "code": "MUS G290",
-    "why": "not in the text (excerpt cut off at MUS G147)"
+    "name": "Applied Music",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUS G290",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text contains only the Music (MUS) course descriptions list (MUS G105 through a truncated MUS G147); it does not include the Music, Associate in Arts Degree requirements section, so no blocks, totals, outcomes or careers could be recorded.",
-   "The course descriptions' 'Catalog Program Pages Referencing' lists name 'Music, Associate in Arts Degree' for MUS G111, G113, G116, G117, G121, G122, G141 and G142, suggesting these belong to the degree, but the requirement rules are not printed here. MUS G113 and MUS G141 are not on the closed list.",
-   "The text begins and ends mid-entry (cut off at 'Catalog Progra' under MUS G147); a reviewer should fetch the program page's requirements tab."
+   "The text does not print the program's own heading; the requirements table begins under 'Required Courses' (page URL is music-aa).",
+   "'Piano or Music Technology' (6 units) is read as two whole options: the piano sequence MUS G141, G142, G241, G242 (6 units) or MUS G111 and MUS G113 (music technology). The printed 6 is recorded as stated on both option blocks. No units are printed beside MUS G111 (state file stores 3).",
+   "Large Ensemble: select one course, each taken four times (4-8 units).",
+   "Applied Music: MUS G290 printed at 0.5 units and taken four times, but the block total is printed as 4 units; 4 x 0.5 = 2, so the per-course units or block total should be checked.",
+   "Major Total 29-33; Total Units 60 with GE (Local or Cal-GETC) 24-34 and electives as needed to reach 60 units.",
+   "Description mentions 26-30 units of lower division work, which differs from the printed Major Total 29-33; the printed Major Total is recorded.",
+   "Transfer majors named (General Music Majors, Performance Majors, Music Education Majors) are not recorded as careers."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

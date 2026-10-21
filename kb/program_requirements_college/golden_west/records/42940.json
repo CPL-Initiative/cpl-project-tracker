@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Academic Writing for Multilingual Students",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/education/education-elementary-k-8/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8288,
+  "input_tokens": 7254,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8288,
-    "output_tokens": 429,
+    "input_tokens": 7254,
+    "output_tokens": 548,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 429,
+  "output_tokens": 548,
   "output_tokens_details": {
-   "thinking_tokens": 141
+   "thinking_tokens": 92
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04173,
- "ms": 5007,
- "seconds": 5.6,
+ "cost_usd": 0.03998,
+ "ms": 5522,
+ "seconds": 6.0,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Education (Elementary / K-8)",
+   "section_heading": "Not found: the text contains no section for Academic Writing for Multilingual Students",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -132,22 +133,25 @@
   "missing_explained": [
    {
     "code": "ENGL C1000",
-    "why": "Not in a requirement list; appears only as an advisory for EDUC courses on an unrelated page"
+    "why": "Named only as a prerequisite for BUS G139 in a Business course listing; no requirements for this award in the text."
    },
    {
     "code": "ENGL C1000E",
-    "why": "Not in a requirement list; appears only as an advisory for EDUC courses on an unrelated page"
+    "why": "Named only as a prerequisite for BUS G139 in a Business course listing; no requirements for this award in the text."
    },
    {
     "code": "ESL G086",
-    "why": "Not in the text"
+    "why": "Not in the text."
    },
    {
     "code": "ESLG087",
-    "why": "Not in the text"
+    "why": "Not in the text."
    }
   ],
-  "notes": []
+  "notes": [
+   "The source text comes from the Business Administration pathway page (Business course descriptions BUS G108-G140). It does not include the Academic Writing for Multilingual Students Certificate of Achievement section, so no blocks, totals, outcomes or careers could be recorded.",
+   "The text begins and ends mid-word ('ogram Pages', 'Transfer Credi'), so it appears truncated. A reviewer should get the correct catalog page for this ESL certificate."
+  ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }

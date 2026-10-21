@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Gender and Queer Studies",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/sociology/gender-studies-coa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11102,
+  "input_tokens": 6903,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11102,
-    "output_tokens": 665,
+    "input_tokens": 6903,
+    "output_tokens": 870,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,32 @@
     "model": null
    }
   ],
-  "output_tokens": 665,
+  "output_tokens": 870,
   "output_tokens_details": {
-   "thinking_tokens": 129
+   "thinking_tokens": 113
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05771,
- "ms": 7956,
- "seconds": 8.4,
+ "cost_usd": 0.04501,
+ "ms": 6853,
+ "seconds": 7.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 7,
-   "share": 0.0,
+   "share": 0.714,
    "missing": [
     "ETHSG111",
-    "ETHSG121",
-    "HISTG121",
-    "SOCG110",
-    "SOCG111",
-    "SOCG115",
-    "SOCG140"
+    "ETHSG121"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,29 +64,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    12.0,
+    12.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -102,15 +99,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Sociology",
+   "section_heading": "Gender and Queer Studies, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 12,
+    "max": 12
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,46 +124,89 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Describe key theories and concepts related to gender, sexual identities, and social justice.",
+    "Apply theories of intersectionality to assess how gender and sexuality interrelates with race, ethnicity, social class, language, and disability in a variety of social factors and contexts.",
+    "Analyze societal norms and approaches to creating and maintaining interlocking structures of power and inequality, as it relates to gender and sexuality."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOC G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "ETHS G111",
-    "why": "not in the text; requirements section absent"
+    "why": "not in the text; appears to be cross-listed with SOC G111"
    },
    {
     "code": "ETHS G121",
-    "why": "not in the text; requirements section absent"
-   },
-   {
-    "code": "HIST G121",
-    "why": "not in the text; requirements section absent"
-   },
-   {
-    "code": "SOC G110",
-    "why": "only in course listing; requirements section absent"
-   },
-   {
-    "code": "SOC G111",
-    "why": "only in course listing; requirements section absent"
-   },
-   {
-    "code": "SOC G115",
-    "why": "only in course listing; requirements section absent"
-   },
-   {
-    "code": "SOC G140",
-    "why": "only in course listing; requirements section absent"
+    "why": "not in the text; appears to be cross-listed with HIST G121"
    }
   ],
   "notes": [
-   "The text holds the Sociology pathway page's navigation and its COURSES tab. It does not hold the requirements of the Gender and Queer Studies, Certificate of Achievement.",
-   "That certificate is named only as a link and in 'Catalog Program Pages Referencing' lists under SOC G110, SOC G111, SOC G115 and SOC G140. This suggests those courses belong to the certificate, but the text does not state its blocks, rules or total.",
-   "No blocks, total, outcomes or careers could be recorded. A reviewer should fetch the certificate's own page (DEGREES AND CERTIFICATES tab)."
+   "Elective block reads 'Select one of the following' with 3 units printed; recorded as choose 1 course.",
+   "ETHS G111 and ETHS G121 share titles with SOC G111 and HIST G121 and may be cross-listed equivalents, but the catalog does not print them."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "39688079435"
 }
