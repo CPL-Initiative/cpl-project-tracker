@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "6433296e07e2",
+ "build": "bf781cf0cd22",
  "built": "2026-10-18",
  "inputs": {
-  "records": 16525,
+  "records": 16684,
   "map_read_at": "2026-10-18",
   "registry_read_at": "2026-10-18",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-20 17:21",
-  "cer": "2026-10-20T17:21:47+00:00"
+  "memberships": "2026-10-21 14:34",
+  "cer": "2026-10-21T14:34:57+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -757,7 +757,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -1787,7 +1787,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -2662,7 +2662,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -3733,7 +3733,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -3865,7 +3865,7 @@ window.CPL_PATHWAYS_ROEP = {
      "courses": 8,
      "here": 7,
      "adopt": 6,
-     "consider": 2
+     "consider": 3
     },
     "courses": {
      "FIPT 101": {
@@ -4076,7 +4076,15 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Fire Inspector I",
+        "credit": "3 hours in Fire Prevention",
+        "cid": "FIRE 110 X",
+        "colleges_n": 0
+       }
+      ]
      },
      "FIPT 103": {
       "title": "Fire Protection Equipment and Systems",
@@ -4154,6 +4162,12 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "consider": [
        {
+        "credential": "Fire Inspector I",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 0
+       },
+       {
         "credential": "SFT Fire Inspector 1C",
         "credit": "3 hours in Fire Protection Systems",
         "cid": "FIRE 120 X",
@@ -4164,6 +4178,12 @@ window.CPL_PATHWAYS_ROEP = {
         "credit": "3 hours in Fire Protection Systems",
         "cid": "FIRE 120 X",
         "colleges_n": 9
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 15
        }
       ]
      },
@@ -4536,7 +4556,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -4668,7 +4688,7 @@ window.CPL_PATHWAYS_ROEP = {
      "courses": 8,
      "here": 7,
      "adopt": 6,
-     "consider": 2
+     "consider": 3
     },
     "courses": {
      "FIPT 101": {
@@ -4879,7 +4899,15 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Fire Inspector I",
+        "credit": "3 hours in Fire Prevention",
+        "cid": "FIRE 110 X",
+        "colleges_n": 0
+       }
+      ]
      },
      "FIPT 103": {
       "title": "Fire Protection Equipment and Systems",
@@ -4957,6 +4985,12 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "consider": [
        {
+        "credential": "Fire Inspector I",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 0
+       },
+       {
         "credential": "SFT Fire Inspector 1C",
         "credit": "3 hours in Fire Protection Systems",
         "cid": "FIRE 120 X",
@@ -4967,6 +5001,12 @@ window.CPL_PATHWAYS_ROEP = {
         "credit": "3 hours in Fire Protection Systems",
         "cid": "FIRE 120 X",
         "colleges_n": 9
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 15
        }
       ]
      },
@@ -5339,7 +5379,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -6892,7 +6932,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -7434,7 +7474,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -7622,7 +7662,7 @@ window.CPL_PATHWAYS_ROEP = {
      "courses": 15,
      "here": 1,
      "adopt": 11,
-     "consider": 3
+     "consider": 5
     },
     "courses": {
      "FIRE 1": {
@@ -7774,7 +7814,15 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Fire Inspector I",
+        "credit": "3 hours in Fire Prevention",
+        "cid": "FIRE 110 X",
+        "colleges_n": 0
+       }
+      ]
      },
      "FIRE 3": {
       "title": "Fire Protection Equipment and Systems",
@@ -7835,6 +7883,12 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "consider": [
        {
+        "credential": "Fire Inspector I",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 0
+       },
+       {
         "credential": "SFT Fire Inspector 1C",
         "credit": "3 hours in Fire Protection Systems",
         "cid": "FIRE 120 X",
@@ -7845,6 +7899,12 @@ window.CPL_PATHWAYS_ROEP = {
         "credit": "3 hours in Fire Protection Systems",
         "cid": "FIRE 120 X",
         "colleges_n": 9
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 15
        }
       ]
      },
@@ -8026,7 +8086,15 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival",
+        "cid": "FIRE 150 X",
+        "colleges_n": 15
+       }
+      ]
      },
      "FIRE 6": {
       "title": "Hazardous Materials/ICS",
@@ -8618,7 +8686,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -9852,7 +9920,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -10573,7 +10641,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -10926,7 +10994,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -11267,7 +11335,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -13117,7 +13185,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -13468,7 +13536,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -14197,7 +14265,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -15840,7 +15908,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -16649,7 +16717,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -17639,7 +17707,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -18417,7 +18485,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   },
@@ -18585,7 +18653,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "6433296e07e2",
+    "build": "bf781cf0cd22",
     "built": "2026-10-18"
    }
   }
