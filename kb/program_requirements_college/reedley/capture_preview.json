@@ -1,0 +1,1744 @@
+{
+ "college": "Reedley College",
+ "catalog_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 213,
+ "with_closed_list": 200,
+ "started": "2026-10-21T13:45:59Z",
+ "curriqunet": {
+  "catalog": 23,
+  "view_prefix": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Certificate and Degree Requirements",
+   "Degree and Certificate Programs"
+  ],
+  "nodes_read": 44,
+  "calls": 89,
+  "entries": 214,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 214
+ },
+ "pages_read": 214,
+ "banner_h1": null,
+ "loads": 304,
+ "seconds": 1456.4,
+ "found": 196,
+ "by_method": {
+  "no_closed_list": 13,
+  "not_found": 3,
+  "page_claimed": 1,
+  "sitemap_page": 196
+ },
+ "shared_pages": {
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3216": [
+   "01757",
+   "33596"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406": [
+   "01787",
+   "32018"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3350": [
+   "19364",
+   "46450"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3352": [
+   "33687",
+   "46449"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3287": [
+   "43229",
+   "44449"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "43050",
+   "title": "Health Care Interpreter",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3527/3329",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3849,
+     "content": 3849,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43594",
+   "title": "Leadership Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3339",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3875,
+     "content": 3875,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43595",
+   "title": "Student Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "45755",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3281",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3253",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3282"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 17,
+  "0.8-1.0": 43,
+  "1.0": 136
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/reedley",
+  "kept": 36,
+  "programs": 160,
+  "list": [
+   {
+    "control_number": "01756",
+    "title": "General Agriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01757",
+    "title": "Animal Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3216",
+    "coverage": 0.65,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01758",
+    "title": "Plant and Soil Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3416",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01759",
+    "title": "Environmental Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3523/3300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01763",
+    "title": "Biological Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01766",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3385",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01767",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3253",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01768",
+    "title": "Physical Education",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3538/3403",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01770",
+    "title": "Automotive Technician",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3509/3224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01771",
+    "title": "Aviation Maintenance Technology",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01773",
+    "title": "Machine Tool Technology",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3349",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01774",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3356",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01775",
+    "title": "Fine Arts",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3524/3306",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01779",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3517/3264",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01782",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3272",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01787",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01791",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3423",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "12324",
+    "title": "Forest Surveying Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3313",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "12325",
+    "title": "Recreation and Interpretation Techniques",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3321",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "12326",
+    "title": "Forestry and Natural Resources Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3315",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "13809",
+    "title": "Receptionist",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3395",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "15047",
+    "title": "Office Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3393",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "15572",
+    "title": "Liberal Studies",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3345",
+    "coverage": 0.821,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "16565",
+    "title": "Early Intervention Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3275",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18957",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3386",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18990",
+    "title": "Welder",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3355",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19364",
+    "title": "Machinist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3350",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19456",
+    "title": "Pest Control Advisor",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3415",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "19457",
+    "title": "Irrigation, Fertility & Pest Management Technician",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3414",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19458",
+    "title": "Production Agriculture Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3418",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19459",
+    "title": "Agriculture & Technology",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3410",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19512",
+    "title": "Medical Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3390",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19513",
+    "title": "Medical Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3389",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19817",
+    "title": "Agriculture Business Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19818",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "20762",
+    "title": "Early Childhood Education: Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3269",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22688",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22693",
+    "title": "Automotive Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3509/3225",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22694",
+    "title": "Aviation Maintenance Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3147",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22696",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3517/3265",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30464",
+    "title": "Family Child Care",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3277",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30465",
+    "title": "Early Childhood Education: Assistant Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3273",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30760",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3532/3358",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30831",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3422",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31509",
+    "title": "Communication",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3513/3249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31663",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3274",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31671",
+    "title": "Equipment Technician Level I",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3362",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31672",
+    "title": "Equipment Technician Level II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3363",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31748",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3292",
+    "coverage": 0.919,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31880",
+    "title": "Plant Protection Intern",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3417",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32018",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32695",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3538/3402",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "32827",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3508/3222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32858",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3635",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33249",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3513/3250",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33395",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3206",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33530",
+    "title": "Manufacturing Maintenance Mechanic",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3353",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33546",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3383",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33583",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3405",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33596",
+    "title": "Agriculture Animal Science",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3216",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33626",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3508/3221",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33687",
+    "title": "Manufacturing Maintenance Mechanic",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3352",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33830",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3413",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33833",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3233",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "35010",
+    "title": "Animal Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3215",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35047",
+    "title": "Flight Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3525/3308",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35122",
+    "title": "Forestry",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3314",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35123",
+    "title": "Natural Resources",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3320",
+    "coverage": 0.97,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35194",
+    "title": "Agricultural Mechanics",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3360",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35265",
+    "title": "Medium/Heavy Duty Truck Service and Repair",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3370",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35266",
+    "title": "Agricultural Mechanics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3361",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35299",
+    "title": "Equine",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35732",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3421",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35745",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3276",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35942",
+    "title": "Agriculture Education",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3141",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35948",
+    "title": "Nursing Assistant Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3535/3381",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36490",
+    "title": "Enology",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3411",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36491",
+    "title": "Enology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3412",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37072",
+    "title": "Medium/Heavy Duty Truck Powertrain and MVAC",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3369",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37096",
+    "title": "Medium/Heavy Duty Truck Engines",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3368",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37097",
+    "title": "Medium/Heavy Duty Truck Advanced Engines and Powertrains",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37098",
+    "title": "Medium/Heavy Duty Truck Electrical and Hydraulics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3367",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37125",
+    "title": "Business Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37866",
+    "title": "American Sign Language Conversational Proficiency",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3506/3212",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37878",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3506/3211",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37998",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3424",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38061",
+    "title": "Music Theory",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3374",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38062",
+    "title": "General Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3372",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38063",
+    "title": "Piano Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3378",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38064",
+    "title": "Vocal Performance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3379",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38074",
+    "title": "Instrumental Performance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3373",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38350",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3377",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38594",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3537/3399",
+    "coverage": 0.932,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38739",
+    "title": "21st Century Job Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39778",
+    "title": "World Languages",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3542/3426",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39951",
+    "title": "Academic and Vocational English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3295",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39952",
+    "title": "Intermediate Academic and Vocational English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3297",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39953",
+    "title": "Basic English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3296",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40022",
+    "title": "Wildland Fire Advancement",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3325",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40068",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3542/3427",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40162",
+    "title": "Wildfire Resources Supervisors",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3323",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40450",
+    "title": "Integrated Fuels Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3319",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40758",
+    "title": "Philosophy",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3537/3398",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41046",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3291",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41051",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41053",
+    "title": "Literature",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3293",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41199",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3408",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41474",
+    "title": "Wildland Fire Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3326",
+    "coverage": 0.706,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42230",
+    "title": "Administrative Assistant",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3387",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42231",
+    "title": "Bookkeeping",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3388",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42236",
+    "title": "Medical Administrative Assistant",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3391",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42237",
+    "title": "Technology Foundations",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3341",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42246",
+    "title": "Office Assistant",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3394",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42247",
+    "title": "Receptionist",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3396",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42303",
+    "title": "MS Office",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3392",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42305",
+    "title": "Ag Technology",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42350",
+    "title": "Small Business",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42457",
+    "title": "Wildfire Resources Supervisors",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3324",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42471",
+    "title": "Utility Vegetation Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3322",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42540",
+    "title": "Aircraft General Maintenance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42542",
+    "title": "Advanced Welding",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3347",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42543",
+    "title": "Intermediate Welding",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3348",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42544",
+    "title": "Welding Essentials",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3354",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42552",
+    "title": "Aircraft Airframe Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42553",
+    "title": "Aircraft Powerplant Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42583",
+    "title": "Agriculture Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3205",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42993",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3513/3251",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43326",
+    "title": "Financial Literacy",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43446",
+    "title": "Quickbooks",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3634/3157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43488",
+    "title": "Land Surveying",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3289",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43508",
+    "title": "Fuels and Prescribed Fire Applications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3318",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43744",
+    "title": "Agriculture Foundations",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43906",
+    "title": "Agriculture Foundations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3207",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44041",
+    "title": "Learning Design",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3710/3713",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44046",
+    "title": "Advanced Learning Design and Technology",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3710/3712",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44192",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44193",
+    "title": "MS Office",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44425",
+    "title": "Quickbooks",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3634/3694",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45071",
+    "title": "Cybersecurity and Network Defense",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3643",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45154",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3270",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45164",
+    "title": "Cybersecurity Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45165",
+    "title": "Cybersecurity Network Defense Technician",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45408",
+    "title": "Cybersecurity Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3142",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45409",
+    "title": "Cybersecurity Network Defense Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45660",
+    "title": "Software Engineering",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45723",
+    "title": "Live Events Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3644/3646",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45843",
+    "title": "Animal Packing Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3642",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45929",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3516/3648",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45942",
+    "title": "Information and AI Literacy",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3662",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45992",
+    "title": "AI and Information Literacy Skills",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3661",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46036",
+    "title": "Manufacturing Professional",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3655",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46037",
+    "title": "Manufacturing Fundamentals, Level 2",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3654",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46038",
+    "title": "Manufacturing Fundamentals, Level 1",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3653",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46224",
+    "title": "Maintenance Mechanic, Level 1",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3651",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46382",
+    "title": "Maintenance Mechanic, Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3652",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46383",
+    "title": "Manufacturing Maintenance Mechanic Essentials",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3659",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46435",
+    "title": "Advanced Maintenance Mechanic",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3657",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46436",
+    "title": "Advanced Maintenance Mechanic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3656",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46449",
+    "title": "Manufacturing Maintenance Mechanic",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3352",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46450",
+    "title": "Machinist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3350",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "39610606062"
+}
