@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPL Implementation Funding Guidance Memo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- The guidance memo, public (Sam, 2026-10-21: "Add a link to the draft
+     funding guidance memo on the funding table of contents. Don't refer to it
+     as 'draft' since we'll finalize it before publishing."). The tab's Report
+     view writes the memo from the live model; this page asks the same module
+     for the same memo, from the published scenario, so the two never differ.
+     Its tokens are the funding page's (First Light; light only, like it). -->
+<style>
+:root{
+  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --surface-opaque:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+  --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+  --cobalt:#0047AB; --crimson:#920000; --hunter:#2C601A; --mustard-text:#8B6800;
+  --mustard-fill:#E3B341;
+  --focus-ring:var(--cobalt);
+  /* ⚠ THE EMBEDDED TAB'S FOCUS TOKEN, WHICH THIS PAGE NEVER DEFINED.
+     cpl_funding.js writes every one of its focus rings as
+     `outline: 2px solid var(--gold-accent)` — a token that lives in COBI's
+     :root and not here. An undefined var() invalidates the whole declaration
+     at computed-value time, so `outline` fell back to its initial value and
+     138 focusable controls on this page had NO visible ring at all: the
+     search box, the Columns menu, Download as Excel, and every institution
+     name in the table. `npm run a11y funding-model` reported it on both the
+     old page and the new one — it long predates this edit.
+     Mapped to the page's OWN focus ring rather than to the gold hex it names,
+     because the gold is a dark-surface grade: prototype/check_contrast.py puts
+     #E3B341 at 1.74:1 on paper and 1.95:1 on white, under the 3:1 that
+     WCAG 2.2 SC 1.4.11 asks of a focus indicator, while cobalt measures
+     7.54:1 and 8.44:1. Same maths the design system derives every token with;
+     no new color is invented here. */
+  --gold-accent:var(--focus-ring);
+  /* Derived tints get their own tokens rather than inline rgba (house rule). */
+  --tint-cobalt:#E8EEF8; --tint-hunter:#EAF0E6; --tint-crimson:#F6EAEA; --tint-mustard:#F7F0DE;
+  /* Prose runs the full column width so its right edge lines up with the
+     boxes and tables rather than stopping ragged short of them. */
+  --measure:none;
+  /* The names fact-sheet/factsheet_sierra.js paints its drawer with, mapped
+     onto this page's own tokens. --faint is the Fact Sheet's small-text grade
+     (4.5:1 on white). None of these is read by the embedded table. */
+  --faint:#69695F; --ink:var(--text-strong); --muted:var(--text-muted);
+  --radius-sm:4px; --font-data:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+/* The seal navy is scoped to the memo, as the funding page scopes it to its
+   own chrome: cpl_funding.js reads the same names. */
+.memo{ --seal-blue:#002F6D; --on-accent:#FFFFFF; }
+*{box-sizing:border-box}
+body{margin:0; background:var(--paper); color:var(--text-body);
+  font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:clamp(15px,.9rem + .2vw,17px); line-height:1.6}
+.skip{position:absolute; left:-9999px; top:0; background:var(--surface-opaque); color:var(--cobalt); padding:10px 16px}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--focus-ring); outline-offset:3px}
+.bar{max-width:880px; margin:0 auto; padding:14px clamp(16px,4vw,28px) 0; display:flex; flex-wrap:wrap; gap:6px 22px; align-items:center}
+.bar a, .bar button{font:inherit; font-size:.92rem; color:var(--cobalt); background:none; border:0; padding:0;
+  min-height:24px; text-decoration:underline; text-underline-offset:2px; cursor:pointer}
+.bar .ver{color:var(--text-muted); font-size:.8rem}
+main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
+.memo{background:var(--surface-opaque); border:1px solid var(--border); border-radius:8px;
+  padding:clamp(20px,5vw,44px) clamp(16px,5vw,52px); color:var(--text-strong)}
+.memo h1{font-size:1.15rem; color:var(--seal-blue); margin:0 0 2px; text-align:center; letter-spacing:.04em}
+.memo h2{font-family:"Playfair Display",Georgia,serif; font-weight:600; font-size:1.08rem; color:var(--seal-blue);
+  margin:20px 0 6px; border-bottom:1px solid var(--border-strong); padding-bottom:3px}
+.memo .masthead{text-align:center; font-size:.85rem; color:var(--text-muted); border-bottom:2px solid var(--seal-blue);
+  padding-bottom:8px; margin-bottom:12px}
+.memo .masthead strong{color:var(--seal-blue)}
+.memo .fields{margin:10px 0; font-size:.95rem}
+.memo .fields .fld{margin:3px 0}
+.memo .fields .lab, .memo .cc .lab{font-weight:700; color:var(--seal-blue); display:inline-block; min-width:52px}
+.memo p{margin:8px 0; max-width:var(--measure,none)}
+.memo ul, .memo ol{margin:8px 0; padding-left:22px}
+.memo li{margin:5px 0}
+.memo blockquote{margin:8px 0 8px 14px; padding-left:10px; border-left:2px solid var(--border-strong)}
+.memo a{color:var(--cobalt); overflow-wrap:anywhere}
+.memo .tbl{overflow-x:auto}
+.memo table{border-collapse:collapse; width:100%; font-size:.85rem; margin:8px 0; font-variant-numeric:tabular-nums}
+.memo th{background:var(--seal-blue); color:var(--on-accent); padding:4px 6px; text-align:right}
+.memo th.t, .memo td.t{text-align:left}
+.memo td{border-top:1px solid var(--border); padding:3px 6px; text-align:right}
+.memo .cc{margin-top:16px; font-size:.9rem; color:var(--text-muted)}
+.status{color:var(--text-muted); font-size:.9rem}
+@media print{ .bar, .skip, .status{display:none} body{background:var(--surface-opaque)} main{padding:0} .memo{border:0; padding:0} }
+@media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<a class="skip" href="#memo">Skip to the memo</a>
+<nav class="bar" aria-label="Memo actions">
+  <a href="../">The funding page</a>
+  <button type="button" id="print-btn">PDF</button>
+  <span class="ver">As of: <span id="as-of">TBA</span></span>
+</nav>
+<main>
+  <p class="status" id="memo-status" role="status">Loading the memo from the current funding model.</p>
+  <article class="memo" id="memo" aria-label="CPL Implementation Funding guidance memo"></article>
+</main>
+<script src="../../cpl_funding_data.js"></script>
+<script src="../../college_short_names.js"></script>
+<script src="../../cpl_funding.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.CPL_FUNDING_TAB;
+  var box = document.getElementById("memo"), status = document.getElementById("memo-status");
+  function asOf() {
+    var s = T && typeof T._scenario === "function" ? T._scenario() : null;
+    var t = s && s.savedAt ? new Date(s.savedAt) : null;
+    if (!t || isNaN(t.getTime())) return;
+    try { document.getElementById("as-of").textContent = t.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }); } catch (e) {}
+  }
+  function paint() {
+    if (!T || typeof T._buildMemo !== "function") {
+      status.textContent = "The memo could not be built here. The funding page carries the same figures.";
+      return;
+    }
+    try {
+      box.innerHTML = T._buildMemo("memo");
+      // Wide tables scroll inside their own box on a phone, never the page.
+      Array.prototype.forEach.call(box.querySelectorAll("table"), function (t) {
+        if (t.parentNode.className === "tbl") return;
+        var w = document.createElement("div"); w.className = "tbl";
+        w.setAttribute("role", "region"); w.setAttribute("tabindex", "0");
+        w.setAttribute("aria-label", "Allocation table");
+        t.parentNode.insertBefore(w, t); w.appendChild(t);
+      });
+      Array.prototype.forEach.call(box.querySelectorAll("th"), function (th) { if (!th.hasAttribute("scope")) th.setAttribute("scope", "col"); });
+      var s = T._scenario && T._scenario();
+      status.textContent = s && s.loaded ? "" : "Loading the current figures.";
+      asOf();
+    } catch (e) {
+      status.textContent = "The memo could not be built from the current model. The funding page carries the same figures.";
+    }
+  }
+  if (T && typeof T.onModelChange === "function") T.onModelChange(paint);
+  if (T && typeof T.ensureLoaded === "function") T.ensureLoaded();
+  paint();
+  document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+})();
+</script>
+</body>
+</html>

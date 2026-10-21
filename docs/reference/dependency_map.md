@@ -260,7 +260,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_lookup.js` | `CCC_COLLEGE_LOOKUP` | not stated in header | tabs: `vision-2030` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_apply_asccc_areas.py` |
 | `cpl_baccalaureates_data.js` | `CPL_BACCALAUREATES` | `kb/_build_baccalaureate_pathways.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_cpl_pathway_membership.py` |
 | `cpl_coci_course_keys.js` | `CPL_COCI_COURSE_KEYS` | `kb/_build_coci_lookup.py` | tabs: `cpl-pathways` · scripts: `kb/_build_coci_lookup.py` |
-| `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `implementation-funding` · modules: `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
+| `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `implementation-funding` · modules: `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
 | `cpl_funding_ess.js` | `CPL_FUNDING_ESS` | not stated in header | tabs: `college-briefing`, `implementation-funding` · scripts: `funding/_build_funding_ess.py` |
 | `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `implementation-funding` · scripts: `funding/_build_funding_performance.py` |
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
@@ -359,13 +359,13 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_cpl_workbook.js` | tabs: `college-briefing`, `cpl-pathways` · pages: `cpl-opportunity/index.html` | — |
 | `college_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
-| `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
+| `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_funding.js` | tabs: `college-briefing` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html` | — |
+| `cpl_funding.js` | tabs: `college-briefing` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html` | — |
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
@@ -1186,4 +1186,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 99 Supabase tables · 41 RPCs · 9 edge functions · 709 file
-datasets · 184 external services · 467 consumers · 58 workflows · 39 tabs.
+datasets · 184 external services · 468 consumers · 58 workflows · 39 tabs.

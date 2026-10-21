@@ -6,7 +6,7 @@
   "edge_functions": 9,
   "file_datasets": 709,
   "external_services": 184,
-  "consumers": 467,
+  "consumers": 468,
   "workflows": 58,
   "data_js_files": 70,
   "tabs": 39
@@ -5399,7 +5399,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1544
+     "line": 1547
+    },
+    {
+     "id": "page:funding-model/memo/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 105
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -5655,7 +5662,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1549
+     "line": 1552
+    },
+    {
+     "id": "page:funding-model/memo/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 106
     }
    ],
    "served": true,
@@ -5706,7 +5720,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1535
+     "line": 1538
+    },
+    {
+     "id": "page:funding-model/memo/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 104
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -6053,7 +6074,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1548
+     "line": 1551
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -7129,7 +7150,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1563
+     "line": 1566
     }
    ],
    "served": true,
@@ -7402,7 +7423,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1536
+     "line": 1539
     }
    ],
    "served": true,
