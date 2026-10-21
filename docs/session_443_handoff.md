@@ -62,5 +62,4 @@ descriptions still hold at the level it describes), the Commons' four other run 
 
 ## Let go
 
-S442 holds PR subscriptions on #2313, and on PR A, PR B and the Reedley PR once opened; no check-in is pending. The
-routine's next firing is in `kb/status/program-requirements.json`.
+S442 dropped its subscriptions on #2313, #2315 and CPLBrain#424 and its watch on Sheet 110; no check-in is pending. Subscribe to whatever you merge. The routine's next firing is 05:12Z on 2026-10-22.
