@@ -1458,6 +1458,12 @@ dialog = {"tabPanels": [{"label": "Close this window", "id": "search-dialog",
                          "text": "Program Requirements\nHORT 11A\tIntro to Horticulture\t3"}]}
 check(P.hidden_tabs_text(dialog).count("[Tab:") == 1 and "search" not in P.hidden_tabs_text(dialog).lower(),
       "a hidden panel naming no course (the page's search dialog) is left out of the model's text")
+# The Ventura district letters each course number by campus (ANCT M01A at Moorpark): its
+# Requirements tab read as naming no course and was dropped (page read 39595760314, S442).
+vcccd = {"tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer",
+                        "text": "Course ID\tTitle\tUnits\nANCT M01A\tAnimal Care & Handling I\t1\nANCT M09\tAnimal Behavior\t3"}]}
+check("ANCT M01A" in P.hidden_tabs_text(vcccd),
+      "a Requirements tab whose numbers carry a campus letter (Moorpark's ANCT M01A) is kept")
 lbt_req = "Program Requirements\nRequired Courses\nHORT 11A\tIntro to Horticulture\t3\nHORT 19\tSoils\t3\nHORT 21\tPests\t3\nMKTG 47\tSales\t3\nTotal Units\t12"
 lbt_got = {"body": "Horticulture - Associate in Science\nOverview\nProgram Requirements\nStudents enrolling in HORT 11A learn plant care.",
            "content": lb_index + "Horticulture - Associate in ScienceStudents enrolling in HORT 11A learn plant care.HORT 19Soils3",
