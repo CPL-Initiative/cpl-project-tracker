@@ -163,7 +163,7 @@
      the Records view lists (for the visit); rscope "all" lists every college, as a count the reader
      followed counted them. failed: a college whose read failed, kept until the reader asks again. */
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
-    view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", pick: null, linkPicks: [], rscope: "pick", open: {}, secs: null,
+    view: "progress", q: "", show: "all", pshow: "all", platform: "all", rq: "", rshow: "all", pick: null, linkPicks: [], rscope: "pick", open: {}, secs: null,
     review: null, sessionWired: false, framing: null, notice: null, districts: null, regions: null, districtError: null,
     filt: null, cip: null, cipError: null, cipLoading: null,
     failed: {}, draftsRead: null, draftsError: null };
@@ -339,7 +339,8 @@
       el("summary", { cls: "prh-sec-sum" }, [
         opts.label ? el("span", { cls: "prh-sec-label" }, [opts.mark ? doneMark() : null, opts.label]) : null,
         el(opts.h || "h3", { cls: "prh-sec-t", text: title }),
-        meta ? el("span", { cls: "prh-sec-meta", text: meta }) : null]),
+        meta ? el("span", { cls: "prh-sec-meta", text: meta }) : null,
+        opts.flag ? el("span", { cls: "prh-sec-flag " + (opts.flag.c || ""), text: opts.flag.t }) : null]),
       b]);
     if (!opts.shut && (opts.open || secOpen(key))) d.setAttribute("open", "");
     if (lazy) {
@@ -895,7 +896,24 @@
       why: r.access_status === "blocked" ? "the site shows a challenge page" : "the census found no catalog" };
     if (r.access_status === "blocked") return { t: "Last read refused", c: "prh-caution", why: "the address is kept from an earlier read" };
     if (r.access_status === "robots_disallow") return { t: "Robots.txt bars reading", c: "prh-caution", why: "the address is recorded and never loaded" };
+    if (r.access_status === "not_found") return { t: "Address answers not found", c: "prh-caution", why: "the host answers the reader 404" };
     return { t: "Read", c: "prh-quiet", why: "" };
+  }
+  /* A catalog the reader cannot reach, and whether a person filed a copy (Sam, 2026-10-21: "put a
+     surface flag on the collapsed row of the colleges we can't access and a way to sort for
+     them"). The hand-filed step (kb/hand_filed_catalogs/) marks the host it reads in the
+     procedure's note; a copy filed for a host the census now answers still counts as filed. */
+  var BLOCKED_WHY = { blocked: "a challenge page", robots_disallow: "robots.txt", not_found: "the address answers not found" };
+  function catalogAccess(r) {
+    var refused = !!(r.access_status && r.access_status !== "ok");
+    var hosts = (r.procedure && r.procedure.hosts) || [];
+    var filed = hosts.some(function (h) { return /hand-filed/i.test(h.note || ""); });
+    if (!refused && !filed) return null;
+    var why = BLOCKED_WHY[r.access_status] || r.access_status;
+    if (!refused) return { t: "Read from a hand-filed copy", c: "prh-quiet", refused: false, filed: true };
+    return filed
+      ? { t: "Catalog blocked (" + why + "), read from a hand-filed copy", c: "prh-quiet", refused: true, filed: true }
+      : { t: "Catalog blocked (" + why + "), needs a hand-filed copy", c: "prh-caution", refused: true, filed: false };
   }
   function needsPerson(r) { return !r.catalog_url || (r.access_status && r.access_status !== "ok"); }
   /* A published map: the census found one (sequence_source), or a session's read recorded
@@ -1228,6 +1246,7 @@
       ".prh-sec-sum:focus-visible { outline:2px solid var(--focus-ring, var(--cobalt)); outline-offset:-2px; }",
       ".prh-sec-t { margin:0; font-size:1.05rem; color:var(--text-strong); }",
       ".prh-sec-meta { font-size:.875rem; color:var(--text-muted); font-variant-numeric:tabular-nums; }",
+      ".prh-sec-flag { font-size:.875rem; flex-basis:100%; }",
       ".prh-sec-label { flex:1 0 100%; font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }",
       ".prh-sec-b { padding:2px 14px 14px; min-width:0; }",
       ".prh-sec-b > .prh-facts { margin-block:4px 0; }",
@@ -2526,14 +2545,42 @@
       el("div", { cls: "prh-facts" }, [
         fact(withP.length + " of " + R.length, "colleges have a reading procedure"),
         fact(withP.reduce(function (s, r) { return s + procedureCounts(r.procedure).open; }, 0), "questions still open"),
-        fact(withP.reduce(function (s, r) { return s + procedureCounts(r.procedure).held; }, 0), "requests to a college held")
+        fact(withP.reduce(function (s, r) { return s + procedureCounts(r.procedure).held; }, 0), "requests to a college held"),
+        fact(R.filter(function (r) { var a = catalogAccess(r); return a && a.refused; }).length, "catalogs block the reader"),
+        fact(R.filter(function (r) { var a = catalogAccess(r); return a && a.filed; }).length, "read from a hand-filed copy")
       ])]));
     if (!withP.length) {
       box.appendChild(el("div", { cls: "prh-empty", text: "No college has a reading procedure yet." }));
       return box;
     }
-    withP.forEach(function (r) { box.appendChild(procedureCard(r)); });
+    var showSel = el("select", { id: "prh-pshow" }, [
+      ["all", "All colleges"], ["access", "Catalog blocked or hand-filed"], ["needscopy", "Blocked, no hand-filed copy"]
+    ].map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
+    showSel.value = state.pshow;
+    var count = el("span", { cls: "prh-count", "aria-live": "polite" });
+    var shown = [];
+    /* The cards sit in the view itself, each a section of its own, so a redraw swaps them in place. */
+    function draw() {
+      state.pshow = showSel.value;
+      var rows = filterProcedures(withP, state.pshow);
+      shown.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      count.textContent = rows.length + (rows.length === 1 ? " college" : " colleges");
+      shown = rows.length ? rows.map(procedureCard) : [el("div", { cls: "prh-empty", text: "No college matches." })];
+      shown.forEach(function (n) { box.appendChild(n); });
+    }
+    showSel.addEventListener("change", draw);
+    box.appendChild(el("div", { cls: "prh-filterbar" }, [el("div", { cls: "prh-filters", role: "group", "aria-label": "Filter the procedures" },
+      [el("label", {}, ["Show ", showSel]), count])]));
+    draw();
     return box;
+  }
+  /* The Procedures view's Show: every college, or those whose catalog blocks the reader or was read
+     from a hand-filed copy (the blocked ones still needing a copy first), or only those. */
+  function filterProcedures(rows, show) {
+    if (show === "access") return rows.filter(function (r) { return catalogAccess(r); })
+      .sort(function (a, b) { return (catalogAccess(a).filed ? 1 : 0) - (catalogAccess(b).filed ? 1 : 0); });
+    if (show === "needscopy") return rows.filter(function (r) { var a = catalogAccess(r); return a && a.refused && !a.filed; });
+    return rows;
   }
 
   function procedureCard(r) {
@@ -2573,7 +2620,8 @@
       el("summary", { text: "Requests and workarounds (" + extra.length + ")" }),
       el("ul", {}, extra.map(function (x) { return el("li", { text: x }); }))]));
     return section("procedures:" + r.college, r.college,
-      "Version " + (p.v || "?") + " · written " + day(r.procedure_at) + (r.procedure_by ? " by " + r.procedure_by : ""), [card]);
+      "Version " + (p.v || "?") + " · written " + day(r.procedure_at) + (r.procedure_by ? " by " + r.procedure_by : ""), [card],
+      { flag: catalogAccess(r) });
   }
 
   /* ── the Progress view ──
@@ -3385,7 +3433,7 @@
     activate: activate,
     _state: state, _load: load, _render: render, _idle: idle,
     INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY, FILTERS_KEY: FILTERS_KEY, CIP_FAMS: CIP_FAMS, sectorOf: sectorOf,
-    catalogStatus: catalogStatus, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,
+    catalogStatus: catalogStatus, catalogAccess: catalogAccess, filterProcedures: filterProcedures, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary, collegeLine: collegeLine, collegeCount: collegeCount,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,

@@ -2633,20 +2633,50 @@ block("(25b)", function () {
   });
 });
 
+// Sam, 2026-10-21: "put a surface flag on the collapsed row of the colleges we can't access
+// and a way to sort for them". The flag sits in the closed card's summary, says whether a
+// hand-filed copy carries the read, and the Show filter lists the blocked ones.
+block("(26)", function () {
+  const m = loadModule({});
+  const hf = { v: 1, hosts: [{ host: "www.deanza.edu", access: "open", note: "Read from the copy Sam filed on the catalog-files release (the hand-filed step, #2199)." }] };
+  const reg = [
+    { college: "De Anza College", catalog_url: "https://x/a.pdf", access_status: "blocked", procedure: hf },
+    { college: "Cerro Coso Community College", catalog_url: "https://x/b.pdf", access_status: "robots_disallow", procedure: { v: 2, hosts: [] } },
+    { college: "Porterville College", catalog_url: "https://x/c.pdf", access_status: "ok", procedure: hf },
+    { college: "Cerritos College", catalog_url: "https://x/d", access_status: "ok", procedure: { v: 4, hosts: [] } }
+  ];
+  const A = m.M.catalogAccess;
+  check("(26) a blocked catalog read from a filed copy says both, quietly",
+    /blocked \(a challenge page\), read from a hand-filed copy/.test(A(reg[0]).t) && A(reg[0]).c !== "prh-caution");
+  check("(26) a blocked catalog with no copy asks for one",
+    /needs a hand-filed copy/.test(A(reg[1]).t) && A(reg[1]).c === "prh-caution");
+  check("(26) an open catalog with no copy carries no flag", A(reg[3]) === null);
+  check("(26) a 404 catalog reads as not found on the Catalogs view", m.M.catalogStatus({ catalog_url: "u", access_status: "not_found" }).t === "Address answers not found");
+  const f = m.M.filterProcedures(reg, "access").map(function (r) { return r.college; });
+  check("(26) the filter lists blocked and filed colleges, a missing copy first",
+    f.join("|") === "Cerro Coso Community College|De Anza College|Porterville College", f.join("|"));
+  check("(26) Blocked, no hand-filed copy lists only that one",
+    m.M.filterProcedures(reg, "needscopy").length === 1);
+  m.M._state.registry = reg; m.M._state.records = []; m.M._state.view = "procedures"; m.M._render();
+  const sum = Array.prototype.find.call(m.root.querySelectorAll("details.prh-sec summary"), function (s) { return /De Anza/.test(s.textContent); });
+  check("(26) the flag shows on the closed card's summary", sum && sum.querySelector(".prh-sec-flag") && /hand-filed/.test(sum.textContent));
+  check("(26) the glance counts blocked catalogs", /2catalogs block the reader/.test(m.root.textContent.replace(/\s+/g, "")) || /2\s*catalogs block the reader/.test(m.root.textContent));
+});
+
 // Sam, 2026-10-21: "the open asks on The Commons doesn't seem to record that I responded to
 // the sheets". A call that names no record counted as open forever; its sheet answer now rides
 // the status file as `answer`, and the call reads answered everywhere it is counted.
-block("(15d)", function () {
+block("(27)", function () {
   const out = progressReady(20);
   const ask = { title: "The second reader waits", text: "Waits on a key.", link: "https://claude.ai/artifact/x" };
   out.M._state.progress.queue.calls = [ask];
   out.M._state.view = "progress"; out.M._render();
-  check("(15d) a call with no answer and no records is one to-do", out.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos (1)");
+  check("(27) a call with no answer and no records is one to-do", out.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos (1)");
   out.M._state.progress.queue.calls = [Object.assign({}, ask, { answer: { by: "Sam", at: "2026-10-21", words: "Later: keep this on ice." } })];
   out.M._render();
   const go = out.root.querySelector("#prh-todo-go"), card = out.root.querySelector('details[data-sec="progress:call:0"]');
-  check("(15d) answered on its sheet, it leaves the count", go.textContent === "Sam's to-dos: all answered", go.textContent);
-  check("(15d) the card reads Answered and shows his words",
+  check("(27) answered on its sheet, it leaves the count", go.textContent === "Sam's to-dos: all answered", go.textContent);
+  check("(27) the card reads Answered and shows his words",
     /Answered/.test(card.querySelector(".prh-sec-label").textContent) && /Sam, 2026-10-21: Later: keep this on ice\./.test(card.textContent), card.textContent);
 });
 
