@@ -26,14 +26,12 @@ Your moniker is **SkyFlannelbush**. Session 442 (**SkyManzanita**) was started b
 - **Golden West's free re-read (39591103370) found the same 81 pages.** Its gap is department and GE pages holding
   several awards, a reader question rather than a code fix (lessons S442).
 - **Display build 8d733f684f83** (16,729 rows): the first apply (run 39630350229) wrote 15,216 and stopped on one
-  SSL EOF at Santa Rosa 21740 (its applied record is the rollback for those rows). A second apply was dispatched about
-  17:00Z; it writes every row again.
+  SSL EOF at Santa Rosa 21740; the second (39641128488) wrote all 16,729, none missing, no errors. Its applied record
+  is the rollback.
 
 ## Priority
 
-1. **PR #2309:** if still open, confirm the second display apply committed its applied record with no errors and
-   none missing, confirm `test` succeeded on the head, mark it ready and squash-merge. A second transient stop: dispatch
-   `step=display` once more.
+1. **PR #2309** was merged by S442 after the display apply. Nothing on it is open.
 2. **Read Sheet 109's replies** (`ArtifactData` list, collection `replies`, url above; then `replies/done`) and apply
    them as handoff 442 item 1 describes. No reply: the sheet waits.
 3. **The thin list** (read live 11:20Z, active COCI programs against records under 60%): Sierra 13%, Reedley 17%,
@@ -62,5 +60,4 @@ Pipeline tab (nothing moved), `kb/README.md`, `README.md`, no KB note, the Commo
 
 ## Let go
 
-S442 holds no PR subscription, no check-in and no artifact watch. PR #2309 is open as a draft with the display job
-running on its branch. The routine's next firing is 05:12Z on 2026-10-22.
+S442 holds no PR subscription, no check-in and no artifact watch. PR #2309 merged; vault PR 422 merged. The routine's next firing is 05:12Z on 2026-10-22.

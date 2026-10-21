@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-21T16:00:08Z",
+  "written_at": "2026-10-21T18:36:03Z",
   "session": 442,
   "moniker": "SkyManzanita",
   "run": "the CPL Queue routine",
@@ -32,8 +32,8 @@
       "text": "Moorpark, Oxnard and Ventura read again and loaded: 209 new records, 100, 86 and 121 passing the machine checks, about 32 dollars in extraction."
     },
     {
-      "at": "2026-10-21T15:50Z",
-      "text": "Display build 8d733f684f83, 16,729 programs, applying through the display job."
+      "at": "2026-10-21T18:31Z",
+      "text": "Display build 8d733f684f83, 16,729 programs, applied in full on the second run after one dropped connection."
     }
   ],
   "headline": [
@@ -129,7 +129,7 @@
   },
   "harvest": {
     "day": "2026-10-21",
-    "gaps": 3894,
+    "gaps": 3781,
     "parts": {
       "links": {
         "catalog": [
@@ -146,11 +146,11 @@
         ]
       },
       "roep": [
-        19074,
+        19312,
         20282
       ],
       "coci": [
-        15180,
+        15531,
         20282
       ],
       "outcomes": {
@@ -159,12 +159,12 @@
           89192
         ],
         "plo": [
-          15180,
+          15531,
           20282
         ]
       },
       "careers": [
-        14130,
+        14481,
         20282
       ]
     }
