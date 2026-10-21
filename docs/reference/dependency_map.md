@@ -68,11 +68,11 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `coci_college_offerings` | `edgefn:cpl-chat` | — |
-| `coci_college_programs` | tabs: `program-requirements` · scripts: `kb/_program_requirements_pilot.py` | — |
-| `coci_program_courses` | scripts: `kb/_program_requirements_pilot.py` | — |
+| `coci_college_programs` | tabs: `cpl-pathways`, `program-requirements` · scripts: `kb/_program_requirements_pilot.py` | — |
+| `coci_program_courses` | tabs: `cpl-pathways` · scripts: `kb/_program_requirements_pilot.py` | — |
 | `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
-| `course_outcomes` | tabs: `coci-lookup`, `program-requirements` | — |
+| `course_outcomes` | tabs: `coci-lookup`, `cpl-pathways`, `program-requirements` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
 | `cpl_contract_documents` | tabs: `contracts` | tabs: `contracts` |

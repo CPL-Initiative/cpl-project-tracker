@@ -15032,7 +15032,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 60,
+   "count": 61,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15733,6 +15733,22 @@
      "title": "Finished workstreams \u2014 archived \u00a711 rows",
      "type": null,
      "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-10-21",
+     "governs": [],
+     "path": "docs/reference/funding_vocabulary.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "funding",
+      "vocabulary",
+      "naming",
+      "claude-md-offload"
+     ],
+     "title": "Funding vocabulary: Sam's rulings in his words (CLAUDE.md offload)",
+     "type": null,
+     "updated": "2026-10-21"
     },
     {
      "created": "2026-07-10",
@@ -23019,5 +23035,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1210
+ "total": 1211
 }

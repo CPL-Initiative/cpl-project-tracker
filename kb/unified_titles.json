@@ -56252,5 +56252,69 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ADJUS 57 Report Writing for Public Safety Personnel": {
+    "unified_title": "Report Writing for Public Safety Personnel",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam for ADJUS 21 Introduction to Administration of Justice": {
+    "unified_title": "Introduction to Administration of Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam for ADJUS 22 Concepts of Criminal Law": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "FAA Private Pilot Certificate": {
+    "unified_title": "FAA Private Pilot Certificate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Fire Inspector 1 Certificate": {
+    "unified_title": "Fire Inspector I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Firefighter 1 Certificate": {
+    "unified_title": "Firefighter 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-statewide-catalog@bot"
+  },
+  "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements": {
+    "unified_title": "FAA Private Pilot Ground School",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio for BUSN 20": {
+    "unified_title": "International Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-21",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

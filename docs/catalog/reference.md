@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-60 document(s).
+61 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -69,6 +69,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Doctrine provenance — the incidents behind CLAUDE.md's rules](../reference/doctrine_provenance.md) | — | `doctrine_provenance.md` | 2026-09-27 | 2026-09-27 |
 | [Engineering & UI practices (CLAUDE.md offload)](../reference/engineering_ui_practices.md) | — | `engineering_ui_practices.md` | 2026-08-28 | 2026-09-10 |
 | [Finished workstreams — archived §11 rows](../reference/finished_workstreams.md) | — | `finished_workstreams.md` | 2026-08-15 | 2026-08-15 |
+| [Funding vocabulary: Sam's rulings in his words (CLAUDE.md offload)](../reference/funding_vocabulary.md) | — | `funding_vocabulary.md` | 2026-10-21 | 2026-10-21 |
 | [Knowledge Base & Unified Courses Curation — Build Status (CLAUDE.md offload)](../reference/kb_build_status.md) | — | `kb_build_status.md` | 2026-07-10 |  |
 | [M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)](../reference/mid_lifecycle.md) | — | `mid_lifecycle.md` | 2026-07-10 |  |
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-08-28 |

@@ -158,6 +158,9 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_pathways_membership_data.js"
       ],
       "reads": [
+        "coci_college_programs",
+        "coci_program_courses",
+        "course_outcomes",
         "program_requirement_records",
         "program_source_registry"
       ],
