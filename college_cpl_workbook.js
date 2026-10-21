@@ -244,7 +244,7 @@
         (coursePrograms[code] = coursePrograms[code] || []).push(p);
       });
     });
-    if (!catalog.length) notes.push("The catalog harvest holds no program records for this college yet, so program-to-course links are not shown.");
+    if (!catalog.length) notes.push("No program record has been read from this college's catalog yet, so program-to-course links are not shown.");
 
     // ── MAP exhibits for this college (non-exam) ─────────────────────────
     var swNames = {};
@@ -364,11 +364,11 @@
       var srcs = Object.keys(fam).sort(function (a, b) { return fam[b] - fam[a]; }).slice(0, 2);
       if (srcs.length) exp.push("Prior-learning sources to research: " + srcs.join(" | "));
       if (!exp.length) exp.push(cat ? "Credit by exam or portfolio review; no aligned exhibit evidence found"
-        : "Program not in the catalog harvest; its courses are not linked here");
+        : "No program record read from the catalog; its courses are not linked here");
       return { ctrl: r[1], title: r[2], top: r[3], cip: r[4], award: (progs.awards || [])[r[5]] || "",
         status: (progs.statuses || [])[r[6]] || "", units: r[7], cte: r[9] ? "CTE" : "", nCourses: cat ? cs.length : "",
         nExisting: cat ? nEx : "", nOpp: cat ? nOpp : "",
-        coverage: !cat ? "Not in catalog harvest" : nEx ? "Some coverage" : nOpp ? "None: opportunities identified" : "None: no aligned evidence found",
+        coverage: !cat ? "No program record" : nEx ? "Some coverage" : nOpp ? "None: opportunities identified" : "None: no aligned evidence found",
         expansion: exp.join("\n"), page: cat ? cat.source_url || "" : "" };
     });
     programs.sort(function (a, b) { return (a.status !== "Active") - (b.status !== "Active") || String(a.title).localeCompare(String(b.title)); });
@@ -576,10 +576,10 @@
       ["Units", "Peer Median Units is what adopting colleges awarded, not the recommendation's maximum."],
       ["Counts", s.nCourses + " COCI courses; " + s.nPrograms + " COCI programs (" + s.nActivePrograms + " active); "
         + b.existing.length + " MAP articulation lines (non-AP/IB); " + s.nCandidates + " statewide CRs not adopted, " + s.nCandidatesReached + " reaching a course."],
-      ["Pathway links", "Program links go to each program's page in the college catalog, as the catalog harvest read it. MyPath pathway links are not in the data this analysis reads, so none are given."],
+      ["Pathway links", "Program links go to each program's page in the college catalog, as its program record read it. MyPath pathway links are not in the data this analysis reads, so none are given."],
       ["Source: COCI courses", "coci_lookup_data.js (COCI course list via MAP); course identity from unified_courses_members.js."],
       ["Source: COCI programs", "coci_programs_data.js (COCI program export)."],
-      ["Source: catalog", "program_requirement_records, the catalog harvest behind the Program Requirements tab."],
+      ["Source: catalog", "program_requirement_records, the program records behind the Program Requirements tab."],
       ["Source: MAP exhibits and statewide CRs", "statewide_data.js, generated " + s.statewideGenerated + " from MAP."],
       ["Source: peer articulations", "unified_courses_aligned.js, the Commons' inverse view (exhibits by common course)."],
       ["Needs college verification", "Course status (the COCI course list carries none); every alignment; programs COCI marks other than Active; exhibits the college's public landing page shows that MAP's articulation records do not, or the reverse."]
@@ -752,7 +752,7 @@
     });
     var progRows = b.programs.filter(function (p) { return p.status === "Active"; }).map(function (p) {
       return [e(p.title), e(p.award), e(p.ctrl), e(p.top), e(p.coverage),
-        p.page ? '<a href="' + e(p.page) + '" target="_blank" rel="noopener">Catalog page</a>' : '<span class="cpo-muted">Not in catalog harvest</span>'];
+        p.page ? '<a href="' + e(p.page) + '" target="_blank" rel="noopener">Catalog page</a>' : '<span class="cpo-muted">No program record</span>'];
     });
     var bare = b.courses.filter(function (c) { return !c.existing.length; }).sort(function (a, c2) { return a.id.localeCompare(c2.id); });
     var bareRows = bare.map(function (c) { return [e(c.id), e(c.title), e(c.units), e(c.topTitle), e(c.tier)]; });
@@ -793,7 +793,7 @@
       + '<section aria-labelledby="cpo-h-bare"><h2 id="cpo-h-bare">Courses without a CPL exhibit</h2><p class="cpo-note">' + n(bare.length) + " of " + n(s.nCourses) + " COCI courses hold no MAP exhibit (AP and IB aside).</p>"
       + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-bq" placeholder="Course ID or title"></label></div>'
       + table("cpo-bare-t", "Courses without a CPL exhibit", ["Course ID", "Title", "Units", "Discipline area", "Alignment"], bareRows) + "</section>"
-      + '<p class="cpo-note">Built from COBI\'s published data: COCI course list and program export, the catalog harvest, MAP exhibits (' + e(s.statewideGenerated)
+      + '<p class="cpo-note">Built from COBI\'s published data: COCI course list and program export, the program records read from college catalogs, MAP exhibits (' + e(s.statewideGenerated)
       + ") and the Commons' peer alignments. MyPath pathway links are not in this data, so none are shown. The extract carries every row and its sources.</p>"
       + b.notes.map(function (t) { return '<p class="cpo-note">' + e(t) + "</p>"; }).join("");
   }

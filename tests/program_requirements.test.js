@@ -2512,7 +2512,7 @@ block("(20)", function () {
   check("(20) five parts count equally, a part with halves averages them", !!w && Math.abs(w.share - expect) < 1e-9, w && w.share);
   check("(20) the measure reads in words, with its day", /About 28% of the whole harvest, counted Oct 13/.test(txt), txt.slice(0, 120));
   check("(20) each part names its count and what it counts", /Links 98%/.test(txt) && /118 of 118 catalogs; 118 of 118 outline systems; 112 of 118 program maps/.test(txt) &&
-    /ROEP data 14%/.test(txt) && /2,876 of 20,282/.test(txt) && /COCI comparison 13%/.test(txt) &&
+    /Program data 14%/.test(txt) && /2,876 of 20,282/.test(txt) && /COCI comparison 13%/.test(txt) &&
     /SLOs and PLOs 9%/.test(txt) && /4,123 of 89,192 course SLOs/.test(txt) && /Career data 7%/.test(txt), txt);
   const bars = band.querySelectorAll('.prh-pg-bar[role="img"]');
   check("(20) a bar for the whole and one a part, each saying its share", bars.length === 6 &&
