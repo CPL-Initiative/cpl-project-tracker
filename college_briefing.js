@@ -3106,33 +3106,16 @@
     var oppsSum = oppsSummary();
     h += sec("opps", "What you could already give credit for", oppsSum, oppsBody());
 
-    // ── Your funding ──────────────────────────────────────────────────────
-    // Two appropriations, kept visibly apart. Neither figure is derived here.
-    var f = fundingFor(state.college);
-    // The program whose priorities the funding box describes. _prios() (in
-    // cpl_funding.js) and collectPrograms() (here) walk the SAME ordered
-    // priority set out of the SAME config, so position joins them — but
-    // ASSERT that rather than assume it. Attaching one priority's strategies
-    // to another priority's money is the bad failure here, so a disagreement
-    // falls back to the standalone list instead.
-    var implProg = null;
-    b.programs.forEach(function (p) { if (p.id === IMPL_PROJECT) implProg = p; });
-    var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
-    var fundBody = fundingBlockHtml({ funding: state.funding, college: state.college, f: f,
-      detail: state.detail, b: b, implProg: implProg, stratsInline: stratsInline });
-    // Summary: the two appropriations, so the shut row still answers "what
-    // money is on the table?". EVERY branch says something — a blank summary
-    // on a money section reads as broken, and "not loaded" and "nothing" are
-    // different claims.
-    var fundSum = "";
-    if (state.funding === "error") fundSum = "not loaded";
-    else if (state.funding !== "ready" || (state.funding === "ready" && !f)) fundSum = "loading…";
-    else if (f && !f.onRoster) fundSum = "noncredit carve-out";
-    else if (f) {
-      if (f.grant) fundSum = f.grant.declined ? "seed declined" : money(f.grant.amount) + " seed";
-      if (f.alloc) fundSum += (fundSum ? " · " : "") + money(f.alloc.total) + " cap";
-    }
-    h += sec("funding", "My CPL Funding", esc(fundSum), fundBody);
+    // ── My CPL Funding, on the funding page (Sam, 2026-10-21: "move funding to
+    // Implementation Funding") ─────────────────────────────────────────────
+    // The block lives with Implementation Funding: its public page draws it for one
+    // institution with this file's own renderer (fundingPanel), so the college reads
+    // one description in one place. This fold says where and opens it on the college.
+    h += sec("funding", "My CPL Funding", "on the funding page",
+      '<p class="cb-note">This college&#39;s funding, the minimum conditions it meets, its targets and its next steps '
+      + "are on the CPL funding page, in its My Institution view.</p>"
+      + '<p><a class="cb-act" id="cb-fundpage" target="_blank" rel="noopener" href="'
+      + esc(fundingPageUrl(state.college)) + '">Open My CPL Funding</a></p>');
     var repSec = myReportsSection();
     h += sec("reports", "Reported expenditures", esc(repSec.summary), repSec.body);
 
@@ -3322,14 +3305,12 @@
         cs.share == null ? "withheld" : safePct(cs.share, 1) + "% to a real course", csBody);
     }
 
-    // ── Advice — only for programs NOT already nested in the funding box ──
-    // The implementation strategies now live inside the priority they count
-    // toward (Sam, 2026-08-12). Anything else the team adds to the config
-    // still gets its own section here, so guarantee (c) — every project is
-    // walked, a new program appears with no code change — survives the move.
-    var restPrograms = b.programs.filter(function (p) {
-      return !(stratsInline && p.id === IMPL_PROJECT);
-    });
+    // ── Advice — every program the team's config holds ──
+    // The implementation strategies sat inside the funding box from 2026-08-12;
+    // the box moved to the funding page on 2026-10-21 (it nests them there), so
+    // here they are advice beside the rest. Guarantee (c), every project walked
+    // and a new program appearing with no code change, holds.
+    var restPrograms = b.programs.slice();
     if (restPrograms.length) {
       var advBody = '<div class="cb-note" style="margin-top:0">These are written by the team, not by this page. '
         + "They are advice; the ones we can measure for this college carry a figure.</div>";
@@ -3712,6 +3693,12 @@
    * analysis here as an Excel workbook (college_cpl_workbook.js, loaded on first use). */
   var OPP_PAGE = "cpl-opportunity/";
   function opportunityPageUrl(college) { return OPP_PAGE + "?college=" + encodeURIComponent(college); }
+  /* The funding page's My Institution view for a college, named by the roster's spelling,
+     the key the funding module joins on (MAP says "Laney College"; the roster, "Laney"). */
+  var FUNDING_PAGE = "funding-model/";
+  function fundingPageUrl(college) {
+    return FUNDING_PAGE + "?college=" + encodeURIComponent(college ? rosterKey(college) : "") + "&view=one";
+  }
   function buildOpportunityExtract(btn) {
     var was = btn.textContent, college = state.college;
     var done = function (msg) {
@@ -4036,7 +4023,9 @@
   }
   /* What this page shows, for the funding tab's Refresh splash. */
   function describeFunding() {
-    var surface = "My College: My CPL Funding";
+    // My CPL Funding moved to the funding page (2026-10-21); what this page still draws from the
+    // model is the steps the CPL Initiative suggests, in Start here and Advice.
+    var surface = "My College: suggested steps";
     if (state.funding !== "ready" || !state.college) {
       return { surface: surface, detail: "no college open in this window; it reads the model when one is chosen" };
     }

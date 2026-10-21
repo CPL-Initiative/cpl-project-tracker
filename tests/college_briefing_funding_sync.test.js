@@ -1,4 +1,4 @@
-// My College — My CPL Funding follows the model (SkyRivet, S306, 2026-09-30).
+// My CPL Funding follows the model (SkyRivet, S306, 2026-09-30; drawn on the funding page since 2026-10-21).
 //
 // Sam: "make sure the My College, My CPL Funding block (screenshot) is updated
 // upon funding refresh." The funding box read the module fresh on every paint,
@@ -61,8 +61,12 @@ B._state.data = { colleges: [KEY], nameToId: {}, summaryByName: {}, raw: { confi
 B._state.college = KEY;
 B._state.data.briefing = B._buildBriefing({ config: c1, college: null }, { scenario: B._briefingScenario(c1), year: "1" });
 B._loadFunding(root);
+// Since 2026-10-21 the block is drawn on the funding page (fundingPanel), the way its My
+// Institution view draws it on every redraw of the model; My College links there.
 const block = () => {
-  const t = (root.querySelector('[data-sec="funding"]') || root).textContent.replace(/\s+/g, " ");
+  const host = w.document.getElementById("panel");
+  B.fundingPanel(host, KEY);
+  const t = host.textContent.replace(/\s+/g, " ");
   return (/Priority outcomes(.*?)Progress toward each priority goal/.exec(t) || [])[1] || "";
 };
 const money = (v) => "$" + Math.round(v).toLocaleString("en-US");
@@ -95,7 +99,7 @@ T._refreshAll();
 setTimeout(function () {
   const dlg = w.document.querySelector("#cplFundSplash .cplfund-splash");
   check("(c) the block names itself to the Refresh splash",
-    dlg && new RegExp("My College: My CPL Funding — redrawn for " + KEY.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " \\(Scenario 2\\)").test(dlg.textContent));
+    dlg && new RegExp("My College: suggested steps — redrawn for " + KEY.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " \\(Scenario 2\\)").test(dlg.textContent));
 
   // (d) the standalone block
   const panel = w.document.getElementById("panel");
@@ -104,9 +108,11 @@ setTimeout(function () {
   check("(d) fundingPanel renders the same block for one institution",
     ok && /2026–2028 College Implementation Funding/.test(pt) && pt.indexOf(money(T._alloc(KEY).total)) >= 0 && /Access step 0\.5/.test(pt));
   check("(d) it points at the table beside it, not at the tab", /same procedure for every institution under All Institutions\./.test(pt) && !/Implementation Funding tab shows/.test(pt));
-  check("(d) My College keeps its own footer", /The Implementation Funding tab shows the full derivation/.test(root.textContent));
-  check("(d) one renderer: My College and the panel both call fundingBlockHtml",
-    (src.match(/fundingBlockHtml\(\{/g) || []).length === 2);
+  B._state.funding = "ready"; B.render(root);
+  check("(d) My College links to the funding page instead of drawing the block",
+    !!root.querySelector("#cb-fundpage") && !root.querySelector(".cb-prios"));
+  check("(d) one renderer: the funding page's panel is the block's one caller",
+    (src.match(/fundingBlockHtml\(\{/g) || []).length === 1);
 
   let pass = 0;
   for (const [n, ok2] of results) { console.log((ok2 ? "PASS" : "FAIL") + "  " + n); if (ok2) pass++; }
