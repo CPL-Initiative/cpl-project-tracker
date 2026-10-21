@@ -868,6 +868,28 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S443 SkyToyon (2026-10-21): a page heading a section per award serves each sibling; Foothill loaded
+
+- **Page-claimed was 842 programs statewide** (Palomar 103, Foothill 73, Imperial Valley 49, Sierra 47, Golden West 43).
+  Foothill prints a program's A.A. and its certificates as sections of one page under the banner h1, so the label named
+  no award and `page_winners()` gave the page to one claimant. `section_award()` (#2322) reads a short line naming the
+  award and every title word, or, for an A.A./A.S., Foothill's generic "Associate Degree Requirements" beside its
+  Award Type(s) line ("AA = Associate in Arts Degree"); when two or more awards head sections and the label names none,
+  each award's fullest-named claimant keeps the page. The extraction already reads by award (`section_heading`).
+- **Read the page before you trust a capture.** The first cut matched nothing on Foothill (run 39654813908): the degree
+  heading carries neither award nor title, and a page read joins short lines with " · ". A free page read (run
+  39657323731) showed both; the second capture moved Foothill from 116 to 144 found.
+- **A hub page lists degrees it does not hold.** Golden West's Physics page lists "Computer Science, Associate in
+  Science Degree", and Computer Science A.S. took it at 67% coverage, the physics it requires (page read 39666262949).
+  Guard: a section on a page whose label does not name the program at least halfway needs 80% of its listed courses.
+  Golden West then read 81 → 95 found, page_claimed 43 → 29 (run 39667910648).
+- **Palomar did not move** (224 found, 103 claimed, run 39661015658): its pages print awards another way. Reader work.
+- **Foothill:** extraction 39671107254 re-extracted all 144 for $11.85 (97 passing, from 73; no earlier record lost its
+  pass, 2 gained, 22 of 28 new pass); load 39675671980 inserted 29 and kept 97 (receipt
+  `kb/receipts/program_requirement_records_college_foothill_39675671980.json`, rollback inside); display build
+  33f68a1257d9 (16,917 records).
+- **Pipe hides a failure:** `check_generated.sh | tail` returned 0 on a stale dependency map; run it bare.
+
 ## S442 SkyManzanita (2026-10-21): six colleges captured again, Reedley loaded, CPL Pathways' college line
 
 - **A free capture first says whether a reader improved.** The live list of thin colleges (active COCI programs
