@@ -3148,6 +3148,113 @@
     parts.forEach(function (p, i) { if (i) add(" · "); p.forEach(add); });
   }
 
+  /* ── a college's program data, in one line (Sam, 2026-10-21) ──
+   * Complete: an active program in COCI whose record passes the three machine checks, as the
+   * Program Requirements tab counts it (program_record_machine_pass). SLOs: the outcomes
+   * course_outcomes holds for the college, against the courses the state's Program Course File
+   * lists for its programs (coci_program_courses), matched on the code without its spaces or
+   * hyphens. Disagreements: records that miss a listed course or add one the catalog prints and
+   * the state's list does not (the courses and off-list checks). Every read is public. */
+  function statKey(code) { return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  function statFails(c) {
+    c = c || {};
+    var out = [];
+    if (c.coverage !== true) out.push("courses");
+    if (c.invented !== true) out.push("off-list");
+    if (c.arithmetic !== "equal" && c.arithmetic !== "unstated") out.push("units");
+    return out;
+  }
+  function collegeStatus(got) {
+    got = got || {};
+    var active = {};
+    (got.active || []).forEach(function (r) { if (r && r.control_number) active[r.control_number] = true; });
+    var nActive = Object.keys(active).length;
+    var complete = 0, conflicts = 0, updated = null;
+    (got.records || []).forEach(function (r) {
+      var f = statFails(r.checks);
+      if (active[r.control_number] && !f.length) complete += 1;
+      if (f.indexOf("courses") >= 0 || f.indexOf("off-list") >= 0) conflicts += 1;
+      if (r.loaded_at && (!updated || r.loaded_at > updated)) updated = r.loaded_at;
+    });
+    var slos = 0, withSlo = {}, kinds = {};
+    (got.outcomes || []).forEach(function (o) {
+      var n = Array.isArray(o.outcomes) ? o.outcomes.length : 0;
+      slos += n;
+      if (n) { withSlo[statKey(o.course_code)] = true; if (o.source_kind) kinds[o.source_kind] = true; }
+    });
+    var listed = {};
+    (got.listed || []).forEach(function (r) { var k = statKey(r && r.course_code); if (k) listed[k] = true; });
+    var nListed = Object.keys(listed).length;
+    var covered = Object.keys(listed).filter(function (k) { return withSlo[k]; }).length;
+    return {
+      active: nActive, complete: complete, records: (got.records || []).length,
+      pct: nActive ? Math.round(100 * complete / nActive) : null,
+      updated: updated, conflicts: conflicts, slos: slos,
+      listed: nListed, covered: covered, coverPct: nListed ? Math.round(100 * covered / nListed) : null,
+      kinds: Object.keys(kinds).sort()
+    };
+  }
+  function readCollegeStatus(college) {
+    var c = "&college=eq." + encodeURIComponent(college);
+    return Promise.all([
+      roepGetAll("/coci_college_programs?select=control_number&status=eq.Active" + c + "&order=id"),
+      roepGetAll("/program_requirement_records?select=control_number,checks,loaded_at" + c + "&order=control_number"),
+      roepGetAll("/course_outcomes?select=course_code,outcomes,source_kind" + c + "&order=id"),
+      roepGetAll("/coci_program_courses?select=course_code" + c + "&order=program_control_number,course_control_number,course_code")
+    ]).then(function (g) { return { active: g[0], records: g[1], outcomes: g[2], listed: g[3] }; });
+  }
+  function statNum(n) { return Number(n || 0).toLocaleString("en-US"); }
+  function statDay(ts) {
+    var d = ts ? new Date(ts) : null;
+    if (!d || isNaN(d.getTime())) return "";
+    try { return d.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }); }
+    catch (e) { return d.toISOString().slice(0, 10); }
+  }
+  var STAT_SOURCE = { course_outline: "course outlines", catalog: "the catalog" };
+  /* A figure opens its list on the Program Requirements tab: the Records view, picked to the college.
+     That tab loads its own module; this one never does (it would read as reading that tab's tables).
+     Loaded already, its goTo runs at once; otherwise the request waits for the tab's first activation,
+     which reads it (window.CPL_PROGRAM_REQUIREMENTS_GOTO). */
+  function openCollegeRecords(college, rshow) {
+    var T = window.CPL_TABS;
+    if (!T || typeof T.navigate !== "function") return;
+    var to = { view: "records", rcollege: college, rshow: rshow, sec: "records:find" };
+    var M = window.CPL_PROGRAM_REQUIREMENTS;
+    if (M && typeof M.goTo === "function") { T.navigate("program-requirements"); M.goTo(to); return; }
+    window.CPL_PROGRAM_REQUIREMENTS_GOTO = to;
+    T.navigate("program-requirements");
+  }
+  function paintCollegeStatus(node, college, s) {
+    function go(words, rshow) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "go"; b.textContent = words;
+      b.setAttribute("data-rshow", rshow);
+      b.addEventListener("click", function () { openCollegeRecords(college, rshow); });
+      return b;
+    }
+    function add(x) { node.appendChild(typeof x === "string" ? document.createTextNode(x) : x); }
+    var parts = [];
+    if (s.active) {
+      parts.push([go(s.pct + "% complete", "complete"),
+        ": " + statNum(s.complete) + " of " + statNum(s.active) + " active programs" +
+        (s.updated ? ", records updated " + statDay(s.updated) : "")]);
+    } else {
+      parts.push(["No active programs in COCI"]);
+    }
+    if (s.slos) {
+      var from = s.kinds.length === 1 ? STAT_SOURCE[s.kinds[0]] || s.kinds[0] : "course outlines and the catalog";
+      parts.push([go(statNum(s.slos) + " SLOs", "all"), " from " + from +
+        (s.listed ? ", for " + s.coverPct + "% of the " + statNum(s.listed) + " courses its programs list" : "")]);
+    } else {
+      parts.push(["No course SLOs read yet"]);
+    }
+    parts.push(s.conflicts
+      ? [go(statNum(s.conflicts) + (s.conflicts === 1 ? " record" : " records"), "conflict"),
+        s.conflicts === 1 ? " disagrees with the state's course list" : " disagree with the state's course list"]
+      : ["No record disagrees with the state's course list"]);
+    parts.forEach(function (p, i) { if (i) add(" · "); p.forEach(add); });
+  }
+
   // The last render's inputs and the pathway it shows, so a re-read of the table
   // (a reviewer signing in or out) re-renders with the reader's pick kept.
   var lastRender = null;

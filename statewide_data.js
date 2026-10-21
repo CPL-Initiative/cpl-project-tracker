@@ -14086,220 +14086,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 30.0
     },
     {
-      "exhibit_id": "MAPICI-FI1C1-1-001",
-      "exhibit_ids": [
-        "MAPICI-FI1C1-1-001"
-      ],
-      "title": "Fire Inspector I",
-      "unified_title": "Fire Inspector I",
-      "is_classified": true,
-      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Inspector 1 Certification (IFSAC/ProBoard)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "106",
-        "130",
-        "132"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Cabrillo College",
-        "Santa Ana College"
-      ],
-      "potential": 107,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 109,
-      "credit_recs": [
-        {
-          "course": "FTC 104",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FTC 106",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FT 2",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FT 3",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FOT 130A",
-          "credit": "1 hour in Fire Inspector 1A: Duties and Administration"
-        },
-        {
-          "course": "FOT 130B",
-          "credit": "1 hour in Fire Inspector 1B: Introduction to Fire and Life Safety"
-        },
-        {
-          "course": "FOT 130C",
-          "credit": "1 hour in Fire Inspector 1C: Field Inspection"
-        },
-        {
-          "course": "EAR 26",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "LOCAL GE E",
-          "credit": "3 hours in Fire Prevention"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FI1C1-1-001",
-          "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
-          "units": 21.0,
-          "lines": 9
-        }
-      ],
-      "adopter_units": {
-        "Cabrillo College": 6.0,
-        "Santa Ana College": 9.0
-      },
-      "adopter_lines": {
-        "Cabrillo College": 2,
-        "Santa Ana College": 5
-      },
-      "adopter_rec_idx": {
-        "Cabrillo College": [
-          2,
-          3
-        ],
-        "Santa Ana College": [
-          0,
-          1,
-          4,
-          5,
-          6
-        ]
-      },
-      "peer_units_median": 7.5,
-      "peer_units_max": 9.0,
-      "rec_units_total": 21.0
-    },
-    {
       "exhibit_id": "MAPCXS-M1FB-1-001",
       "exhibit_ids": [
         "MAPCXS-M1FB-1-001"
@@ -19162,6 +18948,251 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 4.0,
       "peer_units_max": 5.0,
       "rec_units_total": 12.5
+    },
+    {
+      "exhibit_id": "MAPICI-FI12-1-001|MAPICI-FI1C1-1-001",
+      "exhibit_ids": [
+        "MAPICI-FI12-1-001",
+        "MAPICI-FI1C1-1-001"
+      ],
+      "title": "Fire Inspector I",
+      "unified_title": "Fire Inspector I",
+      "is_classified": true,
+      "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Inspector 1 Certificate",
+        "Fire Inspector 1 Certification (IFSAC/ProBoard)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "106",
+        "130",
+        "132"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 3,
+      "adopter_names": [
+        "Cabrillo College",
+        "Glendale Community College",
+        "Santa Ana College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "FTC 104",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FTC 106",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FT 2",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FT 3",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FOT 130A",
+          "credit": "1 hour in Fire Inspector 1A: Duties and Administration"
+        },
+        {
+          "course": "FOT 130B",
+          "credit": "1 hour in Fire Inspector 1B: Introduction to Fire and Life Safety"
+        },
+        {
+          "course": "FOT 130C",
+          "credit": "1 hour in Fire Inspector 1C: Field Inspection"
+        },
+        {
+          "course": "EAR 26",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "LOCAL GE E",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FIRE 103",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FIRE 105",
+          "credit": "3 hours in Fire Protection Systems"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Prevention",
+          "cid": "FIRE 110 X"
+        },
+        {
+          "credit": "3 hours in Fire Protection Systems",
+          "cid": "FIRE 120 X"
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-FI12-1-001",
+          "title": "Fire Inspector 1 Certificate",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-FI1C1-1-001",
+          "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+          "units": 21.0,
+          "lines": 9
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 6.0,
+        "Glendale Community College": 6.0,
+        "Santa Ana College": 9.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 2,
+        "Glendale Community College": 2,
+        "Santa Ana College": 5
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          2,
+          3
+        ],
+        "Glendale Community College": [
+          9,
+          10
+        ],
+        "Santa Ana College": [
+          0,
+          1,
+          4,
+          5,
+          6
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 9.0,
+      "rec_units_total": 27.0
     },
     {
       "exhibit_id": "MAPMM-C1IC-1-001",
@@ -52922,328 +52953,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPCXS-CBEF6-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEF6-1-001"
-      ],
-      "title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
-      "unified_title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam for ADJUS 21 Introduction to Administration of Justice"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Merritt College"
-      ],
-      "potential": 99,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 100,
-      "credit_recs": [
-        {
-          "course": "ADJUS 021",
-          "credit": "3 hours in Introduction to Administration of Justice"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-CBEF6-1-001",
-          "title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Merritt College": 3.0
-      },
-      "adopter_lines": {
-        "Merritt College": 1
-      },
-      "adopter_rec_idx": {
-        "Merritt College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCXS-CBEF7-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBEF7-1-001"
-      ],
-      "title": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
-      "unified_title": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam for ADJUS 22 Concepts of Criminal Law"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Merritt College"
-      ],
-      "potential": 99,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 100,
-      "credit_recs": [
-        {
-          "course": "ADJUS 022",
-          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-CBEF7-1-001",
-          "title": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Merritt College": 3.0
-      },
-      "adopter_lines": {
-        "Merritt College": 1
-      },
-      "adopter_rec_idx": {
-        "Merritt College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPCXS-A2PA-1-001",
       "exhibit_ids": [
         "MAPCXS-A2PA-1-001"
@@ -53570,13 +53279,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-A5RW-1-001"
       ],
-      "title": "ADJUS 57 Report Writing for Public Safety Personnel",
-      "unified_title": "ADJUS 57 Report Writing for Public Safety Personnel",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Report Writing for Public Safety Personnel",
+      "unified_title": "Report Writing for Public Safety Personnel",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "ADJUS 57 Report Writing for Public Safety Personnel"
@@ -54417,202 +54126,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.0,
       "peer_units_max": 21.0,
       "rec_units_total": 33.0
-    },
-    {
-      "exhibit_id": "MAPCXS-AJ1C-1-001|MAPCXS-CBE-5-1-001|MAPCxS-ITAO1-1-001",
-      "exhibit_ids": [
-        "MAPCXS-AJ1C-1-001",
-        "MAPCXS-CBE-5-1-001",
-        "MAPCxS-ITAO1-1-001"
-      ],
-      "title": "Introduction to Administration of Justice",
-      "unified_title": "Introduction to Administration of Justice",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Admin Just 1 CBE",
-        "Discipline Exam - ADM JUS 001",
-        "Introduction to Administration of Justice ADJ 1 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "East Los Angeles College",
-        "Los Angeles Mission College",
-        "Norco College"
-      ],
-      "potential": 98,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADM JUS 001",
-          "credit": "3 hours in INTRODUCTION TO ADMINISTRATION OF JUSTICE"
-        },
-        {
-          "course": "ADJ 1",
-          "credit": "3 hours in Introduction to the Administration of Justice"
-        },
-        {
-          "course": "ADM JUS 001",
-          "credit": "3 hours in Introduction To Administration Of Justice"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-AJ1C-1-001",
-          "title": "Admin Just 1 CBE",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-CBE-5-1-001",
-          "title": "Discipline Exam - ADM JUS 001",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCxS-ITAO1-1-001",
-          "title": "Introduction to Administration of Justice ADJ 1 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "East Los Angeles College": 3.0,
-        "Los Angeles Mission College": 3.0,
-        "Norco College": 3.0
-      },
-      "adopter_lines": {
-        "East Los Angeles College": 1,
-        "Los Angeles Mission College": 1,
-        "Norco College": 1
-      },
-      "adopter_rec_idx": {
-        "East Los Angeles College": [
-          0
-        ],
-        "Los Angeles Mission College": [
-          2
-        ],
-        "Norco College": [
-          1
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 9.0
     },
     {
       "exhibit_id": "MAPICI-A1CL-1-001|MAPICI-A2OC-1-001|MAPICI-CCL-1-001",
@@ -57459,26 +56972,26 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 33.0
     },
     {
-      "exhibit_id": "MAPCXS-A2OC-1-001|MAPCXS-AJ2C-1-001|MAPCXS-COCL-1-001|MAPCXS-DE-A-1-001",
+      "exhibit_id": "MAPCXS-AJ1C-1-001|MAPCXS-CBE-5-1-001|MAPCXS-CBEF6-1-001|MAPCxS-ITAO1-1-001",
       "exhibit_ids": [
-        "MAPCXS-A2OC-1-001",
-        "MAPCXS-AJ2C-1-001",
-        "MAPCXS-COCL-1-001",
-        "MAPCXS-DE-A-1-001"
+        "MAPCXS-AJ1C-1-001",
+        "MAPCXS-CBE-5-1-001",
+        "MAPCXS-CBEF6-1-001",
+        "MAPCxS-ITAO1-1-001"
       ],
-      "title": "Concepts of Criminal Law",
-      "unified_title": "Concepts of Criminal Law",
+      "title": "Introduction to Administration of Justice",
+      "unified_title": "Introduction to Administration of Justice",
       "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.65,
+      "confidence_title": 1.0,
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
-        "Admin Just 2 CBE",
-        "Concepts of Criminal Law",
-        "Discipline Exam - ADM JUS 002"
+        "Admin Just 1 CBE",
+        "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
+        "Discipline Exam - ADM JUS 001",
+        "Introduction to Administration of Justice ADJ 1 Cx"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
@@ -57490,10 +57003,10 @@ window.CPL_STATEWIDE = {
       "collaborative_type": "Local",
       "adopters": 4,
       "adopter_names": [
-        "Chaffey College",
         "East Los Angeles College",
         "Los Angeles Mission College",
-        "Modesto Junior College"
+        "Merritt College",
+        "Norco College"
       ],
       "potential": 97,
       "potential_names": [
@@ -57507,6 +57020,7 @@ window.CPL_STATEWIDE = {
         "Cerritos College",
         "Cerro Coso Community College",
         "Chabot College",
+        "Chaffey College",
         "Citrus College",
         "City College of San Francisco",
         "Clovis Community College",
@@ -57554,16 +57068,15 @@ window.CPL_STATEWIDE = {
         "Madera College",
         "Mendocino College",
         "Merced College",
-        "Merritt College",
         "MiraCosta College",
         "Mission College",
+        "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
         "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
-        "Norco College",
         "Ohlone College",
         "Palo Verde College",
         "Palomar College",
@@ -57598,72 +57111,72 @@ window.CPL_STATEWIDE = {
       "total_addressable": 101,
       "credit_recs": [
         {
-          "course": "ADM JUS 002",
-          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
+          "course": "ADM JUS 001",
+          "credit": "3 hours in INTRODUCTION TO ADMINISTRATION OF JUSTICE"
         },
         {
-          "course": "ADJU 203",
-          "credit": "3 hours in Concepts of Criminal Law"
+          "course": "ADJ 1",
+          "credit": "3 hours in Introduction to the Administration of Justice"
         },
         {
-          "course": "CJ 2",
-          "credit": "3 hours in Concepts of Criminal Law"
+          "course": "ADM JUS 001",
+          "credit": "3 hours in Introduction To Administration Of Justice"
         },
         {
-          "course": "ADM JUS 002",
-          "credit": "3 hours in Concepts Of Criminal Law"
+          "course": "ADJUS 021",
+          "credit": "3 hours in Introduction to Administration of Justice"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPCXS-A2OC-1-001",
-          "title": "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
+          "id": "MAPCXS-AJ1C-1-001",
+          "title": "Admin Just 1 CBE",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPCXS-AJ2C-1-001",
-          "title": "Admin Just 2 CBE",
+          "id": "MAPCXS-CBE-5-1-001",
+          "title": "Discipline Exam - ADM JUS 001",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPCXS-COCL-1-001",
-          "title": "Concepts of Criminal Law",
+          "id": "MAPCXS-CBEF6-1-001",
+          "title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPCXS-DE-A-1-001",
-          "title": "Discipline Exam - ADM JUS 002",
+          "id": "MAPCxS-ITAO1-1-001",
+          "title": "Introduction to Administration of Justice ADJ 1 Cx",
           "units": 3.0,
           "lines": 1
         }
       ],
       "adopter_units": {
-        "Chaffey College": 3.0,
         "East Los Angeles College": 3.0,
         "Los Angeles Mission College": 3.0,
-        "Modesto Junior College": 3.0
+        "Merritt College": 3.0,
+        "Norco College": 3.0
       },
       "adopter_lines": {
-        "Chaffey College": 1,
         "East Los Angeles College": 1,
         "Los Angeles Mission College": 1,
-        "Modesto Junior College": 1
+        "Merritt College": 1,
+        "Norco College": 1
       },
       "adopter_rec_idx": {
-        "Chaffey College": [
-          2
-        ],
         "East Los Angeles College": [
           0
         ],
         "Los Angeles Mission College": [
+          2
+        ],
+        "Merritt College": [
           3
         ],
-        "Modesto Junior College": [
+        "Norco College": [
           1
         ]
       },
@@ -61036,6 +60549,236 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.5,
       "peer_units_max": 3.0,
       "rec_units_total": 11.5
+    },
+    {
+      "exhibit_id": "MAPCXS-A2OC-1-001|MAPCXS-AJ2C-1-001|MAPCXS-CBEF7-1-001|MAPCXS-COCL-1-001|MAPCXS-DE-A-1-001",
+      "exhibit_ids": [
+        "MAPCXS-A2OC-1-001",
+        "MAPCXS-AJ2C-1-001",
+        "MAPCXS-CBEF7-1-001",
+        "MAPCXS-COCL-1-001",
+        "MAPCXS-DE-A-1-001"
+      ],
+      "title": "Concepts of Criminal Law",
+      "unified_title": "Concepts of Criminal Law",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
+        "Admin Just 2 CBE",
+        "Concepts of Criminal Law",
+        "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+        "Discipline Exam - ADM JUS 002"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 5,
+      "adopter_names": [
+        "Chaffey College",
+        "East Los Angeles College",
+        "Los Angeles Mission College",
+        "Merritt College",
+        "Modesto Junior College"
+      ],
+      "potential": 96,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "ADM JUS 002",
+          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
+        },
+        {
+          "course": "ADJU 203",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "CJ 2",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADM JUS 002",
+          "credit": "3 hours in Concepts Of Criminal Law"
+        },
+        {
+          "course": "ADJUS 022",
+          "credit": "3 hours in CONCEPTS OF CRIMINAL LAW"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-A2OC-1-001",
+          "title": "ADJU 203\tConcepts of Criminal Law - Credit by Exam",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-AJ2C-1-001",
+          "title": "Admin Just 2 CBE",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-CBEF7-1-001",
+          "title": "Credit by Exam for ADJUS 22 Concepts of Criminal Law",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-COCL-1-001",
+          "title": "Concepts of Criminal Law",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-DE-A-1-001",
+          "title": "Discipline Exam - ADM JUS 002",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Los Angeles Mission College": 3.0,
+        "Merritt College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 1,
+        "East Los Angeles College": 1,
+        "Los Angeles Mission College": 1,
+        "Merritt College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          2
+        ],
+        "East Los Angeles College": [
+          0
+        ],
+        "Los Angeles Mission College": [
+          3
+        ],
+        "Merritt College": [
+          4
+        ],
+        "Modesto Junior College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 15.0
     },
     {
       "exhibit_id": "MAPCXS-C2IS-1-001",
@@ -172111,587 +171854,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 156.0
     },
     {
-      "exhibit_id": "MAPICA-F1C-1-001|MAPICG-FF1C-1-001|MAPICI-F1A-1-001|MAPICI-F1C2-1-001|MAPICI-F1OF-1-001|MAPICI-FC1A-1-001|MAPICI-FF1(-1-001|MAPICI-FF1C-1-001|MAPICI-FFI2-1-001|MAPICI-FPO1-1-001",
-      "exhibit_ids": [
-        "MAPICA-F1C-1-001",
-        "MAPICG-FF1C-1-001",
-        "MAPICI-F1A-1-001",
-        "MAPICI-F1C2-1-001",
-        "MAPICI-F1OF-1-001",
-        "MAPICI-FC1A-1-001",
-        "MAPICI-FF1(-1-001",
-        "MAPICI-FF1C-1-001",
-        "MAPICI-FFI2-1-001",
-        "MAPICI-FPO1-1-001"
-      ],
-      "title": "Firefighter 1",
-      "unified_title": "Firefighter 1",
-      "is_classified": true,
-      "issuing_agency": "California State Fire Training (SFT)",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Fighter 1 (FF1) Certification",
-        "Fire Fighter 1 Certification (CFSTES)",
-        "Fire Fighter I",
-        "Fire Protection Organization 1 or 1A Certification",
-        "Firefighter 1 Academy",
-        "Firefighter 1 Certification",
-        "Firefighter 1 or Firefighter 1A Certification",
-        "Firefighter Certificate 1 A"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130",
-        "132",
-        "40"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 17,
-      "adopter_names": [
-        "Bakersfield College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Columbia College",
-        "Lake Tahoe Community College",
-        "Los Angeles Mission College",
-        "Mendocino College",
-        "Palo Verde College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Sierra College"
-      ],
-      "potential": 64,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Siskiyous",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 81,
-      "credit_recs": [
-        {
-          "course": "FIPT 101",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIPT 101",
-          "credit": "3 hours in Principles of Emergency Services"
-        },
-        {
-          "course": "FIR 101",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FSC 111",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIPT 150A",
-          "credit": "1.5 hours in Introduction to Fire Suppression and Maintenance Manipulative Tasks (Beginning)"
-        },
-        {
-          "course": "FIPT 150B",
-          "credit": "1.5 hours in Introduction to Fire Suppression and Maintenance Manipulative Tasks (Intermediate)"
-        },
-        {
-          "course": "FIPT 150C",
-          "credit": "1.5 hours in Introduction to Fire Suppression and Maintenance Manipulative Tasks (Advanced)"
-        },
-        {
-          "course": "FT 5",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIR 104",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIR 105",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIPT 104",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIPT 105",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "CSU GE E",
-          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
-        },
-        {
-          "course": "FIRETEC 1",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRETEC 2",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRETEC 4",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRE B1",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRE B4",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE B7",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FTC 101",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FTC 102",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FTC 105",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FTC 121L",
-          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
-        },
-        {
-          "course": "FIRE 001",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "F SC 50",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "F SC 53",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "F SC 64",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 1",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRE 4",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRE 5",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 0001",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRE 0003",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 0008",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FT 1",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FT 3",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FT 6",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FT 7",
-          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
-        },
-        {
-          "course": "FIR 170L",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIR 170L",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIR 170M",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "GE E",
-          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
-        },
-        {
-          "course": "FIRE 004",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRE 005",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FSC 90",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "CSU GE E",
-          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
-        },
-        {
-          "course": "FIRE 155",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 159",
-          "credit": "3 hours in Fire Protection Organization"
-        },
-        {
-          "course": "FIRE 182",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FAC 060B",
-          "credit": "1 hour in Firefighter 1B - Hazardous Materials / WMD"
-        },
-        {
-          "course": "FAC 060C",
-          "credit": "2 hours in Firefighter 1C - Wildland Firefighter 1"
-        },
-        {
-          "course": "FAC 060A",
-          "credit": "10 hours in Basic Fire Academy- Fire Fighter 1A Structure"
-        },
-        {
-          "course": "FST 090",
-          "credit": "7.5 hours in Pre-Service Academy"
-        },
-        {
-          "course": "BFFA 063A",
-          "credit": "9.5 hours in Basic Fire Fighter I Academy (Part 1)"
-        },
-        {
-          "course": "BFFA 063B",
-          "credit": "9 hours in Basic Fire Fighter I Academy (Part 2)"
-        },
-        {
-          "course": "LACCD GE 7",
-          "credit": "3 hours in Lifelong Learning and Self Development"
-        },
-        {
-          "course": "F SC 111",
-          "credit": "13 hours in Firefighter One Academy"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Fire Behavior and Combustion",
-          "cid": ""
-        },
-        {
-          "credit": "3 hours in Building Construction for Fire Protection",
-          "cid": "FIRE 130 X"
-        },
-        {
-          "credit": "3 hours in Principles of Emergency Services",
-          "cid": ""
-        },
-        {
-          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development",
-          "cid": ""
-        },
-        {
-          "credit": "3 hours in Fire Protection Organization",
-          "cid": "FIRE 100 X"
-        },
-        {
-          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICA-F1C-1-001",
-          "title": "Firefighter 1 Certification",
-          "units": 126.0,
-          "lines": 42
-        },
-        {
-          "id": "MAPICG-FF1C-1-001",
-          "title": "Fire Fighter 1 Certification (CFSTES)",
-          "units": 13.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPICI-F1A-1-001",
-          "title": "Firefighter 1 Academy",
-          "units": 18.5,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-F1C2-1-001",
-          "title": "Firefighter 1 Certification",
-          "units": 13.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-F1OF-1-001",
-          "title": "Firefighter 1 or Firefighter 1A Certification",
-          "units": 10.5,
-          "lines": 5
-        },
-        {
-          "id": "MAPICI-FC1A-1-001",
-          "title": "Firefighter Certificate 1 A",
-          "units": 21.0,
-          "lines": 7
-        },
-        {
-          "id": "MAPICI-FF1(-1-001",
-          "title": "Fire Fighter 1 (FF1) Certification",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-FF1C-1-001",
-          "title": "Fire Fighter 1 Certification (CFSTES)",
-          "units": 10.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-FFI2-1-001",
-          "title": "Fire Fighter I",
-          "units": 7.5,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-FPO1-1-001",
-          "title": "Fire Protection Organization 1 or 1A Certification",
-          "units": 12.0,
-          "lines": 4
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 9.0,
-        "Cabrillo College": 9.0,
-        "Chabot College": 12.0,
-        "Chaffey College": 9.0,
-        "City College of San Francisco": 22.0,
-        "College of the Desert": 27.5,
-        "College of the Sequoias": 9.0,
-        "Columbia College": 9.0,
-        "Lake Tahoe Community College": 18.0,
-        "Los Angeles Mission College": 3.0,
-        "Mendocino College": 6.0,
-        "Palo Verde College": 7.5,
-        "San Diego City College": 3.0,
-        "San Diego Mesa College": 3.0,
-        "San Diego Miramar College": 22.5,
-        "Santa Ana College": 25.0,
-        "Sierra College": 9.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 3,
-        "Cabrillo College": 3,
-        "Chabot College": 4,
-        "Chaffey College": 3,
-        "City College of San Francisco": 4,
-        "College of the Desert": 5,
-        "College of the Sequoias": 3,
-        "Columbia College": 3,
-        "Lake Tahoe Community College": 6,
-        "Los Angeles Mission College": 1,
-        "Mendocino College": 2,
-        "Palo Verde College": 1,
-        "San Diego City College": 1,
-        "San Diego Mesa College": 1,
-        "San Diego Miramar College": 9,
-        "Santa Ana College": 7,
-        "Sierra College": 3
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          16,
-          17,
-          18
-        ],
-        "Cabrillo College": [
-          7,
-          33,
-          44
-        ],
-        "Chabot College": [
-          33,
-          34,
-          35,
-          36
-        ],
-        "Chaffey College": [
-          13,
-          14,
-          15
-        ],
-        "City College of San Francisco": [
-          24,
-          25,
-          26,
-          55
-        ],
-        "College of the Desert": [
-          23,
-          41,
-          42,
-          52,
-          53
-        ],
-        "College of the Sequoias": [
-          45,
-          46,
-          47
-        ],
-        "Columbia College": [
-          27,
-          28,
-          29
-        ],
-        "Lake Tahoe Community College": [
-          2,
-          8,
-          9,
-          37,
-          38,
-          39
-        ],
-        "Los Angeles Mission College": [
-          54
-        ],
-        "Mendocino College": [
-          3,
-          43
-        ],
-        "Palo Verde College": [
-          51
-        ],
-        "San Diego City College": [
-          12
-        ],
-        "San Diego Mesa College": [
-          12
-        ],
-        "San Diego Miramar College": [
-          0,
-          1,
-          4,
-          5,
-          6,
-          10,
-          11,
-          12,
-          40
-        ],
-        "Santa Ana College": [
-          19,
-          20,
-          21,
-          22,
-          48,
-          49,
-          50
-        ],
-        "Sierra College": [
-          30,
-          31,
-          32
-        ]
-      },
-      "peer_units_median": 9.0,
-      "peer_units_max": 27.5,
-      "rec_units_total": 194.5
-    },
-    {
       "exhibit_id": "CPLICI-ASEC-1-001|MAPICI-ASE(23-1-001",
       "exhibit_ids": [
         "CPLICI-ASEC-1-001",
@@ -174280,6 +173442,649 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.5,
       "peer_units_max": 21.0,
       "rec_units_total": 198.0
+    },
+    {
+      "exhibit_id": "MAPICA-F1C-1-001|MAPICG-FF1C-1-001|MAPICI-F1A-1-001|MAPICI-F1C2-1-001|MAPICI-F1C3-1-001|MAPICI-F1OF-1-001|MAPICI-FC1A-1-001|MAPICI-FF1(-1-001|MAPICI-FF1C-1-001|MAPICI-FFI2-1-001|MAPICI-FPO1-1-001",
+      "exhibit_ids": [
+        "MAPICA-F1C-1-001",
+        "MAPICG-FF1C-1-001",
+        "MAPICI-F1A-1-001",
+        "MAPICI-F1C2-1-001",
+        "MAPICI-F1C3-1-001",
+        "MAPICI-F1OF-1-001",
+        "MAPICI-FC1A-1-001",
+        "MAPICI-FF1(-1-001",
+        "MAPICI-FF1C-1-001",
+        "MAPICI-FFI2-1-001",
+        "MAPICI-FPO1-1-001"
+      ],
+      "title": "Firefighter 1",
+      "unified_title": "Firefighter 1",
+      "is_classified": true,
+      "issuing_agency": "California State Fire Training (SFT)",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Fighter 1 (FF1) Certification",
+        "Fire Fighter 1 Certification (CFSTES)",
+        "Fire Fighter I",
+        "Fire Protection Organization 1 or 1A Certification",
+        "Firefighter 1 Academy",
+        "Firefighter 1 Certificate",
+        "Firefighter 1 Certification",
+        "Firefighter 1 or Firefighter 1A Certification",
+        "Firefighter Certificate 1 A"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130",
+        "132",
+        "40"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 18,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Columbia College",
+        "Glendale Community College",
+        "Lake Tahoe Community College",
+        "Los Angeles Mission College",
+        "Mendocino College",
+        "Palo Verde College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Sierra College"
+      ],
+      "potential": 63,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Siskiyous",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 81,
+      "credit_recs": [
+        {
+          "course": "FIPT 101",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIPT 101",
+          "credit": "3 hours in Principles of Emergency Services"
+        },
+        {
+          "course": "FIR 101",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FSC 111",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIPT 150A",
+          "credit": "1.5 hours in Introduction to Fire Suppression and Maintenance Manipulative Tasks (Beginning)"
+        },
+        {
+          "course": "FIPT 150B",
+          "credit": "1.5 hours in Introduction to Fire Suppression and Maintenance Manipulative Tasks (Intermediate)"
+        },
+        {
+          "course": "FIPT 150C",
+          "credit": "1.5 hours in Introduction to Fire Suppression and Maintenance Manipulative Tasks (Advanced)"
+        },
+        {
+          "course": "FT 5",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIR 104",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIR 105",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIPT 104",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIPT 105",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "CSU GE E",
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
+        },
+        {
+          "course": "FIRETEC 1",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIRETEC 2",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRETEC 4",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE B1",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIRE B4",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE B7",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FTC 101",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FTC 102",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FTC 105",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FTC 121L",
+          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
+        },
+        {
+          "course": "FIRE 001",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "F SC 50",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "F SC 53",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "F SC 64",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE 1",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIRE 4",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE 5",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE 0001",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIRE 0003",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE 0008",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FT 1",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FT 3",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FT 6",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FT 7",
+          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
+        },
+        {
+          "course": "FIR 170L",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIR 170L",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIR 170M",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "GE E",
+          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
+        },
+        {
+          "course": "FIRE 004",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE 005",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FSC 90",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "CSU GE E",
+          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent"
+        },
+        {
+          "course": "FIRE 155",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE 159",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIRE 182",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FAC 060B",
+          "credit": "1 hour in Firefighter 1B - Hazardous Materials / WMD"
+        },
+        {
+          "course": "FAC 060C",
+          "credit": "2 hours in Firefighter 1C - Wildland Firefighter 1"
+        },
+        {
+          "course": "FAC 060A",
+          "credit": "10 hours in Basic Fire Academy- Fire Fighter 1A Structure"
+        },
+        {
+          "course": "FST 090",
+          "credit": "7.5 hours in Pre-Service Academy"
+        },
+        {
+          "course": "BFFA 063A",
+          "credit": "9.5 hours in Basic Fire Fighter I Academy (Part 1)"
+        },
+        {
+          "course": "BFFA 063B",
+          "credit": "9 hours in Basic Fire Fighter I Academy (Part 2)"
+        },
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        },
+        {
+          "course": "F SC 111",
+          "credit": "13 hours in Firefighter One Academy"
+        },
+        {
+          "course": "FIRE 101",
+          "credit": "3 hours in Principles of Fire Emergency Services"
+        },
+        {
+          "course": "FIRE 102",
+          "credit": "3 hours in Fire Behavior & Combustion"
+        },
+        {
+          "course": "FIRE 104",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE 105",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FIRE 106",
+          "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival"
+        },
+        {
+          "course": "FIRE 144",
+          "credit": "1.5 hours in Physical Standards for the Firefighter"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Fire Behavior and Combustion",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Building Construction for Fire Protection",
+          "cid": "FIRE 130 X"
+        },
+        {
+          "credit": "3 hours in Principles of Emergency Services",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Fire Protection Organization",
+          "cid": "FIRE 100 X"
+        },
+        {
+          "credit": "3 hours in CSU-GE Area E or Native GE Area Equivalent",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Principles of Fire Emergency Services",
+          "cid": "FIRE 100 X"
+        },
+        {
+          "credit": "3 hours in Fire Behavior & Combustion",
+          "cid": "FIRE 140 X"
+        },
+        {
+          "credit": "3 hours in Fire Protection Systems",
+          "cid": "FIRE 120 X"
+        },
+        {
+          "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival",
+          "cid": "FIRE 150 X"
+        },
+        {
+          "credit": "1.5 hours in Physical Standards for the Firefighter",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-F1C-1-001",
+          "title": "Firefighter 1 Certification",
+          "units": 126.0,
+          "lines": 42
+        },
+        {
+          "id": "MAPICG-FF1C-1-001",
+          "title": "Fire Fighter 1 Certification (CFSTES)",
+          "units": 13.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-F1A-1-001",
+          "title": "Firefighter 1 Academy",
+          "units": 18.5,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-F1C2-1-001",
+          "title": "Firefighter 1 Certification",
+          "units": 13.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-F1C3-1-001",
+          "title": "Firefighter 1 Certificate",
+          "units": 16.5,
+          "lines": 6
+        },
+        {
+          "id": "MAPICI-F1OF-1-001",
+          "title": "Firefighter 1 or Firefighter 1A Certification",
+          "units": 10.5,
+          "lines": 5
+        },
+        {
+          "id": "MAPICI-FC1A-1-001",
+          "title": "Firefighter Certificate 1 A",
+          "units": 21.0,
+          "lines": 7
+        },
+        {
+          "id": "MAPICI-FF1(-1-001",
+          "title": "Fire Fighter 1 (FF1) Certification",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-FF1C-1-001",
+          "title": "Fire Fighter 1 Certification (CFSTES)",
+          "units": 10.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-FFI2-1-001",
+          "title": "Fire Fighter I",
+          "units": 7.5,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-FPO1-1-001",
+          "title": "Fire Protection Organization 1 or 1A Certification",
+          "units": 12.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 9.0,
+        "Cabrillo College": 9.0,
+        "Chabot College": 12.0,
+        "Chaffey College": 9.0,
+        "City College of San Francisco": 22.0,
+        "College of the Desert": 27.5,
+        "College of the Sequoias": 9.0,
+        "Columbia College": 9.0,
+        "Glendale Community College": 16.5,
+        "Lake Tahoe Community College": 18.0,
+        "Los Angeles Mission College": 3.0,
+        "Mendocino College": 6.0,
+        "Palo Verde College": 7.5,
+        "San Diego City College": 3.0,
+        "San Diego Mesa College": 3.0,
+        "San Diego Miramar College": 22.5,
+        "Santa Ana College": 25.0,
+        "Sierra College": 9.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 3,
+        "Cabrillo College": 3,
+        "Chabot College": 4,
+        "Chaffey College": 3,
+        "City College of San Francisco": 4,
+        "College of the Desert": 5,
+        "College of the Sequoias": 3,
+        "Columbia College": 3,
+        "Glendale Community College": 6,
+        "Lake Tahoe Community College": 6,
+        "Los Angeles Mission College": 1,
+        "Mendocino College": 2,
+        "Palo Verde College": 1,
+        "San Diego City College": 1,
+        "San Diego Mesa College": 1,
+        "San Diego Miramar College": 9,
+        "Santa Ana College": 7,
+        "Sierra College": 3
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          16,
+          17,
+          18
+        ],
+        "Cabrillo College": [
+          7,
+          33,
+          44
+        ],
+        "Chabot College": [
+          33,
+          34,
+          35,
+          36
+        ],
+        "Chaffey College": [
+          13,
+          14,
+          15
+        ],
+        "City College of San Francisco": [
+          24,
+          25,
+          26,
+          55
+        ],
+        "College of the Desert": [
+          23,
+          41,
+          42,
+          52,
+          53
+        ],
+        "College of the Sequoias": [
+          45,
+          46,
+          47
+        ],
+        "Columbia College": [
+          27,
+          28,
+          29
+        ],
+        "Glendale Community College": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61
+        ],
+        "Lake Tahoe Community College": [
+          2,
+          8,
+          9,
+          37,
+          38,
+          39
+        ],
+        "Los Angeles Mission College": [
+          54
+        ],
+        "Mendocino College": [
+          3,
+          43
+        ],
+        "Palo Verde College": [
+          51
+        ],
+        "San Diego City College": [
+          12
+        ],
+        "San Diego Mesa College": [
+          12
+        ],
+        "San Diego Miramar College": [
+          0,
+          1,
+          4,
+          5,
+          6,
+          10,
+          11,
+          12,
+          40
+        ],
+        "Santa Ana College": [
+          19,
+          20,
+          21,
+          22,
+          48,
+          49,
+          50
+        ],
+        "Sierra College": [
+          30,
+          31,
+          32
+        ]
+      },
+      "peer_units_median": 9.0,
+      "peer_units_max": 27.5,
+      "rec_units_total": 211.0
     },
     {
       "exhibit_id": "MAPCBEN-MP-1-001|MAPCXS-MP-1-001|MAPCxS-MB0C-1-001",
@@ -190578,314 +190383,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.5,
       "peer_units_max": 6.5,
       "rec_units_total": 6.5
-    },
-    {
-      "exhibit_id": "MAPICI-F1C3-1-001",
-      "exhibit_ids": [
-        "MAPICI-F1C3-1-001"
-      ],
-      "title": "Firefighter 1 Certificate",
-      "unified_title": "Firefighter 1 Certificate",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Firefighter 1 Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Glendale Community College"
-      ],
-      "potential": 60,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIRE 101",
-          "credit": "3 hours in Principles of Fire Emergency Services"
-        },
-        {
-          "course": "FIRE 102",
-          "credit": "3 hours in Fire Behavior & Combustion"
-        },
-        {
-          "course": "FIRE 104",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRE 105",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FIRE 106",
-          "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival"
-        },
-        {
-          "course": "FIRE 144",
-          "credit": "1.5 hours in Physical Standards for the Firefighter"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Principles of Fire Emergency Services",
-          "cid": "FIRE 100 X"
-        },
-        {
-          "credit": "3 hours in Fire Behavior & Combustion",
-          "cid": "FIRE 140 X"
-        },
-        {
-          "credit": "3 hours in Building Construction for Fire Protection",
-          "cid": "FIRE 130 X"
-        },
-        {
-          "credit": "3 hours in Fire Protection Systems",
-          "cid": "FIRE 120 X"
-        },
-        {
-          "credit": "3 hours in Principles of Fire and Emergency Services Safety and Survival",
-          "cid": "FIRE 150 X"
-        },
-        {
-          "credit": "1.5 hours in Physical Standards for the Firefighter",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-F1C3-1-001",
-          "title": "Firefighter 1 Certificate",
-          "units": 16.5,
-          "lines": 6
-        }
-      ],
-      "adopter_units": {
-        "Glendale Community College": 16.5
-      },
-      "adopter_lines": {
-        "Glendale Community College": 6
-      },
-      "adopter_rec_idx": {
-        "Glendale Community College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "peer_units_median": 16.5,
-      "peer_units_max": 16.5,
-      "rec_units_total": 16.5
-    },
-    {
-      "exhibit_id": "MAPICI-FI12-1-001",
-      "exhibit_ids": [
-        "MAPICI-FI12-1-001"
-      ],
-      "title": "Fire Inspector 1 Certificate",
-      "unified_title": "Fire Inspector 1 Certificate",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Inspector 1 Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Glendale Community College"
-      ],
-      "potential": 60,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIRE 103",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FIRE 105",
-          "credit": "3 hours in Fire Protection Systems"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Fire Prevention",
-          "cid": "FIRE 110 X"
-        },
-        {
-          "credit": "3 hours in Fire Protection Systems",
-          "cid": "FIRE 120 X"
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FI12-1-001",
-          "title": "Fire Inspector 1 Certificate",
-          "units": 6.0,
-          "lines": 2
-        }
-      ],
-      "adopter_units": {
-        "Glendale Community College": 6.0
-      },
-      "adopter_lines": {
-        "Glendale Community College": 2
-      },
-      "adopter_rec_idx": {
-        "Glendale Community College": [
-          0,
-          1
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 6.0
     },
     {
       "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001|MAPICI-ASEL1-1-001|MAPICI-ASEL2-1-001|MAPICI-IFAL-1-001",
@@ -216075,13 +215572,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRA-PFB2-1-001"
       ],
-      "title": "Portfolio for BUSN 20",
-      "unified_title": "Portfolio for BUSN 20",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "International Business",
+      "unified_title": "International Business",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Portfolio for BUSN 20"
@@ -383587,85 +383084,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 2.0
     },
     {
-      "exhibit_id": "MAPICI-A0-P-1-001|MAPICI-A0-P3-1-001",
-      "exhibit_ids": [
-        "MAPICI-A0-P-1-001",
-        "MAPICI-A0-P3-1-001"
-      ],
-      "title": "FAA Private Pilot Ground School",
-      "unified_title": "FAA Private Pilot Ground School",
-      "is_classified": true,
-      "issuing_agency": "Federal Aviation Administration (FAA)",
-      "training_agency": "Riverside Flight Academy",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AERO 022 - Private Pilot Ground School",
-        "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "355"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "San Bernardino Valley College"
-      ],
-      "potential": 9,
-      "potential_names": [
-        "Cypress College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Reedley College",
-        "Sacramento City College",
-        "San Diego Miramar College",
-        "Southwestern College"
-      ],
-      "total_addressable": 10,
-      "credit_recs": [
-        {
-          "course": "AERO 022",
-          "credit": "6 hours in Private Pilot Ground School"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A0-P-1-001",
-          "title": "AERO 022 - Private Pilot Ground School",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-A0-P3-1-001",
-          "title": "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
-          "units": 6.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "San Bernardino Valley College": 6.0
-      },
-      "adopter_lines": {
-        "San Bernardino Valley College": 1
-      },
-      "adopter_rec_idx": {
-        "San Bernardino Valley College": [
-          0
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 6.0
-    },
-    {
       "exhibit_id": "MAPCXS-A2EO2-1-001",
       "exhibit_ids": [
         "MAPCXS-A2EO2-1-001"
@@ -385938,158 +385356,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-FPPC1-1-001",
-      "exhibit_ids": [
-        "MAPICI-FPPC1-1-001"
-      ],
-      "title": "FAA Private Pilot Certificate",
-      "unified_title": "FAA Private Pilot Certificate",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "FAA Private Pilot Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "355"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Glendale Community College"
-      ],
-      "potential": 9,
-      "potential_names": [
-        "Cypress College",
-        "Fullerton College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Reedley College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Southwestern College"
-      ],
-      "total_addressable": 10,
-      "credit_recs": [
-        {
-          "course": "AT 112",
-          "credit": "2 hours in PRIVATE PILOT LAB I"
-        },
-        {
-          "course": "AT 113",
-          "credit": "3 hours in PRIVATE PILOT LAB II"
-        },
-        {
-          "course": "AT 120",
-          "credit": "5 hours in PRIVATE PILOT GROUND SCHOOL"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FPPC1-1-001",
-          "title": "FAA Private Pilot Certificate",
-          "units": 10.0,
-          "lines": 3
-        }
-      ],
-      "adopter_units": {
-        "Glendale Community College": 10.0
-      },
-      "adopter_lines": {
-        "Glendale Community College": 3
-      },
-      "adopter_rec_idx": {
-        "Glendale Community College": [
-          0,
-          1,
-          2
-        ]
-      },
-      "peer_units_median": 10.0,
-      "peer_units_max": 10.0,
-      "rec_units_total": 10.0
-    },
-    {
-      "exhibit_id": "MAPICI-PFPP-1-001",
-      "exhibit_ids": [
-        "MAPICI-PFPP-1-001"
-      ],
-      "title": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
-      "unified_title": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "355"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Glendale Community College"
-      ],
-      "potential": 9,
-      "potential_names": [
-        "Cypress College",
-        "Fullerton College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Reedley College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Southwestern College"
-      ],
-      "total_addressable": 10,
-      "credit_recs": [
-        {
-          "course": "AT 120",
-          "credit": "5 hours in PRIVATE PILOT GROUND SCHOOL"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-PFPP-1-001",
-          "title": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
-          "units": 5.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Glendale Community College": 5.0
-      },
-      "adopter_lines": {
-        "Glendale Community College": 1
-      },
-      "adopter_rec_idx": {
-        "Glendale Community College": [
-          0
-        ]
-      },
-      "peer_units_median": 5.0,
-      "peer_units_max": 5.0,
-      "rec_units_total": 5.0
-    },
-    {
       "exhibit_id": "MAPSAH-AFLL-1-001|MAPSAS-A-FL-1-001|MAPSAS-A:FL-1-001|MAPSAS-AEFL1-1-001|MAPSAS-AF-L-1-001|MAPSAS-AFL&1-1-001|MAPSAS-AFL&2-1-001|MAPSAS-AFL&3-1-001|MAPSAS-AFL&4-1-001|MAPSAS-AFL&5-1-001|MAPSAS-AFL&6-1-001|MAPSAS-AFL&7-1-001|MAPSAS-AFL1-1-001|MAPSAS-AFL3-1-001|MAPSAS-AFL4-1-001|MAPSAS-AFL5-1-001|MAPSAS-AFLA-1-001|MAPSAS-AFLA1-1-001|MAPSAS-AFLA10-1-001|MAPSAS-AFLA11-1-001|MAPSAS-AFLA12-1-001|MAPSAS-AFLA13-1-001|MAPSAS-AFLA14-1-001|MAPSAS-AFLA2-1-001|MAPSAS-AFLA3-1-001|MAPSAS-AFLA4-1-001|MAPSAS-AFLA5-1-001|MAPSAS-AFLA6-1-001|MAPSAS-AFLA7-1-001|MAPSAS-AFLA8-1-001|MAPSAS-AFLA9-1-001|MAPSAS-AFLC-1-001",
       "exhibit_ids": [
         "MAPSAH-AFLL-1-001",
@@ -387050,112 +386316,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 159.5
     },
     {
-      "exhibit_id": "MAPICI-A0-P1-1-001|MAPICI-A0-P2-1-001|MAPICI-FPPC-1-001",
-      "exhibit_ids": [
-        "MAPICI-A0-P1-1-001",
-        "MAPICI-A0-P2-1-001",
-        "MAPICI-FPPC-1-001"
-      ],
-      "title": "FAA Private Pilot Certificate",
-      "unified_title": "FAA Private Pilot Certificate",
-      "is_classified": true,
-      "issuing_agency": "Federal Aviation Administration (FAA)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "AERO 022 - Private Pilot Ground School - FAA Card",
-        "AERO 022L - Private Pilot Ground School Lab - FAA Card",
-        "FAA-issued Private Pilot Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "355"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "San Bernardino Valley College",
-        "San Diego Miramar College"
-      ],
-      "potential": 8,
-      "potential_names": [
-        "Cypress College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Reedley College",
-        "Sacramento City College",
-        "Southwestern College"
-      ],
-      "total_addressable": 10,
-      "credit_recs": [
-        {
-          "course": "AVIA 101",
-          "credit": "3 hours in Private Pilot Ground School"
-        },
-        {
-          "course": "AVIA 101L",
-          "credit": "1.0 hours in Private Pilot Flight Lab"
-        },
-        {
-          "course": "AERO 022",
-          "credit": "6 hours in Private Pilot Ground School"
-        },
-        {
-          "course": "AERO 022L",
-          "credit": "3 hours in Private Pilot Flight Lab"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A0-P1-1-001",
-          "title": "AERO 022 - Private Pilot Ground School - FAA Card",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-A0-P2-1-001",
-          "title": "AERO 022L - Private Pilot Ground School Lab - FAA Card",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-FPPC-1-001",
-          "title": "FAA-issued Private Pilot Certificate",
-          "units": 4.0,
-          "lines": 2
-        }
-      ],
-      "adopter_units": {
-        "San Bernardino Valley College": 9.0,
-        "San Diego Miramar College": 4.0
-      },
-      "adopter_lines": {
-        "San Bernardino Valley College": 2,
-        "San Diego Miramar College": 2
-      },
-      "adopter_rec_idx": {
-        "San Bernardino Valley College": [
-          2,
-          3
-        ],
-        "San Diego Miramar College": [
-          0,
-          1
-        ]
-      },
-      "peer_units_median": 6.5,
-      "peer_units_max": 9.0,
-      "rec_units_total": 13.0
-    },
-    {
       "exhibit_id": "MAPICI-A0-I1-1-001|MAPICI-A0-I2-1-001|MAPICI-FIR-1-001",
       "exhibit_ids": [
         "MAPICI-A0-I1-1-001",
@@ -387270,6 +386430,102 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 7.5,
       "peer_units_max": 10.0,
       "rec_units_total": 15.0
+    },
+    {
+      "exhibit_id": "MAPICI-A0-P-1-001|MAPICI-A0-P3-1-001|MAPICI-PFPP-1-001",
+      "exhibit_ids": [
+        "MAPICI-A0-P-1-001",
+        "MAPICI-A0-P3-1-001",
+        "MAPICI-PFPP-1-001"
+      ],
+      "title": "FAA Private Pilot Ground School",
+      "unified_title": "FAA Private Pilot Ground School",
+      "is_classified": true,
+      "issuing_agency": "Federal Aviation Administration (FAA)",
+      "training_agency": "Riverside Flight Academy",
+      "confidence_title": 0.85,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "AERO 022 - Private Pilot Ground School",
+        "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
+        "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "355"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Glendale Community College",
+        "San Bernardino Valley College"
+      ],
+      "potential": 8,
+      "potential_names": [
+        "Cypress College",
+        "Fullerton College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Reedley College",
+        "Sacramento City College",
+        "San Diego Miramar College",
+        "Southwestern College"
+      ],
+      "total_addressable": 10,
+      "credit_recs": [
+        {
+          "course": "AERO 022",
+          "credit": "6 hours in Private Pilot Ground School"
+        },
+        {
+          "course": "AT 120",
+          "credit": "5 hours in PRIVATE PILOT GROUND SCHOOL"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A0-P-1-001",
+          "title": "AERO 022 - Private Pilot Ground School",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-A0-P3-1-001",
+          "title": "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-PFPP-1-001",
+          "title": "Passing FAA Private Pilot Knowledge Test Certificate, Ground School Certificate, and Ground School Logbook Endorsements",
+          "units": 5.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Glendale Community College": 5.0,
+        "San Bernardino Valley College": 6.0
+      },
+      "adopter_lines": {
+        "Glendale Community College": 1,
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Glendale Community College": [
+          1
+        ],
+        "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 5.5,
+      "peer_units_max": 6.0,
+      "rec_units_total": 11.0
     },
     {
       "exhibit_id": "MAPPRS-FACA-1-001",
@@ -387735,6 +386991,139 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPICI-A0-P1-1-001|MAPICI-A0-P2-1-001|MAPICI-FPPC-1-001|MAPICI-FPPC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-A0-P1-1-001",
+        "MAPICI-A0-P2-1-001",
+        "MAPICI-FPPC-1-001",
+        "MAPICI-FPPC1-1-001"
+      ],
+      "title": "FAA Private Pilot Certificate",
+      "unified_title": "FAA Private Pilot Certificate",
+      "is_classified": true,
+      "issuing_agency": "Federal Aviation Administration (FAA)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "AERO 022 - Private Pilot Ground School - FAA Card",
+        "AERO 022L - Private Pilot Ground School Lab - FAA Card",
+        "FAA Private Pilot Certificate",
+        "FAA-issued Private Pilot Certificate"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "355"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Glendale Community College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College"
+      ],
+      "potential": 7,
+      "potential_names": [
+        "Cypress College",
+        "Fullerton College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Reedley College",
+        "Sacramento City College",
+        "Southwestern College"
+      ],
+      "total_addressable": 10,
+      "credit_recs": [
+        {
+          "course": "AVIA 101",
+          "credit": "3 hours in Private Pilot Ground School"
+        },
+        {
+          "course": "AVIA 101L",
+          "credit": "1.0 hours in Private Pilot Flight Lab"
+        },
+        {
+          "course": "AERO 022",
+          "credit": "6 hours in Private Pilot Ground School"
+        },
+        {
+          "course": "AERO 022L",
+          "credit": "3 hours in Private Pilot Flight Lab"
+        },
+        {
+          "course": "AT 112",
+          "credit": "2 hours in PRIVATE PILOT LAB I"
+        },
+        {
+          "course": "AT 113",
+          "credit": "3 hours in PRIVATE PILOT LAB II"
+        },
+        {
+          "course": "AT 120",
+          "credit": "5 hours in PRIVATE PILOT GROUND SCHOOL"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A0-P1-1-001",
+          "title": "AERO 022 - Private Pilot Ground School - FAA Card",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-A0-P2-1-001",
+          "title": "AERO 022L - Private Pilot Ground School Lab - FAA Card",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-FPPC-1-001",
+          "title": "FAA-issued Private Pilot Certificate",
+          "units": 4.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-FPPC1-1-001",
+          "title": "FAA Private Pilot Certificate",
+          "units": 10.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "Glendale Community College": 10.0,
+        "San Bernardino Valley College": 9.0,
+        "San Diego Miramar College": 4.0
+      },
+      "adopter_lines": {
+        "Glendale Community College": 3,
+        "San Bernardino Valley College": 2,
+        "San Diego Miramar College": 2
+      },
+      "adopter_rec_idx": {
+        "Glendale Community College": [
+          4,
+          5,
+          6
+        ],
+        "San Bernardino Valley College": [
+          2,
+          3
+        ],
+        "San Diego Miramar College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 9.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 23.0
     },
     {
       "exhibit_id": "MAPCXS-E2OF-1-001",
@@ -413068,7 +412457,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-21T11:55:52",
+  "generated_at": "2026-10-21T14:32:53",
   "total_credit_recs": 14526,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
