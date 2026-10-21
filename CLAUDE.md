@@ -662,6 +662,11 @@ Read that before a UI rework, a First Light artifact, or a table layout.
 - **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
+- **Tabs never remember a filter or a chosen college across visits (Sam, 2026-10-21).**
+  *"It would be best if tabs didn't remember the previously filtered objects."* A pick lasts
+  the visit; a hand-off between tabs is read once and cleared. Column widths, the theme and
+  section folds are not filters. Implementation Funding's public one-institution choice
+  (his call 9, 2026-10-15) stays until he says otherwise.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
 

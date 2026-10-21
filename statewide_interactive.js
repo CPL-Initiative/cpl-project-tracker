@@ -1775,7 +1775,7 @@
     if (one) {
       try {
         localStorage.setItem(MY_COLLEGE_SCOPE_KEY, JSON.stringify({
-          scope: "college", college: one, district: "", swpRegion: ""
+          scope: "college", college: one, district: "", swpRegion: "", handoff: true
         }));
       } catch (e) { /* storage unavailable — the tab still opens and asks */ }
     }

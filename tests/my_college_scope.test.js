@@ -292,7 +292,7 @@ block("persistence", function () {
    * opened already populated for whoever was here last — which shows a second
    * reader someone else's college, and makes a reader who wants a different one
    * notice they are on the wrong page before they can leave it. */
-  const r = load({ remember: { scope: "college", college: "Cabrillo College", district: "" } });
+  const r = load({ remember: { scope: "college", college: "Cabrillo College", district: "", handoff: true } });
   r.M.activate();
   check("⭐ a remembered college does NOT populate the tab", r.M._state.scope !== "college"
     && r.M._state.college !== "Cabrillo College");
@@ -308,9 +308,20 @@ block("persistence", function () {
   check("…which does populate the tab",
     r.M._state.scope === "college" && r.M._state.college === "Cabrillo College");
 
+  // The tab never remembers a choice (Sam, 2026-10-21: "It would be best if tabs didn't remember
+  // the previously filtered objects"): choosing writes nothing, and a choice an earlier build
+  // stored is cleared unread. Only another tab's hand-off (marked `handoff`) is offered, once.
+  check("choosing a college stores nothing", r.w.localStorage.getItem("cplMyCollegeScope.v1") === null);
+  const old = load({ remember: { scope: "college", college: "Cabrillo College", district: "" } });
+  old.M.activate();
+  old.M._state.loading = false;
+  old.M.render(old.root);
+  check("⭐ a choice an earlier visit stored is not offered, and is cleared",
+    !old.root.querySelector("[data-scope-resume]") && old.w.localStorage.getItem("cplMyCollegeScope.v1") === null);
+
   // ⚠ A shortcut that lands on a SECOND question is not a shortcut. A scope
   // that needs an entity is only offered once it has one.
-  const half = load({ remember: { scope: "college", college: "", district: "" } });
+  const half = load({ remember: { scope: "college", college: "", district: "", handoff: true } });
   half.M.activate();
   half.M._state.loading = false;
   half.M.render(half.root);
@@ -321,7 +332,7 @@ block("persistence", function () {
   // screen — e.g. a "senate" saved by a future build, read by this one.
   // (This was "swp" until 2026-09-17, when that scope got its roster; the rule
   // is unchanged, the example moved to the one still without data.)
-  const bad = load({ remember: { scope: "senate" } });
+  const bad = load({ remember: { scope: "senate", handoff: true } });
   bad.M.activate();
   check("⚠ a remembered scope with no data is ignored, not restored",
     bad.M._state.scope !== "senate");
