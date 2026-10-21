@@ -1979,6 +1979,13 @@ module.exports = {
     mayHideBelow: [],
   },
 
+  /* The guidance memo (Sam, 2026-10-21), linked from the explainer's Contents. */
+  "funding-memo": {
+    file: "funding-model/memo/index.html",
+    title: "Funding guidance memo (public)",
+    mayHideBelow: [],
+  },
+
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
      cpl-opportunity/index.html, one college per ?college=, linked from My
      College and the CPL Pathways college picker ("View CPL Visual"). Measured
